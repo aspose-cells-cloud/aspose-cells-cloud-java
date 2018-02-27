@@ -1,0 +1,44 @@
+
+# Shape
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**link** | [**Link**](Link.md) |  |  [optional]
+**name** | **String** |  |  [optional]
+**msoDrawingType** | **String** |  |  [optional]
+**autoShapeType** | **String** |  |  [optional]
+**placement** | **String** |  |  [optional]
+**upperLeftRow** | **Integer** |  |  [optional]
+**top** | **Integer** |  |  [optional]
+**upperLeftColumn** | **Integer** |  |  [optional]
+**left** | **Integer** |  |  [optional]
+**lowerRightRow** | **Integer** |  |  [optional]
+**bottom** | **Integer** |  |  [optional]
+**lowerRightColumn** | **Integer** |  |  [optional]
+**right** | **Integer** |  |  [optional]
+**width** | **Integer** |  |  [optional]
+**height** | **Integer** |  |  [optional]
+**X** | **Integer** |  |  [optional]
+**Y** | **Integer** |  |  [optional]
+**rotationAngle** | **Double** |  |  [optional]
+**htmlText** | **String** |  |  [optional]
+**text** | **String** |  |  [optional]
+**alternativeText** | **String** |  |  [optional]
+**textHorizontalAlignment** | **String** |  |  [optional]
+**textHorizontalOverflow** | **String** |  |  [optional]
+**textOrientationType** | **String** |  |  [optional]
+**textVerticalAlignment** | **String** |  |  [optional]
+**textVerticalOverflow** | **String** |  |  [optional]
+**isGroup** | **Boolean** |  |  [optional]
+**isHidden** | **Boolean** |  |  [optional]
+**isLockAspectRatio** | **Boolean** |  |  [optional]
+**isLocked** | **Boolean** |  |  [optional]
+**isPrintable** | **Boolean** |  |  [optional]
+**isTextWrapped** | **Boolean** |  |  [optional]
+**isWordArt** | **Boolean** |  |  [optional]
+**linkedCell** | **String** |  |  [optional]
+**zorderPosition** | **Integer** |  |  [optional]
+
+
+
