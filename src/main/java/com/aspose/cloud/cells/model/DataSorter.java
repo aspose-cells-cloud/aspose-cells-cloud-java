@@ -29,7 +29,7 @@ import java.util.List;
 /**
  * DataSorter
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-02-27T14:45:34.511+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-05T15:44:26.749+08:00")
 public class DataSorter {
   @SerializedName("CaseSensitive")
   private Boolean caseSensitive = null;

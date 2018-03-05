@@ -216,7 +216,7 @@ No authorization required
 
 <a name="cellsChartsGetWorksheetChart"></a>
 # **cellsChartsGetWorksheetChart**
-> File cellsChartsGetWorksheetChart(name, sheetName, chartNumber, folder)
+> File cellsChartsGetWorksheetChart(name, sheetName, chartNumber, format, folder)
 
 Get chart info.
 
@@ -231,9 +231,10 @@ CellsChartsApi apiInstance = new CellsChartsApi();
 String name = "name_example"; // String | Document name.
 String sheetName = "sheetName_example"; // String | Worksheet name.
 Integer chartNumber = 56; // Integer | The chart number.
+String format = "format_example"; // String | The exported file format.
 String folder = "folder_example"; // String | The document folder.
 try {
-    File result = apiInstance.cellsChartsGetWorksheetChart(name, sheetName, chartNumber, folder);
+    File result = apiInstance.cellsChartsGetWorksheetChart(name, sheetName, chartNumber, format, folder);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsChartsApi#cellsChartsGetWorksheetChart");
@@ -248,6 +249,7 @@ Name | Type | Description  | Notes
  **name** | **String**| Document name. |
  **sheetName** | **String**| Worksheet name. |
  **chartNumber** | **Integer**| The chart number. |
+ **format** | **String**| The exported file format. | [optional]
  **folder** | **String**| The document folder. | [optional]
 
 ### Return type

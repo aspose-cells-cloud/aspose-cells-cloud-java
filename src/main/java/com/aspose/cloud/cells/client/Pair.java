@@ -13,7 +13,7 @@
 
 package com.aspose.cloud.cells.client;
 
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-02-27T14:45:34.511+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-05T15:44:26.749+08:00")
 public class Pair {
     private String name = "";
     private String value = "";

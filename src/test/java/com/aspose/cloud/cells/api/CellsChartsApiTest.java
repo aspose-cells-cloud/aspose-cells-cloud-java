@@ -152,9 +152,10 @@ public class CellsChartsApiTest {
         String name = MYDOC;
         String sheetName = SHEET3;
         Integer chartNumber = 0;
+		String format = "png";
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        File response = api.cellsChartsGetWorksheetChart(name, sheetName, chartNumber, folder);
+        File response = api.cellsChartsGetWorksheetChart(name, sheetName, chartNumber, format, folder);
 
         // TODO: test validations
     }
