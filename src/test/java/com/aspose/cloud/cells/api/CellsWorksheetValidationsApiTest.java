@@ -15,8 +15,7 @@ package com.aspose.cloud.cells.api;
 import com.aspose.cloud.cells.client.ApiClient;
 import com.aspose.cloud.cells.client.ApiException;
 import com.aspose.cloud.cells.client.Configuration;
-
-
+import com.aspose.cloud.cells.model.CellArea;
 import com.aspose.cloud.cells.model.Validation;
 import com.aspose.cloud.cells.model.ValidationResponse;
 import com.aspose.cloud.cells.model.ValidationsResponse;
@@ -124,16 +123,24 @@ public class CellsWorksheetValidationsApiTest {
      */
     @Test
     public void cellsWorksheetValidationsPostWorkSheetValidationTest() throws ApiException {
-       String name = MYDOC;
+       String name = BOOK1;
         String sheetName = SHEET1;
         Integer validationIndex = 0;
         Validation validation = new Validation();
-        validation.setIgnoreBlank ( true);
+        
+        CellArea area = new CellArea();
+        area.setStartRow(0);
+        area.setEndRow(0);
+        area.setStartColumn(0);
+        area.setEndColumn(0);
+        List<CellArea> areaList = new ArrayList<CellArea>();
+        areaList.add(area);
+        validation.setFormula1("=(OR(A1=\"Yes\",A1=\"No\"))");
+        validation.setType("Custom");
+        validation.setIgnoreBlank(true);
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
         ValidationResponse response = api.cellsWorksheetValidationsPostWorksheetValidation(name, sheetName, validationIndex, validation, folder);
-
-        // TODO: test validations
     }
     
     /**
