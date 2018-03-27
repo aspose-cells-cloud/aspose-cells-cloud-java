@@ -31,6 +31,7 @@ import com.aspose.cloud.cells.model.Range;
 import com.aspose.cloud.cells.model.RangeCopyRequest;
 import com.aspose.cloud.cells.model.RangeSetOutlineBorderRequest;
 import com.aspose.cloud.cells.model.RangeSetStyleRequest;
+import com.aspose.cloud.cells.model.RangeValueResponse;
 import com.aspose.cloud.cells.model.SaaSposeResponse;
 
 import java.lang.reflect.Type;
@@ -58,6 +59,178 @@ public class CellsRangesApi {
         this.apiClient = apiClient;
     }
 
+    /**
+     * Build call for cellsRangesGetWorksheetCellsRangeValue
+     * @param name workbook name (required)
+     * @param sheetName worksheet name (required)
+     * @param namerange range name, for example: &#39;A1:B2&#39; or &#39;range_name1&#39; (optional)
+     * @param firstRow the first row of the range (optional)
+     * @param firstColumn the first column of the range (optional)
+     * @param rowCount the count of rows in the range (optional)
+     * @param columnCount the count of columns in the range (optional)
+     * @param folder Workbook folder. (optional)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call cellsRangesGetWorksheetCellsRangeValueCall(String name, String sheetName, String namerange, Integer firstRow, Integer firstColumn, Integer rowCount, Integer columnCount, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = null;
+        
+        // create path and map variables
+        String localVarPath = "/cells/{name}/worksheets/{sheetName}/ranges/value"
+            .replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString()))
+            .replaceAll("\\{" + "sheetName" + "\\}", apiClient.escapeString(sheetName.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        if (namerange != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "namerange", namerange));
+        if (firstRow != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "firstRow", firstRow));
+        if (firstColumn != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "firstColumn", firstColumn));
+        if (rowCount != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "rowCount", rowCount));
+        if (columnCount != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "columnCount", columnCount));
+        if (folder != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "folder", folder));
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+    
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call cellsRangesGetWorksheetCellsRangeValueValidateBeforeCall(String name, String sheetName, String namerange, Integer firstRow, Integer firstColumn, Integer rowCount, Integer columnCount, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'name' is set
+        if (name == null) {
+            throw new ApiException("Missing the required parameter 'name' when calling cellsRangesGetWorksheetCellsRangeValue(Async)");
+        }
+        
+        // verify the required parameter 'sheetName' is set
+        if (sheetName == null) {
+            throw new ApiException("Missing the required parameter 'sheetName' when calling cellsRangesGetWorksheetCellsRangeValue(Async)");
+        }
+        
+        
+        com.squareup.okhttp.Call call = cellsRangesGetWorksheetCellsRangeValueCall(name, sheetName, namerange, firstRow, firstColumn, rowCount, columnCount, folder, progressListener, progressRequestListener);
+        return call;
+
+        
+        
+        
+        
+    }
+
+    /**
+     * Get cells list in a range by range name or row column indexes  
+     * 
+     * @param name workbook name (required)
+     * @param sheetName worksheet name (required)
+     * @param namerange range name, for example: &#39;A1:B2&#39; or &#39;range_name1&#39; (optional)
+     * @param firstRow the first row of the range (optional)
+     * @param firstColumn the first column of the range (optional)
+     * @param rowCount the count of rows in the range (optional)
+     * @param columnCount the count of columns in the range (optional)
+     * @param folder Workbook folder. (optional)
+     * @return RangeValueResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public RangeValueResponse cellsRangesGetWorksheetCellsRangeValue(String name, String sheetName, String namerange, Integer firstRow, Integer firstColumn, Integer rowCount, Integer columnCount, String folder) throws ApiException {
+        ApiResponse<RangeValueResponse> resp = cellsRangesGetWorksheetCellsRangeValueWithHttpInfo(name, sheetName, namerange, firstRow, firstColumn, rowCount, columnCount, folder);
+        return resp.getData();
+    }
+
+    /**
+     * Get cells list in a range by range name or row column indexes  
+     * 
+     * @param name workbook name (required)
+     * @param sheetName worksheet name (required)
+     * @param namerange range name, for example: &#39;A1:B2&#39; or &#39;range_name1&#39; (optional)
+     * @param firstRow the first row of the range (optional)
+     * @param firstColumn the first column of the range (optional)
+     * @param rowCount the count of rows in the range (optional)
+     * @param columnCount the count of columns in the range (optional)
+     * @param folder Workbook folder. (optional)
+     * @return ApiResponse&lt;RangeValueResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<RangeValueResponse> cellsRangesGetWorksheetCellsRangeValueWithHttpInfo(String name, String sheetName, String namerange, Integer firstRow, Integer firstColumn, Integer rowCount, Integer columnCount, String folder) throws ApiException {
+        com.squareup.okhttp.Call call = cellsRangesGetWorksheetCellsRangeValueValidateBeforeCall(name, sheetName, namerange, firstRow, firstColumn, rowCount, columnCount, folder, null, null);
+        Type localVarReturnType = new TypeToken<RangeValueResponse>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Get cells list in a range by range name or row column indexes   (asynchronously)
+     * 
+     * @param name workbook name (required)
+     * @param sheetName worksheet name (required)
+     * @param namerange range name, for example: &#39;A1:B2&#39; or &#39;range_name1&#39; (optional)
+     * @param firstRow the first row of the range (optional)
+     * @param firstColumn the first column of the range (optional)
+     * @param rowCount the count of rows in the range (optional)
+     * @param columnCount the count of columns in the range (optional)
+     * @param folder Workbook folder. (optional)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call cellsRangesGetWorksheetCellsRangeValueAsync(String name, String sheetName, String namerange, Integer firstRow, Integer firstColumn, Integer rowCount, Integer columnCount, String folder, final ApiCallback<RangeValueResponse> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = cellsRangesGetWorksheetCellsRangeValueValidateBeforeCall(name, sheetName, namerange, firstRow, firstColumn, rowCount, columnCount, folder, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<RangeValueResponse>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
     /**
      * Build call for cellsRangesPostWorksheetCellsRangeColumnWidth
      * @param name  (required)

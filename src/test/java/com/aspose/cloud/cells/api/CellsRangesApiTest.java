@@ -22,11 +22,14 @@ import com.aspose.cloud.cells.model.Range;
 import com.aspose.cloud.cells.model.RangeCopyRequest;
 import com.aspose.cloud.cells.model.RangeSetOutlineBorderRequest;
 import com.aspose.cloud.cells.model.RangeSetStyleRequest;
+import com.aspose.cloud.cells.model.RangeValueResponse;
 import com.aspose.cloud.cells.model.SaaSposeResponse;
 import com.aspose.cloud.cells.model.Style;
 
 import org.junit.Test;
 import org.junit.Ignore;
+
+import static org.junit.Assert.assertTrue;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -58,7 +61,36 @@ public class CellsRangesApiTest {
     private String RANGE = "A1:C10";
     private String CELLAREA = "A1:C10";
     
-	
+    /**
+     * Get cells list in a range by range name or row column indexes  
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void cellsRangesGetWorksheetCellsRangeValueTest() throws ApiException {
+        String name = BOOK1;
+        String sheetName = SHEET1;
+        String folder = TEMPFOLDER;
+        Integer firstRow = 0;
+        Integer firstColumn = 0;
+        Integer rowCount = 3;
+        Integer columnCount = 2;
+        api.setApiClient( CellsApiUtil.Ready(folder, name));
+        
+        RangeValueResponse response = api.cellsRangesGetWorksheetCellsRangeValue(name, sheetName, null, firstRow, firstColumn, rowCount, columnCount, folder);
+        assertTrue(response.getCellsList().size() > 0);
+
+        String rangeName = "A1:B3";
+        response = api.cellsRangesGetWorksheetCellsRangeValue(name, sheetName, rangeName, null, null, null, null, folder);
+        assertTrue(response.getCellsList().size() > 0);
+
+        rangeName = "Name_2";
+        response = api.cellsRangesGetWorksheetCellsRangeValue(name, sheetName, rangeName, null, null, null, null, folder);
+        assertTrue(response.getCellsList().size() > 0);
+    }
     
     /**
      * Set column width of range
