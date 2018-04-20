@@ -34,6 +34,7 @@ import com.aspose.cloud.cells.model.ImportOption;
 import com.aspose.cloud.cells.model.NameResponse;
 import com.aspose.cloud.cells.model.NamesResponse;
 import com.aspose.cloud.cells.model.PasswordRequest;
+import com.aspose.cloud.cells.model.RangeValueResponse;
 import com.aspose.cloud.cells.model.SaaSposeResponse;
 import com.aspose.cloud.cells.model.SplitResultResponse;
 import com.aspose.cloud.cells.model.StyleResponse;
@@ -475,6 +476,280 @@ public class CellsWorkbookApi {
         return call;
     }
     /**
+     * Build call for cellsWorkbookDeleteWorkbookName
+     * @param name The workbook name. (required)
+     * @param nameName The name. (required)
+     * @param folder The workbook folder. (optional)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call cellsWorkbookDeleteWorkbookNameCall(String name, String nameName, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = null;
+        
+        // create path and map variables
+        String localVarPath = "/cells/{name}/names/{nameName}"
+            .replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString()))
+            .replaceAll("\\{" + "nameName" + "\\}", apiClient.escapeString(nameName.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        if (folder != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "folder", folder));
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return apiClient.buildCall(localVarPath, "DELETE", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+    
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call cellsWorkbookDeleteWorkbookNameValidateBeforeCall(String name, String nameName, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'name' is set
+        if (name == null) {
+            throw new ApiException("Missing the required parameter 'name' when calling cellsWorkbookDeleteWorkbookName(Async)");
+        }
+        
+        // verify the required parameter 'nameName' is set
+        if (nameName == null) {
+            throw new ApiException("Missing the required parameter 'nameName' when calling cellsWorkbookDeleteWorkbookName(Async)");
+        }
+        
+        
+        com.squareup.okhttp.Call call = cellsWorkbookDeleteWorkbookNameCall(name, nameName, folder, progressListener, progressRequestListener);
+        return call;
+
+        
+        
+        
+        
+    }
+
+    /**
+     * Clean workbook&#39;s names.
+     * 
+     * @param name The workbook name. (required)
+     * @param nameName The name. (required)
+     * @param folder The workbook folder. (optional)
+     * @return SaaSposeResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public SaaSposeResponse cellsWorkbookDeleteWorkbookName(String name, String nameName, String folder) throws ApiException {
+        ApiResponse<SaaSposeResponse> resp = cellsWorkbookDeleteWorkbookNameWithHttpInfo(name, nameName, folder);
+        return resp.getData();
+    }
+
+    /**
+     * Clean workbook&#39;s names.
+     * 
+     * @param name The workbook name. (required)
+     * @param nameName The name. (required)
+     * @param folder The workbook folder. (optional)
+     * @return ApiResponse&lt;SaaSposeResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<SaaSposeResponse> cellsWorkbookDeleteWorkbookNameWithHttpInfo(String name, String nameName, String folder) throws ApiException {
+        com.squareup.okhttp.Call call = cellsWorkbookDeleteWorkbookNameValidateBeforeCall(name, nameName, folder, null, null);
+        Type localVarReturnType = new TypeToken<SaaSposeResponse>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Clean workbook&#39;s names. (asynchronously)
+     * 
+     * @param name The workbook name. (required)
+     * @param nameName The name. (required)
+     * @param folder The workbook folder. (optional)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call cellsWorkbookDeleteWorkbookNameAsync(String name, String nameName, String folder, final ApiCallback<SaaSposeResponse> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = cellsWorkbookDeleteWorkbookNameValidateBeforeCall(name, nameName, folder, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<SaaSposeResponse>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for cellsWorkbookDeleteWorkbookNames
+     * @param name The workbook name. (required)
+     * @param folder The workbook folder. (optional)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call cellsWorkbookDeleteWorkbookNamesCall(String name, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = null;
+        
+        // create path and map variables
+        String localVarPath = "/cells/{name}/names"
+            .replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        if (folder != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "folder", folder));
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return apiClient.buildCall(localVarPath, "DELETE", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+    
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call cellsWorkbookDeleteWorkbookNamesValidateBeforeCall(String name, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'name' is set
+        if (name == null) {
+            throw new ApiException("Missing the required parameter 'name' when calling cellsWorkbookDeleteWorkbookNames(Async)");
+        }
+        
+        
+        com.squareup.okhttp.Call call = cellsWorkbookDeleteWorkbookNamesCall(name, folder, progressListener, progressRequestListener);
+        return call;
+
+        
+        
+        
+        
+    }
+
+    /**
+     * Clean workbook&#39;s names.
+     * 
+     * @param name The workbook name. (required)
+     * @param folder The workbook folder. (optional)
+     * @return SaaSposeResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public SaaSposeResponse cellsWorkbookDeleteWorkbookNames(String name, String folder) throws ApiException {
+        ApiResponse<SaaSposeResponse> resp = cellsWorkbookDeleteWorkbookNamesWithHttpInfo(name, folder);
+        return resp.getData();
+    }
+
+    /**
+     * Clean workbook&#39;s names.
+     * 
+     * @param name The workbook name. (required)
+     * @param folder The workbook folder. (optional)
+     * @return ApiResponse&lt;SaaSposeResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<SaaSposeResponse> cellsWorkbookDeleteWorkbookNamesWithHttpInfo(String name, String folder) throws ApiException {
+        com.squareup.okhttp.Call call = cellsWorkbookDeleteWorkbookNamesValidateBeforeCall(name, folder, null, null);
+        Type localVarReturnType = new TypeToken<SaaSposeResponse>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Clean workbook&#39;s names. (asynchronously)
+     * 
+     * @param name The workbook name. (required)
+     * @param folder The workbook folder. (optional)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call cellsWorkbookDeleteWorkbookNamesAsync(String name, String folder, final ApiCallback<SaaSposeResponse> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = cellsWorkbookDeleteWorkbookNamesValidateBeforeCall(name, folder, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<SaaSposeResponse>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
      * Build call for cellsWorkbookGetWorkbook
      * @param name The document name. (required)
      * @param password The document password. (optional)
@@ -889,6 +1164,148 @@ public class CellsWorkbookApi {
 
         com.squareup.okhttp.Call call = cellsWorkbookGetWorkbookNameValidateBeforeCall(name, nameName, folder, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<NameResponse>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for cellsWorkbookGetWorkbookNameValue
+     * @param name The workbook name. (required)
+     * @param nameName The name. (required)
+     * @param folder The workbook folder. (optional)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call cellsWorkbookGetWorkbookNameValueCall(String name, String nameName, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = null;
+        
+        // create path and map variables
+        String localVarPath = "/cells/{name}/names/{nameName}/value"
+            .replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString()))
+            .replaceAll("\\{" + "nameName" + "\\}", apiClient.escapeString(nameName.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        if (folder != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "folder", folder));
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+    
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call cellsWorkbookGetWorkbookNameValueValidateBeforeCall(String name, String nameName, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'name' is set
+        if (name == null) {
+            throw new ApiException("Missing the required parameter 'name' when calling cellsWorkbookGetWorkbookNameValue(Async)");
+        }
+        
+        // verify the required parameter 'nameName' is set
+        if (nameName == null) {
+            throw new ApiException("Missing the required parameter 'nameName' when calling cellsWorkbookGetWorkbookNameValue(Async)");
+        }
+        
+        
+        com.squareup.okhttp.Call call = cellsWorkbookGetWorkbookNameValueCall(name, nameName, folder, progressListener, progressRequestListener);
+        return call;
+
+        
+        
+        
+        
+    }
+
+    /**
+     * Get workbook&#39;s name value.
+     * 
+     * @param name The workbook name. (required)
+     * @param nameName The name. (required)
+     * @param folder The workbook folder. (optional)
+     * @return RangeValueResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public RangeValueResponse cellsWorkbookGetWorkbookNameValue(String name, String nameName, String folder) throws ApiException {
+        ApiResponse<RangeValueResponse> resp = cellsWorkbookGetWorkbookNameValueWithHttpInfo(name, nameName, folder);
+        return resp.getData();
+    }
+
+    /**
+     * Get workbook&#39;s name value.
+     * 
+     * @param name The workbook name. (required)
+     * @param nameName The name. (required)
+     * @param folder The workbook folder. (optional)
+     * @return ApiResponse&lt;RangeValueResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<RangeValueResponse> cellsWorkbookGetWorkbookNameValueWithHttpInfo(String name, String nameName, String folder) throws ApiException {
+        com.squareup.okhttp.Call call = cellsWorkbookGetWorkbookNameValueValidateBeforeCall(name, nameName, folder, null, null);
+        Type localVarReturnType = new TypeToken<RangeValueResponse>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Get workbook&#39;s name value. (asynchronously)
+     * 
+     * @param name The workbook name. (required)
+     * @param nameName The name. (required)
+     * @param folder The workbook folder. (optional)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call cellsWorkbookGetWorkbookNameValueAsync(String name, String nameName, String folder, final ApiCallback<RangeValueResponse> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = cellsWorkbookGetWorkbookNameValueValidateBeforeCall(name, nameName, folder, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<RangeValueResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

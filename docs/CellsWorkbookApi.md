@@ -7,9 +7,12 @@ Method | HTTP request | Description
 [**cellsWorkbookDeleteDecryptDocument**](CellsWorkbookApi.md#cellsWorkbookDeleteDecryptDocument) | **DELETE** /cells/{name}/encryption | Decrypt document.
 [**cellsWorkbookDeleteDocumentUnprotectFromChanges**](CellsWorkbookApi.md#cellsWorkbookDeleteDocumentUnprotectFromChanges) | **DELETE** /cells/{name}/writeProtection | Unprotect document from changes.
 [**cellsWorkbookDeleteUnprotectDocument**](CellsWorkbookApi.md#cellsWorkbookDeleteUnprotectDocument) | **DELETE** /cells/{name}/protection | Unprotect document.
+[**cellsWorkbookDeleteWorkbookName**](CellsWorkbookApi.md#cellsWorkbookDeleteWorkbookName) | **DELETE** /cells/{name}/names/{nameName} | Clean workbook&#39;s names.
+[**cellsWorkbookDeleteWorkbookNames**](CellsWorkbookApi.md#cellsWorkbookDeleteWorkbookNames) | **DELETE** /cells/{name}/names | Clean workbook&#39;s names.
 [**cellsWorkbookGetWorkbook**](CellsWorkbookApi.md#cellsWorkbookGetWorkbook) | **GET** /cells/{name} | Read workbook info or export.
 [**cellsWorkbookGetWorkbookDefaultStyle**](CellsWorkbookApi.md#cellsWorkbookGetWorkbookDefaultStyle) | **GET** /cells/{name}/defaultstyle | Read workbook default style info.
 [**cellsWorkbookGetWorkbookName**](CellsWorkbookApi.md#cellsWorkbookGetWorkbookName) | **GET** /cells/{name}/names/{nameName} | Read workbook&#39;s name.
+[**cellsWorkbookGetWorkbookNameValue**](CellsWorkbookApi.md#cellsWorkbookGetWorkbookNameValue) | **GET** /cells/{name}/names/{nameName}/value | Get workbook&#39;s name value.
 [**cellsWorkbookGetWorkbookNames**](CellsWorkbookApi.md#cellsWorkbookGetWorkbookNames) | **GET** /cells/{name}/names | Read workbook&#39;s names.
 [**cellsWorkbookGetWorkbookSettings**](CellsWorkbookApi.md#cellsWorkbookGetWorkbookSettings) | **GET** /cells/{name}/settings | Get Workbook Settings DTO
 [**cellsWorkbookGetWorkbookTextItems**](CellsWorkbookApi.md#cellsWorkbookGetWorkbookTextItems) | **GET** /cells/{name}/textItems | Read workbook&#39;s text items.
@@ -168,6 +171,98 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+<a name="cellsWorkbookDeleteWorkbookName"></a>
+# **cellsWorkbookDeleteWorkbookName**
+> SaaSposeResponse cellsWorkbookDeleteWorkbookName(name, nameName, folder)
+
+Clean workbook&#39;s names.
+
+### Example
+```java
+// Import classes:
+//import com.aspose.cloud.cells.client.ApiException;
+//import com.aspose.cloud.cells.api.CellsWorkbookApi;
+
+
+CellsWorkbookApi apiInstance = new CellsWorkbookApi();
+String name = "name_example"; // String | The workbook name.
+String nameName = "nameName_example"; // String | The name.
+String folder = "folder_example"; // String | The workbook folder.
+try {
+    SaaSposeResponse result = apiInstance.cellsWorkbookDeleteWorkbookName(name, nameName, folder);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling CellsWorkbookApi#cellsWorkbookDeleteWorkbookName");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **String**| The workbook name. |
+ **nameName** | **String**| The name. |
+ **folder** | **String**| The workbook folder. | [optional]
+
+### Return type
+
+[**SaaSposeResponse**](SaaSposeResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="cellsWorkbookDeleteWorkbookNames"></a>
+# **cellsWorkbookDeleteWorkbookNames**
+> SaaSposeResponse cellsWorkbookDeleteWorkbookNames(name, folder)
+
+Clean workbook&#39;s names.
+
+### Example
+```java
+// Import classes:
+//import com.aspose.cloud.cells.client.ApiException;
+//import com.aspose.cloud.cells.api.CellsWorkbookApi;
+
+
+CellsWorkbookApi apiInstance = new CellsWorkbookApi();
+String name = "name_example"; // String | The workbook name.
+String folder = "folder_example"; // String | The workbook folder.
+try {
+    SaaSposeResponse result = apiInstance.cellsWorkbookDeleteWorkbookNames(name, folder);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling CellsWorkbookApi#cellsWorkbookDeleteWorkbookNames");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **String**| The workbook name. |
+ **folder** | **String**| The workbook folder. | [optional]
+
+### Return type
+
+[**SaaSposeResponse**](SaaSposeResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
 <a name="cellsWorkbookGetWorkbook"></a>
 # **cellsWorkbookGetWorkbook**
 > File cellsWorkbookGetWorkbook(name, password, isAutoFit, folder)
@@ -299,6 +394,53 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**NameResponse**](NameResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="cellsWorkbookGetWorkbookNameValue"></a>
+# **cellsWorkbookGetWorkbookNameValue**
+> RangeValueResponse cellsWorkbookGetWorkbookNameValue(name, nameName, folder)
+
+Get workbook&#39;s name value.
+
+### Example
+```java
+// Import classes:
+//import com.aspose.cloud.cells.client.ApiException;
+//import com.aspose.cloud.cells.api.CellsWorkbookApi;
+
+
+CellsWorkbookApi apiInstance = new CellsWorkbookApi();
+String name = "name_example"; // String | The workbook name.
+String nameName = "nameName_example"; // String | The name.
+String folder = "folder_example"; // String | The workbook folder.
+try {
+    RangeValueResponse result = apiInstance.cellsWorkbookGetWorkbookNameValue(name, nameName, folder);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling CellsWorkbookApi#cellsWorkbookGetWorkbookNameValue");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **String**| The workbook name. |
+ **nameName** | **String**| The name. |
+ **folder** | **String**| The workbook folder. | [optional]
+
+### Return type
+
+[**RangeValueResponse**](RangeValueResponse.md)
 
 ### Authorization
 

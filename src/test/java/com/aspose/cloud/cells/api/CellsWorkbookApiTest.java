@@ -28,6 +28,7 @@ import com.aspose.cloud.cells.model.ImportOption;
 import com.aspose.cloud.cells.model.NameResponse;
 import com.aspose.cloud.cells.model.NamesResponse;
 import com.aspose.cloud.cells.model.PasswordRequest;
+import com.aspose.cloud.cells.model.RangeValueResponse;
 import com.aspose.cloud.cells.model.SaaSposeResponse;
 import com.aspose.cloud.cells.model.SplitResultResponse;
 import com.aspose.cloud.cells.model.StyleResponse;
@@ -74,6 +75,273 @@ public class CellsWorkbookApiTest {
     
 	
     
+    /**
+     * Decrypt document.
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void cellsWorkbookDeleteDecryptDocumentTest() throws ApiException {
+       String name = BOOK1;
+        WorkbookEncryptionRequest encryption = new WorkbookEncryptionRequest();
+        encryption.setEncryptionType("XOR");
+        encryption.setKeyLength(128);
+        encryption.setPassword("123456");
+        String folder = TEMPFOLDER;
+		api.setApiClient( CellsApiUtil.Ready(folder, name));
+        SaaSposeResponse response = api.cellsWorkbookDeleteDecryptDocument(name, encryption, folder);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Unprotect document from changes.
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void cellsWorkbookDeleteDocumentUnprotectFromChangesTest() throws ApiException {
+       String name = BOOK1;
+        String folder = TEMPFOLDER;
+		api.setApiClient( CellsApiUtil.Ready(folder, name));
+        SaaSposeResponse response = api.cellsWorkbookDeleteDocumentUnprotectFromChanges(name, folder);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Unprotect document.
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void cellsWorkbookDeleteUnprotectDocumentTest() throws ApiException {
+       String name = BOOK1;
+        WorkbookProtectionRequest protection = new WorkbookProtectionRequest();
+        protection.setProtectionType("All");
+        protection.setPassword("123456");
+        String folder = TEMPFOLDER;
+		api.setApiClient( CellsApiUtil.Ready(folder, name));
+        SaaSposeResponse response = api.cellsWorkbookDeleteUnprotectDocument(name, protection, folder);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Clean workbook&#39;s names.
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void cellsWorkbookDeleteWorkbookNameTest() throws ApiException {
+        String name = BOOK1;
+        String nameName = "Name_2";
+        String folder = TEMPFOLDER;
+		api.setApiClient( CellsApiUtil.Ready(folder, name));
+        SaaSposeResponse response = api.cellsWorkbookDeleteWorkbookName(name, nameName, folder);
+    }
+    
+    /**
+     * Clean workbook&#39;s names.
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void cellsWorkbookDeleteWorkbookNamesTest() throws ApiException {
+        String name = BOOK1;
+        String folder = TEMPFOLDER;
+		api.setApiClient( CellsApiUtil.Ready(folder, name));
+        SaaSposeResponse response = api.cellsWorkbookDeleteWorkbookNames(name, folder);
+    }
+    
+    /**
+     * Read workbook info or export.
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void cellsWorkbookGetWorkbookTest() throws ApiException {
+       String name = BOOK1;
+        String password = null;
+        Boolean isAutoFit = true;
+        String folder = TEMPFOLDER;
+		api.setApiClient( CellsApiUtil.Ready(folder, name));
+        File response = api.cellsWorkbookGetWorkbook(name, password, isAutoFit, folder);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Read workbook default style info.
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void cellsWorkbookGetWorkbookDefaultStyleTest() throws ApiException {
+       String name = BOOK1;
+        String folder = TEMPFOLDER;
+		api.setApiClient( CellsApiUtil.Ready(folder, name));
+        StyleResponse response = api.cellsWorkbookGetWorkbookDefaultStyle(name, folder);
+
+        // TODO: test validations
+    }
+
+    /**
+     * Read workbook&#39;s name.
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void cellsWorkbookGetWorkbookNameTest() throws ApiException {
+       String name = BOOK1;
+        String nameName =  "Name_2";
+        String folder = TEMPFOLDER;
+		api.setApiClient( CellsApiUtil.Ready(folder, name));
+        NameResponse response = api.cellsWorkbookGetWorkbookName(name, nameName, folder);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Get workbook&#39;s name value.
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void cellsWorkbookGetWorkbookNameValueTest() throws ApiException {
+        String name = BOOK1;
+        String nameName = "Name_2";
+        String folder = TEMPFOLDER;
+		api.setApiClient( CellsApiUtil.Ready(folder, name));
+        RangeValueResponse response = api.cellsWorkbookGetWorkbookNameValue(name, nameName, folder);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Read workbook&#39;s names.
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void cellsWorkbookGetWorkbookNamesTest() throws ApiException {
+       String name = BOOK1;
+        String folder = TEMPFOLDER;
+		api.setApiClient( CellsApiUtil.Ready(folder, name));
+        NamesResponse response = api.cellsWorkbookGetWorkbookNames(name, folder);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Read workbook&#39;s text items.
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void cellsWorkbookGetWorkbookTextItemsTest() throws ApiException {
+       String name = BOOK1;
+        String folder = TEMPFOLDER;
+		api.setApiClient( CellsApiUtil.Ready(folder, name));
+        TextItemsResponse response = api.cellsWorkbookGetWorkbookTextItems(name, folder);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Get Workbook Settings DTO
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void cellsWorkbookGetWorkbookSettingsTest() throws ApiException {
+       String name = BOOK1;
+        String folder = TEMPFOLDER;
+		api.setApiClient( CellsApiUtil.Ready(folder, name));
+        WorkbookSettingsResponse response = api.cellsWorkbookGetWorkbookSettings(name, folder);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Autofit workbook rows.
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void cellsWorkbookPostAutofitWorkbookRowsTest() throws ApiException {
+       String name = BOOK1;
+        AutoFitterOptions autoFitterOptions = null;
+        Integer startRow = 1;
+        Integer endRow = 100;
+        Boolean onlyAuto = true;
+        String folder = TEMPFOLDER;
+		api.setApiClient( CellsApiUtil.Ready(folder, name));
+        SaaSposeResponse response = api.cellsWorkbookPostAutofitWorkbookRows(name, autoFitterOptions, startRow, endRow, onlyAuto, folder);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Encript document.
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void cellsWorkbookPostEncryptDocumentTest() throws ApiException {
+       String name = BOOK1;
+        WorkbookEncryptionRequest encryption = new WorkbookEncryptionRequest();
+        encryption.setEncryptionType("XOR");
+        encryption.setKeyLength(128);
+        encryption.setPassword("123456");
+        String folder = TEMPFOLDER;
+		api.setApiClient( CellsApiUtil.Ready(folder, name));
+        SaaSposeResponse response = api.cellsWorkbookPostEncryptDocument(name, encryption, folder);
+
+        // TODO: test validations
+    }
     
     /**
      * 
@@ -98,8 +366,231 @@ public class CellsWorkbookApiTest {
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
         SaaSposeResponse response = api.cellsWorkbookPostImportData(name, data, folder);
-        int i = 0;
-        i++;
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Protect document.
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void cellsWorkbookPostProtectDocumentTest() throws ApiException {
+       String name = BOOK1;
+        WorkbookProtectionRequest protection = new WorkbookProtectionRequest();
+        protection.setProtectionType("All");
+        protection.setPassword("123456");
+        String folder = TEMPFOLDER;
+		api.setApiClient( CellsApiUtil.Ready(folder, name));
+        SaaSposeResponse response = api.cellsWorkbookPostProtectDocument(name, protection, folder);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Calculate all formulas in workbook.
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void cellsWorkbookPostWorkbookCalculateFormulaTest() throws ApiException {
+       String name = BOOK1;
+        CalculationOptions options = new CalculationOptions();
+        options.setCalcStackSize(1);
+        Boolean ignoreError = true;
+        String folder = TEMPFOLDER;
+		api.setApiClient( CellsApiUtil.Ready(folder, name));
+        SaaSposeResponse response = api.cellsWorkbookPostWorkbookCalculateFormula(name, options, ignoreError, folder);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Smart marker processing result.
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void cellsWorkbookPostWorkbookGetSmartMarkerResultTest() throws ApiException {
+       String name = BOOK1;
+        String xmlFile = "ReportData.xml";;
+        String folder = TEMPFOLDER;
+        String outPath = null;
+		api.setApiClient( CellsApiUtil.Ready(folder, name));
+        File response = api.cellsWorkbookPostWorkbookGetSmartMarkerResult(name, xmlFile, folder, outPath);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Update Workbook setting 
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void cellsWorkbookPostWorkbookSettingsTest() throws ApiException {
+       String name = BOOK1;
+        WorkbookSettings settings = new WorkbookSettings();
+        settings.setAutoCompressPictures(true);
+        String folder = TEMPFOLDER;
+		api.setApiClient( CellsApiUtil.Ready(folder, name));
+        SaaSposeResponse response = api.cellsWorkbookPostWorkbookSettings(name, settings, folder);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Split workbook.
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void cellsWorkbookPostWorkbookSplitTest() throws ApiException {
+       String name = BOOK1;
+        String format =  "png";
+        Integer from = 1;
+        Integer to = 3;
+        Integer horizontalResolution = 100;
+        Integer verticalResolution = 90;
+        String folder = TEMPFOLDER;
+		api.setApiClient( CellsApiUtil.Ready(folder, name));
+        SplitResultResponse response = api.cellsWorkbookPostWorkbookSplit(name, format, from, to, horizontalResolution, verticalResolution, folder);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Merge workbooks.
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void cellsWorkbookPostWorkbooksMergeTest() throws ApiException {
+       String name = BOOK1;
+        String mergeWith = "myDocument.xlsx";
+        String folder = TEMPFOLDER;
+		api.setApiClient( CellsApiUtil.Ready(folder, name));
+        WorkbookResponse response = api.cellsWorkbookPostWorkbooksMerge(name, mergeWith, folder);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Replace text.
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void cellsWorkbookPostWorkbooksTextReplaceTest() throws ApiException {
+       String name = BOOK1;
+        String oldValue =  "!22";
+        String newValue =  "22";
+        String folder = TEMPFOLDER;
+		api.setApiClient( CellsApiUtil.Ready(folder, name));
+        WorkbookReplaceResponse response = api.cellsWorkbookPostWorkbooksTextReplace(name, oldValue, newValue, folder);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Search text.
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void cellsWorkbookPostWorkbooksTextSearchTest() throws ApiException {
+       String name = BOOK1;
+        String text ="test";
+        String folder = TEMPFOLDER;
+		api.setApiClient( CellsApiUtil.Ready(folder, name));
+        TextItemsResponse response = api.cellsWorkbookPostWorkbooksTextSearch(name, text, folder);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Convert workbook from request content to some format.
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void cellsWorkbookPutConvertWorkbookTest() throws ApiException {
+        String format ="xlsx";
+        String password = null;
+        String outPath = null;
+        String name = BOOK1;
+        String folder = TEMPFOLDER;
+		api.setApiClient( CellsApiUtil.Ready(folder, name));
+        File response = api.cellsWorkbookPutConvertWorkbook(format, password, outPath);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Protect document from changes.
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void cellsWorkbookPutDocumentProtectFromChangesTest() throws ApiException {
+       String name = BOOK1;
+        PasswordRequest password = new PasswordRequest();
+        password.setPassword("123456");
+        String folder = TEMPFOLDER;
+		api.setApiClient( CellsApiUtil.Ready(folder, name));
+        SaaSposeResponse response = api.cellsWorkbookPutDocumentProtectFromChanges(name, password, folder);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Create new workbook using deferent methods.
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void cellsWorkbookPutWorkbookCreateTest() throws ApiException {
+    	SimpleDateFormat df = new SimpleDateFormat("yyyyMMddHHmmss");
+        String name ="NewBook_"+df.format(new Date())+".xlsx" ;
+        String templateFile =  BOOK1;
+        String dataFile ="ReportData.xml";
+        String folder = TEMPFOLDER;
+		api.setApiClient( CellsApiUtil.Ready(folder, name));
+        WorkbookResponse response = api.cellsWorkbookPutWorkbookCreate(name,   templateFile,  dataFile, folder);
 
         // TODO: test validations
     }
