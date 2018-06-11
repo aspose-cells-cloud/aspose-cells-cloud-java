@@ -613,7 +613,7 @@ public class CellsApiTest {
         String sheetName = SHEET1;
         String cellarea = CELLAREA;
         String value = "2017-10-1";
-        String type = "Date";
+        String type = "DateTime";
         String folder = TEMPFOLDER;
         api.setApiClient( CellsApiUtil.Ready(folder, name));
         SaaSposeResponse response = api.cellsPostSetCellRangeValue(name, sheetName, cellarea, value, type, folder);
