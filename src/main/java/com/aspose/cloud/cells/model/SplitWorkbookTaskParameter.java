@@ -28,19 +28,13 @@ import java.io.IOException;
 /**
  * SplitWorkbookTaskParameter
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-05T15:44:26.749+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-08-14T14:34:14.243+08:00")
 public class SplitWorkbookTaskParameter extends TaskParameter {
-  @SerializedName("Workbook")
-  private FileSource workbook = null;
-
-  @SerializedName("DestinationFilePosition")
-  private FileSource destinationFilePosition = null;
-
   @SerializedName("DestinationFileFormat")
   private String destinationFileFormat = null;
 
-  @SerializedName("SplitNameRule")
-  private String splitNameRule = null;
+  @SerializedName("DestinationFilePosition")
+  private FileSource destinationFilePosition = null;
 
   @SerializedName("VerticalResolution")
   private Integer verticalResolution = null;
@@ -48,41 +42,11 @@ public class SplitWorkbookTaskParameter extends TaskParameter {
   @SerializedName("HorizontalResolution")
   private Integer horizontalResolution = null;
 
-  public SplitWorkbookTaskParameter workbook(FileSource workbook) {
-    this.workbook = workbook;
-    return this;
-  }
+  @SerializedName("SplitNameRule")
+  private String splitNameRule = null;
 
-   /**
-   * Get workbook
-   * @return workbook
-  **/
-  @ApiModelProperty(value = "")
-  public FileSource getWorkbook() {
-    return workbook;
-  }
-
-  public void setWorkbook(FileSource workbook) {
-    this.workbook = workbook;
-  }
-
-  public SplitWorkbookTaskParameter destinationFilePosition(FileSource destinationFilePosition) {
-    this.destinationFilePosition = destinationFilePosition;
-    return this;
-  }
-
-   /**
-   * Get destinationFilePosition
-   * @return destinationFilePosition
-  **/
-  @ApiModelProperty(value = "")
-  public FileSource getDestinationFilePosition() {
-    return destinationFilePosition;
-  }
-
-  public void setDestinationFilePosition(FileSource destinationFilePosition) {
-    this.destinationFilePosition = destinationFilePosition;
-  }
+  @SerializedName("Workbook")
+  private FileSource workbook = null;
 
   public SplitWorkbookTaskParameter destinationFileFormat(String destinationFileFormat) {
     this.destinationFileFormat = destinationFileFormat;
@@ -102,22 +66,22 @@ public class SplitWorkbookTaskParameter extends TaskParameter {
     this.destinationFileFormat = destinationFileFormat;
   }
 
-  public SplitWorkbookTaskParameter splitNameRule(String splitNameRule) {
-    this.splitNameRule = splitNameRule;
+  public SplitWorkbookTaskParameter destinationFilePosition(FileSource destinationFilePosition) {
+    this.destinationFilePosition = destinationFilePosition;
     return this;
   }
 
    /**
-   * Get splitNameRule
-   * @return splitNameRule
+   * Get destinationFilePosition
+   * @return destinationFilePosition
   **/
   @ApiModelProperty(value = "")
-  public String getSplitNameRule() {
-    return splitNameRule;
+  public FileSource getDestinationFilePosition() {
+    return destinationFilePosition;
   }
 
-  public void setSplitNameRule(String splitNameRule) {
-    this.splitNameRule = splitNameRule;
+  public void setDestinationFilePosition(FileSource destinationFilePosition) {
+    this.destinationFilePosition = destinationFilePosition;
   }
 
   public SplitWorkbookTaskParameter verticalResolution(Integer verticalResolution) {
@@ -156,6 +120,42 @@ public class SplitWorkbookTaskParameter extends TaskParameter {
     this.horizontalResolution = horizontalResolution;
   }
 
+  public SplitWorkbookTaskParameter splitNameRule(String splitNameRule) {
+    this.splitNameRule = splitNameRule;
+    return this;
+  }
+
+   /**
+   * Get splitNameRule
+   * @return splitNameRule
+  **/
+  @ApiModelProperty(value = "")
+  public String getSplitNameRule() {
+    return splitNameRule;
+  }
+
+  public void setSplitNameRule(String splitNameRule) {
+    this.splitNameRule = splitNameRule;
+  }
+
+  public SplitWorkbookTaskParameter workbook(FileSource workbook) {
+    this.workbook = workbook;
+    return this;
+  }
+
+   /**
+   * Get workbook
+   * @return workbook
+  **/
+  @ApiModelProperty(value = "")
+  public FileSource getWorkbook() {
+    return workbook;
+  }
+
+  public void setWorkbook(FileSource workbook) {
+    this.workbook = workbook;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -166,18 +166,18 @@ public class SplitWorkbookTaskParameter extends TaskParameter {
       return false;
     }
     SplitWorkbookTaskParameter splitWorkbookTaskParameter = (SplitWorkbookTaskParameter) o;
-    return Objects.equals(this.workbook, splitWorkbookTaskParameter.workbook) &&
+    return Objects.equals(this.destinationFileFormat, splitWorkbookTaskParameter.destinationFileFormat) &&
         Objects.equals(this.destinationFilePosition, splitWorkbookTaskParameter.destinationFilePosition) &&
-        Objects.equals(this.destinationFileFormat, splitWorkbookTaskParameter.destinationFileFormat) &&
-        Objects.equals(this.splitNameRule, splitWorkbookTaskParameter.splitNameRule) &&
         Objects.equals(this.verticalResolution, splitWorkbookTaskParameter.verticalResolution) &&
         Objects.equals(this.horizontalResolution, splitWorkbookTaskParameter.horizontalResolution) &&
+        Objects.equals(this.splitNameRule, splitWorkbookTaskParameter.splitNameRule) &&
+        Objects.equals(this.workbook, splitWorkbookTaskParameter.workbook) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(workbook, destinationFilePosition, destinationFileFormat, splitNameRule, verticalResolution, horizontalResolution, super.hashCode());
+    return Objects.hash(destinationFileFormat, destinationFilePosition, verticalResolution, horizontalResolution, splitNameRule, workbook, super.hashCode());
   }
 
 
@@ -186,12 +186,12 @@ public class SplitWorkbookTaskParameter extends TaskParameter {
     StringBuilder sb = new StringBuilder();
     sb.append("class SplitWorkbookTaskParameter {\n");
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
-    sb.append("    workbook: ").append(toIndentedString(workbook)).append("\n");
-    sb.append("    destinationFilePosition: ").append(toIndentedString(destinationFilePosition)).append("\n");
     sb.append("    destinationFileFormat: ").append(toIndentedString(destinationFileFormat)).append("\n");
-    sb.append("    splitNameRule: ").append(toIndentedString(splitNameRule)).append("\n");
+    sb.append("    destinationFilePosition: ").append(toIndentedString(destinationFilePosition)).append("\n");
     sb.append("    verticalResolution: ").append(toIndentedString(verticalResolution)).append("\n");
     sb.append("    horizontalResolution: ").append(toIndentedString(horizontalResolution)).append("\n");
+    sb.append("    splitNameRule: ").append(toIndentedString(splitNameRule)).append("\n");
+    sb.append("    workbook: ").append(toIndentedString(workbook)).append("\n");
     sb.append("}");
     return sb.toString();
   }

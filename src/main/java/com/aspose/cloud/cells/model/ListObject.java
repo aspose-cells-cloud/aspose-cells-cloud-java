@@ -32,34 +32,28 @@ import java.util.List;
 /**
  * ListObject
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-05T15:44:26.749+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-08-14T14:34:14.243+08:00")
 public class ListObject {
   @SerializedName("link")
   private Link link = null;
 
-  @SerializedName("AutoFilter")
-  private AutoFilter autoFilter = null;
+  @SerializedName("ShowTotals")
+  private Boolean showTotals = null;
+
+  @SerializedName("TableStyleType")
+  private String tableStyleType = null;
 
   @SerializedName("DisplayName")
   private String displayName = null;
 
+  @SerializedName("ShowHeaderRow")
+  private Boolean showHeaderRow = null;
+
   @SerializedName("StartColumn")
   private Integer startColumn = null;
 
-  @SerializedName("StartRow")
-  private Integer startRow = null;
-
-  @SerializedName("EndColumn")
-  private Integer endColumn = null;
-
-  @SerializedName("EndRow")
-  private Integer endRow = null;
-
-  @SerializedName("ListColumns")
-  private List<ListColumn> listColumns = null;
-
-  @SerializedName("ShowHeaderRow")
-  private Boolean showHeaderRow = null;
+  @SerializedName("ShowTableStyleLastColumn")
+  private Boolean showTableStyleLastColumn = null;
 
   @SerializedName("ShowTableStyleColumnStripes")
   private Boolean showTableStyleColumnStripes = null;
@@ -67,20 +61,26 @@ public class ListObject {
   @SerializedName("ShowTableStyleFirstColumn")
   private Boolean showTableStyleFirstColumn = null;
 
-  @SerializedName("ShowTableStyleLastColumn")
-  private Boolean showTableStyleLastColumn = null;
+  @SerializedName("StartRow")
+  private Integer startRow = null;
+
+  @SerializedName("AutoFilter")
+  private AutoFilter autoFilter = null;
 
   @SerializedName("ShowTableStyleRowStripes")
   private Boolean showTableStyleRowStripes = null;
 
-  @SerializedName("ShowTotals")
-  private Boolean showTotals = null;
+  @SerializedName("EndColumn")
+  private Integer endColumn = null;
 
   @SerializedName("TableStyleName")
   private String tableStyleName = null;
 
-  @SerializedName("TableStyleType")
-  private String tableStyleType = null;
+  @SerializedName("ListColumns")
+  private List<ListColumn> listColumns = null;
+
+  @SerializedName("EndRow")
+  private Integer endRow = null;
 
   public ListObject link(Link link) {
     this.link = link;
@@ -100,22 +100,40 @@ public class ListObject {
     this.link = link;
   }
 
-  public ListObject autoFilter(AutoFilter autoFilter) {
-    this.autoFilter = autoFilter;
+  public ListObject showTotals(Boolean showTotals) {
+    this.showTotals = showTotals;
     return this;
   }
 
    /**
-   * Gets auto filter.             
-   * @return autoFilter
+   * Gets and sets whether this ListObject show total row.
+   * @return showTotals
   **/
-  @ApiModelProperty(value = "Gets auto filter.             ")
-  public AutoFilter getAutoFilter() {
-    return autoFilter;
+  @ApiModelProperty(value = "Gets and sets whether this ListObject show total row.")
+  public Boolean isShowTotals() {
+    return showTotals;
   }
 
-  public void setAutoFilter(AutoFilter autoFilter) {
-    this.autoFilter = autoFilter;
+  public void setShowTotals(Boolean showTotals) {
+    this.showTotals = showTotals;
+  }
+
+  public ListObject tableStyleType(String tableStyleType) {
+    this.tableStyleType = tableStyleType;
+    return this;
+  }
+
+   /**
+   * Gets and the built-in table style.
+   * @return tableStyleType
+  **/
+  @ApiModelProperty(value = "Gets and the built-in table style.")
+  public String getTableStyleType() {
+    return tableStyleType;
+  }
+
+  public void setTableStyleType(String tableStyleType) {
+    this.tableStyleType = tableStyleType;
   }
 
   public ListObject displayName(String displayName) {
@@ -136,6 +154,24 @@ public class ListObject {
     this.displayName = displayName;
   }
 
+  public ListObject showHeaderRow(Boolean showHeaderRow) {
+    this.showHeaderRow = showHeaderRow;
+    return this;
+  }
+
+   /**
+   * Gets and sets whether this ListObject show header row.             
+   * @return showHeaderRow
+  **/
+  @ApiModelProperty(value = "Gets and sets whether this ListObject show header row.             ")
+  public Boolean isShowHeaderRow() {
+    return showHeaderRow;
+  }
+
+  public void setShowHeaderRow(Boolean showHeaderRow) {
+    this.showHeaderRow = showHeaderRow;
+  }
+
   public ListObject startColumn(Integer startColumn) {
     this.startColumn = startColumn;
     return this;
@@ -154,102 +190,22 @@ public class ListObject {
     this.startColumn = startColumn;
   }
 
-  public ListObject startRow(Integer startRow) {
-    this.startRow = startRow;
+  public ListObject showTableStyleLastColumn(Boolean showTableStyleLastColumn) {
+    this.showTableStyleLastColumn = showTableStyleLastColumn;
     return this;
   }
 
    /**
-   * Gets the start row of the range.
-   * @return startRow
+   * Indicates whether the last column in the table should have the style applied.
+   * @return showTableStyleLastColumn
   **/
-  @ApiModelProperty(value = "Gets the start row of the range.")
-  public Integer getStartRow() {
-    return startRow;
+  @ApiModelProperty(value = "Indicates whether the last column in the table should have the style applied.")
+  public Boolean isShowTableStyleLastColumn() {
+    return showTableStyleLastColumn;
   }
 
-  public void setStartRow(Integer startRow) {
-    this.startRow = startRow;
-  }
-
-  public ListObject endColumn(Integer endColumn) {
-    this.endColumn = endColumn;
-    return this;
-  }
-
-   /**
-   * Gets the end column of the range.
-   * @return endColumn
-  **/
-  @ApiModelProperty(value = "Gets the end column of the range.")
-  public Integer getEndColumn() {
-    return endColumn;
-  }
-
-  public void setEndColumn(Integer endColumn) {
-    this.endColumn = endColumn;
-  }
-
-  public ListObject endRow(Integer endRow) {
-    this.endRow = endRow;
-    return this;
-  }
-
-   /**
-   * Gets the end row of the range.
-   * @return endRow
-  **/
-  @ApiModelProperty(value = "Gets the end row of the range.")
-  public Integer getEndRow() {
-    return endRow;
-  }
-
-  public void setEndRow(Integer endRow) {
-    this.endRow = endRow;
-  }
-
-  public ListObject listColumns(List<ListColumn> listColumns) {
-    this.listColumns = listColumns;
-    return this;
-  }
-
-  public ListObject addListColumnsItem(ListColumn listColumnsItem) {
-    if (this.listColumns == null) {
-      this.listColumns = new ArrayList<ListColumn>();
-    }
-    this.listColumns.add(listColumnsItem);
-    return this;
-  }
-
-   /**
-   * Gets ListColumns of the ListObject.
-   * @return listColumns
-  **/
-  @ApiModelProperty(value = "Gets ListColumns of the ListObject.")
-  public List<ListColumn> getListColumns() {
-    return listColumns;
-  }
-
-  public void setListColumns(List<ListColumn> listColumns) {
-    this.listColumns = listColumns;
-  }
-
-  public ListObject showHeaderRow(Boolean showHeaderRow) {
-    this.showHeaderRow = showHeaderRow;
-    return this;
-  }
-
-   /**
-   * Gets and sets whether this ListObject show header row.             
-   * @return showHeaderRow
-  **/
-  @ApiModelProperty(value = "Gets and sets whether this ListObject show header row.             ")
-  public Boolean isShowHeaderRow() {
-    return showHeaderRow;
-  }
-
-  public void setShowHeaderRow(Boolean showHeaderRow) {
-    this.showHeaderRow = showHeaderRow;
+  public void setShowTableStyleLastColumn(Boolean showTableStyleLastColumn) {
+    this.showTableStyleLastColumn = showTableStyleLastColumn;
   }
 
   public ListObject showTableStyleColumnStripes(Boolean showTableStyleColumnStripes) {
@@ -288,22 +244,40 @@ public class ListObject {
     this.showTableStyleFirstColumn = showTableStyleFirstColumn;
   }
 
-  public ListObject showTableStyleLastColumn(Boolean showTableStyleLastColumn) {
-    this.showTableStyleLastColumn = showTableStyleLastColumn;
+  public ListObject startRow(Integer startRow) {
+    this.startRow = startRow;
     return this;
   }
 
    /**
-   * Indicates whether the last column in the table should have the style applied.
-   * @return showTableStyleLastColumn
+   * Gets the start row of the range.
+   * @return startRow
   **/
-  @ApiModelProperty(value = "Indicates whether the last column in the table should have the style applied.")
-  public Boolean isShowTableStyleLastColumn() {
-    return showTableStyleLastColumn;
+  @ApiModelProperty(value = "Gets the start row of the range.")
+  public Integer getStartRow() {
+    return startRow;
   }
 
-  public void setShowTableStyleLastColumn(Boolean showTableStyleLastColumn) {
-    this.showTableStyleLastColumn = showTableStyleLastColumn;
+  public void setStartRow(Integer startRow) {
+    this.startRow = startRow;
+  }
+
+  public ListObject autoFilter(AutoFilter autoFilter) {
+    this.autoFilter = autoFilter;
+    return this;
+  }
+
+   /**
+   * Gets auto filter.             
+   * @return autoFilter
+  **/
+  @ApiModelProperty(value = "Gets auto filter.             ")
+  public AutoFilter getAutoFilter() {
+    return autoFilter;
+  }
+
+  public void setAutoFilter(AutoFilter autoFilter) {
+    this.autoFilter = autoFilter;
   }
 
   public ListObject showTableStyleRowStripes(Boolean showTableStyleRowStripes) {
@@ -324,22 +298,22 @@ public class ListObject {
     this.showTableStyleRowStripes = showTableStyleRowStripes;
   }
 
-  public ListObject showTotals(Boolean showTotals) {
-    this.showTotals = showTotals;
+  public ListObject endColumn(Integer endColumn) {
+    this.endColumn = endColumn;
     return this;
   }
 
    /**
-   * Gets and sets whether this ListObject show total row.
-   * @return showTotals
+   * Gets the end column of the range.
+   * @return endColumn
   **/
-  @ApiModelProperty(value = "Gets and sets whether this ListObject show total row.")
-  public Boolean isShowTotals() {
-    return showTotals;
+  @ApiModelProperty(value = "Gets the end column of the range.")
+  public Integer getEndColumn() {
+    return endColumn;
   }
 
-  public void setShowTotals(Boolean showTotals) {
-    this.showTotals = showTotals;
+  public void setEndColumn(Integer endColumn) {
+    this.endColumn = endColumn;
   }
 
   public ListObject tableStyleName(String tableStyleName) {
@@ -360,22 +334,48 @@ public class ListObject {
     this.tableStyleName = tableStyleName;
   }
 
-  public ListObject tableStyleType(String tableStyleType) {
-    this.tableStyleType = tableStyleType;
+  public ListObject listColumns(List<ListColumn> listColumns) {
+    this.listColumns = listColumns;
+    return this;
+  }
+
+  public ListObject addListColumnsItem(ListColumn listColumnsItem) {
+    if (this.listColumns == null) {
+      this.listColumns = new ArrayList<ListColumn>();
+    }
+    this.listColumns.add(listColumnsItem);
     return this;
   }
 
    /**
-   * Gets and the built-in table style.
-   * @return tableStyleType
+   * Gets ListColumns of the ListObject.
+   * @return listColumns
   **/
-  @ApiModelProperty(value = "Gets and the built-in table style.")
-  public String getTableStyleType() {
-    return tableStyleType;
+  @ApiModelProperty(value = "Gets ListColumns of the ListObject.")
+  public List<ListColumn> getListColumns() {
+    return listColumns;
   }
 
-  public void setTableStyleType(String tableStyleType) {
-    this.tableStyleType = tableStyleType;
+  public void setListColumns(List<ListColumn> listColumns) {
+    this.listColumns = listColumns;
+  }
+
+  public ListObject endRow(Integer endRow) {
+    this.endRow = endRow;
+    return this;
+  }
+
+   /**
+   * Gets the end row of the range.
+   * @return endRow
+  **/
+  @ApiModelProperty(value = "Gets the end row of the range.")
+  public Integer getEndRow() {
+    return endRow;
+  }
+
+  public void setEndRow(Integer endRow) {
+    this.endRow = endRow;
   }
 
 
@@ -389,26 +389,26 @@ public class ListObject {
     }
     ListObject listObject = (ListObject) o;
     return Objects.equals(this.link, listObject.link) &&
-        Objects.equals(this.autoFilter, listObject.autoFilter) &&
+        Objects.equals(this.showTotals, listObject.showTotals) &&
+        Objects.equals(this.tableStyleType, listObject.tableStyleType) &&
         Objects.equals(this.displayName, listObject.displayName) &&
-        Objects.equals(this.startColumn, listObject.startColumn) &&
-        Objects.equals(this.startRow, listObject.startRow) &&
-        Objects.equals(this.endColumn, listObject.endColumn) &&
-        Objects.equals(this.endRow, listObject.endRow) &&
-        Objects.equals(this.listColumns, listObject.listColumns) &&
         Objects.equals(this.showHeaderRow, listObject.showHeaderRow) &&
+        Objects.equals(this.startColumn, listObject.startColumn) &&
+        Objects.equals(this.showTableStyleLastColumn, listObject.showTableStyleLastColumn) &&
         Objects.equals(this.showTableStyleColumnStripes, listObject.showTableStyleColumnStripes) &&
         Objects.equals(this.showTableStyleFirstColumn, listObject.showTableStyleFirstColumn) &&
-        Objects.equals(this.showTableStyleLastColumn, listObject.showTableStyleLastColumn) &&
+        Objects.equals(this.startRow, listObject.startRow) &&
+        Objects.equals(this.autoFilter, listObject.autoFilter) &&
         Objects.equals(this.showTableStyleRowStripes, listObject.showTableStyleRowStripes) &&
-        Objects.equals(this.showTotals, listObject.showTotals) &&
+        Objects.equals(this.endColumn, listObject.endColumn) &&
         Objects.equals(this.tableStyleName, listObject.tableStyleName) &&
-        Objects.equals(this.tableStyleType, listObject.tableStyleType);
+        Objects.equals(this.listColumns, listObject.listColumns) &&
+        Objects.equals(this.endRow, listObject.endRow);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(link, autoFilter, displayName, startColumn, startRow, endColumn, endRow, listColumns, showHeaderRow, showTableStyleColumnStripes, showTableStyleFirstColumn, showTableStyleLastColumn, showTableStyleRowStripes, showTotals, tableStyleName, tableStyleType);
+    return Objects.hash(link, showTotals, tableStyleType, displayName, showHeaderRow, startColumn, showTableStyleLastColumn, showTableStyleColumnStripes, showTableStyleFirstColumn, startRow, autoFilter, showTableStyleRowStripes, endColumn, tableStyleName, listColumns, endRow);
   }
 
 
@@ -418,21 +418,21 @@ public class ListObject {
     sb.append("class ListObject {\n");
     
     sb.append("    link: ").append(toIndentedString(link)).append("\n");
-    sb.append("    autoFilter: ").append(toIndentedString(autoFilter)).append("\n");
+    sb.append("    showTotals: ").append(toIndentedString(showTotals)).append("\n");
+    sb.append("    tableStyleType: ").append(toIndentedString(tableStyleType)).append("\n");
     sb.append("    displayName: ").append(toIndentedString(displayName)).append("\n");
-    sb.append("    startColumn: ").append(toIndentedString(startColumn)).append("\n");
-    sb.append("    startRow: ").append(toIndentedString(startRow)).append("\n");
-    sb.append("    endColumn: ").append(toIndentedString(endColumn)).append("\n");
-    sb.append("    endRow: ").append(toIndentedString(endRow)).append("\n");
-    sb.append("    listColumns: ").append(toIndentedString(listColumns)).append("\n");
     sb.append("    showHeaderRow: ").append(toIndentedString(showHeaderRow)).append("\n");
+    sb.append("    startColumn: ").append(toIndentedString(startColumn)).append("\n");
+    sb.append("    showTableStyleLastColumn: ").append(toIndentedString(showTableStyleLastColumn)).append("\n");
     sb.append("    showTableStyleColumnStripes: ").append(toIndentedString(showTableStyleColumnStripes)).append("\n");
     sb.append("    showTableStyleFirstColumn: ").append(toIndentedString(showTableStyleFirstColumn)).append("\n");
-    sb.append("    showTableStyleLastColumn: ").append(toIndentedString(showTableStyleLastColumn)).append("\n");
+    sb.append("    startRow: ").append(toIndentedString(startRow)).append("\n");
+    sb.append("    autoFilter: ").append(toIndentedString(autoFilter)).append("\n");
     sb.append("    showTableStyleRowStripes: ").append(toIndentedString(showTableStyleRowStripes)).append("\n");
-    sb.append("    showTotals: ").append(toIndentedString(showTotals)).append("\n");
+    sb.append("    endColumn: ").append(toIndentedString(endColumn)).append("\n");
     sb.append("    tableStyleName: ").append(toIndentedString(tableStyleName)).append("\n");
-    sb.append("    tableStyleType: ").append(toIndentedString(tableStyleType)).append("\n");
+    sb.append("    listColumns: ").append(toIndentedString(listColumns)).append("\n");
+    sb.append("    endRow: ").append(toIndentedString(endRow)).append("\n");
     sb.append("}");
     return sb.toString();
   }

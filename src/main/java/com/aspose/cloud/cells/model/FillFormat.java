@@ -30,79 +30,25 @@ import java.io.IOException;
 /**
  * FillFormat
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-05T15:44:26.749+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-08-14T14:34:14.243+08:00")
 public class FillFormat {
-  @SerializedName("Type")
-  private String type = null;
-
-  @SerializedName("SolidFill")
-  private SolidFill solidFill = null;
-
-  @SerializedName("PatternFill")
-  private PatternFill patternFill = null;
-
   @SerializedName("TextureFill")
   private TextureFill textureFill = null;
-
-  @SerializedName("GradientFill")
-  private GradientFill gradientFill = null;
 
   @SerializedName("ImageData")
   private byte[] imageData = null;
 
-  public FillFormat type(String type) {
-    this.type = type;
-    return this;
-  }
+  @SerializedName("PatternFill")
+  private PatternFill patternFill = null;
 
-   /**
-   * Get type
-   * @return type
-  **/
-  @ApiModelProperty(value = "")
-  public String getType() {
-    return type;
-  }
+  @SerializedName("SolidFill")
+  private SolidFill solidFill = null;
 
-  public void setType(String type) {
-    this.type = type;
-  }
+  @SerializedName("GradientFill")
+  private GradientFill gradientFill = null;
 
-  public FillFormat solidFill(SolidFill solidFill) {
-    this.solidFill = solidFill;
-    return this;
-  }
-
-   /**
-   * Get solidFill
-   * @return solidFill
-  **/
-  @ApiModelProperty(value = "")
-  public SolidFill getSolidFill() {
-    return solidFill;
-  }
-
-  public void setSolidFill(SolidFill solidFill) {
-    this.solidFill = solidFill;
-  }
-
-  public FillFormat patternFill(PatternFill patternFill) {
-    this.patternFill = patternFill;
-    return this;
-  }
-
-   /**
-   * Get patternFill
-   * @return patternFill
-  **/
-  @ApiModelProperty(value = "")
-  public PatternFill getPatternFill() {
-    return patternFill;
-  }
-
-  public void setPatternFill(PatternFill patternFill) {
-    this.patternFill = patternFill;
-  }
+  @SerializedName("Type")
+  private String type = null;
 
   public FillFormat textureFill(TextureFill textureFill) {
     this.textureFill = textureFill;
@@ -120,24 +66,6 @@ public class FillFormat {
 
   public void setTextureFill(TextureFill textureFill) {
     this.textureFill = textureFill;
-  }
-
-  public FillFormat gradientFill(GradientFill gradientFill) {
-    this.gradientFill = gradientFill;
-    return this;
-  }
-
-   /**
-   * Get gradientFill
-   * @return gradientFill
-  **/
-  @ApiModelProperty(value = "")
-  public GradientFill getGradientFill() {
-    return gradientFill;
-  }
-
-  public void setGradientFill(GradientFill gradientFill) {
-    this.gradientFill = gradientFill;
   }
 
   public FillFormat imageData(byte[] imageData) {
@@ -158,6 +86,78 @@ public class FillFormat {
     this.imageData = imageData;
   }
 
+  public FillFormat patternFill(PatternFill patternFill) {
+    this.patternFill = patternFill;
+    return this;
+  }
+
+   /**
+   * Get patternFill
+   * @return patternFill
+  **/
+  @ApiModelProperty(value = "")
+  public PatternFill getPatternFill() {
+    return patternFill;
+  }
+
+  public void setPatternFill(PatternFill patternFill) {
+    this.patternFill = patternFill;
+  }
+
+  public FillFormat solidFill(SolidFill solidFill) {
+    this.solidFill = solidFill;
+    return this;
+  }
+
+   /**
+   * Get solidFill
+   * @return solidFill
+  **/
+  @ApiModelProperty(value = "")
+  public SolidFill getSolidFill() {
+    return solidFill;
+  }
+
+  public void setSolidFill(SolidFill solidFill) {
+    this.solidFill = solidFill;
+  }
+
+  public FillFormat gradientFill(GradientFill gradientFill) {
+    this.gradientFill = gradientFill;
+    return this;
+  }
+
+   /**
+   * Get gradientFill
+   * @return gradientFill
+  **/
+  @ApiModelProperty(value = "")
+  public GradientFill getGradientFill() {
+    return gradientFill;
+  }
+
+  public void setGradientFill(GradientFill gradientFill) {
+    this.gradientFill = gradientFill;
+  }
+
+  public FillFormat type(String type) {
+    this.type = type;
+    return this;
+  }
+
+   /**
+   * Get type
+   * @return type
+  **/
+  @ApiModelProperty(value = "")
+  public String getType() {
+    return type;
+  }
+
+  public void setType(String type) {
+    this.type = type;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -168,17 +168,17 @@ public class FillFormat {
       return false;
     }
     FillFormat fillFormat = (FillFormat) o;
-    return Objects.equals(this.type, fillFormat.type) &&
-        Objects.equals(this.solidFill, fillFormat.solidFill) &&
+    return Objects.equals(this.textureFill, fillFormat.textureFill) &&
+        Objects.equals(this.imageData, fillFormat.imageData) &&
         Objects.equals(this.patternFill, fillFormat.patternFill) &&
-        Objects.equals(this.textureFill, fillFormat.textureFill) &&
+        Objects.equals(this.solidFill, fillFormat.solidFill) &&
         Objects.equals(this.gradientFill, fillFormat.gradientFill) &&
-        Objects.equals(this.imageData, fillFormat.imageData);
+        Objects.equals(this.type, fillFormat.type);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, solidFill, patternFill, textureFill, gradientFill, imageData);
+    return Objects.hash(textureFill, imageData, patternFill, solidFill, gradientFill, type);
   }
 
 
@@ -187,12 +187,12 @@ public class FillFormat {
     StringBuilder sb = new StringBuilder();
     sb.append("class FillFormat {\n");
     
-    sb.append("    type: ").append(toIndentedString(type)).append("\n");
-    sb.append("    solidFill: ").append(toIndentedString(solidFill)).append("\n");
-    sb.append("    patternFill: ").append(toIndentedString(patternFill)).append("\n");
     sb.append("    textureFill: ").append(toIndentedString(textureFill)).append("\n");
-    sb.append("    gradientFill: ").append(toIndentedString(gradientFill)).append("\n");
     sb.append("    imageData: ").append(toIndentedString(imageData)).append("\n");
+    sb.append("    patternFill: ").append(toIndentedString(patternFill)).append("\n");
+    sb.append("    solidFill: ").append(toIndentedString(solidFill)).append("\n");
+    sb.append("    gradientFill: ").append(toIndentedString(gradientFill)).append("\n");
+    sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("}");
     return sb.toString();
   }

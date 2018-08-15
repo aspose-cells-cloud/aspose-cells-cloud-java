@@ -29,13 +29,13 @@ import java.util.List;
 /**
  * PivotTableOperateParameter
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-05T15:44:26.749+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-08-14T14:34:14.243+08:00")
 public class PivotTableOperateParameter extends OperateParameter {
-  @SerializedName("SourceData")
-  private String sourceData = null;
+  @SerializedName("PivotFieldColumns")
+  private List<Integer> pivotFieldColumns = null;
 
-  @SerializedName("DestCellName")
-  private String destCellName = null;
+  @SerializedName("PivotTableIndex")
+  private Integer pivotTableIndex = null;
 
   @SerializedName("TableName")
   private String tableName = null;
@@ -43,52 +43,60 @@ public class PivotTableOperateParameter extends OperateParameter {
   @SerializedName("UseSameSource")
   private Boolean useSameSource = null;
 
-  @SerializedName("PivotTableIndex")
-  private Integer pivotTableIndex = null;
+  @SerializedName("PivotFieldData")
+  private List<Integer> pivotFieldData = null;
 
   @SerializedName("PivotFieldRows")
   private List<Integer> pivotFieldRows = null;
 
-  @SerializedName("PivotFieldColumns")
-  private List<Integer> pivotFieldColumns = null;
+  @SerializedName("DestCellName")
+  private String destCellName = null;
 
-  @SerializedName("PivotFieldData")
-  private List<Integer> pivotFieldData = null;
+  @SerializedName("SourceData")
+  private String sourceData = null;
 
-  public PivotTableOperateParameter sourceData(String sourceData) {
-    this.sourceData = sourceData;
+  public PivotTableOperateParameter pivotFieldColumns(List<Integer> pivotFieldColumns) {
+    this.pivotFieldColumns = pivotFieldColumns;
+    return this;
+  }
+
+  public PivotTableOperateParameter addPivotFieldColumnsItem(Integer pivotFieldColumnsItem) {
+    if (this.pivotFieldColumns == null) {
+      this.pivotFieldColumns = new ArrayList<Integer>();
+    }
+    this.pivotFieldColumns.add(pivotFieldColumnsItem);
     return this;
   }
 
    /**
-   * Get sourceData
-   * @return sourceData
+   * Get pivotFieldColumns
+   * @return pivotFieldColumns
   **/
   @ApiModelProperty(value = "")
-  public String getSourceData() {
-    return sourceData;
+  public List<Integer> getPivotFieldColumns() {
+    return pivotFieldColumns;
   }
 
-  public void setSourceData(String sourceData) {
-    this.sourceData = sourceData;
+  public void setPivotFieldColumns(List<Integer> pivotFieldColumns) {
+    this.pivotFieldColumns = pivotFieldColumns;
   }
 
-  public PivotTableOperateParameter destCellName(String destCellName) {
-    this.destCellName = destCellName;
+  public PivotTableOperateParameter pivotTableIndex(Integer pivotTableIndex) {
+    this.pivotTableIndex = pivotTableIndex;
     return this;
   }
 
    /**
-   * Get destCellName
-   * @return destCellName
+   * Get pivotTableIndex
+   * @return pivotTableIndex
   **/
   @ApiModelProperty(value = "")
-  public String getDestCellName() {
-    return destCellName;
+  public Integer getPivotTableIndex() {
+    return pivotTableIndex;
   }
 
-  public void setDestCellName(String destCellName) {
-    this.destCellName = destCellName;
+  public void setPivotTableIndex(Integer pivotTableIndex) {
+    this.pivotTableIndex = pivotTableIndex;
   }
 
   public PivotTableOperateParameter tableName(String tableName) {
@@ -127,22 +135,30 @@ public class PivotTableOperateParameter extends OperateParameter {
     this.useSameSource = useSameSource;
   }
 
-  public PivotTableOperateParameter pivotTableIndex(Integer pivotTableIndex) {
-    this.pivotTableIndex = pivotTableIndex;
+  public PivotTableOperateParameter pivotFieldData(List<Integer> pivotFieldData) {
+    this.pivotFieldData = pivotFieldData;
+    return this;
+  }
+
+  public PivotTableOperateParameter addPivotFieldDataItem(Integer pivotFieldDataItem) {
+    if (this.pivotFieldData == null) {
+      this.pivotFieldData = new ArrayList<Integer>();
+    }
+    this.pivotFieldData.add(pivotFieldDataItem);
     return this;
   }
 
    /**
-   * Get pivotTableIndex
-   * @return pivotTableIndex
+   * Get pivotFieldData
+   * @return pivotFieldData
   **/
   @ApiModelProperty(value = "")
-  public Integer getPivotTableIndex() {
-    return pivotTableIndex;
+  public List<Integer> getPivotFieldData() {
+    return pivotFieldData;
   }
 
-  public void setPivotTableIndex(Integer pivotTableIndex) {
-    this.pivotTableIndex = pivotTableIndex;
+  public void setPivotFieldData(List<Integer> pivotFieldData) {
+    this.pivotFieldData = pivotFieldData;
   }
 
   public PivotTableOperateParameter pivotFieldRows(List<Integer> pivotFieldRows) {
@@ -171,56 +187,40 @@ public class PivotTableOperateParameter extends OperateParameter {
     this.pivotFieldRows = pivotFieldRows;
   }
 
-  public PivotTableOperateParameter pivotFieldColumns(List<Integer> pivotFieldColumns) {
-    this.pivotFieldColumns = pivotFieldColumns;
-    return this;
-  }
-
-  public PivotTableOperateParameter addPivotFieldColumnsItem(Integer pivotFieldColumnsItem) {
-    if (this.pivotFieldColumns == null) {
-      this.pivotFieldColumns = new ArrayList<Integer>();
-    }
-    this.pivotFieldColumns.add(pivotFieldColumnsItem);
+  public PivotTableOperateParameter destCellName(String destCellName) {
+    this.destCellName = destCellName;
     return this;
   }
 
    /**
-   * Get pivotFieldColumns
-   * @return pivotFieldColumns
+   * Get destCellName
+   * @return destCellName
   **/
   @ApiModelProperty(value = "")
-  public List<Integer> getPivotFieldColumns() {
-    return pivotFieldColumns;
+  public String getDestCellName() {
+    return destCellName;
   }
 
-  public void setPivotFieldColumns(List<Integer> pivotFieldColumns) {
-    this.pivotFieldColumns = pivotFieldColumns;
+  public void setDestCellName(String destCellName) {
+    this.destCellName = destCellName;
   }
 
-  public PivotTableOperateParameter pivotFieldData(List<Integer> pivotFieldData) {
-    this.pivotFieldData = pivotFieldData;
-    return this;
-  }
-
-  public PivotTableOperateParameter addPivotFieldDataItem(Integer pivotFieldDataItem) {
-    if (this.pivotFieldData == null) {
-      this.pivotFieldData = new ArrayList<Integer>();
-    }
-    this.pivotFieldData.add(pivotFieldDataItem);
+  public PivotTableOperateParameter sourceData(String sourceData) {
+    this.sourceData = sourceData;
     return this;
   }
 
    /**
-   * Get pivotFieldData
-   * @return pivotFieldData
+   * Get sourceData
+   * @return sourceData
   **/
   @ApiModelProperty(value = "")
-  public List<Integer> getPivotFieldData() {
-    return pivotFieldData;
+  public String getSourceData() {
+    return sourceData;
   }
 
-  public void setPivotFieldData(List<Integer> pivotFieldData) {
-    this.pivotFieldData = pivotFieldData;
+  public void setSourceData(String sourceData) {
+    this.sourceData = sourceData;
   }
 
 
@@ -233,20 +233,20 @@ public class PivotTableOperateParameter extends OperateParameter {
       return false;
     }
     PivotTableOperateParameter pivotTableOperateParameter = (PivotTableOperateParameter) o;
-    return Objects.equals(this.sourceData, pivotTableOperateParameter.sourceData) &&
-        Objects.equals(this.destCellName, pivotTableOperateParameter.destCellName) &&
+    return Objects.equals(this.pivotFieldColumns, pivotTableOperateParameter.pivotFieldColumns) &&
+        Objects.equals(this.pivotTableIndex, pivotTableOperateParameter.pivotTableIndex) &&
         Objects.equals(this.tableName, pivotTableOperateParameter.tableName) &&
         Objects.equals(this.useSameSource, pivotTableOperateParameter.useSameSource) &&
-        Objects.equals(this.pivotTableIndex, pivotTableOperateParameter.pivotTableIndex) &&
-        Objects.equals(this.pivotFieldRows, pivotTableOperateParameter.pivotFieldRows) &&
-        Objects.equals(this.pivotFieldColumns, pivotTableOperateParameter.pivotFieldColumns) &&
         Objects.equals(this.pivotFieldData, pivotTableOperateParameter.pivotFieldData) &&
+        Objects.equals(this.pivotFieldRows, pivotTableOperateParameter.pivotFieldRows) &&
+        Objects.equals(this.destCellName, pivotTableOperateParameter.destCellName) &&
+        Objects.equals(this.sourceData, pivotTableOperateParameter.sourceData) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(sourceData, destCellName, tableName, useSameSource, pivotTableIndex, pivotFieldRows, pivotFieldColumns, pivotFieldData, super.hashCode());
+    return Objects.hash(pivotFieldColumns, pivotTableIndex, tableName, useSameSource, pivotFieldData, pivotFieldRows, destCellName, sourceData, super.hashCode());
   }
 
 
@@ -255,14 +255,14 @@ public class PivotTableOperateParameter extends OperateParameter {
     StringBuilder sb = new StringBuilder();
     sb.append("class PivotTableOperateParameter {\n");
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
-    sb.append("    sourceData: ").append(toIndentedString(sourceData)).append("\n");
-    sb.append("    destCellName: ").append(toIndentedString(destCellName)).append("\n");
+    sb.append("    pivotFieldColumns: ").append(toIndentedString(pivotFieldColumns)).append("\n");
+    sb.append("    pivotTableIndex: ").append(toIndentedString(pivotTableIndex)).append("\n");
     sb.append("    tableName: ").append(toIndentedString(tableName)).append("\n");
     sb.append("    useSameSource: ").append(toIndentedString(useSameSource)).append("\n");
-    sb.append("    pivotTableIndex: ").append(toIndentedString(pivotTableIndex)).append("\n");
-    sb.append("    pivotFieldRows: ").append(toIndentedString(pivotFieldRows)).append("\n");
-    sb.append("    pivotFieldColumns: ").append(toIndentedString(pivotFieldColumns)).append("\n");
     sb.append("    pivotFieldData: ").append(toIndentedString(pivotFieldData)).append("\n");
+    sb.append("    pivotFieldRows: ").append(toIndentedString(pivotFieldRows)).append("\n");
+    sb.append("    destCellName: ").append(toIndentedString(destCellName)).append("\n");
+    sb.append("    sourceData: ").append(toIndentedString(sourceData)).append("\n");
     sb.append("}");
     return sb.toString();
   }

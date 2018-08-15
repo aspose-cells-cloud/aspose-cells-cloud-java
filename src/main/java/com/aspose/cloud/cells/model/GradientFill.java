@@ -29,19 +29,19 @@ import java.util.List;
 /**
  * GradientFill
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-05T15:44:26.749+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-08-14T14:34:14.243+08:00")
 public class GradientFill {
   @SerializedName("FillType")
   private String fillType = null;
-
-  @SerializedName("DirectionType")
-  private String directionType = null;
 
   @SerializedName("Angle")
   private Double angle = null;
 
   @SerializedName("GradientStops")
   private List<GradientFillStop> gradientStops = null;
+
+  @SerializedName("DirectionType")
+  private String directionType = null;
 
   public GradientFill fillType(String fillType) {
     this.fillType = fillType;
@@ -59,24 +59,6 @@ public class GradientFill {
 
   public void setFillType(String fillType) {
     this.fillType = fillType;
-  }
-
-  public GradientFill directionType(String directionType) {
-    this.directionType = directionType;
-    return this;
-  }
-
-   /**
-   * Get directionType
-   * @return directionType
-  **/
-  @ApiModelProperty(value = "")
-  public String getDirectionType() {
-    return directionType;
-  }
-
-  public void setDirectionType(String directionType) {
-    this.directionType = directionType;
   }
 
   public GradientFill angle(Double angle) {
@@ -123,6 +105,24 @@ public class GradientFill {
     this.gradientStops = gradientStops;
   }
 
+  public GradientFill directionType(String directionType) {
+    this.directionType = directionType;
+    return this;
+  }
+
+   /**
+   * Get directionType
+   * @return directionType
+  **/
+  @ApiModelProperty(value = "")
+  public String getDirectionType() {
+    return directionType;
+  }
+
+  public void setDirectionType(String directionType) {
+    this.directionType = directionType;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -134,14 +134,14 @@ public class GradientFill {
     }
     GradientFill gradientFill = (GradientFill) o;
     return Objects.equals(this.fillType, gradientFill.fillType) &&
-        Objects.equals(this.directionType, gradientFill.directionType) &&
         Objects.equals(this.angle, gradientFill.angle) &&
-        Objects.equals(this.gradientStops, gradientFill.gradientStops);
+        Objects.equals(this.gradientStops, gradientFill.gradientStops) &&
+        Objects.equals(this.directionType, gradientFill.directionType);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(fillType, directionType, angle, gradientStops);
+    return Objects.hash(fillType, angle, gradientStops, directionType);
   }
 
 
@@ -151,9 +151,9 @@ public class GradientFill {
     sb.append("class GradientFill {\n");
     
     sb.append("    fillType: ").append(toIndentedString(fillType)).append("\n");
-    sb.append("    directionType: ").append(toIndentedString(directionType)).append("\n");
     sb.append("    angle: ").append(toIndentedString(angle)).append("\n");
     sb.append("    gradientStops: ").append(toIndentedString(gradientStops)).append("\n");
+    sb.append("    directionType: ").append(toIndentedString(directionType)).append("\n");
     sb.append("}");
     return sb.toString();
   }

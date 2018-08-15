@@ -26,34 +26,16 @@ import java.io.IOException;
 /**
  * AutoFitterOptions
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-05T15:44:26.749+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-08-14T14:34:14.243+08:00")
 public class AutoFitterOptions {
-  @SerializedName("AutoFitMergedCells")
-  private Boolean autoFitMergedCells = null;
-
   @SerializedName("IgnoreHidden")
   private Boolean ignoreHidden = null;
 
   @SerializedName("OnlyAuto")
   private Boolean onlyAuto = null;
 
-  public AutoFitterOptions autoFitMergedCells(Boolean autoFitMergedCells) {
-    this.autoFitMergedCells = autoFitMergedCells;
-    return this;
-  }
-
-   /**
-   * Get autoFitMergedCells
-   * @return autoFitMergedCells
-  **/
-  @ApiModelProperty(required = true, value = "")
-  public Boolean isAutoFitMergedCells() {
-    return autoFitMergedCells;
-  }
-
-  public void setAutoFitMergedCells(Boolean autoFitMergedCells) {
-    this.autoFitMergedCells = autoFitMergedCells;
-  }
+  @SerializedName("AutoFitMergedCells")
+  private Boolean autoFitMergedCells = null;
 
   public AutoFitterOptions ignoreHidden(Boolean ignoreHidden) {
     this.ignoreHidden = ignoreHidden;
@@ -91,6 +73,24 @@ public class AutoFitterOptions {
     this.onlyAuto = onlyAuto;
   }
 
+  public AutoFitterOptions autoFitMergedCells(Boolean autoFitMergedCells) {
+    this.autoFitMergedCells = autoFitMergedCells;
+    return this;
+  }
+
+   /**
+   * Get autoFitMergedCells
+   * @return autoFitMergedCells
+  **/
+  @ApiModelProperty(required = true, value = "")
+  public Boolean isAutoFitMergedCells() {
+    return autoFitMergedCells;
+  }
+
+  public void setAutoFitMergedCells(Boolean autoFitMergedCells) {
+    this.autoFitMergedCells = autoFitMergedCells;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -101,14 +101,14 @@ public class AutoFitterOptions {
       return false;
     }
     AutoFitterOptions autoFitterOptions = (AutoFitterOptions) o;
-    return Objects.equals(this.autoFitMergedCells, autoFitterOptions.autoFitMergedCells) &&
-        Objects.equals(this.ignoreHidden, autoFitterOptions.ignoreHidden) &&
-        Objects.equals(this.onlyAuto, autoFitterOptions.onlyAuto);
+    return Objects.equals(this.ignoreHidden, autoFitterOptions.ignoreHidden) &&
+        Objects.equals(this.onlyAuto, autoFitterOptions.onlyAuto) &&
+        Objects.equals(this.autoFitMergedCells, autoFitterOptions.autoFitMergedCells);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(autoFitMergedCells, ignoreHidden, onlyAuto);
+    return Objects.hash(ignoreHidden, onlyAuto, autoFitMergedCells);
   }
 
 
@@ -117,9 +117,9 @@ public class AutoFitterOptions {
     StringBuilder sb = new StringBuilder();
     sb.append("class AutoFitterOptions {\n");
     
-    sb.append("    autoFitMergedCells: ").append(toIndentedString(autoFitMergedCells)).append("\n");
     sb.append("    ignoreHidden: ").append(toIndentedString(ignoreHidden)).append("\n");
     sb.append("    onlyAuto: ").append(toIndentedString(onlyAuto)).append("\n");
+    sb.append("    autoFitMergedCells: ").append(toIndentedString(autoFitMergedCells)).append("\n");
     sb.append("}");
     return sb.toString();
   }

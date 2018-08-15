@@ -4,13 +4,13 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**angle** | **Double** |  |  [optional]
-**blur** | **Double** |  |  [optional]
-**color** | [**CellsColor**](CellsColor.md) |  |  [optional]
 **distance** | **Double** |  |  [optional]
+**angle** | **Double** |  |  [optional]
 **presetType** | **String** |  |  [optional]
-**size** | **Double** |  |  [optional]
+**color** | [**CellsColor**](CellsColor.md) |  |  [optional]
 **transparency** | **Double** |  |  [optional]
+**blur** | **Double** |  |  [optional]
+**size** | **Double** |  |  [optional]
 
 
 

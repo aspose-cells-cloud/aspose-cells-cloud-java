@@ -34,22 +34,22 @@ import java.io.IOException;
 /**
  * FormatCondition
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-05T15:44:26.749+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-08-14T14:34:14.243+08:00")
 public class FormatCondition {
   @SerializedName("link")
   private Link link = null;
 
-  @SerializedName("Priority")
-  private Integer priority = null;
-
-  @SerializedName("Type")
-  private String type = null;
-
-  @SerializedName("StopIfTrue")
-  private Boolean stopIfTrue = null;
-
   @SerializedName("AboveAverage")
   private AboveAverage aboveAverage = null;
+
+  @SerializedName("Formula2")
+  private String formula2 = null;
+
+  @SerializedName("Style")
+  private Style style = null;
+
+  @SerializedName("Formula1")
+  private String formula1 = null;
 
   @SerializedName("ColorScale")
   private ColorScale colorScale = null;
@@ -57,29 +57,29 @@ public class FormatCondition {
   @SerializedName("DataBar")
   private DataBar dataBar = null;
 
-  @SerializedName("Formula1")
-  private String formula1 = null;
+  @SerializedName("Text")
+  private String text = null;
 
-  @SerializedName("Formula2")
-  private String formula2 = null;
+  @SerializedName("StopIfTrue")
+  private Boolean stopIfTrue = null;
 
-  @SerializedName("IconSet")
-  private IconSet iconSet = null;
+  @SerializedName("Priority")
+  private Integer priority = null;
+
+  @SerializedName("Top10")
+  private Top10 top10 = null;
 
   @SerializedName("Operator")
   private String operator = null;
 
-  @SerializedName("Style")
-  private Style style = null;
+  @SerializedName("IconSet")
+  private IconSet iconSet = null;
 
-  @SerializedName("Text")
-  private String text = null;
+  @SerializedName("Type")
+  private String type = null;
 
   @SerializedName("TimePeriod")
   private String timePeriod = null;
-
-  @SerializedName("Top10")
-  private Top10 top10 = null;
 
   public FormatCondition link(Link link) {
     this.link = link;
@@ -99,60 +99,6 @@ public class FormatCondition {
     this.link = link;
   }
 
-  public FormatCondition priority(Integer priority) {
-    this.priority = priority;
-    return this;
-  }
-
-   /**
-   * The priority of this conditional formatting rule. This value is used to determine     which format should be evaluated and rendered. Lower numeric values are higher     priority than higher numeric values, where &#39;1&#39; is the highest priority.
-   * @return priority
-  **/
-  @ApiModelProperty(value = "The priority of this conditional formatting rule. This value is used to determine     which format should be evaluated and rendered. Lower numeric values are higher     priority than higher numeric values, where '1' is the highest priority.")
-  public Integer getPriority() {
-    return priority;
-  }
-
-  public void setPriority(Integer priority) {
-    this.priority = priority;
-  }
-
-  public FormatCondition type(String type) {
-    this.type = type;
-    return this;
-  }
-
-   /**
-   * Gets and sets whether the conditional format Type.             
-   * @return type
-  **/
-  @ApiModelProperty(value = "Gets and sets whether the conditional format Type.             ")
-  public String getType() {
-    return type;
-  }
-
-  public void setType(String type) {
-    this.type = type;
-  }
-
-  public FormatCondition stopIfTrue(Boolean stopIfTrue) {
-    this.stopIfTrue = stopIfTrue;
-    return this;
-  }
-
-   /**
-   * True, no rules with lower priority may be applied over this rule, when this     rule evaluates to true.  Only applies for Excel 2007;
-   * @return stopIfTrue
-  **/
-  @ApiModelProperty(value = "True, no rules with lower priority may be applied over this rule, when this     rule evaluates to true.  Only applies for Excel 2007;")
-  public Boolean isStopIfTrue() {
-    return stopIfTrue;
-  }
-
-  public void setStopIfTrue(Boolean stopIfTrue) {
-    this.stopIfTrue = stopIfTrue;
-  }
-
   public FormatCondition aboveAverage(AboveAverage aboveAverage) {
     this.aboveAverage = aboveAverage;
     return this;
@@ -169,6 +115,60 @@ public class FormatCondition {
 
   public void setAboveAverage(AboveAverage aboveAverage) {
     this.aboveAverage = aboveAverage;
+  }
+
+  public FormatCondition formula2(String formula2) {
+    this.formula2 = formula2;
+    return this;
+  }
+
+   /**
+   * Get formula2
+   * @return formula2
+  **/
+  @ApiModelProperty(value = "")
+  public String getFormula2() {
+    return formula2;
+  }
+
+  public void setFormula2(String formula2) {
+    this.formula2 = formula2;
+  }
+
+  public FormatCondition style(Style style) {
+    this.style = style;
+    return this;
+  }
+
+   /**
+   * Get style
+   * @return style
+  **/
+  @ApiModelProperty(value = "")
+  public Style getStyle() {
+    return style;
+  }
+
+  public void setStyle(Style style) {
+    this.style = style;
+  }
+
+  public FormatCondition formula1(String formula1) {
+    this.formula1 = formula1;
+    return this;
+  }
+
+   /**
+   * Get formula1
+   * @return formula1
+  **/
+  @ApiModelProperty(value = "")
+  public String getFormula1() {
+    return formula1;
+  }
+
+  public void setFormula1(String formula1) {
+    this.formula1 = formula1;
   }
 
   public FormatCondition colorScale(ColorScale colorScale) {
@@ -207,96 +207,6 @@ public class FormatCondition {
     this.dataBar = dataBar;
   }
 
-  public FormatCondition formula1(String formula1) {
-    this.formula1 = formula1;
-    return this;
-  }
-
-   /**
-   * Get formula1
-   * @return formula1
-  **/
-  @ApiModelProperty(value = "")
-  public String getFormula1() {
-    return formula1;
-  }
-
-  public void setFormula1(String formula1) {
-    this.formula1 = formula1;
-  }
-
-  public FormatCondition formula2(String formula2) {
-    this.formula2 = formula2;
-    return this;
-  }
-
-   /**
-   * Get formula2
-   * @return formula2
-  **/
-  @ApiModelProperty(value = "")
-  public String getFormula2() {
-    return formula2;
-  }
-
-  public void setFormula2(String formula2) {
-    this.formula2 = formula2;
-  }
-
-  public FormatCondition iconSet(IconSet iconSet) {
-    this.iconSet = iconSet;
-    return this;
-  }
-
-   /**
-   * Get iconSet
-   * @return iconSet
-  **/
-  @ApiModelProperty(value = "")
-  public IconSet getIconSet() {
-    return iconSet;
-  }
-
-  public void setIconSet(IconSet iconSet) {
-    this.iconSet = iconSet;
-  }
-
-  public FormatCondition operator(String operator) {
-    this.operator = operator;
-    return this;
-  }
-
-   /**
-   * Get operator
-   * @return operator
-  **/
-  @ApiModelProperty(value = "")
-  public String getOperator() {
-    return operator;
-  }
-
-  public void setOperator(String operator) {
-    this.operator = operator;
-  }
-
-  public FormatCondition style(Style style) {
-    this.style = style;
-    return this;
-  }
-
-   /**
-   * Get style
-   * @return style
-  **/
-  @ApiModelProperty(value = "")
-  public Style getStyle() {
-    return style;
-  }
-
-  public void setStyle(Style style) {
-    this.style = style;
-  }
-
   public FormatCondition text(String text) {
     this.text = text;
     return this;
@@ -315,22 +225,40 @@ public class FormatCondition {
     this.text = text;
   }
 
-  public FormatCondition timePeriod(String timePeriod) {
-    this.timePeriod = timePeriod;
+  public FormatCondition stopIfTrue(Boolean stopIfTrue) {
+    this.stopIfTrue = stopIfTrue;
     return this;
   }
 
    /**
-   * Get timePeriod
-   * @return timePeriod
+   * True, no rules with lower priority may be applied over this rule, when this     rule evaluates to true.  Only applies for Excel 2007;
+   * @return stopIfTrue
   **/
-  @ApiModelProperty(value = "")
-  public String getTimePeriod() {
-    return timePeriod;
+  @ApiModelProperty(value = "True, no rules with lower priority may be applied over this rule, when this     rule evaluates to true.  Only applies for Excel 2007;")
+  public Boolean isStopIfTrue() {
+    return stopIfTrue;
   }
 
-  public void setTimePeriod(String timePeriod) {
-    this.timePeriod = timePeriod;
+  public void setStopIfTrue(Boolean stopIfTrue) {
+    this.stopIfTrue = stopIfTrue;
+  }
+
+  public FormatCondition priority(Integer priority) {
+    this.priority = priority;
+    return this;
+  }
+
+   /**
+   * The priority of this conditional formatting rule. This value is used to determine     which format should be evaluated and rendered. Lower numeric values are higher     priority than higher numeric values, where &#39;1&#39; is the highest priority.
+   * @return priority
+  **/
+  @ApiModelProperty(value = "The priority of this conditional formatting rule. This value is used to determine     which format should be evaluated and rendered. Lower numeric values are higher     priority than higher numeric values, where '1' is the highest priority.")
+  public Integer getPriority() {
+    return priority;
+  }
+
+  public void setPriority(Integer priority) {
+    this.priority = priority;
   }
 
   public FormatCondition top10(Top10 top10) {
@@ -351,6 +279,78 @@ public class FormatCondition {
     this.top10 = top10;
   }
 
+  public FormatCondition operator(String operator) {
+    this.operator = operator;
+    return this;
+  }
+
+   /**
+   * Get operator
+   * @return operator
+  **/
+  @ApiModelProperty(value = "")
+  public String getOperator() {
+    return operator;
+  }
+
+  public void setOperator(String operator) {
+    this.operator = operator;
+  }
+
+  public FormatCondition iconSet(IconSet iconSet) {
+    this.iconSet = iconSet;
+    return this;
+  }
+
+   /**
+   * Get iconSet
+   * @return iconSet
+  **/
+  @ApiModelProperty(value = "")
+  public IconSet getIconSet() {
+    return iconSet;
+  }
+
+  public void setIconSet(IconSet iconSet) {
+    this.iconSet = iconSet;
+  }
+
+  public FormatCondition type(String type) {
+    this.type = type;
+    return this;
+  }
+
+   /**
+   * Gets and sets whether the conditional format Type.             
+   * @return type
+  **/
+  @ApiModelProperty(value = "Gets and sets whether the conditional format Type.             ")
+  public String getType() {
+    return type;
+  }
+
+  public void setType(String type) {
+    this.type = type;
+  }
+
+  public FormatCondition timePeriod(String timePeriod) {
+    this.timePeriod = timePeriod;
+    return this;
+  }
+
+   /**
+   * Get timePeriod
+   * @return timePeriod
+  **/
+  @ApiModelProperty(value = "")
+  public String getTimePeriod() {
+    return timePeriod;
+  }
+
+  public void setTimePeriod(String timePeriod) {
+    this.timePeriod = timePeriod;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -362,25 +362,25 @@ public class FormatCondition {
     }
     FormatCondition formatCondition = (FormatCondition) o;
     return Objects.equals(this.link, formatCondition.link) &&
-        Objects.equals(this.priority, formatCondition.priority) &&
-        Objects.equals(this.type, formatCondition.type) &&
-        Objects.equals(this.stopIfTrue, formatCondition.stopIfTrue) &&
         Objects.equals(this.aboveAverage, formatCondition.aboveAverage) &&
+        Objects.equals(this.formula2, formatCondition.formula2) &&
+        Objects.equals(this.style, formatCondition.style) &&
+        Objects.equals(this.formula1, formatCondition.formula1) &&
         Objects.equals(this.colorScale, formatCondition.colorScale) &&
         Objects.equals(this.dataBar, formatCondition.dataBar) &&
-        Objects.equals(this.formula1, formatCondition.formula1) &&
-        Objects.equals(this.formula2, formatCondition.formula2) &&
-        Objects.equals(this.iconSet, formatCondition.iconSet) &&
-        Objects.equals(this.operator, formatCondition.operator) &&
-        Objects.equals(this.style, formatCondition.style) &&
         Objects.equals(this.text, formatCondition.text) &&
-        Objects.equals(this.timePeriod, formatCondition.timePeriod) &&
-        Objects.equals(this.top10, formatCondition.top10);
+        Objects.equals(this.stopIfTrue, formatCondition.stopIfTrue) &&
+        Objects.equals(this.priority, formatCondition.priority) &&
+        Objects.equals(this.top10, formatCondition.top10) &&
+        Objects.equals(this.operator, formatCondition.operator) &&
+        Objects.equals(this.iconSet, formatCondition.iconSet) &&
+        Objects.equals(this.type, formatCondition.type) &&
+        Objects.equals(this.timePeriod, formatCondition.timePeriod);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(link, priority, type, stopIfTrue, aboveAverage, colorScale, dataBar, formula1, formula2, iconSet, operator, style, text, timePeriod, top10);
+    return Objects.hash(link, aboveAverage, formula2, style, formula1, colorScale, dataBar, text, stopIfTrue, priority, top10, operator, iconSet, type, timePeriod);
   }
 
 
@@ -390,20 +390,20 @@ public class FormatCondition {
     sb.append("class FormatCondition {\n");
     
     sb.append("    link: ").append(toIndentedString(link)).append("\n");
-    sb.append("    priority: ").append(toIndentedString(priority)).append("\n");
-    sb.append("    type: ").append(toIndentedString(type)).append("\n");
-    sb.append("    stopIfTrue: ").append(toIndentedString(stopIfTrue)).append("\n");
     sb.append("    aboveAverage: ").append(toIndentedString(aboveAverage)).append("\n");
+    sb.append("    formula2: ").append(toIndentedString(formula2)).append("\n");
+    sb.append("    style: ").append(toIndentedString(style)).append("\n");
+    sb.append("    formula1: ").append(toIndentedString(formula1)).append("\n");
     sb.append("    colorScale: ").append(toIndentedString(colorScale)).append("\n");
     sb.append("    dataBar: ").append(toIndentedString(dataBar)).append("\n");
-    sb.append("    formula1: ").append(toIndentedString(formula1)).append("\n");
-    sb.append("    formula2: ").append(toIndentedString(formula2)).append("\n");
-    sb.append("    iconSet: ").append(toIndentedString(iconSet)).append("\n");
-    sb.append("    operator: ").append(toIndentedString(operator)).append("\n");
-    sb.append("    style: ").append(toIndentedString(style)).append("\n");
     sb.append("    text: ").append(toIndentedString(text)).append("\n");
-    sb.append("    timePeriod: ").append(toIndentedString(timePeriod)).append("\n");
+    sb.append("    stopIfTrue: ").append(toIndentedString(stopIfTrue)).append("\n");
+    sb.append("    priority: ").append(toIndentedString(priority)).append("\n");
     sb.append("    top10: ").append(toIndentedString(top10)).append("\n");
+    sb.append("    operator: ").append(toIndentedString(operator)).append("\n");
+    sb.append("    iconSet: ").append(toIndentedString(iconSet)).append("\n");
+    sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    sb.append("    timePeriod: ").append(toIndentedString(timePeriod)).append("\n");
     sb.append("}");
     return sb.toString();
   }

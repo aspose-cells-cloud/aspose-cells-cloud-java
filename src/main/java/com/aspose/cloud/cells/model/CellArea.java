@@ -26,19 +26,55 @@ import java.io.IOException;
 /**
  * CellArea
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-05T15:44:26.749+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-08-14T14:34:14.243+08:00")
 public class CellArea {
+  @SerializedName("StartRow")
+  private Integer startRow = null;
+
+  @SerializedName("StartColumn")
+  private Integer startColumn = null;
+
   @SerializedName("EndColumn")
   private Integer endColumn = null;
 
   @SerializedName("EndRow")
   private Integer endRow = null;
 
-  @SerializedName("StartColumn")
-  private Integer startColumn = null;
+  public CellArea startRow(Integer startRow) {
+    this.startRow = startRow;
+    return this;
+  }
 
-  @SerializedName("StartRow")
-  private Integer startRow = null;
+   /**
+   * Get startRow
+   * @return startRow
+  **/
+  @ApiModelProperty(required = true, value = "")
+  public Integer getStartRow() {
+    return startRow;
+  }
+
+  public void setStartRow(Integer startRow) {
+    this.startRow = startRow;
+  }
+
+  public CellArea startColumn(Integer startColumn) {
+    this.startColumn = startColumn;
+    return this;
+  }
+
+   /**
+   * Get startColumn
+   * @return startColumn
+  **/
+  @ApiModelProperty(required = true, value = "")
+  public Integer getStartColumn() {
+    return startColumn;
+  }
+
+  public void setStartColumn(Integer startColumn) {
+    this.startColumn = startColumn;
+  }
 
   public CellArea endColumn(Integer endColumn) {
     this.endColumn = endColumn;
@@ -76,42 +112,6 @@ public class CellArea {
     this.endRow = endRow;
   }
 
-  public CellArea startColumn(Integer startColumn) {
-    this.startColumn = startColumn;
-    return this;
-  }
-
-   /**
-   * Get startColumn
-   * @return startColumn
-  **/
-  @ApiModelProperty(required = true, value = "")
-  public Integer getStartColumn() {
-    return startColumn;
-  }
-
-  public void setStartColumn(Integer startColumn) {
-    this.startColumn = startColumn;
-  }
-
-  public CellArea startRow(Integer startRow) {
-    this.startRow = startRow;
-    return this;
-  }
-
-   /**
-   * Get startRow
-   * @return startRow
-  **/
-  @ApiModelProperty(required = true, value = "")
-  public Integer getStartRow() {
-    return startRow;
-  }
-
-  public void setStartRow(Integer startRow) {
-    this.startRow = startRow;
-  }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -122,15 +122,15 @@ public class CellArea {
       return false;
     }
     CellArea cellArea = (CellArea) o;
-    return Objects.equals(this.endColumn, cellArea.endColumn) &&
-        Objects.equals(this.endRow, cellArea.endRow) &&
+    return Objects.equals(this.startRow, cellArea.startRow) &&
         Objects.equals(this.startColumn, cellArea.startColumn) &&
-        Objects.equals(this.startRow, cellArea.startRow);
+        Objects.equals(this.endColumn, cellArea.endColumn) &&
+        Objects.equals(this.endRow, cellArea.endRow);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(endColumn, endRow, startColumn, startRow);
+    return Objects.hash(startRow, startColumn, endColumn, endRow);
   }
 
 
@@ -139,10 +139,10 @@ public class CellArea {
     StringBuilder sb = new StringBuilder();
     sb.append("class CellArea {\n");
     
+    sb.append("    startRow: ").append(toIndentedString(startRow)).append("\n");
+    sb.append("    startColumn: ").append(toIndentedString(startColumn)).append("\n");
     sb.append("    endColumn: ").append(toIndentedString(endColumn)).append("\n");
     sb.append("    endRow: ").append(toIndentedString(endRow)).append("\n");
-    sb.append("    startColumn: ").append(toIndentedString(startColumn)).append("\n");
-    sb.append("    startRow: ").append(toIndentedString(startRow)).append("\n");
     sb.append("}");
     return sb.toString();
   }

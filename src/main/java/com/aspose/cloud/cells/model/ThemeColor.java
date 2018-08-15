@@ -26,31 +26,13 @@ import java.io.IOException;
 /**
  * ThemeColor
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-05T15:44:26.749+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-08-14T14:34:14.243+08:00")
 public class ThemeColor {
-  @SerializedName("ColorType")
-  private String colorType = null;
-
   @SerializedName("Tint")
   private Double tint = null;
 
-  public ThemeColor colorType(String colorType) {
-    this.colorType = colorType;
-    return this;
-  }
-
-   /**
-   * Get colorType
-   * @return colorType
-  **/
-  @ApiModelProperty(value = "")
-  public String getColorType() {
-    return colorType;
-  }
-
-  public void setColorType(String colorType) {
-    this.colorType = colorType;
-  }
+  @SerializedName("ColorType")
+  private String colorType = null;
 
   public ThemeColor tint(Double tint) {
     this.tint = tint;
@@ -70,6 +52,24 @@ public class ThemeColor {
     this.tint = tint;
   }
 
+  public ThemeColor colorType(String colorType) {
+    this.colorType = colorType;
+    return this;
+  }
+
+   /**
+   * Get colorType
+   * @return colorType
+  **/
+  @ApiModelProperty(value = "")
+  public String getColorType() {
+    return colorType;
+  }
+
+  public void setColorType(String colorType) {
+    this.colorType = colorType;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -80,13 +80,13 @@ public class ThemeColor {
       return false;
     }
     ThemeColor themeColor = (ThemeColor) o;
-    return Objects.equals(this.colorType, themeColor.colorType) &&
-        Objects.equals(this.tint, themeColor.tint);
+    return Objects.equals(this.tint, themeColor.tint) &&
+        Objects.equals(this.colorType, themeColor.colorType);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(colorType, tint);
+    return Objects.hash(tint, colorType);
   }
 
 
@@ -95,8 +95,8 @@ public class ThemeColor {
     StringBuilder sb = new StringBuilder();
     sb.append("class ThemeColor {\n");
     
-    sb.append("    colorType: ").append(toIndentedString(colorType)).append("\n");
     sb.append("    tint: ").append(toIndentedString(tint)).append("\n");
+    sb.append("    colorType: ").append(toIndentedString(colorType)).append("\n");
     sb.append("}");
     return sb.toString();
   }

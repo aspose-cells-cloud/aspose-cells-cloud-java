@@ -31,49 +31,76 @@ import java.util.List;
 /**
  * Worksheet
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-05T15:44:26.749+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-08-14T14:34:14.243+08:00")
 public class Worksheet {
-  @SerializedName("Links")
-  private List<Link> links = null;
-
-  @SerializedName("DisplayRightToLeft")
-  private Boolean displayRightToLeft = null;
-
-  @SerializedName("DisplayZeros")
-  private Boolean displayZeros = null;
-
-  @SerializedName("FirstVisibleColumn")
-  private Integer firstVisibleColumn = null;
-
-  @SerializedName("FirstVisibleRow")
-  private Integer firstVisibleRow = null;
-
-  @SerializedName("Name")
-  private String name = null;
-
   @SerializedName("Index")
   private Integer index = null;
 
-  @SerializedName("IsGridlinesVisible")
-  private Boolean isGridlinesVisible = null;
+  @SerializedName("Pictures")
+  private LinkElement pictures = null;
 
-  @SerializedName("IsOutlineShown")
-  private Boolean isOutlineShown = null;
+  @SerializedName("Charts")
+  private LinkElement charts = null;
 
-  @SerializedName("IsPageBreakPreview")
-  private Boolean isPageBreakPreview = null;
+  @SerializedName("Comments")
+  private LinkElement comments = null;
+
+  @SerializedName("Hyperlinks")
+  private LinkElement hyperlinks = null;
 
   @SerializedName("IsVisible")
   private Boolean isVisible = null;
 
-  @SerializedName("IsProtected")
-  private Boolean isProtected = null;
+  @SerializedName("ViewType")
+  private String viewType = null;
+
+  @SerializedName("Type")
+  private String type = null;
+
+  @SerializedName("IsGridlinesVisible")
+  private Boolean isGridlinesVisible = null;
 
   @SerializedName("IsRowColumnHeadersVisible")
   private Boolean isRowColumnHeadersVisible = null;
 
-  @SerializedName("IsRulerVisible")
-  private Boolean isRulerVisible = null;
+  @SerializedName("IsPageBreakPreview")
+  private Boolean isPageBreakPreview = null;
+
+  @SerializedName("DisplayZeros")
+  private Boolean displayZeros = null;
+
+  @SerializedName("TransitionEvaluation")
+  private Boolean transitionEvaluation = null;
+
+  @SerializedName("DisplayRightToLeft")
+  private Boolean displayRightToLeft = null;
+
+  @SerializedName("FirstVisibleColumn")
+  private Integer firstVisibleColumn = null;
+
+  @SerializedName("OleObjects")
+  private LinkElement oleObjects = null;
+
+  @SerializedName("IsOutlineShown")
+  private Boolean isOutlineShown = null;
+
+  @SerializedName("Name")
+  private String name = null;
+
+  @SerializedName("AutoShapes")
+  private LinkElement autoShapes = null;
+
+  @SerializedName("Cells")
+  private LinkElement cells = null;
+
+  @SerializedName("Validations")
+  private LinkElement validations = null;
+
+  @SerializedName("Zoom")
+  private Integer zoom = null;
+
+  @SerializedName("ConditionalFormattings")
+  private LinkElement conditionalFormattings = null;
 
   @SerializedName("IsSelected")
   private Boolean isSelected = null;
@@ -81,169 +108,26 @@ public class Worksheet {
   @SerializedName("TabColor")
   private Color tabColor = null;
 
+  @SerializedName("FirstVisibleRow")
+  private Integer firstVisibleRow = null;
+
   @SerializedName("TransitionEntry")
   private Boolean transitionEntry = null;
-
-  @SerializedName("TransitionEvaluation")
-  private Boolean transitionEvaluation = null;
-
-  @SerializedName("Type")
-  private String type = null;
-
-  @SerializedName("ViewType")
-  private String viewType = null;
 
   @SerializedName("VisibilityType")
   private String visibilityType = null;
 
-  @SerializedName("Zoom")
-  private Integer zoom = null;
+  @SerializedName("IsRulerVisible")
+  private Boolean isRulerVisible = null;
 
-  @SerializedName("Cells")
-  private LinkElement cells = null;
+  @SerializedName("Links")
+  private List<Link> links = null;
 
-  @SerializedName("Charts")
-  private LinkElement charts = null;
-
-  @SerializedName("AutoShapes")
-  private LinkElement autoShapes = null;
-
-  @SerializedName("OleObjects")
-  private LinkElement oleObjects = null;
-
-  @SerializedName("Comments")
-  private LinkElement comments = null;
-
-  @SerializedName("Pictures")
-  private LinkElement pictures = null;
+  @SerializedName("IsProtected")
+  private Boolean isProtected = null;
 
   @SerializedName("MergedCells")
   private LinkElement mergedCells = null;
-
-  @SerializedName("Validations")
-  private LinkElement validations = null;
-
-  @SerializedName("ConditionalFormattings")
-  private LinkElement conditionalFormattings = null;
-
-  @SerializedName("Hyperlinks")
-  private LinkElement hyperlinks = null;
-
-  public Worksheet links(List<Link> links) {
-    this.links = links;
-    return this;
-  }
-
-  public Worksheet addLinksItem(Link linksItem) {
-    if (this.links == null) {
-      this.links = new ArrayList<Link>();
-    }
-    this.links.add(linksItem);
-    return this;
-  }
-
-   /**
-   * Get links
-   * @return links
-  **/
-  @ApiModelProperty(value = "")
-  public List<Link> getLinks() {
-    return links;
-  }
-
-  public void setLinks(List<Link> links) {
-    this.links = links;
-  }
-
-  public Worksheet displayRightToLeft(Boolean displayRightToLeft) {
-    this.displayRightToLeft = displayRightToLeft;
-    return this;
-  }
-
-   /**
-   * Indicates if the specified worksheet is displayed from right to left instead    of from left to right.  Default is false.             
-   * @return displayRightToLeft
-  **/
-  @ApiModelProperty(value = "Indicates if the specified worksheet is displayed from right to left instead    of from left to right.  Default is false.             ")
-  public Boolean isDisplayRightToLeft() {
-    return displayRightToLeft;
-  }
-
-  public void setDisplayRightToLeft(Boolean displayRightToLeft) {
-    this.displayRightToLeft = displayRightToLeft;
-  }
-
-  public Worksheet displayZeros(Boolean displayZeros) {
-    this.displayZeros = displayZeros;
-    return this;
-  }
-
-   /**
-   * True if zero values are displayed.
-   * @return displayZeros
-  **/
-  @ApiModelProperty(value = "True if zero values are displayed.")
-  public Boolean isDisplayZeros() {
-    return displayZeros;
-  }
-
-  public void setDisplayZeros(Boolean displayZeros) {
-    this.displayZeros = displayZeros;
-  }
-
-  public Worksheet firstVisibleColumn(Integer firstVisibleColumn) {
-    this.firstVisibleColumn = firstVisibleColumn;
-    return this;
-  }
-
-   /**
-   * Represents first visible column index.
-   * @return firstVisibleColumn
-  **/
-  @ApiModelProperty(value = "Represents first visible column index.")
-  public Integer getFirstVisibleColumn() {
-    return firstVisibleColumn;
-  }
-
-  public void setFirstVisibleColumn(Integer firstVisibleColumn) {
-    this.firstVisibleColumn = firstVisibleColumn;
-  }
-
-  public Worksheet firstVisibleRow(Integer firstVisibleRow) {
-    this.firstVisibleRow = firstVisibleRow;
-    return this;
-  }
-
-   /**
-   * Represents first visible row index.             
-   * @return firstVisibleRow
-  **/
-  @ApiModelProperty(value = "Represents first visible row index.             ")
-  public Integer getFirstVisibleRow() {
-    return firstVisibleRow;
-  }
-
-  public void setFirstVisibleRow(Integer firstVisibleRow) {
-    this.firstVisibleRow = firstVisibleRow;
-  }
-
-  public Worksheet name(String name) {
-    this.name = name;
-    return this;
-  }
-
-   /**
-   * Gets or sets the name of the worksheet.             
-   * @return name
-  **/
-  @ApiModelProperty(value = "Gets or sets the name of the worksheet.             ")
-  public String getName() {
-    return name;
-  }
-
-  public void setName(String name) {
-    this.name = name;
-  }
 
   public Worksheet index(Integer index) {
     this.index = index;
@@ -263,58 +147,76 @@ public class Worksheet {
     this.index = index;
   }
 
-  public Worksheet isGridlinesVisible(Boolean isGridlinesVisible) {
-    this.isGridlinesVisible = isGridlinesVisible;
+  public Worksheet pictures(LinkElement pictures) {
+    this.pictures = pictures;
     return this;
   }
 
    /**
-   * Gets or sets a value indicating whether the gridelines are visible.Default     is true.
-   * @return isGridlinesVisible
+   * Get pictures
+   * @return pictures
   **/
-  @ApiModelProperty(value = "Gets or sets a value indicating whether the gridelines are visible.Default     is true.")
-  public Boolean isIsGridlinesVisible() {
-    return isGridlinesVisible;
+  @ApiModelProperty(value = "")
+  public LinkElement getPictures() {
+    return pictures;
   }
 
-  public void setIsGridlinesVisible(Boolean isGridlinesVisible) {
-    this.isGridlinesVisible = isGridlinesVisible;
+  public void setPictures(LinkElement pictures) {
+    this.pictures = pictures;
   }
 
-  public Worksheet isOutlineShown(Boolean isOutlineShown) {
-    this.isOutlineShown = isOutlineShown;
+  public Worksheet charts(LinkElement charts) {
+    this.charts = charts;
     return this;
   }
 
    /**
-   * Indicates whether show outline.             
-   * @return isOutlineShown
+   * Get charts
+   * @return charts
   **/
-  @ApiModelProperty(value = "Indicates whether show outline.             ")
-  public Boolean isIsOutlineShown() {
-    return isOutlineShown;
+  @ApiModelProperty(value = "")
+  public LinkElement getCharts() {
+    return charts;
   }
 
-  public void setIsOutlineShown(Boolean isOutlineShown) {
-    this.isOutlineShown = isOutlineShown;
+  public void setCharts(LinkElement charts) {
+    this.charts = charts;
   }
 
-  public Worksheet isPageBreakPreview(Boolean isPageBreakPreview) {
-    this.isPageBreakPreview = isPageBreakPreview;
+  public Worksheet comments(LinkElement comments) {
+    this.comments = comments;
     return this;
   }
 
    /**
-   * Indications the specified worksheet is shown in normal view or page break preview.
-   * @return isPageBreakPreview
+   * Get comments
+   * @return comments
   **/
-  @ApiModelProperty(value = "Indications the specified worksheet is shown in normal view or page break preview.")
-  public Boolean isIsPageBreakPreview() {
-    return isPageBreakPreview;
+  @ApiModelProperty(value = "")
+  public LinkElement getComments() {
+    return comments;
   }
 
-  public void setIsPageBreakPreview(Boolean isPageBreakPreview) {
-    this.isPageBreakPreview = isPageBreakPreview;
+  public void setComments(LinkElement comments) {
+    this.comments = comments;
+  }
+
+  public Worksheet hyperlinks(LinkElement hyperlinks) {
+    this.hyperlinks = hyperlinks;
+    return this;
+  }
+
+   /**
+   * Get hyperlinks
+   * @return hyperlinks
+  **/
+  @ApiModelProperty(value = "")
+  public LinkElement getHyperlinks() {
+    return hyperlinks;
+  }
+
+  public void setHyperlinks(LinkElement hyperlinks) {
+    this.hyperlinks = hyperlinks;
   }
 
   public Worksheet isVisible(Boolean isVisible) {
@@ -335,22 +237,58 @@ public class Worksheet {
     this.isVisible = isVisible;
   }
 
-  public Worksheet isProtected(Boolean isProtected) {
-    this.isProtected = isProtected;
+  public Worksheet viewType(String viewType) {
+    this.viewType = viewType;
     return this;
   }
 
    /**
-   * Indicates if the worksheet is protected.
-   * @return isProtected
+   * Gets and sets the view type.
+   * @return viewType
   **/
-  @ApiModelProperty(required = true, value = "Indicates if the worksheet is protected.")
-  public Boolean isIsProtected() {
-    return isProtected;
+  @ApiModelProperty(value = "Gets and sets the view type.")
+  public String getViewType() {
+    return viewType;
   }
 
-  public void setIsProtected(Boolean isProtected) {
-    this.isProtected = isProtected;
+  public void setViewType(String viewType) {
+    this.viewType = viewType;
+  }
+
+  public Worksheet type(String type) {
+    this.type = type;
+    return this;
+  }
+
+   /**
+   * Represents worksheet type
+   * @return type
+  **/
+  @ApiModelProperty(value = "Represents worksheet type")
+  public String getType() {
+    return type;
+  }
+
+  public void setType(String type) {
+    this.type = type;
+  }
+
+  public Worksheet isGridlinesVisible(Boolean isGridlinesVisible) {
+    this.isGridlinesVisible = isGridlinesVisible;
+    return this;
+  }
+
+   /**
+   * Gets or sets a value indicating whether the gridelines are visible.Default     is true.
+   * @return isGridlinesVisible
+  **/
+  @ApiModelProperty(value = "Gets or sets a value indicating whether the gridelines are visible.Default     is true.")
+  public Boolean isIsGridlinesVisible() {
+    return isGridlinesVisible;
+  }
+
+  public void setIsGridlinesVisible(Boolean isGridlinesVisible) {
+    this.isGridlinesVisible = isGridlinesVisible;
   }
 
   public Worksheet isRowColumnHeadersVisible(Boolean isRowColumnHeadersVisible) {
@@ -371,22 +309,238 @@ public class Worksheet {
     this.isRowColumnHeadersVisible = isRowColumnHeadersVisible;
   }
 
-  public Worksheet isRulerVisible(Boolean isRulerVisible) {
-    this.isRulerVisible = isRulerVisible;
+  public Worksheet isPageBreakPreview(Boolean isPageBreakPreview) {
+    this.isPageBreakPreview = isPageBreakPreview;
     return this;
   }
 
    /**
-   * Indicates whether the ruler is visible. Only apply for page break preview.
-   * @return isRulerVisible
+   * Indications the specified worksheet is shown in normal view or page break preview.
+   * @return isPageBreakPreview
   **/
-  @ApiModelProperty(value = "Indicates whether the ruler is visible. Only apply for page break preview.")
-  public Boolean isIsRulerVisible() {
-    return isRulerVisible;
+  @ApiModelProperty(value = "Indications the specified worksheet is shown in normal view or page break preview.")
+  public Boolean isIsPageBreakPreview() {
+    return isPageBreakPreview;
   }
 
-  public void setIsRulerVisible(Boolean isRulerVisible) {
-    this.isRulerVisible = isRulerVisible;
+  public void setIsPageBreakPreview(Boolean isPageBreakPreview) {
+    this.isPageBreakPreview = isPageBreakPreview;
+  }
+
+  public Worksheet displayZeros(Boolean displayZeros) {
+    this.displayZeros = displayZeros;
+    return this;
+  }
+
+   /**
+   * True if zero values are displayed.
+   * @return displayZeros
+  **/
+  @ApiModelProperty(value = "True if zero values are displayed.")
+  public Boolean isDisplayZeros() {
+    return displayZeros;
+  }
+
+  public void setDisplayZeros(Boolean displayZeros) {
+    this.displayZeros = displayZeros;
+  }
+
+  public Worksheet transitionEvaluation(Boolean transitionEvaluation) {
+    this.transitionEvaluation = transitionEvaluation;
+    return this;
+  }
+
+   /**
+   * Flag indicating whether the Transition Formula Evaluation (Lotus compatibility) option is enabled.             
+   * @return transitionEvaluation
+  **/
+  @ApiModelProperty(value = "Flag indicating whether the Transition Formula Evaluation (Lotus compatibility) option is enabled.             ")
+  public Boolean isTransitionEvaluation() {
+    return transitionEvaluation;
+  }
+
+  public void setTransitionEvaluation(Boolean transitionEvaluation) {
+    this.transitionEvaluation = transitionEvaluation;
+  }
+
+  public Worksheet displayRightToLeft(Boolean displayRightToLeft) {
+    this.displayRightToLeft = displayRightToLeft;
+    return this;
+  }
+
+   /**
+   * Indicates if the specified worksheet is displayed from right to left instead    of from left to right.  Default is false.             
+   * @return displayRightToLeft
+  **/
+  @ApiModelProperty(value = "Indicates if the specified worksheet is displayed from right to left instead    of from left to right.  Default is false.             ")
+  public Boolean isDisplayRightToLeft() {
+    return displayRightToLeft;
+  }
+
+  public void setDisplayRightToLeft(Boolean displayRightToLeft) {
+    this.displayRightToLeft = displayRightToLeft;
+  }
+
+  public Worksheet firstVisibleColumn(Integer firstVisibleColumn) {
+    this.firstVisibleColumn = firstVisibleColumn;
+    return this;
+  }
+
+   /**
+   * Represents first visible column index.
+   * @return firstVisibleColumn
+  **/
+  @ApiModelProperty(value = "Represents first visible column index.")
+  public Integer getFirstVisibleColumn() {
+    return firstVisibleColumn;
+  }
+
+  public void setFirstVisibleColumn(Integer firstVisibleColumn) {
+    this.firstVisibleColumn = firstVisibleColumn;
+  }
+
+  public Worksheet oleObjects(LinkElement oleObjects) {
+    this.oleObjects = oleObjects;
+    return this;
+  }
+
+   /**
+   * Get oleObjects
+   * @return oleObjects
+  **/
+  @ApiModelProperty(value = "")
+  public LinkElement getOleObjects() {
+    return oleObjects;
+  }
+
+  public void setOleObjects(LinkElement oleObjects) {
+    this.oleObjects = oleObjects;
+  }
+
+  public Worksheet isOutlineShown(Boolean isOutlineShown) {
+    this.isOutlineShown = isOutlineShown;
+    return this;
+  }
+
+   /**
+   * Indicates whether show outline.             
+   * @return isOutlineShown
+  **/
+  @ApiModelProperty(value = "Indicates whether show outline.             ")
+  public Boolean isIsOutlineShown() {
+    return isOutlineShown;
+  }
+
+  public void setIsOutlineShown(Boolean isOutlineShown) {
+    this.isOutlineShown = isOutlineShown;
+  }
+
+  public Worksheet name(String name) {
+    this.name = name;
+    return this;
+  }
+
+   /**
+   * Gets or sets the name of the worksheet.             
+   * @return name
+  **/
+  @ApiModelProperty(value = "Gets or sets the name of the worksheet.             ")
+  public String getName() {
+    return name;
+  }
+
+  public void setName(String name) {
+    this.name = name;
+  }
+
+  public Worksheet autoShapes(LinkElement autoShapes) {
+    this.autoShapes = autoShapes;
+    return this;
+  }
+
+   /**
+   * Get autoShapes
+   * @return autoShapes
+  **/
+  @ApiModelProperty(value = "")
+  public LinkElement getAutoShapes() {
+    return autoShapes;
+  }
+
+  public void setAutoShapes(LinkElement autoShapes) {
+    this.autoShapes = autoShapes;
+  }
+
+  public Worksheet cells(LinkElement cells) {
+    this.cells = cells;
+    return this;
+  }
+
+   /**
+   * Get cells
+   * @return cells
+  **/
+  @ApiModelProperty(value = "")
+  public LinkElement getCells() {
+    return cells;
+  }
+
+  public void setCells(LinkElement cells) {
+    this.cells = cells;
+  }
+
+  public Worksheet validations(LinkElement validations) {
+    this.validations = validations;
+    return this;
+  }
+
+   /**
+   * Get validations
+   * @return validations
+  **/
+  @ApiModelProperty(value = "")
+  public LinkElement getValidations() {
+    return validations;
+  }
+
+  public void setValidations(LinkElement validations) {
+    this.validations = validations;
+  }
+
+  public Worksheet zoom(Integer zoom) {
+    this.zoom = zoom;
+    return this;
+  }
+
+   /**
+   * Represents the scaling factor in percent. It should be btween 10 and 400.             
+   * @return zoom
+  **/
+  @ApiModelProperty(value = "Represents the scaling factor in percent. It should be btween 10 and 400.             ")
+  public Integer getZoom() {
+    return zoom;
+  }
+
+  public void setZoom(Integer zoom) {
+    this.zoom = zoom;
+  }
+
+  public Worksheet conditionalFormattings(LinkElement conditionalFormattings) {
+    this.conditionalFormattings = conditionalFormattings;
+    return this;
+  }
+
+   /**
+   * Get conditionalFormattings
+   * @return conditionalFormattings
+  **/
+  @ApiModelProperty(value = "")
+  public LinkElement getConditionalFormattings() {
+    return conditionalFormattings;
+  }
+
+  public void setConditionalFormattings(LinkElement conditionalFormattings) {
+    this.conditionalFormattings = conditionalFormattings;
   }
 
   public Worksheet isSelected(Boolean isSelected) {
@@ -425,6 +579,24 @@ public class Worksheet {
     this.tabColor = tabColor;
   }
 
+  public Worksheet firstVisibleRow(Integer firstVisibleRow) {
+    this.firstVisibleRow = firstVisibleRow;
+    return this;
+  }
+
+   /**
+   * Represents first visible row index.             
+   * @return firstVisibleRow
+  **/
+  @ApiModelProperty(value = "Represents first visible row index.             ")
+  public Integer getFirstVisibleRow() {
+    return firstVisibleRow;
+  }
+
+  public void setFirstVisibleRow(Integer firstVisibleRow) {
+    this.firstVisibleRow = firstVisibleRow;
+  }
+
   public Worksheet transitionEntry(Boolean transitionEntry) {
     this.transitionEntry = transitionEntry;
     return this;
@@ -441,60 +613,6 @@ public class Worksheet {
 
   public void setTransitionEntry(Boolean transitionEntry) {
     this.transitionEntry = transitionEntry;
-  }
-
-  public Worksheet transitionEvaluation(Boolean transitionEvaluation) {
-    this.transitionEvaluation = transitionEvaluation;
-    return this;
-  }
-
-   /**
-   * Flag indicating whether the Transition Formula Evaluation (Lotus compatibility) option is enabled.             
-   * @return transitionEvaluation
-  **/
-  @ApiModelProperty(value = "Flag indicating whether the Transition Formula Evaluation (Lotus compatibility) option is enabled.             ")
-  public Boolean isTransitionEvaluation() {
-    return transitionEvaluation;
-  }
-
-  public void setTransitionEvaluation(Boolean transitionEvaluation) {
-    this.transitionEvaluation = transitionEvaluation;
-  }
-
-  public Worksheet type(String type) {
-    this.type = type;
-    return this;
-  }
-
-   /**
-   * Represents worksheet type
-   * @return type
-  **/
-  @ApiModelProperty(value = "Represents worksheet type")
-  public String getType() {
-    return type;
-  }
-
-  public void setType(String type) {
-    this.type = type;
-  }
-
-  public Worksheet viewType(String viewType) {
-    this.viewType = viewType;
-    return this;
-  }
-
-   /**
-   * Gets and sets the view type.
-   * @return viewType
-  **/
-  @ApiModelProperty(value = "Gets and sets the view type.")
-  public String getViewType() {
-    return viewType;
-  }
-
-  public void setViewType(String viewType) {
-    this.viewType = viewType;
   }
 
   public Worksheet visibilityType(String visibilityType) {
@@ -515,130 +633,66 @@ public class Worksheet {
     this.visibilityType = visibilityType;
   }
 
-  public Worksheet zoom(Integer zoom) {
-    this.zoom = zoom;
+  public Worksheet isRulerVisible(Boolean isRulerVisible) {
+    this.isRulerVisible = isRulerVisible;
     return this;
   }
 
    /**
-   * Represents the scaling factor in percent. It should be btween 10 and 400.             
-   * @return zoom
+   * Indicates whether the ruler is visible. Only apply for page break preview.
+   * @return isRulerVisible
   **/
-  @ApiModelProperty(value = "Represents the scaling factor in percent. It should be btween 10 and 400.             ")
-  public Integer getZoom() {
-    return zoom;
+  @ApiModelProperty(value = "Indicates whether the ruler is visible. Only apply for page break preview.")
+  public Boolean isIsRulerVisible() {
+    return isRulerVisible;
   }
 
-  public void setZoom(Integer zoom) {
-    this.zoom = zoom;
+  public void setIsRulerVisible(Boolean isRulerVisible) {
+    this.isRulerVisible = isRulerVisible;
   }
 
-  public Worksheet cells(LinkElement cells) {
-    this.cells = cells;
+  public Worksheet links(List<Link> links) {
+    this.links = links;
+    return this;
+  }
+
+  public Worksheet addLinksItem(Link linksItem) {
+    if (this.links == null) {
+      this.links = new ArrayList<Link>();
+    }
+    this.links.add(linksItem);
     return this;
   }
 
    /**
-   * Get cells
-   * @return cells
-  **/
-  @ApiModelProperty(value = "")
-  public LinkElement getCells() {
-    return cells;
-  }
-
-  public void setCells(LinkElement cells) {
-    this.cells = cells;
-  }
-
-  public Worksheet charts(LinkElement charts) {
-    this.charts = charts;
-    return this;
-  }
-
-   /**
-   * Get charts
-   * @return charts
+   * Get links
+   * @return links
   **/
   @ApiModelProperty(value = "")
-  public LinkElement getCharts() {
-    return charts;
+  public List<Link> getLinks() {
+    return links;
   }
 
-  public void setCharts(LinkElement charts) {
-    this.charts = charts;
+  public void setLinks(List<Link> links) {
+    this.links = links;
   }
 
-  public Worksheet autoShapes(LinkElement autoShapes) {
-    this.autoShapes = autoShapes;
+  public Worksheet isProtected(Boolean isProtected) {
+    this.isProtected = isProtected;
     return this;
   }
 
    /**
-   * Get autoShapes
-   * @return autoShapes
+   * Indicates if the worksheet is protected.
+   * @return isProtected
   **/
-  @ApiModelProperty(value = "")
-  public LinkElement getAutoShapes() {
-    return autoShapes;
+  @ApiModelProperty(required = true, value = "Indicates if the worksheet is protected.")
+  public Boolean isIsProtected() {
+    return isProtected;
   }
 
-  public void setAutoShapes(LinkElement autoShapes) {
-    this.autoShapes = autoShapes;
-  }
-
-  public Worksheet oleObjects(LinkElement oleObjects) {
-    this.oleObjects = oleObjects;
-    return this;
-  }
-
-   /**
-   * Get oleObjects
-   * @return oleObjects
-  **/
-  @ApiModelProperty(value = "")
-  public LinkElement getOleObjects() {
-    return oleObjects;
-  }
-
-  public void setOleObjects(LinkElement oleObjects) {
-    this.oleObjects = oleObjects;
-  }
-
-  public Worksheet comments(LinkElement comments) {
-    this.comments = comments;
-    return this;
-  }
-
-   /**
-   * Get comments
-   * @return comments
-  **/
-  @ApiModelProperty(value = "")
-  public LinkElement getComments() {
-    return comments;
-  }
-
-  public void setComments(LinkElement comments) {
-    this.comments = comments;
-  }
-
-  public Worksheet pictures(LinkElement pictures) {
-    this.pictures = pictures;
-    return this;
-  }
-
-   /**
-   * Get pictures
-   * @return pictures
-  **/
-  @ApiModelProperty(value = "")
-  public LinkElement getPictures() {
-    return pictures;
-  }
-
-  public void setPictures(LinkElement pictures) {
-    this.pictures = pictures;
+  public void setIsProtected(Boolean isProtected) {
+    this.isProtected = isProtected;
   }
 
   public Worksheet mergedCells(LinkElement mergedCells) {
@@ -659,60 +713,6 @@ public class Worksheet {
     this.mergedCells = mergedCells;
   }
 
-  public Worksheet validations(LinkElement validations) {
-    this.validations = validations;
-    return this;
-  }
-
-   /**
-   * Get validations
-   * @return validations
-  **/
-  @ApiModelProperty(value = "")
-  public LinkElement getValidations() {
-    return validations;
-  }
-
-  public void setValidations(LinkElement validations) {
-    this.validations = validations;
-  }
-
-  public Worksheet conditionalFormattings(LinkElement conditionalFormattings) {
-    this.conditionalFormattings = conditionalFormattings;
-    return this;
-  }
-
-   /**
-   * Get conditionalFormattings
-   * @return conditionalFormattings
-  **/
-  @ApiModelProperty(value = "")
-  public LinkElement getConditionalFormattings() {
-    return conditionalFormattings;
-  }
-
-  public void setConditionalFormattings(LinkElement conditionalFormattings) {
-    this.conditionalFormattings = conditionalFormattings;
-  }
-
-  public Worksheet hyperlinks(LinkElement hyperlinks) {
-    this.hyperlinks = hyperlinks;
-    return this;
-  }
-
-   /**
-   * Get hyperlinks
-   * @return hyperlinks
-  **/
-  @ApiModelProperty(value = "")
-  public LinkElement getHyperlinks() {
-    return hyperlinks;
-  }
-
-  public void setHyperlinks(LinkElement hyperlinks) {
-    this.hyperlinks = hyperlinks;
-  }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -723,43 +723,43 @@ public class Worksheet {
       return false;
     }
     Worksheet worksheet = (Worksheet) o;
-    return Objects.equals(this.links, worksheet.links) &&
-        Objects.equals(this.displayRightToLeft, worksheet.displayRightToLeft) &&
-        Objects.equals(this.displayZeros, worksheet.displayZeros) &&
-        Objects.equals(this.firstVisibleColumn, worksheet.firstVisibleColumn) &&
-        Objects.equals(this.firstVisibleRow, worksheet.firstVisibleRow) &&
-        Objects.equals(this.name, worksheet.name) &&
-        Objects.equals(this.index, worksheet.index) &&
-        Objects.equals(this.isGridlinesVisible, worksheet.isGridlinesVisible) &&
-        Objects.equals(this.isOutlineShown, worksheet.isOutlineShown) &&
-        Objects.equals(this.isPageBreakPreview, worksheet.isPageBreakPreview) &&
+    return Objects.equals(this.index, worksheet.index) &&
+        Objects.equals(this.pictures, worksheet.pictures) &&
+        Objects.equals(this.charts, worksheet.charts) &&
+        Objects.equals(this.comments, worksheet.comments) &&
+        Objects.equals(this.hyperlinks, worksheet.hyperlinks) &&
         Objects.equals(this.isVisible, worksheet.isVisible) &&
-        Objects.equals(this.isProtected, worksheet.isProtected) &&
+        Objects.equals(this.viewType, worksheet.viewType) &&
+        Objects.equals(this.type, worksheet.type) &&
+        Objects.equals(this.isGridlinesVisible, worksheet.isGridlinesVisible) &&
         Objects.equals(this.isRowColumnHeadersVisible, worksheet.isRowColumnHeadersVisible) &&
-        Objects.equals(this.isRulerVisible, worksheet.isRulerVisible) &&
+        Objects.equals(this.isPageBreakPreview, worksheet.isPageBreakPreview) &&
+        Objects.equals(this.displayZeros, worksheet.displayZeros) &&
+        Objects.equals(this.transitionEvaluation, worksheet.transitionEvaluation) &&
+        Objects.equals(this.displayRightToLeft, worksheet.displayRightToLeft) &&
+        Objects.equals(this.firstVisibleColumn, worksheet.firstVisibleColumn) &&
+        Objects.equals(this.oleObjects, worksheet.oleObjects) &&
+        Objects.equals(this.isOutlineShown, worksheet.isOutlineShown) &&
+        Objects.equals(this.name, worksheet.name) &&
+        Objects.equals(this.autoShapes, worksheet.autoShapes) &&
+        Objects.equals(this.cells, worksheet.cells) &&
+        Objects.equals(this.validations, worksheet.validations) &&
+        Objects.equals(this.zoom, worksheet.zoom) &&
+        Objects.equals(this.conditionalFormattings, worksheet.conditionalFormattings) &&
         Objects.equals(this.isSelected, worksheet.isSelected) &&
         Objects.equals(this.tabColor, worksheet.tabColor) &&
+        Objects.equals(this.firstVisibleRow, worksheet.firstVisibleRow) &&
         Objects.equals(this.transitionEntry, worksheet.transitionEntry) &&
-        Objects.equals(this.transitionEvaluation, worksheet.transitionEvaluation) &&
-        Objects.equals(this.type, worksheet.type) &&
-        Objects.equals(this.viewType, worksheet.viewType) &&
         Objects.equals(this.visibilityType, worksheet.visibilityType) &&
-        Objects.equals(this.zoom, worksheet.zoom) &&
-        Objects.equals(this.cells, worksheet.cells) &&
-        Objects.equals(this.charts, worksheet.charts) &&
-        Objects.equals(this.autoShapes, worksheet.autoShapes) &&
-        Objects.equals(this.oleObjects, worksheet.oleObjects) &&
-        Objects.equals(this.comments, worksheet.comments) &&
-        Objects.equals(this.pictures, worksheet.pictures) &&
-        Objects.equals(this.mergedCells, worksheet.mergedCells) &&
-        Objects.equals(this.validations, worksheet.validations) &&
-        Objects.equals(this.conditionalFormattings, worksheet.conditionalFormattings) &&
-        Objects.equals(this.hyperlinks, worksheet.hyperlinks);
+        Objects.equals(this.isRulerVisible, worksheet.isRulerVisible) &&
+        Objects.equals(this.links, worksheet.links) &&
+        Objects.equals(this.isProtected, worksheet.isProtected) &&
+        Objects.equals(this.mergedCells, worksheet.mergedCells);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(links, displayRightToLeft, displayZeros, firstVisibleColumn, firstVisibleRow, name, index, isGridlinesVisible, isOutlineShown, isPageBreakPreview, isVisible, isProtected, isRowColumnHeadersVisible, isRulerVisible, isSelected, tabColor, transitionEntry, transitionEvaluation, type, viewType, visibilityType, zoom, cells, charts, autoShapes, oleObjects, comments, pictures, mergedCells, validations, conditionalFormattings, hyperlinks);
+    return Objects.hash(index, pictures, charts, comments, hyperlinks, isVisible, viewType, type, isGridlinesVisible, isRowColumnHeadersVisible, isPageBreakPreview, displayZeros, transitionEvaluation, displayRightToLeft, firstVisibleColumn, oleObjects, isOutlineShown, name, autoShapes, cells, validations, zoom, conditionalFormattings, isSelected, tabColor, firstVisibleRow, transitionEntry, visibilityType, isRulerVisible, links, isProtected, mergedCells);
   }
 
 
@@ -768,38 +768,38 @@ public class Worksheet {
     StringBuilder sb = new StringBuilder();
     sb.append("class Worksheet {\n");
     
-    sb.append("    links: ").append(toIndentedString(links)).append("\n");
-    sb.append("    displayRightToLeft: ").append(toIndentedString(displayRightToLeft)).append("\n");
-    sb.append("    displayZeros: ").append(toIndentedString(displayZeros)).append("\n");
-    sb.append("    firstVisibleColumn: ").append(toIndentedString(firstVisibleColumn)).append("\n");
-    sb.append("    firstVisibleRow: ").append(toIndentedString(firstVisibleRow)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    index: ").append(toIndentedString(index)).append("\n");
-    sb.append("    isGridlinesVisible: ").append(toIndentedString(isGridlinesVisible)).append("\n");
-    sb.append("    isOutlineShown: ").append(toIndentedString(isOutlineShown)).append("\n");
-    sb.append("    isPageBreakPreview: ").append(toIndentedString(isPageBreakPreview)).append("\n");
+    sb.append("    pictures: ").append(toIndentedString(pictures)).append("\n");
+    sb.append("    charts: ").append(toIndentedString(charts)).append("\n");
+    sb.append("    comments: ").append(toIndentedString(comments)).append("\n");
+    sb.append("    hyperlinks: ").append(toIndentedString(hyperlinks)).append("\n");
     sb.append("    isVisible: ").append(toIndentedString(isVisible)).append("\n");
-    sb.append("    isProtected: ").append(toIndentedString(isProtected)).append("\n");
+    sb.append("    viewType: ").append(toIndentedString(viewType)).append("\n");
+    sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    sb.append("    isGridlinesVisible: ").append(toIndentedString(isGridlinesVisible)).append("\n");
     sb.append("    isRowColumnHeadersVisible: ").append(toIndentedString(isRowColumnHeadersVisible)).append("\n");
-    sb.append("    isRulerVisible: ").append(toIndentedString(isRulerVisible)).append("\n");
+    sb.append("    isPageBreakPreview: ").append(toIndentedString(isPageBreakPreview)).append("\n");
+    sb.append("    displayZeros: ").append(toIndentedString(displayZeros)).append("\n");
+    sb.append("    transitionEvaluation: ").append(toIndentedString(transitionEvaluation)).append("\n");
+    sb.append("    displayRightToLeft: ").append(toIndentedString(displayRightToLeft)).append("\n");
+    sb.append("    firstVisibleColumn: ").append(toIndentedString(firstVisibleColumn)).append("\n");
+    sb.append("    oleObjects: ").append(toIndentedString(oleObjects)).append("\n");
+    sb.append("    isOutlineShown: ").append(toIndentedString(isOutlineShown)).append("\n");
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    autoShapes: ").append(toIndentedString(autoShapes)).append("\n");
+    sb.append("    cells: ").append(toIndentedString(cells)).append("\n");
+    sb.append("    validations: ").append(toIndentedString(validations)).append("\n");
+    sb.append("    zoom: ").append(toIndentedString(zoom)).append("\n");
+    sb.append("    conditionalFormattings: ").append(toIndentedString(conditionalFormattings)).append("\n");
     sb.append("    isSelected: ").append(toIndentedString(isSelected)).append("\n");
     sb.append("    tabColor: ").append(toIndentedString(tabColor)).append("\n");
+    sb.append("    firstVisibleRow: ").append(toIndentedString(firstVisibleRow)).append("\n");
     sb.append("    transitionEntry: ").append(toIndentedString(transitionEntry)).append("\n");
-    sb.append("    transitionEvaluation: ").append(toIndentedString(transitionEvaluation)).append("\n");
-    sb.append("    type: ").append(toIndentedString(type)).append("\n");
-    sb.append("    viewType: ").append(toIndentedString(viewType)).append("\n");
     sb.append("    visibilityType: ").append(toIndentedString(visibilityType)).append("\n");
-    sb.append("    zoom: ").append(toIndentedString(zoom)).append("\n");
-    sb.append("    cells: ").append(toIndentedString(cells)).append("\n");
-    sb.append("    charts: ").append(toIndentedString(charts)).append("\n");
-    sb.append("    autoShapes: ").append(toIndentedString(autoShapes)).append("\n");
-    sb.append("    oleObjects: ").append(toIndentedString(oleObjects)).append("\n");
-    sb.append("    comments: ").append(toIndentedString(comments)).append("\n");
-    sb.append("    pictures: ").append(toIndentedString(pictures)).append("\n");
+    sb.append("    isRulerVisible: ").append(toIndentedString(isRulerVisible)).append("\n");
+    sb.append("    links: ").append(toIndentedString(links)).append("\n");
+    sb.append("    isProtected: ").append(toIndentedString(isProtected)).append("\n");
     sb.append("    mergedCells: ").append(toIndentedString(mergedCells)).append("\n");
-    sb.append("    validations: ").append(toIndentedString(validations)).append("\n");
-    sb.append("    conditionalFormattings: ").append(toIndentedString(conditionalFormattings)).append("\n");
-    sb.append("    hyperlinks: ").append(toIndentedString(hyperlinks)).append("\n");
     sb.append("}");
     return sb.toString();
   }

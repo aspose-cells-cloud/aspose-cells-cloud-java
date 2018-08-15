@@ -32,22 +32,22 @@ import java.io.IOException;
 /**
  * TextOptions
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-05T15:44:26.749+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-08-14T14:34:14.243+08:00")
 public class TextOptions {
-  @SerializedName("Color")
-  private Color color = null;
+  @SerializedName("IsItalic")
+  private Boolean isItalic = null;
+
+  @SerializedName("Name")
+  private String name = null;
 
   @SerializedName("DoubleSize")
   private Double doubleSize = null;
 
+  @SerializedName("Color")
+  private Color color = null;
+
   @SerializedName("IsBold")
   private Boolean isBold = null;
-
-  @SerializedName("IsItalic")
-  private Boolean isItalic = null;
-
-  @SerializedName("IsStrikeout")
-  private Boolean isStrikeout = null;
 
   @SerializedName("IsSubscript")
   private Boolean isSubscript = null;
@@ -55,49 +55,67 @@ public class TextOptions {
   @SerializedName("IsSuperscript")
   private Boolean isSuperscript = null;
 
-  @SerializedName("Name")
-  private String name = null;
-
-  @SerializedName("Size")
-  private Integer size = null;
+  @SerializedName("IsStrikeout")
+  private Boolean isStrikeout = null;
 
   @SerializedName("Underline")
   private String underline = null;
 
-  @SerializedName("Fill")
-  private FillFormat fill = null;
-
-  @SerializedName("Kerning")
-  private Double kerning = null;
+  @SerializedName("Size")
+  private Integer size = null;
 
   @SerializedName("Outline")
   private LineFormat outline = null;
 
+  @SerializedName("Spacing")
+  private Double spacing = null;
+
+  @SerializedName("Kerning")
+  private Double kerning = null;
+
   @SerializedName("Shadow")
   private ShadowEffect shadow = null;
 
-  @SerializedName("Spacing")
-  private Double spacing = null;
+  @SerializedName("Fill")
+  private FillFormat fill = null;
 
   @SerializedName("UnderlineColor")
   private CellsColor underlineColor = null;
 
-  public TextOptions color(Color color) {
-    this.color = color;
+  public TextOptions isItalic(Boolean isItalic) {
+    this.isItalic = isItalic;
     return this;
   }
 
    /**
-   * Get color
-   * @return color
+   * Get isItalic
+   * @return isItalic
   **/
   @ApiModelProperty(value = "")
-  public Color getColor() {
-    return color;
+  public Boolean isIsItalic() {
+    return isItalic;
   }
 
-  public void setColor(Color color) {
-    this.color = color;
+  public void setIsItalic(Boolean isItalic) {
+    this.isItalic = isItalic;
+  }
+
+  public TextOptions name(String name) {
+    this.name = name;
+    return this;
+  }
+
+   /**
+   * Get name
+   * @return name
+  **/
+  @ApiModelProperty(value = "")
+  public String getName() {
+    return name;
+  }
+
+  public void setName(String name) {
+    this.name = name;
   }
 
   public TextOptions doubleSize(Double doubleSize) {
@@ -118,6 +136,24 @@ public class TextOptions {
     this.doubleSize = doubleSize;
   }
 
+  public TextOptions color(Color color) {
+    this.color = color;
+    return this;
+  }
+
+   /**
+   * Get color
+   * @return color
+  **/
+  @ApiModelProperty(value = "")
+  public Color getColor() {
+    return color;
+  }
+
+  public void setColor(Color color) {
+    this.color = color;
+  }
+
   public TextOptions isBold(Boolean isBold) {
     this.isBold = isBold;
     return this;
@@ -134,42 +170,6 @@ public class TextOptions {
 
   public void setIsBold(Boolean isBold) {
     this.isBold = isBold;
-  }
-
-  public TextOptions isItalic(Boolean isItalic) {
-    this.isItalic = isItalic;
-    return this;
-  }
-
-   /**
-   * Get isItalic
-   * @return isItalic
-  **/
-  @ApiModelProperty(value = "")
-  public Boolean isIsItalic() {
-    return isItalic;
-  }
-
-  public void setIsItalic(Boolean isItalic) {
-    this.isItalic = isItalic;
-  }
-
-  public TextOptions isStrikeout(Boolean isStrikeout) {
-    this.isStrikeout = isStrikeout;
-    return this;
-  }
-
-   /**
-   * Get isStrikeout
-   * @return isStrikeout
-  **/
-  @ApiModelProperty(value = "")
-  public Boolean isIsStrikeout() {
-    return isStrikeout;
-  }
-
-  public void setIsStrikeout(Boolean isStrikeout) {
-    this.isStrikeout = isStrikeout;
   }
 
   public TextOptions isSubscript(Boolean isSubscript) {
@@ -208,40 +208,22 @@ public class TextOptions {
     this.isSuperscript = isSuperscript;
   }
 
-  public TextOptions name(String name) {
-    this.name = name;
+  public TextOptions isStrikeout(Boolean isStrikeout) {
+    this.isStrikeout = isStrikeout;
     return this;
   }
 
    /**
-   * Get name
-   * @return name
+   * Get isStrikeout
+   * @return isStrikeout
   **/
   @ApiModelProperty(value = "")
-  public String getName() {
-    return name;
+  public Boolean isIsStrikeout() {
+    return isStrikeout;
   }
 
-  public void setName(String name) {
-    this.name = name;
-  }
-
-  public TextOptions size(Integer size) {
-    this.size = size;
-    return this;
-  }
-
-   /**
-   * Get size
-   * @return size
-  **/
-  @ApiModelProperty(value = "")
-  public Integer getSize() {
-    return size;
-  }
-
-  public void setSize(Integer size) {
-    this.size = size;
+  public void setIsStrikeout(Boolean isStrikeout) {
+    this.isStrikeout = isStrikeout;
   }
 
   public TextOptions underline(String underline) {
@@ -262,40 +244,22 @@ public class TextOptions {
     this.underline = underline;
   }
 
-  public TextOptions fill(FillFormat fill) {
-    this.fill = fill;
+  public TextOptions size(Integer size) {
+    this.size = size;
     return this;
   }
 
    /**
-   * Get fill
-   * @return fill
+   * Get size
+   * @return size
   **/
   @ApiModelProperty(value = "")
-  public FillFormat getFill() {
-    return fill;
+  public Integer getSize() {
+    return size;
   }
 
-  public void setFill(FillFormat fill) {
-    this.fill = fill;
-  }
-
-  public TextOptions kerning(Double kerning) {
-    this.kerning = kerning;
-    return this;
-  }
-
-   /**
-   * Get kerning
-   * @return kerning
-  **/
-  @ApiModelProperty(value = "")
-  public Double getKerning() {
-    return kerning;
-  }
-
-  public void setKerning(Double kerning) {
-    this.kerning = kerning;
+  public void setSize(Integer size) {
+    this.size = size;
   }
 
   public TextOptions outline(LineFormat outline) {
@@ -316,6 +280,42 @@ public class TextOptions {
     this.outline = outline;
   }
 
+  public TextOptions spacing(Double spacing) {
+    this.spacing = spacing;
+    return this;
+  }
+
+   /**
+   * Get spacing
+   * @return spacing
+  **/
+  @ApiModelProperty(value = "")
+  public Double getSpacing() {
+    return spacing;
+  }
+
+  public void setSpacing(Double spacing) {
+    this.spacing = spacing;
+  }
+
+  public TextOptions kerning(Double kerning) {
+    this.kerning = kerning;
+    return this;
+  }
+
+   /**
+   * Get kerning
+   * @return kerning
+  **/
+  @ApiModelProperty(value = "")
+  public Double getKerning() {
+    return kerning;
+  }
+
+  public void setKerning(Double kerning) {
+    this.kerning = kerning;
+  }
+
   public TextOptions shadow(ShadowEffect shadow) {
     this.shadow = shadow;
     return this;
@@ -334,22 +334,22 @@ public class TextOptions {
     this.shadow = shadow;
   }
 
-  public TextOptions spacing(Double spacing) {
-    this.spacing = spacing;
+  public TextOptions fill(FillFormat fill) {
+    this.fill = fill;
     return this;
   }
 
    /**
-   * Get spacing
-   * @return spacing
+   * Get fill
+   * @return fill
   **/
   @ApiModelProperty(value = "")
-  public Double getSpacing() {
-    return spacing;
+  public FillFormat getFill() {
+    return fill;
   }
 
-  public void setSpacing(Double spacing) {
-    this.spacing = spacing;
+  public void setFill(FillFormat fill) {
+    this.fill = fill;
   }
 
   public TextOptions underlineColor(CellsColor underlineColor) {
@@ -380,27 +380,27 @@ public class TextOptions {
       return false;
     }
     TextOptions textOptions = (TextOptions) o;
-    return Objects.equals(this.color, textOptions.color) &&
+    return Objects.equals(this.isItalic, textOptions.isItalic) &&
+        Objects.equals(this.name, textOptions.name) &&
         Objects.equals(this.doubleSize, textOptions.doubleSize) &&
+        Objects.equals(this.color, textOptions.color) &&
         Objects.equals(this.isBold, textOptions.isBold) &&
-        Objects.equals(this.isItalic, textOptions.isItalic) &&
-        Objects.equals(this.isStrikeout, textOptions.isStrikeout) &&
         Objects.equals(this.isSubscript, textOptions.isSubscript) &&
         Objects.equals(this.isSuperscript, textOptions.isSuperscript) &&
-        Objects.equals(this.name, textOptions.name) &&
-        Objects.equals(this.size, textOptions.size) &&
+        Objects.equals(this.isStrikeout, textOptions.isStrikeout) &&
         Objects.equals(this.underline, textOptions.underline) &&
-        Objects.equals(this.fill, textOptions.fill) &&
-        Objects.equals(this.kerning, textOptions.kerning) &&
+        Objects.equals(this.size, textOptions.size) &&
         Objects.equals(this.outline, textOptions.outline) &&
-        Objects.equals(this.shadow, textOptions.shadow) &&
         Objects.equals(this.spacing, textOptions.spacing) &&
+        Objects.equals(this.kerning, textOptions.kerning) &&
+        Objects.equals(this.shadow, textOptions.shadow) &&
+        Objects.equals(this.fill, textOptions.fill) &&
         Objects.equals(this.underlineColor, textOptions.underlineColor);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(color, doubleSize, isBold, isItalic, isStrikeout, isSubscript, isSuperscript, name, size, underline, fill, kerning, outline, shadow, spacing, underlineColor);
+    return Objects.hash(isItalic, name, doubleSize, color, isBold, isSubscript, isSuperscript, isStrikeout, underline, size, outline, spacing, kerning, shadow, fill, underlineColor);
   }
 
 
@@ -409,21 +409,21 @@ public class TextOptions {
     StringBuilder sb = new StringBuilder();
     sb.append("class TextOptions {\n");
     
-    sb.append("    color: ").append(toIndentedString(color)).append("\n");
-    sb.append("    doubleSize: ").append(toIndentedString(doubleSize)).append("\n");
-    sb.append("    isBold: ").append(toIndentedString(isBold)).append("\n");
     sb.append("    isItalic: ").append(toIndentedString(isItalic)).append("\n");
-    sb.append("    isStrikeout: ").append(toIndentedString(isStrikeout)).append("\n");
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    doubleSize: ").append(toIndentedString(doubleSize)).append("\n");
+    sb.append("    color: ").append(toIndentedString(color)).append("\n");
+    sb.append("    isBold: ").append(toIndentedString(isBold)).append("\n");
     sb.append("    isSubscript: ").append(toIndentedString(isSubscript)).append("\n");
     sb.append("    isSuperscript: ").append(toIndentedString(isSuperscript)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    size: ").append(toIndentedString(size)).append("\n");
+    sb.append("    isStrikeout: ").append(toIndentedString(isStrikeout)).append("\n");
     sb.append("    underline: ").append(toIndentedString(underline)).append("\n");
-    sb.append("    fill: ").append(toIndentedString(fill)).append("\n");
-    sb.append("    kerning: ").append(toIndentedString(kerning)).append("\n");
+    sb.append("    size: ").append(toIndentedString(size)).append("\n");
     sb.append("    outline: ").append(toIndentedString(outline)).append("\n");
-    sb.append("    shadow: ").append(toIndentedString(shadow)).append("\n");
     sb.append("    spacing: ").append(toIndentedString(spacing)).append("\n");
+    sb.append("    kerning: ").append(toIndentedString(kerning)).append("\n");
+    sb.append("    shadow: ").append(toIndentedString(shadow)).append("\n");
+    sb.append("    fill: ").append(toIndentedString(fill)).append("\n");
     sb.append("    underlineColor: ").append(toIndentedString(underlineColor)).append("\n");
     sb.append("}");
     return sb.toString();

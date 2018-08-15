@@ -28,7 +28,7 @@ import java.io.IOException;
 /**
  * Name
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-05T15:44:26.749+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-08-14T14:34:14.243+08:00")
 public class Name {
   @SerializedName("link")
   private Link link = null;
@@ -36,14 +36,11 @@ public class Name {
   @SerializedName("Comment")
   private String comment = null;
 
+  @SerializedName("Text")
+  private String text = null;
+
   @SerializedName("WorksheetIndex")
   private Integer worksheetIndex = null;
-
-  @SerializedName("IsReferred")
-  private Boolean isReferred = null;
-
-  @SerializedName("IsVisible")
-  private Boolean isVisible = null;
 
   @SerializedName("R1C1RefersTo")
   private String r1C1RefersTo = null;
@@ -51,8 +48,11 @@ public class Name {
   @SerializedName("RefersTo")
   private String refersTo = null;
 
-  @SerializedName("Text")
-  private String text = null;
+  @SerializedName("IsReferred")
+  private Boolean isReferred = null;
+
+  @SerializedName("IsVisible")
+  private Boolean isVisible = null;
 
   public Name link(Link link) {
     this.link = link;
@@ -90,6 +90,24 @@ public class Name {
     this.comment = comment;
   }
 
+  public Name text(String text) {
+    this.text = text;
+    return this;
+  }
+
+   /**
+   * Get text
+   * @return text
+  **/
+  @ApiModelProperty(value = "")
+  public String getText() {
+    return text;
+  }
+
+  public void setText(String text) {
+    this.text = text;
+  }
+
   public Name worksheetIndex(Integer worksheetIndex) {
     this.worksheetIndex = worksheetIndex;
     return this;
@@ -106,42 +124,6 @@ public class Name {
 
   public void setWorksheetIndex(Integer worksheetIndex) {
     this.worksheetIndex = worksheetIndex;
-  }
-
-  public Name isReferred(Boolean isReferred) {
-    this.isReferred = isReferred;
-    return this;
-  }
-
-   /**
-   * Get isReferred
-   * @return isReferred
-  **/
-  @ApiModelProperty(required = true, value = "")
-  public Boolean isIsReferred() {
-    return isReferred;
-  }
-
-  public void setIsReferred(Boolean isReferred) {
-    this.isReferred = isReferred;
-  }
-
-  public Name isVisible(Boolean isVisible) {
-    this.isVisible = isVisible;
-    return this;
-  }
-
-   /**
-   * Get isVisible
-   * @return isVisible
-  **/
-  @ApiModelProperty(required = true, value = "")
-  public Boolean isIsVisible() {
-    return isVisible;
-  }
-
-  public void setIsVisible(Boolean isVisible) {
-    this.isVisible = isVisible;
   }
 
   public Name r1C1RefersTo(String r1C1RefersTo) {
@@ -180,22 +162,40 @@ public class Name {
     this.refersTo = refersTo;
   }
 
-  public Name text(String text) {
-    this.text = text;
+  public Name isReferred(Boolean isReferred) {
+    this.isReferred = isReferred;
     return this;
   }
 
    /**
-   * Get text
-   * @return text
+   * Get isReferred
+   * @return isReferred
   **/
-  @ApiModelProperty(value = "")
-  public String getText() {
-    return text;
+  @ApiModelProperty(required = true, value = "")
+  public Boolean isIsReferred() {
+    return isReferred;
   }
 
-  public void setText(String text) {
-    this.text = text;
+  public void setIsReferred(Boolean isReferred) {
+    this.isReferred = isReferred;
+  }
+
+  public Name isVisible(Boolean isVisible) {
+    this.isVisible = isVisible;
+    return this;
+  }
+
+   /**
+   * Get isVisible
+   * @return isVisible
+  **/
+  @ApiModelProperty(required = true, value = "")
+  public Boolean isIsVisible() {
+    return isVisible;
+  }
+
+  public void setIsVisible(Boolean isVisible) {
+    this.isVisible = isVisible;
   }
 
 
@@ -210,17 +210,17 @@ public class Name {
     Name name = (Name) o;
     return Objects.equals(this.link, name.link) &&
         Objects.equals(this.comment, name.comment) &&
+        Objects.equals(this.text, name.text) &&
         Objects.equals(this.worksheetIndex, name.worksheetIndex) &&
-        Objects.equals(this.isReferred, name.isReferred) &&
-        Objects.equals(this.isVisible, name.isVisible) &&
         Objects.equals(this.r1C1RefersTo, name.r1C1RefersTo) &&
         Objects.equals(this.refersTo, name.refersTo) &&
-        Objects.equals(this.text, name.text);
+        Objects.equals(this.isReferred, name.isReferred) &&
+        Objects.equals(this.isVisible, name.isVisible);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(link, comment, worksheetIndex, isReferred, isVisible, r1C1RefersTo, refersTo, text);
+    return Objects.hash(link, comment, text, worksheetIndex, r1C1RefersTo, refersTo, isReferred, isVisible);
   }
 
 
@@ -231,12 +231,12 @@ public class Name {
     
     sb.append("    link: ").append(toIndentedString(link)).append("\n");
     sb.append("    comment: ").append(toIndentedString(comment)).append("\n");
+    sb.append("    text: ").append(toIndentedString(text)).append("\n");
     sb.append("    worksheetIndex: ").append(toIndentedString(worksheetIndex)).append("\n");
-    sb.append("    isReferred: ").append(toIndentedString(isReferred)).append("\n");
-    sb.append("    isVisible: ").append(toIndentedString(isVisible)).append("\n");
     sb.append("    r1C1RefersTo: ").append(toIndentedString(r1C1RefersTo)).append("\n");
     sb.append("    refersTo: ").append(toIndentedString(refersTo)).append("\n");
-    sb.append("    text: ").append(toIndentedString(text)).append("\n");
+    sb.append("    isReferred: ").append(toIndentedString(isReferred)).append("\n");
+    sb.append("    isVisible: ").append(toIndentedString(isVisible)).append("\n");
     sb.append("}");
     return sb.toString();
   }

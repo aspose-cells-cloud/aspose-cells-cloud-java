@@ -26,31 +26,49 @@ import java.io.IOException;
 /**
  * AccessTokenResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-05T15:44:26.749+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-08-14T14:34:14.243+08:00")
 public class AccessTokenResponse {
+  @SerializedName(".expires")
+  private String expires = null;
+
   @SerializedName("access_token")
   private String accessToken = null;
-
-  @SerializedName("token_type")
-  private String tokenType = null;
-
-  @SerializedName("expires_in")
-  private Long expiresIn = null;
-
-  @SerializedName("refresh_token")
-  private String refreshToken = null;
-
-  @SerializedName("client_id")
-  private String clientId = null;
-
-  @SerializedName("clientRefreshTokenLifeTimeInMinutes")
-  private String clientRefreshTokenLifeTimeInMinutes = null;
 
   @SerializedName(".issued")
   private String issued = null;
 
-  @SerializedName(".expires")
-  private String expires = null;
+  @SerializedName("clientRefreshTokenLifeTimeInMinutes")
+  private String clientRefreshTokenLifeTimeInMinutes = null;
+
+  @SerializedName("expires_in")
+  private Long expiresIn = null;
+
+  @SerializedName("token_type")
+  private String tokenType = null;
+
+  @SerializedName("client_id")
+  private String clientId = null;
+
+  @SerializedName("refresh_token")
+  private String refreshToken = null;
+
+  public AccessTokenResponse expires(String expires) {
+    this.expires = expires;
+    return this;
+  }
+
+   /**
+   * Get expires
+   * @return expires
+  **/
+  @ApiModelProperty(value = "")
+  public String getExpires() {
+    return expires;
+  }
+
+  public void setExpires(String expires) {
+    this.expires = expires;
+  }
 
   public AccessTokenResponse accessToken(String accessToken) {
     this.accessToken = accessToken;
@@ -68,96 +86,6 @@ public class AccessTokenResponse {
 
   public void setAccessToken(String accessToken) {
     this.accessToken = accessToken;
-  }
-
-  public AccessTokenResponse tokenType(String tokenType) {
-    this.tokenType = tokenType;
-    return this;
-  }
-
-   /**
-   * Get tokenType
-   * @return tokenType
-  **/
-  @ApiModelProperty(value = "")
-  public String getTokenType() {
-    return tokenType;
-  }
-
-  public void setTokenType(String tokenType) {
-    this.tokenType = tokenType;
-  }
-
-  public AccessTokenResponse expiresIn(Long expiresIn) {
-    this.expiresIn = expiresIn;
-    return this;
-  }
-
-   /**
-   * Get expiresIn
-   * @return expiresIn
-  **/
-  @ApiModelProperty(value = "")
-  public Long getExpiresIn() {
-    return expiresIn;
-  }
-
-  public void setExpiresIn(Long expiresIn) {
-    this.expiresIn = expiresIn;
-  }
-
-  public AccessTokenResponse refreshToken(String refreshToken) {
-    this.refreshToken = refreshToken;
-    return this;
-  }
-
-   /**
-   * Get refreshToken
-   * @return refreshToken
-  **/
-  @ApiModelProperty(value = "")
-  public String getRefreshToken() {
-    return refreshToken;
-  }
-
-  public void setRefreshToken(String refreshToken) {
-    this.refreshToken = refreshToken;
-  }
-
-  public AccessTokenResponse clientId(String clientId) {
-    this.clientId = clientId;
-    return this;
-  }
-
-   /**
-   * Get clientId
-   * @return clientId
-  **/
-  @ApiModelProperty(value = "")
-  public String getClientId() {
-    return clientId;
-  }
-
-  public void setClientId(String clientId) {
-    this.clientId = clientId;
-  }
-
-  public AccessTokenResponse clientRefreshTokenLifeTimeInMinutes(String clientRefreshTokenLifeTimeInMinutes) {
-    this.clientRefreshTokenLifeTimeInMinutes = clientRefreshTokenLifeTimeInMinutes;
-    return this;
-  }
-
-   /**
-   * Get clientRefreshTokenLifeTimeInMinutes
-   * @return clientRefreshTokenLifeTimeInMinutes
-  **/
-  @ApiModelProperty(value = "")
-  public String getClientRefreshTokenLifeTimeInMinutes() {
-    return clientRefreshTokenLifeTimeInMinutes;
-  }
-
-  public void setClientRefreshTokenLifeTimeInMinutes(String clientRefreshTokenLifeTimeInMinutes) {
-    this.clientRefreshTokenLifeTimeInMinutes = clientRefreshTokenLifeTimeInMinutes;
   }
 
   public AccessTokenResponse issued(String issued) {
@@ -178,22 +106,94 @@ public class AccessTokenResponse {
     this.issued = issued;
   }
 
-  public AccessTokenResponse expires(String expires) {
-    this.expires = expires;
+  public AccessTokenResponse clientRefreshTokenLifeTimeInMinutes(String clientRefreshTokenLifeTimeInMinutes) {
+    this.clientRefreshTokenLifeTimeInMinutes = clientRefreshTokenLifeTimeInMinutes;
     return this;
   }
 
    /**
-   * Get expires
-   * @return expires
+   * Get clientRefreshTokenLifeTimeInMinutes
+   * @return clientRefreshTokenLifeTimeInMinutes
   **/
   @ApiModelProperty(value = "")
-  public String getExpires() {
-    return expires;
+  public String getClientRefreshTokenLifeTimeInMinutes() {
+    return clientRefreshTokenLifeTimeInMinutes;
   }
 
-  public void setExpires(String expires) {
-    this.expires = expires;
+  public void setClientRefreshTokenLifeTimeInMinutes(String clientRefreshTokenLifeTimeInMinutes) {
+    this.clientRefreshTokenLifeTimeInMinutes = clientRefreshTokenLifeTimeInMinutes;
+  }
+
+  public AccessTokenResponse expiresIn(Long expiresIn) {
+    this.expiresIn = expiresIn;
+    return this;
+  }
+
+   /**
+   * Get expiresIn
+   * @return expiresIn
+  **/
+  @ApiModelProperty(value = "")
+  public Long getExpiresIn() {
+    return expiresIn;
+  }
+
+  public void setExpiresIn(Long expiresIn) {
+    this.expiresIn = expiresIn;
+  }
+
+  public AccessTokenResponse tokenType(String tokenType) {
+    this.tokenType = tokenType;
+    return this;
+  }
+
+   /**
+   * Get tokenType
+   * @return tokenType
+  **/
+  @ApiModelProperty(value = "")
+  public String getTokenType() {
+    return tokenType;
+  }
+
+  public void setTokenType(String tokenType) {
+    this.tokenType = tokenType;
+  }
+
+  public AccessTokenResponse clientId(String clientId) {
+    this.clientId = clientId;
+    return this;
+  }
+
+   /**
+   * Get clientId
+   * @return clientId
+  **/
+  @ApiModelProperty(value = "")
+  public String getClientId() {
+    return clientId;
+  }
+
+  public void setClientId(String clientId) {
+    this.clientId = clientId;
+  }
+
+  public AccessTokenResponse refreshToken(String refreshToken) {
+    this.refreshToken = refreshToken;
+    return this;
+  }
+
+   /**
+   * Get refreshToken
+   * @return refreshToken
+  **/
+  @ApiModelProperty(value = "")
+  public String getRefreshToken() {
+    return refreshToken;
+  }
+
+  public void setRefreshToken(String refreshToken) {
+    this.refreshToken = refreshToken;
   }
 
 
@@ -206,19 +206,19 @@ public class AccessTokenResponse {
       return false;
     }
     AccessTokenResponse accessTokenResponse = (AccessTokenResponse) o;
-    return Objects.equals(this.accessToken, accessTokenResponse.accessToken) &&
-        Objects.equals(this.tokenType, accessTokenResponse.tokenType) &&
-        Objects.equals(this.expiresIn, accessTokenResponse.expiresIn) &&
-        Objects.equals(this.refreshToken, accessTokenResponse.refreshToken) &&
-        Objects.equals(this.clientId, accessTokenResponse.clientId) &&
-        Objects.equals(this.clientRefreshTokenLifeTimeInMinutes, accessTokenResponse.clientRefreshTokenLifeTimeInMinutes) &&
+    return Objects.equals(this.expires, accessTokenResponse.expires) &&
+        Objects.equals(this.accessToken, accessTokenResponse.accessToken) &&
         Objects.equals(this.issued, accessTokenResponse.issued) &&
-        Objects.equals(this.expires, accessTokenResponse.expires);
+        Objects.equals(this.clientRefreshTokenLifeTimeInMinutes, accessTokenResponse.clientRefreshTokenLifeTimeInMinutes) &&
+        Objects.equals(this.expiresIn, accessTokenResponse.expiresIn) &&
+        Objects.equals(this.tokenType, accessTokenResponse.tokenType) &&
+        Objects.equals(this.clientId, accessTokenResponse.clientId) &&
+        Objects.equals(this.refreshToken, accessTokenResponse.refreshToken);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(accessToken, tokenType, expiresIn, refreshToken, clientId, clientRefreshTokenLifeTimeInMinutes, issued, expires);
+    return Objects.hash(expires, accessToken, issued, clientRefreshTokenLifeTimeInMinutes, expiresIn, tokenType, clientId, refreshToken);
   }
 
 
@@ -227,14 +227,14 @@ public class AccessTokenResponse {
     StringBuilder sb = new StringBuilder();
     sb.append("class AccessTokenResponse {\n");
     
-    sb.append("    accessToken: ").append(toIndentedString(accessToken)).append("\n");
-    sb.append("    tokenType: ").append(toIndentedString(tokenType)).append("\n");
-    sb.append("    expiresIn: ").append(toIndentedString(expiresIn)).append("\n");
-    sb.append("    refreshToken: ").append(toIndentedString(refreshToken)).append("\n");
-    sb.append("    clientId: ").append(toIndentedString(clientId)).append("\n");
-    sb.append("    clientRefreshTokenLifeTimeInMinutes: ").append(toIndentedString(clientRefreshTokenLifeTimeInMinutes)).append("\n");
-    sb.append("    issued: ").append(toIndentedString(issued)).append("\n");
     sb.append("    expires: ").append(toIndentedString(expires)).append("\n");
+    sb.append("    accessToken: ").append(toIndentedString(accessToken)).append("\n");
+    sb.append("    issued: ").append(toIndentedString(issued)).append("\n");
+    sb.append("    clientRefreshTokenLifeTimeInMinutes: ").append(toIndentedString(clientRefreshTokenLifeTimeInMinutes)).append("\n");
+    sb.append("    expiresIn: ").append(toIndentedString(expiresIn)).append("\n");
+    sb.append("    tokenType: ").append(toIndentedString(tokenType)).append("\n");
+    sb.append("    clientId: ").append(toIndentedString(clientId)).append("\n");
+    sb.append("    refreshToken: ").append(toIndentedString(refreshToken)).append("\n");
     sb.append("}");
     return sb.toString();
   }

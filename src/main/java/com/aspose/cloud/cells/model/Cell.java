@@ -29,37 +29,40 @@ import java.io.IOException;
  * Encapsulates the object that represents a single Workbook cell.
  */
 @ApiModel(description = "Encapsulates the object that represents a single Workbook cell.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-05T15:44:26.749+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-08-14T14:34:14.243+08:00")
 public class Cell {
   @SerializedName("link")
   private Link link = null;
 
+  @SerializedName("Style")
+  private LinkElement style = null;
+
+  @SerializedName("HtmlString")
+  private String htmlString = null;
+
   @SerializedName("Name")
   private String name = null;
-
-  @SerializedName("Row")
-  private Integer row = null;
 
   @SerializedName("Column")
   private Integer column = null;
 
+  @SerializedName("Worksheet")
+  private String worksheet = null;
+
+  @SerializedName("IsInTable")
+  private Boolean isInTable = null;
+
+  @SerializedName("IsArrayHeader")
+  private Boolean isArrayHeader = null;
+
   @SerializedName("Value")
   private String value = null;
-
-  @SerializedName("Type")
-  private String type = null;
-
-  @SerializedName("Formula")
-  private String formula = null;
 
   @SerializedName("IsFormula")
   private Boolean isFormula = null;
 
-  @SerializedName("IsMerged")
-  private Boolean isMerged = null;
-
-  @SerializedName("IsArrayHeader")
-  private Boolean isArrayHeader = null;
+  @SerializedName("IsStyleSet")
+  private Boolean isStyleSet = null;
 
   @SerializedName("IsInArray")
   private Boolean isInArray = null;
@@ -67,20 +70,17 @@ public class Cell {
   @SerializedName("IsErrorValue")
   private Boolean isErrorValue = null;
 
-  @SerializedName("IsInTable")
-  private Boolean isInTable = null;
+  @SerializedName("IsMerged")
+  private Boolean isMerged = null;
 
-  @SerializedName("IsStyleSet")
-  private Boolean isStyleSet = null;
+  @SerializedName("Formula")
+  private String formula = null;
 
-  @SerializedName("HtmlString")
-  private String htmlString = null;
+  @SerializedName("Type")
+  private String type = null;
 
-  @SerializedName("Style")
-  private LinkElement style = null;
-
-  @SerializedName("Worksheet")
-  private String worksheet = null;
+  @SerializedName("Row")
+  private Integer row = null;
 
   public Cell link(Link link) {
     this.link = link;
@@ -98,6 +98,42 @@ public class Cell {
 
   public void setLink(Link link) {
     this.link = link;
+  }
+
+  public Cell style(LinkElement style) {
+    this.style = style;
+    return this;
+  }
+
+   /**
+   * Get style
+   * @return style
+  **/
+  @ApiModelProperty(value = "")
+  public LinkElement getStyle() {
+    return style;
+  }
+
+  public void setStyle(LinkElement style) {
+    this.style = style;
+  }
+
+  public Cell htmlString(String htmlString) {
+    this.htmlString = htmlString;
+    return this;
+  }
+
+   /**
+   * Gets and sets the html string which contains data and some formattings in this cell.             
+   * @return htmlString
+  **/
+  @ApiModelProperty(value = "Gets and sets the html string which contains data and some formattings in this cell.             ")
+  public String getHtmlString() {
+    return htmlString;
+  }
+
+  public void setHtmlString(String htmlString) {
+    this.htmlString = htmlString;
   }
 
   public Cell name(String name) {
@@ -118,24 +154,6 @@ public class Cell {
     this.name = name;
   }
 
-  public Cell row(Integer row) {
-    this.row = row;
-    return this;
-  }
-
-   /**
-   * Gets row number (zero based) of the cell.             
-   * @return row
-  **/
-  @ApiModelProperty(required = true, value = "Gets row number (zero based) of the cell.             ")
-  public Integer getRow() {
-    return row;
-  }
-
-  public void setRow(Integer row) {
-    this.row = row;
-  }
-
   public Cell column(Integer column) {
     this.column = column;
     return this;
@@ -152,6 +170,60 @@ public class Cell {
 
   public void setColumn(Integer column) {
     this.column = column;
+  }
+
+  public Cell worksheet(String worksheet) {
+    this.worksheet = worksheet;
+    return this;
+  }
+
+   /**
+   * Gets the parent worksheet.
+   * @return worksheet
+  **/
+  @ApiModelProperty(value = "Gets the parent worksheet.")
+  public String getWorksheet() {
+    return worksheet;
+  }
+
+  public void setWorksheet(String worksheet) {
+    this.worksheet = worksheet;
+  }
+
+  public Cell isInTable(Boolean isInTable) {
+    this.isInTable = isInTable;
+    return this;
+  }
+
+   /**
+   * Indicates whethe this cell is part of table formula.             
+   * @return isInTable
+  **/
+  @ApiModelProperty(required = true, value = "Indicates whethe this cell is part of table formula.             ")
+  public Boolean isIsInTable() {
+    return isInTable;
+  }
+
+  public void setIsInTable(Boolean isInTable) {
+    this.isInTable = isInTable;
+  }
+
+  public Cell isArrayHeader(Boolean isArrayHeader) {
+    this.isArrayHeader = isArrayHeader;
+    return this;
+  }
+
+   /**
+   * Inidicates the cell&#39;s formula is and array formula and it is the first cell of the array.
+   * @return isArrayHeader
+  **/
+  @ApiModelProperty(required = true, value = "Inidicates the cell's formula is and array formula and it is the first cell of the array.")
+  public Boolean isIsArrayHeader() {
+    return isArrayHeader;
+  }
+
+  public void setIsArrayHeader(Boolean isArrayHeader) {
+    this.isArrayHeader = isArrayHeader;
   }
 
   public Cell value(String value) {
@@ -172,42 +244,6 @@ public class Cell {
     this.value = value;
   }
 
-  public Cell type(String type) {
-    this.type = type;
-    return this;
-  }
-
-   /**
-   * Specifies a cell value type.
-   * @return type
-  **/
-  @ApiModelProperty(value = "Specifies a cell value type.")
-  public String getType() {
-    return type;
-  }
-
-  public void setType(String type) {
-    this.type = type;
-  }
-
-  public Cell formula(String formula) {
-    this.formula = formula;
-    return this;
-  }
-
-   /**
-   * Gets or sets a formula of the Aspose.Cells.Cell.
-   * @return formula
-  **/
-  @ApiModelProperty(value = "Gets or sets a formula of the Aspose.Cells.Cell.")
-  public String getFormula() {
-    return formula;
-  }
-
-  public void setFormula(String formula) {
-    this.formula = formula;
-  }
-
   public Cell isFormula(Boolean isFormula) {
     this.isFormula = isFormula;
     return this;
@@ -226,40 +262,22 @@ public class Cell {
     this.isFormula = isFormula;
   }
 
-  public Cell isMerged(Boolean isMerged) {
-    this.isMerged = isMerged;
+  public Cell isStyleSet(Boolean isStyleSet) {
+    this.isStyleSet = isStyleSet;
     return this;
   }
 
    /**
-   * Checks if a cell is part of a merged range or not.             
-   * @return isMerged
+   * Indicates if the cell&#39;s style is set. If return false, it means this cell has a default cell format.             
+   * @return isStyleSet
   **/
-  @ApiModelProperty(required = true, value = "Checks if a cell is part of a merged range or not.             ")
-  public Boolean isIsMerged() {
-    return isMerged;
+  @ApiModelProperty(required = true, value = "Indicates if the cell's style is set. If return false, it means this cell has a default cell format.             ")
+  public Boolean isIsStyleSet() {
+    return isStyleSet;
   }
 
-  public void setIsMerged(Boolean isMerged) {
-    this.isMerged = isMerged;
-  }
-
-  public Cell isArrayHeader(Boolean isArrayHeader) {
-    this.isArrayHeader = isArrayHeader;
-    return this;
-  }
-
-   /**
-   * Inidicates the cell&#39;s formula is and array formula and it is the first cell of the array.
-   * @return isArrayHeader
-  **/
-  @ApiModelProperty(required = true, value = "Inidicates the cell's formula is and array formula and it is the first cell of the array.")
-  public Boolean isIsArrayHeader() {
-    return isArrayHeader;
-  }
-
-  public void setIsArrayHeader(Boolean isArrayHeader) {
-    this.isArrayHeader = isArrayHeader;
+  public void setIsStyleSet(Boolean isStyleSet) {
+    this.isStyleSet = isStyleSet;
   }
 
   public Cell isInArray(Boolean isInArray) {
@@ -298,94 +316,76 @@ public class Cell {
     this.isErrorValue = isErrorValue;
   }
 
-  public Cell isInTable(Boolean isInTable) {
-    this.isInTable = isInTable;
+  public Cell isMerged(Boolean isMerged) {
+    this.isMerged = isMerged;
     return this;
   }
 
    /**
-   * Indicates whethe this cell is part of table formula.             
-   * @return isInTable
+   * Checks if a cell is part of a merged range or not.             
+   * @return isMerged
   **/
-  @ApiModelProperty(required = true, value = "Indicates whethe this cell is part of table formula.             ")
-  public Boolean isIsInTable() {
-    return isInTable;
+  @ApiModelProperty(required = true, value = "Checks if a cell is part of a merged range or not.             ")
+  public Boolean isIsMerged() {
+    return isMerged;
   }
 
-  public void setIsInTable(Boolean isInTable) {
-    this.isInTable = isInTable;
+  public void setIsMerged(Boolean isMerged) {
+    this.isMerged = isMerged;
   }
 
-  public Cell isStyleSet(Boolean isStyleSet) {
-    this.isStyleSet = isStyleSet;
+  public Cell formula(String formula) {
+    this.formula = formula;
     return this;
   }
 
    /**
-   * Indicates if the cell&#39;s style is set. If return false, it means this cell has a default cell format.             
-   * @return isStyleSet
+   * Gets or sets a formula of the Aspose.Cells.Cell.
+   * @return formula
   **/
-  @ApiModelProperty(required = true, value = "Indicates if the cell's style is set. If return false, it means this cell has a default cell format.             ")
-  public Boolean isIsStyleSet() {
-    return isStyleSet;
+  @ApiModelProperty(value = "Gets or sets a formula of the Aspose.Cells.Cell.")
+  public String getFormula() {
+    return formula;
   }
 
-  public void setIsStyleSet(Boolean isStyleSet) {
-    this.isStyleSet = isStyleSet;
+  public void setFormula(String formula) {
+    this.formula = formula;
   }
 
-  public Cell htmlString(String htmlString) {
-    this.htmlString = htmlString;
+  public Cell type(String type) {
+    this.type = type;
     return this;
   }
 
    /**
-   * Gets and sets the html string which contains data and some formattings in this cell.             
-   * @return htmlString
+   * Specifies a cell value type.
+   * @return type
   **/
-  @ApiModelProperty(value = "Gets and sets the html string which contains data and some formattings in this cell.             ")
-  public String getHtmlString() {
-    return htmlString;
+  @ApiModelProperty(value = "Specifies a cell value type.")
+  public String getType() {
+    return type;
   }
 
-  public void setHtmlString(String htmlString) {
-    this.htmlString = htmlString;
+  public void setType(String type) {
+    this.type = type;
   }
 
-  public Cell style(LinkElement style) {
-    this.style = style;
+  public Cell row(Integer row) {
+    this.row = row;
     return this;
   }
 
    /**
-   * Get style
-   * @return style
+   * Gets row number (zero based) of the cell.             
+   * @return row
   **/
-  @ApiModelProperty(value = "")
-  public LinkElement getStyle() {
-    return style;
+  @ApiModelProperty(required = true, value = "Gets row number (zero based) of the cell.             ")
+  public Integer getRow() {
+    return row;
   }
 
-  public void setStyle(LinkElement style) {
-    this.style = style;
-  }
-
-  public Cell worksheet(String worksheet) {
-    this.worksheet = worksheet;
-    return this;
-  }
-
-   /**
-   * Gets the parent worksheet.
-   * @return worksheet
-  **/
-  @ApiModelProperty(value = "Gets the parent worksheet.")
-  public String getWorksheet() {
-    return worksheet;
-  }
-
-  public void setWorksheet(String worksheet) {
-    this.worksheet = worksheet;
+  public void setRow(Integer row) {
+    this.row = row;
   }
 
 
@@ -399,27 +399,27 @@ public class Cell {
     }
     Cell cell = (Cell) o;
     return Objects.equals(this.link, cell.link) &&
+        Objects.equals(this.style, cell.style) &&
+        Objects.equals(this.htmlString, cell.htmlString) &&
         Objects.equals(this.name, cell.name) &&
-        Objects.equals(this.row, cell.row) &&
         Objects.equals(this.column, cell.column) &&
-        Objects.equals(this.value, cell.value) &&
-        Objects.equals(this.type, cell.type) &&
-        Objects.equals(this.formula, cell.formula) &&
-        Objects.equals(this.isFormula, cell.isFormula) &&
-        Objects.equals(this.isMerged, cell.isMerged) &&
+        Objects.equals(this.worksheet, cell.worksheet) &&
+        Objects.equals(this.isInTable, cell.isInTable) &&
         Objects.equals(this.isArrayHeader, cell.isArrayHeader) &&
+        Objects.equals(this.value, cell.value) &&
+        Objects.equals(this.isFormula, cell.isFormula) &&
+        Objects.equals(this.isStyleSet, cell.isStyleSet) &&
         Objects.equals(this.isInArray, cell.isInArray) &&
         Objects.equals(this.isErrorValue, cell.isErrorValue) &&
-        Objects.equals(this.isInTable, cell.isInTable) &&
-        Objects.equals(this.isStyleSet, cell.isStyleSet) &&
-        Objects.equals(this.htmlString, cell.htmlString) &&
-        Objects.equals(this.style, cell.style) &&
-        Objects.equals(this.worksheet, cell.worksheet);
+        Objects.equals(this.isMerged, cell.isMerged) &&
+        Objects.equals(this.formula, cell.formula) &&
+        Objects.equals(this.type, cell.type) &&
+        Objects.equals(this.row, cell.row);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(link, name, row, column, value, type, formula, isFormula, isMerged, isArrayHeader, isInArray, isErrorValue, isInTable, isStyleSet, htmlString, style, worksheet);
+    return Objects.hash(link, style, htmlString, name, column, worksheet, isInTable, isArrayHeader, value, isFormula, isStyleSet, isInArray, isErrorValue, isMerged, formula, type, row);
   }
 
 
@@ -429,22 +429,22 @@ public class Cell {
     sb.append("class Cell {\n");
     
     sb.append("    link: ").append(toIndentedString(link)).append("\n");
+    sb.append("    style: ").append(toIndentedString(style)).append("\n");
+    sb.append("    htmlString: ").append(toIndentedString(htmlString)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    row: ").append(toIndentedString(row)).append("\n");
     sb.append("    column: ").append(toIndentedString(column)).append("\n");
-    sb.append("    value: ").append(toIndentedString(value)).append("\n");
-    sb.append("    type: ").append(toIndentedString(type)).append("\n");
-    sb.append("    formula: ").append(toIndentedString(formula)).append("\n");
-    sb.append("    isFormula: ").append(toIndentedString(isFormula)).append("\n");
-    sb.append("    isMerged: ").append(toIndentedString(isMerged)).append("\n");
+    sb.append("    worksheet: ").append(toIndentedString(worksheet)).append("\n");
+    sb.append("    isInTable: ").append(toIndentedString(isInTable)).append("\n");
     sb.append("    isArrayHeader: ").append(toIndentedString(isArrayHeader)).append("\n");
+    sb.append("    value: ").append(toIndentedString(value)).append("\n");
+    sb.append("    isFormula: ").append(toIndentedString(isFormula)).append("\n");
+    sb.append("    isStyleSet: ").append(toIndentedString(isStyleSet)).append("\n");
     sb.append("    isInArray: ").append(toIndentedString(isInArray)).append("\n");
     sb.append("    isErrorValue: ").append(toIndentedString(isErrorValue)).append("\n");
-    sb.append("    isInTable: ").append(toIndentedString(isInTable)).append("\n");
-    sb.append("    isStyleSet: ").append(toIndentedString(isStyleSet)).append("\n");
-    sb.append("    htmlString: ").append(toIndentedString(htmlString)).append("\n");
-    sb.append("    style: ").append(toIndentedString(style)).append("\n");
-    sb.append("    worksheet: ").append(toIndentedString(worksheet)).append("\n");
+    sb.append("    isMerged: ").append(toIndentedString(isMerged)).append("\n");
+    sb.append("    formula: ").append(toIndentedString(formula)).append("\n");
+    sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    sb.append("    row: ").append(toIndentedString(row)).append("\n");
     sb.append("}");
     return sb.toString();
   }

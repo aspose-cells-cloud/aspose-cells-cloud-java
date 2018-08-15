@@ -29,16 +29,16 @@ import java.util.List;
 /**
  * DataSorter
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-05T15:44:26.749+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-08-14T14:34:14.243+08:00")
 public class DataSorter {
   @SerializedName("CaseSensitive")
   private Boolean caseSensitive = null;
 
-  @SerializedName("HasHeaders")
-  private Boolean hasHeaders = null;
-
   @SerializedName("KeyList")
   private List<SortKey> keyList = null;
+
+  @SerializedName("HasHeaders")
+  private Boolean hasHeaders = null;
 
   @SerializedName("SortLeftToRight")
   private Boolean sortLeftToRight = null;
@@ -59,24 +59,6 @@ public class DataSorter {
 
   public void setCaseSensitive(Boolean caseSensitive) {
     this.caseSensitive = caseSensitive;
-  }
-
-  public DataSorter hasHeaders(Boolean hasHeaders) {
-    this.hasHeaders = hasHeaders;
-    return this;
-  }
-
-   /**
-   * Get hasHeaders
-   * @return hasHeaders
-  **/
-  @ApiModelProperty(value = "")
-  public Boolean isHasHeaders() {
-    return hasHeaders;
-  }
-
-  public void setHasHeaders(Boolean hasHeaders) {
-    this.hasHeaders = hasHeaders;
   }
 
   public DataSorter keyList(List<SortKey> keyList) {
@@ -103,6 +85,24 @@ public class DataSorter {
 
   public void setKeyList(List<SortKey> keyList) {
     this.keyList = keyList;
+  }
+
+  public DataSorter hasHeaders(Boolean hasHeaders) {
+    this.hasHeaders = hasHeaders;
+    return this;
+  }
+
+   /**
+   * Get hasHeaders
+   * @return hasHeaders
+  **/
+  @ApiModelProperty(value = "")
+  public Boolean isHasHeaders() {
+    return hasHeaders;
+  }
+
+  public void setHasHeaders(Boolean hasHeaders) {
+    this.hasHeaders = hasHeaders;
   }
 
   public DataSorter sortLeftToRight(Boolean sortLeftToRight) {
@@ -134,14 +134,14 @@ public class DataSorter {
     }
     DataSorter dataSorter = (DataSorter) o;
     return Objects.equals(this.caseSensitive, dataSorter.caseSensitive) &&
-        Objects.equals(this.hasHeaders, dataSorter.hasHeaders) &&
         Objects.equals(this.keyList, dataSorter.keyList) &&
+        Objects.equals(this.hasHeaders, dataSorter.hasHeaders) &&
         Objects.equals(this.sortLeftToRight, dataSorter.sortLeftToRight);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(caseSensitive, hasHeaders, keyList, sortLeftToRight);
+    return Objects.hash(caseSensitive, keyList, hasHeaders, sortLeftToRight);
   }
 
 
@@ -151,8 +151,8 @@ public class DataSorter {
     sb.append("class DataSorter {\n");
     
     sb.append("    caseSensitive: ").append(toIndentedString(caseSensitive)).append("\n");
-    sb.append("    hasHeaders: ").append(toIndentedString(hasHeaders)).append("\n");
     sb.append("    keyList: ").append(toIndentedString(keyList)).append("\n");
+    sb.append("    hasHeaders: ").append(toIndentedString(hasHeaders)).append("\n");
     sb.append("    sortLeftToRight: ").append(toIndentedString(sortLeftToRight)).append("\n");
     sb.append("}");
     return sb.toString();

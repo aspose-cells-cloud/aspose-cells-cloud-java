@@ -28,16 +28,16 @@ import java.io.IOException;
 /**
  * SmartMarkerTaskParameter
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-05T15:44:26.749+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-08-14T14:34:14.243+08:00")
 public class SmartMarkerTaskParameter extends TaskParameter {
   @SerializedName("SourceWorkbook")
   private FileSource sourceWorkbook = null;
 
-  @SerializedName("DestinationWorkbook")
-  private FileSource destinationWorkbook = null;
-
   @SerializedName("xmlFile")
   private FileSource xmlFile = null;
+
+  @SerializedName("DestinationWorkbook")
+  private FileSource destinationWorkbook = null;
 
   public SmartMarkerTaskParameter sourceWorkbook(FileSource sourceWorkbook) {
     this.sourceWorkbook = sourceWorkbook;
@@ -55,24 +55,6 @@ public class SmartMarkerTaskParameter extends TaskParameter {
 
   public void setSourceWorkbook(FileSource sourceWorkbook) {
     this.sourceWorkbook = sourceWorkbook;
-  }
-
-  public SmartMarkerTaskParameter destinationWorkbook(FileSource destinationWorkbook) {
-    this.destinationWorkbook = destinationWorkbook;
-    return this;
-  }
-
-   /**
-   * Get destinationWorkbook
-   * @return destinationWorkbook
-  **/
-  @ApiModelProperty(value = "")
-  public FileSource getDestinationWorkbook() {
-    return destinationWorkbook;
-  }
-
-  public void setDestinationWorkbook(FileSource destinationWorkbook) {
-    this.destinationWorkbook = destinationWorkbook;
   }
 
   public SmartMarkerTaskParameter xmlFile(FileSource xmlFile) {
@@ -93,6 +75,24 @@ public class SmartMarkerTaskParameter extends TaskParameter {
     this.xmlFile = xmlFile;
   }
 
+  public SmartMarkerTaskParameter destinationWorkbook(FileSource destinationWorkbook) {
+    this.destinationWorkbook = destinationWorkbook;
+    return this;
+  }
+
+   /**
+   * Get destinationWorkbook
+   * @return destinationWorkbook
+  **/
+  @ApiModelProperty(value = "")
+  public FileSource getDestinationWorkbook() {
+    return destinationWorkbook;
+  }
+
+  public void setDestinationWorkbook(FileSource destinationWorkbook) {
+    this.destinationWorkbook = destinationWorkbook;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -104,14 +104,14 @@ public class SmartMarkerTaskParameter extends TaskParameter {
     }
     SmartMarkerTaskParameter smartMarkerTaskParameter = (SmartMarkerTaskParameter) o;
     return Objects.equals(this.sourceWorkbook, smartMarkerTaskParameter.sourceWorkbook) &&
-        Objects.equals(this.destinationWorkbook, smartMarkerTaskParameter.destinationWorkbook) &&
         Objects.equals(this.xmlFile, smartMarkerTaskParameter.xmlFile) &&
+        Objects.equals(this.destinationWorkbook, smartMarkerTaskParameter.destinationWorkbook) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(sourceWorkbook, destinationWorkbook, xmlFile, super.hashCode());
+    return Objects.hash(sourceWorkbook, xmlFile, destinationWorkbook, super.hashCode());
   }
 
 
@@ -121,8 +121,8 @@ public class SmartMarkerTaskParameter extends TaskParameter {
     sb.append("class SmartMarkerTaskParameter {\n");
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    sourceWorkbook: ").append(toIndentedString(sourceWorkbook)).append("\n");
-    sb.append("    destinationWorkbook: ").append(toIndentedString(destinationWorkbook)).append("\n");
     sb.append("    xmlFile: ").append(toIndentedString(xmlFile)).append("\n");
+    sb.append("    destinationWorkbook: ").append(toIndentedString(destinationWorkbook)).append("\n");
     sb.append("}");
     return sb.toString();
   }

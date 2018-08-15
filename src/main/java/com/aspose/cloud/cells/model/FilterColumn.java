@@ -34,19 +34,13 @@ import java.util.List;
 /**
  * FilterColumn
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-05T15:44:26.749+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-08-14T14:34:14.243+08:00")
 public class FilterColumn {
-  @SerializedName("FieldIndex")
-  private Integer fieldIndex = null;
-
   @SerializedName("FilterType")
   private String filterType = null;
 
   @SerializedName("MultipleFilters")
   private MultipleFilters multipleFilters = null;
-
-  @SerializedName("ColorFilter")
-  private ColorFilter colorFilter = null;
 
   @SerializedName("CustomFilters")
   private List<CustomFilter> customFilters = null;
@@ -54,32 +48,20 @@ public class FilterColumn {
   @SerializedName("DynamicFilter")
   private DynamicFilter dynamicFilter = null;
 
-  @SerializedName("IconFilter")
-  private IconFilter iconFilter = null;
+  @SerializedName("ColorFilter")
+  private ColorFilter colorFilter = null;
+
+  @SerializedName("FieldIndex")
+  private Integer fieldIndex = null;
 
   @SerializedName("Top10Filter")
   private Top10Filter top10Filter = null;
 
+  @SerializedName("IconFilter")
+  private IconFilter iconFilter = null;
+
   @SerializedName("Visibledropdown")
   private String visibledropdown = null;
-
-  public FilterColumn fieldIndex(Integer fieldIndex) {
-    this.fieldIndex = fieldIndex;
-    return this;
-  }
-
-   /**
-   * Get fieldIndex
-   * @return fieldIndex
-  **/
-  @ApiModelProperty(required = true, value = "")
-  public Integer getFieldIndex() {
-    return fieldIndex;
-  }
-
-  public void setFieldIndex(Integer fieldIndex) {
-    this.fieldIndex = fieldIndex;
-  }
 
   public FilterColumn filterType(String filterType) {
     this.filterType = filterType;
@@ -115,24 +97,6 @@ public class FilterColumn {
 
   public void setMultipleFilters(MultipleFilters multipleFilters) {
     this.multipleFilters = multipleFilters;
-  }
-
-  public FilterColumn colorFilter(ColorFilter colorFilter) {
-    this.colorFilter = colorFilter;
-    return this;
-  }
-
-   /**
-   * Get colorFilter
-   * @return colorFilter
-  **/
-  @ApiModelProperty(value = "")
-  public ColorFilter getColorFilter() {
-    return colorFilter;
-  }
-
-  public void setColorFilter(ColorFilter colorFilter) {
-    this.colorFilter = colorFilter;
   }
 
   public FilterColumn customFilters(List<CustomFilter> customFilters) {
@@ -179,22 +143,40 @@ public class FilterColumn {
     this.dynamicFilter = dynamicFilter;
   }
 
-  public FilterColumn iconFilter(IconFilter iconFilter) {
-    this.iconFilter = iconFilter;
+  public FilterColumn colorFilter(ColorFilter colorFilter) {
+    this.colorFilter = colorFilter;
     return this;
   }
 
    /**
-   * Get iconFilter
-   * @return iconFilter
+   * Get colorFilter
+   * @return colorFilter
   **/
   @ApiModelProperty(value = "")
-  public IconFilter getIconFilter() {
-    return iconFilter;
+  public ColorFilter getColorFilter() {
+    return colorFilter;
   }
 
-  public void setIconFilter(IconFilter iconFilter) {
-    this.iconFilter = iconFilter;
+  public void setColorFilter(ColorFilter colorFilter) {
+    this.colorFilter = colorFilter;
+  }
+
+  public FilterColumn fieldIndex(Integer fieldIndex) {
+    this.fieldIndex = fieldIndex;
+    return this;
+  }
+
+   /**
+   * Get fieldIndex
+   * @return fieldIndex
+  **/
+  @ApiModelProperty(required = true, value = "")
+  public Integer getFieldIndex() {
+    return fieldIndex;
+  }
+
+  public void setFieldIndex(Integer fieldIndex) {
+    this.fieldIndex = fieldIndex;
   }
 
   public FilterColumn top10Filter(Top10Filter top10Filter) {
@@ -213,6 +195,24 @@ public class FilterColumn {
 
   public void setTop10Filter(Top10Filter top10Filter) {
     this.top10Filter = top10Filter;
+  }
+
+  public FilterColumn iconFilter(IconFilter iconFilter) {
+    this.iconFilter = iconFilter;
+    return this;
+  }
+
+   /**
+   * Get iconFilter
+   * @return iconFilter
+  **/
+  @ApiModelProperty(value = "")
+  public IconFilter getIconFilter() {
+    return iconFilter;
+  }
+
+  public void setIconFilter(IconFilter iconFilter) {
+    this.iconFilter = iconFilter;
   }
 
   public FilterColumn visibledropdown(String visibledropdown) {
@@ -243,20 +243,20 @@ public class FilterColumn {
       return false;
     }
     FilterColumn filterColumn = (FilterColumn) o;
-    return Objects.equals(this.fieldIndex, filterColumn.fieldIndex) &&
-        Objects.equals(this.filterType, filterColumn.filterType) &&
+    return Objects.equals(this.filterType, filterColumn.filterType) &&
         Objects.equals(this.multipleFilters, filterColumn.multipleFilters) &&
-        Objects.equals(this.colorFilter, filterColumn.colorFilter) &&
         Objects.equals(this.customFilters, filterColumn.customFilters) &&
         Objects.equals(this.dynamicFilter, filterColumn.dynamicFilter) &&
-        Objects.equals(this.iconFilter, filterColumn.iconFilter) &&
+        Objects.equals(this.colorFilter, filterColumn.colorFilter) &&
+        Objects.equals(this.fieldIndex, filterColumn.fieldIndex) &&
         Objects.equals(this.top10Filter, filterColumn.top10Filter) &&
+        Objects.equals(this.iconFilter, filterColumn.iconFilter) &&
         Objects.equals(this.visibledropdown, filterColumn.visibledropdown);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(fieldIndex, filterType, multipleFilters, colorFilter, customFilters, dynamicFilter, iconFilter, top10Filter, visibledropdown);
+    return Objects.hash(filterType, multipleFilters, customFilters, dynamicFilter, colorFilter, fieldIndex, top10Filter, iconFilter, visibledropdown);
   }
 
 
@@ -265,14 +265,14 @@ public class FilterColumn {
     StringBuilder sb = new StringBuilder();
     sb.append("class FilterColumn {\n");
     
-    sb.append("    fieldIndex: ").append(toIndentedString(fieldIndex)).append("\n");
     sb.append("    filterType: ").append(toIndentedString(filterType)).append("\n");
     sb.append("    multipleFilters: ").append(toIndentedString(multipleFilters)).append("\n");
-    sb.append("    colorFilter: ").append(toIndentedString(colorFilter)).append("\n");
     sb.append("    customFilters: ").append(toIndentedString(customFilters)).append("\n");
     sb.append("    dynamicFilter: ").append(toIndentedString(dynamicFilter)).append("\n");
-    sb.append("    iconFilter: ").append(toIndentedString(iconFilter)).append("\n");
+    sb.append("    colorFilter: ").append(toIndentedString(colorFilter)).append("\n");
+    sb.append("    fieldIndex: ").append(toIndentedString(fieldIndex)).append("\n");
     sb.append("    top10Filter: ").append(toIndentedString(top10Filter)).append("\n");
+    sb.append("    iconFilter: ").append(toIndentedString(iconFilter)).append("\n");
     sb.append("    visibledropdown: ").append(toIndentedString(visibledropdown)).append("\n");
     sb.append("}");
     return sb.toString();

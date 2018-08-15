@@ -26,16 +26,16 @@ import java.io.IOException;
 /**
  * VerticalPageBreak
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-05T15:44:26.749+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-08-14T14:34:14.243+08:00")
 public class VerticalPageBreak {
   @SerializedName("Column")
   private Integer column = null;
 
-  @SerializedName("EndRow")
-  private Integer endRow = null;
-
   @SerializedName("StartRow")
   private Integer startRow = null;
+
+  @SerializedName("EndRow")
+  private Integer endRow = null;
 
   public VerticalPageBreak column(Integer column) {
     this.column = column;
@@ -53,24 +53,6 @@ public class VerticalPageBreak {
 
   public void setColumn(Integer column) {
     this.column = column;
-  }
-
-  public VerticalPageBreak endRow(Integer endRow) {
-    this.endRow = endRow;
-    return this;
-  }
-
-   /**
-   * Get endRow
-   * @return endRow
-  **/
-  @ApiModelProperty(required = true, value = "")
-  public Integer getEndRow() {
-    return endRow;
-  }
-
-  public void setEndRow(Integer endRow) {
-    this.endRow = endRow;
   }
 
   public VerticalPageBreak startRow(Integer startRow) {
@@ -91,6 +73,24 @@ public class VerticalPageBreak {
     this.startRow = startRow;
   }
 
+  public VerticalPageBreak endRow(Integer endRow) {
+    this.endRow = endRow;
+    return this;
+  }
+
+   /**
+   * Get endRow
+   * @return endRow
+  **/
+  @ApiModelProperty(required = true, value = "")
+  public Integer getEndRow() {
+    return endRow;
+  }
+
+  public void setEndRow(Integer endRow) {
+    this.endRow = endRow;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -102,13 +102,13 @@ public class VerticalPageBreak {
     }
     VerticalPageBreak verticalPageBreak = (VerticalPageBreak) o;
     return Objects.equals(this.column, verticalPageBreak.column) &&
-        Objects.equals(this.endRow, verticalPageBreak.endRow) &&
-        Objects.equals(this.startRow, verticalPageBreak.startRow);
+        Objects.equals(this.startRow, verticalPageBreak.startRow) &&
+        Objects.equals(this.endRow, verticalPageBreak.endRow);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(column, endRow, startRow);
+    return Objects.hash(column, startRow, endRow);
   }
 
 
@@ -118,8 +118,8 @@ public class VerticalPageBreak {
     sb.append("class VerticalPageBreak {\n");
     
     sb.append("    column: ").append(toIndentedString(column)).append("\n");
-    sb.append("    endRow: ").append(toIndentedString(endRow)).append("\n");
     sb.append("    startRow: ").append(toIndentedString(startRow)).append("\n");
+    sb.append("    endRow: ").append(toIndentedString(endRow)).append("\n");
     sb.append("}");
     return sb.toString();
   }

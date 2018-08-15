@@ -28,22 +28,22 @@ import java.io.IOException;
 /**
  * MergedCell
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-05T15:44:26.749+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-08-14T14:34:14.243+08:00")
 public class MergedCell {
   @SerializedName("link")
   private Link link = null;
+
+  @SerializedName("StartRow")
+  private Integer startRow = null;
+
+  @SerializedName("StartColumn")
+  private Integer startColumn = null;
 
   @SerializedName("EndColumn")
   private Integer endColumn = null;
 
   @SerializedName("EndRow")
   private Integer endRow = null;
-
-  @SerializedName("StartColumn")
-  private Integer startColumn = null;
-
-  @SerializedName("StartRow")
-  private Integer startRow = null;
 
   public MergedCell link(Link link) {
     this.link = link;
@@ -61,6 +61,42 @@ public class MergedCell {
 
   public void setLink(Link link) {
     this.link = link;
+  }
+
+  public MergedCell startRow(Integer startRow) {
+    this.startRow = startRow;
+    return this;
+  }
+
+   /**
+   * Get startRow
+   * @return startRow
+  **/
+  @ApiModelProperty(required = true, value = "")
+  public Integer getStartRow() {
+    return startRow;
+  }
+
+  public void setStartRow(Integer startRow) {
+    this.startRow = startRow;
+  }
+
+  public MergedCell startColumn(Integer startColumn) {
+    this.startColumn = startColumn;
+    return this;
+  }
+
+   /**
+   * Get startColumn
+   * @return startColumn
+  **/
+  @ApiModelProperty(required = true, value = "")
+  public Integer getStartColumn() {
+    return startColumn;
+  }
+
+  public void setStartColumn(Integer startColumn) {
+    this.startColumn = startColumn;
   }
 
   public MergedCell endColumn(Integer endColumn) {
@@ -99,42 +135,6 @@ public class MergedCell {
     this.endRow = endRow;
   }
 
-  public MergedCell startColumn(Integer startColumn) {
-    this.startColumn = startColumn;
-    return this;
-  }
-
-   /**
-   * Get startColumn
-   * @return startColumn
-  **/
-  @ApiModelProperty(required = true, value = "")
-  public Integer getStartColumn() {
-    return startColumn;
-  }
-
-  public void setStartColumn(Integer startColumn) {
-    this.startColumn = startColumn;
-  }
-
-  public MergedCell startRow(Integer startRow) {
-    this.startRow = startRow;
-    return this;
-  }
-
-   /**
-   * Get startRow
-   * @return startRow
-  **/
-  @ApiModelProperty(required = true, value = "")
-  public Integer getStartRow() {
-    return startRow;
-  }
-
-  public void setStartRow(Integer startRow) {
-    this.startRow = startRow;
-  }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -146,15 +146,15 @@ public class MergedCell {
     }
     MergedCell mergedCell = (MergedCell) o;
     return Objects.equals(this.link, mergedCell.link) &&
-        Objects.equals(this.endColumn, mergedCell.endColumn) &&
-        Objects.equals(this.endRow, mergedCell.endRow) &&
+        Objects.equals(this.startRow, mergedCell.startRow) &&
         Objects.equals(this.startColumn, mergedCell.startColumn) &&
-        Objects.equals(this.startRow, mergedCell.startRow);
+        Objects.equals(this.endColumn, mergedCell.endColumn) &&
+        Objects.equals(this.endRow, mergedCell.endRow);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(link, endColumn, endRow, startColumn, startRow);
+    return Objects.hash(link, startRow, startColumn, endColumn, endRow);
   }
 
 
@@ -164,10 +164,10 @@ public class MergedCell {
     sb.append("class MergedCell {\n");
     
     sb.append("    link: ").append(toIndentedString(link)).append("\n");
+    sb.append("    startRow: ").append(toIndentedString(startRow)).append("\n");
+    sb.append("    startColumn: ").append(toIndentedString(startColumn)).append("\n");
     sb.append("    endColumn: ").append(toIndentedString(endColumn)).append("\n");
     sb.append("    endRow: ").append(toIndentedString(endRow)).append("\n");
-    sb.append("    startColumn: ").append(toIndentedString(startColumn)).append("\n");
-    sb.append("    startRow: ").append(toIndentedString(startRow)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -34,58 +34,10 @@ import java.util.List;
 /**
  * Style
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-05T15:44:26.749+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-08-14T14:34:14.243+08:00")
 public class Style {
   @SerializedName("link")
   private Link link = null;
-
-  @SerializedName("Font")
-  private Font font = null;
-
-  @SerializedName("Name")
-  private String name = null;
-
-  @SerializedName("CultureCustom")
-  private String cultureCustom = null;
-
-  @SerializedName("Custom")
-  private String custom = null;
-
-  @SerializedName("BackgroundColor")
-  private Color backgroundColor = null;
-
-  @SerializedName("ForegroundColor")
-  private Color foregroundColor = null;
-
-  @SerializedName("IsFormulaHidden")
-  private Boolean isFormulaHidden = null;
-
-  @SerializedName("IsDateTime")
-  private Boolean isDateTime = null;
-
-  @SerializedName("IsTextWrapped")
-  private Boolean isTextWrapped = null;
-
-  @SerializedName("IsGradient")
-  private Boolean isGradient = null;
-
-  @SerializedName("IsLocked")
-  private Boolean isLocked = null;
-
-  @SerializedName("IsPercent")
-  private Boolean isPercent = null;
-
-  @SerializedName("ShrinkToFit")
-  private Boolean shrinkToFit = null;
-
-  @SerializedName("IndentLevel")
-  private Integer indentLevel = null;
-
-  @SerializedName("Number")
-  private Integer number = null;
-
-  @SerializedName("RotationAngle")
-  private Integer rotationAngle = null;
 
   @SerializedName("Pattern")
   private String pattern = null;
@@ -93,20 +45,68 @@ public class Style {
   @SerializedName("TextDirection")
   private String textDirection = null;
 
-  @SerializedName("VerticalAlignment")
-  private String verticalAlignment = null;
+  @SerializedName("Custom")
+  private String custom = null;
 
-  @SerializedName("HorizontalAlignment")
-  private String horizontalAlignment = null;
+  @SerializedName("ShrinkToFit")
+  private Boolean shrinkToFit = null;
+
+  @SerializedName("IsDateTime")
+  private Boolean isDateTime = null;
+
+  @SerializedName("CultureCustom")
+  private String cultureCustom = null;
+
+  @SerializedName("RotationAngle")
+  private Integer rotationAngle = null;
+
+  @SerializedName("IndentLevel")
+  private Integer indentLevel = null;
+
+  @SerializedName("IsPercent")
+  private Boolean isPercent = null;
+
+  @SerializedName("ForegroundColor")
+  private Color foregroundColor = null;
+
+  @SerializedName("Name")
+  private String name = null;
+
+  @SerializedName("ForegroundThemeColor")
+  private ThemeColor foregroundThemeColor = null;
 
   @SerializedName("BorderCollection")
   private List<Border> borderCollection = null;
 
+  @SerializedName("IsLocked")
+  private Boolean isLocked = null;
+
+  @SerializedName("VerticalAlignment")
+  private String verticalAlignment = null;
+
+  @SerializedName("BackgroundColor")
+  private Color backgroundColor = null;
+
   @SerializedName("BackgroundThemeColor")
   private ThemeColor backgroundThemeColor = null;
 
-  @SerializedName("ForegroundThemeColor")
-  private ThemeColor foregroundThemeColor = null;
+  @SerializedName("IsFormulaHidden")
+  private Boolean isFormulaHidden = null;
+
+  @SerializedName("IsGradient")
+  private Boolean isGradient = null;
+
+  @SerializedName("Number")
+  private Integer number = null;
+
+  @SerializedName("HorizontalAlignment")
+  private String horizontalAlignment = null;
+
+  @SerializedName("IsTextWrapped")
+  private Boolean isTextWrapped = null;
+
+  @SerializedName("Font")
+  private Font font = null;
 
   public Style link(Link link) {
     this.link = link;
@@ -124,294 +124,6 @@ public class Style {
 
   public void setLink(Link link) {
     this.link = link;
-  }
-
-  public Style font(Font font) {
-    this.font = font;
-    return this;
-  }
-
-   /**
-   * Get font
-   * @return font
-  **/
-  @ApiModelProperty(value = "")
-  public Font getFont() {
-    return font;
-  }
-
-  public void setFont(Font font) {
-    this.font = font;
-  }
-
-  public Style name(String name) {
-    this.name = name;
-    return this;
-  }
-
-   /**
-   * Get name
-   * @return name
-  **/
-  @ApiModelProperty(value = "")
-  public String getName() {
-    return name;
-  }
-
-  public void setName(String name) {
-    this.name = name;
-  }
-
-  public Style cultureCustom(String cultureCustom) {
-    this.cultureCustom = cultureCustom;
-    return this;
-  }
-
-   /**
-   * Get cultureCustom
-   * @return cultureCustom
-  **/
-  @ApiModelProperty(value = "")
-  public String getCultureCustom() {
-    return cultureCustom;
-  }
-
-  public void setCultureCustom(String cultureCustom) {
-    this.cultureCustom = cultureCustom;
-  }
-
-  public Style custom(String custom) {
-    this.custom = custom;
-    return this;
-  }
-
-   /**
-   * Get custom
-   * @return custom
-  **/
-  @ApiModelProperty(value = "")
-  public String getCustom() {
-    return custom;
-  }
-
-  public void setCustom(String custom) {
-    this.custom = custom;
-  }
-
-  public Style backgroundColor(Color backgroundColor) {
-    this.backgroundColor = backgroundColor;
-    return this;
-  }
-
-   /**
-   * Get backgroundColor
-   * @return backgroundColor
-  **/
-  @ApiModelProperty(value = "")
-  public Color getBackgroundColor() {
-    return backgroundColor;
-  }
-
-  public void setBackgroundColor(Color backgroundColor) {
-    this.backgroundColor = backgroundColor;
-  }
-
-  public Style foregroundColor(Color foregroundColor) {
-    this.foregroundColor = foregroundColor;
-    return this;
-  }
-
-   /**
-   * Get foregroundColor
-   * @return foregroundColor
-  **/
-  @ApiModelProperty(value = "")
-  public Color getForegroundColor() {
-    return foregroundColor;
-  }
-
-  public void setForegroundColor(Color foregroundColor) {
-    this.foregroundColor = foregroundColor;
-  }
-
-  public Style isFormulaHidden(Boolean isFormulaHidden) {
-    this.isFormulaHidden = isFormulaHidden;
-    return this;
-  }
-
-   /**
-   * Get isFormulaHidden
-   * @return isFormulaHidden
-  **/
-  @ApiModelProperty(value = "")
-  public Boolean isIsFormulaHidden() {
-    return isFormulaHidden;
-  }
-
-  public void setIsFormulaHidden(Boolean isFormulaHidden) {
-    this.isFormulaHidden = isFormulaHidden;
-  }
-
-  public Style isDateTime(Boolean isDateTime) {
-    this.isDateTime = isDateTime;
-    return this;
-  }
-
-   /**
-   * Get isDateTime
-   * @return isDateTime
-  **/
-  @ApiModelProperty(value = "")
-  public Boolean isIsDateTime() {
-    return isDateTime;
-  }
-
-  public void setIsDateTime(Boolean isDateTime) {
-    this.isDateTime = isDateTime;
-  }
-
-  public Style isTextWrapped(Boolean isTextWrapped) {
-    this.isTextWrapped = isTextWrapped;
-    return this;
-  }
-
-   /**
-   * Get isTextWrapped
-   * @return isTextWrapped
-  **/
-  @ApiModelProperty(value = "")
-  public Boolean isIsTextWrapped() {
-    return isTextWrapped;
-  }
-
-  public void setIsTextWrapped(Boolean isTextWrapped) {
-    this.isTextWrapped = isTextWrapped;
-  }
-
-  public Style isGradient(Boolean isGradient) {
-    this.isGradient = isGradient;
-    return this;
-  }
-
-   /**
-   * Get isGradient
-   * @return isGradient
-  **/
-  @ApiModelProperty(value = "")
-  public Boolean isIsGradient() {
-    return isGradient;
-  }
-
-  public void setIsGradient(Boolean isGradient) {
-    this.isGradient = isGradient;
-  }
-
-  public Style isLocked(Boolean isLocked) {
-    this.isLocked = isLocked;
-    return this;
-  }
-
-   /**
-   * Get isLocked
-   * @return isLocked
-  **/
-  @ApiModelProperty(value = "")
-  public Boolean isIsLocked() {
-    return isLocked;
-  }
-
-  public void setIsLocked(Boolean isLocked) {
-    this.isLocked = isLocked;
-  }
-
-  public Style isPercent(Boolean isPercent) {
-    this.isPercent = isPercent;
-    return this;
-  }
-
-   /**
-   * Get isPercent
-   * @return isPercent
-  **/
-  @ApiModelProperty(value = "")
-  public Boolean isIsPercent() {
-    return isPercent;
-  }
-
-  public void setIsPercent(Boolean isPercent) {
-    this.isPercent = isPercent;
-  }
-
-  public Style shrinkToFit(Boolean shrinkToFit) {
-    this.shrinkToFit = shrinkToFit;
-    return this;
-  }
-
-   /**
-   * Get shrinkToFit
-   * @return shrinkToFit
-  **/
-  @ApiModelProperty(value = "")
-  public Boolean isShrinkToFit() {
-    return shrinkToFit;
-  }
-
-  public void setShrinkToFit(Boolean shrinkToFit) {
-    this.shrinkToFit = shrinkToFit;
-  }
-
-  public Style indentLevel(Integer indentLevel) {
-    this.indentLevel = indentLevel;
-    return this;
-  }
-
-   /**
-   * Get indentLevel
-   * @return indentLevel
-  **/
-  @ApiModelProperty(value = "")
-  public Integer getIndentLevel() {
-    return indentLevel;
-  }
-
-  public void setIndentLevel(Integer indentLevel) {
-    this.indentLevel = indentLevel;
-  }
-
-  public Style number(Integer number) {
-    this.number = number;
-    return this;
-  }
-
-   /**
-   * Get number
-   * @return number
-  **/
-  @ApiModelProperty(value = "")
-  public Integer getNumber() {
-    return number;
-  }
-
-  public void setNumber(Integer number) {
-    this.number = number;
-  }
-
-  public Style rotationAngle(Integer rotationAngle) {
-    this.rotationAngle = rotationAngle;
-    return this;
-  }
-
-   /**
-   * Get rotationAngle
-   * @return rotationAngle
-  **/
-  @ApiModelProperty(value = "")
-  public Integer getRotationAngle() {
-    return rotationAngle;
-  }
-
-  public void setRotationAngle(Integer rotationAngle) {
-    this.rotationAngle = rotationAngle;
   }
 
   public Style pattern(String pattern) {
@@ -450,40 +162,184 @@ public class Style {
     this.textDirection = textDirection;
   }
 
-  public Style verticalAlignment(String verticalAlignment) {
-    this.verticalAlignment = verticalAlignment;
+  public Style custom(String custom) {
+    this.custom = custom;
     return this;
   }
 
    /**
-   * Get verticalAlignment
-   * @return verticalAlignment
+   * Get custom
+   * @return custom
   **/
   @ApiModelProperty(value = "")
-  public String getVerticalAlignment() {
-    return verticalAlignment;
+  public String getCustom() {
+    return custom;
   }
 
-  public void setVerticalAlignment(String verticalAlignment) {
-    this.verticalAlignment = verticalAlignment;
+  public void setCustom(String custom) {
+    this.custom = custom;
   }
 
-  public Style horizontalAlignment(String horizontalAlignment) {
-    this.horizontalAlignment = horizontalAlignment;
+  public Style shrinkToFit(Boolean shrinkToFit) {
+    this.shrinkToFit = shrinkToFit;
     return this;
   }
 
    /**
-   * Get horizontalAlignment
-   * @return horizontalAlignment
+   * Get shrinkToFit
+   * @return shrinkToFit
   **/
   @ApiModelProperty(value = "")
-  public String getHorizontalAlignment() {
-    return horizontalAlignment;
+  public Boolean isShrinkToFit() {
+    return shrinkToFit;
   }
 
-  public void setHorizontalAlignment(String horizontalAlignment) {
-    this.horizontalAlignment = horizontalAlignment;
+  public void setShrinkToFit(Boolean shrinkToFit) {
+    this.shrinkToFit = shrinkToFit;
+  }
+
+  public Style isDateTime(Boolean isDateTime) {
+    this.isDateTime = isDateTime;
+    return this;
+  }
+
+   /**
+   * Get isDateTime
+   * @return isDateTime
+  **/
+  @ApiModelProperty(value = "")
+  public Boolean isIsDateTime() {
+    return isDateTime;
+  }
+
+  public void setIsDateTime(Boolean isDateTime) {
+    this.isDateTime = isDateTime;
+  }
+
+  public Style cultureCustom(String cultureCustom) {
+    this.cultureCustom = cultureCustom;
+    return this;
+  }
+
+   /**
+   * Get cultureCustom
+   * @return cultureCustom
+  **/
+  @ApiModelProperty(value = "")
+  public String getCultureCustom() {
+    return cultureCustom;
+  }
+
+  public void setCultureCustom(String cultureCustom) {
+    this.cultureCustom = cultureCustom;
+  }
+
+  public Style rotationAngle(Integer rotationAngle) {
+    this.rotationAngle = rotationAngle;
+    return this;
+  }
+
+   /**
+   * Get rotationAngle
+   * @return rotationAngle
+  **/
+  @ApiModelProperty(value = "")
+  public Integer getRotationAngle() {
+    return rotationAngle;
+  }
+
+  public void setRotationAngle(Integer rotationAngle) {
+    this.rotationAngle = rotationAngle;
+  }
+
+  public Style indentLevel(Integer indentLevel) {
+    this.indentLevel = indentLevel;
+    return this;
+  }
+
+   /**
+   * Get indentLevel
+   * @return indentLevel
+  **/
+  @ApiModelProperty(value = "")
+  public Integer getIndentLevel() {
+    return indentLevel;
+  }
+
+  public void setIndentLevel(Integer indentLevel) {
+    this.indentLevel = indentLevel;
+  }
+
+  public Style isPercent(Boolean isPercent) {
+    this.isPercent = isPercent;
+    return this;
+  }
+
+   /**
+   * Get isPercent
+   * @return isPercent
+  **/
+  @ApiModelProperty(value = "")
+  public Boolean isIsPercent() {
+    return isPercent;
+  }
+
+  public void setIsPercent(Boolean isPercent) {
+    this.isPercent = isPercent;
+  }
+
+  public Style foregroundColor(Color foregroundColor) {
+    this.foregroundColor = foregroundColor;
+    return this;
+  }
+
+   /**
+   * Get foregroundColor
+   * @return foregroundColor
+  **/
+  @ApiModelProperty(value = "")
+  public Color getForegroundColor() {
+    return foregroundColor;
+  }
+
+  public void setForegroundColor(Color foregroundColor) {
+    this.foregroundColor = foregroundColor;
+  }
+
+  public Style name(String name) {
+    this.name = name;
+    return this;
+  }
+
+   /**
+   * Get name
+   * @return name
+  **/
+  @ApiModelProperty(value = "")
+  public String getName() {
+    return name;
+  }
+
+  public void setName(String name) {
+    this.name = name;
+  }
+
+  public Style foregroundThemeColor(ThemeColor foregroundThemeColor) {
+    this.foregroundThemeColor = foregroundThemeColor;
+    return this;
+  }
+
+   /**
+   * Get foregroundThemeColor
+   * @return foregroundThemeColor
+  **/
+  @ApiModelProperty(value = "")
+  public ThemeColor getForegroundThemeColor() {
+    return foregroundThemeColor;
+  }
+
+  public void setForegroundThemeColor(ThemeColor foregroundThemeColor) {
+    this.foregroundThemeColor = foregroundThemeColor;
   }
 
   public Style borderCollection(List<Border> borderCollection) {
@@ -512,6 +368,60 @@ public class Style {
     this.borderCollection = borderCollection;
   }
 
+  public Style isLocked(Boolean isLocked) {
+    this.isLocked = isLocked;
+    return this;
+  }
+
+   /**
+   * Get isLocked
+   * @return isLocked
+  **/
+  @ApiModelProperty(value = "")
+  public Boolean isIsLocked() {
+    return isLocked;
+  }
+
+  public void setIsLocked(Boolean isLocked) {
+    this.isLocked = isLocked;
+  }
+
+  public Style verticalAlignment(String verticalAlignment) {
+    this.verticalAlignment = verticalAlignment;
+    return this;
+  }
+
+   /**
+   * Get verticalAlignment
+   * @return verticalAlignment
+  **/
+  @ApiModelProperty(value = "")
+  public String getVerticalAlignment() {
+    return verticalAlignment;
+  }
+
+  public void setVerticalAlignment(String verticalAlignment) {
+    this.verticalAlignment = verticalAlignment;
+  }
+
+  public Style backgroundColor(Color backgroundColor) {
+    this.backgroundColor = backgroundColor;
+    return this;
+  }
+
+   /**
+   * Get backgroundColor
+   * @return backgroundColor
+  **/
+  @ApiModelProperty(value = "")
+  public Color getBackgroundColor() {
+    return backgroundColor;
+  }
+
+  public void setBackgroundColor(Color backgroundColor) {
+    this.backgroundColor = backgroundColor;
+  }
+
   public Style backgroundThemeColor(ThemeColor backgroundThemeColor) {
     this.backgroundThemeColor = backgroundThemeColor;
     return this;
@@ -530,22 +440,112 @@ public class Style {
     this.backgroundThemeColor = backgroundThemeColor;
   }
 
-  public Style foregroundThemeColor(ThemeColor foregroundThemeColor) {
-    this.foregroundThemeColor = foregroundThemeColor;
+  public Style isFormulaHidden(Boolean isFormulaHidden) {
+    this.isFormulaHidden = isFormulaHidden;
     return this;
   }
 
    /**
-   * Get foregroundThemeColor
-   * @return foregroundThemeColor
+   * Get isFormulaHidden
+   * @return isFormulaHidden
   **/
   @ApiModelProperty(value = "")
-  public ThemeColor getForegroundThemeColor() {
-    return foregroundThemeColor;
+  public Boolean isIsFormulaHidden() {
+    return isFormulaHidden;
   }
 
-  public void setForegroundThemeColor(ThemeColor foregroundThemeColor) {
-    this.foregroundThemeColor = foregroundThemeColor;
+  public void setIsFormulaHidden(Boolean isFormulaHidden) {
+    this.isFormulaHidden = isFormulaHidden;
+  }
+
+  public Style isGradient(Boolean isGradient) {
+    this.isGradient = isGradient;
+    return this;
+  }
+
+   /**
+   * Get isGradient
+   * @return isGradient
+  **/
+  @ApiModelProperty(value = "")
+  public Boolean isIsGradient() {
+    return isGradient;
+  }
+
+  public void setIsGradient(Boolean isGradient) {
+    this.isGradient = isGradient;
+  }
+
+  public Style number(Integer number) {
+    this.number = number;
+    return this;
+  }
+
+   /**
+   * Get number
+   * @return number
+  **/
+  @ApiModelProperty(value = "")
+  public Integer getNumber() {
+    return number;
+  }
+
+  public void setNumber(Integer number) {
+    this.number = number;
+  }
+
+  public Style horizontalAlignment(String horizontalAlignment) {
+    this.horizontalAlignment = horizontalAlignment;
+    return this;
+  }
+
+   /**
+   * Get horizontalAlignment
+   * @return horizontalAlignment
+  **/
+  @ApiModelProperty(value = "")
+  public String getHorizontalAlignment() {
+    return horizontalAlignment;
+  }
+
+  public void setHorizontalAlignment(String horizontalAlignment) {
+    this.horizontalAlignment = horizontalAlignment;
+  }
+
+  public Style isTextWrapped(Boolean isTextWrapped) {
+    this.isTextWrapped = isTextWrapped;
+    return this;
+  }
+
+   /**
+   * Get isTextWrapped
+   * @return isTextWrapped
+  **/
+  @ApiModelProperty(value = "")
+  public Boolean isIsTextWrapped() {
+    return isTextWrapped;
+  }
+
+  public void setIsTextWrapped(Boolean isTextWrapped) {
+    this.isTextWrapped = isTextWrapped;
+  }
+
+  public Style font(Font font) {
+    this.font = font;
+    return this;
+  }
+
+   /**
+   * Get font
+   * @return font
+  **/
+  @ApiModelProperty(value = "")
+  public Font getFont() {
+    return font;
+  }
+
+  public void setFont(Font font) {
+    this.font = font;
   }
 
 
@@ -559,34 +559,34 @@ public class Style {
     }
     Style style = (Style) o;
     return Objects.equals(this.link, style.link) &&
-        Objects.equals(this.font, style.font) &&
-        Objects.equals(this.name, style.name) &&
-        Objects.equals(this.cultureCustom, style.cultureCustom) &&
-        Objects.equals(this.custom, style.custom) &&
-        Objects.equals(this.backgroundColor, style.backgroundColor) &&
-        Objects.equals(this.foregroundColor, style.foregroundColor) &&
-        Objects.equals(this.isFormulaHidden, style.isFormulaHidden) &&
-        Objects.equals(this.isDateTime, style.isDateTime) &&
-        Objects.equals(this.isTextWrapped, style.isTextWrapped) &&
-        Objects.equals(this.isGradient, style.isGradient) &&
-        Objects.equals(this.isLocked, style.isLocked) &&
-        Objects.equals(this.isPercent, style.isPercent) &&
-        Objects.equals(this.shrinkToFit, style.shrinkToFit) &&
-        Objects.equals(this.indentLevel, style.indentLevel) &&
-        Objects.equals(this.number, style.number) &&
-        Objects.equals(this.rotationAngle, style.rotationAngle) &&
         Objects.equals(this.pattern, style.pattern) &&
         Objects.equals(this.textDirection, style.textDirection) &&
-        Objects.equals(this.verticalAlignment, style.verticalAlignment) &&
-        Objects.equals(this.horizontalAlignment, style.horizontalAlignment) &&
+        Objects.equals(this.custom, style.custom) &&
+        Objects.equals(this.shrinkToFit, style.shrinkToFit) &&
+        Objects.equals(this.isDateTime, style.isDateTime) &&
+        Objects.equals(this.cultureCustom, style.cultureCustom) &&
+        Objects.equals(this.rotationAngle, style.rotationAngle) &&
+        Objects.equals(this.indentLevel, style.indentLevel) &&
+        Objects.equals(this.isPercent, style.isPercent) &&
+        Objects.equals(this.foregroundColor, style.foregroundColor) &&
+        Objects.equals(this.name, style.name) &&
+        Objects.equals(this.foregroundThemeColor, style.foregroundThemeColor) &&
         Objects.equals(this.borderCollection, style.borderCollection) &&
+        Objects.equals(this.isLocked, style.isLocked) &&
+        Objects.equals(this.verticalAlignment, style.verticalAlignment) &&
+        Objects.equals(this.backgroundColor, style.backgroundColor) &&
         Objects.equals(this.backgroundThemeColor, style.backgroundThemeColor) &&
-        Objects.equals(this.foregroundThemeColor, style.foregroundThemeColor);
+        Objects.equals(this.isFormulaHidden, style.isFormulaHidden) &&
+        Objects.equals(this.isGradient, style.isGradient) &&
+        Objects.equals(this.number, style.number) &&
+        Objects.equals(this.horizontalAlignment, style.horizontalAlignment) &&
+        Objects.equals(this.isTextWrapped, style.isTextWrapped) &&
+        Objects.equals(this.font, style.font);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(link, font, name, cultureCustom, custom, backgroundColor, foregroundColor, isFormulaHidden, isDateTime, isTextWrapped, isGradient, isLocked, isPercent, shrinkToFit, indentLevel, number, rotationAngle, pattern, textDirection, verticalAlignment, horizontalAlignment, borderCollection, backgroundThemeColor, foregroundThemeColor);
+    return Objects.hash(link, pattern, textDirection, custom, shrinkToFit, isDateTime, cultureCustom, rotationAngle, indentLevel, isPercent, foregroundColor, name, foregroundThemeColor, borderCollection, isLocked, verticalAlignment, backgroundColor, backgroundThemeColor, isFormulaHidden, isGradient, number, horizontalAlignment, isTextWrapped, font);
   }
 
 
@@ -596,29 +596,29 @@ public class Style {
     sb.append("class Style {\n");
     
     sb.append("    link: ").append(toIndentedString(link)).append("\n");
-    sb.append("    font: ").append(toIndentedString(font)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    cultureCustom: ").append(toIndentedString(cultureCustom)).append("\n");
-    sb.append("    custom: ").append(toIndentedString(custom)).append("\n");
-    sb.append("    backgroundColor: ").append(toIndentedString(backgroundColor)).append("\n");
-    sb.append("    foregroundColor: ").append(toIndentedString(foregroundColor)).append("\n");
-    sb.append("    isFormulaHidden: ").append(toIndentedString(isFormulaHidden)).append("\n");
-    sb.append("    isDateTime: ").append(toIndentedString(isDateTime)).append("\n");
-    sb.append("    isTextWrapped: ").append(toIndentedString(isTextWrapped)).append("\n");
-    sb.append("    isGradient: ").append(toIndentedString(isGradient)).append("\n");
-    sb.append("    isLocked: ").append(toIndentedString(isLocked)).append("\n");
-    sb.append("    isPercent: ").append(toIndentedString(isPercent)).append("\n");
-    sb.append("    shrinkToFit: ").append(toIndentedString(shrinkToFit)).append("\n");
-    sb.append("    indentLevel: ").append(toIndentedString(indentLevel)).append("\n");
-    sb.append("    number: ").append(toIndentedString(number)).append("\n");
-    sb.append("    rotationAngle: ").append(toIndentedString(rotationAngle)).append("\n");
     sb.append("    pattern: ").append(toIndentedString(pattern)).append("\n");
     sb.append("    textDirection: ").append(toIndentedString(textDirection)).append("\n");
-    sb.append("    verticalAlignment: ").append(toIndentedString(verticalAlignment)).append("\n");
-    sb.append("    horizontalAlignment: ").append(toIndentedString(horizontalAlignment)).append("\n");
-    sb.append("    borderCollection: ").append(toIndentedString(borderCollection)).append("\n");
-    sb.append("    backgroundThemeColor: ").append(toIndentedString(backgroundThemeColor)).append("\n");
+    sb.append("    custom: ").append(toIndentedString(custom)).append("\n");
+    sb.append("    shrinkToFit: ").append(toIndentedString(shrinkToFit)).append("\n");
+    sb.append("    isDateTime: ").append(toIndentedString(isDateTime)).append("\n");
+    sb.append("    cultureCustom: ").append(toIndentedString(cultureCustom)).append("\n");
+    sb.append("    rotationAngle: ").append(toIndentedString(rotationAngle)).append("\n");
+    sb.append("    indentLevel: ").append(toIndentedString(indentLevel)).append("\n");
+    sb.append("    isPercent: ").append(toIndentedString(isPercent)).append("\n");
+    sb.append("    foregroundColor: ").append(toIndentedString(foregroundColor)).append("\n");
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    foregroundThemeColor: ").append(toIndentedString(foregroundThemeColor)).append("\n");
+    sb.append("    borderCollection: ").append(toIndentedString(borderCollection)).append("\n");
+    sb.append("    isLocked: ").append(toIndentedString(isLocked)).append("\n");
+    sb.append("    verticalAlignment: ").append(toIndentedString(verticalAlignment)).append("\n");
+    sb.append("    backgroundColor: ").append(toIndentedString(backgroundColor)).append("\n");
+    sb.append("    backgroundThemeColor: ").append(toIndentedString(backgroundThemeColor)).append("\n");
+    sb.append("    isFormulaHidden: ").append(toIndentedString(isFormulaHidden)).append("\n");
+    sb.append("    isGradient: ").append(toIndentedString(isGradient)).append("\n");
+    sb.append("    number: ").append(toIndentedString(number)).append("\n");
+    sb.append("    horizontalAlignment: ").append(toIndentedString(horizontalAlignment)).append("\n");
+    sb.append("    isTextWrapped: ").append(toIndentedString(isTextWrapped)).append("\n");
+    sb.append("    font: ").append(toIndentedString(font)).append("\n");
     sb.append("}");
     return sb.toString();
   }

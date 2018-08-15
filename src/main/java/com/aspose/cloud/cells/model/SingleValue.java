@@ -27,31 +27,13 @@ import java.io.IOException;
 /**
  * SingleValue
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-05T15:44:26.749+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-08-14T14:34:14.243+08:00")
 public class SingleValue {
-  @SerializedName("Value")
-  private String value = null;
-
   @SerializedName("ValueType")
   private ValueType valueType = null;
 
-  public SingleValue value(String value) {
-    this.value = value;
-    return this;
-  }
-
-   /**
-   * Get value
-   * @return value
-  **/
-  @ApiModelProperty(value = "")
-  public String getValue() {
-    return value;
-  }
-
-  public void setValue(String value) {
-    this.value = value;
-  }
+  @SerializedName("Value")
+  private String value = null;
 
   public SingleValue valueType(ValueType valueType) {
     this.valueType = valueType;
@@ -71,6 +53,24 @@ public class SingleValue {
     this.valueType = valueType;
   }
 
+  public SingleValue value(String value) {
+    this.value = value;
+    return this;
+  }
+
+   /**
+   * Get value
+   * @return value
+  **/
+  @ApiModelProperty(value = "")
+  public String getValue() {
+    return value;
+  }
+
+  public void setValue(String value) {
+    this.value = value;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -81,13 +81,13 @@ public class SingleValue {
       return false;
     }
     SingleValue singleValue = (SingleValue) o;
-    return Objects.equals(this.value, singleValue.value) &&
-        Objects.equals(this.valueType, singleValue.valueType);
+    return Objects.equals(this.valueType, singleValue.valueType) &&
+        Objects.equals(this.value, singleValue.value);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(value, valueType);
+    return Objects.hash(valueType, value);
   }
 
 
@@ -96,8 +96,8 @@ public class SingleValue {
     StringBuilder sb = new StringBuilder();
     sb.append("class SingleValue {\n");
     
-    sb.append("    value: ").append(toIndentedString(value)).append("\n");
     sb.append("    valueType: ").append(toIndentedString(valueType)).append("\n");
+    sb.append("    value: ").append(toIndentedString(value)).append("\n");
     sb.append("}");
     return sb.toString();
   }

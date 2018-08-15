@@ -26,25 +26,43 @@ import java.io.IOException;
 /**
  * TilePicOption
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-05T15:44:26.749+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-08-14T14:34:14.243+08:00")
 public class TilePicOption {
+  @SerializedName("AlignmentType")
+  private String alignmentType = null;
+
   @SerializedName("OffsetX")
   private Double offsetX = null;
-
-  @SerializedName("OffsetY")
-  private Double offsetY = null;
 
   @SerializedName("ScaleX")
   private Double scaleX = null;
 
+  @SerializedName("OffsetY")
+  private Double offsetY = null;
+
   @SerializedName("ScaleY")
   private Double scaleY = null;
 
-  @SerializedName("AlignmentType")
-  private String alignmentType = null;
-
   @SerializedName("MirrorType")
   private String mirrorType = null;
+
+  public TilePicOption alignmentType(String alignmentType) {
+    this.alignmentType = alignmentType;
+    return this;
+  }
+
+   /**
+   * Get alignmentType
+   * @return alignmentType
+  **/
+  @ApiModelProperty(value = "")
+  public String getAlignmentType() {
+    return alignmentType;
+  }
+
+  public void setAlignmentType(String alignmentType) {
+    this.alignmentType = alignmentType;
+  }
 
   public TilePicOption offsetX(Double offsetX) {
     this.offsetX = offsetX;
@@ -62,24 +80,6 @@ public class TilePicOption {
 
   public void setOffsetX(Double offsetX) {
     this.offsetX = offsetX;
-  }
-
-  public TilePicOption offsetY(Double offsetY) {
-    this.offsetY = offsetY;
-    return this;
-  }
-
-   /**
-   * Get offsetY
-   * @return offsetY
-  **/
-  @ApiModelProperty(required = true, value = "")
-  public Double getOffsetY() {
-    return offsetY;
-  }
-
-  public void setOffsetY(Double offsetY) {
-    this.offsetY = offsetY;
   }
 
   public TilePicOption scaleX(Double scaleX) {
@@ -100,6 +100,24 @@ public class TilePicOption {
     this.scaleX = scaleX;
   }
 
+  public TilePicOption offsetY(Double offsetY) {
+    this.offsetY = offsetY;
+    return this;
+  }
+
+   /**
+   * Get offsetY
+   * @return offsetY
+  **/
+  @ApiModelProperty(required = true, value = "")
+  public Double getOffsetY() {
+    return offsetY;
+  }
+
+  public void setOffsetY(Double offsetY) {
+    this.offsetY = offsetY;
+  }
+
   public TilePicOption scaleY(Double scaleY) {
     this.scaleY = scaleY;
     return this;
@@ -116,24 +134,6 @@ public class TilePicOption {
 
   public void setScaleY(Double scaleY) {
     this.scaleY = scaleY;
-  }
-
-  public TilePicOption alignmentType(String alignmentType) {
-    this.alignmentType = alignmentType;
-    return this;
-  }
-
-   /**
-   * Get alignmentType
-   * @return alignmentType
-  **/
-  @ApiModelProperty(value = "")
-  public String getAlignmentType() {
-    return alignmentType;
-  }
-
-  public void setAlignmentType(String alignmentType) {
-    this.alignmentType = alignmentType;
   }
 
   public TilePicOption mirrorType(String mirrorType) {
@@ -164,17 +164,17 @@ public class TilePicOption {
       return false;
     }
     TilePicOption tilePicOption = (TilePicOption) o;
-    return Objects.equals(this.offsetX, tilePicOption.offsetX) &&
-        Objects.equals(this.offsetY, tilePicOption.offsetY) &&
+    return Objects.equals(this.alignmentType, tilePicOption.alignmentType) &&
+        Objects.equals(this.offsetX, tilePicOption.offsetX) &&
         Objects.equals(this.scaleX, tilePicOption.scaleX) &&
+        Objects.equals(this.offsetY, tilePicOption.offsetY) &&
         Objects.equals(this.scaleY, tilePicOption.scaleY) &&
-        Objects.equals(this.alignmentType, tilePicOption.alignmentType) &&
         Objects.equals(this.mirrorType, tilePicOption.mirrorType);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(offsetX, offsetY, scaleX, scaleY, alignmentType, mirrorType);
+    return Objects.hash(alignmentType, offsetX, scaleX, offsetY, scaleY, mirrorType);
   }
 
 
@@ -183,11 +183,11 @@ public class TilePicOption {
     StringBuilder sb = new StringBuilder();
     sb.append("class TilePicOption {\n");
     
-    sb.append("    offsetX: ").append(toIndentedString(offsetX)).append("\n");
-    sb.append("    offsetY: ").append(toIndentedString(offsetY)).append("\n");
-    sb.append("    scaleX: ").append(toIndentedString(scaleX)).append("\n");
-    sb.append("    scaleY: ").append(toIndentedString(scaleY)).append("\n");
     sb.append("    alignmentType: ").append(toIndentedString(alignmentType)).append("\n");
+    sb.append("    offsetX: ").append(toIndentedString(offsetX)).append("\n");
+    sb.append("    scaleX: ").append(toIndentedString(scaleX)).append("\n");
+    sb.append("    offsetY: ").append(toIndentedString(offsetY)).append("\n");
+    sb.append("    scaleY: ").append(toIndentedString(scaleY)).append("\n");
     sb.append("    mirrorType: ").append(toIndentedString(mirrorType)).append("\n");
     sb.append("}");
     return sb.toString();

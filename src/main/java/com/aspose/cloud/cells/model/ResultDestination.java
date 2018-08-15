@@ -26,33 +26,33 @@ import java.io.IOException;
 /**
  * ResultDestination
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-05T15:44:26.749+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-08-14T14:34:14.243+08:00")
 public class ResultDestination {
-  @SerializedName("DestinationType")
-  private String destinationType = null;
+  @SerializedName("OutputFile")
+  private String outputFile = null;
 
   @SerializedName("InputFile")
   private String inputFile = null;
 
-  @SerializedName("OutputFile")
-  private String outputFile = null;
+  @SerializedName("DestinationType")
+  private String destinationType = null;
 
-  public ResultDestination destinationType(String destinationType) {
-    this.destinationType = destinationType;
+  public ResultDestination outputFile(String outputFile) {
+    this.outputFile = outputFile;
     return this;
   }
 
    /**
-   * Get destinationType
-   * @return destinationType
+   * Get outputFile
+   * @return outputFile
   **/
   @ApiModelProperty(value = "")
-  public String getDestinationType() {
-    return destinationType;
+  public String getOutputFile() {
+    return outputFile;
   }
 
-  public void setDestinationType(String destinationType) {
-    this.destinationType = destinationType;
+  public void setOutputFile(String outputFile) {
+    this.outputFile = outputFile;
   }
 
   public ResultDestination inputFile(String inputFile) {
@@ -73,22 +73,22 @@ public class ResultDestination {
     this.inputFile = inputFile;
   }
 
-  public ResultDestination outputFile(String outputFile) {
-    this.outputFile = outputFile;
+  public ResultDestination destinationType(String destinationType) {
+    this.destinationType = destinationType;
     return this;
   }
 
    /**
-   * Get outputFile
-   * @return outputFile
+   * Get destinationType
+   * @return destinationType
   **/
   @ApiModelProperty(value = "")
-  public String getOutputFile() {
-    return outputFile;
+  public String getDestinationType() {
+    return destinationType;
   }
 
-  public void setOutputFile(String outputFile) {
-    this.outputFile = outputFile;
+  public void setDestinationType(String destinationType) {
+    this.destinationType = destinationType;
   }
 
 
@@ -101,14 +101,14 @@ public class ResultDestination {
       return false;
     }
     ResultDestination resultDestination = (ResultDestination) o;
-    return Objects.equals(this.destinationType, resultDestination.destinationType) &&
+    return Objects.equals(this.outputFile, resultDestination.outputFile) &&
         Objects.equals(this.inputFile, resultDestination.inputFile) &&
-        Objects.equals(this.outputFile, resultDestination.outputFile);
+        Objects.equals(this.destinationType, resultDestination.destinationType);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(destinationType, inputFile, outputFile);
+    return Objects.hash(outputFile, inputFile, destinationType);
   }
 
 
@@ -117,9 +117,9 @@ public class ResultDestination {
     StringBuilder sb = new StringBuilder();
     sb.append("class ResultDestination {\n");
     
-    sb.append("    destinationType: ").append(toIndentedString(destinationType)).append("\n");
-    sb.append("    inputFile: ").append(toIndentedString(inputFile)).append("\n");
     sb.append("    outputFile: ").append(toIndentedString(outputFile)).append("\n");
+    sb.append("    inputFile: ").append(toIndentedString(inputFile)).append("\n");
+    sb.append("    destinationType: ").append(toIndentedString(destinationType)).append("\n");
     sb.append("}");
     return sb.toString();
   }

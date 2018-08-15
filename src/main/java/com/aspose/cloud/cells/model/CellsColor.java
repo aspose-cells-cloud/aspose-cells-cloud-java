@@ -28,22 +28,22 @@ import java.io.IOException;
 /**
  * CellsColor
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-05T15:44:26.749+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-08-14T14:34:14.243+08:00")
 public class CellsColor {
   @SerializedName("Color")
   private Color color = null;
 
-  @SerializedName("ColorIndex")
-  private Integer colorIndex = null;
-
-  @SerializedName("IsShapeColor")
-  private Boolean isShapeColor = null;
+  @SerializedName("Type")
+  private String type = null;
 
   @SerializedName("ThemeColor")
   private ThemeColor themeColor = null;
 
-  @SerializedName("Type")
-  private String type = null;
+  @SerializedName("IsShapeColor")
+  private Boolean isShapeColor = null;
+
+  @SerializedName("ColorIndex")
+  private Integer colorIndex = null;
 
   public CellsColor color(Color color) {
     this.color = color;
@@ -61,60 +61,6 @@ public class CellsColor {
 
   public void setColor(Color color) {
     this.color = color;
-  }
-
-  public CellsColor colorIndex(Integer colorIndex) {
-    this.colorIndex = colorIndex;
-    return this;
-  }
-
-   /**
-   * Get colorIndex
-   * @return colorIndex
-  **/
-  @ApiModelProperty(value = "")
-  public Integer getColorIndex() {
-    return colorIndex;
-  }
-
-  public void setColorIndex(Integer colorIndex) {
-    this.colorIndex = colorIndex;
-  }
-
-  public CellsColor isShapeColor(Boolean isShapeColor) {
-    this.isShapeColor = isShapeColor;
-    return this;
-  }
-
-   /**
-   * Get isShapeColor
-   * @return isShapeColor
-  **/
-  @ApiModelProperty(value = "")
-  public Boolean isIsShapeColor() {
-    return isShapeColor;
-  }
-
-  public void setIsShapeColor(Boolean isShapeColor) {
-    this.isShapeColor = isShapeColor;
-  }
-
-  public CellsColor themeColor(ThemeColor themeColor) {
-    this.themeColor = themeColor;
-    return this;
-  }
-
-   /**
-   * Get themeColor
-   * @return themeColor
-  **/
-  @ApiModelProperty(value = "")
-  public ThemeColor getThemeColor() {
-    return themeColor;
-  }
-
-  public void setThemeColor(ThemeColor themeColor) {
-    this.themeColor = themeColor;
   }
 
   public CellsColor type(String type) {
@@ -135,6 +81,60 @@ public class CellsColor {
     this.type = type;
   }
 
+  public CellsColor themeColor(ThemeColor themeColor) {
+    this.themeColor = themeColor;
+    return this;
+  }
+
+   /**
+   * Get themeColor
+   * @return themeColor
+  **/
+  @ApiModelProperty(value = "")
+  public ThemeColor getThemeColor() {
+    return themeColor;
+  }
+
+  public void setThemeColor(ThemeColor themeColor) {
+    this.themeColor = themeColor;
+  }
+
+  public CellsColor isShapeColor(Boolean isShapeColor) {
+    this.isShapeColor = isShapeColor;
+    return this;
+  }
+
+   /**
+   * Get isShapeColor
+   * @return isShapeColor
+  **/
+  @ApiModelProperty(value = "")
+  public Boolean isIsShapeColor() {
+    return isShapeColor;
+  }
+
+  public void setIsShapeColor(Boolean isShapeColor) {
+    this.isShapeColor = isShapeColor;
+  }
+
+  public CellsColor colorIndex(Integer colorIndex) {
+    this.colorIndex = colorIndex;
+    return this;
+  }
+
+   /**
+   * Get colorIndex
+   * @return colorIndex
+  **/
+  @ApiModelProperty(value = "")
+  public Integer getColorIndex() {
+    return colorIndex;
+  }
+
+  public void setColorIndex(Integer colorIndex) {
+    this.colorIndex = colorIndex;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -146,15 +146,15 @@ public class CellsColor {
     }
     CellsColor cellsColor = (CellsColor) o;
     return Objects.equals(this.color, cellsColor.color) &&
-        Objects.equals(this.colorIndex, cellsColor.colorIndex) &&
-        Objects.equals(this.isShapeColor, cellsColor.isShapeColor) &&
+        Objects.equals(this.type, cellsColor.type) &&
         Objects.equals(this.themeColor, cellsColor.themeColor) &&
-        Objects.equals(this.type, cellsColor.type);
+        Objects.equals(this.isShapeColor, cellsColor.isShapeColor) &&
+        Objects.equals(this.colorIndex, cellsColor.colorIndex);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(color, colorIndex, isShapeColor, themeColor, type);
+    return Objects.hash(color, type, themeColor, isShapeColor, colorIndex);
   }
 
 
@@ -164,10 +164,10 @@ public class CellsColor {
     sb.append("class CellsColor {\n");
     
     sb.append("    color: ").append(toIndentedString(color)).append("\n");
-    sb.append("    colorIndex: ").append(toIndentedString(colorIndex)).append("\n");
-    sb.append("    isShapeColor: ").append(toIndentedString(isShapeColor)).append("\n");
-    sb.append("    themeColor: ").append(toIndentedString(themeColor)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    sb.append("    themeColor: ").append(toIndentedString(themeColor)).append("\n");
+    sb.append("    isShapeColor: ").append(toIndentedString(isShapeColor)).append("\n");
+    sb.append("    colorIndex: ").append(toIndentedString(colorIndex)).append("\n");
     sb.append("}");
     return sb.toString();
   }

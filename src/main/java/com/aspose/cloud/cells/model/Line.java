@@ -28,19 +28,22 @@ import java.io.IOException;
 /**
  * Line
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-05T15:44:26.749+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-08-14T14:34:14.243+08:00")
 public class Line {
+  @SerializedName("Style")
+  private String style = null;
+
+  @SerializedName("IsAuto")
+  private Boolean isAuto = null;
+
   @SerializedName("BeginArrowLength")
   private String beginArrowLength = null;
 
-  @SerializedName("BeginArrowWidth")
-  private String beginArrowWidth = null;
+  @SerializedName("Weight")
+  private String weight = null;
 
-  @SerializedName("BeginType")
-  private String beginType = null;
-
-  @SerializedName("CapType")
-  private String capType = null;
+  @SerializedName("GradientFill")
+  private GradientFill gradientFill = null;
 
   @SerializedName("Color")
   private Color color = null;
@@ -48,26 +51,8 @@ public class Line {
   @SerializedName("CompoundType")
   private String compoundType = null;
 
-  @SerializedName("DashType")
-  private String dashType = null;
-
-  @SerializedName("EndArrowLength")
-  private String endArrowLength = null;
-
-  @SerializedName("EndArrowWidth")
-  private String endArrowWidth = null;
-
-  @SerializedName("EndType")
-  private String endType = null;
-
-  @SerializedName("GradientFill")
-  private GradientFill gradientFill = null;
-
-  @SerializedName("IsAuto")
-  private Boolean isAuto = null;
-
-  @SerializedName("IsAutomaticColor")
-  private Boolean isAutomaticColor = null;
+  @SerializedName("WeightPt")
+  private Double weightPt = null;
 
   @SerializedName("IsVisible")
   private Boolean isVisible = null;
@@ -75,17 +60,68 @@ public class Line {
   @SerializedName("JoinType")
   private String joinType = null;
 
-  @SerializedName("Style")
-  private String style = null;
+  @SerializedName("EndArrowLength")
+  private String endArrowLength = null;
+
+  @SerializedName("IsAutomaticColor")
+  private Boolean isAutomaticColor = null;
+
+  @SerializedName("DashType")
+  private String dashType = null;
+
+  @SerializedName("BeginType")
+  private String beginType = null;
+
+  @SerializedName("CapType")
+  private String capType = null;
+
+  @SerializedName("EndType")
+  private String endType = null;
+
+  @SerializedName("BeginArrowWidth")
+  private String beginArrowWidth = null;
+
+  @SerializedName("EndArrowWidth")
+  private String endArrowWidth = null;
 
   @SerializedName("Transparency")
   private Double transparency = null;
 
-  @SerializedName("Weight")
-  private String weight = null;
+  public Line style(String style) {
+    this.style = style;
+    return this;
+  }
 
-  @SerializedName("WeightPt")
-  private Double weightPt = null;
+   /**
+   * Get style
+   * @return style
+  **/
+  @ApiModelProperty(value = "")
+  public String getStyle() {
+    return style;
+  }
+
+  public void setStyle(String style) {
+    this.style = style;
+  }
+
+  public Line isAuto(Boolean isAuto) {
+    this.isAuto = isAuto;
+    return this;
+  }
+
+   /**
+   * Get isAuto
+   * @return isAuto
+  **/
+  @ApiModelProperty(value = "")
+  public Boolean isIsAuto() {
+    return isAuto;
+  }
+
+  public void setIsAuto(Boolean isAuto) {
+    this.isAuto = isAuto;
+  }
 
   public Line beginArrowLength(String beginArrowLength) {
     this.beginArrowLength = beginArrowLength;
@@ -105,58 +141,40 @@ public class Line {
     this.beginArrowLength = beginArrowLength;
   }
 
-  public Line beginArrowWidth(String beginArrowWidth) {
-    this.beginArrowWidth = beginArrowWidth;
+  public Line weight(String weight) {
+    this.weight = weight;
     return this;
   }
 
    /**
-   * Get beginArrowWidth
-   * @return beginArrowWidth
+   * Get weight
+   * @return weight
   **/
   @ApiModelProperty(value = "")
-  public String getBeginArrowWidth() {
-    return beginArrowWidth;
+  public String getWeight() {
+    return weight;
   }
 
-  public void setBeginArrowWidth(String beginArrowWidth) {
-    this.beginArrowWidth = beginArrowWidth;
+  public void setWeight(String weight) {
+    this.weight = weight;
   }
 
-  public Line beginType(String beginType) {
-    this.beginType = beginType;
+  public Line gradientFill(GradientFill gradientFill) {
+    this.gradientFill = gradientFill;
     return this;
   }
 
    /**
-   * Get beginType
-   * @return beginType
+   * Get gradientFill
+   * @return gradientFill
   **/
   @ApiModelProperty(value = "")
-  public String getBeginType() {
-    return beginType;
+  public GradientFill getGradientFill() {
+    return gradientFill;
   }
 
-  public void setBeginType(String beginType) {
-    this.beginType = beginType;
-  }
-
-  public Line capType(String capType) {
-    this.capType = capType;
-    return this;
-  }
-
-   /**
-   * Get capType
-   * @return capType
-  **/
-  @ApiModelProperty(value = "")
-  public String getCapType() {
-    return capType;
-  }
-
-  public void setCapType(String capType) {
-    this.capType = capType;
+  public void setGradientFill(GradientFill gradientFill) {
+    this.gradientFill = gradientFill;
   }
 
   public Line color(Color color) {
@@ -195,130 +213,22 @@ public class Line {
     this.compoundType = compoundType;
   }
 
-  public Line dashType(String dashType) {
-    this.dashType = dashType;
+  public Line weightPt(Double weightPt) {
+    this.weightPt = weightPt;
     return this;
   }
 
    /**
-   * Get dashType
-   * @return dashType
+   * Get weightPt
+   * @return weightPt
   **/
   @ApiModelProperty(value = "")
-  public String getDashType() {
-    return dashType;
+  public Double getWeightPt() {
+    return weightPt;
   }
 
-  public void setDashType(String dashType) {
-    this.dashType = dashType;
-  }
-
-  public Line endArrowLength(String endArrowLength) {
-    this.endArrowLength = endArrowLength;
-    return this;
-  }
-
-   /**
-   * Get endArrowLength
-   * @return endArrowLength
-  **/
-  @ApiModelProperty(value = "")
-  public String getEndArrowLength() {
-    return endArrowLength;
-  }
-
-  public void setEndArrowLength(String endArrowLength) {
-    this.endArrowLength = endArrowLength;
-  }
-
-  public Line endArrowWidth(String endArrowWidth) {
-    this.endArrowWidth = endArrowWidth;
-    return this;
-  }
-
-   /**
-   * Get endArrowWidth
-   * @return endArrowWidth
-  **/
-  @ApiModelProperty(value = "")
-  public String getEndArrowWidth() {
-    return endArrowWidth;
-  }
-
-  public void setEndArrowWidth(String endArrowWidth) {
-    this.endArrowWidth = endArrowWidth;
-  }
-
-  public Line endType(String endType) {
-    this.endType = endType;
-    return this;
-  }
-
-   /**
-   * Get endType
-   * @return endType
-  **/
-  @ApiModelProperty(value = "")
-  public String getEndType() {
-    return endType;
-  }
-
-  public void setEndType(String endType) {
-    this.endType = endType;
-  }
-
-  public Line gradientFill(GradientFill gradientFill) {
-    this.gradientFill = gradientFill;
-    return this;
-  }
-
-   /**
-   * Get gradientFill
-   * @return gradientFill
-  **/
-  @ApiModelProperty(value = "")
-  public GradientFill getGradientFill() {
-    return gradientFill;
-  }
-
-  public void setGradientFill(GradientFill gradientFill) {
-    this.gradientFill = gradientFill;
-  }
-
-  public Line isAuto(Boolean isAuto) {
-    this.isAuto = isAuto;
-    return this;
-  }
-
-   /**
-   * Get isAuto
-   * @return isAuto
-  **/
-  @ApiModelProperty(value = "")
-  public Boolean isIsAuto() {
-    return isAuto;
-  }
-
-  public void setIsAuto(Boolean isAuto) {
-    this.isAuto = isAuto;
-  }
-
-  public Line isAutomaticColor(Boolean isAutomaticColor) {
-    this.isAutomaticColor = isAutomaticColor;
-    return this;
-  }
-
-   /**
-   * Get isAutomaticColor
-   * @return isAutomaticColor
-  **/
-  @ApiModelProperty(value = "")
-  public Boolean isIsAutomaticColor() {
-    return isAutomaticColor;
-  }
-
-  public void setIsAutomaticColor(Boolean isAutomaticColor) {
-    this.isAutomaticColor = isAutomaticColor;
+  public void setWeightPt(Double weightPt) {
+    this.weightPt = weightPt;
   }
 
   public Line isVisible(Boolean isVisible) {
@@ -357,22 +267,148 @@ public class Line {
     this.joinType = joinType;
   }
 
-  public Line style(String style) {
-    this.style = style;
+  public Line endArrowLength(String endArrowLength) {
+    this.endArrowLength = endArrowLength;
     return this;
   }
 
    /**
-   * Get style
-   * @return style
+   * Get endArrowLength
+   * @return endArrowLength
   **/
   @ApiModelProperty(value = "")
-  public String getStyle() {
-    return style;
+  public String getEndArrowLength() {
+    return endArrowLength;
   }
 
-  public void setStyle(String style) {
-    this.style = style;
+  public void setEndArrowLength(String endArrowLength) {
+    this.endArrowLength = endArrowLength;
+  }
+
+  public Line isAutomaticColor(Boolean isAutomaticColor) {
+    this.isAutomaticColor = isAutomaticColor;
+    return this;
+  }
+
+   /**
+   * Get isAutomaticColor
+   * @return isAutomaticColor
+  **/
+  @ApiModelProperty(value = "")
+  public Boolean isIsAutomaticColor() {
+    return isAutomaticColor;
+  }
+
+  public void setIsAutomaticColor(Boolean isAutomaticColor) {
+    this.isAutomaticColor = isAutomaticColor;
+  }
+
+  public Line dashType(String dashType) {
+    this.dashType = dashType;
+    return this;
+  }
+
+   /**
+   * Get dashType
+   * @return dashType
+  **/
+  @ApiModelProperty(value = "")
+  public String getDashType() {
+    return dashType;
+  }
+
+  public void setDashType(String dashType) {
+    this.dashType = dashType;
+  }
+
+  public Line beginType(String beginType) {
+    this.beginType = beginType;
+    return this;
+  }
+
+   /**
+   * Get beginType
+   * @return beginType
+  **/
+  @ApiModelProperty(value = "")
+  public String getBeginType() {
+    return beginType;
+  }
+
+  public void setBeginType(String beginType) {
+    this.beginType = beginType;
+  }
+
+  public Line capType(String capType) {
+    this.capType = capType;
+    return this;
+  }
+
+   /**
+   * Get capType
+   * @return capType
+  **/
+  @ApiModelProperty(value = "")
+  public String getCapType() {
+    return capType;
+  }
+
+  public void setCapType(String capType) {
+    this.capType = capType;
+  }
+
+  public Line endType(String endType) {
+    this.endType = endType;
+    return this;
+  }
+
+   /**
+   * Get endType
+   * @return endType
+  **/
+  @ApiModelProperty(value = "")
+  public String getEndType() {
+    return endType;
+  }
+
+  public void setEndType(String endType) {
+    this.endType = endType;
+  }
+
+  public Line beginArrowWidth(String beginArrowWidth) {
+    this.beginArrowWidth = beginArrowWidth;
+    return this;
+  }
+
+   /**
+   * Get beginArrowWidth
+   * @return beginArrowWidth
+  **/
+  @ApiModelProperty(value = "")
+  public String getBeginArrowWidth() {
+    return beginArrowWidth;
+  }
+
+  public void setBeginArrowWidth(String beginArrowWidth) {
+    this.beginArrowWidth = beginArrowWidth;
+  }
+
+  public Line endArrowWidth(String endArrowWidth) {
+    this.endArrowWidth = endArrowWidth;
+    return this;
+  }
+
+   /**
+   * Get endArrowWidth
+   * @return endArrowWidth
+  **/
+  @ApiModelProperty(value = "")
+  public String getEndArrowWidth() {
+    return endArrowWidth;
+  }
+
+  public void setEndArrowWidth(String endArrowWidth) {
+    this.endArrowWidth = endArrowWidth;
   }
 
   public Line transparency(Double transparency) {
@@ -393,42 +429,6 @@ public class Line {
     this.transparency = transparency;
   }
 
-  public Line weight(String weight) {
-    this.weight = weight;
-    return this;
-  }
-
-   /**
-   * Get weight
-   * @return weight
-  **/
-  @ApiModelProperty(value = "")
-  public String getWeight() {
-    return weight;
-  }
-
-  public void setWeight(String weight) {
-    this.weight = weight;
-  }
-
-  public Line weightPt(Double weightPt) {
-    this.weightPt = weightPt;
-    return this;
-  }
-
-   /**
-   * Get weightPt
-   * @return weightPt
-  **/
-  @ApiModelProperty(value = "")
-  public Double getWeightPt() {
-    return weightPt;
-  }
-
-  public void setWeightPt(Double weightPt) {
-    this.weightPt = weightPt;
-  }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -439,30 +439,30 @@ public class Line {
       return false;
     }
     Line line = (Line) o;
-    return Objects.equals(this.beginArrowLength, line.beginArrowLength) &&
-        Objects.equals(this.beginArrowWidth, line.beginArrowWidth) &&
-        Objects.equals(this.beginType, line.beginType) &&
-        Objects.equals(this.capType, line.capType) &&
+    return Objects.equals(this.style, line.style) &&
+        Objects.equals(this.isAuto, line.isAuto) &&
+        Objects.equals(this.beginArrowLength, line.beginArrowLength) &&
+        Objects.equals(this.weight, line.weight) &&
+        Objects.equals(this.gradientFill, line.gradientFill) &&
         Objects.equals(this.color, line.color) &&
         Objects.equals(this.compoundType, line.compoundType) &&
-        Objects.equals(this.dashType, line.dashType) &&
-        Objects.equals(this.endArrowLength, line.endArrowLength) &&
-        Objects.equals(this.endArrowWidth, line.endArrowWidth) &&
-        Objects.equals(this.endType, line.endType) &&
-        Objects.equals(this.gradientFill, line.gradientFill) &&
-        Objects.equals(this.isAuto, line.isAuto) &&
-        Objects.equals(this.isAutomaticColor, line.isAutomaticColor) &&
+        Objects.equals(this.weightPt, line.weightPt) &&
         Objects.equals(this.isVisible, line.isVisible) &&
         Objects.equals(this.joinType, line.joinType) &&
-        Objects.equals(this.style, line.style) &&
-        Objects.equals(this.transparency, line.transparency) &&
-        Objects.equals(this.weight, line.weight) &&
-        Objects.equals(this.weightPt, line.weightPt);
+        Objects.equals(this.endArrowLength, line.endArrowLength) &&
+        Objects.equals(this.isAutomaticColor, line.isAutomaticColor) &&
+        Objects.equals(this.dashType, line.dashType) &&
+        Objects.equals(this.beginType, line.beginType) &&
+        Objects.equals(this.capType, line.capType) &&
+        Objects.equals(this.endType, line.endType) &&
+        Objects.equals(this.beginArrowWidth, line.beginArrowWidth) &&
+        Objects.equals(this.endArrowWidth, line.endArrowWidth) &&
+        Objects.equals(this.transparency, line.transparency);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(beginArrowLength, beginArrowWidth, beginType, capType, color, compoundType, dashType, endArrowLength, endArrowWidth, endType, gradientFill, isAuto, isAutomaticColor, isVisible, joinType, style, transparency, weight, weightPt);
+    return Objects.hash(style, isAuto, beginArrowLength, weight, gradientFill, color, compoundType, weightPt, isVisible, joinType, endArrowLength, isAutomaticColor, dashType, beginType, capType, endType, beginArrowWidth, endArrowWidth, transparency);
   }
 
 
@@ -471,25 +471,25 @@ public class Line {
     StringBuilder sb = new StringBuilder();
     sb.append("class Line {\n");
     
+    sb.append("    style: ").append(toIndentedString(style)).append("\n");
+    sb.append("    isAuto: ").append(toIndentedString(isAuto)).append("\n");
     sb.append("    beginArrowLength: ").append(toIndentedString(beginArrowLength)).append("\n");
-    sb.append("    beginArrowWidth: ").append(toIndentedString(beginArrowWidth)).append("\n");
-    sb.append("    beginType: ").append(toIndentedString(beginType)).append("\n");
-    sb.append("    capType: ").append(toIndentedString(capType)).append("\n");
+    sb.append("    weight: ").append(toIndentedString(weight)).append("\n");
+    sb.append("    gradientFill: ").append(toIndentedString(gradientFill)).append("\n");
     sb.append("    color: ").append(toIndentedString(color)).append("\n");
     sb.append("    compoundType: ").append(toIndentedString(compoundType)).append("\n");
-    sb.append("    dashType: ").append(toIndentedString(dashType)).append("\n");
-    sb.append("    endArrowLength: ").append(toIndentedString(endArrowLength)).append("\n");
-    sb.append("    endArrowWidth: ").append(toIndentedString(endArrowWidth)).append("\n");
-    sb.append("    endType: ").append(toIndentedString(endType)).append("\n");
-    sb.append("    gradientFill: ").append(toIndentedString(gradientFill)).append("\n");
-    sb.append("    isAuto: ").append(toIndentedString(isAuto)).append("\n");
-    sb.append("    isAutomaticColor: ").append(toIndentedString(isAutomaticColor)).append("\n");
+    sb.append("    weightPt: ").append(toIndentedString(weightPt)).append("\n");
     sb.append("    isVisible: ").append(toIndentedString(isVisible)).append("\n");
     sb.append("    joinType: ").append(toIndentedString(joinType)).append("\n");
-    sb.append("    style: ").append(toIndentedString(style)).append("\n");
+    sb.append("    endArrowLength: ").append(toIndentedString(endArrowLength)).append("\n");
+    sb.append("    isAutomaticColor: ").append(toIndentedString(isAutomaticColor)).append("\n");
+    sb.append("    dashType: ").append(toIndentedString(dashType)).append("\n");
+    sb.append("    beginType: ").append(toIndentedString(beginType)).append("\n");
+    sb.append("    capType: ").append(toIndentedString(capType)).append("\n");
+    sb.append("    endType: ").append(toIndentedString(endType)).append("\n");
+    sb.append("    beginArrowWidth: ").append(toIndentedString(beginArrowWidth)).append("\n");
+    sb.append("    endArrowWidth: ").append(toIndentedString(endArrowWidth)).append("\n");
     sb.append("    transparency: ").append(toIndentedString(transparency)).append("\n");
-    sb.append("    weight: ").append(toIndentedString(weight)).append("\n");
-    sb.append("    weightPt: ").append(toIndentedString(weightPt)).append("\n");
     sb.append("}");
     return sb.toString();
   }

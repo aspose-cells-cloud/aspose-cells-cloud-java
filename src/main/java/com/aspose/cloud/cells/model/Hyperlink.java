@@ -29,22 +29,22 @@ import java.io.IOException;
 /**
  * Hyperlink
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-05T15:44:26.749+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-08-14T14:34:14.243+08:00")
 public class Hyperlink {
   @SerializedName("link")
   private Link link = null;
 
-  @SerializedName("Address")
-  private String address = null;
+  @SerializedName("ScreenTip")
+  private String screenTip = null;
 
   @SerializedName("Area")
   private CellArea area = null;
 
-  @SerializedName("ScreenTip")
-  private String screenTip = null;
-
   @SerializedName("TextToDisplay")
   private String textToDisplay = null;
+
+  @SerializedName("Address")
+  private String address = null;
 
   public Hyperlink link(Link link) {
     this.link = link;
@@ -62,42 +62,6 @@ public class Hyperlink {
 
   public void setLink(Link link) {
     this.link = link;
-  }
-
-  public Hyperlink address(String address) {
-    this.address = address;
-    return this;
-  }
-
-   /**
-   * Get address
-   * @return address
-  **/
-  @ApiModelProperty(value = "")
-  public String getAddress() {
-    return address;
-  }
-
-  public void setAddress(String address) {
-    this.address = address;
-  }
-
-  public Hyperlink area(CellArea area) {
-    this.area = area;
-    return this;
-  }
-
-   /**
-   * Get area
-   * @return area
-  **/
-  @ApiModelProperty(value = "")
-  public CellArea getArea() {
-    return area;
-  }
-
-  public void setArea(CellArea area) {
-    this.area = area;
   }
 
   public Hyperlink screenTip(String screenTip) {
@@ -118,6 +82,24 @@ public class Hyperlink {
     this.screenTip = screenTip;
   }
 
+  public Hyperlink area(CellArea area) {
+    this.area = area;
+    return this;
+  }
+
+   /**
+   * Get area
+   * @return area
+  **/
+  @ApiModelProperty(value = "")
+  public CellArea getArea() {
+    return area;
+  }
+
+  public void setArea(CellArea area) {
+    this.area = area;
+  }
+
   public Hyperlink textToDisplay(String textToDisplay) {
     this.textToDisplay = textToDisplay;
     return this;
@@ -136,6 +118,24 @@ public class Hyperlink {
     this.textToDisplay = textToDisplay;
   }
 
+  public Hyperlink address(String address) {
+    this.address = address;
+    return this;
+  }
+
+   /**
+   * Get address
+   * @return address
+  **/
+  @ApiModelProperty(value = "")
+  public String getAddress() {
+    return address;
+  }
+
+  public void setAddress(String address) {
+    this.address = address;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -147,15 +147,15 @@ public class Hyperlink {
     }
     Hyperlink hyperlink = (Hyperlink) o;
     return Objects.equals(this.link, hyperlink.link) &&
-        Objects.equals(this.address, hyperlink.address) &&
-        Objects.equals(this.area, hyperlink.area) &&
         Objects.equals(this.screenTip, hyperlink.screenTip) &&
-        Objects.equals(this.textToDisplay, hyperlink.textToDisplay);
+        Objects.equals(this.area, hyperlink.area) &&
+        Objects.equals(this.textToDisplay, hyperlink.textToDisplay) &&
+        Objects.equals(this.address, hyperlink.address);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(link, address, area, screenTip, textToDisplay);
+    return Objects.hash(link, screenTip, area, textToDisplay, address);
   }
 
 
@@ -165,10 +165,10 @@ public class Hyperlink {
     sb.append("class Hyperlink {\n");
     
     sb.append("    link: ").append(toIndentedString(link)).append("\n");
-    sb.append("    address: ").append(toIndentedString(address)).append("\n");
-    sb.append("    area: ").append(toIndentedString(area)).append("\n");
     sb.append("    screenTip: ").append(toIndentedString(screenTip)).append("\n");
+    sb.append("    area: ").append(toIndentedString(area)).append("\n");
     sb.append("    textToDisplay: ").append(toIndentedString(textToDisplay)).append("\n");
+    sb.append("    address: ").append(toIndentedString(address)).append("\n");
     sb.append("}");
     return sb.toString();
   }

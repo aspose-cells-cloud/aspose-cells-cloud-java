@@ -28,16 +28,16 @@ import java.io.IOException;
  * Represents the color settings of the data bars for negative values that are    defined by a data bar conditional formating rule.             
  */
 @ApiModel(description = "Represents the color settings of the data bars for negative values that are    defined by a data bar conditional formating rule.             ")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-05T15:44:26.749+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-08-14T14:34:14.243+08:00")
 public class NegativeBarFormat {
   @SerializedName("BorderColor")
   private Color borderColor = null;
 
-  @SerializedName("BorderColorType")
-  private String borderColorType = null;
-
   @SerializedName("Color")
   private Color color = null;
+
+  @SerializedName("BorderColorType")
+  private String borderColorType = null;
 
   @SerializedName("ColorType")
   private String colorType = null;
@@ -60,24 +60,6 @@ public class NegativeBarFormat {
     this.borderColor = borderColor;
   }
 
-  public NegativeBarFormat borderColorType(String borderColorType) {
-    this.borderColorType = borderColorType;
-    return this;
-  }
-
-   /**
-   * Gets whether to use the same border color as positive data bars.             
-   * @return borderColorType
-  **/
-  @ApiModelProperty(value = "Gets whether to use the same border color as positive data bars.             ")
-  public String getBorderColorType() {
-    return borderColorType;
-  }
-
-  public void setBorderColorType(String borderColorType) {
-    this.borderColorType = borderColorType;
-  }
-
   public NegativeBarFormat color(Color color) {
     this.color = color;
     return this;
@@ -94,6 +76,24 @@ public class NegativeBarFormat {
 
   public void setColor(Color color) {
     this.color = color;
+  }
+
+  public NegativeBarFormat borderColorType(String borderColorType) {
+    this.borderColorType = borderColorType;
+    return this;
+  }
+
+   /**
+   * Gets whether to use the same border color as positive data bars.             
+   * @return borderColorType
+  **/
+  @ApiModelProperty(value = "Gets whether to use the same border color as positive data bars.             ")
+  public String getBorderColorType() {
+    return borderColorType;
+  }
+
+  public void setBorderColorType(String borderColorType) {
+    this.borderColorType = borderColorType;
   }
 
   public NegativeBarFormat colorType(String colorType) {
@@ -125,14 +125,14 @@ public class NegativeBarFormat {
     }
     NegativeBarFormat negativeBarFormat = (NegativeBarFormat) o;
     return Objects.equals(this.borderColor, negativeBarFormat.borderColor) &&
-        Objects.equals(this.borderColorType, negativeBarFormat.borderColorType) &&
         Objects.equals(this.color, negativeBarFormat.color) &&
+        Objects.equals(this.borderColorType, negativeBarFormat.borderColorType) &&
         Objects.equals(this.colorType, negativeBarFormat.colorType);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(borderColor, borderColorType, color, colorType);
+    return Objects.hash(borderColor, color, borderColorType, colorType);
   }
 
 
@@ -142,8 +142,8 @@ public class NegativeBarFormat {
     sb.append("class NegativeBarFormat {\n");
     
     sb.append("    borderColor: ").append(toIndentedString(borderColor)).append("\n");
-    sb.append("    borderColorType: ").append(toIndentedString(borderColorType)).append("\n");
     sb.append("    color: ").append(toIndentedString(color)).append("\n");
+    sb.append("    borderColorType: ").append(toIndentedString(borderColorType)).append("\n");
     sb.append("    colorType: ").append(toIndentedString(colorType)).append("\n");
     sb.append("}");
     return sb.toString();

@@ -26,36 +26,36 @@ import java.io.IOException;
 /**
  * CalculationOptions
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-05T15:44:26.749+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-08-14T14:34:14.243+08:00")
 public class CalculationOptions {
-  @SerializedName("CalcStackSize")
-  private Integer calcStackSize = null;
+  @SerializedName("PrecisionStrategy")
+  private String precisionStrategy = null;
 
   @SerializedName("IgnoreError")
   private Boolean ignoreError = null;
 
-  @SerializedName("PrecisionStrategy")
-  private String precisionStrategy = null;
-
   @SerializedName("Recursive")
   private Boolean recursive = null;
 
-  public CalculationOptions calcStackSize(Integer calcStackSize) {
-    this.calcStackSize = calcStackSize;
+  @SerializedName("CalcStackSize")
+  private Integer calcStackSize = null;
+
+  public CalculationOptions precisionStrategy(String precisionStrategy) {
+    this.precisionStrategy = precisionStrategy;
     return this;
   }
 
    /**
-   * Get calcStackSize
-   * @return calcStackSize
+   * Get precisionStrategy
+   * @return precisionStrategy
   **/
   @ApiModelProperty(value = "")
-  public Integer getCalcStackSize() {
-    return calcStackSize;
+  public String getPrecisionStrategy() {
+    return precisionStrategy;
   }
 
-  public void setCalcStackSize(Integer calcStackSize) {
-    this.calcStackSize = calcStackSize;
+  public void setPrecisionStrategy(String precisionStrategy) {
+    this.precisionStrategy = precisionStrategy;
   }
 
   public CalculationOptions ignoreError(Boolean ignoreError) {
@@ -76,24 +76,6 @@ public class CalculationOptions {
     this.ignoreError = ignoreError;
   }
 
-  public CalculationOptions precisionStrategy(String precisionStrategy) {
-    this.precisionStrategy = precisionStrategy;
-    return this;
-  }
-
-   /**
-   * Get precisionStrategy
-   * @return precisionStrategy
-  **/
-  @ApiModelProperty(value = "")
-  public String getPrecisionStrategy() {
-    return precisionStrategy;
-  }
-
-  public void setPrecisionStrategy(String precisionStrategy) {
-    this.precisionStrategy = precisionStrategy;
-  }
-
   public CalculationOptions recursive(Boolean recursive) {
     this.recursive = recursive;
     return this;
@@ -112,6 +94,24 @@ public class CalculationOptions {
     this.recursive = recursive;
   }
 
+  public CalculationOptions calcStackSize(Integer calcStackSize) {
+    this.calcStackSize = calcStackSize;
+    return this;
+  }
+
+   /**
+   * Get calcStackSize
+   * @return calcStackSize
+  **/
+  @ApiModelProperty(value = "")
+  public Integer getCalcStackSize() {
+    return calcStackSize;
+  }
+
+  public void setCalcStackSize(Integer calcStackSize) {
+    this.calcStackSize = calcStackSize;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -122,15 +122,15 @@ public class CalculationOptions {
       return false;
     }
     CalculationOptions calculationOptions = (CalculationOptions) o;
-    return Objects.equals(this.calcStackSize, calculationOptions.calcStackSize) &&
+    return Objects.equals(this.precisionStrategy, calculationOptions.precisionStrategy) &&
         Objects.equals(this.ignoreError, calculationOptions.ignoreError) &&
-        Objects.equals(this.precisionStrategy, calculationOptions.precisionStrategy) &&
-        Objects.equals(this.recursive, calculationOptions.recursive);
+        Objects.equals(this.recursive, calculationOptions.recursive) &&
+        Objects.equals(this.calcStackSize, calculationOptions.calcStackSize);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(calcStackSize, ignoreError, precisionStrategy, recursive);
+    return Objects.hash(precisionStrategy, ignoreError, recursive, calcStackSize);
   }
 
 
@@ -139,10 +139,10 @@ public class CalculationOptions {
     StringBuilder sb = new StringBuilder();
     sb.append("class CalculationOptions {\n");
     
-    sb.append("    calcStackSize: ").append(toIndentedString(calcStackSize)).append("\n");
-    sb.append("    ignoreError: ").append(toIndentedString(ignoreError)).append("\n");
     sb.append("    precisionStrategy: ").append(toIndentedString(precisionStrategy)).append("\n");
+    sb.append("    ignoreError: ").append(toIndentedString(ignoreError)).append("\n");
     sb.append("    recursive: ").append(toIndentedString(recursive)).append("\n");
+    sb.append("    calcStackSize: ").append(toIndentedString(calcStackSize)).append("\n");
     sb.append("}");
     return sb.toString();
   }

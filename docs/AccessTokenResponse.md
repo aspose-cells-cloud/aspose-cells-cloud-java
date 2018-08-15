@@ -4,14 +4,14 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**accessToken** | **String** |  |  [optional]
-**tokenType** | **String** |  |  [optional]
-**expiresIn** | **Long** |  |  [optional]
-**refreshToken** | **String** |  |  [optional]
-**clientId** | **String** |  |  [optional]
-**clientRefreshTokenLifeTimeInMinutes** | **String** |  |  [optional]
-**issued** | **String** |  |  [optional]
 **expires** | **String** |  |  [optional]
+**accessToken** | **String** |  |  [optional]
+**issued** | **String** |  |  [optional]
+**clientRefreshTokenLifeTimeInMinutes** | **String** |  |  [optional]
+**expiresIn** | **Long** |  |  [optional]
+**tokenType** | **String** |  |  [optional]
+**clientId** | **String** |  |  [optional]
+**refreshToken** | **String** |  |  [optional]
 
 
 

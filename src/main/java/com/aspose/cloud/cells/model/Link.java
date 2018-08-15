@@ -26,19 +26,19 @@ import java.io.IOException;
 /**
  * Link
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-05T15:44:26.749+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-08-14T14:34:14.243+08:00")
 public class Link {
   @SerializedName("Href")
   private String href = null;
+
+  @SerializedName("Type")
+  private String type = null;
 
   @SerializedName("Rel")
   private String rel = null;
 
   @SerializedName("Title")
   private String title = null;
-
-  @SerializedName("Type")
-  private String type = null;
 
   public Link href(String href) {
     this.href = href;
@@ -56,6 +56,24 @@ public class Link {
 
   public void setHref(String href) {
     this.href = href;
+  }
+
+  public Link type(String type) {
+    this.type = type;
+    return this;
+  }
+
+   /**
+   * Get type
+   * @return type
+  **/
+  @ApiModelProperty(value = "")
+  public String getType() {
+    return type;
+  }
+
+  public void setType(String type) {
+    this.type = type;
   }
 
   public Link rel(String rel) {
@@ -94,24 +112,6 @@ public class Link {
     this.title = title;
   }
 
-  public Link type(String type) {
-    this.type = type;
-    return this;
-  }
-
-   /**
-   * Get type
-   * @return type
-  **/
-  @ApiModelProperty(value = "")
-  public String getType() {
-    return type;
-  }
-
-  public void setType(String type) {
-    this.type = type;
-  }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -123,14 +123,14 @@ public class Link {
     }
     Link link = (Link) o;
     return Objects.equals(this.href, link.href) &&
+        Objects.equals(this.type, link.type) &&
         Objects.equals(this.rel, link.rel) &&
-        Objects.equals(this.title, link.title) &&
-        Objects.equals(this.type, link.type);
+        Objects.equals(this.title, link.title);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(href, rel, title, type);
+    return Objects.hash(href, type, rel, title);
   }
 
 
@@ -140,9 +140,9 @@ public class Link {
     sb.append("class Link {\n");
     
     sb.append("    href: ").append(toIndentedString(href)).append("\n");
+    sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    rel: ").append(toIndentedString(rel)).append("\n");
     sb.append("    title: ").append(toIndentedString(title)).append("\n");
-    sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("}");
     return sb.toString();
   }

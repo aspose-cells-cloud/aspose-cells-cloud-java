@@ -34,178 +34,70 @@ import java.util.List;
 /**
  * Title
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-05T15:44:26.749+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-08-14T14:34:14.243+08:00")
 public class Title {
-  @SerializedName("Area")
-  private Area area = null;
-
-  @SerializedName("AutoScaleFont")
-  private Boolean autoScaleFont = null;
-
-  @SerializedName("BackgroundMode")
-  private String backgroundMode = null;
-
-  @SerializedName("Border")
-  private Line border = null;
-
-  @SerializedName("Font")
-  private Font font = null;
-
-  @SerializedName("IsAutomaticSize")
-  private Boolean isAutomaticSize = null;
-
   @SerializedName("IsInnerMode")
   private Boolean isInnerMode = null;
-
-  @SerializedName("Shadow")
-  private Boolean shadow = null;
 
   @SerializedName("ShapeProperties")
   private List<LinkElement> shapeProperties = null;
 
-  @SerializedName("Width")
-  private Integer width = null;
+  @SerializedName("AutoScaleFont")
+  private Boolean autoScaleFont = null;
+
+  @SerializedName("Area")
+  private Area area = null;
 
   @SerializedName("Height")
   private Integer height = null;
 
-  @SerializedName("X")
-  private Integer X = null;
+  @SerializedName("Width")
+  private Integer width = null;
+
+  @SerializedName("BackgroundMode")
+  private String backgroundMode = null;
+
+  @SerializedName("IsAutomaticSize")
+  private Boolean isAutomaticSize = null;
 
   @SerializedName("Y")
   private Integer Y = null;
 
+  @SerializedName("X")
+  private Integer X = null;
+
+  @SerializedName("Shadow")
+  private Boolean shadow = null;
+
+  @SerializedName("Font")
+  private Font font = null;
+
+  @SerializedName("Border")
+  private Line border = null;
+
   @SerializedName("link")
   private Link link = null;
-
-  @SerializedName("IsVisible")
-  private Boolean isVisible = null;
 
   @SerializedName("LinkedSource")
   private String linkedSource = null;
 
-  @SerializedName("RotationAngle")
-  private Integer rotationAngle = null;
-
   @SerializedName("Text")
   private String text = null;
+
+  @SerializedName("IsVisible")
+  private Boolean isVisible = null;
 
   @SerializedName("TextDirection")
   private String textDirection = null;
 
-  @SerializedName("TextHorizontalAlignment")
-  private String textHorizontalAlignment = null;
+  @SerializedName("RotationAngle")
+  private Integer rotationAngle = null;
 
   @SerializedName("TextVerticalAlignment")
   private String textVerticalAlignment = null;
 
-  public Title area(Area area) {
-    this.area = area;
-    return this;
-  }
-
-   /**
-   * Get area
-   * @return area
-  **/
-  @ApiModelProperty(value = "")
-  public Area getArea() {
-    return area;
-  }
-
-  public void setArea(Area area) {
-    this.area = area;
-  }
-
-  public Title autoScaleFont(Boolean autoScaleFont) {
-    this.autoScaleFont = autoScaleFont;
-    return this;
-  }
-
-   /**
-   * Get autoScaleFont
-   * @return autoScaleFont
-  **/
-  @ApiModelProperty(value = "")
-  public Boolean isAutoScaleFont() {
-    return autoScaleFont;
-  }
-
-  public void setAutoScaleFont(Boolean autoScaleFont) {
-    this.autoScaleFont = autoScaleFont;
-  }
-
-  public Title backgroundMode(String backgroundMode) {
-    this.backgroundMode = backgroundMode;
-    return this;
-  }
-
-   /**
-   * Get backgroundMode
-   * @return backgroundMode
-  **/
-  @ApiModelProperty(value = "")
-  public String getBackgroundMode() {
-    return backgroundMode;
-  }
-
-  public void setBackgroundMode(String backgroundMode) {
-    this.backgroundMode = backgroundMode;
-  }
-
-  public Title border(Line border) {
-    this.border = border;
-    return this;
-  }
-
-   /**
-   * Get border
-   * @return border
-  **/
-  @ApiModelProperty(value = "")
-  public Line getBorder() {
-    return border;
-  }
-
-  public void setBorder(Line border) {
-    this.border = border;
-  }
-
-  public Title font(Font font) {
-    this.font = font;
-    return this;
-  }
-
-   /**
-   * Get font
-   * @return font
-  **/
-  @ApiModelProperty(value = "")
-  public Font getFont() {
-    return font;
-  }
-
-  public void setFont(Font font) {
-    this.font = font;
-  }
-
-  public Title isAutomaticSize(Boolean isAutomaticSize) {
-    this.isAutomaticSize = isAutomaticSize;
-    return this;
-  }
-
-   /**
-   * Get isAutomaticSize
-   * @return isAutomaticSize
-  **/
-  @ApiModelProperty(value = "")
-  public Boolean isIsAutomaticSize() {
-    return isAutomaticSize;
-  }
-
-  public void setIsAutomaticSize(Boolean isAutomaticSize) {
-    this.isAutomaticSize = isAutomaticSize;
-  }
+  @SerializedName("TextHorizontalAlignment")
+  private String textHorizontalAlignment = null;
 
   public Title isInnerMode(Boolean isInnerMode) {
     this.isInnerMode = isInnerMode;
@@ -223,24 +115,6 @@ public class Title {
 
   public void setIsInnerMode(Boolean isInnerMode) {
     this.isInnerMode = isInnerMode;
-  }
-
-  public Title shadow(Boolean shadow) {
-    this.shadow = shadow;
-    return this;
-  }
-
-   /**
-   * Get shadow
-   * @return shadow
-  **/
-  @ApiModelProperty(value = "")
-  public Boolean isShadow() {
-    return shadow;
-  }
-
-  public void setShadow(Boolean shadow) {
-    this.shadow = shadow;
   }
 
   public Title shapeProperties(List<LinkElement> shapeProperties) {
@@ -269,22 +143,40 @@ public class Title {
     this.shapeProperties = shapeProperties;
   }
 
-  public Title width(Integer width) {
-    this.width = width;
+  public Title autoScaleFont(Boolean autoScaleFont) {
+    this.autoScaleFont = autoScaleFont;
     return this;
   }
 
    /**
-   * Get width
-   * @return width
+   * Get autoScaleFont
+   * @return autoScaleFont
   **/
   @ApiModelProperty(value = "")
-  public Integer getWidth() {
-    return width;
+  public Boolean isAutoScaleFont() {
+    return autoScaleFont;
   }
 
-  public void setWidth(Integer width) {
-    this.width = width;
+  public void setAutoScaleFont(Boolean autoScaleFont) {
+    this.autoScaleFont = autoScaleFont;
+  }
+
+  public Title area(Area area) {
+    this.area = area;
+    return this;
+  }
+
+   /**
+   * Get area
+   * @return area
+  **/
+  @ApiModelProperty(value = "")
+  public Area getArea() {
+    return area;
+  }
+
+  public void setArea(Area area) {
+    this.area = area;
   }
 
   public Title height(Integer height) {
@@ -305,22 +197,58 @@ public class Title {
     this.height = height;
   }
 
-  public Title X(Integer X) {
-    this.X = X;
+  public Title width(Integer width) {
+    this.width = width;
     return this;
   }
 
    /**
-   * Get X
-   * @return X
+   * Get width
+   * @return width
   **/
   @ApiModelProperty(value = "")
-  public Integer getX() {
-    return X;
+  public Integer getWidth() {
+    return width;
   }
 
-  public void setX(Integer X) {
-    this.X = X;
+  public void setWidth(Integer width) {
+    this.width = width;
+  }
+
+  public Title backgroundMode(String backgroundMode) {
+    this.backgroundMode = backgroundMode;
+    return this;
+  }
+
+   /**
+   * Get backgroundMode
+   * @return backgroundMode
+  **/
+  @ApiModelProperty(value = "")
+  public String getBackgroundMode() {
+    return backgroundMode;
+  }
+
+  public void setBackgroundMode(String backgroundMode) {
+    this.backgroundMode = backgroundMode;
+  }
+
+  public Title isAutomaticSize(Boolean isAutomaticSize) {
+    this.isAutomaticSize = isAutomaticSize;
+    return this;
+  }
+
+   /**
+   * Get isAutomaticSize
+   * @return isAutomaticSize
+  **/
+  @ApiModelProperty(value = "")
+  public Boolean isIsAutomaticSize() {
+    return isAutomaticSize;
+  }
+
+  public void setIsAutomaticSize(Boolean isAutomaticSize) {
+    this.isAutomaticSize = isAutomaticSize;
   }
 
   public Title Y(Integer Y) {
@@ -341,6 +269,78 @@ public class Title {
     this.Y = Y;
   }
 
+  public Title X(Integer X) {
+    this.X = X;
+    return this;
+  }
+
+   /**
+   * Get X
+   * @return X
+  **/
+  @ApiModelProperty(value = "")
+  public Integer getX() {
+    return X;
+  }
+
+  public void setX(Integer X) {
+    this.X = X;
+  }
+
+  public Title shadow(Boolean shadow) {
+    this.shadow = shadow;
+    return this;
+  }
+
+   /**
+   * Get shadow
+   * @return shadow
+  **/
+  @ApiModelProperty(value = "")
+  public Boolean isShadow() {
+    return shadow;
+  }
+
+  public void setShadow(Boolean shadow) {
+    this.shadow = shadow;
+  }
+
+  public Title font(Font font) {
+    this.font = font;
+    return this;
+  }
+
+   /**
+   * Get font
+   * @return font
+  **/
+  @ApiModelProperty(value = "")
+  public Font getFont() {
+    return font;
+  }
+
+  public void setFont(Font font) {
+    this.font = font;
+  }
+
+  public Title border(Line border) {
+    this.border = border;
+    return this;
+  }
+
+   /**
+   * Get border
+   * @return border
+  **/
+  @ApiModelProperty(value = "")
+  public Line getBorder() {
+    return border;
+  }
+
+  public void setBorder(Line border) {
+    this.border = border;
+  }
+
   public Title link(Link link) {
     this.link = link;
     return this;
@@ -357,24 +357,6 @@ public class Title {
 
   public void setLink(Link link) {
     this.link = link;
-  }
-
-  public Title isVisible(Boolean isVisible) {
-    this.isVisible = isVisible;
-    return this;
-  }
-
-   /**
-   * Get isVisible
-   * @return isVisible
-  **/
-  @ApiModelProperty(value = "")
-  public Boolean isIsVisible() {
-    return isVisible;
-  }
-
-  public void setIsVisible(Boolean isVisible) {
-    this.isVisible = isVisible;
   }
 
   public Title linkedSource(String linkedSource) {
@@ -395,24 +377,6 @@ public class Title {
     this.linkedSource = linkedSource;
   }
 
-  public Title rotationAngle(Integer rotationAngle) {
-    this.rotationAngle = rotationAngle;
-    return this;
-  }
-
-   /**
-   * Get rotationAngle
-   * @return rotationAngle
-  **/
-  @ApiModelProperty(value = "")
-  public Integer getRotationAngle() {
-    return rotationAngle;
-  }
-
-  public void setRotationAngle(Integer rotationAngle) {
-    this.rotationAngle = rotationAngle;
-  }
-
   public Title text(String text) {
     this.text = text;
     return this;
@@ -429,6 +393,24 @@ public class Title {
 
   public void setText(String text) {
     this.text = text;
+  }
+
+  public Title isVisible(Boolean isVisible) {
+    this.isVisible = isVisible;
+    return this;
+  }
+
+   /**
+   * Get isVisible
+   * @return isVisible
+  **/
+  @ApiModelProperty(value = "")
+  public Boolean isIsVisible() {
+    return isVisible;
+  }
+
+  public void setIsVisible(Boolean isVisible) {
+    this.isVisible = isVisible;
   }
 
   public Title textDirection(String textDirection) {
@@ -449,22 +431,22 @@ public class Title {
     this.textDirection = textDirection;
   }
 
-  public Title textHorizontalAlignment(String textHorizontalAlignment) {
-    this.textHorizontalAlignment = textHorizontalAlignment;
+  public Title rotationAngle(Integer rotationAngle) {
+    this.rotationAngle = rotationAngle;
     return this;
   }
 
    /**
-   * Get textHorizontalAlignment
-   * @return textHorizontalAlignment
+   * Get rotationAngle
+   * @return rotationAngle
   **/
   @ApiModelProperty(value = "")
-  public String getTextHorizontalAlignment() {
-    return textHorizontalAlignment;
+  public Integer getRotationAngle() {
+    return rotationAngle;
   }
 
-  public void setTextHorizontalAlignment(String textHorizontalAlignment) {
-    this.textHorizontalAlignment = textHorizontalAlignment;
+  public void setRotationAngle(Integer rotationAngle) {
+    this.rotationAngle = rotationAngle;
   }
 
   public Title textVerticalAlignment(String textVerticalAlignment) {
@@ -485,6 +467,24 @@ public class Title {
     this.textVerticalAlignment = textVerticalAlignment;
   }
 
+  public Title textHorizontalAlignment(String textHorizontalAlignment) {
+    this.textHorizontalAlignment = textHorizontalAlignment;
+    return this;
+  }
+
+   /**
+   * Get textHorizontalAlignment
+   * @return textHorizontalAlignment
+  **/
+  @ApiModelProperty(value = "")
+  public String getTextHorizontalAlignment() {
+    return textHorizontalAlignment;
+  }
+
+  public void setTextHorizontalAlignment(String textHorizontalAlignment) {
+    this.textHorizontalAlignment = textHorizontalAlignment;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -495,32 +495,32 @@ public class Title {
       return false;
     }
     Title title = (Title) o;
-    return Objects.equals(this.area, title.area) &&
-        Objects.equals(this.autoScaleFont, title.autoScaleFont) &&
-        Objects.equals(this.backgroundMode, title.backgroundMode) &&
-        Objects.equals(this.border, title.border) &&
-        Objects.equals(this.font, title.font) &&
-        Objects.equals(this.isAutomaticSize, title.isAutomaticSize) &&
-        Objects.equals(this.isInnerMode, title.isInnerMode) &&
-        Objects.equals(this.shadow, title.shadow) &&
+    return Objects.equals(this.isInnerMode, title.isInnerMode) &&
         Objects.equals(this.shapeProperties, title.shapeProperties) &&
-        Objects.equals(this.width, title.width) &&
+        Objects.equals(this.autoScaleFont, title.autoScaleFont) &&
+        Objects.equals(this.area, title.area) &&
         Objects.equals(this.height, title.height) &&
-        Objects.equals(this.X, title.X) &&
+        Objects.equals(this.width, title.width) &&
+        Objects.equals(this.backgroundMode, title.backgroundMode) &&
+        Objects.equals(this.isAutomaticSize, title.isAutomaticSize) &&
         Objects.equals(this.Y, title.Y) &&
+        Objects.equals(this.X, title.X) &&
+        Objects.equals(this.shadow, title.shadow) &&
+        Objects.equals(this.font, title.font) &&
+        Objects.equals(this.border, title.border) &&
         Objects.equals(this.link, title.link) &&
-        Objects.equals(this.isVisible, title.isVisible) &&
         Objects.equals(this.linkedSource, title.linkedSource) &&
-        Objects.equals(this.rotationAngle, title.rotationAngle) &&
         Objects.equals(this.text, title.text) &&
+        Objects.equals(this.isVisible, title.isVisible) &&
         Objects.equals(this.textDirection, title.textDirection) &&
-        Objects.equals(this.textHorizontalAlignment, title.textHorizontalAlignment) &&
-        Objects.equals(this.textVerticalAlignment, title.textVerticalAlignment);
+        Objects.equals(this.rotationAngle, title.rotationAngle) &&
+        Objects.equals(this.textVerticalAlignment, title.textVerticalAlignment) &&
+        Objects.equals(this.textHorizontalAlignment, title.textHorizontalAlignment);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(area, autoScaleFont, backgroundMode, border, font, isAutomaticSize, isInnerMode, shadow, shapeProperties, width, height, X, Y, link, isVisible, linkedSource, rotationAngle, text, textDirection, textHorizontalAlignment, textVerticalAlignment);
+    return Objects.hash(isInnerMode, shapeProperties, autoScaleFont, area, height, width, backgroundMode, isAutomaticSize, Y, X, shadow, font, border, link, linkedSource, text, isVisible, textDirection, rotationAngle, textVerticalAlignment, textHorizontalAlignment);
   }
 
 
@@ -529,27 +529,27 @@ public class Title {
     StringBuilder sb = new StringBuilder();
     sb.append("class Title {\n");
     
-    sb.append("    area: ").append(toIndentedString(area)).append("\n");
-    sb.append("    autoScaleFont: ").append(toIndentedString(autoScaleFont)).append("\n");
-    sb.append("    backgroundMode: ").append(toIndentedString(backgroundMode)).append("\n");
-    sb.append("    border: ").append(toIndentedString(border)).append("\n");
-    sb.append("    font: ").append(toIndentedString(font)).append("\n");
-    sb.append("    isAutomaticSize: ").append(toIndentedString(isAutomaticSize)).append("\n");
     sb.append("    isInnerMode: ").append(toIndentedString(isInnerMode)).append("\n");
-    sb.append("    shadow: ").append(toIndentedString(shadow)).append("\n");
     sb.append("    shapeProperties: ").append(toIndentedString(shapeProperties)).append("\n");
-    sb.append("    width: ").append(toIndentedString(width)).append("\n");
+    sb.append("    autoScaleFont: ").append(toIndentedString(autoScaleFont)).append("\n");
+    sb.append("    area: ").append(toIndentedString(area)).append("\n");
     sb.append("    height: ").append(toIndentedString(height)).append("\n");
-    sb.append("    X: ").append(toIndentedString(X)).append("\n");
+    sb.append("    width: ").append(toIndentedString(width)).append("\n");
+    sb.append("    backgroundMode: ").append(toIndentedString(backgroundMode)).append("\n");
+    sb.append("    isAutomaticSize: ").append(toIndentedString(isAutomaticSize)).append("\n");
     sb.append("    Y: ").append(toIndentedString(Y)).append("\n");
+    sb.append("    X: ").append(toIndentedString(X)).append("\n");
+    sb.append("    shadow: ").append(toIndentedString(shadow)).append("\n");
+    sb.append("    font: ").append(toIndentedString(font)).append("\n");
+    sb.append("    border: ").append(toIndentedString(border)).append("\n");
     sb.append("    link: ").append(toIndentedString(link)).append("\n");
-    sb.append("    isVisible: ").append(toIndentedString(isVisible)).append("\n");
     sb.append("    linkedSource: ").append(toIndentedString(linkedSource)).append("\n");
-    sb.append("    rotationAngle: ").append(toIndentedString(rotationAngle)).append("\n");
     sb.append("    text: ").append(toIndentedString(text)).append("\n");
+    sb.append("    isVisible: ").append(toIndentedString(isVisible)).append("\n");
     sb.append("    textDirection: ").append(toIndentedString(textDirection)).append("\n");
-    sb.append("    textHorizontalAlignment: ").append(toIndentedString(textHorizontalAlignment)).append("\n");
+    sb.append("    rotationAngle: ").append(toIndentedString(rotationAngle)).append("\n");
     sb.append("    textVerticalAlignment: ").append(toIndentedString(textVerticalAlignment)).append("\n");
+    sb.append("    textHorizontalAlignment: ").append(toIndentedString(textHorizontalAlignment)).append("\n");
     sb.append("}");
     return sb.toString();
   }

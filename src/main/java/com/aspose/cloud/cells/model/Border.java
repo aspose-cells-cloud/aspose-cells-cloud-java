@@ -27,34 +27,16 @@ import java.io.IOException;
 /**
  * Border
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-05T15:44:26.749+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-08-14T14:34:14.243+08:00")
 public class Border {
-  @SerializedName("LineStyle")
-  private String lineStyle = null;
-
   @SerializedName("Color")
   private Color color = null;
 
   @SerializedName("BorderType")
   private String borderType = null;
 
-  public Border lineStyle(String lineStyle) {
-    this.lineStyle = lineStyle;
-    return this;
-  }
-
-   /**
-   * Get lineStyle
-   * @return lineStyle
-  **/
-  @ApiModelProperty(value = "")
-  public String getLineStyle() {
-    return lineStyle;
-  }
-
-  public void setLineStyle(String lineStyle) {
-    this.lineStyle = lineStyle;
-  }
+  @SerializedName("LineStyle")
+  private String lineStyle = null;
 
   public Border color(Color color) {
     this.color = color;
@@ -92,6 +74,24 @@ public class Border {
     this.borderType = borderType;
   }
 
+  public Border lineStyle(String lineStyle) {
+    this.lineStyle = lineStyle;
+    return this;
+  }
+
+   /**
+   * Get lineStyle
+   * @return lineStyle
+  **/
+  @ApiModelProperty(value = "")
+  public String getLineStyle() {
+    return lineStyle;
+  }
+
+  public void setLineStyle(String lineStyle) {
+    this.lineStyle = lineStyle;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -102,14 +102,14 @@ public class Border {
       return false;
     }
     Border border = (Border) o;
-    return Objects.equals(this.lineStyle, border.lineStyle) &&
-        Objects.equals(this.color, border.color) &&
-        Objects.equals(this.borderType, border.borderType);
+    return Objects.equals(this.color, border.color) &&
+        Objects.equals(this.borderType, border.borderType) &&
+        Objects.equals(this.lineStyle, border.lineStyle);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(lineStyle, color, borderType);
+    return Objects.hash(color, borderType, lineStyle);
   }
 
 
@@ -118,9 +118,9 @@ public class Border {
     StringBuilder sb = new StringBuilder();
     sb.append("class Border {\n");
     
-    sb.append("    lineStyle: ").append(toIndentedString(lineStyle)).append("\n");
     sb.append("    color: ").append(toIndentedString(color)).append("\n");
     sb.append("    borderType: ").append(toIndentedString(borderType)).append("\n");
+    sb.append("    lineStyle: ").append(toIndentedString(lineStyle)).append("\n");
     sb.append("}");
     return sb.toString();
   }

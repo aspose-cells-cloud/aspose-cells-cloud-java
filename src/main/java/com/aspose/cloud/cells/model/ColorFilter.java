@@ -27,39 +27,39 @@ import java.io.IOException;
 /**
  * ColorFilter
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-05T15:44:26.749+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-08-14T14:34:14.243+08:00")
 public class ColorFilter {
-  @SerializedName("FilterByFillColor")
-  private String filterByFillColor = null;
+  @SerializedName("Color")
+  private CellsColor color = null;
 
   @SerializedName("Pattern")
   private String pattern = null;
 
-  @SerializedName("Color")
-  private CellsColor color = null;
+  @SerializedName("BackgroundColor")
+  private CellsColor backgroundColor = null;
 
   @SerializedName("ForegroundColorColor")
   private CellsColor foregroundColorColor = null;
 
-  @SerializedName("BackgroundColor")
-  private CellsColor backgroundColor = null;
+  @SerializedName("FilterByFillColor")
+  private String filterByFillColor = null;
 
-  public ColorFilter filterByFillColor(String filterByFillColor) {
-    this.filterByFillColor = filterByFillColor;
+  public ColorFilter color(CellsColor color) {
+    this.color = color;
     return this;
   }
 
    /**
-   * Get filterByFillColor
-   * @return filterByFillColor
+   * Get color
+   * @return color
   **/
   @ApiModelProperty(value = "")
-  public String getFilterByFillColor() {
-    return filterByFillColor;
+  public CellsColor getColor() {
+    return color;
   }
 
-  public void setFilterByFillColor(String filterByFillColor) {
-    this.filterByFillColor = filterByFillColor;
+  public void setColor(CellsColor color) {
+    this.color = color;
   }
 
   public ColorFilter pattern(String pattern) {
@@ -80,22 +80,22 @@ public class ColorFilter {
     this.pattern = pattern;
   }
 
-  public ColorFilter color(CellsColor color) {
-    this.color = color;
+  public ColorFilter backgroundColor(CellsColor backgroundColor) {
+    this.backgroundColor = backgroundColor;
     return this;
   }
 
    /**
-   * Get color
-   * @return color
+   * Get backgroundColor
+   * @return backgroundColor
   **/
   @ApiModelProperty(value = "")
-  public CellsColor getColor() {
-    return color;
+  public CellsColor getBackgroundColor() {
+    return backgroundColor;
   }
 
-  public void setColor(CellsColor color) {
-    this.color = color;
+  public void setBackgroundColor(CellsColor backgroundColor) {
+    this.backgroundColor = backgroundColor;
   }
 
   public ColorFilter foregroundColorColor(CellsColor foregroundColorColor) {
@@ -116,22 +116,22 @@ public class ColorFilter {
     this.foregroundColorColor = foregroundColorColor;
   }
 
-  public ColorFilter backgroundColor(CellsColor backgroundColor) {
-    this.backgroundColor = backgroundColor;
+  public ColorFilter filterByFillColor(String filterByFillColor) {
+    this.filterByFillColor = filterByFillColor;
     return this;
   }
 
    /**
-   * Get backgroundColor
-   * @return backgroundColor
+   * Get filterByFillColor
+   * @return filterByFillColor
   **/
   @ApiModelProperty(value = "")
-  public CellsColor getBackgroundColor() {
-    return backgroundColor;
+  public String getFilterByFillColor() {
+    return filterByFillColor;
   }
 
-  public void setBackgroundColor(CellsColor backgroundColor) {
-    this.backgroundColor = backgroundColor;
+  public void setFilterByFillColor(String filterByFillColor) {
+    this.filterByFillColor = filterByFillColor;
   }
 
 
@@ -144,16 +144,16 @@ public class ColorFilter {
       return false;
     }
     ColorFilter colorFilter = (ColorFilter) o;
-    return Objects.equals(this.filterByFillColor, colorFilter.filterByFillColor) &&
+    return Objects.equals(this.color, colorFilter.color) &&
         Objects.equals(this.pattern, colorFilter.pattern) &&
-        Objects.equals(this.color, colorFilter.color) &&
+        Objects.equals(this.backgroundColor, colorFilter.backgroundColor) &&
         Objects.equals(this.foregroundColorColor, colorFilter.foregroundColorColor) &&
-        Objects.equals(this.backgroundColor, colorFilter.backgroundColor);
+        Objects.equals(this.filterByFillColor, colorFilter.filterByFillColor);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(filterByFillColor, pattern, color, foregroundColorColor, backgroundColor);
+    return Objects.hash(color, pattern, backgroundColor, foregroundColorColor, filterByFillColor);
   }
 
 
@@ -162,11 +162,11 @@ public class ColorFilter {
     StringBuilder sb = new StringBuilder();
     sb.append("class ColorFilter {\n");
     
-    sb.append("    filterByFillColor: ").append(toIndentedString(filterByFillColor)).append("\n");
-    sb.append("    pattern: ").append(toIndentedString(pattern)).append("\n");
     sb.append("    color: ").append(toIndentedString(color)).append("\n");
-    sb.append("    foregroundColorColor: ").append(toIndentedString(foregroundColorColor)).append("\n");
+    sb.append("    pattern: ").append(toIndentedString(pattern)).append("\n");
     sb.append("    backgroundColor: ").append(toIndentedString(backgroundColor)).append("\n");
+    sb.append("    foregroundColorColor: ").append(toIndentedString(foregroundColorColor)).append("\n");
+    sb.append("    filterByFillColor: ").append(toIndentedString(filterByFillColor)).append("\n");
     sb.append("}");
     return sb.toString();
   }

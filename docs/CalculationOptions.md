@@ -4,10 +4,10 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**calcStackSize** | **Integer** |  |  [optional]
-**ignoreError** | **Boolean** |  |  [optional]
 **precisionStrategy** | **String** |  |  [optional]
+**ignoreError** | **Boolean** |  |  [optional]
 **recursive** | **Boolean** |  |  [optional]
+**calcStackSize** | **Integer** |  |  [optional]
 
 
 

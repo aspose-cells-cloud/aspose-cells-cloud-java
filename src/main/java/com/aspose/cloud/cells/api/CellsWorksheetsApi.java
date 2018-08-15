@@ -1118,6 +1118,7 @@ public class CellsWorksheetsApi {
      * Build call for cellsWorksheetsGetWorksheet
      * @param name The document name. (required)
      * @param sheetName The worksheet name. (required)
+     * @param format The exported file format. (optional)
      * @param verticalResolution Image vertical resolution. (optional, default to 0)
      * @param horizontalResolution Image horizontal resolution. (optional, default to 0)
      * @param folder The document folder. (optional)
@@ -1126,7 +1127,7 @@ public class CellsWorksheetsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call cellsWorksheetsGetWorksheetCall(String name, String sheetName, Integer verticalResolution, Integer horizontalResolution, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call cellsWorksheetsGetWorksheetCall(String name, String sheetName, String format, Integer verticalResolution, Integer horizontalResolution, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -1135,6 +1136,8 @@ public class CellsWorksheetsApi {
             .replaceAll("\\{" + "sheetName" + "\\}", apiClient.escapeString(sheetName.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        if (format != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "format", format));
         if (verticalResolution != null)
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "verticalResolution", verticalResolution));
         if (horizontalResolution != null)
@@ -1175,7 +1178,7 @@ public class CellsWorksheetsApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call cellsWorksheetsGetWorksheetValidateBeforeCall(String name, String sheetName, Integer verticalResolution, Integer horizontalResolution, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call cellsWorksheetsGetWorksheetValidateBeforeCall(String name, String sheetName, String format, Integer verticalResolution, Integer horizontalResolution, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'name' is set
         if (name == null) {
@@ -1188,7 +1191,7 @@ public class CellsWorksheetsApi {
         }
         
         
-        com.squareup.okhttp.Call call = cellsWorksheetsGetWorksheetCall(name, sheetName, verticalResolution, horizontalResolution, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsWorksheetsGetWorksheetCall(name, sheetName, format, verticalResolution, horizontalResolution, folder, progressListener, progressRequestListener);
         return call;
 
         
@@ -1202,14 +1205,15 @@ public class CellsWorksheetsApi {
      * 
      * @param name The document name. (required)
      * @param sheetName The worksheet name. (required)
+     * @param format The exported file format. (optional)
      * @param verticalResolution Image vertical resolution. (optional, default to 0)
      * @param horizontalResolution Image horizontal resolution. (optional, default to 0)
      * @param folder The document folder. (optional)
      * @return File
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public File cellsWorksheetsGetWorksheet(String name, String sheetName, Integer verticalResolution, Integer horizontalResolution, String folder) throws ApiException {
-        ApiResponse<File> resp = cellsWorksheetsGetWorksheetWithHttpInfo(name, sheetName, verticalResolution, horizontalResolution, folder);
+    public File cellsWorksheetsGetWorksheet(String name, String sheetName, String format, Integer verticalResolution, Integer horizontalResolution, String folder) throws ApiException {
+        ApiResponse<File> resp = cellsWorksheetsGetWorksheetWithHttpInfo(name, sheetName, format, verticalResolution, horizontalResolution, folder);
         return resp.getData();
     }
 
@@ -1218,14 +1222,15 @@ public class CellsWorksheetsApi {
      * 
      * @param name The document name. (required)
      * @param sheetName The worksheet name. (required)
+     * @param format The exported file format. (optional)
      * @param verticalResolution Image vertical resolution. (optional, default to 0)
      * @param horizontalResolution Image horizontal resolution. (optional, default to 0)
      * @param folder The document folder. (optional)
      * @return ApiResponse&lt;File&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<File> cellsWorksheetsGetWorksheetWithHttpInfo(String name, String sheetName, Integer verticalResolution, Integer horizontalResolution, String folder) throws ApiException {
-        com.squareup.okhttp.Call call = cellsWorksheetsGetWorksheetValidateBeforeCall(name, sheetName, verticalResolution, horizontalResolution, folder, null, null);
+    public ApiResponse<File> cellsWorksheetsGetWorksheetWithHttpInfo(String name, String sheetName, String format, Integer verticalResolution, Integer horizontalResolution, String folder) throws ApiException {
+        com.squareup.okhttp.Call call = cellsWorksheetsGetWorksheetValidateBeforeCall(name, sheetName, format, verticalResolution, horizontalResolution, folder, null, null);
         Type localVarReturnType = new TypeToken<File>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -1235,6 +1240,7 @@ public class CellsWorksheetsApi {
      * 
      * @param name The document name. (required)
      * @param sheetName The worksheet name. (required)
+     * @param format The exported file format. (optional)
      * @param verticalResolution Image vertical resolution. (optional, default to 0)
      * @param horizontalResolution Image horizontal resolution. (optional, default to 0)
      * @param folder The document folder. (optional)
@@ -1242,7 +1248,7 @@ public class CellsWorksheetsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call cellsWorksheetsGetWorksheetAsync(String name, String sheetName, Integer verticalResolution, Integer horizontalResolution, String folder, final ApiCallback<File> callback) throws ApiException {
+    public com.squareup.okhttp.Call cellsWorksheetsGetWorksheetAsync(String name, String sheetName, String format, Integer verticalResolution, Integer horizontalResolution, String folder, final ApiCallback<File> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1263,7 +1269,7 @@ public class CellsWorksheetsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = cellsWorksheetsGetWorksheetValidateBeforeCall(name, sheetName, verticalResolution, horizontalResolution, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsWorksheetsGetWorksheetValidateBeforeCall(name, sheetName, format, verticalResolution, horizontalResolution, folder, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<File>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

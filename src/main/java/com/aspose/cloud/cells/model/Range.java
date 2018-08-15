@@ -26,22 +26,22 @@ import java.io.IOException;
 /**
  * Range
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-05T15:44:26.749+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-08-14T14:34:14.243+08:00")
 public class Range {
   @SerializedName("ColumnCount")
   private Integer columnCount = null;
 
-  @SerializedName("ColumnWidth")
-  private Double columnWidth = null;
+  @SerializedName("RowHeight")
+  private Double rowHeight = null;
+
+  @SerializedName("Name")
+  private String name = null;
 
   @SerializedName("FirstColumn")
   private Integer firstColumn = null;
 
-  @SerializedName("FirstRow")
-  private Integer firstRow = null;
-
-  @SerializedName("Name")
-  private String name = null;
+  @SerializedName("ColumnWidth")
+  private Double columnWidth = null;
 
   @SerializedName("RefersTo")
   private String refersTo = null;
@@ -49,8 +49,8 @@ public class Range {
   @SerializedName("RowCount")
   private Integer rowCount = null;
 
-  @SerializedName("RowHeight")
-  private Double rowHeight = null;
+  @SerializedName("FirstRow")
+  private Integer firstRow = null;
 
   @SerializedName("Worksheet")
   private String worksheet = null;
@@ -73,22 +73,40 @@ public class Range {
     this.columnCount = columnCount;
   }
 
-  public Range columnWidth(Double columnWidth) {
-    this.columnWidth = columnWidth;
+  public Range rowHeight(Double rowHeight) {
+    this.rowHeight = rowHeight;
     return this;
   }
 
    /**
-   * Sets or gets the column width of this range
-   * @return columnWidth
+   * Sets or gets the height of rows in this range
+   * @return rowHeight
   **/
-  @ApiModelProperty(required = true, value = "Sets or gets the column width of this range")
-  public Double getColumnWidth() {
-    return columnWidth;
+  @ApiModelProperty(required = true, value = "Sets or gets the height of rows in this range")
+  public Double getRowHeight() {
+    return rowHeight;
   }
 
-  public void setColumnWidth(Double columnWidth) {
-    this.columnWidth = columnWidth;
+  public void setRowHeight(Double rowHeight) {
+    this.rowHeight = rowHeight;
+  }
+
+  public Range name(String name) {
+    this.name = name;
+    return this;
+  }
+
+   /**
+   * Gets or sets the name of the range.
+   * @return name
+  **/
+  @ApiModelProperty(value = "Gets or sets the name of the range.")
+  public String getName() {
+    return name;
+  }
+
+  public void setName(String name) {
+    this.name = name;
   }
 
   public Range firstColumn(Integer firstColumn) {
@@ -109,40 +127,22 @@ public class Range {
     this.firstColumn = firstColumn;
   }
 
-  public Range firstRow(Integer firstRow) {
-    this.firstRow = firstRow;
+  public Range columnWidth(Double columnWidth) {
+    this.columnWidth = columnWidth;
     return this;
   }
 
    /**
-   * Gets the index of the first row of the range.
-   * @return firstRow
+   * Sets or gets the column width of this range
+   * @return columnWidth
   **/
-  @ApiModelProperty(required = true, value = "Gets the index of the first row of the range.")
-  public Integer getFirstRow() {
-    return firstRow;
+  @ApiModelProperty(required = true, value = "Sets or gets the column width of this range")
+  public Double getColumnWidth() {
+    return columnWidth;
   }
 
-  public void setFirstRow(Integer firstRow) {
-    this.firstRow = firstRow;
-  }
-
-  public Range name(String name) {
-    this.name = name;
-    return this;
-  }
-
-   /**
-   * Gets or sets the name of the range.
-   * @return name
-  **/
-  @ApiModelProperty(value = "Gets or sets the name of the range.")
-  public String getName() {
-    return name;
-  }
-
-  public void setName(String name) {
-    this.name = name;
+  public void setColumnWidth(Double columnWidth) {
+    this.columnWidth = columnWidth;
   }
 
   public Range refersTo(String refersTo) {
@@ -181,22 +181,22 @@ public class Range {
     this.rowCount = rowCount;
   }
 
-  public Range rowHeight(Double rowHeight) {
-    this.rowHeight = rowHeight;
+  public Range firstRow(Integer firstRow) {
+    this.firstRow = firstRow;
     return this;
   }
 
    /**
-   * Sets or gets the height of rows in this range
-   * @return rowHeight
+   * Gets the index of the first row of the range.
+   * @return firstRow
   **/
-  @ApiModelProperty(required = true, value = "Sets or gets the height of rows in this range")
-  public Double getRowHeight() {
-    return rowHeight;
+  @ApiModelProperty(required = true, value = "Gets the index of the first row of the range.")
+  public Integer getFirstRow() {
+    return firstRow;
   }
 
-  public void setRowHeight(Double rowHeight) {
-    this.rowHeight = rowHeight;
+  public void setFirstRow(Integer firstRow) {
+    this.firstRow = firstRow;
   }
 
   public Range worksheet(String worksheet) {
@@ -228,19 +228,19 @@ public class Range {
     }
     Range range = (Range) o;
     return Objects.equals(this.columnCount, range.columnCount) &&
-        Objects.equals(this.columnWidth, range.columnWidth) &&
-        Objects.equals(this.firstColumn, range.firstColumn) &&
-        Objects.equals(this.firstRow, range.firstRow) &&
+        Objects.equals(this.rowHeight, range.rowHeight) &&
         Objects.equals(this.name, range.name) &&
+        Objects.equals(this.firstColumn, range.firstColumn) &&
+        Objects.equals(this.columnWidth, range.columnWidth) &&
         Objects.equals(this.refersTo, range.refersTo) &&
         Objects.equals(this.rowCount, range.rowCount) &&
-        Objects.equals(this.rowHeight, range.rowHeight) &&
+        Objects.equals(this.firstRow, range.firstRow) &&
         Objects.equals(this.worksheet, range.worksheet);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(columnCount, columnWidth, firstColumn, firstRow, name, refersTo, rowCount, rowHeight, worksheet);
+    return Objects.hash(columnCount, rowHeight, name, firstColumn, columnWidth, refersTo, rowCount, firstRow, worksheet);
   }
 
 
@@ -250,13 +250,13 @@ public class Range {
     sb.append("class Range {\n");
     
     sb.append("    columnCount: ").append(toIndentedString(columnCount)).append("\n");
-    sb.append("    columnWidth: ").append(toIndentedString(columnWidth)).append("\n");
-    sb.append("    firstColumn: ").append(toIndentedString(firstColumn)).append("\n");
-    sb.append("    firstRow: ").append(toIndentedString(firstRow)).append("\n");
+    sb.append("    rowHeight: ").append(toIndentedString(rowHeight)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    firstColumn: ").append(toIndentedString(firstColumn)).append("\n");
+    sb.append("    columnWidth: ").append(toIndentedString(columnWidth)).append("\n");
     sb.append("    refersTo: ").append(toIndentedString(refersTo)).append("\n");
     sb.append("    rowCount: ").append(toIndentedString(rowCount)).append("\n");
-    sb.append("    rowHeight: ").append(toIndentedString(rowHeight)).append("\n");
+    sb.append("    firstRow: ").append(toIndentedString(firstRow)).append("\n");
     sb.append("    worksheet: ").append(toIndentedString(worksheet)).append("\n");
     sb.append("}");
     return sb.toString();

@@ -4,21 +4,21 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**color** | [**Color**](Color.md) |  |  [optional]
-**doubleSize** | **Double** |  |  [optional]
-**isBold** | **Boolean** |  |  [optional]
 **isItalic** | **Boolean** |  |  [optional]
-**isStrikeout** | **Boolean** |  |  [optional]
+**name** | **String** |  |  [optional]
+**doubleSize** | **Double** |  |  [optional]
+**color** | [**Color**](Color.md) |  |  [optional]
+**isBold** | **Boolean** |  |  [optional]
 **isSubscript** | **Boolean** |  |  [optional]
 **isSuperscript** | **Boolean** |  |  [optional]
-**name** | **String** |  |  [optional]
-**size** | **Integer** |  |  [optional]
+**isStrikeout** | **Boolean** |  |  [optional]
 **underline** | **String** |  |  [optional]
-**fill** | [**FillFormat**](FillFormat.md) |  |  [optional]
-**kerning** | **Double** |  |  [optional]
+**size** | **Integer** |  |  [optional]
 **outline** | [**LineFormat**](LineFormat.md) |  |  [optional]
-**shadow** | [**ShadowEffect**](ShadowEffect.md) |  |  [optional]
 **spacing** | **Double** |  |  [optional]
+**kerning** | **Double** |  |  [optional]
+**shadow** | [**ShadowEffect**](ShadowEffect.md) |  |  [optional]
+**fill** | [**FillFormat**](FillFormat.md) |  |  [optional]
 **underlineColor** | [**CellsColor**](CellsColor.md) |  |  [optional]
 
 

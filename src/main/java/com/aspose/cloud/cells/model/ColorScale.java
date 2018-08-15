@@ -29,25 +29,25 @@ import java.io.IOException;
  * Describe the ColorScale conditional formatting rule. This conditional formatting    rule creates a gradated color scale on the cells.             
  */
 @ApiModel(description = "Describe the ColorScale conditional formatting rule. This conditional formatting    rule creates a gradated color scale on the cells.             ")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-05T15:44:26.749+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-08-14T14:34:14.243+08:00")
 public class ColorScale {
   @SerializedName("MaxCfvo")
   private ConditionalFormattingValue maxCfvo = null;
 
-  @SerializedName("MaxColor")
-  private Color maxColor = null;
+  @SerializedName("MidColor")
+  private Color midColor = null;
+
+  @SerializedName("MinColor")
+  private Color minColor = null;
 
   @SerializedName("MidCfvo")
   private ConditionalFormattingValue midCfvo = null;
 
-  @SerializedName("MidColor")
-  private Color midColor = null;
-
   @SerializedName("MinCfvo")
   private ConditionalFormattingValue minCfvo = null;
 
-  @SerializedName("MinColor")
-  private Color minColor = null;
+  @SerializedName("MaxColor")
+  private Color maxColor = null;
 
   public ColorScale maxCfvo(ConditionalFormattingValue maxCfvo) {
     this.maxCfvo = maxCfvo;
@@ -65,42 +65,6 @@ public class ColorScale {
 
   public void setMaxCfvo(ConditionalFormattingValue maxCfvo) {
     this.maxCfvo = maxCfvo;
-  }
-
-  public ColorScale maxColor(Color maxColor) {
-    this.maxColor = maxColor;
-    return this;
-  }
-
-   /**
-   * Get or set the max value object&#39;s corresponding color.
-   * @return maxColor
-  **/
-  @ApiModelProperty(value = "Get or set the max value object's corresponding color.")
-  public Color getMaxColor() {
-    return maxColor;
-  }
-
-  public void setMaxColor(Color maxColor) {
-    this.maxColor = maxColor;
-  }
-
-  public ColorScale midCfvo(ConditionalFormattingValue midCfvo) {
-    this.midCfvo = midCfvo;
-    return this;
-  }
-
-   /**
-   * Get or set this ColorScale&#39;s mid value object.  Cannot set CFValueObject    with type FormatConditionValueType.Max or FormatConditionValueType.Min to    it.             
-   * @return midCfvo
-  **/
-  @ApiModelProperty(value = "Get or set this ColorScale's mid value object.  Cannot set CFValueObject    with type FormatConditionValueType.Max or FormatConditionValueType.Min to    it.             ")
-  public ConditionalFormattingValue getMidCfvo() {
-    return midCfvo;
-  }
-
-  public void setMidCfvo(ConditionalFormattingValue midCfvo) {
-    this.midCfvo = midCfvo;
   }
 
   public ColorScale midColor(Color midColor) {
@@ -121,24 +85,6 @@ public class ColorScale {
     this.midColor = midColor;
   }
 
-  public ColorScale minCfvo(ConditionalFormattingValue minCfvo) {
-    this.minCfvo = minCfvo;
-    return this;
-  }
-
-   /**
-   * Get or set this ColorScale&#39;s min value object.  Cannot set null or CFValueObject    with type FormatConditionValueType.Max to it.             
-   * @return minCfvo
-  **/
-  @ApiModelProperty(value = "Get or set this ColorScale's min value object.  Cannot set null or CFValueObject    with type FormatConditionValueType.Max to it.             ")
-  public ConditionalFormattingValue getMinCfvo() {
-    return minCfvo;
-  }
-
-  public void setMinCfvo(ConditionalFormattingValue minCfvo) {
-    this.minCfvo = minCfvo;
-  }
-
   public ColorScale minColor(Color minColor) {
     this.minColor = minColor;
     return this;
@@ -157,6 +103,60 @@ public class ColorScale {
     this.minColor = minColor;
   }
 
+  public ColorScale midCfvo(ConditionalFormattingValue midCfvo) {
+    this.midCfvo = midCfvo;
+    return this;
+  }
+
+   /**
+   * Get or set this ColorScale&#39;s mid value object.  Cannot set CFValueObject    with type FormatConditionValueType.Max or FormatConditionValueType.Min to    it.             
+   * @return midCfvo
+  **/
+  @ApiModelProperty(value = "Get or set this ColorScale's mid value object.  Cannot set CFValueObject    with type FormatConditionValueType.Max or FormatConditionValueType.Min to    it.             ")
+  public ConditionalFormattingValue getMidCfvo() {
+    return midCfvo;
+  }
+
+  public void setMidCfvo(ConditionalFormattingValue midCfvo) {
+    this.midCfvo = midCfvo;
+  }
+
+  public ColorScale minCfvo(ConditionalFormattingValue minCfvo) {
+    this.minCfvo = minCfvo;
+    return this;
+  }
+
+   /**
+   * Get or set this ColorScale&#39;s min value object.  Cannot set null or CFValueObject    with type FormatConditionValueType.Max to it.             
+   * @return minCfvo
+  **/
+  @ApiModelProperty(value = "Get or set this ColorScale's min value object.  Cannot set null or CFValueObject    with type FormatConditionValueType.Max to it.             ")
+  public ConditionalFormattingValue getMinCfvo() {
+    return minCfvo;
+  }
+
+  public void setMinCfvo(ConditionalFormattingValue minCfvo) {
+    this.minCfvo = minCfvo;
+  }
+
+  public ColorScale maxColor(Color maxColor) {
+    this.maxColor = maxColor;
+    return this;
+  }
+
+   /**
+   * Get or set the max value object&#39;s corresponding color.
+   * @return maxColor
+  **/
+  @ApiModelProperty(value = "Get or set the max value object's corresponding color.")
+  public Color getMaxColor() {
+    return maxColor;
+  }
+
+  public void setMaxColor(Color maxColor) {
+    this.maxColor = maxColor;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -168,16 +168,16 @@ public class ColorScale {
     }
     ColorScale colorScale = (ColorScale) o;
     return Objects.equals(this.maxCfvo, colorScale.maxCfvo) &&
-        Objects.equals(this.maxColor, colorScale.maxColor) &&
-        Objects.equals(this.midCfvo, colorScale.midCfvo) &&
         Objects.equals(this.midColor, colorScale.midColor) &&
+        Objects.equals(this.minColor, colorScale.minColor) &&
+        Objects.equals(this.midCfvo, colorScale.midCfvo) &&
         Objects.equals(this.minCfvo, colorScale.minCfvo) &&
-        Objects.equals(this.minColor, colorScale.minColor);
+        Objects.equals(this.maxColor, colorScale.maxColor);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(maxCfvo, maxColor, midCfvo, midColor, minCfvo, minColor);
+    return Objects.hash(maxCfvo, midColor, minColor, midCfvo, minCfvo, maxColor);
   }
 
 
@@ -187,11 +187,11 @@ public class ColorScale {
     sb.append("class ColorScale {\n");
     
     sb.append("    maxCfvo: ").append(toIndentedString(maxCfvo)).append("\n");
-    sb.append("    maxColor: ").append(toIndentedString(maxColor)).append("\n");
-    sb.append("    midCfvo: ").append(toIndentedString(midCfvo)).append("\n");
     sb.append("    midColor: ").append(toIndentedString(midColor)).append("\n");
-    sb.append("    minCfvo: ").append(toIndentedString(minCfvo)).append("\n");
     sb.append("    minColor: ").append(toIndentedString(minColor)).append("\n");
+    sb.append("    midCfvo: ").append(toIndentedString(midCfvo)).append("\n");
+    sb.append("    minCfvo: ").append(toIndentedString(minCfvo)).append("\n");
+    sb.append("    maxColor: ").append(toIndentedString(maxColor)).append("\n");
     sb.append("}");
     return sb.toString();
   }

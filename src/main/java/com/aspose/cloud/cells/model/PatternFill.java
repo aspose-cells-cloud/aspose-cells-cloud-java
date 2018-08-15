@@ -28,19 +28,13 @@ import java.io.IOException;
 /**
  * PatternFill
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-05T15:44:26.749+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-08-14T14:34:14.243+08:00")
 public class PatternFill {
-  @SerializedName("Pattern")
-  private String pattern = null;
-
-  @SerializedName("BackgroundCellsColor")
-  private CellsColor backgroundCellsColor = null;
-
-  @SerializedName("ForegroundCellsColor")
-  private CellsColor foregroundCellsColor = null;
-
   @SerializedName("ForegroundColor")
   private Color foregroundColor = null;
+
+  @SerializedName("Pattern")
+  private String pattern = null;
 
   @SerializedName("BackgroundColor")
   private Color backgroundColor = null;
@@ -48,62 +42,14 @@ public class PatternFill {
   @SerializedName("BackTransparency")
   private Double backTransparency = null;
 
+  @SerializedName("BackgroundCellsColor")
+  private CellsColor backgroundCellsColor = null;
+
   @SerializedName("ForeTransparency")
   private Double foreTransparency = null;
 
-  public PatternFill pattern(String pattern) {
-    this.pattern = pattern;
-    return this;
-  }
-
-   /**
-   * Get pattern
-   * @return pattern
-  **/
-  @ApiModelProperty(value = "")
-  public String getPattern() {
-    return pattern;
-  }
-
-  public void setPattern(String pattern) {
-    this.pattern = pattern;
-  }
-
-  public PatternFill backgroundCellsColor(CellsColor backgroundCellsColor) {
-    this.backgroundCellsColor = backgroundCellsColor;
-    return this;
-  }
-
-   /**
-   * Get backgroundCellsColor
-   * @return backgroundCellsColor
-  **/
-  @ApiModelProperty(value = "")
-  public CellsColor getBackgroundCellsColor() {
-    return backgroundCellsColor;
-  }
-
-  public void setBackgroundCellsColor(CellsColor backgroundCellsColor) {
-    this.backgroundCellsColor = backgroundCellsColor;
-  }
-
-  public PatternFill foregroundCellsColor(CellsColor foregroundCellsColor) {
-    this.foregroundCellsColor = foregroundCellsColor;
-    return this;
-  }
-
-   /**
-   * Get foregroundCellsColor
-   * @return foregroundCellsColor
-  **/
-  @ApiModelProperty(value = "")
-  public CellsColor getForegroundCellsColor() {
-    return foregroundCellsColor;
-  }
-
-  public void setForegroundCellsColor(CellsColor foregroundCellsColor) {
-    this.foregroundCellsColor = foregroundCellsColor;
-  }
+  @SerializedName("ForegroundCellsColor")
+  private CellsColor foregroundCellsColor = null;
 
   public PatternFill foregroundColor(Color foregroundColor) {
     this.foregroundColor = foregroundColor;
@@ -121,6 +67,24 @@ public class PatternFill {
 
   public void setForegroundColor(Color foregroundColor) {
     this.foregroundColor = foregroundColor;
+  }
+
+  public PatternFill pattern(String pattern) {
+    this.pattern = pattern;
+    return this;
+  }
+
+   /**
+   * Get pattern
+   * @return pattern
+  **/
+  @ApiModelProperty(value = "")
+  public String getPattern() {
+    return pattern;
+  }
+
+  public void setPattern(String pattern) {
+    this.pattern = pattern;
   }
 
   public PatternFill backgroundColor(Color backgroundColor) {
@@ -159,6 +123,24 @@ public class PatternFill {
     this.backTransparency = backTransparency;
   }
 
+  public PatternFill backgroundCellsColor(CellsColor backgroundCellsColor) {
+    this.backgroundCellsColor = backgroundCellsColor;
+    return this;
+  }
+
+   /**
+   * Get backgroundCellsColor
+   * @return backgroundCellsColor
+  **/
+  @ApiModelProperty(value = "")
+  public CellsColor getBackgroundCellsColor() {
+    return backgroundCellsColor;
+  }
+
+  public void setBackgroundCellsColor(CellsColor backgroundCellsColor) {
+    this.backgroundCellsColor = backgroundCellsColor;
+  }
+
   public PatternFill foreTransparency(Double foreTransparency) {
     this.foreTransparency = foreTransparency;
     return this;
@@ -177,6 +159,24 @@ public class PatternFill {
     this.foreTransparency = foreTransparency;
   }
 
+  public PatternFill foregroundCellsColor(CellsColor foregroundCellsColor) {
+    this.foregroundCellsColor = foregroundCellsColor;
+    return this;
+  }
+
+   /**
+   * Get foregroundCellsColor
+   * @return foregroundCellsColor
+  **/
+  @ApiModelProperty(value = "")
+  public CellsColor getForegroundCellsColor() {
+    return foregroundCellsColor;
+  }
+
+  public void setForegroundCellsColor(CellsColor foregroundCellsColor) {
+    this.foregroundCellsColor = foregroundCellsColor;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -187,18 +187,18 @@ public class PatternFill {
       return false;
     }
     PatternFill patternFill = (PatternFill) o;
-    return Objects.equals(this.pattern, patternFill.pattern) &&
-        Objects.equals(this.backgroundCellsColor, patternFill.backgroundCellsColor) &&
-        Objects.equals(this.foregroundCellsColor, patternFill.foregroundCellsColor) &&
-        Objects.equals(this.foregroundColor, patternFill.foregroundColor) &&
+    return Objects.equals(this.foregroundColor, patternFill.foregroundColor) &&
+        Objects.equals(this.pattern, patternFill.pattern) &&
         Objects.equals(this.backgroundColor, patternFill.backgroundColor) &&
         Objects.equals(this.backTransparency, patternFill.backTransparency) &&
-        Objects.equals(this.foreTransparency, patternFill.foreTransparency);
+        Objects.equals(this.backgroundCellsColor, patternFill.backgroundCellsColor) &&
+        Objects.equals(this.foreTransparency, patternFill.foreTransparency) &&
+        Objects.equals(this.foregroundCellsColor, patternFill.foregroundCellsColor);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(pattern, backgroundCellsColor, foregroundCellsColor, foregroundColor, backgroundColor, backTransparency, foreTransparency);
+    return Objects.hash(foregroundColor, pattern, backgroundColor, backTransparency, backgroundCellsColor, foreTransparency, foregroundCellsColor);
   }
 
 
@@ -207,13 +207,13 @@ public class PatternFill {
     StringBuilder sb = new StringBuilder();
     sb.append("class PatternFill {\n");
     
-    sb.append("    pattern: ").append(toIndentedString(pattern)).append("\n");
-    sb.append("    backgroundCellsColor: ").append(toIndentedString(backgroundCellsColor)).append("\n");
-    sb.append("    foregroundCellsColor: ").append(toIndentedString(foregroundCellsColor)).append("\n");
     sb.append("    foregroundColor: ").append(toIndentedString(foregroundColor)).append("\n");
+    sb.append("    pattern: ").append(toIndentedString(pattern)).append("\n");
     sb.append("    backgroundColor: ").append(toIndentedString(backgroundColor)).append("\n");
     sb.append("    backTransparency: ").append(toIndentedString(backTransparency)).append("\n");
+    sb.append("    backgroundCellsColor: ").append(toIndentedString(backgroundCellsColor)).append("\n");
     sb.append("    foreTransparency: ").append(toIndentedString(foreTransparency)).append("\n");
+    sb.append("    foregroundCellsColor: ").append(toIndentedString(foregroundCellsColor)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -613,7 +613,7 @@ public class CellsApiTest {
         String sheetName = SHEET1;
         String cellarea = CELLAREA;
         String value = "2017-10-1";
-        String type = "DateTime";
+        String type = "Date";
         String folder = TEMPFOLDER;
         api.setApiClient( CellsApiUtil.Ready(folder, name));
         SaaSposeResponse response = api.cellsPostSetCellRangeValue(name, sheetName, cellarea, value, type, folder);
@@ -811,7 +811,7 @@ public class CellsApiTest {
         String name = BOOK1;
         String sheetName = SHEET1;
         String cellName = CellName;
-        String value = "1";
+        String value = "2018-08-28";
         String type = "Date";
         String formula = "=Now()";
         String folder = TEMPFOLDER;

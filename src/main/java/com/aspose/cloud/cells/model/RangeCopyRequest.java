@@ -28,37 +28,19 @@ import java.io.IOException;
 /**
  * RangeCopyRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-05T15:44:26.749+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-08-14T14:34:14.243+08:00")
 public class RangeCopyRequest {
-  @SerializedName("Operate")
-  private String operate = null;
-
   @SerializedName("Source")
   private Range source = null;
+
+  @SerializedName("Operate")
+  private String operate = null;
 
   @SerializedName("Target")
   private Range target = null;
 
   @SerializedName("PasteOptions")
   private PasteOptions pasteOptions = null;
-
-  public RangeCopyRequest operate(String operate) {
-    this.operate = operate;
-    return this;
-  }
-
-   /**
-   * Get operate
-   * @return operate
-  **/
-  @ApiModelProperty(value = "")
-  public String getOperate() {
-    return operate;
-  }
-
-  public void setOperate(String operate) {
-    this.operate = operate;
-  }
 
   public RangeCopyRequest source(Range source) {
     this.source = source;
@@ -76,6 +58,24 @@ public class RangeCopyRequest {
 
   public void setSource(Range source) {
     this.source = source;
+  }
+
+  public RangeCopyRequest operate(String operate) {
+    this.operate = operate;
+    return this;
+  }
+
+   /**
+   * Get operate
+   * @return operate
+  **/
+  @ApiModelProperty(value = "")
+  public String getOperate() {
+    return operate;
+  }
+
+  public void setOperate(String operate) {
+    this.operate = operate;
   }
 
   public RangeCopyRequest target(Range target) {
@@ -124,15 +124,15 @@ public class RangeCopyRequest {
       return false;
     }
     RangeCopyRequest rangeCopyRequest = (RangeCopyRequest) o;
-    return Objects.equals(this.operate, rangeCopyRequest.operate) &&
-        Objects.equals(this.source, rangeCopyRequest.source) &&
+    return Objects.equals(this.source, rangeCopyRequest.source) &&
+        Objects.equals(this.operate, rangeCopyRequest.operate) &&
         Objects.equals(this.target, rangeCopyRequest.target) &&
         Objects.equals(this.pasteOptions, rangeCopyRequest.pasteOptions);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(operate, source, target, pasteOptions);
+    return Objects.hash(source, operate, target, pasteOptions);
   }
 
 
@@ -141,8 +141,8 @@ public class RangeCopyRequest {
     StringBuilder sb = new StringBuilder();
     sb.append("class RangeCopyRequest {\n");
     
-    sb.append("    operate: ").append(toIndentedString(operate)).append("\n");
     sb.append("    source: ").append(toIndentedString(source)).append("\n");
+    sb.append("    operate: ").append(toIndentedString(operate)).append("\n");
     sb.append("    target: ").append(toIndentedString(target)).append("\n");
     sb.append("    pasteOptions: ").append(toIndentedString(pasteOptions)).append("\n");
     sb.append("}");

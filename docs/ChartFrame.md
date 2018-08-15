@@ -5,19 +5,19 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **link** | [**Link**](Link.md) |  |  [optional]
-**area** | [**Area**](Area.md) |  |  [optional]
-**autoScaleFont** | **Boolean** |  |  [optional]
-**backgroundMode** | **String** |  |  [optional]
-**border** | [**Line**](Line.md) |  |  [optional]
-**font** | [**Font**](Font.md) |  |  [optional]
-**isAutomaticSize** | **Boolean** |  |  [optional]
 **isInnerMode** | **Boolean** |  |  [optional]
-**shadow** | **Boolean** |  |  [optional]
 **shapeProperties** | [**List&lt;LinkElement&gt;**](LinkElement.md) |  |  [optional]
-**width** | **Integer** |  |  [optional]
+**autoScaleFont** | **Boolean** |  |  [optional]
+**area** | [**Area**](Area.md) |  |  [optional]
 **height** | **Integer** |  |  [optional]
-**X** | **Integer** |  |  [optional]
+**width** | **Integer** |  |  [optional]
+**backgroundMode** | **String** |  |  [optional]
+**isAutomaticSize** | **Boolean** |  |  [optional]
 **Y** | **Integer** |  |  [optional]
+**X** | **Integer** |  |  [optional]
+**shadow** | **Boolean** |  |  [optional]
+**font** | [**Font**](Font.md) |  |  [optional]
+**border** | [**Line**](Line.md) |  |  [optional]
 
 
 

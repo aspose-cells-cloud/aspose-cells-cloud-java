@@ -27,82 +27,28 @@ import java.io.IOException;
 /**
  * ShadowEffect
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-05T15:44:26.749+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-08-14T14:34:14.243+08:00")
 public class ShadowEffect {
-  @SerializedName("Angle")
-  private Double angle = null;
-
-  @SerializedName("Blur")
-  private Double blur = null;
-
-  @SerializedName("Color")
-  private CellsColor color = null;
-
   @SerializedName("Distance")
   private Double distance = null;
+
+  @SerializedName("Angle")
+  private Double angle = null;
 
   @SerializedName("PresetType")
   private String presetType = null;
 
-  @SerializedName("Size")
-  private Double size = null;
+  @SerializedName("Color")
+  private CellsColor color = null;
 
   @SerializedName("Transparency")
   private Double transparency = null;
 
-  public ShadowEffect angle(Double angle) {
-    this.angle = angle;
-    return this;
-  }
+  @SerializedName("Blur")
+  private Double blur = null;
 
-   /**
-   * Get angle
-   * @return angle
-  **/
-  @ApiModelProperty(value = "")
-  public Double getAngle() {
-    return angle;
-  }
-
-  public void setAngle(Double angle) {
-    this.angle = angle;
-  }
-
-  public ShadowEffect blur(Double blur) {
-    this.blur = blur;
-    return this;
-  }
-
-   /**
-   * Get blur
-   * @return blur
-  **/
-  @ApiModelProperty(value = "")
-  public Double getBlur() {
-    return blur;
-  }
-
-  public void setBlur(Double blur) {
-    this.blur = blur;
-  }
-
-  public ShadowEffect color(CellsColor color) {
-    this.color = color;
-    return this;
-  }
-
-   /**
-   * Get color
-   * @return color
-  **/
-  @ApiModelProperty(value = "")
-  public CellsColor getColor() {
-    return color;
-  }
-
-  public void setColor(CellsColor color) {
-    this.color = color;
-  }
+  @SerializedName("Size")
+  private Double size = null;
 
   public ShadowEffect distance(Double distance) {
     this.distance = distance;
@@ -120,6 +66,24 @@ public class ShadowEffect {
 
   public void setDistance(Double distance) {
     this.distance = distance;
+  }
+
+  public ShadowEffect angle(Double angle) {
+    this.angle = angle;
+    return this;
+  }
+
+   /**
+   * Get angle
+   * @return angle
+  **/
+  @ApiModelProperty(value = "")
+  public Double getAngle() {
+    return angle;
+  }
+
+  public void setAngle(Double angle) {
+    this.angle = angle;
   }
 
   public ShadowEffect presetType(String presetType) {
@@ -140,22 +104,22 @@ public class ShadowEffect {
     this.presetType = presetType;
   }
 
-  public ShadowEffect size(Double size) {
-    this.size = size;
+  public ShadowEffect color(CellsColor color) {
+    this.color = color;
     return this;
   }
 
    /**
-   * Get size
-   * @return size
+   * Get color
+   * @return color
   **/
   @ApiModelProperty(value = "")
-  public Double getSize() {
-    return size;
+  public CellsColor getColor() {
+    return color;
   }
 
-  public void setSize(Double size) {
-    this.size = size;
+  public void setColor(CellsColor color) {
+    this.color = color;
   }
 
   public ShadowEffect transparency(Double transparency) {
@@ -176,6 +140,42 @@ public class ShadowEffect {
     this.transparency = transparency;
   }
 
+  public ShadowEffect blur(Double blur) {
+    this.blur = blur;
+    return this;
+  }
+
+   /**
+   * Get blur
+   * @return blur
+  **/
+  @ApiModelProperty(value = "")
+  public Double getBlur() {
+    return blur;
+  }
+
+  public void setBlur(Double blur) {
+    this.blur = blur;
+  }
+
+  public ShadowEffect size(Double size) {
+    this.size = size;
+    return this;
+  }
+
+   /**
+   * Get size
+   * @return size
+  **/
+  @ApiModelProperty(value = "")
+  public Double getSize() {
+    return size;
+  }
+
+  public void setSize(Double size) {
+    this.size = size;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -186,18 +186,18 @@ public class ShadowEffect {
       return false;
     }
     ShadowEffect shadowEffect = (ShadowEffect) o;
-    return Objects.equals(this.angle, shadowEffect.angle) &&
-        Objects.equals(this.blur, shadowEffect.blur) &&
-        Objects.equals(this.color, shadowEffect.color) &&
-        Objects.equals(this.distance, shadowEffect.distance) &&
+    return Objects.equals(this.distance, shadowEffect.distance) &&
+        Objects.equals(this.angle, shadowEffect.angle) &&
         Objects.equals(this.presetType, shadowEffect.presetType) &&
-        Objects.equals(this.size, shadowEffect.size) &&
-        Objects.equals(this.transparency, shadowEffect.transparency);
+        Objects.equals(this.color, shadowEffect.color) &&
+        Objects.equals(this.transparency, shadowEffect.transparency) &&
+        Objects.equals(this.blur, shadowEffect.blur) &&
+        Objects.equals(this.size, shadowEffect.size);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(angle, blur, color, distance, presetType, size, transparency);
+    return Objects.hash(distance, angle, presetType, color, transparency, blur, size);
   }
 
 
@@ -206,13 +206,13 @@ public class ShadowEffect {
     StringBuilder sb = new StringBuilder();
     sb.append("class ShadowEffect {\n");
     
-    sb.append("    angle: ").append(toIndentedString(angle)).append("\n");
-    sb.append("    blur: ").append(toIndentedString(blur)).append("\n");
-    sb.append("    color: ").append(toIndentedString(color)).append("\n");
     sb.append("    distance: ").append(toIndentedString(distance)).append("\n");
+    sb.append("    angle: ").append(toIndentedString(angle)).append("\n");
     sb.append("    presetType: ").append(toIndentedString(presetType)).append("\n");
-    sb.append("    size: ").append(toIndentedString(size)).append("\n");
+    sb.append("    color: ").append(toIndentedString(color)).append("\n");
     sb.append("    transparency: ").append(toIndentedString(transparency)).append("\n");
+    sb.append("    blur: ").append(toIndentedString(blur)).append("\n");
+    sb.append("    size: ").append(toIndentedString(size)).append("\n");
     sb.append("}");
     return sb.toString();
   }

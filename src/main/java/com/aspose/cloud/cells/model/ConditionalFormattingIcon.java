@@ -26,34 +26,16 @@ import java.io.IOException;
 /**
  * ConditionalFormattingIcon
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-05T15:44:26.749+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-08-14T14:34:14.243+08:00")
 public class ConditionalFormattingIcon {
-  @SerializedName("ImageData")
-  private byte[] imageData = null;
-
   @SerializedName("Index")
   private Integer index = null;
 
   @SerializedName("Type")
   private String type = null;
 
-  public ConditionalFormattingIcon imageData(byte[] imageData) {
-    this.imageData = imageData;
-    return this;
-  }
-
-   /**
-   * Gets the icon set data.             
-   * @return imageData
-  **/
-  @ApiModelProperty(value = "Gets the icon set data.             ")
-  public byte[] getImageData() {
-    return imageData;
-  }
-
-  public void setImageData(byte[] imageData) {
-    this.imageData = imageData;
-  }
+  @SerializedName("ImageData")
+  private byte[] imageData = null;
 
   public ConditionalFormattingIcon index(Integer index) {
     this.index = index;
@@ -91,6 +73,24 @@ public class ConditionalFormattingIcon {
     this.type = type;
   }
 
+  public ConditionalFormattingIcon imageData(byte[] imageData) {
+    this.imageData = imageData;
+    return this;
+  }
+
+   /**
+   * Gets the icon set data.             
+   * @return imageData
+  **/
+  @ApiModelProperty(value = "Gets the icon set data.             ")
+  public byte[] getImageData() {
+    return imageData;
+  }
+
+  public void setImageData(byte[] imageData) {
+    this.imageData = imageData;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -101,14 +101,14 @@ public class ConditionalFormattingIcon {
       return false;
     }
     ConditionalFormattingIcon conditionalFormattingIcon = (ConditionalFormattingIcon) o;
-    return Objects.equals(this.imageData, conditionalFormattingIcon.imageData) &&
-        Objects.equals(this.index, conditionalFormattingIcon.index) &&
-        Objects.equals(this.type, conditionalFormattingIcon.type);
+    return Objects.equals(this.index, conditionalFormattingIcon.index) &&
+        Objects.equals(this.type, conditionalFormattingIcon.type) &&
+        Objects.equals(this.imageData, conditionalFormattingIcon.imageData);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(imageData, index, type);
+    return Objects.hash(index, type, imageData);
   }
 
 
@@ -117,9 +117,9 @@ public class ConditionalFormattingIcon {
     StringBuilder sb = new StringBuilder();
     sb.append("class ConditionalFormattingIcon {\n");
     
-    sb.append("    imageData: ").append(toIndentedString(imageData)).append("\n");
     sb.append("    index: ").append(toIndentedString(index)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    sb.append("    imageData: ").append(toIndentedString(imageData)).append("\n");
     sb.append("}");
     return sb.toString();
   }

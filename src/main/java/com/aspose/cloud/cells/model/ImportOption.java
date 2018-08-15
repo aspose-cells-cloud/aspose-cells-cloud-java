@@ -27,20 +27,56 @@ import java.io.IOException;
 /**
  * ImportOption
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-05T15:44:26.749+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-08-14T14:34:14.243+08:00")
 
 public class ImportOption {
+  @SerializedName("Source")
+  private FileSource source = null;
+
+  @SerializedName("ImportDataType")
+  private String importDataType = null;
+
   @SerializedName("DestinationWorksheet")
   private String destinationWorksheet = null;
 
   @SerializedName("IsInsert")
   private Boolean isInsert = null;
 
-  @SerializedName("ImportDataType")
-  private String importDataType = null;
+  public ImportOption source(FileSource source) {
+    this.source = source;
+    return this;
+  }
 
-  @SerializedName("Source")
-  private FileSource source = null;
+   /**
+   * Get source
+   * @return source
+  **/
+  @ApiModelProperty(value = "")
+  public FileSource getSource() {
+    return source;
+  }
+
+  public void setSource(FileSource source) {
+    this.source = source;
+  }
+
+  public ImportOption importDataType(String importDataType) {
+    this.importDataType = importDataType;
+    return this;
+  }
+
+   /**
+   * Get importDataType
+   * @return importDataType
+  **/
+  @ApiModelProperty(value = "")
+  public String getImportDataType() {
+    return importDataType;
+  }
+
+  public void setImportDataType(String importDataType) {
+    this.importDataType = importDataType;
+  }
 
   public ImportOption destinationWorksheet(String destinationWorksheet) {
     this.destinationWorksheet = destinationWorksheet;
@@ -78,42 +114,6 @@ public class ImportOption {
     this.isInsert = isInsert;
   }
 
-  public ImportOption importDataType(String importDataType) {
-    this.importDataType = importDataType;
-    return this;
-  }
-
-   /**
-   * Get importDataType
-   * @return importDataType
-  **/
-  @ApiModelProperty(value = "")
-  public String getImportDataType() {
-    return importDataType;
-  }
-
-  public void setImportDataType(String importDataType) {
-    this.importDataType = importDataType;
-  }
-
-  public ImportOption source(FileSource source) {
-    this.source = source;
-    return this;
-  }
-
-   /**
-   * Get source
-   * @return source
-  **/
-  @ApiModelProperty(value = "")
-  public FileSource getSource() {
-    return source;
-  }
-
-  public void setSource(FileSource source) {
-    this.source = source;
-  }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -124,15 +124,15 @@ public class ImportOption {
       return false;
     }
     ImportOption importOption = (ImportOption) o;
-    return Objects.equals(this.destinationWorksheet, importOption.destinationWorksheet) &&
-        Objects.equals(this.isInsert, importOption.isInsert) &&
+    return Objects.equals(this.source, importOption.source) &&
         Objects.equals(this.importDataType, importOption.importDataType) &&
-        Objects.equals(this.source, importOption.source);
+        Objects.equals(this.destinationWorksheet, importOption.destinationWorksheet) &&
+        Objects.equals(this.isInsert, importOption.isInsert);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(destinationWorksheet, isInsert, importDataType, source);
+    return Objects.hash(source, importDataType, destinationWorksheet, isInsert);
   }
 
 
@@ -141,10 +141,10 @@ public class ImportOption {
     StringBuilder sb = new StringBuilder();
     sb.append("class ImportOption {\n");
     
+    sb.append("    source: ").append(toIndentedString(source)).append("\n");
+    sb.append("    importDataType: ").append(toIndentedString(importDataType)).append("\n");
     sb.append("    destinationWorksheet: ").append(toIndentedString(destinationWorksheet)).append("\n");
     sb.append("    isInsert: ").append(toIndentedString(isInsert)).append("\n");
-    sb.append("    importDataType: ").append(toIndentedString(importDataType)).append("\n");
-    sb.append("    source: ").append(toIndentedString(source)).append("\n");
     sb.append("}");
     return sb.toString();
   }

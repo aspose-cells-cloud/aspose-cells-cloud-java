@@ -30,19 +30,63 @@ import java.util.List;
 /**
  * ImportDoubleArrayOption
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-05T15:44:26.749+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-08-14T14:34:14.243+08:00")
 public class ImportDoubleArrayOption extends ImportOption {
+  @SerializedName("Data")
+  private List<Double> data = null;
+
+  @SerializedName("IsVertical")
+  private Boolean isVertical = null;
+
   @SerializedName("FirstRow")
   private Integer firstRow = null;
 
   @SerializedName("FirstColumn")
   private Integer firstColumn = null;
 
-  @SerializedName("IsVertical")
-  private Boolean isVertical = null;
+  public ImportDoubleArrayOption data(List<Double> data) {
+    this.data = data;
+    return this;
+  }
 
-  @SerializedName("Data")
-  private List<Double> data = null;
+  public ImportDoubleArrayOption addDataItem(Double dataItem) {
+    if (this.data == null) {
+      this.data = new ArrayList<Double>();
+    }
+    this.data.add(dataItem);
+    return this;
+  }
+
+   /**
+   * Get data
+   * @return data
+  **/
+  @ApiModelProperty(value = "")
+  public List<Double> getData() {
+    return data;
+  }
+
+  public void setData(List<Double> data) {
+    this.data = data;
+  }
+
+  public ImportDoubleArrayOption isVertical(Boolean isVertical) {
+    this.isVertical = isVertical;
+    return this;
+  }
+
+   /**
+   * Get isVertical
+   * @return isVertical
+  **/
+  @ApiModelProperty(value = "")
+  public Boolean isIsVertical() {
+    return isVertical;
+  }
+
+  public void setIsVertical(Boolean isVertical) {
+    this.isVertical = isVertical;
+  }
 
   public ImportDoubleArrayOption firstRow(Integer firstRow) {
     this.firstRow = firstRow;
@@ -80,50 +124,6 @@ public class ImportDoubleArrayOption extends ImportOption {
     this.firstColumn = firstColumn;
   }
 
-  public ImportDoubleArrayOption isVertical(Boolean isVertical) {
-    this.isVertical = isVertical;
-    return this;
-  }
-
-   /**
-   * Get isVertical
-   * @return isVertical
-  **/
-  @ApiModelProperty(value = "")
-  public Boolean isIsVertical() {
-    return isVertical;
-  }
-
-  public void setIsVertical(Boolean isVertical) {
-    this.isVertical = isVertical;
-  }
-
-  public ImportDoubleArrayOption data(List<Double> data) {
-    this.data = data;
-    return this;
-  }
-
-  public ImportDoubleArrayOption addDataItem(Double dataItem) {
-    if (this.data == null) {
-      this.data = new ArrayList<Double>();
-    }
-    this.data.add(dataItem);
-    return this;
-  }
-
-   /**
-   * Get data
-   * @return data
-  **/
-  @ApiModelProperty(value = "")
-  public List<Double> getData() {
-    return data;
-  }
-
-  public void setData(List<Double> data) {
-    this.data = data;
-  }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -134,16 +134,16 @@ public class ImportDoubleArrayOption extends ImportOption {
       return false;
     }
     ImportDoubleArrayOption importDoubleArrayOption = (ImportDoubleArrayOption) o;
-    return Objects.equals(this.firstRow, importDoubleArrayOption.firstRow) &&
-        Objects.equals(this.firstColumn, importDoubleArrayOption.firstColumn) &&
+    return Objects.equals(this.data, importDoubleArrayOption.data) &&
         Objects.equals(this.isVertical, importDoubleArrayOption.isVertical) &&
-        Objects.equals(this.data, importDoubleArrayOption.data) &&
+        Objects.equals(this.firstRow, importDoubleArrayOption.firstRow) &&
+        Objects.equals(this.firstColumn, importDoubleArrayOption.firstColumn) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(firstRow, firstColumn, isVertical, data, super.hashCode());
+    return Objects.hash(data, isVertical, firstRow, firstColumn, super.hashCode());
   }
 
 
@@ -152,10 +152,10 @@ public class ImportDoubleArrayOption extends ImportOption {
     StringBuilder sb = new StringBuilder();
     sb.append("class ImportDoubleArrayOption {\n");
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
+    sb.append("    data: ").append(toIndentedString(data)).append("\n");
+    sb.append("    isVertical: ").append(toIndentedString(isVertical)).append("\n");
     sb.append("    firstRow: ").append(toIndentedString(firstRow)).append("\n");
     sb.append("    firstColumn: ").append(toIndentedString(firstColumn)).append("\n");
-    sb.append("    isVertical: ").append(toIndentedString(isVertical)).append("\n");
-    sb.append("    data: ").append(toIndentedString(data)).append("\n");
     sb.append("}");
     return sb.toString();
   }

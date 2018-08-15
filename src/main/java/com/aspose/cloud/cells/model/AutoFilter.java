@@ -32,16 +32,16 @@ import java.util.List;
 /**
  * AutoFilter
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-05T15:44:26.749+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-08-14T14:34:14.243+08:00")
 public class AutoFilter {
   @SerializedName("link")
   private Link link = null;
 
-  @SerializedName("FilterColumns")
-  private List<FilterColumn> filterColumns = null;
-
   @SerializedName("Range")
   private String range = null;
+
+  @SerializedName("FilterColumns")
+  private List<FilterColumn> filterColumns = null;
 
   @SerializedName("Sorter")
   private DataSorter sorter = null;
@@ -62,6 +62,24 @@ public class AutoFilter {
 
   public void setLink(Link link) {
     this.link = link;
+  }
+
+  public AutoFilter range(String range) {
+    this.range = range;
+    return this;
+  }
+
+   /**
+   * Get range
+   * @return range
+  **/
+  @ApiModelProperty(value = "")
+  public String getRange() {
+    return range;
+  }
+
+  public void setRange(String range) {
+    this.range = range;
   }
 
   public AutoFilter filterColumns(List<FilterColumn> filterColumns) {
@@ -88,24 +106,6 @@ public class AutoFilter {
 
   public void setFilterColumns(List<FilterColumn> filterColumns) {
     this.filterColumns = filterColumns;
-  }
-
-  public AutoFilter range(String range) {
-    this.range = range;
-    return this;
-  }
-
-   /**
-   * Get range
-   * @return range
-  **/
-  @ApiModelProperty(value = "")
-  public String getRange() {
-    return range;
-  }
-
-  public void setRange(String range) {
-    this.range = range;
   }
 
   public AutoFilter sorter(DataSorter sorter) {
@@ -137,14 +137,14 @@ public class AutoFilter {
     }
     AutoFilter autoFilter = (AutoFilter) o;
     return Objects.equals(this.link, autoFilter.link) &&
-        Objects.equals(this.filterColumns, autoFilter.filterColumns) &&
         Objects.equals(this.range, autoFilter.range) &&
+        Objects.equals(this.filterColumns, autoFilter.filterColumns) &&
         Objects.equals(this.sorter, autoFilter.sorter);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(link, filterColumns, range, sorter);
+    return Objects.hash(link, range, filterColumns, sorter);
   }
 
 
@@ -154,8 +154,8 @@ public class AutoFilter {
     sb.append("class AutoFilter {\n");
     
     sb.append("    link: ").append(toIndentedString(link)).append("\n");
-    sb.append("    filterColumns: ").append(toIndentedString(filterColumns)).append("\n");
     sb.append("    range: ").append(toIndentedString(range)).append("\n");
+    sb.append("    filterColumns: ").append(toIndentedString(filterColumns)).append("\n");
     sb.append("    sorter: ").append(toIndentedString(sorter)).append("\n");
     sb.append("}");
     return sb.toString();

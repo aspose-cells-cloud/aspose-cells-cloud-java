@@ -31,16 +31,10 @@ import java.util.List;
 /**
  * ImportCSVDataOption
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-05T15:44:26.749+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-08-14T14:34:14.243+08:00")
 public class ImportCSVDataOption extends ImportOption {
-  @SerializedName("SeparatorString")
-  private String separatorString = null;
-
   @SerializedName("ConvertNumericData")
   private Boolean convertNumericData = null;
-
-  @SerializedName("FirstRow")
-  private Integer firstRow = null;
 
   @SerializedName("FirstColumn")
   private Integer firstColumn = null;
@@ -48,26 +42,14 @@ public class ImportCSVDataOption extends ImportOption {
   @SerializedName("SourceFile")
   private String sourceFile = null;
 
+  @SerializedName("FirstRow")
+  private Integer firstRow = null;
+
+  @SerializedName("SeparatorString")
+  private String separatorString = null;
+
   @SerializedName("CustomParsers")
   private List<CustomParserConfig> customParsers = null;
-
-  public ImportCSVDataOption separatorString(String separatorString) {
-    this.separatorString = separatorString;
-    return this;
-  }
-
-   /**
-   * Get separatorString
-   * @return separatorString
-  **/
-  @ApiModelProperty(value = "")
-  public String getSeparatorString() {
-    return separatorString;
-  }
-
-  public void setSeparatorString(String separatorString) {
-    this.separatorString = separatorString;
-  }
 
   public ImportCSVDataOption convertNumericData(Boolean convertNumericData) {
     this.convertNumericData = convertNumericData;
@@ -85,24 +67,6 @@ public class ImportCSVDataOption extends ImportOption {
 
   public void setConvertNumericData(Boolean convertNumericData) {
     this.convertNumericData = convertNumericData;
-  }
-
-  public ImportCSVDataOption firstRow(Integer firstRow) {
-    this.firstRow = firstRow;
-    return this;
-  }
-
-   /**
-   * Get firstRow
-   * @return firstRow
-  **/
-  @ApiModelProperty(value = "")
-  public Integer getFirstRow() {
-    return firstRow;
-  }
-
-  public void setFirstRow(Integer firstRow) {
-    this.firstRow = firstRow;
   }
 
   public ImportCSVDataOption firstColumn(Integer firstColumn) {
@@ -141,6 +105,42 @@ public class ImportCSVDataOption extends ImportOption {
     this.sourceFile = sourceFile;
   }
 
+  public ImportCSVDataOption firstRow(Integer firstRow) {
+    this.firstRow = firstRow;
+    return this;
+  }
+
+   /**
+   * Get firstRow
+   * @return firstRow
+  **/
+  @ApiModelProperty(value = "")
+  public Integer getFirstRow() {
+    return firstRow;
+  }
+
+  public void setFirstRow(Integer firstRow) {
+    this.firstRow = firstRow;
+  }
+
+  public ImportCSVDataOption separatorString(String separatorString) {
+    this.separatorString = separatorString;
+    return this;
+  }
+
+   /**
+   * Get separatorString
+   * @return separatorString
+  **/
+  @ApiModelProperty(value = "")
+  public String getSeparatorString() {
+    return separatorString;
+  }
+
+  public void setSeparatorString(String separatorString) {
+    this.separatorString = separatorString;
+  }
+
   public ImportCSVDataOption customParsers(List<CustomParserConfig> customParsers) {
     this.customParsers = customParsers;
     return this;
@@ -177,18 +177,18 @@ public class ImportCSVDataOption extends ImportOption {
       return false;
     }
     ImportCSVDataOption importCSVDataOption = (ImportCSVDataOption) o;
-    return Objects.equals(this.separatorString, importCSVDataOption.separatorString) &&
-        Objects.equals(this.convertNumericData, importCSVDataOption.convertNumericData) &&
-        Objects.equals(this.firstRow, importCSVDataOption.firstRow) &&
+    return Objects.equals(this.convertNumericData, importCSVDataOption.convertNumericData) &&
         Objects.equals(this.firstColumn, importCSVDataOption.firstColumn) &&
         Objects.equals(this.sourceFile, importCSVDataOption.sourceFile) &&
+        Objects.equals(this.firstRow, importCSVDataOption.firstRow) &&
+        Objects.equals(this.separatorString, importCSVDataOption.separatorString) &&
         Objects.equals(this.customParsers, importCSVDataOption.customParsers) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(separatorString, convertNumericData, firstRow, firstColumn, sourceFile, customParsers, super.hashCode());
+    return Objects.hash(convertNumericData, firstColumn, sourceFile, firstRow, separatorString, customParsers, super.hashCode());
   }
 
 
@@ -197,11 +197,11 @@ public class ImportCSVDataOption extends ImportOption {
     StringBuilder sb = new StringBuilder();
     sb.append("class ImportCSVDataOption {\n");
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
-    sb.append("    separatorString: ").append(toIndentedString(separatorString)).append("\n");
     sb.append("    convertNumericData: ").append(toIndentedString(convertNumericData)).append("\n");
-    sb.append("    firstRow: ").append(toIndentedString(firstRow)).append("\n");
     sb.append("    firstColumn: ").append(toIndentedString(firstColumn)).append("\n");
     sb.append("    sourceFile: ").append(toIndentedString(sourceFile)).append("\n");
+    sb.append("    firstRow: ").append(toIndentedString(firstRow)).append("\n");
+    sb.append("    separatorString: ").append(toIndentedString(separatorString)).append("\n");
     sb.append("    customParsers: ").append(toIndentedString(customParsers)).append("\n");
     sb.append("}");
     return sb.toString();

@@ -27,105 +27,51 @@ import java.io.IOException;
 /**
  * ChartOperateParameter
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-05T15:44:26.749+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-08-14T14:34:14.243+08:00")
 public class ChartOperateParameter extends OperateParameter {
-  @SerializedName("ChartType")
-  private String chartType = null;
-
-  @SerializedName("UpperLeftRow")
-  private Integer upperLeftRow = null;
-
-  @SerializedName("LowerRightRow")
-  private Integer lowerRightRow = null;
-
-  @SerializedName("LowerRightColumn")
-  private Integer lowerRightColumn = null;
+  @SerializedName("string")
+  private String string = null;
 
   @SerializedName("Area")
   private String area = null;
 
-  @SerializedName("IsVertical")
-  private Boolean isVertical = null;
-
   @SerializedName("CategoryData")
   private String categoryData = null;
+
+  @SerializedName("UpperLeftRow")
+  private Integer upperLeftRow = null;
+
+  @SerializedName("LowerRightColumn")
+  private Integer lowerRightColumn = null;
+
+  @SerializedName("LowerRightRow")
+  private Integer lowerRightRow = null;
 
   @SerializedName("IsAutoGetSerialName")
   private Boolean isAutoGetSerialName = null;
 
-  @SerializedName("string")
-  private String string = null;
+  @SerializedName("ChartType")
+  private String chartType = null;
 
-  public ChartOperateParameter chartType(String chartType) {
-    this.chartType = chartType;
+  @SerializedName("IsVertical")
+  private Boolean isVertical = null;
+
+  public ChartOperateParameter string(String string) {
+    this.string = string;
     return this;
   }
 
    /**
-   * Get chartType
-   * @return chartType
+   * Get string
+   * @return string
   **/
   @ApiModelProperty(value = "")
-  public String getChartType() {
-    return chartType;
+  public String getString() {
+    return string;
   }
 
-  public void setChartType(String chartType) {
-    this.chartType = chartType;
-  }
-
-  public ChartOperateParameter upperLeftRow(Integer upperLeftRow) {
-    this.upperLeftRow = upperLeftRow;
-    return this;
-  }
-
-   /**
-   * Get upperLeftRow
-   * @return upperLeftRow
-  **/
-  @ApiModelProperty(value = "")
-  public Integer getUpperLeftRow() {
-    return upperLeftRow;
-  }
-
-  public void setUpperLeftRow(Integer upperLeftRow) {
-    this.upperLeftRow = upperLeftRow;
-  }
-
-  public ChartOperateParameter lowerRightRow(Integer lowerRightRow) {
-    this.lowerRightRow = lowerRightRow;
-    return this;
-  }
-
-   /**
-   * Get lowerRightRow
-   * @return lowerRightRow
-  **/
-  @ApiModelProperty(value = "")
-  public Integer getLowerRightRow() {
-    return lowerRightRow;
-  }
-
-  public void setLowerRightRow(Integer lowerRightRow) {
-    this.lowerRightRow = lowerRightRow;
-  }
-
-  public ChartOperateParameter lowerRightColumn(Integer lowerRightColumn) {
-    this.lowerRightColumn = lowerRightColumn;
-    return this;
-  }
-
-   /**
-   * Get lowerRightColumn
-   * @return lowerRightColumn
-  **/
-  @ApiModelProperty(value = "")
-  public Integer getLowerRightColumn() {
-    return lowerRightColumn;
-  }
-
-  public void setLowerRightColumn(Integer lowerRightColumn) {
-    this.lowerRightColumn = lowerRightColumn;
+  public void setString(String string) {
+    this.string = string;
   }
 
   public ChartOperateParameter area(String area) {
@@ -146,24 +92,6 @@ public class ChartOperateParameter extends OperateParameter {
     this.area = area;
   }
 
-  public ChartOperateParameter isVertical(Boolean isVertical) {
-    this.isVertical = isVertical;
-    return this;
-  }
-
-   /**
-   * Get isVertical
-   * @return isVertical
-  **/
-  @ApiModelProperty(value = "")
-  public Boolean isIsVertical() {
-    return isVertical;
-  }
-
-  public void setIsVertical(Boolean isVertical) {
-    this.isVertical = isVertical;
-  }
-
   public ChartOperateParameter categoryData(String categoryData) {
     this.categoryData = categoryData;
     return this;
@@ -180,6 +108,60 @@ public class ChartOperateParameter extends OperateParameter {
 
   public void setCategoryData(String categoryData) {
     this.categoryData = categoryData;
+  }
+
+  public ChartOperateParameter upperLeftRow(Integer upperLeftRow) {
+    this.upperLeftRow = upperLeftRow;
+    return this;
+  }
+
+   /**
+   * Get upperLeftRow
+   * @return upperLeftRow
+  **/
+  @ApiModelProperty(value = "")
+  public Integer getUpperLeftRow() {
+    return upperLeftRow;
+  }
+
+  public void setUpperLeftRow(Integer upperLeftRow) {
+    this.upperLeftRow = upperLeftRow;
+  }
+
+  public ChartOperateParameter lowerRightColumn(Integer lowerRightColumn) {
+    this.lowerRightColumn = lowerRightColumn;
+    return this;
+  }
+
+   /**
+   * Get lowerRightColumn
+   * @return lowerRightColumn
+  **/
+  @ApiModelProperty(value = "")
+  public Integer getLowerRightColumn() {
+    return lowerRightColumn;
+  }
+
+  public void setLowerRightColumn(Integer lowerRightColumn) {
+    this.lowerRightColumn = lowerRightColumn;
+  }
+
+  public ChartOperateParameter lowerRightRow(Integer lowerRightRow) {
+    this.lowerRightRow = lowerRightRow;
+    return this;
+  }
+
+   /**
+   * Get lowerRightRow
+   * @return lowerRightRow
+  **/
+  @ApiModelProperty(value = "")
+  public Integer getLowerRightRow() {
+    return lowerRightRow;
+  }
+
+  public void setLowerRightRow(Integer lowerRightRow) {
+    this.lowerRightRow = lowerRightRow;
   }
 
   public ChartOperateParameter isAutoGetSerialName(Boolean isAutoGetSerialName) {
@@ -200,22 +182,40 @@ public class ChartOperateParameter extends OperateParameter {
     this.isAutoGetSerialName = isAutoGetSerialName;
   }
 
-  public ChartOperateParameter string(String string) {
-    this.string = string;
+  public ChartOperateParameter chartType(String chartType) {
+    this.chartType = chartType;
     return this;
   }
 
    /**
-   * Get string
-   * @return string
+   * Get chartType
+   * @return chartType
   **/
   @ApiModelProperty(value = "")
-  public String getString() {
-    return string;
+  public String getChartType() {
+    return chartType;
   }
 
-  public void setString(String string) {
-    this.string = string;
+  public void setChartType(String chartType) {
+    this.chartType = chartType;
+  }
+
+  public ChartOperateParameter isVertical(Boolean isVertical) {
+    this.isVertical = isVertical;
+    return this;
+  }
+
+   /**
+   * Get isVertical
+   * @return isVertical
+  **/
+  @ApiModelProperty(value = "")
+  public Boolean isIsVertical() {
+    return isVertical;
+  }
+
+  public void setIsVertical(Boolean isVertical) {
+    this.isVertical = isVertical;
   }
 
 
@@ -228,21 +228,21 @@ public class ChartOperateParameter extends OperateParameter {
       return false;
     }
     ChartOperateParameter chartOperateParameter = (ChartOperateParameter) o;
-    return Objects.equals(this.chartType, chartOperateParameter.chartType) &&
-        Objects.equals(this.upperLeftRow, chartOperateParameter.upperLeftRow) &&
-        Objects.equals(this.lowerRightRow, chartOperateParameter.lowerRightRow) &&
-        Objects.equals(this.lowerRightColumn, chartOperateParameter.lowerRightColumn) &&
+    return Objects.equals(this.string, chartOperateParameter.string) &&
         Objects.equals(this.area, chartOperateParameter.area) &&
-        Objects.equals(this.isVertical, chartOperateParameter.isVertical) &&
         Objects.equals(this.categoryData, chartOperateParameter.categoryData) &&
+        Objects.equals(this.upperLeftRow, chartOperateParameter.upperLeftRow) &&
+        Objects.equals(this.lowerRightColumn, chartOperateParameter.lowerRightColumn) &&
+        Objects.equals(this.lowerRightRow, chartOperateParameter.lowerRightRow) &&
         Objects.equals(this.isAutoGetSerialName, chartOperateParameter.isAutoGetSerialName) &&
-        Objects.equals(this.string, chartOperateParameter.string) &&
+        Objects.equals(this.chartType, chartOperateParameter.chartType) &&
+        Objects.equals(this.isVertical, chartOperateParameter.isVertical) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(chartType, upperLeftRow, lowerRightRow, lowerRightColumn, area, isVertical, categoryData, isAutoGetSerialName, string, super.hashCode());
+    return Objects.hash(string, area, categoryData, upperLeftRow, lowerRightColumn, lowerRightRow, isAutoGetSerialName, chartType, isVertical, super.hashCode());
   }
 
 
@@ -251,15 +251,15 @@ public class ChartOperateParameter extends OperateParameter {
     StringBuilder sb = new StringBuilder();
     sb.append("class ChartOperateParameter {\n");
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
-    sb.append("    chartType: ").append(toIndentedString(chartType)).append("\n");
-    sb.append("    upperLeftRow: ").append(toIndentedString(upperLeftRow)).append("\n");
-    sb.append("    lowerRightRow: ").append(toIndentedString(lowerRightRow)).append("\n");
-    sb.append("    lowerRightColumn: ").append(toIndentedString(lowerRightColumn)).append("\n");
-    sb.append("    area: ").append(toIndentedString(area)).append("\n");
-    sb.append("    isVertical: ").append(toIndentedString(isVertical)).append("\n");
-    sb.append("    categoryData: ").append(toIndentedString(categoryData)).append("\n");
-    sb.append("    isAutoGetSerialName: ").append(toIndentedString(isAutoGetSerialName)).append("\n");
     sb.append("    string: ").append(toIndentedString(string)).append("\n");
+    sb.append("    area: ").append(toIndentedString(area)).append("\n");
+    sb.append("    categoryData: ").append(toIndentedString(categoryData)).append("\n");
+    sb.append("    upperLeftRow: ").append(toIndentedString(upperLeftRow)).append("\n");
+    sb.append("    lowerRightColumn: ").append(toIndentedString(lowerRightColumn)).append("\n");
+    sb.append("    lowerRightRow: ").append(toIndentedString(lowerRightRow)).append("\n");
+    sb.append("    isAutoGetSerialName: ").append(toIndentedString(isAutoGetSerialName)).append("\n");
+    sb.append("    chartType: ").append(toIndentedString(chartType)).append("\n");
+    sb.append("    isVertical: ").append(toIndentedString(isVertical)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -30,7 +30,7 @@ import java.util.List;
 /**
  * Rows
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-05T15:44:26.749+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-08-14T14:34:14.243+08:00")
 public class Rows {
   @SerializedName("link")
   private Link link = null;
@@ -38,11 +38,11 @@ public class Rows {
   @SerializedName("MaxRow")
   private Integer maxRow = null;
 
-  @SerializedName("RowsCount")
-  private Integer rowsCount = null;
-
   @SerializedName("RowsList")
   private List<LinkElement> rowsList = null;
+
+  @SerializedName("RowsCount")
+  private Integer rowsCount = null;
 
   public Rows link(Link link) {
     this.link = link;
@@ -80,24 +80,6 @@ public class Rows {
     this.maxRow = maxRow;
   }
 
-  public Rows rowsCount(Integer rowsCount) {
-    this.rowsCount = rowsCount;
-    return this;
-  }
-
-   /**
-   * Get rowsCount
-   * @return rowsCount
-  **/
-  @ApiModelProperty(required = true, value = "")
-  public Integer getRowsCount() {
-    return rowsCount;
-  }
-
-  public void setRowsCount(Integer rowsCount) {
-    this.rowsCount = rowsCount;
-  }
-
   public Rows rowsList(List<LinkElement> rowsList) {
     this.rowsList = rowsList;
     return this;
@@ -124,6 +106,24 @@ public class Rows {
     this.rowsList = rowsList;
   }
 
+  public Rows rowsCount(Integer rowsCount) {
+    this.rowsCount = rowsCount;
+    return this;
+  }
+
+   /**
+   * Get rowsCount
+   * @return rowsCount
+  **/
+  @ApiModelProperty(required = true, value = "")
+  public Integer getRowsCount() {
+    return rowsCount;
+  }
+
+  public void setRowsCount(Integer rowsCount) {
+    this.rowsCount = rowsCount;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -136,13 +136,13 @@ public class Rows {
     Rows rows = (Rows) o;
     return Objects.equals(this.link, rows.link) &&
         Objects.equals(this.maxRow, rows.maxRow) &&
-        Objects.equals(this.rowsCount, rows.rowsCount) &&
-        Objects.equals(this.rowsList, rows.rowsList);
+        Objects.equals(this.rowsList, rows.rowsList) &&
+        Objects.equals(this.rowsCount, rows.rowsCount);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(link, maxRow, rowsCount, rowsList);
+    return Objects.hash(link, maxRow, rowsList, rowsCount);
   }
 
 
@@ -153,8 +153,8 @@ public class Rows {
     
     sb.append("    link: ").append(toIndentedString(link)).append("\n");
     sb.append("    maxRow: ").append(toIndentedString(maxRow)).append("\n");
-    sb.append("    rowsCount: ").append(toIndentedString(rowsCount)).append("\n");
     sb.append("    rowsList: ").append(toIndentedString(rowsList)).append("\n");
+    sb.append("    rowsCount: ").append(toIndentedString(rowsCount)).append("\n");
     sb.append("}");
     return sb.toString();
   }

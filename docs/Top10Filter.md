@@ -4,10 +4,10 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**criteria** | **String** |  |  [optional]
+**items** | **Integer** |  | 
 **isPercent** | **Boolean** |  | 
 **isTop** | **Boolean** |  | 
-**items** | **Integer** |  | 
+**criteria** | **String** |  |  [optional]
 
 
 

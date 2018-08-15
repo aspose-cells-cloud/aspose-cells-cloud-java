@@ -4,11 +4,11 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**offsetX** | **Double** |  | 
-**offsetY** | **Double** |  | 
-**scaleX** | **Double** |  | 
-**scaleY** | **Double** |  | 
 **alignmentType** | **String** |  |  [optional]
+**offsetX** | **Double** |  | 
+**scaleX** | **Double** |  | 
+**offsetY** | **Double** |  | 
+**scaleY** | **Double** |  | 
 **mirrorType** | **String** |  |  [optional]
 
 

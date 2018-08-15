@@ -28,19 +28,37 @@ import java.io.IOException;
 /**
  * RangeSetOutlineBorderRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-05T15:44:26.749+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-08-14T14:34:14.243+08:00")
 public class RangeSetOutlineBorderRequest {
+  @SerializedName("borderColor")
+  private Color borderColor = null;
+
   @SerializedName("Range")
   private Range range = null;
-
-  @SerializedName("borderEdge")
-  private String borderEdge = null;
 
   @SerializedName("borderStyle")
   private String borderStyle = null;
 
-  @SerializedName("borderColor")
-  private Color borderColor = null;
+  @SerializedName("borderEdge")
+  private String borderEdge = null;
+
+  public RangeSetOutlineBorderRequest borderColor(Color borderColor) {
+    this.borderColor = borderColor;
+    return this;
+  }
+
+   /**
+   * Get borderColor
+   * @return borderColor
+  **/
+  @ApiModelProperty(value = "")
+  public Color getBorderColor() {
+    return borderColor;
+  }
+
+  public void setBorderColor(Color borderColor) {
+    this.borderColor = borderColor;
+  }
 
   public RangeSetOutlineBorderRequest range(Range range) {
     this.range = range;
@@ -58,24 +76,6 @@ public class RangeSetOutlineBorderRequest {
 
   public void setRange(Range range) {
     this.range = range;
-  }
-
-  public RangeSetOutlineBorderRequest borderEdge(String borderEdge) {
-    this.borderEdge = borderEdge;
-    return this;
-  }
-
-   /**
-   * Get borderEdge
-   * @return borderEdge
-  **/
-  @ApiModelProperty(value = "")
-  public String getBorderEdge() {
-    return borderEdge;
-  }
-
-  public void setBorderEdge(String borderEdge) {
-    this.borderEdge = borderEdge;
   }
 
   public RangeSetOutlineBorderRequest borderStyle(String borderStyle) {
@@ -96,22 +96,22 @@ public class RangeSetOutlineBorderRequest {
     this.borderStyle = borderStyle;
   }
 
-  public RangeSetOutlineBorderRequest borderColor(Color borderColor) {
-    this.borderColor = borderColor;
+  public RangeSetOutlineBorderRequest borderEdge(String borderEdge) {
+    this.borderEdge = borderEdge;
     return this;
   }
 
    /**
-   * Get borderColor
-   * @return borderColor
+   * Get borderEdge
+   * @return borderEdge
   **/
   @ApiModelProperty(value = "")
-  public Color getBorderColor() {
-    return borderColor;
+  public String getBorderEdge() {
+    return borderEdge;
   }
 
-  public void setBorderColor(Color borderColor) {
-    this.borderColor = borderColor;
+  public void setBorderEdge(String borderEdge) {
+    this.borderEdge = borderEdge;
   }
 
 
@@ -124,15 +124,15 @@ public class RangeSetOutlineBorderRequest {
       return false;
     }
     RangeSetOutlineBorderRequest rangeSetOutlineBorderRequest = (RangeSetOutlineBorderRequest) o;
-    return Objects.equals(this.range, rangeSetOutlineBorderRequest.range) &&
-        Objects.equals(this.borderEdge, rangeSetOutlineBorderRequest.borderEdge) &&
+    return Objects.equals(this.borderColor, rangeSetOutlineBorderRequest.borderColor) &&
+        Objects.equals(this.range, rangeSetOutlineBorderRequest.range) &&
         Objects.equals(this.borderStyle, rangeSetOutlineBorderRequest.borderStyle) &&
-        Objects.equals(this.borderColor, rangeSetOutlineBorderRequest.borderColor);
+        Objects.equals(this.borderEdge, rangeSetOutlineBorderRequest.borderEdge);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(range, borderEdge, borderStyle, borderColor);
+    return Objects.hash(borderColor, range, borderStyle, borderEdge);
   }
 
 
@@ -141,10 +141,10 @@ public class RangeSetOutlineBorderRequest {
     StringBuilder sb = new StringBuilder();
     sb.append("class RangeSetOutlineBorderRequest {\n");
     
-    sb.append("    range: ").append(toIndentedString(range)).append("\n");
-    sb.append("    borderEdge: ").append(toIndentedString(borderEdge)).append("\n");
-    sb.append("    borderStyle: ").append(toIndentedString(borderStyle)).append("\n");
     sb.append("    borderColor: ").append(toIndentedString(borderColor)).append("\n");
+    sb.append("    range: ").append(toIndentedString(range)).append("\n");
+    sb.append("    borderStyle: ").append(toIndentedString(borderStyle)).append("\n");
+    sb.append("    borderEdge: ").append(toIndentedString(borderEdge)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * CustomFilter
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-05T15:44:26.749+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-08-14T14:34:14.243+08:00")
 public class CustomFilter {
   @SerializedName("FilterOperatorType")
   private String filterOperatorType = null;

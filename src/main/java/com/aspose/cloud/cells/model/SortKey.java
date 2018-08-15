@@ -26,33 +26,33 @@ import java.io.IOException;
 /**
  * SortKey
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-05T15:44:26.749+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-08-14T14:34:14.243+08:00")
 public class SortKey {
-  @SerializedName("Key")
-  private Integer key = null;
+  @SerializedName("CustomList")
+  private String customList = null;
 
   @SerializedName("SortOrder")
   private String sortOrder = null;
 
-  @SerializedName("CustomList")
-  private String customList = null;
+  @SerializedName("Key")
+  private Integer key = null;
 
-  public SortKey key(Integer key) {
-    this.key = key;
+  public SortKey customList(String customList) {
+    this.customList = customList;
     return this;
   }
 
    /**
-   * Get key
-   * @return key
+   * Get customList
+   * @return customList
   **/
-  @ApiModelProperty(required = true, value = "")
-  public Integer getKey() {
-    return key;
+  @ApiModelProperty(value = "")
+  public String getCustomList() {
+    return customList;
   }
 
-  public void setKey(Integer key) {
-    this.key = key;
+  public void setCustomList(String customList) {
+    this.customList = customList;
   }
 
   public SortKey sortOrder(String sortOrder) {
@@ -73,22 +73,22 @@ public class SortKey {
     this.sortOrder = sortOrder;
   }
 
-  public SortKey customList(String customList) {
-    this.customList = customList;
+  public SortKey key(Integer key) {
+    this.key = key;
     return this;
   }
 
    /**
-   * Get customList
-   * @return customList
+   * Get key
+   * @return key
   **/
-  @ApiModelProperty(value = "")
-  public String getCustomList() {
-    return customList;
+  @ApiModelProperty(required = true, value = "")
+  public Integer getKey() {
+    return key;
   }
 
-  public void setCustomList(String customList) {
-    this.customList = customList;
+  public void setKey(Integer key) {
+    this.key = key;
   }
 
 
@@ -101,14 +101,14 @@ public class SortKey {
       return false;
     }
     SortKey sortKey = (SortKey) o;
-    return Objects.equals(this.key, sortKey.key) &&
+    return Objects.equals(this.customList, sortKey.customList) &&
         Objects.equals(this.sortOrder, sortKey.sortOrder) &&
-        Objects.equals(this.customList, sortKey.customList);
+        Objects.equals(this.key, sortKey.key);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(key, sortOrder, customList);
+    return Objects.hash(customList, sortOrder, key);
   }
 
 
@@ -117,9 +117,9 @@ public class SortKey {
     StringBuilder sb = new StringBuilder();
     sb.append("class SortKey {\n");
     
-    sb.append("    key: ").append(toIndentedString(key)).append("\n");
-    sb.append("    sortOrder: ").append(toIndentedString(sortOrder)).append("\n");
     sb.append("    customList: ").append(toIndentedString(customList)).append("\n");
+    sb.append("    sortOrder: ").append(toIndentedString(sortOrder)).append("\n");
+    sb.append("    key: ").append(toIndentedString(key)).append("\n");
     sb.append("}");
     return sb.toString();
   }

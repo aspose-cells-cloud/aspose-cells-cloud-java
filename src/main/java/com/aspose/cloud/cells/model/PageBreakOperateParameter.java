@@ -27,16 +27,13 @@ import java.io.IOException;
 /**
  * PageBreakOperateParameter
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-05T15:44:26.749+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-08-14T14:34:14.243+08:00")
 public class PageBreakOperateParameter extends OperateParameter {
-  @SerializedName("PageBreakType")
-  private String pageBreakType = null;
-
   @SerializedName("Index")
   private Integer index = null;
 
-  @SerializedName("Row")
-  private Integer row = null;
+  @SerializedName("EndIndex")
+  private Integer endIndex = null;
 
   @SerializedName("Column")
   private Integer column = null;
@@ -44,26 +41,11 @@ public class PageBreakOperateParameter extends OperateParameter {
   @SerializedName("StartIndex")
   private Integer startIndex = null;
 
-  @SerializedName("EndIndex")
-  private Integer endIndex = null;
+  @SerializedName("PageBreakType")
+  private String pageBreakType = null;
 
-  public PageBreakOperateParameter pageBreakType(String pageBreakType) {
-    this.pageBreakType = pageBreakType;
-    return this;
-  }
-
-   /**
-   * Get pageBreakType
-   * @return pageBreakType
-  **/
-  @ApiModelProperty(value = "")
-  public String getPageBreakType() {
-    return pageBreakType;
-  }
-
-  public void setPageBreakType(String pageBreakType) {
-    this.pageBreakType = pageBreakType;
-  }
+  @SerializedName("Row")
+  private Integer row = null;
 
   public PageBreakOperateParameter index(Integer index) {
     this.index = index;
@@ -83,22 +65,22 @@ public class PageBreakOperateParameter extends OperateParameter {
     this.index = index;
   }
 
-  public PageBreakOperateParameter row(Integer row) {
-    this.row = row;
+  public PageBreakOperateParameter endIndex(Integer endIndex) {
+    this.endIndex = endIndex;
     return this;
   }
 
    /**
-   * Get row
-   * @return row
+   * Get endIndex
+   * @return endIndex
   **/
   @ApiModelProperty(value = "")
-  public Integer getRow() {
-    return row;
+  public Integer getEndIndex() {
+    return endIndex;
   }
 
-  public void setRow(Integer row) {
-    this.row = row;
+  public void setEndIndex(Integer endIndex) {
+    this.endIndex = endIndex;
   }
 
   public PageBreakOperateParameter column(Integer column) {
@@ -137,22 +119,40 @@ public class PageBreakOperateParameter extends OperateParameter {
     this.startIndex = startIndex;
   }
 
-  public PageBreakOperateParameter endIndex(Integer endIndex) {
-    this.endIndex = endIndex;
+  public PageBreakOperateParameter pageBreakType(String pageBreakType) {
+    this.pageBreakType = pageBreakType;
     return this;
   }
 
    /**
-   * Get endIndex
-   * @return endIndex
+   * Get pageBreakType
+   * @return pageBreakType
   **/
   @ApiModelProperty(value = "")
-  public Integer getEndIndex() {
-    return endIndex;
+  public String getPageBreakType() {
+    return pageBreakType;
   }
 
-  public void setEndIndex(Integer endIndex) {
-    this.endIndex = endIndex;
+  public void setPageBreakType(String pageBreakType) {
+    this.pageBreakType = pageBreakType;
+  }
+
+  public PageBreakOperateParameter row(Integer row) {
+    this.row = row;
+    return this;
+  }
+
+   /**
+   * Get row
+   * @return row
+  **/
+  @ApiModelProperty(value = "")
+  public Integer getRow() {
+    return row;
+  }
+
+  public void setRow(Integer row) {
+    this.row = row;
   }
 
 
@@ -165,18 +165,18 @@ public class PageBreakOperateParameter extends OperateParameter {
       return false;
     }
     PageBreakOperateParameter pageBreakOperateParameter = (PageBreakOperateParameter) o;
-    return Objects.equals(this.pageBreakType, pageBreakOperateParameter.pageBreakType) &&
-        Objects.equals(this.index, pageBreakOperateParameter.index) &&
-        Objects.equals(this.row, pageBreakOperateParameter.row) &&
+    return Objects.equals(this.index, pageBreakOperateParameter.index) &&
+        Objects.equals(this.endIndex, pageBreakOperateParameter.endIndex) &&
         Objects.equals(this.column, pageBreakOperateParameter.column) &&
         Objects.equals(this.startIndex, pageBreakOperateParameter.startIndex) &&
-        Objects.equals(this.endIndex, pageBreakOperateParameter.endIndex) &&
+        Objects.equals(this.pageBreakType, pageBreakOperateParameter.pageBreakType) &&
+        Objects.equals(this.row, pageBreakOperateParameter.row) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(pageBreakType, index, row, column, startIndex, endIndex, super.hashCode());
+    return Objects.hash(index, endIndex, column, startIndex, pageBreakType, row, super.hashCode());
   }
 
 
@@ -185,12 +185,12 @@ public class PageBreakOperateParameter extends OperateParameter {
     StringBuilder sb = new StringBuilder();
     sb.append("class PageBreakOperateParameter {\n");
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
-    sb.append("    pageBreakType: ").append(toIndentedString(pageBreakType)).append("\n");
     sb.append("    index: ").append(toIndentedString(index)).append("\n");
-    sb.append("    row: ").append(toIndentedString(row)).append("\n");
+    sb.append("    endIndex: ").append(toIndentedString(endIndex)).append("\n");
     sb.append("    column: ").append(toIndentedString(column)).append("\n");
     sb.append("    startIndex: ").append(toIndentedString(startIndex)).append("\n");
-    sb.append("    endIndex: ").append(toIndentedString(endIndex)).append("\n");
+    sb.append("    pageBreakType: ").append(toIndentedString(pageBreakType)).append("\n");
+    sb.append("    row: ").append(toIndentedString(row)).append("\n");
     sb.append("}");
     return sb.toString();
   }

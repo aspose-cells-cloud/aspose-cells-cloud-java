@@ -4,13 +4,13 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**pattern** | **String** |  |  [optional]
-**backgroundCellsColor** | [**CellsColor**](CellsColor.md) |  |  [optional]
-**foregroundCellsColor** | [**CellsColor**](CellsColor.md) |  |  [optional]
 **foregroundColor** | [**Color**](Color.md) |  |  [optional]
+**pattern** | **String** |  |  [optional]
 **backgroundColor** | [**Color**](Color.md) |  |  [optional]
 **backTransparency** | **Double** |  |  [optional]
+**backgroundCellsColor** | [**CellsColor**](CellsColor.md) |  |  [optional]
 **foreTransparency** | **Double** |  |  [optional]
+**foregroundCellsColor** | [**CellsColor**](CellsColor.md) |  |  [optional]
 
 
 

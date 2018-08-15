@@ -29,31 +29,13 @@ import java.util.List;
 /**
  * MultipleFilters
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-05T15:44:26.749+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-08-14T14:34:14.243+08:00")
 public class MultipleFilters {
-  @SerializedName("MatchBlank")
-  private Boolean matchBlank = null;
-
   @SerializedName("MultipleFilterList")
   private List<MultipleFilter> multipleFilterList = null;
 
-  public MultipleFilters matchBlank(Boolean matchBlank) {
-    this.matchBlank = matchBlank;
-    return this;
-  }
-
-   /**
-   * Get matchBlank
-   * @return matchBlank
-  **/
-  @ApiModelProperty(value = "")
-  public Boolean isMatchBlank() {
-    return matchBlank;
-  }
-
-  public void setMatchBlank(Boolean matchBlank) {
-    this.matchBlank = matchBlank;
-  }
+  @SerializedName("MatchBlank")
+  private Boolean matchBlank = null;
 
   public MultipleFilters multipleFilterList(List<MultipleFilter> multipleFilterList) {
     this.multipleFilterList = multipleFilterList;
@@ -81,6 +63,24 @@ public class MultipleFilters {
     this.multipleFilterList = multipleFilterList;
   }
 
+  public MultipleFilters matchBlank(Boolean matchBlank) {
+    this.matchBlank = matchBlank;
+    return this;
+  }
+
+   /**
+   * Get matchBlank
+   * @return matchBlank
+  **/
+  @ApiModelProperty(value = "")
+  public Boolean isMatchBlank() {
+    return matchBlank;
+  }
+
+  public void setMatchBlank(Boolean matchBlank) {
+    this.matchBlank = matchBlank;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -91,13 +91,13 @@ public class MultipleFilters {
       return false;
     }
     MultipleFilters multipleFilters = (MultipleFilters) o;
-    return Objects.equals(this.matchBlank, multipleFilters.matchBlank) &&
-        Objects.equals(this.multipleFilterList, multipleFilters.multipleFilterList);
+    return Objects.equals(this.multipleFilterList, multipleFilters.multipleFilterList) &&
+        Objects.equals(this.matchBlank, multipleFilters.matchBlank);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(matchBlank, multipleFilterList);
+    return Objects.hash(multipleFilterList, matchBlank);
   }
 
 
@@ -106,8 +106,8 @@ public class MultipleFilters {
     StringBuilder sb = new StringBuilder();
     sb.append("class MultipleFilters {\n");
     
-    sb.append("    matchBlank: ").append(toIndentedString(matchBlank)).append("\n");
     sb.append("    multipleFilterList: ").append(toIndentedString(multipleFilterList)).append("\n");
+    sb.append("    matchBlank: ").append(toIndentedString(matchBlank)).append("\n");
     sb.append("}");
     return sb.toString();
   }

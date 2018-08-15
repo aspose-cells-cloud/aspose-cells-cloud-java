@@ -29,61 +29,25 @@ import java.io.IOException;
 /**
  * TextureFill
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-05T15:44:26.749+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-08-14T14:34:14.243+08:00")
 public class TextureFill {
-  @SerializedName("Type")
-  private String type = null;
-
-  @SerializedName("Transparency")
-  private Double transparency = null;
-
   @SerializedName("Scale")
   private Double scale = null;
-
-  @SerializedName("TilePicOption")
-  private TilePicOption tilePicOption = null;
-
-  @SerializedName("PicFormatOption")
-  private PicFormatOption picFormatOption = null;
 
   @SerializedName("Image")
   private LinkElement image = null;
 
-  public TextureFill type(String type) {
-    this.type = type;
-    return this;
-  }
+  @SerializedName("PicFormatOption")
+  private PicFormatOption picFormatOption = null;
 
-   /**
-   * Get type
-   * @return type
-  **/
-  @ApiModelProperty(value = "")
-  public String getType() {
-    return type;
-  }
+  @SerializedName("TilePicOption")
+  private TilePicOption tilePicOption = null;
 
-  public void setType(String type) {
-    this.type = type;
-  }
+  @SerializedName("Transparency")
+  private Double transparency = null;
 
-  public TextureFill transparency(Double transparency) {
-    this.transparency = transparency;
-    return this;
-  }
-
-   /**
-   * Get transparency
-   * @return transparency
-  **/
-  @ApiModelProperty(value = "")
-  public Double getTransparency() {
-    return transparency;
-  }
-
-  public void setTransparency(Double transparency) {
-    this.transparency = transparency;
-  }
+  @SerializedName("Type")
+  private String type = null;
 
   public TextureFill scale(Double scale) {
     this.scale = scale;
@@ -101,42 +65,6 @@ public class TextureFill {
 
   public void setScale(Double scale) {
     this.scale = scale;
-  }
-
-  public TextureFill tilePicOption(TilePicOption tilePicOption) {
-    this.tilePicOption = tilePicOption;
-    return this;
-  }
-
-   /**
-   * Get tilePicOption
-   * @return tilePicOption
-  **/
-  @ApiModelProperty(value = "")
-  public TilePicOption getTilePicOption() {
-    return tilePicOption;
-  }
-
-  public void setTilePicOption(TilePicOption tilePicOption) {
-    this.tilePicOption = tilePicOption;
-  }
-
-  public TextureFill picFormatOption(PicFormatOption picFormatOption) {
-    this.picFormatOption = picFormatOption;
-    return this;
-  }
-
-   /**
-   * Get picFormatOption
-   * @return picFormatOption
-  **/
-  @ApiModelProperty(value = "")
-  public PicFormatOption getPicFormatOption() {
-    return picFormatOption;
-  }
-
-  public void setPicFormatOption(PicFormatOption picFormatOption) {
-    this.picFormatOption = picFormatOption;
   }
 
   public TextureFill image(LinkElement image) {
@@ -157,6 +85,78 @@ public class TextureFill {
     this.image = image;
   }
 
+  public TextureFill picFormatOption(PicFormatOption picFormatOption) {
+    this.picFormatOption = picFormatOption;
+    return this;
+  }
+
+   /**
+   * Get picFormatOption
+   * @return picFormatOption
+  **/
+  @ApiModelProperty(value = "")
+  public PicFormatOption getPicFormatOption() {
+    return picFormatOption;
+  }
+
+  public void setPicFormatOption(PicFormatOption picFormatOption) {
+    this.picFormatOption = picFormatOption;
+  }
+
+  public TextureFill tilePicOption(TilePicOption tilePicOption) {
+    this.tilePicOption = tilePicOption;
+    return this;
+  }
+
+   /**
+   * Get tilePicOption
+   * @return tilePicOption
+  **/
+  @ApiModelProperty(value = "")
+  public TilePicOption getTilePicOption() {
+    return tilePicOption;
+  }
+
+  public void setTilePicOption(TilePicOption tilePicOption) {
+    this.tilePicOption = tilePicOption;
+  }
+
+  public TextureFill transparency(Double transparency) {
+    this.transparency = transparency;
+    return this;
+  }
+
+   /**
+   * Get transparency
+   * @return transparency
+  **/
+  @ApiModelProperty(value = "")
+  public Double getTransparency() {
+    return transparency;
+  }
+
+  public void setTransparency(Double transparency) {
+    this.transparency = transparency;
+  }
+
+  public TextureFill type(String type) {
+    this.type = type;
+    return this;
+  }
+
+   /**
+   * Get type
+   * @return type
+  **/
+  @ApiModelProperty(value = "")
+  public String getType() {
+    return type;
+  }
+
+  public void setType(String type) {
+    this.type = type;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -167,17 +167,17 @@ public class TextureFill {
       return false;
     }
     TextureFill textureFill = (TextureFill) o;
-    return Objects.equals(this.type, textureFill.type) &&
-        Objects.equals(this.transparency, textureFill.transparency) &&
-        Objects.equals(this.scale, textureFill.scale) &&
-        Objects.equals(this.tilePicOption, textureFill.tilePicOption) &&
+    return Objects.equals(this.scale, textureFill.scale) &&
+        Objects.equals(this.image, textureFill.image) &&
         Objects.equals(this.picFormatOption, textureFill.picFormatOption) &&
-        Objects.equals(this.image, textureFill.image);
+        Objects.equals(this.tilePicOption, textureFill.tilePicOption) &&
+        Objects.equals(this.transparency, textureFill.transparency) &&
+        Objects.equals(this.type, textureFill.type);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, transparency, scale, tilePicOption, picFormatOption, image);
+    return Objects.hash(scale, image, picFormatOption, tilePicOption, transparency, type);
   }
 
 
@@ -186,12 +186,12 @@ public class TextureFill {
     StringBuilder sb = new StringBuilder();
     sb.append("class TextureFill {\n");
     
-    sb.append("    type: ").append(toIndentedString(type)).append("\n");
-    sb.append("    transparency: ").append(toIndentedString(transparency)).append("\n");
     sb.append("    scale: ").append(toIndentedString(scale)).append("\n");
-    sb.append("    tilePicOption: ").append(toIndentedString(tilePicOption)).append("\n");
-    sb.append("    picFormatOption: ").append(toIndentedString(picFormatOption)).append("\n");
     sb.append("    image: ").append(toIndentedString(image)).append("\n");
+    sb.append("    picFormatOption: ").append(toIndentedString(picFormatOption)).append("\n");
+    sb.append("    tilePicOption: ").append(toIndentedString(tilePicOption)).append("\n");
+    sb.append("    transparency: ").append(toIndentedString(transparency)).append("\n");
+    sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("}");
     return sb.toString();
   }

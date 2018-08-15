@@ -26,79 +26,25 @@ import java.io.IOException;
 /**
  * PicFormatOption
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-05T15:44:26.749+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-08-14T14:34:14.243+08:00")
 public class PicFormatOption {
-  @SerializedName("Type")
-  private String type = null;
-
-  @SerializedName("Scale")
-  private Double scale = null;
-
-  @SerializedName("Left")
-  private Double left = null;
-
   @SerializedName("Right")
   private Double right = null;
-
-  @SerializedName("Top")
-  private Double top = null;
 
   @SerializedName("Bottom")
   private Double bottom = null;
 
-  public PicFormatOption type(String type) {
-    this.type = type;
-    return this;
-  }
+  @SerializedName("Top")
+  private Double top = null;
 
-   /**
-   * Get type
-   * @return type
-  **/
-  @ApiModelProperty(value = "")
-  public String getType() {
-    return type;
-  }
+  @SerializedName("Scale")
+  private Double scale = null;
 
-  public void setType(String type) {
-    this.type = type;
-  }
+  @SerializedName("Type")
+  private String type = null;
 
-  public PicFormatOption scale(Double scale) {
-    this.scale = scale;
-    return this;
-  }
-
-   /**
-   * Get scale
-   * @return scale
-  **/
-  @ApiModelProperty(value = "")
-  public Double getScale() {
-    return scale;
-  }
-
-  public void setScale(Double scale) {
-    this.scale = scale;
-  }
-
-  public PicFormatOption left(Double left) {
-    this.left = left;
-    return this;
-  }
-
-   /**
-   * Get left
-   * @return left
-  **/
-  @ApiModelProperty(value = "")
-  public Double getLeft() {
-    return left;
-  }
-
-  public void setLeft(Double left) {
-    this.left = left;
-  }
+  @SerializedName("Left")
+  private Double left = null;
 
   public PicFormatOption right(Double right) {
     this.right = right;
@@ -116,24 +62,6 @@ public class PicFormatOption {
 
   public void setRight(Double right) {
     this.right = right;
-  }
-
-  public PicFormatOption top(Double top) {
-    this.top = top;
-    return this;
-  }
-
-   /**
-   * Get top
-   * @return top
-  **/
-  @ApiModelProperty(value = "")
-  public Double getTop() {
-    return top;
-  }
-
-  public void setTop(Double top) {
-    this.top = top;
   }
 
   public PicFormatOption bottom(Double bottom) {
@@ -154,6 +82,78 @@ public class PicFormatOption {
     this.bottom = bottom;
   }
 
+  public PicFormatOption top(Double top) {
+    this.top = top;
+    return this;
+  }
+
+   /**
+   * Get top
+   * @return top
+  **/
+  @ApiModelProperty(value = "")
+  public Double getTop() {
+    return top;
+  }
+
+  public void setTop(Double top) {
+    this.top = top;
+  }
+
+  public PicFormatOption scale(Double scale) {
+    this.scale = scale;
+    return this;
+  }
+
+   /**
+   * Get scale
+   * @return scale
+  **/
+  @ApiModelProperty(value = "")
+  public Double getScale() {
+    return scale;
+  }
+
+  public void setScale(Double scale) {
+    this.scale = scale;
+  }
+
+  public PicFormatOption type(String type) {
+    this.type = type;
+    return this;
+  }
+
+   /**
+   * Get type
+   * @return type
+  **/
+  @ApiModelProperty(value = "")
+  public String getType() {
+    return type;
+  }
+
+  public void setType(String type) {
+    this.type = type;
+  }
+
+  public PicFormatOption left(Double left) {
+    this.left = left;
+    return this;
+  }
+
+   /**
+   * Get left
+   * @return left
+  **/
+  @ApiModelProperty(value = "")
+  public Double getLeft() {
+    return left;
+  }
+
+  public void setLeft(Double left) {
+    this.left = left;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -164,17 +164,17 @@ public class PicFormatOption {
       return false;
     }
     PicFormatOption picFormatOption = (PicFormatOption) o;
-    return Objects.equals(this.type, picFormatOption.type) &&
-        Objects.equals(this.scale, picFormatOption.scale) &&
-        Objects.equals(this.left, picFormatOption.left) &&
-        Objects.equals(this.right, picFormatOption.right) &&
+    return Objects.equals(this.right, picFormatOption.right) &&
+        Objects.equals(this.bottom, picFormatOption.bottom) &&
         Objects.equals(this.top, picFormatOption.top) &&
-        Objects.equals(this.bottom, picFormatOption.bottom);
+        Objects.equals(this.scale, picFormatOption.scale) &&
+        Objects.equals(this.type, picFormatOption.type) &&
+        Objects.equals(this.left, picFormatOption.left);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, scale, left, right, top, bottom);
+    return Objects.hash(right, bottom, top, scale, type, left);
   }
 
 
@@ -183,12 +183,12 @@ public class PicFormatOption {
     StringBuilder sb = new StringBuilder();
     sb.append("class PicFormatOption {\n");
     
-    sb.append("    type: ").append(toIndentedString(type)).append("\n");
-    sb.append("    scale: ").append(toIndentedString(scale)).append("\n");
-    sb.append("    left: ").append(toIndentedString(left)).append("\n");
     sb.append("    right: ").append(toIndentedString(right)).append("\n");
-    sb.append("    top: ").append(toIndentedString(top)).append("\n");
     sb.append("    bottom: ").append(toIndentedString(bottom)).append("\n");
+    sb.append("    top: ").append(toIndentedString(top)).append("\n");
+    sb.append("    scale: ").append(toIndentedString(scale)).append("\n");
+    sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    sb.append("    left: ").append(toIndentedString(left)).append("\n");
     sb.append("}");
     return sb.toString();
   }

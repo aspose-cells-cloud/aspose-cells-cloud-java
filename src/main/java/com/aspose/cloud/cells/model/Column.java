@@ -28,25 +28,25 @@ import java.io.IOException;
 /**
  * Column
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-05T15:44:26.749+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-08-14T14:34:14.243+08:00")
 public class Column {
   @SerializedName("link")
   private Link link = null;
 
-  @SerializedName("GroupLevel")
-  private Integer groupLevel = null;
-
   @SerializedName("Index")
   private Integer index = null;
+
+  @SerializedName("Style")
+  private LinkElement style = null;
+
+  @SerializedName("GroupLevel")
+  private Integer groupLevel = null;
 
   @SerializedName("IsHidden")
   private Boolean isHidden = null;
 
   @SerializedName("Width")
   private Double width = null;
-
-  @SerializedName("Style")
-  private LinkElement style = null;
 
   public Column link(Link link) {
     this.link = link;
@@ -66,24 +66,6 @@ public class Column {
     this.link = link;
   }
 
-  public Column groupLevel(Integer groupLevel) {
-    this.groupLevel = groupLevel;
-    return this;
-  }
-
-   /**
-   * Get groupLevel
-   * @return groupLevel
-  **/
-  @ApiModelProperty(value = "")
-  public Integer getGroupLevel() {
-    return groupLevel;
-  }
-
-  public void setGroupLevel(Integer groupLevel) {
-    this.groupLevel = groupLevel;
-  }
-
   public Column index(Integer index) {
     this.index = index;
     return this;
@@ -100,6 +82,42 @@ public class Column {
 
   public void setIndex(Integer index) {
     this.index = index;
+  }
+
+  public Column style(LinkElement style) {
+    this.style = style;
+    return this;
+  }
+
+   /**
+   * Get style
+   * @return style
+  **/
+  @ApiModelProperty(value = "")
+  public LinkElement getStyle() {
+    return style;
+  }
+
+  public void setStyle(LinkElement style) {
+    this.style = style;
+  }
+
+  public Column groupLevel(Integer groupLevel) {
+    this.groupLevel = groupLevel;
+    return this;
+  }
+
+   /**
+   * Get groupLevel
+   * @return groupLevel
+  **/
+  @ApiModelProperty(value = "")
+  public Integer getGroupLevel() {
+    return groupLevel;
+  }
+
+  public void setGroupLevel(Integer groupLevel) {
+    this.groupLevel = groupLevel;
   }
 
   public Column isHidden(Boolean isHidden) {
@@ -138,24 +156,6 @@ public class Column {
     this.width = width;
   }
 
-  public Column style(LinkElement style) {
-    this.style = style;
-    return this;
-  }
-
-   /**
-   * Get style
-   * @return style
-  **/
-  @ApiModelProperty(value = "")
-  public LinkElement getStyle() {
-    return style;
-  }
-
-  public void setStyle(LinkElement style) {
-    this.style = style;
-  }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -167,16 +167,16 @@ public class Column {
     }
     Column column = (Column) o;
     return Objects.equals(this.link, column.link) &&
-        Objects.equals(this.groupLevel, column.groupLevel) &&
         Objects.equals(this.index, column.index) &&
+        Objects.equals(this.style, column.style) &&
+        Objects.equals(this.groupLevel, column.groupLevel) &&
         Objects.equals(this.isHidden, column.isHidden) &&
-        Objects.equals(this.width, column.width) &&
-        Objects.equals(this.style, column.style);
+        Objects.equals(this.width, column.width);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(link, groupLevel, index, isHidden, width, style);
+    return Objects.hash(link, index, style, groupLevel, isHidden, width);
   }
 
 
@@ -186,11 +186,11 @@ public class Column {
     sb.append("class Column {\n");
     
     sb.append("    link: ").append(toIndentedString(link)).append("\n");
-    sb.append("    groupLevel: ").append(toIndentedString(groupLevel)).append("\n");
     sb.append("    index: ").append(toIndentedString(index)).append("\n");
+    sb.append("    style: ").append(toIndentedString(style)).append("\n");
+    sb.append("    groupLevel: ").append(toIndentedString(groupLevel)).append("\n");
     sb.append("    isHidden: ").append(toIndentedString(isHidden)).append("\n");
     sb.append("    width: ").append(toIndentedString(width)).append("\n");
-    sb.append("    style: ").append(toIndentedString(style)).append("\n");
     sb.append("}");
     return sb.toString();
   }

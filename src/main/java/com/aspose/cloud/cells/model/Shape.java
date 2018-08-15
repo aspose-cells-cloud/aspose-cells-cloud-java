@@ -28,103 +28,64 @@ import java.io.IOException;
 /**
  * Shape
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-05T15:44:26.749+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-08-14T14:34:14.243+08:00")
 public class Shape {
   @SerializedName("link")
   private Link link = null;
 
-  @SerializedName("Name")
-  private String name = null;
-
-  @SerializedName("MsoDrawingType")
-  private String msoDrawingType = null;
-
-  @SerializedName("AutoShapeType")
-  private String autoShapeType = null;
-
-  @SerializedName("Placement")
-  private String placement = null;
-
-  @SerializedName("UpperLeftRow")
-  private Integer upperLeftRow = null;
-
-  @SerializedName("Top")
-  private Integer top = null;
-
-  @SerializedName("UpperLeftColumn")
-  private Integer upperLeftColumn = null;
-
-  @SerializedName("Left")
-  private Integer left = null;
-
-  @SerializedName("LowerRightRow")
-  private Integer lowerRightRow = null;
+  @SerializedName("AlternativeText")
+  private String alternativeText = null;
 
   @SerializedName("Bottom")
   private Integer bottom = null;
 
-  @SerializedName("LowerRightColumn")
-  private Integer lowerRightColumn = null;
-
-  @SerializedName("Right")
-  private Integer right = null;
+  @SerializedName("Top")
+  private Integer top = null;
 
   @SerializedName("Width")
   private Integer width = null;
 
-  @SerializedName("Height")
-  private Integer height = null;
-
-  @SerializedName("X")
-  private Integer X = null;
-
-  @SerializedName("Y")
-  private Integer Y = null;
-
-  @SerializedName("RotationAngle")
-  private Double rotationAngle = null;
-
   @SerializedName("HtmlText")
   private String htmlText = null;
-
-  @SerializedName("Text")
-  private String text = null;
-
-  @SerializedName("AlternativeText")
-  private String alternativeText = null;
-
-  @SerializedName("TextHorizontalAlignment")
-  private String textHorizontalAlignment = null;
-
-  @SerializedName("TextHorizontalOverflow")
-  private String textHorizontalOverflow = null;
-
-  @SerializedName("TextOrientationType")
-  private String textOrientationType = null;
 
   @SerializedName("TextVerticalAlignment")
   private String textVerticalAlignment = null;
 
-  @SerializedName("TextVerticalOverflow")
-  private String textVerticalOverflow = null;
-
-  @SerializedName("IsGroup")
-  private Boolean isGroup = null;
-
-  @SerializedName("IsHidden")
-  private Boolean isHidden = null;
-
-  @SerializedName("IsLockAspectRatio")
-  private Boolean isLockAspectRatio = null;
-
-  @SerializedName("IsLocked")
-  private Boolean isLocked = null;
+  @SerializedName("AutoShapeType")
+  private String autoShapeType = null;
 
   @SerializedName("IsPrintable")
   private Boolean isPrintable = null;
 
-  @SerializedName("IsTextWrapped")
-  private Boolean isTextWrapped = null;
+  @SerializedName("UpperLeftColumn")
+  private Integer upperLeftColumn = null;
+
+  @SerializedName("IsLockAspectRatio")
+  private Boolean isLockAspectRatio = null;
+
+  @SerializedName("IsGroup")
+  private Boolean isGroup = null;
+
+  @SerializedName("RotationAngle")
+  private Double rotationAngle = null;
+
+  @SerializedName("ZOrderPosition")
+  private Integer zorderPosition = null;
+
+  @SerializedName("TextHorizontalOverflow")
+  private String textHorizontalOverflow = null;
+
+  @SerializedName("MsoDrawingType")
+  private String msoDrawingType = null;
+
+  @SerializedName("TextOrientationType")
+  private String textOrientationType = null;
+
+  @SerializedName("Placement")
+  private String placement = null;
+
+  @SerializedName("Name")
+  private String name = null;
 
   @SerializedName("IsWordArt")
   private Boolean isWordArt = null;
@@ -132,8 +93,47 @@ public class Shape {
   @SerializedName("LinkedCell")
   private String linkedCell = null;
 
-  @SerializedName("ZOrderPosition")
-  private Integer zorderPosition = null;
+  @SerializedName("UpperLeftRow")
+  private Integer upperLeftRow = null;
+
+  @SerializedName("IsLocked")
+  private Boolean isLocked = null;
+
+  @SerializedName("LowerRightRow")
+  private Integer lowerRightRow = null;
+
+  @SerializedName("IsTextWrapped")
+  private Boolean isTextWrapped = null;
+
+  @SerializedName("Y")
+  private Integer Y = null;
+
+  @SerializedName("X")
+  private Integer X = null;
+
+  @SerializedName("IsHidden")
+  private Boolean isHidden = null;
+
+  @SerializedName("Left")
+  private Integer left = null;
+
+  @SerializedName("Right")
+  private Integer right = null;
+
+  @SerializedName("Text")
+  private String text = null;
+
+  @SerializedName("LowerRightColumn")
+  private Integer lowerRightColumn = null;
+
+  @SerializedName("Height")
+  private Integer height = null;
+
+  @SerializedName("TextHorizontalAlignment")
+  private String textHorizontalAlignment = null;
+
+  @SerializedName("TextVerticalOverflow")
+  private String textVerticalOverflow = null;
 
   public Shape link(Link link) {
     this.link = link;
@@ -151,348 +151,6 @@ public class Shape {
 
   public void setLink(Link link) {
     this.link = link;
-  }
-
-  public Shape name(String name) {
-    this.name = name;
-    return this;
-  }
-
-   /**
-   * Get name
-   * @return name
-  **/
-  @ApiModelProperty(value = "")
-  public String getName() {
-    return name;
-  }
-
-  public void setName(String name) {
-    this.name = name;
-  }
-
-  public Shape msoDrawingType(String msoDrawingType) {
-    this.msoDrawingType = msoDrawingType;
-    return this;
-  }
-
-   /**
-   * Get msoDrawingType
-   * @return msoDrawingType
-  **/
-  @ApiModelProperty(value = "")
-  public String getMsoDrawingType() {
-    return msoDrawingType;
-  }
-
-  public void setMsoDrawingType(String msoDrawingType) {
-    this.msoDrawingType = msoDrawingType;
-  }
-
-  public Shape autoShapeType(String autoShapeType) {
-    this.autoShapeType = autoShapeType;
-    return this;
-  }
-
-   /**
-   * Get autoShapeType
-   * @return autoShapeType
-  **/
-  @ApiModelProperty(value = "")
-  public String getAutoShapeType() {
-    return autoShapeType;
-  }
-
-  public void setAutoShapeType(String autoShapeType) {
-    this.autoShapeType = autoShapeType;
-  }
-
-  public Shape placement(String placement) {
-    this.placement = placement;
-    return this;
-  }
-
-   /**
-   * Get placement
-   * @return placement
-  **/
-  @ApiModelProperty(value = "")
-  public String getPlacement() {
-    return placement;
-  }
-
-  public void setPlacement(String placement) {
-    this.placement = placement;
-  }
-
-  public Shape upperLeftRow(Integer upperLeftRow) {
-    this.upperLeftRow = upperLeftRow;
-    return this;
-  }
-
-   /**
-   * Get upperLeftRow
-   * @return upperLeftRow
-  **/
-  @ApiModelProperty(value = "")
-  public Integer getUpperLeftRow() {
-    return upperLeftRow;
-  }
-
-  public void setUpperLeftRow(Integer upperLeftRow) {
-    this.upperLeftRow = upperLeftRow;
-  }
-
-  public Shape top(Integer top) {
-    this.top = top;
-    return this;
-  }
-
-   /**
-   * Get top
-   * @return top
-  **/
-  @ApiModelProperty(value = "")
-  public Integer getTop() {
-    return top;
-  }
-
-  public void setTop(Integer top) {
-    this.top = top;
-  }
-
-  public Shape upperLeftColumn(Integer upperLeftColumn) {
-    this.upperLeftColumn = upperLeftColumn;
-    return this;
-  }
-
-   /**
-   * Get upperLeftColumn
-   * @return upperLeftColumn
-  **/
-  @ApiModelProperty(value = "")
-  public Integer getUpperLeftColumn() {
-    return upperLeftColumn;
-  }
-
-  public void setUpperLeftColumn(Integer upperLeftColumn) {
-    this.upperLeftColumn = upperLeftColumn;
-  }
-
-  public Shape left(Integer left) {
-    this.left = left;
-    return this;
-  }
-
-   /**
-   * Get left
-   * @return left
-  **/
-  @ApiModelProperty(value = "")
-  public Integer getLeft() {
-    return left;
-  }
-
-  public void setLeft(Integer left) {
-    this.left = left;
-  }
-
-  public Shape lowerRightRow(Integer lowerRightRow) {
-    this.lowerRightRow = lowerRightRow;
-    return this;
-  }
-
-   /**
-   * Get lowerRightRow
-   * @return lowerRightRow
-  **/
-  @ApiModelProperty(value = "")
-  public Integer getLowerRightRow() {
-    return lowerRightRow;
-  }
-
-  public void setLowerRightRow(Integer lowerRightRow) {
-    this.lowerRightRow = lowerRightRow;
-  }
-
-  public Shape bottom(Integer bottom) {
-    this.bottom = bottom;
-    return this;
-  }
-
-   /**
-   * Get bottom
-   * @return bottom
-  **/
-  @ApiModelProperty(value = "")
-  public Integer getBottom() {
-    return bottom;
-  }
-
-  public void setBottom(Integer bottom) {
-    this.bottom = bottom;
-  }
-
-  public Shape lowerRightColumn(Integer lowerRightColumn) {
-    this.lowerRightColumn = lowerRightColumn;
-    return this;
-  }
-
-   /**
-   * Get lowerRightColumn
-   * @return lowerRightColumn
-  **/
-  @ApiModelProperty(value = "")
-  public Integer getLowerRightColumn() {
-    return lowerRightColumn;
-  }
-
-  public void setLowerRightColumn(Integer lowerRightColumn) {
-    this.lowerRightColumn = lowerRightColumn;
-  }
-
-  public Shape right(Integer right) {
-    this.right = right;
-    return this;
-  }
-
-   /**
-   * Get right
-   * @return right
-  **/
-  @ApiModelProperty(value = "")
-  public Integer getRight() {
-    return right;
-  }
-
-  public void setRight(Integer right) {
-    this.right = right;
-  }
-
-  public Shape width(Integer width) {
-    this.width = width;
-    return this;
-  }
-
-   /**
-   * Get width
-   * @return width
-  **/
-  @ApiModelProperty(value = "")
-  public Integer getWidth() {
-    return width;
-  }
-
-  public void setWidth(Integer width) {
-    this.width = width;
-  }
-
-  public Shape height(Integer height) {
-    this.height = height;
-    return this;
-  }
-
-   /**
-   * Get height
-   * @return height
-  **/
-  @ApiModelProperty(value = "")
-  public Integer getHeight() {
-    return height;
-  }
-
-  public void setHeight(Integer height) {
-    this.height = height;
-  }
-
-  public Shape X(Integer X) {
-    this.X = X;
-    return this;
-  }
-
-   /**
-   * Get X
-   * @return X
-  **/
-  @ApiModelProperty(value = "")
-  public Integer getX() {
-    return X;
-  }
-
-  public void setX(Integer X) {
-    this.X = X;
-  }
-
-  public Shape Y(Integer Y) {
-    this.Y = Y;
-    return this;
-  }
-
-   /**
-   * Get Y
-   * @return Y
-  **/
-  @ApiModelProperty(value = "")
-  public Integer getY() {
-    return Y;
-  }
-
-  public void setY(Integer Y) {
-    this.Y = Y;
-  }
-
-  public Shape rotationAngle(Double rotationAngle) {
-    this.rotationAngle = rotationAngle;
-    return this;
-  }
-
-   /**
-   * Get rotationAngle
-   * @return rotationAngle
-  **/
-  @ApiModelProperty(value = "")
-  public Double getRotationAngle() {
-    return rotationAngle;
-  }
-
-  public void setRotationAngle(Double rotationAngle) {
-    this.rotationAngle = rotationAngle;
-  }
-
-  public Shape htmlText(String htmlText) {
-    this.htmlText = htmlText;
-    return this;
-  }
-
-   /**
-   * Get htmlText
-   * @return htmlText
-  **/
-  @ApiModelProperty(value = "")
-  public String getHtmlText() {
-    return htmlText;
-  }
-
-  public void setHtmlText(String htmlText) {
-    this.htmlText = htmlText;
-  }
-
-  public Shape text(String text) {
-    this.text = text;
-    return this;
-  }
-
-   /**
-   * Get text
-   * @return text
-  **/
-  @ApiModelProperty(value = "")
-  public String getText() {
-    return text;
-  }
-
-  public void setText(String text) {
-    this.text = text;
   }
 
   public Shape alternativeText(String alternativeText) {
@@ -513,58 +171,76 @@ public class Shape {
     this.alternativeText = alternativeText;
   }
 
-  public Shape textHorizontalAlignment(String textHorizontalAlignment) {
-    this.textHorizontalAlignment = textHorizontalAlignment;
+  public Shape bottom(Integer bottom) {
+    this.bottom = bottom;
     return this;
   }
 
    /**
-   * Get textHorizontalAlignment
-   * @return textHorizontalAlignment
+   * Get bottom
+   * @return bottom
   **/
   @ApiModelProperty(value = "")
-  public String getTextHorizontalAlignment() {
-    return textHorizontalAlignment;
+  public Integer getBottom() {
+    return bottom;
   }
 
-  public void setTextHorizontalAlignment(String textHorizontalAlignment) {
-    this.textHorizontalAlignment = textHorizontalAlignment;
+  public void setBottom(Integer bottom) {
+    this.bottom = bottom;
   }
 
-  public Shape textHorizontalOverflow(String textHorizontalOverflow) {
-    this.textHorizontalOverflow = textHorizontalOverflow;
+  public Shape top(Integer top) {
+    this.top = top;
     return this;
   }
 
    /**
-   * Get textHorizontalOverflow
-   * @return textHorizontalOverflow
+   * Get top
+   * @return top
   **/
   @ApiModelProperty(value = "")
-  public String getTextHorizontalOverflow() {
-    return textHorizontalOverflow;
+  public Integer getTop() {
+    return top;
   }
 
-  public void setTextHorizontalOverflow(String textHorizontalOverflow) {
-    this.textHorizontalOverflow = textHorizontalOverflow;
+  public void setTop(Integer top) {
+    this.top = top;
   }
 
-  public Shape textOrientationType(String textOrientationType) {
-    this.textOrientationType = textOrientationType;
+  public Shape width(Integer width) {
+    this.width = width;
     return this;
   }
 
    /**
-   * Get textOrientationType
-   * @return textOrientationType
+   * Get width
+   * @return width
   **/
   @ApiModelProperty(value = "")
-  public String getTextOrientationType() {
-    return textOrientationType;
+  public Integer getWidth() {
+    return width;
   }
 
-  public void setTextOrientationType(String textOrientationType) {
-    this.textOrientationType = textOrientationType;
+  public void setWidth(Integer width) {
+    this.width = width;
+  }
+
+  public Shape htmlText(String htmlText) {
+    this.htmlText = htmlText;
+    return this;
+  }
+
+   /**
+   * Get htmlText
+   * @return htmlText
+  **/
+  @ApiModelProperty(value = "")
+  public String getHtmlText() {
+    return htmlText;
+  }
+
+  public void setHtmlText(String htmlText) {
+    this.htmlText = htmlText;
   }
 
   public Shape textVerticalAlignment(String textVerticalAlignment) {
@@ -585,94 +261,22 @@ public class Shape {
     this.textVerticalAlignment = textVerticalAlignment;
   }
 
-  public Shape textVerticalOverflow(String textVerticalOverflow) {
-    this.textVerticalOverflow = textVerticalOverflow;
+  public Shape autoShapeType(String autoShapeType) {
+    this.autoShapeType = autoShapeType;
     return this;
   }
 
    /**
-   * Get textVerticalOverflow
-   * @return textVerticalOverflow
+   * Get autoShapeType
+   * @return autoShapeType
   **/
   @ApiModelProperty(value = "")
-  public String getTextVerticalOverflow() {
-    return textVerticalOverflow;
+  public String getAutoShapeType() {
+    return autoShapeType;
   }
 
-  public void setTextVerticalOverflow(String textVerticalOverflow) {
-    this.textVerticalOverflow = textVerticalOverflow;
-  }
-
-  public Shape isGroup(Boolean isGroup) {
-    this.isGroup = isGroup;
-    return this;
-  }
-
-   /**
-   * Get isGroup
-   * @return isGroup
-  **/
-  @ApiModelProperty(value = "")
-  public Boolean isIsGroup() {
-    return isGroup;
-  }
-
-  public void setIsGroup(Boolean isGroup) {
-    this.isGroup = isGroup;
-  }
-
-  public Shape isHidden(Boolean isHidden) {
-    this.isHidden = isHidden;
-    return this;
-  }
-
-   /**
-   * Get isHidden
-   * @return isHidden
-  **/
-  @ApiModelProperty(value = "")
-  public Boolean isIsHidden() {
-    return isHidden;
-  }
-
-  public void setIsHidden(Boolean isHidden) {
-    this.isHidden = isHidden;
-  }
-
-  public Shape isLockAspectRatio(Boolean isLockAspectRatio) {
-    this.isLockAspectRatio = isLockAspectRatio;
-    return this;
-  }
-
-   /**
-   * Get isLockAspectRatio
-   * @return isLockAspectRatio
-  **/
-  @ApiModelProperty(value = "")
-  public Boolean isIsLockAspectRatio() {
-    return isLockAspectRatio;
-  }
-
-  public void setIsLockAspectRatio(Boolean isLockAspectRatio) {
-    this.isLockAspectRatio = isLockAspectRatio;
-  }
-
-  public Shape isLocked(Boolean isLocked) {
-    this.isLocked = isLocked;
-    return this;
-  }
-
-   /**
-   * Get isLocked
-   * @return isLocked
-  **/
-  @ApiModelProperty(value = "")
-  public Boolean isIsLocked() {
-    return isLocked;
-  }
-
-  public void setIsLocked(Boolean isLocked) {
-    this.isLocked = isLocked;
+  public void setAutoShapeType(String autoShapeType) {
+    this.autoShapeType = autoShapeType;
   }
 
   public Shape isPrintable(Boolean isPrintable) {
@@ -693,22 +297,184 @@ public class Shape {
     this.isPrintable = isPrintable;
   }
 
-  public Shape isTextWrapped(Boolean isTextWrapped) {
-    this.isTextWrapped = isTextWrapped;
+  public Shape upperLeftColumn(Integer upperLeftColumn) {
+    this.upperLeftColumn = upperLeftColumn;
     return this;
   }
 
    /**
-   * Get isTextWrapped
-   * @return isTextWrapped
+   * Get upperLeftColumn
+   * @return upperLeftColumn
   **/
   @ApiModelProperty(value = "")
-  public Boolean isIsTextWrapped() {
-    return isTextWrapped;
+  public Integer getUpperLeftColumn() {
+    return upperLeftColumn;
   }
 
-  public void setIsTextWrapped(Boolean isTextWrapped) {
-    this.isTextWrapped = isTextWrapped;
+  public void setUpperLeftColumn(Integer upperLeftColumn) {
+    this.upperLeftColumn = upperLeftColumn;
+  }
+
+  public Shape isLockAspectRatio(Boolean isLockAspectRatio) {
+    this.isLockAspectRatio = isLockAspectRatio;
+    return this;
+  }
+
+   /**
+   * Get isLockAspectRatio
+   * @return isLockAspectRatio
+  **/
+  @ApiModelProperty(value = "")
+  public Boolean isIsLockAspectRatio() {
+    return isLockAspectRatio;
+  }
+
+  public void setIsLockAspectRatio(Boolean isLockAspectRatio) {
+    this.isLockAspectRatio = isLockAspectRatio;
+  }
+
+  public Shape isGroup(Boolean isGroup) {
+    this.isGroup = isGroup;
+    return this;
+  }
+
+   /**
+   * Get isGroup
+   * @return isGroup
+  **/
+  @ApiModelProperty(value = "")
+  public Boolean isIsGroup() {
+    return isGroup;
+  }
+
+  public void setIsGroup(Boolean isGroup) {
+    this.isGroup = isGroup;
+  }
+
+  public Shape rotationAngle(Double rotationAngle) {
+    this.rotationAngle = rotationAngle;
+    return this;
+  }
+
+   /**
+   * Get rotationAngle
+   * @return rotationAngle
+  **/
+  @ApiModelProperty(value = "")
+  public Double getRotationAngle() {
+    return rotationAngle;
+  }
+
+  public void setRotationAngle(Double rotationAngle) {
+    this.rotationAngle = rotationAngle;
+  }
+
+  public Shape zorderPosition(Integer zorderPosition) {
+    this.zorderPosition = zorderPosition;
+    return this;
+  }
+
+   /**
+   * Get zorderPosition
+   * @return zorderPosition
+  **/
+  @ApiModelProperty(value = "")
+  public Integer getZorderPosition() {
+    return zorderPosition;
+  }
+
+  public void setZorderPosition(Integer zorderPosition) {
+    this.zorderPosition = zorderPosition;
+  }
+
+  public Shape textHorizontalOverflow(String textHorizontalOverflow) {
+    this.textHorizontalOverflow = textHorizontalOverflow;
+    return this;
+  }
+
+   /**
+   * Get textHorizontalOverflow
+   * @return textHorizontalOverflow
+  **/
+  @ApiModelProperty(value = "")
+  public String getTextHorizontalOverflow() {
+    return textHorizontalOverflow;
+  }
+
+  public void setTextHorizontalOverflow(String textHorizontalOverflow) {
+    this.textHorizontalOverflow = textHorizontalOverflow;
+  }
+
+  public Shape msoDrawingType(String msoDrawingType) {
+    this.msoDrawingType = msoDrawingType;
+    return this;
+  }
+
+   /**
+   * Get msoDrawingType
+   * @return msoDrawingType
+  **/
+  @ApiModelProperty(value = "")
+  public String getMsoDrawingType() {
+    return msoDrawingType;
+  }
+
+  public void setMsoDrawingType(String msoDrawingType) {
+    this.msoDrawingType = msoDrawingType;
+  }
+
+  public Shape textOrientationType(String textOrientationType) {
+    this.textOrientationType = textOrientationType;
+    return this;
+  }
+
+   /**
+   * Get textOrientationType
+   * @return textOrientationType
+  **/
+  @ApiModelProperty(value = "")
+  public String getTextOrientationType() {
+    return textOrientationType;
+  }
+
+  public void setTextOrientationType(String textOrientationType) {
+    this.textOrientationType = textOrientationType;
+  }
+
+  public Shape placement(String placement) {
+    this.placement = placement;
+    return this;
+  }
+
+   /**
+   * Get placement
+   * @return placement
+  **/
+  @ApiModelProperty(value = "")
+  public String getPlacement() {
+    return placement;
+  }
+
+  public void setPlacement(String placement) {
+    this.placement = placement;
+  }
+
+  public Shape name(String name) {
+    this.name = name;
+    return this;
+  }
+
+   /**
+   * Get name
+   * @return name
+  **/
+  @ApiModelProperty(value = "")
+  public String getName() {
+    return name;
+  }
+
+  public void setName(String name) {
+    this.name = name;
   }
 
   public Shape isWordArt(Boolean isWordArt) {
@@ -747,22 +513,256 @@ public class Shape {
     this.linkedCell = linkedCell;
   }
 
-  public Shape zorderPosition(Integer zorderPosition) {
-    this.zorderPosition = zorderPosition;
+  public Shape upperLeftRow(Integer upperLeftRow) {
+    this.upperLeftRow = upperLeftRow;
     return this;
   }
 
    /**
-   * Get zorderPosition
-   * @return zorderPosition
+   * Get upperLeftRow
+   * @return upperLeftRow
   **/
   @ApiModelProperty(value = "")
-  public Integer getZorderPosition() {
-    return zorderPosition;
+  public Integer getUpperLeftRow() {
+    return upperLeftRow;
   }
 
-  public void setZorderPosition(Integer zorderPosition) {
-    this.zorderPosition = zorderPosition;
+  public void setUpperLeftRow(Integer upperLeftRow) {
+    this.upperLeftRow = upperLeftRow;
+  }
+
+  public Shape isLocked(Boolean isLocked) {
+    this.isLocked = isLocked;
+    return this;
+  }
+
+   /**
+   * Get isLocked
+   * @return isLocked
+  **/
+  @ApiModelProperty(value = "")
+  public Boolean isIsLocked() {
+    return isLocked;
+  }
+
+  public void setIsLocked(Boolean isLocked) {
+    this.isLocked = isLocked;
+  }
+
+  public Shape lowerRightRow(Integer lowerRightRow) {
+    this.lowerRightRow = lowerRightRow;
+    return this;
+  }
+
+   /**
+   * Get lowerRightRow
+   * @return lowerRightRow
+  **/
+  @ApiModelProperty(value = "")
+  public Integer getLowerRightRow() {
+    return lowerRightRow;
+  }
+
+  public void setLowerRightRow(Integer lowerRightRow) {
+    this.lowerRightRow = lowerRightRow;
+  }
+
+  public Shape isTextWrapped(Boolean isTextWrapped) {
+    this.isTextWrapped = isTextWrapped;
+    return this;
+  }
+
+   /**
+   * Get isTextWrapped
+   * @return isTextWrapped
+  **/
+  @ApiModelProperty(value = "")
+  public Boolean isIsTextWrapped() {
+    return isTextWrapped;
+  }
+
+  public void setIsTextWrapped(Boolean isTextWrapped) {
+    this.isTextWrapped = isTextWrapped;
+  }
+
+  public Shape Y(Integer Y) {
+    this.Y = Y;
+    return this;
+  }
+
+   /**
+   * Get Y
+   * @return Y
+  **/
+  @ApiModelProperty(value = "")
+  public Integer getY() {
+    return Y;
+  }
+
+  public void setY(Integer Y) {
+    this.Y = Y;
+  }
+
+  public Shape X(Integer X) {
+    this.X = X;
+    return this;
+  }
+
+   /**
+   * Get X
+   * @return X
+  **/
+  @ApiModelProperty(value = "")
+  public Integer getX() {
+    return X;
+  }
+
+  public void setX(Integer X) {
+    this.X = X;
+  }
+
+  public Shape isHidden(Boolean isHidden) {
+    this.isHidden = isHidden;
+    return this;
+  }
+
+   /**
+   * Get isHidden
+   * @return isHidden
+  **/
+  @ApiModelProperty(value = "")
+  public Boolean isIsHidden() {
+    return isHidden;
+  }
+
+  public void setIsHidden(Boolean isHidden) {
+    this.isHidden = isHidden;
+  }
+
+  public Shape left(Integer left) {
+    this.left = left;
+    return this;
+  }
+
+   /**
+   * Get left
+   * @return left
+  **/
+  @ApiModelProperty(value = "")
+  public Integer getLeft() {
+    return left;
+  }
+
+  public void setLeft(Integer left) {
+    this.left = left;
+  }
+
+  public Shape right(Integer right) {
+    this.right = right;
+    return this;
+  }
+
+   /**
+   * Get right
+   * @return right
+  **/
+  @ApiModelProperty(value = "")
+  public Integer getRight() {
+    return right;
+  }
+
+  public void setRight(Integer right) {
+    this.right = right;
+  }
+
+  public Shape text(String text) {
+    this.text = text;
+    return this;
+  }
+
+   /**
+   * Get text
+   * @return text
+  **/
+  @ApiModelProperty(value = "")
+  public String getText() {
+    return text;
+  }
+
+  public void setText(String text) {
+    this.text = text;
+  }
+
+  public Shape lowerRightColumn(Integer lowerRightColumn) {
+    this.lowerRightColumn = lowerRightColumn;
+    return this;
+  }
+
+   /**
+   * Get lowerRightColumn
+   * @return lowerRightColumn
+  **/
+  @ApiModelProperty(value = "")
+  public Integer getLowerRightColumn() {
+    return lowerRightColumn;
+  }
+
+  public void setLowerRightColumn(Integer lowerRightColumn) {
+    this.lowerRightColumn = lowerRightColumn;
+  }
+
+  public Shape height(Integer height) {
+    this.height = height;
+    return this;
+  }
+
+   /**
+   * Get height
+   * @return height
+  **/
+  @ApiModelProperty(value = "")
+  public Integer getHeight() {
+    return height;
+  }
+
+  public void setHeight(Integer height) {
+    this.height = height;
+  }
+
+  public Shape textHorizontalAlignment(String textHorizontalAlignment) {
+    this.textHorizontalAlignment = textHorizontalAlignment;
+    return this;
+  }
+
+   /**
+   * Get textHorizontalAlignment
+   * @return textHorizontalAlignment
+  **/
+  @ApiModelProperty(value = "")
+  public String getTextHorizontalAlignment() {
+    return textHorizontalAlignment;
+  }
+
+  public void setTextHorizontalAlignment(String textHorizontalAlignment) {
+    this.textHorizontalAlignment = textHorizontalAlignment;
+  }
+
+  public Shape textVerticalOverflow(String textVerticalOverflow) {
+    this.textVerticalOverflow = textVerticalOverflow;
+    return this;
+  }
+
+   /**
+   * Get textVerticalOverflow
+   * @return textVerticalOverflow
+  **/
+  @ApiModelProperty(value = "")
+  public String getTextVerticalOverflow() {
+    return textVerticalOverflow;
+  }
+
+  public void setTextVerticalOverflow(String textVerticalOverflow) {
+    this.textVerticalOverflow = textVerticalOverflow;
   }
 
 
@@ -776,45 +776,45 @@ public class Shape {
     }
     Shape shape = (Shape) o;
     return Objects.equals(this.link, shape.link) &&
-        Objects.equals(this.name, shape.name) &&
-        Objects.equals(this.msoDrawingType, shape.msoDrawingType) &&
-        Objects.equals(this.autoShapeType, shape.autoShapeType) &&
-        Objects.equals(this.placement, shape.placement) &&
-        Objects.equals(this.upperLeftRow, shape.upperLeftRow) &&
-        Objects.equals(this.top, shape.top) &&
-        Objects.equals(this.upperLeftColumn, shape.upperLeftColumn) &&
-        Objects.equals(this.left, shape.left) &&
-        Objects.equals(this.lowerRightRow, shape.lowerRightRow) &&
-        Objects.equals(this.bottom, shape.bottom) &&
-        Objects.equals(this.lowerRightColumn, shape.lowerRightColumn) &&
-        Objects.equals(this.right, shape.right) &&
-        Objects.equals(this.width, shape.width) &&
-        Objects.equals(this.height, shape.height) &&
-        Objects.equals(this.X, shape.X) &&
-        Objects.equals(this.Y, shape.Y) &&
-        Objects.equals(this.rotationAngle, shape.rotationAngle) &&
-        Objects.equals(this.htmlText, shape.htmlText) &&
-        Objects.equals(this.text, shape.text) &&
         Objects.equals(this.alternativeText, shape.alternativeText) &&
-        Objects.equals(this.textHorizontalAlignment, shape.textHorizontalAlignment) &&
-        Objects.equals(this.textHorizontalOverflow, shape.textHorizontalOverflow) &&
-        Objects.equals(this.textOrientationType, shape.textOrientationType) &&
+        Objects.equals(this.bottom, shape.bottom) &&
+        Objects.equals(this.top, shape.top) &&
+        Objects.equals(this.width, shape.width) &&
+        Objects.equals(this.htmlText, shape.htmlText) &&
         Objects.equals(this.textVerticalAlignment, shape.textVerticalAlignment) &&
-        Objects.equals(this.textVerticalOverflow, shape.textVerticalOverflow) &&
-        Objects.equals(this.isGroup, shape.isGroup) &&
-        Objects.equals(this.isHidden, shape.isHidden) &&
-        Objects.equals(this.isLockAspectRatio, shape.isLockAspectRatio) &&
-        Objects.equals(this.isLocked, shape.isLocked) &&
+        Objects.equals(this.autoShapeType, shape.autoShapeType) &&
         Objects.equals(this.isPrintable, shape.isPrintable) &&
-        Objects.equals(this.isTextWrapped, shape.isTextWrapped) &&
+        Objects.equals(this.upperLeftColumn, shape.upperLeftColumn) &&
+        Objects.equals(this.isLockAspectRatio, shape.isLockAspectRatio) &&
+        Objects.equals(this.isGroup, shape.isGroup) &&
+        Objects.equals(this.rotationAngle, shape.rotationAngle) &&
+        Objects.equals(this.zorderPosition, shape.zorderPosition) &&
+        Objects.equals(this.textHorizontalOverflow, shape.textHorizontalOverflow) &&
+        Objects.equals(this.msoDrawingType, shape.msoDrawingType) &&
+        Objects.equals(this.textOrientationType, shape.textOrientationType) &&
+        Objects.equals(this.placement, shape.placement) &&
+        Objects.equals(this.name, shape.name) &&
         Objects.equals(this.isWordArt, shape.isWordArt) &&
         Objects.equals(this.linkedCell, shape.linkedCell) &&
-        Objects.equals(this.zorderPosition, shape.zorderPosition);
+        Objects.equals(this.upperLeftRow, shape.upperLeftRow) &&
+        Objects.equals(this.isLocked, shape.isLocked) &&
+        Objects.equals(this.lowerRightRow, shape.lowerRightRow) &&
+        Objects.equals(this.isTextWrapped, shape.isTextWrapped) &&
+        Objects.equals(this.Y, shape.Y) &&
+        Objects.equals(this.X, shape.X) &&
+        Objects.equals(this.isHidden, shape.isHidden) &&
+        Objects.equals(this.left, shape.left) &&
+        Objects.equals(this.right, shape.right) &&
+        Objects.equals(this.text, shape.text) &&
+        Objects.equals(this.lowerRightColumn, shape.lowerRightColumn) &&
+        Objects.equals(this.height, shape.height) &&
+        Objects.equals(this.textHorizontalAlignment, shape.textHorizontalAlignment) &&
+        Objects.equals(this.textVerticalOverflow, shape.textVerticalOverflow);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(link, name, msoDrawingType, autoShapeType, placement, upperLeftRow, top, upperLeftColumn, left, lowerRightRow, bottom, lowerRightColumn, right, width, height, X, Y, rotationAngle, htmlText, text, alternativeText, textHorizontalAlignment, textHorizontalOverflow, textOrientationType, textVerticalAlignment, textVerticalOverflow, isGroup, isHidden, isLockAspectRatio, isLocked, isPrintable, isTextWrapped, isWordArt, linkedCell, zorderPosition);
+    return Objects.hash(link, alternativeText, bottom, top, width, htmlText, textVerticalAlignment, autoShapeType, isPrintable, upperLeftColumn, isLockAspectRatio, isGroup, rotationAngle, zorderPosition, textHorizontalOverflow, msoDrawingType, textOrientationType, placement, name, isWordArt, linkedCell, upperLeftRow, isLocked, lowerRightRow, isTextWrapped, Y, X, isHidden, left, right, text, lowerRightColumn, height, textHorizontalAlignment, textVerticalOverflow);
   }
 
 
@@ -824,40 +824,40 @@ public class Shape {
     sb.append("class Shape {\n");
     
     sb.append("    link: ").append(toIndentedString(link)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    msoDrawingType: ").append(toIndentedString(msoDrawingType)).append("\n");
-    sb.append("    autoShapeType: ").append(toIndentedString(autoShapeType)).append("\n");
-    sb.append("    placement: ").append(toIndentedString(placement)).append("\n");
-    sb.append("    upperLeftRow: ").append(toIndentedString(upperLeftRow)).append("\n");
-    sb.append("    top: ").append(toIndentedString(top)).append("\n");
-    sb.append("    upperLeftColumn: ").append(toIndentedString(upperLeftColumn)).append("\n");
-    sb.append("    left: ").append(toIndentedString(left)).append("\n");
-    sb.append("    lowerRightRow: ").append(toIndentedString(lowerRightRow)).append("\n");
-    sb.append("    bottom: ").append(toIndentedString(bottom)).append("\n");
-    sb.append("    lowerRightColumn: ").append(toIndentedString(lowerRightColumn)).append("\n");
-    sb.append("    right: ").append(toIndentedString(right)).append("\n");
-    sb.append("    width: ").append(toIndentedString(width)).append("\n");
-    sb.append("    height: ").append(toIndentedString(height)).append("\n");
-    sb.append("    X: ").append(toIndentedString(X)).append("\n");
-    sb.append("    Y: ").append(toIndentedString(Y)).append("\n");
-    sb.append("    rotationAngle: ").append(toIndentedString(rotationAngle)).append("\n");
-    sb.append("    htmlText: ").append(toIndentedString(htmlText)).append("\n");
-    sb.append("    text: ").append(toIndentedString(text)).append("\n");
     sb.append("    alternativeText: ").append(toIndentedString(alternativeText)).append("\n");
-    sb.append("    textHorizontalAlignment: ").append(toIndentedString(textHorizontalAlignment)).append("\n");
-    sb.append("    textHorizontalOverflow: ").append(toIndentedString(textHorizontalOverflow)).append("\n");
-    sb.append("    textOrientationType: ").append(toIndentedString(textOrientationType)).append("\n");
+    sb.append("    bottom: ").append(toIndentedString(bottom)).append("\n");
+    sb.append("    top: ").append(toIndentedString(top)).append("\n");
+    sb.append("    width: ").append(toIndentedString(width)).append("\n");
+    sb.append("    htmlText: ").append(toIndentedString(htmlText)).append("\n");
     sb.append("    textVerticalAlignment: ").append(toIndentedString(textVerticalAlignment)).append("\n");
-    sb.append("    textVerticalOverflow: ").append(toIndentedString(textVerticalOverflow)).append("\n");
-    sb.append("    isGroup: ").append(toIndentedString(isGroup)).append("\n");
-    sb.append("    isHidden: ").append(toIndentedString(isHidden)).append("\n");
-    sb.append("    isLockAspectRatio: ").append(toIndentedString(isLockAspectRatio)).append("\n");
-    sb.append("    isLocked: ").append(toIndentedString(isLocked)).append("\n");
+    sb.append("    autoShapeType: ").append(toIndentedString(autoShapeType)).append("\n");
     sb.append("    isPrintable: ").append(toIndentedString(isPrintable)).append("\n");
-    sb.append("    isTextWrapped: ").append(toIndentedString(isTextWrapped)).append("\n");
+    sb.append("    upperLeftColumn: ").append(toIndentedString(upperLeftColumn)).append("\n");
+    sb.append("    isLockAspectRatio: ").append(toIndentedString(isLockAspectRatio)).append("\n");
+    sb.append("    isGroup: ").append(toIndentedString(isGroup)).append("\n");
+    sb.append("    rotationAngle: ").append(toIndentedString(rotationAngle)).append("\n");
+    sb.append("    zorderPosition: ").append(toIndentedString(zorderPosition)).append("\n");
+    sb.append("    textHorizontalOverflow: ").append(toIndentedString(textHorizontalOverflow)).append("\n");
+    sb.append("    msoDrawingType: ").append(toIndentedString(msoDrawingType)).append("\n");
+    sb.append("    textOrientationType: ").append(toIndentedString(textOrientationType)).append("\n");
+    sb.append("    placement: ").append(toIndentedString(placement)).append("\n");
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    isWordArt: ").append(toIndentedString(isWordArt)).append("\n");
     sb.append("    linkedCell: ").append(toIndentedString(linkedCell)).append("\n");
-    sb.append("    zorderPosition: ").append(toIndentedString(zorderPosition)).append("\n");
+    sb.append("    upperLeftRow: ").append(toIndentedString(upperLeftRow)).append("\n");
+    sb.append("    isLocked: ").append(toIndentedString(isLocked)).append("\n");
+    sb.append("    lowerRightRow: ").append(toIndentedString(lowerRightRow)).append("\n");
+    sb.append("    isTextWrapped: ").append(toIndentedString(isTextWrapped)).append("\n");
+    sb.append("    Y: ").append(toIndentedString(Y)).append("\n");
+    sb.append("    X: ").append(toIndentedString(X)).append("\n");
+    sb.append("    isHidden: ").append(toIndentedString(isHidden)).append("\n");
+    sb.append("    left: ").append(toIndentedString(left)).append("\n");
+    sb.append("    right: ").append(toIndentedString(right)).append("\n");
+    sb.append("    text: ").append(toIndentedString(text)).append("\n");
+    sb.append("    lowerRightColumn: ").append(toIndentedString(lowerRightColumn)).append("\n");
+    sb.append("    height: ").append(toIndentedString(height)).append("\n");
+    sb.append("    textHorizontalAlignment: ").append(toIndentedString(textHorizontalAlignment)).append("\n");
+    sb.append("    textVerticalOverflow: ").append(toIndentedString(textVerticalOverflow)).append("\n");
     sb.append("}");
     return sb.toString();
   }

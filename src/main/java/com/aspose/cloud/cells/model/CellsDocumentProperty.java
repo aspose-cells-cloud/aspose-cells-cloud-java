@@ -28,19 +28,19 @@ import java.io.IOException;
 /**
  * CellsDocumentProperty
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-05T15:44:26.749+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-08-14T14:34:14.243+08:00")
 public class CellsDocumentProperty {
   @SerializedName("link")
   private Link link = null;
+
+  @SerializedName("BuiltIn")
+  private String builtIn = null;
 
   @SerializedName("Name")
   private String name = null;
 
   @SerializedName("Value")
   private String value = null;
-
-  @SerializedName("BuiltIn")
-  private String builtIn = null;
 
   public CellsDocumentProperty link(Link link) {
     this.link = link;
@@ -58,6 +58,24 @@ public class CellsDocumentProperty {
 
   public void setLink(Link link) {
     this.link = link;
+  }
+
+  public CellsDocumentProperty builtIn(String builtIn) {
+    this.builtIn = builtIn;
+    return this;
+  }
+
+   /**
+   * Get builtIn
+   * @return builtIn
+  **/
+  @ApiModelProperty(value = "")
+  public String getBuiltIn() {
+    return builtIn;
+  }
+
+  public void setBuiltIn(String builtIn) {
+    this.builtIn = builtIn;
   }
 
   public CellsDocumentProperty name(String name) {
@@ -96,24 +114,6 @@ public class CellsDocumentProperty {
     this.value = value;
   }
 
-  public CellsDocumentProperty builtIn(String builtIn) {
-    this.builtIn = builtIn;
-    return this;
-  }
-
-   /**
-   * Get builtIn
-   * @return builtIn
-  **/
-  @ApiModelProperty(value = "")
-  public String getBuiltIn() {
-    return builtIn;
-  }
-
-  public void setBuiltIn(String builtIn) {
-    this.builtIn = builtIn;
-  }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -125,14 +125,14 @@ public class CellsDocumentProperty {
     }
     CellsDocumentProperty cellsDocumentProperty = (CellsDocumentProperty) o;
     return Objects.equals(this.link, cellsDocumentProperty.link) &&
+        Objects.equals(this.builtIn, cellsDocumentProperty.builtIn) &&
         Objects.equals(this.name, cellsDocumentProperty.name) &&
-        Objects.equals(this.value, cellsDocumentProperty.value) &&
-        Objects.equals(this.builtIn, cellsDocumentProperty.builtIn);
+        Objects.equals(this.value, cellsDocumentProperty.value);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(link, name, value, builtIn);
+    return Objects.hash(link, builtIn, name, value);
   }
 
 
@@ -142,9 +142,9 @@ public class CellsDocumentProperty {
     sb.append("class CellsDocumentProperty {\n");
     
     sb.append("    link: ").append(toIndentedString(link)).append("\n");
+    sb.append("    builtIn: ").append(toIndentedString(builtIn)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    value: ").append(toIndentedString(value)).append("\n");
-    sb.append("    builtIn: ").append(toIndentedString(builtIn)).append("\n");
     sb.append("}");
     return sb.toString();
   }

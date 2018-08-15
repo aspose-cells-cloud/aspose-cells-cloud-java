@@ -26,31 +26,13 @@ import java.io.IOException;
 /**
  * ListColumn
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-05T15:44:26.749+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-08-14T14:34:14.243+08:00")
 public class ListColumn {
-  @SerializedName("Name")
-  private String name = null;
-
   @SerializedName("TotalsCalculation")
   private String totalsCalculation = null;
 
-  public ListColumn name(String name) {
-    this.name = name;
-    return this;
-  }
-
-   /**
-   * Gets and sets the name of the column.
-   * @return name
-  **/
-  @ApiModelProperty(value = "Gets and sets the name of the column.")
-  public String getName() {
-    return name;
-  }
-
-  public void setName(String name) {
-    this.name = name;
-  }
+  @SerializedName("Name")
+  private String name = null;
 
   public ListColumn totalsCalculation(String totalsCalculation) {
     this.totalsCalculation = totalsCalculation;
@@ -70,6 +52,24 @@ public class ListColumn {
     this.totalsCalculation = totalsCalculation;
   }
 
+  public ListColumn name(String name) {
+    this.name = name;
+    return this;
+  }
+
+   /**
+   * Gets and sets the name of the column.
+   * @return name
+  **/
+  @ApiModelProperty(value = "Gets and sets the name of the column.")
+  public String getName() {
+    return name;
+  }
+
+  public void setName(String name) {
+    this.name = name;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -80,13 +80,13 @@ public class ListColumn {
       return false;
     }
     ListColumn listColumn = (ListColumn) o;
-    return Objects.equals(this.name, listColumn.name) &&
-        Objects.equals(this.totalsCalculation, listColumn.totalsCalculation);
+    return Objects.equals(this.totalsCalculation, listColumn.totalsCalculation) &&
+        Objects.equals(this.name, listColumn.name);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, totalsCalculation);
+    return Objects.hash(totalsCalculation, name);
   }
 
 
@@ -95,8 +95,8 @@ public class ListColumn {
     StringBuilder sb = new StringBuilder();
     sb.append("class ListColumn {\n");
     
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    totalsCalculation: ").append(toIndentedString(totalsCalculation)).append("\n");
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -26,19 +26,19 @@ import java.io.IOException;
 /**
  * Color
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-05T15:44:26.749+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-08-14T14:34:14.243+08:00")
 public class Color {
   @SerializedName("A")
   private Integer A = null;
+
+  @SerializedName("B")
+  private Integer B = null;
 
   @SerializedName("R")
   private Integer R = null;
 
   @SerializedName("G")
   private Integer G = null;
-
-  @SerializedName("B")
-  private Integer B = null;
 
   public Color A(Integer A) {
     this.A = A;
@@ -56,6 +56,24 @@ public class Color {
 
   public void setA(Integer A) {
     this.A = A;
+  }
+
+  public Color B(Integer B) {
+    this.B = B;
+    return this;
+  }
+
+   /**
+   * Get B
+   * @return B
+  **/
+  @ApiModelProperty(required = true, value = "")
+  public Integer getB() {
+    return B;
+  }
+
+  public void setB(Integer B) {
+    this.B = B;
   }
 
   public Color R(Integer R) {
@@ -94,24 +112,6 @@ public class Color {
     this.G = G;
   }
 
-  public Color B(Integer B) {
-    this.B = B;
-    return this;
-  }
-
-   /**
-   * Get B
-   * @return B
-  **/
-  @ApiModelProperty(required = true, value = "")
-  public Integer getB() {
-    return B;
-  }
-
-  public void setB(Integer B) {
-    this.B = B;
-  }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -123,14 +123,14 @@ public class Color {
     }
     Color color = (Color) o;
     return Objects.equals(this.A, color.A) &&
+        Objects.equals(this.B, color.B) &&
         Objects.equals(this.R, color.R) &&
-        Objects.equals(this.G, color.G) &&
-        Objects.equals(this.B, color.B);
+        Objects.equals(this.G, color.G);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(A, R, G, B);
+    return Objects.hash(A, B, R, G);
   }
 
 
@@ -140,9 +140,9 @@ public class Color {
     sb.append("class Color {\n");
     
     sb.append("    A: ").append(toIndentedString(A)).append("\n");
+    sb.append("    B: ").append(toIndentedString(B)).append("\n");
     sb.append("    R: ").append(toIndentedString(R)).append("\n");
     sb.append("    G: ").append(toIndentedString(G)).append("\n");
-    sb.append("    B: ").append(toIndentedString(B)).append("\n");
     sb.append("}");
     return sb.toString();
   }

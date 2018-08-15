@@ -4,12 +4,12 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**workbook** | [**FileSource**](FileSource.md) |  |  [optional]
-**sheetName** | **String** |  |  [optional]
 **chartIndex** | **Integer** |  |  [optional]
+**listObjectIndex** | **Integer** |  |  [optional]
+**sheetName** | **String** |  |  [optional]
 **shapeIndex** | **Integer** |  |  [optional]
 **cellName** | **String** |  |  [optional]
-**listObjectIndex** | **Integer** |  |  [optional]
+**workbook** | [**FileSource**](FileSource.md) |  |  [optional]
 
 
 

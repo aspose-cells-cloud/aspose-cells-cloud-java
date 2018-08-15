@@ -26,31 +26,50 @@ import java.io.IOException;
 /**
  * SaveOptions
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-05T15:44:26.749+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-08-14T14:34:14.243+08:00")
+
 public class SaveOptions {
+  @SerializedName("EnableHTTPCompression")
+  private Boolean enableHTTPCompression = null;
+
   @SerializedName("SaveFormat")
   private String saveFormat = null;
-
-  @SerializedName("CachedFileFolder")
-  private String cachedFileFolder = null;
 
   @SerializedName("ClearData")
   private Boolean clearData = null;
 
-  @SerializedName("CreateDirectory")
-  private Boolean createDirectory = null;
+  @SerializedName("CachedFileFolder")
+  private String cachedFileFolder = null;
 
-  @SerializedName("EnableHTTPCompression")
-  private Boolean enableHTTPCompression = null;
+  @SerializedName("ValidateMergedAreas")
+  private Boolean validateMergedAreas = null;
 
   @SerializedName("RefreshChartCache")
   private Boolean refreshChartCache = null;
 
+  @SerializedName("CreateDirectory")
+  private Boolean createDirectory = null;
+
   @SerializedName("SortNames")
   private Boolean sortNames = null;
 
-  @SerializedName("ValidateMergedAreas")
-  private Boolean validateMergedAreas = null;
+  public SaveOptions enableHTTPCompression(Boolean enableHTTPCompression) {
+    this.enableHTTPCompression = enableHTTPCompression;
+    return this;
+  }
+
+   /**
+   * Get enableHTTPCompression
+   * @return enableHTTPCompression
+  **/
+  @ApiModelProperty(value = "")
+  public Boolean isEnableHTTPCompression() {
+    return enableHTTPCompression;
+  }
+
+  public void setEnableHTTPCompression(Boolean enableHTTPCompression) {
+    this.enableHTTPCompression = enableHTTPCompression;
+  }
 
   public SaveOptions saveFormat(String saveFormat) {
     this.saveFormat = saveFormat;
@@ -68,24 +87,6 @@ public class SaveOptions {
 
   public void setSaveFormat(String saveFormat) {
     this.saveFormat = saveFormat;
-  }
-
-  public SaveOptions cachedFileFolder(String cachedFileFolder) {
-    this.cachedFileFolder = cachedFileFolder;
-    return this;
-  }
-
-   /**
-   * The cached file folder is used to store some large data.
-   * @return cachedFileFolder
-  **/
-  @ApiModelProperty(value = "The cached file folder is used to store some large data.")
-  public String getCachedFileFolder() {
-    return cachedFileFolder;
-  }
-
-  public void setCachedFileFolder(String cachedFileFolder) {
-    this.cachedFileFolder = cachedFileFolder;
   }
 
   public SaveOptions clearData(Boolean clearData) {
@@ -106,76 +107,22 @@ public class SaveOptions {
     this.clearData = clearData;
   }
 
-  public SaveOptions createDirectory(Boolean createDirectory) {
-    this.createDirectory = createDirectory;
+  public SaveOptions cachedFileFolder(String cachedFileFolder) {
+    this.cachedFileFolder = cachedFileFolder;
     return this;
   }
 
    /**
-   * If true and the directory does not exist, the directory will be automatically created before saving the file.             
-   * @return createDirectory
+   * The cached file folder is used to store some large data.
+   * @return cachedFileFolder
   **/
-  @ApiModelProperty(value = "If true and the directory does not exist, the directory will be automatically created before saving the file.             ")
-  public Boolean isCreateDirectory() {
-    return createDirectory;
+  @ApiModelProperty(value = "The cached file folder is used to store some large data.")
+  public String getCachedFileFolder() {
+    return cachedFileFolder;
   }
 
-  public void setCreateDirectory(Boolean createDirectory) {
-    this.createDirectory = createDirectory;
-  }
-
-  public SaveOptions enableHTTPCompression(Boolean enableHTTPCompression) {
-    this.enableHTTPCompression = enableHTTPCompression;
-    return this;
-  }
-
-   /**
-   * Get enableHTTPCompression
-   * @return enableHTTPCompression
-  **/
-  @ApiModelProperty(value = "")
-  public Boolean isEnableHTTPCompression() {
-    return enableHTTPCompression;
-  }
-
-  public void setEnableHTTPCompression(Boolean enableHTTPCompression) {
-    this.enableHTTPCompression = enableHTTPCompression;
-  }
-
-  public SaveOptions refreshChartCache(Boolean refreshChartCache) {
-    this.refreshChartCache = refreshChartCache;
-    return this;
-  }
-
-   /**
-   * Get refreshChartCache
-   * @return refreshChartCache
-  **/
-  @ApiModelProperty(value = "")
-  public Boolean isRefreshChartCache() {
-    return refreshChartCache;
-  }
-
-  public void setRefreshChartCache(Boolean refreshChartCache) {
-    this.refreshChartCache = refreshChartCache;
-  }
-
-  public SaveOptions sortNames(Boolean sortNames) {
-    this.sortNames = sortNames;
-    return this;
-  }
-
-   /**
-   * Get sortNames
-   * @return sortNames
-  **/
-  @ApiModelProperty(value = "")
-  public Boolean isSortNames() {
-    return sortNames;
-  }
-
-  public void setSortNames(Boolean sortNames) {
-    this.sortNames = sortNames;
+  public void setCachedFileFolder(String cachedFileFolder) {
+    this.cachedFileFolder = cachedFileFolder;
   }
 
   public SaveOptions validateMergedAreas(Boolean validateMergedAreas) {
@@ -196,6 +143,60 @@ public class SaveOptions {
     this.validateMergedAreas = validateMergedAreas;
   }
 
+  public SaveOptions refreshChartCache(Boolean refreshChartCache) {
+    this.refreshChartCache = refreshChartCache;
+    return this;
+  }
+
+   /**
+   * Get refreshChartCache
+   * @return refreshChartCache
+  **/
+  @ApiModelProperty(value = "")
+  public Boolean isRefreshChartCache() {
+    return refreshChartCache;
+  }
+
+  public void setRefreshChartCache(Boolean refreshChartCache) {
+    this.refreshChartCache = refreshChartCache;
+  }
+
+  public SaveOptions createDirectory(Boolean createDirectory) {
+    this.createDirectory = createDirectory;
+    return this;
+  }
+
+   /**
+   * If true and the directory does not exist, the directory will be automatically created before saving the file.             
+   * @return createDirectory
+  **/
+  @ApiModelProperty(value = "If true and the directory does not exist, the directory will be automatically created before saving the file.             ")
+  public Boolean isCreateDirectory() {
+    return createDirectory;
+  }
+
+  public void setCreateDirectory(Boolean createDirectory) {
+    this.createDirectory = createDirectory;
+  }
+
+  public SaveOptions sortNames(Boolean sortNames) {
+    this.sortNames = sortNames;
+    return this;
+  }
+
+   /**
+   * Get sortNames
+   * @return sortNames
+  **/
+  @ApiModelProperty(value = "")
+  public Boolean isSortNames() {
+    return sortNames;
+  }
+
+  public void setSortNames(Boolean sortNames) {
+    this.sortNames = sortNames;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -206,19 +207,19 @@ public class SaveOptions {
       return false;
     }
     SaveOptions saveOptions = (SaveOptions) o;
-    return Objects.equals(this.saveFormat, saveOptions.saveFormat) &&
-        Objects.equals(this.cachedFileFolder, saveOptions.cachedFileFolder) &&
+    return Objects.equals(this.enableHTTPCompression, saveOptions.enableHTTPCompression) &&
+        Objects.equals(this.saveFormat, saveOptions.saveFormat) &&
         Objects.equals(this.clearData, saveOptions.clearData) &&
-        Objects.equals(this.createDirectory, saveOptions.createDirectory) &&
-        Objects.equals(this.enableHTTPCompression, saveOptions.enableHTTPCompression) &&
+        Objects.equals(this.cachedFileFolder, saveOptions.cachedFileFolder) &&
+        Objects.equals(this.validateMergedAreas, saveOptions.validateMergedAreas) &&
         Objects.equals(this.refreshChartCache, saveOptions.refreshChartCache) &&
-        Objects.equals(this.sortNames, saveOptions.sortNames) &&
-        Objects.equals(this.validateMergedAreas, saveOptions.validateMergedAreas);
+        Objects.equals(this.createDirectory, saveOptions.createDirectory) &&
+        Objects.equals(this.sortNames, saveOptions.sortNames);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(saveFormat, cachedFileFolder, clearData, createDirectory, enableHTTPCompression, refreshChartCache, sortNames, validateMergedAreas);
+    return Objects.hash(enableHTTPCompression, saveFormat, clearData, cachedFileFolder, validateMergedAreas, refreshChartCache, createDirectory, sortNames);
   }
 
 
@@ -227,14 +228,14 @@ public class SaveOptions {
     StringBuilder sb = new StringBuilder();
     sb.append("class SaveOptions {\n");
     
-    sb.append("    saveFormat: ").append(toIndentedString(saveFormat)).append("\n");
-    sb.append("    cachedFileFolder: ").append(toIndentedString(cachedFileFolder)).append("\n");
-    sb.append("    clearData: ").append(toIndentedString(clearData)).append("\n");
-    sb.append("    createDirectory: ").append(toIndentedString(createDirectory)).append("\n");
     sb.append("    enableHTTPCompression: ").append(toIndentedString(enableHTTPCompression)).append("\n");
-    sb.append("    refreshChartCache: ").append(toIndentedString(refreshChartCache)).append("\n");
-    sb.append("    sortNames: ").append(toIndentedString(sortNames)).append("\n");
+    sb.append("    saveFormat: ").append(toIndentedString(saveFormat)).append("\n");
+    sb.append("    clearData: ").append(toIndentedString(clearData)).append("\n");
+    sb.append("    cachedFileFolder: ").append(toIndentedString(cachedFileFolder)).append("\n");
     sb.append("    validateMergedAreas: ").append(toIndentedString(validateMergedAreas)).append("\n");
+    sb.append("    refreshChartCache: ").append(toIndentedString(refreshChartCache)).append("\n");
+    sb.append("    createDirectory: ").append(toIndentedString(createDirectory)).append("\n");
+    sb.append("    sortNames: ").append(toIndentedString(sortNames)).append("\n");
     sb.append("}");
     return sb.toString();
   }

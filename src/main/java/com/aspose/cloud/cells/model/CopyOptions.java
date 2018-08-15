@@ -27,25 +27,79 @@ import java.io.IOException;
  * Represents the copy options.
  */
 @ApiModel(description = "Represents the copy options.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-05T15:44:26.749+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-08-14T14:34:14.243+08:00")
 public class CopyOptions {
+  @SerializedName("ReferToDestinationSheet")
+  private Boolean referToDestinationSheet = null;
+
+  @SerializedName("CopyNames")
+  private Boolean copyNames = null;
+
+  @SerializedName("ReferToSheetWithSameName")
+  private Boolean referToSheetWithSameName = null;
+
   @SerializedName("ColumnCharacterWidth")
   private Boolean columnCharacterWidth = null;
 
   @SerializedName("CopyInvalidFormulasAsValues")
   private Boolean copyInvalidFormulasAsValues = null;
 
-  @SerializedName("CopyNames")
-  private Boolean copyNames = null;
-
   @SerializedName("ExtendToAdjacentRange")
   private Boolean extendToAdjacentRange = null;
 
-  @SerializedName("ReferToDestinationSheet")
-  private Boolean referToDestinationSheet = null;
+  public CopyOptions referToDestinationSheet(Boolean referToDestinationSheet) {
+    this.referToDestinationSheet = referToDestinationSheet;
+    return this;
+  }
 
-  @SerializedName("ReferToSheetWithSameName")
-  private Boolean referToSheetWithSameName = null;
+   /**
+   * When copying the range in the same file and the chart refers to the source sheet,   False means the copied chart&#39;s data source will not be changed. True means the   copied chart&#39;s data source refers to the destination sheet.             
+   * @return referToDestinationSheet
+  **/
+  @ApiModelProperty(value = "When copying the range in the same file and the chart refers to the source sheet,   False means the copied chart's data source will not be changed. True means the   copied chart's data source refers to the destination sheet.             ")
+  public Boolean isReferToDestinationSheet() {
+    return referToDestinationSheet;
+  }
+
+  public void setReferToDestinationSheet(Boolean referToDestinationSheet) {
+    this.referToDestinationSheet = referToDestinationSheet;
+  }
+
+  public CopyOptions copyNames(Boolean copyNames) {
+    this.copyNames = copyNames;
+    return this;
+  }
+
+   /**
+   * Indicates whether copying the names.
+   * @return copyNames
+  **/
+  @ApiModelProperty(value = "Indicates whether copying the names.")
+  public Boolean isCopyNames() {
+    return copyNames;
+  }
+
+  public void setCopyNames(Boolean copyNames) {
+    this.copyNames = copyNames;
+  }
+
+  public CopyOptions referToSheetWithSameName(Boolean referToSheetWithSameName) {
+    this.referToSheetWithSameName = referToSheetWithSameName;
+    return this;
+  }
+
+   /**
+   * Get referToSheetWithSameName
+   * @return referToSheetWithSameName
+  **/
+  @ApiModelProperty(value = "")
+  public Boolean isReferToSheetWithSameName() {
+    return referToSheetWithSameName;
+  }
+
+  public void setReferToSheetWithSameName(Boolean referToSheetWithSameName) {
+    this.referToSheetWithSameName = referToSheetWithSameName;
+  }
 
   public CopyOptions columnCharacterWidth(Boolean columnCharacterWidth) {
     this.columnCharacterWidth = columnCharacterWidth;
@@ -83,24 +137,6 @@ public class CopyOptions {
     this.copyInvalidFormulasAsValues = copyInvalidFormulasAsValues;
   }
 
-  public CopyOptions copyNames(Boolean copyNames) {
-    this.copyNames = copyNames;
-    return this;
-  }
-
-   /**
-   * Indicates whether copying the names.
-   * @return copyNames
-  **/
-  @ApiModelProperty(value = "Indicates whether copying the names.")
-  public Boolean isCopyNames() {
-    return copyNames;
-  }
-
-  public void setCopyNames(Boolean copyNames) {
-    this.copyNames = copyNames;
-  }
-
   public CopyOptions extendToAdjacentRange(Boolean extendToAdjacentRange) {
     this.extendToAdjacentRange = extendToAdjacentRange;
     return this;
@@ -119,42 +155,6 @@ public class CopyOptions {
     this.extendToAdjacentRange = extendToAdjacentRange;
   }
 
-  public CopyOptions referToDestinationSheet(Boolean referToDestinationSheet) {
-    this.referToDestinationSheet = referToDestinationSheet;
-    return this;
-  }
-
-   /**
-   * When copying the range in the same file and the chart refers to the source sheet,   False means the copied chart&#39;s data source will not be changed. True means the   copied chart&#39;s data source refers to the destination sheet.             
-   * @return referToDestinationSheet
-  **/
-  @ApiModelProperty(value = "When copying the range in the same file and the chart refers to the source sheet,   False means the copied chart's data source will not be changed. True means the   copied chart's data source refers to the destination sheet.             ")
-  public Boolean isReferToDestinationSheet() {
-    return referToDestinationSheet;
-  }
-
-  public void setReferToDestinationSheet(Boolean referToDestinationSheet) {
-    this.referToDestinationSheet = referToDestinationSheet;
-  }
-
-  public CopyOptions referToSheetWithSameName(Boolean referToSheetWithSameName) {
-    this.referToSheetWithSameName = referToSheetWithSameName;
-    return this;
-  }
-
-   /**
-   * Get referToSheetWithSameName
-   * @return referToSheetWithSameName
-  **/
-  @ApiModelProperty(value = "")
-  public Boolean isReferToSheetWithSameName() {
-    return referToSheetWithSameName;
-  }
-
-  public void setReferToSheetWithSameName(Boolean referToSheetWithSameName) {
-    this.referToSheetWithSameName = referToSheetWithSameName;
-  }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -165,17 +165,17 @@ public class CopyOptions {
       return false;
     }
     CopyOptions copyOptions = (CopyOptions) o;
-    return Objects.equals(this.columnCharacterWidth, copyOptions.columnCharacterWidth) &&
-        Objects.equals(this.copyInvalidFormulasAsValues, copyOptions.copyInvalidFormulasAsValues) &&
+    return Objects.equals(this.referToDestinationSheet, copyOptions.referToDestinationSheet) &&
         Objects.equals(this.copyNames, copyOptions.copyNames) &&
-        Objects.equals(this.extendToAdjacentRange, copyOptions.extendToAdjacentRange) &&
-        Objects.equals(this.referToDestinationSheet, copyOptions.referToDestinationSheet) &&
-        Objects.equals(this.referToSheetWithSameName, copyOptions.referToSheetWithSameName);
+        Objects.equals(this.referToSheetWithSameName, copyOptions.referToSheetWithSameName) &&
+        Objects.equals(this.columnCharacterWidth, copyOptions.columnCharacterWidth) &&
+        Objects.equals(this.copyInvalidFormulasAsValues, copyOptions.copyInvalidFormulasAsValues) &&
+        Objects.equals(this.extendToAdjacentRange, copyOptions.extendToAdjacentRange);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(columnCharacterWidth, copyInvalidFormulasAsValues, copyNames, extendToAdjacentRange, referToDestinationSheet, referToSheetWithSameName);
+    return Objects.hash(referToDestinationSheet, copyNames, referToSheetWithSameName, columnCharacterWidth, copyInvalidFormulasAsValues, extendToAdjacentRange);
   }
 
 
@@ -184,12 +184,12 @@ public class CopyOptions {
     StringBuilder sb = new StringBuilder();
     sb.append("class CopyOptions {\n");
     
+    sb.append("    referToDestinationSheet: ").append(toIndentedString(referToDestinationSheet)).append("\n");
+    sb.append("    copyNames: ").append(toIndentedString(copyNames)).append("\n");
+    sb.append("    referToSheetWithSameName: ").append(toIndentedString(referToSheetWithSameName)).append("\n");
     sb.append("    columnCharacterWidth: ").append(toIndentedString(columnCharacterWidth)).append("\n");
     sb.append("    copyInvalidFormulasAsValues: ").append(toIndentedString(copyInvalidFormulasAsValues)).append("\n");
-    sb.append("    copyNames: ").append(toIndentedString(copyNames)).append("\n");
     sb.append("    extendToAdjacentRange: ").append(toIndentedString(extendToAdjacentRange)).append("\n");
-    sb.append("    referToDestinationSheet: ").append(toIndentedString(referToDestinationSheet)).append("\n");
-    sb.append("    referToSheetWithSameName: ").append(toIndentedString(referToSheetWithSameName)).append("\n");
     sb.append("}");
     return sb.toString();
   }

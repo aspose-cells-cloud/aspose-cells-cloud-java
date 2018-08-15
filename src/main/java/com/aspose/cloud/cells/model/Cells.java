@@ -30,28 +30,28 @@ import java.util.List;
 /**
  * Cells
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-05T15:44:26.749+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-08-14T14:34:14.243+08:00")
 public class Cells {
   @SerializedName("link")
   private Link link = null;
 
-  @SerializedName("MaxRow")
-  private Integer maxRow = null;
-
-  @SerializedName("MaxColumn")
-  private Integer maxColumn = null;
+  @SerializedName("Rows")
+  private LinkElement rows = null;
 
   @SerializedName("CellCount")
   private Integer cellCount = null;
 
-  @SerializedName("Rows")
-  private LinkElement rows = null;
-
-  @SerializedName("Columns")
-  private LinkElement columns = null;
+  @SerializedName("MaxRow")
+  private Integer maxRow = null;
 
   @SerializedName("CellList")
   private List<LinkElement> cellList = null;
+
+  @SerializedName("MaxColumn")
+  private Integer maxColumn = null;
+
+  @SerializedName("Columns")
+  private LinkElement columns = null;
 
   public Cells link(Link link) {
     this.link = link;
@@ -69,60 +69,6 @@ public class Cells {
 
   public void setLink(Link link) {
     this.link = link;
-  }
-
-  public Cells maxRow(Integer maxRow) {
-    this.maxRow = maxRow;
-    return this;
-  }
-
-   /**
-   * Get maxRow
-   * @return maxRow
-  **/
-  @ApiModelProperty(required = true, value = "")
-  public Integer getMaxRow() {
-    return maxRow;
-  }
-
-  public void setMaxRow(Integer maxRow) {
-    this.maxRow = maxRow;
-  }
-
-  public Cells maxColumn(Integer maxColumn) {
-    this.maxColumn = maxColumn;
-    return this;
-  }
-
-   /**
-   * Maximum column index of cell which contains data.             
-   * @return maxColumn
-  **/
-  @ApiModelProperty(required = true, value = "Maximum column index of cell which contains data.             ")
-  public Integer getMaxColumn() {
-    return maxColumn;
-  }
-
-  public void setMaxColumn(Integer maxColumn) {
-    this.maxColumn = maxColumn;
-  }
-
-  public Cells cellCount(Integer cellCount) {
-    this.cellCount = cellCount;
-    return this;
-  }
-
-   /**
-   * Get cellCount
-   * @return cellCount
-  **/
-  @ApiModelProperty(required = true, value = "")
-  public Integer getCellCount() {
-    return cellCount;
-  }
-
-  public void setCellCount(Integer cellCount) {
-    this.cellCount = cellCount;
   }
 
   public Cells rows(LinkElement rows) {
@@ -143,22 +89,40 @@ public class Cells {
     this.rows = rows;
   }
 
-  public Cells columns(LinkElement columns) {
-    this.columns = columns;
+  public Cells cellCount(Integer cellCount) {
+    this.cellCount = cellCount;
     return this;
   }
 
    /**
-   * Get columns
-   * @return columns
+   * Get cellCount
+   * @return cellCount
   **/
-  @ApiModelProperty(value = "")
-  public LinkElement getColumns() {
-    return columns;
+  @ApiModelProperty(required = true, value = "")
+  public Integer getCellCount() {
+    return cellCount;
   }
 
-  public void setColumns(LinkElement columns) {
-    this.columns = columns;
+  public void setCellCount(Integer cellCount) {
+    this.cellCount = cellCount;
+  }
+
+  public Cells maxRow(Integer maxRow) {
+    this.maxRow = maxRow;
+    return this;
+  }
+
+   /**
+   * Get maxRow
+   * @return maxRow
+  **/
+  @ApiModelProperty(required = true, value = "")
+  public Integer getMaxRow() {
+    return maxRow;
+  }
+
+  public void setMaxRow(Integer maxRow) {
+    this.maxRow = maxRow;
   }
 
   public Cells cellList(List<LinkElement> cellList) {
@@ -187,6 +151,42 @@ public class Cells {
     this.cellList = cellList;
   }
 
+  public Cells maxColumn(Integer maxColumn) {
+    this.maxColumn = maxColumn;
+    return this;
+  }
+
+   /**
+   * Maximum column index of cell which contains data.             
+   * @return maxColumn
+  **/
+  @ApiModelProperty(required = true, value = "Maximum column index of cell which contains data.             ")
+  public Integer getMaxColumn() {
+    return maxColumn;
+  }
+
+  public void setMaxColumn(Integer maxColumn) {
+    this.maxColumn = maxColumn;
+  }
+
+  public Cells columns(LinkElement columns) {
+    this.columns = columns;
+    return this;
+  }
+
+   /**
+   * Get columns
+   * @return columns
+  **/
+  @ApiModelProperty(value = "")
+  public LinkElement getColumns() {
+    return columns;
+  }
+
+  public void setColumns(LinkElement columns) {
+    this.columns = columns;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -198,17 +198,17 @@ public class Cells {
     }
     Cells cells = (Cells) o;
     return Objects.equals(this.link, cells.link) &&
-        Objects.equals(this.maxRow, cells.maxRow) &&
-        Objects.equals(this.maxColumn, cells.maxColumn) &&
-        Objects.equals(this.cellCount, cells.cellCount) &&
         Objects.equals(this.rows, cells.rows) &&
-        Objects.equals(this.columns, cells.columns) &&
-        Objects.equals(this.cellList, cells.cellList);
+        Objects.equals(this.cellCount, cells.cellCount) &&
+        Objects.equals(this.maxRow, cells.maxRow) &&
+        Objects.equals(this.cellList, cells.cellList) &&
+        Objects.equals(this.maxColumn, cells.maxColumn) &&
+        Objects.equals(this.columns, cells.columns);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(link, maxRow, maxColumn, cellCount, rows, columns, cellList);
+    return Objects.hash(link, rows, cellCount, maxRow, cellList, maxColumn, columns);
   }
 
 
@@ -218,12 +218,12 @@ public class Cells {
     sb.append("class Cells {\n");
     
     sb.append("    link: ").append(toIndentedString(link)).append("\n");
-    sb.append("    maxRow: ").append(toIndentedString(maxRow)).append("\n");
-    sb.append("    maxColumn: ").append(toIndentedString(maxColumn)).append("\n");
-    sb.append("    cellCount: ").append(toIndentedString(cellCount)).append("\n");
     sb.append("    rows: ").append(toIndentedString(rows)).append("\n");
-    sb.append("    columns: ").append(toIndentedString(columns)).append("\n");
+    sb.append("    cellCount: ").append(toIndentedString(cellCount)).append("\n");
+    sb.append("    maxRow: ").append(toIndentedString(maxRow)).append("\n");
     sb.append("    cellList: ").append(toIndentedString(cellList)).append("\n");
+    sb.append("    maxColumn: ").append(toIndentedString(maxColumn)).append("\n");
+    sb.append("    columns: ").append(toIndentedString(columns)).append("\n");
     sb.append("}");
     return sb.toString();
   }

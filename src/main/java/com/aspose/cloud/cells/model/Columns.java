@@ -30,16 +30,16 @@ import java.util.List;
 /**
  * Columns
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-05T15:44:26.749+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-08-14T14:34:14.243+08:00")
 public class Columns {
   @SerializedName("link")
   private Link link = null;
 
-  @SerializedName("MaxColumn")
-  private Integer maxColumn = null;
-
   @SerializedName("ColumnsCount")
   private Integer columnsCount = null;
+
+  @SerializedName("MaxColumn")
+  private Integer maxColumn = null;
 
   @SerializedName("ColumnsList")
   private List<LinkElement> columnsList = null;
@@ -62,24 +62,6 @@ public class Columns {
     this.link = link;
   }
 
-  public Columns maxColumn(Integer maxColumn) {
-    this.maxColumn = maxColumn;
-    return this;
-  }
-
-   /**
-   * Get maxColumn
-   * @return maxColumn
-  **/
-  @ApiModelProperty(required = true, value = "")
-  public Integer getMaxColumn() {
-    return maxColumn;
-  }
-
-  public void setMaxColumn(Integer maxColumn) {
-    this.maxColumn = maxColumn;
-  }
-
   public Columns columnsCount(Integer columnsCount) {
     this.columnsCount = columnsCount;
     return this;
@@ -96,6 +78,24 @@ public class Columns {
 
   public void setColumnsCount(Integer columnsCount) {
     this.columnsCount = columnsCount;
+  }
+
+  public Columns maxColumn(Integer maxColumn) {
+    this.maxColumn = maxColumn;
+    return this;
+  }
+
+   /**
+   * Get maxColumn
+   * @return maxColumn
+  **/
+  @ApiModelProperty(required = true, value = "")
+  public Integer getMaxColumn() {
+    return maxColumn;
+  }
+
+  public void setMaxColumn(Integer maxColumn) {
+    this.maxColumn = maxColumn;
   }
 
   public Columns columnsList(List<LinkElement> columnsList) {
@@ -135,14 +135,14 @@ public class Columns {
     }
     Columns columns = (Columns) o;
     return Objects.equals(this.link, columns.link) &&
-        Objects.equals(this.maxColumn, columns.maxColumn) &&
         Objects.equals(this.columnsCount, columns.columnsCount) &&
+        Objects.equals(this.maxColumn, columns.maxColumn) &&
         Objects.equals(this.columnsList, columns.columnsList);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(link, maxColumn, columnsCount, columnsList);
+    return Objects.hash(link, columnsCount, maxColumn, columnsList);
   }
 
 
@@ -152,8 +152,8 @@ public class Columns {
     sb.append("class Columns {\n");
     
     sb.append("    link: ").append(toIndentedString(link)).append("\n");
-    sb.append("    maxColumn: ").append(toIndentedString(maxColumn)).append("\n");
     sb.append("    columnsCount: ").append(toIndentedString(columnsCount)).append("\n");
+    sb.append("    maxColumn: ").append(toIndentedString(maxColumn)).append("\n");
     sb.append("    columnsList: ").append(toIndentedString(columnsList)).append("\n");
     sb.append("}");
     return sb.toString();

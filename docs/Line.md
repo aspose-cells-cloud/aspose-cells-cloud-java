@@ -4,25 +4,25 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**style** | **String** |  |  [optional]
+**isAuto** | **Boolean** |  |  [optional]
 **beginArrowLength** | **String** |  |  [optional]
-**beginArrowWidth** | **String** |  |  [optional]
-**beginType** | **String** |  |  [optional]
-**capType** | **String** |  |  [optional]
+**weight** | **String** |  |  [optional]
+**gradientFill** | [**GradientFill**](GradientFill.md) |  |  [optional]
 **color** | [**Color**](Color.md) |  |  [optional]
 **compoundType** | **String** |  |  [optional]
-**dashType** | **String** |  |  [optional]
-**endArrowLength** | **String** |  |  [optional]
-**endArrowWidth** | **String** |  |  [optional]
-**endType** | **String** |  |  [optional]
-**gradientFill** | [**GradientFill**](GradientFill.md) |  |  [optional]
-**isAuto** | **Boolean** |  |  [optional]
-**isAutomaticColor** | **Boolean** |  |  [optional]
+**weightPt** | **Double** |  |  [optional]
 **isVisible** | **Boolean** |  |  [optional]
 **joinType** | **String** |  |  [optional]
-**style** | **String** |  |  [optional]
+**endArrowLength** | **String** |  |  [optional]
+**isAutomaticColor** | **Boolean** |  |  [optional]
+**dashType** | **String** |  |  [optional]
+**beginType** | **String** |  |  [optional]
+**capType** | **String** |  |  [optional]
+**endType** | **String** |  |  [optional]
+**beginArrowWidth** | **String** |  |  [optional]
+**endArrowWidth** | **String** |  |  [optional]
 **transparency** | **Double** |  |  [optional]
-**weight** | **String** |  |  [optional]
-**weightPt** | **Double** |  |  [optional]
 
 
 

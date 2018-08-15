@@ -29,16 +29,16 @@ import java.io.IOException;
 /**
  * ConvertTaskParameter
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-05T15:44:26.749+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-08-14T14:34:14.243+08:00")
 public class ConvertTaskParameter extends TaskParameter {
   @SerializedName("Workbook")
   private FileSource workbook = null;
 
-  @SerializedName("DestinationFile")
-  private String destinationFile = null;
-
   @SerializedName("SaveOptions")
   private SaveOptions saveOptions = null;
+
+  @SerializedName("DestinationFile")
+  private String destinationFile = null;
 
   public ConvertTaskParameter workbook(FileSource workbook) {
     this.workbook = workbook;
@@ -56,24 +56,6 @@ public class ConvertTaskParameter extends TaskParameter {
 
   public void setWorkbook(FileSource workbook) {
     this.workbook = workbook;
-  }
-
-  public ConvertTaskParameter destinationFile(String destinationFile) {
-    this.destinationFile = destinationFile;
-    return this;
-  }
-
-   /**
-   * Get destinationFile
-   * @return destinationFile
-  **/
-  @ApiModelProperty(value = "")
-  public String getDestinationFile() {
-    return destinationFile;
-  }
-
-  public void setDestinationFile(String destinationFile) {
-    this.destinationFile = destinationFile;
   }
 
   public ConvertTaskParameter saveOptions(SaveOptions saveOptions) {
@@ -94,6 +76,24 @@ public class ConvertTaskParameter extends TaskParameter {
     this.saveOptions = saveOptions;
   }
 
+  public ConvertTaskParameter destinationFile(String destinationFile) {
+    this.destinationFile = destinationFile;
+    return this;
+  }
+
+   /**
+   * Get destinationFile
+   * @return destinationFile
+  **/
+  @ApiModelProperty(value = "")
+  public String getDestinationFile() {
+    return destinationFile;
+  }
+
+  public void setDestinationFile(String destinationFile) {
+    this.destinationFile = destinationFile;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -105,14 +105,14 @@ public class ConvertTaskParameter extends TaskParameter {
     }
     ConvertTaskParameter convertTaskParameter = (ConvertTaskParameter) o;
     return Objects.equals(this.workbook, convertTaskParameter.workbook) &&
-        Objects.equals(this.destinationFile, convertTaskParameter.destinationFile) &&
         Objects.equals(this.saveOptions, convertTaskParameter.saveOptions) &&
+        Objects.equals(this.destinationFile, convertTaskParameter.destinationFile) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(workbook, destinationFile, saveOptions, super.hashCode());
+    return Objects.hash(workbook, saveOptions, destinationFile, super.hashCode());
   }
 
 
@@ -122,8 +122,8 @@ public class ConvertTaskParameter extends TaskParameter {
     sb.append("class ConvertTaskParameter {\n");
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    workbook: ").append(toIndentedString(workbook)).append("\n");
-    sb.append("    destinationFile: ").append(toIndentedString(destinationFile)).append("\n");
     sb.append("    saveOptions: ").append(toIndentedString(saveOptions)).append("\n");
+    sb.append("    destinationFile: ").append(toIndentedString(destinationFile)).append("\n");
     sb.append("}");
     return sb.toString();
   }

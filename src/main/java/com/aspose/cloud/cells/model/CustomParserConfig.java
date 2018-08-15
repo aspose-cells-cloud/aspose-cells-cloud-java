@@ -26,16 +26,16 @@ import java.io.IOException;
 /**
  * CustomParserConfig
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-05T15:44:26.749+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-08-14T14:34:14.243+08:00")
 public class CustomParserConfig {
   @SerializedName("ColumnIndex")
   private Integer columnIndex = null;
 
-  @SerializedName("ParseMethod")
-  private String parseMethod = null;
-
   @SerializedName("CustomStyle")
   private String customStyle = null;
+
+  @SerializedName("ParseMethod")
+  private String parseMethod = null;
 
   public CustomParserConfig columnIndex(Integer columnIndex) {
     this.columnIndex = columnIndex;
@@ -53,24 +53,6 @@ public class CustomParserConfig {
 
   public void setColumnIndex(Integer columnIndex) {
     this.columnIndex = columnIndex;
-  }
-
-  public CustomParserConfig parseMethod(String parseMethod) {
-    this.parseMethod = parseMethod;
-    return this;
-  }
-
-   /**
-   * Get parseMethod
-   * @return parseMethod
-  **/
-  @ApiModelProperty(value = "")
-  public String getParseMethod() {
-    return parseMethod;
-  }
-
-  public void setParseMethod(String parseMethod) {
-    this.parseMethod = parseMethod;
   }
 
   public CustomParserConfig customStyle(String customStyle) {
@@ -91,6 +73,24 @@ public class CustomParserConfig {
     this.customStyle = customStyle;
   }
 
+  public CustomParserConfig parseMethod(String parseMethod) {
+    this.parseMethod = parseMethod;
+    return this;
+  }
+
+   /**
+   * Get parseMethod
+   * @return parseMethod
+  **/
+  @ApiModelProperty(value = "")
+  public String getParseMethod() {
+    return parseMethod;
+  }
+
+  public void setParseMethod(String parseMethod) {
+    this.parseMethod = parseMethod;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -102,13 +102,13 @@ public class CustomParserConfig {
     }
     CustomParserConfig customParserConfig = (CustomParserConfig) o;
     return Objects.equals(this.columnIndex, customParserConfig.columnIndex) &&
-        Objects.equals(this.parseMethod, customParserConfig.parseMethod) &&
-        Objects.equals(this.customStyle, customParserConfig.customStyle);
+        Objects.equals(this.customStyle, customParserConfig.customStyle) &&
+        Objects.equals(this.parseMethod, customParserConfig.parseMethod);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(columnIndex, parseMethod, customStyle);
+    return Objects.hash(columnIndex, customStyle, parseMethod);
   }
 
 
@@ -118,8 +118,8 @@ public class CustomParserConfig {
     sb.append("class CustomParserConfig {\n");
     
     sb.append("    columnIndex: ").append(toIndentedString(columnIndex)).append("\n");
-    sb.append("    parseMethod: ").append(toIndentedString(parseMethod)).append("\n");
     sb.append("    customStyle: ").append(toIndentedString(customStyle)).append("\n");
+    sb.append("    parseMethod: ").append(toIndentedString(parseMethod)).append("\n");
     sb.append("}");
     return sb.toString();
   }

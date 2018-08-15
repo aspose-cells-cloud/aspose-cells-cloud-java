@@ -27,33 +27,33 @@ import java.io.IOException;
  * Used by workbook encryption/decryption requests.
  */
 @ApiModel(description = "Used by workbook encryption/decryption requests.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-05T15:44:26.749+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-08-14T14:34:14.243+08:00")
 public class WorkbookEncryptionRequest {
-  @SerializedName("EncryptionType")
-  private String encryptionType = null;
+  @SerializedName("Password")
+  private String password = null;
 
   @SerializedName("KeyLength")
   private Integer keyLength = null;
 
-  @SerializedName("Password")
-  private String password = null;
+  @SerializedName("EncryptionType")
+  private String encryptionType = null;
 
-  public WorkbookEncryptionRequest encryptionType(String encryptionType) {
-    this.encryptionType = encryptionType;
+  public WorkbookEncryptionRequest password(String password) {
+    this.password = password;
     return this;
   }
 
    /**
-   * Workbook encription type.
-   * @return encryptionType
+   * Encription password.
+   * @return password
   **/
-  @ApiModelProperty(value = "Workbook encription type.")
-  public String getEncryptionType() {
-    return encryptionType;
+  @ApiModelProperty(value = "Encription password.")
+  public String getPassword() {
+    return password;
   }
 
-  public void setEncryptionType(String encryptionType) {
-    this.encryptionType = encryptionType;
+  public void setPassword(String password) {
+    this.password = password;
   }
 
   public WorkbookEncryptionRequest keyLength(Integer keyLength) {
@@ -74,22 +74,22 @@ public class WorkbookEncryptionRequest {
     this.keyLength = keyLength;
   }
 
-  public WorkbookEncryptionRequest password(String password) {
-    this.password = password;
+  public WorkbookEncryptionRequest encryptionType(String encryptionType) {
+    this.encryptionType = encryptionType;
     return this;
   }
 
    /**
-   * Encription password.
-   * @return password
+   * Workbook encription type.
+   * @return encryptionType
   **/
-  @ApiModelProperty(value = "Encription password.")
-  public String getPassword() {
-    return password;
+  @ApiModelProperty(value = "Workbook encription type.")
+  public String getEncryptionType() {
+    return encryptionType;
   }
 
-  public void setPassword(String password) {
-    this.password = password;
+  public void setEncryptionType(String encryptionType) {
+    this.encryptionType = encryptionType;
   }
 
 
@@ -102,14 +102,14 @@ public class WorkbookEncryptionRequest {
       return false;
     }
     WorkbookEncryptionRequest workbookEncryptionRequest = (WorkbookEncryptionRequest) o;
-    return Objects.equals(this.encryptionType, workbookEncryptionRequest.encryptionType) &&
+    return Objects.equals(this.password, workbookEncryptionRequest.password) &&
         Objects.equals(this.keyLength, workbookEncryptionRequest.keyLength) &&
-        Objects.equals(this.password, workbookEncryptionRequest.password);
+        Objects.equals(this.encryptionType, workbookEncryptionRequest.encryptionType);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(encryptionType, keyLength, password);
+    return Objects.hash(password, keyLength, encryptionType);
   }
 
 
@@ -118,9 +118,9 @@ public class WorkbookEncryptionRequest {
     StringBuilder sb = new StringBuilder();
     sb.append("class WorkbookEncryptionRequest {\n");
     
-    sb.append("    encryptionType: ").append(toIndentedString(encryptionType)).append("\n");
-    sb.append("    keyLength: ").append(toIndentedString(keyLength)).append("\n");
     sb.append("    password: ").append(toIndentedString(password)).append("\n");
+    sb.append("    keyLength: ").append(toIndentedString(keyLength)).append("\n");
+    sb.append("    encryptionType: ").append(toIndentedString(encryptionType)).append("\n");
     sb.append("}");
     return sb.toString();
   }

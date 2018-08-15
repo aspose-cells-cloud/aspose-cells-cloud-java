@@ -31,25 +31,43 @@ import java.util.List;
  * Describe the IconSet conditional formatting rule. This conditional formatting     rule applies icons to cells according to their values.
  */
 @ApiModel(description = "Describe the IconSet conditional formatting rule. This conditional formatting     rule applies icons to cells according to their values.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-05T15:44:26.749+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-08-14T14:34:14.243+08:00")
 public class IconSet {
+  @SerializedName("Reverse")
+  private Boolean reverse = null;
+
   @SerializedName("CfIcons")
   private List<ConditionalFormattingIcon> cfIcons = null;
 
   @SerializedName("Cfvos")
   private List<ConditionalFormattingValue> cfvos = null;
 
+  @SerializedName("IconSetType")
+  private String iconSetType = null;
+
   @SerializedName("IsCustom")
   private Boolean isCustom = null;
-
-  @SerializedName("Reverse")
-  private Boolean reverse = null;
 
   @SerializedName("ShowValue")
   private Boolean showValue = null;
 
-  @SerializedName("IconSetType")
-  private String iconSetType = null;
+  public IconSet reverse(Boolean reverse) {
+    this.reverse = reverse;
+    return this;
+  }
+
+   /**
+   * Get or set the flag indicating whether to reverses the default order of the   icons in this icon set.  Default value is false.             
+   * @return reverse
+  **/
+  @ApiModelProperty(value = "Get or set the flag indicating whether to reverses the default order of the   icons in this icon set.  Default value is false.             ")
+  public Boolean isReverse() {
+    return reverse;
+  }
+
+  public void setReverse(Boolean reverse) {
+    this.reverse = reverse;
+  }
 
   public IconSet cfIcons(List<ConditionalFormattingIcon> cfIcons) {
     this.cfIcons = cfIcons;
@@ -103,6 +121,24 @@ public class IconSet {
     this.cfvos = cfvos;
   }
 
+  public IconSet iconSetType(String iconSetType) {
+    this.iconSetType = iconSetType;
+    return this;
+  }
+
+   /**
+   * Get or Set the icon set type to display.  Setting the type will auto check    if the current Cfvos&#39;s count is accord with the new type. If not accord,    old Cfvos will be cleaned and default Cfvos will be added.             
+   * @return iconSetType
+  **/
+  @ApiModelProperty(value = "Get or Set the icon set type to display.  Setting the type will auto check    if the current Cfvos's count is accord with the new type. If not accord,    old Cfvos will be cleaned and default Cfvos will be added.             ")
+  public String getIconSetType() {
+    return iconSetType;
+  }
+
+  public void setIconSetType(String iconSetType) {
+    this.iconSetType = iconSetType;
+  }
+
   public IconSet isCustom(Boolean isCustom) {
     this.isCustom = isCustom;
     return this;
@@ -119,24 +155,6 @@ public class IconSet {
 
   public void setIsCustom(Boolean isCustom) {
     this.isCustom = isCustom;
-  }
-
-  public IconSet reverse(Boolean reverse) {
-    this.reverse = reverse;
-    return this;
-  }
-
-   /**
-   * Get or set the flag indicating whether to reverses the default order of the   icons in this icon set.  Default value is false.             
-   * @return reverse
-  **/
-  @ApiModelProperty(value = "Get or set the flag indicating whether to reverses the default order of the   icons in this icon set.  Default value is false.             ")
-  public Boolean isReverse() {
-    return reverse;
-  }
-
-  public void setReverse(Boolean reverse) {
-    this.reverse = reverse;
   }
 
   public IconSet showValue(Boolean showValue) {
@@ -157,24 +175,6 @@ public class IconSet {
     this.showValue = showValue;
   }
 
-  public IconSet iconSetType(String iconSetType) {
-    this.iconSetType = iconSetType;
-    return this;
-  }
-
-   /**
-   * Get or Set the icon set type to display.  Setting the type will auto check    if the current Cfvos&#39;s count is accord with the new type. If not accord,    old Cfvos will be cleaned and default Cfvos will be added.             
-   * @return iconSetType
-  **/
-  @ApiModelProperty(value = "Get or Set the icon set type to display.  Setting the type will auto check    if the current Cfvos's count is accord with the new type. If not accord,    old Cfvos will be cleaned and default Cfvos will be added.             ")
-  public String getIconSetType() {
-    return iconSetType;
-  }
-
-  public void setIconSetType(String iconSetType) {
-    this.iconSetType = iconSetType;
-  }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -185,17 +185,17 @@ public class IconSet {
       return false;
     }
     IconSet iconSet = (IconSet) o;
-    return Objects.equals(this.cfIcons, iconSet.cfIcons) &&
+    return Objects.equals(this.reverse, iconSet.reverse) &&
+        Objects.equals(this.cfIcons, iconSet.cfIcons) &&
         Objects.equals(this.cfvos, iconSet.cfvos) &&
+        Objects.equals(this.iconSetType, iconSet.iconSetType) &&
         Objects.equals(this.isCustom, iconSet.isCustom) &&
-        Objects.equals(this.reverse, iconSet.reverse) &&
-        Objects.equals(this.showValue, iconSet.showValue) &&
-        Objects.equals(this.iconSetType, iconSet.iconSetType);
+        Objects.equals(this.showValue, iconSet.showValue);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(cfIcons, cfvos, isCustom, reverse, showValue, iconSetType);
+    return Objects.hash(reverse, cfIcons, cfvos, iconSetType, isCustom, showValue);
   }
 
 
@@ -204,12 +204,12 @@ public class IconSet {
     StringBuilder sb = new StringBuilder();
     sb.append("class IconSet {\n");
     
+    sb.append("    reverse: ").append(toIndentedString(reverse)).append("\n");
     sb.append("    cfIcons: ").append(toIndentedString(cfIcons)).append("\n");
     sb.append("    cfvos: ").append(toIndentedString(cfvos)).append("\n");
-    sb.append("    isCustom: ").append(toIndentedString(isCustom)).append("\n");
-    sb.append("    reverse: ").append(toIndentedString(reverse)).append("\n");
-    sb.append("    showValue: ").append(toIndentedString(showValue)).append("\n");
     sb.append("    iconSetType: ").append(toIndentedString(iconSetType)).append("\n");
+    sb.append("    isCustom: ").append(toIndentedString(isCustom)).append("\n");
+    sb.append("    showValue: ").append(toIndentedString(showValue)).append("\n");
     sb.append("}");
     return sb.toString();
   }

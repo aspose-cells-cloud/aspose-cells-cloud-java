@@ -26,33 +26,33 @@ import java.io.IOException;
 /**
  * HorizontalPageBreak
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-05T15:44:26.749+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-08-14T14:34:14.243+08:00")
 public class HorizontalPageBreak {
-  @SerializedName("Row")
-  private Integer row = null;
+  @SerializedName("StartColumn")
+  private Integer startColumn = null;
 
   @SerializedName("EndColumn")
   private Integer endColumn = null;
 
-  @SerializedName("StartColumn")
-  private Integer startColumn = null;
+  @SerializedName("Row")
+  private Integer row = null;
 
-  public HorizontalPageBreak row(Integer row) {
-    this.row = row;
+  public HorizontalPageBreak startColumn(Integer startColumn) {
+    this.startColumn = startColumn;
     return this;
   }
 
    /**
-   * Get row
-   * @return row
+   * Get startColumn
+   * @return startColumn
   **/
   @ApiModelProperty(required = true, value = "")
-  public Integer getRow() {
-    return row;
+  public Integer getStartColumn() {
+    return startColumn;
   }
 
-  public void setRow(Integer row) {
-    this.row = row;
+  public void setStartColumn(Integer startColumn) {
+    this.startColumn = startColumn;
   }
 
   public HorizontalPageBreak endColumn(Integer endColumn) {
@@ -73,22 +73,22 @@ public class HorizontalPageBreak {
     this.endColumn = endColumn;
   }
 
-  public HorizontalPageBreak startColumn(Integer startColumn) {
-    this.startColumn = startColumn;
+  public HorizontalPageBreak row(Integer row) {
+    this.row = row;
     return this;
   }
 
    /**
-   * Get startColumn
-   * @return startColumn
+   * Get row
+   * @return row
   **/
   @ApiModelProperty(required = true, value = "")
-  public Integer getStartColumn() {
-    return startColumn;
+  public Integer getRow() {
+    return row;
   }
 
-  public void setStartColumn(Integer startColumn) {
-    this.startColumn = startColumn;
+  public void setRow(Integer row) {
+    this.row = row;
   }
 
 
@@ -101,14 +101,14 @@ public class HorizontalPageBreak {
       return false;
     }
     HorizontalPageBreak horizontalPageBreak = (HorizontalPageBreak) o;
-    return Objects.equals(this.row, horizontalPageBreak.row) &&
+    return Objects.equals(this.startColumn, horizontalPageBreak.startColumn) &&
         Objects.equals(this.endColumn, horizontalPageBreak.endColumn) &&
-        Objects.equals(this.startColumn, horizontalPageBreak.startColumn);
+        Objects.equals(this.row, horizontalPageBreak.row);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(row, endColumn, startColumn);
+    return Objects.hash(startColumn, endColumn, row);
   }
 
 
@@ -117,9 +117,9 @@ public class HorizontalPageBreak {
     StringBuilder sb = new StringBuilder();
     sb.append("class HorizontalPageBreak {\n");
     
-    sb.append("    row: ").append(toIndentedString(row)).append("\n");
-    sb.append("    endColumn: ").append(toIndentedString(endColumn)).append("\n");
     sb.append("    startColumn: ").append(toIndentedString(startColumn)).append("\n");
+    sb.append("    endColumn: ").append(toIndentedString(endColumn)).append("\n");
+    sb.append("    row: ").append(toIndentedString(row)).append("\n");
     sb.append("}");
     return sb.toString();
   }

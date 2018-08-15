@@ -27,31 +27,13 @@ import java.io.IOException;
  * Used by workbook moving requests.
  */
 @ApiModel(description = "Used by workbook moving requests.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-05T15:44:26.749+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-08-14T14:34:14.243+08:00")
 public class WorksheetMovingRequest {
-  @SerializedName("DestinationWorksheet")
-  private String destinationWorksheet = null;
-
   @SerializedName("Position")
   private String position = null;
 
-  public WorksheetMovingRequest destinationWorksheet(String destinationWorksheet) {
-    this.destinationWorksheet = destinationWorksheet;
-    return this;
-  }
-
-   /**
-   * Destination worksheet name.  
-   * @return destinationWorksheet
-  **/
-  @ApiModelProperty(value = "Destination worksheet name.  ")
-  public String getDestinationWorksheet() {
-    return destinationWorksheet;
-  }
-
-  public void setDestinationWorksheet(String destinationWorksheet) {
-    this.destinationWorksheet = destinationWorksheet;
-  }
+  @SerializedName("DestinationWorksheet")
+  private String destinationWorksheet = null;
 
   public WorksheetMovingRequest position(String position) {
     this.position = position;
@@ -71,6 +53,24 @@ public class WorksheetMovingRequest {
     this.position = position;
   }
 
+  public WorksheetMovingRequest destinationWorksheet(String destinationWorksheet) {
+    this.destinationWorksheet = destinationWorksheet;
+    return this;
+  }
+
+   /**
+   * Destination worksheet name.  
+   * @return destinationWorksheet
+  **/
+  @ApiModelProperty(value = "Destination worksheet name.  ")
+  public String getDestinationWorksheet() {
+    return destinationWorksheet;
+  }
+
+  public void setDestinationWorksheet(String destinationWorksheet) {
+    this.destinationWorksheet = destinationWorksheet;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -81,13 +81,13 @@ public class WorksheetMovingRequest {
       return false;
     }
     WorksheetMovingRequest worksheetMovingRequest = (WorksheetMovingRequest) o;
-    return Objects.equals(this.destinationWorksheet, worksheetMovingRequest.destinationWorksheet) &&
-        Objects.equals(this.position, worksheetMovingRequest.position);
+    return Objects.equals(this.position, worksheetMovingRequest.position) &&
+        Objects.equals(this.destinationWorksheet, worksheetMovingRequest.destinationWorksheet);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(destinationWorksheet, position);
+    return Objects.hash(position, destinationWorksheet);
   }
 
 
@@ -96,8 +96,8 @@ public class WorksheetMovingRequest {
     StringBuilder sb = new StringBuilder();
     sb.append("class WorksheetMovingRequest {\n");
     
-    sb.append("    destinationWorksheet: ").append(toIndentedString(destinationWorksheet)).append("\n");
     sb.append("    position: ").append(toIndentedString(position)).append("\n");
+    sb.append("    destinationWorksheet: ").append(toIndentedString(destinationWorksheet)).append("\n");
     sb.append("}");
     return sb.toString();
   }

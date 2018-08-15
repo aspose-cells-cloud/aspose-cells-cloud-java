@@ -30,34 +30,16 @@ import java.io.IOException;
 /**
  * CellsObjectOperateTaskParameter
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-05T15:44:26.749+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-08-14T14:34:14.243+08:00")
 public class CellsObjectOperateTaskParameter extends TaskParameter {
-  @SerializedName("OperateObject")
-  private OperateObject operateObject = null;
-
   @SerializedName("OperateParameter")
   private OperateParameter operateParameter = null;
 
   @SerializedName("DestinationWorkbook")
   private FileSource destinationWorkbook = null;
 
-  public CellsObjectOperateTaskParameter operateObject(OperateObject operateObject) {
-    this.operateObject = operateObject;
-    return this;
-  }
-
-   /**
-   * Get operateObject
-   * @return operateObject
-  **/
-  @ApiModelProperty(value = "")
-  public OperateObject getOperateObject() {
-    return operateObject;
-  }
-
-  public void setOperateObject(OperateObject operateObject) {
-    this.operateObject = operateObject;
-  }
+  @SerializedName("OperateObject")
+  private OperateObject operateObject = null;
 
   public CellsObjectOperateTaskParameter operateParameter(OperateParameter operateParameter) {
     this.operateParameter = operateParameter;
@@ -95,6 +77,24 @@ public class CellsObjectOperateTaskParameter extends TaskParameter {
     this.destinationWorkbook = destinationWorkbook;
   }
 
+  public CellsObjectOperateTaskParameter operateObject(OperateObject operateObject) {
+    this.operateObject = operateObject;
+    return this;
+  }
+
+   /**
+   * Get operateObject
+   * @return operateObject
+  **/
+  @ApiModelProperty(value = "")
+  public OperateObject getOperateObject() {
+    return operateObject;
+  }
+
+  public void setOperateObject(OperateObject operateObject) {
+    this.operateObject = operateObject;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -105,15 +105,15 @@ public class CellsObjectOperateTaskParameter extends TaskParameter {
       return false;
     }
     CellsObjectOperateTaskParameter cellsObjectOperateTaskParameter = (CellsObjectOperateTaskParameter) o;
-    return Objects.equals(this.operateObject, cellsObjectOperateTaskParameter.operateObject) &&
-        Objects.equals(this.operateParameter, cellsObjectOperateTaskParameter.operateParameter) &&
+    return Objects.equals(this.operateParameter, cellsObjectOperateTaskParameter.operateParameter) &&
         Objects.equals(this.destinationWorkbook, cellsObjectOperateTaskParameter.destinationWorkbook) &&
+        Objects.equals(this.operateObject, cellsObjectOperateTaskParameter.operateObject) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(operateObject, operateParameter, destinationWorkbook, super.hashCode());
+    return Objects.hash(operateParameter, destinationWorkbook, operateObject, super.hashCode());
   }
 
 
@@ -122,9 +122,9 @@ public class CellsObjectOperateTaskParameter extends TaskParameter {
     StringBuilder sb = new StringBuilder();
     sb.append("class CellsObjectOperateTaskParameter {\n");
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
-    sb.append("    operateObject: ").append(toIndentedString(operateObject)).append("\n");
     sb.append("    operateParameter: ").append(toIndentedString(operateParameter)).append("\n");
     sb.append("    destinationWorkbook: ").append(toIndentedString(destinationWorkbook)).append("\n");
+    sb.append("    operateObject: ").append(toIndentedString(operateObject)).append("\n");
     sb.append("}");
     return sb.toString();
   }

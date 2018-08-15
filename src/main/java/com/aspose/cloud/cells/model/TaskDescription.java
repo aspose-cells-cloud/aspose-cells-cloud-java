@@ -27,31 +27,13 @@ import java.io.IOException;
 /**
  * TaskDescription
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-05T15:44:26.749+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-08-14T14:34:14.243+08:00")
 public class TaskDescription {
-  @SerializedName("TaskType")
-  private String taskType = null;
-
   @SerializedName("TaskParameter")
   private TaskParameter taskParameter = null;
 
-  public TaskDescription taskType(String taskType) {
-    this.taskType = taskType;
-    return this;
-  }
-
-   /**
-   * Get taskType
-   * @return taskType
-  **/
-  @ApiModelProperty(value = "")
-  public String getTaskType() {
-    return taskType;
-  }
-
-  public void setTaskType(String taskType) {
-    this.taskType = taskType;
-  }
+  @SerializedName("TaskType")
+  private String taskType = null;
 
   public TaskDescription taskParameter(TaskParameter taskParameter) {
     this.taskParameter = taskParameter;
@@ -71,6 +53,24 @@ public class TaskDescription {
     this.taskParameter = taskParameter;
   }
 
+  public TaskDescription taskType(String taskType) {
+    this.taskType = taskType;
+    return this;
+  }
+
+   /**
+   * Get taskType
+   * @return taskType
+  **/
+  @ApiModelProperty(value = "")
+  public String getTaskType() {
+    return taskType;
+  }
+
+  public void setTaskType(String taskType) {
+    this.taskType = taskType;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -81,13 +81,13 @@ public class TaskDescription {
       return false;
     }
     TaskDescription taskDescription = (TaskDescription) o;
-    return Objects.equals(this.taskType, taskDescription.taskType) &&
-        Objects.equals(this.taskParameter, taskDescription.taskParameter);
+    return Objects.equals(this.taskParameter, taskDescription.taskParameter) &&
+        Objects.equals(this.taskType, taskDescription.taskType);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(taskType, taskParameter);
+    return Objects.hash(taskParameter, taskType);
   }
 
 
@@ -96,8 +96,8 @@ public class TaskDescription {
     StringBuilder sb = new StringBuilder();
     sb.append("class TaskDescription {\n");
     
-    sb.append("    taskType: ").append(toIndentedString(taskType)).append("\n");
     sb.append("    taskParameter: ").append(toIndentedString(taskParameter)).append("\n");
+    sb.append("    taskType: ").append(toIndentedString(taskType)).append("\n");
     sb.append("}");
     return sb.toString();
   }

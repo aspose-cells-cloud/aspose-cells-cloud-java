@@ -231,9 +231,10 @@ public class CellsWorksheetsApiTest {
         String sheetName = SHEET1;
         Integer verticalResolution = 100;
         Integer horizontalResolution = 90;
+        String format = "png";
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        File response = api.cellsWorksheetsGetWorksheet(name, sheetName, verticalResolution, horizontalResolution, folder);
+        File response = api.cellsWorksheetsGetWorksheet(name, sheetName, format,verticalResolution, horizontalResolution, folder);
 
         // TODO: test validations
     }
@@ -719,7 +720,7 @@ public class CellsWorksheetsApiTest {
 //        file.get
         byte[] png = null;  
         try {  
-            File file = new File("TestData/WaterMark.png");  
+            File file = new File(CellsApiUtil.GetSourceFolder() + "WaterMark.png");  
             FileInputStream fis = new FileInputStream(file);  
             ByteArrayOutputStream bos = new ByteArrayOutputStream(1000);  
             byte[] b = new byte[1000];  

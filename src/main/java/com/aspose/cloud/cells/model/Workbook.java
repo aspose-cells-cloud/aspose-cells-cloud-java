@@ -30,19 +30,22 @@ import java.util.List;
 /**
  * Workbook
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-05T15:44:26.749+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-08-14T14:34:14.243+08:00")
 public class Workbook {
-  @SerializedName("FileName")
-  private String fileName = null;
-
   @SerializedName("Links")
   private List<Link> links = null;
 
-  @SerializedName("Worksheets")
-  private LinkElement worksheets = null;
+  @SerializedName("Settings")
+  private LinkElement settings = null;
 
-  @SerializedName("DefaultStyle")
-  private LinkElement defaultStyle = null;
+  @SerializedName("IsProtected")
+  private String isProtected = null;
+
+  @SerializedName("IsWriteProtected")
+  private String isWriteProtected = null;
+
+  @SerializedName("FileName")
+  private String fileName = null;
 
   @SerializedName("DocumentProperties")
   private LinkElement documentProperties = null;
@@ -50,38 +53,17 @@ public class Workbook {
   @SerializedName("Names")
   private LinkElement names = null;
 
-  @SerializedName("Settings")
-  private LinkElement settings = null;
-
-  @SerializedName("IsWriteProtected")
-  private String isWriteProtected = null;
-
-  @SerializedName("IsProtected")
-  private String isProtected = null;
+  @SerializedName("DefaultStyle")
+  private LinkElement defaultStyle = null;
 
   @SerializedName("IsEncryption")
   private String isEncryption = null;
 
+  @SerializedName("Worksheets")
+  private LinkElement worksheets = null;
+
   @SerializedName("Password")
   private String password = null;
-
-  public Workbook fileName(String fileName) {
-    this.fileName = fileName;
-    return this;
-  }
-
-   /**
-   * Get fileName
-   * @return fileName
-  **/
-  @ApiModelProperty(value = "")
-  public String getFileName() {
-    return fileName;
-  }
-
-  public void setFileName(String fileName) {
-    this.fileName = fileName;
-  }
 
   public Workbook links(List<Link> links) {
     this.links = links;
@@ -109,40 +91,76 @@ public class Workbook {
     this.links = links;
   }
 
-  public Workbook worksheets(LinkElement worksheets) {
-    this.worksheets = worksheets;
+  public Workbook settings(LinkElement settings) {
+    this.settings = settings;
     return this;
   }
 
    /**
-   * Get worksheets
-   * @return worksheets
+   * Get settings
+   * @return settings
   **/
   @ApiModelProperty(value = "")
-  public LinkElement getWorksheets() {
-    return worksheets;
+  public LinkElement getSettings() {
+    return settings;
   }
 
-  public void setWorksheets(LinkElement worksheets) {
-    this.worksheets = worksheets;
+  public void setSettings(LinkElement settings) {
+    this.settings = settings;
   }
 
-  public Workbook defaultStyle(LinkElement defaultStyle) {
-    this.defaultStyle = defaultStyle;
+  public Workbook isProtected(String isProtected) {
+    this.isProtected = isProtected;
     return this;
   }
 
    /**
-   * Get defaultStyle
-   * @return defaultStyle
+   * Get isProtected
+   * @return isProtected
   **/
   @ApiModelProperty(value = "")
-  public LinkElement getDefaultStyle() {
-    return defaultStyle;
+  public String getIsProtected() {
+    return isProtected;
   }
 
-  public void setDefaultStyle(LinkElement defaultStyle) {
-    this.defaultStyle = defaultStyle;
+  public void setIsProtected(String isProtected) {
+    this.isProtected = isProtected;
+  }
+
+  public Workbook isWriteProtected(String isWriteProtected) {
+    this.isWriteProtected = isWriteProtected;
+    return this;
+  }
+
+   /**
+   * Get isWriteProtected
+   * @return isWriteProtected
+  **/
+  @ApiModelProperty(value = "")
+  public String getIsWriteProtected() {
+    return isWriteProtected;
+  }
+
+  public void setIsWriteProtected(String isWriteProtected) {
+    this.isWriteProtected = isWriteProtected;
+  }
+
+  public Workbook fileName(String fileName) {
+    this.fileName = fileName;
+    return this;
+  }
+
+   /**
+   * Get fileName
+   * @return fileName
+  **/
+  @ApiModelProperty(value = "")
+  public String getFileName() {
+    return fileName;
+  }
+
+  public void setFileName(String fileName) {
+    this.fileName = fileName;
   }
 
   public Workbook documentProperties(LinkElement documentProperties) {
@@ -181,58 +199,22 @@ public class Workbook {
     this.names = names;
   }
 
-  public Workbook settings(LinkElement settings) {
-    this.settings = settings;
+  public Workbook defaultStyle(LinkElement defaultStyle) {
+    this.defaultStyle = defaultStyle;
     return this;
   }
 
    /**
-   * Get settings
-   * @return settings
+   * Get defaultStyle
+   * @return defaultStyle
   **/
   @ApiModelProperty(value = "")
-  public LinkElement getSettings() {
-    return settings;
+  public LinkElement getDefaultStyle() {
+    return defaultStyle;
   }
 
-  public void setSettings(LinkElement settings) {
-    this.settings = settings;
-  }
-
-  public Workbook isWriteProtected(String isWriteProtected) {
-    this.isWriteProtected = isWriteProtected;
-    return this;
-  }
-
-   /**
-   * Get isWriteProtected
-   * @return isWriteProtected
-  **/
-  @ApiModelProperty(value = "")
-  public String getIsWriteProtected() {
-    return isWriteProtected;
-  }
-
-  public void setIsWriteProtected(String isWriteProtected) {
-    this.isWriteProtected = isWriteProtected;
-  }
-
-  public Workbook isProtected(String isProtected) {
-    this.isProtected = isProtected;
-    return this;
-  }
-
-   /**
-   * Get isProtected
-   * @return isProtected
-  **/
-  @ApiModelProperty(value = "")
-  public String getIsProtected() {
-    return isProtected;
-  }
-
-  public void setIsProtected(String isProtected) {
-    this.isProtected = isProtected;
+  public void setDefaultStyle(LinkElement defaultStyle) {
+    this.defaultStyle = defaultStyle;
   }
 
   public Workbook isEncryption(String isEncryption) {
@@ -251,6 +233,24 @@ public class Workbook {
 
   public void setIsEncryption(String isEncryption) {
     this.isEncryption = isEncryption;
+  }
+
+  public Workbook worksheets(LinkElement worksheets) {
+    this.worksheets = worksheets;
+    return this;
+  }
+
+   /**
+   * Get worksheets
+   * @return worksheets
+  **/
+  @ApiModelProperty(value = "")
+  public LinkElement getWorksheets() {
+    return worksheets;
+  }
+
+  public void setWorksheets(LinkElement worksheets) {
+    this.worksheets = worksheets;
   }
 
   public Workbook password(String password) {
@@ -281,22 +281,22 @@ public class Workbook {
       return false;
     }
     Workbook workbook = (Workbook) o;
-    return Objects.equals(this.fileName, workbook.fileName) &&
-        Objects.equals(this.links, workbook.links) &&
-        Objects.equals(this.worksheets, workbook.worksheets) &&
-        Objects.equals(this.defaultStyle, workbook.defaultStyle) &&
+    return Objects.equals(this.links, workbook.links) &&
+        Objects.equals(this.settings, workbook.settings) &&
+        Objects.equals(this.isProtected, workbook.isProtected) &&
+        Objects.equals(this.isWriteProtected, workbook.isWriteProtected) &&
+        Objects.equals(this.fileName, workbook.fileName) &&
         Objects.equals(this.documentProperties, workbook.documentProperties) &&
         Objects.equals(this.names, workbook.names) &&
-        Objects.equals(this.settings, workbook.settings) &&
-        Objects.equals(this.isWriteProtected, workbook.isWriteProtected) &&
-        Objects.equals(this.isProtected, workbook.isProtected) &&
+        Objects.equals(this.defaultStyle, workbook.defaultStyle) &&
         Objects.equals(this.isEncryption, workbook.isEncryption) &&
+        Objects.equals(this.worksheets, workbook.worksheets) &&
         Objects.equals(this.password, workbook.password);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(fileName, links, worksheets, defaultStyle, documentProperties, names, settings, isWriteProtected, isProtected, isEncryption, password);
+    return Objects.hash(links, settings, isProtected, isWriteProtected, fileName, documentProperties, names, defaultStyle, isEncryption, worksheets, password);
   }
 
 
@@ -305,16 +305,16 @@ public class Workbook {
     StringBuilder sb = new StringBuilder();
     sb.append("class Workbook {\n");
     
-    sb.append("    fileName: ").append(toIndentedString(fileName)).append("\n");
     sb.append("    links: ").append(toIndentedString(links)).append("\n");
-    sb.append("    worksheets: ").append(toIndentedString(worksheets)).append("\n");
-    sb.append("    defaultStyle: ").append(toIndentedString(defaultStyle)).append("\n");
+    sb.append("    settings: ").append(toIndentedString(settings)).append("\n");
+    sb.append("    isProtected: ").append(toIndentedString(isProtected)).append("\n");
+    sb.append("    isWriteProtected: ").append(toIndentedString(isWriteProtected)).append("\n");
+    sb.append("    fileName: ").append(toIndentedString(fileName)).append("\n");
     sb.append("    documentProperties: ").append(toIndentedString(documentProperties)).append("\n");
     sb.append("    names: ").append(toIndentedString(names)).append("\n");
-    sb.append("    settings: ").append(toIndentedString(settings)).append("\n");
-    sb.append("    isWriteProtected: ").append(toIndentedString(isWriteProtected)).append("\n");
-    sb.append("    isProtected: ").append(toIndentedString(isProtected)).append("\n");
+    sb.append("    defaultStyle: ").append(toIndentedString(defaultStyle)).append("\n");
     sb.append("    isEncryption: ").append(toIndentedString(isEncryption)).append("\n");
+    sb.append("    worksheets: ").append(toIndentedString(worksheets)).append("\n");
     sb.append("    password: ").append(toIndentedString(password)).append("\n");
     sb.append("}");
     return sb.toString();

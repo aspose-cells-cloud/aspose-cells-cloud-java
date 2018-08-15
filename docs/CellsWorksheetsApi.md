@@ -380,7 +380,7 @@ No authorization required
 
 <a name="cellsWorksheetsGetWorksheet"></a>
 # **cellsWorksheetsGetWorksheet**
-> File cellsWorksheetsGetWorksheet(name, sheetName, verticalResolution, horizontalResolution, folder)
+> File cellsWorksheetsGetWorksheet(name, sheetName, format, verticalResolution, horizontalResolution, folder)
 
 Read worksheet info or export.
 
@@ -394,11 +394,12 @@ Read worksheet info or export.
 CellsWorksheetsApi apiInstance = new CellsWorksheetsApi();
 String name = "name_example"; // String | The document name.
 String sheetName = "sheetName_example"; // String | The worksheet name.
+String format = "format_example"; // String | The exported file format.
 Integer verticalResolution = 0; // Integer | Image vertical resolution.
 Integer horizontalResolution = 0; // Integer | Image horizontal resolution.
 String folder = "folder_example"; // String | The document folder.
 try {
-    File result = apiInstance.cellsWorksheetsGetWorksheet(name, sheetName, verticalResolution, horizontalResolution, folder);
+    File result = apiInstance.cellsWorksheetsGetWorksheet(name, sheetName, format, verticalResolution, horizontalResolution, folder);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsWorksheetsApi#cellsWorksheetsGetWorksheet");
@@ -412,6 +413,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **String**| The document name. |
  **sheetName** | **String**| The worksheet name. |
+ **format** | **String**| The exported file format. | [optional]
  **verticalResolution** | **Integer**| Image vertical resolution. | [optional] [default to 0]
  **horizontalResolution** | **Integer**| Image horizontal resolution. | [optional] [default to 0]
  **folder** | **String**| The document folder. | [optional]

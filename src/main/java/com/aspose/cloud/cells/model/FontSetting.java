@@ -28,39 +28,39 @@ import java.io.IOException;
 /**
  * FontSetting
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-05T15:44:26.749+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-08-14T14:34:14.243+08:00")
 public class FontSetting {
-  @SerializedName("Font")
-  private Font font = null;
+  @SerializedName("TextOptions")
+  private TextOptions textOptions = null;
 
   @SerializedName("Length")
   private Integer length = null;
 
-  @SerializedName("StartIndex")
-  private Integer startIndex = null;
-
-  @SerializedName("TextOptions")
-  private TextOptions textOptions = null;
+  @SerializedName("Font")
+  private Font font = null;
 
   @SerializedName("Type")
   private String type = null;
 
-  public FontSetting font(Font font) {
-    this.font = font;
+  @SerializedName("StartIndex")
+  private Integer startIndex = null;
+
+  public FontSetting textOptions(TextOptions textOptions) {
+    this.textOptions = textOptions;
     return this;
   }
 
    /**
-   * Get font
-   * @return font
+   * Get textOptions
+   * @return textOptions
   **/
   @ApiModelProperty(value = "")
-  public Font getFont() {
-    return font;
+  public TextOptions getTextOptions() {
+    return textOptions;
   }
 
-  public void setFont(Font font) {
-    this.font = font;
+  public void setTextOptions(TextOptions textOptions) {
+    this.textOptions = textOptions;
   }
 
   public FontSetting length(Integer length) {
@@ -81,40 +81,22 @@ public class FontSetting {
     this.length = length;
   }
 
-  public FontSetting startIndex(Integer startIndex) {
-    this.startIndex = startIndex;
+  public FontSetting font(Font font) {
+    this.font = font;
     return this;
   }
 
    /**
-   * Get startIndex
-   * @return startIndex
-  **/
-  @ApiModelProperty(required = true, value = "")
-  public Integer getStartIndex() {
-    return startIndex;
-  }
-
-  public void setStartIndex(Integer startIndex) {
-    this.startIndex = startIndex;
-  }
-
-  public FontSetting textOptions(TextOptions textOptions) {
-    this.textOptions = textOptions;
-    return this;
-  }
-
-   /**
-   * Get textOptions
-   * @return textOptions
+   * Get font
+   * @return font
   **/
   @ApiModelProperty(value = "")
-  public TextOptions getTextOptions() {
-    return textOptions;
+  public Font getFont() {
+    return font;
   }
 
-  public void setTextOptions(TextOptions textOptions) {
-    this.textOptions = textOptions;
+  public void setFont(Font font) {
+    this.font = font;
   }
 
   public FontSetting type(String type) {
@@ -135,6 +117,24 @@ public class FontSetting {
     this.type = type;
   }
 
+  public FontSetting startIndex(Integer startIndex) {
+    this.startIndex = startIndex;
+    return this;
+  }
+
+   /**
+   * Get startIndex
+   * @return startIndex
+  **/
+  @ApiModelProperty(required = true, value = "")
+  public Integer getStartIndex() {
+    return startIndex;
+  }
+
+  public void setStartIndex(Integer startIndex) {
+    this.startIndex = startIndex;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -145,16 +145,16 @@ public class FontSetting {
       return false;
     }
     FontSetting fontSetting = (FontSetting) o;
-    return Objects.equals(this.font, fontSetting.font) &&
+    return Objects.equals(this.textOptions, fontSetting.textOptions) &&
         Objects.equals(this.length, fontSetting.length) &&
-        Objects.equals(this.startIndex, fontSetting.startIndex) &&
-        Objects.equals(this.textOptions, fontSetting.textOptions) &&
-        Objects.equals(this.type, fontSetting.type);
+        Objects.equals(this.font, fontSetting.font) &&
+        Objects.equals(this.type, fontSetting.type) &&
+        Objects.equals(this.startIndex, fontSetting.startIndex);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(font, length, startIndex, textOptions, type);
+    return Objects.hash(textOptions, length, font, type, startIndex);
   }
 
 
@@ -163,11 +163,11 @@ public class FontSetting {
     StringBuilder sb = new StringBuilder();
     sb.append("class FontSetting {\n");
     
-    sb.append("    font: ").append(toIndentedString(font)).append("\n");
-    sb.append("    length: ").append(toIndentedString(length)).append("\n");
-    sb.append("    startIndex: ").append(toIndentedString(startIndex)).append("\n");
     sb.append("    textOptions: ").append(toIndentedString(textOptions)).append("\n");
+    sb.append("    length: ").append(toIndentedString(length)).append("\n");
+    sb.append("    font: ").append(toIndentedString(font)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    sb.append("    startIndex: ").append(toIndentedString(startIndex)).append("\n");
     sb.append("}");
     return sb.toString();
   }

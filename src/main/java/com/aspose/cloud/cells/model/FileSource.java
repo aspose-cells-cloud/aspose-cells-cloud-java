@@ -26,31 +26,13 @@ import java.io.IOException;
 /**
  * FileSource
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-05T15:44:26.749+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-08-14T14:34:14.243+08:00")
 public class FileSource {
-  @SerializedName("FileSourceType")
-  private String fileSourceType = null;
-
   @SerializedName("FilePath")
   private String filePath = null;
 
-  public FileSource fileSourceType(String fileSourceType) {
-    this.fileSourceType = fileSourceType;
-    return this;
-  }
-
-   /**
-   * Get fileSourceType
-   * @return fileSourceType
-  **/
-  @ApiModelProperty(value = "")
-  public String getFileSourceType() {
-    return fileSourceType;
-  }
-
-  public void setFileSourceType(String fileSourceType) {
-    this.fileSourceType = fileSourceType;
-  }
+  @SerializedName("FileSourceType")
+  private String fileSourceType = null;
 
   public FileSource filePath(String filePath) {
     this.filePath = filePath;
@@ -70,6 +52,24 @@ public class FileSource {
     this.filePath = filePath;
   }
 
+  public FileSource fileSourceType(String fileSourceType) {
+    this.fileSourceType = fileSourceType;
+    return this;
+  }
+
+   /**
+   * Get fileSourceType
+   * @return fileSourceType
+  **/
+  @ApiModelProperty(value = "")
+  public String getFileSourceType() {
+    return fileSourceType;
+  }
+
+  public void setFileSourceType(String fileSourceType) {
+    this.fileSourceType = fileSourceType;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -80,13 +80,13 @@ public class FileSource {
       return false;
     }
     FileSource fileSource = (FileSource) o;
-    return Objects.equals(this.fileSourceType, fileSource.fileSourceType) &&
-        Objects.equals(this.filePath, fileSource.filePath);
+    return Objects.equals(this.filePath, fileSource.filePath) &&
+        Objects.equals(this.fileSourceType, fileSource.fileSourceType);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(fileSourceType, filePath);
+    return Objects.hash(filePath, fileSourceType);
   }
 
 
@@ -95,8 +95,8 @@ public class FileSource {
     StringBuilder sb = new StringBuilder();
     sb.append("class FileSource {\n");
     
-    sb.append("    fileSourceType: ").append(toIndentedString(fileSourceType)).append("\n");
     sb.append("    filePath: ").append(toIndentedString(filePath)).append("\n");
+    sb.append("    fileSourceType: ").append(toIndentedString(fileSourceType)).append("\n");
     sb.append("}");
     return sb.toString();
   }

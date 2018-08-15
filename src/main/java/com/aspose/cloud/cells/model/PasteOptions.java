@@ -26,37 +26,19 @@ import java.io.IOException;
 /**
  * PasteOptions
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-05T15:44:26.749+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-08-14T14:34:14.243+08:00")
 public class PasteOptions {
-  @SerializedName("OnlyVisibleCells")
-  private Boolean onlyVisibleCells = null;
-
   @SerializedName("PasteType")
   private String pasteType = null;
 
   @SerializedName("SkipBlanks")
   private Boolean skipBlanks = null;
 
+  @SerializedName("OnlyVisibleCells")
+  private Boolean onlyVisibleCells = null;
+
   @SerializedName("Transpose")
   private Boolean transpose = null;
-
-  public PasteOptions onlyVisibleCells(Boolean onlyVisibleCells) {
-    this.onlyVisibleCells = onlyVisibleCells;
-    return this;
-  }
-
-   /**
-   * Get onlyVisibleCells
-   * @return onlyVisibleCells
-  **/
-  @ApiModelProperty(value = "")
-  public Boolean isOnlyVisibleCells() {
-    return onlyVisibleCells;
-  }
-
-  public void setOnlyVisibleCells(Boolean onlyVisibleCells) {
-    this.onlyVisibleCells = onlyVisibleCells;
-  }
 
   public PasteOptions pasteType(String pasteType) {
     this.pasteType = pasteType;
@@ -94,6 +76,24 @@ public class PasteOptions {
     this.skipBlanks = skipBlanks;
   }
 
+  public PasteOptions onlyVisibleCells(Boolean onlyVisibleCells) {
+    this.onlyVisibleCells = onlyVisibleCells;
+    return this;
+  }
+
+   /**
+   * Get onlyVisibleCells
+   * @return onlyVisibleCells
+  **/
+  @ApiModelProperty(value = "")
+  public Boolean isOnlyVisibleCells() {
+    return onlyVisibleCells;
+  }
+
+  public void setOnlyVisibleCells(Boolean onlyVisibleCells) {
+    this.onlyVisibleCells = onlyVisibleCells;
+  }
+
   public PasteOptions transpose(Boolean transpose) {
     this.transpose = transpose;
     return this;
@@ -122,15 +122,15 @@ public class PasteOptions {
       return false;
     }
     PasteOptions pasteOptions = (PasteOptions) o;
-    return Objects.equals(this.onlyVisibleCells, pasteOptions.onlyVisibleCells) &&
-        Objects.equals(this.pasteType, pasteOptions.pasteType) &&
+    return Objects.equals(this.pasteType, pasteOptions.pasteType) &&
         Objects.equals(this.skipBlanks, pasteOptions.skipBlanks) &&
+        Objects.equals(this.onlyVisibleCells, pasteOptions.onlyVisibleCells) &&
         Objects.equals(this.transpose, pasteOptions.transpose);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(onlyVisibleCells, pasteType, skipBlanks, transpose);
+    return Objects.hash(pasteType, skipBlanks, onlyVisibleCells, transpose);
   }
 
 
@@ -139,9 +139,9 @@ public class PasteOptions {
     StringBuilder sb = new StringBuilder();
     sb.append("class PasteOptions {\n");
     
-    sb.append("    onlyVisibleCells: ").append(toIndentedString(onlyVisibleCells)).append("\n");
     sb.append("    pasteType: ").append(toIndentedString(pasteType)).append("\n");
     sb.append("    skipBlanks: ").append(toIndentedString(skipBlanks)).append("\n");
+    sb.append("    onlyVisibleCells: ").append(toIndentedString(onlyVisibleCells)).append("\n");
     sb.append("    transpose: ").append(toIndentedString(transpose)).append("\n");
     sb.append("}");
     return sb.toString();

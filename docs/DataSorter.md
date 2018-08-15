@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **caseSensitive** | **Boolean** |  |  [optional]
-**hasHeaders** | **Boolean** |  |  [optional]
 **keyList** | [**List&lt;SortKey&gt;**](SortKey.md) |  |  [optional]
+**hasHeaders** | **Boolean** |  |  [optional]
 **sortLeftToRight** | **Boolean** |  |  [optional]
 
 

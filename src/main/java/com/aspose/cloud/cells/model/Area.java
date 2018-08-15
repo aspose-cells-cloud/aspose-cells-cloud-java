@@ -28,61 +28,25 @@ import java.io.IOException;
 /**
  * Area
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-05T15:44:26.749+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-08-14T14:34:14.243+08:00")
 public class Area {
-  @SerializedName("BackgroundColor")
-  private Color backgroundColor = null;
-
-  @SerializedName("FillFormat")
-  private FillFormat fillFormat = null;
-
   @SerializedName("ForegroundColor")
   private Color foregroundColor = null;
 
+  @SerializedName("BackgroundColor")
+  private Color backgroundColor = null;
+
   @SerializedName("Format")
   private String format = null;
+
+  @SerializedName("FillFormat")
+  private FillFormat fillFormat = null;
 
   @SerializedName("InvertIfNegative")
   private Boolean invertIfNegative = null;
 
   @SerializedName("Transparency")
   private Double transparency = null;
-
-  public Area backgroundColor(Color backgroundColor) {
-    this.backgroundColor = backgroundColor;
-    return this;
-  }
-
-   /**
-   * Get backgroundColor
-   * @return backgroundColor
-  **/
-  @ApiModelProperty(value = "")
-  public Color getBackgroundColor() {
-    return backgroundColor;
-  }
-
-  public void setBackgroundColor(Color backgroundColor) {
-    this.backgroundColor = backgroundColor;
-  }
-
-  public Area fillFormat(FillFormat fillFormat) {
-    this.fillFormat = fillFormat;
-    return this;
-  }
-
-   /**
-   * Get fillFormat
-   * @return fillFormat
-  **/
-  @ApiModelProperty(value = "")
-  public FillFormat getFillFormat() {
-    return fillFormat;
-  }
-
-  public void setFillFormat(FillFormat fillFormat) {
-    this.fillFormat = fillFormat;
-  }
 
   public Area foregroundColor(Color foregroundColor) {
     this.foregroundColor = foregroundColor;
@@ -102,6 +66,24 @@ public class Area {
     this.foregroundColor = foregroundColor;
   }
 
+  public Area backgroundColor(Color backgroundColor) {
+    this.backgroundColor = backgroundColor;
+    return this;
+  }
+
+   /**
+   * Get backgroundColor
+   * @return backgroundColor
+  **/
+  @ApiModelProperty(value = "")
+  public Color getBackgroundColor() {
+    return backgroundColor;
+  }
+
+  public void setBackgroundColor(Color backgroundColor) {
+    this.backgroundColor = backgroundColor;
+  }
+
   public Area format(String format) {
     this.format = format;
     return this;
@@ -118,6 +100,24 @@ public class Area {
 
   public void setFormat(String format) {
     this.format = format;
+  }
+
+  public Area fillFormat(FillFormat fillFormat) {
+    this.fillFormat = fillFormat;
+    return this;
+  }
+
+   /**
+   * Get fillFormat
+   * @return fillFormat
+  **/
+  @ApiModelProperty(value = "")
+  public FillFormat getFillFormat() {
+    return fillFormat;
+  }
+
+  public void setFillFormat(FillFormat fillFormat) {
+    this.fillFormat = fillFormat;
   }
 
   public Area invertIfNegative(Boolean invertIfNegative) {
@@ -166,17 +166,17 @@ public class Area {
       return false;
     }
     Area area = (Area) o;
-    return Objects.equals(this.backgroundColor, area.backgroundColor) &&
-        Objects.equals(this.fillFormat, area.fillFormat) &&
-        Objects.equals(this.foregroundColor, area.foregroundColor) &&
+    return Objects.equals(this.foregroundColor, area.foregroundColor) &&
+        Objects.equals(this.backgroundColor, area.backgroundColor) &&
         Objects.equals(this.format, area.format) &&
+        Objects.equals(this.fillFormat, area.fillFormat) &&
         Objects.equals(this.invertIfNegative, area.invertIfNegative) &&
         Objects.equals(this.transparency, area.transparency);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(backgroundColor, fillFormat, foregroundColor, format, invertIfNegative, transparency);
+    return Objects.hash(foregroundColor, backgroundColor, format, fillFormat, invertIfNegative, transparency);
   }
 
 
@@ -185,10 +185,10 @@ public class Area {
     StringBuilder sb = new StringBuilder();
     sb.append("class Area {\n");
     
-    sb.append("    backgroundColor: ").append(toIndentedString(backgroundColor)).append("\n");
-    sb.append("    fillFormat: ").append(toIndentedString(fillFormat)).append("\n");
     sb.append("    foregroundColor: ").append(toIndentedString(foregroundColor)).append("\n");
+    sb.append("    backgroundColor: ").append(toIndentedString(backgroundColor)).append("\n");
     sb.append("    format: ").append(toIndentedString(format)).append("\n");
+    sb.append("    fillFormat: ").append(toIndentedString(fillFormat)).append("\n");
     sb.append("    invertIfNegative: ").append(toIndentedString(invertIfNegative)).append("\n");
     sb.append("    transparency: ").append(toIndentedString(transparency)).append("\n");
     sb.append("}");

@@ -4,14 +4,14 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**sourceData** | **String** |  |  [optional]
-**destCellName** | **String** |  |  [optional]
+**pivotFieldColumns** | **List&lt;Integer&gt;** |  |  [optional]
+**pivotTableIndex** | **Integer** |  |  [optional]
 **tableName** | **String** |  |  [optional]
 **useSameSource** | **Boolean** |  |  [optional]
-**pivotTableIndex** | **Integer** |  |  [optional]
-**pivotFieldRows** | **List&lt;Integer&gt;** |  |  [optional]
-**pivotFieldColumns** | **List&lt;Integer&gt;** |  |  [optional]
 **pivotFieldData** | **List&lt;Integer&gt;** |  |  [optional]
+**pivotFieldRows** | **List&lt;Integer&gt;** |  |  [optional]
+**destCellName** | **String** |  |  [optional]
+**sourceData** | **String** |  |  [optional]
 
 
 

@@ -27,16 +27,16 @@ import java.io.IOException;
 /**
  * OperateObjectPosition
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-05T15:44:26.749+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-08-14T14:34:14.243+08:00")
 public class OperateObjectPosition {
-  @SerializedName("Workbook")
-  private FileSource workbook = null;
+  @SerializedName("ChartIndex")
+  private Integer chartIndex = null;
+
+  @SerializedName("ListObjectIndex")
+  private Integer listObjectIndex = null;
 
   @SerializedName("SheetName")
   private String sheetName = null;
-
-  @SerializedName("ChartIndex")
-  private Integer chartIndex = null;
 
   @SerializedName("ShapeIndex")
   private Integer shapeIndex = null;
@@ -44,25 +44,43 @@ public class OperateObjectPosition {
   @SerializedName("CellName")
   private String cellName = null;
 
-  @SerializedName("ListObjectIndex")
-  private Integer listObjectIndex = null;
+  @SerializedName("Workbook")
+  private FileSource workbook = null;
 
-  public OperateObjectPosition workbook(FileSource workbook) {
-    this.workbook = workbook;
+  public OperateObjectPosition chartIndex(Integer chartIndex) {
+    this.chartIndex = chartIndex;
     return this;
   }
 
    /**
-   * Get workbook
-   * @return workbook
+   * Get chartIndex
+   * @return chartIndex
   **/
   @ApiModelProperty(value = "")
-  public FileSource getWorkbook() {
-    return workbook;
+  public Integer getChartIndex() {
+    return chartIndex;
   }
 
-  public void setWorkbook(FileSource workbook) {
-    this.workbook = workbook;
+  public void setChartIndex(Integer chartIndex) {
+    this.chartIndex = chartIndex;
+  }
+
+  public OperateObjectPosition listObjectIndex(Integer listObjectIndex) {
+    this.listObjectIndex = listObjectIndex;
+    return this;
+  }
+
+   /**
+   * Get listObjectIndex
+   * @return listObjectIndex
+  **/
+  @ApiModelProperty(value = "")
+  public Integer getListObjectIndex() {
+    return listObjectIndex;
+  }
+
+  public void setListObjectIndex(Integer listObjectIndex) {
+    this.listObjectIndex = listObjectIndex;
   }
 
   public OperateObjectPosition sheetName(String sheetName) {
@@ -81,24 +99,6 @@ public class OperateObjectPosition {
 
   public void setSheetName(String sheetName) {
     this.sheetName = sheetName;
-  }
-
-  public OperateObjectPosition chartIndex(Integer chartIndex) {
-    this.chartIndex = chartIndex;
-    return this;
-  }
-
-   /**
-   * Get chartIndex
-   * @return chartIndex
-  **/
-  @ApiModelProperty(value = "")
-  public Integer getChartIndex() {
-    return chartIndex;
-  }
-
-  public void setChartIndex(Integer chartIndex) {
-    this.chartIndex = chartIndex;
   }
 
   public OperateObjectPosition shapeIndex(Integer shapeIndex) {
@@ -137,22 +137,22 @@ public class OperateObjectPosition {
     this.cellName = cellName;
   }
 
-  public OperateObjectPosition listObjectIndex(Integer listObjectIndex) {
-    this.listObjectIndex = listObjectIndex;
+  public OperateObjectPosition workbook(FileSource workbook) {
+    this.workbook = workbook;
     return this;
   }
 
    /**
-   * Get listObjectIndex
-   * @return listObjectIndex
+   * Get workbook
+   * @return workbook
   **/
   @ApiModelProperty(value = "")
-  public Integer getListObjectIndex() {
-    return listObjectIndex;
+  public FileSource getWorkbook() {
+    return workbook;
   }
 
-  public void setListObjectIndex(Integer listObjectIndex) {
-    this.listObjectIndex = listObjectIndex;
+  public void setWorkbook(FileSource workbook) {
+    this.workbook = workbook;
   }
 
 
@@ -165,17 +165,17 @@ public class OperateObjectPosition {
       return false;
     }
     OperateObjectPosition operateObjectPosition = (OperateObjectPosition) o;
-    return Objects.equals(this.workbook, operateObjectPosition.workbook) &&
+    return Objects.equals(this.chartIndex, operateObjectPosition.chartIndex) &&
+        Objects.equals(this.listObjectIndex, operateObjectPosition.listObjectIndex) &&
         Objects.equals(this.sheetName, operateObjectPosition.sheetName) &&
-        Objects.equals(this.chartIndex, operateObjectPosition.chartIndex) &&
         Objects.equals(this.shapeIndex, operateObjectPosition.shapeIndex) &&
         Objects.equals(this.cellName, operateObjectPosition.cellName) &&
-        Objects.equals(this.listObjectIndex, operateObjectPosition.listObjectIndex);
+        Objects.equals(this.workbook, operateObjectPosition.workbook);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(workbook, sheetName, chartIndex, shapeIndex, cellName, listObjectIndex);
+    return Objects.hash(chartIndex, listObjectIndex, sheetName, shapeIndex, cellName, workbook);
   }
 
 
@@ -184,12 +184,12 @@ public class OperateObjectPosition {
     StringBuilder sb = new StringBuilder();
     sb.append("class OperateObjectPosition {\n");
     
-    sb.append("    workbook: ").append(toIndentedString(workbook)).append("\n");
-    sb.append("    sheetName: ").append(toIndentedString(sheetName)).append("\n");
     sb.append("    chartIndex: ").append(toIndentedString(chartIndex)).append("\n");
+    sb.append("    listObjectIndex: ").append(toIndentedString(listObjectIndex)).append("\n");
+    sb.append("    sheetName: ").append(toIndentedString(sheetName)).append("\n");
     sb.append("    shapeIndex: ").append(toIndentedString(shapeIndex)).append("\n");
     sb.append("    cellName: ").append(toIndentedString(cellName)).append("\n");
-    sb.append("    listObjectIndex: ").append(toIndentedString(listObjectIndex)).append("\n");
+    sb.append("    workbook: ").append(toIndentedString(workbook)).append("\n");
     sb.append("}");
     return sb.toString();
   }

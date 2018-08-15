@@ -28,10 +28,16 @@ import java.io.IOException;
 /**
  * Row
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-05T15:44:26.749+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-08-14T14:34:14.243+08:00")
 public class Row {
   @SerializedName("link")
   private Link link = null;
+
+  @SerializedName("Index")
+  private Integer index = null;
+
+  @SerializedName("Style")
+  private LinkElement style = null;
 
   @SerializedName("GroupLevel")
   private Integer groupLevel = null;
@@ -39,20 +45,14 @@ public class Row {
   @SerializedName("Height")
   private Double height = null;
 
-  @SerializedName("Index")
-  private Integer index = null;
-
-  @SerializedName("IsBlank")
-  private Boolean isBlank = null;
-
   @SerializedName("IsHeightMatched")
   private Boolean isHeightMatched = null;
 
   @SerializedName("IsHidden")
   private Boolean isHidden = null;
 
-  @SerializedName("Style")
-  private LinkElement style = null;
+  @SerializedName("IsBlank")
+  private Boolean isBlank = null;
 
   public Row link(Link link) {
     this.link = link;
@@ -70,6 +70,42 @@ public class Row {
 
   public void setLink(Link link) {
     this.link = link;
+  }
+
+  public Row index(Integer index) {
+    this.index = index;
+    return this;
+  }
+
+   /**
+   * Get index
+   * @return index
+  **/
+  @ApiModelProperty(value = "")
+  public Integer getIndex() {
+    return index;
+  }
+
+  public void setIndex(Integer index) {
+    this.index = index;
+  }
+
+  public Row style(LinkElement style) {
+    this.style = style;
+    return this;
+  }
+
+   /**
+   * Get style
+   * @return style
+  **/
+  @ApiModelProperty(value = "")
+  public LinkElement getStyle() {
+    return style;
+  }
+
+  public void setStyle(LinkElement style) {
+    this.style = style;
   }
 
   public Row groupLevel(Integer groupLevel) {
@@ -108,42 +144,6 @@ public class Row {
     this.height = height;
   }
 
-  public Row index(Integer index) {
-    this.index = index;
-    return this;
-  }
-
-   /**
-   * Get index
-   * @return index
-  **/
-  @ApiModelProperty(value = "")
-  public Integer getIndex() {
-    return index;
-  }
-
-  public void setIndex(Integer index) {
-    this.index = index;
-  }
-
-  public Row isBlank(Boolean isBlank) {
-    this.isBlank = isBlank;
-    return this;
-  }
-
-   /**
-   * Get isBlank
-   * @return isBlank
-  **/
-  @ApiModelProperty(value = "")
-  public Boolean isIsBlank() {
-    return isBlank;
-  }
-
-  public void setIsBlank(Boolean isBlank) {
-    this.isBlank = isBlank;
-  }
-
   public Row isHeightMatched(Boolean isHeightMatched) {
     this.isHeightMatched = isHeightMatched;
     return this;
@@ -180,22 +180,22 @@ public class Row {
     this.isHidden = isHidden;
   }
 
-  public Row style(LinkElement style) {
-    this.style = style;
+  public Row isBlank(Boolean isBlank) {
+    this.isBlank = isBlank;
     return this;
   }
 
    /**
-   * Get style
-   * @return style
+   * Get isBlank
+   * @return isBlank
   **/
   @ApiModelProperty(value = "")
-  public LinkElement getStyle() {
-    return style;
+  public Boolean isIsBlank() {
+    return isBlank;
   }
 
-  public void setStyle(LinkElement style) {
-    this.style = style;
+  public void setIsBlank(Boolean isBlank) {
+    this.isBlank = isBlank;
   }
 
 
@@ -209,18 +209,18 @@ public class Row {
     }
     Row row = (Row) o;
     return Objects.equals(this.link, row.link) &&
+        Objects.equals(this.index, row.index) &&
+        Objects.equals(this.style, row.style) &&
         Objects.equals(this.groupLevel, row.groupLevel) &&
         Objects.equals(this.height, row.height) &&
-        Objects.equals(this.index, row.index) &&
-        Objects.equals(this.isBlank, row.isBlank) &&
         Objects.equals(this.isHeightMatched, row.isHeightMatched) &&
         Objects.equals(this.isHidden, row.isHidden) &&
-        Objects.equals(this.style, row.style);
+        Objects.equals(this.isBlank, row.isBlank);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(link, groupLevel, height, index, isBlank, isHeightMatched, isHidden, style);
+    return Objects.hash(link, index, style, groupLevel, height, isHeightMatched, isHidden, isBlank);
   }
 
 
@@ -230,13 +230,13 @@ public class Row {
     sb.append("class Row {\n");
     
     sb.append("    link: ").append(toIndentedString(link)).append("\n");
+    sb.append("    index: ").append(toIndentedString(index)).append("\n");
+    sb.append("    style: ").append(toIndentedString(style)).append("\n");
     sb.append("    groupLevel: ").append(toIndentedString(groupLevel)).append("\n");
     sb.append("    height: ").append(toIndentedString(height)).append("\n");
-    sb.append("    index: ").append(toIndentedString(index)).append("\n");
-    sb.append("    isBlank: ").append(toIndentedString(isBlank)).append("\n");
     sb.append("    isHeightMatched: ").append(toIndentedString(isHeightMatched)).append("\n");
     sb.append("    isHidden: ").append(toIndentedString(isHidden)).append("\n");
-    sb.append("    style: ").append(toIndentedString(style)).append("\n");
+    sb.append("    isBlank: ").append(toIndentedString(isBlank)).append("\n");
     sb.append("}");
     return sb.toString();
   }

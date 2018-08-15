@@ -30,7 +30,7 @@ import java.util.List;
 /**
  * RangeValueResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-27T15:01:00.811+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-08-14T14:34:14.243+08:00")
 public class RangeValueResponse extends SaaSposeResponse {
   @SerializedName("CellsList")
   private List<Cell> cellsList = null;

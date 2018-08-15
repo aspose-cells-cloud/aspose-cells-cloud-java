@@ -34,163 +34,55 @@ import java.util.List;
 /**
  * Legend
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-05T15:44:26.749+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-08-14T14:34:14.243+08:00")
 public class Legend {
-  @SerializedName("Area")
-  private Area area = null;
-
-  @SerializedName("AutoScaleFont")
-  private Boolean autoScaleFont = null;
-
-  @SerializedName("BackgroundMode")
-  private String backgroundMode = null;
-
-  @SerializedName("Border")
-  private Line border = null;
-
-  @SerializedName("Font")
-  private Font font = null;
-
-  @SerializedName("IsAutomaticSize")
-  private Boolean isAutomaticSize = null;
-
   @SerializedName("IsInnerMode")
   private Boolean isInnerMode = null;
-
-  @SerializedName("Shadow")
-  private Boolean shadow = null;
 
   @SerializedName("ShapeProperties")
   private List<LinkElement> shapeProperties = null;
 
-  @SerializedName("Width")
-  private Integer width = null;
+  @SerializedName("AutoScaleFont")
+  private Boolean autoScaleFont = null;
+
+  @SerializedName("Area")
+  private Area area = null;
 
   @SerializedName("Height")
   private Integer height = null;
 
-  @SerializedName("X")
-  private Integer X = null;
+  @SerializedName("Width")
+  private Integer width = null;
+
+  @SerializedName("BackgroundMode")
+  private String backgroundMode = null;
+
+  @SerializedName("IsAutomaticSize")
+  private Boolean isAutomaticSize = null;
 
   @SerializedName("Y")
   private Integer Y = null;
 
+  @SerializedName("X")
+  private Integer X = null;
+
+  @SerializedName("Shadow")
+  private Boolean shadow = null;
+
+  @SerializedName("Font")
+  private Font font = null;
+
+  @SerializedName("Border")
+  private Line border = null;
+
   @SerializedName("link")
   private Link link = null;
-
-  @SerializedName("Position")
-  private String position = null;
 
   @SerializedName("LegendEntries")
   private LinkElement legendEntries = null;
 
-  public Legend area(Area area) {
-    this.area = area;
-    return this;
-  }
-
-   /**
-   * Get area
-   * @return area
-  **/
-  @ApiModelProperty(value = "")
-  public Area getArea() {
-    return area;
-  }
-
-  public void setArea(Area area) {
-    this.area = area;
-  }
-
-  public Legend autoScaleFont(Boolean autoScaleFont) {
-    this.autoScaleFont = autoScaleFont;
-    return this;
-  }
-
-   /**
-   * Get autoScaleFont
-   * @return autoScaleFont
-  **/
-  @ApiModelProperty(value = "")
-  public Boolean isAutoScaleFont() {
-    return autoScaleFont;
-  }
-
-  public void setAutoScaleFont(Boolean autoScaleFont) {
-    this.autoScaleFont = autoScaleFont;
-  }
-
-  public Legend backgroundMode(String backgroundMode) {
-    this.backgroundMode = backgroundMode;
-    return this;
-  }
-
-   /**
-   * Get backgroundMode
-   * @return backgroundMode
-  **/
-  @ApiModelProperty(value = "")
-  public String getBackgroundMode() {
-    return backgroundMode;
-  }
-
-  public void setBackgroundMode(String backgroundMode) {
-    this.backgroundMode = backgroundMode;
-  }
-
-  public Legend border(Line border) {
-    this.border = border;
-    return this;
-  }
-
-   /**
-   * Get border
-   * @return border
-  **/
-  @ApiModelProperty(value = "")
-  public Line getBorder() {
-    return border;
-  }
-
-  public void setBorder(Line border) {
-    this.border = border;
-  }
-
-  public Legend font(Font font) {
-    this.font = font;
-    return this;
-  }
-
-   /**
-   * Get font
-   * @return font
-  **/
-  @ApiModelProperty(value = "")
-  public Font getFont() {
-    return font;
-  }
-
-  public void setFont(Font font) {
-    this.font = font;
-  }
-
-  public Legend isAutomaticSize(Boolean isAutomaticSize) {
-    this.isAutomaticSize = isAutomaticSize;
-    return this;
-  }
-
-   /**
-   * Get isAutomaticSize
-   * @return isAutomaticSize
-  **/
-  @ApiModelProperty(value = "")
-  public Boolean isIsAutomaticSize() {
-    return isAutomaticSize;
-  }
-
-  public void setIsAutomaticSize(Boolean isAutomaticSize) {
-    this.isAutomaticSize = isAutomaticSize;
-  }
+  @SerializedName("Position")
+  private String position = null;
 
   public Legend isInnerMode(Boolean isInnerMode) {
     this.isInnerMode = isInnerMode;
@@ -208,24 +100,6 @@ public class Legend {
 
   public void setIsInnerMode(Boolean isInnerMode) {
     this.isInnerMode = isInnerMode;
-  }
-
-  public Legend shadow(Boolean shadow) {
-    this.shadow = shadow;
-    return this;
-  }
-
-   /**
-   * Get shadow
-   * @return shadow
-  **/
-  @ApiModelProperty(value = "")
-  public Boolean isShadow() {
-    return shadow;
-  }
-
-  public void setShadow(Boolean shadow) {
-    this.shadow = shadow;
   }
 
   public Legend shapeProperties(List<LinkElement> shapeProperties) {
@@ -254,22 +128,40 @@ public class Legend {
     this.shapeProperties = shapeProperties;
   }
 
-  public Legend width(Integer width) {
-    this.width = width;
+  public Legend autoScaleFont(Boolean autoScaleFont) {
+    this.autoScaleFont = autoScaleFont;
     return this;
   }
 
    /**
-   * Get width
-   * @return width
+   * Get autoScaleFont
+   * @return autoScaleFont
   **/
   @ApiModelProperty(value = "")
-  public Integer getWidth() {
-    return width;
+  public Boolean isAutoScaleFont() {
+    return autoScaleFont;
   }
 
-  public void setWidth(Integer width) {
-    this.width = width;
+  public void setAutoScaleFont(Boolean autoScaleFont) {
+    this.autoScaleFont = autoScaleFont;
+  }
+
+  public Legend area(Area area) {
+    this.area = area;
+    return this;
+  }
+
+   /**
+   * Get area
+   * @return area
+  **/
+  @ApiModelProperty(value = "")
+  public Area getArea() {
+    return area;
+  }
+
+  public void setArea(Area area) {
+    this.area = area;
   }
 
   public Legend height(Integer height) {
@@ -290,22 +182,58 @@ public class Legend {
     this.height = height;
   }
 
-  public Legend X(Integer X) {
-    this.X = X;
+  public Legend width(Integer width) {
+    this.width = width;
     return this;
   }
 
    /**
-   * Get X
-   * @return X
+   * Get width
+   * @return width
   **/
   @ApiModelProperty(value = "")
-  public Integer getX() {
-    return X;
+  public Integer getWidth() {
+    return width;
   }
 
-  public void setX(Integer X) {
-    this.X = X;
+  public void setWidth(Integer width) {
+    this.width = width;
+  }
+
+  public Legend backgroundMode(String backgroundMode) {
+    this.backgroundMode = backgroundMode;
+    return this;
+  }
+
+   /**
+   * Get backgroundMode
+   * @return backgroundMode
+  **/
+  @ApiModelProperty(value = "")
+  public String getBackgroundMode() {
+    return backgroundMode;
+  }
+
+  public void setBackgroundMode(String backgroundMode) {
+    this.backgroundMode = backgroundMode;
+  }
+
+  public Legend isAutomaticSize(Boolean isAutomaticSize) {
+    this.isAutomaticSize = isAutomaticSize;
+    return this;
+  }
+
+   /**
+   * Get isAutomaticSize
+   * @return isAutomaticSize
+  **/
+  @ApiModelProperty(value = "")
+  public Boolean isIsAutomaticSize() {
+    return isAutomaticSize;
+  }
+
+  public void setIsAutomaticSize(Boolean isAutomaticSize) {
+    this.isAutomaticSize = isAutomaticSize;
   }
 
   public Legend Y(Integer Y) {
@@ -326,6 +254,78 @@ public class Legend {
     this.Y = Y;
   }
 
+  public Legend X(Integer X) {
+    this.X = X;
+    return this;
+  }
+
+   /**
+   * Get X
+   * @return X
+  **/
+  @ApiModelProperty(value = "")
+  public Integer getX() {
+    return X;
+  }
+
+  public void setX(Integer X) {
+    this.X = X;
+  }
+
+  public Legend shadow(Boolean shadow) {
+    this.shadow = shadow;
+    return this;
+  }
+
+   /**
+   * Get shadow
+   * @return shadow
+  **/
+  @ApiModelProperty(value = "")
+  public Boolean isShadow() {
+    return shadow;
+  }
+
+  public void setShadow(Boolean shadow) {
+    this.shadow = shadow;
+  }
+
+  public Legend font(Font font) {
+    this.font = font;
+    return this;
+  }
+
+   /**
+   * Get font
+   * @return font
+  **/
+  @ApiModelProperty(value = "")
+  public Font getFont() {
+    return font;
+  }
+
+  public void setFont(Font font) {
+    this.font = font;
+  }
+
+  public Legend border(Line border) {
+    this.border = border;
+    return this;
+  }
+
+   /**
+   * Get border
+   * @return border
+  **/
+  @ApiModelProperty(value = "")
+  public Line getBorder() {
+    return border;
+  }
+
+  public void setBorder(Line border) {
+    this.border = border;
+  }
+
   public Legend link(Link link) {
     this.link = link;
     return this;
@@ -342,24 +342,6 @@ public class Legend {
 
   public void setLink(Link link) {
     this.link = link;
-  }
-
-  public Legend position(String position) {
-    this.position = position;
-    return this;
-  }
-
-   /**
-   * Get position
-   * @return position
-  **/
-  @ApiModelProperty(value = "")
-  public String getPosition() {
-    return position;
-  }
-
-  public void setPosition(String position) {
-    this.position = position;
   }
 
   public Legend legendEntries(LinkElement legendEntries) {
@@ -380,6 +362,24 @@ public class Legend {
     this.legendEntries = legendEntries;
   }
 
+  public Legend position(String position) {
+    this.position = position;
+    return this;
+  }
+
+   /**
+   * Get position
+   * @return position
+  **/
+  @ApiModelProperty(value = "")
+  public String getPosition() {
+    return position;
+  }
+
+  public void setPosition(String position) {
+    this.position = position;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -390,27 +390,27 @@ public class Legend {
       return false;
     }
     Legend legend = (Legend) o;
-    return Objects.equals(this.area, legend.area) &&
-        Objects.equals(this.autoScaleFont, legend.autoScaleFont) &&
-        Objects.equals(this.backgroundMode, legend.backgroundMode) &&
-        Objects.equals(this.border, legend.border) &&
-        Objects.equals(this.font, legend.font) &&
-        Objects.equals(this.isAutomaticSize, legend.isAutomaticSize) &&
-        Objects.equals(this.isInnerMode, legend.isInnerMode) &&
-        Objects.equals(this.shadow, legend.shadow) &&
+    return Objects.equals(this.isInnerMode, legend.isInnerMode) &&
         Objects.equals(this.shapeProperties, legend.shapeProperties) &&
-        Objects.equals(this.width, legend.width) &&
+        Objects.equals(this.autoScaleFont, legend.autoScaleFont) &&
+        Objects.equals(this.area, legend.area) &&
         Objects.equals(this.height, legend.height) &&
-        Objects.equals(this.X, legend.X) &&
+        Objects.equals(this.width, legend.width) &&
+        Objects.equals(this.backgroundMode, legend.backgroundMode) &&
+        Objects.equals(this.isAutomaticSize, legend.isAutomaticSize) &&
         Objects.equals(this.Y, legend.Y) &&
+        Objects.equals(this.X, legend.X) &&
+        Objects.equals(this.shadow, legend.shadow) &&
+        Objects.equals(this.font, legend.font) &&
+        Objects.equals(this.border, legend.border) &&
         Objects.equals(this.link, legend.link) &&
-        Objects.equals(this.position, legend.position) &&
-        Objects.equals(this.legendEntries, legend.legendEntries);
+        Objects.equals(this.legendEntries, legend.legendEntries) &&
+        Objects.equals(this.position, legend.position);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(area, autoScaleFont, backgroundMode, border, font, isAutomaticSize, isInnerMode, shadow, shapeProperties, width, height, X, Y, link, position, legendEntries);
+    return Objects.hash(isInnerMode, shapeProperties, autoScaleFont, area, height, width, backgroundMode, isAutomaticSize, Y, X, shadow, font, border, link, legendEntries, position);
   }
 
 
@@ -419,22 +419,22 @@ public class Legend {
     StringBuilder sb = new StringBuilder();
     sb.append("class Legend {\n");
     
-    sb.append("    area: ").append(toIndentedString(area)).append("\n");
-    sb.append("    autoScaleFont: ").append(toIndentedString(autoScaleFont)).append("\n");
-    sb.append("    backgroundMode: ").append(toIndentedString(backgroundMode)).append("\n");
-    sb.append("    border: ").append(toIndentedString(border)).append("\n");
-    sb.append("    font: ").append(toIndentedString(font)).append("\n");
-    sb.append("    isAutomaticSize: ").append(toIndentedString(isAutomaticSize)).append("\n");
     sb.append("    isInnerMode: ").append(toIndentedString(isInnerMode)).append("\n");
-    sb.append("    shadow: ").append(toIndentedString(shadow)).append("\n");
     sb.append("    shapeProperties: ").append(toIndentedString(shapeProperties)).append("\n");
-    sb.append("    width: ").append(toIndentedString(width)).append("\n");
+    sb.append("    autoScaleFont: ").append(toIndentedString(autoScaleFont)).append("\n");
+    sb.append("    area: ").append(toIndentedString(area)).append("\n");
     sb.append("    height: ").append(toIndentedString(height)).append("\n");
-    sb.append("    X: ").append(toIndentedString(X)).append("\n");
+    sb.append("    width: ").append(toIndentedString(width)).append("\n");
+    sb.append("    backgroundMode: ").append(toIndentedString(backgroundMode)).append("\n");
+    sb.append("    isAutomaticSize: ").append(toIndentedString(isAutomaticSize)).append("\n");
     sb.append("    Y: ").append(toIndentedString(Y)).append("\n");
+    sb.append("    X: ").append(toIndentedString(X)).append("\n");
+    sb.append("    shadow: ").append(toIndentedString(shadow)).append("\n");
+    sb.append("    font: ").append(toIndentedString(font)).append("\n");
+    sb.append("    border: ").append(toIndentedString(border)).append("\n");
     sb.append("    link: ").append(toIndentedString(link)).append("\n");
-    sb.append("    position: ").append(toIndentedString(position)).append("\n");
     sb.append("    legendEntries: ").append(toIndentedString(legendEntries)).append("\n");
+    sb.append("    position: ").append(toIndentedString(position)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -26,58 +26,22 @@ import java.io.IOException;
 /**
  * PageSection
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-05T15:44:26.749+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-08-14T14:34:14.243+08:00")
 public class PageSection {
-  @SerializedName("Section")
-  private Integer section = null;
-
-  @SerializedName("Context")
-  private String context = null;
-
   @SerializedName("Picture")
   private byte[] picture = null;
+
+  @SerializedName("Section")
+  private Integer section = null;
 
   @SerializedName("FisrtPageContext")
   private String fisrtPageContext = null;
 
+  @SerializedName("Context")
+  private String context = null;
+
   @SerializedName("EvenPageContext")
   private String evenPageContext = null;
-
-  public PageSection section(Integer section) {
-    this.section = section;
-    return this;
-  }
-
-   /**
-   * 0,1,2  left , middle ,right
-   * @return section
-  **/
-  @ApiModelProperty(required = true, value = "0,1,2  left , middle ,right")
-  public Integer getSection() {
-    return section;
-  }
-
-  public void setSection(Integer section) {
-    this.section = section;
-  }
-
-  public PageSection context(String context) {
-    this.context = context;
-    return this;
-  }
-
-   /**
-   * page context script             
-   * @return context
-  **/
-  @ApiModelProperty(value = "page context script             ")
-  public String getContext() {
-    return context;
-  }
-
-  public void setContext(String context) {
-    this.context = context;
-  }
 
   public PageSection picture(byte[] picture) {
     this.picture = picture;
@@ -97,6 +61,24 @@ public class PageSection {
     this.picture = picture;
   }
 
+  public PageSection section(Integer section) {
+    this.section = section;
+    return this;
+  }
+
+   /**
+   * 0,1,2  left , middle ,right
+   * @return section
+  **/
+  @ApiModelProperty(required = true, value = "0,1,2  left , middle ,right")
+  public Integer getSection() {
+    return section;
+  }
+
+  public void setSection(Integer section) {
+    this.section = section;
+  }
+
   public PageSection fisrtPageContext(String fisrtPageContext) {
     this.fisrtPageContext = fisrtPageContext;
     return this;
@@ -113,6 +95,24 @@ public class PageSection {
 
   public void setFisrtPageContext(String fisrtPageContext) {
     this.fisrtPageContext = fisrtPageContext;
+  }
+
+  public PageSection context(String context) {
+    this.context = context;
+    return this;
+  }
+
+   /**
+   * page context script             
+   * @return context
+  **/
+  @ApiModelProperty(value = "page context script             ")
+  public String getContext() {
+    return context;
+  }
+
+  public void setContext(String context) {
+    this.context = context;
   }
 
   public PageSection evenPageContext(String evenPageContext) {
@@ -143,16 +143,16 @@ public class PageSection {
       return false;
     }
     PageSection pageSection = (PageSection) o;
-    return Objects.equals(this.section, pageSection.section) &&
-        Objects.equals(this.context, pageSection.context) &&
-        Objects.equals(this.picture, pageSection.picture) &&
+    return Objects.equals(this.picture, pageSection.picture) &&
+        Objects.equals(this.section, pageSection.section) &&
         Objects.equals(this.fisrtPageContext, pageSection.fisrtPageContext) &&
+        Objects.equals(this.context, pageSection.context) &&
         Objects.equals(this.evenPageContext, pageSection.evenPageContext);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(section, context, picture, fisrtPageContext, evenPageContext);
+    return Objects.hash(picture, section, fisrtPageContext, context, evenPageContext);
   }
 
 
@@ -161,10 +161,10 @@ public class PageSection {
     StringBuilder sb = new StringBuilder();
     sb.append("class PageSection {\n");
     
-    sb.append("    section: ").append(toIndentedString(section)).append("\n");
-    sb.append("    context: ").append(toIndentedString(context)).append("\n");
     sb.append("    picture: ").append(toIndentedString(picture)).append("\n");
+    sb.append("    section: ").append(toIndentedString(section)).append("\n");
     sb.append("    fisrtPageContext: ").append(toIndentedString(fisrtPageContext)).append("\n");
+    sb.append("    context: ").append(toIndentedString(context)).append("\n");
     sb.append("    evenPageContext: ").append(toIndentedString(evenPageContext)).append("\n");
     sb.append("}");
     return sb.toString();

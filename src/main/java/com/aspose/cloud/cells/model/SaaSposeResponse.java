@@ -26,32 +26,14 @@ import java.io.IOException;
 /**
  * SaaSposeResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-05T15:44:26.749+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-08-14T14:34:14.243+08:00")
 
 public class SaaSposeResponse {
-  @SerializedName("Code")
-  private Integer code = null;
-
   @SerializedName("Status")
   private String status = null;
 
-  public SaaSposeResponse code(Integer code) {
-    this.code = code;
-    return this;
-  }
-
-   /**
-   * Get code
-   * @return code
-  **/
-  @ApiModelProperty(required = true, value = "")
-  public Integer getCode() {
-    return code;
-  }
-
-  public void setCode(Integer code) {
-    this.code = code;
-  }
+  @SerializedName("Code")
+  private Integer code = null;
 
   public SaaSposeResponse status(String status) {
     this.status = status;
@@ -71,6 +53,24 @@ public class SaaSposeResponse {
     this.status = status;
   }
 
+  public SaaSposeResponse code(Integer code) {
+    this.code = code;
+    return this;
+  }
+
+   /**
+   * Get code
+   * @return code
+  **/
+  @ApiModelProperty(required = true, value = "")
+  public Integer getCode() {
+    return code;
+  }
+
+  public void setCode(Integer code) {
+    this.code = code;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -81,13 +81,13 @@ public class SaaSposeResponse {
       return false;
     }
     SaaSposeResponse saaSposeResponse = (SaaSposeResponse) o;
-    return Objects.equals(this.code, saaSposeResponse.code) &&
-        Objects.equals(this.status, saaSposeResponse.status);
+    return Objects.equals(this.status, saaSposeResponse.status) &&
+        Objects.equals(this.code, saaSposeResponse.code);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(code, status);
+    return Objects.hash(status, code);
   }
 
 
@@ -96,8 +96,8 @@ public class SaaSposeResponse {
     StringBuilder sb = new StringBuilder();
     sb.append("class SaaSposeResponse {\n");
     
-    sb.append("    code: ").append(toIndentedString(code)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
+    sb.append("    code: ").append(toIndentedString(code)).append("\n");
     sb.append("}");
     return sb.toString();
   }

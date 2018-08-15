@@ -27,31 +27,13 @@ import java.io.IOException;
  * Used by workbook protection requests.
  */
 @ApiModel(description = "Used by workbook protection requests.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-05T15:44:26.749+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-08-14T14:34:14.243+08:00")
 public class WorkbookProtectionRequest {
-  @SerializedName("ProtectionType")
-  private String protectionType = null;
-
   @SerializedName("Password")
   private String password = null;
 
-  public WorkbookProtectionRequest protectionType(String protectionType) {
-    this.protectionType = protectionType;
-    return this;
-  }
-
-   /**
-   * Protection type. Can be ALL, CONTENTS, NONE, OBJECTS, SCENARIOS, STRUCTURE, WINDOWS  
-   * @return protectionType
-  **/
-  @ApiModelProperty(value = "Protection type. Can be ALL, CONTENTS, NONE, OBJECTS, SCENARIOS, STRUCTURE, WINDOWS  ")
-  public String getProtectionType() {
-    return protectionType;
-  }
-
-  public void setProtectionType(String protectionType) {
-    this.protectionType = protectionType;
-  }
+  @SerializedName("ProtectionType")
+  private String protectionType = null;
 
   public WorkbookProtectionRequest password(String password) {
     this.password = password;
@@ -71,6 +53,24 @@ public class WorkbookProtectionRequest {
     this.password = password;
   }
 
+  public WorkbookProtectionRequest protectionType(String protectionType) {
+    this.protectionType = protectionType;
+    return this;
+  }
+
+   /**
+   * Protection type. Can be ALL, CONTENTS, NONE, OBJECTS, SCENARIOS, STRUCTURE, WINDOWS  
+   * @return protectionType
+  **/
+  @ApiModelProperty(value = "Protection type. Can be ALL, CONTENTS, NONE, OBJECTS, SCENARIOS, STRUCTURE, WINDOWS  ")
+  public String getProtectionType() {
+    return protectionType;
+  }
+
+  public void setProtectionType(String protectionType) {
+    this.protectionType = protectionType;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -81,13 +81,13 @@ public class WorkbookProtectionRequest {
       return false;
     }
     WorkbookProtectionRequest workbookProtectionRequest = (WorkbookProtectionRequest) o;
-    return Objects.equals(this.protectionType, workbookProtectionRequest.protectionType) &&
-        Objects.equals(this.password, workbookProtectionRequest.password);
+    return Objects.equals(this.password, workbookProtectionRequest.password) &&
+        Objects.equals(this.protectionType, workbookProtectionRequest.protectionType);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(protectionType, password);
+    return Objects.hash(password, protectionType);
   }
 
 
@@ -96,8 +96,8 @@ public class WorkbookProtectionRequest {
     StringBuilder sb = new StringBuilder();
     sb.append("class WorkbookProtectionRequest {\n");
     
-    sb.append("    protectionType: ").append(toIndentedString(protectionType)).append("\n");
     sb.append("    password: ").append(toIndentedString(password)).append("\n");
+    sb.append("    protectionType: ").append(toIndentedString(protectionType)).append("\n");
     sb.append("}");
     return sb.toString();
   }

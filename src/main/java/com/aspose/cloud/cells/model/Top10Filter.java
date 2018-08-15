@@ -26,10 +26,10 @@ import java.io.IOException;
 /**
  * Top10Filter
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-05T15:44:26.749+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-08-14T14:34:14.243+08:00")
 public class Top10Filter {
-  @SerializedName("Criteria")
-  private String criteria = null;
+  @SerializedName("Items")
+  private Integer items = null;
 
   @SerializedName("IsPercent")
   private Boolean isPercent = null;
@@ -37,25 +37,25 @@ public class Top10Filter {
   @SerializedName("IsTop")
   private Boolean isTop = null;
 
-  @SerializedName("Items")
-  private Integer items = null;
+  @SerializedName("Criteria")
+  private String criteria = null;
 
-  public Top10Filter criteria(String criteria) {
-    this.criteria = criteria;
+  public Top10Filter items(Integer items) {
+    this.items = items;
     return this;
   }
 
    /**
-   * Get criteria
-   * @return criteria
+   * Get items
+   * @return items
   **/
-  @ApiModelProperty(value = "")
-  public String getCriteria() {
-    return criteria;
+  @ApiModelProperty(required = true, value = "")
+  public Integer getItems() {
+    return items;
   }
 
-  public void setCriteria(String criteria) {
-    this.criteria = criteria;
+  public void setItems(Integer items) {
+    this.items = items;
   }
 
   public Top10Filter isPercent(Boolean isPercent) {
@@ -94,22 +94,22 @@ public class Top10Filter {
     this.isTop = isTop;
   }
 
-  public Top10Filter items(Integer items) {
-    this.items = items;
+  public Top10Filter criteria(String criteria) {
+    this.criteria = criteria;
     return this;
   }
 
    /**
-   * Get items
-   * @return items
+   * Get criteria
+   * @return criteria
   **/
-  @ApiModelProperty(required = true, value = "")
-  public Integer getItems() {
-    return items;
+  @ApiModelProperty(value = "")
+  public String getCriteria() {
+    return criteria;
   }
 
-  public void setItems(Integer items) {
-    this.items = items;
+  public void setCriteria(String criteria) {
+    this.criteria = criteria;
   }
 
 
@@ -122,15 +122,15 @@ public class Top10Filter {
       return false;
     }
     Top10Filter top10Filter = (Top10Filter) o;
-    return Objects.equals(this.criteria, top10Filter.criteria) &&
+    return Objects.equals(this.items, top10Filter.items) &&
         Objects.equals(this.isPercent, top10Filter.isPercent) &&
         Objects.equals(this.isTop, top10Filter.isTop) &&
-        Objects.equals(this.items, top10Filter.items);
+        Objects.equals(this.criteria, top10Filter.criteria);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(criteria, isPercent, isTop, items);
+    return Objects.hash(items, isPercent, isTop, criteria);
   }
 
 
@@ -139,10 +139,10 @@ public class Top10Filter {
     StringBuilder sb = new StringBuilder();
     sb.append("class Top10Filter {\n");
     
-    sb.append("    criteria: ").append(toIndentedString(criteria)).append("\n");
+    sb.append("    items: ").append(toIndentedString(items)).append("\n");
     sb.append("    isPercent: ").append(toIndentedString(isPercent)).append("\n");
     sb.append("    isTop: ").append(toIndentedString(isTop)).append("\n");
-    sb.append("    items: ").append(toIndentedString(items)).append("\n");
+    sb.append("    criteria: ").append(toIndentedString(criteria)).append("\n");
     sb.append("}");
     return sb.toString();
   }

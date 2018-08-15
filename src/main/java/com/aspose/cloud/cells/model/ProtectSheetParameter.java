@@ -28,90 +28,144 @@ import java.util.List;
 /**
  * ProtectSheetParameter
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-05T15:44:26.749+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-08-14T14:34:14.243+08:00")
 public class ProtectSheetParameter {
-  @SerializedName("ProtectionType")
-  private String protectionType = null;
-
-  @SerializedName("Password")
-  private String password = null;
-
-  @SerializedName("AllowEditArea")
-  private List<String> allowEditArea = null;
-
-  @SerializedName("AllowDeletingColumn")
-  private String allowDeletingColumn = null;
-
-  @SerializedName("AllowDeletingRow")
-  private String allowDeletingRow = null;
+  @SerializedName("AllowSelectingUnlockedCell")
+  private String allowSelectingUnlockedCell = null;
 
   @SerializedName("AllowFiltering")
   private String allowFiltering = null;
 
-  @SerializedName("AllowFormattingCell")
-  private String allowFormattingCell = null;
-
-  @SerializedName("AllowFormattingColumn")
-  private String allowFormattingColumn = null;
-
-  @SerializedName("AllowFormattingRow")
-  private String allowFormattingRow = null;
-
-  @SerializedName("AllowInsertingColumn")
-  private String allowInsertingColumn = null;
-
-  @SerializedName("AllowInsertingHyperlink")
-  private String allowInsertingHyperlink = null;
-
-  @SerializedName("AllowInsertingRow")
-  private String allowInsertingRow = null;
+  @SerializedName("AllowDeletingColumn")
+  private String allowDeletingColumn = null;
 
   @SerializedName("AllowSelectingLockedCell")
   private String allowSelectingLockedCell = null;
 
-  @SerializedName("AllowSelectingUnlockedCell")
-  private String allowSelectingUnlockedCell = null;
+  @SerializedName("AllowUsingPivotTable")
+  private String allowUsingPivotTable = null;
+
+  @SerializedName("AllowEditArea")
+  private List<String> allowEditArea = null;
+
+  @SerializedName("AllowInsertingHyperlink")
+  private String allowInsertingHyperlink = null;
+
+  @SerializedName("AllowFormattingCell")
+  private String allowFormattingCell = null;
+
+  @SerializedName("AllowFormattingRow")
+  private String allowFormattingRow = null;
+
+  @SerializedName("AllowInsertingRow")
+  private String allowInsertingRow = null;
+
+  @SerializedName("AllowFormattingColumn")
+  private String allowFormattingColumn = null;
 
   @SerializedName("AllowSorting")
   private String allowSorting = null;
 
-  @SerializedName("AllowUsingPivotTable")
-  private String allowUsingPivotTable = null;
+  @SerializedName("AllowInsertingColumn")
+  private String allowInsertingColumn = null;
 
-  public ProtectSheetParameter protectionType(String protectionType) {
-    this.protectionType = protectionType;
+  @SerializedName("Password")
+  private String password = null;
+
+  @SerializedName("AllowDeletingRow")
+  private String allowDeletingRow = null;
+
+  @SerializedName("ProtectionType")
+  private String protectionType = null;
+
+  public ProtectSheetParameter allowSelectingUnlockedCell(String allowSelectingUnlockedCell) {
+    this.allowSelectingUnlockedCell = allowSelectingUnlockedCell;
     return this;
   }
 
    /**
-   * Get protectionType
-   * @return protectionType
+   * Get allowSelectingUnlockedCell
+   * @return allowSelectingUnlockedCell
   **/
   @ApiModelProperty(value = "")
-  public String getProtectionType() {
-    return protectionType;
+  public String getAllowSelectingUnlockedCell() {
+    return allowSelectingUnlockedCell;
   }
 
-  public void setProtectionType(String protectionType) {
-    this.protectionType = protectionType;
+  public void setAllowSelectingUnlockedCell(String allowSelectingUnlockedCell) {
+    this.allowSelectingUnlockedCell = allowSelectingUnlockedCell;
   }
 
-  public ProtectSheetParameter password(String password) {
-    this.password = password;
+  public ProtectSheetParameter allowFiltering(String allowFiltering) {
+    this.allowFiltering = allowFiltering;
     return this;
   }
 
    /**
-   * Get password
-   * @return password
+   * Get allowFiltering
+   * @return allowFiltering
   **/
   @ApiModelProperty(value = "")
-  public String getPassword() {
-    return password;
+  public String getAllowFiltering() {
+    return allowFiltering;
   }
 
-  public void setPassword(String password) {
-    this.password = password;
+  public void setAllowFiltering(String allowFiltering) {
+    this.allowFiltering = allowFiltering;
+  }
+
+  public ProtectSheetParameter allowDeletingColumn(String allowDeletingColumn) {
+    this.allowDeletingColumn = allowDeletingColumn;
+    return this;
+  }
+
+   /**
+   * Get allowDeletingColumn
+   * @return allowDeletingColumn
+  **/
+  @ApiModelProperty(value = "")
+  public String getAllowDeletingColumn() {
+    return allowDeletingColumn;
+  }
+
+  public void setAllowDeletingColumn(String allowDeletingColumn) {
+    this.allowDeletingColumn = allowDeletingColumn;
+  }
+
+  public ProtectSheetParameter allowSelectingLockedCell(String allowSelectingLockedCell) {
+    this.allowSelectingLockedCell = allowSelectingLockedCell;
+    return this;
+  }
+
+   /**
+   * Get allowSelectingLockedCell
+   * @return allowSelectingLockedCell
+  **/
+  @ApiModelProperty(value = "")
+  public String getAllowSelectingLockedCell() {
+    return allowSelectingLockedCell;
+  }
+
+  public void setAllowSelectingLockedCell(String allowSelectingLockedCell) {
+    this.allowSelectingLockedCell = allowSelectingLockedCell;
+  }
+
+  public ProtectSheetParameter allowUsingPivotTable(String allowUsingPivotTable) {
+    this.allowUsingPivotTable = allowUsingPivotTable;
+    return this;
+  }
+
+   /**
+   * Get allowUsingPivotTable
+   * @return allowUsingPivotTable
+  **/
+  @ApiModelProperty(value = "")
+  public String getAllowUsingPivotTable() {
+    return allowUsingPivotTable;
+  }
+
+  public void setAllowUsingPivotTable(String allowUsingPivotTable) {
+    this.allowUsingPivotTable = allowUsingPivotTable;
   }
 
   public ProtectSheetParameter allowEditArea(List<String> allowEditArea) {
@@ -140,58 +194,22 @@ public class ProtectSheetParameter {
     this.allowEditArea = allowEditArea;
   }
 
-  public ProtectSheetParameter allowDeletingColumn(String allowDeletingColumn) {
-    this.allowDeletingColumn = allowDeletingColumn;
+  public ProtectSheetParameter allowInsertingHyperlink(String allowInsertingHyperlink) {
+    this.allowInsertingHyperlink = allowInsertingHyperlink;
     return this;
   }
 
    /**
-   * Get allowDeletingColumn
-   * @return allowDeletingColumn
+   * Get allowInsertingHyperlink
+   * @return allowInsertingHyperlink
   **/
   @ApiModelProperty(value = "")
-  public String getAllowDeletingColumn() {
-    return allowDeletingColumn;
+  public String getAllowInsertingHyperlink() {
+    return allowInsertingHyperlink;
   }
 
-  public void setAllowDeletingColumn(String allowDeletingColumn) {
-    this.allowDeletingColumn = allowDeletingColumn;
-  }
-
-  public ProtectSheetParameter allowDeletingRow(String allowDeletingRow) {
-    this.allowDeletingRow = allowDeletingRow;
-    return this;
-  }
-
-   /**
-   * Get allowDeletingRow
-   * @return allowDeletingRow
-  **/
-  @ApiModelProperty(value = "")
-  public String getAllowDeletingRow() {
-    return allowDeletingRow;
-  }
-
-  public void setAllowDeletingRow(String allowDeletingRow) {
-    this.allowDeletingRow = allowDeletingRow;
-  }
-
-  public ProtectSheetParameter allowFiltering(String allowFiltering) {
-    this.allowFiltering = allowFiltering;
-    return this;
-  }
-
-   /**
-   * Get allowFiltering
-   * @return allowFiltering
-  **/
-  @ApiModelProperty(value = "")
-  public String getAllowFiltering() {
-    return allowFiltering;
-  }
-
-  public void setAllowFiltering(String allowFiltering) {
-    this.allowFiltering = allowFiltering;
+  public void setAllowInsertingHyperlink(String allowInsertingHyperlink) {
+    this.allowInsertingHyperlink = allowInsertingHyperlink;
   }
 
   public ProtectSheetParameter allowFormattingCell(String allowFormattingCell) {
@@ -212,24 +230,6 @@ public class ProtectSheetParameter {
     this.allowFormattingCell = allowFormattingCell;
   }
 
-  public ProtectSheetParameter allowFormattingColumn(String allowFormattingColumn) {
-    this.allowFormattingColumn = allowFormattingColumn;
-    return this;
-  }
-
-   /**
-   * Get allowFormattingColumn
-   * @return allowFormattingColumn
-  **/
-  @ApiModelProperty(value = "")
-  public String getAllowFormattingColumn() {
-    return allowFormattingColumn;
-  }
-
-  public void setAllowFormattingColumn(String allowFormattingColumn) {
-    this.allowFormattingColumn = allowFormattingColumn;
-  }
-
   public ProtectSheetParameter allowFormattingRow(String allowFormattingRow) {
     this.allowFormattingRow = allowFormattingRow;
     return this;
@@ -246,42 +246,6 @@ public class ProtectSheetParameter {
 
   public void setAllowFormattingRow(String allowFormattingRow) {
     this.allowFormattingRow = allowFormattingRow;
-  }
-
-  public ProtectSheetParameter allowInsertingColumn(String allowInsertingColumn) {
-    this.allowInsertingColumn = allowInsertingColumn;
-    return this;
-  }
-
-   /**
-   * Get allowInsertingColumn
-   * @return allowInsertingColumn
-  **/
-  @ApiModelProperty(value = "")
-  public String getAllowInsertingColumn() {
-    return allowInsertingColumn;
-  }
-
-  public void setAllowInsertingColumn(String allowInsertingColumn) {
-    this.allowInsertingColumn = allowInsertingColumn;
-  }
-
-  public ProtectSheetParameter allowInsertingHyperlink(String allowInsertingHyperlink) {
-    this.allowInsertingHyperlink = allowInsertingHyperlink;
-    return this;
-  }
-
-   /**
-   * Get allowInsertingHyperlink
-   * @return allowInsertingHyperlink
-  **/
-  @ApiModelProperty(value = "")
-  public String getAllowInsertingHyperlink() {
-    return allowInsertingHyperlink;
-  }
-
-  public void setAllowInsertingHyperlink(String allowInsertingHyperlink) {
-    this.allowInsertingHyperlink = allowInsertingHyperlink;
   }
 
   public ProtectSheetParameter allowInsertingRow(String allowInsertingRow) {
@@ -302,40 +266,22 @@ public class ProtectSheetParameter {
     this.allowInsertingRow = allowInsertingRow;
   }
 
-  public ProtectSheetParameter allowSelectingLockedCell(String allowSelectingLockedCell) {
-    this.allowSelectingLockedCell = allowSelectingLockedCell;
+  public ProtectSheetParameter allowFormattingColumn(String allowFormattingColumn) {
+    this.allowFormattingColumn = allowFormattingColumn;
     return this;
   }
 
    /**
-   * Get allowSelectingLockedCell
-   * @return allowSelectingLockedCell
+   * Get allowFormattingColumn
+   * @return allowFormattingColumn
   **/
   @ApiModelProperty(value = "")
-  public String getAllowSelectingLockedCell() {
-    return allowSelectingLockedCell;
+  public String getAllowFormattingColumn() {
+    return allowFormattingColumn;
   }
 
-  public void setAllowSelectingLockedCell(String allowSelectingLockedCell) {
-    this.allowSelectingLockedCell = allowSelectingLockedCell;
-  }
-
-  public ProtectSheetParameter allowSelectingUnlockedCell(String allowSelectingUnlockedCell) {
-    this.allowSelectingUnlockedCell = allowSelectingUnlockedCell;
-    return this;
-  }
-
-   /**
-   * Get allowSelectingUnlockedCell
-   * @return allowSelectingUnlockedCell
-  **/
-  @ApiModelProperty(value = "")
-  public String getAllowSelectingUnlockedCell() {
-    return allowSelectingUnlockedCell;
-  }
-
-  public void setAllowSelectingUnlockedCell(String allowSelectingUnlockedCell) {
-    this.allowSelectingUnlockedCell = allowSelectingUnlockedCell;
+  public void setAllowFormattingColumn(String allowFormattingColumn) {
+    this.allowFormattingColumn = allowFormattingColumn;
   }
 
   public ProtectSheetParameter allowSorting(String allowSorting) {
@@ -356,22 +302,76 @@ public class ProtectSheetParameter {
     this.allowSorting = allowSorting;
   }
 
-  public ProtectSheetParameter allowUsingPivotTable(String allowUsingPivotTable) {
-    this.allowUsingPivotTable = allowUsingPivotTable;
+  public ProtectSheetParameter allowInsertingColumn(String allowInsertingColumn) {
+    this.allowInsertingColumn = allowInsertingColumn;
     return this;
   }
 
    /**
-   * Get allowUsingPivotTable
-   * @return allowUsingPivotTable
+   * Get allowInsertingColumn
+   * @return allowInsertingColumn
   **/
   @ApiModelProperty(value = "")
-  public String getAllowUsingPivotTable() {
-    return allowUsingPivotTable;
+  public String getAllowInsertingColumn() {
+    return allowInsertingColumn;
   }
 
-  public void setAllowUsingPivotTable(String allowUsingPivotTable) {
-    this.allowUsingPivotTable = allowUsingPivotTable;
+  public void setAllowInsertingColumn(String allowInsertingColumn) {
+    this.allowInsertingColumn = allowInsertingColumn;
+  }
+
+  public ProtectSheetParameter password(String password) {
+    this.password = password;
+    return this;
+  }
+
+   /**
+   * Get password
+   * @return password
+  **/
+  @ApiModelProperty(value = "")
+  public String getPassword() {
+    return password;
+  }
+
+  public void setPassword(String password) {
+    this.password = password;
+  }
+
+  public ProtectSheetParameter allowDeletingRow(String allowDeletingRow) {
+    this.allowDeletingRow = allowDeletingRow;
+    return this;
+  }
+
+   /**
+   * Get allowDeletingRow
+   * @return allowDeletingRow
+  **/
+  @ApiModelProperty(value = "")
+  public String getAllowDeletingRow() {
+    return allowDeletingRow;
+  }
+
+  public void setAllowDeletingRow(String allowDeletingRow) {
+    this.allowDeletingRow = allowDeletingRow;
+  }
+
+  public ProtectSheetParameter protectionType(String protectionType) {
+    this.protectionType = protectionType;
+    return this;
+  }
+
+   /**
+   * Get protectionType
+   * @return protectionType
+  **/
+  @ApiModelProperty(value = "")
+  public String getProtectionType() {
+    return protectionType;
+  }
+
+  public void setProtectionType(String protectionType) {
+    this.protectionType = protectionType;
   }
 
 
@@ -384,27 +384,27 @@ public class ProtectSheetParameter {
       return false;
     }
     ProtectSheetParameter protectSheetParameter = (ProtectSheetParameter) o;
-    return Objects.equals(this.protectionType, protectSheetParameter.protectionType) &&
-        Objects.equals(this.password, protectSheetParameter.password) &&
-        Objects.equals(this.allowEditArea, protectSheetParameter.allowEditArea) &&
-        Objects.equals(this.allowDeletingColumn, protectSheetParameter.allowDeletingColumn) &&
-        Objects.equals(this.allowDeletingRow, protectSheetParameter.allowDeletingRow) &&
+    return Objects.equals(this.allowSelectingUnlockedCell, protectSheetParameter.allowSelectingUnlockedCell) &&
         Objects.equals(this.allowFiltering, protectSheetParameter.allowFiltering) &&
-        Objects.equals(this.allowFormattingCell, protectSheetParameter.allowFormattingCell) &&
-        Objects.equals(this.allowFormattingColumn, protectSheetParameter.allowFormattingColumn) &&
-        Objects.equals(this.allowFormattingRow, protectSheetParameter.allowFormattingRow) &&
-        Objects.equals(this.allowInsertingColumn, protectSheetParameter.allowInsertingColumn) &&
-        Objects.equals(this.allowInsertingHyperlink, protectSheetParameter.allowInsertingHyperlink) &&
-        Objects.equals(this.allowInsertingRow, protectSheetParameter.allowInsertingRow) &&
+        Objects.equals(this.allowDeletingColumn, protectSheetParameter.allowDeletingColumn) &&
         Objects.equals(this.allowSelectingLockedCell, protectSheetParameter.allowSelectingLockedCell) &&
-        Objects.equals(this.allowSelectingUnlockedCell, protectSheetParameter.allowSelectingUnlockedCell) &&
+        Objects.equals(this.allowUsingPivotTable, protectSheetParameter.allowUsingPivotTable) &&
+        Objects.equals(this.allowEditArea, protectSheetParameter.allowEditArea) &&
+        Objects.equals(this.allowInsertingHyperlink, protectSheetParameter.allowInsertingHyperlink) &&
+        Objects.equals(this.allowFormattingCell, protectSheetParameter.allowFormattingCell) &&
+        Objects.equals(this.allowFormattingRow, protectSheetParameter.allowFormattingRow) &&
+        Objects.equals(this.allowInsertingRow, protectSheetParameter.allowInsertingRow) &&
+        Objects.equals(this.allowFormattingColumn, protectSheetParameter.allowFormattingColumn) &&
         Objects.equals(this.allowSorting, protectSheetParameter.allowSorting) &&
-        Objects.equals(this.allowUsingPivotTable, protectSheetParameter.allowUsingPivotTable);
+        Objects.equals(this.allowInsertingColumn, protectSheetParameter.allowInsertingColumn) &&
+        Objects.equals(this.password, protectSheetParameter.password) &&
+        Objects.equals(this.allowDeletingRow, protectSheetParameter.allowDeletingRow) &&
+        Objects.equals(this.protectionType, protectSheetParameter.protectionType);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(protectionType, password, allowEditArea, allowDeletingColumn, allowDeletingRow, allowFiltering, allowFormattingCell, allowFormattingColumn, allowFormattingRow, allowInsertingColumn, allowInsertingHyperlink, allowInsertingRow, allowSelectingLockedCell, allowSelectingUnlockedCell, allowSorting, allowUsingPivotTable);
+    return Objects.hash(allowSelectingUnlockedCell, allowFiltering, allowDeletingColumn, allowSelectingLockedCell, allowUsingPivotTable, allowEditArea, allowInsertingHyperlink, allowFormattingCell, allowFormattingRow, allowInsertingRow, allowFormattingColumn, allowSorting, allowInsertingColumn, password, allowDeletingRow, protectionType);
   }
 
 
@@ -413,22 +413,22 @@ public class ProtectSheetParameter {
     StringBuilder sb = new StringBuilder();
     sb.append("class ProtectSheetParameter {\n");
     
-    sb.append("    protectionType: ").append(toIndentedString(protectionType)).append("\n");
-    sb.append("    password: ").append(toIndentedString(password)).append("\n");
-    sb.append("    allowEditArea: ").append(toIndentedString(allowEditArea)).append("\n");
-    sb.append("    allowDeletingColumn: ").append(toIndentedString(allowDeletingColumn)).append("\n");
-    sb.append("    allowDeletingRow: ").append(toIndentedString(allowDeletingRow)).append("\n");
-    sb.append("    allowFiltering: ").append(toIndentedString(allowFiltering)).append("\n");
-    sb.append("    allowFormattingCell: ").append(toIndentedString(allowFormattingCell)).append("\n");
-    sb.append("    allowFormattingColumn: ").append(toIndentedString(allowFormattingColumn)).append("\n");
-    sb.append("    allowFormattingRow: ").append(toIndentedString(allowFormattingRow)).append("\n");
-    sb.append("    allowInsertingColumn: ").append(toIndentedString(allowInsertingColumn)).append("\n");
-    sb.append("    allowInsertingHyperlink: ").append(toIndentedString(allowInsertingHyperlink)).append("\n");
-    sb.append("    allowInsertingRow: ").append(toIndentedString(allowInsertingRow)).append("\n");
-    sb.append("    allowSelectingLockedCell: ").append(toIndentedString(allowSelectingLockedCell)).append("\n");
     sb.append("    allowSelectingUnlockedCell: ").append(toIndentedString(allowSelectingUnlockedCell)).append("\n");
-    sb.append("    allowSorting: ").append(toIndentedString(allowSorting)).append("\n");
+    sb.append("    allowFiltering: ").append(toIndentedString(allowFiltering)).append("\n");
+    sb.append("    allowDeletingColumn: ").append(toIndentedString(allowDeletingColumn)).append("\n");
+    sb.append("    allowSelectingLockedCell: ").append(toIndentedString(allowSelectingLockedCell)).append("\n");
     sb.append("    allowUsingPivotTable: ").append(toIndentedString(allowUsingPivotTable)).append("\n");
+    sb.append("    allowEditArea: ").append(toIndentedString(allowEditArea)).append("\n");
+    sb.append("    allowInsertingHyperlink: ").append(toIndentedString(allowInsertingHyperlink)).append("\n");
+    sb.append("    allowFormattingCell: ").append(toIndentedString(allowFormattingCell)).append("\n");
+    sb.append("    allowFormattingRow: ").append(toIndentedString(allowFormattingRow)).append("\n");
+    sb.append("    allowInsertingRow: ").append(toIndentedString(allowInsertingRow)).append("\n");
+    sb.append("    allowFormattingColumn: ").append(toIndentedString(allowFormattingColumn)).append("\n");
+    sb.append("    allowSorting: ").append(toIndentedString(allowSorting)).append("\n");
+    sb.append("    allowInsertingColumn: ").append(toIndentedString(allowInsertingColumn)).append("\n");
+    sb.append("    password: ").append(toIndentedString(password)).append("\n");
+    sb.append("    allowDeletingRow: ").append(toIndentedString(allowDeletingRow)).append("\n");
+    sb.append("    protectionType: ").append(toIndentedString(protectionType)).append("\n");
     sb.append("}");
     return sb.toString();
   }

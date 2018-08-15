@@ -5,17 +5,17 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **link** | [**Link**](Link.md) |  |  [optional]
-**cellName** | **String** |  |  [optional]
-**author** | **String** |  |  [optional]
-**htmlNote** | **String** |  |  [optional]
-**note** | **String** |  |  [optional]
 **autoSize** | **Boolean** |  |  [optional]
+**author** | **String** |  |  [optional]
 **isVisible** | **Boolean** |  |  [optional]
-**width** | **Integer** |  |  [optional]
-**height** | **Integer** |  |  [optional]
-**textHorizontalAlignment** | **String** |  |  [optional]
 **textOrientationType** | **String** |  |  [optional]
+**height** | **Integer** |  |  [optional]
+**note** | **String** |  |  [optional]
+**width** | **Integer** |  |  [optional]
 **textVerticalAlignment** | **String** |  |  [optional]
+**cellName** | **String** |  |  [optional]
+**htmlNote** | **String** |  |  [optional]
+**textHorizontalAlignment** | **String** |  |  [optional]
 
 
 
