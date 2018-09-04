@@ -63,12 +63,13 @@ public class CellsConditionalFormattingsApi {
      * @param sheetName  (required)
      * @param index  (required)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call cellsConditionalFormattingsDeleteWorksheetConditionalFormattingCall(String name, String sheetName, Integer index, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call cellsConditionalFormattingsDeleteWorksheetConditionalFormattingCall(String name, String sheetName, Integer index, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -80,6 +81,8 @@ public class CellsConditionalFormattingsApi {
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         if (folder != null)
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "folder", folder));
+        if (storage != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "storage", storage));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -114,7 +117,7 @@ public class CellsConditionalFormattingsApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call cellsConditionalFormattingsDeleteWorksheetConditionalFormattingValidateBeforeCall(String name, String sheetName, Integer index, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call cellsConditionalFormattingsDeleteWorksheetConditionalFormattingValidateBeforeCall(String name, String sheetName, Integer index, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'name' is set
         if (name == null) {
@@ -132,7 +135,7 @@ public class CellsConditionalFormattingsApi {
         }
         
         
-        com.squareup.okhttp.Call call = cellsConditionalFormattingsDeleteWorksheetConditionalFormattingCall(name, sheetName, index, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsConditionalFormattingsDeleteWorksheetConditionalFormattingCall(name, sheetName, index, folder, storage, progressListener, progressRequestListener);
         return call;
 
         
@@ -148,11 +151,12 @@ public class CellsConditionalFormattingsApi {
      * @param sheetName  (required)
      * @param index  (required)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @return SaaSposeResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public SaaSposeResponse cellsConditionalFormattingsDeleteWorksheetConditionalFormatting(String name, String sheetName, Integer index, String folder) throws ApiException {
-        ApiResponse<SaaSposeResponse> resp = cellsConditionalFormattingsDeleteWorksheetConditionalFormattingWithHttpInfo(name, sheetName, index, folder);
+    public SaaSposeResponse cellsConditionalFormattingsDeleteWorksheetConditionalFormatting(String name, String sheetName, Integer index, String folder, String storage) throws ApiException {
+        ApiResponse<SaaSposeResponse> resp = cellsConditionalFormattingsDeleteWorksheetConditionalFormattingWithHttpInfo(name, sheetName, index, folder, storage);
         return resp.getData();
     }
 
@@ -163,11 +167,12 @@ public class CellsConditionalFormattingsApi {
      * @param sheetName  (required)
      * @param index  (required)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @return ApiResponse&lt;SaaSposeResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<SaaSposeResponse> cellsConditionalFormattingsDeleteWorksheetConditionalFormattingWithHttpInfo(String name, String sheetName, Integer index, String folder) throws ApiException {
-        com.squareup.okhttp.Call call = cellsConditionalFormattingsDeleteWorksheetConditionalFormattingValidateBeforeCall(name, sheetName, index, folder, null, null);
+    public ApiResponse<SaaSposeResponse> cellsConditionalFormattingsDeleteWorksheetConditionalFormattingWithHttpInfo(String name, String sheetName, Integer index, String folder, String storage) throws ApiException {
+        com.squareup.okhttp.Call call = cellsConditionalFormattingsDeleteWorksheetConditionalFormattingValidateBeforeCall(name, sheetName, index, folder, storage, null, null);
         Type localVarReturnType = new TypeToken<SaaSposeResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -179,11 +184,12 @@ public class CellsConditionalFormattingsApi {
      * @param sheetName  (required)
      * @param index  (required)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call cellsConditionalFormattingsDeleteWorksheetConditionalFormattingAsync(String name, String sheetName, Integer index, String folder, final ApiCallback<SaaSposeResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call cellsConditionalFormattingsDeleteWorksheetConditionalFormattingAsync(String name, String sheetName, Integer index, String folder, String storage, final ApiCallback<SaaSposeResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -204,7 +210,7 @@ public class CellsConditionalFormattingsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = cellsConditionalFormattingsDeleteWorksheetConditionalFormattingValidateBeforeCall(name, sheetName, index, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsConditionalFormattingsDeleteWorksheetConditionalFormattingValidateBeforeCall(name, sheetName, index, folder, storage, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<SaaSposeResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -218,12 +224,13 @@ public class CellsConditionalFormattingsApi {
      * @param totalRows  (required)
      * @param totalColumns  (required)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call cellsConditionalFormattingsDeleteWorksheetConditionalFormattingAreaCall(String name, String sheetName, Integer startRow, Integer startColumn, Integer totalRows, Integer totalColumns, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call cellsConditionalFormattingsDeleteWorksheetConditionalFormattingAreaCall(String name, String sheetName, Integer startRow, Integer startColumn, Integer totalRows, Integer totalColumns, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -242,6 +249,8 @@ public class CellsConditionalFormattingsApi {
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "totalColumns", totalColumns));
         if (folder != null)
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "folder", folder));
+        if (storage != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "storage", storage));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -276,7 +285,7 @@ public class CellsConditionalFormattingsApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call cellsConditionalFormattingsDeleteWorksheetConditionalFormattingAreaValidateBeforeCall(String name, String sheetName, Integer startRow, Integer startColumn, Integer totalRows, Integer totalColumns, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call cellsConditionalFormattingsDeleteWorksheetConditionalFormattingAreaValidateBeforeCall(String name, String sheetName, Integer startRow, Integer startColumn, Integer totalRows, Integer totalColumns, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'name' is set
         if (name == null) {
@@ -309,7 +318,7 @@ public class CellsConditionalFormattingsApi {
         }
         
         
-        com.squareup.okhttp.Call call = cellsConditionalFormattingsDeleteWorksheetConditionalFormattingAreaCall(name, sheetName, startRow, startColumn, totalRows, totalColumns, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsConditionalFormattingsDeleteWorksheetConditionalFormattingAreaCall(name, sheetName, startRow, startColumn, totalRows, totalColumns, folder, storage, progressListener, progressRequestListener);
         return call;
 
         
@@ -328,11 +337,12 @@ public class CellsConditionalFormattingsApi {
      * @param totalRows  (required)
      * @param totalColumns  (required)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @return SaaSposeResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public SaaSposeResponse cellsConditionalFormattingsDeleteWorksheetConditionalFormattingArea(String name, String sheetName, Integer startRow, Integer startColumn, Integer totalRows, Integer totalColumns, String folder) throws ApiException {
-        ApiResponse<SaaSposeResponse> resp = cellsConditionalFormattingsDeleteWorksheetConditionalFormattingAreaWithHttpInfo(name, sheetName, startRow, startColumn, totalRows, totalColumns, folder);
+    public SaaSposeResponse cellsConditionalFormattingsDeleteWorksheetConditionalFormattingArea(String name, String sheetName, Integer startRow, Integer startColumn, Integer totalRows, Integer totalColumns, String folder, String storage) throws ApiException {
+        ApiResponse<SaaSposeResponse> resp = cellsConditionalFormattingsDeleteWorksheetConditionalFormattingAreaWithHttpInfo(name, sheetName, startRow, startColumn, totalRows, totalColumns, folder, storage);
         return resp.getData();
     }
 
@@ -346,11 +356,12 @@ public class CellsConditionalFormattingsApi {
      * @param totalRows  (required)
      * @param totalColumns  (required)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @return ApiResponse&lt;SaaSposeResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<SaaSposeResponse> cellsConditionalFormattingsDeleteWorksheetConditionalFormattingAreaWithHttpInfo(String name, String sheetName, Integer startRow, Integer startColumn, Integer totalRows, Integer totalColumns, String folder) throws ApiException {
-        com.squareup.okhttp.Call call = cellsConditionalFormattingsDeleteWorksheetConditionalFormattingAreaValidateBeforeCall(name, sheetName, startRow, startColumn, totalRows, totalColumns, folder, null, null);
+    public ApiResponse<SaaSposeResponse> cellsConditionalFormattingsDeleteWorksheetConditionalFormattingAreaWithHttpInfo(String name, String sheetName, Integer startRow, Integer startColumn, Integer totalRows, Integer totalColumns, String folder, String storage) throws ApiException {
+        com.squareup.okhttp.Call call = cellsConditionalFormattingsDeleteWorksheetConditionalFormattingAreaValidateBeforeCall(name, sheetName, startRow, startColumn, totalRows, totalColumns, folder, storage, null, null);
         Type localVarReturnType = new TypeToken<SaaSposeResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -365,11 +376,12 @@ public class CellsConditionalFormattingsApi {
      * @param totalRows  (required)
      * @param totalColumns  (required)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call cellsConditionalFormattingsDeleteWorksheetConditionalFormattingAreaAsync(String name, String sheetName, Integer startRow, Integer startColumn, Integer totalRows, Integer totalColumns, String folder, final ApiCallback<SaaSposeResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call cellsConditionalFormattingsDeleteWorksheetConditionalFormattingAreaAsync(String name, String sheetName, Integer startRow, Integer startColumn, Integer totalRows, Integer totalColumns, String folder, String storage, final ApiCallback<SaaSposeResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -390,7 +402,7 @@ public class CellsConditionalFormattingsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = cellsConditionalFormattingsDeleteWorksheetConditionalFormattingAreaValidateBeforeCall(name, sheetName, startRow, startColumn, totalRows, totalColumns, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsConditionalFormattingsDeleteWorksheetConditionalFormattingAreaValidateBeforeCall(name, sheetName, startRow, startColumn, totalRows, totalColumns, folder, storage, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<SaaSposeResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -400,12 +412,13 @@ public class CellsConditionalFormattingsApi {
      * @param name  (required)
      * @param sheetName  (required)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call cellsConditionalFormattingsDeleteWorksheetConditionalFormattingsCall(String name, String sheetName, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call cellsConditionalFormattingsDeleteWorksheetConditionalFormattingsCall(String name, String sheetName, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -416,6 +429,8 @@ public class CellsConditionalFormattingsApi {
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         if (folder != null)
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "folder", folder));
+        if (storage != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "storage", storage));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -450,7 +465,7 @@ public class CellsConditionalFormattingsApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call cellsConditionalFormattingsDeleteWorksheetConditionalFormattingsValidateBeforeCall(String name, String sheetName, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call cellsConditionalFormattingsDeleteWorksheetConditionalFormattingsValidateBeforeCall(String name, String sheetName, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'name' is set
         if (name == null) {
@@ -463,7 +478,7 @@ public class CellsConditionalFormattingsApi {
         }
         
         
-        com.squareup.okhttp.Call call = cellsConditionalFormattingsDeleteWorksheetConditionalFormattingsCall(name, sheetName, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsConditionalFormattingsDeleteWorksheetConditionalFormattingsCall(name, sheetName, folder, storage, progressListener, progressRequestListener);
         return call;
 
         
@@ -478,11 +493,12 @@ public class CellsConditionalFormattingsApi {
      * @param name  (required)
      * @param sheetName  (required)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @return SaaSposeResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public SaaSposeResponse cellsConditionalFormattingsDeleteWorksheetConditionalFormattings(String name, String sheetName, String folder) throws ApiException {
-        ApiResponse<SaaSposeResponse> resp = cellsConditionalFormattingsDeleteWorksheetConditionalFormattingsWithHttpInfo(name, sheetName, folder);
+    public SaaSposeResponse cellsConditionalFormattingsDeleteWorksheetConditionalFormattings(String name, String sheetName, String folder, String storage) throws ApiException {
+        ApiResponse<SaaSposeResponse> resp = cellsConditionalFormattingsDeleteWorksheetConditionalFormattingsWithHttpInfo(name, sheetName, folder, storage);
         return resp.getData();
     }
 
@@ -492,11 +508,12 @@ public class CellsConditionalFormattingsApi {
      * @param name  (required)
      * @param sheetName  (required)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @return ApiResponse&lt;SaaSposeResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<SaaSposeResponse> cellsConditionalFormattingsDeleteWorksheetConditionalFormattingsWithHttpInfo(String name, String sheetName, String folder) throws ApiException {
-        com.squareup.okhttp.Call call = cellsConditionalFormattingsDeleteWorksheetConditionalFormattingsValidateBeforeCall(name, sheetName, folder, null, null);
+    public ApiResponse<SaaSposeResponse> cellsConditionalFormattingsDeleteWorksheetConditionalFormattingsWithHttpInfo(String name, String sheetName, String folder, String storage) throws ApiException {
+        com.squareup.okhttp.Call call = cellsConditionalFormattingsDeleteWorksheetConditionalFormattingsValidateBeforeCall(name, sheetName, folder, storage, null, null);
         Type localVarReturnType = new TypeToken<SaaSposeResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -507,11 +524,12 @@ public class CellsConditionalFormattingsApi {
      * @param name  (required)
      * @param sheetName  (required)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call cellsConditionalFormattingsDeleteWorksheetConditionalFormattingsAsync(String name, String sheetName, String folder, final ApiCallback<SaaSposeResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call cellsConditionalFormattingsDeleteWorksheetConditionalFormattingsAsync(String name, String sheetName, String folder, String storage, final ApiCallback<SaaSposeResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -532,7 +550,7 @@ public class CellsConditionalFormattingsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = cellsConditionalFormattingsDeleteWorksheetConditionalFormattingsValidateBeforeCall(name, sheetName, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsConditionalFormattingsDeleteWorksheetConditionalFormattingsValidateBeforeCall(name, sheetName, folder, storage, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<SaaSposeResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -543,12 +561,13 @@ public class CellsConditionalFormattingsApi {
      * @param sheetName  (required)
      * @param index  (required)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call cellsConditionalFormattingsGetWorksheetConditionalFormattingCall(String name, String sheetName, Integer index, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call cellsConditionalFormattingsGetWorksheetConditionalFormattingCall(String name, String sheetName, Integer index, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -560,6 +579,8 @@ public class CellsConditionalFormattingsApi {
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         if (folder != null)
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "folder", folder));
+        if (storage != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "storage", storage));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -594,7 +615,7 @@ public class CellsConditionalFormattingsApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call cellsConditionalFormattingsGetWorksheetConditionalFormattingValidateBeforeCall(String name, String sheetName, Integer index, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call cellsConditionalFormattingsGetWorksheetConditionalFormattingValidateBeforeCall(String name, String sheetName, Integer index, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'name' is set
         if (name == null) {
@@ -612,7 +633,7 @@ public class CellsConditionalFormattingsApi {
         }
         
         
-        com.squareup.okhttp.Call call = cellsConditionalFormattingsGetWorksheetConditionalFormattingCall(name, sheetName, index, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsConditionalFormattingsGetWorksheetConditionalFormattingCall(name, sheetName, index, folder, storage, progressListener, progressRequestListener);
         return call;
 
         
@@ -628,11 +649,12 @@ public class CellsConditionalFormattingsApi {
      * @param sheetName  (required)
      * @param index  (required)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @return ConditionalFormattingResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ConditionalFormattingResponse cellsConditionalFormattingsGetWorksheetConditionalFormatting(String name, String sheetName, Integer index, String folder) throws ApiException {
-        ApiResponse<ConditionalFormattingResponse> resp = cellsConditionalFormattingsGetWorksheetConditionalFormattingWithHttpInfo(name, sheetName, index, folder);
+    public ConditionalFormattingResponse cellsConditionalFormattingsGetWorksheetConditionalFormatting(String name, String sheetName, Integer index, String folder, String storage) throws ApiException {
+        ApiResponse<ConditionalFormattingResponse> resp = cellsConditionalFormattingsGetWorksheetConditionalFormattingWithHttpInfo(name, sheetName, index, folder, storage);
         return resp.getData();
     }
 
@@ -643,11 +665,12 @@ public class CellsConditionalFormattingsApi {
      * @param sheetName  (required)
      * @param index  (required)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @return ApiResponse&lt;ConditionalFormattingResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ConditionalFormattingResponse> cellsConditionalFormattingsGetWorksheetConditionalFormattingWithHttpInfo(String name, String sheetName, Integer index, String folder) throws ApiException {
-        com.squareup.okhttp.Call call = cellsConditionalFormattingsGetWorksheetConditionalFormattingValidateBeforeCall(name, sheetName, index, folder, null, null);
+    public ApiResponse<ConditionalFormattingResponse> cellsConditionalFormattingsGetWorksheetConditionalFormattingWithHttpInfo(String name, String sheetName, Integer index, String folder, String storage) throws ApiException {
+        com.squareup.okhttp.Call call = cellsConditionalFormattingsGetWorksheetConditionalFormattingValidateBeforeCall(name, sheetName, index, folder, storage, null, null);
         Type localVarReturnType = new TypeToken<ConditionalFormattingResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -659,11 +682,12 @@ public class CellsConditionalFormattingsApi {
      * @param sheetName  (required)
      * @param index  (required)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call cellsConditionalFormattingsGetWorksheetConditionalFormattingAsync(String name, String sheetName, Integer index, String folder, final ApiCallback<ConditionalFormattingResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call cellsConditionalFormattingsGetWorksheetConditionalFormattingAsync(String name, String sheetName, Integer index, String folder, String storage, final ApiCallback<ConditionalFormattingResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -684,7 +708,7 @@ public class CellsConditionalFormattingsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = cellsConditionalFormattingsGetWorksheetConditionalFormattingValidateBeforeCall(name, sheetName, index, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsConditionalFormattingsGetWorksheetConditionalFormattingValidateBeforeCall(name, sheetName, index, folder, storage, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<ConditionalFormattingResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -694,12 +718,13 @@ public class CellsConditionalFormattingsApi {
      * @param name  (required)
      * @param sheetName  (required)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call cellsConditionalFormattingsGetWorksheetConditionalFormattingsCall(String name, String sheetName, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call cellsConditionalFormattingsGetWorksheetConditionalFormattingsCall(String name, String sheetName, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -710,6 +735,8 @@ public class CellsConditionalFormattingsApi {
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         if (folder != null)
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "folder", folder));
+        if (storage != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "storage", storage));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -744,7 +771,7 @@ public class CellsConditionalFormattingsApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call cellsConditionalFormattingsGetWorksheetConditionalFormattingsValidateBeforeCall(String name, String sheetName, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call cellsConditionalFormattingsGetWorksheetConditionalFormattingsValidateBeforeCall(String name, String sheetName, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'name' is set
         if (name == null) {
@@ -757,7 +784,7 @@ public class CellsConditionalFormattingsApi {
         }
         
         
-        com.squareup.okhttp.Call call = cellsConditionalFormattingsGetWorksheetConditionalFormattingsCall(name, sheetName, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsConditionalFormattingsGetWorksheetConditionalFormattingsCall(name, sheetName, folder, storage, progressListener, progressRequestListener);
         return call;
 
         
@@ -772,11 +799,12 @@ public class CellsConditionalFormattingsApi {
      * @param name  (required)
      * @param sheetName  (required)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @return ConditionalFormattingsResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ConditionalFormattingsResponse cellsConditionalFormattingsGetWorksheetConditionalFormattings(String name, String sheetName, String folder) throws ApiException {
-        ApiResponse<ConditionalFormattingsResponse> resp = cellsConditionalFormattingsGetWorksheetConditionalFormattingsWithHttpInfo(name, sheetName, folder);
+    public ConditionalFormattingsResponse cellsConditionalFormattingsGetWorksheetConditionalFormattings(String name, String sheetName, String folder, String storage) throws ApiException {
+        ApiResponse<ConditionalFormattingsResponse> resp = cellsConditionalFormattingsGetWorksheetConditionalFormattingsWithHttpInfo(name, sheetName, folder, storage);
         return resp.getData();
     }
 
@@ -786,11 +814,12 @@ public class CellsConditionalFormattingsApi {
      * @param name  (required)
      * @param sheetName  (required)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @return ApiResponse&lt;ConditionalFormattingsResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ConditionalFormattingsResponse> cellsConditionalFormattingsGetWorksheetConditionalFormattingsWithHttpInfo(String name, String sheetName, String folder) throws ApiException {
-        com.squareup.okhttp.Call call = cellsConditionalFormattingsGetWorksheetConditionalFormattingsValidateBeforeCall(name, sheetName, folder, null, null);
+    public ApiResponse<ConditionalFormattingsResponse> cellsConditionalFormattingsGetWorksheetConditionalFormattingsWithHttpInfo(String name, String sheetName, String folder, String storage) throws ApiException {
+        com.squareup.okhttp.Call call = cellsConditionalFormattingsGetWorksheetConditionalFormattingsValidateBeforeCall(name, sheetName, folder, storage, null, null);
         Type localVarReturnType = new TypeToken<ConditionalFormattingsResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -801,11 +830,12 @@ public class CellsConditionalFormattingsApi {
      * @param name  (required)
      * @param sheetName  (required)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call cellsConditionalFormattingsGetWorksheetConditionalFormattingsAsync(String name, String sheetName, String folder, final ApiCallback<ConditionalFormattingsResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call cellsConditionalFormattingsGetWorksheetConditionalFormattingsAsync(String name, String sheetName, String folder, String storage, final ApiCallback<ConditionalFormattingsResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -826,7 +856,7 @@ public class CellsConditionalFormattingsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = cellsConditionalFormattingsGetWorksheetConditionalFormattingsValidateBeforeCall(name, sheetName, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsConditionalFormattingsGetWorksheetConditionalFormattingsValidateBeforeCall(name, sheetName, folder, storage, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<ConditionalFormattingsResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -838,12 +868,13 @@ public class CellsConditionalFormattingsApi {
      * @param cellArea  (required)
      * @param formatcondition  (optional)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call cellsConditionalFormattingsPutWorksheetConditionalFormattingCall(String name, String sheetName, String cellArea, FormatCondition formatcondition, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call cellsConditionalFormattingsPutWorksheetConditionalFormattingCall(String name, String sheetName, String cellArea, FormatCondition formatcondition, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = formatcondition;
         
         // create path and map variables
@@ -856,6 +887,8 @@ public class CellsConditionalFormattingsApi {
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "cellArea", cellArea));
         if (folder != null)
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "folder", folder));
+        if (storage != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "storage", storage));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -890,7 +923,7 @@ public class CellsConditionalFormattingsApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call cellsConditionalFormattingsPutWorksheetConditionalFormattingValidateBeforeCall(String name, String sheetName, String cellArea, FormatCondition formatcondition, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call cellsConditionalFormattingsPutWorksheetConditionalFormattingValidateBeforeCall(String name, String sheetName, String cellArea, FormatCondition formatcondition, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'name' is set
         if (name == null) {
@@ -908,7 +941,7 @@ public class CellsConditionalFormattingsApi {
         }
         
         
-        com.squareup.okhttp.Call call = cellsConditionalFormattingsPutWorksheetConditionalFormattingCall(name, sheetName, cellArea, formatcondition, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsConditionalFormattingsPutWorksheetConditionalFormattingCall(name, sheetName, cellArea, formatcondition, folder, storage, progressListener, progressRequestListener);
         return call;
 
         
@@ -925,11 +958,12 @@ public class CellsConditionalFormattingsApi {
      * @param cellArea  (required)
      * @param formatcondition  (optional)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @return SaaSposeResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public SaaSposeResponse cellsConditionalFormattingsPutWorksheetConditionalFormatting(String name, String sheetName, String cellArea, FormatCondition formatcondition, String folder) throws ApiException {
-        ApiResponse<SaaSposeResponse> resp = cellsConditionalFormattingsPutWorksheetConditionalFormattingWithHttpInfo(name, sheetName, cellArea, formatcondition, folder);
+    public SaaSposeResponse cellsConditionalFormattingsPutWorksheetConditionalFormatting(String name, String sheetName, String cellArea, FormatCondition formatcondition, String folder, String storage) throws ApiException {
+        ApiResponse<SaaSposeResponse> resp = cellsConditionalFormattingsPutWorksheetConditionalFormattingWithHttpInfo(name, sheetName, cellArea, formatcondition, folder, storage);
         return resp.getData();
     }
 
@@ -941,11 +975,12 @@ public class CellsConditionalFormattingsApi {
      * @param cellArea  (required)
      * @param formatcondition  (optional)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @return ApiResponse&lt;SaaSposeResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<SaaSposeResponse> cellsConditionalFormattingsPutWorksheetConditionalFormattingWithHttpInfo(String name, String sheetName, String cellArea, FormatCondition formatcondition, String folder) throws ApiException {
-        com.squareup.okhttp.Call call = cellsConditionalFormattingsPutWorksheetConditionalFormattingValidateBeforeCall(name, sheetName, cellArea, formatcondition, folder, null, null);
+    public ApiResponse<SaaSposeResponse> cellsConditionalFormattingsPutWorksheetConditionalFormattingWithHttpInfo(String name, String sheetName, String cellArea, FormatCondition formatcondition, String folder, String storage) throws ApiException {
+        com.squareup.okhttp.Call call = cellsConditionalFormattingsPutWorksheetConditionalFormattingValidateBeforeCall(name, sheetName, cellArea, formatcondition, folder, storage, null, null);
         Type localVarReturnType = new TypeToken<SaaSposeResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -958,11 +993,12 @@ public class CellsConditionalFormattingsApi {
      * @param cellArea  (required)
      * @param formatcondition  (optional)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call cellsConditionalFormattingsPutWorksheetConditionalFormattingAsync(String name, String sheetName, String cellArea, FormatCondition formatcondition, String folder, final ApiCallback<SaaSposeResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call cellsConditionalFormattingsPutWorksheetConditionalFormattingAsync(String name, String sheetName, String cellArea, FormatCondition formatcondition, String folder, String storage, final ApiCallback<SaaSposeResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -983,7 +1019,7 @@ public class CellsConditionalFormattingsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = cellsConditionalFormattingsPutWorksheetConditionalFormattingValidateBeforeCall(name, sheetName, cellArea, formatcondition, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsConditionalFormattingsPutWorksheetConditionalFormattingValidateBeforeCall(name, sheetName, cellArea, formatcondition, folder, storage, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<SaaSposeResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -999,12 +1035,13 @@ public class CellsConditionalFormattingsApi {
      * @param formula1  (required)
      * @param formula2  (required)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call cellsConditionalFormattingsPutWorksheetFormatConditionCall(String name, String sheetName, Integer index, String cellArea, String type, String operatorType, String formula1, String formula2, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call cellsConditionalFormattingsPutWorksheetFormatConditionCall(String name, String sheetName, Integer index, String cellArea, String type, String operatorType, String formula1, String formula2, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -1026,6 +1063,8 @@ public class CellsConditionalFormattingsApi {
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "formula2", formula2));
         if (folder != null)
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "folder", folder));
+        if (storage != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "storage", storage));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -1060,7 +1099,7 @@ public class CellsConditionalFormattingsApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call cellsConditionalFormattingsPutWorksheetFormatConditionValidateBeforeCall(String name, String sheetName, Integer index, String cellArea, String type, String operatorType, String formula1, String formula2, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call cellsConditionalFormattingsPutWorksheetFormatConditionValidateBeforeCall(String name, String sheetName, Integer index, String cellArea, String type, String operatorType, String formula1, String formula2, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'name' is set
         if (name == null) {
@@ -1103,7 +1142,7 @@ public class CellsConditionalFormattingsApi {
         }
         
         
-        com.squareup.okhttp.Call call = cellsConditionalFormattingsPutWorksheetFormatConditionCall(name, sheetName, index, cellArea, type, operatorType, formula1, formula2, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsConditionalFormattingsPutWorksheetFormatConditionCall(name, sheetName, index, cellArea, type, operatorType, formula1, formula2, folder, storage, progressListener, progressRequestListener);
         return call;
 
         
@@ -1124,11 +1163,12 @@ public class CellsConditionalFormattingsApi {
      * @param formula1  (required)
      * @param formula2  (required)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @return SaaSposeResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public SaaSposeResponse cellsConditionalFormattingsPutWorksheetFormatCondition(String name, String sheetName, Integer index, String cellArea, String type, String operatorType, String formula1, String formula2, String folder) throws ApiException {
-        ApiResponse<SaaSposeResponse> resp = cellsConditionalFormattingsPutWorksheetFormatConditionWithHttpInfo(name, sheetName, index, cellArea, type, operatorType, formula1, formula2, folder);
+    public SaaSposeResponse cellsConditionalFormattingsPutWorksheetFormatCondition(String name, String sheetName, Integer index, String cellArea, String type, String operatorType, String formula1, String formula2, String folder, String storage) throws ApiException {
+        ApiResponse<SaaSposeResponse> resp = cellsConditionalFormattingsPutWorksheetFormatConditionWithHttpInfo(name, sheetName, index, cellArea, type, operatorType, formula1, formula2, folder, storage);
         return resp.getData();
     }
 
@@ -1144,11 +1184,12 @@ public class CellsConditionalFormattingsApi {
      * @param formula1  (required)
      * @param formula2  (required)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @return ApiResponse&lt;SaaSposeResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<SaaSposeResponse> cellsConditionalFormattingsPutWorksheetFormatConditionWithHttpInfo(String name, String sheetName, Integer index, String cellArea, String type, String operatorType, String formula1, String formula2, String folder) throws ApiException {
-        com.squareup.okhttp.Call call = cellsConditionalFormattingsPutWorksheetFormatConditionValidateBeforeCall(name, sheetName, index, cellArea, type, operatorType, formula1, formula2, folder, null, null);
+    public ApiResponse<SaaSposeResponse> cellsConditionalFormattingsPutWorksheetFormatConditionWithHttpInfo(String name, String sheetName, Integer index, String cellArea, String type, String operatorType, String formula1, String formula2, String folder, String storage) throws ApiException {
+        com.squareup.okhttp.Call call = cellsConditionalFormattingsPutWorksheetFormatConditionValidateBeforeCall(name, sheetName, index, cellArea, type, operatorType, formula1, formula2, folder, storage, null, null);
         Type localVarReturnType = new TypeToken<SaaSposeResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -1165,11 +1206,12 @@ public class CellsConditionalFormattingsApi {
      * @param formula1  (required)
      * @param formula2  (required)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call cellsConditionalFormattingsPutWorksheetFormatConditionAsync(String name, String sheetName, Integer index, String cellArea, String type, String operatorType, String formula1, String formula2, String folder, final ApiCallback<SaaSposeResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call cellsConditionalFormattingsPutWorksheetFormatConditionAsync(String name, String sheetName, Integer index, String cellArea, String type, String operatorType, String formula1, String formula2, String folder, String storage, final ApiCallback<SaaSposeResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1190,7 +1232,7 @@ public class CellsConditionalFormattingsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = cellsConditionalFormattingsPutWorksheetFormatConditionValidateBeforeCall(name, sheetName, index, cellArea, type, operatorType, formula1, formula2, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsConditionalFormattingsPutWorksheetFormatConditionValidateBeforeCall(name, sheetName, index, cellArea, type, operatorType, formula1, formula2, folder, storage, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<SaaSposeResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -1202,12 +1244,13 @@ public class CellsConditionalFormattingsApi {
      * @param index  (required)
      * @param cellArea  (required)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call cellsConditionalFormattingsPutWorksheetFormatConditionAreaCall(String name, String sheetName, Integer index, String cellArea, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call cellsConditionalFormattingsPutWorksheetFormatConditionAreaCall(String name, String sheetName, Integer index, String cellArea, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -1221,6 +1264,8 @@ public class CellsConditionalFormattingsApi {
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "cellArea", cellArea));
         if (folder != null)
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "folder", folder));
+        if (storage != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "storage", storage));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -1255,7 +1300,7 @@ public class CellsConditionalFormattingsApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call cellsConditionalFormattingsPutWorksheetFormatConditionAreaValidateBeforeCall(String name, String sheetName, Integer index, String cellArea, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call cellsConditionalFormattingsPutWorksheetFormatConditionAreaValidateBeforeCall(String name, String sheetName, Integer index, String cellArea, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'name' is set
         if (name == null) {
@@ -1278,7 +1323,7 @@ public class CellsConditionalFormattingsApi {
         }
         
         
-        com.squareup.okhttp.Call call = cellsConditionalFormattingsPutWorksheetFormatConditionAreaCall(name, sheetName, index, cellArea, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsConditionalFormattingsPutWorksheetFormatConditionAreaCall(name, sheetName, index, cellArea, folder, storage, progressListener, progressRequestListener);
         return call;
 
         
@@ -1295,11 +1340,12 @@ public class CellsConditionalFormattingsApi {
      * @param index  (required)
      * @param cellArea  (required)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @return SaaSposeResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public SaaSposeResponse cellsConditionalFormattingsPutWorksheetFormatConditionArea(String name, String sheetName, Integer index, String cellArea, String folder) throws ApiException {
-        ApiResponse<SaaSposeResponse> resp = cellsConditionalFormattingsPutWorksheetFormatConditionAreaWithHttpInfo(name, sheetName, index, cellArea, folder);
+    public SaaSposeResponse cellsConditionalFormattingsPutWorksheetFormatConditionArea(String name, String sheetName, Integer index, String cellArea, String folder, String storage) throws ApiException {
+        ApiResponse<SaaSposeResponse> resp = cellsConditionalFormattingsPutWorksheetFormatConditionAreaWithHttpInfo(name, sheetName, index, cellArea, folder, storage);
         return resp.getData();
     }
 
@@ -1311,11 +1357,12 @@ public class CellsConditionalFormattingsApi {
      * @param index  (required)
      * @param cellArea  (required)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @return ApiResponse&lt;SaaSposeResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<SaaSposeResponse> cellsConditionalFormattingsPutWorksheetFormatConditionAreaWithHttpInfo(String name, String sheetName, Integer index, String cellArea, String folder) throws ApiException {
-        com.squareup.okhttp.Call call = cellsConditionalFormattingsPutWorksheetFormatConditionAreaValidateBeforeCall(name, sheetName, index, cellArea, folder, null, null);
+    public ApiResponse<SaaSposeResponse> cellsConditionalFormattingsPutWorksheetFormatConditionAreaWithHttpInfo(String name, String sheetName, Integer index, String cellArea, String folder, String storage) throws ApiException {
+        com.squareup.okhttp.Call call = cellsConditionalFormattingsPutWorksheetFormatConditionAreaValidateBeforeCall(name, sheetName, index, cellArea, folder, storage, null, null);
         Type localVarReturnType = new TypeToken<SaaSposeResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -1328,11 +1375,12 @@ public class CellsConditionalFormattingsApi {
      * @param index  (required)
      * @param cellArea  (required)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call cellsConditionalFormattingsPutWorksheetFormatConditionAreaAsync(String name, String sheetName, Integer index, String cellArea, String folder, final ApiCallback<SaaSposeResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call cellsConditionalFormattingsPutWorksheetFormatConditionAreaAsync(String name, String sheetName, Integer index, String cellArea, String folder, String storage, final ApiCallback<SaaSposeResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1353,7 +1401,7 @@ public class CellsConditionalFormattingsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = cellsConditionalFormattingsPutWorksheetFormatConditionAreaValidateBeforeCall(name, sheetName, index, cellArea, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsConditionalFormattingsPutWorksheetFormatConditionAreaValidateBeforeCall(name, sheetName, index, cellArea, folder, storage, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<SaaSposeResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -1368,12 +1416,13 @@ public class CellsConditionalFormattingsApi {
      * @param formula1  (required)
      * @param formula2  (required)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call cellsConditionalFormattingsPutWorksheetFormatConditionConditionCall(String name, String sheetName, Integer index, String type, String operatorType, String formula1, String formula2, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call cellsConditionalFormattingsPutWorksheetFormatConditionConditionCall(String name, String sheetName, Integer index, String type, String operatorType, String formula1, String formula2, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -1393,6 +1442,8 @@ public class CellsConditionalFormattingsApi {
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "formula2", formula2));
         if (folder != null)
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "folder", folder));
+        if (storage != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "storage", storage));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -1427,7 +1478,7 @@ public class CellsConditionalFormattingsApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call cellsConditionalFormattingsPutWorksheetFormatConditionConditionValidateBeforeCall(String name, String sheetName, Integer index, String type, String operatorType, String formula1, String formula2, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call cellsConditionalFormattingsPutWorksheetFormatConditionConditionValidateBeforeCall(String name, String sheetName, Integer index, String type, String operatorType, String formula1, String formula2, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'name' is set
         if (name == null) {
@@ -1465,7 +1516,7 @@ public class CellsConditionalFormattingsApi {
         }
         
         
-        com.squareup.okhttp.Call call = cellsConditionalFormattingsPutWorksheetFormatConditionConditionCall(name, sheetName, index, type, operatorType, formula1, formula2, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsConditionalFormattingsPutWorksheetFormatConditionConditionCall(name, sheetName, index, type, operatorType, formula1, formula2, folder, storage, progressListener, progressRequestListener);
         return call;
 
         
@@ -1485,11 +1536,12 @@ public class CellsConditionalFormattingsApi {
      * @param formula1  (required)
      * @param formula2  (required)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @return SaaSposeResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public SaaSposeResponse cellsConditionalFormattingsPutWorksheetFormatConditionCondition(String name, String sheetName, Integer index, String type, String operatorType, String formula1, String formula2, String folder) throws ApiException {
-        ApiResponse<SaaSposeResponse> resp = cellsConditionalFormattingsPutWorksheetFormatConditionConditionWithHttpInfo(name, sheetName, index, type, operatorType, formula1, formula2, folder);
+    public SaaSposeResponse cellsConditionalFormattingsPutWorksheetFormatConditionCondition(String name, String sheetName, Integer index, String type, String operatorType, String formula1, String formula2, String folder, String storage) throws ApiException {
+        ApiResponse<SaaSposeResponse> resp = cellsConditionalFormattingsPutWorksheetFormatConditionConditionWithHttpInfo(name, sheetName, index, type, operatorType, formula1, formula2, folder, storage);
         return resp.getData();
     }
 
@@ -1504,11 +1556,12 @@ public class CellsConditionalFormattingsApi {
      * @param formula1  (required)
      * @param formula2  (required)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @return ApiResponse&lt;SaaSposeResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<SaaSposeResponse> cellsConditionalFormattingsPutWorksheetFormatConditionConditionWithHttpInfo(String name, String sheetName, Integer index, String type, String operatorType, String formula1, String formula2, String folder) throws ApiException {
-        com.squareup.okhttp.Call call = cellsConditionalFormattingsPutWorksheetFormatConditionConditionValidateBeforeCall(name, sheetName, index, type, operatorType, formula1, formula2, folder, null, null);
+    public ApiResponse<SaaSposeResponse> cellsConditionalFormattingsPutWorksheetFormatConditionConditionWithHttpInfo(String name, String sheetName, Integer index, String type, String operatorType, String formula1, String formula2, String folder, String storage) throws ApiException {
+        com.squareup.okhttp.Call call = cellsConditionalFormattingsPutWorksheetFormatConditionConditionValidateBeforeCall(name, sheetName, index, type, operatorType, formula1, formula2, folder, storage, null, null);
         Type localVarReturnType = new TypeToken<SaaSposeResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -1524,11 +1577,12 @@ public class CellsConditionalFormattingsApi {
      * @param formula1  (required)
      * @param formula2  (required)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call cellsConditionalFormattingsPutWorksheetFormatConditionConditionAsync(String name, String sheetName, Integer index, String type, String operatorType, String formula1, String formula2, String folder, final ApiCallback<SaaSposeResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call cellsConditionalFormattingsPutWorksheetFormatConditionConditionAsync(String name, String sheetName, Integer index, String type, String operatorType, String formula1, String formula2, String folder, String storage, final ApiCallback<SaaSposeResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1549,7 +1603,7 @@ public class CellsConditionalFormattingsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = cellsConditionalFormattingsPutWorksheetFormatConditionConditionValidateBeforeCall(name, sheetName, index, type, operatorType, formula1, formula2, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsConditionalFormattingsPutWorksheetFormatConditionConditionValidateBeforeCall(name, sheetName, index, type, operatorType, formula1, formula2, folder, storage, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<SaaSposeResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 <a name="cellsChartAreaGetChartArea"></a>
 # **cellsChartAreaGetChartArea**
-> ChartAreaResponse cellsChartAreaGetChartArea(name, sheetName, chartIndex, folder)
+> ChartAreaResponse cellsChartAreaGetChartArea(name, sheetName, chartIndex, folder, storage)
 
 Get chart area info.
 
@@ -27,8 +27,9 @@ String name = "name_example"; // String | Workbook name.
 String sheetName = "sheetName_example"; // String | Worksheet name.
 Integer chartIndex = 56; // Integer | The chart index.
 String folder = "folder_example"; // String | Workbook folder.
+String storage = "storage_example"; // String | storage name.
 try {
-    ChartAreaResponse result = apiInstance.cellsChartAreaGetChartArea(name, sheetName, chartIndex, folder);
+    ChartAreaResponse result = apiInstance.cellsChartAreaGetChartArea(name, sheetName, chartIndex, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsChartAreaApi#cellsChartAreaGetChartArea");
@@ -44,6 +45,7 @@ Name | Type | Description  | Notes
  **sheetName** | **String**| Worksheet name. |
  **chartIndex** | **Integer**| The chart index. |
  **folder** | **String**| Workbook folder. | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -60,7 +62,7 @@ No authorization required
 
 <a name="cellsChartAreaGetChartAreaBorder"></a>
 # **cellsChartAreaGetChartAreaBorder**
-> LineResponse cellsChartAreaGetChartAreaBorder(name, sheetName, chartIndex, folder)
+> LineResponse cellsChartAreaGetChartAreaBorder(name, sheetName, chartIndex, folder, storage)
 
 Get chart area border info.
 
@@ -76,8 +78,9 @@ String name = "name_example"; // String | Workbook name.
 String sheetName = "sheetName_example"; // String | Worksheet name.
 Integer chartIndex = 56; // Integer | The chart index.
 String folder = "folder_example"; // String | Workbook folder.
+String storage = "storage_example"; // String | storage name.
 try {
-    LineResponse result = apiInstance.cellsChartAreaGetChartAreaBorder(name, sheetName, chartIndex, folder);
+    LineResponse result = apiInstance.cellsChartAreaGetChartAreaBorder(name, sheetName, chartIndex, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsChartAreaApi#cellsChartAreaGetChartAreaBorder");
@@ -93,6 +96,7 @@ Name | Type | Description  | Notes
  **sheetName** | **String**| Worksheet name. |
  **chartIndex** | **Integer**| The chart index. |
  **folder** | **String**| Workbook folder. | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -109,7 +113,7 @@ No authorization required
 
 <a name="cellsChartAreaGetChartAreaFillFormat"></a>
 # **cellsChartAreaGetChartAreaFillFormat**
-> FillFormatResponse cellsChartAreaGetChartAreaFillFormat(name, sheetName, chartIndex, folder)
+> FillFormatResponse cellsChartAreaGetChartAreaFillFormat(name, sheetName, chartIndex, folder, storage)
 
 Get chart area fill format info.
 
@@ -125,8 +129,9 @@ String name = "name_example"; // String | Workbook name.
 String sheetName = "sheetName_example"; // String | Worksheet name.
 Integer chartIndex = 56; // Integer | The chart index.
 String folder = "folder_example"; // String | Workbook folder.
+String storage = "storage_example"; // String | storage name.
 try {
-    FillFormatResponse result = apiInstance.cellsChartAreaGetChartAreaFillFormat(name, sheetName, chartIndex, folder);
+    FillFormatResponse result = apiInstance.cellsChartAreaGetChartAreaFillFormat(name, sheetName, chartIndex, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsChartAreaApi#cellsChartAreaGetChartAreaFillFormat");
@@ -142,6 +147,7 @@ Name | Type | Description  | Notes
  **sheetName** | **String**| Worksheet name. |
  **chartIndex** | **Integer**| The chart index. |
  **folder** | **String**| Workbook folder. | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 

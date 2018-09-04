@@ -39,6 +39,7 @@ import com.aspose.cloud.cells.model.WorkbookReplaceResponse;
 import com.aspose.cloud.cells.model.WorkbookResponse;
 import com.aspose.cloud.cells.model.WorkbookSettings;
 import com.aspose.cloud.cells.model.WorkbookSettingsResponse;
+
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -92,7 +93,7 @@ public class CellsWorkbookApiTest {
         encryption.setPassword("123456");
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        SaaSposeResponse response = api.cellsWorkbookDeleteDecryptDocument(name, encryption, folder);
+        SaaSposeResponse response = api.cellsWorkbookDeleteDecryptDocument(name, encryption, folder,null);
 
         // TODO: test validations
     }
@@ -110,7 +111,7 @@ public class CellsWorkbookApiTest {
        String name = BOOK1;
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        SaaSposeResponse response = api.cellsWorkbookDeleteDocumentUnprotectFromChanges(name, folder);
+        SaaSposeResponse response = api.cellsWorkbookDeleteDocumentUnprotectFromChanges(name, folder,null);
 
         // TODO: test validations
     }
@@ -131,7 +132,7 @@ public class CellsWorkbookApiTest {
         protection.setPassword("123456");
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        SaaSposeResponse response = api.cellsWorkbookDeleteUnprotectDocument(name, protection, folder);
+        SaaSposeResponse response = api.cellsWorkbookDeleteUnprotectDocument(name, protection, folder,null);
 
         // TODO: test validations
     }
@@ -150,7 +151,7 @@ public class CellsWorkbookApiTest {
         String nameName = "Name_2";
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        SaaSposeResponse response = api.cellsWorkbookDeleteWorkbookName(name, nameName, folder);
+        SaaSposeResponse response = api.cellsWorkbookDeleteWorkbookName(name, nameName, folder,null);
     }
     
     /**
@@ -166,7 +167,7 @@ public class CellsWorkbookApiTest {
         String name = BOOK1;
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        SaaSposeResponse response = api.cellsWorkbookDeleteWorkbookNames(name, folder);
+        SaaSposeResponse response = api.cellsWorkbookDeleteWorkbookNames(name, folder,null);
     }
     
     /**
@@ -182,9 +183,11 @@ public class CellsWorkbookApiTest {
        String name = BOOK1;
         String password = null;
         Boolean isAutoFit = true;
+        Boolean onlySaveTable = true;
+        String format = "XPS";
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        File response = api.cellsWorkbookGetWorkbook(name, password, isAutoFit, folder);
+        File response = api.cellsWorkbookGetWorkbook(name, password, format, isAutoFit, onlySaveTable, folder,null,null);
 
         // TODO: test validations
     }
@@ -202,7 +205,7 @@ public class CellsWorkbookApiTest {
        String name = BOOK1;
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        StyleResponse response = api.cellsWorkbookGetWorkbookDefaultStyle(name, folder);
+        StyleResponse response = api.cellsWorkbookGetWorkbookDefaultStyle(name, folder,null);
 
         // TODO: test validations
     }
@@ -221,7 +224,7 @@ public class CellsWorkbookApiTest {
         String nameName =  "Name_2";
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        NameResponse response = api.cellsWorkbookGetWorkbookName(name, nameName, folder);
+        NameResponse response = api.cellsWorkbookGetWorkbookName(name, nameName, folder,null);
 
         // TODO: test validations
     }
@@ -240,7 +243,7 @@ public class CellsWorkbookApiTest {
         String nameName = "Name_2";
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        RangeValueResponse response = api.cellsWorkbookGetWorkbookNameValue(name, nameName, folder);
+        RangeValueResponse response = api.cellsWorkbookGetWorkbookNameValue(name, nameName, folder,null);
 
         // TODO: test validations
     }
@@ -258,7 +261,7 @@ public class CellsWorkbookApiTest {
        String name = BOOK1;
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        NamesResponse response = api.cellsWorkbookGetWorkbookNames(name, folder);
+        NamesResponse response = api.cellsWorkbookGetWorkbookNames(name, folder,null);
 
         // TODO: test validations
     }
@@ -276,7 +279,7 @@ public class CellsWorkbookApiTest {
        String name = BOOK1;
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        TextItemsResponse response = api.cellsWorkbookGetWorkbookTextItems(name, folder);
+        TextItemsResponse response = api.cellsWorkbookGetWorkbookTextItems(name, folder,null);
 
         // TODO: test validations
     }
@@ -294,7 +297,7 @@ public class CellsWorkbookApiTest {
        String name = BOOK1;
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        WorkbookSettingsResponse response = api.cellsWorkbookGetWorkbookSettings(name, folder);
+        WorkbookSettingsResponse response = api.cellsWorkbookGetWorkbookSettings(name, folder,null);
 
         // TODO: test validations
     }
@@ -316,7 +319,7 @@ public class CellsWorkbookApiTest {
         Boolean onlyAuto = true;
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        SaaSposeResponse response = api.cellsWorkbookPostAutofitWorkbookRows(name, autoFitterOptions, startRow, endRow, onlyAuto, folder);
+        SaaSposeResponse response = api.cellsWorkbookPostAutofitWorkbookRows(name, autoFitterOptions, startRow, endRow, onlyAuto, folder,null);
 
         // TODO: test validations
     }
@@ -338,7 +341,7 @@ public class CellsWorkbookApiTest {
         encryption.setPassword("123456");
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        SaaSposeResponse response = api.cellsWorkbookPostEncryptDocument(name, encryption, folder);
+        SaaSposeResponse response = api.cellsWorkbookPostEncryptDocument(name, encryption, folder,null);
 
         // TODO: test validations
     }
@@ -365,7 +368,7 @@ public class CellsWorkbookApiTest {
        data.setData(ld);
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        SaaSposeResponse response = api.cellsWorkbookPostImportData(name, data, folder);
+        SaaSposeResponse response = api.cellsWorkbookPostImportData(name, data, folder,null);
 
         // TODO: test validations
     }
@@ -386,7 +389,7 @@ public class CellsWorkbookApiTest {
         protection.setPassword("123456");
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        SaaSposeResponse response = api.cellsWorkbookPostProtectDocument(name, protection, folder);
+        SaaSposeResponse response = api.cellsWorkbookPostProtectDocument(name, protection, folder,null);
 
         // TODO: test validations
     }
@@ -407,7 +410,7 @@ public class CellsWorkbookApiTest {
         Boolean ignoreError = true;
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        SaaSposeResponse response = api.cellsWorkbookPostWorkbookCalculateFormula(name, options, ignoreError, folder);
+        SaaSposeResponse response = api.cellsWorkbookPostWorkbookCalculateFormula(name, options, ignoreError, folder,null);
 
         // TODO: test validations
     }
@@ -427,7 +430,7 @@ public class CellsWorkbookApiTest {
         String folder = TEMPFOLDER;
         String outPath = null;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        File response = api.cellsWorkbookPostWorkbookGetSmartMarkerResult(name, xmlFile, folder, outPath);
+        File response = api.cellsWorkbookPostWorkbookGetSmartMarkerResult(name, xmlFile, folder,null, outPath);
 
         // TODO: test validations
     }
@@ -447,7 +450,7 @@ public class CellsWorkbookApiTest {
         settings.setAutoCompressPictures(true);
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        SaaSposeResponse response = api.cellsWorkbookPostWorkbookSettings(name, settings, folder);
+        SaaSposeResponse response = api.cellsWorkbookPostWorkbookSettings(name, settings, folder,null);
 
         // TODO: test validations
     }
@@ -470,7 +473,7 @@ public class CellsWorkbookApiTest {
         Integer verticalResolution = 90;
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        SplitResultResponse response = api.cellsWorkbookPostWorkbookSplit(name, format, from, to, horizontalResolution, verticalResolution, folder);
+        SplitResultResponse response = api.cellsWorkbookPostWorkbookSplit(name, format, from, to, horizontalResolution, verticalResolution, folder,null);
 
         // TODO: test validations
     }
@@ -489,7 +492,7 @@ public class CellsWorkbookApiTest {
         String mergeWith = "myDocument.xlsx";
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        WorkbookResponse response = api.cellsWorkbookPostWorkbooksMerge(name, mergeWith, folder);
+        WorkbookResponse response = api.cellsWorkbookPostWorkbooksMerge(name, mergeWith, folder,null);
 
         // TODO: test validations
     }
@@ -509,7 +512,7 @@ public class CellsWorkbookApiTest {
         String newValue =  "22";
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        WorkbookReplaceResponse response = api.cellsWorkbookPostWorkbooksTextReplace(name, oldValue, newValue, folder);
+        WorkbookReplaceResponse response = api.cellsWorkbookPostWorkbooksTextReplace(name, oldValue, newValue, folder,null);
 
         // TODO: test validations
     }
@@ -528,7 +531,7 @@ public class CellsWorkbookApiTest {
         String text ="test";
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        TextItemsResponse response = api.cellsWorkbookPostWorkbooksTextSearch(name, text, folder);
+        TextItemsResponse response = api.cellsWorkbookPostWorkbooksTextSearch(name, text, folder,null);
 
         // TODO: test validations
     }
@@ -569,7 +572,7 @@ public class CellsWorkbookApiTest {
         password.setPassword("123456");
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        SaaSposeResponse response = api.cellsWorkbookPutDocumentProtectFromChanges(name, password, folder);
+        SaaSposeResponse response = api.cellsWorkbookPutDocumentProtectFromChanges(name, password, folder,null);
 
         // TODO: test validations
     }
@@ -590,7 +593,7 @@ public class CellsWorkbookApiTest {
         String dataFile ="ReportData.xml";
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        WorkbookResponse response = api.cellsWorkbookPutWorkbookCreate(name,   templateFile,  dataFile, folder);
+        WorkbookResponse response = api.cellsWorkbookPutWorkbookCreate(name,   templateFile,  dataFile, folder,null);
 
         // TODO: test validations
     }

@@ -63,12 +63,13 @@ public class CellsSaveAsApi {
      * @param isAutoFitRows Autofit rows. (optional, default to false)
      * @param isAutoFitColumns Autofit columns. (optional, default to false)
      * @param folder The document folder. (optional)
+     * @param storage storage name. (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call cellsSaveAsPostDocumentSaveAsCall(String name, SaveOptions saveOptions, String newfilename, Boolean isAutoFitRows, Boolean isAutoFitColumns, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call cellsSaveAsPostDocumentSaveAsCall(String name, SaveOptions saveOptions, String newfilename, Boolean isAutoFitRows, Boolean isAutoFitColumns, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = saveOptions;
         
         // create path and map variables
@@ -84,6 +85,8 @@ public class CellsSaveAsApi {
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "isAutoFitColumns", isAutoFitColumns));
         if (folder != null)
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "folder", folder));
+        if (storage != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "storage", storage));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -118,7 +121,7 @@ public class CellsSaveAsApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call cellsSaveAsPostDocumentSaveAsValidateBeforeCall(String name, SaveOptions saveOptions, String newfilename, Boolean isAutoFitRows, Boolean isAutoFitColumns, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call cellsSaveAsPostDocumentSaveAsValidateBeforeCall(String name, SaveOptions saveOptions, String newfilename, Boolean isAutoFitRows, Boolean isAutoFitColumns, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'name' is set
         if (name == null) {
@@ -126,7 +129,7 @@ public class CellsSaveAsApi {
         }
         
         
-        com.squareup.okhttp.Call call = cellsSaveAsPostDocumentSaveAsCall(name, saveOptions, newfilename, isAutoFitRows, isAutoFitColumns, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsSaveAsPostDocumentSaveAsCall(name, saveOptions, newfilename, isAutoFitRows, isAutoFitColumns, folder, storage, progressListener, progressRequestListener);
         return call;
 
         
@@ -144,11 +147,12 @@ public class CellsSaveAsApi {
      * @param isAutoFitRows Autofit rows. (optional, default to false)
      * @param isAutoFitColumns Autofit columns. (optional, default to false)
      * @param folder The document folder. (optional)
+     * @param storage storage name. (optional)
      * @return SaveResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public SaveResponse cellsSaveAsPostDocumentSaveAs(String name, SaveOptions saveOptions, String newfilename, Boolean isAutoFitRows, Boolean isAutoFitColumns, String folder) throws ApiException {
-        ApiResponse<SaveResponse> resp = cellsSaveAsPostDocumentSaveAsWithHttpInfo(name, saveOptions, newfilename, isAutoFitRows, isAutoFitColumns, folder);
+    public SaveResponse cellsSaveAsPostDocumentSaveAs(String name, SaveOptions saveOptions, String newfilename, Boolean isAutoFitRows, Boolean isAutoFitColumns, String folder, String storage) throws ApiException {
+        ApiResponse<SaveResponse> resp = cellsSaveAsPostDocumentSaveAsWithHttpInfo(name, saveOptions, newfilename, isAutoFitRows, isAutoFitColumns, folder, storage);
         return resp.getData();
     }
 
@@ -161,11 +165,12 @@ public class CellsSaveAsApi {
      * @param isAutoFitRows Autofit rows. (optional, default to false)
      * @param isAutoFitColumns Autofit columns. (optional, default to false)
      * @param folder The document folder. (optional)
+     * @param storage storage name. (optional)
      * @return ApiResponse&lt;SaveResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<SaveResponse> cellsSaveAsPostDocumentSaveAsWithHttpInfo(String name, SaveOptions saveOptions, String newfilename, Boolean isAutoFitRows, Boolean isAutoFitColumns, String folder) throws ApiException {
-        com.squareup.okhttp.Call call = cellsSaveAsPostDocumentSaveAsValidateBeforeCall(name, saveOptions, newfilename, isAutoFitRows, isAutoFitColumns, folder, null, null);
+    public ApiResponse<SaveResponse> cellsSaveAsPostDocumentSaveAsWithHttpInfo(String name, SaveOptions saveOptions, String newfilename, Boolean isAutoFitRows, Boolean isAutoFitColumns, String folder, String storage) throws ApiException {
+        com.squareup.okhttp.Call call = cellsSaveAsPostDocumentSaveAsValidateBeforeCall(name, saveOptions, newfilename, isAutoFitRows, isAutoFitColumns, folder, storage, null, null);
         Type localVarReturnType = new TypeToken<SaveResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -179,11 +184,12 @@ public class CellsSaveAsApi {
      * @param isAutoFitRows Autofit rows. (optional, default to false)
      * @param isAutoFitColumns Autofit columns. (optional, default to false)
      * @param folder The document folder. (optional)
+     * @param storage storage name. (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call cellsSaveAsPostDocumentSaveAsAsync(String name, SaveOptions saveOptions, String newfilename, Boolean isAutoFitRows, Boolean isAutoFitColumns, String folder, final ApiCallback<SaveResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call cellsSaveAsPostDocumentSaveAsAsync(String name, SaveOptions saveOptions, String newfilename, Boolean isAutoFitRows, Boolean isAutoFitColumns, String folder, String storage, final ApiCallback<SaveResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -204,7 +210,7 @@ public class CellsSaveAsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = cellsSaveAsPostDocumentSaveAsValidateBeforeCall(name, saveOptions, newfilename, isAutoFitRows, isAutoFitColumns, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsSaveAsPostDocumentSaveAsValidateBeforeCall(name, saveOptions, newfilename, isAutoFitRows, isAutoFitColumns, folder, storage, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<SaveResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

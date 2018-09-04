@@ -71,12 +71,13 @@ public class CellsPivotTablesApi {
      * @param pivotFieldType The fields area type. (required)
      * @param request Dto that conrains field indexes (optional)
      * @param folder Document&#39;s folder. (optional)
+     * @param storage storage name. (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call cellsPivotTablesDeletePivotTableFieldCall(String name, String sheetName, Integer pivotTableIndex, String pivotFieldType, PivotTableFieldRequest request, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call cellsPivotTablesDeletePivotTableFieldCall(String name, String sheetName, Integer pivotTableIndex, String pivotFieldType, PivotTableFieldRequest request, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = request;
         
         // create path and map variables
@@ -90,6 +91,8 @@ public class CellsPivotTablesApi {
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "pivotFieldType", pivotFieldType));
         if (folder != null)
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "folder", folder));
+        if (storage != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "storage", storage));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -124,7 +127,7 @@ public class CellsPivotTablesApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call cellsPivotTablesDeletePivotTableFieldValidateBeforeCall(String name, String sheetName, Integer pivotTableIndex, String pivotFieldType, PivotTableFieldRequest request, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call cellsPivotTablesDeletePivotTableFieldValidateBeforeCall(String name, String sheetName, Integer pivotTableIndex, String pivotFieldType, PivotTableFieldRequest request, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'name' is set
         if (name == null) {
@@ -147,7 +150,7 @@ public class CellsPivotTablesApi {
         }
         
         
-        com.squareup.okhttp.Call call = cellsPivotTablesDeletePivotTableFieldCall(name, sheetName, pivotTableIndex, pivotFieldType, request, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsPivotTablesDeletePivotTableFieldCall(name, sheetName, pivotTableIndex, pivotFieldType, request, folder, storage, progressListener, progressRequestListener);
         return call;
 
         
@@ -165,11 +168,12 @@ public class CellsPivotTablesApi {
      * @param pivotFieldType The fields area type. (required)
      * @param request Dto that conrains field indexes (optional)
      * @param folder Document&#39;s folder. (optional)
+     * @param storage storage name. (optional)
      * @return SaaSposeResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public SaaSposeResponse cellsPivotTablesDeletePivotTableField(String name, String sheetName, Integer pivotTableIndex, String pivotFieldType, PivotTableFieldRequest request, String folder) throws ApiException {
-        ApiResponse<SaaSposeResponse> resp = cellsPivotTablesDeletePivotTableFieldWithHttpInfo(name, sheetName, pivotTableIndex, pivotFieldType, request, folder);
+    public SaaSposeResponse cellsPivotTablesDeletePivotTableField(String name, String sheetName, Integer pivotTableIndex, String pivotFieldType, PivotTableFieldRequest request, String folder, String storage) throws ApiException {
+        ApiResponse<SaaSposeResponse> resp = cellsPivotTablesDeletePivotTableFieldWithHttpInfo(name, sheetName, pivotTableIndex, pivotFieldType, request, folder, storage);
         return resp.getData();
     }
 
@@ -182,11 +186,12 @@ public class CellsPivotTablesApi {
      * @param pivotFieldType The fields area type. (required)
      * @param request Dto that conrains field indexes (optional)
      * @param folder Document&#39;s folder. (optional)
+     * @param storage storage name. (optional)
      * @return ApiResponse&lt;SaaSposeResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<SaaSposeResponse> cellsPivotTablesDeletePivotTableFieldWithHttpInfo(String name, String sheetName, Integer pivotTableIndex, String pivotFieldType, PivotTableFieldRequest request, String folder) throws ApiException {
-        com.squareup.okhttp.Call call = cellsPivotTablesDeletePivotTableFieldValidateBeforeCall(name, sheetName, pivotTableIndex, pivotFieldType, request, folder, null, null);
+    public ApiResponse<SaaSposeResponse> cellsPivotTablesDeletePivotTableFieldWithHttpInfo(String name, String sheetName, Integer pivotTableIndex, String pivotFieldType, PivotTableFieldRequest request, String folder, String storage) throws ApiException {
+        com.squareup.okhttp.Call call = cellsPivotTablesDeletePivotTableFieldValidateBeforeCall(name, sheetName, pivotTableIndex, pivotFieldType, request, folder, storage, null, null);
         Type localVarReturnType = new TypeToken<SaaSposeResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -200,11 +205,12 @@ public class CellsPivotTablesApi {
      * @param pivotFieldType The fields area type. (required)
      * @param request Dto that conrains field indexes (optional)
      * @param folder Document&#39;s folder. (optional)
+     * @param storage storage name. (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call cellsPivotTablesDeletePivotTableFieldAsync(String name, String sheetName, Integer pivotTableIndex, String pivotFieldType, PivotTableFieldRequest request, String folder, final ApiCallback<SaaSposeResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call cellsPivotTablesDeletePivotTableFieldAsync(String name, String sheetName, Integer pivotTableIndex, String pivotFieldType, PivotTableFieldRequest request, String folder, String storage, final ApiCallback<SaaSposeResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -225,7 +231,7 @@ public class CellsPivotTablesApi {
             };
         }
 
-        com.squareup.okhttp.Call call = cellsPivotTablesDeletePivotTableFieldValidateBeforeCall(name, sheetName, pivotTableIndex, pivotFieldType, request, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsPivotTablesDeletePivotTableFieldValidateBeforeCall(name, sheetName, pivotTableIndex, pivotFieldType, request, folder, storage, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<SaaSposeResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -236,12 +242,13 @@ public class CellsPivotTablesApi {
      * @param sheetName The worksheet name. (required)
      * @param pivotTableIndex Pivot table index (required)
      * @param folder Document&#39;s folder. (optional)
+     * @param storage storage name. (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call cellsPivotTablesDeleteWorksheetPivotTableCall(String name, String sheetName, Integer pivotTableIndex, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call cellsPivotTablesDeleteWorksheetPivotTableCall(String name, String sheetName, Integer pivotTableIndex, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -253,6 +260,8 @@ public class CellsPivotTablesApi {
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         if (folder != null)
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "folder", folder));
+        if (storage != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "storage", storage));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -287,7 +296,7 @@ public class CellsPivotTablesApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call cellsPivotTablesDeleteWorksheetPivotTableValidateBeforeCall(String name, String sheetName, Integer pivotTableIndex, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call cellsPivotTablesDeleteWorksheetPivotTableValidateBeforeCall(String name, String sheetName, Integer pivotTableIndex, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'name' is set
         if (name == null) {
@@ -305,7 +314,7 @@ public class CellsPivotTablesApi {
         }
         
         
-        com.squareup.okhttp.Call call = cellsPivotTablesDeleteWorksheetPivotTableCall(name, sheetName, pivotTableIndex, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsPivotTablesDeleteWorksheetPivotTableCall(name, sheetName, pivotTableIndex, folder, storage, progressListener, progressRequestListener);
         return call;
 
         
@@ -321,11 +330,12 @@ public class CellsPivotTablesApi {
      * @param sheetName The worksheet name. (required)
      * @param pivotTableIndex Pivot table index (required)
      * @param folder Document&#39;s folder. (optional)
+     * @param storage storage name. (optional)
      * @return SaaSposeResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public SaaSposeResponse cellsPivotTablesDeleteWorksheetPivotTable(String name, String sheetName, Integer pivotTableIndex, String folder) throws ApiException {
-        ApiResponse<SaaSposeResponse> resp = cellsPivotTablesDeleteWorksheetPivotTableWithHttpInfo(name, sheetName, pivotTableIndex, folder);
+    public SaaSposeResponse cellsPivotTablesDeleteWorksheetPivotTable(String name, String sheetName, Integer pivotTableIndex, String folder, String storage) throws ApiException {
+        ApiResponse<SaaSposeResponse> resp = cellsPivotTablesDeleteWorksheetPivotTableWithHttpInfo(name, sheetName, pivotTableIndex, folder, storage);
         return resp.getData();
     }
 
@@ -336,11 +346,12 @@ public class CellsPivotTablesApi {
      * @param sheetName The worksheet name. (required)
      * @param pivotTableIndex Pivot table index (required)
      * @param folder Document&#39;s folder. (optional)
+     * @param storage storage name. (optional)
      * @return ApiResponse&lt;SaaSposeResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<SaaSposeResponse> cellsPivotTablesDeleteWorksheetPivotTableWithHttpInfo(String name, String sheetName, Integer pivotTableIndex, String folder) throws ApiException {
-        com.squareup.okhttp.Call call = cellsPivotTablesDeleteWorksheetPivotTableValidateBeforeCall(name, sheetName, pivotTableIndex, folder, null, null);
+    public ApiResponse<SaaSposeResponse> cellsPivotTablesDeleteWorksheetPivotTableWithHttpInfo(String name, String sheetName, Integer pivotTableIndex, String folder, String storage) throws ApiException {
+        com.squareup.okhttp.Call call = cellsPivotTablesDeleteWorksheetPivotTableValidateBeforeCall(name, sheetName, pivotTableIndex, folder, storage, null, null);
         Type localVarReturnType = new TypeToken<SaaSposeResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -352,11 +363,12 @@ public class CellsPivotTablesApi {
      * @param sheetName The worksheet name. (required)
      * @param pivotTableIndex Pivot table index (required)
      * @param folder Document&#39;s folder. (optional)
+     * @param storage storage name. (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call cellsPivotTablesDeleteWorksheetPivotTableAsync(String name, String sheetName, Integer pivotTableIndex, String folder, final ApiCallback<SaaSposeResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call cellsPivotTablesDeleteWorksheetPivotTableAsync(String name, String sheetName, Integer pivotTableIndex, String folder, String storage, final ApiCallback<SaaSposeResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -377,7 +389,7 @@ public class CellsPivotTablesApi {
             };
         }
 
-        com.squareup.okhttp.Call call = cellsPivotTablesDeleteWorksheetPivotTableValidateBeforeCall(name, sheetName, pivotTableIndex, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsPivotTablesDeleteWorksheetPivotTableValidateBeforeCall(name, sheetName, pivotTableIndex, folder, storage, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<SaaSposeResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -390,12 +402,13 @@ public class CellsPivotTablesApi {
      * @param fieldIndex  (required)
      * @param needReCalculate  (optional, default to false)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call cellsPivotTablesDeleteWorksheetPivotTableFilterCall(String name, String sheetName, Integer pivotTableIndex, Integer fieldIndex, Boolean needReCalculate, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call cellsPivotTablesDeleteWorksheetPivotTableFilterCall(String name, String sheetName, Integer pivotTableIndex, Integer fieldIndex, Boolean needReCalculate, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -410,6 +423,8 @@ public class CellsPivotTablesApi {
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "needReCalculate", needReCalculate));
         if (folder != null)
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "folder", folder));
+        if (storage != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "storage", storage));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -444,7 +459,7 @@ public class CellsPivotTablesApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call cellsPivotTablesDeleteWorksheetPivotTableFilterValidateBeforeCall(String name, String sheetName, Integer pivotTableIndex, Integer fieldIndex, Boolean needReCalculate, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call cellsPivotTablesDeleteWorksheetPivotTableFilterValidateBeforeCall(String name, String sheetName, Integer pivotTableIndex, Integer fieldIndex, Boolean needReCalculate, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'name' is set
         if (name == null) {
@@ -467,7 +482,7 @@ public class CellsPivotTablesApi {
         }
         
         
-        com.squareup.okhttp.Call call = cellsPivotTablesDeleteWorksheetPivotTableFilterCall(name, sheetName, pivotTableIndex, fieldIndex, needReCalculate, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsPivotTablesDeleteWorksheetPivotTableFilterCall(name, sheetName, pivotTableIndex, fieldIndex, needReCalculate, folder, storage, progressListener, progressRequestListener);
         return call;
 
         
@@ -485,11 +500,12 @@ public class CellsPivotTablesApi {
      * @param fieldIndex  (required)
      * @param needReCalculate  (optional, default to false)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @return SaaSposeResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public SaaSposeResponse cellsPivotTablesDeleteWorksheetPivotTableFilter(String name, String sheetName, Integer pivotTableIndex, Integer fieldIndex, Boolean needReCalculate, String folder) throws ApiException {
-        ApiResponse<SaaSposeResponse> resp = cellsPivotTablesDeleteWorksheetPivotTableFilterWithHttpInfo(name, sheetName, pivotTableIndex, fieldIndex, needReCalculate, folder);
+    public SaaSposeResponse cellsPivotTablesDeleteWorksheetPivotTableFilter(String name, String sheetName, Integer pivotTableIndex, Integer fieldIndex, Boolean needReCalculate, String folder, String storage) throws ApiException {
+        ApiResponse<SaaSposeResponse> resp = cellsPivotTablesDeleteWorksheetPivotTableFilterWithHttpInfo(name, sheetName, pivotTableIndex, fieldIndex, needReCalculate, folder, storage);
         return resp.getData();
     }
 
@@ -502,11 +518,12 @@ public class CellsPivotTablesApi {
      * @param fieldIndex  (required)
      * @param needReCalculate  (optional, default to false)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @return ApiResponse&lt;SaaSposeResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<SaaSposeResponse> cellsPivotTablesDeleteWorksheetPivotTableFilterWithHttpInfo(String name, String sheetName, Integer pivotTableIndex, Integer fieldIndex, Boolean needReCalculate, String folder) throws ApiException {
-        com.squareup.okhttp.Call call = cellsPivotTablesDeleteWorksheetPivotTableFilterValidateBeforeCall(name, sheetName, pivotTableIndex, fieldIndex, needReCalculate, folder, null, null);
+    public ApiResponse<SaaSposeResponse> cellsPivotTablesDeleteWorksheetPivotTableFilterWithHttpInfo(String name, String sheetName, Integer pivotTableIndex, Integer fieldIndex, Boolean needReCalculate, String folder, String storage) throws ApiException {
+        com.squareup.okhttp.Call call = cellsPivotTablesDeleteWorksheetPivotTableFilterValidateBeforeCall(name, sheetName, pivotTableIndex, fieldIndex, needReCalculate, folder, storage, null, null);
         Type localVarReturnType = new TypeToken<SaaSposeResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -520,11 +537,12 @@ public class CellsPivotTablesApi {
      * @param fieldIndex  (required)
      * @param needReCalculate  (optional, default to false)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call cellsPivotTablesDeleteWorksheetPivotTableFilterAsync(String name, String sheetName, Integer pivotTableIndex, Integer fieldIndex, Boolean needReCalculate, String folder, final ApiCallback<SaaSposeResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call cellsPivotTablesDeleteWorksheetPivotTableFilterAsync(String name, String sheetName, Integer pivotTableIndex, Integer fieldIndex, Boolean needReCalculate, String folder, String storage, final ApiCallback<SaaSposeResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -545,7 +563,7 @@ public class CellsPivotTablesApi {
             };
         }
 
-        com.squareup.okhttp.Call call = cellsPivotTablesDeleteWorksheetPivotTableFilterValidateBeforeCall(name, sheetName, pivotTableIndex, fieldIndex, needReCalculate, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsPivotTablesDeleteWorksheetPivotTableFilterValidateBeforeCall(name, sheetName, pivotTableIndex, fieldIndex, needReCalculate, folder, storage, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<SaaSposeResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -557,12 +575,13 @@ public class CellsPivotTablesApi {
      * @param pivotTableIndex  (required)
      * @param needReCalculate  (optional, default to false)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call cellsPivotTablesDeleteWorksheetPivotTableFiltersCall(String name, String sheetName, Integer pivotTableIndex, Boolean needReCalculate, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call cellsPivotTablesDeleteWorksheetPivotTableFiltersCall(String name, String sheetName, Integer pivotTableIndex, Boolean needReCalculate, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -576,6 +595,8 @@ public class CellsPivotTablesApi {
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "needReCalculate", needReCalculate));
         if (folder != null)
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "folder", folder));
+        if (storage != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "storage", storage));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -610,7 +631,7 @@ public class CellsPivotTablesApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call cellsPivotTablesDeleteWorksheetPivotTableFiltersValidateBeforeCall(String name, String sheetName, Integer pivotTableIndex, Boolean needReCalculate, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call cellsPivotTablesDeleteWorksheetPivotTableFiltersValidateBeforeCall(String name, String sheetName, Integer pivotTableIndex, Boolean needReCalculate, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'name' is set
         if (name == null) {
@@ -628,7 +649,7 @@ public class CellsPivotTablesApi {
         }
         
         
-        com.squareup.okhttp.Call call = cellsPivotTablesDeleteWorksheetPivotTableFiltersCall(name, sheetName, pivotTableIndex, needReCalculate, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsPivotTablesDeleteWorksheetPivotTableFiltersCall(name, sheetName, pivotTableIndex, needReCalculate, folder, storage, progressListener, progressRequestListener);
         return call;
 
         
@@ -645,11 +666,12 @@ public class CellsPivotTablesApi {
      * @param pivotTableIndex  (required)
      * @param needReCalculate  (optional, default to false)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @return SaaSposeResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public SaaSposeResponse cellsPivotTablesDeleteWorksheetPivotTableFilters(String name, String sheetName, Integer pivotTableIndex, Boolean needReCalculate, String folder) throws ApiException {
-        ApiResponse<SaaSposeResponse> resp = cellsPivotTablesDeleteWorksheetPivotTableFiltersWithHttpInfo(name, sheetName, pivotTableIndex, needReCalculate, folder);
+    public SaaSposeResponse cellsPivotTablesDeleteWorksheetPivotTableFilters(String name, String sheetName, Integer pivotTableIndex, Boolean needReCalculate, String folder, String storage) throws ApiException {
+        ApiResponse<SaaSposeResponse> resp = cellsPivotTablesDeleteWorksheetPivotTableFiltersWithHttpInfo(name, sheetName, pivotTableIndex, needReCalculate, folder, storage);
         return resp.getData();
     }
 
@@ -661,11 +683,12 @@ public class CellsPivotTablesApi {
      * @param pivotTableIndex  (required)
      * @param needReCalculate  (optional, default to false)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @return ApiResponse&lt;SaaSposeResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<SaaSposeResponse> cellsPivotTablesDeleteWorksheetPivotTableFiltersWithHttpInfo(String name, String sheetName, Integer pivotTableIndex, Boolean needReCalculate, String folder) throws ApiException {
-        com.squareup.okhttp.Call call = cellsPivotTablesDeleteWorksheetPivotTableFiltersValidateBeforeCall(name, sheetName, pivotTableIndex, needReCalculate, folder, null, null);
+    public ApiResponse<SaaSposeResponse> cellsPivotTablesDeleteWorksheetPivotTableFiltersWithHttpInfo(String name, String sheetName, Integer pivotTableIndex, Boolean needReCalculate, String folder, String storage) throws ApiException {
+        com.squareup.okhttp.Call call = cellsPivotTablesDeleteWorksheetPivotTableFiltersValidateBeforeCall(name, sheetName, pivotTableIndex, needReCalculate, folder, storage, null, null);
         Type localVarReturnType = new TypeToken<SaaSposeResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -678,11 +701,12 @@ public class CellsPivotTablesApi {
      * @param pivotTableIndex  (required)
      * @param needReCalculate  (optional, default to false)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call cellsPivotTablesDeleteWorksheetPivotTableFiltersAsync(String name, String sheetName, Integer pivotTableIndex, Boolean needReCalculate, String folder, final ApiCallback<SaaSposeResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call cellsPivotTablesDeleteWorksheetPivotTableFiltersAsync(String name, String sheetName, Integer pivotTableIndex, Boolean needReCalculate, String folder, String storage, final ApiCallback<SaaSposeResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -703,7 +727,7 @@ public class CellsPivotTablesApi {
             };
         }
 
-        com.squareup.okhttp.Call call = cellsPivotTablesDeleteWorksheetPivotTableFiltersValidateBeforeCall(name, sheetName, pivotTableIndex, needReCalculate, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsPivotTablesDeleteWorksheetPivotTableFiltersValidateBeforeCall(name, sheetName, pivotTableIndex, needReCalculate, folder, storage, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<SaaSposeResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -713,12 +737,13 @@ public class CellsPivotTablesApi {
      * @param name Document name. (required)
      * @param sheetName The worksheet name. (required)
      * @param folder Document&#39;s folder. (optional)
+     * @param storage storage name. (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call cellsPivotTablesDeleteWorksheetPivotTablesCall(String name, String sheetName, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call cellsPivotTablesDeleteWorksheetPivotTablesCall(String name, String sheetName, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -729,6 +754,8 @@ public class CellsPivotTablesApi {
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         if (folder != null)
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "folder", folder));
+        if (storage != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "storage", storage));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -763,7 +790,7 @@ public class CellsPivotTablesApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call cellsPivotTablesDeleteWorksheetPivotTablesValidateBeforeCall(String name, String sheetName, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call cellsPivotTablesDeleteWorksheetPivotTablesValidateBeforeCall(String name, String sheetName, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'name' is set
         if (name == null) {
@@ -776,7 +803,7 @@ public class CellsPivotTablesApi {
         }
         
         
-        com.squareup.okhttp.Call call = cellsPivotTablesDeleteWorksheetPivotTablesCall(name, sheetName, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsPivotTablesDeleteWorksheetPivotTablesCall(name, sheetName, folder, storage, progressListener, progressRequestListener);
         return call;
 
         
@@ -791,11 +818,12 @@ public class CellsPivotTablesApi {
      * @param name Document name. (required)
      * @param sheetName The worksheet name. (required)
      * @param folder Document&#39;s folder. (optional)
+     * @param storage storage name. (optional)
      * @return SaaSposeResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public SaaSposeResponse cellsPivotTablesDeleteWorksheetPivotTables(String name, String sheetName, String folder) throws ApiException {
-        ApiResponse<SaaSposeResponse> resp = cellsPivotTablesDeleteWorksheetPivotTablesWithHttpInfo(name, sheetName, folder);
+    public SaaSposeResponse cellsPivotTablesDeleteWorksheetPivotTables(String name, String sheetName, String folder, String storage) throws ApiException {
+        ApiResponse<SaaSposeResponse> resp = cellsPivotTablesDeleteWorksheetPivotTablesWithHttpInfo(name, sheetName, folder, storage);
         return resp.getData();
     }
 
@@ -805,11 +833,12 @@ public class CellsPivotTablesApi {
      * @param name Document name. (required)
      * @param sheetName The worksheet name. (required)
      * @param folder Document&#39;s folder. (optional)
+     * @param storage storage name. (optional)
      * @return ApiResponse&lt;SaaSposeResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<SaaSposeResponse> cellsPivotTablesDeleteWorksheetPivotTablesWithHttpInfo(String name, String sheetName, String folder) throws ApiException {
-        com.squareup.okhttp.Call call = cellsPivotTablesDeleteWorksheetPivotTablesValidateBeforeCall(name, sheetName, folder, null, null);
+    public ApiResponse<SaaSposeResponse> cellsPivotTablesDeleteWorksheetPivotTablesWithHttpInfo(String name, String sheetName, String folder, String storage) throws ApiException {
+        com.squareup.okhttp.Call call = cellsPivotTablesDeleteWorksheetPivotTablesValidateBeforeCall(name, sheetName, folder, storage, null, null);
         Type localVarReturnType = new TypeToken<SaaSposeResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -820,11 +849,12 @@ public class CellsPivotTablesApi {
      * @param name Document name. (required)
      * @param sheetName The worksheet name. (required)
      * @param folder Document&#39;s folder. (optional)
+     * @param storage storage name. (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call cellsPivotTablesDeleteWorksheetPivotTablesAsync(String name, String sheetName, String folder, final ApiCallback<SaaSposeResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call cellsPivotTablesDeleteWorksheetPivotTablesAsync(String name, String sheetName, String folder, String storage, final ApiCallback<SaaSposeResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -845,7 +875,7 @@ public class CellsPivotTablesApi {
             };
         }
 
-        com.squareup.okhttp.Call call = cellsPivotTablesDeleteWorksheetPivotTablesValidateBeforeCall(name, sheetName, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsPivotTablesDeleteWorksheetPivotTablesValidateBeforeCall(name, sheetName, folder, storage, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<SaaSposeResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -858,12 +888,13 @@ public class CellsPivotTablesApi {
      * @param pivotFieldIndex The field index in the base fields. (required)
      * @param pivotFieldType The fields area type. (required)
      * @param folder Document&#39;s folder. (optional)
+     * @param storage storage name. (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call cellsPivotTablesGetPivotTableFieldCall(String name, String sheetName, Integer pivotTableIndex, Integer pivotFieldIndex, String pivotFieldType, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call cellsPivotTablesGetPivotTableFieldCall(String name, String sheetName, Integer pivotTableIndex, Integer pivotFieldIndex, String pivotFieldType, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -879,6 +910,8 @@ public class CellsPivotTablesApi {
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "pivotFieldType", pivotFieldType));
         if (folder != null)
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "folder", folder));
+        if (storage != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "storage", storage));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -913,7 +946,7 @@ public class CellsPivotTablesApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call cellsPivotTablesGetPivotTableFieldValidateBeforeCall(String name, String sheetName, Integer pivotTableIndex, Integer pivotFieldIndex, String pivotFieldType, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call cellsPivotTablesGetPivotTableFieldValidateBeforeCall(String name, String sheetName, Integer pivotTableIndex, Integer pivotFieldIndex, String pivotFieldType, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'name' is set
         if (name == null) {
@@ -941,7 +974,7 @@ public class CellsPivotTablesApi {
         }
         
         
-        com.squareup.okhttp.Call call = cellsPivotTablesGetPivotTableFieldCall(name, sheetName, pivotTableIndex, pivotFieldIndex, pivotFieldType, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsPivotTablesGetPivotTableFieldCall(name, sheetName, pivotTableIndex, pivotFieldIndex, pivotFieldType, folder, storage, progressListener, progressRequestListener);
         return call;
 
         
@@ -959,11 +992,12 @@ public class CellsPivotTablesApi {
      * @param pivotFieldIndex The field index in the base fields. (required)
      * @param pivotFieldType The fields area type. (required)
      * @param folder Document&#39;s folder. (optional)
+     * @param storage storage name. (optional)
      * @return PivotFieldResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public PivotFieldResponse cellsPivotTablesGetPivotTableField(String name, String sheetName, Integer pivotTableIndex, Integer pivotFieldIndex, String pivotFieldType, String folder) throws ApiException {
-        ApiResponse<PivotFieldResponse> resp = cellsPivotTablesGetPivotTableFieldWithHttpInfo(name, sheetName, pivotTableIndex, pivotFieldIndex, pivotFieldType, folder);
+    public PivotFieldResponse cellsPivotTablesGetPivotTableField(String name, String sheetName, Integer pivotTableIndex, Integer pivotFieldIndex, String pivotFieldType, String folder, String storage) throws ApiException {
+        ApiResponse<PivotFieldResponse> resp = cellsPivotTablesGetPivotTableFieldWithHttpInfo(name, sheetName, pivotTableIndex, pivotFieldIndex, pivotFieldType, folder, storage);
         return resp.getData();
     }
 
@@ -976,11 +1010,12 @@ public class CellsPivotTablesApi {
      * @param pivotFieldIndex The field index in the base fields. (required)
      * @param pivotFieldType The fields area type. (required)
      * @param folder Document&#39;s folder. (optional)
+     * @param storage storage name. (optional)
      * @return ApiResponse&lt;PivotFieldResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<PivotFieldResponse> cellsPivotTablesGetPivotTableFieldWithHttpInfo(String name, String sheetName, Integer pivotTableIndex, Integer pivotFieldIndex, String pivotFieldType, String folder) throws ApiException {
-        com.squareup.okhttp.Call call = cellsPivotTablesGetPivotTableFieldValidateBeforeCall(name, sheetName, pivotTableIndex, pivotFieldIndex, pivotFieldType, folder, null, null);
+    public ApiResponse<PivotFieldResponse> cellsPivotTablesGetPivotTableFieldWithHttpInfo(String name, String sheetName, Integer pivotTableIndex, Integer pivotFieldIndex, String pivotFieldType, String folder, String storage) throws ApiException {
+        com.squareup.okhttp.Call call = cellsPivotTablesGetPivotTableFieldValidateBeforeCall(name, sheetName, pivotTableIndex, pivotFieldIndex, pivotFieldType, folder, storage, null, null);
         Type localVarReturnType = new TypeToken<PivotFieldResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -994,11 +1029,12 @@ public class CellsPivotTablesApi {
      * @param pivotFieldIndex The field index in the base fields. (required)
      * @param pivotFieldType The fields area type. (required)
      * @param folder Document&#39;s folder. (optional)
+     * @param storage storage name. (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call cellsPivotTablesGetPivotTableFieldAsync(String name, String sheetName, Integer pivotTableIndex, Integer pivotFieldIndex, String pivotFieldType, String folder, final ApiCallback<PivotFieldResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call cellsPivotTablesGetPivotTableFieldAsync(String name, String sheetName, Integer pivotTableIndex, Integer pivotFieldIndex, String pivotFieldType, String folder, String storage, final ApiCallback<PivotFieldResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1019,7 +1055,7 @@ public class CellsPivotTablesApi {
             };
         }
 
-        com.squareup.okhttp.Call call = cellsPivotTablesGetPivotTableFieldValidateBeforeCall(name, sheetName, pivotTableIndex, pivotFieldIndex, pivotFieldType, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsPivotTablesGetPivotTableFieldValidateBeforeCall(name, sheetName, pivotTableIndex, pivotFieldIndex, pivotFieldType, folder, storage, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<PivotFieldResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -1030,12 +1066,13 @@ public class CellsPivotTablesApi {
      * @param sheetName The worksheet name. (required)
      * @param pivottableIndex  (required)
      * @param folder Document&#39;s folder. (optional)
+     * @param storage storage name. (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call cellsPivotTablesGetWorksheetPivotTableCall(String name, String sheetName, Integer pivottableIndex, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call cellsPivotTablesGetWorksheetPivotTableCall(String name, String sheetName, Integer pivottableIndex, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -1047,6 +1084,8 @@ public class CellsPivotTablesApi {
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         if (folder != null)
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "folder", folder));
+        if (storage != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "storage", storage));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -1081,7 +1120,7 @@ public class CellsPivotTablesApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call cellsPivotTablesGetWorksheetPivotTableValidateBeforeCall(String name, String sheetName, Integer pivottableIndex, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call cellsPivotTablesGetWorksheetPivotTableValidateBeforeCall(String name, String sheetName, Integer pivottableIndex, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'name' is set
         if (name == null) {
@@ -1099,7 +1138,7 @@ public class CellsPivotTablesApi {
         }
         
         
-        com.squareup.okhttp.Call call = cellsPivotTablesGetWorksheetPivotTableCall(name, sheetName, pivottableIndex, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsPivotTablesGetWorksheetPivotTableCall(name, sheetName, pivottableIndex, folder, storage, progressListener, progressRequestListener);
         return call;
 
         
@@ -1115,11 +1154,12 @@ public class CellsPivotTablesApi {
      * @param sheetName The worksheet name. (required)
      * @param pivottableIndex  (required)
      * @param folder Document&#39;s folder. (optional)
+     * @param storage storage name. (optional)
      * @return PivotTableResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public PivotTableResponse cellsPivotTablesGetWorksheetPivotTable(String name, String sheetName, Integer pivottableIndex, String folder) throws ApiException {
-        ApiResponse<PivotTableResponse> resp = cellsPivotTablesGetWorksheetPivotTableWithHttpInfo(name, sheetName, pivottableIndex, folder);
+    public PivotTableResponse cellsPivotTablesGetWorksheetPivotTable(String name, String sheetName, Integer pivottableIndex, String folder, String storage) throws ApiException {
+        ApiResponse<PivotTableResponse> resp = cellsPivotTablesGetWorksheetPivotTableWithHttpInfo(name, sheetName, pivottableIndex, folder, storage);
         return resp.getData();
     }
 
@@ -1130,11 +1170,12 @@ public class CellsPivotTablesApi {
      * @param sheetName The worksheet name. (required)
      * @param pivottableIndex  (required)
      * @param folder Document&#39;s folder. (optional)
+     * @param storage storage name. (optional)
      * @return ApiResponse&lt;PivotTableResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<PivotTableResponse> cellsPivotTablesGetWorksheetPivotTableWithHttpInfo(String name, String sheetName, Integer pivottableIndex, String folder) throws ApiException {
-        com.squareup.okhttp.Call call = cellsPivotTablesGetWorksheetPivotTableValidateBeforeCall(name, sheetName, pivottableIndex, folder, null, null);
+    public ApiResponse<PivotTableResponse> cellsPivotTablesGetWorksheetPivotTableWithHttpInfo(String name, String sheetName, Integer pivottableIndex, String folder, String storage) throws ApiException {
+        com.squareup.okhttp.Call call = cellsPivotTablesGetWorksheetPivotTableValidateBeforeCall(name, sheetName, pivottableIndex, folder, storage, null, null);
         Type localVarReturnType = new TypeToken<PivotTableResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -1146,11 +1187,12 @@ public class CellsPivotTablesApi {
      * @param sheetName The worksheet name. (required)
      * @param pivottableIndex  (required)
      * @param folder Document&#39;s folder. (optional)
+     * @param storage storage name. (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call cellsPivotTablesGetWorksheetPivotTableAsync(String name, String sheetName, Integer pivottableIndex, String folder, final ApiCallback<PivotTableResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call cellsPivotTablesGetWorksheetPivotTableAsync(String name, String sheetName, Integer pivottableIndex, String folder, String storage, final ApiCallback<PivotTableResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1171,7 +1213,7 @@ public class CellsPivotTablesApi {
             };
         }
 
-        com.squareup.okhttp.Call call = cellsPivotTablesGetWorksheetPivotTableValidateBeforeCall(name, sheetName, pivottableIndex, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsPivotTablesGetWorksheetPivotTableValidateBeforeCall(name, sheetName, pivottableIndex, folder, storage, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<PivotTableResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -1183,12 +1225,13 @@ public class CellsPivotTablesApi {
      * @param pivotTableIndex  (required)
      * @param filterIndex  (required)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call cellsPivotTablesGetWorksheetPivotTableFilterCall(String name, String sheetName, Integer pivotTableIndex, Integer filterIndex, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call cellsPivotTablesGetWorksheetPivotTableFilterCall(String name, String sheetName, Integer pivotTableIndex, Integer filterIndex, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -1201,6 +1244,8 @@ public class CellsPivotTablesApi {
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         if (folder != null)
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "folder", folder));
+        if (storage != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "storage", storage));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -1235,7 +1280,7 @@ public class CellsPivotTablesApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call cellsPivotTablesGetWorksheetPivotTableFilterValidateBeforeCall(String name, String sheetName, Integer pivotTableIndex, Integer filterIndex, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call cellsPivotTablesGetWorksheetPivotTableFilterValidateBeforeCall(String name, String sheetName, Integer pivotTableIndex, Integer filterIndex, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'name' is set
         if (name == null) {
@@ -1258,7 +1303,7 @@ public class CellsPivotTablesApi {
         }
         
         
-        com.squareup.okhttp.Call call = cellsPivotTablesGetWorksheetPivotTableFilterCall(name, sheetName, pivotTableIndex, filterIndex, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsPivotTablesGetWorksheetPivotTableFilterCall(name, sheetName, pivotTableIndex, filterIndex, folder, storage, progressListener, progressRequestListener);
         return call;
 
         
@@ -1275,11 +1320,12 @@ public class CellsPivotTablesApi {
      * @param pivotTableIndex  (required)
      * @param filterIndex  (required)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @return PivotFilterResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public PivotFilterResponse cellsPivotTablesGetWorksheetPivotTableFilter(String name, String sheetName, Integer pivotTableIndex, Integer filterIndex, String folder) throws ApiException {
-        ApiResponse<PivotFilterResponse> resp = cellsPivotTablesGetWorksheetPivotTableFilterWithHttpInfo(name, sheetName, pivotTableIndex, filterIndex, folder);
+    public PivotFilterResponse cellsPivotTablesGetWorksheetPivotTableFilter(String name, String sheetName, Integer pivotTableIndex, Integer filterIndex, String folder, String storage) throws ApiException {
+        ApiResponse<PivotFilterResponse> resp = cellsPivotTablesGetWorksheetPivotTableFilterWithHttpInfo(name, sheetName, pivotTableIndex, filterIndex, folder, storage);
         return resp.getData();
     }
 
@@ -1291,11 +1337,12 @@ public class CellsPivotTablesApi {
      * @param pivotTableIndex  (required)
      * @param filterIndex  (required)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @return ApiResponse&lt;PivotFilterResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<PivotFilterResponse> cellsPivotTablesGetWorksheetPivotTableFilterWithHttpInfo(String name, String sheetName, Integer pivotTableIndex, Integer filterIndex, String folder) throws ApiException {
-        com.squareup.okhttp.Call call = cellsPivotTablesGetWorksheetPivotTableFilterValidateBeforeCall(name, sheetName, pivotTableIndex, filterIndex, folder, null, null);
+    public ApiResponse<PivotFilterResponse> cellsPivotTablesGetWorksheetPivotTableFilterWithHttpInfo(String name, String sheetName, Integer pivotTableIndex, Integer filterIndex, String folder, String storage) throws ApiException {
+        com.squareup.okhttp.Call call = cellsPivotTablesGetWorksheetPivotTableFilterValidateBeforeCall(name, sheetName, pivotTableIndex, filterIndex, folder, storage, null, null);
         Type localVarReturnType = new TypeToken<PivotFilterResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -1308,11 +1355,12 @@ public class CellsPivotTablesApi {
      * @param pivotTableIndex  (required)
      * @param filterIndex  (required)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call cellsPivotTablesGetWorksheetPivotTableFilterAsync(String name, String sheetName, Integer pivotTableIndex, Integer filterIndex, String folder, final ApiCallback<PivotFilterResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call cellsPivotTablesGetWorksheetPivotTableFilterAsync(String name, String sheetName, Integer pivotTableIndex, Integer filterIndex, String folder, String storage, final ApiCallback<PivotFilterResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1333,7 +1381,7 @@ public class CellsPivotTablesApi {
             };
         }
 
-        com.squareup.okhttp.Call call = cellsPivotTablesGetWorksheetPivotTableFilterValidateBeforeCall(name, sheetName, pivotTableIndex, filterIndex, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsPivotTablesGetWorksheetPivotTableFilterValidateBeforeCall(name, sheetName, pivotTableIndex, filterIndex, folder, storage, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<PivotFilterResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -1344,12 +1392,13 @@ public class CellsPivotTablesApi {
      * @param sheetName  (required)
      * @param pivotTableIndex  (required)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call cellsPivotTablesGetWorksheetPivotTableFiltersCall(String name, String sheetName, Integer pivotTableIndex, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call cellsPivotTablesGetWorksheetPivotTableFiltersCall(String name, String sheetName, Integer pivotTableIndex, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -1361,6 +1410,8 @@ public class CellsPivotTablesApi {
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         if (folder != null)
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "folder", folder));
+        if (storage != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "storage", storage));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -1395,7 +1446,7 @@ public class CellsPivotTablesApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call cellsPivotTablesGetWorksheetPivotTableFiltersValidateBeforeCall(String name, String sheetName, Integer pivotTableIndex, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call cellsPivotTablesGetWorksheetPivotTableFiltersValidateBeforeCall(String name, String sheetName, Integer pivotTableIndex, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'name' is set
         if (name == null) {
@@ -1413,7 +1464,7 @@ public class CellsPivotTablesApi {
         }
         
         
-        com.squareup.okhttp.Call call = cellsPivotTablesGetWorksheetPivotTableFiltersCall(name, sheetName, pivotTableIndex, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsPivotTablesGetWorksheetPivotTableFiltersCall(name, sheetName, pivotTableIndex, folder, storage, progressListener, progressRequestListener);
         return call;
 
         
@@ -1429,11 +1480,12 @@ public class CellsPivotTablesApi {
      * @param sheetName  (required)
      * @param pivotTableIndex  (required)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @return PivotFiltersResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public PivotFiltersResponse cellsPivotTablesGetWorksheetPivotTableFilters(String name, String sheetName, Integer pivotTableIndex, String folder) throws ApiException {
-        ApiResponse<PivotFiltersResponse> resp = cellsPivotTablesGetWorksheetPivotTableFiltersWithHttpInfo(name, sheetName, pivotTableIndex, folder);
+    public PivotFiltersResponse cellsPivotTablesGetWorksheetPivotTableFilters(String name, String sheetName, Integer pivotTableIndex, String folder, String storage) throws ApiException {
+        ApiResponse<PivotFiltersResponse> resp = cellsPivotTablesGetWorksheetPivotTableFiltersWithHttpInfo(name, sheetName, pivotTableIndex, folder, storage);
         return resp.getData();
     }
 
@@ -1444,11 +1496,12 @@ public class CellsPivotTablesApi {
      * @param sheetName  (required)
      * @param pivotTableIndex  (required)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @return ApiResponse&lt;PivotFiltersResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<PivotFiltersResponse> cellsPivotTablesGetWorksheetPivotTableFiltersWithHttpInfo(String name, String sheetName, Integer pivotTableIndex, String folder) throws ApiException {
-        com.squareup.okhttp.Call call = cellsPivotTablesGetWorksheetPivotTableFiltersValidateBeforeCall(name, sheetName, pivotTableIndex, folder, null, null);
+    public ApiResponse<PivotFiltersResponse> cellsPivotTablesGetWorksheetPivotTableFiltersWithHttpInfo(String name, String sheetName, Integer pivotTableIndex, String folder, String storage) throws ApiException {
+        com.squareup.okhttp.Call call = cellsPivotTablesGetWorksheetPivotTableFiltersValidateBeforeCall(name, sheetName, pivotTableIndex, folder, storage, null, null);
         Type localVarReturnType = new TypeToken<PivotFiltersResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -1460,11 +1513,12 @@ public class CellsPivotTablesApi {
      * @param sheetName  (required)
      * @param pivotTableIndex  (required)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call cellsPivotTablesGetWorksheetPivotTableFiltersAsync(String name, String sheetName, Integer pivotTableIndex, String folder, final ApiCallback<PivotFiltersResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call cellsPivotTablesGetWorksheetPivotTableFiltersAsync(String name, String sheetName, Integer pivotTableIndex, String folder, String storage, final ApiCallback<PivotFiltersResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1485,7 +1539,7 @@ public class CellsPivotTablesApi {
             };
         }
 
-        com.squareup.okhttp.Call call = cellsPivotTablesGetWorksheetPivotTableFiltersValidateBeforeCall(name, sheetName, pivotTableIndex, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsPivotTablesGetWorksheetPivotTableFiltersValidateBeforeCall(name, sheetName, pivotTableIndex, folder, storage, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<PivotFiltersResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -1495,12 +1549,13 @@ public class CellsPivotTablesApi {
      * @param name Document name. (required)
      * @param sheetName The worksheet name. (required)
      * @param folder Document&#39;s folder. (optional)
+     * @param storage storage name. (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call cellsPivotTablesGetWorksheetPivotTablesCall(String name, String sheetName, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call cellsPivotTablesGetWorksheetPivotTablesCall(String name, String sheetName, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -1511,6 +1566,8 @@ public class CellsPivotTablesApi {
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         if (folder != null)
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "folder", folder));
+        if (storage != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "storage", storage));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -1545,7 +1602,7 @@ public class CellsPivotTablesApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call cellsPivotTablesGetWorksheetPivotTablesValidateBeforeCall(String name, String sheetName, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call cellsPivotTablesGetWorksheetPivotTablesValidateBeforeCall(String name, String sheetName, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'name' is set
         if (name == null) {
@@ -1558,7 +1615,7 @@ public class CellsPivotTablesApi {
         }
         
         
-        com.squareup.okhttp.Call call = cellsPivotTablesGetWorksheetPivotTablesCall(name, sheetName, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsPivotTablesGetWorksheetPivotTablesCall(name, sheetName, folder, storage, progressListener, progressRequestListener);
         return call;
 
         
@@ -1573,11 +1630,12 @@ public class CellsPivotTablesApi {
      * @param name Document name. (required)
      * @param sheetName The worksheet name. (required)
      * @param folder Document&#39;s folder. (optional)
+     * @param storage storage name. (optional)
      * @return PivotTablesResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public PivotTablesResponse cellsPivotTablesGetWorksheetPivotTables(String name, String sheetName, String folder) throws ApiException {
-        ApiResponse<PivotTablesResponse> resp = cellsPivotTablesGetWorksheetPivotTablesWithHttpInfo(name, sheetName, folder);
+    public PivotTablesResponse cellsPivotTablesGetWorksheetPivotTables(String name, String sheetName, String folder, String storage) throws ApiException {
+        ApiResponse<PivotTablesResponse> resp = cellsPivotTablesGetWorksheetPivotTablesWithHttpInfo(name, sheetName, folder, storage);
         return resp.getData();
     }
 
@@ -1587,11 +1645,12 @@ public class CellsPivotTablesApi {
      * @param name Document name. (required)
      * @param sheetName The worksheet name. (required)
      * @param folder Document&#39;s folder. (optional)
+     * @param storage storage name. (optional)
      * @return ApiResponse&lt;PivotTablesResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<PivotTablesResponse> cellsPivotTablesGetWorksheetPivotTablesWithHttpInfo(String name, String sheetName, String folder) throws ApiException {
-        com.squareup.okhttp.Call call = cellsPivotTablesGetWorksheetPivotTablesValidateBeforeCall(name, sheetName, folder, null, null);
+    public ApiResponse<PivotTablesResponse> cellsPivotTablesGetWorksheetPivotTablesWithHttpInfo(String name, String sheetName, String folder, String storage) throws ApiException {
+        com.squareup.okhttp.Call call = cellsPivotTablesGetWorksheetPivotTablesValidateBeforeCall(name, sheetName, folder, storage, null, null);
         Type localVarReturnType = new TypeToken<PivotTablesResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -1602,11 +1661,12 @@ public class CellsPivotTablesApi {
      * @param name Document name. (required)
      * @param sheetName The worksheet name. (required)
      * @param folder Document&#39;s folder. (optional)
+     * @param storage storage name. (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call cellsPivotTablesGetWorksheetPivotTablesAsync(String name, String sheetName, String folder, final ApiCallback<PivotTablesResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call cellsPivotTablesGetWorksheetPivotTablesAsync(String name, String sheetName, String folder, String storage, final ApiCallback<PivotTablesResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1627,7 +1687,7 @@ public class CellsPivotTablesApi {
             };
         }
 
-        com.squareup.okhttp.Call call = cellsPivotTablesGetWorksheetPivotTablesValidateBeforeCall(name, sheetName, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsPivotTablesGetWorksheetPivotTablesValidateBeforeCall(name, sheetName, folder, storage, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<PivotTablesResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -1642,12 +1702,13 @@ public class CellsPivotTablesApi {
      * @param style Style dto in request body. (optional)
      * @param needReCalculate  (optional, default to false)
      * @param folder Document&#39;s folder. (optional)
+     * @param storage storage name. (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call cellsPivotTablesPostPivotTableCellStyleCall(String name, String sheetName, Integer pivotTableIndex, Integer column, Integer row, Style style, Boolean needReCalculate, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call cellsPivotTablesPostPivotTableCellStyleCall(String name, String sheetName, Integer pivotTableIndex, Integer column, Integer row, Style style, Boolean needReCalculate, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = style;
         
         // create path and map variables
@@ -1665,6 +1726,8 @@ public class CellsPivotTablesApi {
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "needReCalculate", needReCalculate));
         if (folder != null)
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "folder", folder));
+        if (storage != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "storage", storage));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -1699,7 +1762,7 @@ public class CellsPivotTablesApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call cellsPivotTablesPostPivotTableCellStyleValidateBeforeCall(String name, String sheetName, Integer pivotTableIndex, Integer column, Integer row, Style style, Boolean needReCalculate, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call cellsPivotTablesPostPivotTableCellStyleValidateBeforeCall(String name, String sheetName, Integer pivotTableIndex, Integer column, Integer row, Style style, Boolean needReCalculate, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'name' is set
         if (name == null) {
@@ -1727,7 +1790,7 @@ public class CellsPivotTablesApi {
         }
         
         
-        com.squareup.okhttp.Call call = cellsPivotTablesPostPivotTableCellStyleCall(name, sheetName, pivotTableIndex, column, row, style, needReCalculate, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsPivotTablesPostPivotTableCellStyleCall(name, sheetName, pivotTableIndex, column, row, style, needReCalculate, folder, storage, progressListener, progressRequestListener);
         return call;
 
         
@@ -1747,11 +1810,12 @@ public class CellsPivotTablesApi {
      * @param style Style dto in request body. (optional)
      * @param needReCalculate  (optional, default to false)
      * @param folder Document&#39;s folder. (optional)
+     * @param storage storage name. (optional)
      * @return SaaSposeResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public SaaSposeResponse cellsPivotTablesPostPivotTableCellStyle(String name, String sheetName, Integer pivotTableIndex, Integer column, Integer row, Style style, Boolean needReCalculate, String folder) throws ApiException {
-        ApiResponse<SaaSposeResponse> resp = cellsPivotTablesPostPivotTableCellStyleWithHttpInfo(name, sheetName, pivotTableIndex, column, row, style, needReCalculate, folder);
+    public SaaSposeResponse cellsPivotTablesPostPivotTableCellStyle(String name, String sheetName, Integer pivotTableIndex, Integer column, Integer row, Style style, Boolean needReCalculate, String folder, String storage) throws ApiException {
+        ApiResponse<SaaSposeResponse> resp = cellsPivotTablesPostPivotTableCellStyleWithHttpInfo(name, sheetName, pivotTableIndex, column, row, style, needReCalculate, folder, storage);
         return resp.getData();
     }
 
@@ -1766,11 +1830,12 @@ public class CellsPivotTablesApi {
      * @param style Style dto in request body. (optional)
      * @param needReCalculate  (optional, default to false)
      * @param folder Document&#39;s folder. (optional)
+     * @param storage storage name. (optional)
      * @return ApiResponse&lt;SaaSposeResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<SaaSposeResponse> cellsPivotTablesPostPivotTableCellStyleWithHttpInfo(String name, String sheetName, Integer pivotTableIndex, Integer column, Integer row, Style style, Boolean needReCalculate, String folder) throws ApiException {
-        com.squareup.okhttp.Call call = cellsPivotTablesPostPivotTableCellStyleValidateBeforeCall(name, sheetName, pivotTableIndex, column, row, style, needReCalculate, folder, null, null);
+    public ApiResponse<SaaSposeResponse> cellsPivotTablesPostPivotTableCellStyleWithHttpInfo(String name, String sheetName, Integer pivotTableIndex, Integer column, Integer row, Style style, Boolean needReCalculate, String folder, String storage) throws ApiException {
+        com.squareup.okhttp.Call call = cellsPivotTablesPostPivotTableCellStyleValidateBeforeCall(name, sheetName, pivotTableIndex, column, row, style, needReCalculate, folder, storage, null, null);
         Type localVarReturnType = new TypeToken<SaaSposeResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -1786,11 +1851,12 @@ public class CellsPivotTablesApi {
      * @param style Style dto in request body. (optional)
      * @param needReCalculate  (optional, default to false)
      * @param folder Document&#39;s folder. (optional)
+     * @param storage storage name. (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call cellsPivotTablesPostPivotTableCellStyleAsync(String name, String sheetName, Integer pivotTableIndex, Integer column, Integer row, Style style, Boolean needReCalculate, String folder, final ApiCallback<SaaSposeResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call cellsPivotTablesPostPivotTableCellStyleAsync(String name, String sheetName, Integer pivotTableIndex, Integer column, Integer row, Style style, Boolean needReCalculate, String folder, String storage, final ApiCallback<SaaSposeResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1811,7 +1877,7 @@ public class CellsPivotTablesApi {
             };
         }
 
-        com.squareup.okhttp.Call call = cellsPivotTablesPostPivotTableCellStyleValidateBeforeCall(name, sheetName, pivotTableIndex, column, row, style, needReCalculate, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsPivotTablesPostPivotTableCellStyleValidateBeforeCall(name, sheetName, pivotTableIndex, column, row, style, needReCalculate, folder, storage, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<SaaSposeResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -1827,12 +1893,13 @@ public class CellsPivotTablesApi {
      * @param isHide  (required)
      * @param needReCalculate  (optional, default to false)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call cellsPivotTablesPostPivotTableFieldHideItemCall(String name, String sheetName, Integer pivotTableIndex, String pivotFieldType, Integer fieldIndex, Integer itemIndex, Boolean isHide, Boolean needReCalculate, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call cellsPivotTablesPostPivotTableFieldHideItemCall(String name, String sheetName, Integer pivotTableIndex, String pivotFieldType, Integer fieldIndex, Integer itemIndex, Boolean isHide, Boolean needReCalculate, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -1854,6 +1921,8 @@ public class CellsPivotTablesApi {
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "needReCalculate", needReCalculate));
         if (folder != null)
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "folder", folder));
+        if (storage != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "storage", storage));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -1888,7 +1957,7 @@ public class CellsPivotTablesApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call cellsPivotTablesPostPivotTableFieldHideItemValidateBeforeCall(String name, String sheetName, Integer pivotTableIndex, String pivotFieldType, Integer fieldIndex, Integer itemIndex, Boolean isHide, Boolean needReCalculate, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call cellsPivotTablesPostPivotTableFieldHideItemValidateBeforeCall(String name, String sheetName, Integer pivotTableIndex, String pivotFieldType, Integer fieldIndex, Integer itemIndex, Boolean isHide, Boolean needReCalculate, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'name' is set
         if (name == null) {
@@ -1926,7 +1995,7 @@ public class CellsPivotTablesApi {
         }
         
         
-        com.squareup.okhttp.Call call = cellsPivotTablesPostPivotTableFieldHideItemCall(name, sheetName, pivotTableIndex, pivotFieldType, fieldIndex, itemIndex, isHide, needReCalculate, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsPivotTablesPostPivotTableFieldHideItemCall(name, sheetName, pivotTableIndex, pivotFieldType, fieldIndex, itemIndex, isHide, needReCalculate, folder, storage, progressListener, progressRequestListener);
         return call;
 
         
@@ -1947,11 +2016,12 @@ public class CellsPivotTablesApi {
      * @param isHide  (required)
      * @param needReCalculate  (optional, default to false)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @return SaaSposeResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public SaaSposeResponse cellsPivotTablesPostPivotTableFieldHideItem(String name, String sheetName, Integer pivotTableIndex, String pivotFieldType, Integer fieldIndex, Integer itemIndex, Boolean isHide, Boolean needReCalculate, String folder) throws ApiException {
-        ApiResponse<SaaSposeResponse> resp = cellsPivotTablesPostPivotTableFieldHideItemWithHttpInfo(name, sheetName, pivotTableIndex, pivotFieldType, fieldIndex, itemIndex, isHide, needReCalculate, folder);
+    public SaaSposeResponse cellsPivotTablesPostPivotTableFieldHideItem(String name, String sheetName, Integer pivotTableIndex, String pivotFieldType, Integer fieldIndex, Integer itemIndex, Boolean isHide, Boolean needReCalculate, String folder, String storage) throws ApiException {
+        ApiResponse<SaaSposeResponse> resp = cellsPivotTablesPostPivotTableFieldHideItemWithHttpInfo(name, sheetName, pivotTableIndex, pivotFieldType, fieldIndex, itemIndex, isHide, needReCalculate, folder, storage);
         return resp.getData();
     }
 
@@ -1967,11 +2037,12 @@ public class CellsPivotTablesApi {
      * @param isHide  (required)
      * @param needReCalculate  (optional, default to false)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @return ApiResponse&lt;SaaSposeResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<SaaSposeResponse> cellsPivotTablesPostPivotTableFieldHideItemWithHttpInfo(String name, String sheetName, Integer pivotTableIndex, String pivotFieldType, Integer fieldIndex, Integer itemIndex, Boolean isHide, Boolean needReCalculate, String folder) throws ApiException {
-        com.squareup.okhttp.Call call = cellsPivotTablesPostPivotTableFieldHideItemValidateBeforeCall(name, sheetName, pivotTableIndex, pivotFieldType, fieldIndex, itemIndex, isHide, needReCalculate, folder, null, null);
+    public ApiResponse<SaaSposeResponse> cellsPivotTablesPostPivotTableFieldHideItemWithHttpInfo(String name, String sheetName, Integer pivotTableIndex, String pivotFieldType, Integer fieldIndex, Integer itemIndex, Boolean isHide, Boolean needReCalculate, String folder, String storage) throws ApiException {
+        com.squareup.okhttp.Call call = cellsPivotTablesPostPivotTableFieldHideItemValidateBeforeCall(name, sheetName, pivotTableIndex, pivotFieldType, fieldIndex, itemIndex, isHide, needReCalculate, folder, storage, null, null);
         Type localVarReturnType = new TypeToken<SaaSposeResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -1988,11 +2059,12 @@ public class CellsPivotTablesApi {
      * @param isHide  (required)
      * @param needReCalculate  (optional, default to false)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call cellsPivotTablesPostPivotTableFieldHideItemAsync(String name, String sheetName, Integer pivotTableIndex, String pivotFieldType, Integer fieldIndex, Integer itemIndex, Boolean isHide, Boolean needReCalculate, String folder, final ApiCallback<SaaSposeResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call cellsPivotTablesPostPivotTableFieldHideItemAsync(String name, String sheetName, Integer pivotTableIndex, String pivotFieldType, Integer fieldIndex, Integer itemIndex, Boolean isHide, Boolean needReCalculate, String folder, String storage, final ApiCallback<SaaSposeResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -2013,7 +2085,7 @@ public class CellsPivotTablesApi {
             };
         }
 
-        com.squareup.okhttp.Call call = cellsPivotTablesPostPivotTableFieldHideItemValidateBeforeCall(name, sheetName, pivotTableIndex, pivotFieldType, fieldIndex, itemIndex, isHide, needReCalculate, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsPivotTablesPostPivotTableFieldHideItemValidateBeforeCall(name, sheetName, pivotTableIndex, pivotFieldType, fieldIndex, itemIndex, isHide, needReCalculate, folder, storage, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<SaaSposeResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -2027,12 +2099,13 @@ public class CellsPivotTablesApi {
      * @param from  (required)
      * @param to  (required)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call cellsPivotTablesPostPivotTableFieldMoveToCall(String name, String sheetName, Integer pivotTableIndex, Integer fieldIndex, String from, String to, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call cellsPivotTablesPostPivotTableFieldMoveToCall(String name, String sheetName, Integer pivotTableIndex, Integer fieldIndex, String from, String to, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -2050,6 +2123,8 @@ public class CellsPivotTablesApi {
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "to", to));
         if (folder != null)
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "folder", folder));
+        if (storage != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "storage", storage));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -2084,7 +2159,7 @@ public class CellsPivotTablesApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call cellsPivotTablesPostPivotTableFieldMoveToValidateBeforeCall(String name, String sheetName, Integer pivotTableIndex, Integer fieldIndex, String from, String to, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call cellsPivotTablesPostPivotTableFieldMoveToValidateBeforeCall(String name, String sheetName, Integer pivotTableIndex, Integer fieldIndex, String from, String to, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'name' is set
         if (name == null) {
@@ -2117,7 +2192,7 @@ public class CellsPivotTablesApi {
         }
         
         
-        com.squareup.okhttp.Call call = cellsPivotTablesPostPivotTableFieldMoveToCall(name, sheetName, pivotTableIndex, fieldIndex, from, to, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsPivotTablesPostPivotTableFieldMoveToCall(name, sheetName, pivotTableIndex, fieldIndex, from, to, folder, storage, progressListener, progressRequestListener);
         return call;
 
         
@@ -2136,11 +2211,12 @@ public class CellsPivotTablesApi {
      * @param from  (required)
      * @param to  (required)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @return SaaSposeResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public SaaSposeResponse cellsPivotTablesPostPivotTableFieldMoveTo(String name, String sheetName, Integer pivotTableIndex, Integer fieldIndex, String from, String to, String folder) throws ApiException {
-        ApiResponse<SaaSposeResponse> resp = cellsPivotTablesPostPivotTableFieldMoveToWithHttpInfo(name, sheetName, pivotTableIndex, fieldIndex, from, to, folder);
+    public SaaSposeResponse cellsPivotTablesPostPivotTableFieldMoveTo(String name, String sheetName, Integer pivotTableIndex, Integer fieldIndex, String from, String to, String folder, String storage) throws ApiException {
+        ApiResponse<SaaSposeResponse> resp = cellsPivotTablesPostPivotTableFieldMoveToWithHttpInfo(name, sheetName, pivotTableIndex, fieldIndex, from, to, folder, storage);
         return resp.getData();
     }
 
@@ -2154,11 +2230,12 @@ public class CellsPivotTablesApi {
      * @param from  (required)
      * @param to  (required)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @return ApiResponse&lt;SaaSposeResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<SaaSposeResponse> cellsPivotTablesPostPivotTableFieldMoveToWithHttpInfo(String name, String sheetName, Integer pivotTableIndex, Integer fieldIndex, String from, String to, String folder) throws ApiException {
-        com.squareup.okhttp.Call call = cellsPivotTablesPostPivotTableFieldMoveToValidateBeforeCall(name, sheetName, pivotTableIndex, fieldIndex, from, to, folder, null, null);
+    public ApiResponse<SaaSposeResponse> cellsPivotTablesPostPivotTableFieldMoveToWithHttpInfo(String name, String sheetName, Integer pivotTableIndex, Integer fieldIndex, String from, String to, String folder, String storage) throws ApiException {
+        com.squareup.okhttp.Call call = cellsPivotTablesPostPivotTableFieldMoveToValidateBeforeCall(name, sheetName, pivotTableIndex, fieldIndex, from, to, folder, storage, null, null);
         Type localVarReturnType = new TypeToken<SaaSposeResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -2173,11 +2250,12 @@ public class CellsPivotTablesApi {
      * @param from  (required)
      * @param to  (required)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call cellsPivotTablesPostPivotTableFieldMoveToAsync(String name, String sheetName, Integer pivotTableIndex, Integer fieldIndex, String from, String to, String folder, final ApiCallback<SaaSposeResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call cellsPivotTablesPostPivotTableFieldMoveToAsync(String name, String sheetName, Integer pivotTableIndex, Integer fieldIndex, String from, String to, String folder, String storage, final ApiCallback<SaaSposeResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -2198,7 +2276,7 @@ public class CellsPivotTablesApi {
             };
         }
 
-        com.squareup.okhttp.Call call = cellsPivotTablesPostPivotTableFieldMoveToValidateBeforeCall(name, sheetName, pivotTableIndex, fieldIndex, from, to, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsPivotTablesPostPivotTableFieldMoveToValidateBeforeCall(name, sheetName, pivotTableIndex, fieldIndex, from, to, folder, storage, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<SaaSposeResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -2211,12 +2289,13 @@ public class CellsPivotTablesApi {
      * @param style Style dto in request body. (optional)
      * @param needReCalculate  (optional, default to false)
      * @param folder Document&#39;s folder. (optional)
+     * @param storage storage name. (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call cellsPivotTablesPostPivotTableStyleCall(String name, String sheetName, Integer pivotTableIndex, Style style, Boolean needReCalculate, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call cellsPivotTablesPostPivotTableStyleCall(String name, String sheetName, Integer pivotTableIndex, Style style, Boolean needReCalculate, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = style;
         
         // create path and map variables
@@ -2230,6 +2309,8 @@ public class CellsPivotTablesApi {
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "needReCalculate", needReCalculate));
         if (folder != null)
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "folder", folder));
+        if (storage != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "storage", storage));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -2264,7 +2345,7 @@ public class CellsPivotTablesApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call cellsPivotTablesPostPivotTableStyleValidateBeforeCall(String name, String sheetName, Integer pivotTableIndex, Style style, Boolean needReCalculate, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call cellsPivotTablesPostPivotTableStyleValidateBeforeCall(String name, String sheetName, Integer pivotTableIndex, Style style, Boolean needReCalculate, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'name' is set
         if (name == null) {
@@ -2282,7 +2363,7 @@ public class CellsPivotTablesApi {
         }
         
         
-        com.squareup.okhttp.Call call = cellsPivotTablesPostPivotTableStyleCall(name, sheetName, pivotTableIndex, style, needReCalculate, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsPivotTablesPostPivotTableStyleCall(name, sheetName, pivotTableIndex, style, needReCalculate, folder, storage, progressListener, progressRequestListener);
         return call;
 
         
@@ -2300,11 +2381,12 @@ public class CellsPivotTablesApi {
      * @param style Style dto in request body. (optional)
      * @param needReCalculate  (optional, default to false)
      * @param folder Document&#39;s folder. (optional)
+     * @param storage storage name. (optional)
      * @return SaaSposeResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public SaaSposeResponse cellsPivotTablesPostPivotTableStyle(String name, String sheetName, Integer pivotTableIndex, Style style, Boolean needReCalculate, String folder) throws ApiException {
-        ApiResponse<SaaSposeResponse> resp = cellsPivotTablesPostPivotTableStyleWithHttpInfo(name, sheetName, pivotTableIndex, style, needReCalculate, folder);
+    public SaaSposeResponse cellsPivotTablesPostPivotTableStyle(String name, String sheetName, Integer pivotTableIndex, Style style, Boolean needReCalculate, String folder, String storage) throws ApiException {
+        ApiResponse<SaaSposeResponse> resp = cellsPivotTablesPostPivotTableStyleWithHttpInfo(name, sheetName, pivotTableIndex, style, needReCalculate, folder, storage);
         return resp.getData();
     }
 
@@ -2317,11 +2399,12 @@ public class CellsPivotTablesApi {
      * @param style Style dto in request body. (optional)
      * @param needReCalculate  (optional, default to false)
      * @param folder Document&#39;s folder. (optional)
+     * @param storage storage name. (optional)
      * @return ApiResponse&lt;SaaSposeResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<SaaSposeResponse> cellsPivotTablesPostPivotTableStyleWithHttpInfo(String name, String sheetName, Integer pivotTableIndex, Style style, Boolean needReCalculate, String folder) throws ApiException {
-        com.squareup.okhttp.Call call = cellsPivotTablesPostPivotTableStyleValidateBeforeCall(name, sheetName, pivotTableIndex, style, needReCalculate, folder, null, null);
+    public ApiResponse<SaaSposeResponse> cellsPivotTablesPostPivotTableStyleWithHttpInfo(String name, String sheetName, Integer pivotTableIndex, Style style, Boolean needReCalculate, String folder, String storage) throws ApiException {
+        com.squareup.okhttp.Call call = cellsPivotTablesPostPivotTableStyleValidateBeforeCall(name, sheetName, pivotTableIndex, style, needReCalculate, folder, storage, null, null);
         Type localVarReturnType = new TypeToken<SaaSposeResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -2335,11 +2418,12 @@ public class CellsPivotTablesApi {
      * @param style Style dto in request body. (optional)
      * @param needReCalculate  (optional, default to false)
      * @param folder Document&#39;s folder. (optional)
+     * @param storage storage name. (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call cellsPivotTablesPostPivotTableStyleAsync(String name, String sheetName, Integer pivotTableIndex, Style style, Boolean needReCalculate, String folder, final ApiCallback<SaaSposeResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call cellsPivotTablesPostPivotTableStyleAsync(String name, String sheetName, Integer pivotTableIndex, Style style, Boolean needReCalculate, String folder, String storage, final ApiCallback<SaaSposeResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -2360,7 +2444,7 @@ public class CellsPivotTablesApi {
             };
         }
 
-        com.squareup.okhttp.Call call = cellsPivotTablesPostPivotTableStyleValidateBeforeCall(name, sheetName, pivotTableIndex, style, needReCalculate, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsPivotTablesPostPivotTableStyleValidateBeforeCall(name, sheetName, pivotTableIndex, style, needReCalculate, folder, storage, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<SaaSposeResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -2371,12 +2455,13 @@ public class CellsPivotTablesApi {
      * @param sheetName The worksheet name. (required)
      * @param pivotTableIndex Pivot table index (required)
      * @param folder Document&#39;s folder. (optional)
+     * @param storage storage name. (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call cellsPivotTablesPostWorksheetPivotTableCalculateCall(String name, String sheetName, Integer pivotTableIndex, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call cellsPivotTablesPostWorksheetPivotTableCalculateCall(String name, String sheetName, Integer pivotTableIndex, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -2388,6 +2473,8 @@ public class CellsPivotTablesApi {
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         if (folder != null)
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "folder", folder));
+        if (storage != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "storage", storage));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -2422,7 +2509,7 @@ public class CellsPivotTablesApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call cellsPivotTablesPostWorksheetPivotTableCalculateValidateBeforeCall(String name, String sheetName, Integer pivotTableIndex, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call cellsPivotTablesPostWorksheetPivotTableCalculateValidateBeforeCall(String name, String sheetName, Integer pivotTableIndex, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'name' is set
         if (name == null) {
@@ -2440,7 +2527,7 @@ public class CellsPivotTablesApi {
         }
         
         
-        com.squareup.okhttp.Call call = cellsPivotTablesPostWorksheetPivotTableCalculateCall(name, sheetName, pivotTableIndex, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsPivotTablesPostWorksheetPivotTableCalculateCall(name, sheetName, pivotTableIndex, folder, storage, progressListener, progressRequestListener);
         return call;
 
         
@@ -2456,11 +2543,12 @@ public class CellsPivotTablesApi {
      * @param sheetName The worksheet name. (required)
      * @param pivotTableIndex Pivot table index (required)
      * @param folder Document&#39;s folder. (optional)
+     * @param storage storage name. (optional)
      * @return SaaSposeResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public SaaSposeResponse cellsPivotTablesPostWorksheetPivotTableCalculate(String name, String sheetName, Integer pivotTableIndex, String folder) throws ApiException {
-        ApiResponse<SaaSposeResponse> resp = cellsPivotTablesPostWorksheetPivotTableCalculateWithHttpInfo(name, sheetName, pivotTableIndex, folder);
+    public SaaSposeResponse cellsPivotTablesPostWorksheetPivotTableCalculate(String name, String sheetName, Integer pivotTableIndex, String folder, String storage) throws ApiException {
+        ApiResponse<SaaSposeResponse> resp = cellsPivotTablesPostWorksheetPivotTableCalculateWithHttpInfo(name, sheetName, pivotTableIndex, folder, storage);
         return resp.getData();
     }
 
@@ -2471,11 +2559,12 @@ public class CellsPivotTablesApi {
      * @param sheetName The worksheet name. (required)
      * @param pivotTableIndex Pivot table index (required)
      * @param folder Document&#39;s folder. (optional)
+     * @param storage storage name. (optional)
      * @return ApiResponse&lt;SaaSposeResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<SaaSposeResponse> cellsPivotTablesPostWorksheetPivotTableCalculateWithHttpInfo(String name, String sheetName, Integer pivotTableIndex, String folder) throws ApiException {
-        com.squareup.okhttp.Call call = cellsPivotTablesPostWorksheetPivotTableCalculateValidateBeforeCall(name, sheetName, pivotTableIndex, folder, null, null);
+    public ApiResponse<SaaSposeResponse> cellsPivotTablesPostWorksheetPivotTableCalculateWithHttpInfo(String name, String sheetName, Integer pivotTableIndex, String folder, String storage) throws ApiException {
+        com.squareup.okhttp.Call call = cellsPivotTablesPostWorksheetPivotTableCalculateValidateBeforeCall(name, sheetName, pivotTableIndex, folder, storage, null, null);
         Type localVarReturnType = new TypeToken<SaaSposeResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -2487,11 +2576,12 @@ public class CellsPivotTablesApi {
      * @param sheetName The worksheet name. (required)
      * @param pivotTableIndex Pivot table index (required)
      * @param folder Document&#39;s folder. (optional)
+     * @param storage storage name. (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call cellsPivotTablesPostWorksheetPivotTableCalculateAsync(String name, String sheetName, Integer pivotTableIndex, String folder, final ApiCallback<SaaSposeResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call cellsPivotTablesPostWorksheetPivotTableCalculateAsync(String name, String sheetName, Integer pivotTableIndex, String folder, String storage, final ApiCallback<SaaSposeResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -2512,7 +2602,7 @@ public class CellsPivotTablesApi {
             };
         }
 
-        com.squareup.okhttp.Call call = cellsPivotTablesPostWorksheetPivotTableCalculateValidateBeforeCall(name, sheetName, pivotTableIndex, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsPivotTablesPostWorksheetPivotTableCalculateValidateBeforeCall(name, sheetName, pivotTableIndex, folder, storage, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<SaaSposeResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -2526,12 +2616,13 @@ public class CellsPivotTablesApi {
      * @param column  (optional)
      * @param destCellName  (optional)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call cellsPivotTablesPostWorksheetPivotTableMoveCall(String name, String sheetName, Integer pivotTableIndex, Integer row, Integer column, String destCellName, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call cellsPivotTablesPostWorksheetPivotTableMoveCall(String name, String sheetName, Integer pivotTableIndex, Integer row, Integer column, String destCellName, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -2549,6 +2640,8 @@ public class CellsPivotTablesApi {
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "destCellName", destCellName));
         if (folder != null)
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "folder", folder));
+        if (storage != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "storage", storage));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -2583,7 +2676,7 @@ public class CellsPivotTablesApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call cellsPivotTablesPostWorksheetPivotTableMoveValidateBeforeCall(String name, String sheetName, Integer pivotTableIndex, Integer row, Integer column, String destCellName, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call cellsPivotTablesPostWorksheetPivotTableMoveValidateBeforeCall(String name, String sheetName, Integer pivotTableIndex, Integer row, Integer column, String destCellName, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'name' is set
         if (name == null) {
@@ -2601,7 +2694,7 @@ public class CellsPivotTablesApi {
         }
         
         
-        com.squareup.okhttp.Call call = cellsPivotTablesPostWorksheetPivotTableMoveCall(name, sheetName, pivotTableIndex, row, column, destCellName, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsPivotTablesPostWorksheetPivotTableMoveCall(name, sheetName, pivotTableIndex, row, column, destCellName, folder, storage, progressListener, progressRequestListener);
         return call;
 
         
@@ -2620,11 +2713,12 @@ public class CellsPivotTablesApi {
      * @param column  (optional)
      * @param destCellName  (optional)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @return SaaSposeResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public SaaSposeResponse cellsPivotTablesPostWorksheetPivotTableMove(String name, String sheetName, Integer pivotTableIndex, Integer row, Integer column, String destCellName, String folder) throws ApiException {
-        ApiResponse<SaaSposeResponse> resp = cellsPivotTablesPostWorksheetPivotTableMoveWithHttpInfo(name, sheetName, pivotTableIndex, row, column, destCellName, folder);
+    public SaaSposeResponse cellsPivotTablesPostWorksheetPivotTableMove(String name, String sheetName, Integer pivotTableIndex, Integer row, Integer column, String destCellName, String folder, String storage) throws ApiException {
+        ApiResponse<SaaSposeResponse> resp = cellsPivotTablesPostWorksheetPivotTableMoveWithHttpInfo(name, sheetName, pivotTableIndex, row, column, destCellName, folder, storage);
         return resp.getData();
     }
 
@@ -2638,11 +2732,12 @@ public class CellsPivotTablesApi {
      * @param column  (optional)
      * @param destCellName  (optional)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @return ApiResponse&lt;SaaSposeResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<SaaSposeResponse> cellsPivotTablesPostWorksheetPivotTableMoveWithHttpInfo(String name, String sheetName, Integer pivotTableIndex, Integer row, Integer column, String destCellName, String folder) throws ApiException {
-        com.squareup.okhttp.Call call = cellsPivotTablesPostWorksheetPivotTableMoveValidateBeforeCall(name, sheetName, pivotTableIndex, row, column, destCellName, folder, null, null);
+    public ApiResponse<SaaSposeResponse> cellsPivotTablesPostWorksheetPivotTableMoveWithHttpInfo(String name, String sheetName, Integer pivotTableIndex, Integer row, Integer column, String destCellName, String folder, String storage) throws ApiException {
+        com.squareup.okhttp.Call call = cellsPivotTablesPostWorksheetPivotTableMoveValidateBeforeCall(name, sheetName, pivotTableIndex, row, column, destCellName, folder, storage, null, null);
         Type localVarReturnType = new TypeToken<SaaSposeResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -2657,11 +2752,12 @@ public class CellsPivotTablesApi {
      * @param column  (optional)
      * @param destCellName  (optional)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call cellsPivotTablesPostWorksheetPivotTableMoveAsync(String name, String sheetName, Integer pivotTableIndex, Integer row, Integer column, String destCellName, String folder, final ApiCallback<SaaSposeResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call cellsPivotTablesPostWorksheetPivotTableMoveAsync(String name, String sheetName, Integer pivotTableIndex, Integer row, Integer column, String destCellName, String folder, String storage, final ApiCallback<SaaSposeResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -2682,7 +2778,7 @@ public class CellsPivotTablesApi {
             };
         }
 
-        com.squareup.okhttp.Call call = cellsPivotTablesPostWorksheetPivotTableMoveValidateBeforeCall(name, sheetName, pivotTableIndex, row, column, destCellName, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsPivotTablesPostWorksheetPivotTableMoveValidateBeforeCall(name, sheetName, pivotTableIndex, row, column, destCellName, folder, storage, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<SaaSposeResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -2696,12 +2792,13 @@ public class CellsPivotTablesApi {
      * @param request Dto that conrains field indexes (optional)
      * @param needReCalculate  (optional, default to false)
      * @param folder Document&#39;s folder. (optional)
+     * @param storage storage name. (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call cellsPivotTablesPutPivotTableFieldCall(String name, String sheetName, Integer pivotTableIndex, String pivotFieldType, PivotTableFieldRequest request, Boolean needReCalculate, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call cellsPivotTablesPutPivotTableFieldCall(String name, String sheetName, Integer pivotTableIndex, String pivotFieldType, PivotTableFieldRequest request, Boolean needReCalculate, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = request;
         
         // create path and map variables
@@ -2717,6 +2814,8 @@ public class CellsPivotTablesApi {
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "needReCalculate", needReCalculate));
         if (folder != null)
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "folder", folder));
+        if (storage != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "storage", storage));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -2751,7 +2850,7 @@ public class CellsPivotTablesApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call cellsPivotTablesPutPivotTableFieldValidateBeforeCall(String name, String sheetName, Integer pivotTableIndex, String pivotFieldType, PivotTableFieldRequest request, Boolean needReCalculate, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call cellsPivotTablesPutPivotTableFieldValidateBeforeCall(String name, String sheetName, Integer pivotTableIndex, String pivotFieldType, PivotTableFieldRequest request, Boolean needReCalculate, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'name' is set
         if (name == null) {
@@ -2774,7 +2873,7 @@ public class CellsPivotTablesApi {
         }
         
         
-        com.squareup.okhttp.Call call = cellsPivotTablesPutPivotTableFieldCall(name, sheetName, pivotTableIndex, pivotFieldType, request, needReCalculate, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsPivotTablesPutPivotTableFieldCall(name, sheetName, pivotTableIndex, pivotFieldType, request, needReCalculate, folder, storage, progressListener, progressRequestListener);
         return call;
 
         
@@ -2793,11 +2892,12 @@ public class CellsPivotTablesApi {
      * @param request Dto that conrains field indexes (optional)
      * @param needReCalculate  (optional, default to false)
      * @param folder Document&#39;s folder. (optional)
+     * @param storage storage name. (optional)
      * @return SaaSposeResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public SaaSposeResponse cellsPivotTablesPutPivotTableField(String name, String sheetName, Integer pivotTableIndex, String pivotFieldType, PivotTableFieldRequest request, Boolean needReCalculate, String folder) throws ApiException {
-        ApiResponse<SaaSposeResponse> resp = cellsPivotTablesPutPivotTableFieldWithHttpInfo(name, sheetName, pivotTableIndex, pivotFieldType, request, needReCalculate, folder);
+    public SaaSposeResponse cellsPivotTablesPutPivotTableField(String name, String sheetName, Integer pivotTableIndex, String pivotFieldType, PivotTableFieldRequest request, Boolean needReCalculate, String folder, String storage) throws ApiException {
+        ApiResponse<SaaSposeResponse> resp = cellsPivotTablesPutPivotTableFieldWithHttpInfo(name, sheetName, pivotTableIndex, pivotFieldType, request, needReCalculate, folder, storage);
         return resp.getData();
     }
 
@@ -2811,11 +2911,12 @@ public class CellsPivotTablesApi {
      * @param request Dto that conrains field indexes (optional)
      * @param needReCalculate  (optional, default to false)
      * @param folder Document&#39;s folder. (optional)
+     * @param storage storage name. (optional)
      * @return ApiResponse&lt;SaaSposeResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<SaaSposeResponse> cellsPivotTablesPutPivotTableFieldWithHttpInfo(String name, String sheetName, Integer pivotTableIndex, String pivotFieldType, PivotTableFieldRequest request, Boolean needReCalculate, String folder) throws ApiException {
-        com.squareup.okhttp.Call call = cellsPivotTablesPutPivotTableFieldValidateBeforeCall(name, sheetName, pivotTableIndex, pivotFieldType, request, needReCalculate, folder, null, null);
+    public ApiResponse<SaaSposeResponse> cellsPivotTablesPutPivotTableFieldWithHttpInfo(String name, String sheetName, Integer pivotTableIndex, String pivotFieldType, PivotTableFieldRequest request, Boolean needReCalculate, String folder, String storage) throws ApiException {
+        com.squareup.okhttp.Call call = cellsPivotTablesPutPivotTableFieldValidateBeforeCall(name, sheetName, pivotTableIndex, pivotFieldType, request, needReCalculate, folder, storage, null, null);
         Type localVarReturnType = new TypeToken<SaaSposeResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -2830,11 +2931,12 @@ public class CellsPivotTablesApi {
      * @param request Dto that conrains field indexes (optional)
      * @param needReCalculate  (optional, default to false)
      * @param folder Document&#39;s folder. (optional)
+     * @param storage storage name. (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call cellsPivotTablesPutPivotTableFieldAsync(String name, String sheetName, Integer pivotTableIndex, String pivotFieldType, PivotTableFieldRequest request, Boolean needReCalculate, String folder, final ApiCallback<SaaSposeResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call cellsPivotTablesPutPivotTableFieldAsync(String name, String sheetName, Integer pivotTableIndex, String pivotFieldType, PivotTableFieldRequest request, Boolean needReCalculate, String folder, String storage, final ApiCallback<SaaSposeResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -2855,7 +2957,7 @@ public class CellsPivotTablesApi {
             };
         }
 
-        com.squareup.okhttp.Call call = cellsPivotTablesPutPivotTableFieldValidateBeforeCall(name, sheetName, pivotTableIndex, pivotFieldType, request, needReCalculate, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsPivotTablesPutPivotTableFieldValidateBeforeCall(name, sheetName, pivotTableIndex, pivotFieldType, request, needReCalculate, folder, storage, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<SaaSposeResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -2866,6 +2968,7 @@ public class CellsPivotTablesApi {
      * @param sheetName The worksheet name. (required)
      * @param request CreatePivotTableRequest dto in request body. (optional)
      * @param folder Document&#39;s folder. (optional)
+     * @param storage storage name. (optional)
      * @param sourceData The data for the new PivotTable cache. (optional)
      * @param destCellName The cell in the upper-left corner of the PivotTable report&#39;s destination range. (optional)
      * @param tableName The name of the new PivotTable report. (optional)
@@ -2875,7 +2978,7 @@ public class CellsPivotTablesApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call cellsPivotTablesPutWorksheetPivotTableCall(String name, String sheetName, CreatePivotTableRequest request, String folder, String sourceData, String destCellName, String tableName, Boolean useSameSource, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call cellsPivotTablesPutWorksheetPivotTableCall(String name, String sheetName, CreatePivotTableRequest request, String folder, String storage, String sourceData, String destCellName, String tableName, Boolean useSameSource, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = request;
         
         // create path and map variables
@@ -2886,6 +2989,8 @@ public class CellsPivotTablesApi {
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         if (folder != null)
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "folder", folder));
+        if (storage != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "storage", storage));
         if (sourceData != null)
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "sourceData", sourceData));
         if (destCellName != null)
@@ -2928,7 +3033,7 @@ public class CellsPivotTablesApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call cellsPivotTablesPutWorksheetPivotTableValidateBeforeCall(String name, String sheetName, CreatePivotTableRequest request, String folder, String sourceData, String destCellName, String tableName, Boolean useSameSource, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call cellsPivotTablesPutWorksheetPivotTableValidateBeforeCall(String name, String sheetName, CreatePivotTableRequest request, String folder, String storage, String sourceData, String destCellName, String tableName, Boolean useSameSource, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'name' is set
         if (name == null) {
@@ -2941,7 +3046,7 @@ public class CellsPivotTablesApi {
         }
         
         
-        com.squareup.okhttp.Call call = cellsPivotTablesPutWorksheetPivotTableCall(name, sheetName, request, folder, sourceData, destCellName, tableName, useSameSource, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsPivotTablesPutWorksheetPivotTableCall(name, sheetName, request, folder, storage, sourceData, destCellName, tableName, useSameSource, progressListener, progressRequestListener);
         return call;
 
         
@@ -2957,6 +3062,7 @@ public class CellsPivotTablesApi {
      * @param sheetName The worksheet name. (required)
      * @param request CreatePivotTableRequest dto in request body. (optional)
      * @param folder Document&#39;s folder. (optional)
+     * @param storage storage name. (optional)
      * @param sourceData The data for the new PivotTable cache. (optional)
      * @param destCellName The cell in the upper-left corner of the PivotTable report&#39;s destination range. (optional)
      * @param tableName The name of the new PivotTable report. (optional)
@@ -2964,8 +3070,8 @@ public class CellsPivotTablesApi {
      * @return PivotTableResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public PivotTableResponse cellsPivotTablesPutWorksheetPivotTable(String name, String sheetName, CreatePivotTableRequest request, String folder, String sourceData, String destCellName, String tableName, Boolean useSameSource) throws ApiException {
-        ApiResponse<PivotTableResponse> resp = cellsPivotTablesPutWorksheetPivotTableWithHttpInfo(name, sheetName, request, folder, sourceData, destCellName, tableName, useSameSource);
+    public PivotTableResponse cellsPivotTablesPutWorksheetPivotTable(String name, String sheetName, CreatePivotTableRequest request, String folder, String storage, String sourceData, String destCellName, String tableName, Boolean useSameSource) throws ApiException {
+        ApiResponse<PivotTableResponse> resp = cellsPivotTablesPutWorksheetPivotTableWithHttpInfo(name, sheetName, request, folder, storage, sourceData, destCellName, tableName, useSameSource);
         return resp.getData();
     }
 
@@ -2976,6 +3082,7 @@ public class CellsPivotTablesApi {
      * @param sheetName The worksheet name. (required)
      * @param request CreatePivotTableRequest dto in request body. (optional)
      * @param folder Document&#39;s folder. (optional)
+     * @param storage storage name. (optional)
      * @param sourceData The data for the new PivotTable cache. (optional)
      * @param destCellName The cell in the upper-left corner of the PivotTable report&#39;s destination range. (optional)
      * @param tableName The name of the new PivotTable report. (optional)
@@ -2983,8 +3090,8 @@ public class CellsPivotTablesApi {
      * @return ApiResponse&lt;PivotTableResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<PivotTableResponse> cellsPivotTablesPutWorksheetPivotTableWithHttpInfo(String name, String sheetName, CreatePivotTableRequest request, String folder, String sourceData, String destCellName, String tableName, Boolean useSameSource) throws ApiException {
-        com.squareup.okhttp.Call call = cellsPivotTablesPutWorksheetPivotTableValidateBeforeCall(name, sheetName, request, folder, sourceData, destCellName, tableName, useSameSource, null, null);
+    public ApiResponse<PivotTableResponse> cellsPivotTablesPutWorksheetPivotTableWithHttpInfo(String name, String sheetName, CreatePivotTableRequest request, String folder, String storage, String sourceData, String destCellName, String tableName, Boolean useSameSource) throws ApiException {
+        com.squareup.okhttp.Call call = cellsPivotTablesPutWorksheetPivotTableValidateBeforeCall(name, sheetName, request, folder, storage, sourceData, destCellName, tableName, useSameSource, null, null);
         Type localVarReturnType = new TypeToken<PivotTableResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -2996,6 +3103,7 @@ public class CellsPivotTablesApi {
      * @param sheetName The worksheet name. (required)
      * @param request CreatePivotTableRequest dto in request body. (optional)
      * @param folder Document&#39;s folder. (optional)
+     * @param storage storage name. (optional)
      * @param sourceData The data for the new PivotTable cache. (optional)
      * @param destCellName The cell in the upper-left corner of the PivotTable report&#39;s destination range. (optional)
      * @param tableName The name of the new PivotTable report. (optional)
@@ -3004,7 +3112,7 @@ public class CellsPivotTablesApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call cellsPivotTablesPutWorksheetPivotTableAsync(String name, String sheetName, CreatePivotTableRequest request, String folder, String sourceData, String destCellName, String tableName, Boolean useSameSource, final ApiCallback<PivotTableResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call cellsPivotTablesPutWorksheetPivotTableAsync(String name, String sheetName, CreatePivotTableRequest request, String folder, String storage, String sourceData, String destCellName, String tableName, Boolean useSameSource, final ApiCallback<PivotTableResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -3025,7 +3133,7 @@ public class CellsPivotTablesApi {
             };
         }
 
-        com.squareup.okhttp.Call call = cellsPivotTablesPutWorksheetPivotTableValidateBeforeCall(name, sheetName, request, folder, sourceData, destCellName, tableName, useSameSource, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsPivotTablesPutWorksheetPivotTableValidateBeforeCall(name, sheetName, request, folder, storage, sourceData, destCellName, tableName, useSameSource, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<PivotTableResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -3038,12 +3146,13 @@ public class CellsPivotTablesApi {
      * @param filter  (optional)
      * @param needReCalculate  (optional, default to false)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call cellsPivotTablesPutWorksheetPivotTableFilterCall(String name, String sheetName, Integer pivotTableIndex, PivotFilter filter, Boolean needReCalculate, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call cellsPivotTablesPutWorksheetPivotTableFilterCall(String name, String sheetName, Integer pivotTableIndex, PivotFilter filter, Boolean needReCalculate, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = filter;
         
         // create path and map variables
@@ -3057,6 +3166,8 @@ public class CellsPivotTablesApi {
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "needReCalculate", needReCalculate));
         if (folder != null)
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "folder", folder));
+        if (storage != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "storage", storage));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -3091,7 +3202,7 @@ public class CellsPivotTablesApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call cellsPivotTablesPutWorksheetPivotTableFilterValidateBeforeCall(String name, String sheetName, Integer pivotTableIndex, PivotFilter filter, Boolean needReCalculate, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call cellsPivotTablesPutWorksheetPivotTableFilterValidateBeforeCall(String name, String sheetName, Integer pivotTableIndex, PivotFilter filter, Boolean needReCalculate, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'name' is set
         if (name == null) {
@@ -3109,7 +3220,7 @@ public class CellsPivotTablesApi {
         }
         
         
-        com.squareup.okhttp.Call call = cellsPivotTablesPutWorksheetPivotTableFilterCall(name, sheetName, pivotTableIndex, filter, needReCalculate, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsPivotTablesPutWorksheetPivotTableFilterCall(name, sheetName, pivotTableIndex, filter, needReCalculate, folder, storage, progressListener, progressRequestListener);
         return call;
 
         
@@ -3127,11 +3238,12 @@ public class CellsPivotTablesApi {
      * @param filter  (optional)
      * @param needReCalculate  (optional, default to false)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @return SaaSposeResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public SaaSposeResponse cellsPivotTablesPutWorksheetPivotTableFilter(String name, String sheetName, Integer pivotTableIndex, PivotFilter filter, Boolean needReCalculate, String folder) throws ApiException {
-        ApiResponse<SaaSposeResponse> resp = cellsPivotTablesPutWorksheetPivotTableFilterWithHttpInfo(name, sheetName, pivotTableIndex, filter, needReCalculate, folder);
+    public SaaSposeResponse cellsPivotTablesPutWorksheetPivotTableFilter(String name, String sheetName, Integer pivotTableIndex, PivotFilter filter, Boolean needReCalculate, String folder, String storage) throws ApiException {
+        ApiResponse<SaaSposeResponse> resp = cellsPivotTablesPutWorksheetPivotTableFilterWithHttpInfo(name, sheetName, pivotTableIndex, filter, needReCalculate, folder, storage);
         return resp.getData();
     }
 
@@ -3144,11 +3256,12 @@ public class CellsPivotTablesApi {
      * @param filter  (optional)
      * @param needReCalculate  (optional, default to false)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @return ApiResponse&lt;SaaSposeResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<SaaSposeResponse> cellsPivotTablesPutWorksheetPivotTableFilterWithHttpInfo(String name, String sheetName, Integer pivotTableIndex, PivotFilter filter, Boolean needReCalculate, String folder) throws ApiException {
-        com.squareup.okhttp.Call call = cellsPivotTablesPutWorksheetPivotTableFilterValidateBeforeCall(name, sheetName, pivotTableIndex, filter, needReCalculate, folder, null, null);
+    public ApiResponse<SaaSposeResponse> cellsPivotTablesPutWorksheetPivotTableFilterWithHttpInfo(String name, String sheetName, Integer pivotTableIndex, PivotFilter filter, Boolean needReCalculate, String folder, String storage) throws ApiException {
+        com.squareup.okhttp.Call call = cellsPivotTablesPutWorksheetPivotTableFilterValidateBeforeCall(name, sheetName, pivotTableIndex, filter, needReCalculate, folder, storage, null, null);
         Type localVarReturnType = new TypeToken<SaaSposeResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -3162,11 +3275,12 @@ public class CellsPivotTablesApi {
      * @param filter  (optional)
      * @param needReCalculate  (optional, default to false)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call cellsPivotTablesPutWorksheetPivotTableFilterAsync(String name, String sheetName, Integer pivotTableIndex, PivotFilter filter, Boolean needReCalculate, String folder, final ApiCallback<SaaSposeResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call cellsPivotTablesPutWorksheetPivotTableFilterAsync(String name, String sheetName, Integer pivotTableIndex, PivotFilter filter, Boolean needReCalculate, String folder, String storage, final ApiCallback<SaaSposeResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -3187,7 +3301,7 @@ public class CellsPivotTablesApi {
             };
         }
 
-        com.squareup.okhttp.Call call = cellsPivotTablesPutWorksheetPivotTableFilterValidateBeforeCall(name, sheetName, pivotTableIndex, filter, needReCalculate, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsPivotTablesPutWorksheetPivotTableFilterValidateBeforeCall(name, sheetName, pivotTableIndex, filter, needReCalculate, folder, storage, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<SaaSposeResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

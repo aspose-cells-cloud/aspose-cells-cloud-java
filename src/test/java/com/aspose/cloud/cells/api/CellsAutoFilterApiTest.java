@@ -79,7 +79,7 @@ public class CellsAutoFilterApiTest {
         Integer second = 1;
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        SaaSposeResponse response = api.cellsAutoFilterDeleteWorksheetDateFilter(name, sheetName, fieldIndex, dateTimeGroupingType, year, month, day, hour, minute, second, folder);
+        SaaSposeResponse response = api.cellsAutoFilterDeleteWorksheetDateFilter(name, sheetName, fieldIndex, dateTimeGroupingType, year, month, day, hour, minute, second, folder,null);
 
         // TODO: test validations
     }
@@ -100,7 +100,7 @@ public class CellsAutoFilterApiTest {
         String criteria = "test";
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        SaaSposeResponse response = api.cellsAutoFilterDeleteWorksheetFilter(name, sheetName, fieldIndex, criteria, folder);
+        SaaSposeResponse response = api.cellsAutoFilterDeleteWorksheetFilter(name, sheetName, fieldIndex, criteria, folder,null);
 
         // TODO: test validations
     }
@@ -119,7 +119,7 @@ public class CellsAutoFilterApiTest {
         String sheetName = SHEET1;
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        AutoFilterResponse response = api.cellsAutoFilterGetWorksheetAutoFilter(name, sheetName, folder);
+        AutoFilterResponse response = api.cellsAutoFilterGetWorksheetAutoFilter(name, sheetName, folder,null);
 
         // TODO: test validations
     }
@@ -138,7 +138,7 @@ public class CellsAutoFilterApiTest {
         String sheetName = SHEET1;
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        SaaSposeResponse response = api.cellsAutoFilterPostWorksheetAutoFilterRefresh(name, sheetName, folder);
+        SaaSposeResponse response = api.cellsAutoFilterPostWorksheetAutoFilterRefresh(name, sheetName, folder,null);
 
         // TODO: test validations
     }
@@ -158,7 +158,7 @@ public class CellsAutoFilterApiTest {
         Integer fieldIndex = 0;
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        SaaSposeResponse response = api.cellsAutoFilterPostWorksheetMatchBlanks(name, sheetName, fieldIndex, folder);
+        SaaSposeResponse response = api.cellsAutoFilterPostWorksheetMatchBlanks(name, sheetName, fieldIndex, folder,null);
 
         // TODO: test validations
     }
@@ -178,7 +178,7 @@ public class CellsAutoFilterApiTest {
         Integer fieldIndex = 0;
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        SaaSposeResponse response = api.cellsAutoFilterPostWorksheetMatchNonBlanks(name, sheetName, fieldIndex, folder);
+        SaaSposeResponse response = api.cellsAutoFilterPostWorksheetMatchNonBlanks(name, sheetName, fieldIndex, folder,null);
 
         // TODO: test validations
     }
@@ -209,7 +209,7 @@ public class CellsAutoFilterApiTest {
         Boolean refresh = true;
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        SaaSposeResponse response = api.cellsAutoFilterPutWorksheetColorFilter(name, sheetName, range, fieldIndex, colorFilter, matchBlanks, refresh, folder);
+        SaaSposeResponse response = api.cellsAutoFilterPutWorksheetColorFilter(name, sheetName, range, fieldIndex, colorFilter, matchBlanks, refresh, folder,null);
 
         // TODO: test validations
     }
@@ -237,7 +237,7 @@ public class CellsAutoFilterApiTest {
         Boolean refresh = false;
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        SaaSposeResponse response = api.cellsAutoFilterPutWorksheetCustomFilter(name, sheetName, range, fieldIndex, operatorType1, criteria1, isAnd, operatorType2, criteria2, matchBlanks, refresh, folder);
+        SaaSposeResponse response = api.cellsAutoFilterPutWorksheetCustomFilter(name, sheetName, range, fieldIndex, operatorType1, criteria1, isAnd, operatorType2, criteria2, matchBlanks, refresh, folder,null);
 
         // TODO: test validations
     }
@@ -267,7 +267,7 @@ public class CellsAutoFilterApiTest {
         Boolean refresh = null;
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        SaaSposeResponse response = api.cellsAutoFilterPutWorksheetDateFilter(name, sheetName, range, fieldIndex, dateTimeGroupingType, year, month, day, hour, minute, second, matchBlanks, refresh, folder);
+        SaaSposeResponse response = api.cellsAutoFilterPutWorksheetDateFilter(name, sheetName, range, fieldIndex, dateTimeGroupingType, year, month, day, hour, minute, second, matchBlanks, refresh, folder,null);
 
         // TODO: test validations
     }
@@ -291,7 +291,7 @@ public class CellsAutoFilterApiTest {
         Boolean refresh = true;
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        SaaSposeResponse response = api.cellsAutoFilterPutWorksheetDynamicFilter(name, sheetName, range, fieldIndex, dynamicFilterType, matchBlanks, refresh, folder);
+        SaaSposeResponse response = api.cellsAutoFilterPutWorksheetDynamicFilter(name, sheetName, range, fieldIndex, dynamicFilterType, matchBlanks, refresh, folder,null);
 
         // TODO: test validations
     }
@@ -315,7 +315,7 @@ public class CellsAutoFilterApiTest {
         Boolean refresh = true;
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        SaaSposeResponse response = api.cellsAutoFilterPutWorksheetFilter(name, sheetName, range, fieldIndex, criteria, matchBlanks, refresh, folder);
+        SaaSposeResponse response = api.cellsAutoFilterPutWorksheetFilter(name, sheetName, range, fieldIndex, criteria, matchBlanks, refresh, folder,null);
 
         // TODO: test validations
     }
@@ -341,7 +341,7 @@ public class CellsAutoFilterApiTest {
         Boolean refresh = null;
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        SaaSposeResponse response = api.cellsAutoFilterPutWorksheetFilterTop10(name, sheetName, range, fieldIndex, isTop, isPercent, itemCount, matchBlanks, refresh, folder);
+        SaaSposeResponse response = api.cellsAutoFilterPutWorksheetFilterTop10(name, sheetName, range, fieldIndex, isTop, isPercent, itemCount, matchBlanks, refresh, folder,null);
 
         // TODO: test validations
     }
@@ -366,7 +366,7 @@ public class CellsAutoFilterApiTest {
         Boolean refresh = null;
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        SaaSposeResponse response = api.cellsAutoFilterPutWorksheetIconFilter(name, sheetName, range, fieldIndex, iconSetType, iconId, matchBlanks, refresh, folder);
+        SaaSposeResponse response = api.cellsAutoFilterPutWorksheetIconFilter(name, sheetName, range, fieldIndex, iconSetType, iconId, matchBlanks, refresh, folder,null);
 
         // TODO: test validations
     }

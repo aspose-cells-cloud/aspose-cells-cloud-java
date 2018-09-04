@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 <a name="cellsPicturesDeleteWorksheetPicture"></a>
 # **cellsPicturesDeleteWorksheetPicture**
-> SaaSposeResponse cellsPicturesDeleteWorksheetPicture(name, sheetName, pictureIndex, folder)
+> SaaSposeResponse cellsPicturesDeleteWorksheetPicture(name, sheetName, pictureIndex, folder, storage)
 
 Delete a picture object in worksheet
 
@@ -30,8 +30,9 @@ String name = "name_example"; // String | The workbook name.
 String sheetName = "sheetName_example"; // String | The worsheet name.
 Integer pictureIndex = 56; // Integer | Picture index
 String folder = "folder_example"; // String | The workbook folder.
+String storage = "storage_example"; // String | storage name.
 try {
-    SaaSposeResponse result = apiInstance.cellsPicturesDeleteWorksheetPicture(name, sheetName, pictureIndex, folder);
+    SaaSposeResponse result = apiInstance.cellsPicturesDeleteWorksheetPicture(name, sheetName, pictureIndex, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsPicturesApi#cellsPicturesDeleteWorksheetPicture");
@@ -47,6 +48,7 @@ Name | Type | Description  | Notes
  **sheetName** | **String**| The worsheet name. |
  **pictureIndex** | **Integer**| Picture index |
  **folder** | **String**| The workbook folder. | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -63,7 +65,7 @@ No authorization required
 
 <a name="cellsPicturesDeleteWorksheetPictures"></a>
 # **cellsPicturesDeleteWorksheetPictures**
-> SaaSposeResponse cellsPicturesDeleteWorksheetPictures(name, sheetName, folder)
+> SaaSposeResponse cellsPicturesDeleteWorksheetPictures(name, sheetName, folder, storage)
 
 Delete all pictures in worksheet.
 
@@ -78,8 +80,9 @@ CellsPicturesApi apiInstance = new CellsPicturesApi();
 String name = "name_example"; // String | Document name.
 String sheetName = "sheetName_example"; // String | Worksheet name.
 String folder = "folder_example"; // String | The document folder.
+String storage = "storage_example"; // String | storage name.
 try {
-    SaaSposeResponse result = apiInstance.cellsPicturesDeleteWorksheetPictures(name, sheetName, folder);
+    SaaSposeResponse result = apiInstance.cellsPicturesDeleteWorksheetPictures(name, sheetName, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsPicturesApi#cellsPicturesDeleteWorksheetPictures");
@@ -94,6 +97,7 @@ Name | Type | Description  | Notes
  **name** | **String**| Document name. |
  **sheetName** | **String**| Worksheet name. |
  **folder** | **String**| The document folder. | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -110,7 +114,7 @@ No authorization required
 
 <a name="cellsPicturesGetWorksheetPicture"></a>
 # **cellsPicturesGetWorksheetPicture**
-> File cellsPicturesGetWorksheetPicture(name, sheetName, pictureNumber, folder)
+> File cellsPicturesGetWorksheetPicture(name, sheetName, pictureNumber, folder, storage)
 
 GRead worksheet picture by number.
 
@@ -126,8 +130,9 @@ String name = "name_example"; // String | Document name.
 String sheetName = "sheetName_example"; // String | Worksheet name.
 Integer pictureNumber = 56; // Integer | The picture number.
 String folder = "folder_example"; // String | The document folder.
+String storage = "storage_example"; // String | storage name.
 try {
-    File result = apiInstance.cellsPicturesGetWorksheetPicture(name, sheetName, pictureNumber, folder);
+    File result = apiInstance.cellsPicturesGetWorksheetPicture(name, sheetName, pictureNumber, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsPicturesApi#cellsPicturesGetWorksheetPicture");
@@ -143,6 +148,7 @@ Name | Type | Description  | Notes
  **sheetName** | **String**| Worksheet name. |
  **pictureNumber** | **Integer**| The picture number. |
  **folder** | **String**| The document folder. | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -159,7 +165,7 @@ No authorization required
 
 <a name="cellsPicturesGetWorksheetPictures"></a>
 # **cellsPicturesGetWorksheetPictures**
-> PicturesResponse cellsPicturesGetWorksheetPictures(name, sheetName, folder)
+> PicturesResponse cellsPicturesGetWorksheetPictures(name, sheetName, folder, storage)
 
 Read worksheet pictures.
 
@@ -174,8 +180,9 @@ CellsPicturesApi apiInstance = new CellsPicturesApi();
 String name = "name_example"; // String | Document name.
 String sheetName = "sheetName_example"; // String | The worksheet name.
 String folder = "folder_example"; // String | Document's folder.
+String storage = "storage_example"; // String | storage name.
 try {
-    PicturesResponse result = apiInstance.cellsPicturesGetWorksheetPictures(name, sheetName, folder);
+    PicturesResponse result = apiInstance.cellsPicturesGetWorksheetPictures(name, sheetName, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsPicturesApi#cellsPicturesGetWorksheetPictures");
@@ -190,6 +197,7 @@ Name | Type | Description  | Notes
  **name** | **String**| Document name. |
  **sheetName** | **String**| The worksheet name. |
  **folder** | **String**| Document&#39;s folder. | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -206,7 +214,7 @@ No authorization required
 
 <a name="cellsPicturesPostWorksheetPicture"></a>
 # **cellsPicturesPostWorksheetPicture**
-> PictureResponse cellsPicturesPostWorksheetPicture(name, sheetName, pictureIndex, picture, folder)
+> PictureResponse cellsPicturesPostWorksheetPicture(name, sheetName, pictureIndex, picture, folder, storage)
 
 Update worksheet picture by index.
 
@@ -223,8 +231,9 @@ String sheetName = "sheetName_example"; // String | Worksheet name.
 Integer pictureIndex = 56; // Integer | The picture's index.
 Picture picture = new Picture(); // Picture | Picture object
 String folder = "folder_example"; // String | The document folder.
+String storage = "storage_example"; // String | storage name.
 try {
-    PictureResponse result = apiInstance.cellsPicturesPostWorksheetPicture(name, sheetName, pictureIndex, picture, folder);
+    PictureResponse result = apiInstance.cellsPicturesPostWorksheetPicture(name, sheetName, pictureIndex, picture, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsPicturesApi#cellsPicturesPostWorksheetPicture");
@@ -241,6 +250,7 @@ Name | Type | Description  | Notes
  **pictureIndex** | **Integer**| The picture&#39;s index. |
  **picture** | [**Picture**](Picture.md)| Picture object | [optional]
  **folder** | **String**| The document folder. | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -257,7 +267,7 @@ No authorization required
 
 <a name="cellsPicturesPutWorksheetAddPicture"></a>
 # **cellsPicturesPutWorksheetAddPicture**
-> PicturesResponse cellsPicturesPutWorksheetAddPicture(name, sheetName, picture, upperLeftRow, upperLeftColumn, lowerRightRow, lowerRightColumn, picturePath, folder)
+> PicturesResponse cellsPicturesPutWorksheetAddPicture(name, sheetName, picture, upperLeftRow, upperLeftColumn, lowerRightRow, lowerRightColumn, picturePath, folder, storage)
 
 Add a new worksheet picture.
 
@@ -278,8 +288,9 @@ Integer lowerRightRow = 0; // Integer | The image low right row.
 Integer lowerRightColumn = 0; // Integer | The image low right column.
 String picturePath = "picturePath_example"; // String | The picture path, if not provided the picture data is inspected in the request body.
 String folder = "folder_example"; // String | The workbook folder.
+String storage = "storage_example"; // String | storage name.
 try {
-    PicturesResponse result = apiInstance.cellsPicturesPutWorksheetAddPicture(name, sheetName, picture, upperLeftRow, upperLeftColumn, lowerRightRow, lowerRightColumn, picturePath, folder);
+    PicturesResponse result = apiInstance.cellsPicturesPutWorksheetAddPicture(name, sheetName, picture, upperLeftRow, upperLeftColumn, lowerRightRow, lowerRightColumn, picturePath, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsPicturesApi#cellsPicturesPutWorksheetAddPicture");
@@ -300,6 +311,7 @@ Name | Type | Description  | Notes
  **lowerRightColumn** | **Integer**| The image low right column. | [optional] [default to 0]
  **picturePath** | **String**| The picture path, if not provided the picture data is inspected in the request body. | [optional]
  **folder** | **String**| The workbook folder. | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 

@@ -21,7 +21,7 @@ Method | HTTP request | Description
 
 <a name="cellsAutoFilterDeleteWorksheetDateFilter"></a>
 # **cellsAutoFilterDeleteWorksheetDateFilter**
-> SaaSposeResponse cellsAutoFilterDeleteWorksheetDateFilter(name, sheetName, fieldIndex, dateTimeGroupingType, year, month, day, hour, minute, second, folder)
+> SaaSposeResponse cellsAutoFilterDeleteWorksheetDateFilter(name, sheetName, fieldIndex, dateTimeGroupingType, year, month, day, hour, minute, second, folder, storage)
 
 Removes a date filter.             
 
@@ -44,8 +44,9 @@ Integer hour = 0; // Integer |
 Integer minute = 0; // Integer | 
 Integer second = 0; // Integer | 
 String folder = "folder_example"; // String | 
+String storage = "storage_example"; // String | storage name.
 try {
-    SaaSposeResponse result = apiInstance.cellsAutoFilterDeleteWorksheetDateFilter(name, sheetName, fieldIndex, dateTimeGroupingType, year, month, day, hour, minute, second, folder);
+    SaaSposeResponse result = apiInstance.cellsAutoFilterDeleteWorksheetDateFilter(name, sheetName, fieldIndex, dateTimeGroupingType, year, month, day, hour, minute, second, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsAutoFilterApi#cellsAutoFilterDeleteWorksheetDateFilter");
@@ -68,6 +69,7 @@ Name | Type | Description  | Notes
  **minute** | **Integer**|  | [optional] [default to 0]
  **second** | **Integer**|  | [optional] [default to 0]
  **folder** | **String**|  | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -84,7 +86,7 @@ No authorization required
 
 <a name="cellsAutoFilterDeleteWorksheetFilter"></a>
 # **cellsAutoFilterDeleteWorksheetFilter**
-> SaaSposeResponse cellsAutoFilterDeleteWorksheetFilter(name, sheetName, fieldIndex, criteria, folder)
+> SaaSposeResponse cellsAutoFilterDeleteWorksheetFilter(name, sheetName, fieldIndex, criteria, folder, storage)
 
 Delete a filter for a filter column.             
 
@@ -101,8 +103,9 @@ String sheetName = "sheetName_example"; // String |
 Integer fieldIndex = 56; // Integer | 
 String criteria = "criteria_example"; // String | 
 String folder = "folder_example"; // String | 
+String storage = "storage_example"; // String | storage name.
 try {
-    SaaSposeResponse result = apiInstance.cellsAutoFilterDeleteWorksheetFilter(name, sheetName, fieldIndex, criteria, folder);
+    SaaSposeResponse result = apiInstance.cellsAutoFilterDeleteWorksheetFilter(name, sheetName, fieldIndex, criteria, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsAutoFilterApi#cellsAutoFilterDeleteWorksheetFilter");
@@ -119,6 +122,7 @@ Name | Type | Description  | Notes
  **fieldIndex** | **Integer**|  |
  **criteria** | **String**|  | [optional]
  **folder** | **String**|  | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -135,7 +139,7 @@ No authorization required
 
 <a name="cellsAutoFilterGetWorksheetAutoFilter"></a>
 # **cellsAutoFilterGetWorksheetAutoFilter**
-> AutoFilterResponse cellsAutoFilterGetWorksheetAutoFilter(name, sheetName, folder)
+> AutoFilterResponse cellsAutoFilterGetWorksheetAutoFilter(name, sheetName, folder, storage)
 
 Get Auto filter Description
 
@@ -150,8 +154,9 @@ CellsAutoFilterApi apiInstance = new CellsAutoFilterApi();
 String name = "name_example"; // String | 
 String sheetName = "sheetName_example"; // String | 
 String folder = "folder_example"; // String | 
+String storage = "storage_example"; // String | storage name.
 try {
-    AutoFilterResponse result = apiInstance.cellsAutoFilterGetWorksheetAutoFilter(name, sheetName, folder);
+    AutoFilterResponse result = apiInstance.cellsAutoFilterGetWorksheetAutoFilter(name, sheetName, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsAutoFilterApi#cellsAutoFilterGetWorksheetAutoFilter");
@@ -166,6 +171,7 @@ Name | Type | Description  | Notes
  **name** | **String**|  |
  **sheetName** | **String**|  |
  **folder** | **String**|  | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -182,7 +188,7 @@ No authorization required
 
 <a name="cellsAutoFilterPostWorksheetAutoFilterRefresh"></a>
 # **cellsAutoFilterPostWorksheetAutoFilterRefresh**
-> SaaSposeResponse cellsAutoFilterPostWorksheetAutoFilterRefresh(name, sheetName, folder)
+> SaaSposeResponse cellsAutoFilterPostWorksheetAutoFilterRefresh(name, sheetName, folder, storage)
 
 
 
@@ -197,8 +203,9 @@ CellsAutoFilterApi apiInstance = new CellsAutoFilterApi();
 String name = "name_example"; // String | 
 String sheetName = "sheetName_example"; // String | 
 String folder = "folder_example"; // String | 
+String storage = "storage_example"; // String | storage name.
 try {
-    SaaSposeResponse result = apiInstance.cellsAutoFilterPostWorksheetAutoFilterRefresh(name, sheetName, folder);
+    SaaSposeResponse result = apiInstance.cellsAutoFilterPostWorksheetAutoFilterRefresh(name, sheetName, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsAutoFilterApi#cellsAutoFilterPostWorksheetAutoFilterRefresh");
@@ -213,6 +220,7 @@ Name | Type | Description  | Notes
  **name** | **String**|  |
  **sheetName** | **String**|  |
  **folder** | **String**|  | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -229,7 +237,7 @@ No authorization required
 
 <a name="cellsAutoFilterPostWorksheetMatchBlanks"></a>
 # **cellsAutoFilterPostWorksheetMatchBlanks**
-> SaaSposeResponse cellsAutoFilterPostWorksheetMatchBlanks(name, sheetName, fieldIndex, folder)
+> SaaSposeResponse cellsAutoFilterPostWorksheetMatchBlanks(name, sheetName, fieldIndex, folder, storage)
 
 Match all blank cell in the list.
 
@@ -245,8 +253,9 @@ String name = "name_example"; // String |
 String sheetName = "sheetName_example"; // String | 
 Integer fieldIndex = 56; // Integer | 
 String folder = "folder_example"; // String | 
+String storage = "storage_example"; // String | storage name.
 try {
-    SaaSposeResponse result = apiInstance.cellsAutoFilterPostWorksheetMatchBlanks(name, sheetName, fieldIndex, folder);
+    SaaSposeResponse result = apiInstance.cellsAutoFilterPostWorksheetMatchBlanks(name, sheetName, fieldIndex, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsAutoFilterApi#cellsAutoFilterPostWorksheetMatchBlanks");
@@ -262,6 +271,7 @@ Name | Type | Description  | Notes
  **sheetName** | **String**|  |
  **fieldIndex** | **Integer**|  |
  **folder** | **String**|  | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -278,7 +288,7 @@ No authorization required
 
 <a name="cellsAutoFilterPostWorksheetMatchNonBlanks"></a>
 # **cellsAutoFilterPostWorksheetMatchNonBlanks**
-> SaaSposeResponse cellsAutoFilterPostWorksheetMatchNonBlanks(name, sheetName, fieldIndex, folder)
+> SaaSposeResponse cellsAutoFilterPostWorksheetMatchNonBlanks(name, sheetName, fieldIndex, folder, storage)
 
 Match all not blank cell in the list.             
 
@@ -294,8 +304,9 @@ String name = "name_example"; // String |
 String sheetName = "sheetName_example"; // String | 
 Integer fieldIndex = 56; // Integer | 
 String folder = "folder_example"; // String | 
+String storage = "storage_example"; // String | storage name.
 try {
-    SaaSposeResponse result = apiInstance.cellsAutoFilterPostWorksheetMatchNonBlanks(name, sheetName, fieldIndex, folder);
+    SaaSposeResponse result = apiInstance.cellsAutoFilterPostWorksheetMatchNonBlanks(name, sheetName, fieldIndex, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsAutoFilterApi#cellsAutoFilterPostWorksheetMatchNonBlanks");
@@ -311,6 +322,7 @@ Name | Type | Description  | Notes
  **sheetName** | **String**|  |
  **fieldIndex** | **Integer**|  |
  **folder** | **String**|  | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -327,7 +339,7 @@ No authorization required
 
 <a name="cellsAutoFilterPutWorksheetColorFilter"></a>
 # **cellsAutoFilterPutWorksheetColorFilter**
-> SaaSposeResponse cellsAutoFilterPutWorksheetColorFilter(name, sheetName, range, fieldIndex, colorFilter, matchBlanks, refresh, folder)
+> SaaSposeResponse cellsAutoFilterPutWorksheetColorFilter(name, sheetName, range, fieldIndex, colorFilter, matchBlanks, refresh, folder, storage)
 
 
 
@@ -347,8 +359,9 @@ ColorFilterRequest colorFilter = new ColorFilterRequest(); // ColorFilterRequest
 Boolean matchBlanks = true; // Boolean | 
 Boolean refresh = true; // Boolean | 
 String folder = "folder_example"; // String | 
+String storage = "storage_example"; // String | storage name.
 try {
-    SaaSposeResponse result = apiInstance.cellsAutoFilterPutWorksheetColorFilter(name, sheetName, range, fieldIndex, colorFilter, matchBlanks, refresh, folder);
+    SaaSposeResponse result = apiInstance.cellsAutoFilterPutWorksheetColorFilter(name, sheetName, range, fieldIndex, colorFilter, matchBlanks, refresh, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsAutoFilterApi#cellsAutoFilterPutWorksheetColorFilter");
@@ -368,6 +381,7 @@ Name | Type | Description  | Notes
  **matchBlanks** | **Boolean**|  | [optional]
  **refresh** | **Boolean**|  | [optional]
  **folder** | **String**|  | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -384,7 +398,7 @@ No authorization required
 
 <a name="cellsAutoFilterPutWorksheetCustomFilter"></a>
 # **cellsAutoFilterPutWorksheetCustomFilter**
-> SaaSposeResponse cellsAutoFilterPutWorksheetCustomFilter(name, sheetName, range, fieldIndex, operatorType1, criteria1, isAnd, operatorType2, criteria2, matchBlanks, refresh, folder)
+> SaaSposeResponse cellsAutoFilterPutWorksheetCustomFilter(name, sheetName, range, fieldIndex, operatorType1, criteria1, isAnd, operatorType2, criteria2, matchBlanks, refresh, folder, storage)
 
 Filters a list with a custom criteria.             
 
@@ -408,8 +422,9 @@ String criteria2 = "criteria2_example"; // String |
 Boolean matchBlanks = true; // Boolean | 
 Boolean refresh = true; // Boolean | 
 String folder = "folder_example"; // String | 
+String storage = "storage_example"; // String | storage name.
 try {
-    SaaSposeResponse result = apiInstance.cellsAutoFilterPutWorksheetCustomFilter(name, sheetName, range, fieldIndex, operatorType1, criteria1, isAnd, operatorType2, criteria2, matchBlanks, refresh, folder);
+    SaaSposeResponse result = apiInstance.cellsAutoFilterPutWorksheetCustomFilter(name, sheetName, range, fieldIndex, operatorType1, criteria1, isAnd, operatorType2, criteria2, matchBlanks, refresh, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsAutoFilterApi#cellsAutoFilterPutWorksheetCustomFilter");
@@ -433,6 +448,7 @@ Name | Type | Description  | Notes
  **matchBlanks** | **Boolean**|  | [optional]
  **refresh** | **Boolean**|  | [optional]
  **folder** | **String**|  | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -449,7 +465,7 @@ No authorization required
 
 <a name="cellsAutoFilterPutWorksheetDateFilter"></a>
 # **cellsAutoFilterPutWorksheetDateFilter**
-> SaaSposeResponse cellsAutoFilterPutWorksheetDateFilter(name, sheetName, range, fieldIndex, dateTimeGroupingType, year, month, day, hour, minute, second, matchBlanks, refresh, folder)
+> SaaSposeResponse cellsAutoFilterPutWorksheetDateFilter(name, sheetName, range, fieldIndex, dateTimeGroupingType, year, month, day, hour, minute, second, matchBlanks, refresh, folder, storage)
 
 add date filter in worksheet 
 
@@ -475,8 +491,9 @@ Integer second = 0; // Integer |
 Boolean matchBlanks = true; // Boolean | 
 Boolean refresh = true; // Boolean | 
 String folder = "folder_example"; // String | 
+String storage = "storage_example"; // String | storage name.
 try {
-    SaaSposeResponse result = apiInstance.cellsAutoFilterPutWorksheetDateFilter(name, sheetName, range, fieldIndex, dateTimeGroupingType, year, month, day, hour, minute, second, matchBlanks, refresh, folder);
+    SaaSposeResponse result = apiInstance.cellsAutoFilterPutWorksheetDateFilter(name, sheetName, range, fieldIndex, dateTimeGroupingType, year, month, day, hour, minute, second, matchBlanks, refresh, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsAutoFilterApi#cellsAutoFilterPutWorksheetDateFilter");
@@ -502,6 +519,7 @@ Name | Type | Description  | Notes
  **matchBlanks** | **Boolean**|  | [optional]
  **refresh** | **Boolean**|  | [optional]
  **folder** | **String**|  | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -518,7 +536,7 @@ No authorization required
 
 <a name="cellsAutoFilterPutWorksheetDynamicFilter"></a>
 # **cellsAutoFilterPutWorksheetDynamicFilter**
-> SaaSposeResponse cellsAutoFilterPutWorksheetDynamicFilter(name, sheetName, range, fieldIndex, dynamicFilterType, matchBlanks, refresh, folder)
+> SaaSposeResponse cellsAutoFilterPutWorksheetDynamicFilter(name, sheetName, range, fieldIndex, dynamicFilterType, matchBlanks, refresh, folder, storage)
 
 
 
@@ -538,8 +556,9 @@ String dynamicFilterType = "dynamicFilterType_example"; // String |
 Boolean matchBlanks = true; // Boolean | 
 Boolean refresh = true; // Boolean | 
 String folder = "folder_example"; // String | 
+String storage = "storage_example"; // String | storage name.
 try {
-    SaaSposeResponse result = apiInstance.cellsAutoFilterPutWorksheetDynamicFilter(name, sheetName, range, fieldIndex, dynamicFilterType, matchBlanks, refresh, folder);
+    SaaSposeResponse result = apiInstance.cellsAutoFilterPutWorksheetDynamicFilter(name, sheetName, range, fieldIndex, dynamicFilterType, matchBlanks, refresh, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsAutoFilterApi#cellsAutoFilterPutWorksheetDynamicFilter");
@@ -559,6 +578,7 @@ Name | Type | Description  | Notes
  **matchBlanks** | **Boolean**|  | [optional]
  **refresh** | **Boolean**|  | [optional]
  **folder** | **String**|  | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -575,7 +595,7 @@ No authorization required
 
 <a name="cellsAutoFilterPutWorksheetFilter"></a>
 # **cellsAutoFilterPutWorksheetFilter**
-> SaaSposeResponse cellsAutoFilterPutWorksheetFilter(name, sheetName, range, fieldIndex, criteria, matchBlanks, refresh, folder)
+> SaaSposeResponse cellsAutoFilterPutWorksheetFilter(name, sheetName, range, fieldIndex, criteria, matchBlanks, refresh, folder, storage)
 
 Adds a filter for a filter column.             
 
@@ -595,8 +615,9 @@ String criteria = "criteria_example"; // String |
 Boolean matchBlanks = true; // Boolean | 
 Boolean refresh = true; // Boolean | 
 String folder = "folder_example"; // String | 
+String storage = "storage_example"; // String | storage name.
 try {
-    SaaSposeResponse result = apiInstance.cellsAutoFilterPutWorksheetFilter(name, sheetName, range, fieldIndex, criteria, matchBlanks, refresh, folder);
+    SaaSposeResponse result = apiInstance.cellsAutoFilterPutWorksheetFilter(name, sheetName, range, fieldIndex, criteria, matchBlanks, refresh, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsAutoFilterApi#cellsAutoFilterPutWorksheetFilter");
@@ -616,6 +637,7 @@ Name | Type | Description  | Notes
  **matchBlanks** | **Boolean**|  | [optional]
  **refresh** | **Boolean**|  | [optional]
  **folder** | **String**|  | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -632,7 +654,7 @@ No authorization required
 
 <a name="cellsAutoFilterPutWorksheetFilterTop10"></a>
 # **cellsAutoFilterPutWorksheetFilterTop10**
-> SaaSposeResponse cellsAutoFilterPutWorksheetFilterTop10(name, sheetName, range, fieldIndex, isTop, isPercent, itemCount, matchBlanks, refresh, folder)
+> SaaSposeResponse cellsAutoFilterPutWorksheetFilterTop10(name, sheetName, range, fieldIndex, isTop, isPercent, itemCount, matchBlanks, refresh, folder, storage)
 
 Filter the top 10 item in the list
 
@@ -654,8 +676,9 @@ Integer itemCount = 56; // Integer |
 Boolean matchBlanks = true; // Boolean | 
 Boolean refresh = true; // Boolean | 
 String folder = "folder_example"; // String | 
+String storage = "storage_example"; // String | storage name.
 try {
-    SaaSposeResponse result = apiInstance.cellsAutoFilterPutWorksheetFilterTop10(name, sheetName, range, fieldIndex, isTop, isPercent, itemCount, matchBlanks, refresh, folder);
+    SaaSposeResponse result = apiInstance.cellsAutoFilterPutWorksheetFilterTop10(name, sheetName, range, fieldIndex, isTop, isPercent, itemCount, matchBlanks, refresh, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsAutoFilterApi#cellsAutoFilterPutWorksheetFilterTop10");
@@ -677,6 +700,7 @@ Name | Type | Description  | Notes
  **matchBlanks** | **Boolean**|  | [optional]
  **refresh** | **Boolean**|  | [optional]
  **folder** | **String**|  | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -693,7 +717,7 @@ No authorization required
 
 <a name="cellsAutoFilterPutWorksheetIconFilter"></a>
 # **cellsAutoFilterPutWorksheetIconFilter**
-> SaaSposeResponse cellsAutoFilterPutWorksheetIconFilter(name, sheetName, range, fieldIndex, iconSetType, iconId, matchBlanks, refresh, folder)
+> SaaSposeResponse cellsAutoFilterPutWorksheetIconFilter(name, sheetName, range, fieldIndex, iconSetType, iconId, matchBlanks, refresh, folder, storage)
 
 Adds an icon filter.
 
@@ -714,8 +738,9 @@ Integer iconId = 56; // Integer |
 Boolean matchBlanks = true; // Boolean | 
 Boolean refresh = true; // Boolean | 
 String folder = "folder_example"; // String | 
+String storage = "storage_example"; // String | storage name.
 try {
-    SaaSposeResponse result = apiInstance.cellsAutoFilterPutWorksheetIconFilter(name, sheetName, range, fieldIndex, iconSetType, iconId, matchBlanks, refresh, folder);
+    SaaSposeResponse result = apiInstance.cellsAutoFilterPutWorksheetIconFilter(name, sheetName, range, fieldIndex, iconSetType, iconId, matchBlanks, refresh, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsAutoFilterApi#cellsAutoFilterPutWorksheetIconFilter");
@@ -736,6 +761,7 @@ Name | Type | Description  | Notes
  **matchBlanks** | **Boolean**|  | [optional]
  **refresh** | **Boolean**|  | [optional]
  **folder** | **String**|  | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 

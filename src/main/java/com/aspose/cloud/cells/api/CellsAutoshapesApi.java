@@ -60,13 +60,15 @@ public class CellsAutoshapesApi {
      * @param name Document name. (required)
      * @param sheetName Worksheet name. (required)
      * @param autoshapeNumber The autoshape number. (required)
+     * @param format Exported format. (optional)
      * @param folder The document folder. (optional)
+     * @param storage storage name. (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call cellsAutoshapesGetWorksheetAutoshapeCall(String name, String sheetName, Integer autoshapeNumber, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call cellsAutoshapesGetWorksheetAutoshapeCall(String name, String sheetName, Integer autoshapeNumber, String format, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -76,8 +78,12 @@ public class CellsAutoshapesApi {
             .replaceAll("\\{" + "autoshapeNumber" + "\\}", apiClient.escapeString(autoshapeNumber.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        if (format != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "format", format));
         if (folder != null)
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "folder", folder));
+        if (storage != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "storage", storage));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -112,7 +118,7 @@ public class CellsAutoshapesApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call cellsAutoshapesGetWorksheetAutoshapeValidateBeforeCall(String name, String sheetName, Integer autoshapeNumber, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call cellsAutoshapesGetWorksheetAutoshapeValidateBeforeCall(String name, String sheetName, Integer autoshapeNumber, String format, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'name' is set
         if (name == null) {
@@ -130,7 +136,7 @@ public class CellsAutoshapesApi {
         }
         
         
-        com.squareup.okhttp.Call call = cellsAutoshapesGetWorksheetAutoshapeCall(name, sheetName, autoshapeNumber, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsAutoshapesGetWorksheetAutoshapeCall(name, sheetName, autoshapeNumber, format, folder, storage, progressListener, progressRequestListener);
         return call;
 
         
@@ -145,12 +151,14 @@ public class CellsAutoshapesApi {
      * @param name Document name. (required)
      * @param sheetName Worksheet name. (required)
      * @param autoshapeNumber The autoshape number. (required)
+     * @param format Exported format. (optional)
      * @param folder The document folder. (optional)
+     * @param storage storage name. (optional)
      * @return File
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public File cellsAutoshapesGetWorksheetAutoshape(String name, String sheetName, Integer autoshapeNumber, String folder) throws ApiException {
-        ApiResponse<File> resp = cellsAutoshapesGetWorksheetAutoshapeWithHttpInfo(name, sheetName, autoshapeNumber, folder);
+    public File cellsAutoshapesGetWorksheetAutoshape(String name, String sheetName, Integer autoshapeNumber, String format, String folder, String storage) throws ApiException {
+        ApiResponse<File> resp = cellsAutoshapesGetWorksheetAutoshapeWithHttpInfo(name, sheetName, autoshapeNumber, format, folder, storage);
         return resp.getData();
     }
 
@@ -160,12 +168,14 @@ public class CellsAutoshapesApi {
      * @param name Document name. (required)
      * @param sheetName Worksheet name. (required)
      * @param autoshapeNumber The autoshape number. (required)
+     * @param format Exported format. (optional)
      * @param folder The document folder. (optional)
+     * @param storage storage name. (optional)
      * @return ApiResponse&lt;File&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<File> cellsAutoshapesGetWorksheetAutoshapeWithHttpInfo(String name, String sheetName, Integer autoshapeNumber, String folder) throws ApiException {
-        com.squareup.okhttp.Call call = cellsAutoshapesGetWorksheetAutoshapeValidateBeforeCall(name, sheetName, autoshapeNumber, folder, null, null);
+    public ApiResponse<File> cellsAutoshapesGetWorksheetAutoshapeWithHttpInfo(String name, String sheetName, Integer autoshapeNumber, String format, String folder, String storage) throws ApiException {
+        com.squareup.okhttp.Call call = cellsAutoshapesGetWorksheetAutoshapeValidateBeforeCall(name, sheetName, autoshapeNumber, format, folder, storage, null, null);
         Type localVarReturnType = new TypeToken<File>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -176,12 +186,14 @@ public class CellsAutoshapesApi {
      * @param name Document name. (required)
      * @param sheetName Worksheet name. (required)
      * @param autoshapeNumber The autoshape number. (required)
+     * @param format Exported format. (optional)
      * @param folder The document folder. (optional)
+     * @param storage storage name. (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call cellsAutoshapesGetWorksheetAutoshapeAsync(String name, String sheetName, Integer autoshapeNumber, String folder, final ApiCallback<File> callback) throws ApiException {
+    public com.squareup.okhttp.Call cellsAutoshapesGetWorksheetAutoshapeAsync(String name, String sheetName, Integer autoshapeNumber, String format, String folder, String storage, final ApiCallback<File> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -202,7 +214,7 @@ public class CellsAutoshapesApi {
             };
         }
 
-        com.squareup.okhttp.Call call = cellsAutoshapesGetWorksheetAutoshapeValidateBeforeCall(name, sheetName, autoshapeNumber, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsAutoshapesGetWorksheetAutoshapeValidateBeforeCall(name, sheetName, autoshapeNumber, format, folder, storage, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<File>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -212,12 +224,13 @@ public class CellsAutoshapesApi {
      * @param name Document name. (required)
      * @param sheetName The worksheet name. (required)
      * @param folder Document&#39;s folder. (optional)
+     * @param storage storage name. (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call cellsAutoshapesGetWorksheetAutoshapesCall(String name, String sheetName, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call cellsAutoshapesGetWorksheetAutoshapesCall(String name, String sheetName, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -228,6 +241,8 @@ public class CellsAutoshapesApi {
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         if (folder != null)
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "folder", folder));
+        if (storage != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "storage", storage));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -262,7 +277,7 @@ public class CellsAutoshapesApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call cellsAutoshapesGetWorksheetAutoshapesValidateBeforeCall(String name, String sheetName, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call cellsAutoshapesGetWorksheetAutoshapesValidateBeforeCall(String name, String sheetName, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'name' is set
         if (name == null) {
@@ -275,7 +290,7 @@ public class CellsAutoshapesApi {
         }
         
         
-        com.squareup.okhttp.Call call = cellsAutoshapesGetWorksheetAutoshapesCall(name, sheetName, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsAutoshapesGetWorksheetAutoshapesCall(name, sheetName, folder, storage, progressListener, progressRequestListener);
         return call;
 
         
@@ -290,11 +305,12 @@ public class CellsAutoshapesApi {
      * @param name Document name. (required)
      * @param sheetName The worksheet name. (required)
      * @param folder Document&#39;s folder. (optional)
+     * @param storage storage name. (optional)
      * @return AutoShapesResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public AutoShapesResponse cellsAutoshapesGetWorksheetAutoshapes(String name, String sheetName, String folder) throws ApiException {
-        ApiResponse<AutoShapesResponse> resp = cellsAutoshapesGetWorksheetAutoshapesWithHttpInfo(name, sheetName, folder);
+    public AutoShapesResponse cellsAutoshapesGetWorksheetAutoshapes(String name, String sheetName, String folder, String storage) throws ApiException {
+        ApiResponse<AutoShapesResponse> resp = cellsAutoshapesGetWorksheetAutoshapesWithHttpInfo(name, sheetName, folder, storage);
         return resp.getData();
     }
 
@@ -304,11 +320,12 @@ public class CellsAutoshapesApi {
      * @param name Document name. (required)
      * @param sheetName The worksheet name. (required)
      * @param folder Document&#39;s folder. (optional)
+     * @param storage storage name. (optional)
      * @return ApiResponse&lt;AutoShapesResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<AutoShapesResponse> cellsAutoshapesGetWorksheetAutoshapesWithHttpInfo(String name, String sheetName, String folder) throws ApiException {
-        com.squareup.okhttp.Call call = cellsAutoshapesGetWorksheetAutoshapesValidateBeforeCall(name, sheetName, folder, null, null);
+    public ApiResponse<AutoShapesResponse> cellsAutoshapesGetWorksheetAutoshapesWithHttpInfo(String name, String sheetName, String folder, String storage) throws ApiException {
+        com.squareup.okhttp.Call call = cellsAutoshapesGetWorksheetAutoshapesValidateBeforeCall(name, sheetName, folder, storage, null, null);
         Type localVarReturnType = new TypeToken<AutoShapesResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -319,11 +336,12 @@ public class CellsAutoshapesApi {
      * @param name Document name. (required)
      * @param sheetName The worksheet name. (required)
      * @param folder Document&#39;s folder. (optional)
+     * @param storage storage name. (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call cellsAutoshapesGetWorksheetAutoshapesAsync(String name, String sheetName, String folder, final ApiCallback<AutoShapesResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call cellsAutoshapesGetWorksheetAutoshapesAsync(String name, String sheetName, String folder, String storage, final ApiCallback<AutoShapesResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -344,7 +362,7 @@ public class CellsAutoshapesApi {
             };
         }
 
-        com.squareup.okhttp.Call call = cellsAutoshapesGetWorksheetAutoshapesValidateBeforeCall(name, sheetName, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsAutoshapesGetWorksheetAutoshapesValidateBeforeCall(name, sheetName, folder, storage, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<AutoShapesResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

@@ -67,9 +67,10 @@ public class CellsAutoshapesApiTest {
         String name = MYDOC;
         String sheetName = SHEET2;
         Integer autoshapeNumber = 4;
+        String format = "png";
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        File response = api.cellsAutoshapesGetWorksheetAutoshape(name, sheetName, autoshapeNumber, folder);
+        File response = api.cellsAutoshapesGetWorksheetAutoshape(name, sheetName, autoshapeNumber, format,folder,null);
 
         // TODO: test validations
     }
@@ -88,8 +89,8 @@ public class CellsAutoshapesApiTest {
         String sheetName = SHEET2;
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        AutoShapesResponse response = api.cellsAutoshapesGetWorksheetAutoshapes(name, sheetName, folder);
-
+        AutoShapesResponse response = api.cellsAutoshapesGetWorksheetAutoshapes(name, sheetName, folder,null);
+        
         // TODO: test validations
     }
     

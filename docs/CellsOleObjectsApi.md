@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 <a name="cellsOleObjectsDeleteWorksheetOleObject"></a>
 # **cellsOleObjectsDeleteWorksheetOleObject**
-> SaaSposeResponse cellsOleObjectsDeleteWorksheetOleObject(name, sheetName, oleObjectIndex, folder)
+> SaaSposeResponse cellsOleObjectsDeleteWorksheetOleObject(name, sheetName, oleObjectIndex, folder, storage)
 
 Delete OLE object.
 
@@ -30,8 +30,9 @@ String name = "name_example"; // String | The workbook name.
 String sheetName = "sheetName_example"; // String | The worsheet name.
 Integer oleObjectIndex = 56; // Integer | Ole object index
 String folder = "folder_example"; // String | The workbook folder.
+String storage = "storage_example"; // String | storage name.
 try {
-    SaaSposeResponse result = apiInstance.cellsOleObjectsDeleteWorksheetOleObject(name, sheetName, oleObjectIndex, folder);
+    SaaSposeResponse result = apiInstance.cellsOleObjectsDeleteWorksheetOleObject(name, sheetName, oleObjectIndex, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsOleObjectsApi#cellsOleObjectsDeleteWorksheetOleObject");
@@ -47,6 +48,7 @@ Name | Type | Description  | Notes
  **sheetName** | **String**| The worsheet name. |
  **oleObjectIndex** | **Integer**| Ole object index |
  **folder** | **String**| The workbook folder. | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -63,7 +65,7 @@ No authorization required
 
 <a name="cellsOleObjectsDeleteWorksheetOleObjects"></a>
 # **cellsOleObjectsDeleteWorksheetOleObjects**
-> SaaSposeResponse cellsOleObjectsDeleteWorksheetOleObjects(name, sheetName, folder)
+> SaaSposeResponse cellsOleObjectsDeleteWorksheetOleObjects(name, sheetName, folder, storage)
 
 Delete all OLE objects.
 
@@ -78,8 +80,9 @@ CellsOleObjectsApi apiInstance = new CellsOleObjectsApi();
 String name = "name_example"; // String | The workbook name.
 String sheetName = "sheetName_example"; // String | The worsheet name.
 String folder = "folder_example"; // String | The workbook folder.
+String storage = "storage_example"; // String | storage name.
 try {
-    SaaSposeResponse result = apiInstance.cellsOleObjectsDeleteWorksheetOleObjects(name, sheetName, folder);
+    SaaSposeResponse result = apiInstance.cellsOleObjectsDeleteWorksheetOleObjects(name, sheetName, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsOleObjectsApi#cellsOleObjectsDeleteWorksheetOleObjects");
@@ -94,6 +97,7 @@ Name | Type | Description  | Notes
  **name** | **String**| The workbook name. |
  **sheetName** | **String**| The worsheet name. |
  **folder** | **String**| The workbook folder. | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -110,7 +114,7 @@ No authorization required
 
 <a name="cellsOleObjectsGetWorksheetOleObject"></a>
 # **cellsOleObjectsGetWorksheetOleObject**
-> File cellsOleObjectsGetWorksheetOleObject(name, sheetName, objectNumber, folder)
+> File cellsOleObjectsGetWorksheetOleObject(name, sheetName, objectNumber, folder, storage)
 
 Get OLE object info.
 
@@ -126,8 +130,9 @@ String name = "name_example"; // String | Document name.
 String sheetName = "sheetName_example"; // String | Worksheet name.
 Integer objectNumber = 56; // Integer | The object number.
 String folder = "folder_example"; // String | The document folder.
+String storage = "storage_example"; // String | storage name.
 try {
-    File result = apiInstance.cellsOleObjectsGetWorksheetOleObject(name, sheetName, objectNumber, folder);
+    File result = apiInstance.cellsOleObjectsGetWorksheetOleObject(name, sheetName, objectNumber, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsOleObjectsApi#cellsOleObjectsGetWorksheetOleObject");
@@ -143,6 +148,7 @@ Name | Type | Description  | Notes
  **sheetName** | **String**| Worksheet name. |
  **objectNumber** | **Integer**| The object number. |
  **folder** | **String**| The document folder. | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -159,7 +165,7 @@ No authorization required
 
 <a name="cellsOleObjectsGetWorksheetOleObjects"></a>
 # **cellsOleObjectsGetWorksheetOleObjects**
-> OleObjectsResponse cellsOleObjectsGetWorksheetOleObjects(name, sheetName, folder)
+> OleObjectsResponse cellsOleObjectsGetWorksheetOleObjects(name, sheetName, folder, storage)
 
 Get worksheet OLE objects info.
 
@@ -174,8 +180,9 @@ CellsOleObjectsApi apiInstance = new CellsOleObjectsApi();
 String name = "name_example"; // String | Document name.
 String sheetName = "sheetName_example"; // String | The worksheet name.
 String folder = "folder_example"; // String | Document's folder.
+String storage = "storage_example"; // String | storage name.
 try {
-    OleObjectsResponse result = apiInstance.cellsOleObjectsGetWorksheetOleObjects(name, sheetName, folder);
+    OleObjectsResponse result = apiInstance.cellsOleObjectsGetWorksheetOleObjects(name, sheetName, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsOleObjectsApi#cellsOleObjectsGetWorksheetOleObjects");
@@ -190,6 +197,7 @@ Name | Type | Description  | Notes
  **name** | **String**| Document name. |
  **sheetName** | **String**| The worksheet name. |
  **folder** | **String**| Document&#39;s folder. | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -206,7 +214,7 @@ No authorization required
 
 <a name="cellsOleObjectsPostUpdateWorksheetOleObject"></a>
 # **cellsOleObjectsPostUpdateWorksheetOleObject**
-> SaaSposeResponse cellsOleObjectsPostUpdateWorksheetOleObject(name, sheetName, oleObjectIndex, ole, folder)
+> SaaSposeResponse cellsOleObjectsPostUpdateWorksheetOleObject(name, sheetName, oleObjectIndex, ole, folder, storage)
 
 Update OLE object.
 
@@ -223,8 +231,9 @@ String sheetName = "sheetName_example"; // String | The worsheet name.
 Integer oleObjectIndex = 56; // Integer | Ole object index
 OleObject ole = new OleObject(); // OleObject | Ole Object
 String folder = "folder_example"; // String | The workbook folder.
+String storage = "storage_example"; // String | storage name.
 try {
-    SaaSposeResponse result = apiInstance.cellsOleObjectsPostUpdateWorksheetOleObject(name, sheetName, oleObjectIndex, ole, folder);
+    SaaSposeResponse result = apiInstance.cellsOleObjectsPostUpdateWorksheetOleObject(name, sheetName, oleObjectIndex, ole, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsOleObjectsApi#cellsOleObjectsPostUpdateWorksheetOleObject");
@@ -241,6 +250,7 @@ Name | Type | Description  | Notes
  **oleObjectIndex** | **Integer**| Ole object index |
  **ole** | [**OleObject**](OleObject.md)| Ole Object | [optional]
  **folder** | **String**| The workbook folder. | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -257,7 +267,7 @@ No authorization required
 
 <a name="cellsOleObjectsPutWorksheetOleObject"></a>
 # **cellsOleObjectsPutWorksheetOleObject**
-> OleObjectResponse cellsOleObjectsPutWorksheetOleObject(name, sheetName, oleObject, upperLeftRow, upperLeftColumn, height, width, oleFile, imageFile, folder)
+> OleObjectResponse cellsOleObjectsPutWorksheetOleObject(name, sheetName, oleObject, upperLeftRow, upperLeftColumn, height, width, oleFile, imageFile, folder, storage)
 
 Add OLE object
 
@@ -279,8 +289,9 @@ Integer width = 0; // Integer | Width of oleObject, in unit of pixel
 String oleFile = "oleFile_example"; // String | OLE filename
 String imageFile = "imageFile_example"; // String | Image filename
 String folder = "folder_example"; // String | The workbook folder.
+String storage = "storage_example"; // String | storage name.
 try {
-    OleObjectResponse result = apiInstance.cellsOleObjectsPutWorksheetOleObject(name, sheetName, oleObject, upperLeftRow, upperLeftColumn, height, width, oleFile, imageFile, folder);
+    OleObjectResponse result = apiInstance.cellsOleObjectsPutWorksheetOleObject(name, sheetName, oleObject, upperLeftRow, upperLeftColumn, height, width, oleFile, imageFile, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsOleObjectsApi#cellsOleObjectsPutWorksheetOleObject");
@@ -302,6 +313,7 @@ Name | Type | Description  | Notes
  **oleFile** | **String**| OLE filename | [optional]
  **imageFile** | **String**| Image filename | [optional]
  **folder** | **String**| The workbook folder. | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 

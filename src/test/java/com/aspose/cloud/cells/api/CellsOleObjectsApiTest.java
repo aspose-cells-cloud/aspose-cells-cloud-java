@@ -72,7 +72,7 @@ public class CellsOleObjectsApiTest {
         Integer oleObjectIndex = 0;
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        SaaSposeResponse response = api.cellsOleObjectsDeleteWorksheetOleObject(name, sheetName, oleObjectIndex, folder);
+        SaaSposeResponse response = api.cellsOleObjectsDeleteWorksheetOleObject(name, sheetName, oleObjectIndex, folder,null);
 
         // TODO: test validations
     }
@@ -91,7 +91,7 @@ public class CellsOleObjectsApiTest {
         String sheetName = SHEET6;
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        SaaSposeResponse response = api.cellsOleObjectsDeleteWorksheetOleObjects(name, sheetName, folder);
+        SaaSposeResponse response = api.cellsOleObjectsDeleteWorksheetOleObjects(name, sheetName, folder,null);
 
         // TODO: test validations
     }
@@ -111,7 +111,7 @@ public class CellsOleObjectsApiTest {
         Integer objectNumber = 0;
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        File response = api.cellsOleObjectsGetWorksheetOleObject(name, sheetName, objectNumber, folder);
+        File response = api.cellsOleObjectsGetWorksheetOleObject(name, sheetName, objectNumber, folder,null);
 
         // TODO: test validations
     }
@@ -130,7 +130,7 @@ public class CellsOleObjectsApiTest {
         String sheetName = SHEET6;
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        OleObjectsResponse response = api.cellsOleObjectsGetWorksheetOleObjects(name, sheetName, folder);
+        OleObjectsResponse response = api.cellsOleObjectsGetWorksheetOleObjects(name, sheetName, folder,null);
 
         // TODO: test validations
     }
@@ -155,7 +155,7 @@ public class CellsOleObjectsApiTest {
         ole.setWidth(90);
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        SaaSposeResponse response = api.cellsOleObjectsPostUpdateWorksheetOleObject(name, sheetName, oleObjectIndex, ole, folder);
+        SaaSposeResponse response = api.cellsOleObjectsPostUpdateWorksheetOleObject(name, sheetName, oleObjectIndex, ole, folder,null);
 
         // TODO: test validations
     }
@@ -181,7 +181,7 @@ public class CellsOleObjectsApiTest {
         String imageFile = "word.jpg";
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        OleObjectResponse response = api.cellsOleObjectsPutWorksheetOleObject(name, sheetName, oleObject, upperLeftRow, upperLeftColumn, height, width, oleFile, imageFile, folder);
+        OleObjectResponse response = api.cellsOleObjectsPutWorksheetOleObject(name, sheetName, oleObject, upperLeftRow, upperLeftColumn, height, width, oleFile, imageFile, folder,null);
 
         // TODO: test validations
     }

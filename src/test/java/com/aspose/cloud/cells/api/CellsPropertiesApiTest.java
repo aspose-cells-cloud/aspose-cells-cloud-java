@@ -68,7 +68,7 @@ public class CellsPropertiesApiTest {
         String name = BOOK1;
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        CellsDocumentPropertiesResponse response = api.cellsPropertiesDeleteDocumentProperties(name, folder);
+        CellsDocumentPropertiesResponse response = api.cellsPropertiesDeleteDocumentProperties(name, folder,null);
 
         // TODO: test validations
     }
@@ -87,7 +87,7 @@ public class CellsPropertiesApiTest {
         String propertyName = "Author";
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        CellsDocumentPropertiesResponse response = api.cellsPropertiesDeleteDocumentProperty(name, propertyName, folder);
+        CellsDocumentPropertiesResponse response = api.cellsPropertiesDeleteDocumentProperty(name, propertyName, folder,null);
 
         // TODO: test validations
     }
@@ -105,7 +105,7 @@ public class CellsPropertiesApiTest {
         String name = BOOK1;
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        CellsDocumentPropertiesResponse response = api.cellsPropertiesGetDocumentProperties(name, folder);
+        CellsDocumentPropertiesResponse response = api.cellsPropertiesGetDocumentProperties(name, folder,null);
 
         // TODO: test validations
     }
@@ -124,7 +124,7 @@ public class CellsPropertiesApiTest {
         String propertyName ="Author";
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        CellsDocumentPropertyResponse response = api.cellsPropertiesGetDocumentProperty(name, propertyName, folder);
+        CellsDocumentPropertyResponse response = api.cellsPropertiesGetDocumentProperty(name, propertyName, folder,null);
 
         // TODO: test validations
     }
@@ -146,7 +146,7 @@ public class CellsPropertiesApiTest {
         property.setValue("Roy");
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        CellsDocumentPropertyResponse response = api.cellsPropertiesPutDocumentProperty(name, propertyName, property, folder);
+        CellsDocumentPropertyResponse response = api.cellsPropertiesPutDocumentProperty(name, propertyName, property, folder,null);
 
         // TODO: test validations
     }

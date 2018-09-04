@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 <a name="cellsAutoshapesGetWorksheetAutoshape"></a>
 # **cellsAutoshapesGetWorksheetAutoshape**
-> File cellsAutoshapesGetWorksheetAutoshape(name, sheetName, autoshapeNumber, folder)
+> File cellsAutoshapesGetWorksheetAutoshape(name, sheetName, autoshapeNumber, format, folder, storage)
 
 Get autoshape info.
 
@@ -25,9 +25,11 @@ CellsAutoshapesApi apiInstance = new CellsAutoshapesApi();
 String name = "name_example"; // String | Document name.
 String sheetName = "sheetName_example"; // String | Worksheet name.
 Integer autoshapeNumber = 56; // Integer | The autoshape number.
+String format = "format_example"; // String | Exported format.
 String folder = "folder_example"; // String | The document folder.
+String storage = "storage_example"; // String | storage name.
 try {
-    File result = apiInstance.cellsAutoshapesGetWorksheetAutoshape(name, sheetName, autoshapeNumber, folder);
+    File result = apiInstance.cellsAutoshapesGetWorksheetAutoshape(name, sheetName, autoshapeNumber, format, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsAutoshapesApi#cellsAutoshapesGetWorksheetAutoshape");
@@ -42,7 +44,9 @@ Name | Type | Description  | Notes
  **name** | **String**| Document name. |
  **sheetName** | **String**| Worksheet name. |
  **autoshapeNumber** | **Integer**| The autoshape number. |
+ **format** | **String**| Exported format. | [optional]
  **folder** | **String**| The document folder. | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -59,7 +63,7 @@ No authorization required
 
 <a name="cellsAutoshapesGetWorksheetAutoshapes"></a>
 # **cellsAutoshapesGetWorksheetAutoshapes**
-> AutoShapesResponse cellsAutoshapesGetWorksheetAutoshapes(name, sheetName, folder)
+> AutoShapesResponse cellsAutoshapesGetWorksheetAutoshapes(name, sheetName, folder, storage)
 
 Get worksheet autoshapes info.
 
@@ -74,8 +78,9 @@ CellsAutoshapesApi apiInstance = new CellsAutoshapesApi();
 String name = "name_example"; // String | Document name.
 String sheetName = "sheetName_example"; // String | The worksheet name.
 String folder = "folder_example"; // String | Document's folder.
+String storage = "storage_example"; // String | storage name.
 try {
-    AutoShapesResponse result = apiInstance.cellsAutoshapesGetWorksheetAutoshapes(name, sheetName, folder);
+    AutoShapesResponse result = apiInstance.cellsAutoshapesGetWorksheetAutoshapes(name, sheetName, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsAutoshapesApi#cellsAutoshapesGetWorksheetAutoshapes");
@@ -90,6 +95,7 @@ Name | Type | Description  | Notes
  **name** | **String**| Document name. |
  **sheetName** | **String**| The worksheet name. |
  **folder** | **String**| Document&#39;s folder. | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 

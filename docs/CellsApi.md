@@ -47,7 +47,7 @@ Method | HTTP request | Description
 
 <a name="cellsDeleteWorksheetColumns"></a>
 # **cellsDeleteWorksheetColumns**
-> ColumnsResponse cellsDeleteWorksheetColumns(name, sheetName, columnIndex, columns, updateReference, folder)
+> ColumnsResponse cellsDeleteWorksheetColumns(name, sheetName, columnIndex, columns, updateReference, folder, storage)
 
 Delete worksheet columns.
 
@@ -65,8 +65,9 @@ Integer columnIndex = 56; // Integer | The column index.
 Integer columns = 56; // Integer | The columns.
 Boolean updateReference = true; // Boolean | The update reference.
 String folder = "folder_example"; // String | The workbook folder.
+String storage = "storage_example"; // String | storage name.
 try {
-    ColumnsResponse result = apiInstance.cellsDeleteWorksheetColumns(name, sheetName, columnIndex, columns, updateReference, folder);
+    ColumnsResponse result = apiInstance.cellsDeleteWorksheetColumns(name, sheetName, columnIndex, columns, updateReference, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsDeleteWorksheetColumns");
@@ -84,6 +85,7 @@ Name | Type | Description  | Notes
  **columns** | **Integer**| The columns. |
  **updateReference** | **Boolean**| The update reference. |
  **folder** | **String**| The workbook folder. | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -100,7 +102,7 @@ No authorization required
 
 <a name="cellsDeleteWorksheetRow"></a>
 # **cellsDeleteWorksheetRow**
-> SaaSposeResponse cellsDeleteWorksheetRow(name, sheetName, rowIndex, folder)
+> SaaSposeResponse cellsDeleteWorksheetRow(name, sheetName, rowIndex, folder, storage)
 
 Delete worksheet row.
 
@@ -116,8 +118,9 @@ String name = "name_example"; // String | The workbook name.
 String sheetName = "sheetName_example"; // String | The worksheet bame.
 Integer rowIndex = 56; // Integer | The row index.
 String folder = "folder_example"; // String | The document folder.
+String storage = "storage_example"; // String | storage name.
 try {
-    SaaSposeResponse result = apiInstance.cellsDeleteWorksheetRow(name, sheetName, rowIndex, folder);
+    SaaSposeResponse result = apiInstance.cellsDeleteWorksheetRow(name, sheetName, rowIndex, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsDeleteWorksheetRow");
@@ -133,6 +136,7 @@ Name | Type | Description  | Notes
  **sheetName** | **String**| The worksheet bame. |
  **rowIndex** | **Integer**| The row index. |
  **folder** | **String**| The document folder. | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -149,7 +153,7 @@ No authorization required
 
 <a name="cellsDeleteWorksheetRows"></a>
 # **cellsDeleteWorksheetRows**
-> SaaSposeResponse cellsDeleteWorksheetRows(name, sheetName, startrow, totalRows, updateReference, folder)
+> SaaSposeResponse cellsDeleteWorksheetRows(name, sheetName, startrow, totalRows, updateReference, folder, storage)
 
 Delete several worksheet rows.
 
@@ -167,8 +171,9 @@ Integer startrow = 56; // Integer | The begin row index to be operated.
 Integer totalRows = 1; // Integer | Number of rows to be operated.
 Boolean updateReference = true; // Boolean | Indicates if update references in other worksheets.
 String folder = "folder_example"; // String | The document folder.
+String storage = "storage_example"; // String | storage name.
 try {
-    SaaSposeResponse result = apiInstance.cellsDeleteWorksheetRows(name, sheetName, startrow, totalRows, updateReference, folder);
+    SaaSposeResponse result = apiInstance.cellsDeleteWorksheetRows(name, sheetName, startrow, totalRows, updateReference, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsDeleteWorksheetRows");
@@ -186,6 +191,7 @@ Name | Type | Description  | Notes
  **totalRows** | **Integer**| Number of rows to be operated. | [optional] [default to 1]
  **updateReference** | **Boolean**| Indicates if update references in other worksheets. | [optional] [default to true]
  **folder** | **String**| The document folder. | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -202,7 +208,7 @@ No authorization required
 
 <a name="cellsGetWorksheetCell"></a>
 # **cellsGetWorksheetCell**
-> File cellsGetWorksheetCell(name, sheetName, cellOrMethodName, folder)
+> Object cellsGetWorksheetCell(name, sheetName, cellOrMethodName, folder, storage)
 
 Read cell data by cell&#39;s name.
 
@@ -218,8 +224,9 @@ String name = "name_example"; // String | Document name.
 String sheetName = "sheetName_example"; // String | Worksheet name.
 String cellOrMethodName = "cellOrMethodName_example"; // String | The cell's or method name. (Method name like firstcell, endcell etc.)
 String folder = "folder_example"; // String | Document's folder.
+String storage = "storage_example"; // String | storage name.
 try {
-    File result = apiInstance.cellsGetWorksheetCell(name, sheetName, cellOrMethodName, folder);
+    Object result = apiInstance.cellsGetWorksheetCell(name, sheetName, cellOrMethodName, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsGetWorksheetCell");
@@ -235,10 +242,11 @@ Name | Type | Description  | Notes
  **sheetName** | **String**| Worksheet name. |
  **cellOrMethodName** | **String**| The cell&#39;s or method name. (Method name like firstcell, endcell etc.) |
  **folder** | **String**| Document&#39;s folder. | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
-[**File**](File.md)
+**Object**
 
 ### Authorization
 
@@ -251,7 +259,7 @@ No authorization required
 
 <a name="cellsGetWorksheetCellStyle"></a>
 # **cellsGetWorksheetCellStyle**
-> StyleResponse cellsGetWorksheetCellStyle(name, sheetName, cellName, folder)
+> StyleResponse cellsGetWorksheetCellStyle(name, sheetName, cellName, folder, storage)
 
 Read cell&#39;s style info.
 
@@ -267,8 +275,9 @@ String name = "name_example"; // String | Document name.
 String sheetName = "sheetName_example"; // String | Worksheet name.
 String cellName = "cellName_example"; // String | Cell's name.
 String folder = "folder_example"; // String | Document's folder.
+String storage = "storage_example"; // String | storage name.
 try {
-    StyleResponse result = apiInstance.cellsGetWorksheetCellStyle(name, sheetName, cellName, folder);
+    StyleResponse result = apiInstance.cellsGetWorksheetCellStyle(name, sheetName, cellName, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsGetWorksheetCellStyle");
@@ -284,6 +293,7 @@ Name | Type | Description  | Notes
  **sheetName** | **String**| Worksheet name. |
  **cellName** | **String**| Cell&#39;s name. |
  **folder** | **String**| Document&#39;s folder. | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -300,7 +310,7 @@ No authorization required
 
 <a name="cellsGetWorksheetCells"></a>
 # **cellsGetWorksheetCells**
-> CellsResponse cellsGetWorksheetCells(name, sheetName, offest, count, folder)
+> CellsResponse cellsGetWorksheetCells(name, sheetName, offest, count, folder, storage)
 
 Get cells info.
 
@@ -317,8 +327,9 @@ String sheetName = "sheetName_example"; // String | Worksheet name.
 Integer offest = 0; // Integer | Begginig offset.
 Integer count = 0; // Integer | Maximum amount of cells in the response.
 String folder = "folder_example"; // String | Document's folder name.
+String storage = "storage_example"; // String | storage name.
 try {
-    CellsResponse result = apiInstance.cellsGetWorksheetCells(name, sheetName, offest, count, folder);
+    CellsResponse result = apiInstance.cellsGetWorksheetCells(name, sheetName, offest, count, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsGetWorksheetCells");
@@ -335,6 +346,7 @@ Name | Type | Description  | Notes
  **offest** | **Integer**| Begginig offset. | [optional] [default to 0]
  **count** | **Integer**| Maximum amount of cells in the response. | [optional] [default to 0]
  **folder** | **String**| Document&#39;s folder name. | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -351,7 +363,7 @@ No authorization required
 
 <a name="cellsGetWorksheetColumn"></a>
 # **cellsGetWorksheetColumn**
-> ColumnResponse cellsGetWorksheetColumn(name, sheetName, columnIndex, folder)
+> ColumnResponse cellsGetWorksheetColumn(name, sheetName, columnIndex, folder, storage)
 
 Read worksheet column data by column&#39;s index.
 
@@ -367,8 +379,9 @@ String name = "name_example"; // String | The workbook name.
 String sheetName = "sheetName_example"; // String | The worksheet name.
 Integer columnIndex = 56; // Integer | The column index.
 String folder = "folder_example"; // String | The workbook folder.
+String storage = "storage_example"; // String | storage name.
 try {
-    ColumnResponse result = apiInstance.cellsGetWorksheetColumn(name, sheetName, columnIndex, folder);
+    ColumnResponse result = apiInstance.cellsGetWorksheetColumn(name, sheetName, columnIndex, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsGetWorksheetColumn");
@@ -384,6 +397,7 @@ Name | Type | Description  | Notes
  **sheetName** | **String**| The worksheet name. |
  **columnIndex** | **Integer**| The column index. |
  **folder** | **String**| The workbook folder. | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -400,7 +414,7 @@ No authorization required
 
 <a name="cellsGetWorksheetColumns"></a>
 # **cellsGetWorksheetColumns**
-> ColumnsResponse cellsGetWorksheetColumns(name, sheetName, folder)
+> ColumnsResponse cellsGetWorksheetColumns(name, sheetName, folder, storage)
 
 Read worksheet columns info.
 
@@ -415,8 +429,9 @@ CellsApi apiInstance = new CellsApi();
 String name = "name_example"; // String | The workbook name.
 String sheetName = "sheetName_example"; // String | The worksheet name.
 String folder = "folder_example"; // String | The workdook folder.
+String storage = "storage_example"; // String | storage name.
 try {
-    ColumnsResponse result = apiInstance.cellsGetWorksheetColumns(name, sheetName, folder);
+    ColumnsResponse result = apiInstance.cellsGetWorksheetColumns(name, sheetName, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsGetWorksheetColumns");
@@ -431,6 +446,7 @@ Name | Type | Description  | Notes
  **name** | **String**| The workbook name. |
  **sheetName** | **String**| The worksheet name. |
  **folder** | **String**| The workdook folder. | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -447,7 +463,7 @@ No authorization required
 
 <a name="cellsGetWorksheetRow"></a>
 # **cellsGetWorksheetRow**
-> RowResponse cellsGetWorksheetRow(name, sheetName, rowIndex, folder)
+> RowResponse cellsGetWorksheetRow(name, sheetName, rowIndex, folder, storage)
 
 Read worksheet row data by row&#39;s index.
 
@@ -463,8 +479,9 @@ String name = "name_example"; // String | The workbook name.
 String sheetName = "sheetName_example"; // String | The worksheet name.
 Integer rowIndex = 56; // Integer | The row index.
 String folder = "folder_example"; // String | The workbook folder.
+String storage = "storage_example"; // String | storage name.
 try {
-    RowResponse result = apiInstance.cellsGetWorksheetRow(name, sheetName, rowIndex, folder);
+    RowResponse result = apiInstance.cellsGetWorksheetRow(name, sheetName, rowIndex, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsGetWorksheetRow");
@@ -480,6 +497,7 @@ Name | Type | Description  | Notes
  **sheetName** | **String**| The worksheet name. |
  **rowIndex** | **Integer**| The row index. |
  **folder** | **String**| The workbook folder. | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -496,7 +514,7 @@ No authorization required
 
 <a name="cellsGetWorksheetRows"></a>
 # **cellsGetWorksheetRows**
-> RowsResponse cellsGetWorksheetRows(name, sheetName, folder)
+> RowsResponse cellsGetWorksheetRows(name, sheetName, folder, storage)
 
 Read worksheet rows info.
 
@@ -511,8 +529,9 @@ CellsApi apiInstance = new CellsApi();
 String name = "name_example"; // String | The workbook name.
 String sheetName = "sheetName_example"; // String | The worksheet name.
 String folder = "folder_example"; // String | The workdook folder.
+String storage = "storage_example"; // String | storage name.
 try {
-    RowsResponse result = apiInstance.cellsGetWorksheetRows(name, sheetName, folder);
+    RowsResponse result = apiInstance.cellsGetWorksheetRows(name, sheetName, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsGetWorksheetRows");
@@ -527,6 +546,7 @@ Name | Type | Description  | Notes
  **name** | **String**| The workbook name. |
  **sheetName** | **String**| The worksheet name. |
  **folder** | **String**| The workdook folder. | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -543,7 +563,7 @@ No authorization required
 
 <a name="cellsPostCellCalculate"></a>
 # **cellsPostCellCalculate**
-> SaaSposeResponse cellsPostCellCalculate(name, sheetName, cellName, options, folder)
+> SaaSposeResponse cellsPostCellCalculate(name, sheetName, cellName, options, folder, storage)
 
 Cell calculate formula
 
@@ -560,8 +580,9 @@ String sheetName = "sheetName_example"; // String |
 String cellName = "cellName_example"; // String | 
 CalculationOptions options = new CalculationOptions(); // CalculationOptions | 
 String folder = "folder_example"; // String | 
+String storage = "storage_example"; // String | storage name.
 try {
-    SaaSposeResponse result = apiInstance.cellsPostCellCalculate(name, sheetName, cellName, options, folder);
+    SaaSposeResponse result = apiInstance.cellsPostCellCalculate(name, sheetName, cellName, options, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsPostCellCalculate");
@@ -578,6 +599,7 @@ Name | Type | Description  | Notes
  **cellName** | **String**|  |
  **options** | [**CalculationOptions**](CalculationOptions.md)|  | [optional]
  **folder** | **String**|  | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -594,7 +616,7 @@ No authorization required
 
 <a name="cellsPostCellCharacters"></a>
 # **cellsPostCellCharacters**
-> SaaSposeResponse cellsPostCellCharacters(name, sheetName, cellName, options, folder)
+> SaaSposeResponse cellsPostCellCharacters(name, sheetName, cellName, options, folder, storage)
 
 Set cell characters 
 
@@ -611,8 +633,9 @@ String sheetName = "sheetName_example"; // String |
 String cellName = "cellName_example"; // String | 
 List<FontSetting> options = Arrays.asList(new FontSetting()); // List<FontSetting> | 
 String folder = "folder_example"; // String | 
+String storage = "storage_example"; // String | storage name.
 try {
-    SaaSposeResponse result = apiInstance.cellsPostCellCharacters(name, sheetName, cellName, options, folder);
+    SaaSposeResponse result = apiInstance.cellsPostCellCharacters(name, sheetName, cellName, options, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsPostCellCharacters");
@@ -629,6 +652,7 @@ Name | Type | Description  | Notes
  **cellName** | **String**|  |
  **options** | [**List&lt;FontSetting&gt;**](FontSetting.md)|  | [optional]
  **folder** | **String**|  | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -645,7 +669,7 @@ No authorization required
 
 <a name="cellsPostClearContents"></a>
 # **cellsPostClearContents**
-> SaaSposeResponse cellsPostClearContents(name, sheetName, range, startRow, startColumn, endRow, endColumn, folder)
+> SaaSposeResponse cellsPostClearContents(name, sheetName, range, startRow, startColumn, endRow, endColumn, folder, storage)
 
 Clear cells contents.
 
@@ -665,8 +689,9 @@ Integer startColumn = 56; // Integer | The start column.
 Integer endRow = 56; // Integer | The end row.
 Integer endColumn = 56; // Integer | The end column.
 String folder = "folder_example"; // String | The workbook folder.
+String storage = "storage_example"; // String | storage name.
 try {
-    SaaSposeResponse result = apiInstance.cellsPostClearContents(name, sheetName, range, startRow, startColumn, endRow, endColumn, folder);
+    SaaSposeResponse result = apiInstance.cellsPostClearContents(name, sheetName, range, startRow, startColumn, endRow, endColumn, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsPostClearContents");
@@ -686,6 +711,7 @@ Name | Type | Description  | Notes
  **endRow** | **Integer**| The end row. | [optional]
  **endColumn** | **Integer**| The end column. | [optional]
  **folder** | **String**| The workbook folder. | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -702,7 +728,7 @@ No authorization required
 
 <a name="cellsPostClearFormats"></a>
 # **cellsPostClearFormats**
-> SaaSposeResponse cellsPostClearFormats(name, sheetName, range, startRow, startColumn, endRow, endColumn, folder)
+> SaaSposeResponse cellsPostClearFormats(name, sheetName, range, startRow, startColumn, endRow, endColumn, folder, storage)
 
 Clear cells contents.
 
@@ -722,8 +748,9 @@ Integer startColumn = 56; // Integer | The start column.
 Integer endRow = 56; // Integer | The end row.
 Integer endColumn = 56; // Integer | The end column.
 String folder = "folder_example"; // String | The workbook folder.
+String storage = "storage_example"; // String | storage name.
 try {
-    SaaSposeResponse result = apiInstance.cellsPostClearFormats(name, sheetName, range, startRow, startColumn, endRow, endColumn, folder);
+    SaaSposeResponse result = apiInstance.cellsPostClearFormats(name, sheetName, range, startRow, startColumn, endRow, endColumn, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsPostClearFormats");
@@ -743,6 +770,7 @@ Name | Type | Description  | Notes
  **endRow** | **Integer**| The end row. | [optional]
  **endColumn** | **Integer**| The end column. | [optional]
  **folder** | **String**| The workbook folder. | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -759,7 +787,7 @@ No authorization required
 
 <a name="cellsPostColumnStyle"></a>
 # **cellsPostColumnStyle**
-> SaaSposeResponse cellsPostColumnStyle(name, sheetName, columnIndex, style, folder)
+> SaaSposeResponse cellsPostColumnStyle(name, sheetName, columnIndex, style, folder, storage)
 
 Set column style
 
@@ -776,8 +804,9 @@ String sheetName = "sheetName_example"; // String | The worksheet name.
 Integer columnIndex = 56; // Integer | The column index.
 Style style = new Style(); // Style | Style dto
 String folder = "folder_example"; // String | The workbook folder.
+String storage = "storage_example"; // String | storage name.
 try {
-    SaaSposeResponse result = apiInstance.cellsPostColumnStyle(name, sheetName, columnIndex, style, folder);
+    SaaSposeResponse result = apiInstance.cellsPostColumnStyle(name, sheetName, columnIndex, style, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsPostColumnStyle");
@@ -794,6 +823,7 @@ Name | Type | Description  | Notes
  **columnIndex** | **Integer**| The column index. |
  **style** | [**Style**](Style.md)| Style dto | [optional]
  **folder** | **String**| The workbook folder. | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -810,7 +840,7 @@ No authorization required
 
 <a name="cellsPostCopyCellIntoCell"></a>
 # **cellsPostCopyCellIntoCell**
-> SaaSposeResponse cellsPostCopyCellIntoCell(name, destCellName, sheetName, worksheet, cellname, row, column, folder)
+> SaaSposeResponse cellsPostCopyCellIntoCell(name, destCellName, sheetName, worksheet, cellname, row, column, folder, storage)
 
 Copy cell into cell
 
@@ -830,8 +860,9 @@ String cellname = "cellname_example"; // String | Source cell name
 Integer row = 56; // Integer | Source row
 Integer column = 56; // Integer | Source column
 String folder = "folder_example"; // String | Folder name
+String storage = "storage_example"; // String | storage name.
 try {
-    SaaSposeResponse result = apiInstance.cellsPostCopyCellIntoCell(name, destCellName, sheetName, worksheet, cellname, row, column, folder);
+    SaaSposeResponse result = apiInstance.cellsPostCopyCellIntoCell(name, destCellName, sheetName, worksheet, cellname, row, column, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsPostCopyCellIntoCell");
@@ -851,6 +882,7 @@ Name | Type | Description  | Notes
  **row** | **Integer**| Source row | [optional]
  **column** | **Integer**| Source column | [optional]
  **folder** | **String**| Folder name | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -867,7 +899,7 @@ No authorization required
 
 <a name="cellsPostCopyWorksheetColumns"></a>
 # **cellsPostCopyWorksheetColumns**
-> SaaSposeResponse cellsPostCopyWorksheetColumns(name, sheetName, sourceColumnIndex, destinationColumnIndex, columnNumber, worksheet, folder)
+> SaaSposeResponse cellsPostCopyWorksheetColumns(name, sheetName, sourceColumnIndex, destinationColumnIndex, columnNumber, worksheet, folder, storage)
 
 Copy worksheet columns.
 
@@ -886,8 +918,9 @@ Integer destinationColumnIndex = 56; // Integer | Destination column index
 Integer columnNumber = 56; // Integer | The copied column number
 String worksheet = ""; // String | The Worksheet
 String folder = "folder_example"; // String | The document folder.
+String storage = "storage_example"; // String | storage name.
 try {
-    SaaSposeResponse result = apiInstance.cellsPostCopyWorksheetColumns(name, sheetName, sourceColumnIndex, destinationColumnIndex, columnNumber, worksheet, folder);
+    SaaSposeResponse result = apiInstance.cellsPostCopyWorksheetColumns(name, sheetName, sourceColumnIndex, destinationColumnIndex, columnNumber, worksheet, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsPostCopyWorksheetColumns");
@@ -906,6 +939,7 @@ Name | Type | Description  | Notes
  **columnNumber** | **Integer**| The copied column number |
  **worksheet** | **String**| The Worksheet | [optional] [default to ]
  **folder** | **String**| The document folder. | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -922,7 +956,7 @@ No authorization required
 
 <a name="cellsPostCopyWorksheetRows"></a>
 # **cellsPostCopyWorksheetRows**
-> SaaSposeResponse cellsPostCopyWorksheetRows(name, sheetName, sourceRowIndex, destinationRowIndex, rowNumber, worksheet, folder)
+> SaaSposeResponse cellsPostCopyWorksheetRows(name, sheetName, sourceRowIndex, destinationRowIndex, rowNumber, worksheet, folder, storage)
 
 Copy worksheet rows.
 
@@ -941,8 +975,9 @@ Integer destinationRowIndex = 56; // Integer | Destination row index
 Integer rowNumber = 56; // Integer | The copied row number
 String worksheet = "worksheet_example"; // String | worksheet
 String folder = "folder_example"; // String | The document folder.
+String storage = "storage_example"; // String | storage name.
 try {
-    SaaSposeResponse result = apiInstance.cellsPostCopyWorksheetRows(name, sheetName, sourceRowIndex, destinationRowIndex, rowNumber, worksheet, folder);
+    SaaSposeResponse result = apiInstance.cellsPostCopyWorksheetRows(name, sheetName, sourceRowIndex, destinationRowIndex, rowNumber, worksheet, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsPostCopyWorksheetRows");
@@ -961,6 +996,7 @@ Name | Type | Description  | Notes
  **rowNumber** | **Integer**| The copied row number |
  **worksheet** | **String**| worksheet | [optional]
  **folder** | **String**| The document folder. | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -977,7 +1013,7 @@ No authorization required
 
 <a name="cellsPostGroupWorksheetColumns"></a>
 # **cellsPostGroupWorksheetColumns**
-> SaaSposeResponse cellsPostGroupWorksheetColumns(name, sheetName, firstIndex, lastIndex, hide, folder)
+> SaaSposeResponse cellsPostGroupWorksheetColumns(name, sheetName, firstIndex, lastIndex, hide, folder, storage)
 
 Group worksheet columns.
 
@@ -995,8 +1031,9 @@ Integer firstIndex = 56; // Integer | The first column index to be operated.
 Integer lastIndex = 56; // Integer | The last column index to be operated.
 Boolean hide = true; // Boolean | columns visible state
 String folder = "folder_example"; // String | The document folder.
+String storage = "storage_example"; // String | storage name.
 try {
-    SaaSposeResponse result = apiInstance.cellsPostGroupWorksheetColumns(name, sheetName, firstIndex, lastIndex, hide, folder);
+    SaaSposeResponse result = apiInstance.cellsPostGroupWorksheetColumns(name, sheetName, firstIndex, lastIndex, hide, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsPostGroupWorksheetColumns");
@@ -1014,6 +1051,7 @@ Name | Type | Description  | Notes
  **lastIndex** | **Integer**| The last column index to be operated. |
  **hide** | **Boolean**| columns visible state | [optional]
  **folder** | **String**| The document folder. | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -1030,7 +1068,7 @@ No authorization required
 
 <a name="cellsPostGroupWorksheetRows"></a>
 # **cellsPostGroupWorksheetRows**
-> SaaSposeResponse cellsPostGroupWorksheetRows(name, sheetName, firstIndex, lastIndex, hide, folder)
+> SaaSposeResponse cellsPostGroupWorksheetRows(name, sheetName, firstIndex, lastIndex, hide, folder, storage)
 
 Group worksheet rows.
 
@@ -1048,8 +1086,9 @@ Integer firstIndex = 56; // Integer | The first row index to be operated.
 Integer lastIndex = 56; // Integer | The last row index to be operated.
 Boolean hide = true; // Boolean | rows visible state
 String folder = "folder_example"; // String | The document folder.
+String storage = "storage_example"; // String | storage name.
 try {
-    SaaSposeResponse result = apiInstance.cellsPostGroupWorksheetRows(name, sheetName, firstIndex, lastIndex, hide, folder);
+    SaaSposeResponse result = apiInstance.cellsPostGroupWorksheetRows(name, sheetName, firstIndex, lastIndex, hide, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsPostGroupWorksheetRows");
@@ -1067,6 +1106,7 @@ Name | Type | Description  | Notes
  **lastIndex** | **Integer**| The last row index to be operated. |
  **hide** | **Boolean**| rows visible state | [optional]
  **folder** | **String**| The document folder. | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -1083,7 +1123,7 @@ No authorization required
 
 <a name="cellsPostHideWorksheetColumns"></a>
 # **cellsPostHideWorksheetColumns**
-> SaaSposeResponse cellsPostHideWorksheetColumns(name, sheetName, startColumn, totalColumns, folder)
+> SaaSposeResponse cellsPostHideWorksheetColumns(name, sheetName, startColumn, totalColumns, folder, storage)
 
 Hide worksheet columns.
 
@@ -1100,8 +1140,9 @@ String sheetName = "sheetName_example"; // String | The worksheet name.
 Integer startColumn = 56; // Integer | The begin column index to be operated.
 Integer totalColumns = 56; // Integer | Number of columns to be operated.
 String folder = "folder_example"; // String | The document folder.
+String storage = "storage_example"; // String | storage name.
 try {
-    SaaSposeResponse result = apiInstance.cellsPostHideWorksheetColumns(name, sheetName, startColumn, totalColumns, folder);
+    SaaSposeResponse result = apiInstance.cellsPostHideWorksheetColumns(name, sheetName, startColumn, totalColumns, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsPostHideWorksheetColumns");
@@ -1118,6 +1159,7 @@ Name | Type | Description  | Notes
  **startColumn** | **Integer**| The begin column index to be operated. |
  **totalColumns** | **Integer**| Number of columns to be operated. |
  **folder** | **String**| The document folder. | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -1134,7 +1176,7 @@ No authorization required
 
 <a name="cellsPostHideWorksheetRows"></a>
 # **cellsPostHideWorksheetRows**
-> SaaSposeResponse cellsPostHideWorksheetRows(name, sheetName, startrow, totalRows, folder)
+> SaaSposeResponse cellsPostHideWorksheetRows(name, sheetName, startrow, totalRows, folder, storage)
 
 Hide worksheet rows.
 
@@ -1151,8 +1193,9 @@ String sheetName = "sheetName_example"; // String | The worksheet name.
 Integer startrow = 56; // Integer | The begin row index to be operated.
 Integer totalRows = 56; // Integer | Number of rows to be operated.
 String folder = "folder_example"; // String | The document folder.
+String storage = "storage_example"; // String | storage name.
 try {
-    SaaSposeResponse result = apiInstance.cellsPostHideWorksheetRows(name, sheetName, startrow, totalRows, folder);
+    SaaSposeResponse result = apiInstance.cellsPostHideWorksheetRows(name, sheetName, startrow, totalRows, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsPostHideWorksheetRows");
@@ -1169,6 +1212,7 @@ Name | Type | Description  | Notes
  **startrow** | **Integer**| The begin row index to be operated. |
  **totalRows** | **Integer**| Number of rows to be operated. |
  **folder** | **String**| The document folder. | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -1185,7 +1229,7 @@ No authorization required
 
 <a name="cellsPostRowStyle"></a>
 # **cellsPostRowStyle**
-> SaaSposeResponse cellsPostRowStyle(name, sheetName, rowIndex, style, folder)
+> SaaSposeResponse cellsPostRowStyle(name, sheetName, rowIndex, style, folder, storage)
 
 Set row style.
 
@@ -1202,8 +1246,9 @@ String sheetName = "sheetName_example"; // String | The worksheet name.
 Integer rowIndex = 56; // Integer | The row index.
 Style style = new Style(); // Style | Style dto
 String folder = "folder_example"; // String | The document folder.
+String storage = "storage_example"; // String | storage name.
 try {
-    SaaSposeResponse result = apiInstance.cellsPostRowStyle(name, sheetName, rowIndex, style, folder);
+    SaaSposeResponse result = apiInstance.cellsPostRowStyle(name, sheetName, rowIndex, style, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsPostRowStyle");
@@ -1220,6 +1265,7 @@ Name | Type | Description  | Notes
  **rowIndex** | **Integer**| The row index. |
  **style** | [**Style**](Style.md)| Style dto | [optional]
  **folder** | **String**| The document folder. | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -1236,7 +1282,7 @@ No authorization required
 
 <a name="cellsPostSetCellHtmlString"></a>
 # **cellsPostSetCellHtmlString**
-> CellResponse cellsPostSetCellHtmlString(name, sheetName, cellName, folder)
+> CellResponse cellsPostSetCellHtmlString(name, sheetName, cellName, folder, storage)
 
 Set htmlstring value into cell
 
@@ -1252,8 +1298,9 @@ String name = "name_example"; // String | Workbook name.
 String sheetName = "sheetName_example"; // String | Worksheet name.
 String cellName = "cellName_example"; // String | The cell name.
 String folder = "folder_example"; // String | The workbook folder.
+String storage = "storage_example"; // String | storage name.
 try {
-    CellResponse result = apiInstance.cellsPostSetCellHtmlString(name, sheetName, cellName, folder);
+    CellResponse result = apiInstance.cellsPostSetCellHtmlString(name, sheetName, cellName, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsPostSetCellHtmlString");
@@ -1269,6 +1316,7 @@ Name | Type | Description  | Notes
  **sheetName** | **String**| Worksheet name. |
  **cellName** | **String**| The cell name. |
  **folder** | **String**| The workbook folder. | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -1285,7 +1333,7 @@ No authorization required
 
 <a name="cellsPostSetCellRangeValue"></a>
 # **cellsPostSetCellRangeValue**
-> SaaSposeResponse cellsPostSetCellRangeValue(name, sheetName, cellarea, value, type, folder)
+> SaaSposeResponse cellsPostSetCellRangeValue(name, sheetName, cellarea, value, type, folder, storage)
 
 Set cell range value 
 
@@ -1303,8 +1351,9 @@ String cellarea = "cellarea_example"; // String | Cell area (like \"A1:C2\")
 String value = "value_example"; // String | Range value
 String type = "type_example"; // String | Value data type (like \"int\")
 String folder = "folder_example"; // String | Folder name
+String storage = "storage_example"; // String | storage name.
 try {
-    SaaSposeResponse result = apiInstance.cellsPostSetCellRangeValue(name, sheetName, cellarea, value, type, folder);
+    SaaSposeResponse result = apiInstance.cellsPostSetCellRangeValue(name, sheetName, cellarea, value, type, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsPostSetCellRangeValue");
@@ -1322,6 +1371,7 @@ Name | Type | Description  | Notes
  **value** | **String**| Range value |
  **type** | **String**| Value data type (like \&quot;int\&quot;) |
  **folder** | **String**| Folder name | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -1338,7 +1388,7 @@ No authorization required
 
 <a name="cellsPostSetWorksheetColumnWidth"></a>
 # **cellsPostSetWorksheetColumnWidth**
-> ColumnResponse cellsPostSetWorksheetColumnWidth(name, sheetName, columnIndex, width, folder)
+> ColumnResponse cellsPostSetWorksheetColumnWidth(name, sheetName, columnIndex, width, folder, storage)
 
 Set worksheet column width.
 
@@ -1355,8 +1405,9 @@ String sheetName = "sheetName_example"; // String | The worksheet name.
 Integer columnIndex = 56; // Integer | The column index.
 Double width = 3.4D; // Double | The width.
 String folder = "folder_example"; // String | The workbook folder.
+String storage = "storage_example"; // String | storage name.
 try {
-    ColumnResponse result = apiInstance.cellsPostSetWorksheetColumnWidth(name, sheetName, columnIndex, width, folder);
+    ColumnResponse result = apiInstance.cellsPostSetWorksheetColumnWidth(name, sheetName, columnIndex, width, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsPostSetWorksheetColumnWidth");
@@ -1373,6 +1424,7 @@ Name | Type | Description  | Notes
  **columnIndex** | **Integer**| The column index. |
  **width** | **Double**| The width. |
  **folder** | **String**| The workbook folder. | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -1389,7 +1441,7 @@ No authorization required
 
 <a name="cellsPostUngroupWorksheetColumns"></a>
 # **cellsPostUngroupWorksheetColumns**
-> SaaSposeResponse cellsPostUngroupWorksheetColumns(name, sheetName, firstIndex, lastIndex, folder)
+> SaaSposeResponse cellsPostUngroupWorksheetColumns(name, sheetName, firstIndex, lastIndex, folder, storage)
 
 Ungroup worksheet columns.
 
@@ -1406,8 +1458,9 @@ String sheetName = "sheetName_example"; // String | The worksheet name.
 Integer firstIndex = 56; // Integer | The first column index to be operated.
 Integer lastIndex = 56; // Integer | The last column index to be operated.
 String folder = "folder_example"; // String | The document folder.
+String storage = "storage_example"; // String | storage name.
 try {
-    SaaSposeResponse result = apiInstance.cellsPostUngroupWorksheetColumns(name, sheetName, firstIndex, lastIndex, folder);
+    SaaSposeResponse result = apiInstance.cellsPostUngroupWorksheetColumns(name, sheetName, firstIndex, lastIndex, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsPostUngroupWorksheetColumns");
@@ -1424,6 +1477,7 @@ Name | Type | Description  | Notes
  **firstIndex** | **Integer**| The first column index to be operated. |
  **lastIndex** | **Integer**| The last column index to be operated. |
  **folder** | **String**| The document folder. | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -1440,7 +1494,7 @@ No authorization required
 
 <a name="cellsPostUngroupWorksheetRows"></a>
 # **cellsPostUngroupWorksheetRows**
-> SaaSposeResponse cellsPostUngroupWorksheetRows(name, sheetName, firstIndex, lastIndex, isAll, folder)
+> SaaSposeResponse cellsPostUngroupWorksheetRows(name, sheetName, firstIndex, lastIndex, isAll, folder, storage)
 
 Ungroup worksheet rows.
 
@@ -1458,8 +1512,9 @@ Integer firstIndex = 56; // Integer | The first row index to be operated.
 Integer lastIndex = 56; // Integer | The last row index to be operated.
 Boolean isAll = true; // Boolean | Is all row to be operated
 String folder = "folder_example"; // String | The document folder.
+String storage = "storage_example"; // String | storage name.
 try {
-    SaaSposeResponse result = apiInstance.cellsPostUngroupWorksheetRows(name, sheetName, firstIndex, lastIndex, isAll, folder);
+    SaaSposeResponse result = apiInstance.cellsPostUngroupWorksheetRows(name, sheetName, firstIndex, lastIndex, isAll, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsPostUngroupWorksheetRows");
@@ -1477,6 +1532,7 @@ Name | Type | Description  | Notes
  **lastIndex** | **Integer**| The last row index to be operated. |
  **isAll** | **Boolean**| Is all row to be operated | [optional]
  **folder** | **String**| The document folder. | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -1493,7 +1549,7 @@ No authorization required
 
 <a name="cellsPostUnhideWorksheetColumns"></a>
 # **cellsPostUnhideWorksheetColumns**
-> SaaSposeResponse cellsPostUnhideWorksheetColumns(name, sheetName, startcolumn, totalColumns, width, folder)
+> SaaSposeResponse cellsPostUnhideWorksheetColumns(name, sheetName, startcolumn, totalColumns, width, folder, storage)
 
 Unhide worksheet columns.
 
@@ -1511,8 +1567,9 @@ Integer startcolumn = 56; // Integer | The begin column index to be operated.
 Integer totalColumns = 56; // Integer | Number of columns to be operated.
 Double width = 3.4D; // Double | The new column width.
 String folder = "folder_example"; // String | The document folder.
+String storage = "storage_example"; // String | storage name.
 try {
-    SaaSposeResponse result = apiInstance.cellsPostUnhideWorksheetColumns(name, sheetName, startcolumn, totalColumns, width, folder);
+    SaaSposeResponse result = apiInstance.cellsPostUnhideWorksheetColumns(name, sheetName, startcolumn, totalColumns, width, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsPostUnhideWorksheetColumns");
@@ -1530,6 +1587,7 @@ Name | Type | Description  | Notes
  **totalColumns** | **Integer**| Number of columns to be operated. |
  **width** | **Double**| The new column width. | [optional] [default to 50.0]
  **folder** | **String**| The document folder. | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -1546,7 +1604,7 @@ No authorization required
 
 <a name="cellsPostUnhideWorksheetRows"></a>
 # **cellsPostUnhideWorksheetRows**
-> SaaSposeResponse cellsPostUnhideWorksheetRows(name, sheetName, startrow, totalRows, height, folder)
+> SaaSposeResponse cellsPostUnhideWorksheetRows(name, sheetName, startrow, totalRows, height, folder, storage)
 
 Unhide worksheet rows.
 
@@ -1564,8 +1622,9 @@ Integer startrow = 56; // Integer | The begin row index to be operated.
 Integer totalRows = 56; // Integer | Number of rows to be operated.
 Double height = 3.4D; // Double | The new row height.
 String folder = "folder_example"; // String | The document folder.
+String storage = "storage_example"; // String | storage name.
 try {
-    SaaSposeResponse result = apiInstance.cellsPostUnhideWorksheetRows(name, sheetName, startrow, totalRows, height, folder);
+    SaaSposeResponse result = apiInstance.cellsPostUnhideWorksheetRows(name, sheetName, startrow, totalRows, height, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsPostUnhideWorksheetRows");
@@ -1583,6 +1642,7 @@ Name | Type | Description  | Notes
  **totalRows** | **Integer**| Number of rows to be operated. |
  **height** | **Double**| The new row height. | [optional] [default to 15.0]
  **folder** | **String**| The document folder. | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -1599,7 +1659,7 @@ No authorization required
 
 <a name="cellsPostUpdateWorksheetCellStyle"></a>
 # **cellsPostUpdateWorksheetCellStyle**
-> StyleResponse cellsPostUpdateWorksheetCellStyle(name, sheetName, cellName, style, folder)
+> StyleResponse cellsPostUpdateWorksheetCellStyle(name, sheetName, cellName, style, folder, storage)
 
 Update cell&#39;s style.
 
@@ -1616,8 +1676,9 @@ String sheetName = "sheetName_example"; // String | Worksheet name.
 String cellName = "cellName_example"; // String | The cell name.
 Style style = new Style(); // Style | with update style settings.
 String folder = "folder_example"; // String | The workbook folder.
+String storage = "storage_example"; // String | storage name.
 try {
-    StyleResponse result = apiInstance.cellsPostUpdateWorksheetCellStyle(name, sheetName, cellName, style, folder);
+    StyleResponse result = apiInstance.cellsPostUpdateWorksheetCellStyle(name, sheetName, cellName, style, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsPostUpdateWorksheetCellStyle");
@@ -1634,6 +1695,7 @@ Name | Type | Description  | Notes
  **cellName** | **String**| The cell name. |
  **style** | [**Style**](Style.md)| with update style settings. | [optional]
  **folder** | **String**| The workbook folder. | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -1650,7 +1712,7 @@ No authorization required
 
 <a name="cellsPostUpdateWorksheetRangeStyle"></a>
 # **cellsPostUpdateWorksheetRangeStyle**
-> SaaSposeResponse cellsPostUpdateWorksheetRangeStyle(name, sheetName, range, style, folder)
+> SaaSposeResponse cellsPostUpdateWorksheetRangeStyle(name, sheetName, range, style, folder, storage)
 
 Update cell&#39;s range style.
 
@@ -1667,8 +1729,9 @@ String sheetName = "sheetName_example"; // String | Worksheet name.
 String range = "range_example"; // String | The range.
 Style style = new Style(); // Style | with update style settings.
 String folder = "folder_example"; // String | The workbook folder.
+String storage = "storage_example"; // String | storage name.
 try {
-    SaaSposeResponse result = apiInstance.cellsPostUpdateWorksheetRangeStyle(name, sheetName, range, style, folder);
+    SaaSposeResponse result = apiInstance.cellsPostUpdateWorksheetRangeStyle(name, sheetName, range, style, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsPostUpdateWorksheetRangeStyle");
@@ -1685,6 +1748,7 @@ Name | Type | Description  | Notes
  **range** | **String**| The range. |
  **style** | [**Style**](Style.md)| with update style settings. | [optional]
  **folder** | **String**| The workbook folder. | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -1701,7 +1765,7 @@ No authorization required
 
 <a name="cellsPostUpdateWorksheetRow"></a>
 # **cellsPostUpdateWorksheetRow**
-> RowResponse cellsPostUpdateWorksheetRow(name, sheetName, rowIndex, height, folder)
+> RowResponse cellsPostUpdateWorksheetRow(name, sheetName, rowIndex, height, folder, storage)
 
 Update worksheet row.
 
@@ -1718,8 +1782,9 @@ String sheetName = "sheetName_example"; // String | The worksheet name.
 Integer rowIndex = 56; // Integer | The row index.
 Double height = 3.4D; // Double | The new row height.
 String folder = "folder_example"; // String | The document folder.
+String storage = "storage_example"; // String | storage name.
 try {
-    RowResponse result = apiInstance.cellsPostUpdateWorksheetRow(name, sheetName, rowIndex, height, folder);
+    RowResponse result = apiInstance.cellsPostUpdateWorksheetRow(name, sheetName, rowIndex, height, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsPostUpdateWorksheetRow");
@@ -1736,6 +1801,7 @@ Name | Type | Description  | Notes
  **rowIndex** | **Integer**| The row index. |
  **height** | **Double**| The new row height. | [optional] [default to 0.0]
  **folder** | **String**| The document folder. | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -1752,7 +1818,7 @@ No authorization required
 
 <a name="cellsPostWorksheetCellSetValue"></a>
 # **cellsPostWorksheetCellSetValue**
-> CellResponse cellsPostWorksheetCellSetValue(name, sheetName, cellName, value, type, formula, folder)
+> CellResponse cellsPostWorksheetCellSetValue(name, sheetName, cellName, value, type, formula, folder, storage)
 
 Set cell value.
 
@@ -1771,8 +1837,9 @@ String value = "value_example"; // String | The cell value.
 String type = "type_example"; // String | The value type.
 String formula = "formula_example"; // String | Formula for cell
 String folder = "folder_example"; // String | The document folder.
+String storage = "storage_example"; // String | storage name.
 try {
-    CellResponse result = apiInstance.cellsPostWorksheetCellSetValue(name, sheetName, cellName, value, type, formula, folder);
+    CellResponse result = apiInstance.cellsPostWorksheetCellSetValue(name, sheetName, cellName, value, type, formula, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsPostWorksheetCellSetValue");
@@ -1791,6 +1858,7 @@ Name | Type | Description  | Notes
  **type** | **String**| The value type. | [optional]
  **formula** | **String**| Formula for cell | [optional]
  **folder** | **String**| The document folder. | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -1807,7 +1875,7 @@ No authorization required
 
 <a name="cellsPostWorksheetMerge"></a>
 # **cellsPostWorksheetMerge**
-> SaaSposeResponse cellsPostWorksheetMerge(name, sheetName, startRow, startColumn, totalRows, totalColumns, folder)
+> SaaSposeResponse cellsPostWorksheetMerge(name, sheetName, startRow, startColumn, totalRows, totalColumns, folder, storage)
 
 Merge cells.
 
@@ -1826,8 +1894,9 @@ Integer startColumn = 56; // Integer | The start column.
 Integer totalRows = 56; // Integer | The total rows
 Integer totalColumns = 56; // Integer | The total columns.
 String folder = "folder_example"; // String | The workbook folder.
+String storage = "storage_example"; // String | storage name.
 try {
-    SaaSposeResponse result = apiInstance.cellsPostWorksheetMerge(name, sheetName, startRow, startColumn, totalRows, totalColumns, folder);
+    SaaSposeResponse result = apiInstance.cellsPostWorksheetMerge(name, sheetName, startRow, startColumn, totalRows, totalColumns, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsPostWorksheetMerge");
@@ -1846,6 +1915,7 @@ Name | Type | Description  | Notes
  **totalRows** | **Integer**| The total rows |
  **totalColumns** | **Integer**| The total columns. |
  **folder** | **String**| The workbook folder. | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -1862,7 +1932,7 @@ No authorization required
 
 <a name="cellsPostWorksheetUnmerge"></a>
 # **cellsPostWorksheetUnmerge**
-> SaaSposeResponse cellsPostWorksheetUnmerge(name, sheetName, startRow, startColumn, totalRows, totalColumns, folder)
+> SaaSposeResponse cellsPostWorksheetUnmerge(name, sheetName, startRow, startColumn, totalRows, totalColumns, folder, storage)
 
 Unmerge cells.
 
@@ -1881,8 +1951,9 @@ Integer startColumn = 56; // Integer | The start column.
 Integer totalRows = 56; // Integer | The total rows
 Integer totalColumns = 56; // Integer | The total columns.
 String folder = "folder_example"; // String | The workbook folder.
+String storage = "storage_example"; // String | storage name.
 try {
-    SaaSposeResponse result = apiInstance.cellsPostWorksheetUnmerge(name, sheetName, startRow, startColumn, totalRows, totalColumns, folder);
+    SaaSposeResponse result = apiInstance.cellsPostWorksheetUnmerge(name, sheetName, startRow, startColumn, totalRows, totalColumns, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsPostWorksheetUnmerge");
@@ -1901,6 +1972,7 @@ Name | Type | Description  | Notes
  **totalRows** | **Integer**| The total rows |
  **totalColumns** | **Integer**| The total columns. |
  **folder** | **String**| The workbook folder. | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -1917,7 +1989,7 @@ No authorization required
 
 <a name="cellsPutInsertWorksheetColumns"></a>
 # **cellsPutInsertWorksheetColumns**
-> ColumnsResponse cellsPutInsertWorksheetColumns(name, sheetName, columnIndex, columns, updateReference, folder)
+> ColumnsResponse cellsPutInsertWorksheetColumns(name, sheetName, columnIndex, columns, updateReference, folder, storage)
 
 Insert worksheet columns.
 
@@ -1935,8 +2007,9 @@ Integer columnIndex = 56; // Integer | The column index.
 Integer columns = 56; // Integer | The columns.
 Boolean updateReference = true; // Boolean | The update reference.
 String folder = "folder_example"; // String | The workbook folder.
+String storage = "storage_example"; // String | storage name.
 try {
-    ColumnsResponse result = apiInstance.cellsPutInsertWorksheetColumns(name, sheetName, columnIndex, columns, updateReference, folder);
+    ColumnsResponse result = apiInstance.cellsPutInsertWorksheetColumns(name, sheetName, columnIndex, columns, updateReference, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsPutInsertWorksheetColumns");
@@ -1954,6 +2027,7 @@ Name | Type | Description  | Notes
  **columns** | **Integer**| The columns. |
  **updateReference** | **Boolean**| The update reference. | [optional] [default to true]
  **folder** | **String**| The workbook folder. | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -1970,7 +2044,7 @@ No authorization required
 
 <a name="cellsPutInsertWorksheetRow"></a>
 # **cellsPutInsertWorksheetRow**
-> RowResponse cellsPutInsertWorksheetRow(name, sheetName, rowIndex, folder)
+> RowResponse cellsPutInsertWorksheetRow(name, sheetName, rowIndex, folder, storage)
 
 Insert new worksheet row.
 
@@ -1986,8 +2060,9 @@ String name = "name_example"; // String | The workbook name.
 String sheetName = "sheetName_example"; // String | The worksheet name.
 Integer rowIndex = 56; // Integer | The new row index.
 String folder = "folder_example"; // String | The document folder.
+String storage = "storage_example"; // String | storage name.
 try {
-    RowResponse result = apiInstance.cellsPutInsertWorksheetRow(name, sheetName, rowIndex, folder);
+    RowResponse result = apiInstance.cellsPutInsertWorksheetRow(name, sheetName, rowIndex, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsPutInsertWorksheetRow");
@@ -2003,6 +2078,7 @@ Name | Type | Description  | Notes
  **sheetName** | **String**| The worksheet name. |
  **rowIndex** | **Integer**| The new row index. |
  **folder** | **String**| The document folder. | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -2019,7 +2095,7 @@ No authorization required
 
 <a name="cellsPutInsertWorksheetRows"></a>
 # **cellsPutInsertWorksheetRows**
-> SaaSposeResponse cellsPutInsertWorksheetRows(name, sheetName, startrow, totalRows, updateReference, folder)
+> SaaSposeResponse cellsPutInsertWorksheetRows(name, sheetName, startrow, totalRows, updateReference, folder, storage)
 
 Insert several new worksheet rows.
 
@@ -2037,8 +2113,9 @@ Integer startrow = 56; // Integer | The begin row index to be operated.
 Integer totalRows = 1; // Integer | Number of rows to be operated.
 Boolean updateReference = true; // Boolean | Indicates if update references in other worksheets.
 String folder = "folder_example"; // String | The document folder.
+String storage = "storage_example"; // String | storage name.
 try {
-    SaaSposeResponse result = apiInstance.cellsPutInsertWorksheetRows(name, sheetName, startrow, totalRows, updateReference, folder);
+    SaaSposeResponse result = apiInstance.cellsPutInsertWorksheetRows(name, sheetName, startrow, totalRows, updateReference, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsPutInsertWorksheetRows");
@@ -2056,6 +2133,7 @@ Name | Type | Description  | Notes
  **totalRows** | **Integer**| Number of rows to be operated. | [optional] [default to 1]
  **updateReference** | **Boolean**| Indicates if update references in other worksheets. | [optional] [default to true]
  **folder** | **String**| The document folder. | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 

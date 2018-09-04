@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a name="cellsSaveAsPostDocumentSaveAs"></a>
 # **cellsSaveAsPostDocumentSaveAs**
-> SaveResponse cellsSaveAsPostDocumentSaveAs(name, saveOptions, newfilename, isAutoFitRows, isAutoFitColumns, folder)
+> SaveResponse cellsSaveAsPostDocumentSaveAs(name, saveOptions, newfilename, isAutoFitRows, isAutoFitColumns, folder, storage)
 
 Convert document and save result to storage.
 
@@ -27,8 +27,9 @@ String newfilename = "newfilename_example"; // String | The new file name.
 Boolean isAutoFitRows = false; // Boolean | Autofit rows.
 Boolean isAutoFitColumns = false; // Boolean | Autofit columns.
 String folder = "folder_example"; // String | The document folder.
+String storage = "storage_example"; // String | storage name.
 try {
-    SaveResponse result = apiInstance.cellsSaveAsPostDocumentSaveAs(name, saveOptions, newfilename, isAutoFitRows, isAutoFitColumns, folder);
+    SaveResponse result = apiInstance.cellsSaveAsPostDocumentSaveAs(name, saveOptions, newfilename, isAutoFitRows, isAutoFitColumns, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsSaveAsApi#cellsSaveAsPostDocumentSaveAs");
@@ -46,6 +47,7 @@ Name | Type | Description  | Notes
  **isAutoFitRows** | **Boolean**| Autofit rows. | [optional] [default to false]
  **isAutoFitColumns** | **Boolean**| Autofit columns. | [optional] [default to false]
  **folder** | **String**| The document folder. | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 

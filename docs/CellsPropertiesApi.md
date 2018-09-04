@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 <a name="cellsPropertiesDeleteDocumentProperties"></a>
 # **cellsPropertiesDeleteDocumentProperties**
-> CellsDocumentPropertiesResponse cellsPropertiesDeleteDocumentProperties(name, folder)
+> CellsDocumentPropertiesResponse cellsPropertiesDeleteDocumentProperties(name, folder, storage)
 
 Delete all custom document properties and clean built-in ones.
 
@@ -27,8 +27,9 @@ Delete all custom document properties and clean built-in ones.
 CellsPropertiesApi apiInstance = new CellsPropertiesApi();
 String name = "name_example"; // String | The document name.
 String folder = "folder_example"; // String | The document folder.
+String storage = "storage_example"; // String | storage name.
 try {
-    CellsDocumentPropertiesResponse result = apiInstance.cellsPropertiesDeleteDocumentProperties(name, folder);
+    CellsDocumentPropertiesResponse result = apiInstance.cellsPropertiesDeleteDocumentProperties(name, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsPropertiesApi#cellsPropertiesDeleteDocumentProperties");
@@ -42,6 +43,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **String**| The document name. |
  **folder** | **String**| The document folder. | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -58,7 +60,7 @@ No authorization required
 
 <a name="cellsPropertiesDeleteDocumentProperty"></a>
 # **cellsPropertiesDeleteDocumentProperty**
-> CellsDocumentPropertiesResponse cellsPropertiesDeleteDocumentProperty(name, propertyName, folder)
+> CellsDocumentPropertiesResponse cellsPropertiesDeleteDocumentProperty(name, propertyName, folder, storage)
 
 Delete document property.
 
@@ -73,8 +75,9 @@ CellsPropertiesApi apiInstance = new CellsPropertiesApi();
 String name = "name_example"; // String | The document name.
 String propertyName = "propertyName_example"; // String | The property name.
 String folder = "folder_example"; // String | The document folder.
+String storage = "storage_example"; // String | storage name.
 try {
-    CellsDocumentPropertiesResponse result = apiInstance.cellsPropertiesDeleteDocumentProperty(name, propertyName, folder);
+    CellsDocumentPropertiesResponse result = apiInstance.cellsPropertiesDeleteDocumentProperty(name, propertyName, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsPropertiesApi#cellsPropertiesDeleteDocumentProperty");
@@ -89,6 +92,7 @@ Name | Type | Description  | Notes
  **name** | **String**| The document name. |
  **propertyName** | **String**| The property name. |
  **folder** | **String**| The document folder. | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -105,7 +109,7 @@ No authorization required
 
 <a name="cellsPropertiesGetDocumentProperties"></a>
 # **cellsPropertiesGetDocumentProperties**
-> CellsDocumentPropertiesResponse cellsPropertiesGetDocumentProperties(name, folder)
+> CellsDocumentPropertiesResponse cellsPropertiesGetDocumentProperties(name, folder, storage)
 
 Read document properties.
 
@@ -119,8 +123,9 @@ Read document properties.
 CellsPropertiesApi apiInstance = new CellsPropertiesApi();
 String name = "name_example"; // String | The document name.
 String folder = "folder_example"; // String | The document folder.
+String storage = "storage_example"; // String | storage name.
 try {
-    CellsDocumentPropertiesResponse result = apiInstance.cellsPropertiesGetDocumentProperties(name, folder);
+    CellsDocumentPropertiesResponse result = apiInstance.cellsPropertiesGetDocumentProperties(name, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsPropertiesApi#cellsPropertiesGetDocumentProperties");
@@ -134,6 +139,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **String**| The document name. |
  **folder** | **String**| The document folder. | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -150,7 +156,7 @@ No authorization required
 
 <a name="cellsPropertiesGetDocumentProperty"></a>
 # **cellsPropertiesGetDocumentProperty**
-> CellsDocumentPropertyResponse cellsPropertiesGetDocumentProperty(name, propertyName, folder)
+> CellsDocumentPropertyResponse cellsPropertiesGetDocumentProperty(name, propertyName, folder, storage)
 
 Read document property by name.
 
@@ -165,8 +171,9 @@ CellsPropertiesApi apiInstance = new CellsPropertiesApi();
 String name = "name_example"; // String | The document name.
 String propertyName = "propertyName_example"; // String | The property name.
 String folder = "folder_example"; // String | The document folder.
+String storage = "storage_example"; // String | storage name.
 try {
-    CellsDocumentPropertyResponse result = apiInstance.cellsPropertiesGetDocumentProperty(name, propertyName, folder);
+    CellsDocumentPropertyResponse result = apiInstance.cellsPropertiesGetDocumentProperty(name, propertyName, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsPropertiesApi#cellsPropertiesGetDocumentProperty");
@@ -181,6 +188,7 @@ Name | Type | Description  | Notes
  **name** | **String**| The document name. |
  **propertyName** | **String**| The property name. |
  **folder** | **String**| The document folder. | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -197,7 +205,7 @@ No authorization required
 
 <a name="cellsPropertiesPutDocumentProperty"></a>
 # **cellsPropertiesPutDocumentProperty**
-> CellsDocumentPropertyResponse cellsPropertiesPutDocumentProperty(name, propertyName, property, folder)
+> CellsDocumentPropertyResponse cellsPropertiesPutDocumentProperty(name, propertyName, property, folder, storage)
 
 Set/create document property.
 
@@ -213,8 +221,9 @@ String name = "name_example"; // String | The document name.
 String propertyName = "propertyName_example"; // String | The property name.
 CellsDocumentProperty property = new CellsDocumentProperty(); // CellsDocumentProperty | with new property value.
 String folder = "folder_example"; // String | The document folder.
+String storage = "storage_example"; // String | storage name.
 try {
-    CellsDocumentPropertyResponse result = apiInstance.cellsPropertiesPutDocumentProperty(name, propertyName, property, folder);
+    CellsDocumentPropertyResponse result = apiInstance.cellsPropertiesPutDocumentProperty(name, propertyName, property, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsPropertiesApi#cellsPropertiesPutDocumentProperty");
@@ -230,6 +239,7 @@ Name | Type | Description  | Notes
  **propertyName** | **String**| The property name. |
  **property** | [**CellsDocumentProperty**](CellsDocumentProperty.md)| with new property value. | [optional]
  **folder** | **String**| The document folder. | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 

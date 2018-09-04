@@ -64,12 +64,13 @@ public class CellsPageBreaksApi {
      * @param sheetName  (required)
      * @param index  (required)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call cellsPageBreaksDeleteHorizontalPageBreakCall(String name, String sheetName, Integer index, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call cellsPageBreaksDeleteHorizontalPageBreakCall(String name, String sheetName, Integer index, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -81,6 +82,8 @@ public class CellsPageBreaksApi {
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         if (folder != null)
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "folder", folder));
+        if (storage != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "storage", storage));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -115,7 +118,7 @@ public class CellsPageBreaksApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call cellsPageBreaksDeleteHorizontalPageBreakValidateBeforeCall(String name, String sheetName, Integer index, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call cellsPageBreaksDeleteHorizontalPageBreakValidateBeforeCall(String name, String sheetName, Integer index, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'name' is set
         if (name == null) {
@@ -133,7 +136,7 @@ public class CellsPageBreaksApi {
         }
         
         
-        com.squareup.okhttp.Call call = cellsPageBreaksDeleteHorizontalPageBreakCall(name, sheetName, index, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsPageBreaksDeleteHorizontalPageBreakCall(name, sheetName, index, folder, storage, progressListener, progressRequestListener);
         return call;
 
         
@@ -149,11 +152,12 @@ public class CellsPageBreaksApi {
      * @param sheetName  (required)
      * @param index  (required)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @return SaaSposeResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public SaaSposeResponse cellsPageBreaksDeleteHorizontalPageBreak(String name, String sheetName, Integer index, String folder) throws ApiException {
-        ApiResponse<SaaSposeResponse> resp = cellsPageBreaksDeleteHorizontalPageBreakWithHttpInfo(name, sheetName, index, folder);
+    public SaaSposeResponse cellsPageBreaksDeleteHorizontalPageBreak(String name, String sheetName, Integer index, String folder, String storage) throws ApiException {
+        ApiResponse<SaaSposeResponse> resp = cellsPageBreaksDeleteHorizontalPageBreakWithHttpInfo(name, sheetName, index, folder, storage);
         return resp.getData();
     }
 
@@ -164,11 +168,12 @@ public class CellsPageBreaksApi {
      * @param sheetName  (required)
      * @param index  (required)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @return ApiResponse&lt;SaaSposeResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<SaaSposeResponse> cellsPageBreaksDeleteHorizontalPageBreakWithHttpInfo(String name, String sheetName, Integer index, String folder) throws ApiException {
-        com.squareup.okhttp.Call call = cellsPageBreaksDeleteHorizontalPageBreakValidateBeforeCall(name, sheetName, index, folder, null, null);
+    public ApiResponse<SaaSposeResponse> cellsPageBreaksDeleteHorizontalPageBreakWithHttpInfo(String name, String sheetName, Integer index, String folder, String storage) throws ApiException {
+        com.squareup.okhttp.Call call = cellsPageBreaksDeleteHorizontalPageBreakValidateBeforeCall(name, sheetName, index, folder, storage, null, null);
         Type localVarReturnType = new TypeToken<SaaSposeResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -180,11 +185,12 @@ public class CellsPageBreaksApi {
      * @param sheetName  (required)
      * @param index  (required)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call cellsPageBreaksDeleteHorizontalPageBreakAsync(String name, String sheetName, Integer index, String folder, final ApiCallback<SaaSposeResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call cellsPageBreaksDeleteHorizontalPageBreakAsync(String name, String sheetName, Integer index, String folder, String storage, final ApiCallback<SaaSposeResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -205,7 +211,7 @@ public class CellsPageBreaksApi {
             };
         }
 
-        com.squareup.okhttp.Call call = cellsPageBreaksDeleteHorizontalPageBreakValidateBeforeCall(name, sheetName, index, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsPageBreaksDeleteHorizontalPageBreakValidateBeforeCall(name, sheetName, index, folder, storage, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<SaaSposeResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -216,12 +222,13 @@ public class CellsPageBreaksApi {
      * @param sheetName  (required)
      * @param row  (optional)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call cellsPageBreaksDeleteHorizontalPageBreaksCall(String name, String sheetName, Integer row, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call cellsPageBreaksDeleteHorizontalPageBreaksCall(String name, String sheetName, Integer row, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -234,6 +241,8 @@ public class CellsPageBreaksApi {
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "row", row));
         if (folder != null)
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "folder", folder));
+        if (storage != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "storage", storage));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -268,7 +277,7 @@ public class CellsPageBreaksApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call cellsPageBreaksDeleteHorizontalPageBreaksValidateBeforeCall(String name, String sheetName, Integer row, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call cellsPageBreaksDeleteHorizontalPageBreaksValidateBeforeCall(String name, String sheetName, Integer row, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'name' is set
         if (name == null) {
@@ -281,7 +290,7 @@ public class CellsPageBreaksApi {
         }
         
         
-        com.squareup.okhttp.Call call = cellsPageBreaksDeleteHorizontalPageBreaksCall(name, sheetName, row, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsPageBreaksDeleteHorizontalPageBreaksCall(name, sheetName, row, folder, storage, progressListener, progressRequestListener);
         return call;
 
         
@@ -297,11 +306,12 @@ public class CellsPageBreaksApi {
      * @param sheetName  (required)
      * @param row  (optional)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @return SaaSposeResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public SaaSposeResponse cellsPageBreaksDeleteHorizontalPageBreaks(String name, String sheetName, Integer row, String folder) throws ApiException {
-        ApiResponse<SaaSposeResponse> resp = cellsPageBreaksDeleteHorizontalPageBreaksWithHttpInfo(name, sheetName, row, folder);
+    public SaaSposeResponse cellsPageBreaksDeleteHorizontalPageBreaks(String name, String sheetName, Integer row, String folder, String storage) throws ApiException {
+        ApiResponse<SaaSposeResponse> resp = cellsPageBreaksDeleteHorizontalPageBreaksWithHttpInfo(name, sheetName, row, folder, storage);
         return resp.getData();
     }
 
@@ -312,11 +322,12 @@ public class CellsPageBreaksApi {
      * @param sheetName  (required)
      * @param row  (optional)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @return ApiResponse&lt;SaaSposeResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<SaaSposeResponse> cellsPageBreaksDeleteHorizontalPageBreaksWithHttpInfo(String name, String sheetName, Integer row, String folder) throws ApiException {
-        com.squareup.okhttp.Call call = cellsPageBreaksDeleteHorizontalPageBreaksValidateBeforeCall(name, sheetName, row, folder, null, null);
+    public ApiResponse<SaaSposeResponse> cellsPageBreaksDeleteHorizontalPageBreaksWithHttpInfo(String name, String sheetName, Integer row, String folder, String storage) throws ApiException {
+        com.squareup.okhttp.Call call = cellsPageBreaksDeleteHorizontalPageBreaksValidateBeforeCall(name, sheetName, row, folder, storage, null, null);
         Type localVarReturnType = new TypeToken<SaaSposeResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -328,11 +339,12 @@ public class CellsPageBreaksApi {
      * @param sheetName  (required)
      * @param row  (optional)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call cellsPageBreaksDeleteHorizontalPageBreaksAsync(String name, String sheetName, Integer row, String folder, final ApiCallback<SaaSposeResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call cellsPageBreaksDeleteHorizontalPageBreaksAsync(String name, String sheetName, Integer row, String folder, String storage, final ApiCallback<SaaSposeResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -353,7 +365,7 @@ public class CellsPageBreaksApi {
             };
         }
 
-        com.squareup.okhttp.Call call = cellsPageBreaksDeleteHorizontalPageBreaksValidateBeforeCall(name, sheetName, row, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsPageBreaksDeleteHorizontalPageBreaksValidateBeforeCall(name, sheetName, row, folder, storage, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<SaaSposeResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -364,12 +376,13 @@ public class CellsPageBreaksApi {
      * @param sheetName  (required)
      * @param index  (required)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call cellsPageBreaksDeleteVerticalPageBreakCall(String name, String sheetName, Integer index, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call cellsPageBreaksDeleteVerticalPageBreakCall(String name, String sheetName, Integer index, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -381,6 +394,8 @@ public class CellsPageBreaksApi {
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         if (folder != null)
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "folder", folder));
+        if (storage != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "storage", storage));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -415,7 +430,7 @@ public class CellsPageBreaksApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call cellsPageBreaksDeleteVerticalPageBreakValidateBeforeCall(String name, String sheetName, Integer index, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call cellsPageBreaksDeleteVerticalPageBreakValidateBeforeCall(String name, String sheetName, Integer index, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'name' is set
         if (name == null) {
@@ -433,7 +448,7 @@ public class CellsPageBreaksApi {
         }
         
         
-        com.squareup.okhttp.Call call = cellsPageBreaksDeleteVerticalPageBreakCall(name, sheetName, index, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsPageBreaksDeleteVerticalPageBreakCall(name, sheetName, index, folder, storage, progressListener, progressRequestListener);
         return call;
 
         
@@ -449,11 +464,12 @@ public class CellsPageBreaksApi {
      * @param sheetName  (required)
      * @param index  (required)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @return SaaSposeResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public SaaSposeResponse cellsPageBreaksDeleteVerticalPageBreak(String name, String sheetName, Integer index, String folder) throws ApiException {
-        ApiResponse<SaaSposeResponse> resp = cellsPageBreaksDeleteVerticalPageBreakWithHttpInfo(name, sheetName, index, folder);
+    public SaaSposeResponse cellsPageBreaksDeleteVerticalPageBreak(String name, String sheetName, Integer index, String folder, String storage) throws ApiException {
+        ApiResponse<SaaSposeResponse> resp = cellsPageBreaksDeleteVerticalPageBreakWithHttpInfo(name, sheetName, index, folder, storage);
         return resp.getData();
     }
 
@@ -464,11 +480,12 @@ public class CellsPageBreaksApi {
      * @param sheetName  (required)
      * @param index  (required)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @return ApiResponse&lt;SaaSposeResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<SaaSposeResponse> cellsPageBreaksDeleteVerticalPageBreakWithHttpInfo(String name, String sheetName, Integer index, String folder) throws ApiException {
-        com.squareup.okhttp.Call call = cellsPageBreaksDeleteVerticalPageBreakValidateBeforeCall(name, sheetName, index, folder, null, null);
+    public ApiResponse<SaaSposeResponse> cellsPageBreaksDeleteVerticalPageBreakWithHttpInfo(String name, String sheetName, Integer index, String folder, String storage) throws ApiException {
+        com.squareup.okhttp.Call call = cellsPageBreaksDeleteVerticalPageBreakValidateBeforeCall(name, sheetName, index, folder, storage, null, null);
         Type localVarReturnType = new TypeToken<SaaSposeResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -480,11 +497,12 @@ public class CellsPageBreaksApi {
      * @param sheetName  (required)
      * @param index  (required)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call cellsPageBreaksDeleteVerticalPageBreakAsync(String name, String sheetName, Integer index, String folder, final ApiCallback<SaaSposeResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call cellsPageBreaksDeleteVerticalPageBreakAsync(String name, String sheetName, Integer index, String folder, String storage, final ApiCallback<SaaSposeResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -505,7 +523,7 @@ public class CellsPageBreaksApi {
             };
         }
 
-        com.squareup.okhttp.Call call = cellsPageBreaksDeleteVerticalPageBreakValidateBeforeCall(name, sheetName, index, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsPageBreaksDeleteVerticalPageBreakValidateBeforeCall(name, sheetName, index, folder, storage, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<SaaSposeResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -516,12 +534,13 @@ public class CellsPageBreaksApi {
      * @param sheetName  (required)
      * @param column  (optional)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call cellsPageBreaksDeleteVerticalPageBreaksCall(String name, String sheetName, Integer column, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call cellsPageBreaksDeleteVerticalPageBreaksCall(String name, String sheetName, Integer column, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -534,6 +553,8 @@ public class CellsPageBreaksApi {
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "column", column));
         if (folder != null)
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "folder", folder));
+        if (storage != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "storage", storage));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -568,7 +589,7 @@ public class CellsPageBreaksApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call cellsPageBreaksDeleteVerticalPageBreaksValidateBeforeCall(String name, String sheetName, Integer column, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call cellsPageBreaksDeleteVerticalPageBreaksValidateBeforeCall(String name, String sheetName, Integer column, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'name' is set
         if (name == null) {
@@ -581,7 +602,7 @@ public class CellsPageBreaksApi {
         }
         
         
-        com.squareup.okhttp.Call call = cellsPageBreaksDeleteVerticalPageBreaksCall(name, sheetName, column, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsPageBreaksDeleteVerticalPageBreaksCall(name, sheetName, column, folder, storage, progressListener, progressRequestListener);
         return call;
 
         
@@ -597,11 +618,12 @@ public class CellsPageBreaksApi {
      * @param sheetName  (required)
      * @param column  (optional)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @return SaaSposeResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public SaaSposeResponse cellsPageBreaksDeleteVerticalPageBreaks(String name, String sheetName, Integer column, String folder) throws ApiException {
-        ApiResponse<SaaSposeResponse> resp = cellsPageBreaksDeleteVerticalPageBreaksWithHttpInfo(name, sheetName, column, folder);
+    public SaaSposeResponse cellsPageBreaksDeleteVerticalPageBreaks(String name, String sheetName, Integer column, String folder, String storage) throws ApiException {
+        ApiResponse<SaaSposeResponse> resp = cellsPageBreaksDeleteVerticalPageBreaksWithHttpInfo(name, sheetName, column, folder, storage);
         return resp.getData();
     }
 
@@ -612,11 +634,12 @@ public class CellsPageBreaksApi {
      * @param sheetName  (required)
      * @param column  (optional)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @return ApiResponse&lt;SaaSposeResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<SaaSposeResponse> cellsPageBreaksDeleteVerticalPageBreaksWithHttpInfo(String name, String sheetName, Integer column, String folder) throws ApiException {
-        com.squareup.okhttp.Call call = cellsPageBreaksDeleteVerticalPageBreaksValidateBeforeCall(name, sheetName, column, folder, null, null);
+    public ApiResponse<SaaSposeResponse> cellsPageBreaksDeleteVerticalPageBreaksWithHttpInfo(String name, String sheetName, Integer column, String folder, String storage) throws ApiException {
+        com.squareup.okhttp.Call call = cellsPageBreaksDeleteVerticalPageBreaksValidateBeforeCall(name, sheetName, column, folder, storage, null, null);
         Type localVarReturnType = new TypeToken<SaaSposeResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -628,11 +651,12 @@ public class CellsPageBreaksApi {
      * @param sheetName  (required)
      * @param column  (optional)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call cellsPageBreaksDeleteVerticalPageBreaksAsync(String name, String sheetName, Integer column, String folder, final ApiCallback<SaaSposeResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call cellsPageBreaksDeleteVerticalPageBreaksAsync(String name, String sheetName, Integer column, String folder, String storage, final ApiCallback<SaaSposeResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -653,7 +677,7 @@ public class CellsPageBreaksApi {
             };
         }
 
-        com.squareup.okhttp.Call call = cellsPageBreaksDeleteVerticalPageBreaksValidateBeforeCall(name, sheetName, column, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsPageBreaksDeleteVerticalPageBreaksValidateBeforeCall(name, sheetName, column, folder, storage, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<SaaSposeResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -664,12 +688,13 @@ public class CellsPageBreaksApi {
      * @param sheetName  (required)
      * @param index  (required)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call cellsPageBreaksGetHorizontalPageBreakCall(String name, String sheetName, Integer index, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call cellsPageBreaksGetHorizontalPageBreakCall(String name, String sheetName, Integer index, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -681,6 +706,8 @@ public class CellsPageBreaksApi {
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         if (folder != null)
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "folder", folder));
+        if (storage != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "storage", storage));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -715,7 +742,7 @@ public class CellsPageBreaksApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call cellsPageBreaksGetHorizontalPageBreakValidateBeforeCall(String name, String sheetName, Integer index, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call cellsPageBreaksGetHorizontalPageBreakValidateBeforeCall(String name, String sheetName, Integer index, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'name' is set
         if (name == null) {
@@ -733,7 +760,7 @@ public class CellsPageBreaksApi {
         }
         
         
-        com.squareup.okhttp.Call call = cellsPageBreaksGetHorizontalPageBreakCall(name, sheetName, index, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsPageBreaksGetHorizontalPageBreakCall(name, sheetName, index, folder, storage, progressListener, progressRequestListener);
         return call;
 
         
@@ -749,11 +776,12 @@ public class CellsPageBreaksApi {
      * @param sheetName  (required)
      * @param index  (required)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @return HorizontalPageBreakResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public HorizontalPageBreakResponse cellsPageBreaksGetHorizontalPageBreak(String name, String sheetName, Integer index, String folder) throws ApiException {
-        ApiResponse<HorizontalPageBreakResponse> resp = cellsPageBreaksGetHorizontalPageBreakWithHttpInfo(name, sheetName, index, folder);
+    public HorizontalPageBreakResponse cellsPageBreaksGetHorizontalPageBreak(String name, String sheetName, Integer index, String folder, String storage) throws ApiException {
+        ApiResponse<HorizontalPageBreakResponse> resp = cellsPageBreaksGetHorizontalPageBreakWithHttpInfo(name, sheetName, index, folder, storage);
         return resp.getData();
     }
 
@@ -764,11 +792,12 @@ public class CellsPageBreaksApi {
      * @param sheetName  (required)
      * @param index  (required)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @return ApiResponse&lt;HorizontalPageBreakResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<HorizontalPageBreakResponse> cellsPageBreaksGetHorizontalPageBreakWithHttpInfo(String name, String sheetName, Integer index, String folder) throws ApiException {
-        com.squareup.okhttp.Call call = cellsPageBreaksGetHorizontalPageBreakValidateBeforeCall(name, sheetName, index, folder, null, null);
+    public ApiResponse<HorizontalPageBreakResponse> cellsPageBreaksGetHorizontalPageBreakWithHttpInfo(String name, String sheetName, Integer index, String folder, String storage) throws ApiException {
+        com.squareup.okhttp.Call call = cellsPageBreaksGetHorizontalPageBreakValidateBeforeCall(name, sheetName, index, folder, storage, null, null);
         Type localVarReturnType = new TypeToken<HorizontalPageBreakResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -780,11 +809,12 @@ public class CellsPageBreaksApi {
      * @param sheetName  (required)
      * @param index  (required)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call cellsPageBreaksGetHorizontalPageBreakAsync(String name, String sheetName, Integer index, String folder, final ApiCallback<HorizontalPageBreakResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call cellsPageBreaksGetHorizontalPageBreakAsync(String name, String sheetName, Integer index, String folder, String storage, final ApiCallback<HorizontalPageBreakResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -805,7 +835,7 @@ public class CellsPageBreaksApi {
             };
         }
 
-        com.squareup.okhttp.Call call = cellsPageBreaksGetHorizontalPageBreakValidateBeforeCall(name, sheetName, index, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsPageBreaksGetHorizontalPageBreakValidateBeforeCall(name, sheetName, index, folder, storage, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<HorizontalPageBreakResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -815,12 +845,13 @@ public class CellsPageBreaksApi {
      * @param name  (required)
      * @param sheetName  (required)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call cellsPageBreaksGetHorizontalPageBreaksCall(String name, String sheetName, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call cellsPageBreaksGetHorizontalPageBreaksCall(String name, String sheetName, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -831,6 +862,8 @@ public class CellsPageBreaksApi {
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         if (folder != null)
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "folder", folder));
+        if (storage != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "storage", storage));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -865,7 +898,7 @@ public class CellsPageBreaksApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call cellsPageBreaksGetHorizontalPageBreaksValidateBeforeCall(String name, String sheetName, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call cellsPageBreaksGetHorizontalPageBreaksValidateBeforeCall(String name, String sheetName, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'name' is set
         if (name == null) {
@@ -878,7 +911,7 @@ public class CellsPageBreaksApi {
         }
         
         
-        com.squareup.okhttp.Call call = cellsPageBreaksGetHorizontalPageBreaksCall(name, sheetName, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsPageBreaksGetHorizontalPageBreaksCall(name, sheetName, folder, storage, progressListener, progressRequestListener);
         return call;
 
         
@@ -893,11 +926,12 @@ public class CellsPageBreaksApi {
      * @param name  (required)
      * @param sheetName  (required)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @return HorizontalPageBreaksResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public HorizontalPageBreaksResponse cellsPageBreaksGetHorizontalPageBreaks(String name, String sheetName, String folder) throws ApiException {
-        ApiResponse<HorizontalPageBreaksResponse> resp = cellsPageBreaksGetHorizontalPageBreaksWithHttpInfo(name, sheetName, folder);
+    public HorizontalPageBreaksResponse cellsPageBreaksGetHorizontalPageBreaks(String name, String sheetName, String folder, String storage) throws ApiException {
+        ApiResponse<HorizontalPageBreaksResponse> resp = cellsPageBreaksGetHorizontalPageBreaksWithHttpInfo(name, sheetName, folder, storage);
         return resp.getData();
     }
 
@@ -907,11 +941,12 @@ public class CellsPageBreaksApi {
      * @param name  (required)
      * @param sheetName  (required)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @return ApiResponse&lt;HorizontalPageBreaksResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<HorizontalPageBreaksResponse> cellsPageBreaksGetHorizontalPageBreaksWithHttpInfo(String name, String sheetName, String folder) throws ApiException {
-        com.squareup.okhttp.Call call = cellsPageBreaksGetHorizontalPageBreaksValidateBeforeCall(name, sheetName, folder, null, null);
+    public ApiResponse<HorizontalPageBreaksResponse> cellsPageBreaksGetHorizontalPageBreaksWithHttpInfo(String name, String sheetName, String folder, String storage) throws ApiException {
+        com.squareup.okhttp.Call call = cellsPageBreaksGetHorizontalPageBreaksValidateBeforeCall(name, sheetName, folder, storage, null, null);
         Type localVarReturnType = new TypeToken<HorizontalPageBreaksResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -922,11 +957,12 @@ public class CellsPageBreaksApi {
      * @param name  (required)
      * @param sheetName  (required)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call cellsPageBreaksGetHorizontalPageBreaksAsync(String name, String sheetName, String folder, final ApiCallback<HorizontalPageBreaksResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call cellsPageBreaksGetHorizontalPageBreaksAsync(String name, String sheetName, String folder, String storage, final ApiCallback<HorizontalPageBreaksResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -947,7 +983,7 @@ public class CellsPageBreaksApi {
             };
         }
 
-        com.squareup.okhttp.Call call = cellsPageBreaksGetHorizontalPageBreaksValidateBeforeCall(name, sheetName, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsPageBreaksGetHorizontalPageBreaksValidateBeforeCall(name, sheetName, folder, storage, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<HorizontalPageBreaksResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -958,12 +994,13 @@ public class CellsPageBreaksApi {
      * @param sheetName  (required)
      * @param index  (required)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call cellsPageBreaksGetVerticalPageBreakCall(String name, String sheetName, Integer index, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call cellsPageBreaksGetVerticalPageBreakCall(String name, String sheetName, Integer index, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -975,6 +1012,8 @@ public class CellsPageBreaksApi {
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         if (folder != null)
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "folder", folder));
+        if (storage != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "storage", storage));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -1009,7 +1048,7 @@ public class CellsPageBreaksApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call cellsPageBreaksGetVerticalPageBreakValidateBeforeCall(String name, String sheetName, Integer index, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call cellsPageBreaksGetVerticalPageBreakValidateBeforeCall(String name, String sheetName, Integer index, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'name' is set
         if (name == null) {
@@ -1027,7 +1066,7 @@ public class CellsPageBreaksApi {
         }
         
         
-        com.squareup.okhttp.Call call = cellsPageBreaksGetVerticalPageBreakCall(name, sheetName, index, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsPageBreaksGetVerticalPageBreakCall(name, sheetName, index, folder, storage, progressListener, progressRequestListener);
         return call;
 
         
@@ -1043,11 +1082,12 @@ public class CellsPageBreaksApi {
      * @param sheetName  (required)
      * @param index  (required)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @return VerticalPageBreakResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public VerticalPageBreakResponse cellsPageBreaksGetVerticalPageBreak(String name, String sheetName, Integer index, String folder) throws ApiException {
-        ApiResponse<VerticalPageBreakResponse> resp = cellsPageBreaksGetVerticalPageBreakWithHttpInfo(name, sheetName, index, folder);
+    public VerticalPageBreakResponse cellsPageBreaksGetVerticalPageBreak(String name, String sheetName, Integer index, String folder, String storage) throws ApiException {
+        ApiResponse<VerticalPageBreakResponse> resp = cellsPageBreaksGetVerticalPageBreakWithHttpInfo(name, sheetName, index, folder, storage);
         return resp.getData();
     }
 
@@ -1058,11 +1098,12 @@ public class CellsPageBreaksApi {
      * @param sheetName  (required)
      * @param index  (required)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @return ApiResponse&lt;VerticalPageBreakResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<VerticalPageBreakResponse> cellsPageBreaksGetVerticalPageBreakWithHttpInfo(String name, String sheetName, Integer index, String folder) throws ApiException {
-        com.squareup.okhttp.Call call = cellsPageBreaksGetVerticalPageBreakValidateBeforeCall(name, sheetName, index, folder, null, null);
+    public ApiResponse<VerticalPageBreakResponse> cellsPageBreaksGetVerticalPageBreakWithHttpInfo(String name, String sheetName, Integer index, String folder, String storage) throws ApiException {
+        com.squareup.okhttp.Call call = cellsPageBreaksGetVerticalPageBreakValidateBeforeCall(name, sheetName, index, folder, storage, null, null);
         Type localVarReturnType = new TypeToken<VerticalPageBreakResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -1074,11 +1115,12 @@ public class CellsPageBreaksApi {
      * @param sheetName  (required)
      * @param index  (required)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call cellsPageBreaksGetVerticalPageBreakAsync(String name, String sheetName, Integer index, String folder, final ApiCallback<VerticalPageBreakResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call cellsPageBreaksGetVerticalPageBreakAsync(String name, String sheetName, Integer index, String folder, String storage, final ApiCallback<VerticalPageBreakResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1099,7 +1141,7 @@ public class CellsPageBreaksApi {
             };
         }
 
-        com.squareup.okhttp.Call call = cellsPageBreaksGetVerticalPageBreakValidateBeforeCall(name, sheetName, index, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsPageBreaksGetVerticalPageBreakValidateBeforeCall(name, sheetName, index, folder, storage, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<VerticalPageBreakResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -1109,12 +1151,13 @@ public class CellsPageBreaksApi {
      * @param name  (required)
      * @param sheetName  (required)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call cellsPageBreaksGetVerticalPageBreaksCall(String name, String sheetName, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call cellsPageBreaksGetVerticalPageBreaksCall(String name, String sheetName, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -1125,6 +1168,8 @@ public class CellsPageBreaksApi {
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         if (folder != null)
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "folder", folder));
+        if (storage != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "storage", storage));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -1159,7 +1204,7 @@ public class CellsPageBreaksApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call cellsPageBreaksGetVerticalPageBreaksValidateBeforeCall(String name, String sheetName, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call cellsPageBreaksGetVerticalPageBreaksValidateBeforeCall(String name, String sheetName, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'name' is set
         if (name == null) {
@@ -1172,7 +1217,7 @@ public class CellsPageBreaksApi {
         }
         
         
-        com.squareup.okhttp.Call call = cellsPageBreaksGetVerticalPageBreaksCall(name, sheetName, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsPageBreaksGetVerticalPageBreaksCall(name, sheetName, folder, storage, progressListener, progressRequestListener);
         return call;
 
         
@@ -1187,11 +1232,12 @@ public class CellsPageBreaksApi {
      * @param name  (required)
      * @param sheetName  (required)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @return VerticalPageBreaksResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public VerticalPageBreaksResponse cellsPageBreaksGetVerticalPageBreaks(String name, String sheetName, String folder) throws ApiException {
-        ApiResponse<VerticalPageBreaksResponse> resp = cellsPageBreaksGetVerticalPageBreaksWithHttpInfo(name, sheetName, folder);
+    public VerticalPageBreaksResponse cellsPageBreaksGetVerticalPageBreaks(String name, String sheetName, String folder, String storage) throws ApiException {
+        ApiResponse<VerticalPageBreaksResponse> resp = cellsPageBreaksGetVerticalPageBreaksWithHttpInfo(name, sheetName, folder, storage);
         return resp.getData();
     }
 
@@ -1201,11 +1247,12 @@ public class CellsPageBreaksApi {
      * @param name  (required)
      * @param sheetName  (required)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @return ApiResponse&lt;VerticalPageBreaksResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<VerticalPageBreaksResponse> cellsPageBreaksGetVerticalPageBreaksWithHttpInfo(String name, String sheetName, String folder) throws ApiException {
-        com.squareup.okhttp.Call call = cellsPageBreaksGetVerticalPageBreaksValidateBeforeCall(name, sheetName, folder, null, null);
+    public ApiResponse<VerticalPageBreaksResponse> cellsPageBreaksGetVerticalPageBreaksWithHttpInfo(String name, String sheetName, String folder, String storage) throws ApiException {
+        com.squareup.okhttp.Call call = cellsPageBreaksGetVerticalPageBreaksValidateBeforeCall(name, sheetName, folder, storage, null, null);
         Type localVarReturnType = new TypeToken<VerticalPageBreaksResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -1216,11 +1263,12 @@ public class CellsPageBreaksApi {
      * @param name  (required)
      * @param sheetName  (required)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call cellsPageBreaksGetVerticalPageBreaksAsync(String name, String sheetName, String folder, final ApiCallback<VerticalPageBreaksResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call cellsPageBreaksGetVerticalPageBreaksAsync(String name, String sheetName, String folder, String storage, final ApiCallback<VerticalPageBreaksResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1241,7 +1289,7 @@ public class CellsPageBreaksApi {
             };
         }
 
-        com.squareup.okhttp.Call call = cellsPageBreaksGetVerticalPageBreaksValidateBeforeCall(name, sheetName, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsPageBreaksGetVerticalPageBreaksValidateBeforeCall(name, sheetName, folder, storage, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<VerticalPageBreaksResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -1256,12 +1304,13 @@ public class CellsPageBreaksApi {
      * @param startColumn  (optional)
      * @param endColumn  (optional)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call cellsPageBreaksPutHorizontalPageBreakCall(String name, String sheetName, String cellname, Integer row, Integer column, Integer startColumn, Integer endColumn, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call cellsPageBreaksPutHorizontalPageBreakCall(String name, String sheetName, String cellname, Integer row, Integer column, Integer startColumn, Integer endColumn, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -1282,6 +1331,8 @@ public class CellsPageBreaksApi {
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "endColumn", endColumn));
         if (folder != null)
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "folder", folder));
+        if (storage != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "storage", storage));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -1316,7 +1367,7 @@ public class CellsPageBreaksApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call cellsPageBreaksPutHorizontalPageBreakValidateBeforeCall(String name, String sheetName, String cellname, Integer row, Integer column, Integer startColumn, Integer endColumn, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call cellsPageBreaksPutHorizontalPageBreakValidateBeforeCall(String name, String sheetName, String cellname, Integer row, Integer column, Integer startColumn, Integer endColumn, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'name' is set
         if (name == null) {
@@ -1329,7 +1380,7 @@ public class CellsPageBreaksApi {
         }
         
         
-        com.squareup.okhttp.Call call = cellsPageBreaksPutHorizontalPageBreakCall(name, sheetName, cellname, row, column, startColumn, endColumn, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsPageBreaksPutHorizontalPageBreakCall(name, sheetName, cellname, row, column, startColumn, endColumn, folder, storage, progressListener, progressRequestListener);
         return call;
 
         
@@ -1349,11 +1400,12 @@ public class CellsPageBreaksApi {
      * @param startColumn  (optional)
      * @param endColumn  (optional)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @return SaaSposeResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public SaaSposeResponse cellsPageBreaksPutHorizontalPageBreak(String name, String sheetName, String cellname, Integer row, Integer column, Integer startColumn, Integer endColumn, String folder) throws ApiException {
-        ApiResponse<SaaSposeResponse> resp = cellsPageBreaksPutHorizontalPageBreakWithHttpInfo(name, sheetName, cellname, row, column, startColumn, endColumn, folder);
+    public SaaSposeResponse cellsPageBreaksPutHorizontalPageBreak(String name, String sheetName, String cellname, Integer row, Integer column, Integer startColumn, Integer endColumn, String folder, String storage) throws ApiException {
+        ApiResponse<SaaSposeResponse> resp = cellsPageBreaksPutHorizontalPageBreakWithHttpInfo(name, sheetName, cellname, row, column, startColumn, endColumn, folder, storage);
         return resp.getData();
     }
 
@@ -1368,11 +1420,12 @@ public class CellsPageBreaksApi {
      * @param startColumn  (optional)
      * @param endColumn  (optional)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @return ApiResponse&lt;SaaSposeResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<SaaSposeResponse> cellsPageBreaksPutHorizontalPageBreakWithHttpInfo(String name, String sheetName, String cellname, Integer row, Integer column, Integer startColumn, Integer endColumn, String folder) throws ApiException {
-        com.squareup.okhttp.Call call = cellsPageBreaksPutHorizontalPageBreakValidateBeforeCall(name, sheetName, cellname, row, column, startColumn, endColumn, folder, null, null);
+    public ApiResponse<SaaSposeResponse> cellsPageBreaksPutHorizontalPageBreakWithHttpInfo(String name, String sheetName, String cellname, Integer row, Integer column, Integer startColumn, Integer endColumn, String folder, String storage) throws ApiException {
+        com.squareup.okhttp.Call call = cellsPageBreaksPutHorizontalPageBreakValidateBeforeCall(name, sheetName, cellname, row, column, startColumn, endColumn, folder, storage, null, null);
         Type localVarReturnType = new TypeToken<SaaSposeResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -1388,11 +1441,12 @@ public class CellsPageBreaksApi {
      * @param startColumn  (optional)
      * @param endColumn  (optional)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call cellsPageBreaksPutHorizontalPageBreakAsync(String name, String sheetName, String cellname, Integer row, Integer column, Integer startColumn, Integer endColumn, String folder, final ApiCallback<SaaSposeResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call cellsPageBreaksPutHorizontalPageBreakAsync(String name, String sheetName, String cellname, Integer row, Integer column, Integer startColumn, Integer endColumn, String folder, String storage, final ApiCallback<SaaSposeResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1413,7 +1467,7 @@ public class CellsPageBreaksApi {
             };
         }
 
-        com.squareup.okhttp.Call call = cellsPageBreaksPutHorizontalPageBreakValidateBeforeCall(name, sheetName, cellname, row, column, startColumn, endColumn, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsPageBreaksPutHorizontalPageBreakValidateBeforeCall(name, sheetName, cellname, row, column, startColumn, endColumn, folder, storage, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<SaaSposeResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -1428,12 +1482,13 @@ public class CellsPageBreaksApi {
      * @param startRow  (optional)
      * @param endRow  (optional)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call cellsPageBreaksPutVerticalPageBreakCall(String name, String sheetName, String cellname, Integer column, Integer row, Integer startRow, Integer endRow, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call cellsPageBreaksPutVerticalPageBreakCall(String name, String sheetName, String cellname, Integer column, Integer row, Integer startRow, Integer endRow, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -1454,6 +1509,8 @@ public class CellsPageBreaksApi {
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "endRow", endRow));
         if (folder != null)
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "folder", folder));
+        if (storage != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "storage", storage));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -1488,7 +1545,7 @@ public class CellsPageBreaksApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call cellsPageBreaksPutVerticalPageBreakValidateBeforeCall(String name, String sheetName, String cellname, Integer column, Integer row, Integer startRow, Integer endRow, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call cellsPageBreaksPutVerticalPageBreakValidateBeforeCall(String name, String sheetName, String cellname, Integer column, Integer row, Integer startRow, Integer endRow, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'name' is set
         if (name == null) {
@@ -1501,7 +1558,7 @@ public class CellsPageBreaksApi {
         }
         
         
-        com.squareup.okhttp.Call call = cellsPageBreaksPutVerticalPageBreakCall(name, sheetName, cellname, column, row, startRow, endRow, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsPageBreaksPutVerticalPageBreakCall(name, sheetName, cellname, column, row, startRow, endRow, folder, storage, progressListener, progressRequestListener);
         return call;
 
         
@@ -1521,11 +1578,12 @@ public class CellsPageBreaksApi {
      * @param startRow  (optional)
      * @param endRow  (optional)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @return SaaSposeResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public SaaSposeResponse cellsPageBreaksPutVerticalPageBreak(String name, String sheetName, String cellname, Integer column, Integer row, Integer startRow, Integer endRow, String folder) throws ApiException {
-        ApiResponse<SaaSposeResponse> resp = cellsPageBreaksPutVerticalPageBreakWithHttpInfo(name, sheetName, cellname, column, row, startRow, endRow, folder);
+    public SaaSposeResponse cellsPageBreaksPutVerticalPageBreak(String name, String sheetName, String cellname, Integer column, Integer row, Integer startRow, Integer endRow, String folder, String storage) throws ApiException {
+        ApiResponse<SaaSposeResponse> resp = cellsPageBreaksPutVerticalPageBreakWithHttpInfo(name, sheetName, cellname, column, row, startRow, endRow, folder, storage);
         return resp.getData();
     }
 
@@ -1540,11 +1598,12 @@ public class CellsPageBreaksApi {
      * @param startRow  (optional)
      * @param endRow  (optional)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @return ApiResponse&lt;SaaSposeResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<SaaSposeResponse> cellsPageBreaksPutVerticalPageBreakWithHttpInfo(String name, String sheetName, String cellname, Integer column, Integer row, Integer startRow, Integer endRow, String folder) throws ApiException {
-        com.squareup.okhttp.Call call = cellsPageBreaksPutVerticalPageBreakValidateBeforeCall(name, sheetName, cellname, column, row, startRow, endRow, folder, null, null);
+    public ApiResponse<SaaSposeResponse> cellsPageBreaksPutVerticalPageBreakWithHttpInfo(String name, String sheetName, String cellname, Integer column, Integer row, Integer startRow, Integer endRow, String folder, String storage) throws ApiException {
+        com.squareup.okhttp.Call call = cellsPageBreaksPutVerticalPageBreakValidateBeforeCall(name, sheetName, cellname, column, row, startRow, endRow, folder, storage, null, null);
         Type localVarReturnType = new TypeToken<SaaSposeResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -1560,11 +1619,12 @@ public class CellsPageBreaksApi {
      * @param startRow  (optional)
      * @param endRow  (optional)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call cellsPageBreaksPutVerticalPageBreakAsync(String name, String sheetName, String cellname, Integer column, Integer row, Integer startRow, Integer endRow, String folder, final ApiCallback<SaaSposeResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call cellsPageBreaksPutVerticalPageBreakAsync(String name, String sheetName, String cellname, Integer column, Integer row, Integer startRow, Integer endRow, String folder, String storage, final ApiCallback<SaaSposeResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1585,7 +1645,7 @@ public class CellsPageBreaksApi {
             };
         }
 
-        com.squareup.okhttp.Call call = cellsPageBreaksPutVerticalPageBreakValidateBeforeCall(name, sheetName, cellname, column, row, startRow, endRow, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsPageBreaksPutVerticalPageBreakValidateBeforeCall(name, sheetName, cellname, column, row, startRow, endRow, folder, storage, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<SaaSposeResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

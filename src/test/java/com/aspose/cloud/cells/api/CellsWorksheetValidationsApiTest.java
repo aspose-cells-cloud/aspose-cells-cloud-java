@@ -69,7 +69,7 @@ public class CellsWorksheetValidationsApiTest {
         Integer validationIndex = 0;
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        ValidationResponse response = api.cellsWorksheetValidationsDeleteWorksheetValidation(name, sheetName, validationIndex, folder);
+        ValidationResponse response = api.cellsWorksheetValidationsDeleteWorksheetValidation(name, sheetName, validationIndex, folder,null);
 
         // TODO: test validations
     }
@@ -89,7 +89,7 @@ public class CellsWorksheetValidationsApiTest {
         Integer validationIndex = 0;
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        ValidationResponse response = api.cellsWorksheetValidationsGetWorksheetValidation(name, sheetName, validationIndex, folder);
+        ValidationResponse response = api.cellsWorksheetValidationsGetWorksheetValidation(name, sheetName, validationIndex, folder,null);
 
         // TODO: test validations
     }
@@ -108,7 +108,7 @@ public class CellsWorksheetValidationsApiTest {
         String sheetName = SHEET1;
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        ValidationsResponse response = api.cellsWorksheetValidationsGetWorksheetValidations(name, sheetName, folder);
+        ValidationsResponse response = api.cellsWorksheetValidationsGetWorksheetValidations(name, sheetName, folder,null);
 
         // TODO: test validations
     }
@@ -140,7 +140,7 @@ public class CellsWorksheetValidationsApiTest {
         validation.setIgnoreBlank(true);
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        ValidationResponse response = api.cellsWorksheetValidationsPostWorksheetValidation(name, sheetName, validationIndex, validation, folder);
+        ValidationResponse response = api.cellsWorksheetValidationsPostWorksheetValidation(name, sheetName, validationIndex, validation, folder,null);
     }
     
     /**
@@ -158,7 +158,7 @@ public class CellsWorksheetValidationsApiTest {
         String range = RANGE;
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        ValidationResponse response = api.cellsWorksheetValidationsPutWorksheetValidation(name, sheetName, range, folder);
+        ValidationResponse response = api.cellsWorksheetValidationsPutWorksheetValidation(name, sheetName, range, folder,null);
 
         // TODO: test validations
     }

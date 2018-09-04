@@ -95,7 +95,7 @@ public class CellsTaskApiTest {
           taskData.setTasks(tasks);
           taskData.getTasks().add(task1);
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        File response = api.cellsTaskPostRunTask(taskData);
+        Object response = api.cellsTaskPostRunTask(taskData);
 
         // TODO: test validations
     }

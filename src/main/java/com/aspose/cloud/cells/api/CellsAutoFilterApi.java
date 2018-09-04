@@ -69,12 +69,13 @@ public class CellsAutoFilterApi {
      * @param minute  (optional, default to 0)
      * @param second  (optional, default to 0)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call cellsAutoFilterDeleteWorksheetDateFilterCall(String name, String sheetName, Integer fieldIndex, String dateTimeGroupingType, Integer year, Integer month, Integer day, Integer hour, Integer minute, Integer second, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call cellsAutoFilterDeleteWorksheetDateFilterCall(String name, String sheetName, Integer fieldIndex, String dateTimeGroupingType, Integer year, Integer month, Integer day, Integer hour, Integer minute, Integer second, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -101,6 +102,8 @@ public class CellsAutoFilterApi {
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "second", second));
         if (folder != null)
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "folder", folder));
+        if (storage != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "storage", storage));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -135,7 +138,7 @@ public class CellsAutoFilterApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call cellsAutoFilterDeleteWorksheetDateFilterValidateBeforeCall(String name, String sheetName, Integer fieldIndex, String dateTimeGroupingType, Integer year, Integer month, Integer day, Integer hour, Integer minute, Integer second, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call cellsAutoFilterDeleteWorksheetDateFilterValidateBeforeCall(String name, String sheetName, Integer fieldIndex, String dateTimeGroupingType, Integer year, Integer month, Integer day, Integer hour, Integer minute, Integer second, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'name' is set
         if (name == null) {
@@ -158,7 +161,7 @@ public class CellsAutoFilterApi {
         }
         
         
-        com.squareup.okhttp.Call call = cellsAutoFilterDeleteWorksheetDateFilterCall(name, sheetName, fieldIndex, dateTimeGroupingType, year, month, day, hour, minute, second, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsAutoFilterDeleteWorksheetDateFilterCall(name, sheetName, fieldIndex, dateTimeGroupingType, year, month, day, hour, minute, second, folder, storage, progressListener, progressRequestListener);
         return call;
 
         
@@ -181,11 +184,12 @@ public class CellsAutoFilterApi {
      * @param minute  (optional, default to 0)
      * @param second  (optional, default to 0)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @return SaaSposeResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public SaaSposeResponse cellsAutoFilterDeleteWorksheetDateFilter(String name, String sheetName, Integer fieldIndex, String dateTimeGroupingType, Integer year, Integer month, Integer day, Integer hour, Integer minute, Integer second, String folder) throws ApiException {
-        ApiResponse<SaaSposeResponse> resp = cellsAutoFilterDeleteWorksheetDateFilterWithHttpInfo(name, sheetName, fieldIndex, dateTimeGroupingType, year, month, day, hour, minute, second, folder);
+    public SaaSposeResponse cellsAutoFilterDeleteWorksheetDateFilter(String name, String sheetName, Integer fieldIndex, String dateTimeGroupingType, Integer year, Integer month, Integer day, Integer hour, Integer minute, Integer second, String folder, String storage) throws ApiException {
+        ApiResponse<SaaSposeResponse> resp = cellsAutoFilterDeleteWorksheetDateFilterWithHttpInfo(name, sheetName, fieldIndex, dateTimeGroupingType, year, month, day, hour, minute, second, folder, storage);
         return resp.getData();
     }
 
@@ -203,11 +207,12 @@ public class CellsAutoFilterApi {
      * @param minute  (optional, default to 0)
      * @param second  (optional, default to 0)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @return ApiResponse&lt;SaaSposeResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<SaaSposeResponse> cellsAutoFilterDeleteWorksheetDateFilterWithHttpInfo(String name, String sheetName, Integer fieldIndex, String dateTimeGroupingType, Integer year, Integer month, Integer day, Integer hour, Integer minute, Integer second, String folder) throws ApiException {
-        com.squareup.okhttp.Call call = cellsAutoFilterDeleteWorksheetDateFilterValidateBeforeCall(name, sheetName, fieldIndex, dateTimeGroupingType, year, month, day, hour, minute, second, folder, null, null);
+    public ApiResponse<SaaSposeResponse> cellsAutoFilterDeleteWorksheetDateFilterWithHttpInfo(String name, String sheetName, Integer fieldIndex, String dateTimeGroupingType, Integer year, Integer month, Integer day, Integer hour, Integer minute, Integer second, String folder, String storage) throws ApiException {
+        com.squareup.okhttp.Call call = cellsAutoFilterDeleteWorksheetDateFilterValidateBeforeCall(name, sheetName, fieldIndex, dateTimeGroupingType, year, month, day, hour, minute, second, folder, storage, null, null);
         Type localVarReturnType = new TypeToken<SaaSposeResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -226,11 +231,12 @@ public class CellsAutoFilterApi {
      * @param minute  (optional, default to 0)
      * @param second  (optional, default to 0)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call cellsAutoFilterDeleteWorksheetDateFilterAsync(String name, String sheetName, Integer fieldIndex, String dateTimeGroupingType, Integer year, Integer month, Integer day, Integer hour, Integer minute, Integer second, String folder, final ApiCallback<SaaSposeResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call cellsAutoFilterDeleteWorksheetDateFilterAsync(String name, String sheetName, Integer fieldIndex, String dateTimeGroupingType, Integer year, Integer month, Integer day, Integer hour, Integer minute, Integer second, String folder, String storage, final ApiCallback<SaaSposeResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -251,7 +257,7 @@ public class CellsAutoFilterApi {
             };
         }
 
-        com.squareup.okhttp.Call call = cellsAutoFilterDeleteWorksheetDateFilterValidateBeforeCall(name, sheetName, fieldIndex, dateTimeGroupingType, year, month, day, hour, minute, second, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsAutoFilterDeleteWorksheetDateFilterValidateBeforeCall(name, sheetName, fieldIndex, dateTimeGroupingType, year, month, day, hour, minute, second, folder, storage, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<SaaSposeResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -263,12 +269,13 @@ public class CellsAutoFilterApi {
      * @param fieldIndex  (required)
      * @param criteria  (optional)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call cellsAutoFilterDeleteWorksheetFilterCall(String name, String sheetName, Integer fieldIndex, String criteria, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call cellsAutoFilterDeleteWorksheetFilterCall(String name, String sheetName, Integer fieldIndex, String criteria, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -283,6 +290,8 @@ public class CellsAutoFilterApi {
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "criteria", criteria));
         if (folder != null)
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "folder", folder));
+        if (storage != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "storage", storage));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -317,7 +326,7 @@ public class CellsAutoFilterApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call cellsAutoFilterDeleteWorksheetFilterValidateBeforeCall(String name, String sheetName, Integer fieldIndex, String criteria, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call cellsAutoFilterDeleteWorksheetFilterValidateBeforeCall(String name, String sheetName, Integer fieldIndex, String criteria, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'name' is set
         if (name == null) {
@@ -335,7 +344,7 @@ public class CellsAutoFilterApi {
         }
         
         
-        com.squareup.okhttp.Call call = cellsAutoFilterDeleteWorksheetFilterCall(name, sheetName, fieldIndex, criteria, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsAutoFilterDeleteWorksheetFilterCall(name, sheetName, fieldIndex, criteria, folder, storage, progressListener, progressRequestListener);
         return call;
 
         
@@ -352,11 +361,12 @@ public class CellsAutoFilterApi {
      * @param fieldIndex  (required)
      * @param criteria  (optional)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @return SaaSposeResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public SaaSposeResponse cellsAutoFilterDeleteWorksheetFilter(String name, String sheetName, Integer fieldIndex, String criteria, String folder) throws ApiException {
-        ApiResponse<SaaSposeResponse> resp = cellsAutoFilterDeleteWorksheetFilterWithHttpInfo(name, sheetName, fieldIndex, criteria, folder);
+    public SaaSposeResponse cellsAutoFilterDeleteWorksheetFilter(String name, String sheetName, Integer fieldIndex, String criteria, String folder, String storage) throws ApiException {
+        ApiResponse<SaaSposeResponse> resp = cellsAutoFilterDeleteWorksheetFilterWithHttpInfo(name, sheetName, fieldIndex, criteria, folder, storage);
         return resp.getData();
     }
 
@@ -368,11 +378,12 @@ public class CellsAutoFilterApi {
      * @param fieldIndex  (required)
      * @param criteria  (optional)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @return ApiResponse&lt;SaaSposeResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<SaaSposeResponse> cellsAutoFilterDeleteWorksheetFilterWithHttpInfo(String name, String sheetName, Integer fieldIndex, String criteria, String folder) throws ApiException {
-        com.squareup.okhttp.Call call = cellsAutoFilterDeleteWorksheetFilterValidateBeforeCall(name, sheetName, fieldIndex, criteria, folder, null, null);
+    public ApiResponse<SaaSposeResponse> cellsAutoFilterDeleteWorksheetFilterWithHttpInfo(String name, String sheetName, Integer fieldIndex, String criteria, String folder, String storage) throws ApiException {
+        com.squareup.okhttp.Call call = cellsAutoFilterDeleteWorksheetFilterValidateBeforeCall(name, sheetName, fieldIndex, criteria, folder, storage, null, null);
         Type localVarReturnType = new TypeToken<SaaSposeResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -385,11 +396,12 @@ public class CellsAutoFilterApi {
      * @param fieldIndex  (required)
      * @param criteria  (optional)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call cellsAutoFilterDeleteWorksheetFilterAsync(String name, String sheetName, Integer fieldIndex, String criteria, String folder, final ApiCallback<SaaSposeResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call cellsAutoFilterDeleteWorksheetFilterAsync(String name, String sheetName, Integer fieldIndex, String criteria, String folder, String storage, final ApiCallback<SaaSposeResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -410,7 +422,7 @@ public class CellsAutoFilterApi {
             };
         }
 
-        com.squareup.okhttp.Call call = cellsAutoFilterDeleteWorksheetFilterValidateBeforeCall(name, sheetName, fieldIndex, criteria, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsAutoFilterDeleteWorksheetFilterValidateBeforeCall(name, sheetName, fieldIndex, criteria, folder, storage, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<SaaSposeResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -420,12 +432,13 @@ public class CellsAutoFilterApi {
      * @param name  (required)
      * @param sheetName  (required)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call cellsAutoFilterGetWorksheetAutoFilterCall(String name, String sheetName, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call cellsAutoFilterGetWorksheetAutoFilterCall(String name, String sheetName, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -436,6 +449,8 @@ public class CellsAutoFilterApi {
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         if (folder != null)
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "folder", folder));
+        if (storage != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "storage", storage));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -470,7 +485,7 @@ public class CellsAutoFilterApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call cellsAutoFilterGetWorksheetAutoFilterValidateBeforeCall(String name, String sheetName, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call cellsAutoFilterGetWorksheetAutoFilterValidateBeforeCall(String name, String sheetName, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'name' is set
         if (name == null) {
@@ -483,7 +498,7 @@ public class CellsAutoFilterApi {
         }
         
         
-        com.squareup.okhttp.Call call = cellsAutoFilterGetWorksheetAutoFilterCall(name, sheetName, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsAutoFilterGetWorksheetAutoFilterCall(name, sheetName, folder, storage, progressListener, progressRequestListener);
         return call;
 
         
@@ -498,11 +513,12 @@ public class CellsAutoFilterApi {
      * @param name  (required)
      * @param sheetName  (required)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @return AutoFilterResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public AutoFilterResponse cellsAutoFilterGetWorksheetAutoFilter(String name, String sheetName, String folder) throws ApiException {
-        ApiResponse<AutoFilterResponse> resp = cellsAutoFilterGetWorksheetAutoFilterWithHttpInfo(name, sheetName, folder);
+    public AutoFilterResponse cellsAutoFilterGetWorksheetAutoFilter(String name, String sheetName, String folder, String storage) throws ApiException {
+        ApiResponse<AutoFilterResponse> resp = cellsAutoFilterGetWorksheetAutoFilterWithHttpInfo(name, sheetName, folder, storage);
         return resp.getData();
     }
 
@@ -512,11 +528,12 @@ public class CellsAutoFilterApi {
      * @param name  (required)
      * @param sheetName  (required)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @return ApiResponse&lt;AutoFilterResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<AutoFilterResponse> cellsAutoFilterGetWorksheetAutoFilterWithHttpInfo(String name, String sheetName, String folder) throws ApiException {
-        com.squareup.okhttp.Call call = cellsAutoFilterGetWorksheetAutoFilterValidateBeforeCall(name, sheetName, folder, null, null);
+    public ApiResponse<AutoFilterResponse> cellsAutoFilterGetWorksheetAutoFilterWithHttpInfo(String name, String sheetName, String folder, String storage) throws ApiException {
+        com.squareup.okhttp.Call call = cellsAutoFilterGetWorksheetAutoFilterValidateBeforeCall(name, sheetName, folder, storage, null, null);
         Type localVarReturnType = new TypeToken<AutoFilterResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -527,11 +544,12 @@ public class CellsAutoFilterApi {
      * @param name  (required)
      * @param sheetName  (required)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call cellsAutoFilterGetWorksheetAutoFilterAsync(String name, String sheetName, String folder, final ApiCallback<AutoFilterResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call cellsAutoFilterGetWorksheetAutoFilterAsync(String name, String sheetName, String folder, String storage, final ApiCallback<AutoFilterResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -552,7 +570,7 @@ public class CellsAutoFilterApi {
             };
         }
 
-        com.squareup.okhttp.Call call = cellsAutoFilterGetWorksheetAutoFilterValidateBeforeCall(name, sheetName, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsAutoFilterGetWorksheetAutoFilterValidateBeforeCall(name, sheetName, folder, storage, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<AutoFilterResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -562,12 +580,13 @@ public class CellsAutoFilterApi {
      * @param name  (required)
      * @param sheetName  (required)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call cellsAutoFilterPostWorksheetAutoFilterRefreshCall(String name, String sheetName, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call cellsAutoFilterPostWorksheetAutoFilterRefreshCall(String name, String sheetName, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -578,6 +597,8 @@ public class CellsAutoFilterApi {
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         if (folder != null)
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "folder", folder));
+        if (storage != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "storage", storage));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -612,7 +633,7 @@ public class CellsAutoFilterApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call cellsAutoFilterPostWorksheetAutoFilterRefreshValidateBeforeCall(String name, String sheetName, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call cellsAutoFilterPostWorksheetAutoFilterRefreshValidateBeforeCall(String name, String sheetName, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'name' is set
         if (name == null) {
@@ -625,7 +646,7 @@ public class CellsAutoFilterApi {
         }
         
         
-        com.squareup.okhttp.Call call = cellsAutoFilterPostWorksheetAutoFilterRefreshCall(name, sheetName, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsAutoFilterPostWorksheetAutoFilterRefreshCall(name, sheetName, folder, storage, progressListener, progressRequestListener);
         return call;
 
         
@@ -640,11 +661,12 @@ public class CellsAutoFilterApi {
      * @param name  (required)
      * @param sheetName  (required)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @return SaaSposeResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public SaaSposeResponse cellsAutoFilterPostWorksheetAutoFilterRefresh(String name, String sheetName, String folder) throws ApiException {
-        ApiResponse<SaaSposeResponse> resp = cellsAutoFilterPostWorksheetAutoFilterRefreshWithHttpInfo(name, sheetName, folder);
+    public SaaSposeResponse cellsAutoFilterPostWorksheetAutoFilterRefresh(String name, String sheetName, String folder, String storage) throws ApiException {
+        ApiResponse<SaaSposeResponse> resp = cellsAutoFilterPostWorksheetAutoFilterRefreshWithHttpInfo(name, sheetName, folder, storage);
         return resp.getData();
     }
 
@@ -654,11 +676,12 @@ public class CellsAutoFilterApi {
      * @param name  (required)
      * @param sheetName  (required)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @return ApiResponse&lt;SaaSposeResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<SaaSposeResponse> cellsAutoFilterPostWorksheetAutoFilterRefreshWithHttpInfo(String name, String sheetName, String folder) throws ApiException {
-        com.squareup.okhttp.Call call = cellsAutoFilterPostWorksheetAutoFilterRefreshValidateBeforeCall(name, sheetName, folder, null, null);
+    public ApiResponse<SaaSposeResponse> cellsAutoFilterPostWorksheetAutoFilterRefreshWithHttpInfo(String name, String sheetName, String folder, String storage) throws ApiException {
+        com.squareup.okhttp.Call call = cellsAutoFilterPostWorksheetAutoFilterRefreshValidateBeforeCall(name, sheetName, folder, storage, null, null);
         Type localVarReturnType = new TypeToken<SaaSposeResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -669,11 +692,12 @@ public class CellsAutoFilterApi {
      * @param name  (required)
      * @param sheetName  (required)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call cellsAutoFilterPostWorksheetAutoFilterRefreshAsync(String name, String sheetName, String folder, final ApiCallback<SaaSposeResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call cellsAutoFilterPostWorksheetAutoFilterRefreshAsync(String name, String sheetName, String folder, String storage, final ApiCallback<SaaSposeResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -694,7 +718,7 @@ public class CellsAutoFilterApi {
             };
         }
 
-        com.squareup.okhttp.Call call = cellsAutoFilterPostWorksheetAutoFilterRefreshValidateBeforeCall(name, sheetName, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsAutoFilterPostWorksheetAutoFilterRefreshValidateBeforeCall(name, sheetName, folder, storage, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<SaaSposeResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -705,12 +729,13 @@ public class CellsAutoFilterApi {
      * @param sheetName  (required)
      * @param fieldIndex  (required)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call cellsAutoFilterPostWorksheetMatchBlanksCall(String name, String sheetName, Integer fieldIndex, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call cellsAutoFilterPostWorksheetMatchBlanksCall(String name, String sheetName, Integer fieldIndex, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -723,6 +748,8 @@ public class CellsAutoFilterApi {
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "fieldIndex", fieldIndex));
         if (folder != null)
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "folder", folder));
+        if (storage != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "storage", storage));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -757,7 +784,7 @@ public class CellsAutoFilterApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call cellsAutoFilterPostWorksheetMatchBlanksValidateBeforeCall(String name, String sheetName, Integer fieldIndex, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call cellsAutoFilterPostWorksheetMatchBlanksValidateBeforeCall(String name, String sheetName, Integer fieldIndex, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'name' is set
         if (name == null) {
@@ -775,7 +802,7 @@ public class CellsAutoFilterApi {
         }
         
         
-        com.squareup.okhttp.Call call = cellsAutoFilterPostWorksheetMatchBlanksCall(name, sheetName, fieldIndex, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsAutoFilterPostWorksheetMatchBlanksCall(name, sheetName, fieldIndex, folder, storage, progressListener, progressRequestListener);
         return call;
 
         
@@ -791,11 +818,12 @@ public class CellsAutoFilterApi {
      * @param sheetName  (required)
      * @param fieldIndex  (required)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @return SaaSposeResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public SaaSposeResponse cellsAutoFilterPostWorksheetMatchBlanks(String name, String sheetName, Integer fieldIndex, String folder) throws ApiException {
-        ApiResponse<SaaSposeResponse> resp = cellsAutoFilterPostWorksheetMatchBlanksWithHttpInfo(name, sheetName, fieldIndex, folder);
+    public SaaSposeResponse cellsAutoFilterPostWorksheetMatchBlanks(String name, String sheetName, Integer fieldIndex, String folder, String storage) throws ApiException {
+        ApiResponse<SaaSposeResponse> resp = cellsAutoFilterPostWorksheetMatchBlanksWithHttpInfo(name, sheetName, fieldIndex, folder, storage);
         return resp.getData();
     }
 
@@ -806,11 +834,12 @@ public class CellsAutoFilterApi {
      * @param sheetName  (required)
      * @param fieldIndex  (required)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @return ApiResponse&lt;SaaSposeResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<SaaSposeResponse> cellsAutoFilterPostWorksheetMatchBlanksWithHttpInfo(String name, String sheetName, Integer fieldIndex, String folder) throws ApiException {
-        com.squareup.okhttp.Call call = cellsAutoFilterPostWorksheetMatchBlanksValidateBeforeCall(name, sheetName, fieldIndex, folder, null, null);
+    public ApiResponse<SaaSposeResponse> cellsAutoFilterPostWorksheetMatchBlanksWithHttpInfo(String name, String sheetName, Integer fieldIndex, String folder, String storage) throws ApiException {
+        com.squareup.okhttp.Call call = cellsAutoFilterPostWorksheetMatchBlanksValidateBeforeCall(name, sheetName, fieldIndex, folder, storage, null, null);
         Type localVarReturnType = new TypeToken<SaaSposeResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -822,11 +851,12 @@ public class CellsAutoFilterApi {
      * @param sheetName  (required)
      * @param fieldIndex  (required)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call cellsAutoFilterPostWorksheetMatchBlanksAsync(String name, String sheetName, Integer fieldIndex, String folder, final ApiCallback<SaaSposeResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call cellsAutoFilterPostWorksheetMatchBlanksAsync(String name, String sheetName, Integer fieldIndex, String folder, String storage, final ApiCallback<SaaSposeResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -847,7 +877,7 @@ public class CellsAutoFilterApi {
             };
         }
 
-        com.squareup.okhttp.Call call = cellsAutoFilterPostWorksheetMatchBlanksValidateBeforeCall(name, sheetName, fieldIndex, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsAutoFilterPostWorksheetMatchBlanksValidateBeforeCall(name, sheetName, fieldIndex, folder, storage, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<SaaSposeResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -858,12 +888,13 @@ public class CellsAutoFilterApi {
      * @param sheetName  (required)
      * @param fieldIndex  (required)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call cellsAutoFilterPostWorksheetMatchNonBlanksCall(String name, String sheetName, Integer fieldIndex, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call cellsAutoFilterPostWorksheetMatchNonBlanksCall(String name, String sheetName, Integer fieldIndex, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -876,6 +907,8 @@ public class CellsAutoFilterApi {
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "fieldIndex", fieldIndex));
         if (folder != null)
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "folder", folder));
+        if (storage != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "storage", storage));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -910,7 +943,7 @@ public class CellsAutoFilterApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call cellsAutoFilterPostWorksheetMatchNonBlanksValidateBeforeCall(String name, String sheetName, Integer fieldIndex, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call cellsAutoFilterPostWorksheetMatchNonBlanksValidateBeforeCall(String name, String sheetName, Integer fieldIndex, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'name' is set
         if (name == null) {
@@ -928,7 +961,7 @@ public class CellsAutoFilterApi {
         }
         
         
-        com.squareup.okhttp.Call call = cellsAutoFilterPostWorksheetMatchNonBlanksCall(name, sheetName, fieldIndex, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsAutoFilterPostWorksheetMatchNonBlanksCall(name, sheetName, fieldIndex, folder, storage, progressListener, progressRequestListener);
         return call;
 
         
@@ -944,11 +977,12 @@ public class CellsAutoFilterApi {
      * @param sheetName  (required)
      * @param fieldIndex  (required)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @return SaaSposeResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public SaaSposeResponse cellsAutoFilterPostWorksheetMatchNonBlanks(String name, String sheetName, Integer fieldIndex, String folder) throws ApiException {
-        ApiResponse<SaaSposeResponse> resp = cellsAutoFilterPostWorksheetMatchNonBlanksWithHttpInfo(name, sheetName, fieldIndex, folder);
+    public SaaSposeResponse cellsAutoFilterPostWorksheetMatchNonBlanks(String name, String sheetName, Integer fieldIndex, String folder, String storage) throws ApiException {
+        ApiResponse<SaaSposeResponse> resp = cellsAutoFilterPostWorksheetMatchNonBlanksWithHttpInfo(name, sheetName, fieldIndex, folder, storage);
         return resp.getData();
     }
 
@@ -959,11 +993,12 @@ public class CellsAutoFilterApi {
      * @param sheetName  (required)
      * @param fieldIndex  (required)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @return ApiResponse&lt;SaaSposeResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<SaaSposeResponse> cellsAutoFilterPostWorksheetMatchNonBlanksWithHttpInfo(String name, String sheetName, Integer fieldIndex, String folder) throws ApiException {
-        com.squareup.okhttp.Call call = cellsAutoFilterPostWorksheetMatchNonBlanksValidateBeforeCall(name, sheetName, fieldIndex, folder, null, null);
+    public ApiResponse<SaaSposeResponse> cellsAutoFilterPostWorksheetMatchNonBlanksWithHttpInfo(String name, String sheetName, Integer fieldIndex, String folder, String storage) throws ApiException {
+        com.squareup.okhttp.Call call = cellsAutoFilterPostWorksheetMatchNonBlanksValidateBeforeCall(name, sheetName, fieldIndex, folder, storage, null, null);
         Type localVarReturnType = new TypeToken<SaaSposeResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -975,11 +1010,12 @@ public class CellsAutoFilterApi {
      * @param sheetName  (required)
      * @param fieldIndex  (required)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call cellsAutoFilterPostWorksheetMatchNonBlanksAsync(String name, String sheetName, Integer fieldIndex, String folder, final ApiCallback<SaaSposeResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call cellsAutoFilterPostWorksheetMatchNonBlanksAsync(String name, String sheetName, Integer fieldIndex, String folder, String storage, final ApiCallback<SaaSposeResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1000,7 +1036,7 @@ public class CellsAutoFilterApi {
             };
         }
 
-        com.squareup.okhttp.Call call = cellsAutoFilterPostWorksheetMatchNonBlanksValidateBeforeCall(name, sheetName, fieldIndex, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsAutoFilterPostWorksheetMatchNonBlanksValidateBeforeCall(name, sheetName, fieldIndex, folder, storage, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<SaaSposeResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -1015,12 +1051,13 @@ public class CellsAutoFilterApi {
      * @param matchBlanks  (optional)
      * @param refresh  (optional)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call cellsAutoFilterPutWorksheetColorFilterCall(String name, String sheetName, String range, Integer fieldIndex, ColorFilterRequest colorFilter, Boolean matchBlanks, Boolean refresh, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call cellsAutoFilterPutWorksheetColorFilterCall(String name, String sheetName, String range, Integer fieldIndex, ColorFilterRequest colorFilter, Boolean matchBlanks, Boolean refresh, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = colorFilter;
         
         // create path and map variables
@@ -1039,6 +1076,8 @@ public class CellsAutoFilterApi {
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "refresh", refresh));
         if (folder != null)
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "folder", folder));
+        if (storage != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "storage", storage));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -1073,7 +1112,7 @@ public class CellsAutoFilterApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call cellsAutoFilterPutWorksheetColorFilterValidateBeforeCall(String name, String sheetName, String range, Integer fieldIndex, ColorFilterRequest colorFilter, Boolean matchBlanks, Boolean refresh, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call cellsAutoFilterPutWorksheetColorFilterValidateBeforeCall(String name, String sheetName, String range, Integer fieldIndex, ColorFilterRequest colorFilter, Boolean matchBlanks, Boolean refresh, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'name' is set
         if (name == null) {
@@ -1096,7 +1135,7 @@ public class CellsAutoFilterApi {
         }
         
         
-        com.squareup.okhttp.Call call = cellsAutoFilterPutWorksheetColorFilterCall(name, sheetName, range, fieldIndex, colorFilter, matchBlanks, refresh, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsAutoFilterPutWorksheetColorFilterCall(name, sheetName, range, fieldIndex, colorFilter, matchBlanks, refresh, folder, storage, progressListener, progressRequestListener);
         return call;
 
         
@@ -1116,11 +1155,12 @@ public class CellsAutoFilterApi {
      * @param matchBlanks  (optional)
      * @param refresh  (optional)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @return SaaSposeResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public SaaSposeResponse cellsAutoFilterPutWorksheetColorFilter(String name, String sheetName, String range, Integer fieldIndex, ColorFilterRequest colorFilter, Boolean matchBlanks, Boolean refresh, String folder) throws ApiException {
-        ApiResponse<SaaSposeResponse> resp = cellsAutoFilterPutWorksheetColorFilterWithHttpInfo(name, sheetName, range, fieldIndex, colorFilter, matchBlanks, refresh, folder);
+    public SaaSposeResponse cellsAutoFilterPutWorksheetColorFilter(String name, String sheetName, String range, Integer fieldIndex, ColorFilterRequest colorFilter, Boolean matchBlanks, Boolean refresh, String folder, String storage) throws ApiException {
+        ApiResponse<SaaSposeResponse> resp = cellsAutoFilterPutWorksheetColorFilterWithHttpInfo(name, sheetName, range, fieldIndex, colorFilter, matchBlanks, refresh, folder, storage);
         return resp.getData();
     }
 
@@ -1135,11 +1175,12 @@ public class CellsAutoFilterApi {
      * @param matchBlanks  (optional)
      * @param refresh  (optional)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @return ApiResponse&lt;SaaSposeResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<SaaSposeResponse> cellsAutoFilterPutWorksheetColorFilterWithHttpInfo(String name, String sheetName, String range, Integer fieldIndex, ColorFilterRequest colorFilter, Boolean matchBlanks, Boolean refresh, String folder) throws ApiException {
-        com.squareup.okhttp.Call call = cellsAutoFilterPutWorksheetColorFilterValidateBeforeCall(name, sheetName, range, fieldIndex, colorFilter, matchBlanks, refresh, folder, null, null);
+    public ApiResponse<SaaSposeResponse> cellsAutoFilterPutWorksheetColorFilterWithHttpInfo(String name, String sheetName, String range, Integer fieldIndex, ColorFilterRequest colorFilter, Boolean matchBlanks, Boolean refresh, String folder, String storage) throws ApiException {
+        com.squareup.okhttp.Call call = cellsAutoFilterPutWorksheetColorFilterValidateBeforeCall(name, sheetName, range, fieldIndex, colorFilter, matchBlanks, refresh, folder, storage, null, null);
         Type localVarReturnType = new TypeToken<SaaSposeResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -1155,11 +1196,12 @@ public class CellsAutoFilterApi {
      * @param matchBlanks  (optional)
      * @param refresh  (optional)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call cellsAutoFilterPutWorksheetColorFilterAsync(String name, String sheetName, String range, Integer fieldIndex, ColorFilterRequest colorFilter, Boolean matchBlanks, Boolean refresh, String folder, final ApiCallback<SaaSposeResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call cellsAutoFilterPutWorksheetColorFilterAsync(String name, String sheetName, String range, Integer fieldIndex, ColorFilterRequest colorFilter, Boolean matchBlanks, Boolean refresh, String folder, String storage, final ApiCallback<SaaSposeResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1180,7 +1222,7 @@ public class CellsAutoFilterApi {
             };
         }
 
-        com.squareup.okhttp.Call call = cellsAutoFilterPutWorksheetColorFilterValidateBeforeCall(name, sheetName, range, fieldIndex, colorFilter, matchBlanks, refresh, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsAutoFilterPutWorksheetColorFilterValidateBeforeCall(name, sheetName, range, fieldIndex, colorFilter, matchBlanks, refresh, folder, storage, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<SaaSposeResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -1199,12 +1241,13 @@ public class CellsAutoFilterApi {
      * @param matchBlanks  (optional)
      * @param refresh  (optional)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call cellsAutoFilterPutWorksheetCustomFilterCall(String name, String sheetName, String range, Integer fieldIndex, String operatorType1, String criteria1, Boolean isAnd, String operatorType2, String criteria2, Boolean matchBlanks, Boolean refresh, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call cellsAutoFilterPutWorksheetCustomFilterCall(String name, String sheetName, String range, Integer fieldIndex, String operatorType1, String criteria1, Boolean isAnd, String operatorType2, String criteria2, Boolean matchBlanks, Boolean refresh, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -1233,6 +1276,8 @@ public class CellsAutoFilterApi {
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "refresh", refresh));
         if (folder != null)
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "folder", folder));
+        if (storage != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "storage", storage));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -1267,7 +1312,7 @@ public class CellsAutoFilterApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call cellsAutoFilterPutWorksheetCustomFilterValidateBeforeCall(String name, String sheetName, String range, Integer fieldIndex, String operatorType1, String criteria1, Boolean isAnd, String operatorType2, String criteria2, Boolean matchBlanks, Boolean refresh, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call cellsAutoFilterPutWorksheetCustomFilterValidateBeforeCall(String name, String sheetName, String range, Integer fieldIndex, String operatorType1, String criteria1, Boolean isAnd, String operatorType2, String criteria2, Boolean matchBlanks, Boolean refresh, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'name' is set
         if (name == null) {
@@ -1300,7 +1345,7 @@ public class CellsAutoFilterApi {
         }
         
         
-        com.squareup.okhttp.Call call = cellsAutoFilterPutWorksheetCustomFilterCall(name, sheetName, range, fieldIndex, operatorType1, criteria1, isAnd, operatorType2, criteria2, matchBlanks, refresh, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsAutoFilterPutWorksheetCustomFilterCall(name, sheetName, range, fieldIndex, operatorType1, criteria1, isAnd, operatorType2, criteria2, matchBlanks, refresh, folder, storage, progressListener, progressRequestListener);
         return call;
 
         
@@ -1324,11 +1369,12 @@ public class CellsAutoFilterApi {
      * @param matchBlanks  (optional)
      * @param refresh  (optional)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @return SaaSposeResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public SaaSposeResponse cellsAutoFilterPutWorksheetCustomFilter(String name, String sheetName, String range, Integer fieldIndex, String operatorType1, String criteria1, Boolean isAnd, String operatorType2, String criteria2, Boolean matchBlanks, Boolean refresh, String folder) throws ApiException {
-        ApiResponse<SaaSposeResponse> resp = cellsAutoFilterPutWorksheetCustomFilterWithHttpInfo(name, sheetName, range, fieldIndex, operatorType1, criteria1, isAnd, operatorType2, criteria2, matchBlanks, refresh, folder);
+    public SaaSposeResponse cellsAutoFilterPutWorksheetCustomFilter(String name, String sheetName, String range, Integer fieldIndex, String operatorType1, String criteria1, Boolean isAnd, String operatorType2, String criteria2, Boolean matchBlanks, Boolean refresh, String folder, String storage) throws ApiException {
+        ApiResponse<SaaSposeResponse> resp = cellsAutoFilterPutWorksheetCustomFilterWithHttpInfo(name, sheetName, range, fieldIndex, operatorType1, criteria1, isAnd, operatorType2, criteria2, matchBlanks, refresh, folder, storage);
         return resp.getData();
     }
 
@@ -1347,11 +1393,12 @@ public class CellsAutoFilterApi {
      * @param matchBlanks  (optional)
      * @param refresh  (optional)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @return ApiResponse&lt;SaaSposeResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<SaaSposeResponse> cellsAutoFilterPutWorksheetCustomFilterWithHttpInfo(String name, String sheetName, String range, Integer fieldIndex, String operatorType1, String criteria1, Boolean isAnd, String operatorType2, String criteria2, Boolean matchBlanks, Boolean refresh, String folder) throws ApiException {
-        com.squareup.okhttp.Call call = cellsAutoFilterPutWorksheetCustomFilterValidateBeforeCall(name, sheetName, range, fieldIndex, operatorType1, criteria1, isAnd, operatorType2, criteria2, matchBlanks, refresh, folder, null, null);
+    public ApiResponse<SaaSposeResponse> cellsAutoFilterPutWorksheetCustomFilterWithHttpInfo(String name, String sheetName, String range, Integer fieldIndex, String operatorType1, String criteria1, Boolean isAnd, String operatorType2, String criteria2, Boolean matchBlanks, Boolean refresh, String folder, String storage) throws ApiException {
+        com.squareup.okhttp.Call call = cellsAutoFilterPutWorksheetCustomFilterValidateBeforeCall(name, sheetName, range, fieldIndex, operatorType1, criteria1, isAnd, operatorType2, criteria2, matchBlanks, refresh, folder, storage, null, null);
         Type localVarReturnType = new TypeToken<SaaSposeResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -1371,11 +1418,12 @@ public class CellsAutoFilterApi {
      * @param matchBlanks  (optional)
      * @param refresh  (optional)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call cellsAutoFilterPutWorksheetCustomFilterAsync(String name, String sheetName, String range, Integer fieldIndex, String operatorType1, String criteria1, Boolean isAnd, String operatorType2, String criteria2, Boolean matchBlanks, Boolean refresh, String folder, final ApiCallback<SaaSposeResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call cellsAutoFilterPutWorksheetCustomFilterAsync(String name, String sheetName, String range, Integer fieldIndex, String operatorType1, String criteria1, Boolean isAnd, String operatorType2, String criteria2, Boolean matchBlanks, Boolean refresh, String folder, String storage, final ApiCallback<SaaSposeResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1396,7 +1444,7 @@ public class CellsAutoFilterApi {
             };
         }
 
-        com.squareup.okhttp.Call call = cellsAutoFilterPutWorksheetCustomFilterValidateBeforeCall(name, sheetName, range, fieldIndex, operatorType1, criteria1, isAnd, operatorType2, criteria2, matchBlanks, refresh, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsAutoFilterPutWorksheetCustomFilterValidateBeforeCall(name, sheetName, range, fieldIndex, operatorType1, criteria1, isAnd, operatorType2, criteria2, matchBlanks, refresh, folder, storage, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<SaaSposeResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -1417,12 +1465,13 @@ public class CellsAutoFilterApi {
      * @param matchBlanks  (optional)
      * @param refresh  (optional)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call cellsAutoFilterPutWorksheetDateFilterCall(String name, String sheetName, String range, Integer fieldIndex, String dateTimeGroupingType, Integer year, Integer month, Integer day, Integer hour, Integer minute, Integer second, Boolean matchBlanks, Boolean refresh, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call cellsAutoFilterPutWorksheetDateFilterCall(String name, String sheetName, String range, Integer fieldIndex, String dateTimeGroupingType, Integer year, Integer month, Integer day, Integer hour, Integer minute, Integer second, Boolean matchBlanks, Boolean refresh, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -1455,6 +1504,8 @@ public class CellsAutoFilterApi {
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "refresh", refresh));
         if (folder != null)
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "folder", folder));
+        if (storage != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "storage", storage));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -1489,7 +1540,7 @@ public class CellsAutoFilterApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call cellsAutoFilterPutWorksheetDateFilterValidateBeforeCall(String name, String sheetName, String range, Integer fieldIndex, String dateTimeGroupingType, Integer year, Integer month, Integer day, Integer hour, Integer minute, Integer second, Boolean matchBlanks, Boolean refresh, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call cellsAutoFilterPutWorksheetDateFilterValidateBeforeCall(String name, String sheetName, String range, Integer fieldIndex, String dateTimeGroupingType, Integer year, Integer month, Integer day, Integer hour, Integer minute, Integer second, Boolean matchBlanks, Boolean refresh, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'name' is set
         if (name == null) {
@@ -1517,7 +1568,7 @@ public class CellsAutoFilterApi {
         }
         
         
-        com.squareup.okhttp.Call call = cellsAutoFilterPutWorksheetDateFilterCall(name, sheetName, range, fieldIndex, dateTimeGroupingType, year, month, day, hour, minute, second, matchBlanks, refresh, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsAutoFilterPutWorksheetDateFilterCall(name, sheetName, range, fieldIndex, dateTimeGroupingType, year, month, day, hour, minute, second, matchBlanks, refresh, folder, storage, progressListener, progressRequestListener);
         return call;
 
         
@@ -1543,11 +1594,12 @@ public class CellsAutoFilterApi {
      * @param matchBlanks  (optional)
      * @param refresh  (optional)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @return SaaSposeResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public SaaSposeResponse cellsAutoFilterPutWorksheetDateFilter(String name, String sheetName, String range, Integer fieldIndex, String dateTimeGroupingType, Integer year, Integer month, Integer day, Integer hour, Integer minute, Integer second, Boolean matchBlanks, Boolean refresh, String folder) throws ApiException {
-        ApiResponse<SaaSposeResponse> resp = cellsAutoFilterPutWorksheetDateFilterWithHttpInfo(name, sheetName, range, fieldIndex, dateTimeGroupingType, year, month, day, hour, minute, second, matchBlanks, refresh, folder);
+    public SaaSposeResponse cellsAutoFilterPutWorksheetDateFilter(String name, String sheetName, String range, Integer fieldIndex, String dateTimeGroupingType, Integer year, Integer month, Integer day, Integer hour, Integer minute, Integer second, Boolean matchBlanks, Boolean refresh, String folder, String storage) throws ApiException {
+        ApiResponse<SaaSposeResponse> resp = cellsAutoFilterPutWorksheetDateFilterWithHttpInfo(name, sheetName, range, fieldIndex, dateTimeGroupingType, year, month, day, hour, minute, second, matchBlanks, refresh, folder, storage);
         return resp.getData();
     }
 
@@ -1568,11 +1620,12 @@ public class CellsAutoFilterApi {
      * @param matchBlanks  (optional)
      * @param refresh  (optional)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @return ApiResponse&lt;SaaSposeResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<SaaSposeResponse> cellsAutoFilterPutWorksheetDateFilterWithHttpInfo(String name, String sheetName, String range, Integer fieldIndex, String dateTimeGroupingType, Integer year, Integer month, Integer day, Integer hour, Integer minute, Integer second, Boolean matchBlanks, Boolean refresh, String folder) throws ApiException {
-        com.squareup.okhttp.Call call = cellsAutoFilterPutWorksheetDateFilterValidateBeforeCall(name, sheetName, range, fieldIndex, dateTimeGroupingType, year, month, day, hour, minute, second, matchBlanks, refresh, folder, null, null);
+    public ApiResponse<SaaSposeResponse> cellsAutoFilterPutWorksheetDateFilterWithHttpInfo(String name, String sheetName, String range, Integer fieldIndex, String dateTimeGroupingType, Integer year, Integer month, Integer day, Integer hour, Integer minute, Integer second, Boolean matchBlanks, Boolean refresh, String folder, String storage) throws ApiException {
+        com.squareup.okhttp.Call call = cellsAutoFilterPutWorksheetDateFilterValidateBeforeCall(name, sheetName, range, fieldIndex, dateTimeGroupingType, year, month, day, hour, minute, second, matchBlanks, refresh, folder, storage, null, null);
         Type localVarReturnType = new TypeToken<SaaSposeResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -1594,11 +1647,12 @@ public class CellsAutoFilterApi {
      * @param matchBlanks  (optional)
      * @param refresh  (optional)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call cellsAutoFilterPutWorksheetDateFilterAsync(String name, String sheetName, String range, Integer fieldIndex, String dateTimeGroupingType, Integer year, Integer month, Integer day, Integer hour, Integer minute, Integer second, Boolean matchBlanks, Boolean refresh, String folder, final ApiCallback<SaaSposeResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call cellsAutoFilterPutWorksheetDateFilterAsync(String name, String sheetName, String range, Integer fieldIndex, String dateTimeGroupingType, Integer year, Integer month, Integer day, Integer hour, Integer minute, Integer second, Boolean matchBlanks, Boolean refresh, String folder, String storage, final ApiCallback<SaaSposeResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1619,7 +1673,7 @@ public class CellsAutoFilterApi {
             };
         }
 
-        com.squareup.okhttp.Call call = cellsAutoFilterPutWorksheetDateFilterValidateBeforeCall(name, sheetName, range, fieldIndex, dateTimeGroupingType, year, month, day, hour, minute, second, matchBlanks, refresh, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsAutoFilterPutWorksheetDateFilterValidateBeforeCall(name, sheetName, range, fieldIndex, dateTimeGroupingType, year, month, day, hour, minute, second, matchBlanks, refresh, folder, storage, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<SaaSposeResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -1634,12 +1688,13 @@ public class CellsAutoFilterApi {
      * @param matchBlanks  (optional)
      * @param refresh  (optional)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call cellsAutoFilterPutWorksheetDynamicFilterCall(String name, String sheetName, String range, Integer fieldIndex, String dynamicFilterType, Boolean matchBlanks, Boolean refresh, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call cellsAutoFilterPutWorksheetDynamicFilterCall(String name, String sheetName, String range, Integer fieldIndex, String dynamicFilterType, Boolean matchBlanks, Boolean refresh, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -1660,6 +1715,8 @@ public class CellsAutoFilterApi {
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "refresh", refresh));
         if (folder != null)
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "folder", folder));
+        if (storage != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "storage", storage));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -1694,7 +1751,7 @@ public class CellsAutoFilterApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call cellsAutoFilterPutWorksheetDynamicFilterValidateBeforeCall(String name, String sheetName, String range, Integer fieldIndex, String dynamicFilterType, Boolean matchBlanks, Boolean refresh, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call cellsAutoFilterPutWorksheetDynamicFilterValidateBeforeCall(String name, String sheetName, String range, Integer fieldIndex, String dynamicFilterType, Boolean matchBlanks, Boolean refresh, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'name' is set
         if (name == null) {
@@ -1722,7 +1779,7 @@ public class CellsAutoFilterApi {
         }
         
         
-        com.squareup.okhttp.Call call = cellsAutoFilterPutWorksheetDynamicFilterCall(name, sheetName, range, fieldIndex, dynamicFilterType, matchBlanks, refresh, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsAutoFilterPutWorksheetDynamicFilterCall(name, sheetName, range, fieldIndex, dynamicFilterType, matchBlanks, refresh, folder, storage, progressListener, progressRequestListener);
         return call;
 
         
@@ -1742,11 +1799,12 @@ public class CellsAutoFilterApi {
      * @param matchBlanks  (optional)
      * @param refresh  (optional)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @return SaaSposeResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public SaaSposeResponse cellsAutoFilterPutWorksheetDynamicFilter(String name, String sheetName, String range, Integer fieldIndex, String dynamicFilterType, Boolean matchBlanks, Boolean refresh, String folder) throws ApiException {
-        ApiResponse<SaaSposeResponse> resp = cellsAutoFilterPutWorksheetDynamicFilterWithHttpInfo(name, sheetName, range, fieldIndex, dynamicFilterType, matchBlanks, refresh, folder);
+    public SaaSposeResponse cellsAutoFilterPutWorksheetDynamicFilter(String name, String sheetName, String range, Integer fieldIndex, String dynamicFilterType, Boolean matchBlanks, Boolean refresh, String folder, String storage) throws ApiException {
+        ApiResponse<SaaSposeResponse> resp = cellsAutoFilterPutWorksheetDynamicFilterWithHttpInfo(name, sheetName, range, fieldIndex, dynamicFilterType, matchBlanks, refresh, folder, storage);
         return resp.getData();
     }
 
@@ -1761,11 +1819,12 @@ public class CellsAutoFilterApi {
      * @param matchBlanks  (optional)
      * @param refresh  (optional)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @return ApiResponse&lt;SaaSposeResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<SaaSposeResponse> cellsAutoFilterPutWorksheetDynamicFilterWithHttpInfo(String name, String sheetName, String range, Integer fieldIndex, String dynamicFilterType, Boolean matchBlanks, Boolean refresh, String folder) throws ApiException {
-        com.squareup.okhttp.Call call = cellsAutoFilterPutWorksheetDynamicFilterValidateBeforeCall(name, sheetName, range, fieldIndex, dynamicFilterType, matchBlanks, refresh, folder, null, null);
+    public ApiResponse<SaaSposeResponse> cellsAutoFilterPutWorksheetDynamicFilterWithHttpInfo(String name, String sheetName, String range, Integer fieldIndex, String dynamicFilterType, Boolean matchBlanks, Boolean refresh, String folder, String storage) throws ApiException {
+        com.squareup.okhttp.Call call = cellsAutoFilterPutWorksheetDynamicFilterValidateBeforeCall(name, sheetName, range, fieldIndex, dynamicFilterType, matchBlanks, refresh, folder, storage, null, null);
         Type localVarReturnType = new TypeToken<SaaSposeResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -1781,11 +1840,12 @@ public class CellsAutoFilterApi {
      * @param matchBlanks  (optional)
      * @param refresh  (optional)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call cellsAutoFilterPutWorksheetDynamicFilterAsync(String name, String sheetName, String range, Integer fieldIndex, String dynamicFilterType, Boolean matchBlanks, Boolean refresh, String folder, final ApiCallback<SaaSposeResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call cellsAutoFilterPutWorksheetDynamicFilterAsync(String name, String sheetName, String range, Integer fieldIndex, String dynamicFilterType, Boolean matchBlanks, Boolean refresh, String folder, String storage, final ApiCallback<SaaSposeResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1806,7 +1866,7 @@ public class CellsAutoFilterApi {
             };
         }
 
-        com.squareup.okhttp.Call call = cellsAutoFilterPutWorksheetDynamicFilterValidateBeforeCall(name, sheetName, range, fieldIndex, dynamicFilterType, matchBlanks, refresh, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsAutoFilterPutWorksheetDynamicFilterValidateBeforeCall(name, sheetName, range, fieldIndex, dynamicFilterType, matchBlanks, refresh, folder, storage, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<SaaSposeResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -1821,12 +1881,13 @@ public class CellsAutoFilterApi {
      * @param matchBlanks  (optional)
      * @param refresh  (optional)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call cellsAutoFilterPutWorksheetFilterCall(String name, String sheetName, String range, Integer fieldIndex, String criteria, Boolean matchBlanks, Boolean refresh, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call cellsAutoFilterPutWorksheetFilterCall(String name, String sheetName, String range, Integer fieldIndex, String criteria, Boolean matchBlanks, Boolean refresh, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -1847,6 +1908,8 @@ public class CellsAutoFilterApi {
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "refresh", refresh));
         if (folder != null)
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "folder", folder));
+        if (storage != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "storage", storage));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -1881,7 +1944,7 @@ public class CellsAutoFilterApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call cellsAutoFilterPutWorksheetFilterValidateBeforeCall(String name, String sheetName, String range, Integer fieldIndex, String criteria, Boolean matchBlanks, Boolean refresh, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call cellsAutoFilterPutWorksheetFilterValidateBeforeCall(String name, String sheetName, String range, Integer fieldIndex, String criteria, Boolean matchBlanks, Boolean refresh, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'name' is set
         if (name == null) {
@@ -1909,7 +1972,7 @@ public class CellsAutoFilterApi {
         }
         
         
-        com.squareup.okhttp.Call call = cellsAutoFilterPutWorksheetFilterCall(name, sheetName, range, fieldIndex, criteria, matchBlanks, refresh, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsAutoFilterPutWorksheetFilterCall(name, sheetName, range, fieldIndex, criteria, matchBlanks, refresh, folder, storage, progressListener, progressRequestListener);
         return call;
 
         
@@ -1929,11 +1992,12 @@ public class CellsAutoFilterApi {
      * @param matchBlanks  (optional)
      * @param refresh  (optional)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @return SaaSposeResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public SaaSposeResponse cellsAutoFilterPutWorksheetFilter(String name, String sheetName, String range, Integer fieldIndex, String criteria, Boolean matchBlanks, Boolean refresh, String folder) throws ApiException {
-        ApiResponse<SaaSposeResponse> resp = cellsAutoFilterPutWorksheetFilterWithHttpInfo(name, sheetName, range, fieldIndex, criteria, matchBlanks, refresh, folder);
+    public SaaSposeResponse cellsAutoFilterPutWorksheetFilter(String name, String sheetName, String range, Integer fieldIndex, String criteria, Boolean matchBlanks, Boolean refresh, String folder, String storage) throws ApiException {
+        ApiResponse<SaaSposeResponse> resp = cellsAutoFilterPutWorksheetFilterWithHttpInfo(name, sheetName, range, fieldIndex, criteria, matchBlanks, refresh, folder, storage);
         return resp.getData();
     }
 
@@ -1948,11 +2012,12 @@ public class CellsAutoFilterApi {
      * @param matchBlanks  (optional)
      * @param refresh  (optional)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @return ApiResponse&lt;SaaSposeResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<SaaSposeResponse> cellsAutoFilterPutWorksheetFilterWithHttpInfo(String name, String sheetName, String range, Integer fieldIndex, String criteria, Boolean matchBlanks, Boolean refresh, String folder) throws ApiException {
-        com.squareup.okhttp.Call call = cellsAutoFilterPutWorksheetFilterValidateBeforeCall(name, sheetName, range, fieldIndex, criteria, matchBlanks, refresh, folder, null, null);
+    public ApiResponse<SaaSposeResponse> cellsAutoFilterPutWorksheetFilterWithHttpInfo(String name, String sheetName, String range, Integer fieldIndex, String criteria, Boolean matchBlanks, Boolean refresh, String folder, String storage) throws ApiException {
+        com.squareup.okhttp.Call call = cellsAutoFilterPutWorksheetFilterValidateBeforeCall(name, sheetName, range, fieldIndex, criteria, matchBlanks, refresh, folder, storage, null, null);
         Type localVarReturnType = new TypeToken<SaaSposeResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -1968,11 +2033,12 @@ public class CellsAutoFilterApi {
      * @param matchBlanks  (optional)
      * @param refresh  (optional)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call cellsAutoFilterPutWorksheetFilterAsync(String name, String sheetName, String range, Integer fieldIndex, String criteria, Boolean matchBlanks, Boolean refresh, String folder, final ApiCallback<SaaSposeResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call cellsAutoFilterPutWorksheetFilterAsync(String name, String sheetName, String range, Integer fieldIndex, String criteria, Boolean matchBlanks, Boolean refresh, String folder, String storage, final ApiCallback<SaaSposeResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1993,7 +2059,7 @@ public class CellsAutoFilterApi {
             };
         }
 
-        com.squareup.okhttp.Call call = cellsAutoFilterPutWorksheetFilterValidateBeforeCall(name, sheetName, range, fieldIndex, criteria, matchBlanks, refresh, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsAutoFilterPutWorksheetFilterValidateBeforeCall(name, sheetName, range, fieldIndex, criteria, matchBlanks, refresh, folder, storage, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<SaaSposeResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -2010,12 +2076,13 @@ public class CellsAutoFilterApi {
      * @param matchBlanks  (optional)
      * @param refresh  (optional)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call cellsAutoFilterPutWorksheetFilterTop10Call(String name, String sheetName, String range, Integer fieldIndex, Boolean isTop, Boolean isPercent, Integer itemCount, Boolean matchBlanks, Boolean refresh, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call cellsAutoFilterPutWorksheetFilterTop10Call(String name, String sheetName, String range, Integer fieldIndex, Boolean isTop, Boolean isPercent, Integer itemCount, Boolean matchBlanks, Boolean refresh, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -2040,6 +2107,8 @@ public class CellsAutoFilterApi {
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "refresh", refresh));
         if (folder != null)
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "folder", folder));
+        if (storage != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "storage", storage));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -2074,7 +2143,7 @@ public class CellsAutoFilterApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call cellsAutoFilterPutWorksheetFilterTop10ValidateBeforeCall(String name, String sheetName, String range, Integer fieldIndex, Boolean isTop, Boolean isPercent, Integer itemCount, Boolean matchBlanks, Boolean refresh, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call cellsAutoFilterPutWorksheetFilterTop10ValidateBeforeCall(String name, String sheetName, String range, Integer fieldIndex, Boolean isTop, Boolean isPercent, Integer itemCount, Boolean matchBlanks, Boolean refresh, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'name' is set
         if (name == null) {
@@ -2112,7 +2181,7 @@ public class CellsAutoFilterApi {
         }
         
         
-        com.squareup.okhttp.Call call = cellsAutoFilterPutWorksheetFilterTop10Call(name, sheetName, range, fieldIndex, isTop, isPercent, itemCount, matchBlanks, refresh, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsAutoFilterPutWorksheetFilterTop10Call(name, sheetName, range, fieldIndex, isTop, isPercent, itemCount, matchBlanks, refresh, folder, storage, progressListener, progressRequestListener);
         return call;
 
         
@@ -2134,11 +2203,12 @@ public class CellsAutoFilterApi {
      * @param matchBlanks  (optional)
      * @param refresh  (optional)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @return SaaSposeResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public SaaSposeResponse cellsAutoFilterPutWorksheetFilterTop10(String name, String sheetName, String range, Integer fieldIndex, Boolean isTop, Boolean isPercent, Integer itemCount, Boolean matchBlanks, Boolean refresh, String folder) throws ApiException {
-        ApiResponse<SaaSposeResponse> resp = cellsAutoFilterPutWorksheetFilterTop10WithHttpInfo(name, sheetName, range, fieldIndex, isTop, isPercent, itemCount, matchBlanks, refresh, folder);
+    public SaaSposeResponse cellsAutoFilterPutWorksheetFilterTop10(String name, String sheetName, String range, Integer fieldIndex, Boolean isTop, Boolean isPercent, Integer itemCount, Boolean matchBlanks, Boolean refresh, String folder, String storage) throws ApiException {
+        ApiResponse<SaaSposeResponse> resp = cellsAutoFilterPutWorksheetFilterTop10WithHttpInfo(name, sheetName, range, fieldIndex, isTop, isPercent, itemCount, matchBlanks, refresh, folder, storage);
         return resp.getData();
     }
 
@@ -2155,11 +2225,12 @@ public class CellsAutoFilterApi {
      * @param matchBlanks  (optional)
      * @param refresh  (optional)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @return ApiResponse&lt;SaaSposeResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<SaaSposeResponse> cellsAutoFilterPutWorksheetFilterTop10WithHttpInfo(String name, String sheetName, String range, Integer fieldIndex, Boolean isTop, Boolean isPercent, Integer itemCount, Boolean matchBlanks, Boolean refresh, String folder) throws ApiException {
-        com.squareup.okhttp.Call call = cellsAutoFilterPutWorksheetFilterTop10ValidateBeforeCall(name, sheetName, range, fieldIndex, isTop, isPercent, itemCount, matchBlanks, refresh, folder, null, null);
+    public ApiResponse<SaaSposeResponse> cellsAutoFilterPutWorksheetFilterTop10WithHttpInfo(String name, String sheetName, String range, Integer fieldIndex, Boolean isTop, Boolean isPercent, Integer itemCount, Boolean matchBlanks, Boolean refresh, String folder, String storage) throws ApiException {
+        com.squareup.okhttp.Call call = cellsAutoFilterPutWorksheetFilterTop10ValidateBeforeCall(name, sheetName, range, fieldIndex, isTop, isPercent, itemCount, matchBlanks, refresh, folder, storage, null, null);
         Type localVarReturnType = new TypeToken<SaaSposeResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -2177,11 +2248,12 @@ public class CellsAutoFilterApi {
      * @param matchBlanks  (optional)
      * @param refresh  (optional)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call cellsAutoFilterPutWorksheetFilterTop10Async(String name, String sheetName, String range, Integer fieldIndex, Boolean isTop, Boolean isPercent, Integer itemCount, Boolean matchBlanks, Boolean refresh, String folder, final ApiCallback<SaaSposeResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call cellsAutoFilterPutWorksheetFilterTop10Async(String name, String sheetName, String range, Integer fieldIndex, Boolean isTop, Boolean isPercent, Integer itemCount, Boolean matchBlanks, Boolean refresh, String folder, String storage, final ApiCallback<SaaSposeResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -2202,7 +2274,7 @@ public class CellsAutoFilterApi {
             };
         }
 
-        com.squareup.okhttp.Call call = cellsAutoFilterPutWorksheetFilterTop10ValidateBeforeCall(name, sheetName, range, fieldIndex, isTop, isPercent, itemCount, matchBlanks, refresh, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsAutoFilterPutWorksheetFilterTop10ValidateBeforeCall(name, sheetName, range, fieldIndex, isTop, isPercent, itemCount, matchBlanks, refresh, folder, storage, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<SaaSposeResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -2218,12 +2290,13 @@ public class CellsAutoFilterApi {
      * @param matchBlanks  (optional)
      * @param refresh  (optional)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call cellsAutoFilterPutWorksheetIconFilterCall(String name, String sheetName, String range, Integer fieldIndex, String iconSetType, Integer iconId, Boolean matchBlanks, Boolean refresh, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call cellsAutoFilterPutWorksheetIconFilterCall(String name, String sheetName, String range, Integer fieldIndex, String iconSetType, Integer iconId, Boolean matchBlanks, Boolean refresh, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -2246,6 +2319,8 @@ public class CellsAutoFilterApi {
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "refresh", refresh));
         if (folder != null)
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "folder", folder));
+        if (storage != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "storage", storage));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -2280,7 +2355,7 @@ public class CellsAutoFilterApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call cellsAutoFilterPutWorksheetIconFilterValidateBeforeCall(String name, String sheetName, String range, Integer fieldIndex, String iconSetType, Integer iconId, Boolean matchBlanks, Boolean refresh, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call cellsAutoFilterPutWorksheetIconFilterValidateBeforeCall(String name, String sheetName, String range, Integer fieldIndex, String iconSetType, Integer iconId, Boolean matchBlanks, Boolean refresh, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'name' is set
         if (name == null) {
@@ -2313,7 +2388,7 @@ public class CellsAutoFilterApi {
         }
         
         
-        com.squareup.okhttp.Call call = cellsAutoFilterPutWorksheetIconFilterCall(name, sheetName, range, fieldIndex, iconSetType, iconId, matchBlanks, refresh, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsAutoFilterPutWorksheetIconFilterCall(name, sheetName, range, fieldIndex, iconSetType, iconId, matchBlanks, refresh, folder, storage, progressListener, progressRequestListener);
         return call;
 
         
@@ -2334,11 +2409,12 @@ public class CellsAutoFilterApi {
      * @param matchBlanks  (optional)
      * @param refresh  (optional)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @return SaaSposeResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public SaaSposeResponse cellsAutoFilterPutWorksheetIconFilter(String name, String sheetName, String range, Integer fieldIndex, String iconSetType, Integer iconId, Boolean matchBlanks, Boolean refresh, String folder) throws ApiException {
-        ApiResponse<SaaSposeResponse> resp = cellsAutoFilterPutWorksheetIconFilterWithHttpInfo(name, sheetName, range, fieldIndex, iconSetType, iconId, matchBlanks, refresh, folder);
+    public SaaSposeResponse cellsAutoFilterPutWorksheetIconFilter(String name, String sheetName, String range, Integer fieldIndex, String iconSetType, Integer iconId, Boolean matchBlanks, Boolean refresh, String folder, String storage) throws ApiException {
+        ApiResponse<SaaSposeResponse> resp = cellsAutoFilterPutWorksheetIconFilterWithHttpInfo(name, sheetName, range, fieldIndex, iconSetType, iconId, matchBlanks, refresh, folder, storage);
         return resp.getData();
     }
 
@@ -2354,11 +2430,12 @@ public class CellsAutoFilterApi {
      * @param matchBlanks  (optional)
      * @param refresh  (optional)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @return ApiResponse&lt;SaaSposeResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<SaaSposeResponse> cellsAutoFilterPutWorksheetIconFilterWithHttpInfo(String name, String sheetName, String range, Integer fieldIndex, String iconSetType, Integer iconId, Boolean matchBlanks, Boolean refresh, String folder) throws ApiException {
-        com.squareup.okhttp.Call call = cellsAutoFilterPutWorksheetIconFilterValidateBeforeCall(name, sheetName, range, fieldIndex, iconSetType, iconId, matchBlanks, refresh, folder, null, null);
+    public ApiResponse<SaaSposeResponse> cellsAutoFilterPutWorksheetIconFilterWithHttpInfo(String name, String sheetName, String range, Integer fieldIndex, String iconSetType, Integer iconId, Boolean matchBlanks, Boolean refresh, String folder, String storage) throws ApiException {
+        com.squareup.okhttp.Call call = cellsAutoFilterPutWorksheetIconFilterValidateBeforeCall(name, sheetName, range, fieldIndex, iconSetType, iconId, matchBlanks, refresh, folder, storage, null, null);
         Type localVarReturnType = new TypeToken<SaaSposeResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -2375,11 +2452,12 @@ public class CellsAutoFilterApi {
      * @param matchBlanks  (optional)
      * @param refresh  (optional)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call cellsAutoFilterPutWorksheetIconFilterAsync(String name, String sheetName, String range, Integer fieldIndex, String iconSetType, Integer iconId, Boolean matchBlanks, Boolean refresh, String folder, final ApiCallback<SaaSposeResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call cellsAutoFilterPutWorksheetIconFilterAsync(String name, String sheetName, String range, Integer fieldIndex, String iconSetType, Integer iconId, Boolean matchBlanks, Boolean refresh, String folder, String storage, final ApiCallback<SaaSposeResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -2400,7 +2478,7 @@ public class CellsAutoFilterApi {
             };
         }
 
-        com.squareup.okhttp.Call call = cellsAutoFilterPutWorksheetIconFilterValidateBeforeCall(name, sheetName, range, fieldIndex, iconSetType, iconId, matchBlanks, refresh, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsAutoFilterPutWorksheetIconFilterValidateBeforeCall(name, sheetName, range, fieldIndex, iconSetType, iconId, matchBlanks, refresh, folder, storage, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<SaaSposeResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

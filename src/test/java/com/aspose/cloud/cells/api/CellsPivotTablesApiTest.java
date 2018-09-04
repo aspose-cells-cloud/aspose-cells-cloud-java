@@ -85,7 +85,7 @@ public class CellsPivotTablesApiTest {
         request.setData(data);
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        SaaSposeResponse response = api.cellsPivotTablesDeletePivotTableField(name, sheetName, pivotTableIndex, pivotFieldType, request, folder);
+        SaaSposeResponse response = api.cellsPivotTablesDeletePivotTableField(name, sheetName, pivotTableIndex, pivotFieldType, request, folder,null);
 
         // TODO: test validations
     }
@@ -105,7 +105,7 @@ public class CellsPivotTablesApiTest {
         Integer pivotTableIndex = 0;
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        SaaSposeResponse response = api.cellsPivotTablesDeleteWorksheetPivotTable(name, sheetName, pivotTableIndex, folder);
+        SaaSposeResponse response = api.cellsPivotTablesDeleteWorksheetPivotTable(name, sheetName, pivotTableIndex, folder,null);
 
         // TODO: test validations
     }
@@ -127,7 +127,7 @@ public class CellsPivotTablesApiTest {
         Boolean needReCalculate = true;
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        SaaSposeResponse response = api.cellsPivotTablesDeleteWorksheetPivotTableFilter(name, sheetName, pivotTableIndex, fieldIndex, needReCalculate, folder);
+        SaaSposeResponse response = api.cellsPivotTablesDeleteWorksheetPivotTableFilter(name, sheetName, pivotTableIndex, fieldIndex, needReCalculate, folder,null);
 
         // TODO: test validations
     }
@@ -148,7 +148,7 @@ public class CellsPivotTablesApiTest {
         Boolean needReCalculate = true;
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        SaaSposeResponse response = api.cellsPivotTablesDeleteWorksheetPivotTableFilters(name, sheetName, pivotTableIndex, needReCalculate, folder);
+        SaaSposeResponse response = api.cellsPivotTablesDeleteWorksheetPivotTableFilters(name, sheetName, pivotTableIndex, needReCalculate, folder,null);
 
         // TODO: test validations
     }
@@ -167,7 +167,7 @@ public class CellsPivotTablesApiTest {
         String sheetName = SHEET4;
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        SaaSposeResponse response = api.cellsPivotTablesDeleteWorksheetPivotTables(name, sheetName, folder);
+        SaaSposeResponse response = api.cellsPivotTablesDeleteWorksheetPivotTables(name, sheetName, folder,null);
 
         // TODO: test validations
     }
@@ -189,7 +189,7 @@ public class CellsPivotTablesApiTest {
         String pivotFieldType = "Row";
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        PivotFieldResponse response = api.cellsPivotTablesGetPivotTableField(name, sheetName, pivotTableIndex, pivotFieldIndex, pivotFieldType, folder);
+        PivotFieldResponse response = api.cellsPivotTablesGetPivotTableField(name, sheetName, pivotTableIndex, pivotFieldIndex, pivotFieldType, folder,null);
 
         // TODO: test validations
     }
@@ -209,7 +209,7 @@ public class CellsPivotTablesApiTest {
         Integer pivottableIndex = 0;
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        PivotTableResponse response = api.cellsPivotTablesGetWorksheetPivotTable(name, sheetName, pivottableIndex, folder);
+        PivotTableResponse response = api.cellsPivotTablesGetWorksheetPivotTable(name, sheetName, pivottableIndex, folder,null);
 
         // TODO: test validations
     }
@@ -248,8 +248,8 @@ public class CellsPivotTablesApiTest {
         Boolean needReCalculate = true;
 
 			api.setApiClient( CellsApiUtil.Ready(folder, name));
-	        SaaSposeResponse response = api.cellsPivotTablesPutWorksheetPivotTableFilter(name, sheetName, pivotTableIndex, filter, needReCalculate, folder);
-        PivotFilterResponse response1 = api.cellsPivotTablesGetWorksheetPivotTableFilter(name, sheetName, pivotTableIndex, filterIndex, folder);
+	        SaaSposeResponse response = api.cellsPivotTablesPutWorksheetPivotTableFilter(name, sheetName, pivotTableIndex, filter, needReCalculate, folder,null);
+        PivotFilterResponse response1 = api.cellsPivotTablesGetWorksheetPivotTableFilter(name, sheetName, pivotTableIndex, filterIndex, folder,null);
 
         // TODO: test validations
     }
@@ -269,7 +269,7 @@ public class CellsPivotTablesApiTest {
         Integer pivotTableIndex = 0;
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        PivotFiltersResponse response = api.cellsPivotTablesGetWorksheetPivotTableFilters(name, sheetName, pivotTableIndex, folder);
+        PivotFiltersResponse response = api.cellsPivotTablesGetWorksheetPivotTableFilters(name, sheetName, pivotTableIndex, folder,null);
 
         // TODO: test validations
     }
@@ -288,7 +288,7 @@ public class CellsPivotTablesApiTest {
         String sheetName = SHEET4;
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        PivotTablesResponse response = api.cellsPivotTablesGetWorksheetPivotTables(name, sheetName, folder);
+        PivotTablesResponse response = api.cellsPivotTablesGetWorksheetPivotTables(name, sheetName, folder,null);
 
         // TODO: test validations
     }
@@ -315,7 +315,7 @@ public class CellsPivotTablesApiTest {
         Boolean needReCalculate = true;
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        SaaSposeResponse response = api.cellsPivotTablesPostPivotTableCellStyle(name, sheetName, pivotTableIndex, column, row, style, needReCalculate, folder);
+        SaaSposeResponse response = api.cellsPivotTablesPostPivotTableCellStyle(name, sheetName, pivotTableIndex, column, row, style, needReCalculate, folder,null);
 
         // TODO: test validations
     }
@@ -340,7 +340,7 @@ public class CellsPivotTablesApiTest {
         Boolean needReCalculate = true;
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        SaaSposeResponse response = api.cellsPivotTablesPostPivotTableFieldHideItem(name, sheetName, pivotTableIndex, pivotFieldType, fieldIndex, itemIndex, isHide, needReCalculate, folder);
+        SaaSposeResponse response = api.cellsPivotTablesPostPivotTableFieldHideItem(name, sheetName, pivotTableIndex, pivotFieldType, fieldIndex, itemIndex, isHide, needReCalculate, folder,null);
 
         // TODO: test validations
     }
@@ -363,7 +363,7 @@ public class CellsPivotTablesApiTest {
         String to = "Column";
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        SaaSposeResponse response = api.cellsPivotTablesPostPivotTableFieldMoveTo(name, sheetName, pivotTableIndex, fieldIndex, from, to, folder);
+        SaaSposeResponse response = api.cellsPivotTablesPostPivotTableFieldMoveTo(name, sheetName, pivotTableIndex, fieldIndex, from, to, folder,null);
 
         // TODO: test validations
     }
@@ -388,7 +388,7 @@ public class CellsPivotTablesApiTest {
         Boolean needReCalculate = true;
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        SaaSposeResponse response = api.cellsPivotTablesPostPivotTableStyle(name, sheetName, pivotTableIndex, style, needReCalculate, folder);
+        SaaSposeResponse response = api.cellsPivotTablesPostPivotTableStyle(name, sheetName, pivotTableIndex, style, needReCalculate, folder,null);
 
         // TODO: test validations
     }
@@ -408,7 +408,7 @@ public class CellsPivotTablesApiTest {
         Integer pivotTableIndex = 0;
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        SaaSposeResponse response = api.cellsPivotTablesPostWorksheetPivotTableCalculate(name, sheetName, pivotTableIndex, folder);
+        SaaSposeResponse response = api.cellsPivotTablesPostWorksheetPivotTableCalculate(name, sheetName, pivotTableIndex, folder,null);
 
         // TODO: test validations
     }
@@ -431,7 +431,7 @@ public class CellsPivotTablesApiTest {
         String destCellName =  "C10";
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        SaaSposeResponse response = api.cellsPivotTablesPostWorksheetPivotTableMove(name, sheetName, pivotTableIndex, row, column, destCellName, folder);
+        SaaSposeResponse response = api.cellsPivotTablesPostWorksheetPivotTableMove(name, sheetName, pivotTableIndex, row, column, destCellName, folder,null);
 
         // TODO: test validations
     }
@@ -457,7 +457,7 @@ public class CellsPivotTablesApiTest {
         Boolean needReCalculate = null;
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        SaaSposeResponse response = api.cellsPivotTablesPutPivotTableField(name, sheetName, pivotTableIndex, pivotFieldType, request, needReCalculate, folder);
+        SaaSposeResponse response = api.cellsPivotTablesPutPivotTableField(name, sheetName, pivotTableIndex, pivotFieldType, request, needReCalculate, folder,null);
 
         // TODO: test validations
     }
@@ -480,7 +480,7 @@ public class CellsPivotTablesApiTest {
         String tableName = "TestPivot";
         Boolean useSameSource = true;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        PivotTableResponse response = api.cellsPivotTablesPutWorksheetPivotTable(name, sheetName, null, folder, sourceData, destCellName, tableName, useSameSource);
+        PivotTableResponse response = api.cellsPivotTablesPutWorksheetPivotTable(name, sheetName, null, folder,null, sourceData, destCellName, tableName, useSameSource);
 
         // TODO: test validations
     }
@@ -515,7 +515,7 @@ public class CellsPivotTablesApiTest {
         Boolean needReCalculate = true;
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        SaaSposeResponse response = api.cellsPivotTablesPutWorksheetPivotTableFilter(name, sheetName, pivotTableIndex, filter, needReCalculate, folder);
+        SaaSposeResponse response = api.cellsPivotTablesPutWorksheetPivotTableFilter(name, sheetName, pivotTableIndex, filter, needReCalculate, folder,null);
 
         // TODO: test validations
     }

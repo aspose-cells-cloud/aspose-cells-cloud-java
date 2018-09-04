@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a name="cellsTaskPostRunTask"></a>
 # **cellsTaskPostRunTask**
-> File cellsTaskPostRunTask(taskData)
+> Object cellsTaskPostRunTask(taskData)
 
 Run tasks  
 
@@ -23,7 +23,7 @@ Run tasks
 CellsTaskApi apiInstance = new CellsTaskApi();
 TaskData taskData = new TaskData(); // TaskData | 
 try {
-    File result = apiInstance.cellsTaskPostRunTask(taskData);
+    Object result = apiInstance.cellsTaskPostRunTask(taskData);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsTaskApi#cellsTaskPostRunTask");
@@ -39,7 +39,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**File**](File.md)
+**Object**
 
 ### Authorization
 

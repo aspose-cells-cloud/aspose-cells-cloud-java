@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 <a name="cellsShapesDeleteWorksheetShape"></a>
 # **cellsShapesDeleteWorksheetShape**
-> SaaSposeResponse cellsShapesDeleteWorksheetShape(name, sheetName, shapeindex, folder)
+> SaaSposeResponse cellsShapesDeleteWorksheetShape(name, sheetName, shapeindex, folder, storage)
 
 Delete a shape in worksheet
 
@@ -30,8 +30,9 @@ String name = "name_example"; // String | document name.
 String sheetName = "sheetName_example"; // String | worksheet name.
 Integer shapeindex = 56; // Integer | shape index in worksheet shapes.
 String folder = "folder_example"; // String | Document's folder.
+String storage = "storage_example"; // String | storage name.
 try {
-    SaaSposeResponse result = apiInstance.cellsShapesDeleteWorksheetShape(name, sheetName, shapeindex, folder);
+    SaaSposeResponse result = apiInstance.cellsShapesDeleteWorksheetShape(name, sheetName, shapeindex, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsShapesApi#cellsShapesDeleteWorksheetShape");
@@ -47,6 +48,7 @@ Name | Type | Description  | Notes
  **sheetName** | **String**| worksheet name. |
  **shapeindex** | **Integer**| shape index in worksheet shapes. |
  **folder** | **String**| Document&#39;s folder. | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -63,7 +65,7 @@ No authorization required
 
 <a name="cellsShapesDeleteWorksheetShapes"></a>
 # **cellsShapesDeleteWorksheetShapes**
-> SaaSposeResponse cellsShapesDeleteWorksheetShapes(name, sheetName, folder)
+> SaaSposeResponse cellsShapesDeleteWorksheetShapes(name, sheetName, folder, storage)
 
 delete all shapes in worksheet
 
@@ -78,8 +80,9 @@ CellsShapesApi apiInstance = new CellsShapesApi();
 String name = "name_example"; // String | document name.
 String sheetName = "sheetName_example"; // String | worksheet name.
 String folder = "folder_example"; // String | Document's folder.
+String storage = "storage_example"; // String | storage name.
 try {
-    SaaSposeResponse result = apiInstance.cellsShapesDeleteWorksheetShapes(name, sheetName, folder);
+    SaaSposeResponse result = apiInstance.cellsShapesDeleteWorksheetShapes(name, sheetName, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsShapesApi#cellsShapesDeleteWorksheetShapes");
@@ -94,6 +97,7 @@ Name | Type | Description  | Notes
  **name** | **String**| document name. |
  **sheetName** | **String**| worksheet name. |
  **folder** | **String**| Document&#39;s folder. | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -110,7 +114,7 @@ No authorization required
 
 <a name="cellsShapesGetWorksheetShape"></a>
 # **cellsShapesGetWorksheetShape**
-> ShapeResponse cellsShapesGetWorksheetShape(name, sheetName, shapeindex, folder)
+> ShapeResponse cellsShapesGetWorksheetShape(name, sheetName, shapeindex, folder, storage)
 
 Get worksheet shape
 
@@ -126,8 +130,9 @@ String name = "name_example"; // String | document name.
 String sheetName = "sheetName_example"; // String | worksheet name.
 Integer shapeindex = 56; // Integer | shape index in worksheet shapes.
 String folder = "folder_example"; // String | Document's folder.
+String storage = "storage_example"; // String | storage name.
 try {
-    ShapeResponse result = apiInstance.cellsShapesGetWorksheetShape(name, sheetName, shapeindex, folder);
+    ShapeResponse result = apiInstance.cellsShapesGetWorksheetShape(name, sheetName, shapeindex, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsShapesApi#cellsShapesGetWorksheetShape");
@@ -143,6 +148,7 @@ Name | Type | Description  | Notes
  **sheetName** | **String**| worksheet name. |
  **shapeindex** | **Integer**| shape index in worksheet shapes. |
  **folder** | **String**| Document&#39;s folder. | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -159,7 +165,7 @@ No authorization required
 
 <a name="cellsShapesGetWorksheetShapes"></a>
 # **cellsShapesGetWorksheetShapes**
-> ShapesResponse cellsShapesGetWorksheetShapes(name, sheetName, folder)
+> ShapesResponse cellsShapesGetWorksheetShapes(name, sheetName, folder, storage)
 
 Get worksheet shapes 
 
@@ -174,8 +180,9 @@ CellsShapesApi apiInstance = new CellsShapesApi();
 String name = "name_example"; // String | document name.
 String sheetName = "sheetName_example"; // String | worksheet name.
 String folder = "folder_example"; // String | Document's folder.
+String storage = "storage_example"; // String | storage name.
 try {
-    ShapesResponse result = apiInstance.cellsShapesGetWorksheetShapes(name, sheetName, folder);
+    ShapesResponse result = apiInstance.cellsShapesGetWorksheetShapes(name, sheetName, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsShapesApi#cellsShapesGetWorksheetShapes");
@@ -190,6 +197,7 @@ Name | Type | Description  | Notes
  **name** | **String**| document name. |
  **sheetName** | **String**| worksheet name. |
  **folder** | **String**| Document&#39;s folder. | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -206,7 +214,7 @@ No authorization required
 
 <a name="cellsShapesPostWorksheetShape"></a>
 # **cellsShapesPostWorksheetShape**
-> SaaSposeResponse cellsShapesPostWorksheetShape(name, sheetName, shapeindex, dto, folder)
+> SaaSposeResponse cellsShapesPostWorksheetShape(name, sheetName, shapeindex, dto, folder, storage)
 
 Update a shape in worksheet
 
@@ -223,8 +231,9 @@ String sheetName = "sheetName_example"; // String | worksheet name.
 Integer shapeindex = 56; // Integer | shape index in worksheet shapes.
 Shape dto = new Shape(); // Shape | 
 String folder = "folder_example"; // String | Document's folder.
+String storage = "storage_example"; // String | storage name.
 try {
-    SaaSposeResponse result = apiInstance.cellsShapesPostWorksheetShape(name, sheetName, shapeindex, dto, folder);
+    SaaSposeResponse result = apiInstance.cellsShapesPostWorksheetShape(name, sheetName, shapeindex, dto, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsShapesApi#cellsShapesPostWorksheetShape");
@@ -241,6 +250,7 @@ Name | Type | Description  | Notes
  **shapeindex** | **Integer**| shape index in worksheet shapes. |
  **dto** | [**Shape**](Shape.md)|  | [optional]
  **folder** | **String**| Document&#39;s folder. | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -257,7 +267,7 @@ No authorization required
 
 <a name="cellsShapesPutWorksheetShape"></a>
 # **cellsShapesPutWorksheetShape**
-> ShapeResponse cellsShapesPutWorksheetShape(name, sheetName, drawingType, upperLeftRow, upperLeftColumn, top, left, width, height, folder)
+> ShapeResponse cellsShapesPutWorksheetShape(name, sheetName, drawingType, upperLeftRow, upperLeftColumn, top, left, width, height, folder, storage)
 
 Add shape in worksheet
 
@@ -279,8 +289,9 @@ Integer left = 56; // Integer | Represents the horizontal offset of Spinner from
 Integer width = 56; // Integer | Represents the height of Spinner, in unit of pixel.
 Integer height = 56; // Integer | Represents the width of Spinner, in unit of pixel.
 String folder = "folder_example"; // String | Document's folder.
+String storage = "storage_example"; // String | storage name.
 try {
-    ShapeResponse result = apiInstance.cellsShapesPutWorksheetShape(name, sheetName, drawingType, upperLeftRow, upperLeftColumn, top, left, width, height, folder);
+    ShapeResponse result = apiInstance.cellsShapesPutWorksheetShape(name, sheetName, drawingType, upperLeftRow, upperLeftColumn, top, left, width, height, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsShapesApi#cellsShapesPutWorksheetShape");
@@ -302,6 +313,7 @@ Name | Type | Description  | Notes
  **width** | **Integer**| Represents the height of Spinner, in unit of pixel. |
  **height** | **Integer**| Represents the width of Spinner, in unit of pixel. |
  **folder** | **String**| Document&#39;s folder. | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 

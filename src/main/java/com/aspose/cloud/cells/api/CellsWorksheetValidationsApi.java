@@ -62,12 +62,13 @@ public class CellsWorksheetValidationsApi {
      * @param sheetName Worksheet name. (required)
      * @param validationIndex The validation index. (required)
      * @param folder Document&#39;s folder. (optional)
+     * @param storage storage name. (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call cellsWorksheetValidationsDeleteWorksheetValidationCall(String name, String sheetName, Integer validationIndex, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call cellsWorksheetValidationsDeleteWorksheetValidationCall(String name, String sheetName, Integer validationIndex, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -79,6 +80,8 @@ public class CellsWorksheetValidationsApi {
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         if (folder != null)
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "folder", folder));
+        if (storage != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "storage", storage));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -113,7 +116,7 @@ public class CellsWorksheetValidationsApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call cellsWorksheetValidationsDeleteWorksheetValidationValidateBeforeCall(String name, String sheetName, Integer validationIndex, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call cellsWorksheetValidationsDeleteWorksheetValidationValidateBeforeCall(String name, String sheetName, Integer validationIndex, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'name' is set
         if (name == null) {
@@ -131,7 +134,7 @@ public class CellsWorksheetValidationsApi {
         }
         
         
-        com.squareup.okhttp.Call call = cellsWorksheetValidationsDeleteWorksheetValidationCall(name, sheetName, validationIndex, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsWorksheetValidationsDeleteWorksheetValidationCall(name, sheetName, validationIndex, folder, storage, progressListener, progressRequestListener);
         return call;
 
         
@@ -147,11 +150,12 @@ public class CellsWorksheetValidationsApi {
      * @param sheetName Worksheet name. (required)
      * @param validationIndex The validation index. (required)
      * @param folder Document&#39;s folder. (optional)
+     * @param storage storage name. (optional)
      * @return ValidationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ValidationResponse cellsWorksheetValidationsDeleteWorksheetValidation(String name, String sheetName, Integer validationIndex, String folder) throws ApiException {
-        ApiResponse<ValidationResponse> resp = cellsWorksheetValidationsDeleteWorksheetValidationWithHttpInfo(name, sheetName, validationIndex, folder);
+    public ValidationResponse cellsWorksheetValidationsDeleteWorksheetValidation(String name, String sheetName, Integer validationIndex, String folder, String storage) throws ApiException {
+        ApiResponse<ValidationResponse> resp = cellsWorksheetValidationsDeleteWorksheetValidationWithHttpInfo(name, sheetName, validationIndex, folder, storage);
         return resp.getData();
     }
 
@@ -162,11 +166,12 @@ public class CellsWorksheetValidationsApi {
      * @param sheetName Worksheet name. (required)
      * @param validationIndex The validation index. (required)
      * @param folder Document&#39;s folder. (optional)
+     * @param storage storage name. (optional)
      * @return ApiResponse&lt;ValidationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ValidationResponse> cellsWorksheetValidationsDeleteWorksheetValidationWithHttpInfo(String name, String sheetName, Integer validationIndex, String folder) throws ApiException {
-        com.squareup.okhttp.Call call = cellsWorksheetValidationsDeleteWorksheetValidationValidateBeforeCall(name, sheetName, validationIndex, folder, null, null);
+    public ApiResponse<ValidationResponse> cellsWorksheetValidationsDeleteWorksheetValidationWithHttpInfo(String name, String sheetName, Integer validationIndex, String folder, String storage) throws ApiException {
+        com.squareup.okhttp.Call call = cellsWorksheetValidationsDeleteWorksheetValidationValidateBeforeCall(name, sheetName, validationIndex, folder, storage, null, null);
         Type localVarReturnType = new TypeToken<ValidationResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -178,11 +183,12 @@ public class CellsWorksheetValidationsApi {
      * @param sheetName Worksheet name. (required)
      * @param validationIndex The validation index. (required)
      * @param folder Document&#39;s folder. (optional)
+     * @param storage storage name. (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call cellsWorksheetValidationsDeleteWorksheetValidationAsync(String name, String sheetName, Integer validationIndex, String folder, final ApiCallback<ValidationResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call cellsWorksheetValidationsDeleteWorksheetValidationAsync(String name, String sheetName, Integer validationIndex, String folder, String storage, final ApiCallback<ValidationResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -203,7 +209,7 @@ public class CellsWorksheetValidationsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = cellsWorksheetValidationsDeleteWorksheetValidationValidateBeforeCall(name, sheetName, validationIndex, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsWorksheetValidationsDeleteWorksheetValidationValidateBeforeCall(name, sheetName, validationIndex, folder, storage, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<ValidationResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -214,12 +220,13 @@ public class CellsWorksheetValidationsApi {
      * @param sheetName Worksheet name. (required)
      * @param validationIndex The validation index. (required)
      * @param folder Document&#39;s folder. (optional)
+     * @param storage storage name. (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call cellsWorksheetValidationsGetWorksheetValidationCall(String name, String sheetName, Integer validationIndex, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call cellsWorksheetValidationsGetWorksheetValidationCall(String name, String sheetName, Integer validationIndex, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -231,6 +238,8 @@ public class CellsWorksheetValidationsApi {
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         if (folder != null)
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "folder", folder));
+        if (storage != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "storage", storage));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -265,7 +274,7 @@ public class CellsWorksheetValidationsApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call cellsWorksheetValidationsGetWorksheetValidationValidateBeforeCall(String name, String sheetName, Integer validationIndex, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call cellsWorksheetValidationsGetWorksheetValidationValidateBeforeCall(String name, String sheetName, Integer validationIndex, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'name' is set
         if (name == null) {
@@ -283,7 +292,7 @@ public class CellsWorksheetValidationsApi {
         }
         
         
-        com.squareup.okhttp.Call call = cellsWorksheetValidationsGetWorksheetValidationCall(name, sheetName, validationIndex, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsWorksheetValidationsGetWorksheetValidationCall(name, sheetName, validationIndex, folder, storage, progressListener, progressRequestListener);
         return call;
 
         
@@ -299,11 +308,12 @@ public class CellsWorksheetValidationsApi {
      * @param sheetName Worksheet name. (required)
      * @param validationIndex The validation index. (required)
      * @param folder Document&#39;s folder. (optional)
+     * @param storage storage name. (optional)
      * @return ValidationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ValidationResponse cellsWorksheetValidationsGetWorksheetValidation(String name, String sheetName, Integer validationIndex, String folder) throws ApiException {
-        ApiResponse<ValidationResponse> resp = cellsWorksheetValidationsGetWorksheetValidationWithHttpInfo(name, sheetName, validationIndex, folder);
+    public ValidationResponse cellsWorksheetValidationsGetWorksheetValidation(String name, String sheetName, Integer validationIndex, String folder, String storage) throws ApiException {
+        ApiResponse<ValidationResponse> resp = cellsWorksheetValidationsGetWorksheetValidationWithHttpInfo(name, sheetName, validationIndex, folder, storage);
         return resp.getData();
     }
 
@@ -314,11 +324,12 @@ public class CellsWorksheetValidationsApi {
      * @param sheetName Worksheet name. (required)
      * @param validationIndex The validation index. (required)
      * @param folder Document&#39;s folder. (optional)
+     * @param storage storage name. (optional)
      * @return ApiResponse&lt;ValidationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ValidationResponse> cellsWorksheetValidationsGetWorksheetValidationWithHttpInfo(String name, String sheetName, Integer validationIndex, String folder) throws ApiException {
-        com.squareup.okhttp.Call call = cellsWorksheetValidationsGetWorksheetValidationValidateBeforeCall(name, sheetName, validationIndex, folder, null, null);
+    public ApiResponse<ValidationResponse> cellsWorksheetValidationsGetWorksheetValidationWithHttpInfo(String name, String sheetName, Integer validationIndex, String folder, String storage) throws ApiException {
+        com.squareup.okhttp.Call call = cellsWorksheetValidationsGetWorksheetValidationValidateBeforeCall(name, sheetName, validationIndex, folder, storage, null, null);
         Type localVarReturnType = new TypeToken<ValidationResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -330,11 +341,12 @@ public class CellsWorksheetValidationsApi {
      * @param sheetName Worksheet name. (required)
      * @param validationIndex The validation index. (required)
      * @param folder Document&#39;s folder. (optional)
+     * @param storage storage name. (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call cellsWorksheetValidationsGetWorksheetValidationAsync(String name, String sheetName, Integer validationIndex, String folder, final ApiCallback<ValidationResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call cellsWorksheetValidationsGetWorksheetValidationAsync(String name, String sheetName, Integer validationIndex, String folder, String storage, final ApiCallback<ValidationResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -355,7 +367,7 @@ public class CellsWorksheetValidationsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = cellsWorksheetValidationsGetWorksheetValidationValidateBeforeCall(name, sheetName, validationIndex, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsWorksheetValidationsGetWorksheetValidationValidateBeforeCall(name, sheetName, validationIndex, folder, storage, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<ValidationResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -365,12 +377,13 @@ public class CellsWorksheetValidationsApi {
      * @param name Document name. (required)
      * @param sheetName Worksheet name. (required)
      * @param folder Document folder. (optional)
+     * @param storage storage name. (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call cellsWorksheetValidationsGetWorksheetValidationsCall(String name, String sheetName, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call cellsWorksheetValidationsGetWorksheetValidationsCall(String name, String sheetName, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -381,6 +394,8 @@ public class CellsWorksheetValidationsApi {
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         if (folder != null)
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "folder", folder));
+        if (storage != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "storage", storage));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -415,7 +430,7 @@ public class CellsWorksheetValidationsApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call cellsWorksheetValidationsGetWorksheetValidationsValidateBeforeCall(String name, String sheetName, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call cellsWorksheetValidationsGetWorksheetValidationsValidateBeforeCall(String name, String sheetName, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'name' is set
         if (name == null) {
@@ -428,7 +443,7 @@ public class CellsWorksheetValidationsApi {
         }
         
         
-        com.squareup.okhttp.Call call = cellsWorksheetValidationsGetWorksheetValidationsCall(name, sheetName, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsWorksheetValidationsGetWorksheetValidationsCall(name, sheetName, folder, storage, progressListener, progressRequestListener);
         return call;
 
         
@@ -443,11 +458,12 @@ public class CellsWorksheetValidationsApi {
      * @param name Document name. (required)
      * @param sheetName Worksheet name. (required)
      * @param folder Document folder. (optional)
+     * @param storage storage name. (optional)
      * @return ValidationsResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ValidationsResponse cellsWorksheetValidationsGetWorksheetValidations(String name, String sheetName, String folder) throws ApiException {
-        ApiResponse<ValidationsResponse> resp = cellsWorksheetValidationsGetWorksheetValidationsWithHttpInfo(name, sheetName, folder);
+    public ValidationsResponse cellsWorksheetValidationsGetWorksheetValidations(String name, String sheetName, String folder, String storage) throws ApiException {
+        ApiResponse<ValidationsResponse> resp = cellsWorksheetValidationsGetWorksheetValidationsWithHttpInfo(name, sheetName, folder, storage);
         return resp.getData();
     }
 
@@ -457,11 +473,12 @@ public class CellsWorksheetValidationsApi {
      * @param name Document name. (required)
      * @param sheetName Worksheet name. (required)
      * @param folder Document folder. (optional)
+     * @param storage storage name. (optional)
      * @return ApiResponse&lt;ValidationsResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ValidationsResponse> cellsWorksheetValidationsGetWorksheetValidationsWithHttpInfo(String name, String sheetName, String folder) throws ApiException {
-        com.squareup.okhttp.Call call = cellsWorksheetValidationsGetWorksheetValidationsValidateBeforeCall(name, sheetName, folder, null, null);
+    public ApiResponse<ValidationsResponse> cellsWorksheetValidationsGetWorksheetValidationsWithHttpInfo(String name, String sheetName, String folder, String storage) throws ApiException {
+        com.squareup.okhttp.Call call = cellsWorksheetValidationsGetWorksheetValidationsValidateBeforeCall(name, sheetName, folder, storage, null, null);
         Type localVarReturnType = new TypeToken<ValidationsResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -472,11 +489,12 @@ public class CellsWorksheetValidationsApi {
      * @param name Document name. (required)
      * @param sheetName Worksheet name. (required)
      * @param folder Document folder. (optional)
+     * @param storage storage name. (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call cellsWorksheetValidationsGetWorksheetValidationsAsync(String name, String sheetName, String folder, final ApiCallback<ValidationsResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call cellsWorksheetValidationsGetWorksheetValidationsAsync(String name, String sheetName, String folder, String storage, final ApiCallback<ValidationsResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -497,7 +515,7 @@ public class CellsWorksheetValidationsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = cellsWorksheetValidationsGetWorksheetValidationsValidateBeforeCall(name, sheetName, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsWorksheetValidationsGetWorksheetValidationsValidateBeforeCall(name, sheetName, folder, storage, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<ValidationsResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -509,12 +527,13 @@ public class CellsWorksheetValidationsApi {
      * @param validationIndex The validation index. (required)
      * @param validation  (optional)
      * @param folder Document&#39;s folder. (optional)
+     * @param storage storage name. (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call cellsWorksheetValidationsPostWorksheetValidationCall(String name, String sheetName, Integer validationIndex, Validation validation, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call cellsWorksheetValidationsPostWorksheetValidationCall(String name, String sheetName, Integer validationIndex, Validation validation, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = validation;
         
         // create path and map variables
@@ -526,6 +545,8 @@ public class CellsWorksheetValidationsApi {
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         if (folder != null)
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "folder", folder));
+        if (storage != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "storage", storage));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -560,7 +581,7 @@ public class CellsWorksheetValidationsApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call cellsWorksheetValidationsPostWorksheetValidationValidateBeforeCall(String name, String sheetName, Integer validationIndex, Validation validation, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call cellsWorksheetValidationsPostWorksheetValidationValidateBeforeCall(String name, String sheetName, Integer validationIndex, Validation validation, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'name' is set
         if (name == null) {
@@ -578,7 +599,7 @@ public class CellsWorksheetValidationsApi {
         }
         
         
-        com.squareup.okhttp.Call call = cellsWorksheetValidationsPostWorksheetValidationCall(name, sheetName, validationIndex, validation, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsWorksheetValidationsPostWorksheetValidationCall(name, sheetName, validationIndex, validation, folder, storage, progressListener, progressRequestListener);
         return call;
 
         
@@ -595,11 +616,12 @@ public class CellsWorksheetValidationsApi {
      * @param validationIndex The validation index. (required)
      * @param validation  (optional)
      * @param folder Document&#39;s folder. (optional)
+     * @param storage storage name. (optional)
      * @return ValidationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ValidationResponse cellsWorksheetValidationsPostWorksheetValidation(String name, String sheetName, Integer validationIndex, Validation validation, String folder) throws ApiException {
-        ApiResponse<ValidationResponse> resp = cellsWorksheetValidationsPostWorksheetValidationWithHttpInfo(name, sheetName, validationIndex, validation, folder);
+    public ValidationResponse cellsWorksheetValidationsPostWorksheetValidation(String name, String sheetName, Integer validationIndex, Validation validation, String folder, String storage) throws ApiException {
+        ApiResponse<ValidationResponse> resp = cellsWorksheetValidationsPostWorksheetValidationWithHttpInfo(name, sheetName, validationIndex, validation, folder, storage);
         return resp.getData();
     }
 
@@ -611,11 +633,12 @@ public class CellsWorksheetValidationsApi {
      * @param validationIndex The validation index. (required)
      * @param validation  (optional)
      * @param folder Document&#39;s folder. (optional)
+     * @param storage storage name. (optional)
      * @return ApiResponse&lt;ValidationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ValidationResponse> cellsWorksheetValidationsPostWorksheetValidationWithHttpInfo(String name, String sheetName, Integer validationIndex, Validation validation, String folder) throws ApiException {
-        com.squareup.okhttp.Call call = cellsWorksheetValidationsPostWorksheetValidationValidateBeforeCall(name, sheetName, validationIndex, validation, folder, null, null);
+    public ApiResponse<ValidationResponse> cellsWorksheetValidationsPostWorksheetValidationWithHttpInfo(String name, String sheetName, Integer validationIndex, Validation validation, String folder, String storage) throws ApiException {
+        com.squareup.okhttp.Call call = cellsWorksheetValidationsPostWorksheetValidationValidateBeforeCall(name, sheetName, validationIndex, validation, folder, storage, null, null);
         Type localVarReturnType = new TypeToken<ValidationResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -628,11 +651,12 @@ public class CellsWorksheetValidationsApi {
      * @param validationIndex The validation index. (required)
      * @param validation  (optional)
      * @param folder Document&#39;s folder. (optional)
+     * @param storage storage name. (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call cellsWorksheetValidationsPostWorksheetValidationAsync(String name, String sheetName, Integer validationIndex, Validation validation, String folder, final ApiCallback<ValidationResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call cellsWorksheetValidationsPostWorksheetValidationAsync(String name, String sheetName, Integer validationIndex, Validation validation, String folder, String storage, final ApiCallback<ValidationResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -653,7 +677,7 @@ public class CellsWorksheetValidationsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = cellsWorksheetValidationsPostWorksheetValidationValidateBeforeCall(name, sheetName, validationIndex, validation, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsWorksheetValidationsPostWorksheetValidationValidateBeforeCall(name, sheetName, validationIndex, validation, folder, storage, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<ValidationResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -664,12 +688,13 @@ public class CellsWorksheetValidationsApi {
      * @param sheetName Worksheet name. (required)
      * @param range Specified cells area (optional)
      * @param folder Document&#39;s folder. (optional)
+     * @param storage storage name. (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call cellsWorksheetValidationsPutWorksheetValidationCall(String name, String sheetName, String range, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call cellsWorksheetValidationsPutWorksheetValidationCall(String name, String sheetName, String range, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -682,6 +707,8 @@ public class CellsWorksheetValidationsApi {
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "range", range));
         if (folder != null)
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "folder", folder));
+        if (storage != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "storage", storage));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -716,7 +743,7 @@ public class CellsWorksheetValidationsApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call cellsWorksheetValidationsPutWorksheetValidationValidateBeforeCall(String name, String sheetName, String range, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call cellsWorksheetValidationsPutWorksheetValidationValidateBeforeCall(String name, String sheetName, String range, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'name' is set
         if (name == null) {
@@ -729,7 +756,7 @@ public class CellsWorksheetValidationsApi {
         }
         
         
-        com.squareup.okhttp.Call call = cellsWorksheetValidationsPutWorksheetValidationCall(name, sheetName, range, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsWorksheetValidationsPutWorksheetValidationCall(name, sheetName, range, folder, storage, progressListener, progressRequestListener);
         return call;
 
         
@@ -745,11 +772,12 @@ public class CellsWorksheetValidationsApi {
      * @param sheetName Worksheet name. (required)
      * @param range Specified cells area (optional)
      * @param folder Document&#39;s folder. (optional)
+     * @param storage storage name. (optional)
      * @return ValidationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ValidationResponse cellsWorksheetValidationsPutWorksheetValidation(String name, String sheetName, String range, String folder) throws ApiException {
-        ApiResponse<ValidationResponse> resp = cellsWorksheetValidationsPutWorksheetValidationWithHttpInfo(name, sheetName, range, folder);
+    public ValidationResponse cellsWorksheetValidationsPutWorksheetValidation(String name, String sheetName, String range, String folder, String storage) throws ApiException {
+        ApiResponse<ValidationResponse> resp = cellsWorksheetValidationsPutWorksheetValidationWithHttpInfo(name, sheetName, range, folder, storage);
         return resp.getData();
     }
 
@@ -760,11 +788,12 @@ public class CellsWorksheetValidationsApi {
      * @param sheetName Worksheet name. (required)
      * @param range Specified cells area (optional)
      * @param folder Document&#39;s folder. (optional)
+     * @param storage storage name. (optional)
      * @return ApiResponse&lt;ValidationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ValidationResponse> cellsWorksheetValidationsPutWorksheetValidationWithHttpInfo(String name, String sheetName, String range, String folder) throws ApiException {
-        com.squareup.okhttp.Call call = cellsWorksheetValidationsPutWorksheetValidationValidateBeforeCall(name, sheetName, range, folder, null, null);
+    public ApiResponse<ValidationResponse> cellsWorksheetValidationsPutWorksheetValidationWithHttpInfo(String name, String sheetName, String range, String folder, String storage) throws ApiException {
+        com.squareup.okhttp.Call call = cellsWorksheetValidationsPutWorksheetValidationValidateBeforeCall(name, sheetName, range, folder, storage, null, null);
         Type localVarReturnType = new TypeToken<ValidationResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -776,11 +805,12 @@ public class CellsWorksheetValidationsApi {
      * @param sheetName Worksheet name. (required)
      * @param range Specified cells area (optional)
      * @param folder Document&#39;s folder. (optional)
+     * @param storage storage name. (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call cellsWorksheetValidationsPutWorksheetValidationAsync(String name, String sheetName, String range, String folder, final ApiCallback<ValidationResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call cellsWorksheetValidationsPutWorksheetValidationAsync(String name, String sheetName, String range, String folder, String storage, final ApiCallback<ValidationResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -801,7 +831,7 @@ public class CellsWorksheetValidationsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = cellsWorksheetValidationsPutWorksheetValidationValidateBeforeCall(name, sheetName, range, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsWorksheetValidationsPutWorksheetValidationValidateBeforeCall(name, sheetName, range, folder, storage, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<ValidationResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

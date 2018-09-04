@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 <a name="cellsConditionalFormattingsDeleteWorksheetConditionalFormatting"></a>
 # **cellsConditionalFormattingsDeleteWorksheetConditionalFormatting**
-> SaaSposeResponse cellsConditionalFormattingsDeleteWorksheetConditionalFormatting(name, sheetName, index, folder)
+> SaaSposeResponse cellsConditionalFormattingsDeleteWorksheetConditionalFormatting(name, sheetName, index, folder, storage)
 
 Remove conditional formatting
 
@@ -33,8 +33,9 @@ String name = "name_example"; // String |
 String sheetName = "sheetName_example"; // String | 
 Integer index = 56; // Integer | 
 String folder = "folder_example"; // String | 
+String storage = "storage_example"; // String | storage name.
 try {
-    SaaSposeResponse result = apiInstance.cellsConditionalFormattingsDeleteWorksheetConditionalFormatting(name, sheetName, index, folder);
+    SaaSposeResponse result = apiInstance.cellsConditionalFormattingsDeleteWorksheetConditionalFormatting(name, sheetName, index, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsConditionalFormattingsApi#cellsConditionalFormattingsDeleteWorksheetConditionalFormatting");
@@ -50,6 +51,7 @@ Name | Type | Description  | Notes
  **sheetName** | **String**|  |
  **index** | **Integer**|  |
  **folder** | **String**|  | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -66,7 +68,7 @@ No authorization required
 
 <a name="cellsConditionalFormattingsDeleteWorksheetConditionalFormattingArea"></a>
 # **cellsConditionalFormattingsDeleteWorksheetConditionalFormattingArea**
-> SaaSposeResponse cellsConditionalFormattingsDeleteWorksheetConditionalFormattingArea(name, sheetName, startRow, startColumn, totalRows, totalColumns, folder)
+> SaaSposeResponse cellsConditionalFormattingsDeleteWorksheetConditionalFormattingArea(name, sheetName, startRow, startColumn, totalRows, totalColumns, folder, storage)
 
 Remove cell area from conditional formatting.
 
@@ -85,8 +87,9 @@ Integer startColumn = 56; // Integer |
 Integer totalRows = 56; // Integer | 
 Integer totalColumns = 56; // Integer | 
 String folder = "folder_example"; // String | 
+String storage = "storage_example"; // String | storage name.
 try {
-    SaaSposeResponse result = apiInstance.cellsConditionalFormattingsDeleteWorksheetConditionalFormattingArea(name, sheetName, startRow, startColumn, totalRows, totalColumns, folder);
+    SaaSposeResponse result = apiInstance.cellsConditionalFormattingsDeleteWorksheetConditionalFormattingArea(name, sheetName, startRow, startColumn, totalRows, totalColumns, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsConditionalFormattingsApi#cellsConditionalFormattingsDeleteWorksheetConditionalFormattingArea");
@@ -105,6 +108,7 @@ Name | Type | Description  | Notes
  **totalRows** | **Integer**|  |
  **totalColumns** | **Integer**|  |
  **folder** | **String**|  | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -121,7 +125,7 @@ No authorization required
 
 <a name="cellsConditionalFormattingsDeleteWorksheetConditionalFormattings"></a>
 # **cellsConditionalFormattingsDeleteWorksheetConditionalFormattings**
-> SaaSposeResponse cellsConditionalFormattingsDeleteWorksheetConditionalFormattings(name, sheetName, folder)
+> SaaSposeResponse cellsConditionalFormattingsDeleteWorksheetConditionalFormattings(name, sheetName, folder, storage)
 
 Clear all condition formattings
 
@@ -136,8 +140,9 @@ CellsConditionalFormattingsApi apiInstance = new CellsConditionalFormattingsApi(
 String name = "name_example"; // String | 
 String sheetName = "sheetName_example"; // String | 
 String folder = "folder_example"; // String | 
+String storage = "storage_example"; // String | storage name.
 try {
-    SaaSposeResponse result = apiInstance.cellsConditionalFormattingsDeleteWorksheetConditionalFormattings(name, sheetName, folder);
+    SaaSposeResponse result = apiInstance.cellsConditionalFormattingsDeleteWorksheetConditionalFormattings(name, sheetName, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsConditionalFormattingsApi#cellsConditionalFormattingsDeleteWorksheetConditionalFormattings");
@@ -152,6 +157,7 @@ Name | Type | Description  | Notes
  **name** | **String**|  |
  **sheetName** | **String**|  |
  **folder** | **String**|  | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -168,7 +174,7 @@ No authorization required
 
 <a name="cellsConditionalFormattingsGetWorksheetConditionalFormatting"></a>
 # **cellsConditionalFormattingsGetWorksheetConditionalFormatting**
-> ConditionalFormattingResponse cellsConditionalFormattingsGetWorksheetConditionalFormatting(name, sheetName, index, folder)
+> ConditionalFormattingResponse cellsConditionalFormattingsGetWorksheetConditionalFormatting(name, sheetName, index, folder, storage)
 
 Get conditional formatting
 
@@ -184,8 +190,9 @@ String name = "name_example"; // String |
 String sheetName = "sheetName_example"; // String | 
 Integer index = 56; // Integer | 
 String folder = "folder_example"; // String | 
+String storage = "storage_example"; // String | storage name.
 try {
-    ConditionalFormattingResponse result = apiInstance.cellsConditionalFormattingsGetWorksheetConditionalFormatting(name, sheetName, index, folder);
+    ConditionalFormattingResponse result = apiInstance.cellsConditionalFormattingsGetWorksheetConditionalFormatting(name, sheetName, index, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsConditionalFormattingsApi#cellsConditionalFormattingsGetWorksheetConditionalFormatting");
@@ -201,6 +208,7 @@ Name | Type | Description  | Notes
  **sheetName** | **String**|  |
  **index** | **Integer**|  |
  **folder** | **String**|  | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -217,7 +225,7 @@ No authorization required
 
 <a name="cellsConditionalFormattingsGetWorksheetConditionalFormattings"></a>
 # **cellsConditionalFormattingsGetWorksheetConditionalFormattings**
-> ConditionalFormattingsResponse cellsConditionalFormattingsGetWorksheetConditionalFormattings(name, sheetName, folder)
+> ConditionalFormattingsResponse cellsConditionalFormattingsGetWorksheetConditionalFormattings(name, sheetName, folder, storage)
 
 Get conditional formattings 
 
@@ -232,8 +240,9 @@ CellsConditionalFormattingsApi apiInstance = new CellsConditionalFormattingsApi(
 String name = "name_example"; // String | 
 String sheetName = "sheetName_example"; // String | 
 String folder = "folder_example"; // String | 
+String storage = "storage_example"; // String | storage name.
 try {
-    ConditionalFormattingsResponse result = apiInstance.cellsConditionalFormattingsGetWorksheetConditionalFormattings(name, sheetName, folder);
+    ConditionalFormattingsResponse result = apiInstance.cellsConditionalFormattingsGetWorksheetConditionalFormattings(name, sheetName, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsConditionalFormattingsApi#cellsConditionalFormattingsGetWorksheetConditionalFormattings");
@@ -248,6 +257,7 @@ Name | Type | Description  | Notes
  **name** | **String**|  |
  **sheetName** | **String**|  |
  **folder** | **String**|  | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -264,7 +274,7 @@ No authorization required
 
 <a name="cellsConditionalFormattingsPutWorksheetConditionalFormatting"></a>
 # **cellsConditionalFormattingsPutWorksheetConditionalFormatting**
-> SaaSposeResponse cellsConditionalFormattingsPutWorksheetConditionalFormatting(name, sheetName, cellArea, formatcondition, folder)
+> SaaSposeResponse cellsConditionalFormattingsPutWorksheetConditionalFormatting(name, sheetName, cellArea, formatcondition, folder, storage)
 
 Add a condition formatting.
 
@@ -281,8 +291,9 @@ String sheetName = "sheetName_example"; // String |
 String cellArea = "cellArea_example"; // String | 
 FormatCondition formatcondition = new FormatCondition(); // FormatCondition | 
 String folder = "folder_example"; // String | 
+String storage = "storage_example"; // String | storage name.
 try {
-    SaaSposeResponse result = apiInstance.cellsConditionalFormattingsPutWorksheetConditionalFormatting(name, sheetName, cellArea, formatcondition, folder);
+    SaaSposeResponse result = apiInstance.cellsConditionalFormattingsPutWorksheetConditionalFormatting(name, sheetName, cellArea, formatcondition, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsConditionalFormattingsApi#cellsConditionalFormattingsPutWorksheetConditionalFormatting");
@@ -299,6 +310,7 @@ Name | Type | Description  | Notes
  **cellArea** | **String**|  |
  **formatcondition** | [**FormatCondition**](FormatCondition.md)|  | [optional]
  **folder** | **String**|  | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -315,7 +327,7 @@ No authorization required
 
 <a name="cellsConditionalFormattingsPutWorksheetFormatCondition"></a>
 # **cellsConditionalFormattingsPutWorksheetFormatCondition**
-> SaaSposeResponse cellsConditionalFormattingsPutWorksheetFormatCondition(name, sheetName, index, cellArea, type, operatorType, formula1, formula2, folder)
+> SaaSposeResponse cellsConditionalFormattingsPutWorksheetFormatCondition(name, sheetName, index, cellArea, type, operatorType, formula1, formula2, folder, storage)
 
 Add a format condition.
 
@@ -336,8 +348,9 @@ String operatorType = "operatorType_example"; // String |
 String formula1 = "formula1_example"; // String | 
 String formula2 = "formula2_example"; // String | 
 String folder = "folder_example"; // String | 
+String storage = "storage_example"; // String | storage name.
 try {
-    SaaSposeResponse result = apiInstance.cellsConditionalFormattingsPutWorksheetFormatCondition(name, sheetName, index, cellArea, type, operatorType, formula1, formula2, folder);
+    SaaSposeResponse result = apiInstance.cellsConditionalFormattingsPutWorksheetFormatCondition(name, sheetName, index, cellArea, type, operatorType, formula1, formula2, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsConditionalFormattingsApi#cellsConditionalFormattingsPutWorksheetFormatCondition");
@@ -358,6 +371,7 @@ Name | Type | Description  | Notes
  **formula1** | **String**|  |
  **formula2** | **String**|  |
  **folder** | **String**|  | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -374,7 +388,7 @@ No authorization required
 
 <a name="cellsConditionalFormattingsPutWorksheetFormatConditionArea"></a>
 # **cellsConditionalFormattingsPutWorksheetFormatConditionArea**
-> SaaSposeResponse cellsConditionalFormattingsPutWorksheetFormatConditionArea(name, sheetName, index, cellArea, folder)
+> SaaSposeResponse cellsConditionalFormattingsPutWorksheetFormatConditionArea(name, sheetName, index, cellArea, folder, storage)
 
 add a cell area for format condition             
 
@@ -391,8 +405,9 @@ String sheetName = "sheetName_example"; // String |
 Integer index = 56; // Integer | 
 String cellArea = "cellArea_example"; // String | 
 String folder = "folder_example"; // String | 
+String storage = "storage_example"; // String | storage name.
 try {
-    SaaSposeResponse result = apiInstance.cellsConditionalFormattingsPutWorksheetFormatConditionArea(name, sheetName, index, cellArea, folder);
+    SaaSposeResponse result = apiInstance.cellsConditionalFormattingsPutWorksheetFormatConditionArea(name, sheetName, index, cellArea, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsConditionalFormattingsApi#cellsConditionalFormattingsPutWorksheetFormatConditionArea");
@@ -409,6 +424,7 @@ Name | Type | Description  | Notes
  **index** | **Integer**|  |
  **cellArea** | **String**|  |
  **folder** | **String**|  | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -425,7 +441,7 @@ No authorization required
 
 <a name="cellsConditionalFormattingsPutWorksheetFormatConditionCondition"></a>
 # **cellsConditionalFormattingsPutWorksheetFormatConditionCondition**
-> SaaSposeResponse cellsConditionalFormattingsPutWorksheetFormatConditionCondition(name, sheetName, index, type, operatorType, formula1, formula2, folder)
+> SaaSposeResponse cellsConditionalFormattingsPutWorksheetFormatConditionCondition(name, sheetName, index, type, operatorType, formula1, formula2, folder, storage)
 
 Add a condition for format condition.
 
@@ -445,8 +461,9 @@ String operatorType = "operatorType_example"; // String |
 String formula1 = "formula1_example"; // String | 
 String formula2 = "formula2_example"; // String | 
 String folder = "folder_example"; // String | 
+String storage = "storage_example"; // String | storage name.
 try {
-    SaaSposeResponse result = apiInstance.cellsConditionalFormattingsPutWorksheetFormatConditionCondition(name, sheetName, index, type, operatorType, formula1, formula2, folder);
+    SaaSposeResponse result = apiInstance.cellsConditionalFormattingsPutWorksheetFormatConditionCondition(name, sheetName, index, type, operatorType, formula1, formula2, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsConditionalFormattingsApi#cellsConditionalFormattingsPutWorksheetFormatConditionCondition");
@@ -466,6 +483,7 @@ Name | Type | Description  | Notes
  **formula1** | **String**|  |
  **formula2** | **String**|  |
  **folder** | **String**|  | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 

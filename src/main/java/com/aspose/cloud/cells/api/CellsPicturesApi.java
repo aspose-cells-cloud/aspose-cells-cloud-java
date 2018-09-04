@@ -64,12 +64,13 @@ public class CellsPicturesApi {
      * @param sheetName The worsheet name. (required)
      * @param pictureIndex Picture index (required)
      * @param folder The workbook folder. (optional)
+     * @param storage storage name. (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call cellsPicturesDeleteWorksheetPictureCall(String name, String sheetName, Integer pictureIndex, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call cellsPicturesDeleteWorksheetPictureCall(String name, String sheetName, Integer pictureIndex, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -81,6 +82,8 @@ public class CellsPicturesApi {
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         if (folder != null)
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "folder", folder));
+        if (storage != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "storage", storage));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -115,7 +118,7 @@ public class CellsPicturesApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call cellsPicturesDeleteWorksheetPictureValidateBeforeCall(String name, String sheetName, Integer pictureIndex, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call cellsPicturesDeleteWorksheetPictureValidateBeforeCall(String name, String sheetName, Integer pictureIndex, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'name' is set
         if (name == null) {
@@ -133,7 +136,7 @@ public class CellsPicturesApi {
         }
         
         
-        com.squareup.okhttp.Call call = cellsPicturesDeleteWorksheetPictureCall(name, sheetName, pictureIndex, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsPicturesDeleteWorksheetPictureCall(name, sheetName, pictureIndex, folder, storage, progressListener, progressRequestListener);
         return call;
 
         
@@ -149,11 +152,12 @@ public class CellsPicturesApi {
      * @param sheetName The worsheet name. (required)
      * @param pictureIndex Picture index (required)
      * @param folder The workbook folder. (optional)
+     * @param storage storage name. (optional)
      * @return SaaSposeResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public SaaSposeResponse cellsPicturesDeleteWorksheetPicture(String name, String sheetName, Integer pictureIndex, String folder) throws ApiException {
-        ApiResponse<SaaSposeResponse> resp = cellsPicturesDeleteWorksheetPictureWithHttpInfo(name, sheetName, pictureIndex, folder);
+    public SaaSposeResponse cellsPicturesDeleteWorksheetPicture(String name, String sheetName, Integer pictureIndex, String folder, String storage) throws ApiException {
+        ApiResponse<SaaSposeResponse> resp = cellsPicturesDeleteWorksheetPictureWithHttpInfo(name, sheetName, pictureIndex, folder, storage);
         return resp.getData();
     }
 
@@ -164,11 +168,12 @@ public class CellsPicturesApi {
      * @param sheetName The worsheet name. (required)
      * @param pictureIndex Picture index (required)
      * @param folder The workbook folder. (optional)
+     * @param storage storage name. (optional)
      * @return ApiResponse&lt;SaaSposeResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<SaaSposeResponse> cellsPicturesDeleteWorksheetPictureWithHttpInfo(String name, String sheetName, Integer pictureIndex, String folder) throws ApiException {
-        com.squareup.okhttp.Call call = cellsPicturesDeleteWorksheetPictureValidateBeforeCall(name, sheetName, pictureIndex, folder, null, null);
+    public ApiResponse<SaaSposeResponse> cellsPicturesDeleteWorksheetPictureWithHttpInfo(String name, String sheetName, Integer pictureIndex, String folder, String storage) throws ApiException {
+        com.squareup.okhttp.Call call = cellsPicturesDeleteWorksheetPictureValidateBeforeCall(name, sheetName, pictureIndex, folder, storage, null, null);
         Type localVarReturnType = new TypeToken<SaaSposeResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -180,11 +185,12 @@ public class CellsPicturesApi {
      * @param sheetName The worsheet name. (required)
      * @param pictureIndex Picture index (required)
      * @param folder The workbook folder. (optional)
+     * @param storage storage name. (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call cellsPicturesDeleteWorksheetPictureAsync(String name, String sheetName, Integer pictureIndex, String folder, final ApiCallback<SaaSposeResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call cellsPicturesDeleteWorksheetPictureAsync(String name, String sheetName, Integer pictureIndex, String folder, String storage, final ApiCallback<SaaSposeResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -205,7 +211,7 @@ public class CellsPicturesApi {
             };
         }
 
-        com.squareup.okhttp.Call call = cellsPicturesDeleteWorksheetPictureValidateBeforeCall(name, sheetName, pictureIndex, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsPicturesDeleteWorksheetPictureValidateBeforeCall(name, sheetName, pictureIndex, folder, storage, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<SaaSposeResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -215,12 +221,13 @@ public class CellsPicturesApi {
      * @param name Document name. (required)
      * @param sheetName Worksheet name. (required)
      * @param folder The document folder. (optional)
+     * @param storage storage name. (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call cellsPicturesDeleteWorksheetPicturesCall(String name, String sheetName, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call cellsPicturesDeleteWorksheetPicturesCall(String name, String sheetName, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -231,6 +238,8 @@ public class CellsPicturesApi {
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         if (folder != null)
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "folder", folder));
+        if (storage != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "storage", storage));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -265,7 +274,7 @@ public class CellsPicturesApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call cellsPicturesDeleteWorksheetPicturesValidateBeforeCall(String name, String sheetName, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call cellsPicturesDeleteWorksheetPicturesValidateBeforeCall(String name, String sheetName, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'name' is set
         if (name == null) {
@@ -278,7 +287,7 @@ public class CellsPicturesApi {
         }
         
         
-        com.squareup.okhttp.Call call = cellsPicturesDeleteWorksheetPicturesCall(name, sheetName, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsPicturesDeleteWorksheetPicturesCall(name, sheetName, folder, storage, progressListener, progressRequestListener);
         return call;
 
         
@@ -293,11 +302,12 @@ public class CellsPicturesApi {
      * @param name Document name. (required)
      * @param sheetName Worksheet name. (required)
      * @param folder The document folder. (optional)
+     * @param storage storage name. (optional)
      * @return SaaSposeResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public SaaSposeResponse cellsPicturesDeleteWorksheetPictures(String name, String sheetName, String folder) throws ApiException {
-        ApiResponse<SaaSposeResponse> resp = cellsPicturesDeleteWorksheetPicturesWithHttpInfo(name, sheetName, folder);
+    public SaaSposeResponse cellsPicturesDeleteWorksheetPictures(String name, String sheetName, String folder, String storage) throws ApiException {
+        ApiResponse<SaaSposeResponse> resp = cellsPicturesDeleteWorksheetPicturesWithHttpInfo(name, sheetName, folder, storage);
         return resp.getData();
     }
 
@@ -307,11 +317,12 @@ public class CellsPicturesApi {
      * @param name Document name. (required)
      * @param sheetName Worksheet name. (required)
      * @param folder The document folder. (optional)
+     * @param storage storage name. (optional)
      * @return ApiResponse&lt;SaaSposeResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<SaaSposeResponse> cellsPicturesDeleteWorksheetPicturesWithHttpInfo(String name, String sheetName, String folder) throws ApiException {
-        com.squareup.okhttp.Call call = cellsPicturesDeleteWorksheetPicturesValidateBeforeCall(name, sheetName, folder, null, null);
+    public ApiResponse<SaaSposeResponse> cellsPicturesDeleteWorksheetPicturesWithHttpInfo(String name, String sheetName, String folder, String storage) throws ApiException {
+        com.squareup.okhttp.Call call = cellsPicturesDeleteWorksheetPicturesValidateBeforeCall(name, sheetName, folder, storage, null, null);
         Type localVarReturnType = new TypeToken<SaaSposeResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -322,11 +333,12 @@ public class CellsPicturesApi {
      * @param name Document name. (required)
      * @param sheetName Worksheet name. (required)
      * @param folder The document folder. (optional)
+     * @param storage storage name. (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call cellsPicturesDeleteWorksheetPicturesAsync(String name, String sheetName, String folder, final ApiCallback<SaaSposeResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call cellsPicturesDeleteWorksheetPicturesAsync(String name, String sheetName, String folder, String storage, final ApiCallback<SaaSposeResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -347,7 +359,7 @@ public class CellsPicturesApi {
             };
         }
 
-        com.squareup.okhttp.Call call = cellsPicturesDeleteWorksheetPicturesValidateBeforeCall(name, sheetName, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsPicturesDeleteWorksheetPicturesValidateBeforeCall(name, sheetName, folder, storage, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<SaaSposeResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -358,12 +370,13 @@ public class CellsPicturesApi {
      * @param sheetName Worksheet name. (required)
      * @param pictureNumber The picture number. (required)
      * @param folder The document folder. (optional)
+     * @param storage storage name. (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call cellsPicturesGetWorksheetPictureCall(String name, String sheetName, Integer pictureNumber, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call cellsPicturesGetWorksheetPictureCall(String name, String sheetName, Integer pictureNumber, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -375,6 +388,8 @@ public class CellsPicturesApi {
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         if (folder != null)
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "folder", folder));
+        if (storage != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "storage", storage));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -409,7 +424,7 @@ public class CellsPicturesApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call cellsPicturesGetWorksheetPictureValidateBeforeCall(String name, String sheetName, Integer pictureNumber, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call cellsPicturesGetWorksheetPictureValidateBeforeCall(String name, String sheetName, Integer pictureNumber, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'name' is set
         if (name == null) {
@@ -427,7 +442,7 @@ public class CellsPicturesApi {
         }
         
         
-        com.squareup.okhttp.Call call = cellsPicturesGetWorksheetPictureCall(name, sheetName, pictureNumber, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsPicturesGetWorksheetPictureCall(name, sheetName, pictureNumber, folder, storage, progressListener, progressRequestListener);
         return call;
 
         
@@ -443,11 +458,12 @@ public class CellsPicturesApi {
      * @param sheetName Worksheet name. (required)
      * @param pictureNumber The picture number. (required)
      * @param folder The document folder. (optional)
+     * @param storage storage name. (optional)
      * @return File
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public File cellsPicturesGetWorksheetPicture(String name, String sheetName, Integer pictureNumber, String folder) throws ApiException {
-        ApiResponse<File> resp = cellsPicturesGetWorksheetPictureWithHttpInfo(name, sheetName, pictureNumber, folder);
+    public File cellsPicturesGetWorksheetPicture(String name, String sheetName, Integer pictureNumber, String folder, String storage) throws ApiException {
+        ApiResponse<File> resp = cellsPicturesGetWorksheetPictureWithHttpInfo(name, sheetName, pictureNumber, folder, storage);
         return resp.getData();
     }
 
@@ -458,11 +474,12 @@ public class CellsPicturesApi {
      * @param sheetName Worksheet name. (required)
      * @param pictureNumber The picture number. (required)
      * @param folder The document folder. (optional)
+     * @param storage storage name. (optional)
      * @return ApiResponse&lt;File&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<File> cellsPicturesGetWorksheetPictureWithHttpInfo(String name, String sheetName, Integer pictureNumber, String folder) throws ApiException {
-        com.squareup.okhttp.Call call = cellsPicturesGetWorksheetPictureValidateBeforeCall(name, sheetName, pictureNumber, folder, null, null);
+    public ApiResponse<File> cellsPicturesGetWorksheetPictureWithHttpInfo(String name, String sheetName, Integer pictureNumber, String folder, String storage) throws ApiException {
+        com.squareup.okhttp.Call call = cellsPicturesGetWorksheetPictureValidateBeforeCall(name, sheetName, pictureNumber, folder, storage, null, null);
         Type localVarReturnType = new TypeToken<File>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -474,11 +491,12 @@ public class CellsPicturesApi {
      * @param sheetName Worksheet name. (required)
      * @param pictureNumber The picture number. (required)
      * @param folder The document folder. (optional)
+     * @param storage storage name. (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call cellsPicturesGetWorksheetPictureAsync(String name, String sheetName, Integer pictureNumber, String folder, final ApiCallback<File> callback) throws ApiException {
+    public com.squareup.okhttp.Call cellsPicturesGetWorksheetPictureAsync(String name, String sheetName, Integer pictureNumber, String folder, String storage, final ApiCallback<File> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -499,7 +517,7 @@ public class CellsPicturesApi {
             };
         }
 
-        com.squareup.okhttp.Call call = cellsPicturesGetWorksheetPictureValidateBeforeCall(name, sheetName, pictureNumber, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsPicturesGetWorksheetPictureValidateBeforeCall(name, sheetName, pictureNumber, folder, storage, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<File>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -509,12 +527,13 @@ public class CellsPicturesApi {
      * @param name Document name. (required)
      * @param sheetName The worksheet name. (required)
      * @param folder Document&#39;s folder. (optional)
+     * @param storage storage name. (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call cellsPicturesGetWorksheetPicturesCall(String name, String sheetName, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call cellsPicturesGetWorksheetPicturesCall(String name, String sheetName, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -525,6 +544,8 @@ public class CellsPicturesApi {
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         if (folder != null)
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "folder", folder));
+        if (storage != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "storage", storage));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -559,7 +580,7 @@ public class CellsPicturesApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call cellsPicturesGetWorksheetPicturesValidateBeforeCall(String name, String sheetName, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call cellsPicturesGetWorksheetPicturesValidateBeforeCall(String name, String sheetName, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'name' is set
         if (name == null) {
@@ -572,7 +593,7 @@ public class CellsPicturesApi {
         }
         
         
-        com.squareup.okhttp.Call call = cellsPicturesGetWorksheetPicturesCall(name, sheetName, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsPicturesGetWorksheetPicturesCall(name, sheetName, folder, storage, progressListener, progressRequestListener);
         return call;
 
         
@@ -587,11 +608,12 @@ public class CellsPicturesApi {
      * @param name Document name. (required)
      * @param sheetName The worksheet name. (required)
      * @param folder Document&#39;s folder. (optional)
+     * @param storage storage name. (optional)
      * @return PicturesResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public PicturesResponse cellsPicturesGetWorksheetPictures(String name, String sheetName, String folder) throws ApiException {
-        ApiResponse<PicturesResponse> resp = cellsPicturesGetWorksheetPicturesWithHttpInfo(name, sheetName, folder);
+    public PicturesResponse cellsPicturesGetWorksheetPictures(String name, String sheetName, String folder, String storage) throws ApiException {
+        ApiResponse<PicturesResponse> resp = cellsPicturesGetWorksheetPicturesWithHttpInfo(name, sheetName, folder, storage);
         return resp.getData();
     }
 
@@ -601,11 +623,12 @@ public class CellsPicturesApi {
      * @param name Document name. (required)
      * @param sheetName The worksheet name. (required)
      * @param folder Document&#39;s folder. (optional)
+     * @param storage storage name. (optional)
      * @return ApiResponse&lt;PicturesResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<PicturesResponse> cellsPicturesGetWorksheetPicturesWithHttpInfo(String name, String sheetName, String folder) throws ApiException {
-        com.squareup.okhttp.Call call = cellsPicturesGetWorksheetPicturesValidateBeforeCall(name, sheetName, folder, null, null);
+    public ApiResponse<PicturesResponse> cellsPicturesGetWorksheetPicturesWithHttpInfo(String name, String sheetName, String folder, String storage) throws ApiException {
+        com.squareup.okhttp.Call call = cellsPicturesGetWorksheetPicturesValidateBeforeCall(name, sheetName, folder, storage, null, null);
         Type localVarReturnType = new TypeToken<PicturesResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -616,11 +639,12 @@ public class CellsPicturesApi {
      * @param name Document name. (required)
      * @param sheetName The worksheet name. (required)
      * @param folder Document&#39;s folder. (optional)
+     * @param storage storage name. (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call cellsPicturesGetWorksheetPicturesAsync(String name, String sheetName, String folder, final ApiCallback<PicturesResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call cellsPicturesGetWorksheetPicturesAsync(String name, String sheetName, String folder, String storage, final ApiCallback<PicturesResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -641,7 +665,7 @@ public class CellsPicturesApi {
             };
         }
 
-        com.squareup.okhttp.Call call = cellsPicturesGetWorksheetPicturesValidateBeforeCall(name, sheetName, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsPicturesGetWorksheetPicturesValidateBeforeCall(name, sheetName, folder, storage, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<PicturesResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -653,12 +677,13 @@ public class CellsPicturesApi {
      * @param pictureIndex The picture&#39;s index. (required)
      * @param picture Picture object (optional)
      * @param folder The document folder. (optional)
+     * @param storage storage name. (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call cellsPicturesPostWorksheetPictureCall(String name, String sheetName, Integer pictureIndex, Picture picture, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call cellsPicturesPostWorksheetPictureCall(String name, String sheetName, Integer pictureIndex, Picture picture, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = picture;
         
         // create path and map variables
@@ -670,6 +695,8 @@ public class CellsPicturesApi {
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         if (folder != null)
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "folder", folder));
+        if (storage != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "storage", storage));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -704,7 +731,7 @@ public class CellsPicturesApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call cellsPicturesPostWorksheetPictureValidateBeforeCall(String name, String sheetName, Integer pictureIndex, Picture picture, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call cellsPicturesPostWorksheetPictureValidateBeforeCall(String name, String sheetName, Integer pictureIndex, Picture picture, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'name' is set
         if (name == null) {
@@ -722,7 +749,7 @@ public class CellsPicturesApi {
         }
         
         
-        com.squareup.okhttp.Call call = cellsPicturesPostWorksheetPictureCall(name, sheetName, pictureIndex, picture, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsPicturesPostWorksheetPictureCall(name, sheetName, pictureIndex, picture, folder, storage, progressListener, progressRequestListener);
         return call;
 
         
@@ -739,11 +766,12 @@ public class CellsPicturesApi {
      * @param pictureIndex The picture&#39;s index. (required)
      * @param picture Picture object (optional)
      * @param folder The document folder. (optional)
+     * @param storage storage name. (optional)
      * @return PictureResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public PictureResponse cellsPicturesPostWorksheetPicture(String name, String sheetName, Integer pictureIndex, Picture picture, String folder) throws ApiException {
-        ApiResponse<PictureResponse> resp = cellsPicturesPostWorksheetPictureWithHttpInfo(name, sheetName, pictureIndex, picture, folder);
+    public PictureResponse cellsPicturesPostWorksheetPicture(String name, String sheetName, Integer pictureIndex, Picture picture, String folder, String storage) throws ApiException {
+        ApiResponse<PictureResponse> resp = cellsPicturesPostWorksheetPictureWithHttpInfo(name, sheetName, pictureIndex, picture, folder, storage);
         return resp.getData();
     }
 
@@ -755,11 +783,12 @@ public class CellsPicturesApi {
      * @param pictureIndex The picture&#39;s index. (required)
      * @param picture Picture object (optional)
      * @param folder The document folder. (optional)
+     * @param storage storage name. (optional)
      * @return ApiResponse&lt;PictureResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<PictureResponse> cellsPicturesPostWorksheetPictureWithHttpInfo(String name, String sheetName, Integer pictureIndex, Picture picture, String folder) throws ApiException {
-        com.squareup.okhttp.Call call = cellsPicturesPostWorksheetPictureValidateBeforeCall(name, sheetName, pictureIndex, picture, folder, null, null);
+    public ApiResponse<PictureResponse> cellsPicturesPostWorksheetPictureWithHttpInfo(String name, String sheetName, Integer pictureIndex, Picture picture, String folder, String storage) throws ApiException {
+        com.squareup.okhttp.Call call = cellsPicturesPostWorksheetPictureValidateBeforeCall(name, sheetName, pictureIndex, picture, folder, storage, null, null);
         Type localVarReturnType = new TypeToken<PictureResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -772,11 +801,12 @@ public class CellsPicturesApi {
      * @param pictureIndex The picture&#39;s index. (required)
      * @param picture Picture object (optional)
      * @param folder The document folder. (optional)
+     * @param storage storage name. (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call cellsPicturesPostWorksheetPictureAsync(String name, String sheetName, Integer pictureIndex, Picture picture, String folder, final ApiCallback<PictureResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call cellsPicturesPostWorksheetPictureAsync(String name, String sheetName, Integer pictureIndex, Picture picture, String folder, String storage, final ApiCallback<PictureResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -797,7 +827,7 @@ public class CellsPicturesApi {
             };
         }
 
-        com.squareup.okhttp.Call call = cellsPicturesPostWorksheetPictureValidateBeforeCall(name, sheetName, pictureIndex, picture, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsPicturesPostWorksheetPictureValidateBeforeCall(name, sheetName, pictureIndex, picture, folder, storage, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<PictureResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -813,12 +843,13 @@ public class CellsPicturesApi {
      * @param lowerRightColumn The image low right column. (optional, default to 0)
      * @param picturePath The picture path, if not provided the picture data is inspected in the request body. (optional)
      * @param folder The workbook folder. (optional)
+     * @param storage storage name. (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call cellsPicturesPutWorksheetAddPictureCall(String name, String sheetName, Picture picture, Integer upperLeftRow, Integer upperLeftColumn, Integer lowerRightRow, Integer lowerRightColumn, String picturePath, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call cellsPicturesPutWorksheetAddPictureCall(String name, String sheetName, Picture picture, Integer upperLeftRow, Integer upperLeftColumn, Integer lowerRightRow, Integer lowerRightColumn, String picturePath, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = picture;
         
         // create path and map variables
@@ -839,6 +870,8 @@ public class CellsPicturesApi {
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "picturePath", picturePath));
         if (folder != null)
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "folder", folder));
+        if (storage != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "storage", storage));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -873,7 +906,7 @@ public class CellsPicturesApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call cellsPicturesPutWorksheetAddPictureValidateBeforeCall(String name, String sheetName, Picture picture, Integer upperLeftRow, Integer upperLeftColumn, Integer lowerRightRow, Integer lowerRightColumn, String picturePath, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call cellsPicturesPutWorksheetAddPictureValidateBeforeCall(String name, String sheetName, Picture picture, Integer upperLeftRow, Integer upperLeftColumn, Integer lowerRightRow, Integer lowerRightColumn, String picturePath, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'name' is set
         if (name == null) {
@@ -886,7 +919,7 @@ public class CellsPicturesApi {
         }
         
         
-        com.squareup.okhttp.Call call = cellsPicturesPutWorksheetAddPictureCall(name, sheetName, picture, upperLeftRow, upperLeftColumn, lowerRightRow, lowerRightColumn, picturePath, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsPicturesPutWorksheetAddPictureCall(name, sheetName, picture, upperLeftRow, upperLeftColumn, lowerRightRow, lowerRightColumn, picturePath, folder, storage, progressListener, progressRequestListener);
         return call;
 
         
@@ -907,11 +940,12 @@ public class CellsPicturesApi {
      * @param lowerRightColumn The image low right column. (optional, default to 0)
      * @param picturePath The picture path, if not provided the picture data is inspected in the request body. (optional)
      * @param folder The workbook folder. (optional)
+     * @param storage storage name. (optional)
      * @return PicturesResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public PicturesResponse cellsPicturesPutWorksheetAddPicture(String name, String sheetName, Picture picture, Integer upperLeftRow, Integer upperLeftColumn, Integer lowerRightRow, Integer lowerRightColumn, String picturePath, String folder) throws ApiException {
-        ApiResponse<PicturesResponse> resp = cellsPicturesPutWorksheetAddPictureWithHttpInfo(name, sheetName, picture, upperLeftRow, upperLeftColumn, lowerRightRow, lowerRightColumn, picturePath, folder);
+    public PicturesResponse cellsPicturesPutWorksheetAddPicture(String name, String sheetName, Picture picture, Integer upperLeftRow, Integer upperLeftColumn, Integer lowerRightRow, Integer lowerRightColumn, String picturePath, String folder, String storage) throws ApiException {
+        ApiResponse<PicturesResponse> resp = cellsPicturesPutWorksheetAddPictureWithHttpInfo(name, sheetName, picture, upperLeftRow, upperLeftColumn, lowerRightRow, lowerRightColumn, picturePath, folder, storage);
         return resp.getData();
     }
 
@@ -927,11 +961,12 @@ public class CellsPicturesApi {
      * @param lowerRightColumn The image low right column. (optional, default to 0)
      * @param picturePath The picture path, if not provided the picture data is inspected in the request body. (optional)
      * @param folder The workbook folder. (optional)
+     * @param storage storage name. (optional)
      * @return ApiResponse&lt;PicturesResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<PicturesResponse> cellsPicturesPutWorksheetAddPictureWithHttpInfo(String name, String sheetName, Picture picture, Integer upperLeftRow, Integer upperLeftColumn, Integer lowerRightRow, Integer lowerRightColumn, String picturePath, String folder) throws ApiException {
-        com.squareup.okhttp.Call call = cellsPicturesPutWorksheetAddPictureValidateBeforeCall(name, sheetName, picture, upperLeftRow, upperLeftColumn, lowerRightRow, lowerRightColumn, picturePath, folder, null, null);
+    public ApiResponse<PicturesResponse> cellsPicturesPutWorksheetAddPictureWithHttpInfo(String name, String sheetName, Picture picture, Integer upperLeftRow, Integer upperLeftColumn, Integer lowerRightRow, Integer lowerRightColumn, String picturePath, String folder, String storage) throws ApiException {
+        com.squareup.okhttp.Call call = cellsPicturesPutWorksheetAddPictureValidateBeforeCall(name, sheetName, picture, upperLeftRow, upperLeftColumn, lowerRightRow, lowerRightColumn, picturePath, folder, storage, null, null);
         Type localVarReturnType = new TypeToken<PicturesResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -948,11 +983,12 @@ public class CellsPicturesApi {
      * @param lowerRightColumn The image low right column. (optional, default to 0)
      * @param picturePath The picture path, if not provided the picture data is inspected in the request body. (optional)
      * @param folder The workbook folder. (optional)
+     * @param storage storage name. (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call cellsPicturesPutWorksheetAddPictureAsync(String name, String sheetName, Picture picture, Integer upperLeftRow, Integer upperLeftColumn, Integer lowerRightRow, Integer lowerRightColumn, String picturePath, String folder, final ApiCallback<PicturesResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call cellsPicturesPutWorksheetAddPictureAsync(String name, String sheetName, Picture picture, Integer upperLeftRow, Integer upperLeftColumn, Integer lowerRightRow, Integer lowerRightColumn, String picturePath, String folder, String storage, final ApiCallback<PicturesResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -973,7 +1009,7 @@ public class CellsPicturesApi {
             };
         }
 
-        com.squareup.okhttp.Call call = cellsPicturesPutWorksheetAddPictureValidateBeforeCall(name, sheetName, picture, upperLeftRow, upperLeftColumn, lowerRightRow, lowerRightColumn, picturePath, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsPicturesPutWorksheetAddPictureValidateBeforeCall(name, sheetName, picture, upperLeftRow, upperLeftColumn, lowerRightRow, lowerRightColumn, picturePath, folder, storage, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<PicturesResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

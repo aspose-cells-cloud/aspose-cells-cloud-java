@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 <a name="cellsListObjectsDeleteWorksheetListObject"></a>
 # **cellsListObjectsDeleteWorksheetListObject**
-> SaaSposeResponse cellsListObjectsDeleteWorksheetListObject(name, sheetName, listObjectIndex, folder)
+> SaaSposeResponse cellsListObjectsDeleteWorksheetListObject(name, sheetName, listObjectIndex, folder, storage)
 
 Delete worksheet list object by index
 
@@ -33,8 +33,9 @@ String name = "name_example"; // String | Document name.
 String sheetName = "sheetName_example"; // String | The worksheet name.
 Integer listObjectIndex = 56; // Integer | List object index
 String folder = "folder_example"; // String | Document's folder.
+String storage = "storage_example"; // String | storage name.
 try {
-    SaaSposeResponse result = apiInstance.cellsListObjectsDeleteWorksheetListObject(name, sheetName, listObjectIndex, folder);
+    SaaSposeResponse result = apiInstance.cellsListObjectsDeleteWorksheetListObject(name, sheetName, listObjectIndex, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsListObjectsApi#cellsListObjectsDeleteWorksheetListObject");
@@ -50,6 +51,7 @@ Name | Type | Description  | Notes
  **sheetName** | **String**| The worksheet name. |
  **listObjectIndex** | **Integer**| List object index |
  **folder** | **String**| Document&#39;s folder. | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -66,7 +68,7 @@ No authorization required
 
 <a name="cellsListObjectsDeleteWorksheetListObjects"></a>
 # **cellsListObjectsDeleteWorksheetListObjects**
-> SaaSposeResponse cellsListObjectsDeleteWorksheetListObjects(name, sheetName, folder)
+> SaaSposeResponse cellsListObjectsDeleteWorksheetListObjects(name, sheetName, folder, storage)
 
 Delete worksheet list objects
 
@@ -81,8 +83,9 @@ CellsListObjectsApi apiInstance = new CellsListObjectsApi();
 String name = "name_example"; // String | Document name.
 String sheetName = "sheetName_example"; // String | The worksheet name.
 String folder = "folder_example"; // String | Document's folder.
+String storage = "storage_example"; // String | storage name.
 try {
-    SaaSposeResponse result = apiInstance.cellsListObjectsDeleteWorksheetListObjects(name, sheetName, folder);
+    SaaSposeResponse result = apiInstance.cellsListObjectsDeleteWorksheetListObjects(name, sheetName, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsListObjectsApi#cellsListObjectsDeleteWorksheetListObjects");
@@ -97,6 +100,7 @@ Name | Type | Description  | Notes
  **name** | **String**| Document name. |
  **sheetName** | **String**| The worksheet name. |
  **folder** | **String**| Document&#39;s folder. | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -113,7 +117,7 @@ No authorization required
 
 <a name="cellsListObjectsGetWorksheetListObject"></a>
 # **cellsListObjectsGetWorksheetListObject**
-> ListObjectResponse cellsListObjectsGetWorksheetListObject(name, sheetName, listobjectindex, folder)
+> ListObjectResponse cellsListObjectsGetWorksheetListObject(name, sheetName, listobjectindex, folder, storage)
 
 Get worksheet list object info by index.
 
@@ -129,8 +133,9 @@ String name = "name_example"; // String | Document name.
 String sheetName = "sheetName_example"; // String | The worksheet name.
 Integer listobjectindex = 56; // Integer | list object index.
 String folder = "folder_example"; // String | Document's folder.
+String storage = "storage_example"; // String | storage name.
 try {
-    ListObjectResponse result = apiInstance.cellsListObjectsGetWorksheetListObject(name, sheetName, listobjectindex, folder);
+    ListObjectResponse result = apiInstance.cellsListObjectsGetWorksheetListObject(name, sheetName, listobjectindex, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsListObjectsApi#cellsListObjectsGetWorksheetListObject");
@@ -146,6 +151,7 @@ Name | Type | Description  | Notes
  **sheetName** | **String**| The worksheet name. |
  **listobjectindex** | **Integer**| list object index. |
  **folder** | **String**| Document&#39;s folder. | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -162,7 +168,7 @@ No authorization required
 
 <a name="cellsListObjectsGetWorksheetListObjects"></a>
 # **cellsListObjectsGetWorksheetListObjects**
-> ListObjectsResponse cellsListObjectsGetWorksheetListObjects(name, sheetName, folder)
+> ListObjectsResponse cellsListObjectsGetWorksheetListObjects(name, sheetName, folder, storage)
 
 Get worksheet listobjects info.
 
@@ -177,8 +183,9 @@ CellsListObjectsApi apiInstance = new CellsListObjectsApi();
 String name = "name_example"; // String | Document name.
 String sheetName = "sheetName_example"; // String | The worksheet name.
 String folder = "folder_example"; // String | Document's folder.
+String storage = "storage_example"; // String | storage name.
 try {
-    ListObjectsResponse result = apiInstance.cellsListObjectsGetWorksheetListObjects(name, sheetName, folder);
+    ListObjectsResponse result = apiInstance.cellsListObjectsGetWorksheetListObjects(name, sheetName, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsListObjectsApi#cellsListObjectsGetWorksheetListObjects");
@@ -193,6 +200,7 @@ Name | Type | Description  | Notes
  **name** | **String**| Document name. |
  **sheetName** | **String**| The worksheet name. |
  **folder** | **String**| Document&#39;s folder. | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -209,7 +217,7 @@ No authorization required
 
 <a name="cellsListObjectsPostWorksheetListObject"></a>
 # **cellsListObjectsPostWorksheetListObject**
-> SaaSposeResponse cellsListObjectsPostWorksheetListObject(name, sheetName, listObjectIndex, listObject, folder)
+> SaaSposeResponse cellsListObjectsPostWorksheetListObject(name, sheetName, listObjectIndex, listObject, folder, storage)
 
 Update  list object 
 
@@ -226,8 +234,9 @@ String sheetName = "sheetName_example"; // String | The worksheet name.
 Integer listObjectIndex = 56; // Integer | list Object index
 ListObject listObject = new ListObject(); // ListObject | listObject dto in request body.
 String folder = "folder_example"; // String | Document's folder.
+String storage = "storage_example"; // String | storage name.
 try {
-    SaaSposeResponse result = apiInstance.cellsListObjectsPostWorksheetListObject(name, sheetName, listObjectIndex, listObject, folder);
+    SaaSposeResponse result = apiInstance.cellsListObjectsPostWorksheetListObject(name, sheetName, listObjectIndex, listObject, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsListObjectsApi#cellsListObjectsPostWorksheetListObject");
@@ -244,6 +253,7 @@ Name | Type | Description  | Notes
  **listObjectIndex** | **Integer**| list Object index |
  **listObject** | [**ListObject**](ListObject.md)| listObject dto in request body. | [optional]
  **folder** | **String**| Document&#39;s folder. | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -260,7 +270,7 @@ No authorization required
 
 <a name="cellsListObjectsPostWorksheetListObjectConvertToRange"></a>
 # **cellsListObjectsPostWorksheetListObjectConvertToRange**
-> SaaSposeResponse cellsListObjectsPostWorksheetListObjectConvertToRange(name, sheetName, listObjectIndex, folder)
+> SaaSposeResponse cellsListObjectsPostWorksheetListObjectConvertToRange(name, sheetName, listObjectIndex, folder, storage)
 
 
 
@@ -276,8 +286,9 @@ String name = "name_example"; // String |
 String sheetName = "sheetName_example"; // String | 
 Integer listObjectIndex = 56; // Integer | 
 String folder = "folder_example"; // String | 
+String storage = "storage_example"; // String | storage name.
 try {
-    SaaSposeResponse result = apiInstance.cellsListObjectsPostWorksheetListObjectConvertToRange(name, sheetName, listObjectIndex, folder);
+    SaaSposeResponse result = apiInstance.cellsListObjectsPostWorksheetListObjectConvertToRange(name, sheetName, listObjectIndex, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsListObjectsApi#cellsListObjectsPostWorksheetListObjectConvertToRange");
@@ -293,6 +304,7 @@ Name | Type | Description  | Notes
  **sheetName** | **String**|  |
  **listObjectIndex** | **Integer**|  |
  **folder** | **String**|  | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -309,7 +321,7 @@ No authorization required
 
 <a name="cellsListObjectsPostWorksheetListObjectSortTable"></a>
 # **cellsListObjectsPostWorksheetListObjectSortTable**
-> SaaSposeResponse cellsListObjectsPostWorksheetListObjectSortTable(name, sheetName, listObjectIndex, dataSorter, folder)
+> SaaSposeResponse cellsListObjectsPostWorksheetListObjectSortTable(name, sheetName, listObjectIndex, dataSorter, folder, storage)
 
 
 
@@ -326,8 +338,9 @@ String sheetName = "sheetName_example"; // String |
 Integer listObjectIndex = 56; // Integer | 
 DataSorter dataSorter = new DataSorter(); // DataSorter | 
 String folder = "folder_example"; // String | 
+String storage = "storage_example"; // String | storage name.
 try {
-    SaaSposeResponse result = apiInstance.cellsListObjectsPostWorksheetListObjectSortTable(name, sheetName, listObjectIndex, dataSorter, folder);
+    SaaSposeResponse result = apiInstance.cellsListObjectsPostWorksheetListObjectSortTable(name, sheetName, listObjectIndex, dataSorter, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsListObjectsApi#cellsListObjectsPostWorksheetListObjectSortTable");
@@ -344,6 +357,7 @@ Name | Type | Description  | Notes
  **listObjectIndex** | **Integer**|  |
  **dataSorter** | [**DataSorter**](DataSorter.md)|  | [optional]
  **folder** | **String**|  | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -360,7 +374,7 @@ No authorization required
 
 <a name="cellsListObjectsPostWorksheetListObjectSummarizeWithPivotTable"></a>
 # **cellsListObjectsPostWorksheetListObjectSummarizeWithPivotTable**
-> SaaSposeResponse cellsListObjectsPostWorksheetListObjectSummarizeWithPivotTable(name, sheetName, listObjectIndex, destsheetName, request, folder)
+> SaaSposeResponse cellsListObjectsPostWorksheetListObjectSummarizeWithPivotTable(name, sheetName, listObjectIndex, destsheetName, request, folder, storage)
 
 
 
@@ -378,8 +392,9 @@ Integer listObjectIndex = 56; // Integer |
 String destsheetName = "destsheetName_example"; // String | 
 CreatePivotTableRequest request = new CreatePivotTableRequest(); // CreatePivotTableRequest | 
 String folder = "folder_example"; // String | 
+String storage = "storage_example"; // String | storage name.
 try {
-    SaaSposeResponse result = apiInstance.cellsListObjectsPostWorksheetListObjectSummarizeWithPivotTable(name, sheetName, listObjectIndex, destsheetName, request, folder);
+    SaaSposeResponse result = apiInstance.cellsListObjectsPostWorksheetListObjectSummarizeWithPivotTable(name, sheetName, listObjectIndex, destsheetName, request, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsListObjectsApi#cellsListObjectsPostWorksheetListObjectSummarizeWithPivotTable");
@@ -397,6 +412,7 @@ Name | Type | Description  | Notes
  **destsheetName** | **String**|  |
  **request** | [**CreatePivotTableRequest**](CreatePivotTableRequest.md)|  | [optional]
  **folder** | **String**|  | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -413,7 +429,7 @@ No authorization required
 
 <a name="cellsListObjectsPutWorksheetListObject"></a>
 # **cellsListObjectsPutWorksheetListObject**
-> ListObjectResponse cellsListObjectsPutWorksheetListObject(name, sheetName, startRow, startColumn, endRow, endColumn, folder, hasHeaders)
+> ListObjectResponse cellsListObjectsPutWorksheetListObject(name, sheetName, startRow, startColumn, endRow, endColumn, folder, storage, hasHeaders)
 
 Add a list object into worksheet.
 
@@ -432,9 +448,10 @@ Integer startColumn = 56; // Integer | The start row of the list range.
 Integer endRow = 56; // Integer | The start row of the list range.
 Integer endColumn = 56; // Integer | The start row of the list range.
 String folder = "folder_example"; // String | Document's folder.
+String storage = "storage_example"; // String | storage name.
 Boolean hasHeaders = true; // Boolean | Whether the range has headers.
 try {
-    ListObjectResponse result = apiInstance.cellsListObjectsPutWorksheetListObject(name, sheetName, startRow, startColumn, endRow, endColumn, folder, hasHeaders);
+    ListObjectResponse result = apiInstance.cellsListObjectsPutWorksheetListObject(name, sheetName, startRow, startColumn, endRow, endColumn, folder, storage, hasHeaders);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsListObjectsApi#cellsListObjectsPutWorksheetListObject");
@@ -453,6 +470,7 @@ Name | Type | Description  | Notes
  **endRow** | **Integer**| The start row of the list range. |
  **endColumn** | **Integer**| The start row of the list range. |
  **folder** | **String**| Document&#39;s folder. | [optional]
+ **storage** | **String**| storage name. | [optional]
  **hasHeaders** | **Boolean**| Whether the range has headers. | [optional] [default to true]
 
 ### Return type

@@ -22,7 +22,7 @@ Method | HTTP request | Description
 
 <a name="cellsChartsDeleteWorksheetChartLegend"></a>
 # **cellsChartsDeleteWorksheetChartLegend**
-> SaaSposeResponse cellsChartsDeleteWorksheetChartLegend(name, sheetName, chartIndex, folder)
+> SaaSposeResponse cellsChartsDeleteWorksheetChartLegend(name, sheetName, chartIndex, folder, storage)
 
 Hide legend in chart
 
@@ -38,8 +38,9 @@ String name = "name_example"; // String | Workbook name.
 String sheetName = "sheetName_example"; // String | Worksheet name.
 Integer chartIndex = 56; // Integer | The chart index.
 String folder = "folder_example"; // String | The workbook folder.
+String storage = "storage_example"; // String | storage name.
 try {
-    SaaSposeResponse result = apiInstance.cellsChartsDeleteWorksheetChartLegend(name, sheetName, chartIndex, folder);
+    SaaSposeResponse result = apiInstance.cellsChartsDeleteWorksheetChartLegend(name, sheetName, chartIndex, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsChartsApi#cellsChartsDeleteWorksheetChartLegend");
@@ -55,6 +56,7 @@ Name | Type | Description  | Notes
  **sheetName** | **String**| Worksheet name. |
  **chartIndex** | **Integer**| The chart index. |
  **folder** | **String**| The workbook folder. | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -71,7 +73,7 @@ No authorization required
 
 <a name="cellsChartsDeleteWorksheetChartTitle"></a>
 # **cellsChartsDeleteWorksheetChartTitle**
-> SaaSposeResponse cellsChartsDeleteWorksheetChartTitle(name, sheetName, chartIndex, folder)
+> SaaSposeResponse cellsChartsDeleteWorksheetChartTitle(name, sheetName, chartIndex, folder, storage)
 
 Hide title in chart
 
@@ -87,8 +89,9 @@ String name = "name_example"; // String | Workbook name.
 String sheetName = "sheetName_example"; // String | Worksheet name.
 Integer chartIndex = 56; // Integer | The chart index.
 String folder = "folder_example"; // String | The workbook folder.
+String storage = "storage_example"; // String | storage name.
 try {
-    SaaSposeResponse result = apiInstance.cellsChartsDeleteWorksheetChartTitle(name, sheetName, chartIndex, folder);
+    SaaSposeResponse result = apiInstance.cellsChartsDeleteWorksheetChartTitle(name, sheetName, chartIndex, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsChartsApi#cellsChartsDeleteWorksheetChartTitle");
@@ -104,6 +107,7 @@ Name | Type | Description  | Notes
  **sheetName** | **String**| Worksheet name. |
  **chartIndex** | **Integer**| The chart index. |
  **folder** | **String**| The workbook folder. | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -120,7 +124,7 @@ No authorization required
 
 <a name="cellsChartsDeleteWorksheetClearCharts"></a>
 # **cellsChartsDeleteWorksheetClearCharts**
-> SaaSposeResponse cellsChartsDeleteWorksheetClearCharts(name, sheetName, folder)
+> SaaSposeResponse cellsChartsDeleteWorksheetClearCharts(name, sheetName, folder, storage)
 
 Clear the charts.
 
@@ -135,8 +139,9 @@ CellsChartsApi apiInstance = new CellsChartsApi();
 String name = "name_example"; // String | Workbook name.
 String sheetName = "sheetName_example"; // String | The worksheet name.
 String folder = "folder_example"; // String | The workbook folder.
+String storage = "storage_example"; // String | storage name.
 try {
-    SaaSposeResponse result = apiInstance.cellsChartsDeleteWorksheetClearCharts(name, sheetName, folder);
+    SaaSposeResponse result = apiInstance.cellsChartsDeleteWorksheetClearCharts(name, sheetName, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsChartsApi#cellsChartsDeleteWorksheetClearCharts");
@@ -151,6 +156,7 @@ Name | Type | Description  | Notes
  **name** | **String**| Workbook name. |
  **sheetName** | **String**| The worksheet name. |
  **folder** | **String**| The workbook folder. | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -167,7 +173,7 @@ No authorization required
 
 <a name="cellsChartsDeleteWorksheetDeleteChart"></a>
 # **cellsChartsDeleteWorksheetDeleteChart**
-> ChartsResponse cellsChartsDeleteWorksheetDeleteChart(name, sheetName, chartIndex, folder)
+> ChartsResponse cellsChartsDeleteWorksheetDeleteChart(name, sheetName, chartIndex, folder, storage)
 
 Delete worksheet chart by index.
 
@@ -183,8 +189,9 @@ String name = "name_example"; // String | Workbook name.
 String sheetName = "sheetName_example"; // String | Worksheet name.
 Integer chartIndex = 56; // Integer | The chart index.
 String folder = "folder_example"; // String | The workbook folder.
+String storage = "storage_example"; // String | storage name.
 try {
-    ChartsResponse result = apiInstance.cellsChartsDeleteWorksheetDeleteChart(name, sheetName, chartIndex, folder);
+    ChartsResponse result = apiInstance.cellsChartsDeleteWorksheetDeleteChart(name, sheetName, chartIndex, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsChartsApi#cellsChartsDeleteWorksheetDeleteChart");
@@ -200,6 +207,7 @@ Name | Type | Description  | Notes
  **sheetName** | **String**| Worksheet name. |
  **chartIndex** | **Integer**| The chart index. |
  **folder** | **String**| The workbook folder. | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -216,7 +224,7 @@ No authorization required
 
 <a name="cellsChartsGetWorksheetChart"></a>
 # **cellsChartsGetWorksheetChart**
-> File cellsChartsGetWorksheetChart(name, sheetName, chartNumber, format, folder)
+> File cellsChartsGetWorksheetChart(name, sheetName, chartNumber, format, folder, storage)
 
 Get chart info.
 
@@ -233,8 +241,9 @@ String sheetName = "sheetName_example"; // String | Worksheet name.
 Integer chartNumber = 56; // Integer | The chart number.
 String format = "format_example"; // String | The exported file format.
 String folder = "folder_example"; // String | The document folder.
+String storage = "storage_example"; // String | storage name.
 try {
-    File result = apiInstance.cellsChartsGetWorksheetChart(name, sheetName, chartNumber, format, folder);
+    File result = apiInstance.cellsChartsGetWorksheetChart(name, sheetName, chartNumber, format, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsChartsApi#cellsChartsGetWorksheetChart");
@@ -251,6 +260,7 @@ Name | Type | Description  | Notes
  **chartNumber** | **Integer**| The chart number. |
  **format** | **String**| The exported file format. | [optional]
  **folder** | **String**| The document folder. | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -267,7 +277,7 @@ No authorization required
 
 <a name="cellsChartsGetWorksheetChartLegend"></a>
 # **cellsChartsGetWorksheetChartLegend**
-> LegendResponse cellsChartsGetWorksheetChartLegend(name, sheetName, chartIndex, folder)
+> LegendResponse cellsChartsGetWorksheetChartLegend(name, sheetName, chartIndex, folder, storage)
 
 Get chart legend
 
@@ -283,8 +293,9 @@ String name = "name_example"; // String | Workbook name.
 String sheetName = "sheetName_example"; // String | Worksheet name.
 Integer chartIndex = 56; // Integer | The chart index.
 String folder = "folder_example"; // String | The workbook folder.
+String storage = "storage_example"; // String | storage name.
 try {
-    LegendResponse result = apiInstance.cellsChartsGetWorksheetChartLegend(name, sheetName, chartIndex, folder);
+    LegendResponse result = apiInstance.cellsChartsGetWorksheetChartLegend(name, sheetName, chartIndex, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsChartsApi#cellsChartsGetWorksheetChartLegend");
@@ -300,6 +311,7 @@ Name | Type | Description  | Notes
  **sheetName** | **String**| Worksheet name. |
  **chartIndex** | **Integer**| The chart index. |
  **folder** | **String**| The workbook folder. | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -316,7 +328,7 @@ No authorization required
 
 <a name="cellsChartsGetWorksheetChartTitle"></a>
 # **cellsChartsGetWorksheetChartTitle**
-> TitleResponse cellsChartsGetWorksheetChartTitle(name, sheetName, chartIndex, folder)
+> TitleResponse cellsChartsGetWorksheetChartTitle(name, sheetName, chartIndex, folder, storage)
 
 Get chart title
 
@@ -332,8 +344,9 @@ String name = "name_example"; // String | Workbook name.
 String sheetName = "sheetName_example"; // String | Worksheet name.
 Integer chartIndex = 56; // Integer | The chart index.
 String folder = "folder_example"; // String | The workbook folder.
+String storage = "storage_example"; // String | storage name.
 try {
-    TitleResponse result = apiInstance.cellsChartsGetWorksheetChartTitle(name, sheetName, chartIndex, folder);
+    TitleResponse result = apiInstance.cellsChartsGetWorksheetChartTitle(name, sheetName, chartIndex, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsChartsApi#cellsChartsGetWorksheetChartTitle");
@@ -349,6 +362,7 @@ Name | Type | Description  | Notes
  **sheetName** | **String**| Worksheet name. |
  **chartIndex** | **Integer**| The chart index. |
  **folder** | **String**| The workbook folder. | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -365,7 +379,7 @@ No authorization required
 
 <a name="cellsChartsGetWorksheetCharts"></a>
 # **cellsChartsGetWorksheetCharts**
-> ChartsResponse cellsChartsGetWorksheetCharts(name, sheetName, folder)
+> ChartsResponse cellsChartsGetWorksheetCharts(name, sheetName, folder, storage)
 
 Get worksheet charts info.
 
@@ -380,8 +394,9 @@ CellsChartsApi apiInstance = new CellsChartsApi();
 String name = "name_example"; // String | Document name.
 String sheetName = "sheetName_example"; // String | The worksheet name.
 String folder = "folder_example"; // String | Document's folder.
+String storage = "storage_example"; // String | storage name.
 try {
-    ChartsResponse result = apiInstance.cellsChartsGetWorksheetCharts(name, sheetName, folder);
+    ChartsResponse result = apiInstance.cellsChartsGetWorksheetCharts(name, sheetName, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsChartsApi#cellsChartsGetWorksheetCharts");
@@ -396,6 +411,7 @@ Name | Type | Description  | Notes
  **name** | **String**| Document name. |
  **sheetName** | **String**| The worksheet name. |
  **folder** | **String**| Document&#39;s folder. | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -412,7 +428,7 @@ No authorization required
 
 <a name="cellsChartsPostWorksheetChart"></a>
 # **cellsChartsPostWorksheetChart**
-> SaaSposeResponse cellsChartsPostWorksheetChart(name, sheetName, chartIndex, chart, folder)
+> SaaSposeResponse cellsChartsPostWorksheetChart(name, sheetName, chartIndex, chart, folder, storage)
 
 Update chart propreties
 
@@ -429,8 +445,9 @@ String sheetName = "sheetName_example"; // String |
 Integer chartIndex = 56; // Integer | 
 Chart chart = new Chart(); // Chart | 
 String folder = "folder_example"; // String | 
+String storage = "storage_example"; // String | storage name.
 try {
-    SaaSposeResponse result = apiInstance.cellsChartsPostWorksheetChart(name, sheetName, chartIndex, chart, folder);
+    SaaSposeResponse result = apiInstance.cellsChartsPostWorksheetChart(name, sheetName, chartIndex, chart, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsChartsApi#cellsChartsPostWorksheetChart");
@@ -447,6 +464,7 @@ Name | Type | Description  | Notes
  **chartIndex** | **Integer**|  |
  **chart** | [**Chart**](Chart.md)|  | [optional]
  **folder** | **String**|  | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -463,7 +481,7 @@ No authorization required
 
 <a name="cellsChartsPostWorksheetChartLegend"></a>
 # **cellsChartsPostWorksheetChartLegend**
-> LegendResponse cellsChartsPostWorksheetChartLegend(name, sheetName, chartIndex, legend, folder)
+> LegendResponse cellsChartsPostWorksheetChartLegend(name, sheetName, chartIndex, legend, folder, storage)
 
 Update chart legend
 
@@ -480,8 +498,9 @@ String sheetName = "sheetName_example"; // String | Worksheet name.
 Integer chartIndex = 56; // Integer | The chart index.
 Legend legend = new Legend(); // Legend | 
 String folder = "folder_example"; // String | The workbook folder.
+String storage = "storage_example"; // String | storage name.
 try {
-    LegendResponse result = apiInstance.cellsChartsPostWorksheetChartLegend(name, sheetName, chartIndex, legend, folder);
+    LegendResponse result = apiInstance.cellsChartsPostWorksheetChartLegend(name, sheetName, chartIndex, legend, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsChartsApi#cellsChartsPostWorksheetChartLegend");
@@ -498,6 +517,7 @@ Name | Type | Description  | Notes
  **chartIndex** | **Integer**| The chart index. |
  **legend** | [**Legend**](Legend.md)|  | [optional]
  **folder** | **String**| The workbook folder. | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -514,7 +534,7 @@ No authorization required
 
 <a name="cellsChartsPostWorksheetChartTitle"></a>
 # **cellsChartsPostWorksheetChartTitle**
-> TitleResponse cellsChartsPostWorksheetChartTitle(name, sheetName, chartIndex, title, folder)
+> TitleResponse cellsChartsPostWorksheetChartTitle(name, sheetName, chartIndex, title, folder, storage)
 
 Update chart title
 
@@ -531,8 +551,9 @@ String sheetName = "sheetName_example"; // String | Worksheet name.
 Integer chartIndex = 56; // Integer | The chart index.
 Title title = new Title(); // Title | Chart title
 String folder = "folder_example"; // String | The workbook folder.
+String storage = "storage_example"; // String | storage name.
 try {
-    TitleResponse result = apiInstance.cellsChartsPostWorksheetChartTitle(name, sheetName, chartIndex, title, folder);
+    TitleResponse result = apiInstance.cellsChartsPostWorksheetChartTitle(name, sheetName, chartIndex, title, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsChartsApi#cellsChartsPostWorksheetChartTitle");
@@ -549,6 +570,7 @@ Name | Type | Description  | Notes
  **chartIndex** | **Integer**| The chart index. |
  **title** | [**Title**](Title.md)| Chart title | [optional]
  **folder** | **String**| The workbook folder. | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -565,7 +587,7 @@ No authorization required
 
 <a name="cellsChartsPutWorksheetAddChart"></a>
 # **cellsChartsPutWorksheetAddChart**
-> ChartsResponse cellsChartsPutWorksheetAddChart(name, sheetName, chartType, upperLeftRow, upperLeftColumn, lowerRightRow, lowerRightColumn, area, isVertical, categoryData, isAutoGetSerialName, title, folder)
+> ChartsResponse cellsChartsPutWorksheetAddChart(name, sheetName, chartType, upperLeftRow, upperLeftColumn, lowerRightRow, lowerRightColumn, area, isVertical, categoryData, isAutoGetSerialName, title, folder, storage)
 
 Add new chart to worksheet.
 
@@ -590,8 +612,9 @@ String categoryData = "categoryData_example"; // String | Gets or sets the range
 Boolean isAutoGetSerialName = true; // Boolean | Specifies whether auto update serial name. 
 String title = "title_example"; // String | Specifies chart title name.
 String folder = "folder_example"; // String | The workbook folder.
+String storage = "storage_example"; // String | storage name.
 try {
-    ChartsResponse result = apiInstance.cellsChartsPutWorksheetAddChart(name, sheetName, chartType, upperLeftRow, upperLeftColumn, lowerRightRow, lowerRightColumn, area, isVertical, categoryData, isAutoGetSerialName, title, folder);
+    ChartsResponse result = apiInstance.cellsChartsPutWorksheetAddChart(name, sheetName, chartType, upperLeftRow, upperLeftColumn, lowerRightRow, lowerRightColumn, area, isVertical, categoryData, isAutoGetSerialName, title, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsChartsApi#cellsChartsPutWorksheetAddChart");
@@ -616,6 +639,7 @@ Name | Type | Description  | Notes
  **isAutoGetSerialName** | **Boolean**| Specifies whether auto update serial name.  | [optional] [default to true]
  **title** | **String**| Specifies chart title name. | [optional]
  **folder** | **String**| The workbook folder. | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -632,7 +656,7 @@ No authorization required
 
 <a name="cellsChartsPutWorksheetChartLegend"></a>
 # **cellsChartsPutWorksheetChartLegend**
-> SaaSposeResponse cellsChartsPutWorksheetChartLegend(name, sheetName, chartIndex, folder)
+> SaaSposeResponse cellsChartsPutWorksheetChartLegend(name, sheetName, chartIndex, folder, storage)
 
 Show legend in chart
 
@@ -648,8 +672,9 @@ String name = "name_example"; // String | Workbook name.
 String sheetName = "sheetName_example"; // String | Worksheet name.
 Integer chartIndex = 56; // Integer | The chart index.
 String folder = "folder_example"; // String | The workbook folder.
+String storage = "storage_example"; // String | storage name.
 try {
-    SaaSposeResponse result = apiInstance.cellsChartsPutWorksheetChartLegend(name, sheetName, chartIndex, folder);
+    SaaSposeResponse result = apiInstance.cellsChartsPutWorksheetChartLegend(name, sheetName, chartIndex, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsChartsApi#cellsChartsPutWorksheetChartLegend");
@@ -665,6 +690,7 @@ Name | Type | Description  | Notes
  **sheetName** | **String**| Worksheet name. |
  **chartIndex** | **Integer**| The chart index. |
  **folder** | **String**| The workbook folder. | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -681,7 +707,7 @@ No authorization required
 
 <a name="cellsChartsPutWorksheetChartTitle"></a>
 # **cellsChartsPutWorksheetChartTitle**
-> TitleResponse cellsChartsPutWorksheetChartTitle(name, sheetName, chartIndex, title, folder)
+> TitleResponse cellsChartsPutWorksheetChartTitle(name, sheetName, chartIndex, title, folder, storage)
 
 Add chart title / Set chart title visible
 
@@ -698,8 +724,9 @@ String sheetName = "sheetName_example"; // String | Worksheet name.
 Integer chartIndex = 56; // Integer | The chart index.
 Title title = new Title(); // Title | Chart title.
 String folder = "folder_example"; // String | The workbook folder.
+String storage = "storage_example"; // String | storage name.
 try {
-    TitleResponse result = apiInstance.cellsChartsPutWorksheetChartTitle(name, sheetName, chartIndex, title, folder);
+    TitleResponse result = apiInstance.cellsChartsPutWorksheetChartTitle(name, sheetName, chartIndex, title, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsChartsApi#cellsChartsPutWorksheetChartTitle");
@@ -716,6 +743,7 @@ Name | Type | Description  | Notes
  **chartIndex** | **Integer**| The chart index. |
  **title** | [**Title**](Title.md)| Chart title. | [optional]
  **folder** | **String**| The workbook folder. | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 

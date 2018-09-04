@@ -71,7 +71,7 @@ public class CellsHypelinksApiTest {
         Integer hyperlinkIndex = 0;
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        SaaSposeResponse response = api.cellsHypelinksDeleteWorksheetHyperlink(name, sheetName, hyperlinkIndex, folder);
+        SaaSposeResponse response = api.cellsHypelinksDeleteWorksheetHyperlink(name, sheetName, hyperlinkIndex, folder,null);
 
         // TODO: test validations
     }
@@ -90,7 +90,7 @@ public class CellsHypelinksApiTest {
         String sheetName = SHEET1;
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        SaaSposeResponse response = api.cellsHypelinksDeleteWorksheetHyperlinks(name, sheetName, folder);
+        SaaSposeResponse response = api.cellsHypelinksDeleteWorksheetHyperlinks(name, sheetName, folder,null);
 
         // TODO: test validations
     }
@@ -110,7 +110,7 @@ public class CellsHypelinksApiTest {
         Integer hyperlinkIndex = 0;
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        HyperlinkResponse response = api.cellsHypelinksGetWorksheetHyperlink(name, sheetName, hyperlinkIndex, folder);
+        HyperlinkResponse response = api.cellsHypelinksGetWorksheetHyperlink(name, sheetName, hyperlinkIndex, folder,null);
 
         // TODO: test validations
     }
@@ -129,7 +129,7 @@ public class CellsHypelinksApiTest {
         String sheetName = SHEET1;
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        HyperlinksResponse response = api.cellsHypelinksGetWorksheetHyperlinks(name, sheetName, folder);
+        HyperlinksResponse response = api.cellsHypelinksGetWorksheetHyperlinks(name, sheetName, folder,null);
 
         // TODO: test validations
     }
@@ -151,7 +151,7 @@ public class CellsHypelinksApiTest {
         hyperlink.setAddress( "http://www.aspose.com");
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        HyperlinkResponse response = api.cellsHypelinksPostWorksheetHyperlink(name, sheetName, hyperlinkIndex, hyperlink, folder);
+        HyperlinkResponse response = api.cellsHypelinksPostWorksheetHyperlink(name, sheetName, hyperlinkIndex, hyperlink, folder,null);
 
         // TODO: test validations
     }
@@ -175,7 +175,7 @@ public class CellsHypelinksApiTest {
         String address = "http://wwww.aspose.com";
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        HyperlinkResponse response = api.cellsHypelinksPutWorksheetHyperlink(name, sheetName, firstRow, firstColumn, totalRows, totalColumns, address, folder);
+        HyperlinkResponse response = api.cellsHypelinksPutWorksheetHyperlink(name, sheetName, firstRow, firstColumn, totalRows, totalColumns, address, folder,null);
 
         // TODO: test validations
     }

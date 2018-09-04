@@ -70,7 +70,7 @@ public class CellsPageSetupApiTest {
         String sheetName = SHEET1;
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        SaaSposeResponse response = api.cellsPageSetupDeleteHeaderFooter(name, sheetName, folder);
+        SaaSposeResponse response = api.cellsPageSetupDeleteHeaderFooter(name, sheetName, folder,null);
 
         // TODO: test validations
     }
@@ -89,7 +89,7 @@ public class CellsPageSetupApiTest {
         String sheetName = SHEET1;
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        PageSectionsResponse response = api.cellsPageSetupGetFooter(name, sheetName, folder);
+        PageSectionsResponse response = api.cellsPageSetupGetFooter(name, sheetName, folder,null);
 
         // TODO: test validations
     }
@@ -108,7 +108,7 @@ public class CellsPageSetupApiTest {
         String sheetName = SHEET1;
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        PageSectionsResponse response = api.cellsPageSetupGetHeader(name, sheetName, folder);
+        PageSectionsResponse response = api.cellsPageSetupGetHeader(name, sheetName, folder,null);
 
         // TODO: test validations
     }
@@ -127,7 +127,7 @@ public class CellsPageSetupApiTest {
         String sheetName = SHEET1;
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        PageSetupResponse response = api.cellsPageSetupGetPageSetup(name, sheetName, folder);
+        PageSetupResponse response = api.cellsPageSetupGetPageSetup(name, sheetName, folder,null);
 
         // TODO: test validations
     }
@@ -149,7 +149,7 @@ public class CellsPageSetupApiTest {
         Boolean isFirstPage = true;
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        SaaSposeResponse response = api.cellsPageSetupPostFooter(name, sheetName, section, script, isFirstPage, folder);
+        SaaSposeResponse response = api.cellsPageSetupPostFooter(name, sheetName, section, script, isFirstPage, folder,null);
 
         // TODO: test validations
     }
@@ -171,7 +171,7 @@ public class CellsPageSetupApiTest {
         Boolean isFirstPage = false;
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        SaaSposeResponse response = api.cellsPageSetupPostHeader(name, sheetName, section, script, isFirstPage, folder);
+        SaaSposeResponse response = api.cellsPageSetupPostHeader(name, sheetName, section, script, isFirstPage, folder,null);
 
         // TODO: test validations
     }
@@ -192,7 +192,7 @@ public class CellsPageSetupApiTest {
         pageSetup.setBlackAndWhite(true);
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        SaaSposeResponse response = api.cellsPageSetupPostPageSetup(name, sheetName, pageSetup, folder);
+        SaaSposeResponse response = api.cellsPageSetupPostPageSetup(name, sheetName, pageSetup, folder,null);
 
         // TODO: test validations
     }

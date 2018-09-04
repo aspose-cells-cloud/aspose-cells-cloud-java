@@ -63,12 +63,13 @@ public class CellsHypelinksApi {
      * @param sheetName Worksheet name. (required)
      * @param hyperlinkIndex The hyperlink&#39;s index. (required)
      * @param folder The document folder. (optional)
+     * @param storage storage name. (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call cellsHypelinksDeleteWorksheetHyperlinkCall(String name, String sheetName, Integer hyperlinkIndex, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call cellsHypelinksDeleteWorksheetHyperlinkCall(String name, String sheetName, Integer hyperlinkIndex, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -80,6 +81,8 @@ public class CellsHypelinksApi {
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         if (folder != null)
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "folder", folder));
+        if (storage != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "storage", storage));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -114,7 +117,7 @@ public class CellsHypelinksApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call cellsHypelinksDeleteWorksheetHyperlinkValidateBeforeCall(String name, String sheetName, Integer hyperlinkIndex, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call cellsHypelinksDeleteWorksheetHyperlinkValidateBeforeCall(String name, String sheetName, Integer hyperlinkIndex, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'name' is set
         if (name == null) {
@@ -132,7 +135,7 @@ public class CellsHypelinksApi {
         }
         
         
-        com.squareup.okhttp.Call call = cellsHypelinksDeleteWorksheetHyperlinkCall(name, sheetName, hyperlinkIndex, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsHypelinksDeleteWorksheetHyperlinkCall(name, sheetName, hyperlinkIndex, folder, storage, progressListener, progressRequestListener);
         return call;
 
         
@@ -148,11 +151,12 @@ public class CellsHypelinksApi {
      * @param sheetName Worksheet name. (required)
      * @param hyperlinkIndex The hyperlink&#39;s index. (required)
      * @param folder The document folder. (optional)
+     * @param storage storage name. (optional)
      * @return SaaSposeResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public SaaSposeResponse cellsHypelinksDeleteWorksheetHyperlink(String name, String sheetName, Integer hyperlinkIndex, String folder) throws ApiException {
-        ApiResponse<SaaSposeResponse> resp = cellsHypelinksDeleteWorksheetHyperlinkWithHttpInfo(name, sheetName, hyperlinkIndex, folder);
+    public SaaSposeResponse cellsHypelinksDeleteWorksheetHyperlink(String name, String sheetName, Integer hyperlinkIndex, String folder, String storage) throws ApiException {
+        ApiResponse<SaaSposeResponse> resp = cellsHypelinksDeleteWorksheetHyperlinkWithHttpInfo(name, sheetName, hyperlinkIndex, folder, storage);
         return resp.getData();
     }
 
@@ -163,11 +167,12 @@ public class CellsHypelinksApi {
      * @param sheetName Worksheet name. (required)
      * @param hyperlinkIndex The hyperlink&#39;s index. (required)
      * @param folder The document folder. (optional)
+     * @param storage storage name. (optional)
      * @return ApiResponse&lt;SaaSposeResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<SaaSposeResponse> cellsHypelinksDeleteWorksheetHyperlinkWithHttpInfo(String name, String sheetName, Integer hyperlinkIndex, String folder) throws ApiException {
-        com.squareup.okhttp.Call call = cellsHypelinksDeleteWorksheetHyperlinkValidateBeforeCall(name, sheetName, hyperlinkIndex, folder, null, null);
+    public ApiResponse<SaaSposeResponse> cellsHypelinksDeleteWorksheetHyperlinkWithHttpInfo(String name, String sheetName, Integer hyperlinkIndex, String folder, String storage) throws ApiException {
+        com.squareup.okhttp.Call call = cellsHypelinksDeleteWorksheetHyperlinkValidateBeforeCall(name, sheetName, hyperlinkIndex, folder, storage, null, null);
         Type localVarReturnType = new TypeToken<SaaSposeResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -179,11 +184,12 @@ public class CellsHypelinksApi {
      * @param sheetName Worksheet name. (required)
      * @param hyperlinkIndex The hyperlink&#39;s index. (required)
      * @param folder The document folder. (optional)
+     * @param storage storage name. (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call cellsHypelinksDeleteWorksheetHyperlinkAsync(String name, String sheetName, Integer hyperlinkIndex, String folder, final ApiCallback<SaaSposeResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call cellsHypelinksDeleteWorksheetHyperlinkAsync(String name, String sheetName, Integer hyperlinkIndex, String folder, String storage, final ApiCallback<SaaSposeResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -204,7 +210,7 @@ public class CellsHypelinksApi {
             };
         }
 
-        com.squareup.okhttp.Call call = cellsHypelinksDeleteWorksheetHyperlinkValidateBeforeCall(name, sheetName, hyperlinkIndex, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsHypelinksDeleteWorksheetHyperlinkValidateBeforeCall(name, sheetName, hyperlinkIndex, folder, storage, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<SaaSposeResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -214,12 +220,13 @@ public class CellsHypelinksApi {
      * @param name Document name. (required)
      * @param sheetName Worksheet name. (required)
      * @param folder The document folder. (optional)
+     * @param storage storage name. (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call cellsHypelinksDeleteWorksheetHyperlinksCall(String name, String sheetName, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call cellsHypelinksDeleteWorksheetHyperlinksCall(String name, String sheetName, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -230,6 +237,8 @@ public class CellsHypelinksApi {
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         if (folder != null)
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "folder", folder));
+        if (storage != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "storage", storage));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -264,7 +273,7 @@ public class CellsHypelinksApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call cellsHypelinksDeleteWorksheetHyperlinksValidateBeforeCall(String name, String sheetName, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call cellsHypelinksDeleteWorksheetHyperlinksValidateBeforeCall(String name, String sheetName, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'name' is set
         if (name == null) {
@@ -277,7 +286,7 @@ public class CellsHypelinksApi {
         }
         
         
-        com.squareup.okhttp.Call call = cellsHypelinksDeleteWorksheetHyperlinksCall(name, sheetName, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsHypelinksDeleteWorksheetHyperlinksCall(name, sheetName, folder, storage, progressListener, progressRequestListener);
         return call;
 
         
@@ -292,11 +301,12 @@ public class CellsHypelinksApi {
      * @param name Document name. (required)
      * @param sheetName Worksheet name. (required)
      * @param folder The document folder. (optional)
+     * @param storage storage name. (optional)
      * @return SaaSposeResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public SaaSposeResponse cellsHypelinksDeleteWorksheetHyperlinks(String name, String sheetName, String folder) throws ApiException {
-        ApiResponse<SaaSposeResponse> resp = cellsHypelinksDeleteWorksheetHyperlinksWithHttpInfo(name, sheetName, folder);
+    public SaaSposeResponse cellsHypelinksDeleteWorksheetHyperlinks(String name, String sheetName, String folder, String storage) throws ApiException {
+        ApiResponse<SaaSposeResponse> resp = cellsHypelinksDeleteWorksheetHyperlinksWithHttpInfo(name, sheetName, folder, storage);
         return resp.getData();
     }
 
@@ -306,11 +316,12 @@ public class CellsHypelinksApi {
      * @param name Document name. (required)
      * @param sheetName Worksheet name. (required)
      * @param folder The document folder. (optional)
+     * @param storage storage name. (optional)
      * @return ApiResponse&lt;SaaSposeResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<SaaSposeResponse> cellsHypelinksDeleteWorksheetHyperlinksWithHttpInfo(String name, String sheetName, String folder) throws ApiException {
-        com.squareup.okhttp.Call call = cellsHypelinksDeleteWorksheetHyperlinksValidateBeforeCall(name, sheetName, folder, null, null);
+    public ApiResponse<SaaSposeResponse> cellsHypelinksDeleteWorksheetHyperlinksWithHttpInfo(String name, String sheetName, String folder, String storage) throws ApiException {
+        com.squareup.okhttp.Call call = cellsHypelinksDeleteWorksheetHyperlinksValidateBeforeCall(name, sheetName, folder, storage, null, null);
         Type localVarReturnType = new TypeToken<SaaSposeResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -321,11 +332,12 @@ public class CellsHypelinksApi {
      * @param name Document name. (required)
      * @param sheetName Worksheet name. (required)
      * @param folder The document folder. (optional)
+     * @param storage storage name. (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call cellsHypelinksDeleteWorksheetHyperlinksAsync(String name, String sheetName, String folder, final ApiCallback<SaaSposeResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call cellsHypelinksDeleteWorksheetHyperlinksAsync(String name, String sheetName, String folder, String storage, final ApiCallback<SaaSposeResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -346,7 +358,7 @@ public class CellsHypelinksApi {
             };
         }
 
-        com.squareup.okhttp.Call call = cellsHypelinksDeleteWorksheetHyperlinksValidateBeforeCall(name, sheetName, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsHypelinksDeleteWorksheetHyperlinksValidateBeforeCall(name, sheetName, folder, storage, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<SaaSposeResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -357,12 +369,13 @@ public class CellsHypelinksApi {
      * @param sheetName Worksheet name. (required)
      * @param hyperlinkIndex The hyperlink&#39;s index. (required)
      * @param folder The document folder. (optional)
+     * @param storage storage name. (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call cellsHypelinksGetWorksheetHyperlinkCall(String name, String sheetName, Integer hyperlinkIndex, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call cellsHypelinksGetWorksheetHyperlinkCall(String name, String sheetName, Integer hyperlinkIndex, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -374,6 +387,8 @@ public class CellsHypelinksApi {
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         if (folder != null)
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "folder", folder));
+        if (storage != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "storage", storage));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -408,7 +423,7 @@ public class CellsHypelinksApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call cellsHypelinksGetWorksheetHyperlinkValidateBeforeCall(String name, String sheetName, Integer hyperlinkIndex, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call cellsHypelinksGetWorksheetHyperlinkValidateBeforeCall(String name, String sheetName, Integer hyperlinkIndex, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'name' is set
         if (name == null) {
@@ -426,7 +441,7 @@ public class CellsHypelinksApi {
         }
         
         
-        com.squareup.okhttp.Call call = cellsHypelinksGetWorksheetHyperlinkCall(name, sheetName, hyperlinkIndex, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsHypelinksGetWorksheetHyperlinkCall(name, sheetName, hyperlinkIndex, folder, storage, progressListener, progressRequestListener);
         return call;
 
         
@@ -442,11 +457,12 @@ public class CellsHypelinksApi {
      * @param sheetName Worksheet name. (required)
      * @param hyperlinkIndex The hyperlink&#39;s index. (required)
      * @param folder The document folder. (optional)
+     * @param storage storage name. (optional)
      * @return HyperlinkResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public HyperlinkResponse cellsHypelinksGetWorksheetHyperlink(String name, String sheetName, Integer hyperlinkIndex, String folder) throws ApiException {
-        ApiResponse<HyperlinkResponse> resp = cellsHypelinksGetWorksheetHyperlinkWithHttpInfo(name, sheetName, hyperlinkIndex, folder);
+    public HyperlinkResponse cellsHypelinksGetWorksheetHyperlink(String name, String sheetName, Integer hyperlinkIndex, String folder, String storage) throws ApiException {
+        ApiResponse<HyperlinkResponse> resp = cellsHypelinksGetWorksheetHyperlinkWithHttpInfo(name, sheetName, hyperlinkIndex, folder, storage);
         return resp.getData();
     }
 
@@ -457,11 +473,12 @@ public class CellsHypelinksApi {
      * @param sheetName Worksheet name. (required)
      * @param hyperlinkIndex The hyperlink&#39;s index. (required)
      * @param folder The document folder. (optional)
+     * @param storage storage name. (optional)
      * @return ApiResponse&lt;HyperlinkResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<HyperlinkResponse> cellsHypelinksGetWorksheetHyperlinkWithHttpInfo(String name, String sheetName, Integer hyperlinkIndex, String folder) throws ApiException {
-        com.squareup.okhttp.Call call = cellsHypelinksGetWorksheetHyperlinkValidateBeforeCall(name, sheetName, hyperlinkIndex, folder, null, null);
+    public ApiResponse<HyperlinkResponse> cellsHypelinksGetWorksheetHyperlinkWithHttpInfo(String name, String sheetName, Integer hyperlinkIndex, String folder, String storage) throws ApiException {
+        com.squareup.okhttp.Call call = cellsHypelinksGetWorksheetHyperlinkValidateBeforeCall(name, sheetName, hyperlinkIndex, folder, storage, null, null);
         Type localVarReturnType = new TypeToken<HyperlinkResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -473,11 +490,12 @@ public class CellsHypelinksApi {
      * @param sheetName Worksheet name. (required)
      * @param hyperlinkIndex The hyperlink&#39;s index. (required)
      * @param folder The document folder. (optional)
+     * @param storage storage name. (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call cellsHypelinksGetWorksheetHyperlinkAsync(String name, String sheetName, Integer hyperlinkIndex, String folder, final ApiCallback<HyperlinkResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call cellsHypelinksGetWorksheetHyperlinkAsync(String name, String sheetName, Integer hyperlinkIndex, String folder, String storage, final ApiCallback<HyperlinkResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -498,7 +516,7 @@ public class CellsHypelinksApi {
             };
         }
 
-        com.squareup.okhttp.Call call = cellsHypelinksGetWorksheetHyperlinkValidateBeforeCall(name, sheetName, hyperlinkIndex, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsHypelinksGetWorksheetHyperlinkValidateBeforeCall(name, sheetName, hyperlinkIndex, folder, storage, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<HyperlinkResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -508,12 +526,13 @@ public class CellsHypelinksApi {
      * @param name Document name. (required)
      * @param sheetName The worksheet name. (required)
      * @param folder Document&#39;s folder. (optional)
+     * @param storage storage name. (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call cellsHypelinksGetWorksheetHyperlinksCall(String name, String sheetName, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call cellsHypelinksGetWorksheetHyperlinksCall(String name, String sheetName, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -524,6 +543,8 @@ public class CellsHypelinksApi {
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         if (folder != null)
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "folder", folder));
+        if (storage != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "storage", storage));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -558,7 +579,7 @@ public class CellsHypelinksApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call cellsHypelinksGetWorksheetHyperlinksValidateBeforeCall(String name, String sheetName, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call cellsHypelinksGetWorksheetHyperlinksValidateBeforeCall(String name, String sheetName, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'name' is set
         if (name == null) {
@@ -571,7 +592,7 @@ public class CellsHypelinksApi {
         }
         
         
-        com.squareup.okhttp.Call call = cellsHypelinksGetWorksheetHyperlinksCall(name, sheetName, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsHypelinksGetWorksheetHyperlinksCall(name, sheetName, folder, storage, progressListener, progressRequestListener);
         return call;
 
         
@@ -586,11 +607,12 @@ public class CellsHypelinksApi {
      * @param name Document name. (required)
      * @param sheetName The worksheet name. (required)
      * @param folder Document&#39;s folder. (optional)
+     * @param storage storage name. (optional)
      * @return HyperlinksResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public HyperlinksResponse cellsHypelinksGetWorksheetHyperlinks(String name, String sheetName, String folder) throws ApiException {
-        ApiResponse<HyperlinksResponse> resp = cellsHypelinksGetWorksheetHyperlinksWithHttpInfo(name, sheetName, folder);
+    public HyperlinksResponse cellsHypelinksGetWorksheetHyperlinks(String name, String sheetName, String folder, String storage) throws ApiException {
+        ApiResponse<HyperlinksResponse> resp = cellsHypelinksGetWorksheetHyperlinksWithHttpInfo(name, sheetName, folder, storage);
         return resp.getData();
     }
 
@@ -600,11 +622,12 @@ public class CellsHypelinksApi {
      * @param name Document name. (required)
      * @param sheetName The worksheet name. (required)
      * @param folder Document&#39;s folder. (optional)
+     * @param storage storage name. (optional)
      * @return ApiResponse&lt;HyperlinksResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<HyperlinksResponse> cellsHypelinksGetWorksheetHyperlinksWithHttpInfo(String name, String sheetName, String folder) throws ApiException {
-        com.squareup.okhttp.Call call = cellsHypelinksGetWorksheetHyperlinksValidateBeforeCall(name, sheetName, folder, null, null);
+    public ApiResponse<HyperlinksResponse> cellsHypelinksGetWorksheetHyperlinksWithHttpInfo(String name, String sheetName, String folder, String storage) throws ApiException {
+        com.squareup.okhttp.Call call = cellsHypelinksGetWorksheetHyperlinksValidateBeforeCall(name, sheetName, folder, storage, null, null);
         Type localVarReturnType = new TypeToken<HyperlinksResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -615,11 +638,12 @@ public class CellsHypelinksApi {
      * @param name Document name. (required)
      * @param sheetName The worksheet name. (required)
      * @param folder Document&#39;s folder. (optional)
+     * @param storage storage name. (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call cellsHypelinksGetWorksheetHyperlinksAsync(String name, String sheetName, String folder, final ApiCallback<HyperlinksResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call cellsHypelinksGetWorksheetHyperlinksAsync(String name, String sheetName, String folder, String storage, final ApiCallback<HyperlinksResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -640,7 +664,7 @@ public class CellsHypelinksApi {
             };
         }
 
-        com.squareup.okhttp.Call call = cellsHypelinksGetWorksheetHyperlinksValidateBeforeCall(name, sheetName, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsHypelinksGetWorksheetHyperlinksValidateBeforeCall(name, sheetName, folder, storage, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<HyperlinksResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -652,12 +676,13 @@ public class CellsHypelinksApi {
      * @param hyperlinkIndex The hyperlink&#39;s index. (required)
      * @param hyperlink Hyperlink object (optional)
      * @param folder The document folder. (optional)
+     * @param storage storage name. (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call cellsHypelinksPostWorksheetHyperlinkCall(String name, String sheetName, Integer hyperlinkIndex, Hyperlink hyperlink, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call cellsHypelinksPostWorksheetHyperlinkCall(String name, String sheetName, Integer hyperlinkIndex, Hyperlink hyperlink, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = hyperlink;
         
         // create path and map variables
@@ -669,6 +694,8 @@ public class CellsHypelinksApi {
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         if (folder != null)
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "folder", folder));
+        if (storage != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "storage", storage));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -703,7 +730,7 @@ public class CellsHypelinksApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call cellsHypelinksPostWorksheetHyperlinkValidateBeforeCall(String name, String sheetName, Integer hyperlinkIndex, Hyperlink hyperlink, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call cellsHypelinksPostWorksheetHyperlinkValidateBeforeCall(String name, String sheetName, Integer hyperlinkIndex, Hyperlink hyperlink, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'name' is set
         if (name == null) {
@@ -721,7 +748,7 @@ public class CellsHypelinksApi {
         }
         
         
-        com.squareup.okhttp.Call call = cellsHypelinksPostWorksheetHyperlinkCall(name, sheetName, hyperlinkIndex, hyperlink, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsHypelinksPostWorksheetHyperlinkCall(name, sheetName, hyperlinkIndex, hyperlink, folder, storage, progressListener, progressRequestListener);
         return call;
 
         
@@ -738,11 +765,12 @@ public class CellsHypelinksApi {
      * @param hyperlinkIndex The hyperlink&#39;s index. (required)
      * @param hyperlink Hyperlink object (optional)
      * @param folder The document folder. (optional)
+     * @param storage storage name. (optional)
      * @return HyperlinkResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public HyperlinkResponse cellsHypelinksPostWorksheetHyperlink(String name, String sheetName, Integer hyperlinkIndex, Hyperlink hyperlink, String folder) throws ApiException {
-        ApiResponse<HyperlinkResponse> resp = cellsHypelinksPostWorksheetHyperlinkWithHttpInfo(name, sheetName, hyperlinkIndex, hyperlink, folder);
+    public HyperlinkResponse cellsHypelinksPostWorksheetHyperlink(String name, String sheetName, Integer hyperlinkIndex, Hyperlink hyperlink, String folder, String storage) throws ApiException {
+        ApiResponse<HyperlinkResponse> resp = cellsHypelinksPostWorksheetHyperlinkWithHttpInfo(name, sheetName, hyperlinkIndex, hyperlink, folder, storage);
         return resp.getData();
     }
 
@@ -754,11 +782,12 @@ public class CellsHypelinksApi {
      * @param hyperlinkIndex The hyperlink&#39;s index. (required)
      * @param hyperlink Hyperlink object (optional)
      * @param folder The document folder. (optional)
+     * @param storage storage name. (optional)
      * @return ApiResponse&lt;HyperlinkResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<HyperlinkResponse> cellsHypelinksPostWorksheetHyperlinkWithHttpInfo(String name, String sheetName, Integer hyperlinkIndex, Hyperlink hyperlink, String folder) throws ApiException {
-        com.squareup.okhttp.Call call = cellsHypelinksPostWorksheetHyperlinkValidateBeforeCall(name, sheetName, hyperlinkIndex, hyperlink, folder, null, null);
+    public ApiResponse<HyperlinkResponse> cellsHypelinksPostWorksheetHyperlinkWithHttpInfo(String name, String sheetName, Integer hyperlinkIndex, Hyperlink hyperlink, String folder, String storage) throws ApiException {
+        com.squareup.okhttp.Call call = cellsHypelinksPostWorksheetHyperlinkValidateBeforeCall(name, sheetName, hyperlinkIndex, hyperlink, folder, storage, null, null);
         Type localVarReturnType = new TypeToken<HyperlinkResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -771,11 +800,12 @@ public class CellsHypelinksApi {
      * @param hyperlinkIndex The hyperlink&#39;s index. (required)
      * @param hyperlink Hyperlink object (optional)
      * @param folder The document folder. (optional)
+     * @param storage storage name. (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call cellsHypelinksPostWorksheetHyperlinkAsync(String name, String sheetName, Integer hyperlinkIndex, Hyperlink hyperlink, String folder, final ApiCallback<HyperlinkResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call cellsHypelinksPostWorksheetHyperlinkAsync(String name, String sheetName, Integer hyperlinkIndex, Hyperlink hyperlink, String folder, String storage, final ApiCallback<HyperlinkResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -796,7 +826,7 @@ public class CellsHypelinksApi {
             };
         }
 
-        com.squareup.okhttp.Call call = cellsHypelinksPostWorksheetHyperlinkValidateBeforeCall(name, sheetName, hyperlinkIndex, hyperlink, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsHypelinksPostWorksheetHyperlinkValidateBeforeCall(name, sheetName, hyperlinkIndex, hyperlink, folder, storage, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<HyperlinkResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -811,12 +841,13 @@ public class CellsHypelinksApi {
      * @param totalColumns  (required)
      * @param address  (required)
      * @param folder The document folder. (optional)
+     * @param storage storage name. (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call cellsHypelinksPutWorksheetHyperlinkCall(String name, String sheetName, Integer firstRow, Integer firstColumn, Integer totalRows, Integer totalColumns, String address, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call cellsHypelinksPutWorksheetHyperlinkCall(String name, String sheetName, Integer firstRow, Integer firstColumn, Integer totalRows, Integer totalColumns, String address, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -837,6 +868,8 @@ public class CellsHypelinksApi {
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "address", address));
         if (folder != null)
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "folder", folder));
+        if (storage != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "storage", storage));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -871,7 +904,7 @@ public class CellsHypelinksApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call cellsHypelinksPutWorksheetHyperlinkValidateBeforeCall(String name, String sheetName, Integer firstRow, Integer firstColumn, Integer totalRows, Integer totalColumns, String address, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call cellsHypelinksPutWorksheetHyperlinkValidateBeforeCall(String name, String sheetName, Integer firstRow, Integer firstColumn, Integer totalRows, Integer totalColumns, String address, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'name' is set
         if (name == null) {
@@ -909,7 +942,7 @@ public class CellsHypelinksApi {
         }
         
         
-        com.squareup.okhttp.Call call = cellsHypelinksPutWorksheetHyperlinkCall(name, sheetName, firstRow, firstColumn, totalRows, totalColumns, address, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsHypelinksPutWorksheetHyperlinkCall(name, sheetName, firstRow, firstColumn, totalRows, totalColumns, address, folder, storage, progressListener, progressRequestListener);
         return call;
 
         
@@ -929,11 +962,12 @@ public class CellsHypelinksApi {
      * @param totalColumns  (required)
      * @param address  (required)
      * @param folder The document folder. (optional)
+     * @param storage storage name. (optional)
      * @return HyperlinkResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public HyperlinkResponse cellsHypelinksPutWorksheetHyperlink(String name, String sheetName, Integer firstRow, Integer firstColumn, Integer totalRows, Integer totalColumns, String address, String folder) throws ApiException {
-        ApiResponse<HyperlinkResponse> resp = cellsHypelinksPutWorksheetHyperlinkWithHttpInfo(name, sheetName, firstRow, firstColumn, totalRows, totalColumns, address, folder);
+    public HyperlinkResponse cellsHypelinksPutWorksheetHyperlink(String name, String sheetName, Integer firstRow, Integer firstColumn, Integer totalRows, Integer totalColumns, String address, String folder, String storage) throws ApiException {
+        ApiResponse<HyperlinkResponse> resp = cellsHypelinksPutWorksheetHyperlinkWithHttpInfo(name, sheetName, firstRow, firstColumn, totalRows, totalColumns, address, folder, storage);
         return resp.getData();
     }
 
@@ -948,11 +982,12 @@ public class CellsHypelinksApi {
      * @param totalColumns  (required)
      * @param address  (required)
      * @param folder The document folder. (optional)
+     * @param storage storage name. (optional)
      * @return ApiResponse&lt;HyperlinkResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<HyperlinkResponse> cellsHypelinksPutWorksheetHyperlinkWithHttpInfo(String name, String sheetName, Integer firstRow, Integer firstColumn, Integer totalRows, Integer totalColumns, String address, String folder) throws ApiException {
-        com.squareup.okhttp.Call call = cellsHypelinksPutWorksheetHyperlinkValidateBeforeCall(name, sheetName, firstRow, firstColumn, totalRows, totalColumns, address, folder, null, null);
+    public ApiResponse<HyperlinkResponse> cellsHypelinksPutWorksheetHyperlinkWithHttpInfo(String name, String sheetName, Integer firstRow, Integer firstColumn, Integer totalRows, Integer totalColumns, String address, String folder, String storage) throws ApiException {
+        com.squareup.okhttp.Call call = cellsHypelinksPutWorksheetHyperlinkValidateBeforeCall(name, sheetName, firstRow, firstColumn, totalRows, totalColumns, address, folder, storage, null, null);
         Type localVarReturnType = new TypeToken<HyperlinkResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -968,11 +1003,12 @@ public class CellsHypelinksApi {
      * @param totalColumns  (required)
      * @param address  (required)
      * @param folder The document folder. (optional)
+     * @param storage storage name. (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call cellsHypelinksPutWorksheetHyperlinkAsync(String name, String sheetName, Integer firstRow, Integer firstColumn, Integer totalRows, Integer totalColumns, String address, String folder, final ApiCallback<HyperlinkResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call cellsHypelinksPutWorksheetHyperlinkAsync(String name, String sheetName, Integer firstRow, Integer firstColumn, Integer totalRows, Integer totalColumns, String address, String folder, String storage, final ApiCallback<HyperlinkResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -993,7 +1029,7 @@ public class CellsHypelinksApi {
             };
         }
 
-        com.squareup.okhttp.Call call = cellsHypelinksPutWorksheetHyperlinkValidateBeforeCall(name, sheetName, firstRow, firstColumn, totalRows, totalColumns, address, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsHypelinksPutWorksheetHyperlinkValidateBeforeCall(name, sheetName, firstRow, firstColumn, totalRows, totalColumns, address, folder, storage, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<HyperlinkResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

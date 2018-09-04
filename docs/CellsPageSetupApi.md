@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 <a name="cellsPageSetupDeleteHeaderFooter"></a>
 # **cellsPageSetupDeleteHeaderFooter**
-> SaaSposeResponse cellsPageSetupDeleteHeaderFooter(name, sheetName, folder)
+> SaaSposeResponse cellsPageSetupDeleteHeaderFooter(name, sheetName, folder, storage)
 
 clear header footer
 
@@ -30,8 +30,9 @@ CellsPageSetupApi apiInstance = new CellsPageSetupApi();
 String name = "name_example"; // String | 
 String sheetName = "sheetName_example"; // String | 
 String folder = "folder_example"; // String | 
+String storage = "storage_example"; // String | storage name.
 try {
-    SaaSposeResponse result = apiInstance.cellsPageSetupDeleteHeaderFooter(name, sheetName, folder);
+    SaaSposeResponse result = apiInstance.cellsPageSetupDeleteHeaderFooter(name, sheetName, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsPageSetupApi#cellsPageSetupDeleteHeaderFooter");
@@ -46,6 +47,7 @@ Name | Type | Description  | Notes
  **name** | **String**|  |
  **sheetName** | **String**|  |
  **folder** | **String**|  | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -62,7 +64,7 @@ No authorization required
 
 <a name="cellsPageSetupGetFooter"></a>
 # **cellsPageSetupGetFooter**
-> PageSectionsResponse cellsPageSetupGetFooter(name, sheetName, folder)
+> PageSectionsResponse cellsPageSetupGetFooter(name, sheetName, folder, storage)
 
 get page footer information
 
@@ -77,8 +79,9 @@ CellsPageSetupApi apiInstance = new CellsPageSetupApi();
 String name = "name_example"; // String | 
 String sheetName = "sheetName_example"; // String | 
 String folder = "folder_example"; // String | 
+String storage = "storage_example"; // String | storage name.
 try {
-    PageSectionsResponse result = apiInstance.cellsPageSetupGetFooter(name, sheetName, folder);
+    PageSectionsResponse result = apiInstance.cellsPageSetupGetFooter(name, sheetName, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsPageSetupApi#cellsPageSetupGetFooter");
@@ -93,6 +96,7 @@ Name | Type | Description  | Notes
  **name** | **String**|  |
  **sheetName** | **String**|  |
  **folder** | **String**|  | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -109,7 +113,7 @@ No authorization required
 
 <a name="cellsPageSetupGetHeader"></a>
 # **cellsPageSetupGetHeader**
-> PageSectionsResponse cellsPageSetupGetHeader(name, sheetName, folder)
+> PageSectionsResponse cellsPageSetupGetHeader(name, sheetName, folder, storage)
 
 get page header information
 
@@ -124,8 +128,9 @@ CellsPageSetupApi apiInstance = new CellsPageSetupApi();
 String name = "name_example"; // String | 
 String sheetName = "sheetName_example"; // String | 
 String folder = "folder_example"; // String | 
+String storage = "storage_example"; // String | storage name.
 try {
-    PageSectionsResponse result = apiInstance.cellsPageSetupGetHeader(name, sheetName, folder);
+    PageSectionsResponse result = apiInstance.cellsPageSetupGetHeader(name, sheetName, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsPageSetupApi#cellsPageSetupGetHeader");
@@ -140,6 +145,7 @@ Name | Type | Description  | Notes
  **name** | **String**|  |
  **sheetName** | **String**|  |
  **folder** | **String**|  | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -156,7 +162,7 @@ No authorization required
 
 <a name="cellsPageSetupGetPageSetup"></a>
 # **cellsPageSetupGetPageSetup**
-> PageSetupResponse cellsPageSetupGetPageSetup(name, sheetName, folder)
+> PageSetupResponse cellsPageSetupGetPageSetup(name, sheetName, folder, storage)
 
 Get Page Setup information.             
 
@@ -171,8 +177,9 @@ CellsPageSetupApi apiInstance = new CellsPageSetupApi();
 String name = "name_example"; // String | 
 String sheetName = "sheetName_example"; // String | 
 String folder = "folder_example"; // String | 
+String storage = "storage_example"; // String | storage name.
 try {
-    PageSetupResponse result = apiInstance.cellsPageSetupGetPageSetup(name, sheetName, folder);
+    PageSetupResponse result = apiInstance.cellsPageSetupGetPageSetup(name, sheetName, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsPageSetupApi#cellsPageSetupGetPageSetup");
@@ -187,6 +194,7 @@ Name | Type | Description  | Notes
  **name** | **String**|  |
  **sheetName** | **String**|  |
  **folder** | **String**|  | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -203,7 +211,7 @@ No authorization required
 
 <a name="cellsPageSetupPostFooter"></a>
 # **cellsPageSetupPostFooter**
-> SaaSposeResponse cellsPageSetupPostFooter(name, sheetName, section, script, isFirstPage, folder)
+> SaaSposeResponse cellsPageSetupPostFooter(name, sheetName, section, script, isFirstPage, folder, storage)
 
 update  page footer information 
 
@@ -221,8 +229,9 @@ Integer section = 56; // Integer |
 String script = "script_example"; // String | 
 Boolean isFirstPage = true; // Boolean | 
 String folder = "folder_example"; // String | 
+String storage = "storage_example"; // String | storage name.
 try {
-    SaaSposeResponse result = apiInstance.cellsPageSetupPostFooter(name, sheetName, section, script, isFirstPage, folder);
+    SaaSposeResponse result = apiInstance.cellsPageSetupPostFooter(name, sheetName, section, script, isFirstPage, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsPageSetupApi#cellsPageSetupPostFooter");
@@ -240,6 +249,7 @@ Name | Type | Description  | Notes
  **script** | **String**|  |
  **isFirstPage** | **Boolean**|  |
  **folder** | **String**|  | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -256,7 +266,7 @@ No authorization required
 
 <a name="cellsPageSetupPostHeader"></a>
 # **cellsPageSetupPostHeader**
-> SaaSposeResponse cellsPageSetupPostHeader(name, sheetName, section, script, isFirstPage, folder)
+> SaaSposeResponse cellsPageSetupPostHeader(name, sheetName, section, script, isFirstPage, folder, storage)
 
 update  page header information 
 
@@ -274,8 +284,9 @@ Integer section = 56; // Integer |
 String script = "script_example"; // String | 
 Boolean isFirstPage = true; // Boolean | 
 String folder = "folder_example"; // String | 
+String storage = "storage_example"; // String | storage name.
 try {
-    SaaSposeResponse result = apiInstance.cellsPageSetupPostHeader(name, sheetName, section, script, isFirstPage, folder);
+    SaaSposeResponse result = apiInstance.cellsPageSetupPostHeader(name, sheetName, section, script, isFirstPage, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsPageSetupApi#cellsPageSetupPostHeader");
@@ -293,6 +304,7 @@ Name | Type | Description  | Notes
  **script** | **String**|  |
  **isFirstPage** | **Boolean**|  |
  **folder** | **String**|  | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -309,7 +321,7 @@ No authorization required
 
 <a name="cellsPageSetupPostPageSetup"></a>
 # **cellsPageSetupPostPageSetup**
-> SaaSposeResponse cellsPageSetupPostPageSetup(name, sheetName, pageSetup, folder)
+> SaaSposeResponse cellsPageSetupPostPageSetup(name, sheetName, pageSetup, folder, storage)
 
 Update Page Setup information.
 
@@ -325,8 +337,9 @@ String name = "name_example"; // String |
 String sheetName = "sheetName_example"; // String | 
 PageSetup pageSetup = new PageSetup(); // PageSetup | 
 String folder = "folder_example"; // String | 
+String storage = "storage_example"; // String | storage name.
 try {
-    SaaSposeResponse result = apiInstance.cellsPageSetupPostPageSetup(name, sheetName, pageSetup, folder);
+    SaaSposeResponse result = apiInstance.cellsPageSetupPostPageSetup(name, sheetName, pageSetup, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsPageSetupApi#cellsPageSetupPostPageSetup");
@@ -342,6 +355,7 @@ Name | Type | Description  | Notes
  **sheetName** | **String**|  |
  **pageSetup** | [**PageSetup**](PageSetup.md)|  | [optional]
  **folder** | **String**|  | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 

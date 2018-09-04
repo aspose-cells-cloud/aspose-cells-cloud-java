@@ -17,9 +17,9 @@ import com.aspose.cloud.cells.model.WorkbookSettingsOperateParameter;
 public class CellsApiUtil {
 	private static String accesstoken;
 	private static String grantType = "client_credentials";
-	private static String clientId = "xxxxx-xxxxx-xxxx-xxxx-xxxxxxx";
-	private static String clientSecret = "xxxxxxxxxxxxxxxxxxxxx";
-	private static String sourceFolder ="test data foler";
+	private static String clientId = "xxxxx-xxxx-xxxx-xxxx-xxxxxxx";
+	private static String clientSecret = "xxxxxxxxxxxxxxxxxxx";
+	private static String sourceFolder ="xxxxxxxxxxxxxxxxxxx";
 	public static String GetSourceFolder() {
 		return sourceFolder;
 	}

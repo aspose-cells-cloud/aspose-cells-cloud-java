@@ -27,7 +27,6 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
-import java.io.File;
 import com.aspose.cloud.cells.model.TaskData;
 
 import java.lang.reflect.Type;
@@ -125,11 +124,11 @@ public class CellsTaskApi {
      * Run tasks  
      * 
      * @param taskData  (required)
-     * @return File
+     * @return Object
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public File cellsTaskPostRunTask(TaskData taskData) throws ApiException {
-        ApiResponse<File> resp = cellsTaskPostRunTaskWithHttpInfo(taskData);
+    public Object cellsTaskPostRunTask(TaskData taskData) throws ApiException {
+        ApiResponse<Object> resp = cellsTaskPostRunTaskWithHttpInfo(taskData);
         return resp.getData();
     }
 
@@ -137,12 +136,12 @@ public class CellsTaskApi {
      * Run tasks  
      * 
      * @param taskData  (required)
-     * @return ApiResponse&lt;File&gt;
+     * @return ApiResponse&lt;Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<File> cellsTaskPostRunTaskWithHttpInfo(TaskData taskData) throws ApiException {
+    public ApiResponse<Object> cellsTaskPostRunTaskWithHttpInfo(TaskData taskData) throws ApiException {
         com.squareup.okhttp.Call call = cellsTaskPostRunTaskValidateBeforeCall(taskData, null, null);
-        Type localVarReturnType = new TypeToken<File>(){}.getType();
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -154,7 +153,7 @@ public class CellsTaskApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call cellsTaskPostRunTaskAsync(TaskData taskData, final ApiCallback<File> callback) throws ApiException {
+    public com.squareup.okhttp.Call cellsTaskPostRunTaskAsync(TaskData taskData, final ApiCallback<Object> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -176,7 +175,7 @@ public class CellsTaskApi {
         }
 
         com.squareup.okhttp.Call call = cellsTaskPostRunTaskValidateBeforeCall(taskData, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<File>(){}.getType();
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 <a name="cellsWorksheetValidationsDeleteWorksheetValidation"></a>
 # **cellsWorksheetValidationsDeleteWorksheetValidation**
-> ValidationResponse cellsWorksheetValidationsDeleteWorksheetValidation(name, sheetName, validationIndex, folder)
+> ValidationResponse cellsWorksheetValidationsDeleteWorksheetValidation(name, sheetName, validationIndex, folder, storage)
 
 Delete worksheet validation by index.
 
@@ -29,8 +29,9 @@ String name = "name_example"; // String | Document name.
 String sheetName = "sheetName_example"; // String | Worksheet name.
 Integer validationIndex = 56; // Integer | The validation index.
 String folder = "folder_example"; // String | Document's folder.
+String storage = "storage_example"; // String | storage name.
 try {
-    ValidationResponse result = apiInstance.cellsWorksheetValidationsDeleteWorksheetValidation(name, sheetName, validationIndex, folder);
+    ValidationResponse result = apiInstance.cellsWorksheetValidationsDeleteWorksheetValidation(name, sheetName, validationIndex, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsWorksheetValidationsApi#cellsWorksheetValidationsDeleteWorksheetValidation");
@@ -46,6 +47,7 @@ Name | Type | Description  | Notes
  **sheetName** | **String**| Worksheet name. |
  **validationIndex** | **Integer**| The validation index. |
  **folder** | **String**| Document&#39;s folder. | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -62,7 +64,7 @@ No authorization required
 
 <a name="cellsWorksheetValidationsGetWorksheetValidation"></a>
 # **cellsWorksheetValidationsGetWorksheetValidation**
-> ValidationResponse cellsWorksheetValidationsGetWorksheetValidation(name, sheetName, validationIndex, folder)
+> ValidationResponse cellsWorksheetValidationsGetWorksheetValidation(name, sheetName, validationIndex, folder, storage)
 
 Get worksheet validation by index.
 
@@ -78,8 +80,9 @@ String name = "name_example"; // String | Document name.
 String sheetName = "sheetName_example"; // String | Worksheet name.
 Integer validationIndex = 56; // Integer | The validation index.
 String folder = "folder_example"; // String | Document's folder.
+String storage = "storage_example"; // String | storage name.
 try {
-    ValidationResponse result = apiInstance.cellsWorksheetValidationsGetWorksheetValidation(name, sheetName, validationIndex, folder);
+    ValidationResponse result = apiInstance.cellsWorksheetValidationsGetWorksheetValidation(name, sheetName, validationIndex, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsWorksheetValidationsApi#cellsWorksheetValidationsGetWorksheetValidation");
@@ -95,6 +98,7 @@ Name | Type | Description  | Notes
  **sheetName** | **String**| Worksheet name. |
  **validationIndex** | **Integer**| The validation index. |
  **folder** | **String**| Document&#39;s folder. | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -111,7 +115,7 @@ No authorization required
 
 <a name="cellsWorksheetValidationsGetWorksheetValidations"></a>
 # **cellsWorksheetValidationsGetWorksheetValidations**
-> ValidationsResponse cellsWorksheetValidationsGetWorksheetValidations(name, sheetName, folder)
+> ValidationsResponse cellsWorksheetValidationsGetWorksheetValidations(name, sheetName, folder, storage)
 
 Get worksheet validations.
 
@@ -126,8 +130,9 @@ CellsWorksheetValidationsApi apiInstance = new CellsWorksheetValidationsApi();
 String name = "name_example"; // String | Document name.
 String sheetName = "sheetName_example"; // String | Worksheet name.
 String folder = "folder_example"; // String | Document folder.
+String storage = "storage_example"; // String | storage name.
 try {
-    ValidationsResponse result = apiInstance.cellsWorksheetValidationsGetWorksheetValidations(name, sheetName, folder);
+    ValidationsResponse result = apiInstance.cellsWorksheetValidationsGetWorksheetValidations(name, sheetName, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsWorksheetValidationsApi#cellsWorksheetValidationsGetWorksheetValidations");
@@ -142,6 +147,7 @@ Name | Type | Description  | Notes
  **name** | **String**| Document name. |
  **sheetName** | **String**| Worksheet name. |
  **folder** | **String**| Document folder. | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -158,7 +164,7 @@ No authorization required
 
 <a name="cellsWorksheetValidationsPostWorksheetValidation"></a>
 # **cellsWorksheetValidationsPostWorksheetValidation**
-> ValidationResponse cellsWorksheetValidationsPostWorksheetValidation(name, sheetName, validationIndex, validation, folder)
+> ValidationResponse cellsWorksheetValidationsPostWorksheetValidation(name, sheetName, validationIndex, validation, folder, storage)
 
 Update worksheet validation by index.
 
@@ -175,8 +181,9 @@ String sheetName = "sheetName_example"; // String | Worksheet name.
 Integer validationIndex = 56; // Integer | The validation index.
 Validation validation = new Validation(); // Validation | 
 String folder = "folder_example"; // String | Document's folder.
+String storage = "storage_example"; // String | storage name.
 try {
-    ValidationResponse result = apiInstance.cellsWorksheetValidationsPostWorksheetValidation(name, sheetName, validationIndex, validation, folder);
+    ValidationResponse result = apiInstance.cellsWorksheetValidationsPostWorksheetValidation(name, sheetName, validationIndex, validation, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsWorksheetValidationsApi#cellsWorksheetValidationsPostWorksheetValidation");
@@ -193,6 +200,7 @@ Name | Type | Description  | Notes
  **validationIndex** | **Integer**| The validation index. |
  **validation** | [**Validation**](Validation.md)|  | [optional]
  **folder** | **String**| Document&#39;s folder. | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -209,7 +217,7 @@ No authorization required
 
 <a name="cellsWorksheetValidationsPutWorksheetValidation"></a>
 # **cellsWorksheetValidationsPutWorksheetValidation**
-> ValidationResponse cellsWorksheetValidationsPutWorksheetValidation(name, sheetName, range, folder)
+> ValidationResponse cellsWorksheetValidationsPutWorksheetValidation(name, sheetName, range, folder, storage)
 
 Add worksheet validation at index.
 
@@ -225,8 +233,9 @@ String name = "name_example"; // String | Document name.
 String sheetName = "sheetName_example"; // String | Worksheet name.
 String range = "range_example"; // String | Specified cells area
 String folder = "folder_example"; // String | Document's folder.
+String storage = "storage_example"; // String | storage name.
 try {
-    ValidationResponse result = apiInstance.cellsWorksheetValidationsPutWorksheetValidation(name, sheetName, range, folder);
+    ValidationResponse result = apiInstance.cellsWorksheetValidationsPutWorksheetValidation(name, sheetName, range, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsWorksheetValidationsApi#cellsWorksheetValidationsPutWorksheetValidation");
@@ -242,6 +251,7 @@ Name | Type | Description  | Notes
  **sheetName** | **String**| Worksheet name. |
  **range** | **String**| Specified cells area | [optional]
  **folder** | **String**| Document&#39;s folder. | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 

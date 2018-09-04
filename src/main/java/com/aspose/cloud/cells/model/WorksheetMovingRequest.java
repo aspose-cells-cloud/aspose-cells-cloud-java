@@ -27,7 +27,7 @@ import java.io.IOException;
  * Used by workbook moving requests.
  */
 @ApiModel(description = "Used by workbook moving requests.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-08-14T14:34:14.243+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-09-04T14:16:31.808+08:00")
 public class WorksheetMovingRequest {
   @SerializedName("Position")
   private String position = null;

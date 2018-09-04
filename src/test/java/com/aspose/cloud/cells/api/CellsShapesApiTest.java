@@ -71,7 +71,7 @@ public class CellsShapesApiTest {
         Integer shapeindex = 0;
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        SaaSposeResponse response = api.cellsShapesDeleteWorksheetShape(name, sheetName, shapeindex, folder);
+        SaaSposeResponse response = api.cellsShapesDeleteWorksheetShape(name, sheetName, shapeindex, folder,null);
 
         // TODO: test validations
     }
@@ -90,7 +90,7 @@ public class CellsShapesApiTest {
         String sheetName = SHEET1;
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        SaaSposeResponse response = api.cellsShapesDeleteWorksheetShapes(name, sheetName, folder);
+        SaaSposeResponse response = api.cellsShapesDeleteWorksheetShapes(name, sheetName, folder,null);
 
         // TODO: test validations
     }
@@ -110,7 +110,7 @@ public class CellsShapesApiTest {
         Integer shapeindex = 0;
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        ShapeResponse response = api.cellsShapesGetWorksheetShape(name, sheetName, shapeindex, folder);
+        ShapeResponse response = api.cellsShapesGetWorksheetShape(name, sheetName, shapeindex, folder,null);
 
         // TODO: test validations
     }
@@ -129,7 +129,7 @@ public class CellsShapesApiTest {
         String sheetName = SHEET1;
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        ShapesResponse response = api.cellsShapesGetWorksheetShapes(name, sheetName, folder);
+        ShapesResponse response = api.cellsShapesGetWorksheetShapes(name, sheetName, folder,null);
 
         // TODO: test validations
     }
@@ -151,7 +151,7 @@ public class CellsShapesApiTest {
         dto.setLowerRightColumn(10);
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        SaaSposeResponse response = api.cellsShapesPostWorksheetShape(name, sheetName, shapeindex, dto, folder);
+        SaaSposeResponse response = api.cellsShapesPostWorksheetShape(name, sheetName, shapeindex, dto, folder,null);
 
         // TODO: test validations
     }
@@ -177,7 +177,7 @@ public class CellsShapesApiTest {
         Integer height = 90;
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        ShapeResponse response = api.cellsShapesPutWorksheetShape(name, sheetName, drawingType, upperLeftRow, upperLeftColumn, top, left, width, height, folder);
+        ShapeResponse response = api.cellsShapesPutWorksheetShape(name, sheetName, drawingType, upperLeftRow, upperLeftColumn, top, left, width, height, folder,null);
 
         // TODO: test validations
     }

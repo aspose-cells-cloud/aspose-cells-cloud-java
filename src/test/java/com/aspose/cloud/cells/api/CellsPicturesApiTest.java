@@ -71,7 +71,7 @@ public class CellsPicturesApiTest {
         String sheetName = SHEET6;
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        SaaSposeResponse response = api.cellsPicturesDeleteWorksheetPictures(name, sheetName, folder);
+        SaaSposeResponse response = api.cellsPicturesDeleteWorksheetPictures(name, sheetName, folder,null);
 
         // TODO: test validations
     }
@@ -91,7 +91,7 @@ public class CellsPicturesApiTest {
         Integer pictureIndex = 0;
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        SaaSposeResponse response = api.cellsPicturesDeleteWorksheetPicture(name, sheetName, pictureIndex, folder);
+        SaaSposeResponse response = api.cellsPicturesDeleteWorksheetPicture(name, sheetName, pictureIndex, folder,null);
 
         // TODO: test validations
     }
@@ -111,7 +111,7 @@ public class CellsPicturesApiTest {
         Integer pictureNumber = 0;
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        File response = api.cellsPicturesGetWorksheetPicture(name, sheetName, pictureNumber, folder);
+        File response = api.cellsPicturesGetWorksheetPicture(name, sheetName, pictureNumber, folder,null);
 
         // TODO: test validations
     }
@@ -130,7 +130,7 @@ public class CellsPicturesApiTest {
         String sheetName = SHEET6;
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        PicturesResponse response = api.cellsPicturesGetWorksheetPictures(name, sheetName, folder);
+        PicturesResponse response = api.cellsPicturesGetWorksheetPictures(name, sheetName, folder,null);
 
         // TODO: test validations
     }
@@ -152,7 +152,7 @@ public class CellsPicturesApiTest {
         picture.setLeft(10);
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        PictureResponse response = api.cellsPicturesPostWorksheetPicture(name, sheetName, pictureIndex, picture, folder);
+        PictureResponse response = api.cellsPicturesPostWorksheetPicture(name, sheetName, pictureIndex, picture, folder,null);
 
         // TODO: test validations
     }
@@ -177,7 +177,7 @@ public class CellsPicturesApiTest {
         String picturePath = "WaterMark.png";
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        PicturesResponse response = api.cellsPicturesPutWorksheetAddPicture(name, sheetName, picture, upperLeftRow, upperLeftColumn, lowerRightRow, lowerRightColumn, picturePath, folder);
+        PicturesResponse response = api.cellsPicturesPutWorksheetAddPicture(name, sheetName, picture, upperLeftRow, upperLeftColumn, lowerRightRow, lowerRightColumn, picturePath, folder,null);
 
         // TODO: test validations
     }

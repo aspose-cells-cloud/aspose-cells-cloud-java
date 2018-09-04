@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 <a name="cellsHypelinksDeleteWorksheetHyperlink"></a>
 # **cellsHypelinksDeleteWorksheetHyperlink**
-> SaaSposeResponse cellsHypelinksDeleteWorksheetHyperlink(name, sheetName, hyperlinkIndex, folder)
+> SaaSposeResponse cellsHypelinksDeleteWorksheetHyperlink(name, sheetName, hyperlinkIndex, folder, storage)
 
 Delete worksheet hyperlink by index.
 
@@ -30,8 +30,9 @@ String name = "name_example"; // String | Document name.
 String sheetName = "sheetName_example"; // String | Worksheet name.
 Integer hyperlinkIndex = 56; // Integer | The hyperlink's index.
 String folder = "folder_example"; // String | The document folder.
+String storage = "storage_example"; // String | storage name.
 try {
-    SaaSposeResponse result = apiInstance.cellsHypelinksDeleteWorksheetHyperlink(name, sheetName, hyperlinkIndex, folder);
+    SaaSposeResponse result = apiInstance.cellsHypelinksDeleteWorksheetHyperlink(name, sheetName, hyperlinkIndex, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsHypelinksApi#cellsHypelinksDeleteWorksheetHyperlink");
@@ -47,6 +48,7 @@ Name | Type | Description  | Notes
  **sheetName** | **String**| Worksheet name. |
  **hyperlinkIndex** | **Integer**| The hyperlink&#39;s index. |
  **folder** | **String**| The document folder. | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -63,7 +65,7 @@ No authorization required
 
 <a name="cellsHypelinksDeleteWorksheetHyperlinks"></a>
 # **cellsHypelinksDeleteWorksheetHyperlinks**
-> SaaSposeResponse cellsHypelinksDeleteWorksheetHyperlinks(name, sheetName, folder)
+> SaaSposeResponse cellsHypelinksDeleteWorksheetHyperlinks(name, sheetName, folder, storage)
 
 Delete all hyperlinks in worksheet.
 
@@ -78,8 +80,9 @@ CellsHypelinksApi apiInstance = new CellsHypelinksApi();
 String name = "name_example"; // String | Document name.
 String sheetName = "sheetName_example"; // String | Worksheet name.
 String folder = "folder_example"; // String | The document folder.
+String storage = "storage_example"; // String | storage name.
 try {
-    SaaSposeResponse result = apiInstance.cellsHypelinksDeleteWorksheetHyperlinks(name, sheetName, folder);
+    SaaSposeResponse result = apiInstance.cellsHypelinksDeleteWorksheetHyperlinks(name, sheetName, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsHypelinksApi#cellsHypelinksDeleteWorksheetHyperlinks");
@@ -94,6 +97,7 @@ Name | Type | Description  | Notes
  **name** | **String**| Document name. |
  **sheetName** | **String**| Worksheet name. |
  **folder** | **String**| The document folder. | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -110,7 +114,7 @@ No authorization required
 
 <a name="cellsHypelinksGetWorksheetHyperlink"></a>
 # **cellsHypelinksGetWorksheetHyperlink**
-> HyperlinkResponse cellsHypelinksGetWorksheetHyperlink(name, sheetName, hyperlinkIndex, folder)
+> HyperlinkResponse cellsHypelinksGetWorksheetHyperlink(name, sheetName, hyperlinkIndex, folder, storage)
 
 Get worksheet hyperlink by index.
 
@@ -126,8 +130,9 @@ String name = "name_example"; // String | Document name.
 String sheetName = "sheetName_example"; // String | Worksheet name.
 Integer hyperlinkIndex = 56; // Integer | The hyperlink's index.
 String folder = "folder_example"; // String | The document folder.
+String storage = "storage_example"; // String | storage name.
 try {
-    HyperlinkResponse result = apiInstance.cellsHypelinksGetWorksheetHyperlink(name, sheetName, hyperlinkIndex, folder);
+    HyperlinkResponse result = apiInstance.cellsHypelinksGetWorksheetHyperlink(name, sheetName, hyperlinkIndex, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsHypelinksApi#cellsHypelinksGetWorksheetHyperlink");
@@ -143,6 +148,7 @@ Name | Type | Description  | Notes
  **sheetName** | **String**| Worksheet name. |
  **hyperlinkIndex** | **Integer**| The hyperlink&#39;s index. |
  **folder** | **String**| The document folder. | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -159,7 +165,7 @@ No authorization required
 
 <a name="cellsHypelinksGetWorksheetHyperlinks"></a>
 # **cellsHypelinksGetWorksheetHyperlinks**
-> HyperlinksResponse cellsHypelinksGetWorksheetHyperlinks(name, sheetName, folder)
+> HyperlinksResponse cellsHypelinksGetWorksheetHyperlinks(name, sheetName, folder, storage)
 
 Get worksheet hyperlinks.
 
@@ -174,8 +180,9 @@ CellsHypelinksApi apiInstance = new CellsHypelinksApi();
 String name = "name_example"; // String | Document name.
 String sheetName = "sheetName_example"; // String | The worksheet name.
 String folder = "folder_example"; // String | Document's folder.
+String storage = "storage_example"; // String | storage name.
 try {
-    HyperlinksResponse result = apiInstance.cellsHypelinksGetWorksheetHyperlinks(name, sheetName, folder);
+    HyperlinksResponse result = apiInstance.cellsHypelinksGetWorksheetHyperlinks(name, sheetName, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsHypelinksApi#cellsHypelinksGetWorksheetHyperlinks");
@@ -190,6 +197,7 @@ Name | Type | Description  | Notes
  **name** | **String**| Document name. |
  **sheetName** | **String**| The worksheet name. |
  **folder** | **String**| Document&#39;s folder. | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -206,7 +214,7 @@ No authorization required
 
 <a name="cellsHypelinksPostWorksheetHyperlink"></a>
 # **cellsHypelinksPostWorksheetHyperlink**
-> HyperlinkResponse cellsHypelinksPostWorksheetHyperlink(name, sheetName, hyperlinkIndex, hyperlink, folder)
+> HyperlinkResponse cellsHypelinksPostWorksheetHyperlink(name, sheetName, hyperlinkIndex, hyperlink, folder, storage)
 
 Update worksheet hyperlink by index.
 
@@ -223,8 +231,9 @@ String sheetName = "sheetName_example"; // String | Worksheet name.
 Integer hyperlinkIndex = 56; // Integer | The hyperlink's index.
 Hyperlink hyperlink = new Hyperlink(); // Hyperlink | Hyperlink object
 String folder = "folder_example"; // String | The document folder.
+String storage = "storage_example"; // String | storage name.
 try {
-    HyperlinkResponse result = apiInstance.cellsHypelinksPostWorksheetHyperlink(name, sheetName, hyperlinkIndex, hyperlink, folder);
+    HyperlinkResponse result = apiInstance.cellsHypelinksPostWorksheetHyperlink(name, sheetName, hyperlinkIndex, hyperlink, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsHypelinksApi#cellsHypelinksPostWorksheetHyperlink");
@@ -241,6 +250,7 @@ Name | Type | Description  | Notes
  **hyperlinkIndex** | **Integer**| The hyperlink&#39;s index. |
  **hyperlink** | [**Hyperlink**](Hyperlink.md)| Hyperlink object | [optional]
  **folder** | **String**| The document folder. | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -257,7 +267,7 @@ No authorization required
 
 <a name="cellsHypelinksPutWorksheetHyperlink"></a>
 # **cellsHypelinksPutWorksheetHyperlink**
-> HyperlinkResponse cellsHypelinksPutWorksheetHyperlink(name, sheetName, firstRow, firstColumn, totalRows, totalColumns, address, folder)
+> HyperlinkResponse cellsHypelinksPutWorksheetHyperlink(name, sheetName, firstRow, firstColumn, totalRows, totalColumns, address, folder, storage)
 
 Add worksheet hyperlink.
 
@@ -277,8 +287,9 @@ Integer totalRows = 56; // Integer |
 Integer totalColumns = 56; // Integer | 
 String address = "address_example"; // String | 
 String folder = "folder_example"; // String | The document folder.
+String storage = "storage_example"; // String | storage name.
 try {
-    HyperlinkResponse result = apiInstance.cellsHypelinksPutWorksheetHyperlink(name, sheetName, firstRow, firstColumn, totalRows, totalColumns, address, folder);
+    HyperlinkResponse result = apiInstance.cellsHypelinksPutWorksheetHyperlink(name, sheetName, firstRow, firstColumn, totalRows, totalColumns, address, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsHypelinksApi#cellsHypelinksPutWorksheetHyperlink");
@@ -298,6 +309,7 @@ Name | Type | Description  | Notes
  **totalColumns** | **Integer**|  |
  **address** | **String**|  |
  **folder** | **String**| The document folder. | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 

@@ -70,7 +70,7 @@ public class CellsChartAreaApiTest {
         Integer chartIndex = 0;
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        ChartAreaResponse response = api.cellsChartAreaGetChartArea(name, sheetName, chartIndex, folder);
+        ChartAreaResponse response = api.cellsChartAreaGetChartArea(name, sheetName, chartIndex, folder,null);
 
         // TODO: test validations
     }
@@ -90,7 +90,7 @@ public class CellsChartAreaApiTest {
         Integer chartIndex = 0;
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        LineResponse response = api.cellsChartAreaGetChartAreaBorder(name, sheetName, chartIndex, folder);
+        LineResponse response = api.cellsChartAreaGetChartAreaBorder(name, sheetName, chartIndex, folder,null);
 
         // TODO: test validations
     }
@@ -110,7 +110,7 @@ public class CellsChartAreaApiTest {
         Integer chartIndex = 0;
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        FillFormatResponse response = api.cellsChartAreaGetChartAreaFillFormat(name, sheetName, chartIndex, folder);
+        FillFormatResponse response = api.cellsChartAreaGetChartAreaFillFormat(name, sheetName, chartIndex, folder,null);
 
         // TODO: test validations
     }

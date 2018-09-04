@@ -62,12 +62,13 @@ public class CellsPageSetupApi {
      * @param name  (required)
      * @param sheetName  (required)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call cellsPageSetupDeleteHeaderFooterCall(String name, String sheetName, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call cellsPageSetupDeleteHeaderFooterCall(String name, String sheetName, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -78,6 +79,8 @@ public class CellsPageSetupApi {
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         if (folder != null)
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "folder", folder));
+        if (storage != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "storage", storage));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -112,7 +115,7 @@ public class CellsPageSetupApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call cellsPageSetupDeleteHeaderFooterValidateBeforeCall(String name, String sheetName, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call cellsPageSetupDeleteHeaderFooterValidateBeforeCall(String name, String sheetName, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'name' is set
         if (name == null) {
@@ -125,7 +128,7 @@ public class CellsPageSetupApi {
         }
         
         
-        com.squareup.okhttp.Call call = cellsPageSetupDeleteHeaderFooterCall(name, sheetName, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsPageSetupDeleteHeaderFooterCall(name, sheetName, folder, storage, progressListener, progressRequestListener);
         return call;
 
         
@@ -140,11 +143,12 @@ public class CellsPageSetupApi {
      * @param name  (required)
      * @param sheetName  (required)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @return SaaSposeResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public SaaSposeResponse cellsPageSetupDeleteHeaderFooter(String name, String sheetName, String folder) throws ApiException {
-        ApiResponse<SaaSposeResponse> resp = cellsPageSetupDeleteHeaderFooterWithHttpInfo(name, sheetName, folder);
+    public SaaSposeResponse cellsPageSetupDeleteHeaderFooter(String name, String sheetName, String folder, String storage) throws ApiException {
+        ApiResponse<SaaSposeResponse> resp = cellsPageSetupDeleteHeaderFooterWithHttpInfo(name, sheetName, folder, storage);
         return resp.getData();
     }
 
@@ -154,11 +158,12 @@ public class CellsPageSetupApi {
      * @param name  (required)
      * @param sheetName  (required)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @return ApiResponse&lt;SaaSposeResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<SaaSposeResponse> cellsPageSetupDeleteHeaderFooterWithHttpInfo(String name, String sheetName, String folder) throws ApiException {
-        com.squareup.okhttp.Call call = cellsPageSetupDeleteHeaderFooterValidateBeforeCall(name, sheetName, folder, null, null);
+    public ApiResponse<SaaSposeResponse> cellsPageSetupDeleteHeaderFooterWithHttpInfo(String name, String sheetName, String folder, String storage) throws ApiException {
+        com.squareup.okhttp.Call call = cellsPageSetupDeleteHeaderFooterValidateBeforeCall(name, sheetName, folder, storage, null, null);
         Type localVarReturnType = new TypeToken<SaaSposeResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -169,11 +174,12 @@ public class CellsPageSetupApi {
      * @param name  (required)
      * @param sheetName  (required)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call cellsPageSetupDeleteHeaderFooterAsync(String name, String sheetName, String folder, final ApiCallback<SaaSposeResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call cellsPageSetupDeleteHeaderFooterAsync(String name, String sheetName, String folder, String storage, final ApiCallback<SaaSposeResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -194,7 +200,7 @@ public class CellsPageSetupApi {
             };
         }
 
-        com.squareup.okhttp.Call call = cellsPageSetupDeleteHeaderFooterValidateBeforeCall(name, sheetName, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsPageSetupDeleteHeaderFooterValidateBeforeCall(name, sheetName, folder, storage, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<SaaSposeResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -204,12 +210,13 @@ public class CellsPageSetupApi {
      * @param name  (required)
      * @param sheetName  (required)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call cellsPageSetupGetFooterCall(String name, String sheetName, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call cellsPageSetupGetFooterCall(String name, String sheetName, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -220,6 +227,8 @@ public class CellsPageSetupApi {
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         if (folder != null)
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "folder", folder));
+        if (storage != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "storage", storage));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -254,7 +263,7 @@ public class CellsPageSetupApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call cellsPageSetupGetFooterValidateBeforeCall(String name, String sheetName, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call cellsPageSetupGetFooterValidateBeforeCall(String name, String sheetName, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'name' is set
         if (name == null) {
@@ -267,7 +276,7 @@ public class CellsPageSetupApi {
         }
         
         
-        com.squareup.okhttp.Call call = cellsPageSetupGetFooterCall(name, sheetName, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsPageSetupGetFooterCall(name, sheetName, folder, storage, progressListener, progressRequestListener);
         return call;
 
         
@@ -282,11 +291,12 @@ public class CellsPageSetupApi {
      * @param name  (required)
      * @param sheetName  (required)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @return PageSectionsResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public PageSectionsResponse cellsPageSetupGetFooter(String name, String sheetName, String folder) throws ApiException {
-        ApiResponse<PageSectionsResponse> resp = cellsPageSetupGetFooterWithHttpInfo(name, sheetName, folder);
+    public PageSectionsResponse cellsPageSetupGetFooter(String name, String sheetName, String folder, String storage) throws ApiException {
+        ApiResponse<PageSectionsResponse> resp = cellsPageSetupGetFooterWithHttpInfo(name, sheetName, folder, storage);
         return resp.getData();
     }
 
@@ -296,11 +306,12 @@ public class CellsPageSetupApi {
      * @param name  (required)
      * @param sheetName  (required)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @return ApiResponse&lt;PageSectionsResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<PageSectionsResponse> cellsPageSetupGetFooterWithHttpInfo(String name, String sheetName, String folder) throws ApiException {
-        com.squareup.okhttp.Call call = cellsPageSetupGetFooterValidateBeforeCall(name, sheetName, folder, null, null);
+    public ApiResponse<PageSectionsResponse> cellsPageSetupGetFooterWithHttpInfo(String name, String sheetName, String folder, String storage) throws ApiException {
+        com.squareup.okhttp.Call call = cellsPageSetupGetFooterValidateBeforeCall(name, sheetName, folder, storage, null, null);
         Type localVarReturnType = new TypeToken<PageSectionsResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -311,11 +322,12 @@ public class CellsPageSetupApi {
      * @param name  (required)
      * @param sheetName  (required)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call cellsPageSetupGetFooterAsync(String name, String sheetName, String folder, final ApiCallback<PageSectionsResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call cellsPageSetupGetFooterAsync(String name, String sheetName, String folder, String storage, final ApiCallback<PageSectionsResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -336,7 +348,7 @@ public class CellsPageSetupApi {
             };
         }
 
-        com.squareup.okhttp.Call call = cellsPageSetupGetFooterValidateBeforeCall(name, sheetName, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsPageSetupGetFooterValidateBeforeCall(name, sheetName, folder, storage, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<PageSectionsResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -346,12 +358,13 @@ public class CellsPageSetupApi {
      * @param name  (required)
      * @param sheetName  (required)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call cellsPageSetupGetHeaderCall(String name, String sheetName, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call cellsPageSetupGetHeaderCall(String name, String sheetName, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -362,6 +375,8 @@ public class CellsPageSetupApi {
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         if (folder != null)
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "folder", folder));
+        if (storage != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "storage", storage));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -396,7 +411,7 @@ public class CellsPageSetupApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call cellsPageSetupGetHeaderValidateBeforeCall(String name, String sheetName, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call cellsPageSetupGetHeaderValidateBeforeCall(String name, String sheetName, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'name' is set
         if (name == null) {
@@ -409,7 +424,7 @@ public class CellsPageSetupApi {
         }
         
         
-        com.squareup.okhttp.Call call = cellsPageSetupGetHeaderCall(name, sheetName, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsPageSetupGetHeaderCall(name, sheetName, folder, storage, progressListener, progressRequestListener);
         return call;
 
         
@@ -424,11 +439,12 @@ public class CellsPageSetupApi {
      * @param name  (required)
      * @param sheetName  (required)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @return PageSectionsResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public PageSectionsResponse cellsPageSetupGetHeader(String name, String sheetName, String folder) throws ApiException {
-        ApiResponse<PageSectionsResponse> resp = cellsPageSetupGetHeaderWithHttpInfo(name, sheetName, folder);
+    public PageSectionsResponse cellsPageSetupGetHeader(String name, String sheetName, String folder, String storage) throws ApiException {
+        ApiResponse<PageSectionsResponse> resp = cellsPageSetupGetHeaderWithHttpInfo(name, sheetName, folder, storage);
         return resp.getData();
     }
 
@@ -438,11 +454,12 @@ public class CellsPageSetupApi {
      * @param name  (required)
      * @param sheetName  (required)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @return ApiResponse&lt;PageSectionsResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<PageSectionsResponse> cellsPageSetupGetHeaderWithHttpInfo(String name, String sheetName, String folder) throws ApiException {
-        com.squareup.okhttp.Call call = cellsPageSetupGetHeaderValidateBeforeCall(name, sheetName, folder, null, null);
+    public ApiResponse<PageSectionsResponse> cellsPageSetupGetHeaderWithHttpInfo(String name, String sheetName, String folder, String storage) throws ApiException {
+        com.squareup.okhttp.Call call = cellsPageSetupGetHeaderValidateBeforeCall(name, sheetName, folder, storage, null, null);
         Type localVarReturnType = new TypeToken<PageSectionsResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -453,11 +470,12 @@ public class CellsPageSetupApi {
      * @param name  (required)
      * @param sheetName  (required)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call cellsPageSetupGetHeaderAsync(String name, String sheetName, String folder, final ApiCallback<PageSectionsResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call cellsPageSetupGetHeaderAsync(String name, String sheetName, String folder, String storage, final ApiCallback<PageSectionsResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -478,7 +496,7 @@ public class CellsPageSetupApi {
             };
         }
 
-        com.squareup.okhttp.Call call = cellsPageSetupGetHeaderValidateBeforeCall(name, sheetName, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsPageSetupGetHeaderValidateBeforeCall(name, sheetName, folder, storage, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<PageSectionsResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -488,12 +506,13 @@ public class CellsPageSetupApi {
      * @param name  (required)
      * @param sheetName  (required)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call cellsPageSetupGetPageSetupCall(String name, String sheetName, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call cellsPageSetupGetPageSetupCall(String name, String sheetName, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -504,6 +523,8 @@ public class CellsPageSetupApi {
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         if (folder != null)
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "folder", folder));
+        if (storage != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "storage", storage));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -538,7 +559,7 @@ public class CellsPageSetupApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call cellsPageSetupGetPageSetupValidateBeforeCall(String name, String sheetName, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call cellsPageSetupGetPageSetupValidateBeforeCall(String name, String sheetName, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'name' is set
         if (name == null) {
@@ -551,7 +572,7 @@ public class CellsPageSetupApi {
         }
         
         
-        com.squareup.okhttp.Call call = cellsPageSetupGetPageSetupCall(name, sheetName, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsPageSetupGetPageSetupCall(name, sheetName, folder, storage, progressListener, progressRequestListener);
         return call;
 
         
@@ -566,11 +587,12 @@ public class CellsPageSetupApi {
      * @param name  (required)
      * @param sheetName  (required)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @return PageSetupResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public PageSetupResponse cellsPageSetupGetPageSetup(String name, String sheetName, String folder) throws ApiException {
-        ApiResponse<PageSetupResponse> resp = cellsPageSetupGetPageSetupWithHttpInfo(name, sheetName, folder);
+    public PageSetupResponse cellsPageSetupGetPageSetup(String name, String sheetName, String folder, String storage) throws ApiException {
+        ApiResponse<PageSetupResponse> resp = cellsPageSetupGetPageSetupWithHttpInfo(name, sheetName, folder, storage);
         return resp.getData();
     }
 
@@ -580,11 +602,12 @@ public class CellsPageSetupApi {
      * @param name  (required)
      * @param sheetName  (required)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @return ApiResponse&lt;PageSetupResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<PageSetupResponse> cellsPageSetupGetPageSetupWithHttpInfo(String name, String sheetName, String folder) throws ApiException {
-        com.squareup.okhttp.Call call = cellsPageSetupGetPageSetupValidateBeforeCall(name, sheetName, folder, null, null);
+    public ApiResponse<PageSetupResponse> cellsPageSetupGetPageSetupWithHttpInfo(String name, String sheetName, String folder, String storage) throws ApiException {
+        com.squareup.okhttp.Call call = cellsPageSetupGetPageSetupValidateBeforeCall(name, sheetName, folder, storage, null, null);
         Type localVarReturnType = new TypeToken<PageSetupResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -595,11 +618,12 @@ public class CellsPageSetupApi {
      * @param name  (required)
      * @param sheetName  (required)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call cellsPageSetupGetPageSetupAsync(String name, String sheetName, String folder, final ApiCallback<PageSetupResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call cellsPageSetupGetPageSetupAsync(String name, String sheetName, String folder, String storage, final ApiCallback<PageSetupResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -620,7 +644,7 @@ public class CellsPageSetupApi {
             };
         }
 
-        com.squareup.okhttp.Call call = cellsPageSetupGetPageSetupValidateBeforeCall(name, sheetName, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsPageSetupGetPageSetupValidateBeforeCall(name, sheetName, folder, storage, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<PageSetupResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -633,12 +657,13 @@ public class CellsPageSetupApi {
      * @param script  (required)
      * @param isFirstPage  (required)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call cellsPageSetupPostFooterCall(String name, String sheetName, Integer section, String script, Boolean isFirstPage, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call cellsPageSetupPostFooterCall(String name, String sheetName, Integer section, String script, Boolean isFirstPage, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -655,6 +680,8 @@ public class CellsPageSetupApi {
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "isFirstPage", isFirstPage));
         if (folder != null)
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "folder", folder));
+        if (storage != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "storage", storage));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -689,7 +716,7 @@ public class CellsPageSetupApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call cellsPageSetupPostFooterValidateBeforeCall(String name, String sheetName, Integer section, String script, Boolean isFirstPage, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call cellsPageSetupPostFooterValidateBeforeCall(String name, String sheetName, Integer section, String script, Boolean isFirstPage, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'name' is set
         if (name == null) {
@@ -717,7 +744,7 @@ public class CellsPageSetupApi {
         }
         
         
-        com.squareup.okhttp.Call call = cellsPageSetupPostFooterCall(name, sheetName, section, script, isFirstPage, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsPageSetupPostFooterCall(name, sheetName, section, script, isFirstPage, folder, storage, progressListener, progressRequestListener);
         return call;
 
         
@@ -735,11 +762,12 @@ public class CellsPageSetupApi {
      * @param script  (required)
      * @param isFirstPage  (required)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @return SaaSposeResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public SaaSposeResponse cellsPageSetupPostFooter(String name, String sheetName, Integer section, String script, Boolean isFirstPage, String folder) throws ApiException {
-        ApiResponse<SaaSposeResponse> resp = cellsPageSetupPostFooterWithHttpInfo(name, sheetName, section, script, isFirstPage, folder);
+    public SaaSposeResponse cellsPageSetupPostFooter(String name, String sheetName, Integer section, String script, Boolean isFirstPage, String folder, String storage) throws ApiException {
+        ApiResponse<SaaSposeResponse> resp = cellsPageSetupPostFooterWithHttpInfo(name, sheetName, section, script, isFirstPage, folder, storage);
         return resp.getData();
     }
 
@@ -752,11 +780,12 @@ public class CellsPageSetupApi {
      * @param script  (required)
      * @param isFirstPage  (required)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @return ApiResponse&lt;SaaSposeResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<SaaSposeResponse> cellsPageSetupPostFooterWithHttpInfo(String name, String sheetName, Integer section, String script, Boolean isFirstPage, String folder) throws ApiException {
-        com.squareup.okhttp.Call call = cellsPageSetupPostFooterValidateBeforeCall(name, sheetName, section, script, isFirstPage, folder, null, null);
+    public ApiResponse<SaaSposeResponse> cellsPageSetupPostFooterWithHttpInfo(String name, String sheetName, Integer section, String script, Boolean isFirstPage, String folder, String storage) throws ApiException {
+        com.squareup.okhttp.Call call = cellsPageSetupPostFooterValidateBeforeCall(name, sheetName, section, script, isFirstPage, folder, storage, null, null);
         Type localVarReturnType = new TypeToken<SaaSposeResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -770,11 +799,12 @@ public class CellsPageSetupApi {
      * @param script  (required)
      * @param isFirstPage  (required)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call cellsPageSetupPostFooterAsync(String name, String sheetName, Integer section, String script, Boolean isFirstPage, String folder, final ApiCallback<SaaSposeResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call cellsPageSetupPostFooterAsync(String name, String sheetName, Integer section, String script, Boolean isFirstPage, String folder, String storage, final ApiCallback<SaaSposeResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -795,7 +825,7 @@ public class CellsPageSetupApi {
             };
         }
 
-        com.squareup.okhttp.Call call = cellsPageSetupPostFooterValidateBeforeCall(name, sheetName, section, script, isFirstPage, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsPageSetupPostFooterValidateBeforeCall(name, sheetName, section, script, isFirstPage, folder, storage, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<SaaSposeResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -808,12 +838,13 @@ public class CellsPageSetupApi {
      * @param script  (required)
      * @param isFirstPage  (required)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call cellsPageSetupPostHeaderCall(String name, String sheetName, Integer section, String script, Boolean isFirstPage, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call cellsPageSetupPostHeaderCall(String name, String sheetName, Integer section, String script, Boolean isFirstPage, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -830,6 +861,8 @@ public class CellsPageSetupApi {
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "isFirstPage", isFirstPage));
         if (folder != null)
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "folder", folder));
+        if (storage != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "storage", storage));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -864,7 +897,7 @@ public class CellsPageSetupApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call cellsPageSetupPostHeaderValidateBeforeCall(String name, String sheetName, Integer section, String script, Boolean isFirstPage, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call cellsPageSetupPostHeaderValidateBeforeCall(String name, String sheetName, Integer section, String script, Boolean isFirstPage, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'name' is set
         if (name == null) {
@@ -892,7 +925,7 @@ public class CellsPageSetupApi {
         }
         
         
-        com.squareup.okhttp.Call call = cellsPageSetupPostHeaderCall(name, sheetName, section, script, isFirstPage, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsPageSetupPostHeaderCall(name, sheetName, section, script, isFirstPage, folder, storage, progressListener, progressRequestListener);
         return call;
 
         
@@ -910,11 +943,12 @@ public class CellsPageSetupApi {
      * @param script  (required)
      * @param isFirstPage  (required)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @return SaaSposeResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public SaaSposeResponse cellsPageSetupPostHeader(String name, String sheetName, Integer section, String script, Boolean isFirstPage, String folder) throws ApiException {
-        ApiResponse<SaaSposeResponse> resp = cellsPageSetupPostHeaderWithHttpInfo(name, sheetName, section, script, isFirstPage, folder);
+    public SaaSposeResponse cellsPageSetupPostHeader(String name, String sheetName, Integer section, String script, Boolean isFirstPage, String folder, String storage) throws ApiException {
+        ApiResponse<SaaSposeResponse> resp = cellsPageSetupPostHeaderWithHttpInfo(name, sheetName, section, script, isFirstPage, folder, storage);
         return resp.getData();
     }
 
@@ -927,11 +961,12 @@ public class CellsPageSetupApi {
      * @param script  (required)
      * @param isFirstPage  (required)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @return ApiResponse&lt;SaaSposeResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<SaaSposeResponse> cellsPageSetupPostHeaderWithHttpInfo(String name, String sheetName, Integer section, String script, Boolean isFirstPage, String folder) throws ApiException {
-        com.squareup.okhttp.Call call = cellsPageSetupPostHeaderValidateBeforeCall(name, sheetName, section, script, isFirstPage, folder, null, null);
+    public ApiResponse<SaaSposeResponse> cellsPageSetupPostHeaderWithHttpInfo(String name, String sheetName, Integer section, String script, Boolean isFirstPage, String folder, String storage) throws ApiException {
+        com.squareup.okhttp.Call call = cellsPageSetupPostHeaderValidateBeforeCall(name, sheetName, section, script, isFirstPage, folder, storage, null, null);
         Type localVarReturnType = new TypeToken<SaaSposeResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -945,11 +980,12 @@ public class CellsPageSetupApi {
      * @param script  (required)
      * @param isFirstPage  (required)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call cellsPageSetupPostHeaderAsync(String name, String sheetName, Integer section, String script, Boolean isFirstPage, String folder, final ApiCallback<SaaSposeResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call cellsPageSetupPostHeaderAsync(String name, String sheetName, Integer section, String script, Boolean isFirstPage, String folder, String storage, final ApiCallback<SaaSposeResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -970,7 +1006,7 @@ public class CellsPageSetupApi {
             };
         }
 
-        com.squareup.okhttp.Call call = cellsPageSetupPostHeaderValidateBeforeCall(name, sheetName, section, script, isFirstPage, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsPageSetupPostHeaderValidateBeforeCall(name, sheetName, section, script, isFirstPage, folder, storage, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<SaaSposeResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -981,12 +1017,13 @@ public class CellsPageSetupApi {
      * @param sheetName  (required)
      * @param pageSetup  (optional)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call cellsPageSetupPostPageSetupCall(String name, String sheetName, PageSetup pageSetup, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call cellsPageSetupPostPageSetupCall(String name, String sheetName, PageSetup pageSetup, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = pageSetup;
         
         // create path and map variables
@@ -997,6 +1034,8 @@ public class CellsPageSetupApi {
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         if (folder != null)
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "folder", folder));
+        if (storage != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "storage", storage));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -1031,7 +1070,7 @@ public class CellsPageSetupApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call cellsPageSetupPostPageSetupValidateBeforeCall(String name, String sheetName, PageSetup pageSetup, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call cellsPageSetupPostPageSetupValidateBeforeCall(String name, String sheetName, PageSetup pageSetup, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'name' is set
         if (name == null) {
@@ -1044,7 +1083,7 @@ public class CellsPageSetupApi {
         }
         
         
-        com.squareup.okhttp.Call call = cellsPageSetupPostPageSetupCall(name, sheetName, pageSetup, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsPageSetupPostPageSetupCall(name, sheetName, pageSetup, folder, storage, progressListener, progressRequestListener);
         return call;
 
         
@@ -1060,11 +1099,12 @@ public class CellsPageSetupApi {
      * @param sheetName  (required)
      * @param pageSetup  (optional)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @return SaaSposeResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public SaaSposeResponse cellsPageSetupPostPageSetup(String name, String sheetName, PageSetup pageSetup, String folder) throws ApiException {
-        ApiResponse<SaaSposeResponse> resp = cellsPageSetupPostPageSetupWithHttpInfo(name, sheetName, pageSetup, folder);
+    public SaaSposeResponse cellsPageSetupPostPageSetup(String name, String sheetName, PageSetup pageSetup, String folder, String storage) throws ApiException {
+        ApiResponse<SaaSposeResponse> resp = cellsPageSetupPostPageSetupWithHttpInfo(name, sheetName, pageSetup, folder, storage);
         return resp.getData();
     }
 
@@ -1075,11 +1115,12 @@ public class CellsPageSetupApi {
      * @param sheetName  (required)
      * @param pageSetup  (optional)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @return ApiResponse&lt;SaaSposeResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<SaaSposeResponse> cellsPageSetupPostPageSetupWithHttpInfo(String name, String sheetName, PageSetup pageSetup, String folder) throws ApiException {
-        com.squareup.okhttp.Call call = cellsPageSetupPostPageSetupValidateBeforeCall(name, sheetName, pageSetup, folder, null, null);
+    public ApiResponse<SaaSposeResponse> cellsPageSetupPostPageSetupWithHttpInfo(String name, String sheetName, PageSetup pageSetup, String folder, String storage) throws ApiException {
+        com.squareup.okhttp.Call call = cellsPageSetupPostPageSetupValidateBeforeCall(name, sheetName, pageSetup, folder, storage, null, null);
         Type localVarReturnType = new TypeToken<SaaSposeResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -1091,11 +1132,12 @@ public class CellsPageSetupApi {
      * @param sheetName  (required)
      * @param pageSetup  (optional)
      * @param folder  (optional)
+     * @param storage storage name. (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call cellsPageSetupPostPageSetupAsync(String name, String sheetName, PageSetup pageSetup, String folder, final ApiCallback<SaaSposeResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call cellsPageSetupPostPageSetupAsync(String name, String sheetName, PageSetup pageSetup, String folder, String storage, final ApiCallback<SaaSposeResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1116,7 +1158,7 @@ public class CellsPageSetupApi {
             };
         }
 
-        com.squareup.okhttp.Call call = cellsPageSetupPostPageSetupValidateBeforeCall(name, sheetName, pageSetup, folder, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsPageSetupPostPageSetupValidateBeforeCall(name, sheetName, pageSetup, folder, storage, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<SaaSposeResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

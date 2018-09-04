@@ -27,7 +27,7 @@ Method | HTTP request | Description
 
 <a name="cellsPivotTablesDeletePivotTableField"></a>
 # **cellsPivotTablesDeletePivotTableField**
-> SaaSposeResponse cellsPivotTablesDeletePivotTableField(name, sheetName, pivotTableIndex, pivotFieldType, request, folder)
+> SaaSposeResponse cellsPivotTablesDeletePivotTableField(name, sheetName, pivotTableIndex, pivotFieldType, request, folder, storage)
 
 Delete pivot field into into pivot table
 
@@ -45,8 +45,9 @@ Integer pivotTableIndex = 56; // Integer | Pivot table index
 String pivotFieldType = "pivotFieldType_example"; // String | The fields area type.
 PivotTableFieldRequest request = new PivotTableFieldRequest(); // PivotTableFieldRequest | Dto that conrains field indexes
 String folder = "folder_example"; // String | Document's folder.
+String storage = "storage_example"; // String | storage name.
 try {
-    SaaSposeResponse result = apiInstance.cellsPivotTablesDeletePivotTableField(name, sheetName, pivotTableIndex, pivotFieldType, request, folder);
+    SaaSposeResponse result = apiInstance.cellsPivotTablesDeletePivotTableField(name, sheetName, pivotTableIndex, pivotFieldType, request, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsPivotTablesApi#cellsPivotTablesDeletePivotTableField");
@@ -64,6 +65,7 @@ Name | Type | Description  | Notes
  **pivotFieldType** | **String**| The fields area type. |
  **request** | [**PivotTableFieldRequest**](PivotTableFieldRequest.md)| Dto that conrains field indexes | [optional]
  **folder** | **String**| Document&#39;s folder. | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -80,7 +82,7 @@ No authorization required
 
 <a name="cellsPivotTablesDeleteWorksheetPivotTable"></a>
 # **cellsPivotTablesDeleteWorksheetPivotTable**
-> SaaSposeResponse cellsPivotTablesDeleteWorksheetPivotTable(name, sheetName, pivotTableIndex, folder)
+> SaaSposeResponse cellsPivotTablesDeleteWorksheetPivotTable(name, sheetName, pivotTableIndex, folder, storage)
 
 Delete worksheet pivot table by index
 
@@ -96,8 +98,9 @@ String name = "name_example"; // String | Document name.
 String sheetName = "sheetName_example"; // String | The worksheet name.
 Integer pivotTableIndex = 56; // Integer | Pivot table index
 String folder = "folder_example"; // String | Document's folder.
+String storage = "storage_example"; // String | storage name.
 try {
-    SaaSposeResponse result = apiInstance.cellsPivotTablesDeleteWorksheetPivotTable(name, sheetName, pivotTableIndex, folder);
+    SaaSposeResponse result = apiInstance.cellsPivotTablesDeleteWorksheetPivotTable(name, sheetName, pivotTableIndex, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsPivotTablesApi#cellsPivotTablesDeleteWorksheetPivotTable");
@@ -113,6 +116,7 @@ Name | Type | Description  | Notes
  **sheetName** | **String**| The worksheet name. |
  **pivotTableIndex** | **Integer**| Pivot table index |
  **folder** | **String**| Document&#39;s folder. | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -129,7 +133,7 @@ No authorization required
 
 <a name="cellsPivotTablesDeleteWorksheetPivotTableFilter"></a>
 # **cellsPivotTablesDeleteWorksheetPivotTableFilter**
-> SaaSposeResponse cellsPivotTablesDeleteWorksheetPivotTableFilter(name, sheetName, pivotTableIndex, fieldIndex, needReCalculate, folder)
+> SaaSposeResponse cellsPivotTablesDeleteWorksheetPivotTableFilter(name, sheetName, pivotTableIndex, fieldIndex, needReCalculate, folder, storage)
 
 delete  pivot filter for piovt table             
 
@@ -147,8 +151,9 @@ Integer pivotTableIndex = 56; // Integer |
 Integer fieldIndex = 56; // Integer | 
 Boolean needReCalculate = false; // Boolean | 
 String folder = "folder_example"; // String | 
+String storage = "storage_example"; // String | storage name.
 try {
-    SaaSposeResponse result = apiInstance.cellsPivotTablesDeleteWorksheetPivotTableFilter(name, sheetName, pivotTableIndex, fieldIndex, needReCalculate, folder);
+    SaaSposeResponse result = apiInstance.cellsPivotTablesDeleteWorksheetPivotTableFilter(name, sheetName, pivotTableIndex, fieldIndex, needReCalculate, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsPivotTablesApi#cellsPivotTablesDeleteWorksheetPivotTableFilter");
@@ -166,6 +171,7 @@ Name | Type | Description  | Notes
  **fieldIndex** | **Integer**|  |
  **needReCalculate** | **Boolean**|  | [optional] [default to false]
  **folder** | **String**|  | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -182,7 +188,7 @@ No authorization required
 
 <a name="cellsPivotTablesDeleteWorksheetPivotTableFilters"></a>
 # **cellsPivotTablesDeleteWorksheetPivotTableFilters**
-> SaaSposeResponse cellsPivotTablesDeleteWorksheetPivotTableFilters(name, sheetName, pivotTableIndex, needReCalculate, folder)
+> SaaSposeResponse cellsPivotTablesDeleteWorksheetPivotTableFilters(name, sheetName, pivotTableIndex, needReCalculate, folder, storage)
 
 delete all pivot filters for piovt table
 
@@ -199,8 +205,9 @@ String sheetName = "sheetName_example"; // String |
 Integer pivotTableIndex = 56; // Integer | 
 Boolean needReCalculate = false; // Boolean | 
 String folder = "folder_example"; // String | 
+String storage = "storage_example"; // String | storage name.
 try {
-    SaaSposeResponse result = apiInstance.cellsPivotTablesDeleteWorksheetPivotTableFilters(name, sheetName, pivotTableIndex, needReCalculate, folder);
+    SaaSposeResponse result = apiInstance.cellsPivotTablesDeleteWorksheetPivotTableFilters(name, sheetName, pivotTableIndex, needReCalculate, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsPivotTablesApi#cellsPivotTablesDeleteWorksheetPivotTableFilters");
@@ -217,6 +224,7 @@ Name | Type | Description  | Notes
  **pivotTableIndex** | **Integer**|  |
  **needReCalculate** | **Boolean**|  | [optional] [default to false]
  **folder** | **String**|  | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -233,7 +241,7 @@ No authorization required
 
 <a name="cellsPivotTablesDeleteWorksheetPivotTables"></a>
 # **cellsPivotTablesDeleteWorksheetPivotTables**
-> SaaSposeResponse cellsPivotTablesDeleteWorksheetPivotTables(name, sheetName, folder)
+> SaaSposeResponse cellsPivotTablesDeleteWorksheetPivotTables(name, sheetName, folder, storage)
 
 Delete worksheet pivot tables
 
@@ -248,8 +256,9 @@ CellsPivotTablesApi apiInstance = new CellsPivotTablesApi();
 String name = "name_example"; // String | Document name.
 String sheetName = "sheetName_example"; // String | The worksheet name.
 String folder = "folder_example"; // String | Document's folder.
+String storage = "storage_example"; // String | storage name.
 try {
-    SaaSposeResponse result = apiInstance.cellsPivotTablesDeleteWorksheetPivotTables(name, sheetName, folder);
+    SaaSposeResponse result = apiInstance.cellsPivotTablesDeleteWorksheetPivotTables(name, sheetName, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsPivotTablesApi#cellsPivotTablesDeleteWorksheetPivotTables");
@@ -264,6 +273,7 @@ Name | Type | Description  | Notes
  **name** | **String**| Document name. |
  **sheetName** | **String**| The worksheet name. |
  **folder** | **String**| Document&#39;s folder. | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -280,7 +290,7 @@ No authorization required
 
 <a name="cellsPivotTablesGetPivotTableField"></a>
 # **cellsPivotTablesGetPivotTableField**
-> PivotFieldResponse cellsPivotTablesGetPivotTableField(name, sheetName, pivotTableIndex, pivotFieldIndex, pivotFieldType, folder)
+> PivotFieldResponse cellsPivotTablesGetPivotTableField(name, sheetName, pivotTableIndex, pivotFieldIndex, pivotFieldType, folder, storage)
 
 Get pivot field into into pivot table
 
@@ -298,8 +308,9 @@ Integer pivotTableIndex = 56; // Integer | Pivot table index
 Integer pivotFieldIndex = 56; // Integer | The field index in the base fields.
 String pivotFieldType = "pivotFieldType_example"; // String | The fields area type.
 String folder = "folder_example"; // String | Document's folder.
+String storage = "storage_example"; // String | storage name.
 try {
-    PivotFieldResponse result = apiInstance.cellsPivotTablesGetPivotTableField(name, sheetName, pivotTableIndex, pivotFieldIndex, pivotFieldType, folder);
+    PivotFieldResponse result = apiInstance.cellsPivotTablesGetPivotTableField(name, sheetName, pivotTableIndex, pivotFieldIndex, pivotFieldType, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsPivotTablesApi#cellsPivotTablesGetPivotTableField");
@@ -317,6 +328,7 @@ Name | Type | Description  | Notes
  **pivotFieldIndex** | **Integer**| The field index in the base fields. |
  **pivotFieldType** | **String**| The fields area type. |
  **folder** | **String**| Document&#39;s folder. | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -333,7 +345,7 @@ No authorization required
 
 <a name="cellsPivotTablesGetWorksheetPivotTable"></a>
 # **cellsPivotTablesGetWorksheetPivotTable**
-> PivotTableResponse cellsPivotTablesGetWorksheetPivotTable(name, sheetName, pivottableIndex, folder)
+> PivotTableResponse cellsPivotTablesGetWorksheetPivotTable(name, sheetName, pivottableIndex, folder, storage)
 
 Get worksheet pivottable info by index.
 
@@ -349,8 +361,9 @@ String name = "name_example"; // String | Document name.
 String sheetName = "sheetName_example"; // String | The worksheet name.
 Integer pivottableIndex = 56; // Integer | 
 String folder = "folder_example"; // String | Document's folder.
+String storage = "storage_example"; // String | storage name.
 try {
-    PivotTableResponse result = apiInstance.cellsPivotTablesGetWorksheetPivotTable(name, sheetName, pivottableIndex, folder);
+    PivotTableResponse result = apiInstance.cellsPivotTablesGetWorksheetPivotTable(name, sheetName, pivottableIndex, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsPivotTablesApi#cellsPivotTablesGetWorksheetPivotTable");
@@ -366,6 +379,7 @@ Name | Type | Description  | Notes
  **sheetName** | **String**| The worksheet name. |
  **pivottableIndex** | **Integer**|  |
  **folder** | **String**| Document&#39;s folder. | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -382,7 +396,7 @@ No authorization required
 
 <a name="cellsPivotTablesGetWorksheetPivotTableFilter"></a>
 # **cellsPivotTablesGetWorksheetPivotTableFilter**
-> PivotFilterResponse cellsPivotTablesGetWorksheetPivotTableFilter(name, sheetName, pivotTableIndex, filterIndex, folder)
+> PivotFilterResponse cellsPivotTablesGetWorksheetPivotTableFilter(name, sheetName, pivotTableIndex, filterIndex, folder, storage)
 
 
 
@@ -399,8 +413,9 @@ String sheetName = "sheetName_example"; // String |
 Integer pivotTableIndex = 56; // Integer | 
 Integer filterIndex = 56; // Integer | 
 String folder = "folder_example"; // String | 
+String storage = "storage_example"; // String | storage name.
 try {
-    PivotFilterResponse result = apiInstance.cellsPivotTablesGetWorksheetPivotTableFilter(name, sheetName, pivotTableIndex, filterIndex, folder);
+    PivotFilterResponse result = apiInstance.cellsPivotTablesGetWorksheetPivotTableFilter(name, sheetName, pivotTableIndex, filterIndex, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsPivotTablesApi#cellsPivotTablesGetWorksheetPivotTableFilter");
@@ -417,6 +432,7 @@ Name | Type | Description  | Notes
  **pivotTableIndex** | **Integer**|  |
  **filterIndex** | **Integer**|  |
  **folder** | **String**|  | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -433,7 +449,7 @@ No authorization required
 
 <a name="cellsPivotTablesGetWorksheetPivotTableFilters"></a>
 # **cellsPivotTablesGetWorksheetPivotTableFilters**
-> PivotFiltersResponse cellsPivotTablesGetWorksheetPivotTableFilters(name, sheetName, pivotTableIndex, folder)
+> PivotFiltersResponse cellsPivotTablesGetWorksheetPivotTableFilters(name, sheetName, pivotTableIndex, folder, storage)
 
 
 
@@ -449,8 +465,9 @@ String name = "name_example"; // String |
 String sheetName = "sheetName_example"; // String | 
 Integer pivotTableIndex = 56; // Integer | 
 String folder = "folder_example"; // String | 
+String storage = "storage_example"; // String | storage name.
 try {
-    PivotFiltersResponse result = apiInstance.cellsPivotTablesGetWorksheetPivotTableFilters(name, sheetName, pivotTableIndex, folder);
+    PivotFiltersResponse result = apiInstance.cellsPivotTablesGetWorksheetPivotTableFilters(name, sheetName, pivotTableIndex, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsPivotTablesApi#cellsPivotTablesGetWorksheetPivotTableFilters");
@@ -466,6 +483,7 @@ Name | Type | Description  | Notes
  **sheetName** | **String**|  |
  **pivotTableIndex** | **Integer**|  |
  **folder** | **String**|  | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -482,7 +500,7 @@ No authorization required
 
 <a name="cellsPivotTablesGetWorksheetPivotTables"></a>
 # **cellsPivotTablesGetWorksheetPivotTables**
-> PivotTablesResponse cellsPivotTablesGetWorksheetPivotTables(name, sheetName, folder)
+> PivotTablesResponse cellsPivotTablesGetWorksheetPivotTables(name, sheetName, folder, storage)
 
 Get worksheet pivottables info.
 
@@ -497,8 +515,9 @@ CellsPivotTablesApi apiInstance = new CellsPivotTablesApi();
 String name = "name_example"; // String | Document name.
 String sheetName = "sheetName_example"; // String | The worksheet name.
 String folder = "folder_example"; // String | Document's folder.
+String storage = "storage_example"; // String | storage name.
 try {
-    PivotTablesResponse result = apiInstance.cellsPivotTablesGetWorksheetPivotTables(name, sheetName, folder);
+    PivotTablesResponse result = apiInstance.cellsPivotTablesGetWorksheetPivotTables(name, sheetName, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsPivotTablesApi#cellsPivotTablesGetWorksheetPivotTables");
@@ -513,6 +532,7 @@ Name | Type | Description  | Notes
  **name** | **String**| Document name. |
  **sheetName** | **String**| The worksheet name. |
  **folder** | **String**| Document&#39;s folder. | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -529,7 +549,7 @@ No authorization required
 
 <a name="cellsPivotTablesPostPivotTableCellStyle"></a>
 # **cellsPivotTablesPostPivotTableCellStyle**
-> SaaSposeResponse cellsPivotTablesPostPivotTableCellStyle(name, sheetName, pivotTableIndex, column, row, style, needReCalculate, folder)
+> SaaSposeResponse cellsPivotTablesPostPivotTableCellStyle(name, sheetName, pivotTableIndex, column, row, style, needReCalculate, folder, storage)
 
 Update cell style for pivot table
 
@@ -549,8 +569,9 @@ Integer row = 56; // Integer |
 Style style = new Style(); // Style | Style dto in request body.
 Boolean needReCalculate = false; // Boolean | 
 String folder = "folder_example"; // String | Document's folder.
+String storage = "storage_example"; // String | storage name.
 try {
-    SaaSposeResponse result = apiInstance.cellsPivotTablesPostPivotTableCellStyle(name, sheetName, pivotTableIndex, column, row, style, needReCalculate, folder);
+    SaaSposeResponse result = apiInstance.cellsPivotTablesPostPivotTableCellStyle(name, sheetName, pivotTableIndex, column, row, style, needReCalculate, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsPivotTablesApi#cellsPivotTablesPostPivotTableCellStyle");
@@ -570,6 +591,7 @@ Name | Type | Description  | Notes
  **style** | [**Style**](Style.md)| Style dto in request body. | [optional]
  **needReCalculate** | **Boolean**|  | [optional] [default to false]
  **folder** | **String**| Document&#39;s folder. | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -586,7 +608,7 @@ No authorization required
 
 <a name="cellsPivotTablesPostPivotTableFieldHideItem"></a>
 # **cellsPivotTablesPostPivotTableFieldHideItem**
-> SaaSposeResponse cellsPivotTablesPostPivotTableFieldHideItem(name, sheetName, pivotTableIndex, pivotFieldType, fieldIndex, itemIndex, isHide, needReCalculate, folder)
+> SaaSposeResponse cellsPivotTablesPostPivotTableFieldHideItem(name, sheetName, pivotTableIndex, pivotFieldType, fieldIndex, itemIndex, isHide, needReCalculate, folder, storage)
 
 
 
@@ -607,8 +629,9 @@ Integer itemIndex = 56; // Integer |
 Boolean isHide = true; // Boolean | 
 Boolean needReCalculate = false; // Boolean | 
 String folder = "folder_example"; // String | 
+String storage = "storage_example"; // String | storage name.
 try {
-    SaaSposeResponse result = apiInstance.cellsPivotTablesPostPivotTableFieldHideItem(name, sheetName, pivotTableIndex, pivotFieldType, fieldIndex, itemIndex, isHide, needReCalculate, folder);
+    SaaSposeResponse result = apiInstance.cellsPivotTablesPostPivotTableFieldHideItem(name, sheetName, pivotTableIndex, pivotFieldType, fieldIndex, itemIndex, isHide, needReCalculate, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsPivotTablesApi#cellsPivotTablesPostPivotTableFieldHideItem");
@@ -629,6 +652,7 @@ Name | Type | Description  | Notes
  **isHide** | **Boolean**|  |
  **needReCalculate** | **Boolean**|  | [optional] [default to false]
  **folder** | **String**|  | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -645,7 +669,7 @@ No authorization required
 
 <a name="cellsPivotTablesPostPivotTableFieldMoveTo"></a>
 # **cellsPivotTablesPostPivotTableFieldMoveTo**
-> SaaSposeResponse cellsPivotTablesPostPivotTableFieldMoveTo(name, sheetName, pivotTableIndex, fieldIndex, from, to, folder)
+> SaaSposeResponse cellsPivotTablesPostPivotTableFieldMoveTo(name, sheetName, pivotTableIndex, fieldIndex, from, to, folder, storage)
 
 
 
@@ -664,8 +688,9 @@ Integer fieldIndex = 56; // Integer |
 String from = "from_example"; // String | 
 String to = "to_example"; // String | 
 String folder = "folder_example"; // String | 
+String storage = "storage_example"; // String | storage name.
 try {
-    SaaSposeResponse result = apiInstance.cellsPivotTablesPostPivotTableFieldMoveTo(name, sheetName, pivotTableIndex, fieldIndex, from, to, folder);
+    SaaSposeResponse result = apiInstance.cellsPivotTablesPostPivotTableFieldMoveTo(name, sheetName, pivotTableIndex, fieldIndex, from, to, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsPivotTablesApi#cellsPivotTablesPostPivotTableFieldMoveTo");
@@ -684,6 +709,7 @@ Name | Type | Description  | Notes
  **from** | **String**|  |
  **to** | **String**|  |
  **folder** | **String**|  | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -700,7 +726,7 @@ No authorization required
 
 <a name="cellsPivotTablesPostPivotTableStyle"></a>
 # **cellsPivotTablesPostPivotTableStyle**
-> SaaSposeResponse cellsPivotTablesPostPivotTableStyle(name, sheetName, pivotTableIndex, style, needReCalculate, folder)
+> SaaSposeResponse cellsPivotTablesPostPivotTableStyle(name, sheetName, pivotTableIndex, style, needReCalculate, folder, storage)
 
 Update style for pivot table
 
@@ -718,8 +744,9 @@ Integer pivotTableIndex = 56; // Integer | Pivot table index
 Style style = new Style(); // Style | Style dto in request body.
 Boolean needReCalculate = false; // Boolean | 
 String folder = "folder_example"; // String | Document's folder.
+String storage = "storage_example"; // String | storage name.
 try {
-    SaaSposeResponse result = apiInstance.cellsPivotTablesPostPivotTableStyle(name, sheetName, pivotTableIndex, style, needReCalculate, folder);
+    SaaSposeResponse result = apiInstance.cellsPivotTablesPostPivotTableStyle(name, sheetName, pivotTableIndex, style, needReCalculate, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsPivotTablesApi#cellsPivotTablesPostPivotTableStyle");
@@ -737,6 +764,7 @@ Name | Type | Description  | Notes
  **style** | [**Style**](Style.md)| Style dto in request body. | [optional]
  **needReCalculate** | **Boolean**|  | [optional] [default to false]
  **folder** | **String**| Document&#39;s folder. | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -753,7 +781,7 @@ No authorization required
 
 <a name="cellsPivotTablesPostWorksheetPivotTableCalculate"></a>
 # **cellsPivotTablesPostWorksheetPivotTableCalculate**
-> SaaSposeResponse cellsPivotTablesPostWorksheetPivotTableCalculate(name, sheetName, pivotTableIndex, folder)
+> SaaSposeResponse cellsPivotTablesPostWorksheetPivotTableCalculate(name, sheetName, pivotTableIndex, folder, storage)
 
 Calculates pivottable&#39;s data to cells.
 
@@ -769,8 +797,9 @@ String name = "name_example"; // String | Document name.
 String sheetName = "sheetName_example"; // String | The worksheet name.
 Integer pivotTableIndex = 56; // Integer | Pivot table index
 String folder = "folder_example"; // String | Document's folder.
+String storage = "storage_example"; // String | storage name.
 try {
-    SaaSposeResponse result = apiInstance.cellsPivotTablesPostWorksheetPivotTableCalculate(name, sheetName, pivotTableIndex, folder);
+    SaaSposeResponse result = apiInstance.cellsPivotTablesPostWorksheetPivotTableCalculate(name, sheetName, pivotTableIndex, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsPivotTablesApi#cellsPivotTablesPostWorksheetPivotTableCalculate");
@@ -786,6 +815,7 @@ Name | Type | Description  | Notes
  **sheetName** | **String**| The worksheet name. |
  **pivotTableIndex** | **Integer**| Pivot table index |
  **folder** | **String**| Document&#39;s folder. | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -802,7 +832,7 @@ No authorization required
 
 <a name="cellsPivotTablesPostWorksheetPivotTableMove"></a>
 # **cellsPivotTablesPostWorksheetPivotTableMove**
-> SaaSposeResponse cellsPivotTablesPostWorksheetPivotTableMove(name, sheetName, pivotTableIndex, row, column, destCellName, folder)
+> SaaSposeResponse cellsPivotTablesPostWorksheetPivotTableMove(name, sheetName, pivotTableIndex, row, column, destCellName, folder, storage)
 
 
 
@@ -821,8 +851,9 @@ Integer row = 56; // Integer |
 Integer column = 56; // Integer | 
 String destCellName = "destCellName_example"; // String | 
 String folder = "folder_example"; // String | 
+String storage = "storage_example"; // String | storage name.
 try {
-    SaaSposeResponse result = apiInstance.cellsPivotTablesPostWorksheetPivotTableMove(name, sheetName, pivotTableIndex, row, column, destCellName, folder);
+    SaaSposeResponse result = apiInstance.cellsPivotTablesPostWorksheetPivotTableMove(name, sheetName, pivotTableIndex, row, column, destCellName, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsPivotTablesApi#cellsPivotTablesPostWorksheetPivotTableMove");
@@ -841,6 +872,7 @@ Name | Type | Description  | Notes
  **column** | **Integer**|  | [optional]
  **destCellName** | **String**|  | [optional]
  **folder** | **String**|  | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -857,7 +889,7 @@ No authorization required
 
 <a name="cellsPivotTablesPutPivotTableField"></a>
 # **cellsPivotTablesPutPivotTableField**
-> SaaSposeResponse cellsPivotTablesPutPivotTableField(name, sheetName, pivotTableIndex, pivotFieldType, request, needReCalculate, folder)
+> SaaSposeResponse cellsPivotTablesPutPivotTableField(name, sheetName, pivotTableIndex, pivotFieldType, request, needReCalculate, folder, storage)
 
 Add pivot field into into pivot table
 
@@ -876,8 +908,9 @@ String pivotFieldType = "pivotFieldType_example"; // String | The fields area ty
 PivotTableFieldRequest request = new PivotTableFieldRequest(); // PivotTableFieldRequest | Dto that conrains field indexes
 Boolean needReCalculate = false; // Boolean | 
 String folder = "folder_example"; // String | Document's folder.
+String storage = "storage_example"; // String | storage name.
 try {
-    SaaSposeResponse result = apiInstance.cellsPivotTablesPutPivotTableField(name, sheetName, pivotTableIndex, pivotFieldType, request, needReCalculate, folder);
+    SaaSposeResponse result = apiInstance.cellsPivotTablesPutPivotTableField(name, sheetName, pivotTableIndex, pivotFieldType, request, needReCalculate, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsPivotTablesApi#cellsPivotTablesPutPivotTableField");
@@ -896,6 +929,7 @@ Name | Type | Description  | Notes
  **request** | [**PivotTableFieldRequest**](PivotTableFieldRequest.md)| Dto that conrains field indexes | [optional]
  **needReCalculate** | **Boolean**|  | [optional] [default to false]
  **folder** | **String**| Document&#39;s folder. | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -912,7 +946,7 @@ No authorization required
 
 <a name="cellsPivotTablesPutWorksheetPivotTable"></a>
 # **cellsPivotTablesPutWorksheetPivotTable**
-> PivotTableResponse cellsPivotTablesPutWorksheetPivotTable(name, sheetName, request, folder, sourceData, destCellName, tableName, useSameSource)
+> PivotTableResponse cellsPivotTablesPutWorksheetPivotTable(name, sheetName, request, folder, storage, sourceData, destCellName, tableName, useSameSource)
 
 Add a pivot table into worksheet.
 
@@ -928,12 +962,13 @@ String name = "name_example"; // String | Document name.
 String sheetName = "sheetName_example"; // String | The worksheet name.
 CreatePivotTableRequest request = new CreatePivotTableRequest(); // CreatePivotTableRequest | CreatePivotTableRequest dto in request body.
 String folder = "folder_example"; // String | Document's folder.
+String storage = "storage_example"; // String | storage name.
 String sourceData = "sourceData_example"; // String | The data for the new PivotTable cache.
 String destCellName = "destCellName_example"; // String | The cell in the upper-left corner of the PivotTable report's destination range.
 String tableName = "tableName_example"; // String | The name of the new PivotTable report.
 Boolean useSameSource = true; // Boolean | Indicates whether using same data source when another existing pivot table has used this data source. If the property is true, it will save memory.
 try {
-    PivotTableResponse result = apiInstance.cellsPivotTablesPutWorksheetPivotTable(name, sheetName, request, folder, sourceData, destCellName, tableName, useSameSource);
+    PivotTableResponse result = apiInstance.cellsPivotTablesPutWorksheetPivotTable(name, sheetName, request, folder, storage, sourceData, destCellName, tableName, useSameSource);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsPivotTablesApi#cellsPivotTablesPutWorksheetPivotTable");
@@ -949,6 +984,7 @@ Name | Type | Description  | Notes
  **sheetName** | **String**| The worksheet name. |
  **request** | [**CreatePivotTableRequest**](CreatePivotTableRequest.md)| CreatePivotTableRequest dto in request body. | [optional]
  **folder** | **String**| Document&#39;s folder. | [optional]
+ **storage** | **String**| storage name. | [optional]
  **sourceData** | **String**| The data for the new PivotTable cache. | [optional]
  **destCellName** | **String**| The cell in the upper-left corner of the PivotTable report&#39;s destination range. | [optional]
  **tableName** | **String**| The name of the new PivotTable report. | [optional]
@@ -969,7 +1005,7 @@ No authorization required
 
 <a name="cellsPivotTablesPutWorksheetPivotTableFilter"></a>
 # **cellsPivotTablesPutWorksheetPivotTableFilter**
-> SaaSposeResponse cellsPivotTablesPutWorksheetPivotTableFilter(name, sheetName, pivotTableIndex, filter, needReCalculate, folder)
+> SaaSposeResponse cellsPivotTablesPutWorksheetPivotTableFilter(name, sheetName, pivotTableIndex, filter, needReCalculate, folder, storage)
 
 Add pivot filter for piovt table index
 
@@ -987,8 +1023,9 @@ Integer pivotTableIndex = 56; // Integer |
 PivotFilter filter = new PivotFilter(); // PivotFilter | 
 Boolean needReCalculate = false; // Boolean | 
 String folder = "folder_example"; // String | 
+String storage = "storage_example"; // String | storage name.
 try {
-    SaaSposeResponse result = apiInstance.cellsPivotTablesPutWorksheetPivotTableFilter(name, sheetName, pivotTableIndex, filter, needReCalculate, folder);
+    SaaSposeResponse result = apiInstance.cellsPivotTablesPutWorksheetPivotTableFilter(name, sheetName, pivotTableIndex, filter, needReCalculate, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsPivotTablesApi#cellsPivotTablesPutWorksheetPivotTableFilter");
@@ -1006,6 +1043,7 @@ Name | Type | Description  | Notes
  **filter** | [**PivotFilter**](PivotFilter.md)|  | [optional]
  **needReCalculate** | **Boolean**|  | [optional] [default to false]
  **folder** | **String**|  | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 

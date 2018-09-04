@@ -41,7 +41,7 @@ Method | HTTP request | Description
 
 <a name="cellsWorksheetsDeleteUnprotectWorksheet"></a>
 # **cellsWorksheetsDeleteUnprotectWorksheet**
-> WorksheetResponse cellsWorksheetsDeleteUnprotectWorksheet(name, sheetName, protectParameter, folder)
+> WorksheetResponse cellsWorksheetsDeleteUnprotectWorksheet(name, sheetName, protectParameter, folder, storage)
 
 Unprotect worksheet.
 
@@ -57,8 +57,9 @@ String name = "name_example"; // String | Document name.
 String sheetName = "sheetName_example"; // String | The worksheet name.
 ProtectSheetParameter protectParameter = new ProtectSheetParameter(); // ProtectSheetParameter | with protection settings. Only password is used here.
 String folder = "folder_example"; // String | Document folder.
+String storage = "storage_example"; // String | storage name.
 try {
-    WorksheetResponse result = apiInstance.cellsWorksheetsDeleteUnprotectWorksheet(name, sheetName, protectParameter, folder);
+    WorksheetResponse result = apiInstance.cellsWorksheetsDeleteUnprotectWorksheet(name, sheetName, protectParameter, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsWorksheetsApi#cellsWorksheetsDeleteUnprotectWorksheet");
@@ -74,6 +75,7 @@ Name | Type | Description  | Notes
  **sheetName** | **String**| The worksheet name. |
  **protectParameter** | [**ProtectSheetParameter**](ProtectSheetParameter.md)| with protection settings. Only password is used here. | [optional]
  **folder** | **String**| Document folder. | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -90,7 +92,7 @@ No authorization required
 
 <a name="cellsWorksheetsDeleteWorksheet"></a>
 # **cellsWorksheetsDeleteWorksheet**
-> WorksheetsResponse cellsWorksheetsDeleteWorksheet(name, sheetName, folder)
+> WorksheetsResponse cellsWorksheetsDeleteWorksheet(name, sheetName, folder, storage)
 
 Delete worksheet.
 
@@ -105,8 +107,9 @@ CellsWorksheetsApi apiInstance = new CellsWorksheetsApi();
 String name = "name_example"; // String | Document name.
 String sheetName = "sheetName_example"; // String | The worksheet name.
 String folder = "folder_example"; // String | Document's folder.
+String storage = "storage_example"; // String | storage name.
 try {
-    WorksheetsResponse result = apiInstance.cellsWorksheetsDeleteWorksheet(name, sheetName, folder);
+    WorksheetsResponse result = apiInstance.cellsWorksheetsDeleteWorksheet(name, sheetName, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsWorksheetsApi#cellsWorksheetsDeleteWorksheet");
@@ -121,6 +124,7 @@ Name | Type | Description  | Notes
  **name** | **String**| Document name. |
  **sheetName** | **String**| The worksheet name. |
  **folder** | **String**| Document&#39;s folder. | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -137,7 +141,7 @@ No authorization required
 
 <a name="cellsWorksheetsDeleteWorksheetBackground"></a>
 # **cellsWorksheetsDeleteWorksheetBackground**
-> SaaSposeResponse cellsWorksheetsDeleteWorksheetBackground(name, sheetName, folder)
+> SaaSposeResponse cellsWorksheetsDeleteWorksheetBackground(name, sheetName, folder, storage)
 
 Set worksheet background image.
 
@@ -152,8 +156,9 @@ CellsWorksheetsApi apiInstance = new CellsWorksheetsApi();
 String name = "name_example"; // String | 
 String sheetName = "sheetName_example"; // String | 
 String folder = "folder_example"; // String | 
+String storage = "storage_example"; // String | storage name.
 try {
-    SaaSposeResponse result = apiInstance.cellsWorksheetsDeleteWorksheetBackground(name, sheetName, folder);
+    SaaSposeResponse result = apiInstance.cellsWorksheetsDeleteWorksheetBackground(name, sheetName, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsWorksheetsApi#cellsWorksheetsDeleteWorksheetBackground");
@@ -168,6 +173,7 @@ Name | Type | Description  | Notes
  **name** | **String**|  |
  **sheetName** | **String**|  |
  **folder** | **String**|  | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -184,7 +190,7 @@ No authorization required
 
 <a name="cellsWorksheetsDeleteWorksheetComment"></a>
 # **cellsWorksheetsDeleteWorksheetComment**
-> SaaSposeResponse cellsWorksheetsDeleteWorksheetComment(name, sheetName, cellName, folder)
+> SaaSposeResponse cellsWorksheetsDeleteWorksheetComment(name, sheetName, cellName, folder, storage)
 
 Delete worksheet&#39;s cell comment.
 
@@ -200,8 +206,9 @@ String name = "name_example"; // String | The document name.
 String sheetName = "sheetName_example"; // String | The worksheet name.
 String cellName = "cellName_example"; // String | The cell name
 String folder = "folder_example"; // String | The document folder.
+String storage = "storage_example"; // String | storage name.
 try {
-    SaaSposeResponse result = apiInstance.cellsWorksheetsDeleteWorksheetComment(name, sheetName, cellName, folder);
+    SaaSposeResponse result = apiInstance.cellsWorksheetsDeleteWorksheetComment(name, sheetName, cellName, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsWorksheetsApi#cellsWorksheetsDeleteWorksheetComment");
@@ -217,6 +224,7 @@ Name | Type | Description  | Notes
  **sheetName** | **String**| The worksheet name. |
  **cellName** | **String**| The cell name |
  **folder** | **String**| The document folder. | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -233,7 +241,7 @@ No authorization required
 
 <a name="cellsWorksheetsDeleteWorksheetComments"></a>
 # **cellsWorksheetsDeleteWorksheetComments**
-> SaaSposeResponse cellsWorksheetsDeleteWorksheetComments(name, sheetName, folder)
+> SaaSposeResponse cellsWorksheetsDeleteWorksheetComments(name, sheetName, folder, storage)
 
 Delete all comments for worksheet.
 
@@ -248,8 +256,9 @@ CellsWorksheetsApi apiInstance = new CellsWorksheetsApi();
 String name = "name_example"; // String | 
 String sheetName = "sheetName_example"; // String | 
 String folder = "folder_example"; // String | 
+String storage = "storage_example"; // String | storage name.
 try {
-    SaaSposeResponse result = apiInstance.cellsWorksheetsDeleteWorksheetComments(name, sheetName, folder);
+    SaaSposeResponse result = apiInstance.cellsWorksheetsDeleteWorksheetComments(name, sheetName, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsWorksheetsApi#cellsWorksheetsDeleteWorksheetComments");
@@ -264,6 +273,7 @@ Name | Type | Description  | Notes
  **name** | **String**|  |
  **sheetName** | **String**|  |
  **folder** | **String**|  | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -280,7 +290,7 @@ No authorization required
 
 <a name="cellsWorksheetsDeleteWorksheetFreezePanes"></a>
 # **cellsWorksheetsDeleteWorksheetFreezePanes**
-> SaaSposeResponse cellsWorksheetsDeleteWorksheetFreezePanes(name, sheetName, row, column, freezedRows, freezedColumns, folder)
+> SaaSposeResponse cellsWorksheetsDeleteWorksheetFreezePanes(name, sheetName, row, column, freezedRows, freezedColumns, folder, storage)
 
 Unfreeze panes
 
@@ -299,8 +309,9 @@ Integer column = 56; // Integer |
 Integer freezedRows = 56; // Integer | 
 Integer freezedColumns = 56; // Integer | 
 String folder = "folder_example"; // String | 
+String storage = "storage_example"; // String | storage name.
 try {
-    SaaSposeResponse result = apiInstance.cellsWorksheetsDeleteWorksheetFreezePanes(name, sheetName, row, column, freezedRows, freezedColumns, folder);
+    SaaSposeResponse result = apiInstance.cellsWorksheetsDeleteWorksheetFreezePanes(name, sheetName, row, column, freezedRows, freezedColumns, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsWorksheetsApi#cellsWorksheetsDeleteWorksheetFreezePanes");
@@ -319,6 +330,7 @@ Name | Type | Description  | Notes
  **freezedRows** | **Integer**|  |
  **freezedColumns** | **Integer**|  |
  **folder** | **String**|  | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -335,7 +347,7 @@ No authorization required
 
 <a name="cellsWorksheetsGetNamedRanges"></a>
 # **cellsWorksheetsGetNamedRanges**
-> RangesResponse cellsWorksheetsGetNamedRanges(name, folder)
+> RangesResponse cellsWorksheetsGetNamedRanges(name, folder, storage)
 
 Read worksheets ranges info.
 
@@ -349,8 +361,9 @@ Read worksheets ranges info.
 CellsWorksheetsApi apiInstance = new CellsWorksheetsApi();
 String name = "name_example"; // String | Document name.
 String folder = "folder_example"; // String | Document folder.
+String storage = "storage_example"; // String | storage name.
 try {
-    RangesResponse result = apiInstance.cellsWorksheetsGetNamedRanges(name, folder);
+    RangesResponse result = apiInstance.cellsWorksheetsGetNamedRanges(name, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsWorksheetsApi#cellsWorksheetsGetNamedRanges");
@@ -364,6 +377,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **String**| Document name. |
  **folder** | **String**| Document folder. | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -380,7 +394,7 @@ No authorization required
 
 <a name="cellsWorksheetsGetWorksheet"></a>
 # **cellsWorksheetsGetWorksheet**
-> File cellsWorksheetsGetWorksheet(name, sheetName, format, verticalResolution, horizontalResolution, folder)
+> File cellsWorksheetsGetWorksheet(name, sheetName, format, verticalResolution, horizontalResolution, folder, storage)
 
 Read worksheet info or export.
 
@@ -398,8 +412,9 @@ String format = "format_example"; // String | The exported file format.
 Integer verticalResolution = 0; // Integer | Image vertical resolution.
 Integer horizontalResolution = 0; // Integer | Image horizontal resolution.
 String folder = "folder_example"; // String | The document folder.
+String storage = "storage_example"; // String | storage name.
 try {
-    File result = apiInstance.cellsWorksheetsGetWorksheet(name, sheetName, format, verticalResolution, horizontalResolution, folder);
+    File result = apiInstance.cellsWorksheetsGetWorksheet(name, sheetName, format, verticalResolution, horizontalResolution, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsWorksheetsApi#cellsWorksheetsGetWorksheet");
@@ -417,6 +432,7 @@ Name | Type | Description  | Notes
  **verticalResolution** | **Integer**| Image vertical resolution. | [optional] [default to 0]
  **horizontalResolution** | **Integer**| Image horizontal resolution. | [optional] [default to 0]
  **folder** | **String**| The document folder. | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -433,7 +449,7 @@ No authorization required
 
 <a name="cellsWorksheetsGetWorksheetCalculateFormula"></a>
 # **cellsWorksheetsGetWorksheetCalculateFormula**
-> SingleValueResponse cellsWorksheetsGetWorksheetCalculateFormula(name, sheetName, formula, folder)
+> SingleValueResponse cellsWorksheetsGetWorksheetCalculateFormula(name, sheetName, formula, folder, storage)
 
 Calculate formula value.
 
@@ -449,8 +465,9 @@ String name = "name_example"; // String | Document name.
 String sheetName = "sheetName_example"; // String | Worksheet name.
 String formula = "formula_example"; // String | The formula.
 String folder = "folder_example"; // String | Document's folder.
+String storage = "storage_example"; // String | storage name.
 try {
-    SingleValueResponse result = apiInstance.cellsWorksheetsGetWorksheetCalculateFormula(name, sheetName, formula, folder);
+    SingleValueResponse result = apiInstance.cellsWorksheetsGetWorksheetCalculateFormula(name, sheetName, formula, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsWorksheetsApi#cellsWorksheetsGetWorksheetCalculateFormula");
@@ -466,6 +483,7 @@ Name | Type | Description  | Notes
  **sheetName** | **String**| Worksheet name. |
  **formula** | **String**| The formula. |
  **folder** | **String**| Document&#39;s folder. | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -482,7 +500,7 @@ No authorization required
 
 <a name="cellsWorksheetsGetWorksheetComment"></a>
 # **cellsWorksheetsGetWorksheetComment**
-> CommentResponse cellsWorksheetsGetWorksheetComment(name, sheetName, cellName, folder)
+> CommentResponse cellsWorksheetsGetWorksheetComment(name, sheetName, cellName, folder, storage)
 
 Get worksheet comment by cell name.
 
@@ -498,8 +516,9 @@ String name = "name_example"; // String | The document name.
 String sheetName = "sheetName_example"; // String | The worksheet name.
 String cellName = "cellName_example"; // String | The cell name
 String folder = "folder_example"; // String | The document folder.
+String storage = "storage_example"; // String | storage name.
 try {
-    CommentResponse result = apiInstance.cellsWorksheetsGetWorksheetComment(name, sheetName, cellName, folder);
+    CommentResponse result = apiInstance.cellsWorksheetsGetWorksheetComment(name, sheetName, cellName, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsWorksheetsApi#cellsWorksheetsGetWorksheetComment");
@@ -515,6 +534,7 @@ Name | Type | Description  | Notes
  **sheetName** | **String**| The worksheet name. |
  **cellName** | **String**| The cell name |
  **folder** | **String**| The document folder. | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -531,7 +551,7 @@ No authorization required
 
 <a name="cellsWorksheetsGetWorksheetComments"></a>
 # **cellsWorksheetsGetWorksheetComments**
-> CommentsResponse cellsWorksheetsGetWorksheetComments(name, sheetName, folder)
+> CommentsResponse cellsWorksheetsGetWorksheetComments(name, sheetName, folder, storage)
 
 Get worksheet comments.
 
@@ -546,8 +566,9 @@ CellsWorksheetsApi apiInstance = new CellsWorksheetsApi();
 String name = "name_example"; // String | Workbook name.
 String sheetName = "sheetName_example"; // String | The worksheet name.
 String folder = "folder_example"; // String | The document folder.
+String storage = "storage_example"; // String | storage name.
 try {
-    CommentsResponse result = apiInstance.cellsWorksheetsGetWorksheetComments(name, sheetName, folder);
+    CommentsResponse result = apiInstance.cellsWorksheetsGetWorksheetComments(name, sheetName, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsWorksheetsApi#cellsWorksheetsGetWorksheetComments");
@@ -562,6 +583,7 @@ Name | Type | Description  | Notes
  **name** | **String**| Workbook name. |
  **sheetName** | **String**| The worksheet name. |
  **folder** | **String**| The document folder. | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -578,7 +600,7 @@ No authorization required
 
 <a name="cellsWorksheetsGetWorksheetMergedCell"></a>
 # **cellsWorksheetsGetWorksheetMergedCell**
-> MergedCellResponse cellsWorksheetsGetWorksheetMergedCell(name, sheetName, mergedCellIndex, folder)
+> MergedCellResponse cellsWorksheetsGetWorksheetMergedCell(name, sheetName, mergedCellIndex, folder, storage)
 
 Get worksheet merged cell by its index.
 
@@ -594,8 +616,9 @@ String name = "name_example"; // String | Document name.
 String sheetName = "sheetName_example"; // String | Worksheet name.
 Integer mergedCellIndex = 56; // Integer | Merged cell index.
 String folder = "folder_example"; // String | Document folder.
+String storage = "storage_example"; // String | storage name.
 try {
-    MergedCellResponse result = apiInstance.cellsWorksheetsGetWorksheetMergedCell(name, sheetName, mergedCellIndex, folder);
+    MergedCellResponse result = apiInstance.cellsWorksheetsGetWorksheetMergedCell(name, sheetName, mergedCellIndex, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsWorksheetsApi#cellsWorksheetsGetWorksheetMergedCell");
@@ -611,6 +634,7 @@ Name | Type | Description  | Notes
  **sheetName** | **String**| Worksheet name. |
  **mergedCellIndex** | **Integer**| Merged cell index. |
  **folder** | **String**| Document folder. | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -627,7 +651,7 @@ No authorization required
 
 <a name="cellsWorksheetsGetWorksheetMergedCells"></a>
 # **cellsWorksheetsGetWorksheetMergedCells**
-> MergedCellsResponse cellsWorksheetsGetWorksheetMergedCells(name, sheetName, folder)
+> MergedCellsResponse cellsWorksheetsGetWorksheetMergedCells(name, sheetName, folder, storage)
 
 Get worksheet merged cells.
 
@@ -642,8 +666,9 @@ CellsWorksheetsApi apiInstance = new CellsWorksheetsApi();
 String name = "name_example"; // String | Document name.
 String sheetName = "sheetName_example"; // String | The workseet name.
 String folder = "folder_example"; // String | Document folder.
+String storage = "storage_example"; // String | storage name.
 try {
-    MergedCellsResponse result = apiInstance.cellsWorksheetsGetWorksheetMergedCells(name, sheetName, folder);
+    MergedCellsResponse result = apiInstance.cellsWorksheetsGetWorksheetMergedCells(name, sheetName, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsWorksheetsApi#cellsWorksheetsGetWorksheetMergedCells");
@@ -658,6 +683,7 @@ Name | Type | Description  | Notes
  **name** | **String**| Document name. |
  **sheetName** | **String**| The workseet name. |
  **folder** | **String**| Document folder. | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -674,7 +700,7 @@ No authorization required
 
 <a name="cellsWorksheetsGetWorksheetTextItems"></a>
 # **cellsWorksheetsGetWorksheetTextItems**
-> TextItemsResponse cellsWorksheetsGetWorksheetTextItems(name, sheetName, folder)
+> TextItemsResponse cellsWorksheetsGetWorksheetTextItems(name, sheetName, folder, storage)
 
 Get worksheet text items.
 
@@ -689,8 +715,9 @@ CellsWorksheetsApi apiInstance = new CellsWorksheetsApi();
 String name = "name_example"; // String | Workbook name.
 String sheetName = "sheetName_example"; // String | The worksheet name.
 String folder = "folder_example"; // String | The workbook's folder.
+String storage = "storage_example"; // String | storage name.
 try {
-    TextItemsResponse result = apiInstance.cellsWorksheetsGetWorksheetTextItems(name, sheetName, folder);
+    TextItemsResponse result = apiInstance.cellsWorksheetsGetWorksheetTextItems(name, sheetName, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsWorksheetsApi#cellsWorksheetsGetWorksheetTextItems");
@@ -705,6 +732,7 @@ Name | Type | Description  | Notes
  **name** | **String**| Workbook name. |
  **sheetName** | **String**| The worksheet name. |
  **folder** | **String**| The workbook&#39;s folder. | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -721,7 +749,7 @@ No authorization required
 
 <a name="cellsWorksheetsGetWorksheets"></a>
 # **cellsWorksheetsGetWorksheets**
-> WorksheetsResponse cellsWorksheetsGetWorksheets(name, folder)
+> WorksheetsResponse cellsWorksheetsGetWorksheets(name, folder, storage)
 
 Read worksheets info.
 
@@ -735,8 +763,9 @@ Read worksheets info.
 CellsWorksheetsApi apiInstance = new CellsWorksheetsApi();
 String name = "name_example"; // String | Document name.
 String folder = "folder_example"; // String | Document folder.
+String storage = "storage_example"; // String | storage name.
 try {
-    WorksheetsResponse result = apiInstance.cellsWorksheetsGetWorksheets(name, folder);
+    WorksheetsResponse result = apiInstance.cellsWorksheetsGetWorksheets(name, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsWorksheetsApi#cellsWorksheetsGetWorksheets");
@@ -750,6 +779,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **String**| Document name. |
  **folder** | **String**| Document folder. | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -766,7 +796,7 @@ No authorization required
 
 <a name="cellsWorksheetsPostAutofitWorksheetColumns"></a>
 # **cellsWorksheetsPostAutofitWorksheetColumns**
-> SaaSposeResponse cellsWorksheetsPostAutofitWorksheetColumns(name, sheetName, firstColumn, lastColumn, autoFitterOptions, firstRow, lastRow, folder)
+> SaaSposeResponse cellsWorksheetsPostAutofitWorksheetColumns(name, sheetName, firstColumn, lastColumn, autoFitterOptions, firstRow, lastRow, folder, storage)
 
 
 
@@ -786,8 +816,9 @@ AutoFitterOptions autoFitterOptions = new AutoFitterOptions(); // AutoFitterOpti
 Integer firstRow = 56; // Integer | 
 Integer lastRow = 56; // Integer | 
 String folder = "folder_example"; // String | 
+String storage = "storage_example"; // String | storage name.
 try {
-    SaaSposeResponse result = apiInstance.cellsWorksheetsPostAutofitWorksheetColumns(name, sheetName, firstColumn, lastColumn, autoFitterOptions, firstRow, lastRow, folder);
+    SaaSposeResponse result = apiInstance.cellsWorksheetsPostAutofitWorksheetColumns(name, sheetName, firstColumn, lastColumn, autoFitterOptions, firstRow, lastRow, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsWorksheetsApi#cellsWorksheetsPostAutofitWorksheetColumns");
@@ -807,6 +838,7 @@ Name | Type | Description  | Notes
  **firstRow** | **Integer**|  | [optional]
  **lastRow** | **Integer**|  | [optional]
  **folder** | **String**|  | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -823,7 +855,7 @@ No authorization required
 
 <a name="cellsWorksheetsPostAutofitWorksheetRow"></a>
 # **cellsWorksheetsPostAutofitWorksheetRow**
-> SaaSposeResponse cellsWorksheetsPostAutofitWorksheetRow(name, sheetName, rowIndex, firstColumn, lastColumn, autoFitterOptions, folder)
+> SaaSposeResponse cellsWorksheetsPostAutofitWorksheetRow(name, sheetName, rowIndex, firstColumn, lastColumn, autoFitterOptions, folder, storage)
 
 
 
@@ -842,8 +874,9 @@ Integer firstColumn = 56; // Integer |
 Integer lastColumn = 56; // Integer | 
 AutoFitterOptions autoFitterOptions = new AutoFitterOptions(); // AutoFitterOptions | 
 String folder = "folder_example"; // String | 
+String storage = "storage_example"; // String | storage name.
 try {
-    SaaSposeResponse result = apiInstance.cellsWorksheetsPostAutofitWorksheetRow(name, sheetName, rowIndex, firstColumn, lastColumn, autoFitterOptions, folder);
+    SaaSposeResponse result = apiInstance.cellsWorksheetsPostAutofitWorksheetRow(name, sheetName, rowIndex, firstColumn, lastColumn, autoFitterOptions, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsWorksheetsApi#cellsWorksheetsPostAutofitWorksheetRow");
@@ -862,6 +895,7 @@ Name | Type | Description  | Notes
  **lastColumn** | **Integer**|  |
  **autoFitterOptions** | [**AutoFitterOptions**](AutoFitterOptions.md)|  | [optional]
  **folder** | **String**|  | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -878,7 +912,7 @@ No authorization required
 
 <a name="cellsWorksheetsPostAutofitWorksheetRows"></a>
 # **cellsWorksheetsPostAutofitWorksheetRows**
-> SaaSposeResponse cellsWorksheetsPostAutofitWorksheetRows(name, sheetName, autoFitterOptions, startRow, endRow, onlyAuto, folder)
+> SaaSposeResponse cellsWorksheetsPostAutofitWorksheetRows(name, sheetName, autoFitterOptions, startRow, endRow, onlyAuto, folder, storage)
 
 Autofit worksheet rows.
 
@@ -897,8 +931,9 @@ Integer startRow = 56; // Integer | Start row.
 Integer endRow = 56; // Integer | End row.
 Boolean onlyAuto = false; // Boolean | Only auto.
 String folder = "folder_example"; // String | Document's folder.
+String storage = "storage_example"; // String | storage name.
 try {
-    SaaSposeResponse result = apiInstance.cellsWorksheetsPostAutofitWorksheetRows(name, sheetName, autoFitterOptions, startRow, endRow, onlyAuto, folder);
+    SaaSposeResponse result = apiInstance.cellsWorksheetsPostAutofitWorksheetRows(name, sheetName, autoFitterOptions, startRow, endRow, onlyAuto, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsWorksheetsApi#cellsWorksheetsPostAutofitWorksheetRows");
@@ -917,6 +952,7 @@ Name | Type | Description  | Notes
  **endRow** | **Integer**| End row. | [optional]
  **onlyAuto** | **Boolean**| Only auto. | [optional] [default to false]
  **folder** | **String**| Document&#39;s folder. | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -933,7 +969,7 @@ No authorization required
 
 <a name="cellsWorksheetsPostCopyWorksheet"></a>
 # **cellsWorksheetsPostCopyWorksheet**
-> SaaSposeResponse cellsWorksheetsPostCopyWorksheet(name, sheetName, sourceSheet, options, sourceWorkbook, sourceFolder, folder)
+> SaaSposeResponse cellsWorksheetsPostCopyWorksheet(name, sheetName, sourceSheet, options, sourceWorkbook, sourceFolder, folder, storage)
 
 
 
@@ -952,8 +988,9 @@ CopyOptions options = new CopyOptions(); // CopyOptions |
 String sourceWorkbook = "sourceWorkbook_example"; // String | 
 String sourceFolder = "sourceFolder_example"; // String | 
 String folder = "folder_example"; // String | 
+String storage = "storage_example"; // String | storage name.
 try {
-    SaaSposeResponse result = apiInstance.cellsWorksheetsPostCopyWorksheet(name, sheetName, sourceSheet, options, sourceWorkbook, sourceFolder, folder);
+    SaaSposeResponse result = apiInstance.cellsWorksheetsPostCopyWorksheet(name, sheetName, sourceSheet, options, sourceWorkbook, sourceFolder, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsWorksheetsApi#cellsWorksheetsPostCopyWorksheet");
@@ -972,6 +1009,7 @@ Name | Type | Description  | Notes
  **sourceWorkbook** | **String**|  | [optional]
  **sourceFolder** | **String**|  | [optional]
  **folder** | **String**|  | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -988,7 +1026,7 @@ No authorization required
 
 <a name="cellsWorksheetsPostMoveWorksheet"></a>
 # **cellsWorksheetsPostMoveWorksheet**
-> WorksheetsResponse cellsWorksheetsPostMoveWorksheet(name, sheetName, moving, folder)
+> WorksheetsResponse cellsWorksheetsPostMoveWorksheet(name, sheetName, moving, folder, storage)
 
 Move worksheet.
 
@@ -1004,8 +1042,9 @@ String name = "name_example"; // String | Document name.
 String sheetName = "sheetName_example"; // String | The worksheet name.
 WorksheetMovingRequest moving = new WorksheetMovingRequest(); // WorksheetMovingRequest | with moving parameters.
 String folder = "folder_example"; // String | The document folder.
+String storage = "storage_example"; // String | storage name.
 try {
-    WorksheetsResponse result = apiInstance.cellsWorksheetsPostMoveWorksheet(name, sheetName, moving, folder);
+    WorksheetsResponse result = apiInstance.cellsWorksheetsPostMoveWorksheet(name, sheetName, moving, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsWorksheetsApi#cellsWorksheetsPostMoveWorksheet");
@@ -1021,6 +1060,7 @@ Name | Type | Description  | Notes
  **sheetName** | **String**| The worksheet name. |
  **moving** | [**WorksheetMovingRequest**](WorksheetMovingRequest.md)| with moving parameters. | [optional]
  **folder** | **String**| The document folder. | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -1037,7 +1077,7 @@ No authorization required
 
 <a name="cellsWorksheetsPostRenameWorksheet"></a>
 # **cellsWorksheetsPostRenameWorksheet**
-> SaaSposeResponse cellsWorksheetsPostRenameWorksheet(name, sheetName, newname, folder)
+> SaaSposeResponse cellsWorksheetsPostRenameWorksheet(name, sheetName, newname, folder, storage)
 
 Rename worksheet
 
@@ -1053,8 +1093,9 @@ String name = "name_example"; // String |
 String sheetName = "sheetName_example"; // String | 
 String newname = "newname_example"; // String | 
 String folder = "folder_example"; // String | 
+String storage = "storage_example"; // String | storage name.
 try {
-    SaaSposeResponse result = apiInstance.cellsWorksheetsPostRenameWorksheet(name, sheetName, newname, folder);
+    SaaSposeResponse result = apiInstance.cellsWorksheetsPostRenameWorksheet(name, sheetName, newname, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsWorksheetsApi#cellsWorksheetsPostRenameWorksheet");
@@ -1070,6 +1111,7 @@ Name | Type | Description  | Notes
  **sheetName** | **String**|  |
  **newname** | **String**|  |
  **folder** | **String**|  | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -1086,7 +1128,7 @@ No authorization required
 
 <a name="cellsWorksheetsPostUpdateWorksheetProperty"></a>
 # **cellsWorksheetsPostUpdateWorksheetProperty**
-> WorksheetResponse cellsWorksheetsPostUpdateWorksheetProperty(name, sheetName, sheet, folder)
+> WorksheetResponse cellsWorksheetsPostUpdateWorksheetProperty(name, sheetName, sheet, folder, storage)
 
 Update worksheet property
 
@@ -1102,8 +1144,9 @@ String name = "name_example"; // String |
 String sheetName = "sheetName_example"; // String | 
 Worksheet sheet = new Worksheet(); // Worksheet | 
 String folder = "folder_example"; // String | 
+String storage = "storage_example"; // String | storage name.
 try {
-    WorksheetResponse result = apiInstance.cellsWorksheetsPostUpdateWorksheetProperty(name, sheetName, sheet, folder);
+    WorksheetResponse result = apiInstance.cellsWorksheetsPostUpdateWorksheetProperty(name, sheetName, sheet, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsWorksheetsApi#cellsWorksheetsPostUpdateWorksheetProperty");
@@ -1119,6 +1162,7 @@ Name | Type | Description  | Notes
  **sheetName** | **String**|  |
  **sheet** | [**Worksheet**](Worksheet.md)|  | [optional]
  **folder** | **String**|  | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -1135,7 +1179,7 @@ No authorization required
 
 <a name="cellsWorksheetsPostUpdateWorksheetZoom"></a>
 # **cellsWorksheetsPostUpdateWorksheetZoom**
-> SaaSposeResponse cellsWorksheetsPostUpdateWorksheetZoom(name, sheetName, value, folder)
+> SaaSposeResponse cellsWorksheetsPostUpdateWorksheetZoom(name, sheetName, value, folder, storage)
 
 
 
@@ -1151,8 +1195,9 @@ String name = "name_example"; // String |
 String sheetName = "sheetName_example"; // String | 
 Integer value = 56; // Integer | 
 String folder = "folder_example"; // String | 
+String storage = "storage_example"; // String | storage name.
 try {
-    SaaSposeResponse result = apiInstance.cellsWorksheetsPostUpdateWorksheetZoom(name, sheetName, value, folder);
+    SaaSposeResponse result = apiInstance.cellsWorksheetsPostUpdateWorksheetZoom(name, sheetName, value, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsWorksheetsApi#cellsWorksheetsPostUpdateWorksheetZoom");
@@ -1168,6 +1213,7 @@ Name | Type | Description  | Notes
  **sheetName** | **String**|  |
  **value** | **Integer**|  |
  **folder** | **String**|  | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -1184,7 +1230,7 @@ No authorization required
 
 <a name="cellsWorksheetsPostWorksheetComment"></a>
 # **cellsWorksheetsPostWorksheetComment**
-> SaaSposeResponse cellsWorksheetsPostWorksheetComment(name, sheetName, cellName, comment, folder)
+> SaaSposeResponse cellsWorksheetsPostWorksheetComment(name, sheetName, cellName, comment, folder, storage)
 
 Update worksheet&#39;s cell comment.
 
@@ -1201,8 +1247,9 @@ String sheetName = "sheetName_example"; // String | The worksheet name.
 String cellName = "cellName_example"; // String | The cell name
 Comment comment = new Comment(); // Comment | Comment object
 String folder = "folder_example"; // String | The document folder.
+String storage = "storage_example"; // String | storage name.
 try {
-    SaaSposeResponse result = apiInstance.cellsWorksheetsPostWorksheetComment(name, sheetName, cellName, comment, folder);
+    SaaSposeResponse result = apiInstance.cellsWorksheetsPostWorksheetComment(name, sheetName, cellName, comment, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsWorksheetsApi#cellsWorksheetsPostWorksheetComment");
@@ -1219,6 +1266,7 @@ Name | Type | Description  | Notes
  **cellName** | **String**| The cell name |
  **comment** | [**Comment**](Comment.md)| Comment object | [optional]
  **folder** | **String**| The document folder. | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -1235,7 +1283,7 @@ No authorization required
 
 <a name="cellsWorksheetsPostWorksheetRangeSort"></a>
 # **cellsWorksheetsPostWorksheetRangeSort**
-> SaaSposeResponse cellsWorksheetsPostWorksheetRangeSort(name, sheetName, cellArea, dataSorter, folder)
+> SaaSposeResponse cellsWorksheetsPostWorksheetRangeSort(name, sheetName, cellArea, dataSorter, folder, storage)
 
 Sort worksheet range.
 
@@ -1252,8 +1300,9 @@ String sheetName = "sheetName_example"; // String | The worksheet name.
 String cellArea = "cellArea_example"; // String | The range to sort.
 DataSorter dataSorter = new DataSorter(); // DataSorter | with sorting settings.
 String folder = "folder_example"; // String | The workbook folder.
+String storage = "storage_example"; // String | storage name.
 try {
-    SaaSposeResponse result = apiInstance.cellsWorksheetsPostWorksheetRangeSort(name, sheetName, cellArea, dataSorter, folder);
+    SaaSposeResponse result = apiInstance.cellsWorksheetsPostWorksheetRangeSort(name, sheetName, cellArea, dataSorter, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsWorksheetsApi#cellsWorksheetsPostWorksheetRangeSort");
@@ -1270,6 +1319,7 @@ Name | Type | Description  | Notes
  **cellArea** | **String**| The range to sort. |
  **dataSorter** | [**DataSorter**](DataSorter.md)| with sorting settings. | [optional]
  **folder** | **String**| The workbook folder. | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -1286,7 +1336,7 @@ No authorization required
 
 <a name="cellsWorksheetsPostWorksheetTextSearch"></a>
 # **cellsWorksheetsPostWorksheetTextSearch**
-> TextItemsResponse cellsWorksheetsPostWorksheetTextSearch(name, sheetName, text, folder)
+> TextItemsResponse cellsWorksheetsPostWorksheetTextSearch(name, sheetName, text, folder, storage)
 
 Search text.
 
@@ -1302,8 +1352,9 @@ String name = "name_example"; // String | Document name.
 String sheetName = "sheetName_example"; // String | The worksheet name.
 String text = "text_example"; // String | Text to search.
 String folder = "folder_example"; // String | Document's folder.
+String storage = "storage_example"; // String | storage name.
 try {
-    TextItemsResponse result = apiInstance.cellsWorksheetsPostWorksheetTextSearch(name, sheetName, text, folder);
+    TextItemsResponse result = apiInstance.cellsWorksheetsPostWorksheetTextSearch(name, sheetName, text, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsWorksheetsApi#cellsWorksheetsPostWorksheetTextSearch");
@@ -1319,6 +1370,7 @@ Name | Type | Description  | Notes
  **sheetName** | **String**| The worksheet name. |
  **text** | **String**| Text to search. |
  **folder** | **String**| Document&#39;s folder. | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -1335,7 +1387,7 @@ No authorization required
 
 <a name="cellsWorksheetsPostWorsheetTextReplace"></a>
 # **cellsWorksheetsPostWorsheetTextReplace**
-> WorksheetReplaceResponse cellsWorksheetsPostWorsheetTextReplace(name, sheetName, oldValue, newValue, folder)
+> WorksheetReplaceResponse cellsWorksheetsPostWorsheetTextReplace(name, sheetName, oldValue, newValue, folder, storage)
 
 Replace text.
 
@@ -1352,8 +1404,9 @@ String sheetName = "sheetName_example"; // String | Worksheet name.
 String oldValue = "oldValue_example"; // String | The old text to replace.
 String newValue = "newValue_example"; // String | The new text to replace by.
 String folder = "folder_example"; // String | Document's folder.
+String storage = "storage_example"; // String | storage name.
 try {
-    WorksheetReplaceResponse result = apiInstance.cellsWorksheetsPostWorsheetTextReplace(name, sheetName, oldValue, newValue, folder);
+    WorksheetReplaceResponse result = apiInstance.cellsWorksheetsPostWorsheetTextReplace(name, sheetName, oldValue, newValue, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsWorksheetsApi#cellsWorksheetsPostWorsheetTextReplace");
@@ -1370,6 +1423,7 @@ Name | Type | Description  | Notes
  **oldValue** | **String**| The old text to replace. |
  **newValue** | **String**| The new text to replace by. |
  **folder** | **String**| Document&#39;s folder. | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -1386,7 +1440,7 @@ No authorization required
 
 <a name="cellsWorksheetsPutAddNewWorksheet"></a>
 # **cellsWorksheetsPutAddNewWorksheet**
-> WorksheetsResponse cellsWorksheetsPutAddNewWorksheet(name, sheetName, position, sheettype, folder)
+> WorksheetsResponse cellsWorksheetsPutAddNewWorksheet(name, sheetName, position, sheettype, folder, storage)
 
 Add new worksheet.
 
@@ -1403,8 +1457,9 @@ String sheetName = "sheetName_example"; // String | The new sheet name.
 Integer position = 56; // Integer | The new sheet position.
 String sheettype = "sheettype_example"; // String | The new sheet type.
 String folder = "folder_example"; // String | Document folder.
+String storage = "storage_example"; // String | storage name.
 try {
-    WorksheetsResponse result = apiInstance.cellsWorksheetsPutAddNewWorksheet(name, sheetName, position, sheettype, folder);
+    WorksheetsResponse result = apiInstance.cellsWorksheetsPutAddNewWorksheet(name, sheetName, position, sheettype, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsWorksheetsApi#cellsWorksheetsPutAddNewWorksheet");
@@ -1421,6 +1476,7 @@ Name | Type | Description  | Notes
  **position** | **Integer**| The new sheet position. | [optional]
  **sheettype** | **String**| The new sheet type. | [optional]
  **folder** | **String**| Document folder. | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -1437,7 +1493,7 @@ No authorization required
 
 <a name="cellsWorksheetsPutChangeVisibilityWorksheet"></a>
 # **cellsWorksheetsPutChangeVisibilityWorksheet**
-> WorksheetResponse cellsWorksheetsPutChangeVisibilityWorksheet(name, sheetName, isVisible, folder)
+> WorksheetResponse cellsWorksheetsPutChangeVisibilityWorksheet(name, sheetName, isVisible, folder, storage)
 
 Change worksheet visibility.
 
@@ -1453,8 +1509,9 @@ String name = "name_example"; // String | Document name.
 String sheetName = "sheetName_example"; // String | Worksheet name.
 Boolean isVisible = true; // Boolean | New worksheet visibility value.
 String folder = "folder_example"; // String | The document folder.
+String storage = "storage_example"; // String | storage name.
 try {
-    WorksheetResponse result = apiInstance.cellsWorksheetsPutChangeVisibilityWorksheet(name, sheetName, isVisible, folder);
+    WorksheetResponse result = apiInstance.cellsWorksheetsPutChangeVisibilityWorksheet(name, sheetName, isVisible, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsWorksheetsApi#cellsWorksheetsPutChangeVisibilityWorksheet");
@@ -1470,6 +1527,7 @@ Name | Type | Description  | Notes
  **sheetName** | **String**| Worksheet name. |
  **isVisible** | **Boolean**| New worksheet visibility value. |
  **folder** | **String**| The document folder. | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -1486,7 +1544,7 @@ No authorization required
 
 <a name="cellsWorksheetsPutProtectWorksheet"></a>
 # **cellsWorksheetsPutProtectWorksheet**
-> WorksheetResponse cellsWorksheetsPutProtectWorksheet(name, sheetName, protectParameter, folder)
+> WorksheetResponse cellsWorksheetsPutProtectWorksheet(name, sheetName, protectParameter, folder, storage)
 
 Protect worksheet.
 
@@ -1502,8 +1560,9 @@ String name = "name_example"; // String | Document name.
 String sheetName = "sheetName_example"; // String | The worksheet name.
 ProtectSheetParameter protectParameter = new ProtectSheetParameter(); // ProtectSheetParameter | with protection settings.
 String folder = "folder_example"; // String | Document folder.
+String storage = "storage_example"; // String | storage name.
 try {
-    WorksheetResponse result = apiInstance.cellsWorksheetsPutProtectWorksheet(name, sheetName, protectParameter, folder);
+    WorksheetResponse result = apiInstance.cellsWorksheetsPutProtectWorksheet(name, sheetName, protectParameter, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsWorksheetsApi#cellsWorksheetsPutProtectWorksheet");
@@ -1519,6 +1578,7 @@ Name | Type | Description  | Notes
  **sheetName** | **String**| The worksheet name. |
  **protectParameter** | [**ProtectSheetParameter**](ProtectSheetParameter.md)| with protection settings. | [optional]
  **folder** | **String**| Document folder. | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -1535,7 +1595,7 @@ No authorization required
 
 <a name="cellsWorksheetsPutWorksheetBackground"></a>
 # **cellsWorksheetsPutWorksheetBackground**
-> SaaSposeResponse cellsWorksheetsPutWorksheetBackground(name, sheetName, png, folder)
+> SaaSposeResponse cellsWorksheetsPutWorksheetBackground(name, sheetName, png, folder, storage)
 
 Set worksheet background image.
 
@@ -1551,8 +1611,9 @@ String name = "name_example"; // String |
 String sheetName = "sheetName_example"; // String | 
 byte[] png = BINARY_DATA_HERE; // byte[] | 
 String folder = "folder_example"; // String | 
+String storage = "storage_example"; // String | storage name.
 try {
-    SaaSposeResponse result = apiInstance.cellsWorksheetsPutWorksheetBackground(name, sheetName, png, folder);
+    SaaSposeResponse result = apiInstance.cellsWorksheetsPutWorksheetBackground(name, sheetName, png, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsWorksheetsApi#cellsWorksheetsPutWorksheetBackground");
@@ -1568,6 +1629,7 @@ Name | Type | Description  | Notes
  **sheetName** | **String**|  |
  **png** | **byte[]**|  |
  **folder** | **String**|  | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -1584,7 +1646,7 @@ No authorization required
 
 <a name="cellsWorksheetsPutWorksheetComment"></a>
 # **cellsWorksheetsPutWorksheetComment**
-> CommentResponse cellsWorksheetsPutWorksheetComment(name, sheetName, cellName, comment, folder)
+> CommentResponse cellsWorksheetsPutWorksheetComment(name, sheetName, cellName, comment, folder, storage)
 
 Add worksheet&#39;s cell comment.
 
@@ -1601,8 +1663,9 @@ String sheetName = "sheetName_example"; // String | The worksheet name.
 String cellName = "cellName_example"; // String | The cell name
 Comment comment = new Comment(); // Comment | Comment object
 String folder = "folder_example"; // String | The document folder.
+String storage = "storage_example"; // String | storage name.
 try {
-    CommentResponse result = apiInstance.cellsWorksheetsPutWorksheetComment(name, sheetName, cellName, comment, folder);
+    CommentResponse result = apiInstance.cellsWorksheetsPutWorksheetComment(name, sheetName, cellName, comment, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsWorksheetsApi#cellsWorksheetsPutWorksheetComment");
@@ -1619,6 +1682,7 @@ Name | Type | Description  | Notes
  **cellName** | **String**| The cell name |
  **comment** | [**Comment**](Comment.md)| Comment object | [optional]
  **folder** | **String**| The document folder. | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -1635,7 +1699,7 @@ No authorization required
 
 <a name="cellsWorksheetsPutWorksheetFreezePanes"></a>
 # **cellsWorksheetsPutWorksheetFreezePanes**
-> SaaSposeResponse cellsWorksheetsPutWorksheetFreezePanes(name, sheetName, row, column, freezedRows, freezedColumns, folder)
+> SaaSposeResponse cellsWorksheetsPutWorksheetFreezePanes(name, sheetName, row, column, freezedRows, freezedColumns, folder, storage)
 
 Set freeze panes
 
@@ -1654,8 +1718,9 @@ Integer column = 56; // Integer |
 Integer freezedRows = 56; // Integer | 
 Integer freezedColumns = 56; // Integer | 
 String folder = "folder_example"; // String | 
+String storage = "storage_example"; // String | storage name.
 try {
-    SaaSposeResponse result = apiInstance.cellsWorksheetsPutWorksheetFreezePanes(name, sheetName, row, column, freezedRows, freezedColumns, folder);
+    SaaSposeResponse result = apiInstance.cellsWorksheetsPutWorksheetFreezePanes(name, sheetName, row, column, freezedRows, freezedColumns, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsWorksheetsApi#cellsWorksheetsPutWorksheetFreezePanes");
@@ -1674,6 +1739,7 @@ Name | Type | Description  | Notes
  **freezedRows** | **Integer**|  |
  **freezedColumns** | **Integer**|  |
  **folder** | **String**|  | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 

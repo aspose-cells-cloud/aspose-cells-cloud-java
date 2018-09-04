@@ -18,7 +18,7 @@ Method | HTTP request | Description
 
 <a name="cellsRangesGetWorksheetCellsRangeValue"></a>
 # **cellsRangesGetWorksheetCellsRangeValue**
-> RangeValueResponse cellsRangesGetWorksheetCellsRangeValue(name, sheetName, namerange, firstRow, firstColumn, rowCount, columnCount, folder)
+> RangeValueResponse cellsRangesGetWorksheetCellsRangeValue(name, sheetName, namerange, firstRow, firstColumn, rowCount, columnCount, folder, storage)
 
 Get cells list in a range by range name or row column indexes  
 
@@ -38,8 +38,9 @@ Integer firstColumn = 56; // Integer | the first column of the range
 Integer rowCount = 56; // Integer | the count of rows in the range
 Integer columnCount = 56; // Integer | the count of columns in the range
 String folder = "folder_example"; // String | Workbook folder.
+String storage = "storage_example"; // String | storage name.
 try {
-    RangeValueResponse result = apiInstance.cellsRangesGetWorksheetCellsRangeValue(name, sheetName, namerange, firstRow, firstColumn, rowCount, columnCount, folder);
+    RangeValueResponse result = apiInstance.cellsRangesGetWorksheetCellsRangeValue(name, sheetName, namerange, firstRow, firstColumn, rowCount, columnCount, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsRangesApi#cellsRangesGetWorksheetCellsRangeValue");
@@ -59,6 +60,7 @@ Name | Type | Description  | Notes
  **rowCount** | **Integer**| the count of rows in the range | [optional]
  **columnCount** | **Integer**| the count of columns in the range | [optional]
  **folder** | **String**| Workbook folder. | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -75,7 +77,7 @@ No authorization required
 
 <a name="cellsRangesPostWorksheetCellsRangeColumnWidth"></a>
 # **cellsRangesPostWorksheetCellsRangeColumnWidth**
-> SaaSposeResponse cellsRangesPostWorksheetCellsRangeColumnWidth(name, sheetName, value, range, folder)
+> SaaSposeResponse cellsRangesPostWorksheetCellsRangeColumnWidth(name, sheetName, value, range, folder, storage)
 
 Set column width of range
 
@@ -92,8 +94,9 @@ String sheetName = "sheetName_example"; // String |
 Double value = 3.4D; // Double | 
 Range range = new Range(); // Range | 
 String folder = "folder_example"; // String | 
+String storage = "storage_example"; // String | storage name.
 try {
-    SaaSposeResponse result = apiInstance.cellsRangesPostWorksheetCellsRangeColumnWidth(name, sheetName, value, range, folder);
+    SaaSposeResponse result = apiInstance.cellsRangesPostWorksheetCellsRangeColumnWidth(name, sheetName, value, range, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsRangesApi#cellsRangesPostWorksheetCellsRangeColumnWidth");
@@ -110,6 +113,7 @@ Name | Type | Description  | Notes
  **value** | **Double**|  |
  **range** | [**Range**](Range.md)|  | [optional]
  **folder** | **String**|  | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -126,7 +130,7 @@ No authorization required
 
 <a name="cellsRangesPostWorksheetCellsRangeMerge"></a>
 # **cellsRangesPostWorksheetCellsRangeMerge**
-> SaaSposeResponse cellsRangesPostWorksheetCellsRangeMerge(name, sheetName, range, folder)
+> SaaSposeResponse cellsRangesPostWorksheetCellsRangeMerge(name, sheetName, range, folder, storage)
 
 Combines a range of cells into a single cell.              
 
@@ -142,8 +146,9 @@ String name = "name_example"; // String | workbook name
 String sheetName = "sheetName_example"; // String | worksheet name
 Range range = new Range(); // Range | range in worksheet 
 String folder = "folder_example"; // String | Workbook folder.
+String storage = "storage_example"; // String | storage name.
 try {
-    SaaSposeResponse result = apiInstance.cellsRangesPostWorksheetCellsRangeMerge(name, sheetName, range, folder);
+    SaaSposeResponse result = apiInstance.cellsRangesPostWorksheetCellsRangeMerge(name, sheetName, range, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsRangesApi#cellsRangesPostWorksheetCellsRangeMerge");
@@ -159,6 +164,7 @@ Name | Type | Description  | Notes
  **sheetName** | **String**| worksheet name |
  **range** | [**Range**](Range.md)| range in worksheet  | [optional]
  **folder** | **String**| Workbook folder. | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -175,7 +181,7 @@ No authorization required
 
 <a name="cellsRangesPostWorksheetCellsRangeMoveTo"></a>
 # **cellsRangesPostWorksheetCellsRangeMoveTo**
-> SaaSposeResponse cellsRangesPostWorksheetCellsRangeMoveTo(name, sheetName, destRow, destColumn, range, folder)
+> SaaSposeResponse cellsRangesPostWorksheetCellsRangeMoveTo(name, sheetName, destRow, destColumn, range, folder, storage)
 
 Move the current range to the dest range.             
 
@@ -193,8 +199,9 @@ Integer destRow = 56; // Integer | The start row of the dest range.
 Integer destColumn = 56; // Integer | The start column of the dest range.
 Range range = new Range(); // Range | range in worksheet 
 String folder = "folder_example"; // String | Workbook folder.
+String storage = "storage_example"; // String | storage name.
 try {
-    SaaSposeResponse result = apiInstance.cellsRangesPostWorksheetCellsRangeMoveTo(name, sheetName, destRow, destColumn, range, folder);
+    SaaSposeResponse result = apiInstance.cellsRangesPostWorksheetCellsRangeMoveTo(name, sheetName, destRow, destColumn, range, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsRangesApi#cellsRangesPostWorksheetCellsRangeMoveTo");
@@ -212,6 +219,7 @@ Name | Type | Description  | Notes
  **destColumn** | **Integer**| The start column of the dest range. |
  **range** | [**Range**](Range.md)| range in worksheet  | [optional]
  **folder** | **String**| Workbook folder. | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -228,7 +236,7 @@ No authorization required
 
 <a name="cellsRangesPostWorksheetCellsRangeOutlineBorder"></a>
 # **cellsRangesPostWorksheetCellsRangeOutlineBorder**
-> SaaSposeResponse cellsRangesPostWorksheetCellsRangeOutlineBorder(name, sheetName, rangeOperate, folder)
+> SaaSposeResponse cellsRangesPostWorksheetCellsRangeOutlineBorder(name, sheetName, rangeOperate, folder, storage)
 
 Sets outline border around a range of cells.
 
@@ -244,8 +252,9 @@ String name = "name_example"; // String | workbook name
 String sheetName = "sheetName_example"; // String | worksheet name
 RangeSetOutlineBorderRequest rangeOperate = new RangeSetOutlineBorderRequest(); // RangeSetOutlineBorderRequest | Range Set OutlineBorder Request 
 String folder = "folder_example"; // String | Workbook folder.
+String storage = "storage_example"; // String | storage name.
 try {
-    SaaSposeResponse result = apiInstance.cellsRangesPostWorksheetCellsRangeOutlineBorder(name, sheetName, rangeOperate, folder);
+    SaaSposeResponse result = apiInstance.cellsRangesPostWorksheetCellsRangeOutlineBorder(name, sheetName, rangeOperate, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsRangesApi#cellsRangesPostWorksheetCellsRangeOutlineBorder");
@@ -261,6 +270,7 @@ Name | Type | Description  | Notes
  **sheetName** | **String**| worksheet name |
  **rangeOperate** | [**RangeSetOutlineBorderRequest**](RangeSetOutlineBorderRequest.md)| Range Set OutlineBorder Request  | [optional]
  **folder** | **String**| Workbook folder. | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -277,7 +287,7 @@ No authorization required
 
 <a name="cellsRangesPostWorksheetCellsRangeRowHeight"></a>
 # **cellsRangesPostWorksheetCellsRangeRowHeight**
-> SaaSposeResponse cellsRangesPostWorksheetCellsRangeRowHeight(name, sheetName, value, range, folder)
+> SaaSposeResponse cellsRangesPostWorksheetCellsRangeRowHeight(name, sheetName, value, range, folder, storage)
 
 set row height of range
 
@@ -294,8 +304,9 @@ String sheetName = "sheetName_example"; // String |
 Double value = 3.4D; // Double | 
 Range range = new Range(); // Range | 
 String folder = "folder_example"; // String | 
+String storage = "storage_example"; // String | storage name.
 try {
-    SaaSposeResponse result = apiInstance.cellsRangesPostWorksheetCellsRangeRowHeight(name, sheetName, value, range, folder);
+    SaaSposeResponse result = apiInstance.cellsRangesPostWorksheetCellsRangeRowHeight(name, sheetName, value, range, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsRangesApi#cellsRangesPostWorksheetCellsRangeRowHeight");
@@ -312,6 +323,7 @@ Name | Type | Description  | Notes
  **value** | **Double**|  |
  **range** | [**Range**](Range.md)|  | [optional]
  **folder** | **String**|  | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -328,7 +340,7 @@ No authorization required
 
 <a name="cellsRangesPostWorksheetCellsRangeStyle"></a>
 # **cellsRangesPostWorksheetCellsRangeStyle**
-> SaaSposeResponse cellsRangesPostWorksheetCellsRangeStyle(name, sheetName, rangeOperate, folder)
+> SaaSposeResponse cellsRangesPostWorksheetCellsRangeStyle(name, sheetName, rangeOperate, folder, storage)
 
 Sets the style of the range.             
 
@@ -344,8 +356,9 @@ String name = "name_example"; // String | workbook name
 String sheetName = "sheetName_example"; // String | worksheet name
 RangeSetStyleRequest rangeOperate = new RangeSetStyleRequest(); // RangeSetStyleRequest | Range Set Style Request 
 String folder = "folder_example"; // String | Workbook folder.
+String storage = "storage_example"; // String | storage name.
 try {
-    SaaSposeResponse result = apiInstance.cellsRangesPostWorksheetCellsRangeStyle(name, sheetName, rangeOperate, folder);
+    SaaSposeResponse result = apiInstance.cellsRangesPostWorksheetCellsRangeStyle(name, sheetName, rangeOperate, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsRangesApi#cellsRangesPostWorksheetCellsRangeStyle");
@@ -361,6 +374,7 @@ Name | Type | Description  | Notes
  **sheetName** | **String**| worksheet name |
  **rangeOperate** | [**RangeSetStyleRequest**](RangeSetStyleRequest.md)| Range Set Style Request  | [optional]
  **folder** | **String**| Workbook folder. | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -377,7 +391,7 @@ No authorization required
 
 <a name="cellsRangesPostWorksheetCellsRangeUnmerge"></a>
 # **cellsRangesPostWorksheetCellsRangeUnmerge**
-> SaaSposeResponse cellsRangesPostWorksheetCellsRangeUnmerge(name, sheetName, range, folder)
+> SaaSposeResponse cellsRangesPostWorksheetCellsRangeUnmerge(name, sheetName, range, folder, storage)
 
 Unmerges merged cells of this range.             
 
@@ -393,8 +407,9 @@ String name = "name_example"; // String | workbook name
 String sheetName = "sheetName_example"; // String | worksheet name
 Range range = new Range(); // Range | range in worksheet 
 String folder = "folder_example"; // String | Workbook folder.
+String storage = "storage_example"; // String | storage name.
 try {
-    SaaSposeResponse result = apiInstance.cellsRangesPostWorksheetCellsRangeUnmerge(name, sheetName, range, folder);
+    SaaSposeResponse result = apiInstance.cellsRangesPostWorksheetCellsRangeUnmerge(name, sheetName, range, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsRangesApi#cellsRangesPostWorksheetCellsRangeUnmerge");
@@ -410,6 +425,7 @@ Name | Type | Description  | Notes
  **sheetName** | **String**| worksheet name |
  **range** | [**Range**](Range.md)| range in worksheet  | [optional]
  **folder** | **String**| Workbook folder. | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -426,7 +442,7 @@ No authorization required
 
 <a name="cellsRangesPostWorksheetCellsRangeValue"></a>
 # **cellsRangesPostWorksheetCellsRangeValue**
-> SaaSposeResponse cellsRangesPostWorksheetCellsRangeValue(name, sheetName, value, range, isConverted, setStyle, folder)
+> SaaSposeResponse cellsRangesPostWorksheetCellsRangeValue(name, sheetName, value, range, isConverted, setStyle, folder, storage)
 
 Puts a value into the range, if appropriate the value will be converted to other data type and cell&#39;s number format will be reset.             
 
@@ -445,8 +461,9 @@ Range range = new Range(); // Range | range in worksheet
 Boolean isConverted = false; // Boolean | True: converted to other data type if appropriate.
 Boolean setStyle = false; // Boolean | True: set the number format to cell's style when converting to other data type
 String folder = "folder_example"; // String | Workbook folder.
+String storage = "storage_example"; // String | storage name.
 try {
-    SaaSposeResponse result = apiInstance.cellsRangesPostWorksheetCellsRangeValue(name, sheetName, value, range, isConverted, setStyle, folder);
+    SaaSposeResponse result = apiInstance.cellsRangesPostWorksheetCellsRangeValue(name, sheetName, value, range, isConverted, setStyle, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsRangesApi#cellsRangesPostWorksheetCellsRangeValue");
@@ -465,6 +482,7 @@ Name | Type | Description  | Notes
  **isConverted** | **Boolean**| True: converted to other data type if appropriate. | [optional] [default to false]
  **setStyle** | **Boolean**| True: set the number format to cell&#39;s style when converting to other data type | [optional] [default to false]
  **folder** | **String**| Workbook folder. | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -481,7 +499,7 @@ No authorization required
 
 <a name="cellsRangesPostWorksheetCellsRanges"></a>
 # **cellsRangesPostWorksheetCellsRanges**
-> SaaSposeResponse cellsRangesPostWorksheetCellsRanges(name, sheetName, rangeOperate, folder)
+> SaaSposeResponse cellsRangesPostWorksheetCellsRanges(name, sheetName, rangeOperate, folder, storage)
 
 copy range in the worksheet
 
@@ -497,8 +515,9 @@ String name = "name_example"; // String | workbook name
 String sheetName = "sheetName_example"; // String | worksheet name
 RangeCopyRequest rangeOperate = new RangeCopyRequest(); // RangeCopyRequest | copydata,copystyle,copyto,copyvalue
 String folder = "folder_example"; // String | Workbook folder.
+String storage = "storage_example"; // String | storage name.
 try {
-    SaaSposeResponse result = apiInstance.cellsRangesPostWorksheetCellsRanges(name, sheetName, rangeOperate, folder);
+    SaaSposeResponse result = apiInstance.cellsRangesPostWorksheetCellsRanges(name, sheetName, rangeOperate, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsRangesApi#cellsRangesPostWorksheetCellsRanges");
@@ -514,6 +533,7 @@ Name | Type | Description  | Notes
  **sheetName** | **String**| worksheet name |
  **rangeOperate** | [**RangeCopyRequest**](RangeCopyRequest.md)| copydata,copystyle,copyto,copyvalue | [optional]
  **folder** | **String**| Workbook folder. | [optional]
+ **storage** | **String**| storage name. | [optional]
 
 ### Return type
 

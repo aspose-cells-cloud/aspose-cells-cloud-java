@@ -94,7 +94,7 @@ public class CellsWorksheetsApiTest {
         protectParameter.setPassword("123456");
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        WorksheetResponse response = api.cellsWorksheetsDeleteUnprotectWorksheet(name, sheetName, protectParameter, folder);
+        WorksheetResponse response = api.cellsWorksheetsDeleteUnprotectWorksheet(name, sheetName, protectParameter, folder,null);
 
         // TODO: test validations
     }
@@ -113,7 +113,7 @@ public class CellsWorksheetsApiTest {
         String sheetName = SHEET1;
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        SaaSposeResponse response = api.cellsWorksheetsDeleteWorksheetBackground(name, sheetName, folder);
+        SaaSposeResponse response = api.cellsWorksheetsDeleteWorksheetBackground(name, sheetName, folder,null);
 
         // TODO: test validations
     }
@@ -133,7 +133,7 @@ public class CellsWorksheetsApiTest {
         String cellName = "C1";
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        SaaSposeResponse response = api.cellsWorksheetsDeleteWorksheetComment(name, sheetName, cellName, folder);
+        SaaSposeResponse response = api.cellsWorksheetsDeleteWorksheetComment(name, sheetName, cellName, folder,null);
 
         // TODO: test validations
     }
@@ -152,7 +152,7 @@ public class CellsWorksheetsApiTest {
         String sheetName = SHEET1;
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        SaaSposeResponse response = api.cellsWorksheetsDeleteWorksheetComments(name, sheetName, folder);
+        SaaSposeResponse response = api.cellsWorksheetsDeleteWorksheetComments(name, sheetName, folder,null);
 
         // TODO: test validations
     }
@@ -171,7 +171,7 @@ public class CellsWorksheetsApiTest {
         String sheetName = SHEET1;
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        WorksheetsResponse response = api.cellsWorksheetsDeleteWorksheet(name, sheetName, folder);
+        WorksheetsResponse response = api.cellsWorksheetsDeleteWorksheet(name, sheetName, folder,null);
 
         // TODO: test validations
     }
@@ -194,7 +194,7 @@ public class CellsWorksheetsApiTest {
         Integer freezedColumns = 2;
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        SaaSposeResponse response = api.cellsWorksheetsDeleteWorksheetFreezePanes(name, sheetName, row, column, freezedRows, freezedColumns, folder);
+        SaaSposeResponse response = api.cellsWorksheetsDeleteWorksheetFreezePanes(name, sheetName, row, column, freezedRows, freezedColumns, folder,null);
 
         // TODO: test validations
     }
@@ -212,7 +212,7 @@ public class CellsWorksheetsApiTest {
        String name = BOOK1;
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        RangesResponse response = api.cellsWorksheetsGetNamedRanges(name, folder);
+        RangesResponse response = api.cellsWorksheetsGetNamedRanges(name, folder,null);
 
         // TODO: test validations
     }
@@ -234,7 +234,7 @@ public class CellsWorksheetsApiTest {
         String format = "png";
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        File response = api.cellsWorksheetsGetWorksheet(name, sheetName, format,verticalResolution, horizontalResolution, folder);
+        File response = api.cellsWorksheetsGetWorksheet(name, sheetName, format,verticalResolution, horizontalResolution, folder,null);
 
         // TODO: test validations
     }
@@ -254,7 +254,7 @@ public class CellsWorksheetsApiTest {
         String formula = "=NOW()";
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        SingleValueResponse response = api.cellsWorksheetsGetWorksheetCalculateFormula(name, sheetName, formula, folder);
+        SingleValueResponse response = api.cellsWorksheetsGetWorksheetCalculateFormula(name, sheetName, formula, folder,null);
 
         // TODO: test validations
     }
@@ -274,7 +274,7 @@ public class CellsWorksheetsApiTest {
         String cellName = "B3";
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        CommentResponse response = api.cellsWorksheetsGetWorksheetComment(name, sheetName, cellName, folder);
+        CommentResponse response = api.cellsWorksheetsGetWorksheetComment(name, sheetName, cellName, folder,null);
 
         // TODO: test validations
     }
@@ -293,7 +293,7 @@ public class CellsWorksheetsApiTest {
         String sheetName = SHEET1;
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        CommentsResponse response = api.cellsWorksheetsGetWorksheetComments(name, sheetName, folder);
+        CommentsResponse response = api.cellsWorksheetsGetWorksheetComments(name, sheetName, folder,null);
 
         // TODO: test validations
     }
@@ -313,7 +313,7 @@ public class CellsWorksheetsApiTest {
         Integer mergedCellIndex = 1;
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        MergedCellResponse response = api.cellsWorksheetsGetWorksheetMergedCell(name, sheetName, mergedCellIndex, folder);
+        MergedCellResponse response = api.cellsWorksheetsGetWorksheetMergedCell(name, sheetName, mergedCellIndex, folder,null);
 
         // TODO: test validations
     }
@@ -332,7 +332,7 @@ public class CellsWorksheetsApiTest {
         String sheetName = SHEET1;
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        MergedCellsResponse response = api.cellsWorksheetsGetWorksheetMergedCells(name, sheetName, folder);
+        MergedCellsResponse response = api.cellsWorksheetsGetWorksheetMergedCells(name, sheetName, folder,null);
 
         // TODO: test validations
     }
@@ -351,7 +351,7 @@ public class CellsWorksheetsApiTest {
         String sheetName = SHEET1;
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        TextItemsResponse response = api.cellsWorksheetsGetWorksheetTextItems(name, sheetName, folder);
+        TextItemsResponse response = api.cellsWorksheetsGetWorksheetTextItems(name, sheetName, folder,null);
 
         // TODO: test validations
     }
@@ -369,7 +369,7 @@ public class CellsWorksheetsApiTest {
        String name = BOOK1;
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        WorksheetsResponse response = api.cellsWorksheetsGetWorksheets(name, folder);
+        WorksheetsResponse response = api.cellsWorksheetsGetWorksheets(name, folder,null);
 
         // TODO: test validations
     }
@@ -393,7 +393,7 @@ public class CellsWorksheetsApiTest {
         Integer lastRow = 19;
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        SaaSposeResponse response = api.cellsWorksheetsPostAutofitWorksheetColumns(name, sheetName, firstColumn, lastColumn, autoFitterOptions, firstRow, lastRow, folder);
+        SaaSposeResponse response = api.cellsWorksheetsPostAutofitWorksheetColumns(name, sheetName, firstColumn, lastColumn, autoFitterOptions, firstRow, lastRow, folder,null);
 
         // TODO: test validations
     }
@@ -417,7 +417,7 @@ public class CellsWorksheetsApiTest {
         autoFitterOptions.setAutoFitMergedCells(true);
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        SaaSposeResponse response = api.cellsWorksheetsPostAutofitWorksheetRow(name, sheetName, rowIndex, firstColumn, lastColumn, autoFitterOptions, folder);
+        SaaSposeResponse response = api.cellsWorksheetsPostAutofitWorksheetRow(name, sheetName, rowIndex, firstColumn, lastColumn, autoFitterOptions, folder,null);
 
         // TODO: test validations
     }
@@ -441,7 +441,7 @@ public class CellsWorksheetsApiTest {
         Boolean onlyAuto = true;
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        SaaSposeResponse response = api.cellsWorksheetsPostAutofitWorksheetRows(name, sheetName, autoFitterOptions, startRow, endRow, onlyAuto, folder);
+        SaaSposeResponse response = api.cellsWorksheetsPostAutofitWorksheetRows(name, sheetName, autoFitterOptions, startRow, endRow, onlyAuto, folder,null);
 
         // TODO: test validations
     }
@@ -467,7 +467,7 @@ public class CellsWorksheetsApiTest {
         CellsApiUtil.Ready(sourceFolder, sourceWorkbook);
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
 		CellsApiUtil.Ready(sourceFolder, sourceWorkbook);
-        SaaSposeResponse response = api.cellsWorksheetsPostCopyWorksheet(name, sheetName, sourceSheet, options, sourceWorkbook, sourceFolder, folder);
+        SaaSposeResponse response = api.cellsWorksheetsPostCopyWorksheet(name, sheetName, sourceSheet, options, sourceWorkbook, sourceFolder, folder,null);
 
         // TODO: test validations
     }
@@ -489,7 +489,7 @@ public class CellsWorksheetsApiTest {
         moving.setPosition("after");
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        WorksheetsResponse response = api.cellsWorksheetsPostMoveWorksheet(name, sheetName, moving, folder);
+        WorksheetsResponse response = api.cellsWorksheetsPostMoveWorksheet(name, sheetName, moving, folder,null);
 
         // TODO: test validations
     }
@@ -509,7 +509,7 @@ public class CellsWorksheetsApiTest {
         String newname = "renametest";
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        SaaSposeResponse response = api.cellsWorksheetsPostRenameWorksheet(name, sheetName, newname, folder);
+        SaaSposeResponse response = api.cellsWorksheetsPostRenameWorksheet(name, sheetName, newname, folder,null);
 
         // TODO: test validations
     }
@@ -531,7 +531,7 @@ public class CellsWorksheetsApiTest {
         sheet.setIndex(0);
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        WorksheetResponse response = api.cellsWorksheetsPostUpdateWorksheetProperty(name, sheetName, sheet, folder);
+        WorksheetResponse response = api.cellsWorksheetsPostUpdateWorksheetProperty(name, sheetName, sheet, folder,null);
 
         // TODO: test validations
     }
@@ -551,7 +551,7 @@ public class CellsWorksheetsApiTest {
         Integer value = 1;
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        SaaSposeResponse response = api.cellsWorksheetsPostUpdateWorksheetZoom(name, sheetName, value, folder);
+        SaaSposeResponse response = api.cellsWorksheetsPostUpdateWorksheetZoom(name, sheetName, value, folder,null);
 
         // TODO: test validations
     }
@@ -573,7 +573,7 @@ public class CellsWorksheetsApiTest {
         comment.setAuthor("Roy Wang");
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        SaaSposeResponse response = api.cellsWorksheetsPostWorksheetComment(name, sheetName, cellName, comment, folder);
+        SaaSposeResponse response = api.cellsWorksheetsPostWorksheetComment(name, sheetName, cellName, comment, folder,null);
 
         // TODO: test validations
     }
@@ -593,7 +593,7 @@ public class CellsWorksheetsApiTest {
         String text ="123456";
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        TextItemsResponse response = api.cellsWorksheetsPostWorksheetTextSearch(name, sheetName, text, folder);
+        TextItemsResponse response = api.cellsWorksheetsPostWorksheetTextSearch(name, sheetName, text, folder,null);
 
         // TODO: test validations
     }
@@ -615,7 +615,7 @@ public class CellsWorksheetsApiTest {
         dataSorter.setCaseSensitive( true);
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        SaaSposeResponse response = api.cellsWorksheetsPostWorksheetRangeSort(name, sheetName, cellArea, dataSorter, folder);
+        SaaSposeResponse response = api.cellsWorksheetsPostWorksheetRangeSort(name, sheetName, cellArea, dataSorter, folder,null);
 
         // TODO: test validations
     }
@@ -636,7 +636,7 @@ public class CellsWorksheetsApiTest {
         String newValue = "56678";
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        WorksheetReplaceResponse response = api.cellsWorksheetsPostWorsheetTextReplace(name, sheetName, oldValue, newValue, folder);
+        WorksheetReplaceResponse response = api.cellsWorksheetsPostWorsheetTextReplace(name, sheetName, oldValue, newValue, folder,null);
 
         // TODO: test validations
     }
@@ -657,7 +657,7 @@ public class CellsWorksheetsApiTest {
         String sheettype ="VB";
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        WorksheetsResponse response = api.cellsWorksheetsPutAddNewWorksheet(name, sheetName, position, sheettype, folder);
+        WorksheetsResponse response = api.cellsWorksheetsPutAddNewWorksheet(name, sheetName, position, sheettype, folder,null);
 
         // TODO: test validations
     }
@@ -677,7 +677,7 @@ public class CellsWorksheetsApiTest {
         Boolean isVisible = true;
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        WorksheetResponse response = api.cellsWorksheetsPutChangeVisibilityWorksheet(name, sheetName, isVisible, folder);
+        WorksheetResponse response = api.cellsWorksheetsPutChangeVisibilityWorksheet(name, sheetName, isVisible, folder,null);
 
         // TODO: test validations
     }
@@ -699,7 +699,7 @@ public class CellsWorksheetsApiTest {
         protectParameter.setPassword("123456");
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        WorksheetResponse response = api.cellsWorksheetsPutProtectWorksheet(name, sheetName, protectParameter, folder);
+        WorksheetResponse response = api.cellsWorksheetsPutProtectWorksheet(name, sheetName, protectParameter, folder,null);
 
         // TODO: test validations
     }
@@ -739,7 +739,7 @@ public class CellsWorksheetsApiTest {
         
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        SaaSposeResponse response = api.cellsWorksheetsPutWorksheetBackground(name, sheetName, png, folder);
+        SaaSposeResponse response = api.cellsWorksheetsPutWorksheetBackground(name, sheetName, png, folder,null);
 
         // TODO: test validations
     }
@@ -761,7 +761,7 @@ public class CellsWorksheetsApiTest {
         comment.setAuthor ( "roy");
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        CommentResponse response = api.cellsWorksheetsPutWorksheetComment(name, sheetName, cellName, comment, folder);
+        CommentResponse response = api.cellsWorksheetsPutWorksheetComment(name, sheetName, cellName, comment, folder,null);
 
         // TODO: test validations
     }
@@ -784,7 +784,7 @@ public class CellsWorksheetsApiTest {
         Integer freezedColumns = 5;
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        SaaSposeResponse response = api.cellsWorksheetsPutWorksheetFreezePanes(name, sheetName, row, column, freezedRows, freezedColumns, folder);
+        SaaSposeResponse response = api.cellsWorksheetsPutWorksheetFreezePanes(name, sheetName, row, column, freezedRows, freezedColumns, folder,null);
 
         // TODO: test validations
     }

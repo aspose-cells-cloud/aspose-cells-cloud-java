@@ -5,7 +5,7 @@
   <artifactId>aspose-cells-cloud</artifactId>
   <packaging>jar</packaging>
   <name>aspose-cells-cloud</name>
-  <version>18.8</version>
+  <version>18.9</version>
   <url>https://github.com/swagger-api/swagger-codegen</url>
   <description>Swagger Java</description>
   <scm>
@@ -50,7 +50,6 @@
           <argLine>-Xms512m -Xmx1500m</argLine>
           <parallel>methods</parallel>
           <forkMode>pertest</forkMode>
-		  <skip>true</skip>
         </configuration>
       </plugin>
       <plugin>
