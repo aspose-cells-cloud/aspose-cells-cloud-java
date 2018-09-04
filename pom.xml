@@ -16,14 +16,13 @@
   <prerequisites>
     <maven>2.2.0</maven>
   </prerequisites>
-
   <licenses>
     <license>
       <name>Unlicense</name>
       <url>http://unlicense.org</url>
       <distribution>repo</distribution>
     </license>
-  </licenses>
+  </licenses> 
 
   <developers>
     <developer>
@@ -35,6 +34,7 @@
   </developers>
 
   <build>
+   <defaultGoal>compile</defaultGoal>
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
