@@ -6,7 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**cellsPicturesDeleteWorksheetPicture**](CellsPicturesApi.md#cellsPicturesDeleteWorksheetPicture) | **DELETE** /cells/{name}/worksheets/{sheetName}/pictures/{pictureIndex} | Delete a picture object in worksheet
 [**cellsPicturesDeleteWorksheetPictures**](CellsPicturesApi.md#cellsPicturesDeleteWorksheetPictures) | **DELETE** /cells/{name}/worksheets/{sheetName}/pictures | Delete all pictures in worksheet.
-[**cellsPicturesGetWorksheetPicture**](CellsPicturesApi.md#cellsPicturesGetWorksheetPicture) | **GET** /cells/{name}/worksheets/{sheetName}/pictures/{pictureNumber} | GRead worksheet picture by number.
+[**cellsPicturesGetWorksheetPicture**](CellsPicturesApi.md#cellsPicturesGetWorksheetPicture) | **GET** /cells/{name}/worksheets/{sheetName}/pictures/{pictureIndex} | GRead worksheet picture by number.
 [**cellsPicturesGetWorksheetPictures**](CellsPicturesApi.md#cellsPicturesGetWorksheetPictures) | **GET** /cells/{name}/worksheets/{sheetName}/pictures | Read worksheet pictures.
 [**cellsPicturesPostWorksheetPicture**](CellsPicturesApi.md#cellsPicturesPostWorksheetPicture) | **POST** /cells/{name}/worksheets/{sheetName}/pictures/{pictureIndex} | Update worksheet picture by index.
 [**cellsPicturesPutWorksheetAddPicture**](CellsPicturesApi.md#cellsPicturesPutWorksheetAddPicture) | **PUT** /cells/{name}/worksheets/{sheetName}/pictures | Add a new worksheet picture.
@@ -114,7 +114,7 @@ No authorization required
 
 <a name="cellsPicturesGetWorksheetPicture"></a>
 # **cellsPicturesGetWorksheetPicture**
-> File cellsPicturesGetWorksheetPicture(name, sheetName, pictureNumber, folder, storage)
+> File cellsPicturesGetWorksheetPicture(name, sheetName, pictureIndex, format, folder, storage)
 
 GRead worksheet picture by number.
 
@@ -128,11 +128,12 @@ GRead worksheet picture by number.
 CellsPicturesApi apiInstance = new CellsPicturesApi();
 String name = "name_example"; // String | Document name.
 String sheetName = "sheetName_example"; // String | Worksheet name.
-Integer pictureNumber = 56; // Integer | The picture number.
+Integer pictureIndex = 56; // Integer | The picture index.
+String format = "format_example"; // String | The exported object format.
 String folder = "folder_example"; // String | The document folder.
 String storage = "storage_example"; // String | storage name.
 try {
-    File result = apiInstance.cellsPicturesGetWorksheetPicture(name, sheetName, pictureNumber, folder, storage);
+    File result = apiInstance.cellsPicturesGetWorksheetPicture(name, sheetName, pictureIndex, format, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsPicturesApi#cellsPicturesGetWorksheetPicture");
@@ -146,7 +147,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **String**| Document name. |
  **sheetName** | **String**| Worksheet name. |
- **pictureNumber** | **Integer**| The picture number. |
+ **pictureIndex** | **Integer**| The picture index. |
+ **format** | **String**| The exported object format. | [optional]
  **folder** | **String**| The document folder. | [optional]
  **storage** | **String**| storage name. | [optional]
 

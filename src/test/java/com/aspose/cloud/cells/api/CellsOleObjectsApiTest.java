@@ -17,11 +17,14 @@ import com.aspose.cloud.cells.client.ApiException;
 import com.aspose.cloud.cells.client.Configuration;
 
 
+
 import java.io.File;
+
 import com.aspose.cloud.cells.model.OleObject;
 import com.aspose.cloud.cells.model.OleObjectResponse;
 import com.aspose.cloud.cells.model.OleObjectsResponse;
 import com.aspose.cloud.cells.model.SaaSposeResponse;
+
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -30,6 +33,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import junit.framework.Assert;
 
 /**
  * API tests for CellsOleObjectsApi
@@ -73,7 +78,7 @@ public class CellsOleObjectsApiTest {
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
         SaaSposeResponse response = api.cellsOleObjectsDeleteWorksheetOleObject(name, sheetName, oleObjectIndex, folder,null);
-
+        Assert.assertEquals("cellsOleObjectsDeleteWorksheetOleObjectTest is OK.", "OK", response.getStatus());
         // TODO: test validations
     }
     
@@ -92,7 +97,7 @@ public class CellsOleObjectsApiTest {
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
         SaaSposeResponse response = api.cellsOleObjectsDeleteWorksheetOleObjects(name, sheetName, folder,null);
-
+        Assert.assertEquals("cellsOleObjectsDeleteWorksheetOleObjectsTest is OK.", "OK", response.getStatus());
         // TODO: test validations
     }
     
@@ -109,9 +114,10 @@ public class CellsOleObjectsApiTest {
        String name = BOOK1;
         String sheetName = SHEET6;
         Integer objectNumber = 0;
+        String format = null;
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        File response = api.cellsOleObjectsGetWorksheetOleObject(name, sheetName, objectNumber, folder,null);
+        File response = api.cellsOleObjectsGetWorksheetOleObject(name, sheetName, objectNumber,format, folder,null);
 
         // TODO: test validations
     }
@@ -131,7 +137,7 @@ public class CellsOleObjectsApiTest {
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
         OleObjectsResponse response = api.cellsOleObjectsGetWorksheetOleObjects(name, sheetName, folder,null);
-
+        Assert.assertEquals("cellsOleObjectsGetWorksheetOleObjectsTest is OK.", "OK", response.getStatus());
         // TODO: test validations
     }
     
@@ -156,7 +162,7 @@ public class CellsOleObjectsApiTest {
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
         SaaSposeResponse response = api.cellsOleObjectsPostUpdateWorksheetOleObject(name, sheetName, oleObjectIndex, ole, folder,null);
-
+        Assert.assertEquals("cellsOleObjectsPostUpdateWorksheetOleObjectTest is OK.", "OK", response.getStatus());
         // TODO: test validations
     }
     
@@ -182,7 +188,7 @@ public class CellsOleObjectsApiTest {
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
         OleObjectResponse response = api.cellsOleObjectsPutWorksheetOleObject(name, sheetName, oleObject, upperLeftRow, upperLeftColumn, height, width, oleFile, imageFile, folder,null);
-
+        Assert.assertEquals("cellsOleObjectsPutWorksheetOleObjectTest is OK.", "OK", response.getStatus());
         // TODO: test validations
     }
     

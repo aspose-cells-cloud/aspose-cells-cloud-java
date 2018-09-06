@@ -29,7 +29,7 @@ import java.util.List;
 /**
  * PivotField
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-09-04T14:16:31.808+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-09-05T14:42:39.608+08:00")
 public class PivotField {
   @SerializedName("PivotItems")
   private List<PivotItem> pivotItems = null;

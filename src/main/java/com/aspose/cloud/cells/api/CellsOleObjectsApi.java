@@ -369,6 +369,7 @@ public class CellsOleObjectsApi {
      * @param name Document name. (required)
      * @param sheetName Worksheet name. (required)
      * @param objectNumber The object number. (required)
+     * @param format The exported object format. (optional)
      * @param folder The document folder. (optional)
      * @param storage storage name. (optional)
      * @param progressListener Progress listener
@@ -376,7 +377,7 @@ public class CellsOleObjectsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call cellsOleObjectsGetWorksheetOleObjectCall(String name, String sheetName, Integer objectNumber, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call cellsOleObjectsGetWorksheetOleObjectCall(String name, String sheetName, Integer objectNumber, String format, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -386,6 +387,8 @@ public class CellsOleObjectsApi {
             .replaceAll("\\{" + "objectNumber" + "\\}", apiClient.escapeString(objectNumber.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        if (format != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "format", format));
         if (folder != null)
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "folder", folder));
         if (storage != null)
@@ -424,7 +427,7 @@ public class CellsOleObjectsApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call cellsOleObjectsGetWorksheetOleObjectValidateBeforeCall(String name, String sheetName, Integer objectNumber, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call cellsOleObjectsGetWorksheetOleObjectValidateBeforeCall(String name, String sheetName, Integer objectNumber, String format, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'name' is set
         if (name == null) {
@@ -442,7 +445,7 @@ public class CellsOleObjectsApi {
         }
         
         
-        com.squareup.okhttp.Call call = cellsOleObjectsGetWorksheetOleObjectCall(name, sheetName, objectNumber, folder, storage, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsOleObjectsGetWorksheetOleObjectCall(name, sheetName, objectNumber, format, folder, storage, progressListener, progressRequestListener);
         return call;
 
         
@@ -457,13 +460,14 @@ public class CellsOleObjectsApi {
      * @param name Document name. (required)
      * @param sheetName Worksheet name. (required)
      * @param objectNumber The object number. (required)
+     * @param format The exported object format. (optional)
      * @param folder The document folder. (optional)
      * @param storage storage name. (optional)
      * @return File
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public File cellsOleObjectsGetWorksheetOleObject(String name, String sheetName, Integer objectNumber, String folder, String storage) throws ApiException {
-        ApiResponse<File> resp = cellsOleObjectsGetWorksheetOleObjectWithHttpInfo(name, sheetName, objectNumber, folder, storage);
+    public File cellsOleObjectsGetWorksheetOleObject(String name, String sheetName, Integer objectNumber, String format, String folder, String storage) throws ApiException {
+        ApiResponse<File> resp = cellsOleObjectsGetWorksheetOleObjectWithHttpInfo(name, sheetName, objectNumber, format, folder, storage);
         return resp.getData();
     }
 
@@ -473,13 +477,14 @@ public class CellsOleObjectsApi {
      * @param name Document name. (required)
      * @param sheetName Worksheet name. (required)
      * @param objectNumber The object number. (required)
+     * @param format The exported object format. (optional)
      * @param folder The document folder. (optional)
      * @param storage storage name. (optional)
      * @return ApiResponse&lt;File&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<File> cellsOleObjectsGetWorksheetOleObjectWithHttpInfo(String name, String sheetName, Integer objectNumber, String folder, String storage) throws ApiException {
-        com.squareup.okhttp.Call call = cellsOleObjectsGetWorksheetOleObjectValidateBeforeCall(name, sheetName, objectNumber, folder, storage, null, null);
+    public ApiResponse<File> cellsOleObjectsGetWorksheetOleObjectWithHttpInfo(String name, String sheetName, Integer objectNumber, String format, String folder, String storage) throws ApiException {
+        com.squareup.okhttp.Call call = cellsOleObjectsGetWorksheetOleObjectValidateBeforeCall(name, sheetName, objectNumber, format, folder, storage, null, null);
         Type localVarReturnType = new TypeToken<File>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -490,13 +495,14 @@ public class CellsOleObjectsApi {
      * @param name Document name. (required)
      * @param sheetName Worksheet name. (required)
      * @param objectNumber The object number. (required)
+     * @param format The exported object format. (optional)
      * @param folder The document folder. (optional)
      * @param storage storage name. (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call cellsOleObjectsGetWorksheetOleObjectAsync(String name, String sheetName, Integer objectNumber, String folder, String storage, final ApiCallback<File> callback) throws ApiException {
+    public com.squareup.okhttp.Call cellsOleObjectsGetWorksheetOleObjectAsync(String name, String sheetName, Integer objectNumber, String format, String folder, String storage, final ApiCallback<File> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -517,7 +523,7 @@ public class CellsOleObjectsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = cellsOleObjectsGetWorksheetOleObjectValidateBeforeCall(name, sheetName, objectNumber, folder, storage, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsOleObjectsGetWorksheetOleObjectValidateBeforeCall(name, sheetName, objectNumber, format, folder, storage, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<File>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

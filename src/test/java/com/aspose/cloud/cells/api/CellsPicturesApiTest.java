@@ -17,11 +17,15 @@ import com.aspose.cloud.cells.client.ApiException;
 import com.aspose.cloud.cells.client.Configuration;
 
 
+
+
 import java.io.File;
+
 import com.aspose.cloud.cells.model.Picture;
 import com.aspose.cloud.cells.model.PictureResponse;
 import com.aspose.cloud.cells.model.PicturesResponse;
 import com.aspose.cloud.cells.model.SaaSposeResponse;
+
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -30,6 +34,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import junit.framework.Assert;
 
 /**
  * API tests for CellsPicturesApi
@@ -72,7 +78,7 @@ public class CellsPicturesApiTest {
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
         SaaSposeResponse response = api.cellsPicturesDeleteWorksheetPictures(name, sheetName, folder,null);
-
+        Assert.assertEquals("cellsOleObjectsDeleteWorksheetOleObjectTest is OK.", "OK", response.getStatus());
         // TODO: test validations
     }
     
@@ -92,7 +98,7 @@ public class CellsPicturesApiTest {
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
         SaaSposeResponse response = api.cellsPicturesDeleteWorksheetPicture(name, sheetName, pictureIndex, folder,null);
-
+        Assert.assertEquals("cellsPicturesDeleteWorksheetPictureTest is OK.", "OK", response.getStatus());
         // TODO: test validations
     }
     
@@ -108,10 +114,11 @@ public class CellsPicturesApiTest {
     public void cellsPicturesGetWorksheetPictureTest() throws ApiException {
         String name = BOOK1;
         String sheetName = SHEET6;
+        String format = null;
         Integer pictureNumber = 0;
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        File response = api.cellsPicturesGetWorksheetPicture(name, sheetName, pictureNumber, folder,null);
+        File response = api.cellsPicturesGetWorksheetPicture(name, sheetName, pictureNumber,format, folder,null);
 
         // TODO: test validations
     }
@@ -131,7 +138,7 @@ public class CellsPicturesApiTest {
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
         PicturesResponse response = api.cellsPicturesGetWorksheetPictures(name, sheetName, folder,null);
-
+        Assert.assertEquals("cellsPicturesGetWorksheetPicturesTest is OK.", "OK", response.getStatus());
         // TODO: test validations
     }
     
@@ -153,7 +160,7 @@ public class CellsPicturesApiTest {
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
         PictureResponse response = api.cellsPicturesPostWorksheetPicture(name, sheetName, pictureIndex, picture, folder,null);
-
+        Assert.assertEquals("cellsPicturesPostWorkSheetPictureTest is OK.", "OK", response.getStatus());
         // TODO: test validations
     }
     
@@ -178,7 +185,7 @@ public class CellsPicturesApiTest {
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
         PicturesResponse response = api.cellsPicturesPutWorksheetAddPicture(name, sheetName, picture, upperLeftRow, upperLeftColumn, lowerRightRow, lowerRightColumn, picturePath, folder,null);
-
+        Assert.assertEquals("cellsPicturesPutWorksheetAddPictureTest is OK.", "OK", response.getStatus());
         // TODO: test validations
     }
     

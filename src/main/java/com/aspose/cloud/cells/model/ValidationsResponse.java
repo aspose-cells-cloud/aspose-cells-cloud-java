@@ -28,7 +28,7 @@ import java.io.IOException;
 /**
  * ValidationsResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-09-04T14:16:31.808+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-09-05T14:42:39.608+08:00")
 public class ValidationsResponse extends SaaSposeResponse {
   @SerializedName("Validations")
   private Validations validations = null;

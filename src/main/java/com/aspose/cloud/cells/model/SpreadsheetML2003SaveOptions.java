@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * SpreadsheetML2003SaveOptions
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-09-04T14:16:31.808+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-09-05T14:42:39.608+08:00")
 public class SpreadsheetML2003SaveOptions extends SaveOptions {
   @SerializedName("ExportColumnIndexOfCell")
   private Boolean exportColumnIndexOfCell = null;

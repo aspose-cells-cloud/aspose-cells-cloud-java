@@ -114,7 +114,7 @@ No authorization required
 
 <a name="cellsOleObjectsGetWorksheetOleObject"></a>
 # **cellsOleObjectsGetWorksheetOleObject**
-> File cellsOleObjectsGetWorksheetOleObject(name, sheetName, objectNumber, folder, storage)
+> File cellsOleObjectsGetWorksheetOleObject(name, sheetName, objectNumber, format, folder, storage)
 
 Get OLE object info.
 
@@ -129,10 +129,11 @@ CellsOleObjectsApi apiInstance = new CellsOleObjectsApi();
 String name = "name_example"; // String | Document name.
 String sheetName = "sheetName_example"; // String | Worksheet name.
 Integer objectNumber = 56; // Integer | The object number.
+String format = "format_example"; // String | The exported object format.
 String folder = "folder_example"; // String | The document folder.
 String storage = "storage_example"; // String | storage name.
 try {
-    File result = apiInstance.cellsOleObjectsGetWorksheetOleObject(name, sheetName, objectNumber, folder, storage);
+    File result = apiInstance.cellsOleObjectsGetWorksheetOleObject(name, sheetName, objectNumber, format, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsOleObjectsApi#cellsOleObjectsGetWorksheetOleObject");
@@ -147,6 +148,7 @@ Name | Type | Description  | Notes
  **name** | **String**| Document name. |
  **sheetName** | **String**| Worksheet name. |
  **objectNumber** | **Integer**| The object number. |
+ **format** | **String**| The exported object format. | [optional]
  **folder** | **String**| The document folder. | [optional]
  **storage** | **String**| storage name. | [optional]
 

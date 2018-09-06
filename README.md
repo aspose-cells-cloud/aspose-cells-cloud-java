@@ -28,7 +28,7 @@ Add this dependency to your project's POM:
 <dependency>
     <groupId>com.aspose</groupId>
     <artifactId>aspose-cells-cloud</artifactId>
-    <version>18.9</version>
+    <version>18.9.1</version>
     <scope>compile</scope>
 </dependency>
 ```
@@ -38,7 +38,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "com.aspose:aspose-cells-cloud:18.9"
+compile "com.aspose:aspose-cells-cloud:18.9.1"
 ```
 
 ### Others
@@ -49,7 +49,7 @@ At first generate the JAR by executing:
 
 Then manually install the following JARs:
 
-* target/aspose-cells-cloud-18.9.jar
+* target/aspose-cells-cloud-18.9.1.jar
 * target/lib/*.jar
 
 ## Getting Started
