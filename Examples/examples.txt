@@ -1,1 +1,0 @@
-This folder contains Examples for Asppose.Cells Cloud product family examples
