@@ -1,25 +1,19 @@
 package com.aspose.cloud.cells.api;
 
+import java.io.File;
+
 import com.aspose.cloud.cells.client.ApiClient;
 import com.aspose.cloud.cells.client.ApiException;
 import com.aspose.cloud.cells.model.AccessTokenResponse;
-import com.aspose.cloud.cells.model.CellsObjectOperateTaskParameter;
-import com.aspose.cloud.cells.model.FileSource;
-import com.aspose.cloud.cells.model.OperateObject;
-import com.aspose.cloud.cells.model.OperateObjectPosition;
-import com.aspose.cloud.cells.model.ResultDestination;
-import com.aspose.cloud.cells.model.SaveResultTaskParameter;
-import com.aspose.cloud.cells.model.TaskData;
-import com.aspose.cloud.cells.model.TaskDescription;
-import com.aspose.cloud.cells.model.WorkbookSettings;
-import com.aspose.cloud.cells.model.WorkbookSettingsOperateParameter;
+import com.aspose.storage.api.*;
+
 
 public class CellsApiUtil {
 	private static String accesstoken;
 	private static String grantType = "client_credentials";
-	private static String clientId = "xxxxx-xxxx-xxxx-xxxx-xxxxxxx";
-	private static String clientSecret = "xxxxxxxxxxxxxxxxxxx";
-	private static String sourceFolder ="xxxxxxxxxxxxxxxxxxx";
+	private static String clientId = "your sid";
+	private static String clientSecret = "your key";
+	private static String sourceFolder ="test data folder";
 	public static String GetSourceFolder() {
 		return sourceFolder;
 	}
@@ -53,57 +47,21 @@ public class CellsApiUtil {
 		}
 		return accesstoken;
 	}
-
+	public static void Upload( String filename) {		
+		StorageApi storageHelper = new StorageApi(clientSecret,clientId);
+		File file = new File(sourceFolder + filename);
+		storageHelper.PutCreate( filename, null, null, file);		
+	}
 	public static ApiClient Ready(String folder, String filename) {
-		TaskData taskdata = new TaskData();
-		TaskDescription task1 = new TaskDescription();
-		task1.setTaskType("CellsObjectOperate");
-		CellsObjectOperateTaskParameter param1 = new CellsObjectOperateTaskParameter();
-		OperateObject optObject = new OperateObject();
-		optObject.setOperateObjectType("WorkbookSettings");
-		OperateObjectPosition p = new OperateObjectPosition();
-		FileSource fileSource = new FileSource();
-		fileSource.setFilePath(filename);
-		fileSource.setFileSourceType("CloudFileSystem");
-		p.setWorkbook(fileSource);
-		optObject.setPosition(p);
-		param1.setOperateObject(optObject);
-		FileSource fileDestinatio = new FileSource();
-		fileDestinatio.setFilePath(filename);
-		fileDestinatio.setFileSourceType("InMemoryFiles");
-		param1.setDestinationWorkbook(fileDestinatio);
-		WorkbookSettingsOperateParameter oparam1 = new WorkbookSettingsOperateParameter();
-		WorkbookSettings setting = new WorkbookSettings();
-		setting.setAutoCompressPictures(true);
-		oparam1.setWorkbookSettings(setting);
-		oparam1.setOperateType("Update");
-		param1.setOperateParameter(oparam1);
-		task1.setTaskParameter(param1);
-		taskdata.addTasksItem(task1);
-
-		TaskDescription task2 = new TaskDescription();
-		task2.setTaskType("SaveResult");
-		SaveResultTaskParameter param2 = new SaveResultTaskParameter();
-		param2.setResultSource("InMemoryFiles");
-		ResultDestination result = new ResultDestination();
-		result.setDestinationType("CloudFileSystem");
-		result.setInputFile(filename);
-		result.setOutputFile(folder + "/" + filename);
-		param2.setResultDestination(result);
-		task2.setTaskParameter(param2);
-		taskdata.addTasksItem(task2);
-
+		StorageApi storageHelper = new StorageApi(clientSecret,clientId);
+		File file = new File(sourceFolder + filename);
+		storageHelper.PutCreate(folder + "/" + filename, null, null, file);
+		
 		CellsTaskApi apiTask = new CellsTaskApi();
 		ApiClient apiClient = new ApiClient();
 		apiClient.setBasePath("https://api.aspose.cloud/v1.1");
 		apiClient.addDefaultHeader("Authorization", "Bearer " + GetAccessToken());
 		apiTask.setApiClient(apiClient);
-		try {
-			apiTask.cellsTaskPostRunTask(taskdata);
-		} catch (ApiException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 		return apiClient;
 	}
 }

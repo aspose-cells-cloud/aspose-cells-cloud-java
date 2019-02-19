@@ -581,7 +581,25 @@ public class CellsApiTest {
 
         // TODO: test validations
     }
-    
+    /**
+     * Get htmlstring value into cell
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void cellsGetCellHtmlStringTest() throws ApiException {
+        String name = BOOK1;
+        String sheetName = SHEET1;
+        String cellName = CellName;
+        String folder = TEMPFOLDER;
+        api.setApiClient( CellsApiUtil.Ready(folder, name));
+        Object response = api.cellsGetCellHtmlString(name, sheetName, cellName, folder,null);
+
+        // TODO: test validations
+    }    
     /**
      * Set htmlstring value into cell
      *

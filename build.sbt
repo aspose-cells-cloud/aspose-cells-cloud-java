@@ -2,7 +2,7 @@ lazy val root = (project in file(".")).
   settings(
     organization := "com.aspose",
     name := "aspose-cells-cloud",
-    version := "18.9",
+    version := "19.2",
     scalaVersion := "2.11.4",
     scalacOptions ++= Seq("-feature"),
     javacOptions in compile ++= Seq("-Xlint:deprecation"),

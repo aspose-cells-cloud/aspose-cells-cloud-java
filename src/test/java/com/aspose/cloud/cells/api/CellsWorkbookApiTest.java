@@ -592,7 +592,8 @@ public class CellsWorkbookApiTest {
         String templateFile =  BOOK1;
         String dataFile ="ReportData.xml";
         String folder = TEMPFOLDER;
-		api.setApiClient( CellsApiUtil.Ready(folder, name));
+        CellsApiUtil.Upload(dataFile);
+		api.setApiClient( CellsApiUtil.Ready(folder, templateFile));
         WorkbookResponse response = api.cellsWorkbookPutWorkbookCreate(name,   templateFile,  dataFile, folder,null);
 
         // TODO: test validations

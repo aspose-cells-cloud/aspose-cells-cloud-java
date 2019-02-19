@@ -5,7 +5,7 @@
   <artifactId>aspose-cells-cloud</artifactId>
   <packaging>jar</packaging>
   <name>aspose-cells-cloud</name>
-  <version>18.9.1</version>
+  <version>19.2</version>
   <url>https://github.com/swagger-api/swagger-codegen</url>
   <description>Swagger Java</description>
   <scm>
@@ -16,14 +16,21 @@
   <prerequisites>
     <maven>2.2.0</maven>
   </prerequisites>
+
   <licenses>
     <license>
       <name>Unlicense</name>
       <url>http://unlicense.org</url>
       <distribution>repo</distribution>
     </license>
-  </licenses> 
-
+  </licenses>
+  <repositories>
+		<repository>
+			<id>AsposeJavaAPI</id>
+			<name>Aspose Java API</name>
+			<url>https://repository.aspose.cloud/repo/</url>
+		</repository>
+  </repositories>	
   <developers>
     <developer>
       <name>Roy.Wang</name>
@@ -34,7 +41,6 @@
   </developers>
 
   <build>
-   <defaultGoal>compile</defaultGoal>
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -194,6 +200,12 @@
       <artifactId>joda-time</artifactId>
       <version>${jodatime-version}</version>
     </dependency>
+	<dependency>
+		<groupId>com.aspose</groupId>
+		<artifactId>aspose-cloud-storage</artifactId>
+		<version>1.0.2</version>
+	</dependency>
+
     <!-- test dependencies -->
     <dependency>
       <groupId>junit</groupId>
