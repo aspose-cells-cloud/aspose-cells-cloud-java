@@ -1,6 +1,10 @@
 package com.aspose.cloud.cells.api;
 
+import java.io.ByteArrayOutputStream;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 
 import com.aspose.cloud.cells.client.ApiClient;
 import com.aspose.cloud.cells.client.ApiException;
@@ -13,7 +17,7 @@ public class CellsApiUtil {
 	private static String grantType = "client_credentials";
 	private static String clientId = "your sid";
 	private static String clientSecret = "your key";
-	private static String sourceFolder ="test data folder";
+	private static String sourceFolder ="test data foler";
 	public static String GetSourceFolder() {
 		return sourceFolder;
 	}
@@ -53,6 +57,7 @@ public class CellsApiUtil {
 		storageHelper.PutCreate( filename, null, null, file);		
 	}
 	public static ApiClient Ready(String folder, String filename) {
+		
 		StorageApi storageHelper = new StorageApi(clientSecret,clientId);
 		File file = new File(sourceFolder + filename);
 		storageHelper.PutCreate(folder + "/" + filename, null, null, file);
@@ -64,4 +69,25 @@ public class CellsApiUtil {
 		apiTask.setApiClient(apiClient);
 		return apiClient;
 	}
+	public static byte[] GetFileData(String filename)	{		
+        try {  
+            File file = new File(GetSourceFolder() + filename);  
+            FileInputStream fis = new FileInputStream(file);  
+            ByteArrayOutputStream bos = new ByteArrayOutputStream(1000);  
+            byte[] b = new byte[1000];  
+            int n;  
+            while ((n = fis.read(b)) != -1) {  
+                bos.write(b, 0, n);  
+            }  
+            fis.close();  
+            bos.close();  
+            return bos.toByteArray();  
+        } catch (FileNotFoundException e) {  
+            e.printStackTrace();  
+        } catch (IOException e) {  
+            e.printStackTrace();  
+        }
+		return null;  
+	}
+	
 }

@@ -546,13 +546,13 @@ public class CellsWorkbookApiTest {
      */
     @Test
     public void cellsWorkbookPutConvertWorkbookTest() throws ApiException {
-        String format ="xlsx";
+        String format ="pdf";
         String password = null;
         String outPath = null;
         String name = BOOK1;
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        File response = api.cellsWorkbookPutConvertWorkbook(format, password, outPath);
+        File response = api.cellsWorkbookPutConvertWorkbook(CellsApiUtil.GetFileData(name),format, password, outPath);
 
         // TODO: test validations
     }
