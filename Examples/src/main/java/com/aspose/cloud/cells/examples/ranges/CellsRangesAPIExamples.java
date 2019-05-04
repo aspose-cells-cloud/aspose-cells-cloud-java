@@ -2,7 +2,7 @@ package com.aspose.cloud.cells.examples.ranges;
 
 import com.aspose.cloud.cells.api.CellsRangesApi;
 import com.aspose.cloud.cells.client.ApiException;
-import com.aspose.cloud.cells.examples.Utils;
+import com.aspose.cloud.cells.examples.Base;
 import com.aspose.cloud.cells.model.Color;
 import com.aspose.cloud.cells.model.Font;
 import com.aspose.cloud.cells.model.PasteOptions;
@@ -14,31 +14,12 @@ import com.aspose.cloud.cells.model.RangeValueResponse;
 import com.aspose.cloud.cells.model.SaaSposeResponse;
 import com.aspose.cloud.cells.model.Style;
 
-/**
- * API tests for CellsRangesApi
- */
-
-public class CellsRangesAPIExamples {
+public class CellsRangesAPIExamples extends Base{
 
 	private final CellsRangesApi api = new CellsRangesApi();
 
-	private String BOOK1 = "Book1.xlsx";
-	private String MYDOC = "myDocument.xlsx";
-	private String PivTestFile = "TestCase.xlsx";
-	private String TEMPFOLDER = "Temp";
-	private String SHEET1 = "Sheet1";
-	private String SHEET2 = "Sheet2";
-	private String SHEET3 = "Sheet3";
-	private String SHEET4 = "Sheet4";
-	private String SHEET5 = "Sheet5";
-	private String SHEET6 = "Sheet6";
-	private String SHEET7 = "Sheet7";
-	private String SHEET8 = "Sheet8";
-	private String CellName = "A1";
-	private String RANGE = "A1:C10";
-	private String CELLAREA = "A1:C10";
-
-	public void cellsRangesGetWorksheetCellsRangeValueTest() throws ApiException {
+	
+	public void cellsRangesGetWorksheetCellsRangeValueExample() throws ApiException {
 		String name = BOOK1;
 		String sheetName = SHEET1;
 		String folder = TEMPFOLDER;
@@ -46,21 +27,24 @@ public class CellsRangesAPIExamples {
 		Integer firstColumn = 0;
 		Integer rowCount = 3;
 		Integer columnCount = 2;
-		api.setApiClient(Utils.Ready(folder, name));
+		api.setApiClient(Base.Ready(folder, name));
 
 		RangeValueResponse response = api.cellsRangesGetWorksheetCellsRangeValue(name, sheetName, null, firstRow,
 				firstColumn, rowCount, columnCount, folder, null);
+		System.out.print(response);
 
 		String rangeName = "A1:B3";
 		response = api.cellsRangesGetWorksheetCellsRangeValue(name, sheetName, rangeName, null, null, null, null,
 				folder, null);
+		System.out.print(response);
 
 		rangeName = "Name_2";
 		response = api.cellsRangesGetWorksheetCellsRangeValue(name, sheetName, rangeName, null, null, null, null,
 				folder, null);
+		System.out.print(response);
 	}
 
-	public void cellsRangesPostWorksheetCellsRangeColumnWidthTest() throws ApiException {
+	public void cellsRangesPostWorksheetCellsRangeColumnWidthExample() throws ApiException {
 		String name = BOOK1;
 		String sheetName = SHEET1;
 		Double value = 10.01;
@@ -71,7 +55,7 @@ public class CellsRangesAPIExamples {
 		range.setRowCount(10);
 		range.setColumnWidth(10.01);
 		String folder = TEMPFOLDER;
-		api.setApiClient(Utils.Ready(folder, name));
+		api.setApiClient(Base.Ready(folder, name));
 		SaaSposeResponse response = api.cellsRangesPostWorksheetCellsRangeColumnWidth(name, sheetName, value, range,
 				folder, null);
 
@@ -79,7 +63,7 @@ public class CellsRangesAPIExamples {
 
 	}
 
-	public void cellsRangesPostWorksheetCellsRangeMergeTest() throws ApiException {
+	public void cellsRangesPostWorksheetCellsRangeMergeExample() throws ApiException {
 		String name = BOOK1;
 		String sheetName = SHEET1;
 		Range range = new Range();
@@ -88,14 +72,14 @@ public class CellsRangesAPIExamples {
 		range.setColumnCount(1);
 		range.setRowCount(10);
 		String folder = TEMPFOLDER;
-		api.setApiClient(Utils.Ready(folder, name));
+		api.setApiClient(Base.Ready(folder, name));
 		SaaSposeResponse response = api.cellsRangesPostWorksheetCellsRangeMerge(name, sheetName, range, folder, null);
 
 		System.out.println(response.getCode());
 
 	}
 
-	public void cellsRangesPostWorksheetCellsRangeMoveToTest() throws ApiException {
+	public void cellsRangesPostWorksheetCellsRangeMoveToExample() throws ApiException {
 		String name = BOOK1;
 		String sheetName = SHEET1;
 		Integer destRow = 1;
@@ -106,7 +90,7 @@ public class CellsRangesAPIExamples {
 		range.setColumnCount(1);
 		range.setRowCount(10);
 		String folder = TEMPFOLDER;
-		api.setApiClient(Utils.Ready(folder, name));
+		api.setApiClient(Base.Ready(folder, name));
 		SaaSposeResponse response = api.cellsRangesPostWorksheetCellsRangeMoveTo(name, sheetName, destRow, destColumn,
 				range, folder, null);
 
@@ -114,7 +98,7 @@ public class CellsRangesAPIExamples {
 
 	}
 
-	public void cellsRangesPostWorksheetCellsRangeOutlineBorderTest() throws ApiException {
+	public void cellsRangesPostWorksheetCellsRangeOutlineBorderExample() throws ApiException {
 		String name = BOOK1;
 		String sheetName = SHEET1;
 		RangeSetOutlineBorderRequest rangeOperate = new RangeSetOutlineBorderRequest();
@@ -130,7 +114,7 @@ public class CellsRangesAPIExamples {
 		range.setRowCount(10);
 		rangeOperate.setRange(range);
 		String folder = TEMPFOLDER;
-		api.setApiClient(Utils.Ready(folder, name));
+		api.setApiClient(Base.Ready(folder, name));
 		SaaSposeResponse response = api.cellsRangesPostWorksheetCellsRangeOutlineBorder(name, sheetName, rangeOperate,
 				folder, null);
 
@@ -138,7 +122,7 @@ public class CellsRangesAPIExamples {
 
 	}
 
-	public void cellsRangesPostWorksheetCellsRangeRowHeightTest() throws ApiException {
+	public void cellsRangesPostWorksheetCellsRangeRowHeightExample() throws ApiException {
 		String name = BOOK1;
 		String sheetName = SHEET1;
 		Double value = 10.99;
@@ -148,7 +132,7 @@ public class CellsRangesAPIExamples {
 		range.setColumnCount(1);
 		range.setRowCount(10);
 		String folder = TEMPFOLDER;
-		api.setApiClient(Utils.Ready(folder, name));
+		api.setApiClient(Base.Ready(folder, name));
 		SaaSposeResponse response = api.cellsRangesPostWorksheetCellsRangeRowHeight(name, sheetName, value, range,
 				folder, null);
 
@@ -156,7 +140,7 @@ public class CellsRangesAPIExamples {
 
 	}
 
-	public void cellsRangesPostWorksheetCellsRangeStyleTest() throws ApiException {
+	public void cellsRangesPostWorksheetCellsRangeStyleExample() throws ApiException {
 		String name = BOOK1;
 		String sheetName = SHEET1;
 		RangeSetStyleRequest rangeOperate = new RangeSetStyleRequest();
@@ -172,7 +156,7 @@ public class CellsRangesAPIExamples {
 		style.setFont(font);
 		rangeOperate.setStyle(style);
 		String folder = TEMPFOLDER;
-		api.setApiClient(Utils.Ready(folder, name));
+		api.setApiClient(Base.Ready(folder, name));
 		SaaSposeResponse response = api.cellsRangesPostWorksheetCellsRangeStyle(name, sheetName, rangeOperate, folder,
 				null);
 
@@ -180,7 +164,7 @@ public class CellsRangesAPIExamples {
 
 	}
 
-	public void cellsRangesPostWorksheetCellsRangeUnMergeTest() throws ApiException {
+	public void cellsRangesPostWorksheetCellsRangeUnMergeExample() throws ApiException {
 		String name = BOOK1;
 		String sheetName = SHEET1;
 		Range range = new Range();
@@ -189,14 +173,14 @@ public class CellsRangesAPIExamples {
 		range.setColumnCount(1);
 		range.setRowCount(10);
 		String folder = TEMPFOLDER;
-		api.setApiClient(Utils.Ready(folder, name));
+		api.setApiClient(Base.Ready(folder, name));
 		SaaSposeResponse response = api.cellsRangesPostWorksheetCellsRangeUnmerge(name, sheetName, range, folder, null);
 
 		System.out.println(response.getCode());
 
 	}
 
-	public void cellsRangesPostWorksheetCellsRangeValueTest() throws ApiException {
+	public void cellsRangesPostWorksheetCellsRangeValueExample() throws ApiException {
 		String name = BOOK1;
 		String sheetName = SHEET1;
 		String value = "10";
@@ -208,7 +192,7 @@ public class CellsRangesAPIExamples {
 		Boolean isConverted = true;
 		Boolean setStyle = true;
 		String folder = TEMPFOLDER;
-		api.setApiClient(Utils.Ready(folder, name));
+		api.setApiClient(Base.Ready(folder, name));
 		SaaSposeResponse response = api.cellsRangesPostWorksheetCellsRangeValue(name, sheetName, value, range,
 				isConverted, setStyle, folder, null);
 
@@ -216,7 +200,7 @@ public class CellsRangesAPIExamples {
 
 	}
 
-	public void cellsRangesPostWorksheetCellsRangesTest() throws ApiException {
+	public void cellsRangesPostWorksheetCellsRangesExample() throws ApiException {
 		String name = BOOK1;
 		String sheetName = SHEET1;
 		RangeCopyRequest rangeOperate = new RangeCopyRequest();
@@ -237,7 +221,7 @@ public class CellsRangesAPIExamples {
 		range2.setRowCount(10);
 		rangeOperate.setTarget(range2);
 		String folder = TEMPFOLDER;
-		api.setApiClient(Utils.Ready(folder, name));
+		api.setApiClient(Base.Ready(folder, name));
 		SaaSposeResponse response = api.cellsRangesPostWorksheetCellsRanges(name, sheetName, rangeOperate, folder,
 				null);
 

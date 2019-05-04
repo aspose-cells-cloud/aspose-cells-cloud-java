@@ -6,7 +6,7 @@ import java.util.List;
 
 import com.aspose.cloud.cells.api.CellsApi;
 import com.aspose.cloud.cells.client.ApiException;
-import com.aspose.cloud.cells.examples.Utils;
+import com.aspose.cloud.cells.examples.Base;
 import com.aspose.cloud.cells.model.CalculationOptions;
 import com.aspose.cloud.cells.model.CellResponse;
 import com.aspose.cloud.cells.model.CellsResponse;
@@ -22,31 +22,22 @@ import com.aspose.cloud.cells.model.StyleResponse;
 
 
 
-/**
- * API Examples for CellsApi
- */
 
-public class CellsApiExamples {
+public class CellsApiExamples extends Base {
 
     private final CellsApi api = new CellsApi();
 
-    private String BOOK1 = "Book1.xlsx";
-    private String MYDOC = "myDocument.xlsx";
-    private String PivExampleFile = "ExampleCase.xlsx";
-    private String TEMPFOLDER = "Temp";
-    private String SHEET1 = "Sheet1";
-    private String SHEET2 = "Sheet2";
-    private String SHEET3 = "Sheet3";
-    private String SHEET4 = "Sheet4";
-    private String SHEET5 = "Sheet5";
-    private String SHEET6 = "Sheet6";
-    private String SHEET7 = "Sheet7";
-    private String SHEET8 = "Sheet8";
-    private String CellName = "A1";
-    private String RANGE = "A1:C10";
-    private String CELLAREA = "A1:C10";
-    
- 
+
+    public void cellsGetCellHtmlStringExample() throws ApiException {
+        String name = BOOK1;
+        String sheetName = SHEET1;
+        String cellName = CellName;
+        String folder = TEMPFOLDER;
+        api.setApiClient( Base.Ready(folder, name));
+        Object response = api.cellsGetCellHtmlString(name, sheetName, cellName, folder,null);
+
+        System.out.println(response);
+    }    
     
     
     public void cellsDeleteWorksheetColumnsExample() throws Exception {
@@ -56,9 +47,9 @@ public class CellsApiExamples {
         Integer columns = 1;
         Boolean updateReference = true;
         String folder = TEMPFOLDER;
-        api.setApiClient(Utils.Ready(folder, name));
+        api.setApiClient(Base.Ready(folder, name));
         ColumnsResponse response = api.cellsDeleteWorksheetColumns(name, sheetName, columnIndex, columns, updateReference, folder,null);
-
+        System.out.println(response);
        
     }
     
@@ -69,8 +60,9 @@ public class CellsApiExamples {
         String sheetName = SHEET1;
         Integer rowIndex = 1;
         String folder = TEMPFOLDER;
-        api.setApiClient(Utils.Ready(folder, name));
+        api.setApiClient(Base.Ready(folder, name));
         SaaSposeResponse response = api.cellsDeleteWorksheetRow(name, sheetName, rowIndex, folder,null);
+        System.out.print(response);
 
        
     }
@@ -84,7 +76,7 @@ public class CellsApiExamples {
         Integer totalRows = 2;
         Boolean updateReference = true;
         String folder = TEMPFOLDER;
-        api.setApiClient(Utils.Ready(folder, name));
+        api.setApiClient(Base.Ready(folder, name));
         SaaSposeResponse response = api.cellsDeleteWorksheetRows(name, sheetName, startrow, totalRows, updateReference, folder,null);
 
         System.out.print(response.getCode());
@@ -98,9 +90,9 @@ public class CellsApiExamples {
         String sheetName = SHEET1;
         String cellOrMethodName = "A1";
         String folder = TEMPFOLDER;
-        api.setApiClient(Utils.Ready(folder, name));
+        api.setApiClient(Base.Ready(folder, name));
         Object response = api.cellsGetWorksheetCell(name, sheetName, cellOrMethodName, folder,null);
-
+        System.out.print(response);
 
 
     }
@@ -112,7 +104,7 @@ public class CellsApiExamples {
         String sheetName = SHEET1;
         String cellName = "A1";
         String folder = TEMPFOLDER;
-        api.setApiClient(Utils.Ready(folder, name));
+        api.setApiClient(Base.Ready(folder, name));
         StyleResponse response = api.cellsGetWorksheetCellStyle(name, sheetName, cellName, folder,null);
         System.out.print(response.getCode());
 
@@ -134,7 +126,7 @@ public class CellsApiExamples {
         Integer offest = 1;
         Integer count = 10;
         String folder = TEMPFOLDER;
-        api.setApiClient(Utils.Ready(folder, name));
+        api.setApiClient(Base.Ready(folder, name));
         CellsResponse response = api.cellsGetWorksheetCells(name, sheetName, offest, count, folder,null);
         System.out.print(response.getCode());
 
@@ -148,7 +140,7 @@ public class CellsApiExamples {
         String sheetName = SHEET1;
         Integer columnIndex = 1;
         String folder = TEMPFOLDER;
-        api.setApiClient(Utils.Ready(folder, name));
+        api.setApiClient(Base.Ready(folder, name));
         ColumnResponse response = api.cellsGetWorksheetColumn(name, sheetName, columnIndex, folder,null);
         System.out.print(response.getCode());
 
@@ -161,7 +153,7 @@ public class CellsApiExamples {
         String name = BOOK1;
         String sheetName = SHEET1;
         String folder = TEMPFOLDER;
-        api.setApiClient(Utils.Ready(folder, name));
+        api.setApiClient(Base.Ready(folder, name));
         ColumnsResponse response = api.cellsGetWorksheetColumns(name, sheetName, folder,null);
         System.out.print(response.getCode());
 
@@ -176,7 +168,7 @@ public class CellsApiExamples {
         String sheetName = SHEET1;
         Integer rowIndex = 1;
         String folder = TEMPFOLDER;
-        api.setApiClient(Utils.Ready(folder, name));
+        api.setApiClient(Base.Ready(folder, name));
         RowResponse response = api.cellsGetWorksheetRow(name, sheetName, rowIndex, folder,null);
         System.out.print(response.getCode());
 
@@ -196,7 +188,7 @@ public class CellsApiExamples {
         String name = BOOK1;
         String sheetName = SHEET1;
         String folder = TEMPFOLDER;
-        api.setApiClient(Utils.Ready(folder, name));
+        api.setApiClient(Base.Ready(folder, name));
         RowsResponse response = api.cellsGetWorksheetRows(name, sheetName, folder,null);
         System.out.print(response.getCode());
 
@@ -212,7 +204,7 @@ public class CellsApiExamples {
         CalculationOptions options = new CalculationOptions();
         options.setRecursive(true);
         String folder = TEMPFOLDER;
-        api.setApiClient(Utils.Ready(folder, name));
+        api.setApiClient(Base.Ready(folder, name));
         SaaSposeResponse response = api.cellsPostCellCalculate(name, sheetName, cellName, options, folder,null);
         System.out.print(response.getCode());
 
@@ -234,7 +226,7 @@ public class CellsApiExamples {
         fs1.setStartIndex(0);
         options.add(fs1);
         String folder = TEMPFOLDER;
-        api.setApiClient(Utils.Ready(folder, name));
+        api.setApiClient(Base.Ready(folder, name));
         SaaSposeResponse response = api.cellsPostCellCharacters(name, sheetName, cellName, options, folder,null);
 
         System.out.print(response.getCode());
@@ -252,7 +244,7 @@ public class CellsApiExamples {
         Integer endRow = 10;
         Integer endColumn = 7;
         String folder = TEMPFOLDER;
-        api.setApiClient(Utils.Ready(folder, name));
+        api.setApiClient(Base.Ready(folder, name));
         SaaSposeResponse response = api.cellsPostClearContents(name, sheetName, range, startRow, startColumn, endRow, endColumn, folder,null);
         System.out.print(response.getCode());
 
@@ -270,7 +262,7 @@ public class CellsApiExamples {
         Integer endRow = 7;
         Integer endColumn = 6;
         String folder = TEMPFOLDER;
-        api.setApiClient(Utils.Ready(folder, name));
+        api.setApiClient(Base.Ready(folder, name));
         SaaSposeResponse response = api.cellsPostClearFormats(name, sheetName, range, startRow, startColumn, endRow, endColumn, folder,null);
 
         System.out.print(response.getCode());
@@ -286,7 +278,7 @@ public class CellsApiExamples {
         font.setSize(10);
         style.setFont(font);
         String folder = TEMPFOLDER;
-        api.setApiClient(Utils.Ready(folder, name));
+        api.setApiClient(Base.Ready(folder, name));
         SaaSposeResponse response = api.cellsPostColumnStyle(name, sheetName, columnIndex, style, folder,null);
         System.out.print(response.getCode());
 
@@ -304,7 +296,7 @@ public class CellsApiExamples {
         Integer row = 1;
         Integer column = 1;
         String folder = TEMPFOLDER;
-        api.setApiClient(Utils.Ready(folder, name));
+        api.setApiClient(Base.Ready(folder, name));
         SaaSposeResponse response = api.cellsPostCopyCellIntoCell(name, destCellName, sheetName, worksheet, cellname, row, column, folder,null);
 
         System.out.print(response.getCode());
@@ -321,7 +313,7 @@ public class CellsApiExamples {
         Integer columnNumber = 1;
         String worksheet = SHEET2;
         String folder = TEMPFOLDER;
-        api.setApiClient(Utils.Ready(folder, name));
+        api.setApiClient(Base.Ready(folder, name));
         SaaSposeResponse response = api.cellsPostCopyWorksheetColumns(name, sheetName, sourceColumnIndex, destinationColumnIndex, columnNumber, worksheet, folder,null);
         System.out.print(response.getCode());
 
@@ -338,7 +330,7 @@ public class CellsApiExamples {
         Integer rowNumber = 1;
         String worksheet = SHEET2;
         String folder = TEMPFOLDER;
-        api.setApiClient(Utils.Ready(folder, name));
+        api.setApiClient(Base.Ready(folder, name));
         SaaSposeResponse response = api.cellsPostCopyWorksheetRows(name, sheetName, sourceRowIndex, destinationRowIndex, rowNumber, worksheet, folder,null);
         System.out.print(response.getCode());
 
@@ -354,7 +346,7 @@ public class CellsApiExamples {
         Integer lastIndex = 1;
         Boolean hide = true;
         String folder = TEMPFOLDER;
-        api.setApiClient(Utils.Ready(folder, name));
+        api.setApiClient(Base.Ready(folder, name));
         SaaSposeResponse response = api.cellsPostGroupWorksheetColumns(name, sheetName, firstIndex, lastIndex, hide, folder,null);
         System.out.print(response.getCode());
 
@@ -370,7 +362,7 @@ public class CellsApiExamples {
         Integer lastIndex = 1;
         Boolean hide = true;
         String folder = TEMPFOLDER;
-        api.setApiClient(Utils.Ready(folder, name));
+        api.setApiClient(Base.Ready(folder, name));
         SaaSposeResponse response = api.cellsPostGroupWorksheetRows(name, sheetName, firstIndex, lastIndex, hide, folder,null);
         System.out.print(response.getCode());
 
@@ -385,7 +377,7 @@ public class CellsApiExamples {
         Integer startColumn = 1;
         Integer totalColumns = 1;
         String folder = TEMPFOLDER;
-        api.setApiClient(Utils.Ready(folder, name));
+        api.setApiClient(Base.Ready(folder, name));
         SaaSposeResponse response = api.cellsPostHideWorksheetColumns(name, sheetName, startColumn, totalColumns, folder,null);
 
         System.out.print(response.getCode());
@@ -400,7 +392,7 @@ public class CellsApiExamples {
         Integer startrow = 1;
         Integer totalRows = 1;
         String folder = TEMPFOLDER;
-        api.setApiClient(Utils.Ready(folder, name));
+        api.setApiClient(Base.Ready(folder, name));
         SaaSposeResponse response = api.cellsPostHideWorksheetRows(name, sheetName, startrow, totalRows, folder,null);
         System.out.print(response.getCode());
 
@@ -418,7 +410,7 @@ public class CellsApiExamples {
         font.setSize(10);
         style.setFont(font);
         String folder = TEMPFOLDER;
-        api.setApiClient(Utils.Ready(folder, name));
+        api.setApiClient(Base.Ready(folder, name));
         SaaSposeResponse response = api.cellsPostRowStyle(name, sheetName, rowIndex, style, folder,null);
 
         System.out.print(response.getCode());
@@ -431,7 +423,7 @@ public class CellsApiExamples {
         String sheetName = SHEET1;
         String cellName = CellName;
         String folder = TEMPFOLDER;
-        api.setApiClient(Utils.Ready(folder, name));
+        api.setApiClient(Base.Ready(folder, name));
         CellResponse response = api.cellsPostSetCellHtmlString(name, sheetName, cellName, folder,null);
         System.out.print(response.getCode());
 
@@ -447,7 +439,7 @@ public class CellsApiExamples {
         String value = "2017-10-1";
         String type = "Date";
         String folder = TEMPFOLDER;
-        api.setApiClient(Utils.Ready(folder, name));
+        api.setApiClient(Base.Ready(folder, name));
         SaaSposeResponse response = api.cellsPostSetCellRangeValue(name, sheetName, cellarea, value, type, folder,null);
         System.out.print(response.getCode());
 
@@ -461,7 +453,7 @@ public class CellsApiExamples {
         Integer columnIndex = 1;
         Double width = 10.0;
         String folder = TEMPFOLDER;
-        api.setApiClient(Utils.Ready(folder, name));
+        api.setApiClient(Base.Ready(folder, name));
         ColumnResponse response = api.cellsPostSetWorksheetColumnWidth(name, sheetName, columnIndex, width, folder,null);
         System.out.print(response.getCode());
 
@@ -475,10 +467,10 @@ public class CellsApiExamples {
         Integer firstIndex = 1;
         Integer lastIndex = 10;
         String folder = TEMPFOLDER;
-        api.setApiClient(Utils.Ready(folder, name));
+        api.setApiClient(Base.Ready(folder, name));
         SaaSposeResponse response = api.cellsPostUngroupWorksheetColumns(name, sheetName, firstIndex, lastIndex, folder,null);
 
-       
+        System.out.print(response);
     }
     
 
@@ -489,7 +481,7 @@ public class CellsApiExamples {
         Integer lastIndex = 10;
         Boolean isAll = true;
         String folder = TEMPFOLDER;
-        api.setApiClient(Utils.Ready(folder, name));
+        api.setApiClient(Base.Ready(folder, name));
         SaaSposeResponse response = api.cellsPostUngroupWorksheetRows(name, sheetName, firstIndex, lastIndex, isAll, folder,null);
 
         System.out.print(response.getCode());
@@ -505,7 +497,7 @@ public class CellsApiExamples {
         Integer totalColumns = 10;
         Double width = 10.0;
         String folder = TEMPFOLDER;
-        api.setApiClient(Utils.Ready(folder, name));
+        api.setApiClient(Base.Ready(folder, name));
         SaaSposeResponse response = api.cellsPostUnhideWorksheetColumns(name, sheetName, startcolumn, totalColumns, width, folder,null);
 
         System.out.print(response.getCode());
@@ -520,9 +512,9 @@ public class CellsApiExamples {
         Integer totalRows = 1;
         Double height = 10.0;
         String folder = TEMPFOLDER;
-        api.setApiClient(Utils.Ready(folder, name));
+        api.setApiClient(Base.Ready(folder, name));
         SaaSposeResponse response = api.cellsPostUnhideWorksheetRows(name, sheetName, startrow, totalRows, height, folder,null);
-
+        System.out.print(response);
        
     }
 
@@ -536,7 +528,7 @@ public class CellsApiExamples {
         font.setSize(10);
         style.setFont(font);
         String folder = TEMPFOLDER;
-        api.setApiClient(Utils.Ready(folder, name));
+        api.setApiClient(Base.Ready(folder, name));
         StyleResponse response = api.cellsPostUpdateWorksheetCellStyle(name, sheetName, cellName, style, folder,null);
         System.out.print(response.getCode());
 
@@ -554,7 +546,7 @@ public class CellsApiExamples {
         font.setSize(10);
         style.setFont(font);
         String folder = TEMPFOLDER;
-        api.setApiClient(Utils.Ready(folder, name));
+        api.setApiClient(Base.Ready(folder, name));
         SaaSposeResponse response = api.cellsPostUpdateWorksheetRangeStyle(name, sheetName, range, style, folder,null);
         System.out.print(response.getCode());
 
@@ -569,7 +561,7 @@ public class CellsApiExamples {
         Integer rowIndex = 1;
         Double height = 10.01;
         String folder = TEMPFOLDER;
-        api.setApiClient(Utils.Ready(folder, name));
+        api.setApiClient(Base.Ready(folder, name));
         RowResponse response = api.cellsPostUpdateWorksheetRow(name, sheetName, rowIndex, height, folder,null);
         System.out.print(response.getCode());
 
@@ -586,7 +578,7 @@ public class CellsApiExamples {
         String type = "Date";
         String formula = "=Now()";
         String folder = TEMPFOLDER;
-        api.setApiClient(Utils.Ready(folder, name));
+        api.setApiClient(Base.Ready(folder, name));
         CellResponse response = api.cellsPostWorksheetCellSetValue(name, sheetName, cellName, value, type, formula, folder,null);
 
         System.out.print(response.getCode());
@@ -603,7 +595,7 @@ public class CellsApiExamples {
         Integer totalRows = 7;
         Integer totalColumns = 6;
         String folder = TEMPFOLDER;
-        api.setApiClient(Utils.Ready(folder, name));
+        api.setApiClient(Base.Ready(folder, name));
         SaaSposeResponse response = api.cellsPostWorksheetMerge(name, sheetName, startRow, startColumn, totalRows, totalColumns, folder,null);
 
         System.out.print(response.getCode());
@@ -620,7 +612,7 @@ public class CellsApiExamples {
         Integer totalRows = 6;
         Integer totalColumns = 6;
         String folder = TEMPFOLDER;
-        api.setApiClient(Utils.Ready(folder, name));
+        api.setApiClient(Base.Ready(folder, name));
         SaaSposeResponse response = api.cellsPostWorksheetUnmerge(name, sheetName, startRow, startColumn, totalRows, totalColumns, folder,null);
 
         System.out.print(response.getCode());
@@ -636,7 +628,7 @@ public class CellsApiExamples {
         Integer columns = 2;
         Boolean updateReference = true;
         String folder = TEMPFOLDER;
-        api.setApiClient(Utils.Ready(folder, name));
+        api.setApiClient(Base.Ready(folder, name));
         ColumnsResponse response = api.cellsPutInsertWorksheetColumns(name, sheetName, columnIndex, columns, updateReference, folder,null);
         System.out.print(response.getCode());
        
@@ -649,7 +641,7 @@ public class CellsApiExamples {
         String sheetName = SHEET1;
         Integer rowIndex = 1;
         String folder = TEMPFOLDER;
-        api.setApiClient(Utils.Ready(folder, name));
+        api.setApiClient(Base.Ready(folder, name));
         RowResponse response = api.cellsPutInsertWorksheetRow(name, sheetName, rowIndex, folder,null);
         System.out.print(response.getCode());
 
@@ -664,9 +656,9 @@ public class CellsApiExamples {
         Integer totalRows = 10;
         Boolean updateReference = true;
         String folder = TEMPFOLDER;
-        api.setApiClient(Utils.Ready(folder, name));
+        api.setApiClient(Base.Ready(folder, name));
         SaaSposeResponse response = api.cellsPutInsertWorksheetRows(name, sheetName, startrow, totalRows, updateReference, folder,null);
-
+        System.out.print(response);
     }
     
 }

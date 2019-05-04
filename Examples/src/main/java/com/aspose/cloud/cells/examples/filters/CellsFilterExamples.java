@@ -15,34 +15,17 @@ package com.aspose.cloud.cells.examples.filters;
 
 import com.aspose.cloud.cells.api.CellsAutoFilterApi;
 import com.aspose.cloud.cells.client.ApiException;
-import com.aspose.cloud.cells.examples.Utils;
+import com.aspose.cloud.cells.examples.Base;
 import com.aspose.cloud.cells.model.AutoFilterResponse;
 import com.aspose.cloud.cells.model.CellsColor;
 import com.aspose.cloud.cells.model.Color;
 import com.aspose.cloud.cells.model.ColorFilterRequest;
 import com.aspose.cloud.cells.model.SaaSposeResponse;
 
-public class CellsFilterExamples {
+public class CellsFilterExamples extends Base{
 
 	private final CellsAutoFilterApi api = new CellsAutoFilterApi();
-
-	private String BOOK1 = "Book1.xlsx";
-	private String MYDOC = "myDocument.xlsx";
-	private String PivTestFile = "TestCase.xlsx";
-	private String TEMPFOLDER = "Temp";
-	private String SHEET1 = "Sheet1";
-	private String SHEET2 = "Sheet2";
-	private String SHEET3 = "Sheet3";
-	private String SHEET4 = "Sheet4";
-	private String SHEET5 = "Sheet5";
-	private String SHEET6 = "Sheet6";
-	private String SHEET7 = "Sheet7";
-	private String SHEET8 = "Sheet8";
-	private String CellName = "A1";
-	private String RANGE = "A1:C10";
-	private String CELLAREA = "A1:C10";
-
-	public void cellsAutoFilterDeleteWorksheetDateFilterTest() throws ApiException {
+	public void cellsAutoFilterDeleteWorksheetDateFilterExample() throws ApiException {
 		String name = BOOK1;
 		String sheetName = SHEET1;
 		Integer fieldIndex = 1;
@@ -54,7 +37,7 @@ public class CellsFilterExamples {
 		Integer minute = 1;
 		Integer second = 1;
 		String folder = TEMPFOLDER;
-		api.setApiClient(Utils.Ready(folder, name));
+		api.setApiClient(Base.Ready(folder, name));
 		SaaSposeResponse response = api.cellsAutoFilterDeleteWorksheetDateFilter(name, sheetName, fieldIndex,
 				dateTimeGroupingType, year, month, day, hour, minute, second, folder, null);
 		System.out.print(response.getCode());
@@ -62,13 +45,13 @@ public class CellsFilterExamples {
 		System.out.print(response.getCode());
 	}
 
-	public void cellsAutoFilterDeleteWorksheetFilterTest() throws ApiException {
+	public void cellsAutoFilterDeleteWorksheetFilterExample() throws ApiException {
 		String name = BOOK1;
 		String sheetName = SHEET1;
 		Integer fieldIndex = 1;
-		String criteria = "test";
+		String criteria = "Example";
 		String folder = TEMPFOLDER;
-		api.setApiClient(Utils.Ready(folder, name));
+		api.setApiClient(Base.Ready(folder, name));
 		SaaSposeResponse response = api.cellsAutoFilterDeleteWorksheetFilter(name, sheetName, fieldIndex, criteria,
 				folder, null);
 		System.out.print(response.getCode());
@@ -77,51 +60,51 @@ public class CellsFilterExamples {
 		System.out.print(response.getCode());
 	}
 
-	public void cellsAutoFilterGetWorksheetAutoFilterTest() throws ApiException {
+	public void cellsAutoFilterGetWorksheetAutoFilterExample() throws ApiException {
 		String name = BOOK1;
 		String sheetName = SHEET1;
 		String folder = TEMPFOLDER;
-		api.setApiClient(Utils.Ready(folder, name));
+		api.setApiClient(Base.Ready(folder, name));
 		AutoFilterResponse response = api.cellsAutoFilterGetWorksheetAutoFilter(name, sheetName, folder, null);
 
 		System.out.print(response.getCode());
 	}
 
-	public void cellsAutoFilterPostWorksheetAutoFilterRefreshTest() throws ApiException {
+	public void cellsAutoFilterPostWorksheetAutoFilterRefreshExample() throws ApiException {
 		String name = BOOK1;
 		String sheetName = SHEET1;
 		String folder = TEMPFOLDER;
-		api.setApiClient(Utils.Ready(folder, name));
+		api.setApiClient(Base.Ready(folder, name));
 		SaaSposeResponse response = api.cellsAutoFilterPostWorksheetAutoFilterRefresh(name, sheetName, folder, null);
 
 		System.out.print(response.getCode());
 	}
 
-	public void cellsAutoFilterPostWorksheetMatchBlanksTest() throws ApiException {
+	public void cellsAutoFilterPostWorksheetMatchBlanksExample() throws ApiException {
 		String name = BOOK1;
 		String sheetName = SHEET1;
 		Integer fieldIndex = 0;
 		String folder = TEMPFOLDER;
-		api.setApiClient(Utils.Ready(folder, name));
+		api.setApiClient(Base.Ready(folder, name));
 		SaaSposeResponse response = api.cellsAutoFilterPostWorksheetMatchBlanks(name, sheetName, fieldIndex, folder,
 				null);
 
 		System.out.print(response.getCode());
 	}
 
-	public void cellsAutoFilterPostWorksheetMatchNonBlanksTest() throws ApiException {
+	public void cellsAutoFilterPostWorksheetMatchNonBlanksExample() throws ApiException {
 		String name = BOOK1;
 		String sheetName = SHEET1;
 		Integer fieldIndex = 0;
 		String folder = TEMPFOLDER;
-		api.setApiClient(Utils.Ready(folder, name));
+		api.setApiClient(Base.Ready(folder, name));
 		SaaSposeResponse response = api.cellsAutoFilterPostWorksheetMatchNonBlanks(name, sheetName, fieldIndex, folder,
 				null);
 
 		System.out.print(response.getCode());
 	}
 
-	public void cellsAutoFilterPutWorksheetColorFilterTest() throws ApiException {
+	public void cellsAutoFilterPutWorksheetColorFilterExample() throws ApiException {
 		String name = BOOK1;
 		String sheetName = SHEET1;
 		String range = RANGE;
@@ -137,34 +120,34 @@ public class CellsFilterExamples {
 		Boolean matchBlanks = true;
 		Boolean refresh = true;
 		String folder = TEMPFOLDER;
-		api.setApiClient(Utils.Ready(folder, name));
+		api.setApiClient(Base.Ready(folder, name));
 		SaaSposeResponse response = api.cellsAutoFilterPutWorksheetColorFilter(name, sheetName, range, fieldIndex,
 				colorFilter, matchBlanks, refresh, folder, null);
 
 		System.out.print(response.getCode());
 	}
 
-	public void cellsAutoFilterPutWorksheetCustomFilterTest() throws ApiException {
+	public void cellsAutoFilterPutWorksheetCustomFilterExample() throws ApiException {
 		String name = BOOK1;
 		String sheetName = SHEET1;
 		String range = RANGE;
 		Integer fieldIndex = 0;
 		String operatorType1 = "LessOrEqual";
-		String criteria1 = "test";
+		String criteria1 = "Example";
 		Boolean isAnd = false;
 		String operatorType2 = "LessOrEqual";
-		String criteria2 = "test";
+		String criteria2 = "Example";
 		Boolean matchBlanks = true;
 		Boolean refresh = false;
 		String folder = TEMPFOLDER;
-		api.setApiClient(Utils.Ready(folder, name));
+		api.setApiClient(Base.Ready(folder, name));
 		SaaSposeResponse response = api.cellsAutoFilterPutWorksheetCustomFilter(name, sheetName, range, fieldIndex,
 				operatorType1, criteria1, isAnd, operatorType2, criteria2, matchBlanks, refresh, folder, null);
 
 		System.out.print(response.getCode());
 	}
 
-	public void cellsAutoFilterPutWorksheetDateFilterTest() throws ApiException {
+	public void cellsAutoFilterPutWorksheetDateFilterExample() throws ApiException {
 		String name = BOOK1;
 		String sheetName = SHEET1;
 		String range = RANGE;
@@ -179,14 +162,14 @@ public class CellsFilterExamples {
 		Boolean matchBlanks = true;
 		Boolean refresh = null;
 		String folder = TEMPFOLDER;
-		api.setApiClient(Utils.Ready(folder, name));
+		api.setApiClient(Base.Ready(folder, name));
 		SaaSposeResponse response = api.cellsAutoFilterPutWorksheetDateFilter(name, sheetName, range, fieldIndex,
 				dateTimeGroupingType, year, month, day, hour, minute, second, matchBlanks, refresh, folder, null);
 
 		System.out.print(response.getCode());
 	}
 
-	public void cellsAutoFilterPutWorksheetDynamicFilterTest() throws ApiException {
+	public void cellsAutoFilterPutWorksheetDynamicFilterExample() throws ApiException {
 		String name = BOOK1;
 		String sheetName = SHEET1;
 		String range = RANGE;
@@ -195,30 +178,30 @@ public class CellsFilterExamples {
 		Boolean matchBlanks = true;
 		Boolean refresh = true;
 		String folder = TEMPFOLDER;
-		api.setApiClient(Utils.Ready(folder, name));
+		api.setApiClient(Base.Ready(folder, name));
 		SaaSposeResponse response = api.cellsAutoFilterPutWorksheetDynamicFilter(name, sheetName, range, fieldIndex,
 				dynamicFilterType, matchBlanks, refresh, folder, null);
 
 		System.out.print(response.getCode());
 	}
 
-	public void cellsAutoFilterPutWorksheetFilterTest() throws ApiException {
+	public void cellsAutoFilterPutWorksheetFilterExample() throws ApiException {
 		String name = BOOK1;
 		String sheetName = SHEET1;
 		String range = RANGE;
 		Integer fieldIndex = 0;
-		String criteria = "test";
+		String criteria = "Example";
 		Boolean matchBlanks = true;
 		Boolean refresh = true;
 		String folder = TEMPFOLDER;
-		api.setApiClient(Utils.Ready(folder, name));
+		api.setApiClient(Base.Ready(folder, name));
 		SaaSposeResponse response = api.cellsAutoFilterPutWorksheetFilter(name, sheetName, range, fieldIndex, criteria,
 				matchBlanks, refresh, folder, null);
 
 		System.out.print(response.getCode());
 	}
 
-	public void cellsAutoFilterPutWorksheetFilterTop10Test() throws ApiException {
+	public void cellsAutoFilterPutWorksheetFilterTop10Example() throws ApiException {
 		String name = BOOK1;
 		String sheetName = SHEET1;
 		String range = RANGE;
@@ -229,14 +212,14 @@ public class CellsFilterExamples {
 		Boolean matchBlanks = null;
 		Boolean refresh = null;
 		String folder = TEMPFOLDER;
-		api.setApiClient(Utils.Ready(folder, name));
+		api.setApiClient(Base.Ready(folder, name));
 		SaaSposeResponse response = api.cellsAutoFilterPutWorksheetFilterTop10(name, sheetName, range, fieldIndex,
 				isTop, isPercent, itemCount, matchBlanks, refresh, folder, null);
 
 		System.out.print(response.getCode());
 	}
 
-	public void cellsAutoFilterPutWorksheetIconFilterTest() throws ApiException {
+	public void cellsAutoFilterPutWorksheetIconFilterExample() throws ApiException {
 		String name = BOOK1;
 		String sheetName = SHEET1;
 		String range = RANGE;
@@ -246,7 +229,7 @@ public class CellsFilterExamples {
 		Boolean matchBlanks = null;
 		Boolean refresh = null;
 		String folder = TEMPFOLDER;
-		api.setApiClient(Utils.Ready(folder, name));
+		api.setApiClient(Base.Ready(folder, name));
 		SaaSposeResponse response = api.cellsAutoFilterPutWorksheetIconFilter(name, sheetName, range, fieldIndex,
 				iconSetType, iconId, matchBlanks, refresh, folder, null);
 
