@@ -1177,7 +1177,7 @@ No authorization required
 
 <a name="cellsWorkbookPutConvertWorkbook"></a>
 # **cellsWorkbookPutConvertWorkbook**
-> File cellsWorkbookPutConvertWorkbook(format, password, outPath)
+> File cellsWorkbookPutConvertWorkbook(workbook, format, password, outPath)
 
 Convert workbook from request content to some format.
 
@@ -1189,11 +1189,12 @@ Convert workbook from request content to some format.
 
 
 CellsWorkbookApi apiInstance = new CellsWorkbookApi();
+byte[] workbook = BINARY_DATA_HERE; // byte[] | 
 String format = "format_example"; // String | The format to convert.
 String password = "password_example"; // String | The workbook password.
 String outPath = "outPath_example"; // String | Path to save result
 try {
-    File result = apiInstance.cellsWorkbookPutConvertWorkbook(format, password, outPath);
+    File result = apiInstance.cellsWorkbookPutConvertWorkbook(workbook, format, password, outPath);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsWorkbookApi#cellsWorkbookPutConvertWorkbook");
@@ -1205,6 +1206,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **workbook** | **byte[]**|  |
  **format** | **String**| The format to convert. | [optional]
  **password** | **String**| The workbook password. | [optional]
  **outPath** | **String**| Path to save result | [optional]

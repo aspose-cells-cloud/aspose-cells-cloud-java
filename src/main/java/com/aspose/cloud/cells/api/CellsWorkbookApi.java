@@ -3454,6 +3454,7 @@ public class CellsWorkbookApi {
     }
     /**
      * Build call for cellsWorkbookPutConvertWorkbook
+     * @param workbook  (required)
      * @param format The format to convert. (optional)
      * @param password The workbook password. (optional)
      * @param outPath Path to save result (optional)
@@ -3462,8 +3463,8 @@ public class CellsWorkbookApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call cellsWorkbookPutConvertWorkbookCall(String format, String password, String outPath, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = null;
+    public com.squareup.okhttp.Call cellsWorkbookPutConvertWorkbookCall(byte[] workbook, String format, String password, String outPath, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = workbook;
         
         // create path and map variables
         String localVarPath = "/cells/convert";
@@ -3509,10 +3510,15 @@ public class CellsWorkbookApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call cellsWorkbookPutConvertWorkbookValidateBeforeCall(String format, String password, String outPath, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call cellsWorkbookPutConvertWorkbookValidateBeforeCall(byte[] workbook, String format, String password, String outPath, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'workbook' is set
+        if (workbook == null) {
+            throw new ApiException("Missing the required parameter 'workbook' when calling cellsWorkbookPutConvertWorkbook(Async)");
+        }
         
         
-        com.squareup.okhttp.Call call = cellsWorkbookPutConvertWorkbookCall(format, password, outPath, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsWorkbookPutConvertWorkbookCall(workbook, format, password, outPath, progressListener, progressRequestListener);
         return call;
 
         
@@ -3524,28 +3530,30 @@ public class CellsWorkbookApi {
     /**
      * Convert workbook from request content to some format.
      * 
+     * @param workbook  (required)
      * @param format The format to convert. (optional)
      * @param password The workbook password. (optional)
      * @param outPath Path to save result (optional)
      * @return File
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public File cellsWorkbookPutConvertWorkbook(String format, String password, String outPath) throws ApiException {
-        ApiResponse<File> resp = cellsWorkbookPutConvertWorkbookWithHttpInfo(format, password, outPath);
+    public File cellsWorkbookPutConvertWorkbook(byte[] workbook, String format, String password, String outPath) throws ApiException {
+        ApiResponse<File> resp = cellsWorkbookPutConvertWorkbookWithHttpInfo(workbook, format, password, outPath);
         return resp.getData();
     }
 
     /**
      * Convert workbook from request content to some format.
      * 
+     * @param workbook  (required)
      * @param format The format to convert. (optional)
      * @param password The workbook password. (optional)
      * @param outPath Path to save result (optional)
      * @return ApiResponse&lt;File&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<File> cellsWorkbookPutConvertWorkbookWithHttpInfo(String format, String password, String outPath) throws ApiException {
-        com.squareup.okhttp.Call call = cellsWorkbookPutConvertWorkbookValidateBeforeCall(format, password, outPath, null, null);
+    public ApiResponse<File> cellsWorkbookPutConvertWorkbookWithHttpInfo(byte[] workbook, String format, String password, String outPath) throws ApiException {
+        com.squareup.okhttp.Call call = cellsWorkbookPutConvertWorkbookValidateBeforeCall(workbook, format, password, outPath, null, null);
         Type localVarReturnType = new TypeToken<File>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -3553,6 +3561,7 @@ public class CellsWorkbookApi {
     /**
      * Convert workbook from request content to some format. (asynchronously)
      * 
+     * @param workbook  (required)
      * @param format The format to convert. (optional)
      * @param password The workbook password. (optional)
      * @param outPath Path to save result (optional)
@@ -3560,7 +3569,7 @@ public class CellsWorkbookApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call cellsWorkbookPutConvertWorkbookAsync(String format, String password, String outPath, final ApiCallback<File> callback) throws ApiException {
+    public com.squareup.okhttp.Call cellsWorkbookPutConvertWorkbookAsync(byte[] workbook, String format, String password, String outPath, final ApiCallback<File> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -3581,7 +3590,7 @@ public class CellsWorkbookApi {
             };
         }
 
-        com.squareup.okhttp.Call call = cellsWorkbookPutConvertWorkbookValidateBeforeCall(format, password, outPath, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsWorkbookPutConvertWorkbookValidateBeforeCall(workbook, format, password, outPath, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<File>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

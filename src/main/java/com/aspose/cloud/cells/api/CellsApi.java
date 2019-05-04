@@ -574,6 +574,164 @@ public class CellsApi {
         return call;
     }
     /**
+     * Build call for cellsGetCellHtmlString
+     * @param name Document name. (required)
+     * @param sheetName Worksheet name. (required)
+     * @param cellName The cell&#39;s  name. (required)
+     * @param folder Document&#39;s folder. (optional)
+     * @param storage storage name. (optional)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call cellsGetCellHtmlStringCall(String name, String sheetName, String cellName, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = null;
+        
+        // create path and map variables
+        String localVarPath = "/cells/{name}/worksheets/{sheetName}/cells/{cellName}/htmlstring"
+            .replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString()))
+            .replaceAll("\\{" + "sheetName" + "\\}", apiClient.escapeString(sheetName.toString()))
+            .replaceAll("\\{" + "cellName" + "\\}", apiClient.escapeString(cellName.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        if (folder != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "folder", folder));
+        if (storage != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "storage", storage));
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+    
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call cellsGetCellHtmlStringValidateBeforeCall(String name, String sheetName, String cellName, String folder, String storage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'name' is set
+        if (name == null) {
+            throw new ApiException("Missing the required parameter 'name' when calling cellsGetCellHtmlString(Async)");
+        }
+        
+        // verify the required parameter 'sheetName' is set
+        if (sheetName == null) {
+            throw new ApiException("Missing the required parameter 'sheetName' when calling cellsGetCellHtmlString(Async)");
+        }
+        
+        // verify the required parameter 'cellName' is set
+        if (cellName == null) {
+            throw new ApiException("Missing the required parameter 'cellName' when calling cellsGetCellHtmlString(Async)");
+        }
+        
+        
+        com.squareup.okhttp.Call call = cellsGetCellHtmlStringCall(name, sheetName, cellName, folder, storage, progressListener, progressRequestListener);
+        return call;
+
+        
+        
+        
+        
+    }
+
+    /**
+     * Read cell data by cell&#39;s name.
+     * 
+     * @param name Document name. (required)
+     * @param sheetName Worksheet name. (required)
+     * @param cellName The cell&#39;s  name. (required)
+     * @param folder Document&#39;s folder. (optional)
+     * @param storage storage name. (optional)
+     * @return Object
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public Object cellsGetCellHtmlString(String name, String sheetName, String cellName, String folder, String storage) throws ApiException {
+        ApiResponse<Object> resp = cellsGetCellHtmlStringWithHttpInfo(name, sheetName, cellName, folder, storage);
+        return resp.getData();
+    }
+
+    /**
+     * Read cell data by cell&#39;s name.
+     * 
+     * @param name Document name. (required)
+     * @param sheetName Worksheet name. (required)
+     * @param cellName The cell&#39;s  name. (required)
+     * @param folder Document&#39;s folder. (optional)
+     * @param storage storage name. (optional)
+     * @return ApiResponse&lt;Object&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<Object> cellsGetCellHtmlStringWithHttpInfo(String name, String sheetName, String cellName, String folder, String storage) throws ApiException {
+        com.squareup.okhttp.Call call = cellsGetCellHtmlStringValidateBeforeCall(name, sheetName, cellName, folder, storage, null, null);
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Read cell data by cell&#39;s name. (asynchronously)
+     * 
+     * @param name Document name. (required)
+     * @param sheetName Worksheet name. (required)
+     * @param cellName The cell&#39;s  name. (required)
+     * @param folder Document&#39;s folder. (optional)
+     * @param storage storage name. (optional)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call cellsGetCellHtmlStringAsync(String name, String sheetName, String cellName, String folder, String storage, final ApiCallback<Object> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = cellsGetCellHtmlStringValidateBeforeCall(name, sheetName, cellName, folder, storage, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
      * Build call for cellsGetWorksheetCell
      * @param name Document name. (required)
      * @param sheetName Worksheet name. (required)

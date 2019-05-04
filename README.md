@@ -28,7 +28,7 @@ Add this dependency to your project's POM:
 <dependency>
     <groupId>com.aspose</groupId>
     <artifactId>aspose-cells-cloud</artifactId>
-    <version>18.9.1</version>
+    <version>19.2.1</version>
     <scope>compile</scope>
 </dependency>
 ```
@@ -38,7 +38,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "com.aspose:aspose-cells-cloud:18.9.1"
+compile "com.aspose:aspose-cells-cloud:19.2.1"
 ```
 
 ### Others
@@ -49,7 +49,7 @@ At first generate the JAR by executing:
 
 Then manually install the following JARs:
 
-* target/aspose-cells-cloud-18.9.1.jar
+* target/aspose-cells-cloud-19.2.1.jar
 * target/lib/*.jar
 
 ## Getting Started
@@ -77,8 +77,9 @@ public class CellsApiExample {
         Integer columns = 56; // Integer | The columns.
         Boolean updateReference = true; // Boolean | The update reference.
         String folder = "folder_example"; // String | The workbook folder.
+        String storage = "storage_example"; // String | storage name.
         try {
-            ColumnsResponse result = apiInstance.cellsDeleteWorksheetColumns(name, sheetName, columnIndex, columns, updateReference, folder);
+            ColumnsResponse result = apiInstance.cellsDeleteWorksheetColumns(name, sheetName, columnIndex, columns, updateReference, folder, storage);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling CellsApi#cellsDeleteWorksheetColumns");
@@ -98,6 +99,7 @@ Class | Method | HTTP request | Description
 *CellsApi* | [**cellsDeleteWorksheetColumns**](docs/CellsApi.md#cellsDeleteWorksheetColumns) | **DELETE** /cells/{name}/worksheets/{sheetName}/cells/columns/{columnIndex} | Delete worksheet columns.
 *CellsApi* | [**cellsDeleteWorksheetRow**](docs/CellsApi.md#cellsDeleteWorksheetRow) | **DELETE** /cells/{name}/worksheets/{sheetName}/cells/rows/{rowIndex} | Delete worksheet row.
 *CellsApi* | [**cellsDeleteWorksheetRows**](docs/CellsApi.md#cellsDeleteWorksheetRows) | **DELETE** /cells/{name}/worksheets/{sheetName}/cells/rows | Delete several worksheet rows.
+*CellsApi* | [**cellsGetCellHtmlString**](docs/CellsApi.md#cellsGetCellHtmlString) | **GET** /cells/{name}/worksheets/{sheetName}/cells/{cellName}/htmlstring | Read cell data by cell&#39;s name.
 *CellsApi* | [**cellsGetWorksheetCell**](docs/CellsApi.md#cellsGetWorksheetCell) | **GET** /cells/{name}/worksheets/{sheetName}/cells/{cellOrMethodName} | Read cell data by cell&#39;s name.
 *CellsApi* | [**cellsGetWorksheetCellStyle**](docs/CellsApi.md#cellsGetWorksheetCellStyle) | **GET** /cells/{name}/worksheets/{sheetName}/cells/{cellName}/style | Read cell&#39;s style info.
 *CellsApi* | [**cellsGetWorksheetCells**](docs/CellsApi.md#cellsGetWorksheetCells) | **GET** /cells/{name}/worksheets/{sheetName}/cells | Get cells info.
@@ -215,7 +217,7 @@ Class | Method | HTTP request | Description
 *CellsPageSetupApi* | [**cellsPageSetupPostPageSetup**](docs/CellsPageSetupApi.md#cellsPageSetupPostPageSetup) | **POST** /cells/{name}/worksheets/{sheetName}/pagesetup | Update Page Setup information.
 *CellsPicturesApi* | [**cellsPicturesDeleteWorksheetPicture**](docs/CellsPicturesApi.md#cellsPicturesDeleteWorksheetPicture) | **DELETE** /cells/{name}/worksheets/{sheetName}/pictures/{pictureIndex} | Delete a picture object in worksheet
 *CellsPicturesApi* | [**cellsPicturesDeleteWorksheetPictures**](docs/CellsPicturesApi.md#cellsPicturesDeleteWorksheetPictures) | **DELETE** /cells/{name}/worksheets/{sheetName}/pictures | Delete all pictures in worksheet.
-*CellsPicturesApi* | [**cellsPicturesGetWorksheetPicture**](docs/CellsPicturesApi.md#cellsPicturesGetWorksheetPicture) | **GET** /cells/{name}/worksheets/{sheetName}/pictures/{pictureNumber} | GRead worksheet picture by number.
+*CellsPicturesApi* | [**cellsPicturesGetWorksheetPicture**](docs/CellsPicturesApi.md#cellsPicturesGetWorksheetPicture) | **GET** /cells/{name}/worksheets/{sheetName}/pictures/{pictureIndex} | GRead worksheet picture by number.
 *CellsPicturesApi* | [**cellsPicturesGetWorksheetPictures**](docs/CellsPicturesApi.md#cellsPicturesGetWorksheetPictures) | **GET** /cells/{name}/worksheets/{sheetName}/pictures | Read worksheet pictures.
 *CellsPicturesApi* | [**cellsPicturesPostWorksheetPicture**](docs/CellsPicturesApi.md#cellsPicturesPostWorksheetPicture) | **POST** /cells/{name}/worksheets/{sheetName}/pictures/{pictureIndex} | Update worksheet picture by index.
 *CellsPicturesApi* | [**cellsPicturesPutWorksheetAddPicture**](docs/CellsPicturesApi.md#cellsPicturesPutWorksheetAddPicture) | **PUT** /cells/{name}/worksheets/{sheetName}/pictures | Add a new worksheet picture.
@@ -243,6 +245,7 @@ Class | Method | HTTP request | Description
 *CellsPropertiesApi* | [**cellsPropertiesGetDocumentProperties**](docs/CellsPropertiesApi.md#cellsPropertiesGetDocumentProperties) | **GET** /cells/{name}/documentproperties | Read document properties.
 *CellsPropertiesApi* | [**cellsPropertiesGetDocumentProperty**](docs/CellsPropertiesApi.md#cellsPropertiesGetDocumentProperty) | **GET** /cells/{name}/documentproperties/{propertyName} | Read document property by name.
 *CellsPropertiesApi* | [**cellsPropertiesPutDocumentProperty**](docs/CellsPropertiesApi.md#cellsPropertiesPutDocumentProperty) | **PUT** /cells/{name}/documentproperties/{propertyName} | Set/create document property.
+*CellsRangesApi* | [**cellsRangesGetWorksheetCellsRangeValue**](docs/CellsRangesApi.md#cellsRangesGetWorksheetCellsRangeValue) | **GET** /cells/{name}/worksheets/{sheetName}/ranges/value | Get cells list in a range by range name or row column indexes  
 *CellsRangesApi* | [**cellsRangesPostWorksheetCellsRangeColumnWidth**](docs/CellsRangesApi.md#cellsRangesPostWorksheetCellsRangeColumnWidth) | **POST** /cells/{name}/worksheets/{sheetName}/ranges/columnWidth | Set column width of range
 *CellsRangesApi* | [**cellsRangesPostWorksheetCellsRangeMerge**](docs/CellsRangesApi.md#cellsRangesPostWorksheetCellsRangeMerge) | **POST** /cells/{name}/worksheets/{sheetName}/ranges/merge | Combines a range of cells into a single cell.              
 *CellsRangesApi* | [**cellsRangesPostWorksheetCellsRangeMoveTo**](docs/CellsRangesApi.md#cellsRangesPostWorksheetCellsRangeMoveTo) | **POST** /cells/{name}/worksheets/{sheetName}/ranges/moveto | Move the current range to the dest range.             
@@ -263,9 +266,12 @@ Class | Method | HTTP request | Description
 *CellsWorkbookApi* | [**cellsWorkbookDeleteDecryptDocument**](docs/CellsWorkbookApi.md#cellsWorkbookDeleteDecryptDocument) | **DELETE** /cells/{name}/encryption | Decrypt document.
 *CellsWorkbookApi* | [**cellsWorkbookDeleteDocumentUnprotectFromChanges**](docs/CellsWorkbookApi.md#cellsWorkbookDeleteDocumentUnprotectFromChanges) | **DELETE** /cells/{name}/writeProtection | Unprotect document from changes.
 *CellsWorkbookApi* | [**cellsWorkbookDeleteUnprotectDocument**](docs/CellsWorkbookApi.md#cellsWorkbookDeleteUnprotectDocument) | **DELETE** /cells/{name}/protection | Unprotect document.
+*CellsWorkbookApi* | [**cellsWorkbookDeleteWorkbookName**](docs/CellsWorkbookApi.md#cellsWorkbookDeleteWorkbookName) | **DELETE** /cells/{name}/names/{nameName} | Clean workbook&#39;s names.
+*CellsWorkbookApi* | [**cellsWorkbookDeleteWorkbookNames**](docs/CellsWorkbookApi.md#cellsWorkbookDeleteWorkbookNames) | **DELETE** /cells/{name}/names | Clean workbook&#39;s names.
 *CellsWorkbookApi* | [**cellsWorkbookGetWorkbook**](docs/CellsWorkbookApi.md#cellsWorkbookGetWorkbook) | **GET** /cells/{name} | Read workbook info or export.
 *CellsWorkbookApi* | [**cellsWorkbookGetWorkbookDefaultStyle**](docs/CellsWorkbookApi.md#cellsWorkbookGetWorkbookDefaultStyle) | **GET** /cells/{name}/defaultstyle | Read workbook default style info.
 *CellsWorkbookApi* | [**cellsWorkbookGetWorkbookName**](docs/CellsWorkbookApi.md#cellsWorkbookGetWorkbookName) | **GET** /cells/{name}/names/{nameName} | Read workbook&#39;s name.
+*CellsWorkbookApi* | [**cellsWorkbookGetWorkbookNameValue**](docs/CellsWorkbookApi.md#cellsWorkbookGetWorkbookNameValue) | **GET** /cells/{name}/names/{nameName}/value | Get workbook&#39;s name value.
 *CellsWorkbookApi* | [**cellsWorkbookGetWorkbookNames**](docs/CellsWorkbookApi.md#cellsWorkbookGetWorkbookNames) | **GET** /cells/{name}/names | Read workbook&#39;s names.
 *CellsWorkbookApi* | [**cellsWorkbookGetWorkbookSettings**](docs/CellsWorkbookApi.md#cellsWorkbookGetWorkbookSettings) | **GET** /cells/{name}/settings | Get Workbook Settings DTO
 *CellsWorkbookApi* | [**cellsWorkbookGetWorkbookTextItems**](docs/CellsWorkbookApi.md#cellsWorkbookGetWorkbookTextItems) | **GET** /cells/{name}/textItems | Read workbook&#39;s text items.
@@ -374,6 +380,7 @@ Class | Method | HTTP request | Description
  - [PasswordRequest](docs/PasswordRequest.md)
  - [PasteOptions](docs/PasteOptions.md)
  - [PatternFill](docs/PatternFill.md)
+ - [PdfSecurityOptions](docs/PdfSecurityOptions.md)
  - [PicFormatOption](docs/PicFormatOption.md)
  - [PivotField](docs/PivotField.md)
  - [PivotFilter](docs/PivotFilter.md)
@@ -412,6 +419,7 @@ Class | Method | HTTP request | Description
  - [WorksheetMovingRequest](docs/WorksheetMovingRequest.md)
  - [AutoFilter](docs/AutoFilter.md)
  - [AutoFilterResponse](docs/AutoFilterResponse.md)
+ - [AutoShapeResponse](docs/AutoShapeResponse.md)
  - [AutoShapes](docs/AutoShapes.md)
  - [AutoShapesResponse](docs/AutoShapesResponse.md)
  - [Cell](docs/Cell.md)
@@ -442,15 +450,18 @@ Class | Method | HTTP request | Description
  - [ConditionalFormattings](docs/ConditionalFormattings.md)
  - [ConditionalFormattingsResponse](docs/ConditionalFormattingsResponse.md)
  - [ConvertTaskParameter](docs/ConvertTaskParameter.md)
+ - [DifSaveOptions](docs/DifSaveOptions.md)
  - [FillFormatResponse](docs/FillFormatResponse.md)
  - [FormatCondition](docs/FormatCondition.md)
  - [HorizontalPageBreakResponse](docs/HorizontalPageBreakResponse.md)
  - [HorizontalPageBreaks](docs/HorizontalPageBreaks.md)
  - [HorizontalPageBreaksResponse](docs/HorizontalPageBreaksResponse.md)
+ - [HtmlSaveOptions](docs/HtmlSaveOptions.md)
  - [Hyperlink](docs/Hyperlink.md)
  - [HyperlinkResponse](docs/HyperlinkResponse.md)
  - [Hyperlinks](docs/Hyperlinks.md)
  - [HyperlinksResponse](docs/HyperlinksResponse.md)
+ - [ImageSaveOptions](docs/ImageSaveOptions.md)
  - [ImportBatchDataOption](docs/ImportBatchDataOption.md)
  - [ImportCSVDataOption](docs/ImportCSVDataOption.md)
  - [ImportDataTaskParameter](docs/ImportDataTaskParameter.md)
@@ -465,6 +476,7 @@ Class | Method | HTTP request | Description
  - [ListObjectResponse](docs/ListObjectResponse.md)
  - [ListObjects](docs/ListObjects.md)
  - [ListObjectsResponse](docs/ListObjectsResponse.md)
+ - [MHtmlSaveOptions](docs/MHtmlSaveOptions.md)
  - [MergedCell](docs/MergedCell.md)
  - [MergedCellResponse](docs/MergedCellResponse.md)
  - [MergedCells](docs/MergedCells.md)
@@ -473,14 +485,17 @@ Class | Method | HTTP request | Description
  - [NameResponse](docs/NameResponse.md)
  - [Names](docs/Names.md)
  - [NamesResponse](docs/NamesResponse.md)
+ - [OdsSaveOptions](docs/OdsSaveOptions.md)
  - [OleObjectResponse](docs/OleObjectResponse.md)
  - [OleObjects](docs/OleObjects.md)
  - [OleObjectsResponse](docs/OleObjectsResponse.md)
+ - [OoxmlSaveOptions](docs/OoxmlSaveOptions.md)
  - [PageBreakOperateParameter](docs/PageBreakOperateParameter.md)
  - [PageSectionsResponse](docs/PageSectionsResponse.md)
  - [PageSetup](docs/PageSetup.md)
  - [PageSetupOperateParameter](docs/PageSetupOperateParameter.md)
  - [PageSetupResponse](docs/PageSetupResponse.md)
+ - [PdfSaveOptions](docs/PdfSaveOptions.md)
  - [PictureResponse](docs/PictureResponse.md)
  - [Pictures](docs/Pictures.md)
  - [PicturesResponse](docs/PicturesResponse.md)
@@ -492,6 +507,7 @@ Class | Method | HTTP request | Description
  - [PivotTableResponse](docs/PivotTableResponse.md)
  - [PivotTables](docs/PivotTables.md)
  - [PivotTablesResponse](docs/PivotTablesResponse.md)
+ - [RangeValueResponse](docs/RangeValueResponse.md)
  - [RangesResponse](docs/RangesResponse.md)
  - [Row](docs/Row.md)
  - [RowResponse](docs/RowResponse.md)
@@ -509,13 +525,16 @@ Class | Method | HTTP request | Description
  - [SplitResultDocument](docs/SplitResultDocument.md)
  - [SplitResultResponse](docs/SplitResultResponse.md)
  - [SplitWorkbookTaskParameter](docs/SplitWorkbookTaskParameter.md)
+ - [SpreadsheetML2003SaveOptions](docs/SpreadsheetML2003SaveOptions.md)
  - [Style](docs/Style.md)
  - [StyleResponse](docs/StyleResponse.md)
+ - [SvgSaveOptions](docs/SvgSaveOptions.md)
  - [TextItem](docs/TextItem.md)
  - [TextItems](docs/TextItems.md)
  - [TextItemsResponse](docs/TextItemsResponse.md)
  - [TextOptions](docs/TextOptions.md)
  - [TitleResponse](docs/TitleResponse.md)
+ - [TxtSaveOptions](docs/TxtSaveOptions.md)
  - [Validation](docs/Validation.md)
  - [ValidationResponse](docs/ValidationResponse.md)
  - [Validations](docs/Validations.md)
@@ -532,6 +551,10 @@ Class | Method | HTTP request | Description
  - [WorksheetResponse](docs/WorksheetResponse.md)
  - [Worksheets](docs/Worksheets.md)
  - [WorksheetsResponse](docs/WorksheetsResponse.md)
+ - [XlsSaveOptions](docs/XlsSaveOptions.md)
+ - [XlsbSaveOptions](docs/XlsbSaveOptions.md)
+ - [XpsSaveOptions](docs/XpsSaveOptions.md)
+ - [AutoShape](docs/AutoShape.md)
  - [ChartArea](docs/ChartArea.md)
  - [Legend](docs/Legend.md)
  - [OleObject](docs/OleObject.md)

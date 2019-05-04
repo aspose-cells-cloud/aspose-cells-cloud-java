@@ -718,24 +718,24 @@ public class CellsWorksheetsApiTest {
         String sheetName = SHEET1;
 //        File file = new File("");
 //        file.get
-        byte[] png = null;  
-        try {  
-            File file = new File(CellsApiUtil.GetSourceFolder() + "WaterMark.png");  
-            FileInputStream fis = new FileInputStream(file);  
-            ByteArrayOutputStream bos = new ByteArrayOutputStream(1000);  
-            byte[] b = new byte[1000];  
-            int n;  
-            while ((n = fis.read(b)) != -1) {  
-                bos.write(b, 0, n);  
-            }  
-            fis.close();  
-            bos.close();  
-            png = bos.toByteArray();  
-        } catch (FileNotFoundException e) {  
-            e.printStackTrace();  
-        } catch (IOException e) {  
-            e.printStackTrace();  
-        }  
+        byte[] png = CellsApiUtil.GetFileData("WaterMark.png");
+//        try {  
+//            File file = new File(CellsApiUtil.GetSourceFolder() + "WaterMark.png");  
+//            FileInputStream fis = new FileInputStream(file);  
+//            ByteArrayOutputStream bos = new ByteArrayOutputStream(1000);  
+//            byte[] b = new byte[1000];  
+//            int n;  
+//            while ((n = fis.read(b)) != -1) {  
+//                bos.write(b, 0, n);  
+//            }  
+//            fis.close();  
+//            bos.close();  
+//            png = bos.toByteArray();  
+//        } catch (FileNotFoundException e) {  
+//            e.printStackTrace();  
+//        } catch (IOException e) {  
+//            e.printStackTrace();  
+//        }  
         
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));

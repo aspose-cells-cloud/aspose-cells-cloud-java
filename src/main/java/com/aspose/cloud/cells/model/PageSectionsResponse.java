@@ -30,7 +30,7 @@ import java.util.List;
 /**
  * PageSectionsResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-09-05T14:42:39.608+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-02-02T16:48:31.575+08:00")
 public class PageSectionsResponse extends SaaSposeResponse {
   @SerializedName("PageSections")
   private List<PageSection> pageSections = null;

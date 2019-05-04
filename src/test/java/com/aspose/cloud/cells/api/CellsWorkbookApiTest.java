@@ -546,13 +546,13 @@ public class CellsWorkbookApiTest {
      */
     @Test
     public void cellsWorkbookPutConvertWorkbookTest() throws ApiException {
-        String format ="xlsx";
+        String format ="pdf";
         String password = null;
         String outPath = null;
         String name = BOOK1;
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        File response = api.cellsWorkbookPutConvertWorkbook(format, password, outPath);
+        File response = api.cellsWorkbookPutConvertWorkbook(CellsApiUtil.GetFileData(name),format, password, outPath);
 
         // TODO: test validations
     }
@@ -592,7 +592,8 @@ public class CellsWorkbookApiTest {
         String templateFile =  BOOK1;
         String dataFile ="ReportData.xml";
         String folder = TEMPFOLDER;
-		api.setApiClient( CellsApiUtil.Ready(folder, name));
+        CellsApiUtil.Upload(dataFile);
+		api.setApiClient( CellsApiUtil.Ready(folder, templateFile));
         WorkbookResponse response = api.cellsWorkbookPutWorkbookCreate(name,   templateFile,  dataFile, folder,null);
 
         // TODO: test validations

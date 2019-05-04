@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**cellsDeleteWorksheetColumns**](CellsApi.md#cellsDeleteWorksheetColumns) | **DELETE** /cells/{name}/worksheets/{sheetName}/cells/columns/{columnIndex} | Delete worksheet columns.
 [**cellsDeleteWorksheetRow**](CellsApi.md#cellsDeleteWorksheetRow) | **DELETE** /cells/{name}/worksheets/{sheetName}/cells/rows/{rowIndex} | Delete worksheet row.
 [**cellsDeleteWorksheetRows**](CellsApi.md#cellsDeleteWorksheetRows) | **DELETE** /cells/{name}/worksheets/{sheetName}/cells/rows | Delete several worksheet rows.
+[**cellsGetCellHtmlString**](CellsApi.md#cellsGetCellHtmlString) | **GET** /cells/{name}/worksheets/{sheetName}/cells/{cellName}/htmlstring | Read cell data by cell&#39;s name.
 [**cellsGetWorksheetCell**](CellsApi.md#cellsGetWorksheetCell) | **GET** /cells/{name}/worksheets/{sheetName}/cells/{cellOrMethodName} | Read cell data by cell&#39;s name.
 [**cellsGetWorksheetCellStyle**](CellsApi.md#cellsGetWorksheetCellStyle) | **GET** /cells/{name}/worksheets/{sheetName}/cells/{cellName}/style | Read cell&#39;s style info.
 [**cellsGetWorksheetCells**](CellsApi.md#cellsGetWorksheetCells) | **GET** /cells/{name}/worksheets/{sheetName}/cells | Get cells info.
@@ -196,6 +197,57 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**SaaSposeResponse**](SaaSposeResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="cellsGetCellHtmlString"></a>
+# **cellsGetCellHtmlString**
+> Object cellsGetCellHtmlString(name, sheetName, cellName, folder, storage)
+
+Read cell data by cell&#39;s name.
+
+### Example
+```java
+// Import classes:
+//import com.aspose.cloud.cells.client.ApiException;
+//import com.aspose.cloud.cells.api.CellsApi;
+
+
+CellsApi apiInstance = new CellsApi();
+String name = "name_example"; // String | Document name.
+String sheetName = "sheetName_example"; // String | Worksheet name.
+String cellName = "cellName_example"; // String | The cell's  name.
+String folder = "folder_example"; // String | Document's folder.
+String storage = "storage_example"; // String | storage name.
+try {
+    Object result = apiInstance.cellsGetCellHtmlString(name, sheetName, cellName, folder, storage);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling CellsApi#cellsGetCellHtmlString");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **String**| Document name. |
+ **sheetName** | **String**| Worksheet name. |
+ **cellName** | **String**| The cell&#39;s  name. |
+ **folder** | **String**| Document&#39;s folder. | [optional]
+ **storage** | **String**| storage name. | [optional]
+
+### Return type
+
+**Object**
 
 ### Authorization
 
