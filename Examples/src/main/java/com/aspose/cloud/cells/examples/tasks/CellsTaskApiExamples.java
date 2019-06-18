@@ -1,51 +1,23 @@
 package com.aspose.cloud.cells.examples.tasks;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aspose.cloud.cells.api.CellsTaskApi;
-import com.aspose.cloud.cells.client.ApiClient;
 import com.aspose.cloud.cells.client.ApiException;
-import com.aspose.cloud.cells.client.Configuration;
-
-import java.io.File;
-
+import com.aspose.cloud.cells.examples.Base;
 import com.aspose.cloud.cells.model.FileSource;
 import com.aspose.cloud.cells.model.SplitWorkbookTaskParameter;
 import com.aspose.cloud.cells.model.TaskData;
 import com.aspose.cloud.cells.model.TaskDescription;
 
-import org.junit.Test;
-import org.junit.Ignore;
-
-import java.io.File;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-/**
- * API tests for CellsTaskApi
- */
-
-public class CellsTaskApiExamples {
+public class CellsTaskApiExamples extends Base{
 
 	private final CellsTaskApi api = new CellsTaskApi();
 
-	private String BOOK1 = "Book1.xlsx";
-	private String MYDOC = "myDocument.xlsx";
-	private String PivTestFile = "TestCase.xlsx";
-	private String TEMPFOLDER = "Temp";
-	private String SHEET1 = "Sheet1";
-	private String SHEET2 = "Sheet2";
-	private String SHEET3 = "Sheet3";
-	private String SHEET4 = "Sheet4";
-	private String SHEET5 = "Sheet5";
-	private String SHEET6 = "Sheet6";
-	private String SHEET7 = "Sheet7";
-	private String SHEET8 = "Sheet8";
-	private String CellName = "A1";
-	private String RANGE = "A1:C10";
-	private String CELLAREA = "A1:C10";
+	
 
-	public void cellsTaskPostRunTaskTest() throws ApiException {
+	public void cellsTaskPostRunTaskExample() throws ApiException {
 		String name = BOOK1;
 
 		String folder = TEMPFOLDER;
@@ -71,8 +43,10 @@ public class CellsTaskApiExamples {
 		tasks.add(task1);
 		taskData.setTasks(tasks);
 		taskData.getTasks().add(task1);
-		api.setApiClient(Utils.Ready(folder, name));
+		api.setApiClient(Base.Ready(folder, name));
 		Object response = api.cellsTaskPostRunTask(taskData);
+		
+		System.out.print(response);
 
 	}
 
