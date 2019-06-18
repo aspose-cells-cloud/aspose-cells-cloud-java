@@ -187,6 +187,8 @@ public class CellsOleObjectsApiTest {
         String imageFile = "word.jpg";
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
+		CellsApiUtil.Upload( imageFile);
+		CellsApiUtil.Upload(oleFile);
         OleObjectResponse response = api.cellsOleObjectsPutWorksheetOleObject(name, sheetName, oleObject, upperLeftRow, upperLeftColumn, height, width, oleFile, imageFile, folder,null);
         Assert.assertEquals("cellsOleObjectsPutWorksheetOleObjectTest is OK.", "OK", response.getStatus());
         // TODO: test validations

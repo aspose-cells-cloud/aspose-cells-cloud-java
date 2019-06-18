@@ -184,6 +184,7 @@ public class CellsPicturesApiTest {
         String picturePath = "WaterMark.png";
         String folder = TEMPFOLDER;
 		api.setApiClient( CellsApiUtil.Ready(folder, name));
+		CellsApiUtil.Upload( picturePath);
         PicturesResponse response = api.cellsPicturesPutWorksheetAddPicture(name, sheetName, picture, upperLeftRow, upperLeftColumn, lowerRightRow, lowerRightColumn, picturePath, folder,null);
         Assert.assertEquals("cellsPicturesPutWorksheetAddPictureTest is OK.", "OK", response.getStatus());
         // TODO: test validations

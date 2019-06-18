@@ -75,5 +75,25 @@ public class CellsSaveAsApiTest {
 
         // TODO: test validations
     }
-    
+    /**
+     * Convert document and save result to storage.
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void cellsSaveAsPostDocumentSaveAsMDTest() throws ApiException {
+        String name = BOOK1;
+        SaveOptions saveOptions = null;
+        String newfilename = "newbook.xlsx.md";
+        Boolean isAutoFitRows = true;
+        Boolean isAutoFitColumns = false;
+        String folder = TEMPFOLDER;
+		api.setApiClient( CellsApiUtil.Ready(folder, name));
+        SaveResponse response = api.cellsSaveAsPostDocumentSaveAs(name, saveOptions, newfilename, isAutoFitRows, isAutoFitColumns, folder,null);
+
+        // TODO: test validations
+    }
 }

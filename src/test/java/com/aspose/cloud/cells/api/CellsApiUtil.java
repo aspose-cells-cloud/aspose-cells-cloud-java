@@ -15,9 +15,12 @@ import com.aspose.storage.api.*;
 public class CellsApiUtil {
 	private static String accesstoken;
 	private static String grantType = "client_credentials";
-	private static String clientId = "your sid";
-	private static String clientSecret = "your key";
-	private static String sourceFolder ="test data foler";
+	private static String clientId = "66164C51-693E-4904-A121-545961673EC1";
+	private static String clientSecret = "536e76768419db9585afdd37bb5f7533";
+	private static String sourceFolder ="D:\\Projects\\Aspose\\Aspose.Cloud\\Aspose.Cells.Cloud.SDK\\src\\TestData\\";
+//	private static String clientId = "your sid";
+//	private static String clientSecret = "your key";
+//	private static String sourceFolder ="test data foler";	
 	public static String GetSourceFolder() {
 		return sourceFolder;
 	}
@@ -62,13 +65,12 @@ public class CellsApiUtil {
 		File file = new File(sourceFolder + filename);
 		storageHelper.PutCreate(folder + "/" + filename, null, null, file);
 		
-		CellsTaskApi apiTask = new CellsTaskApi();
 		ApiClient apiClient = new ApiClient();
 		apiClient.setBasePath("https://api.aspose.cloud/v1.1");
 		apiClient.addDefaultHeader("Authorization", "Bearer " + GetAccessToken());
-		apiTask.setApiClient(apiClient);
 		return apiClient;
 	}
+
 	public static byte[] GetFileData(String filename)	{		
         try {  
             File file = new File(GetSourceFolder() + filename);  

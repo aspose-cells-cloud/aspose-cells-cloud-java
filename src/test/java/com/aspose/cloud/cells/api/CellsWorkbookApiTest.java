@@ -201,6 +201,27 @@ public class CellsWorkbookApiTest {
      *          if the Api call fails
      */
     @Test
+    public void cellsWorkbookGetWorkbookForMDTest() throws ApiException {
+       String name = BOOK1;
+        String password = null;
+        Boolean isAutoFit = true;
+        Boolean onlySaveTable = true;
+        String format = "md";
+        String folder = TEMPFOLDER;
+		api.setApiClient( CellsApiUtil.Ready(folder, name));
+        File response = api.cellsWorkbookGetWorkbook(name, password, format, isAutoFit, onlySaveTable, folder,null,null);
+
+        // TODO: test validations
+    }
+    /**
+     * Read workbook default style info.
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
     public void cellsWorkbookGetWorkbookDefaultStyleTest() throws ApiException {
        String name = BOOK1;
         String folder = TEMPFOLDER;
@@ -594,7 +615,7 @@ public class CellsWorkbookApiTest {
         String folder = TEMPFOLDER;
         CellsApiUtil.Upload(dataFile);
 		api.setApiClient( CellsApiUtil.Ready(folder, templateFile));
-        WorkbookResponse response = api.cellsWorkbookPutWorkbookCreate(name,   templateFile,  dataFile, folder,null);
+        WorkbookResponse response = api.cellsWorkbookPutWorkbookCreate(name,  folder+"/"+ templateFile,  dataFile, folder,null);
 
         // TODO: test validations
     }
