@@ -18,7 +18,9 @@ import com.aspose.cloud.cells.client.Configuration;
 
 
 import com.aspose.cloud.cells.model.AutoShapesResponse;
+
 import java.io.File;
+
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -34,7 +36,7 @@ import java.util.Map;
 
 public class CellsAutoshapesApiTest {
 
-    private final CellsAutoshapesApi api = new CellsAutoshapesApi();
+    private CellsApi api ;
 
     private String BOOK1 = "Book1.xlsx";
     private String MYDOC = "myDocument.xlsx";
@@ -53,7 +55,14 @@ public class CellsAutoshapesApiTest {
     private String CELLAREA = "A1:C10";
     
 	
-    
+    public CellsAutoshapesApiTest(){
+    	try {
+			 api = new CellsApi(CellsApiUtil.GetClientId(),CellsApiUtil.GetClientSecret());
+		} catch (ApiException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    }
     /**
      * Get autoshape info.
      *
@@ -69,7 +78,7 @@ public class CellsAutoshapesApiTest {
         Integer autoshapeNumber = 4;
         String format = "png";
         String folder = TEMPFOLDER;
-		api.setApiClient( CellsApiUtil.Ready(folder, name));
+        CellsApiUtil.Upload(api, folder , name);
         File response = api.cellsAutoshapesGetWorksheetAutoshape(name, sheetName, autoshapeNumber, format,folder,null);
 
         // TODO: test validations
@@ -88,7 +97,7 @@ public class CellsAutoshapesApiTest {
         String name = MYDOC;
         String sheetName = SHEET2;
         String folder = TEMPFOLDER;
-		api.setApiClient( CellsApiUtil.Ready(folder, name));
+        CellsApiUtil.Upload(api, folder , name);
         AutoShapesResponse response = api.cellsAutoshapesGetWorksheetAutoshapes(name, sheetName, folder,null);
         
         // TODO: test validations

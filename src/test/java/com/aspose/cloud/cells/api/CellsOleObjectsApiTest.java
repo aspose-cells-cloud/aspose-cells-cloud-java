@@ -18,12 +18,21 @@ import com.aspose.cloud.cells.client.Configuration;
 
 
 
+
+
+
+
+
+
+
+
+
 import java.io.File;
 
 import com.aspose.cloud.cells.model.OleObject;
 import com.aspose.cloud.cells.model.OleObjectResponse;
 import com.aspose.cloud.cells.model.OleObjectsResponse;
-import com.aspose.cloud.cells.model.SaaSposeResponse;
+import com.aspose.cloud.cells.model.CellsCloudResponse;
 
 import org.junit.Test;
 import org.junit.Ignore;
@@ -42,7 +51,7 @@ import junit.framework.Assert;
 
 public class CellsOleObjectsApiTest {
 
-    private final CellsOleObjectsApi api = new CellsOleObjectsApi();
+    private  CellsApi api ;
 
     private String BOOK1 = "Book1.xlsx";
     private String MYDOC = "myDocument.xlsx";
@@ -61,7 +70,14 @@ public class CellsOleObjectsApiTest {
     private String CELLAREA = "A1:C10";
     
 	
-    
+    public CellsOleObjectsApiTest(){
+    	try {
+			 api = new CellsApi(CellsApiUtil.GetClientId(),CellsApiUtil.GetClientSecret());
+		} catch (ApiException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    }
     /**
      * Delete OLE object.
      *
@@ -76,8 +92,8 @@ public class CellsOleObjectsApiTest {
         String sheetName = SHEET6;
         Integer oleObjectIndex = 0;
         String folder = TEMPFOLDER;
-		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        SaaSposeResponse response = api.cellsOleObjectsDeleteWorksheetOleObject(name, sheetName, oleObjectIndex, folder,null);
+        CellsApiUtil.Upload(api, folder , name);
+        CellsCloudResponse response = api.cellsOleObjectsDeleteWorksheetOleObject(name, sheetName, oleObjectIndex, folder,null);
         Assert.assertEquals("cellsOleObjectsDeleteWorksheetOleObjectTest is OK.", "OK", response.getStatus());
         // TODO: test validations
     }
@@ -95,8 +111,8 @@ public class CellsOleObjectsApiTest {
        String name = BOOK1;
         String sheetName = SHEET6;
         String folder = TEMPFOLDER;
-		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        SaaSposeResponse response = api.cellsOleObjectsDeleteWorksheetOleObjects(name, sheetName, folder,null);
+        CellsApiUtil.Upload(api, folder , name);
+        CellsCloudResponse response = api.cellsOleObjectsDeleteWorksheetOleObjects(name, sheetName, folder,null);
         Assert.assertEquals("cellsOleObjectsDeleteWorksheetOleObjectsTest is OK.", "OK", response.getStatus());
         // TODO: test validations
     }
@@ -116,7 +132,7 @@ public class CellsOleObjectsApiTest {
         Integer objectNumber = 0;
         String format = null;
         String folder = TEMPFOLDER;
-		api.setApiClient( CellsApiUtil.Ready(folder, name));
+        CellsApiUtil.Upload(api, folder , name);
         File response = api.cellsOleObjectsGetWorksheetOleObject(name, sheetName, objectNumber,format, folder,null);
 
         // TODO: test validations
@@ -132,10 +148,10 @@ public class CellsOleObjectsApiTest {
      */
     @Test
     public void cellsOleObjectsGetWorksheetOleObjectsTest() throws ApiException {
-       String name = BOOK1;
+        String name = BOOK1;
         String sheetName = SHEET6;
         String folder = TEMPFOLDER;
-		api.setApiClient( CellsApiUtil.Ready(folder, name));
+        CellsApiUtil.Upload(api, folder , name);
         OleObjectsResponse response = api.cellsOleObjectsGetWorksheetOleObjects(name, sheetName, folder,null);
         Assert.assertEquals("cellsOleObjectsGetWorksheetOleObjectsTest is OK.", "OK", response.getStatus());
         // TODO: test validations
@@ -151,7 +167,7 @@ public class CellsOleObjectsApiTest {
      */
     @Test
     public void cellsOleObjectsPostUpdateWorksheetOleObjectTest() throws ApiException {
-       String name = BOOK1;
+        String name = BOOK1;
         String sheetName = SHEET6;
         Integer oleObjectIndex = 0;
         OleObject ole = new OleObject();
@@ -160,8 +176,8 @@ public class CellsOleObjectsApiTest {
         ole.setHeight(100);
         ole.setWidth(90);
         String folder = TEMPFOLDER;
-		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        SaaSposeResponse response = api.cellsOleObjectsPostUpdateWorksheetOleObject(name, sheetName, oleObjectIndex, ole, folder,null);
+        CellsApiUtil.Upload(api, folder , name);
+        CellsCloudResponse response = api.cellsOleObjectsPostUpdateWorksheetOleObject(name, sheetName, oleObjectIndex, ole, folder,null);
         Assert.assertEquals("cellsOleObjectsPostUpdateWorksheetOleObjectTest is OK.", "OK", response.getStatus());
         // TODO: test validations
     }
@@ -176,7 +192,7 @@ public class CellsOleObjectsApiTest {
      */
     @Test
     public void cellsOleObjectsPutWorksheetOleObjectTest() throws ApiException {
-       String name = BOOK1;
+        String name = BOOK1;
         String sheetName = SHEET6;
         OleObject oleObject = null;
         Integer upperLeftRow = 1;
@@ -186,9 +202,9 @@ public class CellsOleObjectsApiTest {
         String oleFile = "OLEDoc.docx";
         String imageFile = "word.jpg";
         String folder = TEMPFOLDER;
-		api.setApiClient( CellsApiUtil.Ready(folder, name));
-		CellsApiUtil.Upload( imageFile);
-		CellsApiUtil.Upload(oleFile);
+        CellsApiUtil.Upload(api, folder , name);
+		CellsApiUtil.Upload(api,  imageFile);
+		CellsApiUtil.Upload(api, oleFile);
         OleObjectResponse response = api.cellsOleObjectsPutWorksheetOleObject(name, sheetName, oleObject, upperLeftRow, upperLeftColumn, height, width, oleFile, imageFile, folder,null);
         Assert.assertEquals("cellsOleObjectsPutWorksheetOleObjectTest is OK.", "OK", response.getStatus());
         // TODO: test validations

@@ -20,6 +20,7 @@ import com.aspose.cloud.cells.client.Configuration;
 import com.aspose.cloud.cells.model.ChartAreaResponse;
 import com.aspose.cloud.cells.model.FillFormatResponse;
 import com.aspose.cloud.cells.model.LineResponse;
+
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -35,7 +36,7 @@ import java.util.Map;
 
 public class CellsChartAreaApiTest {
 
-    private final CellsChartAreaApi api = new CellsChartAreaApi();
+    private  CellsApi api ;
 
     private String BOOK1 = "Book1.xlsx";
     private String MYDOC = "myDocument.xlsx";
@@ -54,7 +55,14 @@ public class CellsChartAreaApiTest {
     private String CELLAREA = "A1:C10";
     
 	
-    
+    public CellsChartAreaApiTest(){
+    	try {
+			 api = new CellsApi(CellsApiUtil.GetClientId(),CellsApiUtil.GetClientSecret());
+		} catch (ApiException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    }
     /**
      * Get chart area info.
      *
@@ -69,7 +77,7 @@ public class CellsChartAreaApiTest {
         String sheetName = SHEET3;
         Integer chartIndex = 0;
         String folder = TEMPFOLDER;
-		api.setApiClient( CellsApiUtil.Ready(folder, name));
+        CellsApiUtil.Upload(api, folder , name);
         ChartAreaResponse response = api.cellsChartAreaGetChartArea(name, sheetName, chartIndex, folder,null);
 
         // TODO: test validations
@@ -89,7 +97,7 @@ public class CellsChartAreaApiTest {
         String sheetName = SHEET3;
         Integer chartIndex = 0;
         String folder = TEMPFOLDER;
-		api.setApiClient( CellsApiUtil.Ready(folder, name));
+        CellsApiUtil.Upload(api, folder , name);
         LineResponse response = api.cellsChartAreaGetChartAreaBorder(name, sheetName, chartIndex, folder,null);
 
         // TODO: test validations
@@ -109,7 +117,7 @@ public class CellsChartAreaApiTest {
         String sheetName = SHEET3;
         Integer chartIndex = 0;
         String folder = TEMPFOLDER;
-		api.setApiClient( CellsApiUtil.Ready(folder, name));
+        CellsApiUtil.Upload(api, folder , name);
         FillFormatResponse response = api.cellsChartAreaGetChartAreaFillFormat(name, sheetName, chartIndex, folder,null);
 
         // TODO: test validations

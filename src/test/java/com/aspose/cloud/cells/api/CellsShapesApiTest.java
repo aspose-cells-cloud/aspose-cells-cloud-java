@@ -17,10 +17,11 @@ import com.aspose.cloud.cells.client.ApiException;
 import com.aspose.cloud.cells.client.Configuration;
 
 
-import com.aspose.cloud.cells.model.SaaSposeResponse;
+import com.aspose.cloud.cells.model.CellsCloudResponse;
 import com.aspose.cloud.cells.model.Shape;
 import com.aspose.cloud.cells.model.ShapeResponse;
 import com.aspose.cloud.cells.model.ShapesResponse;
+
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -36,7 +37,7 @@ import java.util.Map;
 
 public class CellsShapesApiTest {
 
-    private final CellsShapesApi api = new CellsShapesApi();
+    private  CellsApi api ;
 
     private String BOOK1 = "Book1.xlsx";
     private String MYDOC = "myDocument.xlsx";
@@ -54,7 +55,14 @@ public class CellsShapesApiTest {
     private String RANGE = "A1:C10";
     private String CELLAREA = "A1:C10";
     
-	
+    public CellsShapesApiTest(){
+    	try {
+			 api = new CellsApi(CellsApiUtil.GetClientId(),CellsApiUtil.GetClientSecret());
+		} catch (ApiException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    }    
     
     /**
      * Delete a shape in worksheet
@@ -70,8 +78,8 @@ public class CellsShapesApiTest {
         String sheetName = SHEET6;
         Integer shapeindex = 0;
         String folder = TEMPFOLDER;
-		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        SaaSposeResponse response = api.cellsShapesDeleteWorksheetShape(name, sheetName, shapeindex, folder,null);
+        CellsApiUtil.Upload(api, folder , name);
+        CellsCloudResponse response = api.cellsShapesDeleteWorksheetShape(name, sheetName, shapeindex, folder,null);
 
         // TODO: test validations
     }
@@ -89,8 +97,8 @@ public class CellsShapesApiTest {
        String name = BOOK1;
         String sheetName = SHEET1;
         String folder = TEMPFOLDER;
-		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        SaaSposeResponse response = api.cellsShapesDeleteWorksheetShapes(name, sheetName, folder,null);
+        CellsApiUtil.Upload(api, folder , name);
+        CellsCloudResponse response = api.cellsShapesDeleteWorksheetShapes(name, sheetName, folder,null);
 
         // TODO: test validations
     }
@@ -109,7 +117,7 @@ public class CellsShapesApiTest {
         String sheetName = SHEET6;
         Integer shapeindex = 0;
         String folder = TEMPFOLDER;
-		api.setApiClient( CellsApiUtil.Ready(folder, name));
+        CellsApiUtil.Upload(api, folder , name);
         ShapeResponse response = api.cellsShapesGetWorksheetShape(name, sheetName, shapeindex, folder,null);
 
         // TODO: test validations
@@ -128,7 +136,7 @@ public class CellsShapesApiTest {
        String name = BOOK1;
         String sheetName = SHEET1;
         String folder = TEMPFOLDER;
-		api.setApiClient( CellsApiUtil.Ready(folder, name));
+        CellsApiUtil.Upload(api, folder , name);
         ShapesResponse response = api.cellsShapesGetWorksheetShapes(name, sheetName, folder,null);
 
         // TODO: test validations
@@ -150,8 +158,8 @@ public class CellsShapesApiTest {
         Shape dto = new Shape();
         dto.setLowerRightColumn(10);
         String folder = TEMPFOLDER;
-		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        SaaSposeResponse response = api.cellsShapesPostWorksheetShape(name, sheetName, shapeindex, dto, folder,null);
+        CellsApiUtil.Upload(api, folder , name);
+        CellsCloudResponse response = api.cellsShapesPostWorksheetShape(name, sheetName, shapeindex, dto, folder,null);
 
         // TODO: test validations
     }
@@ -176,7 +184,7 @@ public class CellsShapesApiTest {
         Integer width = 100;
         Integer height = 90;
         String folder = TEMPFOLDER;
-		api.setApiClient( CellsApiUtil.Ready(folder, name));
+        CellsApiUtil.Upload(api, folder , name);
         ShapeResponse response = api.cellsShapesPutWorksheetShape(name, sheetName, drawingType, upperLeftRow, upperLeftColumn, top, left, width, height, folder,null);
 
         // TODO: test validations

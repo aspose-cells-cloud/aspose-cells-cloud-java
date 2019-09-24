@@ -19,6 +19,7 @@ import com.aspose.cloud.cells.model.CellArea;
 import com.aspose.cloud.cells.model.Validation;
 import com.aspose.cloud.cells.model.ValidationResponse;
 import com.aspose.cloud.cells.model.ValidationsResponse;
+
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -34,7 +35,7 @@ import java.util.Map;
 
 public class CellsWorksheetValidationsApiTest {
 
-    private final CellsWorksheetValidationsApi api = new CellsWorksheetValidationsApi();
+    private CellsApi api ;
 
     private String BOOK1 = "Book1.xlsx";
     private String MYDOC = "myDocument.xlsx";
@@ -53,7 +54,14 @@ public class CellsWorksheetValidationsApiTest {
     private String CELLAREA = "A1:C10";
     
 	
-    
+    public CellsWorksheetValidationsApiTest(){
+    	try {
+			 api = new CellsApi(CellsApiUtil.GetClientId(),CellsApiUtil.GetClientSecret());
+		} catch (ApiException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    }    
     /**
      * Delete worksheet validation by index.
      *
@@ -68,7 +76,7 @@ public class CellsWorksheetValidationsApiTest {
         String sheetName = SHEET1;
         Integer validationIndex = 0;
         String folder = TEMPFOLDER;
-		api.setApiClient( CellsApiUtil.Ready(folder, name));
+		CellsApiUtil.Upload(api, folder , name);
         ValidationResponse response = api.cellsWorksheetValidationsDeleteWorksheetValidation(name, sheetName, validationIndex, folder,null);
 
         // TODO: test validations
@@ -88,7 +96,7 @@ public class CellsWorksheetValidationsApiTest {
         String sheetName = SHEET1;
         Integer validationIndex = 0;
         String folder = TEMPFOLDER;
-		api.setApiClient( CellsApiUtil.Ready(folder, name));
+		CellsApiUtil.Upload(api, folder , name);
         ValidationResponse response = api.cellsWorksheetValidationsGetWorksheetValidation(name, sheetName, validationIndex, folder,null);
 
         // TODO: test validations
@@ -107,7 +115,7 @@ public class CellsWorksheetValidationsApiTest {
        String name = MYDOC;
         String sheetName = SHEET1;
         String folder = TEMPFOLDER;
-		api.setApiClient( CellsApiUtil.Ready(folder, name));
+		CellsApiUtil.Upload(api, folder , name);
         ValidationsResponse response = api.cellsWorksheetValidationsGetWorksheetValidations(name, sheetName, folder,null);
 
         // TODO: test validations
@@ -139,7 +147,7 @@ public class CellsWorksheetValidationsApiTest {
         validation.setType("Custom");
         validation.setIgnoreBlank(true);
         String folder = TEMPFOLDER;
-		api.setApiClient( CellsApiUtil.Ready(folder, name));
+		CellsApiUtil.Upload(api, folder , name);
         ValidationResponse response = api.cellsWorksheetValidationsPostWorksheetValidation(name, sheetName, validationIndex, validation, folder,null);
     }
     
@@ -157,8 +165,8 @@ public class CellsWorksheetValidationsApiTest {
         String sheetName = SHEET1;
         String range = RANGE;
         String folder = TEMPFOLDER;
-		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        ValidationResponse response = api.cellsWorksheetValidationsPutWorksheetValidation(name, sheetName, range, folder,null);
+		CellsApiUtil.Upload(api, folder , name);
+        ValidationResponse response = api.cellsWorksheetValidationsPutWorksheetValidation(name, sheetName, range,null,folder,null);
 
         // TODO: test validations
     }

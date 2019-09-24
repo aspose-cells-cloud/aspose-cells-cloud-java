@@ -9,18 +9,12 @@ import java.io.IOException;
 import com.aspose.cloud.cells.client.ApiClient;
 import com.aspose.cloud.cells.client.ApiException;
 import com.aspose.cloud.cells.model.AccessTokenResponse;
-import com.aspose.storage.api.*;
-
 
 public class CellsApiUtil {
-	private static String accesstoken;
 	private static String grantType = "client_credentials";
-	private static String clientId = "66164C51-693E-4904-A121-545961673EC1";
-	private static String clientSecret = "536e76768419db9585afdd37bb5f7533";
+	private static String clientId = "66164C51-693E-4904-A121-545961673EC1";//"";
+	private static String clientSecret =  "536e76768419db9585afdd37bb5f7533";//"";
 	private static String sourceFolder ="D:\\Projects\\Aspose\\Aspose.Cloud\\Aspose.Cells.Cloud.SDK\\src\\TestData\\";
-//	private static String clientId = "your sid";
-//	private static String clientSecret = "your key";
-//	private static String sourceFolder ="test data foler";	
 	public static String GetSourceFolder() {
 		return sourceFolder;
 	}
@@ -36,41 +30,25 @@ public class CellsApiUtil {
 		return clientSecret;
 	}
 
-	public static String GetAccessToken() {
+	
+	public static void Upload(CellsApi cellsApi,String folder ,String filename) {		
+		File file = new File(sourceFolder + filename);
 		try {
-			if (accesstoken == null || accesstoken == "") {
-				System.out.println("--------------------------");
-				ApiClient apiClient = new ApiClient();
-				apiClient.setBasePath("https://api.aspose.cloud/");
-				OAuthApi oauth2 = new OAuthApi();
-				oauth2.setApiClient(apiClient);
-				AccessTokenResponse accessTokenResponse = oauth2.oAuthPost(grantType, clientId, clientSecret);
-				accesstoken = accessTokenResponse.getAccessToken();
-			}
-
+			cellsApi.uploadFile(folder +"\\" + filename, file, null);
 		} catch (ApiException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
-		return accesstoken;
+		}		
 	}
-	public static void Upload( String filename) {		
-		StorageApi storageHelper = new StorageApi(clientSecret,clientId);
+	public static void Upload(CellsApi cellsApi,String filename) {		
 		File file = new File(sourceFolder + filename);
-		storageHelper.PutCreate( filename, null, null, file);		
+		try {
+			cellsApi.uploadFile( filename, file, null);
+		} catch (ApiException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}		
 	}
-	public static ApiClient Ready(String folder, String filename) {
-		
-		StorageApi storageHelper = new StorageApi(clientSecret,clientId);
-		File file = new File(sourceFolder + filename);
-		storageHelper.PutCreate(folder + "/" + filename, null, null, file);
-		
-		ApiClient apiClient = new ApiClient();
-		apiClient.setBasePath("https://api.aspose.cloud/v1.1");
-		apiClient.addDefaultHeader("Authorization", "Bearer " + GetAccessToken());
-		return apiClient;
-	}
-
 	public static byte[] GetFileData(String filename)	{		
         try {  
             File file = new File(GetSourceFolder() + filename);  

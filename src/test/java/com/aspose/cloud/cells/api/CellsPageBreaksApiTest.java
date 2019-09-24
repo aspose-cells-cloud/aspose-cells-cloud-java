@@ -19,9 +19,10 @@ import com.aspose.cloud.cells.client.Configuration;
 
 import com.aspose.cloud.cells.model.HorizontalPageBreakResponse;
 import com.aspose.cloud.cells.model.HorizontalPageBreaksResponse;
-import com.aspose.cloud.cells.model.SaaSposeResponse;
+import com.aspose.cloud.cells.model.CellsCloudResponse;
 import com.aspose.cloud.cells.model.VerticalPageBreakResponse;
 import com.aspose.cloud.cells.model.VerticalPageBreaksResponse;
+
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -37,7 +38,7 @@ import java.util.Map;
 
 public class CellsPageBreaksApiTest {
 
-    private final CellsPageBreaksApi api = new CellsPageBreaksApi();
+    private  CellsApi api ;
 
     private String BOOK1 = "Book1.xlsx";
     private String MYDOC = "myDocument.xlsx";
@@ -56,7 +57,14 @@ public class CellsPageBreaksApiTest {
     private String CELLAREA = "A1:C10";
     
 	
-    
+    public CellsPageBreaksApiTest(){
+    	try {
+			 api = new CellsApi(CellsApiUtil.GetClientId(),CellsApiUtil.GetClientSecret());
+		} catch (ApiException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    }
     /**
      * 
      *
@@ -67,12 +75,12 @@ public class CellsPageBreaksApiTest {
      */
     @Test
     public void cellsPageBreaksDeleteHorizontalPageBreakTest() throws ApiException {
-       String name = BOOK1;
+        String name = BOOK1;
         String sheetName = SHEET1;
         Integer index = 0;
         String folder = TEMPFOLDER;
-		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        SaaSposeResponse response = api.cellsPageBreaksDeleteHorizontalPageBreak(name, sheetName, index, folder,null);
+        CellsApiUtil.Upload(api, folder , name);
+        CellsCloudResponse response = api.cellsPageBreaksDeleteHorizontalPageBreak(name, sheetName, index, folder,null);
 
         // TODO: test validations
     }
@@ -87,12 +95,12 @@ public class CellsPageBreaksApiTest {
      */
     @Test
     public void cellsPageBreaksDeleteHorizontalPageBreaksTest() throws ApiException {
-       String name = BOOK1;
+        String name = BOOK1;
         String sheetName = SHEET1;
         Integer row = 1;
         String folder = TEMPFOLDER;
-		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        SaaSposeResponse response = api.cellsPageBreaksDeleteHorizontalPageBreaks(name, sheetName, row, folder,null);
+        CellsApiUtil.Upload(api, folder , name);
+        CellsCloudResponse response = api.cellsPageBreaksDeleteHorizontalPageBreaks(name, sheetName, row, folder,null);
 
         // TODO: test validations
     }
@@ -107,12 +115,12 @@ public class CellsPageBreaksApiTest {
      */
     @Test
     public void cellsPageBreaksDeleteVerticalPageBreakTest() throws ApiException {
-       String name = BOOK1;
+        String name = BOOK1;
         String sheetName = SHEET1;
         Integer index = 0;
         String folder = TEMPFOLDER;
-		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        SaaSposeResponse response = api.cellsPageBreaksDeleteVerticalPageBreak(name, sheetName, index, folder,null);
+        CellsApiUtil.Upload(api, folder , name);
+        CellsCloudResponse response = api.cellsPageBreaksDeleteVerticalPageBreak(name, sheetName, index, folder,null);
 
         // TODO: test validations
     }
@@ -127,12 +135,12 @@ public class CellsPageBreaksApiTest {
      */
     @Test
     public void cellsPageBreaksDeleteVerticalPageBreaksTest() throws ApiException {
-       String name = BOOK1;
+        String name = BOOK1;
         String sheetName = SHEET1;
         Integer column = 1;
         String folder = TEMPFOLDER;
-		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        SaaSposeResponse response = api.cellsPageBreaksDeleteVerticalPageBreaks(name, sheetName, column, folder,null);
+        CellsApiUtil.Upload(api, folder , name);
+        CellsCloudResponse response = api.cellsPageBreaksDeleteVerticalPageBreaks(name, sheetName, column, folder,null);
 
         // TODO: test validations
     }
@@ -147,11 +155,11 @@ public class CellsPageBreaksApiTest {
      */
     @Test
     public void cellsPageBreaksGetHorizontalPageBreakTest() throws ApiException {
-       String name = BOOK1;
+        String name = BOOK1;
         String sheetName = SHEET1;
         Integer index = 0;
         String folder = TEMPFOLDER;
-		api.setApiClient( CellsApiUtil.Ready(folder, name));
+        CellsApiUtil.Upload(api, folder , name);
         HorizontalPageBreakResponse response = api.cellsPageBreaksGetHorizontalPageBreak(name, sheetName, index, folder,null);
 
         // TODO: test validations
@@ -167,10 +175,10 @@ public class CellsPageBreaksApiTest {
      */
     @Test
     public void cellsPageBreaksGetHorizontalPageBreaksTest() throws ApiException {
-       String name = BOOK1;
+        String name = BOOK1;
         String sheetName = SHEET1;
         String folder = TEMPFOLDER;
-		api.setApiClient( CellsApiUtil.Ready(folder, name));
+        CellsApiUtil.Upload(api, folder , name);
         HorizontalPageBreaksResponse response = api.cellsPageBreaksGetHorizontalPageBreaks(name, sheetName, folder,null);
 
         // TODO: test validations
@@ -186,11 +194,11 @@ public class CellsPageBreaksApiTest {
      */
     @Test
     public void cellsPageBreaksGetVerticalPageBreakTest() throws ApiException {
-       String name = BOOK1;
+        String name = BOOK1;
         String sheetName = SHEET1;
         Integer index = 0;
         String folder = TEMPFOLDER;
-		api.setApiClient( CellsApiUtil.Ready(folder, name));
+        CellsApiUtil.Upload(api, folder , name);
         VerticalPageBreakResponse response = api.cellsPageBreaksGetVerticalPageBreak(name, sheetName, index, folder,null);
 
         // TODO: test validations
@@ -206,10 +214,10 @@ public class CellsPageBreaksApiTest {
      */
     @Test
     public void cellsPageBreaksGetVerticalPageBreaksTest() throws ApiException {
-       String name = BOOK1;
+        String name = BOOK1;
         String sheetName = SHEET1;
         String folder = TEMPFOLDER;
-		api.setApiClient( CellsApiUtil.Ready(folder, name));
+        CellsApiUtil.Upload(api, folder , name);
         VerticalPageBreaksResponse response = api.cellsPageBreaksGetVerticalPageBreaks(name, sheetName, folder,null);
 
         // TODO: test validations
@@ -225,7 +233,7 @@ public class CellsPageBreaksApiTest {
      */
     @Test
     public void cellsPageBreaksPutHorizontalPageBreakTest() throws ApiException {
-       String name = BOOK1;
+        String name = BOOK1;
         String sheetName = SHEET1;
         String cellname = CellName;
         Integer row = 1;
@@ -233,8 +241,8 @@ public class CellsPageBreaksApiTest {
         Integer startColumn = 1;
         Integer endColumn = 1;
         String folder = TEMPFOLDER;
-		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        SaaSposeResponse response = api.cellsPageBreaksPutHorizontalPageBreak(name, sheetName, cellname, row, column, startColumn, endColumn, folder,null);
+        CellsApiUtil.Upload(api, folder , name);
+        CellsCloudResponse response = api.cellsPageBreaksPutHorizontalPageBreak(name, sheetName, cellname, row, column, startColumn, endColumn, folder,null);
 
         // TODO: test validations
     }
@@ -249,7 +257,7 @@ public class CellsPageBreaksApiTest {
      */
     @Test
     public void cellsPageBreaksPutVerticalPageBreakTest() throws ApiException {
-       String name = BOOK1;
+        String name = BOOK1;
         String sheetName = SHEET1;
         String cellname = CellName;
         Integer column = 1;
@@ -257,8 +265,8 @@ public class CellsPageBreaksApiTest {
         Integer startRow = 1;
         Integer endRow = 1;
         String folder = TEMPFOLDER;
-		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        SaaSposeResponse response = api.cellsPageBreaksPutVerticalPageBreak(name, sheetName, cellname, column, row, startRow, endRow, folder,null);
+        CellsApiUtil.Upload(api, folder , name);
+        CellsCloudResponse response = api.cellsPageBreaksPutVerticalPageBreak(name, sheetName, cellname, column, row, startRow, endRow, folder,null);
 
         // TODO: test validations
     }

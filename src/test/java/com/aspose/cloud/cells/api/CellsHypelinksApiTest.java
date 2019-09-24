@@ -20,7 +20,8 @@ import com.aspose.cloud.cells.client.Configuration;
 import com.aspose.cloud.cells.model.Hyperlink;
 import com.aspose.cloud.cells.model.HyperlinkResponse;
 import com.aspose.cloud.cells.model.HyperlinksResponse;
-import com.aspose.cloud.cells.model.SaaSposeResponse;
+import com.aspose.cloud.cells.model.CellsCloudResponse;
+
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -36,7 +37,7 @@ import java.util.Map;
 
 public class CellsHypelinksApiTest {
 
-    private final CellsHypelinksApi api = new CellsHypelinksApi();
+    private  CellsApi api ;
 
     private String BOOK1 = "Book1.xlsx";
     private String MYDOC = "myDocument.xlsx";
@@ -55,7 +56,14 @@ public class CellsHypelinksApiTest {
     private String CELLAREA = "A1:C10";
     
 	
-    
+    public CellsHypelinksApiTest(){
+    	try {
+			 api = new CellsApi(CellsApiUtil.GetClientId(),CellsApiUtil.GetClientSecret());
+		} catch (ApiException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    }
     /**
      * Delete worksheet hyperlink by index.
      *
@@ -70,8 +78,8 @@ public class CellsHypelinksApiTest {
         String sheetName = SHEET1;
         Integer hyperlinkIndex = 0;
         String folder = TEMPFOLDER;
-		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        SaaSposeResponse response = api.cellsHypelinksDeleteWorksheetHyperlink(name, sheetName, hyperlinkIndex, folder,null);
+        CellsApiUtil.Upload(api, folder , name);
+        CellsCloudResponse response = api.cellsHypelinksDeleteWorksheetHyperlink(name, sheetName, hyperlinkIndex, folder,null);
 
         // TODO: test validations
     }
@@ -89,8 +97,8 @@ public class CellsHypelinksApiTest {
         String name = BOOK1;
         String sheetName = SHEET1;
         String folder = TEMPFOLDER;
-		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        SaaSposeResponse response = api.cellsHypelinksDeleteWorksheetHyperlinks(name, sheetName, folder,null);
+        CellsApiUtil.Upload(api, folder , name);
+        CellsCloudResponse response = api.cellsHypelinksDeleteWorksheetHyperlinks(name, sheetName, folder,null);
 
         // TODO: test validations
     }
@@ -109,7 +117,7 @@ public class CellsHypelinksApiTest {
         String sheetName = SHEET1;
         Integer hyperlinkIndex = 0;
         String folder = TEMPFOLDER;
-		api.setApiClient( CellsApiUtil.Ready(folder, name));
+        CellsApiUtil.Upload(api, folder , name);
         HyperlinkResponse response = api.cellsHypelinksGetWorksheetHyperlink(name, sheetName, hyperlinkIndex, folder,null);
 
         // TODO: test validations
@@ -128,7 +136,7 @@ public class CellsHypelinksApiTest {
         String name = BOOK1;
         String sheetName = SHEET1;
         String folder = TEMPFOLDER;
-		api.setApiClient( CellsApiUtil.Ready(folder, name));
+        CellsApiUtil.Upload(api, folder , name);
         HyperlinksResponse response = api.cellsHypelinksGetWorksheetHyperlinks(name, sheetName, folder,null);
 
         // TODO: test validations
@@ -150,7 +158,7 @@ public class CellsHypelinksApiTest {
         Hyperlink hyperlink = new Hyperlink();
         hyperlink.setAddress( "http://www.aspose.com");
         String folder = TEMPFOLDER;
-		api.setApiClient( CellsApiUtil.Ready(folder, name));
+        CellsApiUtil.Upload(api, folder , name);
         HyperlinkResponse response = api.cellsHypelinksPostWorksheetHyperlink(name, sheetName, hyperlinkIndex, hyperlink, folder,null);
 
         // TODO: test validations
@@ -174,7 +182,7 @@ public class CellsHypelinksApiTest {
         Integer totalColumns = 3;
         String address = "http://wwww.aspose.com";
         String folder = TEMPFOLDER;
-		api.setApiClient( CellsApiUtil.Ready(folder, name));
+        CellsApiUtil.Upload(api, folder , name);
         HyperlinkResponse response = api.cellsHypelinksPutWorksheetHyperlink(name, sheetName, firstRow, firstColumn, totalRows, totalColumns, address, folder,null);
 
         // TODO: test validations

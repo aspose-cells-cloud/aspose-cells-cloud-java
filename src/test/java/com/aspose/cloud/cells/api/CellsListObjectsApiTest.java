@@ -22,7 +22,8 @@ import com.aspose.cloud.cells.model.DataSorter;
 import com.aspose.cloud.cells.model.ListObject;
 import com.aspose.cloud.cells.model.ListObjectResponse;
 import com.aspose.cloud.cells.model.ListObjectsResponse;
-import com.aspose.cloud.cells.model.SaaSposeResponse;
+import com.aspose.cloud.cells.model.CellsCloudResponse;
+
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -38,7 +39,7 @@ import java.util.Map;
 
 public class CellsListObjectsApiTest {
 
-    private final CellsListObjectsApi api = new CellsListObjectsApi();
+    private  CellsApi api ;
 
     private String BOOK1 = "Book1.xlsx";
     private String MYDOC = "myDocument.xlsx";
@@ -57,7 +58,14 @@ public class CellsListObjectsApiTest {
     private String CELLAREA = "A1:C10";
     
 	
-    
+    public CellsListObjectsApiTest(){
+    	try {
+			 api = new CellsApi(CellsApiUtil.GetClientId(),CellsApiUtil.GetClientSecret());
+		} catch (ApiException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    }
     /**
      * Delete worksheet list object by index
      *
@@ -72,8 +80,8 @@ public class CellsListObjectsApiTest {
         String sheetName = SHEET7;
         Integer listObjectIndex = 0;
         String folder = TEMPFOLDER;
-		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        SaaSposeResponse response = api.cellsListObjectsDeleteWorksheetListObject(name, sheetName, listObjectIndex, folder,null);
+        CellsApiUtil.Upload(api, folder , name);
+        CellsCloudResponse response = api.cellsListObjectsDeleteWorksheetListObject(name, sheetName, listObjectIndex, folder,null);
 
         // TODO: test validations
     }
@@ -91,8 +99,8 @@ public class CellsListObjectsApiTest {
         String name = BOOK1;
         String sheetName = SHEET7;
         String folder = TEMPFOLDER;
-		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        SaaSposeResponse response = api.cellsListObjectsDeleteWorksheetListObjects(name, sheetName, folder,null);
+        CellsApiUtil.Upload(api, folder , name);
+        CellsCloudResponse response = api.cellsListObjectsDeleteWorksheetListObjects(name, sheetName, folder,null);
 
         // TODO: test validations
     }
@@ -111,7 +119,7 @@ public class CellsListObjectsApiTest {
         String sheetName = SHEET7;
         Integer listobjectindex = 0;
         String folder = TEMPFOLDER;
-		api.setApiClient( CellsApiUtil.Ready(folder, name));
+        CellsApiUtil.Upload(api, folder , name);
         ListObjectResponse response = api.cellsListObjectsGetWorksheetListObject(name, sheetName, listobjectindex, folder,null);
 
         // TODO: test validations
@@ -130,7 +138,7 @@ public class CellsListObjectsApiTest {
         String name = BOOK1;
         String sheetName = SHEET7;
         String folder = TEMPFOLDER;
-		api.setApiClient( CellsApiUtil.Ready(folder, name));
+        CellsApiUtil.Upload(api, folder , name);
         ListObjectsResponse response = api.cellsListObjectsGetWorksheetListObjects(name, sheetName, folder,null);
 
         // TODO: test validations
@@ -152,8 +160,8 @@ public class CellsListObjectsApiTest {
         ListObject listObject = new ListObject();
         listObject.setShowHeaderRow(true);
         String folder = TEMPFOLDER;
-		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        SaaSposeResponse response = api.cellsListObjectsPostWorksheetListObject(name, sheetName, listObjectIndex, listObject, folder,null);
+        CellsApiUtil.Upload(api, folder , name);
+        CellsCloudResponse response = api.cellsListObjectsPostWorksheetListObject(name, sheetName, listObjectIndex, listObject, folder,null);
 
         // TODO: test validations
     }
@@ -172,8 +180,8 @@ public class CellsListObjectsApiTest {
         String sheetName = SHEET7;
         Integer listObjectIndex = 0;
         String folder = TEMPFOLDER;
-		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        SaaSposeResponse response = api.cellsListObjectsPostWorksheetListObjectConvertToRange(name, sheetName, listObjectIndex, folder,null);
+        CellsApiUtil.Upload(api, folder , name);
+        CellsCloudResponse response = api.cellsListObjectsPostWorksheetListObjectConvertToRange(name, sheetName, listObjectIndex, folder,null);
 
         // TODO: test validations
     }
@@ -194,8 +202,8 @@ public class CellsListObjectsApiTest {
         DataSorter dataSorter =new DataSorter();
         dataSorter.setCaseSensitive(true);
         String folder = TEMPFOLDER;
-		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        SaaSposeResponse response = api.cellsListObjectsPostWorksheetListObjectSortTable(name, sheetName, listObjectIndex, dataSorter, folder,null);
+        CellsApiUtil.Upload(api, folder , name);
+        CellsCloudResponse response = api.cellsListObjectsPostWorksheetListObjectSortTable(name, sheetName, listObjectIndex, dataSorter, folder,null);
 
         // TODO: test validations
     }
@@ -229,8 +237,8 @@ public class CellsListObjectsApiTest {
         request.setSourceData("=Sheet2!A1:E8");
         request.setUseSameSource(true);
         String folder = TEMPFOLDER;
-		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        SaaSposeResponse response = api.cellsListObjectsPostWorksheetListObjectSummarizeWithPivotTable(name, sheetName, listObjectIndex, destsheetName, request, folder,null);
+        CellsApiUtil.Upload(api, folder , name);
+        CellsCloudResponse response = api.cellsListObjectsPostWorksheetListObjectSummarizeWithPivotTable(name, sheetName, listObjectIndex, destsheetName, request, folder,null);
 
         // TODO: test validations
     }
@@ -253,8 +261,8 @@ public class CellsListObjectsApiTest {
         Integer endColumn = 6;
         String folder = TEMPFOLDER;
         Boolean hasHeaders = null;
-		api.setApiClient( CellsApiUtil.Ready(folder, name));
-        ListObjectResponse response = api.cellsListObjectsPutWorksheetListObject(name, sheetName, startRow, startColumn, endRow, endColumn, folder,null, hasHeaders);
+        CellsApiUtil.Upload(api, folder , name);
+        ListObjectResponse response = api.cellsListObjectsPutWorksheetListObject(name, sheetName, startRow, startColumn, endRow, endColumn, hasHeaders,null, folder,null);
 
         // TODO: test validations
     }

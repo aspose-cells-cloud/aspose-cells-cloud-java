@@ -17,6 +17,8 @@ import com.aspose.cloud.cells.client.ApiException;
 import com.aspose.cloud.cells.client.Configuration;
 
 
+
+
 import java.io.File;
 
 import com.aspose.cloud.cells.model.FileSource;
@@ -39,7 +41,7 @@ import java.util.Map;
 
 public class CellsTaskApiTest {
 
-    private final CellsTaskApi api = new CellsTaskApi();
+    private  CellsApi api ;
 
     private String BOOK1 = "Book1.xlsx";
     private String MYDOC = "myDocument.xlsx";
@@ -57,7 +59,14 @@ public class CellsTaskApiTest {
     private String RANGE = "A1:C10";
     private String CELLAREA = "A1:C10";
     
-	
+    public CellsTaskApiTest(){
+    	try {
+			 api = new CellsApi(CellsApiUtil.GetClientId(),CellsApiUtil.GetClientSecret());
+		} catch (ApiException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    }    	
     
     /**
      * Run tasks  
@@ -94,7 +103,7 @@ public class CellsTaskApiTest {
           tasks.add(task1);
           taskData.setTasks(tasks);
           taskData.getTasks().add(task1);
-		api.setApiClient( CellsApiUtil.Ready(folder, name));
+          CellsApiUtil.Upload(api, folder , name);
         Object response = api.cellsTaskPostRunTask(taskData);
 
         // TODO: test validations
