@@ -198,6 +198,7 @@ Method | HTTP request | Description
 [**cellsWorkbookPutDocumentProtectFromChanges**](CellsApi.md#cellsWorkbookPutDocumentProtectFromChanges) | **PUT** /cells/{name}/writeProtection | Protect document from changes.
 [**cellsWorkbookPutWorkbookCreate**](CellsApi.md#cellsWorkbookPutWorkbookCreate) | **PUT** /cells/{name} | Create new workbook using deferent methods.
 [**cellsWorksheetValidationsDeleteWorksheetValidation**](CellsApi.md#cellsWorksheetValidationsDeleteWorksheetValidation) | **DELETE** /cells/{name}/worksheets/{sheetName}/validations/{validationIndex} | Delete worksheet validation by index.
+[**cellsWorksheetValidationsDeleteWorksheetValidations**](CellsApi.md#cellsWorksheetValidationsDeleteWorksheetValidations) | **DELETE** /cells/{name}/worksheets/{sheetName}/validations | Clear all validation in worksheet.
 [**cellsWorksheetValidationsGetWorksheetValidation**](CellsApi.md#cellsWorksheetValidationsGetWorksheetValidation) | **GET** /cells/{name}/worksheets/{sheetName}/validations/{validationIndex} | Get worksheet validation by index.
 [**cellsWorksheetValidationsGetWorksheetValidations**](CellsApi.md#cellsWorksheetValidationsGetWorksheetValidations) | **GET** /cells/{name}/worksheets/{sheetName}/validations | Get worksheet validations.
 [**cellsWorksheetValidationsPostWorksheetValidation**](CellsApi.md#cellsWorksheetValidationsPostWorksheetValidation) | **POST** /cells/{name}/worksheets/{sheetName}/validations/{validationIndex} | Update worksheet validation by index.
@@ -2261,7 +2262,7 @@ No authorization required
 
 <a name="cellsConditionalFormattingsPutWorksheetConditionalFormatting"></a>
 # **cellsConditionalFormattingsPutWorksheetConditionalFormatting**
-> CellsCloudResponse cellsConditionalFormattingsPutWorksheetConditionalFormatting(name, sheetName, cellArea, formatcondition, folder, storage)
+> CellsCloudResponse cellsConditionalFormattingsPutWorksheetConditionalFormatting(name, sheetName, cellArea, formatCondition, folder, storage)
 
 Add a condition formatting.
 
@@ -2276,11 +2277,11 @@ CellsApi apiInstance = new CellsApi();
 String name = "name_example"; // String | 
 String sheetName = "sheetName_example"; // String | 
 String cellArea = "cellArea_example"; // String | 
-FormatCondition formatcondition = new FormatCondition(); // FormatCondition | 
+FormatCondition formatCondition = new FormatCondition(); // FormatCondition | 
 String folder = "folder_example"; // String | 
 String storage = "storage_example"; // String | storage name.
 try {
-    CellsCloudResponse result = apiInstance.cellsConditionalFormattingsPutWorksheetConditionalFormatting(name, sheetName, cellArea, formatcondition, folder, storage);
+    CellsCloudResponse result = apiInstance.cellsConditionalFormattingsPutWorksheetConditionalFormatting(name, sheetName, cellArea, formatCondition, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsConditionalFormattingsPutWorksheetConditionalFormatting");
@@ -2295,7 +2296,7 @@ Name | Type | Description  | Notes
  **name** | **String**|  |
  **sheetName** | **String**|  |
  **cellArea** | **String**|  |
- **formatcondition** | [**FormatCondition**](FormatCondition.md)|  | [optional]
+ **formatCondition** | [**FormatCondition**](FormatCondition.md)|  | [optional]
  **folder** | **String**|  | [optional]
  **storage** | **String**| storage name. | [optional]
 
@@ -7104,7 +7105,7 @@ No authorization required
 
 <a name="cellsPostSetCellHtmlString"></a>
 # **cellsPostSetCellHtmlString**
-> CellResponse cellsPostSetCellHtmlString(name, sheetName, cellName, folder, storage)
+> CellResponse cellsPostSetCellHtmlString(name, sheetName, cellName, htmlString, folder, storage)
 
 Set htmlstring value into cell
 
@@ -7119,10 +7120,11 @@ CellsApi apiInstance = new CellsApi();
 String name = "name_example"; // String | Workbook name.
 String sheetName = "sheetName_example"; // String | Worksheet name.
 String cellName = "cellName_example"; // String | The cell name.
+byte[] htmlString = BINARY_DATA_HERE; // byte[] | 
 String folder = "folder_example"; // String | The workbook folder.
 String storage = "storage_example"; // String | storage name.
 try {
-    CellResponse result = apiInstance.cellsPostSetCellHtmlString(name, sheetName, cellName, folder, storage);
+    CellResponse result = apiInstance.cellsPostSetCellHtmlString(name, sheetName, cellName, htmlString, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsPostSetCellHtmlString");
@@ -7137,6 +7139,7 @@ Name | Type | Description  | Notes
  **name** | **String**| Workbook name. |
  **sheetName** | **String**| Worksheet name. |
  **cellName** | **String**| The cell name. |
+ **htmlString** | **byte[]**|  |
  **folder** | **String**| The workbook folder. | [optional]
  **storage** | **String**| storage name. | [optional]
 
@@ -9849,7 +9852,7 @@ No authorization required
 
 <a name="cellsWorkbookPostImportData"></a>
 # **cellsWorkbookPostImportData**
-> CellsCloudResponse cellsWorkbookPostImportData(name, importdata, folder, storage)
+> CellsCloudResponse cellsWorkbookPostImportData(name, importData, folder, storage)
 
 
 
@@ -9862,11 +9865,11 @@ No authorization required
 
 CellsApi apiInstance = new CellsApi();
 String name = "name_example"; // String | 
-ImportOption importdata = new ImportOption(); // ImportOption | 
+ImportOption importData = new ImportOption(); // ImportOption | 
 String folder = "folder_example"; // String | 
 String storage = "storage_example"; // String | storage name.
 try {
-    CellsCloudResponse result = apiInstance.cellsWorkbookPostImportData(name, importdata, folder, storage);
+    CellsCloudResponse result = apiInstance.cellsWorkbookPostImportData(name, importData, folder, storage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsWorkbookPostImportData");
@@ -9879,7 +9882,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **String**|  |
- **importdata** | [**ImportOption**](ImportOption.md)|  |
+ **importData** | [**ImportOption**](ImportOption.md)|  |
  **folder** | **String**|  | [optional]
  **storage** | **String**| storage name. | [optional]
 
@@ -10492,6 +10495,55 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ValidationResponse**](ValidationResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="cellsWorksheetValidationsDeleteWorksheetValidations"></a>
+# **cellsWorksheetValidationsDeleteWorksheetValidations**
+> CellsCloudResponse cellsWorksheetValidationsDeleteWorksheetValidations(name, sheetName, folder, storage)
+
+Clear all validation in worksheet.
+
+### Example
+```java
+// Import classes:
+//import com.aspose.cloud.cells.client.ApiException;
+//import com.aspose.cloud.cells.api.CellsApi;
+
+
+CellsApi apiInstance = new CellsApi();
+String name = "name_example"; // String | Document name.
+String sheetName = "sheetName_example"; // String | Worksheet name.
+String folder = "folder_example"; // String | Document's folder.
+String storage = "storage_example"; // String | storage name.
+try {
+    CellsCloudResponse result = apiInstance.cellsWorksheetValidationsDeleteWorksheetValidations(name, sheetName, folder, storage);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling CellsApi#cellsWorksheetValidationsDeleteWorksheetValidations");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **String**| Document name. |
+ **sheetName** | **String**| Worksheet name. |
+ **folder** | **String**| Document&#39;s folder. | [optional]
+ **storage** | **String**| storage name. | [optional]
+
+### Return type
+
+[**CellsCloudResponse**](CellsCloudResponse.md)
 
 ### Authorization
 

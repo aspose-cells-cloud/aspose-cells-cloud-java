@@ -21,6 +21,7 @@
  * </summary>
  */
 
+
 package com.aspose.cloud.cells.client.auth;
 
 import com.aspose.cloud.cells.client.Pair;

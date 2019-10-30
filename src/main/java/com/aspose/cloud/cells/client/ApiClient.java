@@ -39,7 +39,6 @@ import com.squareup.okhttp.logging.HttpLoggingInterceptor;
 import com.squareup.okhttp.logging.HttpLoggingInterceptor.Level;
 
 import java.lang.reflect.Type;
-
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Map;
@@ -52,15 +51,12 @@ import java.util.TimeZone;
 import java.util.concurrent.TimeUnit;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
 import java.net.URLEncoder;
 import java.net.URLConnection;
-
 import java.io.File;
 import java.io.InputStream;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
-
 import java.security.GeneralSecurityException;
 import java.security.KeyStore;
 import java.security.SecureRandom;
@@ -68,7 +64,6 @@ import java.security.cert.Certificate;
 import java.security.cert.CertificateException;
 import java.security.cert.CertificateFactory;
 import java.security.cert.X509Certificate;
-
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.text.ParseException;
@@ -89,6 +84,8 @@ import com.aspose.cloud.cells.client.auth.Authentication;
 import com.aspose.cloud.cells.client.auth.HttpBasicAuth;
 import com.aspose.cloud.cells.client.auth.ApiKeyAuth;
 import com.aspose.cloud.cells.client.auth.OAuth;
+import com.aspose.cloud.cells.model.AccessTokenResponse;
+import com.google.gson.reflect.TypeToken;
 
 public class ApiClient {
     public static final double JAVA_VERSION;
@@ -170,7 +167,7 @@ public class ApiClient {
         this.lenientDatetimeFormat = true;
 
         // Set default User-Agent.
-        setUserAgent("Swagger-Codegen/19.2.1/java");
+        setUserAgent("Swagger-Codegen/19.10/java");
 
         // Setup authentications (key: authentication name, value: authentication).
         authentications = new HashMap<String, Authentication>();
@@ -193,7 +190,7 @@ public class ApiClient {
     /**
      * Set base path
      *
-     * @param basePath Base path of the URL (e.g https://api.aspose.cloud/v1.1/
+     * @param basePath Base path of the URL (e.g https://api.aspose.cloud/v3.0
      * @return An instance of OkHttpClient
      */
     public ApiClient setBasePath(String basePath) {
@@ -1280,7 +1277,56 @@ public class ApiClient {
             return contentType;
         }
     }
+    /**
+     * Get access token
+     * @param grantType
+     * @param clientId
+     * @param clientSecret
+     * @param version
+     * @return
+     * @throws ApiException
+     */
+   public String getAccessToken(String grantType, String clientId, String clientSecret,String version) throws ApiException {
+       Object localVarPostBody = null;
+       
+       // create path and map variables
+       
+       String localVarPath = "/connect/token";
+       if( version == "v1.1")
+       {
+         localVarPath ="/oauth2/token";
+       }
+       List<Pair> localVarQueryParams = new ArrayList<Pair>();
 
+       Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+       Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+       if (grantType != null)
+       localVarFormParams.put("grant_type", grantType);
+       if (clientId != null)
+       localVarFormParams.put("client_id", clientId);
+       if (clientSecret != null)
+       localVarFormParams.put("client_secret", clientSecret);
+
+       final String[] localVarAccepts = {
+           "application/json"
+       };
+       final String localVarAccept = selectHeaderAccept(localVarAccepts);
+       if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+       final String[] localVarContentTypes = {
+           "application/x-www-form-urlencoded"
+       };
+       final String localVarContentType = selectHeaderContentType(localVarContentTypes);
+       localVarHeaderParams.put("Content-Type", localVarContentType);
+       
+       String[] localVarAuthNames = new String[] {  };
+       
+       com.squareup.okhttp.Call call= buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, null);
+       Type localVarReturnType = new TypeToken<AccessTokenResponse>(){}.getType();
+       ApiResponse<AccessTokenResponse> resp =  execute(call, localVarReturnType);
+       return resp.getData().getAccessToken();
+   }
     /**
      * Initialize datetime format according to the current environment, e.g. Java 1.7 and Android.
      */

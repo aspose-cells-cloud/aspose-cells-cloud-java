@@ -39,7 +39,7 @@ import java.io.IOException;
 /**
  * FillFormatResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-09-17T15:02:23.029+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-10-24T14:56:32.974+08:00")
 public class FillFormatResponse extends CellsCloudResponse {
   @SerializedName("FillFormat")
   private FillFormat fillFormat = null;

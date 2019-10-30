@@ -620,8 +620,9 @@ public class CellsApiTest {
         String sheetName = SHEET1;
         String cellName = CellName;
         String folder = TEMPFOLDER;
+        String htmlString ="https://api.aspose.cloud/v3.0/cells";
         CellsApiUtil.Upload(api, folder , name);
-        CellResponse response = api.cellsPostSetCellHtmlString(name, sheetName, cellName, folder,null);
+        CellResponse response = api.cellsPostSetCellHtmlString(name, sheetName, cellName,htmlString.getBytes() ,folder,null);
         Assert.assertEquals("cellsPostSetCellHtmlStringTest is OK.", "OK", response.getStatus());
         // TODO: test validations
     }

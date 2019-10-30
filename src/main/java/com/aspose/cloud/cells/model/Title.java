@@ -45,7 +45,7 @@ import java.util.List;
 /**
  * Title
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-09-17T15:02:23.029+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-10-24T14:56:32.974+08:00")
 public class Title {
   @SerializedName("IsInnerMode")
   private Boolean isInnerMode = null;

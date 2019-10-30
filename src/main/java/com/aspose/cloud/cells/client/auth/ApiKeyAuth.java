@@ -21,6 +21,7 @@
  * </summary>
  */
 
+
 package com.aspose.cloud.cells.client.auth;
 
 import com.aspose.cloud.cells.client.Pair;
@@ -28,7 +29,7 @@ import com.aspose.cloud.cells.client.Pair;
 import java.util.Map;
 import java.util.List;
 
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-02-02T16:48:31.575+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-10-24T14:56:32.974+08:00")
 public class ApiKeyAuth implements Authentication {
   private final String location;
   private final String paramName;

@@ -5,13 +5,12 @@
   <artifactId>aspose-cells-cloud</artifactId>
   <packaging>jar</packaging>
   <name>aspose-cells-cloud</name>
-  <version>19.9</version>
-  <url>https://github.com/swagger-api/swagger-codegen</url>
-  <description>Swagger Java</description>
+  <version>19.10</version>
+  <url>https://github.com/aspose-cells-cloud/aspose-cells-cloud-java</url>
   <scm>
-    <connection>scm:git:git@github.com:swagger-api/swagger-codegen.git</connection>
-    <developerConnection>scm:git:git@github.com:swagger-api/swagger-codegen.git</developerConnection>
-    <url>https://github.com/swagger-api/swagger-codegen</url>
+    <connection>scm:git:git@github.com:aspose-cells-cloud/aspose-cells-cloud-java</connection>
+    <developerConnection>Aspose</developerConnection>
+    <url>https://github.com/aspose-cells-cloud/aspose-cells-cloud-java</url>
   </scm>
   <prerequisites>
     <maven>2.2.0</maven>
@@ -221,4 +220,5 @@
     <junit-version>4.12</junit-version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
+  <description>This repository contains Aspose.Cells Cloud SDK for Java source code. This SDK allows you to work with Aspose.Cells Cloud REST APIs in your Java applications quickly and easily, with zero initial cost.</description>
 </project>

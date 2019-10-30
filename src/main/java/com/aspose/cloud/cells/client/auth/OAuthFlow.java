@@ -21,6 +21,7 @@
  * </summary>
  */
 
+
 package com.aspose.cloud.cells.client.auth;
 
 public enum OAuthFlow {
