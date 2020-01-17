@@ -31,6 +31,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import junit.framework.Assert;
+
 /**
  * API tests for CellsHypelinksApi
  */
@@ -80,7 +82,7 @@ public class CellsHypelinksApiTest {
         String folder = TEMPFOLDER;
         CellsApiUtil.Upload(api, folder , name);
         CellsCloudResponse response = api.cellsHypelinksDeleteWorksheetHyperlink(name, sheetName, hyperlinkIndex, folder,null);
-
+        Assert.assertEquals("cellsHypelinksDeleteWorkSheetHyperlinkTest is OK.", "OK", response.getStatus());
         // TODO: test validations
     }
     
@@ -99,7 +101,7 @@ public class CellsHypelinksApiTest {
         String folder = TEMPFOLDER;
         CellsApiUtil.Upload(api, folder , name);
         CellsCloudResponse response = api.cellsHypelinksDeleteWorksheetHyperlinks(name, sheetName, folder,null);
-
+        Assert.assertEquals("cellsHypelinksDeleteWorkSheetHyperlinksTest is OK.", "OK", response.getStatus());
         // TODO: test validations
     }
     
@@ -119,7 +121,7 @@ public class CellsHypelinksApiTest {
         String folder = TEMPFOLDER;
         CellsApiUtil.Upload(api, folder , name);
         HyperlinkResponse response = api.cellsHypelinksGetWorksheetHyperlink(name, sheetName, hyperlinkIndex, folder,null);
-
+        Assert.assertEquals("cellsHypelinksGetWorkSheetHyperlinkTest is OK.", "OK", response.getStatus());
         // TODO: test validations
     }
     
@@ -138,7 +140,7 @@ public class CellsHypelinksApiTest {
         String folder = TEMPFOLDER;
         CellsApiUtil.Upload(api, folder , name);
         HyperlinksResponse response = api.cellsHypelinksGetWorksheetHyperlinks(name, sheetName, folder,null);
-
+        Assert.assertEquals("cellsHypelinksGetWorkSheetHyperlinksTest is OK.", "OK", response.getStatus());
         // TODO: test validations
     }
     
@@ -160,7 +162,7 @@ public class CellsHypelinksApiTest {
         String folder = TEMPFOLDER;
         CellsApiUtil.Upload(api, folder , name);
         HyperlinkResponse response = api.cellsHypelinksPostWorksheetHyperlink(name, sheetName, hyperlinkIndex, hyperlink, folder,null);
-
+        Assert.assertEquals("cellsHypelinksPostWorkSheetHyperlinkTest is OK.", "OK", response.getStatus());
         // TODO: test validations
     }
     
@@ -184,7 +186,7 @@ public class CellsHypelinksApiTest {
         String folder = TEMPFOLDER;
         CellsApiUtil.Upload(api, folder , name);
         HyperlinkResponse response = api.cellsHypelinksPutWorksheetHyperlink(name, sheetName, firstRow, firstColumn, totalRows, totalColumns, address, folder,null);
-
+        Assert.assertEquals("cellsHypelinksPutWorkSheetHyperlinkTest is OK.", "OK", response.getStatus());
         // TODO: test validations
     }
     

@@ -1,6 +1,6 @@
 /* 
  * <summary>
- *  Copyright (c) 2019 Aspose.Cells Cloud
+ *  Copyright (c) 2020 Aspose.Cells Cloud
  *  Permission is hereby granted, free of charge, to any person obtaining a copy
  *  of this software and associated documentation files (the "Software"), to deal
  *  in the Software without restriction, including without limitation the rights
@@ -40,7 +40,7 @@ import java.io.IOException;
  * Describe the ColorScale conditional formatting rule. This conditional formatting    rule creates a gradated color scale on the cells.             
  */
 @ApiModel(description = "Describe the ColorScale conditional formatting rule. This conditional formatting    rule creates a gradated color scale on the cells.             ")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-10-24T14:56:32.974+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-01-02T17:30:33.766+08:00")
 public class ColorScale {
   @SerializedName("MaxCfvo")
   private ConditionalFormattingValue maxCfvo = null;

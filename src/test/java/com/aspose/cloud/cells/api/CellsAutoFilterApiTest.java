@@ -22,6 +22,7 @@ import com.aspose.cloud.cells.model.CellsColor;
 import com.aspose.cloud.cells.model.Color;
 import com.aspose.cloud.cells.model.ColorFilterRequest;
 import com.aspose.cloud.cells.model.CellsCloudResponse;
+import com.aspose.cloud.cells.model.ThemeColor;
 
 import org.junit.Test;
 import org.junit.Ignore;
@@ -208,10 +209,30 @@ public class CellsAutoFilterApiTest {
         ColorFilterRequest colorFilter = new ColorFilterRequest();
         Color color = new Color();
         color.setR(255);
-        color.setG ( 245);
+        color.setA(245);
+        color.setB(245);
+        color.setG(0);
         CellsColor cellsColor = new CellsColor();
         cellsColor.setColor(color);
+        ThemeColor themeColor = new ThemeColor();
+        themeColor.setColorType("Text2");
+        themeColor.setTint(1.0);
+        cellsColor.setThemeColor(themeColor);
         colorFilter.setForegroundColor(cellsColor);
+        
+        Color bcolor = new Color();
+        bcolor.setR(255);
+        bcolor.setA(255);
+        bcolor.setB(0);
+        bcolor.setG(0);
+        CellsColor backgroundColor = new CellsColor();
+        backgroundColor.setColor(color);
+        ThemeColor bthemeColor = new ThemeColor();
+        bthemeColor.setColorType("Text2");
+        bthemeColor.setTint(1.0);
+        backgroundColor.setThemeColor(bthemeColor);
+        colorFilter.setBackgroundColor(backgroundColor);
+        
         colorFilter.setPattern("Solid");
         Boolean matchBlanks = true;
         Boolean refresh = true;

@@ -1,6 +1,6 @@
 /* 
  * <summary>
- *  Copyright (c) 2019 Aspose.Cells Cloud
+ *  Copyright (c) 2020 Aspose.Cells Cloud
  *  Permission is hereby granted, free of charge, to any person obtaining a copy
  *  of this software and associated documentation files (the "Software"), to deal
  *  in the Software without restriction, including without limitation the rights
@@ -38,7 +38,7 @@ import java.io.IOException;
  * Describe the AboveAverage conditional formatting rule. This conditional formatting     rule highlights cells that are above or below the average for all values     in the range.
  */
 @ApiModel(description = "Describe the AboveAverage conditional formatting rule. This conditional formatting     rule highlights cells that are above or below the average for all values     in the range.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-10-24T14:56:32.974+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-01-02T17:30:33.766+08:00")
 public class AboveAverage {
   @SerializedName("IsAboveAverage")
   private Boolean isAboveAverage = null;

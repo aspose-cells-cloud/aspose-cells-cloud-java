@@ -1,6 +1,6 @@
 /* 
  * <summary>
- *  Copyright (c) 2019 Aspose.Cells Cloud
+ *  Copyright (c) 2020 Aspose.Cells Cloud
  *  Permission is hereby granted, free of charge, to any person obtaining a copy
  *  of this software and associated documentation files (the "Software"), to deal
  *  in the Software without restriction, including without limitation the rights
@@ -32,10 +32,10 @@ import com.aspose.cloud.cells.client.Configuration;
 import com.aspose.cloud.cells.client.Pair;
 import com.aspose.cloud.cells.client.ProgressRequestBody;
 import com.aspose.cloud.cells.client.ProgressResponseBody;
-
 import com.google.gson.reflect.TypeToken;
 
 import java.io.IOException;
+
 
 
 import com.aspose.cloud.cells.model.AccessTokenResponse;
@@ -64,7 +64,9 @@ import com.aspose.cloud.cells.model.CopyOptions;
 import com.aspose.cloud.cells.model.CreatePivotTableRequest;
 import com.aspose.cloud.cells.model.DataSorter;
 import com.aspose.cloud.cells.model.DiscUsage;
+
 import java.io.File;
+
 import com.aspose.cloud.cells.model.FileVersions;
 import com.aspose.cloud.cells.model.FilesList;
 import com.aspose.cloud.cells.model.FilesUploadResult;
