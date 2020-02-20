@@ -12,12 +12,14 @@ import com.aspose.cloud.cells.model.AccessTokenResponse;
 
 public class CellsApiUtil {
 	private static String grantType = "client_credentials";
-	private static String clientId = "66164C51-693E-4904-A121-545961673EC1";//"";
-	private static String clientSecret =  "536e76768419db9585afdd37bb5f7533";//"";
+	private static String clientId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx";//"";
+	private static String clientSecret =  "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";//"";
 	private static String sourceFolder ="D:\\Projects\\Aspose\\Aspose.Cloud\\Aspose.Cells.Cloud.SDK\\src\\TestData\\";
+	
 	public static String GetSourceFolder() {
 		return sourceFolder;
 	}
+
 	public static String GetGrantType() {
 		return grantType;
 	}

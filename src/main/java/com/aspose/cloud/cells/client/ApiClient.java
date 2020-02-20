@@ -77,6 +77,8 @@ import javax.net.ssl.TrustManager;
 import javax.net.ssl.TrustManagerFactory;
 import javax.net.ssl.X509TrustManager;
 
+import org.joda.time.DateTime;
+
 import okio.BufferedSink;
 import okio.Okio;
 
@@ -178,14 +180,95 @@ public class ApiClient {
         authentications = Collections.unmodifiableMap(authentications);
     }
 
-    /**
-     * Get base path
-     *
-     * @return Baes path
-     */
-    public String getBasePath() {
-        return basePath;
-    }
+	private String appSid;
+	private String appKey;
+	private String appVersion;
+	private String appGrantType;
+	private DateTime getAccessTokenTime;
+
+	/**
+	 * Get access token
+	 * 
+	 * @param grantType
+	 * @param clientId
+	 * @param clientSecret
+	 * @param version
+	 * @return
+	 * @throws ApiException
+	 */
+	public String getAccessToken(String grantType, String clientId,
+			String clientSecret, String version) throws ApiException {
+		Object localVarPostBody = null;
+
+		// create path and map variables]
+		appGrantType = grantType;
+		appSid = clientId;
+		appKey = clientSecret;
+		appVersion = version;
+
+		String localVarPath = "/connect/token";
+		if (version == "v1.1") {
+			localVarPath = "/oauth2/token";
+		}
+		List<Pair> localVarQueryParams = new ArrayList<Pair>();
+
+		Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+		Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+		if (grantType != null)
+			localVarFormParams.put("grant_type", grantType);
+		if (clientId != null)
+			localVarFormParams.put("client_id", clientId);
+		if (clientSecret != null)
+			localVarFormParams.put("client_secret", clientSecret);
+
+		final String[] localVarAccepts = { "application/json" };
+		final String localVarAccept = selectHeaderAccept(localVarAccepts);
+		if (localVarAccept != null)
+			localVarHeaderParams.put("Accept", localVarAccept);
+
+		final String[] localVarContentTypes = { "application/x-www-form-urlencoded" };
+		final String localVarContentType = selectHeaderContentType(localVarContentTypes);
+		localVarHeaderParams.put("Content-Type", localVarContentType);
+
+		String[] localVarAuthNames = new String[] {};
+		
+		Request request = buildRequest(localVarPath, "POST", localVarQueryParams, localVarPostBody,
+				localVarHeaderParams, localVarFormParams, localVarAuthNames, null);
+
+		com.squareup.okhttp.Call call = httpClient.newCall(request);
+		
+		Type localVarReturnType = new TypeToken<AccessTokenResponse>() {
+		}.getType();
+		ApiResponse<AccessTokenResponse> resp = execute(call,
+				localVarReturnType);
+		String accessToken = resp.getData().getAccessToken();
+		getAccessTokenTime = DateTime.now();
+		return accessToken;
+	}
+
+	public void checkAccessToken() throws ApiException {
+		if (getAccessTokenTime == null) {
+			return;
+		}
+		if (DateTime.now().compareTo(getAccessTokenTime.plusSeconds(86300))>0 ) {
+			setBasePath("https://api.aspose.cloud");
+			String accessToken = getAccessToken(appGrantType, appSid, appKey,
+					appVersion);
+			getAccessTokenTime = DateTime.now();
+			setBasePath("https://api.aspose.cloud/" + appVersion);
+			addDefaultHeader("Authorization", "Bearer " + accessToken);
+		}
+	}
+
+	/**
+	 * Get base path
+	 *
+	 * @return Baes path
+	 */
+	public String getBasePath() {
+		return basePath;
+	}
 
     /**
      * Set base path
@@ -457,56 +540,7 @@ public class ApiClient {
     public Authentication getAuthentication(String authName) {
         return authentications.get(authName);
     }
-    /**
-     * Get access token
-     * @param grantType
-     * @param clientId
-     * @param clientSecret
-     * @param version
-     * @return
-     * @throws ApiException
-     */
-    public String getAccessToken(String grantType, String clientId, String clientSecret,String version) throws ApiException {
-        Object localVarPostBody = null;
 
-        // create path and map variables
-
-        String localVarPath = "/connect/token";
-        if( version == "v1.1")
-        {
-            localVarPath ="/oauth2/token";
-        }
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-        if (grantType != null)
-            localVarFormParams.put("grant_type", grantType);
-        if (clientId != null)
-            localVarFormParams.put("client_id", clientId);
-        if (clientSecret != null)
-            localVarFormParams.put("client_secret", clientSecret);
-
-        final String[] localVarAccepts = {
-                "application/json"
-        };
-        final String localVarAccept = selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
-
-        final String[] localVarContentTypes = {
-                "application/x-www-form-urlencoded"
-        };
-        final String localVarContentType = selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
-
-        String[] localVarAuthNames = new String[] {  };
-
-        com.squareup.okhttp.Call call= buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, null);
-        Type localVarReturnType = new TypeToken<AccessTokenResponse>(){}.getType();
-        ApiResponse<AccessTokenResponse> resp =  execute(call, localVarReturnType);
-        return resp.getData().getAccessToken();
-    }
     /**
      * Helper method to set username for the first HTTP basic authentication.
      *
