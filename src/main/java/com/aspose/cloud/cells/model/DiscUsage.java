@@ -38,7 +38,7 @@ import java.io.IOException;
  * Class for disc space information.
  */
 @ApiModel(description = "Class for disc space information.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-01-02T17:30:33.766+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-03-16T09:11:43.161+08:00")
 public class DiscUsage {
   @SerializedName("UsedSize")
   private Long usedSize = null;

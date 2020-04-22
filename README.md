@@ -1,71 +1,52 @@
-# Aspose.Cells Cloud SDK for Java 
+# Java REST API for Spreadsheet Processing in Cloud
 
-- API version: 3.0
-- SDK version: 20.2
+This Cloud SDK enhances your Java cloud-based apps to [process & manipulate Microsoft Excel spreadsheets](https://products.aspose.cloud/cells/java) in the cloud, without MS Office.
 
-This repository contains Aspose.Cells Cloud SDK for Java source code. This SDK allows you to work with Aspose.Cells Cloud REST APIs in your Java applications quickly and easily, with zero initial cost.
+## Spreadsheet Processing Features
 
+- Add, update or delete charts, worksheet pictures, shapes, hyperlinks & validations.
+- Add or remove cells area for conditional formatting, or OleObjects from Excel worksheets.
+- Insert or delete, horizontal or vertical page breaks
+- Add ListObject at a specific place within an Excel file & convert them to a range of cells.
+- Delete specific or all ListObjects in a worksheet or summarize its data with pivot table.
+- Apply custom criteria to list filters of various types.
+- Get, update, show or hide chart legend & titles.
+- Manipulate page setup, header & footer.
+- Create, update, fetch or delete document properties.
+- Fetch the required shape from worksheet.
+- Load & Process Excel Spreadsheets via Cloud SDK.
+- Cloud SDK to Read & Process Excel Worksheets.
+- Leverage the Power of Pivot Tables & Ranges.
 
+## Enhancements in Version 20.4
 
-# Key Features
+- Support to export area or page of sheet to JPEG.
+- Support to add background for workbook.
+- Enhancement for splitting workbook.
+- Enhancement for create workbook.
 
-- Conversion between various document-related formats (20+ formats supported), including PDF<->Excel conversion
+## Read & Write Spreadsheet Formats
 
-- Splitting Excel documents
+**Microsoft Excel:** XLS, XLSX, XLSB, XLSM, XLT, XLTX, XLTM
+**OpenOffice:** ODS
+**SpreadsheetML:** XML
+**Text:** CSV, TSV, TXT (TabDelimited)
+**Web:** HTML, MHTML
+**PDF**
 
-- Accessing Excel document metadata and statistics
+## Save Spreadsheet As
 
-- Find and replace
+DIF, HTML, MHTML,PNG,JPG, TIFF, XPS, SVG, MD (Markdown), ODS ,xlsx,xls,xlsb, PDF,XML,TXT,CSV
 
-- Watermarks and protection
+## Read Spreadsheet Formats
 
-- Full read & write access to Cells Object Model, including workbook, worksheet, cell, shapes, tables, list object ,ole Object,headers/footers and many others
+SXC, FODS
 
-  
+## Getting Started with Aspose.Cells Cloud SDK for Java
 
-See [API Reference](https://apireference.aspose.cloud/cells/) for full API specification.
-
-
-
-# Storage API support
-
-#### Since version 19.9 SDK includes support of storage operations for better user experience and unification, so now there's no need to use 2 different SDKs!
-
-It gives you an ability to:
-
-- Upload, download, copy, move and delete files, including versions handling (if you are using Cloud storage that supports this feature - true by default)
-- Create, copy, move and delete folders
-- Copy and move files and folders accross separate storages in scope of a single operation
-- Check if certain file, folder or storage exists
-
-# Licensing
-
-All Aspose.Cells Cloud SDKs are licensed under [MIT License](https://github.com/aspose-cells-cloud/aspose-cells-cloud-java/blob/master/LICENSE)).
-
-
-
-# How to use the SDK?
-
-The complete source code is available in this repository folder. You can either directly use it in your project via source code or get [NuGet distribution](https://www.nuget.org/packages/Aspose.Cells-Cloud/) (recommended). For more details, please visit our [documentation website](https://docs.aspose.cloud/display/cellscloud/Available+SDKs#AvailableSDKs-.NET).
-
- 
-
-### Prerequisites
-
- 
-
-To use Aspose Cells Cloud SDK for Java you need to register an account with [Aspose Cloud](https://www.aspose.cloud/) and lookup/create App Key and SID at [Maven](https://mvnrepository.com/artifact/com.aspose/aspose-cloud-cells). There is free quota available. For more details, see [Aspose Cloud Pricing](https://purchase.aspose.cloud/pricing).
-
- 
-
-## Installation & Usage
-
- 
+You do not need to install anything to get started with Aspose.Cells Cloud SDK for Java. Just create an account at [Aspose for Cloud](https://dashboard.aspose.cloud/#/apps) and get your application information.
 
 Add this dependency to your project's POM:
-
- 
-
 ```
 <repositories>
     <repository>
@@ -79,57 +60,46 @@ Add this dependency to your project's POM:
     <dependency>
         <groupId>com.aspose</groupId>
         <artifactId>aspose-cells-cloud</artifactId>
-        <version>19.9.0</version>
+        <version>20.4.0</version>
     </dependency>
 </dependencies>
 ```
+If you already have Aspose.Cells Cloud SDK for Java and want to upgrade it, please execute `Update-Package Aspose.Cells-Cloud` to get the latest version.
 
- 
 
-## Getting Started
+Please check the [GitHub Repository](https://github.com/aspose-cells-cloud/aspose-cells-cloud-java) for other common usage scenarios.
 
- 
+## Using Java to Add a New Worksheet to an Excel File
 
-```
-import com.aspose.cells.*;
-import com.aspose.cells.client.*;
-import com.aspose.cells.model.*;
+The following code snippet demonstrates how to add a new worksheet to a Microsoft Excel document using Java code:
 
-import java.io.File;
-import java.util.*;
-
-public class WordsApiExample {
-
-    public static void main(String[] args) {
-        
-        CellsApi cellsApi = new CellsApi();
-        String name = BOOK1;
-        String sheetName = SHEET1;
-        Integer columnIndex = 1;
-        Integer columns = 1;
-        Boolean updateReference = true;
-        String folder = TEMPFOLDER;
-        ColumnsResponse response = cellsApi.cellsDeleteWorksheetColumns(name, sheetName, columnIndex, columns, updateReference, folder,null);
-    }
-}
+```Java
+CellsApi cellsApi = new CellsApi(CellsApiUtil.GetClientId(),CellsApiUtil.GetClientSecret())
+String name = BOOK1;
+String sheetName = SHEET1;
+Integer position = 1;
+String sheettype ="VB";
+String folder = TEMPFOLDER;
+cellsApi.uploadFile(folder +"\\" + filename, new File(sourceFolder + filename), null);
+WorksheetsResponse response = cellsApi.cellsWorksheetsPutAddNewWorksheet(name, sheetName, position, sheettype, folder,null);
 ```
 
-# Tests
+## Using Java to Convert an Excel File to another File Format
 
-[Tests](https://github.com/aspose-cells-cloud/aspose-cells-cloud-java/tree/master/src/test/java/com/aspose/cloud/cells/api) contain various examples of using the SDK.
+The following code example elaborates how you can use Java code to convert an Excel document to another file format in the cloud:
 
+```Java
+String name = BOOK1;
+SaveOptions saveOptions = null;
+String newfilename = "newbook.xlsx";
+Boolean isAutoFitRows = true;
+Boolean isAutoFitColumns = false;
+String folder = TEMPFOLDER;
+// Upload source file to aspose cloud storage
+cellsApi.uploadFile(folder +"\\" + filename, new File(sourceFolder + filename), null);
+// Invoke Aspose.Cells Cloud SDK API to convert excel workbook to different format
+SaveResponse response = cellsApi.cellsSaveAsPostDocumentSaveAs(name, saveOptions, newfilename, isAutoFitRows, isAutoFitColumns, folder,null);
+```
 
-# Contact Us
+[Product Page](https://products.aspose.cloud/cells/java) | [Documentation](https://docs.aspose.cloud/display/cellscloud/Home) | [Live Demo](https://products.aspose.app/cells/family) | [API Reference](https://apireference.aspose.cloud/cells/) | [Code Samples](https://github.com/aspose-cells-cloud/aspose-cells-cloud-java) | [Blog](https://blog.aspose.cloud/category/cells/) | [Free Support](https://forum.aspose.cloud/c/cells) | [Free Trial](https://dashboard.aspose.cloud/#/apps)
 
-Your feedback is very important to us. Please feel free to contact via
-
-- [**Free Support Forum**](https://forum.aspose.cloud/c/cells)
-- [**Paid Support Helpdesk**](https://helpdesk.aspose.cloud/)
-
-# Resources
-
-- [**Web API reference**](https://apireference.aspose.cloud/cells/)
-- [**Website**](https://www.aspose.cloud)
-- [**Product Home**](https://products.aspose.cloud/cells)
-- [**Documentation**](https://docs.aspose.cloud/display/cellscloud/Home)
-- [**Blog**](https://blog.aspose.cloud/category/cells/)

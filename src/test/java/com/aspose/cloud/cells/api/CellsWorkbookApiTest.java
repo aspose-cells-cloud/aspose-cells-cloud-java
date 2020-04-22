@@ -500,7 +500,7 @@ public class CellsWorkbookApiTest {
         Integer verticalResolution = 90;
         String folder = TEMPFOLDER;
 		 CellsApiUtil.Upload(api, folder , name);
-        SplitResultResponse response = api.cellsWorkbookPostWorkbookSplit(name, format, from, to, horizontalResolution, verticalResolution, folder,null);
+        SplitResultResponse response = api.cellsWorkbookPostWorkbookSplit(name, format, from, to, horizontalResolution, verticalResolution, folder,null,null);
 
         // TODO: test validations
     }
@@ -579,7 +579,7 @@ public class CellsWorkbookApiTest {
         String name = BOOK1;
         String folder = TEMPFOLDER;
 		 CellsApiUtil.Upload(api, folder , name);
-        File response = api.cellsWorkbookPutConvertWorkbook(CellsApiUtil.GetFileData(name),format, password, outPath);
+        File response = api.cellsWorkbookPutConvertWorkbook(CellsApiUtil.GetFileHolder(name),format, password, outPath);
 
         // TODO: test validations
     }
@@ -620,10 +620,24 @@ public class CellsWorkbookApiTest {
         String dataFile ="ReportData.xml";
         String folder = TEMPFOLDER;
         CellsApiUtil.Upload(api,dataFile);
-        CellsApiUtil.Upload(api, folder + "/"+templateFile);
-        WorkbookResponse response = api.cellsWorkbookPutWorkbookCreate(name,  folder+"/"+ templateFile,  dataFile, folder,null);
+        CellsApiUtil.Upload(api, folder ,templateFile);
+        WorkbookResponse response = api.cellsWorkbookPutWorkbookCreate(name,  folder+"/"+ templateFile,  dataFile,true, folder,null);
 
         // TODO: test validations
     }
-    
+    @Test
+    public void cellsWorkbookDeleteBackgroupTest() throws ApiException {
+    	String name = BOOK1;
+    	String folder = TEMPFOLDER;
+    	CellsApiUtil.Upload(api, folder, name);
+    	CellsCloudResponse response = api.cellsWorkbookDeleteWorkbookBackground(name, folder, null);
+    }
+    @Test
+    public void cellsWorkbookPutBackgroupTest() throws ApiException {
+    	String name = BOOK1;
+    	String folder = TEMPFOLDER;
+    	CellsApiUtil.Upload(api, folder, name);
+    	byte[] png = CellsApiUtil.GetFileData("WaterMark.png");
+    	CellsCloudResponse response = api.cellsWorkbookPutWorkbookBackground(name,png, folder, null);
+    }
 }

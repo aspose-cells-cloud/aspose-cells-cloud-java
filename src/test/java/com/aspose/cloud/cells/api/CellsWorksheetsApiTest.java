@@ -242,7 +242,7 @@ public class CellsWorksheetsApiTest {
         String format = "png";
         String folder = TEMPFOLDER;
 		CellsApiUtil.Upload(api, folder , name);
-        File response = api.cellsWorksheetsGetWorksheet(name, sheetName, format,verticalResolution, horizontalResolution, folder,null);
+        File response = api.cellsWorksheetsGetWorksheet(name, sheetName, format,verticalResolution, horizontalResolution, null,null,folder,null);
 
         // TODO: test validations
     }
@@ -472,9 +472,8 @@ public class CellsWorksheetsApiTest {
         String sourceWorkbook = BOOK1;
         String sourceFolder = TEMPFOLDER;
         String folder = TEMPFOLDER;
-        CellsApiUtil.Upload(api,sourceFolder+ "/"+sourceWorkbook);
+        CellsApiUtil.Upload(api,folder,sourceWorkbook);
 		CellsApiUtil.Upload(api, folder , name);
-		CellsApiUtil.Upload(api,sourceFolder+ "/"+sourceWorkbook);
         CellsCloudResponse response = api.cellsWorksheetsPostCopyWorksheet(name, sheetName, sourceSheet, options, sourceWorkbook, sourceFolder, folder,null);
 
         // TODO: test validations
@@ -796,5 +795,32 @@ public class CellsWorksheetsApiTest {
 
         // TODO: test validations
     }
-    
+    @Test
+    public void cellsWorksheetsGetWorkSheetForAreaTest() throws ApiException {
+       String name = BOOK1;
+        String sheetName = SHEET1;
+        Integer verticalResolution = 100;
+        Integer horizontalResolution = 90;
+        String format = "png";
+        String area ="B3:K8";
+        String folder = TEMPFOLDER;
+		CellsApiUtil.Upload(api, folder , name);
+        File response = api.cellsWorksheetsGetWorksheet(name, sheetName, format,verticalResolution, horizontalResolution, area,null,folder,null);
+
+        // TODO: test validations
+    }
+    @Test
+    public void cellsWorksheetsGetWorkSheetForPageIndexTest() throws ApiException {
+       String name = BOOK1;
+        String sheetName = SHEET1;
+        Integer verticalResolution = 100;
+        Integer horizontalResolution = 90;
+        String format = "png";
+        Integer pageIndex =1 ;
+        String folder = TEMPFOLDER;
+		CellsApiUtil.Upload(api, folder , name);
+        File response = api.cellsWorksheetsGetWorksheet(name, sheetName, format,verticalResolution, horizontalResolution, null,pageIndex,folder,null);
+
+        // TODO: test validations
+    }
 }

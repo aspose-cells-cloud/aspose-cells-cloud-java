@@ -15,11 +15,9 @@ public class CellsApiUtil {
 	private static String clientId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx";//"";
 	private static String clientSecret =  "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";//"";
 	private static String sourceFolder ="D:\\Projects\\Aspose\\Aspose.Cloud\\Aspose.Cells.Cloud.SDK\\src\\TestData\\";
-	
 	public static String GetSourceFolder() {
 		return sourceFolder;
 	}
-
 	public static String GetGrantType() {
 		return grantType;
 	}
@@ -70,6 +68,11 @@ public class CellsApiUtil {
             e.printStackTrace();  
         }
 		return null;  
+	}
+	
+	public static File GetFileHolder(String filename)	{		
+		File file = new File(GetSourceFolder() + filename);  
+        return file;
 	}
 	
 }
