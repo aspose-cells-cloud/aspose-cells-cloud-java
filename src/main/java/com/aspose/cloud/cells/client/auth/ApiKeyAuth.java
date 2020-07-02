@@ -29,7 +29,7 @@ import com.aspose.cloud.cells.client.Pair;
 import java.util.Map;
 import java.util.List;
 
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-03-16T09:11:43.161+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-07-02T09:41:11.020+08:00")
 public class ApiKeyAuth implements Authentication {
   private final String location;
   private final String paramName;

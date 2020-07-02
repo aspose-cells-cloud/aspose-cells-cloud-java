@@ -39,6 +39,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import junit.framework.Assert;
+
 /**
  * API tests for CellsPivotTablesApi
  */
@@ -117,27 +119,6 @@ public class CellsPivotTablesApiTest {
         // TODO: test validations
     }
     
-    /**
-     * delete  pivot filter for piovt table             
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void cellsPivotTablesDeleteWorksheetPivotTableFilterTest() throws ApiException {
-        String name =PivTestFile;;
-        String sheetName = SHEET4;
-        Integer pivotTableIndex = 0;
-        Integer fieldIndex = 0;
-        Boolean needReCalculate = true;
-        String folder = TEMPFOLDER;
-        CellsApiUtil.Upload(api, folder , name);
-        CellsCloudResponse response = api.cellsPivotTablesDeleteWorksheetPivotTableFilter(name, sheetName, pivotTableIndex, fieldIndex, needReCalculate, folder,null);
-
-        // TODO: test validations
-    }
     
     /**
      * delete all pivot filters for piovt table
@@ -500,7 +481,7 @@ public class CellsPivotTablesApiTest {
      *          if the Api call fails
      */
     @Test
-    public void cellsPivotTablesPutWorksheetPivotTableFilterTest() throws ApiException {
+    public void cellsPivotTablesPutAndDeleteWorksheetPivotTableFilterTest() throws ApiException {
         String name =PivTestFile;;
         String sheetName = SHEET4;
         Integer pivotTableIndex = 0;
@@ -522,8 +503,11 @@ public class CellsPivotTablesApiTest {
         String folder = TEMPFOLDER;
         CellsApiUtil.Upload(api, folder , name);
         CellsCloudResponse response = api.cellsPivotTablesPutWorksheetPivotTableFilter(name, sheetName, pivotTableIndex, filter, needReCalculate, folder,null);
-
-        // TODO: test validations
+        Assert.assertEquals("cellsPivotTablesPutWorksheetPivotTableFilterTest is OK.", "OK", response.getStatus());
+        
+        Integer fieldIndex = 0;
+        CellsCloudResponse response1 = api.cellsPivotTablesDeleteWorksheetPivotTableFilter(name, sheetName, pivotTableIndex, fieldIndex, needReCalculate, folder,null);
+        Assert.assertEquals("cellsPivotTablesPutWorksheetPivotTableFilterTest is OK.", "OK", response1.getStatus());
     }
     
 }

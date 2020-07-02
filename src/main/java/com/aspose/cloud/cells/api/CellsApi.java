@@ -126,6 +126,7 @@ import com.aspose.cloud.cells.model.Style;
 import com.aspose.cloud.cells.model.StyleResponse;
 import com.aspose.cloud.cells.model.TaskData;
 import com.aspose.cloud.cells.model.TextItemsResponse;
+import com.aspose.cloud.cells.model.TextWaterMarkerRequest;
 import com.aspose.cloud.cells.model.Title;
 import com.aspose.cloud.cells.model.TitleResponse;
 import com.aspose.cloud.cells.model.Validation;
@@ -157,6 +158,18 @@ public class CellsApi {
     public CellsApi() {
         this(Configuration.getDefaultApiClient());
     }
+
+    public CellsApi(ApiClient apiClient) {
+        this.apiClient = apiClient;
+    }
+
+    public ApiClient getApiClient() {
+        return apiClient;
+    }
+
+    public void setApiClient(ApiClient apiClient) {
+        this.apiClient = apiClient;
+    }
 	public CellsApi(String appSid, String appKey) throws ApiException {
 		ApiClient apiClient = new ApiClient();
 		apiClient.setBasePath("https://api.aspose.cloud");
@@ -180,18 +193,6 @@ public class CellsApi {
 		apiClient.addDefaultHeader("Authorization", "Bearer " + accesstoken);
 		setApiClient(apiClient);
 	}
-    public CellsApi(ApiClient apiClient) {
-        this.apiClient = apiClient;
-    }
-
-    public ApiClient getApiClient() {
-        return apiClient;
-    }
-
-    public void setApiClient(ApiClient apiClient) {
-        this.apiClient = apiClient;
-    }
-
     /**
      * Build call for cellsAutoFilterDeleteWorksheetDateFilter
      * @param name  (required)
@@ -32055,6 +32056,148 @@ public class CellsApi {
 
         com.squareup.okhttp.Call call = cellsWorkbookPutWorkbookCreateValidateBeforeCall(name, templateFile, dataFile, isWriteOver, folder, storage, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<WorkbookResponse>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for cellsWorkbookPutWorkbookWaterMarker
+     * @param name  (required)
+     * @param folder  (optional)
+     * @param storage storage name. (optional)
+     * @param textWaterMarkerRequest The text water marker request. (optional)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call cellsWorkbookPutWorkbookWaterMarkerCall(String name, String folder, String storage, TextWaterMarkerRequest textWaterMarkerRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = textWaterMarkerRequest;
+        
+        // create path and map variables
+        String localVarPath = "/cells/{name}/watermarker"
+            .replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        if (folder != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "folder", folder));
+        if (storage != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "storage", storage));
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return apiClient.buildCall(localVarPath, "PUT", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+    
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call cellsWorkbookPutWorkbookWaterMarkerValidateBeforeCall(String name, String folder, String storage, TextWaterMarkerRequest textWaterMarkerRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'name' is set
+        if (name == null) {
+            throw new ApiException("Missing the required parameter 'name' when calling cellsWorkbookPutWorkbookWaterMarker(Async)");
+        }
+        
+        
+        com.squareup.okhttp.Call call = cellsWorkbookPutWorkbookWaterMarkerCall(name, folder, storage, textWaterMarkerRequest, progressListener, progressRequestListener);
+        return call;
+
+        
+        
+        
+        
+    }
+
+    /**
+     * Set workbook background image.
+     * 
+     * @param name  (required)
+     * @param folder  (optional)
+     * @param storage storage name. (optional)
+     * @param textWaterMarkerRequest The text water marker request. (optional)
+     * @return CellsCloudResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public CellsCloudResponse cellsWorkbookPutWorkbookWaterMarker(String name, String folder, String storage, TextWaterMarkerRequest textWaterMarkerRequest) throws ApiException {
+        ApiResponse<CellsCloudResponse> resp = cellsWorkbookPutWorkbookWaterMarkerWithHttpInfo(name, folder, storage, textWaterMarkerRequest);
+        return resp.getData();
+    }
+
+    /**
+     * Set workbook background image.
+     * 
+     * @param name  (required)
+     * @param folder  (optional)
+     * @param storage storage name. (optional)
+     * @param textWaterMarkerRequest The text water marker request. (optional)
+     * @return ApiResponse&lt;CellsCloudResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<CellsCloudResponse> cellsWorkbookPutWorkbookWaterMarkerWithHttpInfo(String name, String folder, String storage, TextWaterMarkerRequest textWaterMarkerRequest) throws ApiException {
+        com.squareup.okhttp.Call call = cellsWorkbookPutWorkbookWaterMarkerValidateBeforeCall(name, folder, storage, textWaterMarkerRequest, null, null);
+        Type localVarReturnType = new TypeToken<CellsCloudResponse>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Set workbook background image. (asynchronously)
+     * 
+     * @param name  (required)
+     * @param folder  (optional)
+     * @param storage storage name. (optional)
+     * @param textWaterMarkerRequest The text water marker request. (optional)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call cellsWorkbookPutWorkbookWaterMarkerAsync(String name, String folder, String storage, TextWaterMarkerRequest textWaterMarkerRequest, final ApiCallback<CellsCloudResponse> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = cellsWorkbookPutWorkbookWaterMarkerValidateBeforeCall(name, folder, storage, textWaterMarkerRequest, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<CellsCloudResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

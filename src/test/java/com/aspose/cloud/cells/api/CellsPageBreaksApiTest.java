@@ -97,7 +97,7 @@ public class CellsPageBreaksApiTest {
     public void cellsPageBreaksDeleteHorizontalPageBreaksTest() throws ApiException {
         String name = BOOK1;
         String sheetName = SHEET1;
-        Integer row = 1;
+        Integer row = 0;
         String folder = TEMPFOLDER;
         CellsApiUtil.Upload(api, folder , name);
         CellsCloudResponse response = api.cellsPageBreaksDeleteHorizontalPageBreaks(name, sheetName, row, folder,null);
@@ -137,7 +137,7 @@ public class CellsPageBreaksApiTest {
     public void cellsPageBreaksDeleteVerticalPageBreaksTest() throws ApiException {
         String name = BOOK1;
         String sheetName = SHEET1;
-        Integer column = 1;
+        Integer column = 0;
         String folder = TEMPFOLDER;
         CellsApiUtil.Upload(api, folder , name);
         CellsCloudResponse response = api.cellsPageBreaksDeleteVerticalPageBreaks(name, sheetName, column, folder,null);

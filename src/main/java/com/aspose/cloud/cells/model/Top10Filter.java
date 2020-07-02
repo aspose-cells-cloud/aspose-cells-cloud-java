@@ -37,7 +37,7 @@ import java.io.IOException;
 /**
  * Top10Filter
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-03-16T09:11:43.161+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-07-02T09:41:11.020+08:00")
 public class Top10Filter {
   @SerializedName("Items")
   private Integer items = null;

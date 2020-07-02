@@ -90,12 +90,12 @@ public class CellsTaskApiTest {
           param1.setDestinationFileFormat ( "xlsx");
           
           FileSource fs = new FileSource();
-          fs.setFilePath( TEMPFOLDER);
+//          fs.setFilePath( TEMPFOLDER);
           fs.setFileSourceType ( "CloudFileSystem");
           param1.setDestinationFilePosition (fs);
           param1.setSplitNameRule ( "sheetname");
           FileSource ds = new FileSource();
-          ds.setFilePath( TEMPFOLDER + "\\" + BOOK1);
+          ds.setFilePath( TEMPFOLDER + "/" + BOOK1);
           ds.setFileSourceType ( "CloudFileSystem");
           param1.setWorkbook (ds);
 
