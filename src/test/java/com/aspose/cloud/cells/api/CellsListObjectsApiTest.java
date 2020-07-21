@@ -10,12 +10,11 @@
  * Do not edit the class manually.
  */
 
-
 package com.aspose.cloud.cells.api;
+
 import com.aspose.cloud.cells.client.ApiClient;
 import com.aspose.cloud.cells.client.ApiException;
 import com.aspose.cloud.cells.client.Configuration;
-
 
 import com.aspose.cloud.cells.model.CreatePivotTableRequest;
 import com.aspose.cloud.cells.model.DataSorter;
@@ -39,232 +38,262 @@ import java.util.Map;
 
 public class CellsListObjectsApiTest {
 
-    private  CellsApi api ;
+	private CellsApi api;
 
-    private String BOOK1 = "Book1.xlsx";
-    private String MYDOC = "myDocument.xlsx";
-    private String PivTestFile = "TestCase.xlsx";
-    private String TEMPFOLDER = "Temp";
-    private String SHEET1 = "Sheet1";
-    private String SHEET2 = "Sheet2";
-    private String SHEET3 = "Sheet3";
-    private String SHEET4 = "Sheet4";
-    private String SHEET5 = "Sheet5";
-    private String SHEET6 = "Sheet6";
-    private String SHEET7 = "Sheet7";
-    private String SHEET8 = "Sheet8";
-    private String CellName = "A1";
-    private String RANGE = "A1:C10";
-    private String CELLAREA = "A1:C10";
-    
-	
-    public CellsListObjectsApiTest(){
-    	try {
-			 api = new CellsApi(CellsApiUtil.GetClientId(),CellsApiUtil.GetClientSecret());
+	private String BOOK1 = "Book1.xlsx";
+	private String MYDOC = "myDocument.xlsx";
+	private String PivTestFile = "TestCase.xlsx";
+	private String TEMPFOLDER = "JavaTest";
+	private String SHEET1 = "Sheet1";
+	private String SHEET2 = "Sheet2";
+	private String SHEET3 = "Sheet3";
+	private String SHEET4 = "Sheet4";
+	private String SHEET5 = "Sheet5";
+	private String SHEET6 = "Sheet6";
+	private String SHEET7 = "Sheet7";
+	private String SHEET8 = "Sheet8";
+	private String CellName = "A1";
+	private String RANGE = "A1:C10";
+	private String CELLAREA = "A1:C10";
+
+	public CellsListObjectsApiTest() {
+		try {
+			api = new CellsApi(CellsApiUtil.GetClientId(),
+					CellsApiUtil.GetClientSecret());
 		} catch (ApiException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-    }
-    /**
-     * Delete worksheet list object by index
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void cellsListObjectsDeleteWorksheetListObjectTest() throws ApiException {
-        String name = BOOK1;
-        String sheetName = SHEET7;
-        Integer listObjectIndex = 0;
-        String folder = TEMPFOLDER;
-        CellsApiUtil.Upload(api, folder , name);
-        CellsCloudResponse response = api.cellsListObjectsDeleteWorksheetListObject(name, sheetName, listObjectIndex, folder,null);
+	}
 
-        // TODO: test validations
-    }
-    
-    /**
-     * Delete worksheet list objects
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void cellsListObjectsDeleteWorksheetListObjectsTest() throws ApiException {
-        String name = BOOK1;
-        String sheetName = SHEET7;
-        String folder = TEMPFOLDER;
-        CellsApiUtil.Upload(api, folder , name);
-        CellsCloudResponse response = api.cellsListObjectsDeleteWorksheetListObjects(name, sheetName, folder,null);
+	/**
+	 * Delete worksheet list object by index
+	 *
+	 * 
+	 *
+	 * @throws ApiException
+	 *             if the Api call fails
+	 */
+	@Test
+	public void cellsListObjectsDeleteWorksheetListObjectTest()
+			throws ApiException {
+		String name = BOOK1;
+		String sheetName = SHEET7;
+		Integer listObjectIndex = 0;
+		String folder = TEMPFOLDER;
+		CellsApiUtil.Upload(api, folder, name);
+		CellsCloudResponse response = api
+				.cellsListObjectsDeleteWorksheetListObject(name, sheetName,
+						listObjectIndex, folder, null);
 
-        // TODO: test validations
-    }
-    
-    /**
-     * Get worksheet list object info by index.
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void cellsListObjectsGetWorksheetListObjectTest() throws ApiException {
-        String name = BOOK1;
-        String sheetName = SHEET7;
-        Integer listobjectindex = 0;
-        String folder = TEMPFOLDER;
-        CellsApiUtil.Upload(api, folder , name);
-        ListObjectResponse response = api.cellsListObjectsGetWorksheetListObject(name, sheetName, listobjectindex, folder,null);
+		// TODO: test validations
+	}
 
-        // TODO: test validations
-    }
-    
-    /**
-     * Get worksheet listobjects info.
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void cellsListObjectsGetWorksheetListObjectsTest() throws ApiException {
-        String name = BOOK1;
-        String sheetName = SHEET7;
-        String folder = TEMPFOLDER;
-        CellsApiUtil.Upload(api, folder , name);
-        ListObjectsResponse response = api.cellsListObjectsGetWorksheetListObjects(name, sheetName, folder,null);
+	/**
+	 * Delete worksheet list objects
+	 *
+	 * 
+	 *
+	 * @throws ApiException
+	 *             if the Api call fails
+	 */
+	@Test
+	public void cellsListObjectsDeleteWorksheetListObjectsTest()
+			throws ApiException {
+		String name = BOOK1;
+		String sheetName = SHEET7;
+		String folder = TEMPFOLDER;
+		CellsApiUtil.Upload(api, folder, name);
+		CellsCloudResponse response = api
+				.cellsListObjectsDeleteWorksheetListObjects(name, sheetName,
+						folder, null);
 
-        // TODO: test validations
-    }
-    
-    /**
-     * Update  list object 
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void cellsListObjectsPostWorksheetListObjectTest() throws ApiException {
-        String name = BOOK1;
-        String sheetName = SHEET7;
-        Integer listObjectIndex = 0;
-        ListObject listObject = new ListObject();
-        listObject.setShowHeaderRow(true);
-        String folder = TEMPFOLDER;
-        CellsApiUtil.Upload(api, folder , name);
-        CellsCloudResponse response = api.cellsListObjectsPostWorksheetListObject(name, sheetName, listObjectIndex, listObject, folder,null);
+		// TODO: test validations
+	}
 
-        // TODO: test validations
-    }
-    
-    /**
-     * 
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void cellsListObjectsPostWorksheetListObjectConvertToRangeTest() throws ApiException {
-        String name = BOOK1;
-        String sheetName = SHEET7;
-        Integer listObjectIndex = 0;
-        String folder = TEMPFOLDER;
-        CellsApiUtil.Upload(api, folder , name);
-        CellsCloudResponse response = api.cellsListObjectsPostWorksheetListObjectConvertToRange(name, sheetName, listObjectIndex, folder,null);
+	/**
+	 * Get worksheet list object info by index.
+	 *
+	 * 
+	 *
+	 * @throws ApiException
+	 *             if the Api call fails
+	 */
+	@Test
+	public void cellsListObjectsGetWorksheetListObjectTest()
+			throws ApiException {
+		String name = BOOK1;
+		String sheetName = SHEET7;
+		Integer listobjectindex = 0;
+		String folder = TEMPFOLDER;
+		CellsApiUtil.Upload(api, folder, name);
+		ListObjectResponse response = api
+				.cellsListObjectsGetWorksheetListObject(name, sheetName,
+						listobjectindex, folder, null);
 
-        // TODO: test validations
-    }
-    
-    /**
-     * 
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void cellsListObjectsPostWorksheetListObjectSortTableTest() throws ApiException {
-        String name = BOOK1;
-        String sheetName = SHEET7;
-        Integer listObjectIndex = 0;
-        DataSorter dataSorter =new DataSorter();
-        dataSorter.setCaseSensitive(true);
-        String folder = TEMPFOLDER;
-        CellsApiUtil.Upload(api, folder , name);
-        CellsCloudResponse response = api.cellsListObjectsPostWorksheetListObjectSortTable(name, sheetName, listObjectIndex, dataSorter, folder,null);
+		// TODO: test validations
+	}
 
-        // TODO: test validations
-    }
-    
-    /**
-     * 
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void cellsListObjectsPostWorksheetListObjectSummarizeWithPivotTableTest() throws ApiException {
-        String name = BOOK1;
-        String sheetName = SHEET7;
-        Integer listObjectIndex = 0;
-        String destsheetName =  "Sheet2";
-        CreatePivotTableRequest request =  new CreatePivotTableRequest ();
-        request.setDestCellName("C1");
-        request.setName("testp");
-        List<Integer> pivotFieldColumns = new ArrayList<Integer>();
-        pivotFieldColumns.add(2);
-        request.setPivotFieldColumns(pivotFieldColumns);
-        List<Integer> pivotFieldRows = new ArrayList<Integer>();
-        pivotFieldColumns.add(2);
-        request.setPivotFieldRows(pivotFieldRows);
-        List<Integer> pivotFieldData = new ArrayList<Integer>();
-        pivotFieldColumns.add(2);
-        request.setPivotFieldData(pivotFieldData);
-        request.setSourceData("=Sheet2!A1:E8");
-        request.setUseSameSource(true);
-        String folder = TEMPFOLDER;
-        CellsApiUtil.Upload(api, folder , name);
-        CellsCloudResponse response = api.cellsListObjectsPostWorksheetListObjectSummarizeWithPivotTable(name, sheetName, listObjectIndex, destsheetName, request, folder,null);
+	/**
+	 * Get worksheet listobjects info.
+	 *
+	 * 
+	 *
+	 * @throws ApiException
+	 *             if the Api call fails
+	 */
+	@Test
+	public void cellsListObjectsGetWorksheetListObjectsTest()
+			throws ApiException {
+		String name = BOOK1;
+		String sheetName = SHEET7;
+		String folder = TEMPFOLDER;
+		CellsApiUtil.Upload(api, folder, name);
+		ListObjectsResponse response = api
+				.cellsListObjectsGetWorksheetListObjects(name, sheetName,
+						folder, null);
 
-        // TODO: test validations
-    }
-    
-    /**
-     * Add a list object into worksheet.
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void cellsListObjectsPutWorksheetListObjectTest() throws ApiException {
-        String name = BOOK1;
-        String sheetName = SHEET7;
-        Integer startRow = 1;
-        Integer startColumn = 1;
-        Integer endRow = 6;
-        Integer endColumn = 6;
-        String folder = TEMPFOLDER;
-        Boolean hasHeaders = null;
-        CellsApiUtil.Upload(api, folder , name);
-        ListObjectResponse response = api.cellsListObjectsPutWorksheetListObject(name, sheetName, startRow, startColumn, endRow, endColumn, hasHeaders,null, folder,null);
+		// TODO: test validations
+	}
 
-        // TODO: test validations
-    }
-    
+	/**
+	 * Update list object
+	 *
+	 * 
+	 *
+	 * @throws ApiException
+	 *             if the Api call fails
+	 */
+	@Test
+	public void cellsListObjectsPostWorksheetListObjectTest()
+			throws ApiException {
+		String name = BOOK1;
+		String sheetName = SHEET7;
+		Integer listObjectIndex = 0;
+		ListObject listObject = new ListObject();
+		listObject.setShowHeaderRow(true);
+		String folder = TEMPFOLDER;
+		CellsApiUtil.Upload(api, folder, name);
+		CellsCloudResponse response = api
+				.cellsListObjectsPostWorksheetListObject(name, sheetName,
+						listObjectIndex, listObject, folder, null);
+
+		// TODO: test validations
+	}
+
+	/**
+	 * 
+	 *
+	 * 
+	 *
+	 * @throws ApiException
+	 *             if the Api call fails
+	 */
+	@Test
+	public void cellsListObjectsPostWorksheetListObjectConvertToRangeTest()
+			throws ApiException {
+		String name = BOOK1;
+		String sheetName = SHEET7;
+		Integer listObjectIndex = 0;
+		String folder = TEMPFOLDER;
+		CellsApiUtil.Upload(api, folder, name);
+		CellsCloudResponse response = api
+				.cellsListObjectsPostWorksheetListObjectConvertToRange(name,
+						sheetName, listObjectIndex, folder, null);
+
+		// TODO: test validations
+	}
+
+	/**
+	 * 
+	 *
+	 * 
+	 *
+	 * @throws ApiException
+	 *             if the Api call fails
+	 */
+	@Test
+	public void cellsListObjectsPostWorksheetListObjectSortTableTest()
+			throws ApiException {
+		String name = BOOK1;
+		String sheetName = SHEET7;
+		Integer listObjectIndex = 0;
+		DataSorter dataSorter = new DataSorter();
+		dataSorter.setCaseSensitive(true);
+		String folder = TEMPFOLDER;
+		CellsApiUtil.Upload(api, folder, name);
+		CellsCloudResponse response = api
+				.cellsListObjectsPostWorksheetListObjectSortTable(name,
+						sheetName, listObjectIndex, dataSorter, folder, null);
+
+		// TODO: test validations
+	}
+
+	/**
+	 * 
+	 *
+	 * 
+	 *
+	 * @throws ApiException
+	 *             if the Api call fails
+	 */
+	@Test
+	public void cellsListObjectsPostWorksheetListObjectSummarizeWithPivotTableTest()
+			throws ApiException {
+		String name = BOOK1;
+		String sheetName = SHEET7;
+		Integer listObjectIndex = 0;
+		String destsheetName = "Sheet2";
+		CreatePivotTableRequest request = new CreatePivotTableRequest();
+		request.setDestCellName("C1");
+		request.setName("testp");
+		List<Integer> pivotFieldColumns = new ArrayList<Integer>();
+		pivotFieldColumns.add(2);
+		request.setPivotFieldColumns(pivotFieldColumns);
+		List<Integer> pivotFieldRows = new ArrayList<Integer>();
+		pivotFieldColumns.add(2);
+		request.setPivotFieldRows(pivotFieldRows);
+		List<Integer> pivotFieldData = new ArrayList<Integer>();
+		pivotFieldColumns.add(2);
+		request.setPivotFieldData(pivotFieldData);
+		request.setSourceData("=Sheet2!A1:E8");
+		request.setUseSameSource(true);
+		String folder = TEMPFOLDER;
+		CellsApiUtil.Upload(api, folder, name);
+		CellsCloudResponse response = api
+				.cellsListObjectsPostWorksheetListObjectSummarizeWithPivotTable(
+						name, sheetName, listObjectIndex, destsheetName,
+						request, folder, null);
+
+		// TODO: test validations
+	}
+
+	/**
+	 * Add a list object into worksheet.
+	 *
+	 * 
+	 *
+	 * @throws ApiException
+	 *             if the Api call fails
+	 */
+	@Test
+	public void cellsListObjectsPutWorksheetListObjectTest()
+			throws ApiException {
+		String name = BOOK1;
+		String sheetName = SHEET7;
+		Integer startRow = 1;
+		Integer startColumn = 1;
+		Integer endRow = 6;
+		Integer endColumn = 6;
+		String folder = TEMPFOLDER;
+		Boolean hasHeaders = null;
+		CellsApiUtil.Upload(api, folder, name);
+		ListObjectResponse response = api
+				.cellsListObjectsPutWorksheetListObject(name, sheetName,
+						startRow, startColumn, endRow, endColumn, hasHeaders,
+						null, folder, null);
+
+		// TODO: test validations
+	}
+
 }

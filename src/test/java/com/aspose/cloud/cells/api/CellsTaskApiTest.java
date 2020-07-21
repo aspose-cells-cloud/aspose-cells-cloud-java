@@ -10,14 +10,11 @@
  * Do not edit the class manually.
  */
 
-
 package com.aspose.cloud.cells.api;
+
 import com.aspose.cloud.cells.client.ApiClient;
 import com.aspose.cloud.cells.client.ApiException;
 import com.aspose.cloud.cells.client.Configuration;
-
-
-
 
 import java.io.File;
 
@@ -41,72 +38,73 @@ import java.util.Map;
 
 public class CellsTaskApiTest {
 
-    private  CellsApi api ;
+	private CellsApi api;
 
-    private String BOOK1 = "Book1.xlsx";
-    private String MYDOC = "myDocument.xlsx";
-    private String PivTestFile = "TestCase.xlsx";
-    private String TEMPFOLDER = "Temp";
-    private String SHEET1 = "Sheet1";
-    private String SHEET2 = "Sheet2";
-    private String SHEET3 = "Sheet3";
-    private String SHEET4 = "Sheet4";
-    private String SHEET5 = "Sheet5";
-    private String SHEET6 = "Sheet6";
-    private String SHEET7 = "Sheet7";
-    private String SHEET8 = "Sheet8";
-    private String CellName = "A1";
-    private String RANGE = "A1:C10";
-    private String CELLAREA = "A1:C10";
-    
-    public CellsTaskApiTest(){
-    	try {
-			 api = new CellsApi(CellsApiUtil.GetClientId(),CellsApiUtil.GetClientSecret());
+	private String BOOK1 = "Book1.xlsx";
+	private String MYDOC = "myDocument.xlsx";
+	private String PivTestFile = "TestCase.xlsx";
+	private String TEMPFOLDER = "JavaTest";
+	private String SHEET1 = "Sheet1";
+	private String SHEET2 = "Sheet2";
+	private String SHEET3 = "Sheet3";
+	private String SHEET4 = "Sheet4";
+	private String SHEET5 = "Sheet5";
+	private String SHEET6 = "Sheet6";
+	private String SHEET7 = "Sheet7";
+	private String SHEET8 = "Sheet8";
+	private String CellName = "A1";
+	private String RANGE = "A1:C10";
+	private String CELLAREA = "A1:C10";
+
+	public CellsTaskApiTest() {
+		try {
+			api = new CellsApi(CellsApiUtil.GetClientId(),
+					CellsApiUtil.GetClientSecret());
 		} catch (ApiException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-    }    	
-    
-    /**
-     * Run tasks  
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void cellsTaskPostRunTaskTest() throws ApiException {
-        String name = BOOK1;
+	}
 
-        String folder = TEMPFOLDER;
-    	  TaskData taskData = new TaskData();
-    	  List<TaskDescription> tasks = new ArrayList<TaskDescription>();
-          TaskDescription task1 = new TaskDescription();
-          task1.setTaskType ("SplitWorkbook");
+	/**
+	 * Run tasks
+	 *
+	 * 
+	 *
+	 * @throws ApiException
+	 *             if the Api call fails
+	 */
+	@Test
+	public void cellsTaskPostRunTaskTest() throws ApiException {
+		String name = BOOK1;
 
-          SplitWorkbookTaskParameter param1 = new SplitWorkbookTaskParameter();
-          param1.setDestinationFileFormat ( "xlsx");
-          
-          FileSource fs = new FileSource();
-//          fs.setFilePath( TEMPFOLDER);
-          fs.setFileSourceType ( "CloudFileSystem");
-          param1.setDestinationFilePosition (fs);
-          param1.setSplitNameRule ( "sheetname");
-          FileSource ds = new FileSource();
-          ds.setFilePath( TEMPFOLDER + "/" + BOOK1);
-          ds.setFileSourceType ( "CloudFileSystem");
-          param1.setWorkbook (ds);
+		String folder = TEMPFOLDER;
+		TaskData taskData = new TaskData();
+		List<TaskDescription> tasks = new ArrayList<TaskDescription>();
+		TaskDescription task1 = new TaskDescription();
+		task1.setTaskType("SplitWorkbook");
 
-          task1.setTaskParameter ( param1);
-          tasks.add(task1);
-          taskData.setTasks(tasks);
-          taskData.getTasks().add(task1);
-          CellsApiUtil.Upload(api, folder , name);
-        Object response = api.cellsTaskPostRunTask(taskData);
+		SplitWorkbookTaskParameter param1 = new SplitWorkbookTaskParameter();
+		param1.setDestinationFileFormat("xlsx");
 
-        // TODO: test validations
-    }
-    
+		FileSource fs = new FileSource();
+		fs.setFilePath(TEMPFOLDER);
+		fs.setFileSourceType("CloudFileSystem");
+		param1.setDestinationFilePosition(fs);
+		param1.setSplitNameRule("sheetname");
+		FileSource ds = new FileSource();
+		ds.setFilePath(TEMPFOLDER + "/" + BOOK1);
+		ds.setFileSourceType("CloudFileSystem");
+		param1.setWorkbook(ds);
+
+		task1.setTaskParameter(param1);
+		tasks.add(task1);
+		taskData.setTasks(tasks);
+		taskData.getTasks().add(task1);
+		CellsApiUtil.Upload(api, folder, name);
+		Object response = api.cellsTaskPostRunTask(taskData);
+
+		// TODO: test validations
+	}
+
 }

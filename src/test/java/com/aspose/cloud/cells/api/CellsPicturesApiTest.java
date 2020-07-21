@@ -56,7 +56,7 @@ public class CellsPicturesApiTest {
     private String BOOK1 = "Book1.xlsx";
     private String MYDOC = "myDocument.xlsx";
     private String PivTestFile = "TestCase.xlsx";
-    private String TEMPFOLDER = "Temp";
+    private String TEMPFOLDER = "JavaTest";
     private String SHEET1 = "Sheet1";
     private String SHEET2 = "Sheet2";
     private String SHEET3 = "Sheet3";
@@ -199,8 +199,8 @@ public class CellsPicturesApiTest {
         String picturePath = "WaterMark.png";
         String folder = TEMPFOLDER;
         CellsApiUtil.Upload(api, folder , name);
-		CellsApiUtil.Upload( api,picturePath);
-        PicturesResponse response = api.cellsPicturesPutWorksheetAddPicture(name, sheetName, picture, upperLeftRow, upperLeftColumn, lowerRightRow, lowerRightColumn, picturePath, folder,null);
+		CellsApiUtil.Upload( api,folder ,picturePath);
+        PicturesResponse response = api.cellsPicturesPutWorksheetAddPicture(name, sheetName, picture, upperLeftRow, upperLeftColumn, lowerRightRow, lowerRightColumn, folder +"/"+ picturePath, folder,null);
         Assert.assertEquals("cellsPicturesPutWorksheetAddPictureTest is OK.", "OK", response.getStatus());
         // TODO: test validations
     }

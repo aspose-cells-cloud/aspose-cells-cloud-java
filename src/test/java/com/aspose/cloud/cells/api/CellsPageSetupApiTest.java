@@ -10,12 +10,11 @@
  * Do not edit the class manually.
  */
 
-
 package com.aspose.cloud.cells.api;
+
 import com.aspose.cloud.cells.client.ApiClient;
 import com.aspose.cloud.cells.client.ApiException;
 import com.aspose.cloud.cells.client.Configuration;
-
 
 import com.aspose.cloud.cells.model.PageSectionsResponse;
 import com.aspose.cloud.cells.model.PageSetup;
@@ -37,172 +36,180 @@ import java.util.Map;
 
 public class CellsPageSetupApiTest {
 
-    private  CellsApi api ;
+	private CellsApi api;
 
-    private String BOOK1 = "Book1.xlsx";
-    private String MYDOC = "myDocument.xlsx";
-    private String PivTestFile = "TestCase.xlsx";
-    private String TEMPFOLDER = "Temp";
-    private String SHEET1 = "Sheet1";
-    private String SHEET2 = "Sheet2";
-    private String SHEET3 = "Sheet3";
-    private String SHEET4 = "Sheet4";
-    private String SHEET5 = "Sheet5";
-    private String SHEET6 = "Sheet6";
-    private String SHEET7 = "Sheet7";
-    private String SHEET8 = "Sheet8";
-    private String CellName = "A1";
-    private String RANGE = "A1:C10";
-    private String CELLAREA = "A1:C10";
-    
-	
-    public CellsPageSetupApiTest(){
-    	try {
-			 api = new CellsApi(CellsApiUtil.GetClientId(),CellsApiUtil.GetClientSecret());
+	private String BOOK1 = "Book1.xlsx";
+	private String MYDOC = "myDocument.xlsx";
+	private String PivTestFile = "TestCase.xlsx";
+	private String TEMPFOLDER = "JavaTest";
+	private String SHEET1 = "Sheet1";
+	private String SHEET2 = "Sheet2";
+	private String SHEET3 = "Sheet3";
+	private String SHEET4 = "Sheet4";
+	private String SHEET5 = "Sheet5";
+	private String SHEET6 = "Sheet6";
+	private String SHEET7 = "Sheet7";
+	private String SHEET8 = "Sheet8";
+	private String CellName = "A1";
+	private String RANGE = "A1:C10";
+	private String CELLAREA = "A1:C10";
+
+	public CellsPageSetupApiTest() {
+		try {
+			api = new CellsApi(CellsApiUtil.GetClientId(),
+					CellsApiUtil.GetClientSecret());
 		} catch (ApiException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-    }
-    /**
-     * clear header footer
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void cellsPageSetupDeleteHeaderFooterTest() throws ApiException {
-        String name = BOOK1;
-        String sheetName = SHEET1;
-        String folder = TEMPFOLDER;
-        CellsApiUtil.Upload(api, folder , name);
-        CellsCloudResponse response = api.cellsPageSetupDeleteHeaderFooter(name, sheetName, folder,null);
+	}
 
-        // TODO: test validations
-    }
-    
-    /**
-     * get page footer information
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void cellsPageSetupGetFooterTest() throws ApiException {
-        String name = BOOK1;
-        String sheetName = SHEET1;
-        String folder = TEMPFOLDER;
-        CellsApiUtil.Upload(api, folder , name);
-        PageSectionsResponse response = api.cellsPageSetupGetFooter(name, sheetName, folder,null);
+	/**
+	 * clear header footer
+	 *
+	 * 
+	 *
+	 * @throws ApiException
+	 *             if the Api call fails
+	 */
+	@Test
+	public void cellsPageSetupDeleteHeaderFooterTest() throws ApiException {
+		String name = BOOK1;
+		String sheetName = SHEET1;
+		String folder = TEMPFOLDER;
+		CellsApiUtil.Upload(api, folder, name);
+		CellsCloudResponse response = api.cellsPageSetupDeleteHeaderFooter(
+				name, sheetName, folder, null);
 
-        // TODO: test validations
-    }
-    
-    /**
-     * get page header information
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void cellsPageSetupGetHeaderTest() throws ApiException {
-        String name = BOOK1;
-        String sheetName = SHEET1;
-        String folder = TEMPFOLDER;
-        CellsApiUtil.Upload(api, folder , name);
-        PageSectionsResponse response = api.cellsPageSetupGetHeader(name, sheetName, folder,null);
+		// TODO: test validations
+	}
 
-        // TODO: test validations
-    }
-    
-    /**
-     * Get Page Setup information.             
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void cellsPageSetupGetPageSetupTest() throws ApiException {
-        String name = BOOK1;
-        String sheetName = SHEET1;
-        String folder = TEMPFOLDER;
-        CellsApiUtil.Upload(api, folder , name);
-        PageSetupResponse response = api.cellsPageSetupGetPageSetup(name, sheetName, folder,null);
+	/**
+	 * get page footer information
+	 *
+	 * 
+	 *
+	 * @throws ApiException
+	 *             if the Api call fails
+	 */
+	@Test
+	public void cellsPageSetupGetFooterTest() throws ApiException {
+		String name = BOOK1;
+		String sheetName = SHEET1;
+		String folder = TEMPFOLDER;
+		CellsApiUtil.Upload(api, folder, name);
+		PageSectionsResponse response = api.cellsPageSetupGetFooter(name,
+				sheetName, folder, null);
 
-        // TODO: test validations
-    }
-    
-    /**
-     * update  page footer information 
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void cellsPageSetupPostFooterTest() throws ApiException {
-        String name = BOOK1;
-        String sheetName = SHEET1;
-        Integer section = 0;
-        String script = "test";
-        Boolean isFirstPage = true;
-        String folder = TEMPFOLDER;
-        CellsApiUtil.Upload(api, folder , name);
-        CellsCloudResponse response = api.cellsPageSetupPostFooter(name, sheetName, section, script, isFirstPage, folder,null);
+		// TODO: test validations
+	}
 
-        // TODO: test validations
-    }
-    
-    /**
-     * update  page header information 
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void cellsPageSetupPostHeaderTest() throws ApiException {
-        String name = BOOK1;
-        String sheetName = SHEET1;
-        Integer section = 1;
-        String script ="trst";
-        Boolean isFirstPage = false;
-        String folder = TEMPFOLDER;
-        CellsApiUtil.Upload(api, folder , name);
-        CellsCloudResponse response = api.cellsPageSetupPostHeader(name, sheetName, section, script, isFirstPage, folder,null);
+	/**
+	 * get page header information
+	 *
+	 * 
+	 *
+	 * @throws ApiException
+	 *             if the Api call fails
+	 */
+	@Test
+	public void cellsPageSetupGetHeaderTest() throws ApiException {
+		String name = BOOK1;
+		String sheetName = SHEET1;
+		String folder = TEMPFOLDER;
+		CellsApiUtil.Upload(api, folder, name);
+		PageSectionsResponse response = api.cellsPageSetupGetHeader(name,
+				sheetName, folder, null);
 
-        // TODO: test validations
-    }
-    
-    /**
-     * Update Page Setup information.
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void cellsPageSetupPostPageSetupTest() throws ApiException {
-        String name = BOOK1;
-        String sheetName = SHEET1;
-        PageSetup pageSetup =new PageSetup();
-        pageSetup.setBlackAndWhite(true);
-        String folder = TEMPFOLDER;
-        CellsApiUtil.Upload(api, folder , name);
-        CellsCloudResponse response = api.cellsPageSetupPostPageSetup(name, sheetName, pageSetup, folder,null);
+		// TODO: test validations
+	}
 
-        // TODO: test validations
-    }
-    
+	/**
+	 * Get Page Setup information.
+	 *
+	 * 
+	 *
+	 * @throws ApiException
+	 *             if the Api call fails
+	 */
+	@Test
+	public void cellsPageSetupGetPageSetupTest() throws ApiException {
+		String name = BOOK1;
+		String sheetName = SHEET1;
+		String folder = TEMPFOLDER;
+		CellsApiUtil.Upload(api, folder, name);
+		PageSetupResponse response = api.cellsPageSetupGetPageSetup(name,
+				sheetName, folder, null);
+
+		// TODO: test validations
+	}
+
+	/**
+	 * update page footer information
+	 *
+	 * 
+	 *
+	 * @throws ApiException
+	 *             if the Api call fails
+	 */
+	@Test
+	public void cellsPageSetupPostFooterTest() throws ApiException {
+		String name = BOOK1;
+		String sheetName = SHEET1;
+		Integer section = 0;
+		String script = "test";
+		Boolean isFirstPage = true;
+		String folder = TEMPFOLDER;
+		CellsApiUtil.Upload(api, folder, name);
+		CellsCloudResponse response = api.cellsPageSetupPostFooter(name,
+				sheetName, section, script, isFirstPage, folder, null);
+
+		// TODO: test validations
+	}
+
+	/**
+	 * update page header information
+	 *
+	 * 
+	 *
+	 * @throws ApiException
+	 *             if the Api call fails
+	 */
+	@Test
+	public void cellsPageSetupPostHeaderTest() throws ApiException {
+		String name = BOOK1;
+		String sheetName = SHEET1;
+		Integer section = 1;
+		String script = "trst";
+		Boolean isFirstPage = false;
+		String folder = TEMPFOLDER;
+		CellsApiUtil.Upload(api, folder, name);
+		CellsCloudResponse response = api.cellsPageSetupPostHeader(name,
+				sheetName, section, script, isFirstPage, folder, null);
+
+		// TODO: test validations
+	}
+
+	/**
+	 * Update Page Setup information.
+	 *
+	 * 
+	 *
+	 * @throws ApiException
+	 *             if the Api call fails
+	 */
+	@Test
+	public void cellsPageSetupPostPageSetupTest() throws ApiException {
+		String name = BOOK1;
+		String sheetName = SHEET1;
+		PageSetup pageSetup = new PageSetup();
+		pageSetup.setBlackAndWhite(true);
+		String folder = TEMPFOLDER;
+		CellsApiUtil.Upload(api, folder, name);
+		CellsCloudResponse response = api.cellsPageSetupPostPageSetup(name,
+				sheetName, pageSetup, folder, null);
+
+		// TODO: test validations
+	}
+
 }

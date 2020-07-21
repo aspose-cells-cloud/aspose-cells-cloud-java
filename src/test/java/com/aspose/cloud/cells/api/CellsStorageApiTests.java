@@ -10,12 +10,11 @@
  * Do not edit the class manually.
  */
 
-
 package com.aspose.cloud.cells.api;
+
 import com.aspose.cloud.cells.client.ApiClient;
 import com.aspose.cloud.cells.client.ApiException;
 import com.aspose.cloud.cells.client.Configuration;
-
 
 import com.aspose.cloud.cells.model.CalculationOptions;
 import com.aspose.cloud.cells.model.CellResponse;
@@ -60,47 +59,49 @@ import junit.framework.Assert;
  */
 
 public class CellsStorageApiTests {
-	   private CellsApi api ;
+	private CellsApi api;
 
-	    private String BOOK1 = "Book1.xlsx";
-	    private String MYDOC = "myDocument.xlsx";
-	    private String PivTestFile = "TestCase.xlsx";
-	    private String TEMPFOLDER = "Temp";
-	    private String SHEET1 = "Sheet1";
-	    private String SHEET2 = "Sheet2";
-	    private String SHEET3 = "Sheet3";
-	    private String SHEET4 = "Sheet4";
-	    private String SHEET5 = "Sheet5";
-	    private String SHEET6 = "Sheet6";
-	    private String SHEET7 = "Sheet7";
-	    private String SHEET8 = "Sheet8";
-	    private String CellName = "A1";
-	    private String RANGE = "A1:C10";
-	    private String CELLAREA = "A1:C10";
-	    
-	    public CellsStorageApiTests(){
-	    	try {
-				 api = new CellsApi(CellsApiUtil.GetClientId(),CellsApiUtil.GetClientSecret());
-			} catch (ApiException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-	    }  
-	    
-	    @Test
-	    public void cellsStorageTest() throws ApiException {
-	        String name = MYDOC;
-	        String folder = "NewFolder";
-	        api.createFolder(folder, null);
-	        File file = new File(CellsApiUtil.GetSourceFolder() + name);
-	        api.uploadFile( folder + "\\"+name, file, null);
-			CellsApiUtil.Upload(api, folder + "\\"+name);	 			
-			api.copyFile( folder + "\\"+name, folder + "\\1"+name, null, null, null); //error
-			api.copyFolder(folder, folder + "1", null, null);
-			api.moveFolder(folder+"1", folder + "2", null, null);
-			api.deleteFolder(folder + "2", null, true);
-			api.deleteFile(folder + "\\"+name,null,null);
-			
-	        // TODO: test validations
-	    }
+	private String BOOK1 = "Book1.xlsx";
+	private String MYDOC = "myDocument.xlsx";
+	private String PivTestFile = "TestCase.xlsx";
+	private String TEMPFOLDER = "JavaTest";
+	private String SHEET1 = "Sheet1";
+	private String SHEET2 = "Sheet2";
+	private String SHEET3 = "Sheet3";
+	private String SHEET4 = "Sheet4";
+	private String SHEET5 = "Sheet5";
+	private String SHEET6 = "Sheet6";
+	private String SHEET7 = "Sheet7";
+	private String SHEET8 = "Sheet8";
+	private String CellName = "A1";
+	private String RANGE = "A1:C10";
+	private String CELLAREA = "A1:C10";
+
+	public CellsStorageApiTests() {
+		try {
+			api = new CellsApi(CellsApiUtil.GetClientId(),
+					CellsApiUtil.GetClientSecret());
+		} catch (ApiException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	@Test
+	public void cellsStorageTest() throws ApiException {
+		String name = MYDOC;
+		String folder = TEMPFOLDER + "\\NewFolder";
+		api.createFolder(folder, null);
+		File file = new File(CellsApiUtil.GetSourceFolder() + name);
+		api.uploadFile(folder + "\\" + name, file, null);
+		CellsApiUtil.Upload(api, folder + "\\" + name);
+		api.copyFile(folder + "\\" + name, folder + "\\1" + name, null, null,
+				null); // error
+		api.copyFolder(folder, folder + "1", null, null);
+		api.moveFolder(folder + "1", folder + "2", null, null);
+		api.deleteFolder(folder + "2", null, true);
+		api.deleteFile(folder + "\\" + name, null, null);
+
+		// TODO: test validations
+	}
 }
