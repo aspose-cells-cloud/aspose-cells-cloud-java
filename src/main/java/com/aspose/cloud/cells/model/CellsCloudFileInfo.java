@@ -25,9 +25,6 @@
 package com.aspose.cloud.cells.model;
 
 import java.util.Objects;
-import com.aspose.cloud.cells.model.Link;
-import com.aspose.cloud.cells.model.LinkElement;
-import com.aspose.cloud.cells.model.TextItem;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -36,62 +33,94 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
- * TextItems
+ * CellsCloudFileInfo
  */
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-08-19T15:56:27.996+08:00")
-public class TextItems {
-  @SerializedName("link")
-  private Link link = null;
+public class CellsCloudFileInfo {
+  @SerializedName("Name")
+  private String name = null;
 
-  @SerializedName("TextItemList")
-  private List<TextItem> textItemList = null;
+  @SerializedName("Size")
+  private Integer size = null;
 
-  public TextItems link(Link link) {
-    this.link = link;
+  @SerializedName("Folder")
+  private String folder = null;
+
+  @SerializedName("Storage")
+  private String storage = null;
+
+  public CellsCloudFileInfo name(String name) {
+    this.name = name;
     return this;
   }
 
    /**
-   * Get link
-   * @return link
+   * Get name
+   * @return name
   **/
   @ApiModelProperty(value = "")
-  public Link getLink() {
-    return link;
+  public String getName() {
+    return name;
   }
 
-  public void setLink(Link link) {
-    this.link = link;
+  public void setName(String name) {
+    this.name = name;
   }
 
-  public TextItems textItemList(List<TextItem> textItemList) {
-    this.textItemList = textItemList;
-    return this;
-  }
-
-  public TextItems addTextItemListItem(TextItem textItemListItem) {
-    if (this.textItemList == null) {
-      this.textItemList = new ArrayList<>();
-    }
-    this.textItemList.add(textItemListItem);
+  public CellsCloudFileInfo size(Integer size) {
+    this.size = size;
     return this;
   }
 
    /**
-   * Get textItemList
-   * @return textItemList
+   * Get size
+   * @return size
   **/
-  @ApiModelProperty(value = "")
-  public List<TextItem> getTextItemList() {
-    return textItemList;
+  @ApiModelProperty(required = true, value = "")
+  public Integer getSize() {
+    return size;
   }
 
-  public void setTextItemList(List<TextItem> textItemList) {
-    this.textItemList = textItemList;
+  public void setSize(Integer size) {
+    this.size = size;
+  }
+
+  public CellsCloudFileInfo folder(String folder) {
+    this.folder = folder;
+    return this;
+  }
+
+   /**
+   * Get folder
+   * @return folder
+  **/
+  @ApiModelProperty(value = "")
+  public String getFolder() {
+    return folder;
+  }
+
+  public void setFolder(String folder) {
+    this.folder = folder;
+  }
+
+  public CellsCloudFileInfo storage(String storage) {
+    this.storage = storage;
+    return this;
+  }
+
+   /**
+   * Get storage
+   * @return storage
+  **/
+  @ApiModelProperty(value = "")
+  public String getStorage() {
+    return storage;
+  }
+
+  public void setStorage(String storage) {
+    this.storage = storage;
   }
 
 
@@ -103,24 +132,28 @@ public class TextItems {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    TextItems textItems = (TextItems) o;
-    return Objects.equals(this.link, textItems.link) &&
-        Objects.equals(this.textItemList, textItems.textItemList);
+    CellsCloudFileInfo cellsCloudFileInfo = (CellsCloudFileInfo) o;
+    return Objects.equals(this.name, cellsCloudFileInfo.name) &&
+        Objects.equals(this.size, cellsCloudFileInfo.size) &&
+        Objects.equals(this.folder, cellsCloudFileInfo.folder) &&
+        Objects.equals(this.storage, cellsCloudFileInfo.storage);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(link, textItemList);
+    return Objects.hash(name, size, folder, storage);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class TextItems {\n");
+    sb.append("class CellsCloudFileInfo {\n");
     
-    sb.append("    link: ").append(toIndentedString(link)).append("\n");
-    sb.append("    textItemList: ").append(toIndentedString(textItemList)).append("\n");
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    size: ").append(toIndentedString(size)).append("\n");
+    sb.append("    folder: ").append(toIndentedString(folder)).append("\n");
+    sb.append("    storage: ").append(toIndentedString(storage)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -38,15 +38,15 @@ import java.io.IOException;
  * Class for disc space information.
  */
 @ApiModel(description = "Class for disc space information.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-07-02T09:41:11.020+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-08-19T15:56:27.996+08:00")
 public class DiscUsage {
   @SerializedName("UsedSize")
-  private Long usedSize = null;
+  private Integer usedSize = null;
 
   @SerializedName("TotalSize")
-  private Long totalSize = null;
+  private Integer totalSize = null;
 
-  public DiscUsage usedSize(Long usedSize) {
+  public DiscUsage usedSize(Integer usedSize) {
     this.usedSize = usedSize;
     return this;
   }
@@ -56,15 +56,15 @@ public class DiscUsage {
    * @return usedSize
   **/
   @ApiModelProperty(required = true, value = "Application used disc space.")
-  public Long getUsedSize() {
+  public Integer getUsedSize() {
     return usedSize;
   }
 
-  public void setUsedSize(Long usedSize) {
+  public void setUsedSize(Integer usedSize) {
     this.usedSize = usedSize;
   }
 
-  public DiscUsage totalSize(Long totalSize) {
+  public DiscUsage totalSize(Integer totalSize) {
     this.totalSize = totalSize;
     return this;
   }
@@ -74,11 +74,11 @@ public class DiscUsage {
    * @return totalSize
   **/
   @ApiModelProperty(required = true, value = "Total disc space.")
-  public Long getTotalSize() {
+  public Integer getTotalSize() {
     return totalSize;
   }
 
-  public void setTotalSize(Long totalSize) {
+  public void setTotalSize(Integer totalSize) {
     this.totalSize = totalSize;
   }
 

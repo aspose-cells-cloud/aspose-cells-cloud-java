@@ -39,7 +39,7 @@ import java.time.OffsetDateTime;
  * File or folder information
  */
 @ApiModel(description = "File or folder information")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-07-02T09:41:11.020+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-08-19T15:56:27.996+08:00")
 
 public class StorageFile {
   @SerializedName("Name")
@@ -52,7 +52,7 @@ public class StorageFile {
   private OffsetDateTime modifiedDate = null;
 
   @SerializedName("Size")
-  private Long size = null;
+  private Integer size = null;
 
   @SerializedName("Path")
   private String path = null;
@@ -111,7 +111,7 @@ public class StorageFile {
     this.modifiedDate = modifiedDate;
   }
 
-  public StorageFile size(Long size) {
+  public StorageFile size(Integer size) {
     this.size = size;
     return this;
   }
@@ -121,11 +121,11 @@ public class StorageFile {
    * @return size
   **/
   @ApiModelProperty(required = true, value = "File or folder size.")
-  public Long getSize() {
+  public Integer getSize() {
     return size;
   }
 
-  public void setSize(Long size) {
+  public void setSize(Integer size) {
     this.size = size;
   }
 

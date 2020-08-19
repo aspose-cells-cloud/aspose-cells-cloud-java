@@ -185,7 +185,7 @@ public class CellsShapesApiTest {
         Integer height = 90;
         String folder = TEMPFOLDER;
         CellsApiUtil.Upload(api, folder , name);
-        ShapeResponse response = api.cellsShapesPutWorksheetShape(name, sheetName, drawingType, upperLeftRow, upperLeftColumn, top, left, width, height, folder,null);
+        ShapeResponse response = api.cellsShapesPutWorksheetShape(name, sheetName,null, drawingType, upperLeftRow, upperLeftColumn, top, left, width, height, folder,null);
 
         // TODO: test validations
     }

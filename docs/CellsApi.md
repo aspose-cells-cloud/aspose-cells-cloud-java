@@ -199,6 +199,7 @@ Method | HTTP request | Description
 [**cellsWorkbookPutDocumentProtectFromChanges**](CellsApi.md#cellsWorkbookPutDocumentProtectFromChanges) | **PUT** /cells/{name}/writeProtection | Protect document from changes.
 [**cellsWorkbookPutWorkbookBackground**](CellsApi.md#cellsWorkbookPutWorkbookBackground) | **PUT** /cells/{name}/background | Set workbook background image.
 [**cellsWorkbookPutWorkbookCreate**](CellsApi.md#cellsWorkbookPutWorkbookCreate) | **PUT** /cells/{name} | Create new workbook using deferent methods.
+[**cellsWorkbookPutWorkbookWaterMarker**](CellsApi.md#cellsWorkbookPutWorkbookWaterMarker) | **PUT** /cells/{name}/watermarker | Set workbook background image.
 [**cellsWorksheetValidationsDeleteWorksheetValidation**](CellsApi.md#cellsWorksheetValidationsDeleteWorksheetValidation) | **DELETE** /cells/{name}/worksheets/{sheetName}/validations/{validationIndex} | Delete worksheet validation by index.
 [**cellsWorksheetValidationsDeleteWorksheetValidations**](CellsApi.md#cellsWorksheetValidationsDeleteWorksheetValidations) | **DELETE** /cells/{name}/worksheets/{sheetName}/validations | Clear all validation in worksheet.
 [**cellsWorksheetValidationsGetWorksheetValidation**](CellsApi.md#cellsWorksheetValidationsGetWorksheetValidation) | **GET** /cells/{name}/worksheets/{sheetName}/validations/{validationIndex} | Get worksheet validation by index.
@@ -257,7 +258,7 @@ Method | HTTP request | Description
 
 <a name="cellsAutoFilterDeleteWorksheetDateFilter"></a>
 # **cellsAutoFilterDeleteWorksheetDateFilter**
-> CellsCloudResponse cellsAutoFilterDeleteWorksheetDateFilter(name, sheetName, fieldIndex, dateTimeGroupingType, year, month, day, hour, minute, second, folder, storage)
+> CellsCloudResponse cellsAutoFilterDeleteWorksheetDateFilter(name, sheetName, fieldIndex, dateTimeGroupingType, year, month, day, hour, minute, second, folder, storageName)
 
 Removes a date filter.             
 
@@ -280,9 +281,9 @@ Integer hour = 0; // Integer |
 Integer minute = 0; // Integer | 
 Integer second = 0; // Integer | 
 String folder = "folder_example"; // String | 
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    CellsCloudResponse result = apiInstance.cellsAutoFilterDeleteWorksheetDateFilter(name, sheetName, fieldIndex, dateTimeGroupingType, year, month, day, hour, minute, second, folder, storage);
+    CellsCloudResponse result = apiInstance.cellsAutoFilterDeleteWorksheetDateFilter(name, sheetName, fieldIndex, dateTimeGroupingType, year, month, day, hour, minute, second, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsAutoFilterDeleteWorksheetDateFilter");
@@ -305,7 +306,7 @@ Name | Type | Description  | Notes
  **minute** | **Integer**|  | [optional] [default to 0]
  **second** | **Integer**|  | [optional] [default to 0]
  **folder** | **String**|  | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -322,7 +323,7 @@ No authorization required
 
 <a name="cellsAutoFilterDeleteWorksheetFilter"></a>
 # **cellsAutoFilterDeleteWorksheetFilter**
-> CellsCloudResponse cellsAutoFilterDeleteWorksheetFilter(name, sheetName, fieldIndex, criteria, folder, storage)
+> CellsCloudResponse cellsAutoFilterDeleteWorksheetFilter(name, sheetName, fieldIndex, criteria, folder, storageName)
 
 Delete a filter for a filter column.             
 
@@ -339,9 +340,9 @@ String sheetName = "sheetName_example"; // String |
 Integer fieldIndex = 56; // Integer | 
 String criteria = "criteria_example"; // String | 
 String folder = "folder_example"; // String | 
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    CellsCloudResponse result = apiInstance.cellsAutoFilterDeleteWorksheetFilter(name, sheetName, fieldIndex, criteria, folder, storage);
+    CellsCloudResponse result = apiInstance.cellsAutoFilterDeleteWorksheetFilter(name, sheetName, fieldIndex, criteria, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsAutoFilterDeleteWorksheetFilter");
@@ -358,7 +359,7 @@ Name | Type | Description  | Notes
  **fieldIndex** | **Integer**|  |
  **criteria** | **String**|  | [optional]
  **folder** | **String**|  | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -375,7 +376,7 @@ No authorization required
 
 <a name="cellsAutoFilterGetWorksheetAutoFilter"></a>
 # **cellsAutoFilterGetWorksheetAutoFilter**
-> AutoFilterResponse cellsAutoFilterGetWorksheetAutoFilter(name, sheetName, folder, storage)
+> AutoFilterResponse cellsAutoFilterGetWorksheetAutoFilter(name, sheetName, folder, storageName)
 
 Get Auto filter Description
 
@@ -390,9 +391,9 @@ CellsApi apiInstance = new CellsApi();
 String name = "name_example"; // String | 
 String sheetName = "sheetName_example"; // String | 
 String folder = "folder_example"; // String | 
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    AutoFilterResponse result = apiInstance.cellsAutoFilterGetWorksheetAutoFilter(name, sheetName, folder, storage);
+    AutoFilterResponse result = apiInstance.cellsAutoFilterGetWorksheetAutoFilter(name, sheetName, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsAutoFilterGetWorksheetAutoFilter");
@@ -407,7 +408,7 @@ Name | Type | Description  | Notes
  **name** | **String**|  |
  **sheetName** | **String**|  |
  **folder** | **String**|  | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -424,7 +425,7 @@ No authorization required
 
 <a name="cellsAutoFilterPostWorksheetAutoFilterRefresh"></a>
 # **cellsAutoFilterPostWorksheetAutoFilterRefresh**
-> CellsCloudResponse cellsAutoFilterPostWorksheetAutoFilterRefresh(name, sheetName, folder, storage)
+> CellsCloudResponse cellsAutoFilterPostWorksheetAutoFilterRefresh(name, sheetName, folder, storageName)
 
 
 
@@ -439,9 +440,9 @@ CellsApi apiInstance = new CellsApi();
 String name = "name_example"; // String | 
 String sheetName = "sheetName_example"; // String | 
 String folder = "folder_example"; // String | 
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    CellsCloudResponse result = apiInstance.cellsAutoFilterPostWorksheetAutoFilterRefresh(name, sheetName, folder, storage);
+    CellsCloudResponse result = apiInstance.cellsAutoFilterPostWorksheetAutoFilterRefresh(name, sheetName, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsAutoFilterPostWorksheetAutoFilterRefresh");
@@ -456,7 +457,7 @@ Name | Type | Description  | Notes
  **name** | **String**|  |
  **sheetName** | **String**|  |
  **folder** | **String**|  | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -473,7 +474,7 @@ No authorization required
 
 <a name="cellsAutoFilterPostWorksheetMatchBlanks"></a>
 # **cellsAutoFilterPostWorksheetMatchBlanks**
-> CellsCloudResponse cellsAutoFilterPostWorksheetMatchBlanks(name, sheetName, fieldIndex, folder, storage)
+> CellsCloudResponse cellsAutoFilterPostWorksheetMatchBlanks(name, sheetName, fieldIndex, folder, storageName)
 
 Match all blank cell in the list.
 
@@ -489,9 +490,9 @@ String name = "name_example"; // String |
 String sheetName = "sheetName_example"; // String | 
 Integer fieldIndex = 56; // Integer | 
 String folder = "folder_example"; // String | 
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    CellsCloudResponse result = apiInstance.cellsAutoFilterPostWorksheetMatchBlanks(name, sheetName, fieldIndex, folder, storage);
+    CellsCloudResponse result = apiInstance.cellsAutoFilterPostWorksheetMatchBlanks(name, sheetName, fieldIndex, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsAutoFilterPostWorksheetMatchBlanks");
@@ -507,7 +508,7 @@ Name | Type | Description  | Notes
  **sheetName** | **String**|  |
  **fieldIndex** | **Integer**|  |
  **folder** | **String**|  | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -524,7 +525,7 @@ No authorization required
 
 <a name="cellsAutoFilterPostWorksheetMatchNonBlanks"></a>
 # **cellsAutoFilterPostWorksheetMatchNonBlanks**
-> CellsCloudResponse cellsAutoFilterPostWorksheetMatchNonBlanks(name, sheetName, fieldIndex, folder, storage)
+> CellsCloudResponse cellsAutoFilterPostWorksheetMatchNonBlanks(name, sheetName, fieldIndex, folder, storageName)
 
 Match all not blank cell in the list.             
 
@@ -540,9 +541,9 @@ String name = "name_example"; // String |
 String sheetName = "sheetName_example"; // String | 
 Integer fieldIndex = 56; // Integer | 
 String folder = "folder_example"; // String | 
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    CellsCloudResponse result = apiInstance.cellsAutoFilterPostWorksheetMatchNonBlanks(name, sheetName, fieldIndex, folder, storage);
+    CellsCloudResponse result = apiInstance.cellsAutoFilterPostWorksheetMatchNonBlanks(name, sheetName, fieldIndex, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsAutoFilterPostWorksheetMatchNonBlanks");
@@ -558,7 +559,7 @@ Name | Type | Description  | Notes
  **sheetName** | **String**|  |
  **fieldIndex** | **Integer**|  |
  **folder** | **String**|  | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -575,7 +576,7 @@ No authorization required
 
 <a name="cellsAutoFilterPutWorksheetColorFilter"></a>
 # **cellsAutoFilterPutWorksheetColorFilter**
-> CellsCloudResponse cellsAutoFilterPutWorksheetColorFilter(name, sheetName, range, fieldIndex, colorFilter, matchBlanks, refresh, folder, storage)
+> CellsCloudResponse cellsAutoFilterPutWorksheetColorFilter(name, sheetName, range, fieldIndex, colorFilter, matchBlanks, refresh, folder, storageName)
 
 
 
@@ -595,9 +596,9 @@ ColorFilterRequest colorFilter = new ColorFilterRequest(); // ColorFilterRequest
 Boolean matchBlanks = true; // Boolean | 
 Boolean refresh = true; // Boolean | 
 String folder = "folder_example"; // String | 
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    CellsCloudResponse result = apiInstance.cellsAutoFilterPutWorksheetColorFilter(name, sheetName, range, fieldIndex, colorFilter, matchBlanks, refresh, folder, storage);
+    CellsCloudResponse result = apiInstance.cellsAutoFilterPutWorksheetColorFilter(name, sheetName, range, fieldIndex, colorFilter, matchBlanks, refresh, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsAutoFilterPutWorksheetColorFilter");
@@ -617,7 +618,7 @@ Name | Type | Description  | Notes
  **matchBlanks** | **Boolean**|  | [optional]
  **refresh** | **Boolean**|  | [optional]
  **folder** | **String**|  | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -634,7 +635,7 @@ No authorization required
 
 <a name="cellsAutoFilterPutWorksheetCustomFilter"></a>
 # **cellsAutoFilterPutWorksheetCustomFilter**
-> CellsCloudResponse cellsAutoFilterPutWorksheetCustomFilter(name, sheetName, range, fieldIndex, operatorType1, criteria1, isAnd, operatorType2, criteria2, matchBlanks, refresh, folder, storage)
+> CellsCloudResponse cellsAutoFilterPutWorksheetCustomFilter(name, sheetName, range, fieldIndex, operatorType1, criteria1, isAnd, operatorType2, criteria2, matchBlanks, refresh, folder, storageName)
 
 Filters a list with a custom criteria.             
 
@@ -658,9 +659,9 @@ String criteria2 = "criteria2_example"; // String |
 Boolean matchBlanks = true; // Boolean | 
 Boolean refresh = true; // Boolean | 
 String folder = "folder_example"; // String | 
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    CellsCloudResponse result = apiInstance.cellsAutoFilterPutWorksheetCustomFilter(name, sheetName, range, fieldIndex, operatorType1, criteria1, isAnd, operatorType2, criteria2, matchBlanks, refresh, folder, storage);
+    CellsCloudResponse result = apiInstance.cellsAutoFilterPutWorksheetCustomFilter(name, sheetName, range, fieldIndex, operatorType1, criteria1, isAnd, operatorType2, criteria2, matchBlanks, refresh, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsAutoFilterPutWorksheetCustomFilter");
@@ -684,7 +685,7 @@ Name | Type | Description  | Notes
  **matchBlanks** | **Boolean**|  | [optional]
  **refresh** | **Boolean**|  | [optional]
  **folder** | **String**|  | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -701,7 +702,7 @@ No authorization required
 
 <a name="cellsAutoFilterPutWorksheetDateFilter"></a>
 # **cellsAutoFilterPutWorksheetDateFilter**
-> CellsCloudResponse cellsAutoFilterPutWorksheetDateFilter(name, sheetName, range, fieldIndex, dateTimeGroupingType, year, month, day, hour, minute, second, matchBlanks, refresh, folder, storage)
+> CellsCloudResponse cellsAutoFilterPutWorksheetDateFilter(name, sheetName, range, fieldIndex, dateTimeGroupingType, year, month, day, hour, minute, second, matchBlanks, refresh, folder, storageName)
 
 add date filter in worksheet 
 
@@ -727,9 +728,9 @@ Integer second = 0; // Integer |
 Boolean matchBlanks = true; // Boolean | 
 Boolean refresh = true; // Boolean | 
 String folder = "folder_example"; // String | 
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    CellsCloudResponse result = apiInstance.cellsAutoFilterPutWorksheetDateFilter(name, sheetName, range, fieldIndex, dateTimeGroupingType, year, month, day, hour, minute, second, matchBlanks, refresh, folder, storage);
+    CellsCloudResponse result = apiInstance.cellsAutoFilterPutWorksheetDateFilter(name, sheetName, range, fieldIndex, dateTimeGroupingType, year, month, day, hour, minute, second, matchBlanks, refresh, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsAutoFilterPutWorksheetDateFilter");
@@ -755,7 +756,7 @@ Name | Type | Description  | Notes
  **matchBlanks** | **Boolean**|  | [optional]
  **refresh** | **Boolean**|  | [optional]
  **folder** | **String**|  | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -772,7 +773,7 @@ No authorization required
 
 <a name="cellsAutoFilterPutWorksheetDynamicFilter"></a>
 # **cellsAutoFilterPutWorksheetDynamicFilter**
-> CellsCloudResponse cellsAutoFilterPutWorksheetDynamicFilter(name, sheetName, range, fieldIndex, dynamicFilterType, matchBlanks, refresh, folder, storage)
+> CellsCloudResponse cellsAutoFilterPutWorksheetDynamicFilter(name, sheetName, range, fieldIndex, dynamicFilterType, matchBlanks, refresh, folder, storageName)
 
 
 
@@ -792,9 +793,9 @@ String dynamicFilterType = "dynamicFilterType_example"; // String |
 Boolean matchBlanks = true; // Boolean | 
 Boolean refresh = true; // Boolean | 
 String folder = "folder_example"; // String | 
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    CellsCloudResponse result = apiInstance.cellsAutoFilterPutWorksheetDynamicFilter(name, sheetName, range, fieldIndex, dynamicFilterType, matchBlanks, refresh, folder, storage);
+    CellsCloudResponse result = apiInstance.cellsAutoFilterPutWorksheetDynamicFilter(name, sheetName, range, fieldIndex, dynamicFilterType, matchBlanks, refresh, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsAutoFilterPutWorksheetDynamicFilter");
@@ -814,7 +815,7 @@ Name | Type | Description  | Notes
  **matchBlanks** | **Boolean**|  | [optional]
  **refresh** | **Boolean**|  | [optional]
  **folder** | **String**|  | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -831,7 +832,7 @@ No authorization required
 
 <a name="cellsAutoFilterPutWorksheetFilter"></a>
 # **cellsAutoFilterPutWorksheetFilter**
-> CellsCloudResponse cellsAutoFilterPutWorksheetFilter(name, sheetName, range, fieldIndex, criteria, matchBlanks, refresh, folder, storage)
+> CellsCloudResponse cellsAutoFilterPutWorksheetFilter(name, sheetName, range, fieldIndex, criteria, matchBlanks, refresh, folder, storageName)
 
 Adds a filter for a filter column.             
 
@@ -851,9 +852,9 @@ String criteria = "criteria_example"; // String |
 Boolean matchBlanks = true; // Boolean | 
 Boolean refresh = true; // Boolean | 
 String folder = "folder_example"; // String | 
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    CellsCloudResponse result = apiInstance.cellsAutoFilterPutWorksheetFilter(name, sheetName, range, fieldIndex, criteria, matchBlanks, refresh, folder, storage);
+    CellsCloudResponse result = apiInstance.cellsAutoFilterPutWorksheetFilter(name, sheetName, range, fieldIndex, criteria, matchBlanks, refresh, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsAutoFilterPutWorksheetFilter");
@@ -873,7 +874,7 @@ Name | Type | Description  | Notes
  **matchBlanks** | **Boolean**|  | [optional]
  **refresh** | **Boolean**|  | [optional]
  **folder** | **String**|  | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -890,7 +891,7 @@ No authorization required
 
 <a name="cellsAutoFilterPutWorksheetFilterTop10"></a>
 # **cellsAutoFilterPutWorksheetFilterTop10**
-> CellsCloudResponse cellsAutoFilterPutWorksheetFilterTop10(name, sheetName, range, fieldIndex, isTop, isPercent, itemCount, matchBlanks, refresh, folder, storage)
+> CellsCloudResponse cellsAutoFilterPutWorksheetFilterTop10(name, sheetName, range, fieldIndex, isTop, isPercent, itemCount, matchBlanks, refresh, folder, storageName)
 
 Filter the top 10 item in the list
 
@@ -912,9 +913,9 @@ Integer itemCount = 56; // Integer |
 Boolean matchBlanks = true; // Boolean | 
 Boolean refresh = true; // Boolean | 
 String folder = "folder_example"; // String | 
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    CellsCloudResponse result = apiInstance.cellsAutoFilterPutWorksheetFilterTop10(name, sheetName, range, fieldIndex, isTop, isPercent, itemCount, matchBlanks, refresh, folder, storage);
+    CellsCloudResponse result = apiInstance.cellsAutoFilterPutWorksheetFilterTop10(name, sheetName, range, fieldIndex, isTop, isPercent, itemCount, matchBlanks, refresh, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsAutoFilterPutWorksheetFilterTop10");
@@ -936,7 +937,7 @@ Name | Type | Description  | Notes
  **matchBlanks** | **Boolean**|  | [optional]
  **refresh** | **Boolean**|  | [optional]
  **folder** | **String**|  | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -953,7 +954,7 @@ No authorization required
 
 <a name="cellsAutoFilterPutWorksheetIconFilter"></a>
 # **cellsAutoFilterPutWorksheetIconFilter**
-> CellsCloudResponse cellsAutoFilterPutWorksheetIconFilter(name, sheetName, range, fieldIndex, iconSetType, iconId, matchBlanks, refresh, folder, storage)
+> CellsCloudResponse cellsAutoFilterPutWorksheetIconFilter(name, sheetName, range, fieldIndex, iconSetType, iconId, matchBlanks, refresh, folder, storageName)
 
 Adds an icon filter.
 
@@ -974,9 +975,9 @@ Integer iconId = 56; // Integer |
 Boolean matchBlanks = true; // Boolean | 
 Boolean refresh = true; // Boolean | 
 String folder = "folder_example"; // String | 
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    CellsCloudResponse result = apiInstance.cellsAutoFilterPutWorksheetIconFilter(name, sheetName, range, fieldIndex, iconSetType, iconId, matchBlanks, refresh, folder, storage);
+    CellsCloudResponse result = apiInstance.cellsAutoFilterPutWorksheetIconFilter(name, sheetName, range, fieldIndex, iconSetType, iconId, matchBlanks, refresh, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsAutoFilterPutWorksheetIconFilter");
@@ -997,7 +998,7 @@ Name | Type | Description  | Notes
  **matchBlanks** | **Boolean**|  | [optional]
  **refresh** | **Boolean**|  | [optional]
  **folder** | **String**|  | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -1014,7 +1015,7 @@ No authorization required
 
 <a name="cellsAutoshapesGetWorksheetAutoshape"></a>
 # **cellsAutoshapesGetWorksheetAutoshape**
-> File cellsAutoshapesGetWorksheetAutoshape(name, sheetName, autoshapeNumber, format, folder, storage)
+> File cellsAutoshapesGetWorksheetAutoshape(name, sheetName, autoshapeNumber, format, folder, storageName)
 
 Get autoshape info.
 
@@ -1031,9 +1032,9 @@ String sheetName = "sheetName_example"; // String | Worksheet name.
 Integer autoshapeNumber = 56; // Integer | The autoshape number.
 String format = "format_example"; // String | Exported format.
 String folder = "folder_example"; // String | The document folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    File result = apiInstance.cellsAutoshapesGetWorksheetAutoshape(name, sheetName, autoshapeNumber, format, folder, storage);
+    File result = apiInstance.cellsAutoshapesGetWorksheetAutoshape(name, sheetName, autoshapeNumber, format, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsAutoshapesGetWorksheetAutoshape");
@@ -1050,7 +1051,7 @@ Name | Type | Description  | Notes
  **autoshapeNumber** | **Integer**| The autoshape number. |
  **format** | **String**| Exported format. | [optional]
  **folder** | **String**| The document folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -1067,7 +1068,7 @@ No authorization required
 
 <a name="cellsAutoshapesGetWorksheetAutoshapes"></a>
 # **cellsAutoshapesGetWorksheetAutoshapes**
-> AutoShapesResponse cellsAutoshapesGetWorksheetAutoshapes(name, sheetName, folder, storage)
+> AutoShapesResponse cellsAutoshapesGetWorksheetAutoshapes(name, sheetName, folder, storageName)
 
 Get worksheet autoshapes info.
 
@@ -1082,9 +1083,9 @@ CellsApi apiInstance = new CellsApi();
 String name = "name_example"; // String | Document name.
 String sheetName = "sheetName_example"; // String | The worksheet name.
 String folder = "folder_example"; // String | Document's folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    AutoShapesResponse result = apiInstance.cellsAutoshapesGetWorksheetAutoshapes(name, sheetName, folder, storage);
+    AutoShapesResponse result = apiInstance.cellsAutoshapesGetWorksheetAutoshapes(name, sheetName, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsAutoshapesGetWorksheetAutoshapes");
@@ -1099,7 +1100,7 @@ Name | Type | Description  | Notes
  **name** | **String**| Document name. |
  **sheetName** | **String**| The worksheet name. |
  **folder** | **String**| Document&#39;s folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -1116,7 +1117,7 @@ No authorization required
 
 <a name="cellsChartAreaGetChartArea"></a>
 # **cellsChartAreaGetChartArea**
-> ChartAreaResponse cellsChartAreaGetChartArea(name, sheetName, chartIndex, folder, storage)
+> ChartAreaResponse cellsChartAreaGetChartArea(name, sheetName, chartIndex, folder, storageName)
 
 Get chart area info.
 
@@ -1132,9 +1133,9 @@ String name = "name_example"; // String | Workbook name.
 String sheetName = "sheetName_example"; // String | Worksheet name.
 Integer chartIndex = 56; // Integer | The chart index.
 String folder = "folder_example"; // String | Workbook folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    ChartAreaResponse result = apiInstance.cellsChartAreaGetChartArea(name, sheetName, chartIndex, folder, storage);
+    ChartAreaResponse result = apiInstance.cellsChartAreaGetChartArea(name, sheetName, chartIndex, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsChartAreaGetChartArea");
@@ -1150,7 +1151,7 @@ Name | Type | Description  | Notes
  **sheetName** | **String**| Worksheet name. |
  **chartIndex** | **Integer**| The chart index. |
  **folder** | **String**| Workbook folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -1167,7 +1168,7 @@ No authorization required
 
 <a name="cellsChartAreaGetChartAreaBorder"></a>
 # **cellsChartAreaGetChartAreaBorder**
-> LineResponse cellsChartAreaGetChartAreaBorder(name, sheetName, chartIndex, folder, storage)
+> LineResponse cellsChartAreaGetChartAreaBorder(name, sheetName, chartIndex, folder, storageName)
 
 Get chart area border info.
 
@@ -1183,9 +1184,9 @@ String name = "name_example"; // String | Workbook name.
 String sheetName = "sheetName_example"; // String | Worksheet name.
 Integer chartIndex = 56; // Integer | The chart index.
 String folder = "folder_example"; // String | Workbook folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    LineResponse result = apiInstance.cellsChartAreaGetChartAreaBorder(name, sheetName, chartIndex, folder, storage);
+    LineResponse result = apiInstance.cellsChartAreaGetChartAreaBorder(name, sheetName, chartIndex, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsChartAreaGetChartAreaBorder");
@@ -1201,7 +1202,7 @@ Name | Type | Description  | Notes
  **sheetName** | **String**| Worksheet name. |
  **chartIndex** | **Integer**| The chart index. |
  **folder** | **String**| Workbook folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -1218,7 +1219,7 @@ No authorization required
 
 <a name="cellsChartAreaGetChartAreaFillFormat"></a>
 # **cellsChartAreaGetChartAreaFillFormat**
-> FillFormatResponse cellsChartAreaGetChartAreaFillFormat(name, sheetName, chartIndex, folder, storage)
+> FillFormatResponse cellsChartAreaGetChartAreaFillFormat(name, sheetName, chartIndex, folder, storageName)
 
 Get chart area fill format info.
 
@@ -1234,9 +1235,9 @@ String name = "name_example"; // String | Workbook name.
 String sheetName = "sheetName_example"; // String | Worksheet name.
 Integer chartIndex = 56; // Integer | The chart index.
 String folder = "folder_example"; // String | Workbook folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    FillFormatResponse result = apiInstance.cellsChartAreaGetChartAreaFillFormat(name, sheetName, chartIndex, folder, storage);
+    FillFormatResponse result = apiInstance.cellsChartAreaGetChartAreaFillFormat(name, sheetName, chartIndex, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsChartAreaGetChartAreaFillFormat");
@@ -1252,7 +1253,7 @@ Name | Type | Description  | Notes
  **sheetName** | **String**| Worksheet name. |
  **chartIndex** | **Integer**| The chart index. |
  **folder** | **String**| Workbook folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -1269,7 +1270,7 @@ No authorization required
 
 <a name="cellsChartsDeleteWorksheetChartLegend"></a>
 # **cellsChartsDeleteWorksheetChartLegend**
-> CellsCloudResponse cellsChartsDeleteWorksheetChartLegend(name, sheetName, chartIndex, folder, storage)
+> CellsCloudResponse cellsChartsDeleteWorksheetChartLegend(name, sheetName, chartIndex, folder, storageName)
 
 Hide legend in chart
 
@@ -1285,9 +1286,9 @@ String name = "name_example"; // String | Workbook name.
 String sheetName = "sheetName_example"; // String | Worksheet name.
 Integer chartIndex = 56; // Integer | The chart index.
 String folder = "folder_example"; // String | The workbook folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    CellsCloudResponse result = apiInstance.cellsChartsDeleteWorksheetChartLegend(name, sheetName, chartIndex, folder, storage);
+    CellsCloudResponse result = apiInstance.cellsChartsDeleteWorksheetChartLegend(name, sheetName, chartIndex, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsChartsDeleteWorksheetChartLegend");
@@ -1303,7 +1304,7 @@ Name | Type | Description  | Notes
  **sheetName** | **String**| Worksheet name. |
  **chartIndex** | **Integer**| The chart index. |
  **folder** | **String**| The workbook folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -1320,7 +1321,7 @@ No authorization required
 
 <a name="cellsChartsDeleteWorksheetChartTitle"></a>
 # **cellsChartsDeleteWorksheetChartTitle**
-> CellsCloudResponse cellsChartsDeleteWorksheetChartTitle(name, sheetName, chartIndex, folder, storage)
+> CellsCloudResponse cellsChartsDeleteWorksheetChartTitle(name, sheetName, chartIndex, folder, storageName)
 
 Hide title in chart
 
@@ -1336,9 +1337,9 @@ String name = "name_example"; // String | Workbook name.
 String sheetName = "sheetName_example"; // String | Worksheet name.
 Integer chartIndex = 56; // Integer | The chart index.
 String folder = "folder_example"; // String | The workbook folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    CellsCloudResponse result = apiInstance.cellsChartsDeleteWorksheetChartTitle(name, sheetName, chartIndex, folder, storage);
+    CellsCloudResponse result = apiInstance.cellsChartsDeleteWorksheetChartTitle(name, sheetName, chartIndex, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsChartsDeleteWorksheetChartTitle");
@@ -1354,7 +1355,7 @@ Name | Type | Description  | Notes
  **sheetName** | **String**| Worksheet name. |
  **chartIndex** | **Integer**| The chart index. |
  **folder** | **String**| The workbook folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -1371,7 +1372,7 @@ No authorization required
 
 <a name="cellsChartsDeleteWorksheetClearCharts"></a>
 # **cellsChartsDeleteWorksheetClearCharts**
-> CellsCloudResponse cellsChartsDeleteWorksheetClearCharts(name, sheetName, folder, storage)
+> CellsCloudResponse cellsChartsDeleteWorksheetClearCharts(name, sheetName, folder, storageName)
 
 Clear the charts.
 
@@ -1386,9 +1387,9 @@ CellsApi apiInstance = new CellsApi();
 String name = "name_example"; // String | Workbook name.
 String sheetName = "sheetName_example"; // String | The worksheet name.
 String folder = "folder_example"; // String | The workbook folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    CellsCloudResponse result = apiInstance.cellsChartsDeleteWorksheetClearCharts(name, sheetName, folder, storage);
+    CellsCloudResponse result = apiInstance.cellsChartsDeleteWorksheetClearCharts(name, sheetName, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsChartsDeleteWorksheetClearCharts");
@@ -1403,7 +1404,7 @@ Name | Type | Description  | Notes
  **name** | **String**| Workbook name. |
  **sheetName** | **String**| The worksheet name. |
  **folder** | **String**| The workbook folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -1420,7 +1421,7 @@ No authorization required
 
 <a name="cellsChartsDeleteWorksheetDeleteChart"></a>
 # **cellsChartsDeleteWorksheetDeleteChart**
-> ChartsResponse cellsChartsDeleteWorksheetDeleteChart(name, sheetName, chartIndex, folder, storage)
+> ChartsResponse cellsChartsDeleteWorksheetDeleteChart(name, sheetName, chartIndex, folder, storageName)
 
 Delete worksheet chart by index.
 
@@ -1436,9 +1437,9 @@ String name = "name_example"; // String | Workbook name.
 String sheetName = "sheetName_example"; // String | Worksheet name.
 Integer chartIndex = 56; // Integer | The chart index.
 String folder = "folder_example"; // String | The workbook folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    ChartsResponse result = apiInstance.cellsChartsDeleteWorksheetDeleteChart(name, sheetName, chartIndex, folder, storage);
+    ChartsResponse result = apiInstance.cellsChartsDeleteWorksheetDeleteChart(name, sheetName, chartIndex, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsChartsDeleteWorksheetDeleteChart");
@@ -1454,7 +1455,7 @@ Name | Type | Description  | Notes
  **sheetName** | **String**| Worksheet name. |
  **chartIndex** | **Integer**| The chart index. |
  **folder** | **String**| The workbook folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -1471,7 +1472,7 @@ No authorization required
 
 <a name="cellsChartsGetWorksheetChart"></a>
 # **cellsChartsGetWorksheetChart**
-> File cellsChartsGetWorksheetChart(name, sheetName, chartNumber, format, folder, storage)
+> File cellsChartsGetWorksheetChart(name, sheetName, chartNumber, format, folder, storageName)
 
 Get chart info.
 
@@ -1488,9 +1489,9 @@ String sheetName = "sheetName_example"; // String | Worksheet name.
 Integer chartNumber = 56; // Integer | The chart number.
 String format = "format_example"; // String | The exported file format.
 String folder = "folder_example"; // String | The document folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    File result = apiInstance.cellsChartsGetWorksheetChart(name, sheetName, chartNumber, format, folder, storage);
+    File result = apiInstance.cellsChartsGetWorksheetChart(name, sheetName, chartNumber, format, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsChartsGetWorksheetChart");
@@ -1507,7 +1508,7 @@ Name | Type | Description  | Notes
  **chartNumber** | **Integer**| The chart number. |
  **format** | **String**| The exported file format. | [optional]
  **folder** | **String**| The document folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -1524,7 +1525,7 @@ No authorization required
 
 <a name="cellsChartsGetWorksheetChartLegend"></a>
 # **cellsChartsGetWorksheetChartLegend**
-> LegendResponse cellsChartsGetWorksheetChartLegend(name, sheetName, chartIndex, folder, storage)
+> LegendResponse cellsChartsGetWorksheetChartLegend(name, sheetName, chartIndex, folder, storageName)
 
 Get chart legend
 
@@ -1540,9 +1541,9 @@ String name = "name_example"; // String | Workbook name.
 String sheetName = "sheetName_example"; // String | Worksheet name.
 Integer chartIndex = 56; // Integer | The chart index.
 String folder = "folder_example"; // String | The workbook folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    LegendResponse result = apiInstance.cellsChartsGetWorksheetChartLegend(name, sheetName, chartIndex, folder, storage);
+    LegendResponse result = apiInstance.cellsChartsGetWorksheetChartLegend(name, sheetName, chartIndex, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsChartsGetWorksheetChartLegend");
@@ -1558,7 +1559,7 @@ Name | Type | Description  | Notes
  **sheetName** | **String**| Worksheet name. |
  **chartIndex** | **Integer**| The chart index. |
  **folder** | **String**| The workbook folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -1575,7 +1576,7 @@ No authorization required
 
 <a name="cellsChartsGetWorksheetChartTitle"></a>
 # **cellsChartsGetWorksheetChartTitle**
-> TitleResponse cellsChartsGetWorksheetChartTitle(name, sheetName, chartIndex, folder, storage)
+> TitleResponse cellsChartsGetWorksheetChartTitle(name, sheetName, chartIndex, folder, storageName)
 
 Get chart title
 
@@ -1591,9 +1592,9 @@ String name = "name_example"; // String | Workbook name.
 String sheetName = "sheetName_example"; // String | Worksheet name.
 Integer chartIndex = 56; // Integer | The chart index.
 String folder = "folder_example"; // String | The workbook folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    TitleResponse result = apiInstance.cellsChartsGetWorksheetChartTitle(name, sheetName, chartIndex, folder, storage);
+    TitleResponse result = apiInstance.cellsChartsGetWorksheetChartTitle(name, sheetName, chartIndex, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsChartsGetWorksheetChartTitle");
@@ -1609,7 +1610,7 @@ Name | Type | Description  | Notes
  **sheetName** | **String**| Worksheet name. |
  **chartIndex** | **Integer**| The chart index. |
  **folder** | **String**| The workbook folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -1626,7 +1627,7 @@ No authorization required
 
 <a name="cellsChartsGetWorksheetCharts"></a>
 # **cellsChartsGetWorksheetCharts**
-> ChartsResponse cellsChartsGetWorksheetCharts(name, sheetName, folder, storage)
+> ChartsResponse cellsChartsGetWorksheetCharts(name, sheetName, folder, storageName)
 
 Get worksheet charts info.
 
@@ -1641,9 +1642,9 @@ CellsApi apiInstance = new CellsApi();
 String name = "name_example"; // String | Document name.
 String sheetName = "sheetName_example"; // String | The worksheet name.
 String folder = "folder_example"; // String | Document's folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    ChartsResponse result = apiInstance.cellsChartsGetWorksheetCharts(name, sheetName, folder, storage);
+    ChartsResponse result = apiInstance.cellsChartsGetWorksheetCharts(name, sheetName, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsChartsGetWorksheetCharts");
@@ -1658,7 +1659,7 @@ Name | Type | Description  | Notes
  **name** | **String**| Document name. |
  **sheetName** | **String**| The worksheet name. |
  **folder** | **String**| Document&#39;s folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -1675,7 +1676,7 @@ No authorization required
 
 <a name="cellsChartsPostWorksheetChart"></a>
 # **cellsChartsPostWorksheetChart**
-> CellsCloudResponse cellsChartsPostWorksheetChart(name, sheetName, chartIndex, chart, folder, storage)
+> CellsCloudResponse cellsChartsPostWorksheetChart(name, sheetName, chartIndex, chart, folder, storageName)
 
 Update chart propreties
 
@@ -1692,9 +1693,9 @@ String sheetName = "sheetName_example"; // String |
 Integer chartIndex = 56; // Integer | 
 Chart chart = new Chart(); // Chart | 
 String folder = "folder_example"; // String | 
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    CellsCloudResponse result = apiInstance.cellsChartsPostWorksheetChart(name, sheetName, chartIndex, chart, folder, storage);
+    CellsCloudResponse result = apiInstance.cellsChartsPostWorksheetChart(name, sheetName, chartIndex, chart, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsChartsPostWorksheetChart");
@@ -1711,7 +1712,7 @@ Name | Type | Description  | Notes
  **chartIndex** | **Integer**|  |
  **chart** | [**Chart**](Chart.md)|  | [optional]
  **folder** | **String**|  | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -1728,7 +1729,7 @@ No authorization required
 
 <a name="cellsChartsPostWorksheetChartLegend"></a>
 # **cellsChartsPostWorksheetChartLegend**
-> LegendResponse cellsChartsPostWorksheetChartLegend(name, sheetName, chartIndex, legend, folder, storage)
+> LegendResponse cellsChartsPostWorksheetChartLegend(name, sheetName, chartIndex, legend, folder, storageName)
 
 Update chart legend
 
@@ -1745,9 +1746,9 @@ String sheetName = "sheetName_example"; // String | Worksheet name.
 Integer chartIndex = 56; // Integer | The chart index.
 Legend legend = new Legend(); // Legend | 
 String folder = "folder_example"; // String | The workbook folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    LegendResponse result = apiInstance.cellsChartsPostWorksheetChartLegend(name, sheetName, chartIndex, legend, folder, storage);
+    LegendResponse result = apiInstance.cellsChartsPostWorksheetChartLegend(name, sheetName, chartIndex, legend, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsChartsPostWorksheetChartLegend");
@@ -1764,7 +1765,7 @@ Name | Type | Description  | Notes
  **chartIndex** | **Integer**| The chart index. |
  **legend** | [**Legend**](Legend.md)|  | [optional]
  **folder** | **String**| The workbook folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -1781,7 +1782,7 @@ No authorization required
 
 <a name="cellsChartsPostWorksheetChartTitle"></a>
 # **cellsChartsPostWorksheetChartTitle**
-> TitleResponse cellsChartsPostWorksheetChartTitle(name, sheetName, chartIndex, title, folder, storage)
+> TitleResponse cellsChartsPostWorksheetChartTitle(name, sheetName, chartIndex, title, folder, storageName)
 
 Update chart title
 
@@ -1798,9 +1799,9 @@ String sheetName = "sheetName_example"; // String | Worksheet name.
 Integer chartIndex = 56; // Integer | The chart index.
 Title title = new Title(); // Title | Chart title
 String folder = "folder_example"; // String | The workbook folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    TitleResponse result = apiInstance.cellsChartsPostWorksheetChartTitle(name, sheetName, chartIndex, title, folder, storage);
+    TitleResponse result = apiInstance.cellsChartsPostWorksheetChartTitle(name, sheetName, chartIndex, title, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsChartsPostWorksheetChartTitle");
@@ -1817,7 +1818,7 @@ Name | Type | Description  | Notes
  **chartIndex** | **Integer**| The chart index. |
  **title** | [**Title**](Title.md)| Chart title | [optional]
  **folder** | **String**| The workbook folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -1834,7 +1835,7 @@ No authorization required
 
 <a name="cellsChartsPutWorksheetAddChart"></a>
 # **cellsChartsPutWorksheetAddChart**
-> ChartsResponse cellsChartsPutWorksheetAddChart(name, sheetName, chartType, upperLeftRow, upperLeftColumn, lowerRightRow, lowerRightColumn, area, isVertical, categoryData, isAutoGetSerialName, title, folder, storage)
+> ChartsResponse cellsChartsPutWorksheetAddChart(name, sheetName, chartType, upperLeftRow, upperLeftColumn, lowerRightRow, lowerRightColumn, area, isVertical, categoryData, isAutoGetSerialName, title, folder, storageName)
 
 Add new chart to worksheet.
 
@@ -1859,9 +1860,9 @@ String categoryData = "categoryData_example"; // String | Gets or sets the range
 Boolean isAutoGetSerialName = true; // Boolean | Specifies whether auto update serial name. 
 String title = "title_example"; // String | Specifies chart title name.
 String folder = "folder_example"; // String | The workbook folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    ChartsResponse result = apiInstance.cellsChartsPutWorksheetAddChart(name, sheetName, chartType, upperLeftRow, upperLeftColumn, lowerRightRow, lowerRightColumn, area, isVertical, categoryData, isAutoGetSerialName, title, folder, storage);
+    ChartsResponse result = apiInstance.cellsChartsPutWorksheetAddChart(name, sheetName, chartType, upperLeftRow, upperLeftColumn, lowerRightRow, lowerRightColumn, area, isVertical, categoryData, isAutoGetSerialName, title, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsChartsPutWorksheetAddChart");
@@ -1886,7 +1887,7 @@ Name | Type | Description  | Notes
  **isAutoGetSerialName** | **Boolean**| Specifies whether auto update serial name.  | [optional] [default to true]
  **title** | **String**| Specifies chart title name. | [optional]
  **folder** | **String**| The workbook folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -1903,7 +1904,7 @@ No authorization required
 
 <a name="cellsChartsPutWorksheetChartLegend"></a>
 # **cellsChartsPutWorksheetChartLegend**
-> CellsCloudResponse cellsChartsPutWorksheetChartLegend(name, sheetName, chartIndex, folder, storage)
+> CellsCloudResponse cellsChartsPutWorksheetChartLegend(name, sheetName, chartIndex, folder, storageName)
 
 Show legend in chart
 
@@ -1919,9 +1920,9 @@ String name = "name_example"; // String | Workbook name.
 String sheetName = "sheetName_example"; // String | Worksheet name.
 Integer chartIndex = 56; // Integer | The chart index.
 String folder = "folder_example"; // String | The workbook folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    CellsCloudResponse result = apiInstance.cellsChartsPutWorksheetChartLegend(name, sheetName, chartIndex, folder, storage);
+    CellsCloudResponse result = apiInstance.cellsChartsPutWorksheetChartLegend(name, sheetName, chartIndex, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsChartsPutWorksheetChartLegend");
@@ -1937,7 +1938,7 @@ Name | Type | Description  | Notes
  **sheetName** | **String**| Worksheet name. |
  **chartIndex** | **Integer**| The chart index. |
  **folder** | **String**| The workbook folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -1954,7 +1955,7 @@ No authorization required
 
 <a name="cellsChartsPutWorksheetChartTitle"></a>
 # **cellsChartsPutWorksheetChartTitle**
-> TitleResponse cellsChartsPutWorksheetChartTitle(name, sheetName, chartIndex, title, folder, storage)
+> TitleResponse cellsChartsPutWorksheetChartTitle(name, sheetName, chartIndex, title, folder, storageName)
 
 Add chart title / Set chart title visible
 
@@ -1971,9 +1972,9 @@ String sheetName = "sheetName_example"; // String | Worksheet name.
 Integer chartIndex = 56; // Integer | The chart index.
 Title title = new Title(); // Title | Chart title.
 String folder = "folder_example"; // String | The workbook folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    TitleResponse result = apiInstance.cellsChartsPutWorksheetChartTitle(name, sheetName, chartIndex, title, folder, storage);
+    TitleResponse result = apiInstance.cellsChartsPutWorksheetChartTitle(name, sheetName, chartIndex, title, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsChartsPutWorksheetChartTitle");
@@ -1990,7 +1991,7 @@ Name | Type | Description  | Notes
  **chartIndex** | **Integer**| The chart index. |
  **title** | [**Title**](Title.md)| Chart title. | [optional]
  **folder** | **String**| The workbook folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -2007,7 +2008,7 @@ No authorization required
 
 <a name="cellsConditionalFormattingsDeleteWorksheetConditionalFormatting"></a>
 # **cellsConditionalFormattingsDeleteWorksheetConditionalFormatting**
-> CellsCloudResponse cellsConditionalFormattingsDeleteWorksheetConditionalFormatting(name, sheetName, index, folder, storage)
+> CellsCloudResponse cellsConditionalFormattingsDeleteWorksheetConditionalFormatting(name, sheetName, index, folder, storageName)
 
 Remove conditional formatting
 
@@ -2023,9 +2024,9 @@ String name = "name_example"; // String |
 String sheetName = "sheetName_example"; // String | 
 Integer index = 56; // Integer | 
 String folder = "folder_example"; // String | 
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    CellsCloudResponse result = apiInstance.cellsConditionalFormattingsDeleteWorksheetConditionalFormatting(name, sheetName, index, folder, storage);
+    CellsCloudResponse result = apiInstance.cellsConditionalFormattingsDeleteWorksheetConditionalFormatting(name, sheetName, index, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsConditionalFormattingsDeleteWorksheetConditionalFormatting");
@@ -2041,7 +2042,7 @@ Name | Type | Description  | Notes
  **sheetName** | **String**|  |
  **index** | **Integer**|  |
  **folder** | **String**|  | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -2058,7 +2059,7 @@ No authorization required
 
 <a name="cellsConditionalFormattingsDeleteWorksheetConditionalFormattingArea"></a>
 # **cellsConditionalFormattingsDeleteWorksheetConditionalFormattingArea**
-> CellsCloudResponse cellsConditionalFormattingsDeleteWorksheetConditionalFormattingArea(name, sheetName, startRow, startColumn, totalRows, totalColumns, folder, storage)
+> CellsCloudResponse cellsConditionalFormattingsDeleteWorksheetConditionalFormattingArea(name, sheetName, startRow, startColumn, totalRows, totalColumns, folder, storageName)
 
 Remove cell area from conditional formatting.
 
@@ -2077,9 +2078,9 @@ Integer startColumn = 56; // Integer |
 Integer totalRows = 56; // Integer | 
 Integer totalColumns = 56; // Integer | 
 String folder = "folder_example"; // String | 
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    CellsCloudResponse result = apiInstance.cellsConditionalFormattingsDeleteWorksheetConditionalFormattingArea(name, sheetName, startRow, startColumn, totalRows, totalColumns, folder, storage);
+    CellsCloudResponse result = apiInstance.cellsConditionalFormattingsDeleteWorksheetConditionalFormattingArea(name, sheetName, startRow, startColumn, totalRows, totalColumns, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsConditionalFormattingsDeleteWorksheetConditionalFormattingArea");
@@ -2098,7 +2099,7 @@ Name | Type | Description  | Notes
  **totalRows** | **Integer**|  |
  **totalColumns** | **Integer**|  |
  **folder** | **String**|  | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -2115,7 +2116,7 @@ No authorization required
 
 <a name="cellsConditionalFormattingsDeleteWorksheetConditionalFormattings"></a>
 # **cellsConditionalFormattingsDeleteWorksheetConditionalFormattings**
-> CellsCloudResponse cellsConditionalFormattingsDeleteWorksheetConditionalFormattings(name, sheetName, folder, storage)
+> CellsCloudResponse cellsConditionalFormattingsDeleteWorksheetConditionalFormattings(name, sheetName, folder, storageName)
 
 Clear all condition formattings
 
@@ -2130,9 +2131,9 @@ CellsApi apiInstance = new CellsApi();
 String name = "name_example"; // String | 
 String sheetName = "sheetName_example"; // String | 
 String folder = "folder_example"; // String | 
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    CellsCloudResponse result = apiInstance.cellsConditionalFormattingsDeleteWorksheetConditionalFormattings(name, sheetName, folder, storage);
+    CellsCloudResponse result = apiInstance.cellsConditionalFormattingsDeleteWorksheetConditionalFormattings(name, sheetName, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsConditionalFormattingsDeleteWorksheetConditionalFormattings");
@@ -2147,7 +2148,7 @@ Name | Type | Description  | Notes
  **name** | **String**|  |
  **sheetName** | **String**|  |
  **folder** | **String**|  | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -2164,7 +2165,7 @@ No authorization required
 
 <a name="cellsConditionalFormattingsGetWorksheetConditionalFormatting"></a>
 # **cellsConditionalFormattingsGetWorksheetConditionalFormatting**
-> ConditionalFormattingResponse cellsConditionalFormattingsGetWorksheetConditionalFormatting(name, sheetName, index, folder, storage)
+> ConditionalFormattingResponse cellsConditionalFormattingsGetWorksheetConditionalFormatting(name, sheetName, index, folder, storageName)
 
 Get conditional formatting
 
@@ -2180,9 +2181,9 @@ String name = "name_example"; // String |
 String sheetName = "sheetName_example"; // String | 
 Integer index = 56; // Integer | 
 String folder = "folder_example"; // String | 
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    ConditionalFormattingResponse result = apiInstance.cellsConditionalFormattingsGetWorksheetConditionalFormatting(name, sheetName, index, folder, storage);
+    ConditionalFormattingResponse result = apiInstance.cellsConditionalFormattingsGetWorksheetConditionalFormatting(name, sheetName, index, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsConditionalFormattingsGetWorksheetConditionalFormatting");
@@ -2198,7 +2199,7 @@ Name | Type | Description  | Notes
  **sheetName** | **String**|  |
  **index** | **Integer**|  |
  **folder** | **String**|  | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -2215,7 +2216,7 @@ No authorization required
 
 <a name="cellsConditionalFormattingsGetWorksheetConditionalFormattings"></a>
 # **cellsConditionalFormattingsGetWorksheetConditionalFormattings**
-> ConditionalFormattingsResponse cellsConditionalFormattingsGetWorksheetConditionalFormattings(name, sheetName, folder, storage)
+> ConditionalFormattingsResponse cellsConditionalFormattingsGetWorksheetConditionalFormattings(name, sheetName, folder, storageName)
 
 Get conditional formattings 
 
@@ -2230,9 +2231,9 @@ CellsApi apiInstance = new CellsApi();
 String name = "name_example"; // String | 
 String sheetName = "sheetName_example"; // String | 
 String folder = "folder_example"; // String | 
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    ConditionalFormattingsResponse result = apiInstance.cellsConditionalFormattingsGetWorksheetConditionalFormattings(name, sheetName, folder, storage);
+    ConditionalFormattingsResponse result = apiInstance.cellsConditionalFormattingsGetWorksheetConditionalFormattings(name, sheetName, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsConditionalFormattingsGetWorksheetConditionalFormattings");
@@ -2247,7 +2248,7 @@ Name | Type | Description  | Notes
  **name** | **String**|  |
  **sheetName** | **String**|  |
  **folder** | **String**|  | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -2264,7 +2265,7 @@ No authorization required
 
 <a name="cellsConditionalFormattingsPutWorksheetConditionalFormatting"></a>
 # **cellsConditionalFormattingsPutWorksheetConditionalFormatting**
-> CellsCloudResponse cellsConditionalFormattingsPutWorksheetConditionalFormatting(name, sheetName, cellArea, formatCondition, folder, storage)
+> CellsCloudResponse cellsConditionalFormattingsPutWorksheetConditionalFormatting(name, sheetName, cellArea, formatCondition, folder, storageName)
 
 Add a condition formatting.
 
@@ -2281,9 +2282,9 @@ String sheetName = "sheetName_example"; // String |
 String cellArea = "cellArea_example"; // String | 
 FormatCondition formatCondition = new FormatCondition(); // FormatCondition | 
 String folder = "folder_example"; // String | 
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    CellsCloudResponse result = apiInstance.cellsConditionalFormattingsPutWorksheetConditionalFormatting(name, sheetName, cellArea, formatCondition, folder, storage);
+    CellsCloudResponse result = apiInstance.cellsConditionalFormattingsPutWorksheetConditionalFormatting(name, sheetName, cellArea, formatCondition, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsConditionalFormattingsPutWorksheetConditionalFormatting");
@@ -2300,7 +2301,7 @@ Name | Type | Description  | Notes
  **cellArea** | **String**|  |
  **formatCondition** | [**FormatCondition**](FormatCondition.md)|  | [optional]
  **folder** | **String**|  | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -2317,7 +2318,7 @@ No authorization required
 
 <a name="cellsConditionalFormattingsPutWorksheetFormatCondition"></a>
 # **cellsConditionalFormattingsPutWorksheetFormatCondition**
-> CellsCloudResponse cellsConditionalFormattingsPutWorksheetFormatCondition(name, sheetName, index, cellArea, type, operatorType, formula1, formula2, folder, storage)
+> CellsCloudResponse cellsConditionalFormattingsPutWorksheetFormatCondition(name, sheetName, index, cellArea, type, operatorType, formula1, formula2, folder, storageName)
 
 Add a format condition.
 
@@ -2338,9 +2339,9 @@ String operatorType = "operatorType_example"; // String |
 String formula1 = "formula1_example"; // String | 
 String formula2 = "formula2_example"; // String | 
 String folder = "folder_example"; // String | 
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    CellsCloudResponse result = apiInstance.cellsConditionalFormattingsPutWorksheetFormatCondition(name, sheetName, index, cellArea, type, operatorType, formula1, formula2, folder, storage);
+    CellsCloudResponse result = apiInstance.cellsConditionalFormattingsPutWorksheetFormatCondition(name, sheetName, index, cellArea, type, operatorType, formula1, formula2, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsConditionalFormattingsPutWorksheetFormatCondition");
@@ -2361,7 +2362,7 @@ Name | Type | Description  | Notes
  **formula1** | **String**|  |
  **formula2** | **String**|  |
  **folder** | **String**|  | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -2378,7 +2379,7 @@ No authorization required
 
 <a name="cellsConditionalFormattingsPutWorksheetFormatConditionArea"></a>
 # **cellsConditionalFormattingsPutWorksheetFormatConditionArea**
-> CellsCloudResponse cellsConditionalFormattingsPutWorksheetFormatConditionArea(name, sheetName, index, cellArea, folder, storage)
+> CellsCloudResponse cellsConditionalFormattingsPutWorksheetFormatConditionArea(name, sheetName, index, cellArea, folder, storageName)
 
 add a cell area for format condition             
 
@@ -2395,9 +2396,9 @@ String sheetName = "sheetName_example"; // String |
 Integer index = 56; // Integer | 
 String cellArea = "cellArea_example"; // String | 
 String folder = "folder_example"; // String | 
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    CellsCloudResponse result = apiInstance.cellsConditionalFormattingsPutWorksheetFormatConditionArea(name, sheetName, index, cellArea, folder, storage);
+    CellsCloudResponse result = apiInstance.cellsConditionalFormattingsPutWorksheetFormatConditionArea(name, sheetName, index, cellArea, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsConditionalFormattingsPutWorksheetFormatConditionArea");
@@ -2414,7 +2415,7 @@ Name | Type | Description  | Notes
  **index** | **Integer**|  |
  **cellArea** | **String**|  |
  **folder** | **String**|  | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -2431,7 +2432,7 @@ No authorization required
 
 <a name="cellsConditionalFormattingsPutWorksheetFormatConditionCondition"></a>
 # **cellsConditionalFormattingsPutWorksheetFormatConditionCondition**
-> CellsCloudResponse cellsConditionalFormattingsPutWorksheetFormatConditionCondition(name, sheetName, index, type, operatorType, formula1, formula2, folder, storage)
+> CellsCloudResponse cellsConditionalFormattingsPutWorksheetFormatConditionCondition(name, sheetName, index, type, operatorType, formula1, formula2, folder, storageName)
 
 Add a condition for format condition.
 
@@ -2451,9 +2452,9 @@ String operatorType = "operatorType_example"; // String |
 String formula1 = "formula1_example"; // String | 
 String formula2 = "formula2_example"; // String | 
 String folder = "folder_example"; // String | 
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    CellsCloudResponse result = apiInstance.cellsConditionalFormattingsPutWorksheetFormatConditionCondition(name, sheetName, index, type, operatorType, formula1, formula2, folder, storage);
+    CellsCloudResponse result = apiInstance.cellsConditionalFormattingsPutWorksheetFormatConditionCondition(name, sheetName, index, type, operatorType, formula1, formula2, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsConditionalFormattingsPutWorksheetFormatConditionCondition");
@@ -2473,7 +2474,7 @@ Name | Type | Description  | Notes
  **formula1** | **String**|  |
  **formula2** | **String**|  |
  **folder** | **String**|  | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -2490,7 +2491,7 @@ No authorization required
 
 <a name="cellsDeleteWorksheetColumns"></a>
 # **cellsDeleteWorksheetColumns**
-> ColumnsResponse cellsDeleteWorksheetColumns(name, sheetName, columnIndex, columns, updateReference, folder, storage)
+> ColumnsResponse cellsDeleteWorksheetColumns(name, sheetName, columnIndex, columns, updateReference, folder, storageName)
 
 Delete worksheet columns.
 
@@ -2508,9 +2509,9 @@ Integer columnIndex = 56; // Integer | The column index.
 Integer columns = 56; // Integer | The columns.
 Boolean updateReference = true; // Boolean | The update reference.
 String folder = "folder_example"; // String | The workbook folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    ColumnsResponse result = apiInstance.cellsDeleteWorksheetColumns(name, sheetName, columnIndex, columns, updateReference, folder, storage);
+    ColumnsResponse result = apiInstance.cellsDeleteWorksheetColumns(name, sheetName, columnIndex, columns, updateReference, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsDeleteWorksheetColumns");
@@ -2528,7 +2529,7 @@ Name | Type | Description  | Notes
  **columns** | **Integer**| The columns. |
  **updateReference** | **Boolean**| The update reference. |
  **folder** | **String**| The workbook folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -2545,7 +2546,7 @@ No authorization required
 
 <a name="cellsDeleteWorksheetRow"></a>
 # **cellsDeleteWorksheetRow**
-> CellsCloudResponse cellsDeleteWorksheetRow(name, sheetName, rowIndex, folder, storage)
+> CellsCloudResponse cellsDeleteWorksheetRow(name, sheetName, rowIndex, folder, storageName)
 
 Delete worksheet row.
 
@@ -2561,9 +2562,9 @@ String name = "name_example"; // String | The workbook name.
 String sheetName = "sheetName_example"; // String | The worksheet bame.
 Integer rowIndex = 56; // Integer | The row index.
 String folder = "folder_example"; // String | The document folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    CellsCloudResponse result = apiInstance.cellsDeleteWorksheetRow(name, sheetName, rowIndex, folder, storage);
+    CellsCloudResponse result = apiInstance.cellsDeleteWorksheetRow(name, sheetName, rowIndex, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsDeleteWorksheetRow");
@@ -2579,7 +2580,7 @@ Name | Type | Description  | Notes
  **sheetName** | **String**| The worksheet bame. |
  **rowIndex** | **Integer**| The row index. |
  **folder** | **String**| The document folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -2596,7 +2597,7 @@ No authorization required
 
 <a name="cellsDeleteWorksheetRows"></a>
 # **cellsDeleteWorksheetRows**
-> CellsCloudResponse cellsDeleteWorksheetRows(name, sheetName, startrow, totalRows, updateReference, folder, storage)
+> CellsCloudResponse cellsDeleteWorksheetRows(name, sheetName, startrow, totalRows, updateReference, folder, storageName)
 
 Delete several worksheet rows.
 
@@ -2614,9 +2615,9 @@ Integer startrow = 56; // Integer | The begin row index to be operated.
 Integer totalRows = 1; // Integer | Number of rows to be operated.
 Boolean updateReference = true; // Boolean | Indicates if update references in other worksheets.
 String folder = "folder_example"; // String | The document folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    CellsCloudResponse result = apiInstance.cellsDeleteWorksheetRows(name, sheetName, startrow, totalRows, updateReference, folder, storage);
+    CellsCloudResponse result = apiInstance.cellsDeleteWorksheetRows(name, sheetName, startrow, totalRows, updateReference, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsDeleteWorksheetRows");
@@ -2634,7 +2635,7 @@ Name | Type | Description  | Notes
  **totalRows** | **Integer**| Number of rows to be operated. | [optional] [default to 1]
  **updateReference** | **Boolean**| Indicates if update references in other worksheets. | [optional] [default to true]
  **folder** | **String**| The document folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -2651,7 +2652,7 @@ No authorization required
 
 <a name="cellsGetCellHtmlString"></a>
 # **cellsGetCellHtmlString**
-> Object cellsGetCellHtmlString(name, sheetName, cellName, folder, storage)
+> Object cellsGetCellHtmlString(name, sheetName, cellName, folder, storageName)
 
 Read cell data by cell&#39;s name.
 
@@ -2667,9 +2668,9 @@ String name = "name_example"; // String | Document name.
 String sheetName = "sheetName_example"; // String | Worksheet name.
 String cellName = "cellName_example"; // String | The cell's  name.
 String folder = "folder_example"; // String | Document's folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    Object result = apiInstance.cellsGetCellHtmlString(name, sheetName, cellName, folder, storage);
+    Object result = apiInstance.cellsGetCellHtmlString(name, sheetName, cellName, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsGetCellHtmlString");
@@ -2685,7 +2686,7 @@ Name | Type | Description  | Notes
  **sheetName** | **String**| Worksheet name. |
  **cellName** | **String**| The cell&#39;s  name. |
  **folder** | **String**| Document&#39;s folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -2702,7 +2703,7 @@ No authorization required
 
 <a name="cellsGetWorksheetCell"></a>
 # **cellsGetWorksheetCell**
-> Object cellsGetWorksheetCell(name, sheetName, cellOrMethodName, folder, storage)
+> Object cellsGetWorksheetCell(name, sheetName, cellOrMethodName, folder, storageName)
 
 Read cell data by cell&#39;s name.
 
@@ -2718,9 +2719,9 @@ String name = "name_example"; // String | Document name.
 String sheetName = "sheetName_example"; // String | Worksheet name.
 String cellOrMethodName = "cellOrMethodName_example"; // String | The cell's or method name. (Method name like firstcell, endcell etc.)
 String folder = "folder_example"; // String | Document's folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    Object result = apiInstance.cellsGetWorksheetCell(name, sheetName, cellOrMethodName, folder, storage);
+    Object result = apiInstance.cellsGetWorksheetCell(name, sheetName, cellOrMethodName, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsGetWorksheetCell");
@@ -2736,7 +2737,7 @@ Name | Type | Description  | Notes
  **sheetName** | **String**| Worksheet name. |
  **cellOrMethodName** | **String**| The cell&#39;s or method name. (Method name like firstcell, endcell etc.) |
  **folder** | **String**| Document&#39;s folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -2753,7 +2754,7 @@ No authorization required
 
 <a name="cellsGetWorksheetCellStyle"></a>
 # **cellsGetWorksheetCellStyle**
-> StyleResponse cellsGetWorksheetCellStyle(name, sheetName, cellName, folder, storage)
+> StyleResponse cellsGetWorksheetCellStyle(name, sheetName, cellName, folder, storageName)
 
 Read cell&#39;s style info.
 
@@ -2769,9 +2770,9 @@ String name = "name_example"; // String | Document name.
 String sheetName = "sheetName_example"; // String | Worksheet name.
 String cellName = "cellName_example"; // String | Cell's name.
 String folder = "folder_example"; // String | Document's folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    StyleResponse result = apiInstance.cellsGetWorksheetCellStyle(name, sheetName, cellName, folder, storage);
+    StyleResponse result = apiInstance.cellsGetWorksheetCellStyle(name, sheetName, cellName, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsGetWorksheetCellStyle");
@@ -2787,7 +2788,7 @@ Name | Type | Description  | Notes
  **sheetName** | **String**| Worksheet name. |
  **cellName** | **String**| Cell&#39;s name. |
  **folder** | **String**| Document&#39;s folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -2804,7 +2805,7 @@ No authorization required
 
 <a name="cellsGetWorksheetCells"></a>
 # **cellsGetWorksheetCells**
-> CellsResponse cellsGetWorksheetCells(name, sheetName, offest, count, folder, storage)
+> CellsResponse cellsGetWorksheetCells(name, sheetName, offest, count, folder, storageName)
 
 Get cells info.
 
@@ -2821,9 +2822,9 @@ String sheetName = "sheetName_example"; // String | Worksheet name.
 Integer offest = 0; // Integer | Begginig offset.
 Integer count = 0; // Integer | Maximum amount of cells in the response.
 String folder = "folder_example"; // String | Document's folder name.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    CellsResponse result = apiInstance.cellsGetWorksheetCells(name, sheetName, offest, count, folder, storage);
+    CellsResponse result = apiInstance.cellsGetWorksheetCells(name, sheetName, offest, count, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsGetWorksheetCells");
@@ -2840,7 +2841,7 @@ Name | Type | Description  | Notes
  **offest** | **Integer**| Begginig offset. | [optional] [default to 0]
  **count** | **Integer**| Maximum amount of cells in the response. | [optional] [default to 0]
  **folder** | **String**| Document&#39;s folder name. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -2857,7 +2858,7 @@ No authorization required
 
 <a name="cellsGetWorksheetColumn"></a>
 # **cellsGetWorksheetColumn**
-> ColumnResponse cellsGetWorksheetColumn(name, sheetName, columnIndex, folder, storage)
+> ColumnResponse cellsGetWorksheetColumn(name, sheetName, columnIndex, folder, storageName)
 
 Read worksheet column data by column&#39;s index.
 
@@ -2873,9 +2874,9 @@ String name = "name_example"; // String | The workbook name.
 String sheetName = "sheetName_example"; // String | The worksheet name.
 Integer columnIndex = 56; // Integer | The column index.
 String folder = "folder_example"; // String | The workbook folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    ColumnResponse result = apiInstance.cellsGetWorksheetColumn(name, sheetName, columnIndex, folder, storage);
+    ColumnResponse result = apiInstance.cellsGetWorksheetColumn(name, sheetName, columnIndex, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsGetWorksheetColumn");
@@ -2891,7 +2892,7 @@ Name | Type | Description  | Notes
  **sheetName** | **String**| The worksheet name. |
  **columnIndex** | **Integer**| The column index. |
  **folder** | **String**| The workbook folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -2908,7 +2909,7 @@ No authorization required
 
 <a name="cellsGetWorksheetColumns"></a>
 # **cellsGetWorksheetColumns**
-> ColumnsResponse cellsGetWorksheetColumns(name, sheetName, folder, storage)
+> ColumnsResponse cellsGetWorksheetColumns(name, sheetName, folder, storageName)
 
 Read worksheet columns info.
 
@@ -2923,9 +2924,9 @@ CellsApi apiInstance = new CellsApi();
 String name = "name_example"; // String | The workbook name.
 String sheetName = "sheetName_example"; // String | The worksheet name.
 String folder = "folder_example"; // String | The workdook folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    ColumnsResponse result = apiInstance.cellsGetWorksheetColumns(name, sheetName, folder, storage);
+    ColumnsResponse result = apiInstance.cellsGetWorksheetColumns(name, sheetName, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsGetWorksheetColumns");
@@ -2940,7 +2941,7 @@ Name | Type | Description  | Notes
  **name** | **String**| The workbook name. |
  **sheetName** | **String**| The worksheet name. |
  **folder** | **String**| The workdook folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -2957,7 +2958,7 @@ No authorization required
 
 <a name="cellsGetWorksheetRow"></a>
 # **cellsGetWorksheetRow**
-> RowResponse cellsGetWorksheetRow(name, sheetName, rowIndex, folder, storage)
+> RowResponse cellsGetWorksheetRow(name, sheetName, rowIndex, folder, storageName)
 
 Read worksheet row data by row&#39;s index.
 
@@ -2973,9 +2974,9 @@ String name = "name_example"; // String | The workbook name.
 String sheetName = "sheetName_example"; // String | The worksheet name.
 Integer rowIndex = 56; // Integer | The row index.
 String folder = "folder_example"; // String | The workbook folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    RowResponse result = apiInstance.cellsGetWorksheetRow(name, sheetName, rowIndex, folder, storage);
+    RowResponse result = apiInstance.cellsGetWorksheetRow(name, sheetName, rowIndex, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsGetWorksheetRow");
@@ -2991,7 +2992,7 @@ Name | Type | Description  | Notes
  **sheetName** | **String**| The worksheet name. |
  **rowIndex** | **Integer**| The row index. |
  **folder** | **String**| The workbook folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -3008,7 +3009,7 @@ No authorization required
 
 <a name="cellsGetWorksheetRows"></a>
 # **cellsGetWorksheetRows**
-> RowsResponse cellsGetWorksheetRows(name, sheetName, folder, storage)
+> RowsResponse cellsGetWorksheetRows(name, sheetName, folder, storageName)
 
 Read worksheet rows info.
 
@@ -3023,9 +3024,9 @@ CellsApi apiInstance = new CellsApi();
 String name = "name_example"; // String | The workbook name.
 String sheetName = "sheetName_example"; // String | The worksheet name.
 String folder = "folder_example"; // String | The workdook folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    RowsResponse result = apiInstance.cellsGetWorksheetRows(name, sheetName, folder, storage);
+    RowsResponse result = apiInstance.cellsGetWorksheetRows(name, sheetName, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsGetWorksheetRows");
@@ -3040,7 +3041,7 @@ Name | Type | Description  | Notes
  **name** | **String**| The workbook name. |
  **sheetName** | **String**| The worksheet name. |
  **folder** | **String**| The workdook folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -3057,7 +3058,7 @@ No authorization required
 
 <a name="cellsHypelinksDeleteWorksheetHyperlink"></a>
 # **cellsHypelinksDeleteWorksheetHyperlink**
-> CellsCloudResponse cellsHypelinksDeleteWorksheetHyperlink(name, sheetName, hyperlinkIndex, folder, storage)
+> CellsCloudResponse cellsHypelinksDeleteWorksheetHyperlink(name, sheetName, hyperlinkIndex, folder, storageName)
 
 Delete worksheet hyperlink by index.
 
@@ -3073,9 +3074,9 @@ String name = "name_example"; // String | Document name.
 String sheetName = "sheetName_example"; // String | Worksheet name.
 Integer hyperlinkIndex = 56; // Integer | The hyperlink's index.
 String folder = "folder_example"; // String | The document folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    CellsCloudResponse result = apiInstance.cellsHypelinksDeleteWorksheetHyperlink(name, sheetName, hyperlinkIndex, folder, storage);
+    CellsCloudResponse result = apiInstance.cellsHypelinksDeleteWorksheetHyperlink(name, sheetName, hyperlinkIndex, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsHypelinksDeleteWorksheetHyperlink");
@@ -3091,7 +3092,7 @@ Name | Type | Description  | Notes
  **sheetName** | **String**| Worksheet name. |
  **hyperlinkIndex** | **Integer**| The hyperlink&#39;s index. |
  **folder** | **String**| The document folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -3108,7 +3109,7 @@ No authorization required
 
 <a name="cellsHypelinksDeleteWorksheetHyperlinks"></a>
 # **cellsHypelinksDeleteWorksheetHyperlinks**
-> CellsCloudResponse cellsHypelinksDeleteWorksheetHyperlinks(name, sheetName, folder, storage)
+> CellsCloudResponse cellsHypelinksDeleteWorksheetHyperlinks(name, sheetName, folder, storageName)
 
 Delete all hyperlinks in worksheet.
 
@@ -3123,9 +3124,9 @@ CellsApi apiInstance = new CellsApi();
 String name = "name_example"; // String | Document name.
 String sheetName = "sheetName_example"; // String | Worksheet name.
 String folder = "folder_example"; // String | The document folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    CellsCloudResponse result = apiInstance.cellsHypelinksDeleteWorksheetHyperlinks(name, sheetName, folder, storage);
+    CellsCloudResponse result = apiInstance.cellsHypelinksDeleteWorksheetHyperlinks(name, sheetName, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsHypelinksDeleteWorksheetHyperlinks");
@@ -3140,7 +3141,7 @@ Name | Type | Description  | Notes
  **name** | **String**| Document name. |
  **sheetName** | **String**| Worksheet name. |
  **folder** | **String**| The document folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -3157,7 +3158,7 @@ No authorization required
 
 <a name="cellsHypelinksGetWorksheetHyperlink"></a>
 # **cellsHypelinksGetWorksheetHyperlink**
-> HyperlinkResponse cellsHypelinksGetWorksheetHyperlink(name, sheetName, hyperlinkIndex, folder, storage)
+> HyperlinkResponse cellsHypelinksGetWorksheetHyperlink(name, sheetName, hyperlinkIndex, folder, storageName)
 
 Get worksheet hyperlink by index.
 
@@ -3173,9 +3174,9 @@ String name = "name_example"; // String | Document name.
 String sheetName = "sheetName_example"; // String | Worksheet name.
 Integer hyperlinkIndex = 56; // Integer | The hyperlink's index.
 String folder = "folder_example"; // String | The document folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    HyperlinkResponse result = apiInstance.cellsHypelinksGetWorksheetHyperlink(name, sheetName, hyperlinkIndex, folder, storage);
+    HyperlinkResponse result = apiInstance.cellsHypelinksGetWorksheetHyperlink(name, sheetName, hyperlinkIndex, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsHypelinksGetWorksheetHyperlink");
@@ -3191,7 +3192,7 @@ Name | Type | Description  | Notes
  **sheetName** | **String**| Worksheet name. |
  **hyperlinkIndex** | **Integer**| The hyperlink&#39;s index. |
  **folder** | **String**| The document folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -3208,7 +3209,7 @@ No authorization required
 
 <a name="cellsHypelinksGetWorksheetHyperlinks"></a>
 # **cellsHypelinksGetWorksheetHyperlinks**
-> HyperlinksResponse cellsHypelinksGetWorksheetHyperlinks(name, sheetName, folder, storage)
+> HyperlinksResponse cellsHypelinksGetWorksheetHyperlinks(name, sheetName, folder, storageName)
 
 Get worksheet hyperlinks.
 
@@ -3223,9 +3224,9 @@ CellsApi apiInstance = new CellsApi();
 String name = "name_example"; // String | Document name.
 String sheetName = "sheetName_example"; // String | The worksheet name.
 String folder = "folder_example"; // String | Document's folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    HyperlinksResponse result = apiInstance.cellsHypelinksGetWorksheetHyperlinks(name, sheetName, folder, storage);
+    HyperlinksResponse result = apiInstance.cellsHypelinksGetWorksheetHyperlinks(name, sheetName, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsHypelinksGetWorksheetHyperlinks");
@@ -3240,7 +3241,7 @@ Name | Type | Description  | Notes
  **name** | **String**| Document name. |
  **sheetName** | **String**| The worksheet name. |
  **folder** | **String**| Document&#39;s folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -3257,7 +3258,7 @@ No authorization required
 
 <a name="cellsHypelinksPostWorksheetHyperlink"></a>
 # **cellsHypelinksPostWorksheetHyperlink**
-> HyperlinkResponse cellsHypelinksPostWorksheetHyperlink(name, sheetName, hyperlinkIndex, hyperlink, folder, storage)
+> HyperlinkResponse cellsHypelinksPostWorksheetHyperlink(name, sheetName, hyperlinkIndex, hyperlink, folder, storageName)
 
 Update worksheet hyperlink by index.
 
@@ -3274,9 +3275,9 @@ String sheetName = "sheetName_example"; // String | Worksheet name.
 Integer hyperlinkIndex = 56; // Integer | The hyperlink's index.
 Hyperlink hyperlink = new Hyperlink(); // Hyperlink | Hyperlink object
 String folder = "folder_example"; // String | The document folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    HyperlinkResponse result = apiInstance.cellsHypelinksPostWorksheetHyperlink(name, sheetName, hyperlinkIndex, hyperlink, folder, storage);
+    HyperlinkResponse result = apiInstance.cellsHypelinksPostWorksheetHyperlink(name, sheetName, hyperlinkIndex, hyperlink, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsHypelinksPostWorksheetHyperlink");
@@ -3293,7 +3294,7 @@ Name | Type | Description  | Notes
  **hyperlinkIndex** | **Integer**| The hyperlink&#39;s index. |
  **hyperlink** | [**Hyperlink**](Hyperlink.md)| Hyperlink object | [optional]
  **folder** | **String**| The document folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -3310,7 +3311,7 @@ No authorization required
 
 <a name="cellsHypelinksPutWorksheetHyperlink"></a>
 # **cellsHypelinksPutWorksheetHyperlink**
-> HyperlinkResponse cellsHypelinksPutWorksheetHyperlink(name, sheetName, firstRow, firstColumn, totalRows, totalColumns, address, folder, storage)
+> HyperlinkResponse cellsHypelinksPutWorksheetHyperlink(name, sheetName, firstRow, firstColumn, totalRows, totalColumns, address, folder, storageName)
 
 Add worksheet hyperlink.
 
@@ -3330,9 +3331,9 @@ Integer totalRows = 56; // Integer |
 Integer totalColumns = 56; // Integer | 
 String address = "address_example"; // String | 
 String folder = "folder_example"; // String | The document folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    HyperlinkResponse result = apiInstance.cellsHypelinksPutWorksheetHyperlink(name, sheetName, firstRow, firstColumn, totalRows, totalColumns, address, folder, storage);
+    HyperlinkResponse result = apiInstance.cellsHypelinksPutWorksheetHyperlink(name, sheetName, firstRow, firstColumn, totalRows, totalColumns, address, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsHypelinksPutWorksheetHyperlink");
@@ -3352,7 +3353,7 @@ Name | Type | Description  | Notes
  **totalColumns** | **Integer**|  |
  **address** | **String**|  |
  **folder** | **String**| The document folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -3369,7 +3370,7 @@ No authorization required
 
 <a name="cellsListObjectsDeleteWorksheetListObject"></a>
 # **cellsListObjectsDeleteWorksheetListObject**
-> CellsCloudResponse cellsListObjectsDeleteWorksheetListObject(name, sheetName, listObjectIndex, folder, storage)
+> CellsCloudResponse cellsListObjectsDeleteWorksheetListObject(name, sheetName, listObjectIndex, folder, storageName)
 
 Delete worksheet list object by index
 
@@ -3385,9 +3386,9 @@ String name = "name_example"; // String | Document name.
 String sheetName = "sheetName_example"; // String | The worksheet name.
 Integer listObjectIndex = 56; // Integer | List object index
 String folder = "folder_example"; // String | Document's folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    CellsCloudResponse result = apiInstance.cellsListObjectsDeleteWorksheetListObject(name, sheetName, listObjectIndex, folder, storage);
+    CellsCloudResponse result = apiInstance.cellsListObjectsDeleteWorksheetListObject(name, sheetName, listObjectIndex, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsListObjectsDeleteWorksheetListObject");
@@ -3403,7 +3404,7 @@ Name | Type | Description  | Notes
  **sheetName** | **String**| The worksheet name. |
  **listObjectIndex** | **Integer**| List object index |
  **folder** | **String**| Document&#39;s folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -3420,7 +3421,7 @@ No authorization required
 
 <a name="cellsListObjectsDeleteWorksheetListObjects"></a>
 # **cellsListObjectsDeleteWorksheetListObjects**
-> CellsCloudResponse cellsListObjectsDeleteWorksheetListObjects(name, sheetName, folder, storage)
+> CellsCloudResponse cellsListObjectsDeleteWorksheetListObjects(name, sheetName, folder, storageName)
 
 Delete worksheet list objects
 
@@ -3435,9 +3436,9 @@ CellsApi apiInstance = new CellsApi();
 String name = "name_example"; // String | Document name.
 String sheetName = "sheetName_example"; // String | The worksheet name.
 String folder = "folder_example"; // String | Document's folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    CellsCloudResponse result = apiInstance.cellsListObjectsDeleteWorksheetListObjects(name, sheetName, folder, storage);
+    CellsCloudResponse result = apiInstance.cellsListObjectsDeleteWorksheetListObjects(name, sheetName, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsListObjectsDeleteWorksheetListObjects");
@@ -3452,7 +3453,7 @@ Name | Type | Description  | Notes
  **name** | **String**| Document name. |
  **sheetName** | **String**| The worksheet name. |
  **folder** | **String**| Document&#39;s folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -3469,7 +3470,7 @@ No authorization required
 
 <a name="cellsListObjectsGetWorksheetListObject"></a>
 # **cellsListObjectsGetWorksheetListObject**
-> ListObjectResponse cellsListObjectsGetWorksheetListObject(name, sheetName, listobjectindex, folder, storage)
+> ListObjectResponse cellsListObjectsGetWorksheetListObject(name, sheetName, listobjectindex, folder, storageName)
 
 Get worksheet list object info by index.
 
@@ -3485,9 +3486,9 @@ String name = "name_example"; // String | Document name.
 String sheetName = "sheetName_example"; // String | The worksheet name.
 Integer listobjectindex = 56; // Integer | list object index.
 String folder = "folder_example"; // String | Document's folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    ListObjectResponse result = apiInstance.cellsListObjectsGetWorksheetListObject(name, sheetName, listobjectindex, folder, storage);
+    ListObjectResponse result = apiInstance.cellsListObjectsGetWorksheetListObject(name, sheetName, listobjectindex, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsListObjectsGetWorksheetListObject");
@@ -3503,7 +3504,7 @@ Name | Type | Description  | Notes
  **sheetName** | **String**| The worksheet name. |
  **listobjectindex** | **Integer**| list object index. |
  **folder** | **String**| Document&#39;s folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -3520,7 +3521,7 @@ No authorization required
 
 <a name="cellsListObjectsGetWorksheetListObjects"></a>
 # **cellsListObjectsGetWorksheetListObjects**
-> ListObjectsResponse cellsListObjectsGetWorksheetListObjects(name, sheetName, folder, storage)
+> ListObjectsResponse cellsListObjectsGetWorksheetListObjects(name, sheetName, folder, storageName)
 
 Get worksheet listobjects info.
 
@@ -3535,9 +3536,9 @@ CellsApi apiInstance = new CellsApi();
 String name = "name_example"; // String | Document name.
 String sheetName = "sheetName_example"; // String | The worksheet name.
 String folder = "folder_example"; // String | Document's folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    ListObjectsResponse result = apiInstance.cellsListObjectsGetWorksheetListObjects(name, sheetName, folder, storage);
+    ListObjectsResponse result = apiInstance.cellsListObjectsGetWorksheetListObjects(name, sheetName, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsListObjectsGetWorksheetListObjects");
@@ -3552,7 +3553,7 @@ Name | Type | Description  | Notes
  **name** | **String**| Document name. |
  **sheetName** | **String**| The worksheet name. |
  **folder** | **String**| Document&#39;s folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -3569,7 +3570,7 @@ No authorization required
 
 <a name="cellsListObjectsPostWorksheetListObject"></a>
 # **cellsListObjectsPostWorksheetListObject**
-> CellsCloudResponse cellsListObjectsPostWorksheetListObject(name, sheetName, listObjectIndex, listObject, folder, storage)
+> CellsCloudResponse cellsListObjectsPostWorksheetListObject(name, sheetName, listObjectIndex, listObject, folder, storageName)
 
 Update  list object 
 
@@ -3586,9 +3587,9 @@ String sheetName = "sheetName_example"; // String | The worksheet name.
 Integer listObjectIndex = 56; // Integer | list Object index
 ListObject listObject = new ListObject(); // ListObject | listObject dto in request body.
 String folder = "folder_example"; // String | Document's folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    CellsCloudResponse result = apiInstance.cellsListObjectsPostWorksheetListObject(name, sheetName, listObjectIndex, listObject, folder, storage);
+    CellsCloudResponse result = apiInstance.cellsListObjectsPostWorksheetListObject(name, sheetName, listObjectIndex, listObject, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsListObjectsPostWorksheetListObject");
@@ -3605,7 +3606,7 @@ Name | Type | Description  | Notes
  **listObjectIndex** | **Integer**| list Object index |
  **listObject** | [**ListObject**](ListObject.md)| listObject dto in request body. | [optional]
  **folder** | **String**| Document&#39;s folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -3622,7 +3623,7 @@ No authorization required
 
 <a name="cellsListObjectsPostWorksheetListObjectConvertToRange"></a>
 # **cellsListObjectsPostWorksheetListObjectConvertToRange**
-> CellsCloudResponse cellsListObjectsPostWorksheetListObjectConvertToRange(name, sheetName, listObjectIndex, folder, storage)
+> CellsCloudResponse cellsListObjectsPostWorksheetListObjectConvertToRange(name, sheetName, listObjectIndex, folder, storageName)
 
 
 
@@ -3638,9 +3639,9 @@ String name = "name_example"; // String |
 String sheetName = "sheetName_example"; // String | 
 Integer listObjectIndex = 56; // Integer | 
 String folder = "folder_example"; // String | 
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    CellsCloudResponse result = apiInstance.cellsListObjectsPostWorksheetListObjectConvertToRange(name, sheetName, listObjectIndex, folder, storage);
+    CellsCloudResponse result = apiInstance.cellsListObjectsPostWorksheetListObjectConvertToRange(name, sheetName, listObjectIndex, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsListObjectsPostWorksheetListObjectConvertToRange");
@@ -3656,7 +3657,7 @@ Name | Type | Description  | Notes
  **sheetName** | **String**|  |
  **listObjectIndex** | **Integer**|  |
  **folder** | **String**|  | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -3673,7 +3674,7 @@ No authorization required
 
 <a name="cellsListObjectsPostWorksheetListObjectSortTable"></a>
 # **cellsListObjectsPostWorksheetListObjectSortTable**
-> CellsCloudResponse cellsListObjectsPostWorksheetListObjectSortTable(name, sheetName, listObjectIndex, dataSorter, folder, storage)
+> CellsCloudResponse cellsListObjectsPostWorksheetListObjectSortTable(name, sheetName, listObjectIndex, dataSorter, folder, storageName)
 
 
 
@@ -3690,9 +3691,9 @@ String sheetName = "sheetName_example"; // String |
 Integer listObjectIndex = 56; // Integer | 
 DataSorter dataSorter = new DataSorter(); // DataSorter | 
 String folder = "folder_example"; // String | 
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    CellsCloudResponse result = apiInstance.cellsListObjectsPostWorksheetListObjectSortTable(name, sheetName, listObjectIndex, dataSorter, folder, storage);
+    CellsCloudResponse result = apiInstance.cellsListObjectsPostWorksheetListObjectSortTable(name, sheetName, listObjectIndex, dataSorter, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsListObjectsPostWorksheetListObjectSortTable");
@@ -3709,7 +3710,7 @@ Name | Type | Description  | Notes
  **listObjectIndex** | **Integer**|  |
  **dataSorter** | [**DataSorter**](DataSorter.md)|  | [optional]
  **folder** | **String**|  | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -3726,7 +3727,7 @@ No authorization required
 
 <a name="cellsListObjectsPostWorksheetListObjectSummarizeWithPivotTable"></a>
 # **cellsListObjectsPostWorksheetListObjectSummarizeWithPivotTable**
-> CellsCloudResponse cellsListObjectsPostWorksheetListObjectSummarizeWithPivotTable(name, sheetName, listObjectIndex, destsheetName, request, folder, storage)
+> CellsCloudResponse cellsListObjectsPostWorksheetListObjectSummarizeWithPivotTable(name, sheetName, listObjectIndex, destsheetName, request, folder, storageName)
 
 
 
@@ -3744,9 +3745,9 @@ Integer listObjectIndex = 56; // Integer |
 String destsheetName = "destsheetName_example"; // String | 
 CreatePivotTableRequest request = new CreatePivotTableRequest(); // CreatePivotTableRequest | 
 String folder = "folder_example"; // String | 
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    CellsCloudResponse result = apiInstance.cellsListObjectsPostWorksheetListObjectSummarizeWithPivotTable(name, sheetName, listObjectIndex, destsheetName, request, folder, storage);
+    CellsCloudResponse result = apiInstance.cellsListObjectsPostWorksheetListObjectSummarizeWithPivotTable(name, sheetName, listObjectIndex, destsheetName, request, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsListObjectsPostWorksheetListObjectSummarizeWithPivotTable");
@@ -3764,7 +3765,7 @@ Name | Type | Description  | Notes
  **destsheetName** | **String**|  |
  **request** | [**CreatePivotTableRequest**](CreatePivotTableRequest.md)|  | [optional]
  **folder** | **String**|  | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -3781,7 +3782,7 @@ No authorization required
 
 <a name="cellsListObjectsPutWorksheetListObject"></a>
 # **cellsListObjectsPutWorksheetListObject**
-> ListObjectResponse cellsListObjectsPutWorksheetListObject(name, sheetName, startRow, startColumn, endRow, endColumn, hasHeaders, listObject, folder, storage)
+> ListObjectResponse cellsListObjectsPutWorksheetListObject(name, sheetName, startRow, startColumn, endRow, endColumn, hasHeaders, listObject, folder, storageName)
 
 Add a list object into worksheet.
 
@@ -3802,9 +3803,9 @@ Integer endColumn = 56; // Integer | The start row of the list range.
 Boolean hasHeaders = true; // Boolean | Whether the range has headers.
 ListObject listObject = new ListObject(); // ListObject | List Object
 String folder = "folder_example"; // String | Document's folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    ListObjectResponse result = apiInstance.cellsListObjectsPutWorksheetListObject(name, sheetName, startRow, startColumn, endRow, endColumn, hasHeaders, listObject, folder, storage);
+    ListObjectResponse result = apiInstance.cellsListObjectsPutWorksheetListObject(name, sheetName, startRow, startColumn, endRow, endColumn, hasHeaders, listObject, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsListObjectsPutWorksheetListObject");
@@ -3825,7 +3826,7 @@ Name | Type | Description  | Notes
  **hasHeaders** | **Boolean**| Whether the range has headers. | [optional] [default to true]
  **listObject** | [**ListObject**](ListObject.md)| List Object | [optional]
  **folder** | **String**| Document&#39;s folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -3842,7 +3843,7 @@ No authorization required
 
 <a name="cellsOleObjectsDeleteWorksheetOleObject"></a>
 # **cellsOleObjectsDeleteWorksheetOleObject**
-> CellsCloudResponse cellsOleObjectsDeleteWorksheetOleObject(name, sheetName, oleObjectIndex, folder, storage)
+> CellsCloudResponse cellsOleObjectsDeleteWorksheetOleObject(name, sheetName, oleObjectIndex, folder, storageName)
 
 Delete OLE object.
 
@@ -3858,9 +3859,9 @@ String name = "name_example"; // String | The workbook name.
 String sheetName = "sheetName_example"; // String | The worsheet name.
 Integer oleObjectIndex = 56; // Integer | Ole object index
 String folder = "folder_example"; // String | The workbook folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    CellsCloudResponse result = apiInstance.cellsOleObjectsDeleteWorksheetOleObject(name, sheetName, oleObjectIndex, folder, storage);
+    CellsCloudResponse result = apiInstance.cellsOleObjectsDeleteWorksheetOleObject(name, sheetName, oleObjectIndex, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsOleObjectsDeleteWorksheetOleObject");
@@ -3876,7 +3877,7 @@ Name | Type | Description  | Notes
  **sheetName** | **String**| The worsheet name. |
  **oleObjectIndex** | **Integer**| Ole object index |
  **folder** | **String**| The workbook folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -3893,7 +3894,7 @@ No authorization required
 
 <a name="cellsOleObjectsDeleteWorksheetOleObjects"></a>
 # **cellsOleObjectsDeleteWorksheetOleObjects**
-> CellsCloudResponse cellsOleObjectsDeleteWorksheetOleObjects(name, sheetName, folder, storage)
+> CellsCloudResponse cellsOleObjectsDeleteWorksheetOleObjects(name, sheetName, folder, storageName)
 
 Delete all OLE objects.
 
@@ -3908,9 +3909,9 @@ CellsApi apiInstance = new CellsApi();
 String name = "name_example"; // String | The workbook name.
 String sheetName = "sheetName_example"; // String | The worsheet name.
 String folder = "folder_example"; // String | The workbook folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    CellsCloudResponse result = apiInstance.cellsOleObjectsDeleteWorksheetOleObjects(name, sheetName, folder, storage);
+    CellsCloudResponse result = apiInstance.cellsOleObjectsDeleteWorksheetOleObjects(name, sheetName, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsOleObjectsDeleteWorksheetOleObjects");
@@ -3925,7 +3926,7 @@ Name | Type | Description  | Notes
  **name** | **String**| The workbook name. |
  **sheetName** | **String**| The worsheet name. |
  **folder** | **String**| The workbook folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -3942,7 +3943,7 @@ No authorization required
 
 <a name="cellsOleObjectsGetWorksheetOleObject"></a>
 # **cellsOleObjectsGetWorksheetOleObject**
-> File cellsOleObjectsGetWorksheetOleObject(name, sheetName, objectNumber, format, folder, storage)
+> File cellsOleObjectsGetWorksheetOleObject(name, sheetName, objectNumber, format, folder, storageName)
 
 Get OLE object info.
 
@@ -3959,9 +3960,9 @@ String sheetName = "sheetName_example"; // String | Worksheet name.
 Integer objectNumber = 56; // Integer | The object number.
 String format = "format_example"; // String | The exported object format.
 String folder = "folder_example"; // String | The document folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    File result = apiInstance.cellsOleObjectsGetWorksheetOleObject(name, sheetName, objectNumber, format, folder, storage);
+    File result = apiInstance.cellsOleObjectsGetWorksheetOleObject(name, sheetName, objectNumber, format, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsOleObjectsGetWorksheetOleObject");
@@ -3978,7 +3979,7 @@ Name | Type | Description  | Notes
  **objectNumber** | **Integer**| The object number. |
  **format** | **String**| The exported object format. | [optional]
  **folder** | **String**| The document folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -3995,7 +3996,7 @@ No authorization required
 
 <a name="cellsOleObjectsGetWorksheetOleObjects"></a>
 # **cellsOleObjectsGetWorksheetOleObjects**
-> OleObjectsResponse cellsOleObjectsGetWorksheetOleObjects(name, sheetName, folder, storage)
+> OleObjectsResponse cellsOleObjectsGetWorksheetOleObjects(name, sheetName, folder, storageName)
 
 Get worksheet OLE objects info.
 
@@ -4010,9 +4011,9 @@ CellsApi apiInstance = new CellsApi();
 String name = "name_example"; // String | Document name.
 String sheetName = "sheetName_example"; // String | The worksheet name.
 String folder = "folder_example"; // String | Document's folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    OleObjectsResponse result = apiInstance.cellsOleObjectsGetWorksheetOleObjects(name, sheetName, folder, storage);
+    OleObjectsResponse result = apiInstance.cellsOleObjectsGetWorksheetOleObjects(name, sheetName, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsOleObjectsGetWorksheetOleObjects");
@@ -4027,7 +4028,7 @@ Name | Type | Description  | Notes
  **name** | **String**| Document name. |
  **sheetName** | **String**| The worksheet name. |
  **folder** | **String**| Document&#39;s folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -4044,7 +4045,7 @@ No authorization required
 
 <a name="cellsOleObjectsPostUpdateWorksheetOleObject"></a>
 # **cellsOleObjectsPostUpdateWorksheetOleObject**
-> CellsCloudResponse cellsOleObjectsPostUpdateWorksheetOleObject(name, sheetName, oleObjectIndex, ole, folder, storage)
+> CellsCloudResponse cellsOleObjectsPostUpdateWorksheetOleObject(name, sheetName, oleObjectIndex, ole, folder, storageName)
 
 Update OLE object.
 
@@ -4061,9 +4062,9 @@ String sheetName = "sheetName_example"; // String | The worsheet name.
 Integer oleObjectIndex = 56; // Integer | Ole object index
 OleObject ole = new OleObject(); // OleObject | Ole Object
 String folder = "folder_example"; // String | The workbook folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    CellsCloudResponse result = apiInstance.cellsOleObjectsPostUpdateWorksheetOleObject(name, sheetName, oleObjectIndex, ole, folder, storage);
+    CellsCloudResponse result = apiInstance.cellsOleObjectsPostUpdateWorksheetOleObject(name, sheetName, oleObjectIndex, ole, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsOleObjectsPostUpdateWorksheetOleObject");
@@ -4080,7 +4081,7 @@ Name | Type | Description  | Notes
  **oleObjectIndex** | **Integer**| Ole object index |
  **ole** | [**OleObject**](OleObject.md)| Ole Object | [optional]
  **folder** | **String**| The workbook folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -4097,7 +4098,7 @@ No authorization required
 
 <a name="cellsOleObjectsPutWorksheetOleObject"></a>
 # **cellsOleObjectsPutWorksheetOleObject**
-> OleObjectResponse cellsOleObjectsPutWorksheetOleObject(name, sheetName, oleObject, upperLeftRow, upperLeftColumn, height, width, oleFile, imageFile, folder, storage)
+> OleObjectResponse cellsOleObjectsPutWorksheetOleObject(name, sheetName, oleObject, upperLeftRow, upperLeftColumn, height, width, oleFile, imageFile, folder, storageName)
 
 Add OLE object
 
@@ -4119,9 +4120,9 @@ Integer width = 0; // Integer | Width of oleObject, in unit of pixel
 String oleFile = "oleFile_example"; // String | OLE filename
 String imageFile = "imageFile_example"; // String | Image filename
 String folder = "folder_example"; // String | The workbook folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    OleObjectResponse result = apiInstance.cellsOleObjectsPutWorksheetOleObject(name, sheetName, oleObject, upperLeftRow, upperLeftColumn, height, width, oleFile, imageFile, folder, storage);
+    OleObjectResponse result = apiInstance.cellsOleObjectsPutWorksheetOleObject(name, sheetName, oleObject, upperLeftRow, upperLeftColumn, height, width, oleFile, imageFile, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsOleObjectsPutWorksheetOleObject");
@@ -4143,7 +4144,7 @@ Name | Type | Description  | Notes
  **oleFile** | **String**| OLE filename | [optional]
  **imageFile** | **String**| Image filename | [optional]
  **folder** | **String**| The workbook folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -4160,7 +4161,7 @@ No authorization required
 
 <a name="cellsPageBreaksDeleteHorizontalPageBreak"></a>
 # **cellsPageBreaksDeleteHorizontalPageBreak**
-> CellsCloudResponse cellsPageBreaksDeleteHorizontalPageBreak(name, sheetName, index, folder, storage)
+> CellsCloudResponse cellsPageBreaksDeleteHorizontalPageBreak(name, sheetName, index, folder, storageName)
 
 
 
@@ -4176,9 +4177,9 @@ String name = "name_example"; // String |
 String sheetName = "sheetName_example"; // String | 
 Integer index = 56; // Integer | 
 String folder = "folder_example"; // String | 
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    CellsCloudResponse result = apiInstance.cellsPageBreaksDeleteHorizontalPageBreak(name, sheetName, index, folder, storage);
+    CellsCloudResponse result = apiInstance.cellsPageBreaksDeleteHorizontalPageBreak(name, sheetName, index, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsPageBreaksDeleteHorizontalPageBreak");
@@ -4194,7 +4195,7 @@ Name | Type | Description  | Notes
  **sheetName** | **String**|  |
  **index** | **Integer**|  |
  **folder** | **String**|  | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -4211,7 +4212,7 @@ No authorization required
 
 <a name="cellsPageBreaksDeleteHorizontalPageBreaks"></a>
 # **cellsPageBreaksDeleteHorizontalPageBreaks**
-> CellsCloudResponse cellsPageBreaksDeleteHorizontalPageBreaks(name, sheetName, row, folder, storage)
+> CellsCloudResponse cellsPageBreaksDeleteHorizontalPageBreaks(name, sheetName, row, folder, storageName)
 
 
 
@@ -4227,9 +4228,9 @@ String name = "name_example"; // String |
 String sheetName = "sheetName_example"; // String | 
 Integer row = 56; // Integer | 
 String folder = "folder_example"; // String | 
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    CellsCloudResponse result = apiInstance.cellsPageBreaksDeleteHorizontalPageBreaks(name, sheetName, row, folder, storage);
+    CellsCloudResponse result = apiInstance.cellsPageBreaksDeleteHorizontalPageBreaks(name, sheetName, row, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsPageBreaksDeleteHorizontalPageBreaks");
@@ -4245,7 +4246,7 @@ Name | Type | Description  | Notes
  **sheetName** | **String**|  |
  **row** | **Integer**|  | [optional]
  **folder** | **String**|  | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -4262,7 +4263,7 @@ No authorization required
 
 <a name="cellsPageBreaksDeleteVerticalPageBreak"></a>
 # **cellsPageBreaksDeleteVerticalPageBreak**
-> CellsCloudResponse cellsPageBreaksDeleteVerticalPageBreak(name, sheetName, index, folder, storage)
+> CellsCloudResponse cellsPageBreaksDeleteVerticalPageBreak(name, sheetName, index, folder, storageName)
 
 
 
@@ -4278,9 +4279,9 @@ String name = "name_example"; // String |
 String sheetName = "sheetName_example"; // String | 
 Integer index = 56; // Integer | 
 String folder = "folder_example"; // String | 
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    CellsCloudResponse result = apiInstance.cellsPageBreaksDeleteVerticalPageBreak(name, sheetName, index, folder, storage);
+    CellsCloudResponse result = apiInstance.cellsPageBreaksDeleteVerticalPageBreak(name, sheetName, index, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsPageBreaksDeleteVerticalPageBreak");
@@ -4296,7 +4297,7 @@ Name | Type | Description  | Notes
  **sheetName** | **String**|  |
  **index** | **Integer**|  |
  **folder** | **String**|  | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -4313,7 +4314,7 @@ No authorization required
 
 <a name="cellsPageBreaksDeleteVerticalPageBreaks"></a>
 # **cellsPageBreaksDeleteVerticalPageBreaks**
-> CellsCloudResponse cellsPageBreaksDeleteVerticalPageBreaks(name, sheetName, column, folder, storage)
+> CellsCloudResponse cellsPageBreaksDeleteVerticalPageBreaks(name, sheetName, column, folder, storageName)
 
 
 
@@ -4329,9 +4330,9 @@ String name = "name_example"; // String |
 String sheetName = "sheetName_example"; // String | 
 Integer column = 56; // Integer | 
 String folder = "folder_example"; // String | 
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    CellsCloudResponse result = apiInstance.cellsPageBreaksDeleteVerticalPageBreaks(name, sheetName, column, folder, storage);
+    CellsCloudResponse result = apiInstance.cellsPageBreaksDeleteVerticalPageBreaks(name, sheetName, column, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsPageBreaksDeleteVerticalPageBreaks");
@@ -4347,7 +4348,7 @@ Name | Type | Description  | Notes
  **sheetName** | **String**|  |
  **column** | **Integer**|  | [optional]
  **folder** | **String**|  | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -4364,7 +4365,7 @@ No authorization required
 
 <a name="cellsPageBreaksGetHorizontalPageBreak"></a>
 # **cellsPageBreaksGetHorizontalPageBreak**
-> HorizontalPageBreakResponse cellsPageBreaksGetHorizontalPageBreak(name, sheetName, index, folder, storage)
+> HorizontalPageBreakResponse cellsPageBreaksGetHorizontalPageBreak(name, sheetName, index, folder, storageName)
 
 
 
@@ -4380,9 +4381,9 @@ String name = "name_example"; // String |
 String sheetName = "sheetName_example"; // String | 
 Integer index = 56; // Integer | 
 String folder = "folder_example"; // String | 
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    HorizontalPageBreakResponse result = apiInstance.cellsPageBreaksGetHorizontalPageBreak(name, sheetName, index, folder, storage);
+    HorizontalPageBreakResponse result = apiInstance.cellsPageBreaksGetHorizontalPageBreak(name, sheetName, index, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsPageBreaksGetHorizontalPageBreak");
@@ -4398,7 +4399,7 @@ Name | Type | Description  | Notes
  **sheetName** | **String**|  |
  **index** | **Integer**|  |
  **folder** | **String**|  | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -4415,7 +4416,7 @@ No authorization required
 
 <a name="cellsPageBreaksGetHorizontalPageBreaks"></a>
 # **cellsPageBreaksGetHorizontalPageBreaks**
-> HorizontalPageBreaksResponse cellsPageBreaksGetHorizontalPageBreaks(name, sheetName, folder, storage)
+> HorizontalPageBreaksResponse cellsPageBreaksGetHorizontalPageBreaks(name, sheetName, folder, storageName)
 
 
 
@@ -4430,9 +4431,9 @@ CellsApi apiInstance = new CellsApi();
 String name = "name_example"; // String | 
 String sheetName = "sheetName_example"; // String | 
 String folder = "folder_example"; // String | 
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    HorizontalPageBreaksResponse result = apiInstance.cellsPageBreaksGetHorizontalPageBreaks(name, sheetName, folder, storage);
+    HorizontalPageBreaksResponse result = apiInstance.cellsPageBreaksGetHorizontalPageBreaks(name, sheetName, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsPageBreaksGetHorizontalPageBreaks");
@@ -4447,7 +4448,7 @@ Name | Type | Description  | Notes
  **name** | **String**|  |
  **sheetName** | **String**|  |
  **folder** | **String**|  | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -4464,7 +4465,7 @@ No authorization required
 
 <a name="cellsPageBreaksGetVerticalPageBreak"></a>
 # **cellsPageBreaksGetVerticalPageBreak**
-> VerticalPageBreakResponse cellsPageBreaksGetVerticalPageBreak(name, sheetName, index, folder, storage)
+> VerticalPageBreakResponse cellsPageBreaksGetVerticalPageBreak(name, sheetName, index, folder, storageName)
 
 
 
@@ -4480,9 +4481,9 @@ String name = "name_example"; // String |
 String sheetName = "sheetName_example"; // String | 
 Integer index = 56; // Integer | 
 String folder = "folder_example"; // String | 
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    VerticalPageBreakResponse result = apiInstance.cellsPageBreaksGetVerticalPageBreak(name, sheetName, index, folder, storage);
+    VerticalPageBreakResponse result = apiInstance.cellsPageBreaksGetVerticalPageBreak(name, sheetName, index, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsPageBreaksGetVerticalPageBreak");
@@ -4498,7 +4499,7 @@ Name | Type | Description  | Notes
  **sheetName** | **String**|  |
  **index** | **Integer**|  |
  **folder** | **String**|  | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -4515,7 +4516,7 @@ No authorization required
 
 <a name="cellsPageBreaksGetVerticalPageBreaks"></a>
 # **cellsPageBreaksGetVerticalPageBreaks**
-> VerticalPageBreaksResponse cellsPageBreaksGetVerticalPageBreaks(name, sheetName, folder, storage)
+> VerticalPageBreaksResponse cellsPageBreaksGetVerticalPageBreaks(name, sheetName, folder, storageName)
 
 
 
@@ -4530,9 +4531,9 @@ CellsApi apiInstance = new CellsApi();
 String name = "name_example"; // String | 
 String sheetName = "sheetName_example"; // String | 
 String folder = "folder_example"; // String | 
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    VerticalPageBreaksResponse result = apiInstance.cellsPageBreaksGetVerticalPageBreaks(name, sheetName, folder, storage);
+    VerticalPageBreaksResponse result = apiInstance.cellsPageBreaksGetVerticalPageBreaks(name, sheetName, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsPageBreaksGetVerticalPageBreaks");
@@ -4547,7 +4548,7 @@ Name | Type | Description  | Notes
  **name** | **String**|  |
  **sheetName** | **String**|  |
  **folder** | **String**|  | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -4564,7 +4565,7 @@ No authorization required
 
 <a name="cellsPageBreaksPutHorizontalPageBreak"></a>
 # **cellsPageBreaksPutHorizontalPageBreak**
-> CellsCloudResponse cellsPageBreaksPutHorizontalPageBreak(name, sheetName, cellname, row, column, startColumn, endColumn, folder, storage)
+> CellsCloudResponse cellsPageBreaksPutHorizontalPageBreak(name, sheetName, cellname, row, column, startColumn, endColumn, folder, storageName)
 
 
 
@@ -4584,9 +4585,9 @@ Integer column = 56; // Integer |
 Integer startColumn = 56; // Integer | 
 Integer endColumn = 56; // Integer | 
 String folder = "folder_example"; // String | 
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    CellsCloudResponse result = apiInstance.cellsPageBreaksPutHorizontalPageBreak(name, sheetName, cellname, row, column, startColumn, endColumn, folder, storage);
+    CellsCloudResponse result = apiInstance.cellsPageBreaksPutHorizontalPageBreak(name, sheetName, cellname, row, column, startColumn, endColumn, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsPageBreaksPutHorizontalPageBreak");
@@ -4606,7 +4607,7 @@ Name | Type | Description  | Notes
  **startColumn** | **Integer**|  | [optional]
  **endColumn** | **Integer**|  | [optional]
  **folder** | **String**|  | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -4623,7 +4624,7 @@ No authorization required
 
 <a name="cellsPageBreaksPutVerticalPageBreak"></a>
 # **cellsPageBreaksPutVerticalPageBreak**
-> CellsCloudResponse cellsPageBreaksPutVerticalPageBreak(name, sheetName, cellname, column, row, startRow, endRow, folder, storage)
+> CellsCloudResponse cellsPageBreaksPutVerticalPageBreak(name, sheetName, cellname, column, row, startRow, endRow, folder, storageName)
 
 
 
@@ -4643,9 +4644,9 @@ Integer row = 56; // Integer |
 Integer startRow = 56; // Integer | 
 Integer endRow = 56; // Integer | 
 String folder = "folder_example"; // String | 
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    CellsCloudResponse result = apiInstance.cellsPageBreaksPutVerticalPageBreak(name, sheetName, cellname, column, row, startRow, endRow, folder, storage);
+    CellsCloudResponse result = apiInstance.cellsPageBreaksPutVerticalPageBreak(name, sheetName, cellname, column, row, startRow, endRow, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsPageBreaksPutVerticalPageBreak");
@@ -4665,7 +4666,7 @@ Name | Type | Description  | Notes
  **startRow** | **Integer**|  | [optional]
  **endRow** | **Integer**|  | [optional]
  **folder** | **String**|  | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -4682,7 +4683,7 @@ No authorization required
 
 <a name="cellsPageSetupDeleteHeaderFooter"></a>
 # **cellsPageSetupDeleteHeaderFooter**
-> CellsCloudResponse cellsPageSetupDeleteHeaderFooter(name, sheetName, folder, storage)
+> CellsCloudResponse cellsPageSetupDeleteHeaderFooter(name, sheetName, folder, storageName)
 
 clear header footer
 
@@ -4697,9 +4698,9 @@ CellsApi apiInstance = new CellsApi();
 String name = "name_example"; // String | 
 String sheetName = "sheetName_example"; // String | 
 String folder = "folder_example"; // String | 
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    CellsCloudResponse result = apiInstance.cellsPageSetupDeleteHeaderFooter(name, sheetName, folder, storage);
+    CellsCloudResponse result = apiInstance.cellsPageSetupDeleteHeaderFooter(name, sheetName, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsPageSetupDeleteHeaderFooter");
@@ -4714,7 +4715,7 @@ Name | Type | Description  | Notes
  **name** | **String**|  |
  **sheetName** | **String**|  |
  **folder** | **String**|  | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -4731,7 +4732,7 @@ No authorization required
 
 <a name="cellsPageSetupGetFooter"></a>
 # **cellsPageSetupGetFooter**
-> PageSectionsResponse cellsPageSetupGetFooter(name, sheetName, folder, storage)
+> PageSectionsResponse cellsPageSetupGetFooter(name, sheetName, folder, storageName)
 
 get page footer information
 
@@ -4746,9 +4747,9 @@ CellsApi apiInstance = new CellsApi();
 String name = "name_example"; // String | 
 String sheetName = "sheetName_example"; // String | 
 String folder = "folder_example"; // String | 
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    PageSectionsResponse result = apiInstance.cellsPageSetupGetFooter(name, sheetName, folder, storage);
+    PageSectionsResponse result = apiInstance.cellsPageSetupGetFooter(name, sheetName, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsPageSetupGetFooter");
@@ -4763,7 +4764,7 @@ Name | Type | Description  | Notes
  **name** | **String**|  |
  **sheetName** | **String**|  |
  **folder** | **String**|  | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -4780,7 +4781,7 @@ No authorization required
 
 <a name="cellsPageSetupGetHeader"></a>
 # **cellsPageSetupGetHeader**
-> PageSectionsResponse cellsPageSetupGetHeader(name, sheetName, folder, storage)
+> PageSectionsResponse cellsPageSetupGetHeader(name, sheetName, folder, storageName)
 
 get page header information
 
@@ -4795,9 +4796,9 @@ CellsApi apiInstance = new CellsApi();
 String name = "name_example"; // String | 
 String sheetName = "sheetName_example"; // String | 
 String folder = "folder_example"; // String | 
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    PageSectionsResponse result = apiInstance.cellsPageSetupGetHeader(name, sheetName, folder, storage);
+    PageSectionsResponse result = apiInstance.cellsPageSetupGetHeader(name, sheetName, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsPageSetupGetHeader");
@@ -4812,7 +4813,7 @@ Name | Type | Description  | Notes
  **name** | **String**|  |
  **sheetName** | **String**|  |
  **folder** | **String**|  | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -4829,7 +4830,7 @@ No authorization required
 
 <a name="cellsPageSetupGetPageSetup"></a>
 # **cellsPageSetupGetPageSetup**
-> PageSetupResponse cellsPageSetupGetPageSetup(name, sheetName, folder, storage)
+> PageSetupResponse cellsPageSetupGetPageSetup(name, sheetName, folder, storageName)
 
 Get Page Setup information.             
 
@@ -4844,9 +4845,9 @@ CellsApi apiInstance = new CellsApi();
 String name = "name_example"; // String | 
 String sheetName = "sheetName_example"; // String | 
 String folder = "folder_example"; // String | 
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    PageSetupResponse result = apiInstance.cellsPageSetupGetPageSetup(name, sheetName, folder, storage);
+    PageSetupResponse result = apiInstance.cellsPageSetupGetPageSetup(name, sheetName, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsPageSetupGetPageSetup");
@@ -4861,7 +4862,7 @@ Name | Type | Description  | Notes
  **name** | **String**|  |
  **sheetName** | **String**|  |
  **folder** | **String**|  | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -4878,7 +4879,7 @@ No authorization required
 
 <a name="cellsPageSetupPostFooter"></a>
 # **cellsPageSetupPostFooter**
-> CellsCloudResponse cellsPageSetupPostFooter(name, sheetName, section, script, isFirstPage, folder, storage)
+> CellsCloudResponse cellsPageSetupPostFooter(name, sheetName, section, script, isFirstPage, folder, storageName)
 
 update  page footer information 
 
@@ -4896,9 +4897,9 @@ Integer section = 56; // Integer |
 String script = "script_example"; // String | 
 Boolean isFirstPage = true; // Boolean | 
 String folder = "folder_example"; // String | 
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    CellsCloudResponse result = apiInstance.cellsPageSetupPostFooter(name, sheetName, section, script, isFirstPage, folder, storage);
+    CellsCloudResponse result = apiInstance.cellsPageSetupPostFooter(name, sheetName, section, script, isFirstPage, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsPageSetupPostFooter");
@@ -4916,7 +4917,7 @@ Name | Type | Description  | Notes
  **script** | **String**|  |
  **isFirstPage** | **Boolean**|  |
  **folder** | **String**|  | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -4933,7 +4934,7 @@ No authorization required
 
 <a name="cellsPageSetupPostHeader"></a>
 # **cellsPageSetupPostHeader**
-> CellsCloudResponse cellsPageSetupPostHeader(name, sheetName, section, script, isFirstPage, folder, storage)
+> CellsCloudResponse cellsPageSetupPostHeader(name, sheetName, section, script, isFirstPage, folder, storageName)
 
 update  page header information 
 
@@ -4951,9 +4952,9 @@ Integer section = 56; // Integer |
 String script = "script_example"; // String | 
 Boolean isFirstPage = true; // Boolean | 
 String folder = "folder_example"; // String | 
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    CellsCloudResponse result = apiInstance.cellsPageSetupPostHeader(name, sheetName, section, script, isFirstPage, folder, storage);
+    CellsCloudResponse result = apiInstance.cellsPageSetupPostHeader(name, sheetName, section, script, isFirstPage, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsPageSetupPostHeader");
@@ -4971,7 +4972,7 @@ Name | Type | Description  | Notes
  **script** | **String**|  |
  **isFirstPage** | **Boolean**|  |
  **folder** | **String**|  | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -4988,7 +4989,7 @@ No authorization required
 
 <a name="cellsPageSetupPostPageSetup"></a>
 # **cellsPageSetupPostPageSetup**
-> CellsCloudResponse cellsPageSetupPostPageSetup(name, sheetName, pageSetup, folder, storage)
+> CellsCloudResponse cellsPageSetupPostPageSetup(name, sheetName, pageSetup, folder, storageName)
 
 Update Page Setup information.
 
@@ -5004,9 +5005,9 @@ String name = "name_example"; // String |
 String sheetName = "sheetName_example"; // String | 
 PageSetup pageSetup = new PageSetup(); // PageSetup | 
 String folder = "folder_example"; // String | 
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    CellsCloudResponse result = apiInstance.cellsPageSetupPostPageSetup(name, sheetName, pageSetup, folder, storage);
+    CellsCloudResponse result = apiInstance.cellsPageSetupPostPageSetup(name, sheetName, pageSetup, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsPageSetupPostPageSetup");
@@ -5022,7 +5023,7 @@ Name | Type | Description  | Notes
  **sheetName** | **String**|  |
  **pageSetup** | [**PageSetup**](PageSetup.md)|  | [optional]
  **folder** | **String**|  | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -5039,7 +5040,7 @@ No authorization required
 
 <a name="cellsPicturesDeleteWorksheetPicture"></a>
 # **cellsPicturesDeleteWorksheetPicture**
-> CellsCloudResponse cellsPicturesDeleteWorksheetPicture(name, sheetName, pictureIndex, folder, storage)
+> CellsCloudResponse cellsPicturesDeleteWorksheetPicture(name, sheetName, pictureIndex, folder, storageName)
 
 Delete a picture object in worksheet
 
@@ -5055,9 +5056,9 @@ String name = "name_example"; // String | The workbook name.
 String sheetName = "sheetName_example"; // String | The worsheet name.
 Integer pictureIndex = 56; // Integer | Picture index
 String folder = "folder_example"; // String | The workbook folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    CellsCloudResponse result = apiInstance.cellsPicturesDeleteWorksheetPicture(name, sheetName, pictureIndex, folder, storage);
+    CellsCloudResponse result = apiInstance.cellsPicturesDeleteWorksheetPicture(name, sheetName, pictureIndex, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsPicturesDeleteWorksheetPicture");
@@ -5073,7 +5074,7 @@ Name | Type | Description  | Notes
  **sheetName** | **String**| The worsheet name. |
  **pictureIndex** | **Integer**| Picture index |
  **folder** | **String**| The workbook folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -5090,7 +5091,7 @@ No authorization required
 
 <a name="cellsPicturesDeleteWorksheetPictures"></a>
 # **cellsPicturesDeleteWorksheetPictures**
-> CellsCloudResponse cellsPicturesDeleteWorksheetPictures(name, sheetName, folder, storage)
+> CellsCloudResponse cellsPicturesDeleteWorksheetPictures(name, sheetName, folder, storageName)
 
 Delete all pictures in worksheet.
 
@@ -5105,9 +5106,9 @@ CellsApi apiInstance = new CellsApi();
 String name = "name_example"; // String | Document name.
 String sheetName = "sheetName_example"; // String | Worksheet name.
 String folder = "folder_example"; // String | The document folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    CellsCloudResponse result = apiInstance.cellsPicturesDeleteWorksheetPictures(name, sheetName, folder, storage);
+    CellsCloudResponse result = apiInstance.cellsPicturesDeleteWorksheetPictures(name, sheetName, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsPicturesDeleteWorksheetPictures");
@@ -5122,7 +5123,7 @@ Name | Type | Description  | Notes
  **name** | **String**| Document name. |
  **sheetName** | **String**| Worksheet name. |
  **folder** | **String**| The document folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -5139,7 +5140,7 @@ No authorization required
 
 <a name="cellsPicturesGetWorksheetPicture"></a>
 # **cellsPicturesGetWorksheetPicture**
-> File cellsPicturesGetWorksheetPicture(name, sheetName, pictureIndex, format, folder, storage)
+> File cellsPicturesGetWorksheetPicture(name, sheetName, pictureIndex, format, folder, storageName)
 
 GRead worksheet picture by number.
 
@@ -5156,9 +5157,9 @@ String sheetName = "sheetName_example"; // String | Worksheet name.
 Integer pictureIndex = 56; // Integer | The picture index.
 String format = "format_example"; // String | The exported object format.
 String folder = "folder_example"; // String | The document folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    File result = apiInstance.cellsPicturesGetWorksheetPicture(name, sheetName, pictureIndex, format, folder, storage);
+    File result = apiInstance.cellsPicturesGetWorksheetPicture(name, sheetName, pictureIndex, format, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsPicturesGetWorksheetPicture");
@@ -5175,7 +5176,7 @@ Name | Type | Description  | Notes
  **pictureIndex** | **Integer**| The picture index. |
  **format** | **String**| The exported object format. | [optional]
  **folder** | **String**| The document folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -5192,7 +5193,7 @@ No authorization required
 
 <a name="cellsPicturesGetWorksheetPictures"></a>
 # **cellsPicturesGetWorksheetPictures**
-> PicturesResponse cellsPicturesGetWorksheetPictures(name, sheetName, folder, storage)
+> PicturesResponse cellsPicturesGetWorksheetPictures(name, sheetName, folder, storageName)
 
 Read worksheet pictures.
 
@@ -5207,9 +5208,9 @@ CellsApi apiInstance = new CellsApi();
 String name = "name_example"; // String | Document name.
 String sheetName = "sheetName_example"; // String | The worksheet name.
 String folder = "folder_example"; // String | Document's folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    PicturesResponse result = apiInstance.cellsPicturesGetWorksheetPictures(name, sheetName, folder, storage);
+    PicturesResponse result = apiInstance.cellsPicturesGetWorksheetPictures(name, sheetName, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsPicturesGetWorksheetPictures");
@@ -5224,7 +5225,7 @@ Name | Type | Description  | Notes
  **name** | **String**| Document name. |
  **sheetName** | **String**| The worksheet name. |
  **folder** | **String**| Document&#39;s folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -5241,7 +5242,7 @@ No authorization required
 
 <a name="cellsPicturesPostWorksheetPicture"></a>
 # **cellsPicturesPostWorksheetPicture**
-> PictureResponse cellsPicturesPostWorksheetPicture(name, sheetName, pictureIndex, picture, folder, storage)
+> PictureResponse cellsPicturesPostWorksheetPicture(name, sheetName, pictureIndex, picture, folder, storageName)
 
 Update worksheet picture by index.
 
@@ -5258,9 +5259,9 @@ String sheetName = "sheetName_example"; // String | Worksheet name.
 Integer pictureIndex = 56; // Integer | The picture's index.
 Picture picture = new Picture(); // Picture | Picture object
 String folder = "folder_example"; // String | The document folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    PictureResponse result = apiInstance.cellsPicturesPostWorksheetPicture(name, sheetName, pictureIndex, picture, folder, storage);
+    PictureResponse result = apiInstance.cellsPicturesPostWorksheetPicture(name, sheetName, pictureIndex, picture, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsPicturesPostWorksheetPicture");
@@ -5277,7 +5278,7 @@ Name | Type | Description  | Notes
  **pictureIndex** | **Integer**| The picture&#39;s index. |
  **picture** | [**Picture**](Picture.md)| Picture object | [optional]
  **folder** | **String**| The document folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -5294,7 +5295,7 @@ No authorization required
 
 <a name="cellsPicturesPutWorksheetAddPicture"></a>
 # **cellsPicturesPutWorksheetAddPicture**
-> PicturesResponse cellsPicturesPutWorksheetAddPicture(name, sheetName, picture, upperLeftRow, upperLeftColumn, lowerRightRow, lowerRightColumn, picturePath, folder, storage)
+> PicturesResponse cellsPicturesPutWorksheetAddPicture(name, sheetName, picture, upperLeftRow, upperLeftColumn, lowerRightRow, lowerRightColumn, picturePath, folder, storageName)
 
 Add a new worksheet picture.
 
@@ -5315,9 +5316,9 @@ Integer lowerRightRow = 0; // Integer | The image low right row.
 Integer lowerRightColumn = 0; // Integer | The image low right column.
 String picturePath = "picturePath_example"; // String | The picture path, if not provided the picture data is inspected in the request body.
 String folder = "folder_example"; // String | The workbook folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    PicturesResponse result = apiInstance.cellsPicturesPutWorksheetAddPicture(name, sheetName, picture, upperLeftRow, upperLeftColumn, lowerRightRow, lowerRightColumn, picturePath, folder, storage);
+    PicturesResponse result = apiInstance.cellsPicturesPutWorksheetAddPicture(name, sheetName, picture, upperLeftRow, upperLeftColumn, lowerRightRow, lowerRightColumn, picturePath, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsPicturesPutWorksheetAddPicture");
@@ -5338,7 +5339,7 @@ Name | Type | Description  | Notes
  **lowerRightColumn** | **Integer**| The image low right column. | [optional] [default to 0]
  **picturePath** | **String**| The picture path, if not provided the picture data is inspected in the request body. | [optional]
  **folder** | **String**| The workbook folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -5355,7 +5356,7 @@ No authorization required
 
 <a name="cellsPivotTablesDeletePivotTableField"></a>
 # **cellsPivotTablesDeletePivotTableField**
-> CellsCloudResponse cellsPivotTablesDeletePivotTableField(name, sheetName, pivotTableIndex, pivotFieldType, request, folder, storage)
+> CellsCloudResponse cellsPivotTablesDeletePivotTableField(name, sheetName, pivotTableIndex, pivotFieldType, request, folder, storageName)
 
 Delete pivot field into into pivot table
 
@@ -5373,9 +5374,9 @@ Integer pivotTableIndex = 56; // Integer | Pivot table index
 String pivotFieldType = "pivotFieldType_example"; // String | The fields area type.
 PivotTableFieldRequest request = new PivotTableFieldRequest(); // PivotTableFieldRequest | Dto that conrains field indexes
 String folder = "folder_example"; // String | Document's folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    CellsCloudResponse result = apiInstance.cellsPivotTablesDeletePivotTableField(name, sheetName, pivotTableIndex, pivotFieldType, request, folder, storage);
+    CellsCloudResponse result = apiInstance.cellsPivotTablesDeletePivotTableField(name, sheetName, pivotTableIndex, pivotFieldType, request, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsPivotTablesDeletePivotTableField");
@@ -5393,7 +5394,7 @@ Name | Type | Description  | Notes
  **pivotFieldType** | **String**| The fields area type. |
  **request** | [**PivotTableFieldRequest**](PivotTableFieldRequest.md)| Dto that conrains field indexes | [optional]
  **folder** | **String**| Document&#39;s folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -5410,7 +5411,7 @@ No authorization required
 
 <a name="cellsPivotTablesDeleteWorksheetPivotTable"></a>
 # **cellsPivotTablesDeleteWorksheetPivotTable**
-> CellsCloudResponse cellsPivotTablesDeleteWorksheetPivotTable(name, sheetName, pivotTableIndex, folder, storage)
+> CellsCloudResponse cellsPivotTablesDeleteWorksheetPivotTable(name, sheetName, pivotTableIndex, folder, storageName)
 
 Delete worksheet pivot table by index
 
@@ -5426,9 +5427,9 @@ String name = "name_example"; // String | Document name.
 String sheetName = "sheetName_example"; // String | The worksheet name.
 Integer pivotTableIndex = 56; // Integer | Pivot table index
 String folder = "folder_example"; // String | Document's folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    CellsCloudResponse result = apiInstance.cellsPivotTablesDeleteWorksheetPivotTable(name, sheetName, pivotTableIndex, folder, storage);
+    CellsCloudResponse result = apiInstance.cellsPivotTablesDeleteWorksheetPivotTable(name, sheetName, pivotTableIndex, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsPivotTablesDeleteWorksheetPivotTable");
@@ -5444,7 +5445,7 @@ Name | Type | Description  | Notes
  **sheetName** | **String**| The worksheet name. |
  **pivotTableIndex** | **Integer**| Pivot table index |
  **folder** | **String**| Document&#39;s folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -5461,7 +5462,7 @@ No authorization required
 
 <a name="cellsPivotTablesDeleteWorksheetPivotTableFilter"></a>
 # **cellsPivotTablesDeleteWorksheetPivotTableFilter**
-> CellsCloudResponse cellsPivotTablesDeleteWorksheetPivotTableFilter(name, sheetName, pivotTableIndex, fieldIndex, needReCalculate, folder, storage)
+> CellsCloudResponse cellsPivotTablesDeleteWorksheetPivotTableFilter(name, sheetName, pivotTableIndex, fieldIndex, needReCalculate, folder, storageName)
 
 delete  pivot filter for piovt table             
 
@@ -5479,9 +5480,9 @@ Integer pivotTableIndex = 56; // Integer |
 Integer fieldIndex = 56; // Integer | 
 Boolean needReCalculate = false; // Boolean | 
 String folder = "folder_example"; // String | 
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    CellsCloudResponse result = apiInstance.cellsPivotTablesDeleteWorksheetPivotTableFilter(name, sheetName, pivotTableIndex, fieldIndex, needReCalculate, folder, storage);
+    CellsCloudResponse result = apiInstance.cellsPivotTablesDeleteWorksheetPivotTableFilter(name, sheetName, pivotTableIndex, fieldIndex, needReCalculate, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsPivotTablesDeleteWorksheetPivotTableFilter");
@@ -5499,7 +5500,7 @@ Name | Type | Description  | Notes
  **fieldIndex** | **Integer**|  |
  **needReCalculate** | **Boolean**|  | [optional] [default to false]
  **folder** | **String**|  | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -5516,7 +5517,7 @@ No authorization required
 
 <a name="cellsPivotTablesDeleteWorksheetPivotTableFilters"></a>
 # **cellsPivotTablesDeleteWorksheetPivotTableFilters**
-> CellsCloudResponse cellsPivotTablesDeleteWorksheetPivotTableFilters(name, sheetName, pivotTableIndex, needReCalculate, folder, storage)
+> CellsCloudResponse cellsPivotTablesDeleteWorksheetPivotTableFilters(name, sheetName, pivotTableIndex, needReCalculate, folder, storageName)
 
 delete all pivot filters for piovt table
 
@@ -5533,9 +5534,9 @@ String sheetName = "sheetName_example"; // String |
 Integer pivotTableIndex = 56; // Integer | 
 Boolean needReCalculate = false; // Boolean | 
 String folder = "folder_example"; // String | 
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    CellsCloudResponse result = apiInstance.cellsPivotTablesDeleteWorksheetPivotTableFilters(name, sheetName, pivotTableIndex, needReCalculate, folder, storage);
+    CellsCloudResponse result = apiInstance.cellsPivotTablesDeleteWorksheetPivotTableFilters(name, sheetName, pivotTableIndex, needReCalculate, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsPivotTablesDeleteWorksheetPivotTableFilters");
@@ -5552,7 +5553,7 @@ Name | Type | Description  | Notes
  **pivotTableIndex** | **Integer**|  |
  **needReCalculate** | **Boolean**|  | [optional] [default to false]
  **folder** | **String**|  | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -5569,7 +5570,7 @@ No authorization required
 
 <a name="cellsPivotTablesDeleteWorksheetPivotTables"></a>
 # **cellsPivotTablesDeleteWorksheetPivotTables**
-> CellsCloudResponse cellsPivotTablesDeleteWorksheetPivotTables(name, sheetName, folder, storage)
+> CellsCloudResponse cellsPivotTablesDeleteWorksheetPivotTables(name, sheetName, folder, storageName)
 
 Delete worksheet pivot tables
 
@@ -5584,9 +5585,9 @@ CellsApi apiInstance = new CellsApi();
 String name = "name_example"; // String | Document name.
 String sheetName = "sheetName_example"; // String | The worksheet name.
 String folder = "folder_example"; // String | Document's folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    CellsCloudResponse result = apiInstance.cellsPivotTablesDeleteWorksheetPivotTables(name, sheetName, folder, storage);
+    CellsCloudResponse result = apiInstance.cellsPivotTablesDeleteWorksheetPivotTables(name, sheetName, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsPivotTablesDeleteWorksheetPivotTables");
@@ -5601,7 +5602,7 @@ Name | Type | Description  | Notes
  **name** | **String**| Document name. |
  **sheetName** | **String**| The worksheet name. |
  **folder** | **String**| Document&#39;s folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -5618,7 +5619,7 @@ No authorization required
 
 <a name="cellsPivotTablesGetPivotTableField"></a>
 # **cellsPivotTablesGetPivotTableField**
-> PivotFieldResponse cellsPivotTablesGetPivotTableField(name, sheetName, pivotTableIndex, pivotFieldIndex, pivotFieldType, folder, storage)
+> PivotFieldResponse cellsPivotTablesGetPivotTableField(name, sheetName, pivotTableIndex, pivotFieldIndex, pivotFieldType, folder, storageName)
 
 Get pivot field into into pivot table
 
@@ -5636,9 +5637,9 @@ Integer pivotTableIndex = 56; // Integer | Pivot table index
 Integer pivotFieldIndex = 56; // Integer | The field index in the base fields.
 String pivotFieldType = "pivotFieldType_example"; // String | The fields area type.
 String folder = "folder_example"; // String | Document's folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    PivotFieldResponse result = apiInstance.cellsPivotTablesGetPivotTableField(name, sheetName, pivotTableIndex, pivotFieldIndex, pivotFieldType, folder, storage);
+    PivotFieldResponse result = apiInstance.cellsPivotTablesGetPivotTableField(name, sheetName, pivotTableIndex, pivotFieldIndex, pivotFieldType, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsPivotTablesGetPivotTableField");
@@ -5656,7 +5657,7 @@ Name | Type | Description  | Notes
  **pivotFieldIndex** | **Integer**| The field index in the base fields. |
  **pivotFieldType** | **String**| The fields area type. |
  **folder** | **String**| Document&#39;s folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -5673,7 +5674,7 @@ No authorization required
 
 <a name="cellsPivotTablesGetWorksheetPivotTable"></a>
 # **cellsPivotTablesGetWorksheetPivotTable**
-> PivotTableResponse cellsPivotTablesGetWorksheetPivotTable(name, sheetName, pivottableIndex, folder, storage)
+> PivotTableResponse cellsPivotTablesGetWorksheetPivotTable(name, sheetName, pivottableIndex, folder, storageName)
 
 Get worksheet pivottable info by index.
 
@@ -5689,9 +5690,9 @@ String name = "name_example"; // String | Document name.
 String sheetName = "sheetName_example"; // String | The worksheet name.
 Integer pivottableIndex = 56; // Integer | 
 String folder = "folder_example"; // String | Document's folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    PivotTableResponse result = apiInstance.cellsPivotTablesGetWorksheetPivotTable(name, sheetName, pivottableIndex, folder, storage);
+    PivotTableResponse result = apiInstance.cellsPivotTablesGetWorksheetPivotTable(name, sheetName, pivottableIndex, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsPivotTablesGetWorksheetPivotTable");
@@ -5707,7 +5708,7 @@ Name | Type | Description  | Notes
  **sheetName** | **String**| The worksheet name. |
  **pivottableIndex** | **Integer**|  |
  **folder** | **String**| Document&#39;s folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -5724,7 +5725,7 @@ No authorization required
 
 <a name="cellsPivotTablesGetWorksheetPivotTableFilter"></a>
 # **cellsPivotTablesGetWorksheetPivotTableFilter**
-> PivotFilterResponse cellsPivotTablesGetWorksheetPivotTableFilter(name, sheetName, pivotTableIndex, filterIndex, folder, storage)
+> PivotFilterResponse cellsPivotTablesGetWorksheetPivotTableFilter(name, sheetName, pivotTableIndex, filterIndex, folder, storageName)
 
 
 
@@ -5741,9 +5742,9 @@ String sheetName = "sheetName_example"; // String |
 Integer pivotTableIndex = 56; // Integer | 
 Integer filterIndex = 56; // Integer | 
 String folder = "folder_example"; // String | 
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    PivotFilterResponse result = apiInstance.cellsPivotTablesGetWorksheetPivotTableFilter(name, sheetName, pivotTableIndex, filterIndex, folder, storage);
+    PivotFilterResponse result = apiInstance.cellsPivotTablesGetWorksheetPivotTableFilter(name, sheetName, pivotTableIndex, filterIndex, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsPivotTablesGetWorksheetPivotTableFilter");
@@ -5760,7 +5761,7 @@ Name | Type | Description  | Notes
  **pivotTableIndex** | **Integer**|  |
  **filterIndex** | **Integer**|  |
  **folder** | **String**|  | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -5777,7 +5778,7 @@ No authorization required
 
 <a name="cellsPivotTablesGetWorksheetPivotTableFilters"></a>
 # **cellsPivotTablesGetWorksheetPivotTableFilters**
-> PivotFiltersResponse cellsPivotTablesGetWorksheetPivotTableFilters(name, sheetName, pivotTableIndex, folder, storage)
+> PivotFiltersResponse cellsPivotTablesGetWorksheetPivotTableFilters(name, sheetName, pivotTableIndex, folder, storageName)
 
 
 
@@ -5793,9 +5794,9 @@ String name = "name_example"; // String |
 String sheetName = "sheetName_example"; // String | 
 Integer pivotTableIndex = 56; // Integer | 
 String folder = "folder_example"; // String | 
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    PivotFiltersResponse result = apiInstance.cellsPivotTablesGetWorksheetPivotTableFilters(name, sheetName, pivotTableIndex, folder, storage);
+    PivotFiltersResponse result = apiInstance.cellsPivotTablesGetWorksheetPivotTableFilters(name, sheetName, pivotTableIndex, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsPivotTablesGetWorksheetPivotTableFilters");
@@ -5811,7 +5812,7 @@ Name | Type | Description  | Notes
  **sheetName** | **String**|  |
  **pivotTableIndex** | **Integer**|  |
  **folder** | **String**|  | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -5828,7 +5829,7 @@ No authorization required
 
 <a name="cellsPivotTablesGetWorksheetPivotTables"></a>
 # **cellsPivotTablesGetWorksheetPivotTables**
-> PivotTablesResponse cellsPivotTablesGetWorksheetPivotTables(name, sheetName, folder, storage)
+> PivotTablesResponse cellsPivotTablesGetWorksheetPivotTables(name, sheetName, folder, storageName)
 
 Get worksheet pivottables info.
 
@@ -5843,9 +5844,9 @@ CellsApi apiInstance = new CellsApi();
 String name = "name_example"; // String | Document name.
 String sheetName = "sheetName_example"; // String | The worksheet name.
 String folder = "folder_example"; // String | Document's folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    PivotTablesResponse result = apiInstance.cellsPivotTablesGetWorksheetPivotTables(name, sheetName, folder, storage);
+    PivotTablesResponse result = apiInstance.cellsPivotTablesGetWorksheetPivotTables(name, sheetName, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsPivotTablesGetWorksheetPivotTables");
@@ -5860,7 +5861,7 @@ Name | Type | Description  | Notes
  **name** | **String**| Document name. |
  **sheetName** | **String**| The worksheet name. |
  **folder** | **String**| Document&#39;s folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -5877,7 +5878,7 @@ No authorization required
 
 <a name="cellsPivotTablesPostPivotTableCellStyle"></a>
 # **cellsPivotTablesPostPivotTableCellStyle**
-> CellsCloudResponse cellsPivotTablesPostPivotTableCellStyle(name, sheetName, pivotTableIndex, column, row, style, needReCalculate, folder, storage)
+> CellsCloudResponse cellsPivotTablesPostPivotTableCellStyle(name, sheetName, pivotTableIndex, column, row, style, needReCalculate, folder, storageName)
 
 Update cell style for pivot table
 
@@ -5897,9 +5898,9 @@ Integer row = 56; // Integer |
 Style style = new Style(); // Style | Style dto in request body.
 Boolean needReCalculate = false; // Boolean | 
 String folder = "folder_example"; // String | Document's folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    CellsCloudResponse result = apiInstance.cellsPivotTablesPostPivotTableCellStyle(name, sheetName, pivotTableIndex, column, row, style, needReCalculate, folder, storage);
+    CellsCloudResponse result = apiInstance.cellsPivotTablesPostPivotTableCellStyle(name, sheetName, pivotTableIndex, column, row, style, needReCalculate, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsPivotTablesPostPivotTableCellStyle");
@@ -5919,7 +5920,7 @@ Name | Type | Description  | Notes
  **style** | [**Style**](Style.md)| Style dto in request body. | [optional]
  **needReCalculate** | **Boolean**|  | [optional] [default to false]
  **folder** | **String**| Document&#39;s folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -5936,7 +5937,7 @@ No authorization required
 
 <a name="cellsPivotTablesPostPivotTableFieldHideItem"></a>
 # **cellsPivotTablesPostPivotTableFieldHideItem**
-> CellsCloudResponse cellsPivotTablesPostPivotTableFieldHideItem(name, sheetName, pivotTableIndex, pivotFieldType, fieldIndex, itemIndex, isHide, needReCalculate, folder, storage)
+> CellsCloudResponse cellsPivotTablesPostPivotTableFieldHideItem(name, sheetName, pivotTableIndex, pivotFieldType, fieldIndex, itemIndex, isHide, needReCalculate, folder, storageName)
 
 
 
@@ -5957,9 +5958,9 @@ Integer itemIndex = 56; // Integer |
 Boolean isHide = true; // Boolean | 
 Boolean needReCalculate = false; // Boolean | 
 String folder = "folder_example"; // String | 
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    CellsCloudResponse result = apiInstance.cellsPivotTablesPostPivotTableFieldHideItem(name, sheetName, pivotTableIndex, pivotFieldType, fieldIndex, itemIndex, isHide, needReCalculate, folder, storage);
+    CellsCloudResponse result = apiInstance.cellsPivotTablesPostPivotTableFieldHideItem(name, sheetName, pivotTableIndex, pivotFieldType, fieldIndex, itemIndex, isHide, needReCalculate, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsPivotTablesPostPivotTableFieldHideItem");
@@ -5980,7 +5981,7 @@ Name | Type | Description  | Notes
  **isHide** | **Boolean**|  |
  **needReCalculate** | **Boolean**|  | [optional] [default to false]
  **folder** | **String**|  | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -5997,7 +5998,7 @@ No authorization required
 
 <a name="cellsPivotTablesPostPivotTableFieldMoveTo"></a>
 # **cellsPivotTablesPostPivotTableFieldMoveTo**
-> CellsCloudResponse cellsPivotTablesPostPivotTableFieldMoveTo(name, sheetName, pivotTableIndex, fieldIndex, from, to, folder, storage)
+> CellsCloudResponse cellsPivotTablesPostPivotTableFieldMoveTo(name, sheetName, pivotTableIndex, fieldIndex, from, to, folder, storageName)
 
 
 
@@ -6016,9 +6017,9 @@ Integer fieldIndex = 56; // Integer |
 String from = "from_example"; // String | 
 String to = "to_example"; // String | 
 String folder = "folder_example"; // String | 
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    CellsCloudResponse result = apiInstance.cellsPivotTablesPostPivotTableFieldMoveTo(name, sheetName, pivotTableIndex, fieldIndex, from, to, folder, storage);
+    CellsCloudResponse result = apiInstance.cellsPivotTablesPostPivotTableFieldMoveTo(name, sheetName, pivotTableIndex, fieldIndex, from, to, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsPivotTablesPostPivotTableFieldMoveTo");
@@ -6037,7 +6038,7 @@ Name | Type | Description  | Notes
  **from** | **String**|  |
  **to** | **String**|  |
  **folder** | **String**|  | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -6054,7 +6055,7 @@ No authorization required
 
 <a name="cellsPivotTablesPostPivotTableStyle"></a>
 # **cellsPivotTablesPostPivotTableStyle**
-> CellsCloudResponse cellsPivotTablesPostPivotTableStyle(name, sheetName, pivotTableIndex, style, needReCalculate, folder, storage)
+> CellsCloudResponse cellsPivotTablesPostPivotTableStyle(name, sheetName, pivotTableIndex, style, needReCalculate, folder, storageName)
 
 Update style for pivot table
 
@@ -6072,9 +6073,9 @@ Integer pivotTableIndex = 56; // Integer | Pivot table index
 Style style = new Style(); // Style | Style dto in request body.
 Boolean needReCalculate = false; // Boolean | 
 String folder = "folder_example"; // String | Document's folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    CellsCloudResponse result = apiInstance.cellsPivotTablesPostPivotTableStyle(name, sheetName, pivotTableIndex, style, needReCalculate, folder, storage);
+    CellsCloudResponse result = apiInstance.cellsPivotTablesPostPivotTableStyle(name, sheetName, pivotTableIndex, style, needReCalculate, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsPivotTablesPostPivotTableStyle");
@@ -6092,7 +6093,7 @@ Name | Type | Description  | Notes
  **style** | [**Style**](Style.md)| Style dto in request body. | [optional]
  **needReCalculate** | **Boolean**|  | [optional] [default to false]
  **folder** | **String**| Document&#39;s folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -6109,7 +6110,7 @@ No authorization required
 
 <a name="cellsPivotTablesPostWorksheetPivotTableCalculate"></a>
 # **cellsPivotTablesPostWorksheetPivotTableCalculate**
-> CellsCloudResponse cellsPivotTablesPostWorksheetPivotTableCalculate(name, sheetName, pivotTableIndex, folder, storage)
+> CellsCloudResponse cellsPivotTablesPostWorksheetPivotTableCalculate(name, sheetName, pivotTableIndex, folder, storageName)
 
 Calculates pivottable&#39;s data to cells.
 
@@ -6125,9 +6126,9 @@ String name = "name_example"; // String | Document name.
 String sheetName = "sheetName_example"; // String | The worksheet name.
 Integer pivotTableIndex = 56; // Integer | Pivot table index
 String folder = "folder_example"; // String | Document's folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    CellsCloudResponse result = apiInstance.cellsPivotTablesPostWorksheetPivotTableCalculate(name, sheetName, pivotTableIndex, folder, storage);
+    CellsCloudResponse result = apiInstance.cellsPivotTablesPostWorksheetPivotTableCalculate(name, sheetName, pivotTableIndex, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsPivotTablesPostWorksheetPivotTableCalculate");
@@ -6143,7 +6144,7 @@ Name | Type | Description  | Notes
  **sheetName** | **String**| The worksheet name. |
  **pivotTableIndex** | **Integer**| Pivot table index |
  **folder** | **String**| Document&#39;s folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -6160,7 +6161,7 @@ No authorization required
 
 <a name="cellsPivotTablesPostWorksheetPivotTableMove"></a>
 # **cellsPivotTablesPostWorksheetPivotTableMove**
-> CellsCloudResponse cellsPivotTablesPostWorksheetPivotTableMove(name, sheetName, pivotTableIndex, row, column, destCellName, folder, storage)
+> CellsCloudResponse cellsPivotTablesPostWorksheetPivotTableMove(name, sheetName, pivotTableIndex, row, column, destCellName, folder, storageName)
 
 
 
@@ -6179,9 +6180,9 @@ Integer row = 56; // Integer |
 Integer column = 56; // Integer | 
 String destCellName = "destCellName_example"; // String | 
 String folder = "folder_example"; // String | 
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    CellsCloudResponse result = apiInstance.cellsPivotTablesPostWorksheetPivotTableMove(name, sheetName, pivotTableIndex, row, column, destCellName, folder, storage);
+    CellsCloudResponse result = apiInstance.cellsPivotTablesPostWorksheetPivotTableMove(name, sheetName, pivotTableIndex, row, column, destCellName, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsPivotTablesPostWorksheetPivotTableMove");
@@ -6200,7 +6201,7 @@ Name | Type | Description  | Notes
  **column** | **Integer**|  | [optional]
  **destCellName** | **String**|  | [optional]
  **folder** | **String**|  | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -6217,7 +6218,7 @@ No authorization required
 
 <a name="cellsPivotTablesPutPivotTableField"></a>
 # **cellsPivotTablesPutPivotTableField**
-> CellsCloudResponse cellsPivotTablesPutPivotTableField(name, sheetName, pivotTableIndex, pivotFieldType, request, needReCalculate, folder, storage)
+> CellsCloudResponse cellsPivotTablesPutPivotTableField(name, sheetName, pivotTableIndex, pivotFieldType, request, needReCalculate, folder, storageName)
 
 Add pivot field into into pivot table
 
@@ -6236,9 +6237,9 @@ String pivotFieldType = "pivotFieldType_example"; // String | The fields area ty
 PivotTableFieldRequest request = new PivotTableFieldRequest(); // PivotTableFieldRequest | Dto that conrains field indexes
 Boolean needReCalculate = false; // Boolean | 
 String folder = "folder_example"; // String | Document's folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    CellsCloudResponse result = apiInstance.cellsPivotTablesPutPivotTableField(name, sheetName, pivotTableIndex, pivotFieldType, request, needReCalculate, folder, storage);
+    CellsCloudResponse result = apiInstance.cellsPivotTablesPutPivotTableField(name, sheetName, pivotTableIndex, pivotFieldType, request, needReCalculate, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsPivotTablesPutPivotTableField");
@@ -6257,7 +6258,7 @@ Name | Type | Description  | Notes
  **request** | [**PivotTableFieldRequest**](PivotTableFieldRequest.md)| Dto that conrains field indexes | [optional]
  **needReCalculate** | **Boolean**|  | [optional] [default to false]
  **folder** | **String**| Document&#39;s folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -6274,7 +6275,7 @@ No authorization required
 
 <a name="cellsPivotTablesPutWorksheetPivotTable"></a>
 # **cellsPivotTablesPutWorksheetPivotTable**
-> PivotTableResponse cellsPivotTablesPutWorksheetPivotTable(name, sheetName, request, folder, storage, sourceData, destCellName, tableName, useSameSource)
+> PivotTableResponse cellsPivotTablesPutWorksheetPivotTable(name, sheetName, request, folder, storageName, sourceData, destCellName, tableName, useSameSource)
 
 Add a pivot table into worksheet.
 
@@ -6290,13 +6291,13 @@ String name = "name_example"; // String | Document name.
 String sheetName = "sheetName_example"; // String | The worksheet name.
 CreatePivotTableRequest request = new CreatePivotTableRequest(); // CreatePivotTableRequest | CreatePivotTableRequest dto in request body.
 String folder = "folder_example"; // String | Document's folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 String sourceData = "sourceData_example"; // String | The data for the new PivotTable cache.
 String destCellName = "destCellName_example"; // String | The cell in the upper-left corner of the PivotTable report's destination range.
 String tableName = "tableName_example"; // String | The name of the new PivotTable report.
 Boolean useSameSource = true; // Boolean | Indicates whether using same data source when another existing pivot table has used this data source. If the property is true, it will save memory.
 try {
-    PivotTableResponse result = apiInstance.cellsPivotTablesPutWorksheetPivotTable(name, sheetName, request, folder, storage, sourceData, destCellName, tableName, useSameSource);
+    PivotTableResponse result = apiInstance.cellsPivotTablesPutWorksheetPivotTable(name, sheetName, request, folder, storageName, sourceData, destCellName, tableName, useSameSource);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsPivotTablesPutWorksheetPivotTable");
@@ -6312,7 +6313,7 @@ Name | Type | Description  | Notes
  **sheetName** | **String**| The worksheet name. |
  **request** | [**CreatePivotTableRequest**](CreatePivotTableRequest.md)| CreatePivotTableRequest dto in request body. | [optional]
  **folder** | **String**| Document&#39;s folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
  **sourceData** | **String**| The data for the new PivotTable cache. | [optional]
  **destCellName** | **String**| The cell in the upper-left corner of the PivotTable report&#39;s destination range. | [optional]
  **tableName** | **String**| The name of the new PivotTable report. | [optional]
@@ -6333,7 +6334,7 @@ No authorization required
 
 <a name="cellsPivotTablesPutWorksheetPivotTableFilter"></a>
 # **cellsPivotTablesPutWorksheetPivotTableFilter**
-> CellsCloudResponse cellsPivotTablesPutWorksheetPivotTableFilter(name, sheetName, pivotTableIndex, filter, needReCalculate, folder, storage)
+> CellsCloudResponse cellsPivotTablesPutWorksheetPivotTableFilter(name, sheetName, pivotTableIndex, filter, needReCalculate, folder, storageName)
 
 Add pivot filter for piovt table index
 
@@ -6351,9 +6352,9 @@ Integer pivotTableIndex = 56; // Integer |
 PivotFilter filter = new PivotFilter(); // PivotFilter | 
 Boolean needReCalculate = false; // Boolean | 
 String folder = "folder_example"; // String | 
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    CellsCloudResponse result = apiInstance.cellsPivotTablesPutWorksheetPivotTableFilter(name, sheetName, pivotTableIndex, filter, needReCalculate, folder, storage);
+    CellsCloudResponse result = apiInstance.cellsPivotTablesPutWorksheetPivotTableFilter(name, sheetName, pivotTableIndex, filter, needReCalculate, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsPivotTablesPutWorksheetPivotTableFilter");
@@ -6371,7 +6372,7 @@ Name | Type | Description  | Notes
  **filter** | [**PivotFilter**](PivotFilter.md)|  | [optional]
  **needReCalculate** | **Boolean**|  | [optional] [default to false]
  **folder** | **String**|  | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -6388,7 +6389,7 @@ No authorization required
 
 <a name="cellsPostCellCalculate"></a>
 # **cellsPostCellCalculate**
-> CellsCloudResponse cellsPostCellCalculate(name, sheetName, cellName, options, folder, storage)
+> CellsCloudResponse cellsPostCellCalculate(name, sheetName, cellName, options, folder, storageName)
 
 Cell calculate formula
 
@@ -6405,9 +6406,9 @@ String sheetName = "sheetName_example"; // String |
 String cellName = "cellName_example"; // String | 
 CalculationOptions options = new CalculationOptions(); // CalculationOptions | 
 String folder = "folder_example"; // String | 
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    CellsCloudResponse result = apiInstance.cellsPostCellCalculate(name, sheetName, cellName, options, folder, storage);
+    CellsCloudResponse result = apiInstance.cellsPostCellCalculate(name, sheetName, cellName, options, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsPostCellCalculate");
@@ -6424,7 +6425,7 @@ Name | Type | Description  | Notes
  **cellName** | **String**|  |
  **options** | [**CalculationOptions**](CalculationOptions.md)|  | [optional]
  **folder** | **String**|  | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -6441,7 +6442,7 @@ No authorization required
 
 <a name="cellsPostCellCharacters"></a>
 # **cellsPostCellCharacters**
-> CellsCloudResponse cellsPostCellCharacters(name, sheetName, cellName, options, folder, storage)
+> CellsCloudResponse cellsPostCellCharacters(name, sheetName, cellName, options, folder, storageName)
 
 Set cell characters 
 
@@ -6458,9 +6459,9 @@ String sheetName = "sheetName_example"; // String |
 String cellName = "cellName_example"; // String | 
 List<FontSetting> options = Arrays.asList(new FontSetting()); // List<FontSetting> | 
 String folder = "folder_example"; // String | 
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    CellsCloudResponse result = apiInstance.cellsPostCellCharacters(name, sheetName, cellName, options, folder, storage);
+    CellsCloudResponse result = apiInstance.cellsPostCellCharacters(name, sheetName, cellName, options, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsPostCellCharacters");
@@ -6477,7 +6478,7 @@ Name | Type | Description  | Notes
  **cellName** | **String**|  |
  **options** | [**List&lt;FontSetting&gt;**](FontSetting.md)|  | [optional]
  **folder** | **String**|  | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -6494,7 +6495,7 @@ No authorization required
 
 <a name="cellsPostClearContents"></a>
 # **cellsPostClearContents**
-> CellsCloudResponse cellsPostClearContents(name, sheetName, range, startRow, startColumn, endRow, endColumn, folder, storage)
+> CellsCloudResponse cellsPostClearContents(name, sheetName, range, startRow, startColumn, endRow, endColumn, folder, storageName)
 
 Clear cells contents.
 
@@ -6514,9 +6515,9 @@ Integer startColumn = 56; // Integer | The start column.
 Integer endRow = 56; // Integer | The end row.
 Integer endColumn = 56; // Integer | The end column.
 String folder = "folder_example"; // String | The workbook folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    CellsCloudResponse result = apiInstance.cellsPostClearContents(name, sheetName, range, startRow, startColumn, endRow, endColumn, folder, storage);
+    CellsCloudResponse result = apiInstance.cellsPostClearContents(name, sheetName, range, startRow, startColumn, endRow, endColumn, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsPostClearContents");
@@ -6536,7 +6537,7 @@ Name | Type | Description  | Notes
  **endRow** | **Integer**| The end row. | [optional]
  **endColumn** | **Integer**| The end column. | [optional]
  **folder** | **String**| The workbook folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -6553,7 +6554,7 @@ No authorization required
 
 <a name="cellsPostClearFormats"></a>
 # **cellsPostClearFormats**
-> CellsCloudResponse cellsPostClearFormats(name, sheetName, range, startRow, startColumn, endRow, endColumn, folder, storage)
+> CellsCloudResponse cellsPostClearFormats(name, sheetName, range, startRow, startColumn, endRow, endColumn, folder, storageName)
 
 Clear cells contents.
 
@@ -6573,9 +6574,9 @@ Integer startColumn = 56; // Integer | The start column.
 Integer endRow = 56; // Integer | The end row.
 Integer endColumn = 56; // Integer | The end column.
 String folder = "folder_example"; // String | The workbook folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    CellsCloudResponse result = apiInstance.cellsPostClearFormats(name, sheetName, range, startRow, startColumn, endRow, endColumn, folder, storage);
+    CellsCloudResponse result = apiInstance.cellsPostClearFormats(name, sheetName, range, startRow, startColumn, endRow, endColumn, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsPostClearFormats");
@@ -6595,7 +6596,7 @@ Name | Type | Description  | Notes
  **endRow** | **Integer**| The end row. | [optional]
  **endColumn** | **Integer**| The end column. | [optional]
  **folder** | **String**| The workbook folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -6612,7 +6613,7 @@ No authorization required
 
 <a name="cellsPostColumnStyle"></a>
 # **cellsPostColumnStyle**
-> CellsCloudResponse cellsPostColumnStyle(name, sheetName, columnIndex, style, folder, storage)
+> CellsCloudResponse cellsPostColumnStyle(name, sheetName, columnIndex, style, folder, storageName)
 
 Set column style
 
@@ -6629,9 +6630,9 @@ String sheetName = "sheetName_example"; // String | The worksheet name.
 Integer columnIndex = 56; // Integer | The column index.
 Style style = new Style(); // Style | Style dto
 String folder = "folder_example"; // String | The workbook folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    CellsCloudResponse result = apiInstance.cellsPostColumnStyle(name, sheetName, columnIndex, style, folder, storage);
+    CellsCloudResponse result = apiInstance.cellsPostColumnStyle(name, sheetName, columnIndex, style, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsPostColumnStyle");
@@ -6648,7 +6649,7 @@ Name | Type | Description  | Notes
  **columnIndex** | **Integer**| The column index. |
  **style** | [**Style**](Style.md)| Style dto | [optional]
  **folder** | **String**| The workbook folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -6665,7 +6666,7 @@ No authorization required
 
 <a name="cellsPostCopyCellIntoCell"></a>
 # **cellsPostCopyCellIntoCell**
-> CellsCloudResponse cellsPostCopyCellIntoCell(name, destCellName, sheetName, worksheet, cellname, row, column, folder, storage)
+> CellsCloudResponse cellsPostCopyCellIntoCell(name, destCellName, sheetName, worksheet, cellname, row, column, folder, storageName)
 
 Copy cell into cell
 
@@ -6685,9 +6686,9 @@ String cellname = "cellname_example"; // String | Source cell name
 Integer row = 56; // Integer | Source row
 Integer column = 56; // Integer | Source column
 String folder = "folder_example"; // String | Folder name
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    CellsCloudResponse result = apiInstance.cellsPostCopyCellIntoCell(name, destCellName, sheetName, worksheet, cellname, row, column, folder, storage);
+    CellsCloudResponse result = apiInstance.cellsPostCopyCellIntoCell(name, destCellName, sheetName, worksheet, cellname, row, column, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsPostCopyCellIntoCell");
@@ -6707,7 +6708,7 @@ Name | Type | Description  | Notes
  **row** | **Integer**| Source row | [optional]
  **column** | **Integer**| Source column | [optional]
  **folder** | **String**| Folder name | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -6724,7 +6725,7 @@ No authorization required
 
 <a name="cellsPostCopyWorksheetColumns"></a>
 # **cellsPostCopyWorksheetColumns**
-> CellsCloudResponse cellsPostCopyWorksheetColumns(name, sheetName, sourceColumnIndex, destinationColumnIndex, columnNumber, worksheet, folder, storage)
+> CellsCloudResponse cellsPostCopyWorksheetColumns(name, sheetName, sourceColumnIndex, destinationColumnIndex, columnNumber, worksheet, folder, storageName)
 
 Copy worksheet columns.
 
@@ -6743,9 +6744,9 @@ Integer destinationColumnIndex = 56; // Integer | Destination column index
 Integer columnNumber = 56; // Integer | The copied column number
 String worksheet = ""; // String | The Worksheet
 String folder = "folder_example"; // String | The document folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    CellsCloudResponse result = apiInstance.cellsPostCopyWorksheetColumns(name, sheetName, sourceColumnIndex, destinationColumnIndex, columnNumber, worksheet, folder, storage);
+    CellsCloudResponse result = apiInstance.cellsPostCopyWorksheetColumns(name, sheetName, sourceColumnIndex, destinationColumnIndex, columnNumber, worksheet, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsPostCopyWorksheetColumns");
@@ -6764,7 +6765,7 @@ Name | Type | Description  | Notes
  **columnNumber** | **Integer**| The copied column number |
  **worksheet** | **String**| The Worksheet | [optional] [default to ]
  **folder** | **String**| The document folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -6781,7 +6782,7 @@ No authorization required
 
 <a name="cellsPostCopyWorksheetRows"></a>
 # **cellsPostCopyWorksheetRows**
-> CellsCloudResponse cellsPostCopyWorksheetRows(name, sheetName, sourceRowIndex, destinationRowIndex, rowNumber, worksheet, folder, storage)
+> CellsCloudResponse cellsPostCopyWorksheetRows(name, sheetName, sourceRowIndex, destinationRowIndex, rowNumber, worksheet, folder, storageName)
 
 Copy worksheet rows.
 
@@ -6800,9 +6801,9 @@ Integer destinationRowIndex = 56; // Integer | Destination row index
 Integer rowNumber = 56; // Integer | The copied row number
 String worksheet = "worksheet_example"; // String | worksheet
 String folder = "folder_example"; // String | The document folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    CellsCloudResponse result = apiInstance.cellsPostCopyWorksheetRows(name, sheetName, sourceRowIndex, destinationRowIndex, rowNumber, worksheet, folder, storage);
+    CellsCloudResponse result = apiInstance.cellsPostCopyWorksheetRows(name, sheetName, sourceRowIndex, destinationRowIndex, rowNumber, worksheet, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsPostCopyWorksheetRows");
@@ -6821,7 +6822,7 @@ Name | Type | Description  | Notes
  **rowNumber** | **Integer**| The copied row number |
  **worksheet** | **String**| worksheet | [optional]
  **folder** | **String**| The document folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -6838,7 +6839,7 @@ No authorization required
 
 <a name="cellsPostGroupWorksheetColumns"></a>
 # **cellsPostGroupWorksheetColumns**
-> CellsCloudResponse cellsPostGroupWorksheetColumns(name, sheetName, firstIndex, lastIndex, hide, folder, storage)
+> CellsCloudResponse cellsPostGroupWorksheetColumns(name, sheetName, firstIndex, lastIndex, hide, folder, storageName)
 
 Group worksheet columns.
 
@@ -6856,9 +6857,9 @@ Integer firstIndex = 56; // Integer | The first column index to be operated.
 Integer lastIndex = 56; // Integer | The last column index to be operated.
 Boolean hide = true; // Boolean | columns visible state
 String folder = "folder_example"; // String | The document folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    CellsCloudResponse result = apiInstance.cellsPostGroupWorksheetColumns(name, sheetName, firstIndex, lastIndex, hide, folder, storage);
+    CellsCloudResponse result = apiInstance.cellsPostGroupWorksheetColumns(name, sheetName, firstIndex, lastIndex, hide, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsPostGroupWorksheetColumns");
@@ -6876,7 +6877,7 @@ Name | Type | Description  | Notes
  **lastIndex** | **Integer**| The last column index to be operated. |
  **hide** | **Boolean**| columns visible state | [optional]
  **folder** | **String**| The document folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -6893,7 +6894,7 @@ No authorization required
 
 <a name="cellsPostGroupWorksheetRows"></a>
 # **cellsPostGroupWorksheetRows**
-> CellsCloudResponse cellsPostGroupWorksheetRows(name, sheetName, firstIndex, lastIndex, hide, folder, storage)
+> CellsCloudResponse cellsPostGroupWorksheetRows(name, sheetName, firstIndex, lastIndex, hide, folder, storageName)
 
 Group worksheet rows.
 
@@ -6911,9 +6912,9 @@ Integer firstIndex = 56; // Integer | The first row index to be operated.
 Integer lastIndex = 56; // Integer | The last row index to be operated.
 Boolean hide = true; // Boolean | rows visible state
 String folder = "folder_example"; // String | The document folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    CellsCloudResponse result = apiInstance.cellsPostGroupWorksheetRows(name, sheetName, firstIndex, lastIndex, hide, folder, storage);
+    CellsCloudResponse result = apiInstance.cellsPostGroupWorksheetRows(name, sheetName, firstIndex, lastIndex, hide, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsPostGroupWorksheetRows");
@@ -6931,7 +6932,7 @@ Name | Type | Description  | Notes
  **lastIndex** | **Integer**| The last row index to be operated. |
  **hide** | **Boolean**| rows visible state | [optional]
  **folder** | **String**| The document folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -6948,7 +6949,7 @@ No authorization required
 
 <a name="cellsPostHideWorksheetColumns"></a>
 # **cellsPostHideWorksheetColumns**
-> CellsCloudResponse cellsPostHideWorksheetColumns(name, sheetName, startColumn, totalColumns, folder, storage)
+> CellsCloudResponse cellsPostHideWorksheetColumns(name, sheetName, startColumn, totalColumns, folder, storageName)
 
 Hide worksheet columns.
 
@@ -6965,9 +6966,9 @@ String sheetName = "sheetName_example"; // String | The worksheet name.
 Integer startColumn = 56; // Integer | The begin column index to be operated.
 Integer totalColumns = 56; // Integer | Number of columns to be operated.
 String folder = "folder_example"; // String | The document folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    CellsCloudResponse result = apiInstance.cellsPostHideWorksheetColumns(name, sheetName, startColumn, totalColumns, folder, storage);
+    CellsCloudResponse result = apiInstance.cellsPostHideWorksheetColumns(name, sheetName, startColumn, totalColumns, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsPostHideWorksheetColumns");
@@ -6984,7 +6985,7 @@ Name | Type | Description  | Notes
  **startColumn** | **Integer**| The begin column index to be operated. |
  **totalColumns** | **Integer**| Number of columns to be operated. |
  **folder** | **String**| The document folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -7001,7 +7002,7 @@ No authorization required
 
 <a name="cellsPostHideWorksheetRows"></a>
 # **cellsPostHideWorksheetRows**
-> CellsCloudResponse cellsPostHideWorksheetRows(name, sheetName, startrow, totalRows, folder, storage)
+> CellsCloudResponse cellsPostHideWorksheetRows(name, sheetName, startrow, totalRows, folder, storageName)
 
 Hide worksheet rows.
 
@@ -7018,9 +7019,9 @@ String sheetName = "sheetName_example"; // String | The worksheet name.
 Integer startrow = 56; // Integer | The begin row index to be operated.
 Integer totalRows = 56; // Integer | Number of rows to be operated.
 String folder = "folder_example"; // String | The document folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    CellsCloudResponse result = apiInstance.cellsPostHideWorksheetRows(name, sheetName, startrow, totalRows, folder, storage);
+    CellsCloudResponse result = apiInstance.cellsPostHideWorksheetRows(name, sheetName, startrow, totalRows, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsPostHideWorksheetRows");
@@ -7037,7 +7038,7 @@ Name | Type | Description  | Notes
  **startrow** | **Integer**| The begin row index to be operated. |
  **totalRows** | **Integer**| Number of rows to be operated. |
  **folder** | **String**| The document folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -7054,7 +7055,7 @@ No authorization required
 
 <a name="cellsPostRowStyle"></a>
 # **cellsPostRowStyle**
-> CellsCloudResponse cellsPostRowStyle(name, sheetName, rowIndex, style, folder, storage)
+> CellsCloudResponse cellsPostRowStyle(name, sheetName, rowIndex, style, folder, storageName)
 
 Set row style.
 
@@ -7071,9 +7072,9 @@ String sheetName = "sheetName_example"; // String | The worksheet name.
 Integer rowIndex = 56; // Integer | The row index.
 Style style = new Style(); // Style | Style dto
 String folder = "folder_example"; // String | The document folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    CellsCloudResponse result = apiInstance.cellsPostRowStyle(name, sheetName, rowIndex, style, folder, storage);
+    CellsCloudResponse result = apiInstance.cellsPostRowStyle(name, sheetName, rowIndex, style, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsPostRowStyle");
@@ -7090,7 +7091,7 @@ Name | Type | Description  | Notes
  **rowIndex** | **Integer**| The row index. |
  **style** | [**Style**](Style.md)| Style dto | [optional]
  **folder** | **String**| The document folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -7107,7 +7108,7 @@ No authorization required
 
 <a name="cellsPostSetCellHtmlString"></a>
 # **cellsPostSetCellHtmlString**
-> CellResponse cellsPostSetCellHtmlString(name, sheetName, cellName, htmlString, folder, storage)
+> CellResponse cellsPostSetCellHtmlString(name, sheetName, cellName, htmlString, folder, storageName)
 
 Set htmlstring value into cell
 
@@ -7124,9 +7125,9 @@ String sheetName = "sheetName_example"; // String | Worksheet name.
 String cellName = "cellName_example"; // String | The cell name.
 byte[] htmlString = BINARY_DATA_HERE; // byte[] | 
 String folder = "folder_example"; // String | The workbook folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    CellResponse result = apiInstance.cellsPostSetCellHtmlString(name, sheetName, cellName, htmlString, folder, storage);
+    CellResponse result = apiInstance.cellsPostSetCellHtmlString(name, sheetName, cellName, htmlString, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsPostSetCellHtmlString");
@@ -7143,7 +7144,7 @@ Name | Type | Description  | Notes
  **cellName** | **String**| The cell name. |
  **htmlString** | **byte[]**|  |
  **folder** | **String**| The workbook folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -7160,7 +7161,7 @@ No authorization required
 
 <a name="cellsPostSetCellRangeValue"></a>
 # **cellsPostSetCellRangeValue**
-> CellsCloudResponse cellsPostSetCellRangeValue(name, sheetName, cellarea, value, type, folder, storage)
+> CellsCloudResponse cellsPostSetCellRangeValue(name, sheetName, cellarea, value, type, folder, storageName)
 
 Set cell range value 
 
@@ -7178,9 +7179,9 @@ String cellarea = "cellarea_example"; // String | Cell area (like \"A1:C2\")
 String value = "value_example"; // String | Range value
 String type = "type_example"; // String | Value data type (like \"int\")
 String folder = "folder_example"; // String | Folder name
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    CellsCloudResponse result = apiInstance.cellsPostSetCellRangeValue(name, sheetName, cellarea, value, type, folder, storage);
+    CellsCloudResponse result = apiInstance.cellsPostSetCellRangeValue(name, sheetName, cellarea, value, type, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsPostSetCellRangeValue");
@@ -7198,7 +7199,7 @@ Name | Type | Description  | Notes
  **value** | **String**| Range value |
  **type** | **String**| Value data type (like \&quot;int\&quot;) |
  **folder** | **String**| Folder name | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -7215,7 +7216,7 @@ No authorization required
 
 <a name="cellsPostSetWorksheetColumnWidth"></a>
 # **cellsPostSetWorksheetColumnWidth**
-> ColumnResponse cellsPostSetWorksheetColumnWidth(name, sheetName, columnIndex, width, folder, storage)
+> ColumnResponse cellsPostSetWorksheetColumnWidth(name, sheetName, columnIndex, width, folder, storageName)
 
 Set worksheet column width.
 
@@ -7232,9 +7233,9 @@ String sheetName = "sheetName_example"; // String | The worksheet name.
 Integer columnIndex = 56; // Integer | The column index.
 Double width = 3.4D; // Double | The width.
 String folder = "folder_example"; // String | The workbook folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    ColumnResponse result = apiInstance.cellsPostSetWorksheetColumnWidth(name, sheetName, columnIndex, width, folder, storage);
+    ColumnResponse result = apiInstance.cellsPostSetWorksheetColumnWidth(name, sheetName, columnIndex, width, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsPostSetWorksheetColumnWidth");
@@ -7251,7 +7252,7 @@ Name | Type | Description  | Notes
  **columnIndex** | **Integer**| The column index. |
  **width** | **Double**| The width. |
  **folder** | **String**| The workbook folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -7268,7 +7269,7 @@ No authorization required
 
 <a name="cellsPostUngroupWorksheetColumns"></a>
 # **cellsPostUngroupWorksheetColumns**
-> CellsCloudResponse cellsPostUngroupWorksheetColumns(name, sheetName, firstIndex, lastIndex, folder, storage)
+> CellsCloudResponse cellsPostUngroupWorksheetColumns(name, sheetName, firstIndex, lastIndex, folder, storageName)
 
 Ungroup worksheet columns.
 
@@ -7285,9 +7286,9 @@ String sheetName = "sheetName_example"; // String | The worksheet name.
 Integer firstIndex = 56; // Integer | The first column index to be operated.
 Integer lastIndex = 56; // Integer | The last column index to be operated.
 String folder = "folder_example"; // String | The document folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    CellsCloudResponse result = apiInstance.cellsPostUngroupWorksheetColumns(name, sheetName, firstIndex, lastIndex, folder, storage);
+    CellsCloudResponse result = apiInstance.cellsPostUngroupWorksheetColumns(name, sheetName, firstIndex, lastIndex, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsPostUngroupWorksheetColumns");
@@ -7304,7 +7305,7 @@ Name | Type | Description  | Notes
  **firstIndex** | **Integer**| The first column index to be operated. |
  **lastIndex** | **Integer**| The last column index to be operated. |
  **folder** | **String**| The document folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -7321,7 +7322,7 @@ No authorization required
 
 <a name="cellsPostUngroupWorksheetRows"></a>
 # **cellsPostUngroupWorksheetRows**
-> CellsCloudResponse cellsPostUngroupWorksheetRows(name, sheetName, firstIndex, lastIndex, isAll, folder, storage)
+> CellsCloudResponse cellsPostUngroupWorksheetRows(name, sheetName, firstIndex, lastIndex, isAll, folder, storageName)
 
 Ungroup worksheet rows.
 
@@ -7339,9 +7340,9 @@ Integer firstIndex = 56; // Integer | The first row index to be operated.
 Integer lastIndex = 56; // Integer | The last row index to be operated.
 Boolean isAll = true; // Boolean | Is all row to be operated
 String folder = "folder_example"; // String | The document folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    CellsCloudResponse result = apiInstance.cellsPostUngroupWorksheetRows(name, sheetName, firstIndex, lastIndex, isAll, folder, storage);
+    CellsCloudResponse result = apiInstance.cellsPostUngroupWorksheetRows(name, sheetName, firstIndex, lastIndex, isAll, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsPostUngroupWorksheetRows");
@@ -7359,7 +7360,7 @@ Name | Type | Description  | Notes
  **lastIndex** | **Integer**| The last row index to be operated. |
  **isAll** | **Boolean**| Is all row to be operated | [optional]
  **folder** | **String**| The document folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -7376,7 +7377,7 @@ No authorization required
 
 <a name="cellsPostUnhideWorksheetColumns"></a>
 # **cellsPostUnhideWorksheetColumns**
-> CellsCloudResponse cellsPostUnhideWorksheetColumns(name, sheetName, startcolumn, totalColumns, width, folder, storage)
+> CellsCloudResponse cellsPostUnhideWorksheetColumns(name, sheetName, startcolumn, totalColumns, width, folder, storageName)
 
 Unhide worksheet columns.
 
@@ -7394,9 +7395,9 @@ Integer startcolumn = 56; // Integer | The begin column index to be operated.
 Integer totalColumns = 56; // Integer | Number of columns to be operated.
 Double width = 3.4D; // Double | The new column width.
 String folder = "folder_example"; // String | The document folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    CellsCloudResponse result = apiInstance.cellsPostUnhideWorksheetColumns(name, sheetName, startcolumn, totalColumns, width, folder, storage);
+    CellsCloudResponse result = apiInstance.cellsPostUnhideWorksheetColumns(name, sheetName, startcolumn, totalColumns, width, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsPostUnhideWorksheetColumns");
@@ -7414,7 +7415,7 @@ Name | Type | Description  | Notes
  **totalColumns** | **Integer**| Number of columns to be operated. |
  **width** | **Double**| The new column width. | [optional] [default to 50.0]
  **folder** | **String**| The document folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -7431,7 +7432,7 @@ No authorization required
 
 <a name="cellsPostUnhideWorksheetRows"></a>
 # **cellsPostUnhideWorksheetRows**
-> CellsCloudResponse cellsPostUnhideWorksheetRows(name, sheetName, startrow, totalRows, height, folder, storage)
+> CellsCloudResponse cellsPostUnhideWorksheetRows(name, sheetName, startrow, totalRows, height, folder, storageName)
 
 Unhide worksheet rows.
 
@@ -7449,9 +7450,9 @@ Integer startrow = 56; // Integer | The begin row index to be operated.
 Integer totalRows = 56; // Integer | Number of rows to be operated.
 Double height = 3.4D; // Double | The new row height.
 String folder = "folder_example"; // String | The document folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    CellsCloudResponse result = apiInstance.cellsPostUnhideWorksheetRows(name, sheetName, startrow, totalRows, height, folder, storage);
+    CellsCloudResponse result = apiInstance.cellsPostUnhideWorksheetRows(name, sheetName, startrow, totalRows, height, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsPostUnhideWorksheetRows");
@@ -7469,7 +7470,7 @@ Name | Type | Description  | Notes
  **totalRows** | **Integer**| Number of rows to be operated. |
  **height** | **Double**| The new row height. | [optional] [default to 15.0]
  **folder** | **String**| The document folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -7486,7 +7487,7 @@ No authorization required
 
 <a name="cellsPostUpdateWorksheetCellStyle"></a>
 # **cellsPostUpdateWorksheetCellStyle**
-> StyleResponse cellsPostUpdateWorksheetCellStyle(name, sheetName, cellName, style, folder, storage)
+> StyleResponse cellsPostUpdateWorksheetCellStyle(name, sheetName, cellName, style, folder, storageName)
 
 Update cell&#39;s style.
 
@@ -7503,9 +7504,9 @@ String sheetName = "sheetName_example"; // String | Worksheet name.
 String cellName = "cellName_example"; // String | The cell name.
 Style style = new Style(); // Style | with update style settings.
 String folder = "folder_example"; // String | The workbook folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    StyleResponse result = apiInstance.cellsPostUpdateWorksheetCellStyle(name, sheetName, cellName, style, folder, storage);
+    StyleResponse result = apiInstance.cellsPostUpdateWorksheetCellStyle(name, sheetName, cellName, style, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsPostUpdateWorksheetCellStyle");
@@ -7522,7 +7523,7 @@ Name | Type | Description  | Notes
  **cellName** | **String**| The cell name. |
  **style** | [**Style**](Style.md)| with update style settings. | [optional]
  **folder** | **String**| The workbook folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -7539,7 +7540,7 @@ No authorization required
 
 <a name="cellsPostUpdateWorksheetRangeStyle"></a>
 # **cellsPostUpdateWorksheetRangeStyle**
-> CellsCloudResponse cellsPostUpdateWorksheetRangeStyle(name, sheetName, range, style, folder, storage)
+> CellsCloudResponse cellsPostUpdateWorksheetRangeStyle(name, sheetName, range, style, folder, storageName)
 
 Update cell&#39;s range style.
 
@@ -7556,9 +7557,9 @@ String sheetName = "sheetName_example"; // String | Worksheet name.
 String range = "range_example"; // String | The range.
 Style style = new Style(); // Style | with update style settings.
 String folder = "folder_example"; // String | The workbook folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    CellsCloudResponse result = apiInstance.cellsPostUpdateWorksheetRangeStyle(name, sheetName, range, style, folder, storage);
+    CellsCloudResponse result = apiInstance.cellsPostUpdateWorksheetRangeStyle(name, sheetName, range, style, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsPostUpdateWorksheetRangeStyle");
@@ -7575,7 +7576,7 @@ Name | Type | Description  | Notes
  **range** | **String**| The range. |
  **style** | [**Style**](Style.md)| with update style settings. | [optional]
  **folder** | **String**| The workbook folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -7592,7 +7593,7 @@ No authorization required
 
 <a name="cellsPostUpdateWorksheetRow"></a>
 # **cellsPostUpdateWorksheetRow**
-> RowResponse cellsPostUpdateWorksheetRow(name, sheetName, rowIndex, height, folder, storage)
+> RowResponse cellsPostUpdateWorksheetRow(name, sheetName, rowIndex, height, folder, storageName)
 
 Update worksheet row.
 
@@ -7609,9 +7610,9 @@ String sheetName = "sheetName_example"; // String | The worksheet name.
 Integer rowIndex = 56; // Integer | The row index.
 Double height = 3.4D; // Double | The new row height.
 String folder = "folder_example"; // String | The document folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    RowResponse result = apiInstance.cellsPostUpdateWorksheetRow(name, sheetName, rowIndex, height, folder, storage);
+    RowResponse result = apiInstance.cellsPostUpdateWorksheetRow(name, sheetName, rowIndex, height, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsPostUpdateWorksheetRow");
@@ -7628,7 +7629,7 @@ Name | Type | Description  | Notes
  **rowIndex** | **Integer**| The row index. |
  **height** | **Double**| The new row height. | [optional] [default to 0.0]
  **folder** | **String**| The document folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -7645,7 +7646,7 @@ No authorization required
 
 <a name="cellsPostWorksheetCellSetValue"></a>
 # **cellsPostWorksheetCellSetValue**
-> CellResponse cellsPostWorksheetCellSetValue(name, sheetName, cellName, value, type, formula, folder, storage)
+> CellResponse cellsPostWorksheetCellSetValue(name, sheetName, cellName, value, type, formula, folder, storageName)
 
 Set cell value.
 
@@ -7664,9 +7665,9 @@ String value = "value_example"; // String | The cell value.
 String type = "type_example"; // String | The value type.
 String formula = "formula_example"; // String | Formula for cell
 String folder = "folder_example"; // String | The document folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    CellResponse result = apiInstance.cellsPostWorksheetCellSetValue(name, sheetName, cellName, value, type, formula, folder, storage);
+    CellResponse result = apiInstance.cellsPostWorksheetCellSetValue(name, sheetName, cellName, value, type, formula, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsPostWorksheetCellSetValue");
@@ -7685,7 +7686,7 @@ Name | Type | Description  | Notes
  **type** | **String**| The value type. | [optional]
  **formula** | **String**| Formula for cell | [optional]
  **folder** | **String**| The document folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -7702,7 +7703,7 @@ No authorization required
 
 <a name="cellsPostWorksheetMerge"></a>
 # **cellsPostWorksheetMerge**
-> CellsCloudResponse cellsPostWorksheetMerge(name, sheetName, startRow, startColumn, totalRows, totalColumns, folder, storage)
+> CellsCloudResponse cellsPostWorksheetMerge(name, sheetName, startRow, startColumn, totalRows, totalColumns, folder, storageName)
 
 Merge cells.
 
@@ -7721,9 +7722,9 @@ Integer startColumn = 56; // Integer | The start column.
 Integer totalRows = 56; // Integer | The total rows
 Integer totalColumns = 56; // Integer | The total columns.
 String folder = "folder_example"; // String | The workbook folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    CellsCloudResponse result = apiInstance.cellsPostWorksheetMerge(name, sheetName, startRow, startColumn, totalRows, totalColumns, folder, storage);
+    CellsCloudResponse result = apiInstance.cellsPostWorksheetMerge(name, sheetName, startRow, startColumn, totalRows, totalColumns, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsPostWorksheetMerge");
@@ -7742,7 +7743,7 @@ Name | Type | Description  | Notes
  **totalRows** | **Integer**| The total rows |
  **totalColumns** | **Integer**| The total columns. |
  **folder** | **String**| The workbook folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -7759,7 +7760,7 @@ No authorization required
 
 <a name="cellsPostWorksheetUnmerge"></a>
 # **cellsPostWorksheetUnmerge**
-> CellsCloudResponse cellsPostWorksheetUnmerge(name, sheetName, startRow, startColumn, totalRows, totalColumns, folder, storage)
+> CellsCloudResponse cellsPostWorksheetUnmerge(name, sheetName, startRow, startColumn, totalRows, totalColumns, folder, storageName)
 
 Unmerge cells.
 
@@ -7778,9 +7779,9 @@ Integer startColumn = 56; // Integer | The start column.
 Integer totalRows = 56; // Integer | The total rows
 Integer totalColumns = 56; // Integer | The total columns.
 String folder = "folder_example"; // String | The workbook folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    CellsCloudResponse result = apiInstance.cellsPostWorksheetUnmerge(name, sheetName, startRow, startColumn, totalRows, totalColumns, folder, storage);
+    CellsCloudResponse result = apiInstance.cellsPostWorksheetUnmerge(name, sheetName, startRow, startColumn, totalRows, totalColumns, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsPostWorksheetUnmerge");
@@ -7799,7 +7800,7 @@ Name | Type | Description  | Notes
  **totalRows** | **Integer**| The total rows |
  **totalColumns** | **Integer**| The total columns. |
  **folder** | **String**| The workbook folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -7816,7 +7817,7 @@ No authorization required
 
 <a name="cellsPropertiesDeleteDocumentProperties"></a>
 # **cellsPropertiesDeleteDocumentProperties**
-> CellsDocumentPropertiesResponse cellsPropertiesDeleteDocumentProperties(name, folder, storage)
+> CellsDocumentPropertiesResponse cellsPropertiesDeleteDocumentProperties(name, folder, storageName)
 
 Delete all custom document properties and clean built-in ones.
 
@@ -7830,9 +7831,9 @@ Delete all custom document properties and clean built-in ones.
 CellsApi apiInstance = new CellsApi();
 String name = "name_example"; // String | The document name.
 String folder = "folder_example"; // String | The document folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    CellsDocumentPropertiesResponse result = apiInstance.cellsPropertiesDeleteDocumentProperties(name, folder, storage);
+    CellsDocumentPropertiesResponse result = apiInstance.cellsPropertiesDeleteDocumentProperties(name, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsPropertiesDeleteDocumentProperties");
@@ -7846,7 +7847,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **String**| The document name. |
  **folder** | **String**| The document folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -7863,7 +7864,7 @@ No authorization required
 
 <a name="cellsPropertiesDeleteDocumentProperty"></a>
 # **cellsPropertiesDeleteDocumentProperty**
-> CellsDocumentPropertiesResponse cellsPropertiesDeleteDocumentProperty(name, propertyName, folder, storage)
+> CellsDocumentPropertiesResponse cellsPropertiesDeleteDocumentProperty(name, propertyName, folder, storageName)
 
 Delete document property.
 
@@ -7878,9 +7879,9 @@ CellsApi apiInstance = new CellsApi();
 String name = "name_example"; // String | The document name.
 String propertyName = "propertyName_example"; // String | The property name.
 String folder = "folder_example"; // String | The document folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    CellsDocumentPropertiesResponse result = apiInstance.cellsPropertiesDeleteDocumentProperty(name, propertyName, folder, storage);
+    CellsDocumentPropertiesResponse result = apiInstance.cellsPropertiesDeleteDocumentProperty(name, propertyName, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsPropertiesDeleteDocumentProperty");
@@ -7895,7 +7896,7 @@ Name | Type | Description  | Notes
  **name** | **String**| The document name. |
  **propertyName** | **String**| The property name. |
  **folder** | **String**| The document folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -7912,7 +7913,7 @@ No authorization required
 
 <a name="cellsPropertiesGetDocumentProperties"></a>
 # **cellsPropertiesGetDocumentProperties**
-> CellsDocumentPropertiesResponse cellsPropertiesGetDocumentProperties(name, folder, storage)
+> CellsDocumentPropertiesResponse cellsPropertiesGetDocumentProperties(name, folder, storageName)
 
 Read document properties.
 
@@ -7926,9 +7927,9 @@ Read document properties.
 CellsApi apiInstance = new CellsApi();
 String name = "name_example"; // String | The document name.
 String folder = "folder_example"; // String | The document folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    CellsDocumentPropertiesResponse result = apiInstance.cellsPropertiesGetDocumentProperties(name, folder, storage);
+    CellsDocumentPropertiesResponse result = apiInstance.cellsPropertiesGetDocumentProperties(name, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsPropertiesGetDocumentProperties");
@@ -7942,7 +7943,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **String**| The document name. |
  **folder** | **String**| The document folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -7959,7 +7960,7 @@ No authorization required
 
 <a name="cellsPropertiesGetDocumentProperty"></a>
 # **cellsPropertiesGetDocumentProperty**
-> CellsDocumentPropertyResponse cellsPropertiesGetDocumentProperty(name, propertyName, folder, storage)
+> CellsDocumentPropertyResponse cellsPropertiesGetDocumentProperty(name, propertyName, folder, storageName)
 
 Read document property by name.
 
@@ -7974,9 +7975,9 @@ CellsApi apiInstance = new CellsApi();
 String name = "name_example"; // String | The document name.
 String propertyName = "propertyName_example"; // String | The property name.
 String folder = "folder_example"; // String | The document folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    CellsDocumentPropertyResponse result = apiInstance.cellsPropertiesGetDocumentProperty(name, propertyName, folder, storage);
+    CellsDocumentPropertyResponse result = apiInstance.cellsPropertiesGetDocumentProperty(name, propertyName, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsPropertiesGetDocumentProperty");
@@ -7991,7 +7992,7 @@ Name | Type | Description  | Notes
  **name** | **String**| The document name. |
  **propertyName** | **String**| The property name. |
  **folder** | **String**| The document folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -8008,7 +8009,7 @@ No authorization required
 
 <a name="cellsPropertiesPutDocumentProperty"></a>
 # **cellsPropertiesPutDocumentProperty**
-> CellsDocumentPropertyResponse cellsPropertiesPutDocumentProperty(name, propertyName, property, folder, storage)
+> CellsDocumentPropertyResponse cellsPropertiesPutDocumentProperty(name, propertyName, property, folder, storageName)
 
 Set/create document property.
 
@@ -8024,9 +8025,9 @@ String name = "name_example"; // String | The document name.
 String propertyName = "propertyName_example"; // String | The property name.
 CellsDocumentProperty property = new CellsDocumentProperty(); // CellsDocumentProperty | with new property value.
 String folder = "folder_example"; // String | The document folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    CellsDocumentPropertyResponse result = apiInstance.cellsPropertiesPutDocumentProperty(name, propertyName, property, folder, storage);
+    CellsDocumentPropertyResponse result = apiInstance.cellsPropertiesPutDocumentProperty(name, propertyName, property, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsPropertiesPutDocumentProperty");
@@ -8042,7 +8043,7 @@ Name | Type | Description  | Notes
  **propertyName** | **String**| The property name. |
  **property** | [**CellsDocumentProperty**](CellsDocumentProperty.md)| with new property value. | [optional]
  **folder** | **String**| The document folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -8059,7 +8060,7 @@ No authorization required
 
 <a name="cellsPutInsertWorksheetColumns"></a>
 # **cellsPutInsertWorksheetColumns**
-> ColumnsResponse cellsPutInsertWorksheetColumns(name, sheetName, columnIndex, columns, updateReference, folder, storage)
+> ColumnsResponse cellsPutInsertWorksheetColumns(name, sheetName, columnIndex, columns, updateReference, folder, storageName)
 
 Insert worksheet columns.
 
@@ -8077,9 +8078,9 @@ Integer columnIndex = 56; // Integer | The column index.
 Integer columns = 56; // Integer | The columns.
 Boolean updateReference = true; // Boolean | The update reference.
 String folder = "folder_example"; // String | The workbook folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    ColumnsResponse result = apiInstance.cellsPutInsertWorksheetColumns(name, sheetName, columnIndex, columns, updateReference, folder, storage);
+    ColumnsResponse result = apiInstance.cellsPutInsertWorksheetColumns(name, sheetName, columnIndex, columns, updateReference, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsPutInsertWorksheetColumns");
@@ -8097,7 +8098,7 @@ Name | Type | Description  | Notes
  **columns** | **Integer**| The columns. |
  **updateReference** | **Boolean**| The update reference. | [optional] [default to true]
  **folder** | **String**| The workbook folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -8114,7 +8115,7 @@ No authorization required
 
 <a name="cellsPutInsertWorksheetRow"></a>
 # **cellsPutInsertWorksheetRow**
-> RowResponse cellsPutInsertWorksheetRow(name, sheetName, rowIndex, folder, storage)
+> RowResponse cellsPutInsertWorksheetRow(name, sheetName, rowIndex, folder, storageName)
 
 Insert new worksheet row.
 
@@ -8130,9 +8131,9 @@ String name = "name_example"; // String | The workbook name.
 String sheetName = "sheetName_example"; // String | The worksheet name.
 Integer rowIndex = 56; // Integer | The new row index.
 String folder = "folder_example"; // String | The document folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    RowResponse result = apiInstance.cellsPutInsertWorksheetRow(name, sheetName, rowIndex, folder, storage);
+    RowResponse result = apiInstance.cellsPutInsertWorksheetRow(name, sheetName, rowIndex, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsPutInsertWorksheetRow");
@@ -8148,7 +8149,7 @@ Name | Type | Description  | Notes
  **sheetName** | **String**| The worksheet name. |
  **rowIndex** | **Integer**| The new row index. |
  **folder** | **String**| The document folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -8165,7 +8166,7 @@ No authorization required
 
 <a name="cellsPutInsertWorksheetRows"></a>
 # **cellsPutInsertWorksheetRows**
-> CellsCloudResponse cellsPutInsertWorksheetRows(name, sheetName, startrow, totalRows, updateReference, folder, storage)
+> CellsCloudResponse cellsPutInsertWorksheetRows(name, sheetName, startrow, totalRows, updateReference, folder, storageName)
 
 Insert several new worksheet rows.
 
@@ -8183,9 +8184,9 @@ Integer startrow = 56; // Integer | The begin row index to be operated.
 Integer totalRows = 1; // Integer | Number of rows to be operated.
 Boolean updateReference = true; // Boolean | Indicates if update references in other worksheets.
 String folder = "folder_example"; // String | The document folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    CellsCloudResponse result = apiInstance.cellsPutInsertWorksheetRows(name, sheetName, startrow, totalRows, updateReference, folder, storage);
+    CellsCloudResponse result = apiInstance.cellsPutInsertWorksheetRows(name, sheetName, startrow, totalRows, updateReference, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsPutInsertWorksheetRows");
@@ -8203,7 +8204,7 @@ Name | Type | Description  | Notes
  **totalRows** | **Integer**| Number of rows to be operated. | [optional] [default to 1]
  **updateReference** | **Boolean**| Indicates if update references in other worksheets. | [optional] [default to true]
  **folder** | **String**| The document folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -8220,7 +8221,7 @@ No authorization required
 
 <a name="cellsRangesGetWorksheetCellsRangeValue"></a>
 # **cellsRangesGetWorksheetCellsRangeValue**
-> RangeValueResponse cellsRangesGetWorksheetCellsRangeValue(name, sheetName, namerange, firstRow, firstColumn, rowCount, columnCount, folder, storage)
+> RangeValueResponse cellsRangesGetWorksheetCellsRangeValue(name, sheetName, namerange, firstRow, firstColumn, rowCount, columnCount, folder, storageName)
 
 Get cells list in a range by range name or row column indexes  
 
@@ -8240,9 +8241,9 @@ Integer firstColumn = 56; // Integer | the first column of the range
 Integer rowCount = 56; // Integer | the count of rows in the range
 Integer columnCount = 56; // Integer | the count of columns in the range
 String folder = "folder_example"; // String | Workbook folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    RangeValueResponse result = apiInstance.cellsRangesGetWorksheetCellsRangeValue(name, sheetName, namerange, firstRow, firstColumn, rowCount, columnCount, folder, storage);
+    RangeValueResponse result = apiInstance.cellsRangesGetWorksheetCellsRangeValue(name, sheetName, namerange, firstRow, firstColumn, rowCount, columnCount, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsRangesGetWorksheetCellsRangeValue");
@@ -8262,7 +8263,7 @@ Name | Type | Description  | Notes
  **rowCount** | **Integer**| the count of rows in the range | [optional]
  **columnCount** | **Integer**| the count of columns in the range | [optional]
  **folder** | **String**| Workbook folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -8279,7 +8280,7 @@ No authorization required
 
 <a name="cellsRangesPostWorksheetCellsRangeColumnWidth"></a>
 # **cellsRangesPostWorksheetCellsRangeColumnWidth**
-> CellsCloudResponse cellsRangesPostWorksheetCellsRangeColumnWidth(name, sheetName, value, range, folder, storage)
+> CellsCloudResponse cellsRangesPostWorksheetCellsRangeColumnWidth(name, sheetName, value, range, folder, storageName)
 
 Set column width of range
 
@@ -8296,9 +8297,9 @@ String sheetName = "sheetName_example"; // String |
 Double value = 3.4D; // Double | 
 Range range = new Range(); // Range | 
 String folder = "folder_example"; // String | 
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    CellsCloudResponse result = apiInstance.cellsRangesPostWorksheetCellsRangeColumnWidth(name, sheetName, value, range, folder, storage);
+    CellsCloudResponse result = apiInstance.cellsRangesPostWorksheetCellsRangeColumnWidth(name, sheetName, value, range, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsRangesPostWorksheetCellsRangeColumnWidth");
@@ -8315,7 +8316,7 @@ Name | Type | Description  | Notes
  **value** | **Double**|  |
  **range** | [**Range**](Range.md)|  | [optional]
  **folder** | **String**|  | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -8332,7 +8333,7 @@ No authorization required
 
 <a name="cellsRangesPostWorksheetCellsRangeMerge"></a>
 # **cellsRangesPostWorksheetCellsRangeMerge**
-> CellsCloudResponse cellsRangesPostWorksheetCellsRangeMerge(name, sheetName, range, folder, storage)
+> CellsCloudResponse cellsRangesPostWorksheetCellsRangeMerge(name, sheetName, range, folder, storageName)
 
 Combines a range of cells into a single cell.              
 
@@ -8348,9 +8349,9 @@ String name = "name_example"; // String | workbook name
 String sheetName = "sheetName_example"; // String | worksheet name
 Range range = new Range(); // Range | range in worksheet 
 String folder = "folder_example"; // String | Workbook folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    CellsCloudResponse result = apiInstance.cellsRangesPostWorksheetCellsRangeMerge(name, sheetName, range, folder, storage);
+    CellsCloudResponse result = apiInstance.cellsRangesPostWorksheetCellsRangeMerge(name, sheetName, range, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsRangesPostWorksheetCellsRangeMerge");
@@ -8366,7 +8367,7 @@ Name | Type | Description  | Notes
  **sheetName** | **String**| worksheet name |
  **range** | [**Range**](Range.md)| range in worksheet  | [optional]
  **folder** | **String**| Workbook folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -8383,7 +8384,7 @@ No authorization required
 
 <a name="cellsRangesPostWorksheetCellsRangeMoveTo"></a>
 # **cellsRangesPostWorksheetCellsRangeMoveTo**
-> CellsCloudResponse cellsRangesPostWorksheetCellsRangeMoveTo(name, sheetName, destRow, destColumn, range, folder, storage)
+> CellsCloudResponse cellsRangesPostWorksheetCellsRangeMoveTo(name, sheetName, destRow, destColumn, range, folder, storageName)
 
 Move the current range to the dest range.             
 
@@ -8401,9 +8402,9 @@ Integer destRow = 56; // Integer | The start row of the dest range.
 Integer destColumn = 56; // Integer | The start column of the dest range.
 Range range = new Range(); // Range | range in worksheet 
 String folder = "folder_example"; // String | Workbook folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    CellsCloudResponse result = apiInstance.cellsRangesPostWorksheetCellsRangeMoveTo(name, sheetName, destRow, destColumn, range, folder, storage);
+    CellsCloudResponse result = apiInstance.cellsRangesPostWorksheetCellsRangeMoveTo(name, sheetName, destRow, destColumn, range, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsRangesPostWorksheetCellsRangeMoveTo");
@@ -8421,7 +8422,7 @@ Name | Type | Description  | Notes
  **destColumn** | **Integer**| The start column of the dest range. |
  **range** | [**Range**](Range.md)| range in worksheet  | [optional]
  **folder** | **String**| Workbook folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -8438,7 +8439,7 @@ No authorization required
 
 <a name="cellsRangesPostWorksheetCellsRangeOutlineBorder"></a>
 # **cellsRangesPostWorksheetCellsRangeOutlineBorder**
-> CellsCloudResponse cellsRangesPostWorksheetCellsRangeOutlineBorder(name, sheetName, rangeOperate, folder, storage)
+> CellsCloudResponse cellsRangesPostWorksheetCellsRangeOutlineBorder(name, sheetName, rangeOperate, folder, storageName)
 
 Sets outline border around a range of cells.
 
@@ -8454,9 +8455,9 @@ String name = "name_example"; // String | workbook name
 String sheetName = "sheetName_example"; // String | worksheet name
 RangeSetOutlineBorderRequest rangeOperate = new RangeSetOutlineBorderRequest(); // RangeSetOutlineBorderRequest | Range Set OutlineBorder Request 
 String folder = "folder_example"; // String | Workbook folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    CellsCloudResponse result = apiInstance.cellsRangesPostWorksheetCellsRangeOutlineBorder(name, sheetName, rangeOperate, folder, storage);
+    CellsCloudResponse result = apiInstance.cellsRangesPostWorksheetCellsRangeOutlineBorder(name, sheetName, rangeOperate, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsRangesPostWorksheetCellsRangeOutlineBorder");
@@ -8472,7 +8473,7 @@ Name | Type | Description  | Notes
  **sheetName** | **String**| worksheet name |
  **rangeOperate** | [**RangeSetOutlineBorderRequest**](RangeSetOutlineBorderRequest.md)| Range Set OutlineBorder Request  | [optional]
  **folder** | **String**| Workbook folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -8489,7 +8490,7 @@ No authorization required
 
 <a name="cellsRangesPostWorksheetCellsRangeRowHeight"></a>
 # **cellsRangesPostWorksheetCellsRangeRowHeight**
-> CellsCloudResponse cellsRangesPostWorksheetCellsRangeRowHeight(name, sheetName, value, range, folder, storage)
+> CellsCloudResponse cellsRangesPostWorksheetCellsRangeRowHeight(name, sheetName, value, range, folder, storageName)
 
 set row height of range
 
@@ -8506,9 +8507,9 @@ String sheetName = "sheetName_example"; // String |
 Double value = 3.4D; // Double | 
 Range range = new Range(); // Range | 
 String folder = "folder_example"; // String | 
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    CellsCloudResponse result = apiInstance.cellsRangesPostWorksheetCellsRangeRowHeight(name, sheetName, value, range, folder, storage);
+    CellsCloudResponse result = apiInstance.cellsRangesPostWorksheetCellsRangeRowHeight(name, sheetName, value, range, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsRangesPostWorksheetCellsRangeRowHeight");
@@ -8525,7 +8526,7 @@ Name | Type | Description  | Notes
  **value** | **Double**|  |
  **range** | [**Range**](Range.md)|  | [optional]
  **folder** | **String**|  | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -8542,7 +8543,7 @@ No authorization required
 
 <a name="cellsRangesPostWorksheetCellsRangeStyle"></a>
 # **cellsRangesPostWorksheetCellsRangeStyle**
-> CellsCloudResponse cellsRangesPostWorksheetCellsRangeStyle(name, sheetName, rangeOperate, folder, storage)
+> CellsCloudResponse cellsRangesPostWorksheetCellsRangeStyle(name, sheetName, rangeOperate, folder, storageName)
 
 Sets the style of the range.             
 
@@ -8558,9 +8559,9 @@ String name = "name_example"; // String | workbook name
 String sheetName = "sheetName_example"; // String | worksheet name
 RangeSetStyleRequest rangeOperate = new RangeSetStyleRequest(); // RangeSetStyleRequest | Range Set Style Request 
 String folder = "folder_example"; // String | Workbook folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    CellsCloudResponse result = apiInstance.cellsRangesPostWorksheetCellsRangeStyle(name, sheetName, rangeOperate, folder, storage);
+    CellsCloudResponse result = apiInstance.cellsRangesPostWorksheetCellsRangeStyle(name, sheetName, rangeOperate, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsRangesPostWorksheetCellsRangeStyle");
@@ -8576,7 +8577,7 @@ Name | Type | Description  | Notes
  **sheetName** | **String**| worksheet name |
  **rangeOperate** | [**RangeSetStyleRequest**](RangeSetStyleRequest.md)| Range Set Style Request  | [optional]
  **folder** | **String**| Workbook folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -8593,7 +8594,7 @@ No authorization required
 
 <a name="cellsRangesPostWorksheetCellsRangeUnmerge"></a>
 # **cellsRangesPostWorksheetCellsRangeUnmerge**
-> CellsCloudResponse cellsRangesPostWorksheetCellsRangeUnmerge(name, sheetName, range, folder, storage)
+> CellsCloudResponse cellsRangesPostWorksheetCellsRangeUnmerge(name, sheetName, range, folder, storageName)
 
 Unmerges merged cells of this range.             
 
@@ -8609,9 +8610,9 @@ String name = "name_example"; // String | workbook name
 String sheetName = "sheetName_example"; // String | worksheet name
 Range range = new Range(); // Range | range in worksheet 
 String folder = "folder_example"; // String | Workbook folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    CellsCloudResponse result = apiInstance.cellsRangesPostWorksheetCellsRangeUnmerge(name, sheetName, range, folder, storage);
+    CellsCloudResponse result = apiInstance.cellsRangesPostWorksheetCellsRangeUnmerge(name, sheetName, range, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsRangesPostWorksheetCellsRangeUnmerge");
@@ -8627,7 +8628,7 @@ Name | Type | Description  | Notes
  **sheetName** | **String**| worksheet name |
  **range** | [**Range**](Range.md)| range in worksheet  | [optional]
  **folder** | **String**| Workbook folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -8644,7 +8645,7 @@ No authorization required
 
 <a name="cellsRangesPostWorksheetCellsRangeValue"></a>
 # **cellsRangesPostWorksheetCellsRangeValue**
-> CellsCloudResponse cellsRangesPostWorksheetCellsRangeValue(name, sheetName, value, range, isConverted, setStyle, folder, storage)
+> CellsCloudResponse cellsRangesPostWorksheetCellsRangeValue(name, sheetName, value, range, isConverted, setStyle, folder, storageName)
 
 Puts a value into the range, if appropriate the value will be converted to other data type and cell&#39;s number format will be reset.             
 
@@ -8663,9 +8664,9 @@ Range range = new Range(); // Range | range in worksheet
 Boolean isConverted = false; // Boolean | True: converted to other data type if appropriate.
 Boolean setStyle = false; // Boolean | True: set the number format to cell's style when converting to other data type
 String folder = "folder_example"; // String | Workbook folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    CellsCloudResponse result = apiInstance.cellsRangesPostWorksheetCellsRangeValue(name, sheetName, value, range, isConverted, setStyle, folder, storage);
+    CellsCloudResponse result = apiInstance.cellsRangesPostWorksheetCellsRangeValue(name, sheetName, value, range, isConverted, setStyle, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsRangesPostWorksheetCellsRangeValue");
@@ -8684,7 +8685,7 @@ Name | Type | Description  | Notes
  **isConverted** | **Boolean**| True: converted to other data type if appropriate. | [optional] [default to false]
  **setStyle** | **Boolean**| True: set the number format to cell&#39;s style when converting to other data type | [optional] [default to false]
  **folder** | **String**| Workbook folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -8701,7 +8702,7 @@ No authorization required
 
 <a name="cellsRangesPostWorksheetCellsRanges"></a>
 # **cellsRangesPostWorksheetCellsRanges**
-> CellsCloudResponse cellsRangesPostWorksheetCellsRanges(name, sheetName, rangeOperate, folder, storage)
+> CellsCloudResponse cellsRangesPostWorksheetCellsRanges(name, sheetName, rangeOperate, folder, storageName)
 
 copy range in the worksheet
 
@@ -8717,9 +8718,9 @@ String name = "name_example"; // String | workbook name
 String sheetName = "sheetName_example"; // String | worksheet name
 RangeCopyRequest rangeOperate = new RangeCopyRequest(); // RangeCopyRequest | copydata,copystyle,copyto,copyvalue
 String folder = "folder_example"; // String | Workbook folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    CellsCloudResponse result = apiInstance.cellsRangesPostWorksheetCellsRanges(name, sheetName, rangeOperate, folder, storage);
+    CellsCloudResponse result = apiInstance.cellsRangesPostWorksheetCellsRanges(name, sheetName, rangeOperate, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsRangesPostWorksheetCellsRanges");
@@ -8735,7 +8736,7 @@ Name | Type | Description  | Notes
  **sheetName** | **String**| worksheet name |
  **rangeOperate** | [**RangeCopyRequest**](RangeCopyRequest.md)| copydata,copystyle,copyto,copyvalue | [optional]
  **folder** | **String**| Workbook folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -8752,7 +8753,7 @@ No authorization required
 
 <a name="cellsSaveAsPostDocumentSaveAs"></a>
 # **cellsSaveAsPostDocumentSaveAs**
-> SaveResponse cellsSaveAsPostDocumentSaveAs(name, saveOptions, newfilename, isAutoFitRows, isAutoFitColumns, folder, storage)
+> SaveResponse cellsSaveAsPostDocumentSaveAs(name, saveOptions, newfilename, isAutoFitRows, isAutoFitColumns, folder, storageName)
 
 Convert document and save result to storage.
 
@@ -8770,9 +8771,9 @@ String newfilename = "newfilename_example"; // String | The new file name.
 Boolean isAutoFitRows = false; // Boolean | Autofit rows.
 Boolean isAutoFitColumns = false; // Boolean | Autofit columns.
 String folder = "folder_example"; // String | The document folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    SaveResponse result = apiInstance.cellsSaveAsPostDocumentSaveAs(name, saveOptions, newfilename, isAutoFitRows, isAutoFitColumns, folder, storage);
+    SaveResponse result = apiInstance.cellsSaveAsPostDocumentSaveAs(name, saveOptions, newfilename, isAutoFitRows, isAutoFitColumns, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsSaveAsPostDocumentSaveAs");
@@ -8790,7 +8791,7 @@ Name | Type | Description  | Notes
  **isAutoFitRows** | **Boolean**| Autofit rows. | [optional] [default to false]
  **isAutoFitColumns** | **Boolean**| Autofit columns. | [optional] [default to false]
  **folder** | **String**| The document folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -8807,7 +8808,7 @@ No authorization required
 
 <a name="cellsShapesDeleteWorksheetShape"></a>
 # **cellsShapesDeleteWorksheetShape**
-> CellsCloudResponse cellsShapesDeleteWorksheetShape(name, sheetName, shapeindex, folder, storage)
+> CellsCloudResponse cellsShapesDeleteWorksheetShape(name, sheetName, shapeindex, folder, storageName)
 
 Delete a shape in worksheet
 
@@ -8823,9 +8824,9 @@ String name = "name_example"; // String | document name.
 String sheetName = "sheetName_example"; // String | worksheet name.
 Integer shapeindex = 56; // Integer | shape index in worksheet shapes.
 String folder = "folder_example"; // String | Document's folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    CellsCloudResponse result = apiInstance.cellsShapesDeleteWorksheetShape(name, sheetName, shapeindex, folder, storage);
+    CellsCloudResponse result = apiInstance.cellsShapesDeleteWorksheetShape(name, sheetName, shapeindex, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsShapesDeleteWorksheetShape");
@@ -8841,7 +8842,7 @@ Name | Type | Description  | Notes
  **sheetName** | **String**| worksheet name. |
  **shapeindex** | **Integer**| shape index in worksheet shapes. |
  **folder** | **String**| Document&#39;s folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -8858,7 +8859,7 @@ No authorization required
 
 <a name="cellsShapesDeleteWorksheetShapes"></a>
 # **cellsShapesDeleteWorksheetShapes**
-> CellsCloudResponse cellsShapesDeleteWorksheetShapes(name, sheetName, folder, storage)
+> CellsCloudResponse cellsShapesDeleteWorksheetShapes(name, sheetName, folder, storageName)
 
 delete all shapes in worksheet
 
@@ -8873,9 +8874,9 @@ CellsApi apiInstance = new CellsApi();
 String name = "name_example"; // String | document name.
 String sheetName = "sheetName_example"; // String | worksheet name.
 String folder = "folder_example"; // String | Document's folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    CellsCloudResponse result = apiInstance.cellsShapesDeleteWorksheetShapes(name, sheetName, folder, storage);
+    CellsCloudResponse result = apiInstance.cellsShapesDeleteWorksheetShapes(name, sheetName, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsShapesDeleteWorksheetShapes");
@@ -8890,7 +8891,7 @@ Name | Type | Description  | Notes
  **name** | **String**| document name. |
  **sheetName** | **String**| worksheet name. |
  **folder** | **String**| Document&#39;s folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -8907,7 +8908,7 @@ No authorization required
 
 <a name="cellsShapesGetWorksheetShape"></a>
 # **cellsShapesGetWorksheetShape**
-> ShapeResponse cellsShapesGetWorksheetShape(name, sheetName, shapeindex, folder, storage)
+> ShapeResponse cellsShapesGetWorksheetShape(name, sheetName, shapeindex, folder, storageName)
 
 Get worksheet shape
 
@@ -8923,9 +8924,9 @@ String name = "name_example"; // String | document name.
 String sheetName = "sheetName_example"; // String | worksheet name.
 Integer shapeindex = 56; // Integer | shape index in worksheet shapes.
 String folder = "folder_example"; // String | Document's folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    ShapeResponse result = apiInstance.cellsShapesGetWorksheetShape(name, sheetName, shapeindex, folder, storage);
+    ShapeResponse result = apiInstance.cellsShapesGetWorksheetShape(name, sheetName, shapeindex, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsShapesGetWorksheetShape");
@@ -8941,7 +8942,7 @@ Name | Type | Description  | Notes
  **sheetName** | **String**| worksheet name. |
  **shapeindex** | **Integer**| shape index in worksheet shapes. |
  **folder** | **String**| Document&#39;s folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -8958,7 +8959,7 @@ No authorization required
 
 <a name="cellsShapesGetWorksheetShapes"></a>
 # **cellsShapesGetWorksheetShapes**
-> ShapesResponse cellsShapesGetWorksheetShapes(name, sheetName, folder, storage)
+> ShapesResponse cellsShapesGetWorksheetShapes(name, sheetName, folder, storageName)
 
 Get worksheet shapes 
 
@@ -8973,9 +8974,9 @@ CellsApi apiInstance = new CellsApi();
 String name = "name_example"; // String | document name.
 String sheetName = "sheetName_example"; // String | worksheet name.
 String folder = "folder_example"; // String | Document's folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    ShapesResponse result = apiInstance.cellsShapesGetWorksheetShapes(name, sheetName, folder, storage);
+    ShapesResponse result = apiInstance.cellsShapesGetWorksheetShapes(name, sheetName, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsShapesGetWorksheetShapes");
@@ -8990,7 +8991,7 @@ Name | Type | Description  | Notes
  **name** | **String**| document name. |
  **sheetName** | **String**| worksheet name. |
  **folder** | **String**| Document&#39;s folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -9007,7 +9008,7 @@ No authorization required
 
 <a name="cellsShapesPostWorksheetShape"></a>
 # **cellsShapesPostWorksheetShape**
-> CellsCloudResponse cellsShapesPostWorksheetShape(name, sheetName, shapeindex, dto, folder, storage)
+> CellsCloudResponse cellsShapesPostWorksheetShape(name, sheetName, shapeindex, dto, folder, storageName)
 
 Update a shape in worksheet
 
@@ -9024,9 +9025,9 @@ String sheetName = "sheetName_example"; // String | worksheet name.
 Integer shapeindex = 56; // Integer | shape index in worksheet shapes.
 Shape dto = new Shape(); // Shape | 
 String folder = "folder_example"; // String | Document's folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    CellsCloudResponse result = apiInstance.cellsShapesPostWorksheetShape(name, sheetName, shapeindex, dto, folder, storage);
+    CellsCloudResponse result = apiInstance.cellsShapesPostWorksheetShape(name, sheetName, shapeindex, dto, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsShapesPostWorksheetShape");
@@ -9043,7 +9044,7 @@ Name | Type | Description  | Notes
  **shapeindex** | **Integer**| shape index in worksheet shapes. |
  **dto** | [**Shape**](Shape.md)|  | [optional]
  **folder** | **String**| Document&#39;s folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -9060,7 +9061,7 @@ No authorization required
 
 <a name="cellsShapesPutWorksheetShape"></a>
 # **cellsShapesPutWorksheetShape**
-> ShapeResponse cellsShapesPutWorksheetShape(name, sheetName, drawingType, upperLeftRow, upperLeftColumn, top, left, width, height, folder, storage)
+> ShapeResponse cellsShapesPutWorksheetShape(name, sheetName, shapeDTO, drawingType, upperLeftRow, upperLeftColumn, top, left, width, height, folder, storageName)
 
 Add shape in worksheet
 
@@ -9074,6 +9075,7 @@ Add shape in worksheet
 CellsApi apiInstance = new CellsApi();
 String name = "name_example"; // String | document name.
 String sheetName = "sheetName_example"; // String | worksheet name.
+Shape shapeDTO = new Shape(); // Shape | 
 String drawingType = "drawingType_example"; // String | shape object type
 Integer upperLeftRow = 56; // Integer | Upper left row index.
 Integer upperLeftColumn = 56; // Integer | Upper left column index.
@@ -9082,9 +9084,9 @@ Integer left = 56; // Integer | Represents the horizontal offset of Spinner from
 Integer width = 56; // Integer | Represents the height of Spinner, in unit of pixel.
 Integer height = 56; // Integer | Represents the width of Spinner, in unit of pixel.
 String folder = "folder_example"; // String | Document's folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    ShapeResponse result = apiInstance.cellsShapesPutWorksheetShape(name, sheetName, drawingType, upperLeftRow, upperLeftColumn, top, left, width, height, folder, storage);
+    ShapeResponse result = apiInstance.cellsShapesPutWorksheetShape(name, sheetName, shapeDTO, drawingType, upperLeftRow, upperLeftColumn, top, left, width, height, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsShapesPutWorksheetShape");
@@ -9098,15 +9100,16 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **String**| document name. |
  **sheetName** | **String**| worksheet name. |
- **drawingType** | **String**| shape object type |
- **upperLeftRow** | **Integer**| Upper left row index. |
- **upperLeftColumn** | **Integer**| Upper left column index. |
- **top** | **Integer**| Represents the vertical offset of Spinner from its left row, in unit of pixel. |
- **left** | **Integer**| Represents the horizontal offset of Spinner from its left column, in unit of pixel. |
- **width** | **Integer**| Represents the height of Spinner, in unit of pixel. |
- **height** | **Integer**| Represents the width of Spinner, in unit of pixel. |
+ **shapeDTO** | [**Shape**](Shape.md)|  | [optional]
+ **drawingType** | **String**| shape object type | [optional]
+ **upperLeftRow** | **Integer**| Upper left row index. | [optional]
+ **upperLeftColumn** | **Integer**| Upper left column index. | [optional]
+ **top** | **Integer**| Represents the vertical offset of Spinner from its left row, in unit of pixel. | [optional]
+ **left** | **Integer**| Represents the horizontal offset of Spinner from its left column, in unit of pixel. | [optional]
+ **width** | **Integer**| Represents the height of Spinner, in unit of pixel. | [optional]
+ **height** | **Integer**| Represents the width of Spinner, in unit of pixel. | [optional]
  **folder** | **String**| Document&#39;s folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -9166,7 +9169,7 @@ No authorization required
 
 <a name="cellsWorkbookDeleteDecryptDocument"></a>
 # **cellsWorkbookDeleteDecryptDocument**
-> CellsCloudResponse cellsWorkbookDeleteDecryptDocument(name, encryption, folder, storage)
+> CellsCloudResponse cellsWorkbookDeleteDecryptDocument(name, encryption, folder, storageName)
 
 Decrypt document.
 
@@ -9181,9 +9184,9 @@ CellsApi apiInstance = new CellsApi();
 String name = "name_example"; // String | The document name.
 WorkbookEncryptionRequest encryption = new WorkbookEncryptionRequest(); // WorkbookEncryptionRequest | Encryption settings, only password can be specified.
 String folder = "folder_example"; // String | The document folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    CellsCloudResponse result = apiInstance.cellsWorkbookDeleteDecryptDocument(name, encryption, folder, storage);
+    CellsCloudResponse result = apiInstance.cellsWorkbookDeleteDecryptDocument(name, encryption, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsWorkbookDeleteDecryptDocument");
@@ -9198,7 +9201,7 @@ Name | Type | Description  | Notes
  **name** | **String**| The document name. |
  **encryption** | [**WorkbookEncryptionRequest**](WorkbookEncryptionRequest.md)| Encryption settings, only password can be specified. | [optional]
  **folder** | **String**| The document folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -9215,7 +9218,7 @@ No authorization required
 
 <a name="cellsWorkbookDeleteDocumentUnprotectFromChanges"></a>
 # **cellsWorkbookDeleteDocumentUnprotectFromChanges**
-> CellsCloudResponse cellsWorkbookDeleteDocumentUnprotectFromChanges(name, folder, storage)
+> CellsCloudResponse cellsWorkbookDeleteDocumentUnprotectFromChanges(name, folder, storageName)
 
 Unprotect document from changes.
 
@@ -9229,9 +9232,9 @@ Unprotect document from changes.
 CellsApi apiInstance = new CellsApi();
 String name = "name_example"; // String | The document name.
 String folder = "folder_example"; // String | Document's folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    CellsCloudResponse result = apiInstance.cellsWorkbookDeleteDocumentUnprotectFromChanges(name, folder, storage);
+    CellsCloudResponse result = apiInstance.cellsWorkbookDeleteDocumentUnprotectFromChanges(name, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsWorkbookDeleteDocumentUnprotectFromChanges");
@@ -9245,7 +9248,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **String**| The document name. |
  **folder** | **String**| Document&#39;s folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -9262,7 +9265,7 @@ No authorization required
 
 <a name="cellsWorkbookDeleteUnprotectDocument"></a>
 # **cellsWorkbookDeleteUnprotectDocument**
-> CellsCloudResponse cellsWorkbookDeleteUnprotectDocument(name, protection, folder, storage)
+> CellsCloudResponse cellsWorkbookDeleteUnprotectDocument(name, protection, folder, storageName)
 
 Unprotect document.
 
@@ -9277,9 +9280,9 @@ CellsApi apiInstance = new CellsApi();
 String name = "name_example"; // String | The document name.
 WorkbookProtectionRequest protection = new WorkbookProtectionRequest(); // WorkbookProtectionRequest | Protection settings, only password can be specified.
 String folder = "folder_example"; // String | The document folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    CellsCloudResponse result = apiInstance.cellsWorkbookDeleteUnprotectDocument(name, protection, folder, storage);
+    CellsCloudResponse result = apiInstance.cellsWorkbookDeleteUnprotectDocument(name, protection, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsWorkbookDeleteUnprotectDocument");
@@ -9294,7 +9297,7 @@ Name | Type | Description  | Notes
  **name** | **String**| The document name. |
  **protection** | [**WorkbookProtectionRequest**](WorkbookProtectionRequest.md)| Protection settings, only password can be specified. | [optional]
  **folder** | **String**| The document folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -9311,7 +9314,7 @@ No authorization required
 
 <a name="cellsWorkbookDeleteWorkbookBackground"></a>
 # **cellsWorkbookDeleteWorkbookBackground**
-> CellsCloudResponse cellsWorkbookDeleteWorkbookBackground(name, folder, storage)
+> CellsCloudResponse cellsWorkbookDeleteWorkbookBackground(name, folder, storageName)
 
 Set worksheet background image.
 
@@ -9325,9 +9328,9 @@ Set worksheet background image.
 CellsApi apiInstance = new CellsApi();
 String name = "name_example"; // String | 
 String folder = "folder_example"; // String | 
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    CellsCloudResponse result = apiInstance.cellsWorkbookDeleteWorkbookBackground(name, folder, storage);
+    CellsCloudResponse result = apiInstance.cellsWorkbookDeleteWorkbookBackground(name, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsWorkbookDeleteWorkbookBackground");
@@ -9341,7 +9344,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **String**|  |
  **folder** | **String**|  | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -9358,7 +9361,7 @@ No authorization required
 
 <a name="cellsWorkbookDeleteWorkbookName"></a>
 # **cellsWorkbookDeleteWorkbookName**
-> CellsCloudResponse cellsWorkbookDeleteWorkbookName(name, nameName, folder, storage)
+> CellsCloudResponse cellsWorkbookDeleteWorkbookName(name, nameName, folder, storageName)
 
 Clean workbook&#39;s names.
 
@@ -9373,9 +9376,9 @@ CellsApi apiInstance = new CellsApi();
 String name = "name_example"; // String | The workbook name.
 String nameName = "nameName_example"; // String | The name.
 String folder = "folder_example"; // String | The workbook folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    CellsCloudResponse result = apiInstance.cellsWorkbookDeleteWorkbookName(name, nameName, folder, storage);
+    CellsCloudResponse result = apiInstance.cellsWorkbookDeleteWorkbookName(name, nameName, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsWorkbookDeleteWorkbookName");
@@ -9390,7 +9393,7 @@ Name | Type | Description  | Notes
  **name** | **String**| The workbook name. |
  **nameName** | **String**| The name. |
  **folder** | **String**| The workbook folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -9407,7 +9410,7 @@ No authorization required
 
 <a name="cellsWorkbookDeleteWorkbookNames"></a>
 # **cellsWorkbookDeleteWorkbookNames**
-> CellsCloudResponse cellsWorkbookDeleteWorkbookNames(name, folder, storage)
+> CellsCloudResponse cellsWorkbookDeleteWorkbookNames(name, folder, storageName)
 
 Clean workbook&#39;s names.
 
@@ -9421,9 +9424,9 @@ Clean workbook&#39;s names.
 CellsApi apiInstance = new CellsApi();
 String name = "name_example"; // String | The workbook name.
 String folder = "folder_example"; // String | The workbook folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    CellsCloudResponse result = apiInstance.cellsWorkbookDeleteWorkbookNames(name, folder, storage);
+    CellsCloudResponse result = apiInstance.cellsWorkbookDeleteWorkbookNames(name, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsWorkbookDeleteWorkbookNames");
@@ -9437,7 +9440,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **String**| The workbook name. |
  **folder** | **String**| The workbook folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -9454,7 +9457,7 @@ No authorization required
 
 <a name="cellsWorkbookGetWorkbook"></a>
 # **cellsWorkbookGetWorkbook**
-> File cellsWorkbookGetWorkbook(name, password, format, isAutoFit, onlySaveTable, folder, storage, outPath)
+> File cellsWorkbookGetWorkbook(name, password, format, isAutoFit, onlySaveTable, folder, storageName, outPath)
 
 Read workbook info or export.
 
@@ -9472,10 +9475,10 @@ String format = "format_example"; // String | The exported file format.
 Boolean isAutoFit = false; // Boolean | Set document rows to be autofit.
 Boolean onlySaveTable = false; // Boolean | Only save table data.
 String folder = "folder_example"; // String | The document folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 String outPath = "outPath_example"; // String | The document output folder.
 try {
-    File result = apiInstance.cellsWorkbookGetWorkbook(name, password, format, isAutoFit, onlySaveTable, folder, storage, outPath);
+    File result = apiInstance.cellsWorkbookGetWorkbook(name, password, format, isAutoFit, onlySaveTable, folder, storageName, outPath);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsWorkbookGetWorkbook");
@@ -9493,7 +9496,7 @@ Name | Type | Description  | Notes
  **isAutoFit** | **Boolean**| Set document rows to be autofit. | [optional] [default to false]
  **onlySaveTable** | **Boolean**| Only save table data. | [optional] [default to false]
  **folder** | **String**| The document folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
  **outPath** | **String**| The document output folder. | [optional]
 
 ### Return type
@@ -9511,7 +9514,7 @@ No authorization required
 
 <a name="cellsWorkbookGetWorkbookDefaultStyle"></a>
 # **cellsWorkbookGetWorkbookDefaultStyle**
-> StyleResponse cellsWorkbookGetWorkbookDefaultStyle(name, folder, storage)
+> StyleResponse cellsWorkbookGetWorkbookDefaultStyle(name, folder, storageName)
 
 Read workbook default style info.
 
@@ -9525,9 +9528,9 @@ Read workbook default style info.
 CellsApi apiInstance = new CellsApi();
 String name = "name_example"; // String | The workbook name.
 String folder = "folder_example"; // String | The document's folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    StyleResponse result = apiInstance.cellsWorkbookGetWorkbookDefaultStyle(name, folder, storage);
+    StyleResponse result = apiInstance.cellsWorkbookGetWorkbookDefaultStyle(name, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsWorkbookGetWorkbookDefaultStyle");
@@ -9541,7 +9544,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **String**| The workbook name. |
  **folder** | **String**| The document&#39;s folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -9558,7 +9561,7 @@ No authorization required
 
 <a name="cellsWorkbookGetWorkbookName"></a>
 # **cellsWorkbookGetWorkbookName**
-> NameResponse cellsWorkbookGetWorkbookName(name, nameName, folder, storage)
+> NameResponse cellsWorkbookGetWorkbookName(name, nameName, folder, storageName)
 
 Read workbook&#39;s name.
 
@@ -9573,9 +9576,9 @@ CellsApi apiInstance = new CellsApi();
 String name = "name_example"; // String | The workbook name.
 String nameName = "nameName_example"; // String | The name.
 String folder = "folder_example"; // String | The workbook folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    NameResponse result = apiInstance.cellsWorkbookGetWorkbookName(name, nameName, folder, storage);
+    NameResponse result = apiInstance.cellsWorkbookGetWorkbookName(name, nameName, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsWorkbookGetWorkbookName");
@@ -9590,7 +9593,7 @@ Name | Type | Description  | Notes
  **name** | **String**| The workbook name. |
  **nameName** | **String**| The name. |
  **folder** | **String**| The workbook folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -9607,7 +9610,7 @@ No authorization required
 
 <a name="cellsWorkbookGetWorkbookNameValue"></a>
 # **cellsWorkbookGetWorkbookNameValue**
-> RangeValueResponse cellsWorkbookGetWorkbookNameValue(name, nameName, folder, storage)
+> RangeValueResponse cellsWorkbookGetWorkbookNameValue(name, nameName, folder, storageName)
 
 Get workbook&#39;s name value.
 
@@ -9622,9 +9625,9 @@ CellsApi apiInstance = new CellsApi();
 String name = "name_example"; // String | The workbook name.
 String nameName = "nameName_example"; // String | The name.
 String folder = "folder_example"; // String | The workbook folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    RangeValueResponse result = apiInstance.cellsWorkbookGetWorkbookNameValue(name, nameName, folder, storage);
+    RangeValueResponse result = apiInstance.cellsWorkbookGetWorkbookNameValue(name, nameName, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsWorkbookGetWorkbookNameValue");
@@ -9639,7 +9642,7 @@ Name | Type | Description  | Notes
  **name** | **String**| The workbook name. |
  **nameName** | **String**| The name. |
  **folder** | **String**| The workbook folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -9656,7 +9659,7 @@ No authorization required
 
 <a name="cellsWorkbookGetWorkbookNames"></a>
 # **cellsWorkbookGetWorkbookNames**
-> NamesResponse cellsWorkbookGetWorkbookNames(name, folder, storage)
+> NamesResponse cellsWorkbookGetWorkbookNames(name, folder, storageName)
 
 Read workbook&#39;s names.
 
@@ -9670,9 +9673,9 @@ Read workbook&#39;s names.
 CellsApi apiInstance = new CellsApi();
 String name = "name_example"; // String | The workbook name.
 String folder = "folder_example"; // String | The workbook folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    NamesResponse result = apiInstance.cellsWorkbookGetWorkbookNames(name, folder, storage);
+    NamesResponse result = apiInstance.cellsWorkbookGetWorkbookNames(name, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsWorkbookGetWorkbookNames");
@@ -9686,7 +9689,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **String**| The workbook name. |
  **folder** | **String**| The workbook folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -9703,7 +9706,7 @@ No authorization required
 
 <a name="cellsWorkbookGetWorkbookSettings"></a>
 # **cellsWorkbookGetWorkbookSettings**
-> WorkbookSettingsResponse cellsWorkbookGetWorkbookSettings(name, folder, storage)
+> WorkbookSettingsResponse cellsWorkbookGetWorkbookSettings(name, folder, storageName)
 
 Get Workbook Settings DTO
 
@@ -9717,9 +9720,9 @@ Get Workbook Settings DTO
 CellsApi apiInstance = new CellsApi();
 String name = "name_example"; // String | Document name.
 String folder = "folder_example"; // String | Document's folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    WorkbookSettingsResponse result = apiInstance.cellsWorkbookGetWorkbookSettings(name, folder, storage);
+    WorkbookSettingsResponse result = apiInstance.cellsWorkbookGetWorkbookSettings(name, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsWorkbookGetWorkbookSettings");
@@ -9733,7 +9736,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **String**| Document name. |
  **folder** | **String**| Document&#39;s folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -9750,7 +9753,7 @@ No authorization required
 
 <a name="cellsWorkbookGetWorkbookTextItems"></a>
 # **cellsWorkbookGetWorkbookTextItems**
-> TextItemsResponse cellsWorkbookGetWorkbookTextItems(name, folder, storage)
+> TextItemsResponse cellsWorkbookGetWorkbookTextItems(name, folder, storageName)
 
 Read workbook&#39;s text items.
 
@@ -9764,9 +9767,9 @@ Read workbook&#39;s text items.
 CellsApi apiInstance = new CellsApi();
 String name = "name_example"; // String | The workbook name.
 String folder = "folder_example"; // String | The workbook folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    TextItemsResponse result = apiInstance.cellsWorkbookGetWorkbookTextItems(name, folder, storage);
+    TextItemsResponse result = apiInstance.cellsWorkbookGetWorkbookTextItems(name, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsWorkbookGetWorkbookTextItems");
@@ -9780,7 +9783,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **String**| The workbook name. |
  **folder** | **String**| The workbook folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -9797,7 +9800,7 @@ No authorization required
 
 <a name="cellsWorkbookPostAutofitWorkbookRows"></a>
 # **cellsWorkbookPostAutofitWorkbookRows**
-> CellsCloudResponse cellsWorkbookPostAutofitWorkbookRows(name, autoFitterOptions, startRow, endRow, onlyAuto, folder, storage)
+> CellsCloudResponse cellsWorkbookPostAutofitWorkbookRows(name, autoFitterOptions, startRow, endRow, onlyAuto, folder, storageName)
 
 Autofit workbook rows.
 
@@ -9815,9 +9818,9 @@ Integer startRow = 56; // Integer | Start row.
 Integer endRow = 56; // Integer | End row.
 Boolean onlyAuto = false; // Boolean | Only auto.
 String folder = "folder_example"; // String | Document's folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    CellsCloudResponse result = apiInstance.cellsWorkbookPostAutofitWorkbookRows(name, autoFitterOptions, startRow, endRow, onlyAuto, folder, storage);
+    CellsCloudResponse result = apiInstance.cellsWorkbookPostAutofitWorkbookRows(name, autoFitterOptions, startRow, endRow, onlyAuto, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsWorkbookPostAutofitWorkbookRows");
@@ -9835,7 +9838,7 @@ Name | Type | Description  | Notes
  **endRow** | **Integer**| End row. | [optional]
  **onlyAuto** | **Boolean**| Only auto. | [optional] [default to false]
  **folder** | **String**| Document&#39;s folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -9852,7 +9855,7 @@ No authorization required
 
 <a name="cellsWorkbookPostEncryptDocument"></a>
 # **cellsWorkbookPostEncryptDocument**
-> CellsCloudResponse cellsWorkbookPostEncryptDocument(name, encryption, folder, storage)
+> CellsCloudResponse cellsWorkbookPostEncryptDocument(name, encryption, folder, storageName)
 
 Encript document.
 
@@ -9867,9 +9870,9 @@ CellsApi apiInstance = new CellsApi();
 String name = "name_example"; // String | The document name.
 WorkbookEncryptionRequest encryption = new WorkbookEncryptionRequest(); // WorkbookEncryptionRequest | Encryption parameters.
 String folder = "folder_example"; // String | The document folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    CellsCloudResponse result = apiInstance.cellsWorkbookPostEncryptDocument(name, encryption, folder, storage);
+    CellsCloudResponse result = apiInstance.cellsWorkbookPostEncryptDocument(name, encryption, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsWorkbookPostEncryptDocument");
@@ -9884,7 +9887,7 @@ Name | Type | Description  | Notes
  **name** | **String**| The document name. |
  **encryption** | [**WorkbookEncryptionRequest**](WorkbookEncryptionRequest.md)| Encryption parameters. | [optional]
  **folder** | **String**| The document folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -9901,7 +9904,7 @@ No authorization required
 
 <a name="cellsWorkbookPostImportData"></a>
 # **cellsWorkbookPostImportData**
-> CellsCloudResponse cellsWorkbookPostImportData(name, importData, folder, storage)
+> CellsCloudResponse cellsWorkbookPostImportData(name, importData, folder, storageName)
 
 
 
@@ -9916,9 +9919,9 @@ CellsApi apiInstance = new CellsApi();
 String name = "name_example"; // String | 
 ImportOption importData = new ImportOption(); // ImportOption | 
 String folder = "folder_example"; // String | 
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    CellsCloudResponse result = apiInstance.cellsWorkbookPostImportData(name, importData, folder, storage);
+    CellsCloudResponse result = apiInstance.cellsWorkbookPostImportData(name, importData, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsWorkbookPostImportData");
@@ -9933,7 +9936,7 @@ Name | Type | Description  | Notes
  **name** | **String**|  |
  **importData** | [**ImportOption**](ImportOption.md)|  |
  **folder** | **String**|  | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -9950,7 +9953,7 @@ No authorization required
 
 <a name="cellsWorkbookPostProtectDocument"></a>
 # **cellsWorkbookPostProtectDocument**
-> CellsCloudResponse cellsWorkbookPostProtectDocument(name, protection, folder, storage)
+> CellsCloudResponse cellsWorkbookPostProtectDocument(name, protection, folder, storageName)
 
 Protect document.
 
@@ -9965,9 +9968,9 @@ CellsApi apiInstance = new CellsApi();
 String name = "name_example"; // String | The document name.
 WorkbookProtectionRequest protection = new WorkbookProtectionRequest(); // WorkbookProtectionRequest | The protection settings.
 String folder = "folder_example"; // String | The document folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    CellsCloudResponse result = apiInstance.cellsWorkbookPostProtectDocument(name, protection, folder, storage);
+    CellsCloudResponse result = apiInstance.cellsWorkbookPostProtectDocument(name, protection, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsWorkbookPostProtectDocument");
@@ -9982,7 +9985,7 @@ Name | Type | Description  | Notes
  **name** | **String**| The document name. |
  **protection** | [**WorkbookProtectionRequest**](WorkbookProtectionRequest.md)| The protection settings. | [optional]
  **folder** | **String**| The document folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -9999,7 +10002,7 @@ No authorization required
 
 <a name="cellsWorkbookPostWorkbookCalculateFormula"></a>
 # **cellsWorkbookPostWorkbookCalculateFormula**
-> CellsCloudResponse cellsWorkbookPostWorkbookCalculateFormula(name, options, ignoreError, folder, storage)
+> CellsCloudResponse cellsWorkbookPostWorkbookCalculateFormula(name, options, ignoreError, folder, storageName)
 
 Calculate all formulas in workbook.
 
@@ -10015,9 +10018,9 @@ String name = "name_example"; // String | Document name.
 CalculationOptions options = new CalculationOptions(); // CalculationOptions | Calculation Options.
 Boolean ignoreError = true; // Boolean | ignore Error.
 String folder = "folder_example"; // String | Document's folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    CellsCloudResponse result = apiInstance.cellsWorkbookPostWorkbookCalculateFormula(name, options, ignoreError, folder, storage);
+    CellsCloudResponse result = apiInstance.cellsWorkbookPostWorkbookCalculateFormula(name, options, ignoreError, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsWorkbookPostWorkbookCalculateFormula");
@@ -10033,7 +10036,7 @@ Name | Type | Description  | Notes
  **options** | [**CalculationOptions**](CalculationOptions.md)| Calculation Options. | [optional]
  **ignoreError** | **Boolean**| ignore Error. | [optional]
  **folder** | **String**| Document&#39;s folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -10050,7 +10053,7 @@ No authorization required
 
 <a name="cellsWorkbookPostWorkbookGetSmartMarkerResult"></a>
 # **cellsWorkbookPostWorkbookGetSmartMarkerResult**
-> File cellsWorkbookPostWorkbookGetSmartMarkerResult(name, xmlFile, folder, storage, outPath)
+> File cellsWorkbookPostWorkbookGetSmartMarkerResult(name, xmlFile, folder, storageName, outPath)
 
 Smart marker processing result.
 
@@ -10065,10 +10068,10 @@ CellsApi apiInstance = new CellsApi();
 String name = "name_example"; // String | The workbook name.
 String xmlFile = "xmlFile_example"; // String | The xml file full path, if empty the data is read from request body.
 String folder = "folder_example"; // String | The workbook folder full path.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 String outPath = "outPath_example"; // String | Path to save result
 try {
-    File result = apiInstance.cellsWorkbookPostWorkbookGetSmartMarkerResult(name, xmlFile, folder, storage, outPath);
+    File result = apiInstance.cellsWorkbookPostWorkbookGetSmartMarkerResult(name, xmlFile, folder, storageName, outPath);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsWorkbookPostWorkbookGetSmartMarkerResult");
@@ -10083,7 +10086,7 @@ Name | Type | Description  | Notes
  **name** | **String**| The workbook name. |
  **xmlFile** | **String**| The xml file full path, if empty the data is read from request body. | [optional]
  **folder** | **String**| The workbook folder full path. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
  **outPath** | **String**| Path to save result | [optional]
 
 ### Return type
@@ -10101,7 +10104,7 @@ No authorization required
 
 <a name="cellsWorkbookPostWorkbookSettings"></a>
 # **cellsWorkbookPostWorkbookSettings**
-> CellsCloudResponse cellsWorkbookPostWorkbookSettings(name, settings, folder, storage)
+> CellsCloudResponse cellsWorkbookPostWorkbookSettings(name, settings, folder, storageName)
 
 Update Workbook setting 
 
@@ -10116,9 +10119,9 @@ CellsApi apiInstance = new CellsApi();
 String name = "name_example"; // String | Document name.
 WorkbookSettings settings = new WorkbookSettings(); // WorkbookSettings | Workbook Setting DTO
 String folder = "folder_example"; // String | Document's folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    CellsCloudResponse result = apiInstance.cellsWorkbookPostWorkbookSettings(name, settings, folder, storage);
+    CellsCloudResponse result = apiInstance.cellsWorkbookPostWorkbookSettings(name, settings, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsWorkbookPostWorkbookSettings");
@@ -10133,7 +10136,7 @@ Name | Type | Description  | Notes
  **name** | **String**| Document name. |
  **settings** | [**WorkbookSettings**](WorkbookSettings.md)| Workbook Setting DTO | [optional]
  **folder** | **String**| Document&#39;s folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -10150,7 +10153,7 @@ No authorization required
 
 <a name="cellsWorkbookPostWorkbookSplit"></a>
 # **cellsWorkbookPostWorkbookSplit**
-> SplitResultResponse cellsWorkbookPostWorkbookSplit(name, format, from, to, horizontalResolution, verticalResolution, folder, outFolder, storage)
+> SplitResultResponse cellsWorkbookPostWorkbookSplit(name, format, from, to, horizontalResolution, verticalResolution, folder, outFolder, storageName)
 
 Split workbook.
 
@@ -10170,9 +10173,9 @@ Integer horizontalResolution = 0; // Integer | Image horizontal resolution.
 Integer verticalResolution = 0; // Integer | Image vertical resolution.
 String folder = "folder_example"; // String | The workbook folder.
 String outFolder = "outFolder_example"; // String | out Folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    SplitResultResponse result = apiInstance.cellsWorkbookPostWorkbookSplit(name, format, from, to, horizontalResolution, verticalResolution, folder, outFolder, storage);
+    SplitResultResponse result = apiInstance.cellsWorkbookPostWorkbookSplit(name, format, from, to, horizontalResolution, verticalResolution, folder, outFolder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsWorkbookPostWorkbookSplit");
@@ -10192,7 +10195,7 @@ Name | Type | Description  | Notes
  **verticalResolution** | **Integer**| Image vertical resolution. | [optional] [default to 0]
  **folder** | **String**| The workbook folder. | [optional]
  **outFolder** | **String**| out Folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -10209,7 +10212,7 @@ No authorization required
 
 <a name="cellsWorkbookPostWorkbooksMerge"></a>
 # **cellsWorkbookPostWorkbooksMerge**
-> WorkbookResponse cellsWorkbookPostWorkbooksMerge(name, mergeWith, folder, storage)
+> WorkbookResponse cellsWorkbookPostWorkbooksMerge(name, mergeWith, folder, storageName)
 
 Merge workbooks.
 
@@ -10224,9 +10227,9 @@ CellsApi apiInstance = new CellsApi();
 String name = "name_example"; // String | Workbook name.
 String mergeWith = "mergeWith_example"; // String | The workbook to merge with.
 String folder = "folder_example"; // String | Source workbook folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    WorkbookResponse result = apiInstance.cellsWorkbookPostWorkbooksMerge(name, mergeWith, folder, storage);
+    WorkbookResponse result = apiInstance.cellsWorkbookPostWorkbooksMerge(name, mergeWith, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsWorkbookPostWorkbooksMerge");
@@ -10241,7 +10244,7 @@ Name | Type | Description  | Notes
  **name** | **String**| Workbook name. |
  **mergeWith** | **String**| The workbook to merge with. |
  **folder** | **String**| Source workbook folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -10258,7 +10261,7 @@ No authorization required
 
 <a name="cellsWorkbookPostWorkbooksTextReplace"></a>
 # **cellsWorkbookPostWorkbooksTextReplace**
-> WorkbookReplaceResponse cellsWorkbookPostWorkbooksTextReplace(name, oldValue, newValue, folder, storage)
+> WorkbookReplaceResponse cellsWorkbookPostWorkbooksTextReplace(name, oldValue, newValue, folder, storageName)
 
 Replace text.
 
@@ -10274,9 +10277,9 @@ String name = "name_example"; // String | Document name.
 String oldValue = "oldValue_example"; // String | The old value.
 String newValue = "newValue_example"; // String | The new value.
 String folder = "folder_example"; // String | Document's folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    WorkbookReplaceResponse result = apiInstance.cellsWorkbookPostWorkbooksTextReplace(name, oldValue, newValue, folder, storage);
+    WorkbookReplaceResponse result = apiInstance.cellsWorkbookPostWorkbooksTextReplace(name, oldValue, newValue, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsWorkbookPostWorkbooksTextReplace");
@@ -10292,7 +10295,7 @@ Name | Type | Description  | Notes
  **oldValue** | **String**| The old value. |
  **newValue** | **String**| The new value. |
  **folder** | **String**| Document&#39;s folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -10309,7 +10312,7 @@ No authorization required
 
 <a name="cellsWorkbookPostWorkbooksTextSearch"></a>
 # **cellsWorkbookPostWorkbooksTextSearch**
-> TextItemsResponse cellsWorkbookPostWorkbooksTextSearch(name, text, folder, storage)
+> TextItemsResponse cellsWorkbookPostWorkbooksTextSearch(name, text, folder, storageName)
 
 Search text.
 
@@ -10324,9 +10327,9 @@ CellsApi apiInstance = new CellsApi();
 String name = "name_example"; // String | Document name.
 String text = "text_example"; // String | Text sample.
 String folder = "folder_example"; // String | Document's folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    TextItemsResponse result = apiInstance.cellsWorkbookPostWorkbooksTextSearch(name, text, folder, storage);
+    TextItemsResponse result = apiInstance.cellsWorkbookPostWorkbooksTextSearch(name, text, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsWorkbookPostWorkbooksTextSearch");
@@ -10341,7 +10344,7 @@ Name | Type | Description  | Notes
  **name** | **String**| Document name. |
  **text** | **String**| Text sample. |
  **folder** | **String**| Document&#39;s folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -10407,7 +10410,7 @@ No authorization required
 
 <a name="cellsWorkbookPutDocumentProtectFromChanges"></a>
 # **cellsWorkbookPutDocumentProtectFromChanges**
-> CellsCloudResponse cellsWorkbookPutDocumentProtectFromChanges(name, password, folder, storage)
+> CellsCloudResponse cellsWorkbookPutDocumentProtectFromChanges(name, password, folder, storageName)
 
 Protect document from changes.
 
@@ -10422,9 +10425,9 @@ CellsApi apiInstance = new CellsApi();
 String name = "name_example"; // String | Document name.
 PasswordRequest password = new PasswordRequest(); // PasswordRequest | Modification password.
 String folder = "folder_example"; // String | Document's folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    CellsCloudResponse result = apiInstance.cellsWorkbookPutDocumentProtectFromChanges(name, password, folder, storage);
+    CellsCloudResponse result = apiInstance.cellsWorkbookPutDocumentProtectFromChanges(name, password, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsWorkbookPutDocumentProtectFromChanges");
@@ -10439,7 +10442,7 @@ Name | Type | Description  | Notes
  **name** | **String**| Document name. |
  **password** | [**PasswordRequest**](PasswordRequest.md)| Modification password. | [optional]
  **folder** | **String**| Document&#39;s folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -10456,7 +10459,7 @@ No authorization required
 
 <a name="cellsWorkbookPutWorkbookBackground"></a>
 # **cellsWorkbookPutWorkbookBackground**
-> CellsCloudResponse cellsWorkbookPutWorkbookBackground(name, png, folder, storage)
+> CellsCloudResponse cellsWorkbookPutWorkbookBackground(name, png, folder, storageName)
 
 Set workbook background image.
 
@@ -10471,9 +10474,9 @@ CellsApi apiInstance = new CellsApi();
 String name = "name_example"; // String | 
 byte[] png = BINARY_DATA_HERE; // byte[] | 
 String folder = "folder_example"; // String | 
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    CellsCloudResponse result = apiInstance.cellsWorkbookPutWorkbookBackground(name, png, folder, storage);
+    CellsCloudResponse result = apiInstance.cellsWorkbookPutWorkbookBackground(name, png, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsWorkbookPutWorkbookBackground");
@@ -10488,7 +10491,7 @@ Name | Type | Description  | Notes
  **name** | **String**|  |
  **png** | **byte[]**|  |
  **folder** | **String**|  | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -10505,7 +10508,7 @@ No authorization required
 
 <a name="cellsWorkbookPutWorkbookCreate"></a>
 # **cellsWorkbookPutWorkbookCreate**
-> WorkbookResponse cellsWorkbookPutWorkbookCreate(name, templateFile, dataFile, isWriteOver, folder, storage)
+> WorkbookResponse cellsWorkbookPutWorkbookCreate(name, templateFile, dataFile, isWriteOver, folder, storageName)
 
 Create new workbook using deferent methods.
 
@@ -10522,9 +10525,9 @@ String templateFile = "templateFile_example"; // String | The template file, if 
 String dataFile = "dataFile_example"; // String | Smart marker data file, if the data not provided the request content is checked for the data.
 Boolean isWriteOver = true; // Boolean | write over file.
 String folder = "folder_example"; // String | The new document folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    WorkbookResponse result = apiInstance.cellsWorkbookPutWorkbookCreate(name, templateFile, dataFile, isWriteOver, folder, storage);
+    WorkbookResponse result = apiInstance.cellsWorkbookPutWorkbookCreate(name, templateFile, dataFile, isWriteOver, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsWorkbookPutWorkbookCreate");
@@ -10541,7 +10544,7 @@ Name | Type | Description  | Notes
  **dataFile** | **String**| Smart marker data file, if the data not provided the request content is checked for the data. | [optional]
  **isWriteOver** | **Boolean**| write over file. | [optional]
  **folder** | **String**| The new document folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -10556,9 +10559,58 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+<a name="cellsWorkbookPutWorkbookWaterMarker"></a>
+# **cellsWorkbookPutWorkbookWaterMarker**
+> CellsCloudResponse cellsWorkbookPutWorkbookWaterMarker(name, folder, storageName, textWaterMarkerRequest)
+
+Set workbook background image.
+
+### Example
+```java
+// Import classes:
+//import com.aspose.cloud.cells.client.ApiException;
+//import com.aspose.cloud.cells.api.CellsApi;
+
+
+CellsApi apiInstance = new CellsApi();
+String name = "name_example"; // String | 
+String folder = "folder_example"; // String | 
+String storageName = "storageName_example"; // String | storage name.
+TextWaterMarkerRequest textWaterMarkerRequest = new TextWaterMarkerRequest(); // TextWaterMarkerRequest | The text water marker request.
+try {
+    CellsCloudResponse result = apiInstance.cellsWorkbookPutWorkbookWaterMarker(name, folder, storageName, textWaterMarkerRequest);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling CellsApi#cellsWorkbookPutWorkbookWaterMarker");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **String**|  |
+ **folder** | **String**|  | [optional]
+ **storageName** | **String**| storage name. | [optional]
+ **textWaterMarkerRequest** | [**TextWaterMarkerRequest**](TextWaterMarkerRequest.md)| The text water marker request. | [optional]
+
+### Return type
+
+[**CellsCloudResponse**](CellsCloudResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
 <a name="cellsWorksheetValidationsDeleteWorksheetValidation"></a>
 # **cellsWorksheetValidationsDeleteWorksheetValidation**
-> ValidationResponse cellsWorksheetValidationsDeleteWorksheetValidation(name, sheetName, validationIndex, folder, storage)
+> ValidationResponse cellsWorksheetValidationsDeleteWorksheetValidation(name, sheetName, validationIndex, folder, storageName)
 
 Delete worksheet validation by index.
 
@@ -10574,9 +10626,9 @@ String name = "name_example"; // String | Document name.
 String sheetName = "sheetName_example"; // String | Worksheet name.
 Integer validationIndex = 56; // Integer | The validation index.
 String folder = "folder_example"; // String | Document's folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    ValidationResponse result = apiInstance.cellsWorksheetValidationsDeleteWorksheetValidation(name, sheetName, validationIndex, folder, storage);
+    ValidationResponse result = apiInstance.cellsWorksheetValidationsDeleteWorksheetValidation(name, sheetName, validationIndex, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsWorksheetValidationsDeleteWorksheetValidation");
@@ -10592,7 +10644,7 @@ Name | Type | Description  | Notes
  **sheetName** | **String**| Worksheet name. |
  **validationIndex** | **Integer**| The validation index. |
  **folder** | **String**| Document&#39;s folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -10609,7 +10661,7 @@ No authorization required
 
 <a name="cellsWorksheetValidationsDeleteWorksheetValidations"></a>
 # **cellsWorksheetValidationsDeleteWorksheetValidations**
-> CellsCloudResponse cellsWorksheetValidationsDeleteWorksheetValidations(name, sheetName, folder, storage)
+> CellsCloudResponse cellsWorksheetValidationsDeleteWorksheetValidations(name, sheetName, folder, storageName)
 
 Clear all validation in worksheet.
 
@@ -10624,9 +10676,9 @@ CellsApi apiInstance = new CellsApi();
 String name = "name_example"; // String | Document name.
 String sheetName = "sheetName_example"; // String | Worksheet name.
 String folder = "folder_example"; // String | Document's folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    CellsCloudResponse result = apiInstance.cellsWorksheetValidationsDeleteWorksheetValidations(name, sheetName, folder, storage);
+    CellsCloudResponse result = apiInstance.cellsWorksheetValidationsDeleteWorksheetValidations(name, sheetName, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsWorksheetValidationsDeleteWorksheetValidations");
@@ -10641,7 +10693,7 @@ Name | Type | Description  | Notes
  **name** | **String**| Document name. |
  **sheetName** | **String**| Worksheet name. |
  **folder** | **String**| Document&#39;s folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -10658,7 +10710,7 @@ No authorization required
 
 <a name="cellsWorksheetValidationsGetWorksheetValidation"></a>
 # **cellsWorksheetValidationsGetWorksheetValidation**
-> ValidationResponse cellsWorksheetValidationsGetWorksheetValidation(name, sheetName, validationIndex, folder, storage)
+> ValidationResponse cellsWorksheetValidationsGetWorksheetValidation(name, sheetName, validationIndex, folder, storageName)
 
 Get worksheet validation by index.
 
@@ -10674,9 +10726,9 @@ String name = "name_example"; // String | Document name.
 String sheetName = "sheetName_example"; // String | Worksheet name.
 Integer validationIndex = 56; // Integer | The validation index.
 String folder = "folder_example"; // String | Document's folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    ValidationResponse result = apiInstance.cellsWorksheetValidationsGetWorksheetValidation(name, sheetName, validationIndex, folder, storage);
+    ValidationResponse result = apiInstance.cellsWorksheetValidationsGetWorksheetValidation(name, sheetName, validationIndex, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsWorksheetValidationsGetWorksheetValidation");
@@ -10692,7 +10744,7 @@ Name | Type | Description  | Notes
  **sheetName** | **String**| Worksheet name. |
  **validationIndex** | **Integer**| The validation index. |
  **folder** | **String**| Document&#39;s folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -10709,7 +10761,7 @@ No authorization required
 
 <a name="cellsWorksheetValidationsGetWorksheetValidations"></a>
 # **cellsWorksheetValidationsGetWorksheetValidations**
-> ValidationsResponse cellsWorksheetValidationsGetWorksheetValidations(name, sheetName, folder, storage)
+> ValidationsResponse cellsWorksheetValidationsGetWorksheetValidations(name, sheetName, folder, storageName)
 
 Get worksheet validations.
 
@@ -10724,9 +10776,9 @@ CellsApi apiInstance = new CellsApi();
 String name = "name_example"; // String | Document name.
 String sheetName = "sheetName_example"; // String | Worksheet name.
 String folder = "folder_example"; // String | Document folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    ValidationsResponse result = apiInstance.cellsWorksheetValidationsGetWorksheetValidations(name, sheetName, folder, storage);
+    ValidationsResponse result = apiInstance.cellsWorksheetValidationsGetWorksheetValidations(name, sheetName, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsWorksheetValidationsGetWorksheetValidations");
@@ -10741,7 +10793,7 @@ Name | Type | Description  | Notes
  **name** | **String**| Document name. |
  **sheetName** | **String**| Worksheet name. |
  **folder** | **String**| Document folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -10758,7 +10810,7 @@ No authorization required
 
 <a name="cellsWorksheetValidationsPostWorksheetValidation"></a>
 # **cellsWorksheetValidationsPostWorksheetValidation**
-> ValidationResponse cellsWorksheetValidationsPostWorksheetValidation(name, sheetName, validationIndex, validation, folder, storage)
+> ValidationResponse cellsWorksheetValidationsPostWorksheetValidation(name, sheetName, validationIndex, validation, folder, storageName)
 
 Update worksheet validation by index.
 
@@ -10775,9 +10827,9 @@ String sheetName = "sheetName_example"; // String | Worksheet name.
 Integer validationIndex = 56; // Integer | The validation index.
 Validation validation = new Validation(); // Validation | 
 String folder = "folder_example"; // String | Document's folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    ValidationResponse result = apiInstance.cellsWorksheetValidationsPostWorksheetValidation(name, sheetName, validationIndex, validation, folder, storage);
+    ValidationResponse result = apiInstance.cellsWorksheetValidationsPostWorksheetValidation(name, sheetName, validationIndex, validation, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsWorksheetValidationsPostWorksheetValidation");
@@ -10794,7 +10846,7 @@ Name | Type | Description  | Notes
  **validationIndex** | **Integer**| The validation index. |
  **validation** | [**Validation**](Validation.md)|  | [optional]
  **folder** | **String**| Document&#39;s folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -10811,7 +10863,7 @@ No authorization required
 
 <a name="cellsWorksheetValidationsPutWorksheetValidation"></a>
 # **cellsWorksheetValidationsPutWorksheetValidation**
-> ValidationResponse cellsWorksheetValidationsPutWorksheetValidation(name, sheetName, range, validation, folder, storage)
+> ValidationResponse cellsWorksheetValidationsPutWorksheetValidation(name, sheetName, range, validation, folder, storageName)
 
 Add worksheet validation at index.
 
@@ -10828,9 +10880,9 @@ String sheetName = "sheetName_example"; // String | Worksheet name.
 String range = "range_example"; // String | Specified cells area
 Validation validation = new Validation(); // Validation | validation
 String folder = "folder_example"; // String | Document's folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    ValidationResponse result = apiInstance.cellsWorksheetValidationsPutWorksheetValidation(name, sheetName, range, validation, folder, storage);
+    ValidationResponse result = apiInstance.cellsWorksheetValidationsPutWorksheetValidation(name, sheetName, range, validation, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsWorksheetValidationsPutWorksheetValidation");
@@ -10847,7 +10899,7 @@ Name | Type | Description  | Notes
  **range** | **String**| Specified cells area | [optional]
  **validation** | [**Validation**](Validation.md)| validation | [optional]
  **folder** | **String**| Document&#39;s folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -10864,7 +10916,7 @@ No authorization required
 
 <a name="cellsWorksheetsDeleteUnprotectWorksheet"></a>
 # **cellsWorksheetsDeleteUnprotectWorksheet**
-> WorksheetResponse cellsWorksheetsDeleteUnprotectWorksheet(name, sheetName, protectParameter, folder, storage)
+> WorksheetResponse cellsWorksheetsDeleteUnprotectWorksheet(name, sheetName, protectParameter, folder, storageName)
 
 Unprotect worksheet.
 
@@ -10880,9 +10932,9 @@ String name = "name_example"; // String | Document name.
 String sheetName = "sheetName_example"; // String | The worksheet name.
 ProtectSheetParameter protectParameter = new ProtectSheetParameter(); // ProtectSheetParameter | with protection settings. Only password is used here.
 String folder = "folder_example"; // String | Document folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    WorksheetResponse result = apiInstance.cellsWorksheetsDeleteUnprotectWorksheet(name, sheetName, protectParameter, folder, storage);
+    WorksheetResponse result = apiInstance.cellsWorksheetsDeleteUnprotectWorksheet(name, sheetName, protectParameter, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsWorksheetsDeleteUnprotectWorksheet");
@@ -10898,7 +10950,7 @@ Name | Type | Description  | Notes
  **sheetName** | **String**| The worksheet name. |
  **protectParameter** | [**ProtectSheetParameter**](ProtectSheetParameter.md)| with protection settings. Only password is used here. | [optional]
  **folder** | **String**| Document folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -10915,7 +10967,7 @@ No authorization required
 
 <a name="cellsWorksheetsDeleteWorksheet"></a>
 # **cellsWorksheetsDeleteWorksheet**
-> WorksheetsResponse cellsWorksheetsDeleteWorksheet(name, sheetName, folder, storage)
+> WorksheetsResponse cellsWorksheetsDeleteWorksheet(name, sheetName, folder, storageName)
 
 Delete worksheet.
 
@@ -10930,9 +10982,9 @@ CellsApi apiInstance = new CellsApi();
 String name = "name_example"; // String | Document name.
 String sheetName = "sheetName_example"; // String | The worksheet name.
 String folder = "folder_example"; // String | Document's folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    WorksheetsResponse result = apiInstance.cellsWorksheetsDeleteWorksheet(name, sheetName, folder, storage);
+    WorksheetsResponse result = apiInstance.cellsWorksheetsDeleteWorksheet(name, sheetName, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsWorksheetsDeleteWorksheet");
@@ -10947,7 +10999,7 @@ Name | Type | Description  | Notes
  **name** | **String**| Document name. |
  **sheetName** | **String**| The worksheet name. |
  **folder** | **String**| Document&#39;s folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -10964,7 +11016,7 @@ No authorization required
 
 <a name="cellsWorksheetsDeleteWorksheetBackground"></a>
 # **cellsWorksheetsDeleteWorksheetBackground**
-> CellsCloudResponse cellsWorksheetsDeleteWorksheetBackground(name, sheetName, folder, storage)
+> CellsCloudResponse cellsWorksheetsDeleteWorksheetBackground(name, sheetName, folder, storageName)
 
 Set worksheet background image.
 
@@ -10979,9 +11031,9 @@ CellsApi apiInstance = new CellsApi();
 String name = "name_example"; // String | 
 String sheetName = "sheetName_example"; // String | 
 String folder = "folder_example"; // String | 
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    CellsCloudResponse result = apiInstance.cellsWorksheetsDeleteWorksheetBackground(name, sheetName, folder, storage);
+    CellsCloudResponse result = apiInstance.cellsWorksheetsDeleteWorksheetBackground(name, sheetName, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsWorksheetsDeleteWorksheetBackground");
@@ -10996,7 +11048,7 @@ Name | Type | Description  | Notes
  **name** | **String**|  |
  **sheetName** | **String**|  |
  **folder** | **String**|  | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -11013,7 +11065,7 @@ No authorization required
 
 <a name="cellsWorksheetsDeleteWorksheetComment"></a>
 # **cellsWorksheetsDeleteWorksheetComment**
-> CellsCloudResponse cellsWorksheetsDeleteWorksheetComment(name, sheetName, cellName, folder, storage)
+> CellsCloudResponse cellsWorksheetsDeleteWorksheetComment(name, sheetName, cellName, folder, storageName)
 
 Delete worksheet&#39;s cell comment.
 
@@ -11029,9 +11081,9 @@ String name = "name_example"; // String | The document name.
 String sheetName = "sheetName_example"; // String | The worksheet name.
 String cellName = "cellName_example"; // String | The cell name
 String folder = "folder_example"; // String | The document folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    CellsCloudResponse result = apiInstance.cellsWorksheetsDeleteWorksheetComment(name, sheetName, cellName, folder, storage);
+    CellsCloudResponse result = apiInstance.cellsWorksheetsDeleteWorksheetComment(name, sheetName, cellName, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsWorksheetsDeleteWorksheetComment");
@@ -11047,7 +11099,7 @@ Name | Type | Description  | Notes
  **sheetName** | **String**| The worksheet name. |
  **cellName** | **String**| The cell name |
  **folder** | **String**| The document folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -11064,7 +11116,7 @@ No authorization required
 
 <a name="cellsWorksheetsDeleteWorksheetComments"></a>
 # **cellsWorksheetsDeleteWorksheetComments**
-> CellsCloudResponse cellsWorksheetsDeleteWorksheetComments(name, sheetName, folder, storage)
+> CellsCloudResponse cellsWorksheetsDeleteWorksheetComments(name, sheetName, folder, storageName)
 
 Delete all comments for worksheet.
 
@@ -11079,9 +11131,9 @@ CellsApi apiInstance = new CellsApi();
 String name = "name_example"; // String | 
 String sheetName = "sheetName_example"; // String | 
 String folder = "folder_example"; // String | 
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    CellsCloudResponse result = apiInstance.cellsWorksheetsDeleteWorksheetComments(name, sheetName, folder, storage);
+    CellsCloudResponse result = apiInstance.cellsWorksheetsDeleteWorksheetComments(name, sheetName, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsWorksheetsDeleteWorksheetComments");
@@ -11096,7 +11148,7 @@ Name | Type | Description  | Notes
  **name** | **String**|  |
  **sheetName** | **String**|  |
  **folder** | **String**|  | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -11113,7 +11165,7 @@ No authorization required
 
 <a name="cellsWorksheetsDeleteWorksheetFreezePanes"></a>
 # **cellsWorksheetsDeleteWorksheetFreezePanes**
-> CellsCloudResponse cellsWorksheetsDeleteWorksheetFreezePanes(name, sheetName, row, column, freezedRows, freezedColumns, folder, storage)
+> CellsCloudResponse cellsWorksheetsDeleteWorksheetFreezePanes(name, sheetName, row, column, freezedRows, freezedColumns, folder, storageName)
 
 Unfreeze panes
 
@@ -11132,9 +11184,9 @@ Integer column = 56; // Integer |
 Integer freezedRows = 56; // Integer | 
 Integer freezedColumns = 56; // Integer | 
 String folder = "folder_example"; // String | 
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    CellsCloudResponse result = apiInstance.cellsWorksheetsDeleteWorksheetFreezePanes(name, sheetName, row, column, freezedRows, freezedColumns, folder, storage);
+    CellsCloudResponse result = apiInstance.cellsWorksheetsDeleteWorksheetFreezePanes(name, sheetName, row, column, freezedRows, freezedColumns, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsWorksheetsDeleteWorksheetFreezePanes");
@@ -11153,7 +11205,7 @@ Name | Type | Description  | Notes
  **freezedRows** | **Integer**|  |
  **freezedColumns** | **Integer**|  |
  **folder** | **String**|  | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -11170,7 +11222,7 @@ No authorization required
 
 <a name="cellsWorksheetsGetNamedRanges"></a>
 # **cellsWorksheetsGetNamedRanges**
-> RangesResponse cellsWorksheetsGetNamedRanges(name, folder, storage)
+> RangesResponse cellsWorksheetsGetNamedRanges(name, folder, storageName)
 
 Read worksheets ranges info.
 
@@ -11184,9 +11236,9 @@ Read worksheets ranges info.
 CellsApi apiInstance = new CellsApi();
 String name = "name_example"; // String | Document name.
 String folder = "folder_example"; // String | Document folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    RangesResponse result = apiInstance.cellsWorksheetsGetNamedRanges(name, folder, storage);
+    RangesResponse result = apiInstance.cellsWorksheetsGetNamedRanges(name, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsWorksheetsGetNamedRanges");
@@ -11200,7 +11252,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **String**| Document name. |
  **folder** | **String**| Document folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -11217,7 +11269,7 @@ No authorization required
 
 <a name="cellsWorksheetsGetWorksheet"></a>
 # **cellsWorksheetsGetWorksheet**
-> File cellsWorksheetsGetWorksheet(name, sheetName, format, verticalResolution, horizontalResolution, area, pageIndex, folder, storage)
+> File cellsWorksheetsGetWorksheet(name, sheetName, format, verticalResolution, horizontalResolution, area, pageIndex, folder, storageName)
 
 Read worksheet info or export.
 
@@ -11237,9 +11289,9 @@ Integer horizontalResolution = 0; // Integer | Image horizontal resolution.
 String area = "area_example"; // String | Exported area.
 Integer pageIndex = 56; // Integer | Exported page index.
 String folder = "folder_example"; // String | The document folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    File result = apiInstance.cellsWorksheetsGetWorksheet(name, sheetName, format, verticalResolution, horizontalResolution, area, pageIndex, folder, storage);
+    File result = apiInstance.cellsWorksheetsGetWorksheet(name, sheetName, format, verticalResolution, horizontalResolution, area, pageIndex, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsWorksheetsGetWorksheet");
@@ -11259,7 +11311,7 @@ Name | Type | Description  | Notes
  **area** | **String**| Exported area. | [optional]
  **pageIndex** | **Integer**| Exported page index. | [optional]
  **folder** | **String**| The document folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -11276,7 +11328,7 @@ No authorization required
 
 <a name="cellsWorksheetsGetWorksheetCalculateFormula"></a>
 # **cellsWorksheetsGetWorksheetCalculateFormula**
-> SingleValueResponse cellsWorksheetsGetWorksheetCalculateFormula(name, sheetName, formula, folder, storage)
+> SingleValueResponse cellsWorksheetsGetWorksheetCalculateFormula(name, sheetName, formula, folder, storageName)
 
 Calculate formula value.
 
@@ -11292,9 +11344,9 @@ String name = "name_example"; // String | Document name.
 String sheetName = "sheetName_example"; // String | Worksheet name.
 String formula = "formula_example"; // String | The formula.
 String folder = "folder_example"; // String | Document's folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    SingleValueResponse result = apiInstance.cellsWorksheetsGetWorksheetCalculateFormula(name, sheetName, formula, folder, storage);
+    SingleValueResponse result = apiInstance.cellsWorksheetsGetWorksheetCalculateFormula(name, sheetName, formula, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsWorksheetsGetWorksheetCalculateFormula");
@@ -11310,7 +11362,7 @@ Name | Type | Description  | Notes
  **sheetName** | **String**| Worksheet name. |
  **formula** | **String**| The formula. |
  **folder** | **String**| Document&#39;s folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -11327,7 +11379,7 @@ No authorization required
 
 <a name="cellsWorksheetsGetWorksheetComment"></a>
 # **cellsWorksheetsGetWorksheetComment**
-> CommentResponse cellsWorksheetsGetWorksheetComment(name, sheetName, cellName, folder, storage)
+> CommentResponse cellsWorksheetsGetWorksheetComment(name, sheetName, cellName, folder, storageName)
 
 Get worksheet comment by cell name.
 
@@ -11343,9 +11395,9 @@ String name = "name_example"; // String | The document name.
 String sheetName = "sheetName_example"; // String | The worksheet name.
 String cellName = "cellName_example"; // String | The cell name
 String folder = "folder_example"; // String | The document folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    CommentResponse result = apiInstance.cellsWorksheetsGetWorksheetComment(name, sheetName, cellName, folder, storage);
+    CommentResponse result = apiInstance.cellsWorksheetsGetWorksheetComment(name, sheetName, cellName, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsWorksheetsGetWorksheetComment");
@@ -11361,7 +11413,7 @@ Name | Type | Description  | Notes
  **sheetName** | **String**| The worksheet name. |
  **cellName** | **String**| The cell name |
  **folder** | **String**| The document folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -11378,7 +11430,7 @@ No authorization required
 
 <a name="cellsWorksheetsGetWorksheetComments"></a>
 # **cellsWorksheetsGetWorksheetComments**
-> CommentsResponse cellsWorksheetsGetWorksheetComments(name, sheetName, folder, storage)
+> CommentsResponse cellsWorksheetsGetWorksheetComments(name, sheetName, folder, storageName)
 
 Get worksheet comments.
 
@@ -11393,9 +11445,9 @@ CellsApi apiInstance = new CellsApi();
 String name = "name_example"; // String | Workbook name.
 String sheetName = "sheetName_example"; // String | The worksheet name.
 String folder = "folder_example"; // String | The document folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    CommentsResponse result = apiInstance.cellsWorksheetsGetWorksheetComments(name, sheetName, folder, storage);
+    CommentsResponse result = apiInstance.cellsWorksheetsGetWorksheetComments(name, sheetName, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsWorksheetsGetWorksheetComments");
@@ -11410,7 +11462,7 @@ Name | Type | Description  | Notes
  **name** | **String**| Workbook name. |
  **sheetName** | **String**| The worksheet name. |
  **folder** | **String**| The document folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -11427,7 +11479,7 @@ No authorization required
 
 <a name="cellsWorksheetsGetWorksheetMergedCell"></a>
 # **cellsWorksheetsGetWorksheetMergedCell**
-> MergedCellResponse cellsWorksheetsGetWorksheetMergedCell(name, sheetName, mergedCellIndex, folder, storage)
+> MergedCellResponse cellsWorksheetsGetWorksheetMergedCell(name, sheetName, mergedCellIndex, folder, storageName)
 
 Get worksheet merged cell by its index.
 
@@ -11443,9 +11495,9 @@ String name = "name_example"; // String | Document name.
 String sheetName = "sheetName_example"; // String | Worksheet name.
 Integer mergedCellIndex = 56; // Integer | Merged cell index.
 String folder = "folder_example"; // String | Document folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    MergedCellResponse result = apiInstance.cellsWorksheetsGetWorksheetMergedCell(name, sheetName, mergedCellIndex, folder, storage);
+    MergedCellResponse result = apiInstance.cellsWorksheetsGetWorksheetMergedCell(name, sheetName, mergedCellIndex, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsWorksheetsGetWorksheetMergedCell");
@@ -11461,7 +11513,7 @@ Name | Type | Description  | Notes
  **sheetName** | **String**| Worksheet name. |
  **mergedCellIndex** | **Integer**| Merged cell index. |
  **folder** | **String**| Document folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -11478,7 +11530,7 @@ No authorization required
 
 <a name="cellsWorksheetsGetWorksheetMergedCells"></a>
 # **cellsWorksheetsGetWorksheetMergedCells**
-> MergedCellsResponse cellsWorksheetsGetWorksheetMergedCells(name, sheetName, folder, storage)
+> MergedCellsResponse cellsWorksheetsGetWorksheetMergedCells(name, sheetName, folder, storageName)
 
 Get worksheet merged cells.
 
@@ -11493,9 +11545,9 @@ CellsApi apiInstance = new CellsApi();
 String name = "name_example"; // String | Document name.
 String sheetName = "sheetName_example"; // String | The workseet name.
 String folder = "folder_example"; // String | Document folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    MergedCellsResponse result = apiInstance.cellsWorksheetsGetWorksheetMergedCells(name, sheetName, folder, storage);
+    MergedCellsResponse result = apiInstance.cellsWorksheetsGetWorksheetMergedCells(name, sheetName, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsWorksheetsGetWorksheetMergedCells");
@@ -11510,7 +11562,7 @@ Name | Type | Description  | Notes
  **name** | **String**| Document name. |
  **sheetName** | **String**| The workseet name. |
  **folder** | **String**| Document folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -11527,7 +11579,7 @@ No authorization required
 
 <a name="cellsWorksheetsGetWorksheetTextItems"></a>
 # **cellsWorksheetsGetWorksheetTextItems**
-> TextItemsResponse cellsWorksheetsGetWorksheetTextItems(name, sheetName, folder, storage)
+> TextItemsResponse cellsWorksheetsGetWorksheetTextItems(name, sheetName, folder, storageName)
 
 Get worksheet text items.
 
@@ -11542,9 +11594,9 @@ CellsApi apiInstance = new CellsApi();
 String name = "name_example"; // String | Workbook name.
 String sheetName = "sheetName_example"; // String | The worksheet name.
 String folder = "folder_example"; // String | The workbook's folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    TextItemsResponse result = apiInstance.cellsWorksheetsGetWorksheetTextItems(name, sheetName, folder, storage);
+    TextItemsResponse result = apiInstance.cellsWorksheetsGetWorksheetTextItems(name, sheetName, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsWorksheetsGetWorksheetTextItems");
@@ -11559,7 +11611,7 @@ Name | Type | Description  | Notes
  **name** | **String**| Workbook name. |
  **sheetName** | **String**| The worksheet name. |
  **folder** | **String**| The workbook&#39;s folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -11576,7 +11628,7 @@ No authorization required
 
 <a name="cellsWorksheetsGetWorksheets"></a>
 # **cellsWorksheetsGetWorksheets**
-> WorksheetsResponse cellsWorksheetsGetWorksheets(name, folder, storage)
+> WorksheetsResponse cellsWorksheetsGetWorksheets(name, folder, storageName)
 
 Read worksheets info.
 
@@ -11590,9 +11642,9 @@ Read worksheets info.
 CellsApi apiInstance = new CellsApi();
 String name = "name_example"; // String | Document name.
 String folder = "folder_example"; // String | Document folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    WorksheetsResponse result = apiInstance.cellsWorksheetsGetWorksheets(name, folder, storage);
+    WorksheetsResponse result = apiInstance.cellsWorksheetsGetWorksheets(name, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsWorksheetsGetWorksheets");
@@ -11606,7 +11658,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **String**| Document name. |
  **folder** | **String**| Document folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -11623,7 +11675,7 @@ No authorization required
 
 <a name="cellsWorksheetsPostAutofitWorksheetColumns"></a>
 # **cellsWorksheetsPostAutofitWorksheetColumns**
-> CellsCloudResponse cellsWorksheetsPostAutofitWorksheetColumns(name, sheetName, firstColumn, lastColumn, autoFitterOptions, firstRow, lastRow, folder, storage)
+> CellsCloudResponse cellsWorksheetsPostAutofitWorksheetColumns(name, sheetName, firstColumn, lastColumn, autoFitterOptions, firstRow, lastRow, folder, storageName)
 
 
 
@@ -11643,9 +11695,9 @@ AutoFitterOptions autoFitterOptions = new AutoFitterOptions(); // AutoFitterOpti
 Integer firstRow = 56; // Integer | 
 Integer lastRow = 56; // Integer | 
 String folder = "folder_example"; // String | 
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    CellsCloudResponse result = apiInstance.cellsWorksheetsPostAutofitWorksheetColumns(name, sheetName, firstColumn, lastColumn, autoFitterOptions, firstRow, lastRow, folder, storage);
+    CellsCloudResponse result = apiInstance.cellsWorksheetsPostAutofitWorksheetColumns(name, sheetName, firstColumn, lastColumn, autoFitterOptions, firstRow, lastRow, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsWorksheetsPostAutofitWorksheetColumns");
@@ -11665,7 +11717,7 @@ Name | Type | Description  | Notes
  **firstRow** | **Integer**|  | [optional]
  **lastRow** | **Integer**|  | [optional]
  **folder** | **String**|  | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -11682,7 +11734,7 @@ No authorization required
 
 <a name="cellsWorksheetsPostAutofitWorksheetRow"></a>
 # **cellsWorksheetsPostAutofitWorksheetRow**
-> CellsCloudResponse cellsWorksheetsPostAutofitWorksheetRow(name, sheetName, rowIndex, firstColumn, lastColumn, autoFitterOptions, folder, storage)
+> CellsCloudResponse cellsWorksheetsPostAutofitWorksheetRow(name, sheetName, rowIndex, firstColumn, lastColumn, autoFitterOptions, folder, storageName)
 
 
 
@@ -11701,9 +11753,9 @@ Integer firstColumn = 56; // Integer |
 Integer lastColumn = 56; // Integer | 
 AutoFitterOptions autoFitterOptions = new AutoFitterOptions(); // AutoFitterOptions | 
 String folder = "folder_example"; // String | 
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    CellsCloudResponse result = apiInstance.cellsWorksheetsPostAutofitWorksheetRow(name, sheetName, rowIndex, firstColumn, lastColumn, autoFitterOptions, folder, storage);
+    CellsCloudResponse result = apiInstance.cellsWorksheetsPostAutofitWorksheetRow(name, sheetName, rowIndex, firstColumn, lastColumn, autoFitterOptions, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsWorksheetsPostAutofitWorksheetRow");
@@ -11722,7 +11774,7 @@ Name | Type | Description  | Notes
  **lastColumn** | **Integer**|  |
  **autoFitterOptions** | [**AutoFitterOptions**](AutoFitterOptions.md)|  | [optional]
  **folder** | **String**|  | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -11739,7 +11791,7 @@ No authorization required
 
 <a name="cellsWorksheetsPostAutofitWorksheetRows"></a>
 # **cellsWorksheetsPostAutofitWorksheetRows**
-> CellsCloudResponse cellsWorksheetsPostAutofitWorksheetRows(name, sheetName, autoFitterOptions, startRow, endRow, onlyAuto, folder, storage)
+> CellsCloudResponse cellsWorksheetsPostAutofitWorksheetRows(name, sheetName, autoFitterOptions, startRow, endRow, onlyAuto, folder, storageName)
 
 Autofit worksheet rows.
 
@@ -11758,9 +11810,9 @@ Integer startRow = 56; // Integer | Start row.
 Integer endRow = 56; // Integer | End row.
 Boolean onlyAuto = false; // Boolean | Only auto.
 String folder = "folder_example"; // String | Document's folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    CellsCloudResponse result = apiInstance.cellsWorksheetsPostAutofitWorksheetRows(name, sheetName, autoFitterOptions, startRow, endRow, onlyAuto, folder, storage);
+    CellsCloudResponse result = apiInstance.cellsWorksheetsPostAutofitWorksheetRows(name, sheetName, autoFitterOptions, startRow, endRow, onlyAuto, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsWorksheetsPostAutofitWorksheetRows");
@@ -11779,7 +11831,7 @@ Name | Type | Description  | Notes
  **endRow** | **Integer**| End row. | [optional]
  **onlyAuto** | **Boolean**| Only auto. | [optional] [default to false]
  **folder** | **String**| Document&#39;s folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -11796,7 +11848,7 @@ No authorization required
 
 <a name="cellsWorksheetsPostCopyWorksheet"></a>
 # **cellsWorksheetsPostCopyWorksheet**
-> CellsCloudResponse cellsWorksheetsPostCopyWorksheet(name, sheetName, sourceSheet, options, sourceWorkbook, sourceFolder, folder, storage)
+> CellsCloudResponse cellsWorksheetsPostCopyWorksheet(name, sheetName, sourceSheet, options, sourceWorkbook, sourceFolder, folder, storageName)
 
 
 
@@ -11815,9 +11867,9 @@ CopyOptions options = new CopyOptions(); // CopyOptions |
 String sourceWorkbook = "sourceWorkbook_example"; // String | 
 String sourceFolder = "sourceFolder_example"; // String | 
 String folder = "folder_example"; // String | 
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    CellsCloudResponse result = apiInstance.cellsWorksheetsPostCopyWorksheet(name, sheetName, sourceSheet, options, sourceWorkbook, sourceFolder, folder, storage);
+    CellsCloudResponse result = apiInstance.cellsWorksheetsPostCopyWorksheet(name, sheetName, sourceSheet, options, sourceWorkbook, sourceFolder, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsWorksheetsPostCopyWorksheet");
@@ -11836,7 +11888,7 @@ Name | Type | Description  | Notes
  **sourceWorkbook** | **String**|  | [optional]
  **sourceFolder** | **String**|  | [optional]
  **folder** | **String**|  | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -11853,7 +11905,7 @@ No authorization required
 
 <a name="cellsWorksheetsPostMoveWorksheet"></a>
 # **cellsWorksheetsPostMoveWorksheet**
-> WorksheetsResponse cellsWorksheetsPostMoveWorksheet(name, sheetName, moving, folder, storage)
+> WorksheetsResponse cellsWorksheetsPostMoveWorksheet(name, sheetName, moving, folder, storageName)
 
 Move worksheet.
 
@@ -11869,9 +11921,9 @@ String name = "name_example"; // String | Document name.
 String sheetName = "sheetName_example"; // String | The worksheet name.
 WorksheetMovingRequest moving = new WorksheetMovingRequest(); // WorksheetMovingRequest | with moving parameters.
 String folder = "folder_example"; // String | The document folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    WorksheetsResponse result = apiInstance.cellsWorksheetsPostMoveWorksheet(name, sheetName, moving, folder, storage);
+    WorksheetsResponse result = apiInstance.cellsWorksheetsPostMoveWorksheet(name, sheetName, moving, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsWorksheetsPostMoveWorksheet");
@@ -11887,7 +11939,7 @@ Name | Type | Description  | Notes
  **sheetName** | **String**| The worksheet name. |
  **moving** | [**WorksheetMovingRequest**](WorksheetMovingRequest.md)| with moving parameters. | [optional]
  **folder** | **String**| The document folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -11904,7 +11956,7 @@ No authorization required
 
 <a name="cellsWorksheetsPostRenameWorksheet"></a>
 # **cellsWorksheetsPostRenameWorksheet**
-> CellsCloudResponse cellsWorksheetsPostRenameWorksheet(name, sheetName, newname, folder, storage)
+> CellsCloudResponse cellsWorksheetsPostRenameWorksheet(name, sheetName, newname, folder, storageName)
 
 Rename worksheet
 
@@ -11920,9 +11972,9 @@ String name = "name_example"; // String |
 String sheetName = "sheetName_example"; // String | 
 String newname = "newname_example"; // String | 
 String folder = "folder_example"; // String | 
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    CellsCloudResponse result = apiInstance.cellsWorksheetsPostRenameWorksheet(name, sheetName, newname, folder, storage);
+    CellsCloudResponse result = apiInstance.cellsWorksheetsPostRenameWorksheet(name, sheetName, newname, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsWorksheetsPostRenameWorksheet");
@@ -11938,7 +11990,7 @@ Name | Type | Description  | Notes
  **sheetName** | **String**|  |
  **newname** | **String**|  |
  **folder** | **String**|  | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -11955,7 +12007,7 @@ No authorization required
 
 <a name="cellsWorksheetsPostUpdateWorksheetProperty"></a>
 # **cellsWorksheetsPostUpdateWorksheetProperty**
-> WorksheetResponse cellsWorksheetsPostUpdateWorksheetProperty(name, sheetName, sheet, folder, storage)
+> WorksheetResponse cellsWorksheetsPostUpdateWorksheetProperty(name, sheetName, sheet, folder, storageName)
 
 Update worksheet property
 
@@ -11971,9 +12023,9 @@ String name = "name_example"; // String |
 String sheetName = "sheetName_example"; // String | 
 Worksheet sheet = new Worksheet(); // Worksheet | 
 String folder = "folder_example"; // String | 
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    WorksheetResponse result = apiInstance.cellsWorksheetsPostUpdateWorksheetProperty(name, sheetName, sheet, folder, storage);
+    WorksheetResponse result = apiInstance.cellsWorksheetsPostUpdateWorksheetProperty(name, sheetName, sheet, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsWorksheetsPostUpdateWorksheetProperty");
@@ -11989,7 +12041,7 @@ Name | Type | Description  | Notes
  **sheetName** | **String**|  |
  **sheet** | [**Worksheet**](Worksheet.md)|  | [optional]
  **folder** | **String**|  | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -12006,7 +12058,7 @@ No authorization required
 
 <a name="cellsWorksheetsPostUpdateWorksheetZoom"></a>
 # **cellsWorksheetsPostUpdateWorksheetZoom**
-> CellsCloudResponse cellsWorksheetsPostUpdateWorksheetZoom(name, sheetName, value, folder, storage)
+> CellsCloudResponse cellsWorksheetsPostUpdateWorksheetZoom(name, sheetName, value, folder, storageName)
 
 
 
@@ -12022,9 +12074,9 @@ String name = "name_example"; // String |
 String sheetName = "sheetName_example"; // String | 
 Integer value = 56; // Integer | 
 String folder = "folder_example"; // String | 
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    CellsCloudResponse result = apiInstance.cellsWorksheetsPostUpdateWorksheetZoom(name, sheetName, value, folder, storage);
+    CellsCloudResponse result = apiInstance.cellsWorksheetsPostUpdateWorksheetZoom(name, sheetName, value, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsWorksheetsPostUpdateWorksheetZoom");
@@ -12040,7 +12092,7 @@ Name | Type | Description  | Notes
  **sheetName** | **String**|  |
  **value** | **Integer**|  |
  **folder** | **String**|  | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -12057,7 +12109,7 @@ No authorization required
 
 <a name="cellsWorksheetsPostWorksheetComment"></a>
 # **cellsWorksheetsPostWorksheetComment**
-> CellsCloudResponse cellsWorksheetsPostWorksheetComment(name, sheetName, cellName, comment, folder, storage)
+> CellsCloudResponse cellsWorksheetsPostWorksheetComment(name, sheetName, cellName, comment, folder, storageName)
 
 Update worksheet&#39;s cell comment.
 
@@ -12074,9 +12126,9 @@ String sheetName = "sheetName_example"; // String | The worksheet name.
 String cellName = "cellName_example"; // String | The cell name
 Comment comment = new Comment(); // Comment | Comment object
 String folder = "folder_example"; // String | The document folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    CellsCloudResponse result = apiInstance.cellsWorksheetsPostWorksheetComment(name, sheetName, cellName, comment, folder, storage);
+    CellsCloudResponse result = apiInstance.cellsWorksheetsPostWorksheetComment(name, sheetName, cellName, comment, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsWorksheetsPostWorksheetComment");
@@ -12093,7 +12145,7 @@ Name | Type | Description  | Notes
  **cellName** | **String**| The cell name |
  **comment** | [**Comment**](Comment.md)| Comment object | [optional]
  **folder** | **String**| The document folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -12110,7 +12162,7 @@ No authorization required
 
 <a name="cellsWorksheetsPostWorksheetRangeSort"></a>
 # **cellsWorksheetsPostWorksheetRangeSort**
-> CellsCloudResponse cellsWorksheetsPostWorksheetRangeSort(name, sheetName, cellArea, dataSorter, folder, storage)
+> CellsCloudResponse cellsWorksheetsPostWorksheetRangeSort(name, sheetName, cellArea, dataSorter, folder, storageName)
 
 Sort worksheet range.
 
@@ -12127,9 +12179,9 @@ String sheetName = "sheetName_example"; // String | The worksheet name.
 String cellArea = "cellArea_example"; // String | The range to sort.
 DataSorter dataSorter = new DataSorter(); // DataSorter | with sorting settings.
 String folder = "folder_example"; // String | The workbook folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    CellsCloudResponse result = apiInstance.cellsWorksheetsPostWorksheetRangeSort(name, sheetName, cellArea, dataSorter, folder, storage);
+    CellsCloudResponse result = apiInstance.cellsWorksheetsPostWorksheetRangeSort(name, sheetName, cellArea, dataSorter, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsWorksheetsPostWorksheetRangeSort");
@@ -12146,7 +12198,7 @@ Name | Type | Description  | Notes
  **cellArea** | **String**| The range to sort. |
  **dataSorter** | [**DataSorter**](DataSorter.md)| with sorting settings. | [optional]
  **folder** | **String**| The workbook folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -12163,7 +12215,7 @@ No authorization required
 
 <a name="cellsWorksheetsPostWorksheetTextSearch"></a>
 # **cellsWorksheetsPostWorksheetTextSearch**
-> TextItemsResponse cellsWorksheetsPostWorksheetTextSearch(name, sheetName, text, folder, storage)
+> TextItemsResponse cellsWorksheetsPostWorksheetTextSearch(name, sheetName, text, folder, storageName)
 
 Search text.
 
@@ -12179,9 +12231,9 @@ String name = "name_example"; // String | Document name.
 String sheetName = "sheetName_example"; // String | The worksheet name.
 String text = "text_example"; // String | Text to search.
 String folder = "folder_example"; // String | Document's folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    TextItemsResponse result = apiInstance.cellsWorksheetsPostWorksheetTextSearch(name, sheetName, text, folder, storage);
+    TextItemsResponse result = apiInstance.cellsWorksheetsPostWorksheetTextSearch(name, sheetName, text, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsWorksheetsPostWorksheetTextSearch");
@@ -12197,7 +12249,7 @@ Name | Type | Description  | Notes
  **sheetName** | **String**| The worksheet name. |
  **text** | **String**| Text to search. |
  **folder** | **String**| Document&#39;s folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -12214,7 +12266,7 @@ No authorization required
 
 <a name="cellsWorksheetsPostWorsheetTextReplace"></a>
 # **cellsWorksheetsPostWorsheetTextReplace**
-> WorksheetReplaceResponse cellsWorksheetsPostWorsheetTextReplace(name, sheetName, oldValue, newValue, folder, storage)
+> WorksheetReplaceResponse cellsWorksheetsPostWorsheetTextReplace(name, sheetName, oldValue, newValue, folder, storageName)
 
 Replace text.
 
@@ -12231,9 +12283,9 @@ String sheetName = "sheetName_example"; // String | Worksheet name.
 String oldValue = "oldValue_example"; // String | The old text to replace.
 String newValue = "newValue_example"; // String | The new text to replace by.
 String folder = "folder_example"; // String | Document's folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    WorksheetReplaceResponse result = apiInstance.cellsWorksheetsPostWorsheetTextReplace(name, sheetName, oldValue, newValue, folder, storage);
+    WorksheetReplaceResponse result = apiInstance.cellsWorksheetsPostWorsheetTextReplace(name, sheetName, oldValue, newValue, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsWorksheetsPostWorsheetTextReplace");
@@ -12250,7 +12302,7 @@ Name | Type | Description  | Notes
  **oldValue** | **String**| The old text to replace. |
  **newValue** | **String**| The new text to replace by. |
  **folder** | **String**| Document&#39;s folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -12267,7 +12319,7 @@ No authorization required
 
 <a name="cellsWorksheetsPutAddNewWorksheet"></a>
 # **cellsWorksheetsPutAddNewWorksheet**
-> WorksheetsResponse cellsWorksheetsPutAddNewWorksheet(name, sheetName, position, sheettype, folder, storage)
+> WorksheetsResponse cellsWorksheetsPutAddNewWorksheet(name, sheetName, position, sheettype, folder, storageName)
 
 Add new worksheet.
 
@@ -12284,9 +12336,9 @@ String sheetName = "sheetName_example"; // String | The new sheet name.
 Integer position = 56; // Integer | The new sheet position.
 String sheettype = "sheettype_example"; // String | The new sheet type.
 String folder = "folder_example"; // String | Document folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    WorksheetsResponse result = apiInstance.cellsWorksheetsPutAddNewWorksheet(name, sheetName, position, sheettype, folder, storage);
+    WorksheetsResponse result = apiInstance.cellsWorksheetsPutAddNewWorksheet(name, sheetName, position, sheettype, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsWorksheetsPutAddNewWorksheet");
@@ -12303,7 +12355,7 @@ Name | Type | Description  | Notes
  **position** | **Integer**| The new sheet position. | [optional]
  **sheettype** | **String**| The new sheet type. | [optional]
  **folder** | **String**| Document folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -12320,7 +12372,7 @@ No authorization required
 
 <a name="cellsWorksheetsPutChangeVisibilityWorksheet"></a>
 # **cellsWorksheetsPutChangeVisibilityWorksheet**
-> WorksheetResponse cellsWorksheetsPutChangeVisibilityWorksheet(name, sheetName, isVisible, folder, storage)
+> WorksheetResponse cellsWorksheetsPutChangeVisibilityWorksheet(name, sheetName, isVisible, folder, storageName)
 
 Change worksheet visibility.
 
@@ -12336,9 +12388,9 @@ String name = "name_example"; // String | Document name.
 String sheetName = "sheetName_example"; // String | Worksheet name.
 Boolean isVisible = true; // Boolean | New worksheet visibility value.
 String folder = "folder_example"; // String | The document folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    WorksheetResponse result = apiInstance.cellsWorksheetsPutChangeVisibilityWorksheet(name, sheetName, isVisible, folder, storage);
+    WorksheetResponse result = apiInstance.cellsWorksheetsPutChangeVisibilityWorksheet(name, sheetName, isVisible, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsWorksheetsPutChangeVisibilityWorksheet");
@@ -12354,7 +12406,7 @@ Name | Type | Description  | Notes
  **sheetName** | **String**| Worksheet name. |
  **isVisible** | **Boolean**| New worksheet visibility value. |
  **folder** | **String**| The document folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -12371,7 +12423,7 @@ No authorization required
 
 <a name="cellsWorksheetsPutProtectWorksheet"></a>
 # **cellsWorksheetsPutProtectWorksheet**
-> WorksheetResponse cellsWorksheetsPutProtectWorksheet(name, sheetName, protectParameter, folder, storage)
+> WorksheetResponse cellsWorksheetsPutProtectWorksheet(name, sheetName, protectParameter, folder, storageName)
 
 Protect worksheet.
 
@@ -12387,9 +12439,9 @@ String name = "name_example"; // String | Document name.
 String sheetName = "sheetName_example"; // String | The worksheet name.
 ProtectSheetParameter protectParameter = new ProtectSheetParameter(); // ProtectSheetParameter | with protection settings.
 String folder = "folder_example"; // String | Document folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    WorksheetResponse result = apiInstance.cellsWorksheetsPutProtectWorksheet(name, sheetName, protectParameter, folder, storage);
+    WorksheetResponse result = apiInstance.cellsWorksheetsPutProtectWorksheet(name, sheetName, protectParameter, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsWorksheetsPutProtectWorksheet");
@@ -12405,7 +12457,7 @@ Name | Type | Description  | Notes
  **sheetName** | **String**| The worksheet name. |
  **protectParameter** | [**ProtectSheetParameter**](ProtectSheetParameter.md)| with protection settings. | [optional]
  **folder** | **String**| Document folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -12422,7 +12474,7 @@ No authorization required
 
 <a name="cellsWorksheetsPutWorksheetBackground"></a>
 # **cellsWorksheetsPutWorksheetBackground**
-> CellsCloudResponse cellsWorksheetsPutWorksheetBackground(name, sheetName, png, folder, storage)
+> CellsCloudResponse cellsWorksheetsPutWorksheetBackground(name, sheetName, png, folder, storageName)
 
 Set worksheet background image.
 
@@ -12438,9 +12490,9 @@ String name = "name_example"; // String |
 String sheetName = "sheetName_example"; // String | 
 byte[] png = BINARY_DATA_HERE; // byte[] | 
 String folder = "folder_example"; // String | 
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    CellsCloudResponse result = apiInstance.cellsWorksheetsPutWorksheetBackground(name, sheetName, png, folder, storage);
+    CellsCloudResponse result = apiInstance.cellsWorksheetsPutWorksheetBackground(name, sheetName, png, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsWorksheetsPutWorksheetBackground");
@@ -12456,7 +12508,7 @@ Name | Type | Description  | Notes
  **sheetName** | **String**|  |
  **png** | **byte[]**|  |
  **folder** | **String**|  | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -12473,7 +12525,7 @@ No authorization required
 
 <a name="cellsWorksheetsPutWorksheetComment"></a>
 # **cellsWorksheetsPutWorksheetComment**
-> CommentResponse cellsWorksheetsPutWorksheetComment(name, sheetName, cellName, comment, folder, storage)
+> CommentResponse cellsWorksheetsPutWorksheetComment(name, sheetName, cellName, comment, folder, storageName)
 
 Add worksheet&#39;s cell comment.
 
@@ -12490,9 +12542,9 @@ String sheetName = "sheetName_example"; // String | The worksheet name.
 String cellName = "cellName_example"; // String | The cell name
 Comment comment = new Comment(); // Comment | Comment object
 String folder = "folder_example"; // String | The document folder.
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    CommentResponse result = apiInstance.cellsWorksheetsPutWorksheetComment(name, sheetName, cellName, comment, folder, storage);
+    CommentResponse result = apiInstance.cellsWorksheetsPutWorksheetComment(name, sheetName, cellName, comment, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsWorksheetsPutWorksheetComment");
@@ -12509,7 +12561,7 @@ Name | Type | Description  | Notes
  **cellName** | **String**| The cell name |
  **comment** | [**Comment**](Comment.md)| Comment object | [optional]
  **folder** | **String**| The document folder. | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
@@ -12526,7 +12578,7 @@ No authorization required
 
 <a name="cellsWorksheetsPutWorksheetFreezePanes"></a>
 # **cellsWorksheetsPutWorksheetFreezePanes**
-> CellsCloudResponse cellsWorksheetsPutWorksheetFreezePanes(name, sheetName, row, column, freezedRows, freezedColumns, folder, storage)
+> CellsCloudResponse cellsWorksheetsPutWorksheetFreezePanes(name, sheetName, row, column, freezedRows, freezedColumns, folder, storageName)
 
 Set freeze panes
 
@@ -12545,9 +12597,9 @@ Integer column = 56; // Integer |
 Integer freezedRows = 56; // Integer | 
 Integer freezedColumns = 56; // Integer | 
 String folder = "folder_example"; // String | 
-String storage = "storage_example"; // String | storage name.
+String storageName = "storageName_example"; // String | storage name.
 try {
-    CellsCloudResponse result = apiInstance.cellsWorksheetsPutWorksheetFreezePanes(name, sheetName, row, column, freezedRows, freezedColumns, folder, storage);
+    CellsCloudResponse result = apiInstance.cellsWorksheetsPutWorksheetFreezePanes(name, sheetName, row, column, freezedRows, freezedColumns, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsWorksheetsPutWorksheetFreezePanes");
@@ -12566,7 +12618,7 @@ Name | Type | Description  | Notes
  **freezedRows** | **Integer**|  |
  **freezedColumns** | **Integer**|  |
  **folder** | **String**|  | [optional]
- **storage** | **String**| storage name. | [optional]
+ **storageName** | **String**| storage name. | [optional]
 
 ### Return type
 
