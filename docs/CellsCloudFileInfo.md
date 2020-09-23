@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **String** |  |  [optional]
-**size** | **Integer** |  | 
+**size** | **Long** |  | 
 **folder** | **String** |  |  [optional]
 **storage** | **String** |  |  [optional]
 

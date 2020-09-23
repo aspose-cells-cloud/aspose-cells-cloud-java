@@ -38,7 +38,7 @@ import java.io.IOException;
  * Represents the copy options.
  */
 @ApiModel(description = "Represents the copy options.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-08-19T15:56:27.996+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-09-18T15:44:17.049+08:00")
 public class CopyOptions {
   @SerializedName("ReferToDestinationSheet")
   private Boolean referToDestinationSheet = null;

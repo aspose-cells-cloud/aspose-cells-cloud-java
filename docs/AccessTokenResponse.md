@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **accessToken** | **String** |  |  [optional]
 **issued** | **String** |  |  [optional]
 **clientRefreshTokenLifeTimeInMinutes** | **String** |  |  [optional]
-**expiresIn** | **Integer** |  |  [optional]
+**expiresIn** | **Long** |  |  [optional]
 **tokenType** | **String** |  |  [optional]
 **clientId** | **String** |  |  [optional]
 **refreshToken** | **String** |  |  [optional]

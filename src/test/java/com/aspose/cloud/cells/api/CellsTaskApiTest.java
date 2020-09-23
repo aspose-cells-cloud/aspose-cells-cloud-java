@@ -58,8 +58,7 @@ public class CellsTaskApiTest {
 
 	public CellsTaskApiTest() {
 		try {
-			api = new CellsApi(CellsApiUtil.GetClientId(),
-					CellsApiUtil.GetClientSecret());
+			api = new CellsApi(CellsApiUtil.GetClientId(),CellsApiUtil.GetClientSecret(),CellsApiUtil.GetAPIVersion(),CellsApiUtil.GetBaseUrl());
 		} catch (ApiException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

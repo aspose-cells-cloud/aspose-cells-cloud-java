@@ -25,7 +25,7 @@
 package com.aspose.cloud.cells.model;
 
 import java.util.Objects;
-import com.aspose.cloud.cells.model.Error;
+import com.aspose.cloud.cells.model.CellsError;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -41,13 +41,13 @@ import java.util.List;
  * File upload result
  */
 @ApiModel(description = "File upload result")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-08-19T15:56:27.996+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-09-18T15:44:17.049+08:00")
 public class FilesUploadResult {
   @SerializedName("Uploaded")
   private List<String> uploaded = null;
 
   @SerializedName("Errors")
-  private List<Error> errors = null;
+  private List<CellsError> errors = null;
 
   public FilesUploadResult uploaded(List<String> uploaded) {
     this.uploaded = uploaded;
@@ -75,12 +75,12 @@ public class FilesUploadResult {
     this.uploaded = uploaded;
   }
 
-  public FilesUploadResult errors(List<Error> errors) {
+  public FilesUploadResult errors(List<CellsError> errors) {
     this.errors = errors;
     return this;
   }
 
-  public FilesUploadResult addErrorsItem(Error errorsItem) {
+  public FilesUploadResult addErrorsItem(CellsError errorsItem) {
     if (this.errors == null) {
       this.errors = new ArrayList<>();
     }
@@ -93,11 +93,11 @@ public class FilesUploadResult {
    * @return errors
   **/
   @ApiModelProperty(value = "List of errors.")
-  public List<Error> getErrors() {
+  public List<CellsError> getErrors() {
     return errors;
   }
 
-  public void setErrors(List<Error> errors) {
+  public void setErrors(List<CellsError> errors) {
     this.errors = errors;
   }
 

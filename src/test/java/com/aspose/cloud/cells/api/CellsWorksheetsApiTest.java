@@ -15,7 +15,6 @@ package com.aspose.cloud.cells.api;
 import com.aspose.cloud.cells.client.ApiClient;
 import com.aspose.cloud.cells.client.ApiException;
 import com.aspose.cloud.cells.client.Configuration;
-
 import com.aspose.cloud.cells.model.AutoFitterOptions;
 import com.aspose.cloud.cells.model.Comment;
 import com.aspose.cloud.cells.model.CommentResponse;
@@ -77,8 +76,7 @@ public class CellsWorksheetsApiTest {
 
 	public CellsWorksheetsApiTest() {
 		try {
-			api = new CellsApi(CellsApiUtil.GetClientId(),
-					CellsApiUtil.GetClientSecret());
+			api = new CellsApi(CellsApiUtil.GetClientId(),CellsApiUtil.GetClientSecret(),CellsApiUtil.GetAPIVersion(),CellsApiUtil.GetBaseUrl());
 		} catch (ApiException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

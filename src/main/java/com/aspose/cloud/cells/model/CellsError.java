@@ -39,8 +39,8 @@ import java.io.IOException;
  * Error
  */
 @ApiModel(description = "Error")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-08-19T15:56:27.996+08:00")
-public class Error {
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-09-18T15:44:17.049+08:00")
+public class CellsError {
   @SerializedName("Code")
   private String code = null;
 
@@ -53,7 +53,7 @@ public class Error {
   @SerializedName("InnerError")
   private ErrorDetails innerError = null;
 
-  public Error code(String code) {
+  public CellsError code(String code) {
     this.code = code;
     return this;
   }
@@ -71,7 +71,7 @@ public class Error {
     this.code = code;
   }
 
-  public Error message(String message) {
+  public CellsError message(String message) {
     this.message = message;
     return this;
   }
@@ -89,7 +89,7 @@ public class Error {
     this.message = message;
   }
 
-  public Error description(String description) {
+  public CellsError description(String description) {
     this.description = description;
     return this;
   }
@@ -107,7 +107,7 @@ public class Error {
     this.description = description;
   }
 
-  public Error innerError(ErrorDetails innerError) {
+  public CellsError innerError(ErrorDetails innerError) {
     this.innerError = innerError;
     return this;
   }
@@ -134,11 +134,11 @@ public class Error {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    Error error = (Error) o;
-    return Objects.equals(this.code, error.code) &&
-        Objects.equals(this.message, error.message) &&
-        Objects.equals(this.description, error.description) &&
-        Objects.equals(this.innerError, error.innerError);
+    CellsError cellsError = (CellsError) o;
+    return Objects.equals(this.code, cellsError.code) &&
+        Objects.equals(this.message, cellsError.message) &&
+        Objects.equals(this.description, cellsError.description) &&
+        Objects.equals(this.innerError, cellsError.innerError);
   }
 
   @Override
@@ -150,7 +150,7 @@ public class Error {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class Error {\n");
+    sb.append("class CellsError {\n");
     
     sb.append("    code: ").append(toIndentedString(code)).append("\n");
     sb.append("    message: ").append(toIndentedString(message)).append("\n");

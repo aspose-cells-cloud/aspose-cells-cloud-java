@@ -63,7 +63,7 @@ public class CellsChartsApiTest {
     
     public CellsChartsApiTest(){
     	try {
-			 api = new CellsApi(CellsApiUtil.GetClientId(),CellsApiUtil.GetClientSecret());
+    		api = new CellsApi(CellsApiUtil.GetClientId(),CellsApiUtil.GetClientSecret(),CellsApiUtil.GetAPIVersion(),CellsApiUtil.GetBaseUrl());
 		} catch (ApiException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -319,7 +319,7 @@ public class CellsChartsApiTest {
         String title = null;
         String folder = TEMPFOLDER;
         CellsApiUtil.Upload(api, folder , name);
-        ChartsResponse response = api.cellsChartsPutWorksheetAddChart(name, sheetName, chartType, upperLeftRow, upperLeftColumn, lowerRightRow, lowerRightColumn, area, isVertical, categoryData, isAutoGetSerialName, title, folder,null);
+        ChartsResponse response = api.cellsChartsPutWorksheetAddChart(name, sheetName, chartType, upperLeftRow, upperLeftColumn, lowerRightRow, lowerRightColumn, area, isVertical, categoryData, isAutoGetSerialName, title, folder,null,null,null,null,null);
 
         // TODO: test validations
     }

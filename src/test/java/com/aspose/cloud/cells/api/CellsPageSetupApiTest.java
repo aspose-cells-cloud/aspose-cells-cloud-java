@@ -15,7 +15,6 @@ package com.aspose.cloud.cells.api;
 import com.aspose.cloud.cells.client.ApiClient;
 import com.aspose.cloud.cells.client.ApiException;
 import com.aspose.cloud.cells.client.Configuration;
-
 import com.aspose.cloud.cells.model.PageSectionsResponse;
 import com.aspose.cloud.cells.model.PageSetup;
 import com.aspose.cloud.cells.model.PageSetupResponse;
@@ -56,8 +55,7 @@ public class CellsPageSetupApiTest {
 
 	public CellsPageSetupApiTest() {
 		try {
-			api = new CellsApi(CellsApiUtil.GetClientId(),
-					CellsApiUtil.GetClientSecret());
+			api = new CellsApi(CellsApiUtil.GetClientId(),CellsApiUtil.GetClientSecret(),CellsApiUtil.GetAPIVersion(),CellsApiUtil.GetBaseUrl());
 		} catch (ApiException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

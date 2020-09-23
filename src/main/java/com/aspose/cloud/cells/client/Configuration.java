@@ -24,7 +24,7 @@
 
 package com.aspose.cloud.cells.client;
 
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-07-02T09:41:11.020+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-09-18T15:44:17.049+08:00")
 public class Configuration {
     private static ApiClient defaultApiClient = new ApiClient();
 

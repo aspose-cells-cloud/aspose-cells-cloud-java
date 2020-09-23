@@ -114,6 +114,8 @@ Method | HTTP request | Description
 [**cellsPivotTablesPostPivotTableFieldHideItem**](CellsApi.md#cellsPivotTablesPostPivotTableFieldHideItem) | **POST** /cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/PivotField/Hide | 
 [**cellsPivotTablesPostPivotTableFieldMoveTo**](CellsApi.md#cellsPivotTablesPostPivotTableFieldMoveTo) | **POST** /cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/PivotField/Move | 
 [**cellsPivotTablesPostPivotTableStyle**](CellsApi.md#cellsPivotTablesPostPivotTableStyle) | **POST** /cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/FormatAll | Update style for pivot table
+[**cellsPivotTablesPostPivotTableUpdatePivotField**](CellsApi.md#cellsPivotTablesPostPivotTableUpdatePivotField) | **POST** /cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/PivotFields/{pivotFieldIndex} | 
+[**cellsPivotTablesPostPivotTableUpdatePivotFields**](CellsApi.md#cellsPivotTablesPostPivotTableUpdatePivotFields) | **POST** /cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/PivotFields | 
 [**cellsPivotTablesPostWorksheetPivotTableCalculate**](CellsApi.md#cellsPivotTablesPostWorksheetPivotTableCalculate) | **POST** /cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/Calculate | Calculates pivottable&#39;s data to cells.
 [**cellsPivotTablesPostWorksheetPivotTableMove**](CellsApi.md#cellsPivotTablesPostWorksheetPivotTableMove) | **POST** /cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/Move | 
 [**cellsPivotTablesPutPivotTableField**](CellsApi.md#cellsPivotTablesPutPivotTableField) | **PUT** /cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/PivotField | Add pivot field into into pivot table
@@ -170,6 +172,12 @@ Method | HTTP request | Description
 [**cellsShapesGetWorksheetShapes**](CellsApi.md#cellsShapesGetWorksheetShapes) | **GET** /cells/{name}/worksheets/{sheetName}/shapes | Get worksheet shapes 
 [**cellsShapesPostWorksheetShape**](CellsApi.md#cellsShapesPostWorksheetShape) | **POST** /cells/{name}/worksheets/{sheetName}/shapes/{shapeindex} | Update a shape in worksheet
 [**cellsShapesPutWorksheetShape**](CellsApi.md#cellsShapesPutWorksheetShape) | **PUT** /cells/{name}/worksheets/{sheetName}/shapes | Add shape in worksheet
+[**cellsSparklineGroupsDeleteWorksheetSparklineGroup**](CellsApi.md#cellsSparklineGroupsDeleteWorksheetSparklineGroup) | **DELETE** /cells/{name}/worksheets/{sheetName}/sparklinegroups/{sparklineGroupIndex} | 
+[**cellsSparklineGroupsDeleteWorksheetSparklineGroups**](CellsApi.md#cellsSparklineGroupsDeleteWorksheetSparklineGroups) | **DELETE** /cells/{name}/worksheets/{sheetName}/sparklinegroups | 
+[**cellsSparklineGroupsGetWorksheetSparklineGroup**](CellsApi.md#cellsSparklineGroupsGetWorksheetSparklineGroup) | **GET** /cells/{name}/worksheets/{sheetName}/sparklinegroups/{sparklineGroupIndex} | 
+[**cellsSparklineGroupsGetWorksheetSparklineGroups**](CellsApi.md#cellsSparklineGroupsGetWorksheetSparklineGroups) | **GET** /cells/{name}/worksheets/{sheetName}/sparklinegroups | Get worksheet charts description.
+[**cellsSparklineGroupsPostWorksheetSparklineGroup**](CellsApi.md#cellsSparklineGroupsPostWorksheetSparklineGroup) | **POST** /cells/{name}/worksheets/{sheetName}/sparklinegroups/{sparklineGroupIndex} | 
+[**cellsSparklineGroupsPutWorksheetSparklineGroup**](CellsApi.md#cellsSparklineGroupsPutWorksheetSparklineGroup) | **PUT** /cells/{name}/worksheets/{sheetName}/sparklinegroups | 
 [**cellsTaskPostRunTask**](CellsApi.md#cellsTaskPostRunTask) | **POST** /cells/task/runtask | Run tasks  
 [**cellsWorkbookDeleteDecryptDocument**](CellsApi.md#cellsWorkbookDeleteDecryptDocument) | **DELETE** /cells/{name}/encryption | Decrypt document.
 [**cellsWorkbookDeleteDocumentUnprotectFromChanges**](CellsApi.md#cellsWorkbookDeleteDocumentUnprotectFromChanges) | **DELETE** /cells/{name}/writeProtection | Unprotect document from changes.
@@ -1835,7 +1843,7 @@ No authorization required
 
 <a name="cellsChartsPutWorksheetAddChart"></a>
 # **cellsChartsPutWorksheetAddChart**
-> ChartsResponse cellsChartsPutWorksheetAddChart(name, sheetName, chartType, upperLeftRow, upperLeftColumn, lowerRightRow, lowerRightColumn, area, isVertical, categoryData, isAutoGetSerialName, title, folder, storageName)
+> ChartsResponse cellsChartsPutWorksheetAddChart(name, sheetName, chartType, upperLeftRow, upperLeftColumn, lowerRightRow, lowerRightColumn, area, isVertical, categoryData, isAutoGetSerialName, title, folder, storageName, dataLabels, dataLabelsPosition, pivotTableSheet, pivotTableName)
 
 Add new chart to worksheet.
 
@@ -1861,8 +1869,12 @@ Boolean isAutoGetSerialName = true; // Boolean | Specifies whether auto update s
 String title = "title_example"; // String | Specifies chart title name.
 String folder = "folder_example"; // String | The workbook folder.
 String storageName = "storageName_example"; // String | storage name.
+Boolean dataLabels = true; // Boolean | 
+String dataLabelsPosition = "Above"; // String | 
+String pivotTableSheet = "pivotTableSheet_example"; // String | 
+String pivotTableName = "pivotTableName_example"; // String | 
 try {
-    ChartsResponse result = apiInstance.cellsChartsPutWorksheetAddChart(name, sheetName, chartType, upperLeftRow, upperLeftColumn, lowerRightRow, lowerRightColumn, area, isVertical, categoryData, isAutoGetSerialName, title, folder, storageName);
+    ChartsResponse result = apiInstance.cellsChartsPutWorksheetAddChart(name, sheetName, chartType, upperLeftRow, upperLeftColumn, lowerRightRow, lowerRightColumn, area, isVertical, categoryData, isAutoGetSerialName, title, folder, storageName, dataLabels, dataLabelsPosition, pivotTableSheet, pivotTableName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsChartsPutWorksheetAddChart");
@@ -1888,6 +1900,10 @@ Name | Type | Description  | Notes
  **title** | **String**| Specifies chart title name. | [optional]
  **folder** | **String**| The workbook folder. | [optional]
  **storageName** | **String**| storage name. | [optional]
+ **dataLabels** | **Boolean**|  | [optional] [default to true]
+ **dataLabelsPosition** | **String**|  | [optional] [default to Above]
+ **pivotTableSheet** | **String**|  | [optional]
+ **pivotTableName** | **String**|  | [optional]
 
 ### Return type
 
@@ -6108,6 +6124,118 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+<a name="cellsPivotTablesPostPivotTableUpdatePivotField"></a>
+# **cellsPivotTablesPostPivotTableUpdatePivotField**
+> CellsCloudResponse cellsPivotTablesPostPivotTableUpdatePivotField(name, sheetName, pivotTableIndex, pivotFieldIndex, pivotFieldType, pivotField, needReCalculate, folder)
+
+
+
+### Example
+```java
+// Import classes:
+//import com.aspose.cloud.cells.client.ApiException;
+//import com.aspose.cloud.cells.api.CellsApi;
+
+
+CellsApi apiInstance = new CellsApi();
+String name = "name_example"; // String | 
+String sheetName = "sheetName_example"; // String | 
+Integer pivotTableIndex = 56; // Integer | 
+Integer pivotFieldIndex = 56; // Integer | 
+String pivotFieldType = "pivotFieldType_example"; // String | 
+PivotField pivotField = new PivotField(); // PivotField | 
+Boolean needReCalculate = false; // Boolean | 
+String folder = "folder_example"; // String | 
+try {
+    CellsCloudResponse result = apiInstance.cellsPivotTablesPostPivotTableUpdatePivotField(name, sheetName, pivotTableIndex, pivotFieldIndex, pivotFieldType, pivotField, needReCalculate, folder);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling CellsApi#cellsPivotTablesPostPivotTableUpdatePivotField");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **String**|  |
+ **sheetName** | **String**|  |
+ **pivotTableIndex** | **Integer**|  |
+ **pivotFieldIndex** | **Integer**|  |
+ **pivotFieldType** | **String**|  |
+ **pivotField** | [**PivotField**](PivotField.md)|  |
+ **needReCalculate** | **Boolean**|  | [optional] [default to false]
+ **folder** | **String**|  | [optional]
+
+### Return type
+
+[**CellsCloudResponse**](CellsCloudResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="cellsPivotTablesPostPivotTableUpdatePivotFields"></a>
+# **cellsPivotTablesPostPivotTableUpdatePivotFields**
+> CellsCloudResponse cellsPivotTablesPostPivotTableUpdatePivotFields(name, sheetName, pivotTableIndex, pivotFieldType, pivotField, needReCalculate, folder)
+
+
+
+### Example
+```java
+// Import classes:
+//import com.aspose.cloud.cells.client.ApiException;
+//import com.aspose.cloud.cells.api.CellsApi;
+
+
+CellsApi apiInstance = new CellsApi();
+String name = "name_example"; // String | 
+String sheetName = "sheetName_example"; // String | 
+Integer pivotTableIndex = 56; // Integer | 
+String pivotFieldType = "pivotFieldType_example"; // String | 
+PivotField pivotField = new PivotField(); // PivotField | 
+Boolean needReCalculate = false; // Boolean | 
+String folder = "folder_example"; // String | 
+try {
+    CellsCloudResponse result = apiInstance.cellsPivotTablesPostPivotTableUpdatePivotFields(name, sheetName, pivotTableIndex, pivotFieldType, pivotField, needReCalculate, folder);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling CellsApi#cellsPivotTablesPostPivotTableUpdatePivotFields");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **String**|  |
+ **sheetName** | **String**|  |
+ **pivotTableIndex** | **Integer**|  |
+ **pivotFieldType** | **String**|  |
+ **pivotField** | [**PivotField**](PivotField.md)|  |
+ **needReCalculate** | **Boolean**|  | [optional] [default to false]
+ **folder** | **String**|  | [optional]
+
+### Return type
+
+[**CellsCloudResponse**](CellsCloudResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
 <a name="cellsPivotTablesPostWorksheetPivotTableCalculate"></a>
 # **cellsPivotTablesPostWorksheetPivotTableCalculate**
 > CellsCloudResponse cellsPivotTablesPostWorksheetPivotTableCalculate(name, sheetName, pivotTableIndex, folder, storageName)
@@ -9114,6 +9242,316 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ShapeResponse**](ShapeResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="cellsSparklineGroupsDeleteWorksheetSparklineGroup"></a>
+# **cellsSparklineGroupsDeleteWorksheetSparklineGroup**
+> CellsCloudResponse cellsSparklineGroupsDeleteWorksheetSparklineGroup(name, sheetName, sparklineGroupIndex, folder, storageName)
+
+
+
+### Example
+```java
+// Import classes:
+//import com.aspose.cloud.cells.client.ApiException;
+//import com.aspose.cloud.cells.api.CellsApi;
+
+
+CellsApi apiInstance = new CellsApi();
+String name = "name_example"; // String | 
+String sheetName = "sheetName_example"; // String | 
+Integer sparklineGroupIndex = 56; // Integer | 
+String folder = "folder_example"; // String | 
+String storageName = "storageName_example"; // String | storage name.
+try {
+    CellsCloudResponse result = apiInstance.cellsSparklineGroupsDeleteWorksheetSparklineGroup(name, sheetName, sparklineGroupIndex, folder, storageName);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling CellsApi#cellsSparklineGroupsDeleteWorksheetSparklineGroup");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **String**|  |
+ **sheetName** | **String**|  |
+ **sparklineGroupIndex** | **Integer**|  |
+ **folder** | **String**|  | [optional]
+ **storageName** | **String**| storage name. | [optional]
+
+### Return type
+
+[**CellsCloudResponse**](CellsCloudResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="cellsSparklineGroupsDeleteWorksheetSparklineGroups"></a>
+# **cellsSparklineGroupsDeleteWorksheetSparklineGroups**
+> CellsCloudResponse cellsSparklineGroupsDeleteWorksheetSparklineGroups(name, sheetName, folder, storageName)
+
+
+
+### Example
+```java
+// Import classes:
+//import com.aspose.cloud.cells.client.ApiException;
+//import com.aspose.cloud.cells.api.CellsApi;
+
+
+CellsApi apiInstance = new CellsApi();
+String name = "name_example"; // String | 
+String sheetName = "sheetName_example"; // String | 
+String folder = "folder_example"; // String | 
+String storageName = "storageName_example"; // String | storage name.
+try {
+    CellsCloudResponse result = apiInstance.cellsSparklineGroupsDeleteWorksheetSparklineGroups(name, sheetName, folder, storageName);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling CellsApi#cellsSparklineGroupsDeleteWorksheetSparklineGroups");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **String**|  |
+ **sheetName** | **String**|  |
+ **folder** | **String**|  | [optional]
+ **storageName** | **String**| storage name. | [optional]
+
+### Return type
+
+[**CellsCloudResponse**](CellsCloudResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="cellsSparklineGroupsGetWorksheetSparklineGroup"></a>
+# **cellsSparklineGroupsGetWorksheetSparklineGroup**
+> SparklineGroupResponse cellsSparklineGroupsGetWorksheetSparklineGroup(name, sheetName, sparklineGroupIndex, folder, storageName)
+
+
+
+### Example
+```java
+// Import classes:
+//import com.aspose.cloud.cells.client.ApiException;
+//import com.aspose.cloud.cells.api.CellsApi;
+
+
+CellsApi apiInstance = new CellsApi();
+String name = "name_example"; // String | 
+String sheetName = "sheetName_example"; // String | 
+Integer sparklineGroupIndex = 56; // Integer | 
+String folder = "folder_example"; // String | 
+String storageName = "storageName_example"; // String | storage name.
+try {
+    SparklineGroupResponse result = apiInstance.cellsSparklineGroupsGetWorksheetSparklineGroup(name, sheetName, sparklineGroupIndex, folder, storageName);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling CellsApi#cellsSparklineGroupsGetWorksheetSparklineGroup");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **String**|  |
+ **sheetName** | **String**|  |
+ **sparklineGroupIndex** | **Integer**|  |
+ **folder** | **String**|  | [optional]
+ **storageName** | **String**| storage name. | [optional]
+
+### Return type
+
+[**SparklineGroupResponse**](SparklineGroupResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="cellsSparklineGroupsGetWorksheetSparklineGroups"></a>
+# **cellsSparklineGroupsGetWorksheetSparklineGroups**
+> SparklineGroupsResponse cellsSparklineGroupsGetWorksheetSparklineGroups(name, sheetName, folder, storageName)
+
+Get worksheet charts description.
+
+### Example
+```java
+// Import classes:
+//import com.aspose.cloud.cells.client.ApiException;
+//import com.aspose.cloud.cells.api.CellsApi;
+
+
+CellsApi apiInstance = new CellsApi();
+String name = "name_example"; // String | Document name.
+String sheetName = "sheetName_example"; // String | The worksheet name.
+String folder = "folder_example"; // String | Document's folder.
+String storageName = "storageName_example"; // String | storage name.
+try {
+    SparklineGroupsResponse result = apiInstance.cellsSparklineGroupsGetWorksheetSparklineGroups(name, sheetName, folder, storageName);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling CellsApi#cellsSparklineGroupsGetWorksheetSparklineGroups");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **String**| Document name. |
+ **sheetName** | **String**| The worksheet name. |
+ **folder** | **String**| Document&#39;s folder. | [optional]
+ **storageName** | **String**| storage name. | [optional]
+
+### Return type
+
+[**SparklineGroupsResponse**](SparklineGroupsResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="cellsSparklineGroupsPostWorksheetSparklineGroup"></a>
+# **cellsSparklineGroupsPostWorksheetSparklineGroup**
+> CellsCloudResponse cellsSparklineGroupsPostWorksheetSparklineGroup(name, sheetName, sparklineGroupIndex, sparklineGroup, folder, storageName)
+
+
+
+### Example
+```java
+// Import classes:
+//import com.aspose.cloud.cells.client.ApiException;
+//import com.aspose.cloud.cells.api.CellsApi;
+
+
+CellsApi apiInstance = new CellsApi();
+String name = "name_example"; // String | 
+String sheetName = "sheetName_example"; // String | 
+Integer sparklineGroupIndex = 56; // Integer | 
+SparklineGroup sparklineGroup = new SparklineGroup(); // SparklineGroup | 
+String folder = "folder_example"; // String | 
+String storageName = "storageName_example"; // String | storage name.
+try {
+    CellsCloudResponse result = apiInstance.cellsSparklineGroupsPostWorksheetSparklineGroup(name, sheetName, sparklineGroupIndex, sparklineGroup, folder, storageName);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling CellsApi#cellsSparklineGroupsPostWorksheetSparklineGroup");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **String**|  |
+ **sheetName** | **String**|  |
+ **sparklineGroupIndex** | **Integer**|  |
+ **sparklineGroup** | [**SparklineGroup**](SparklineGroup.md)|  |
+ **folder** | **String**|  | [optional]
+ **storageName** | **String**| storage name. | [optional]
+
+### Return type
+
+[**CellsCloudResponse**](CellsCloudResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="cellsSparklineGroupsPutWorksheetSparklineGroup"></a>
+# **cellsSparklineGroupsPutWorksheetSparklineGroup**
+> CellsCloudResponse cellsSparklineGroupsPutWorksheetSparklineGroup(name, sheetName, type, dataRange, isVertical, locationRange, folder, storageName)
+
+
+
+### Example
+```java
+// Import classes:
+//import com.aspose.cloud.cells.client.ApiException;
+//import com.aspose.cloud.cells.api.CellsApi;
+
+
+CellsApi apiInstance = new CellsApi();
+String name = "name_example"; // String | 
+String sheetName = "sheetName_example"; // String | 
+String type = "type_example"; // String | 
+String dataRange = "dataRange_example"; // String | 
+Boolean isVertical = true; // Boolean | 
+String locationRange = "locationRange_example"; // String | 
+String folder = "folder_example"; // String | 
+String storageName = "storageName_example"; // String | storage name.
+try {
+    CellsCloudResponse result = apiInstance.cellsSparklineGroupsPutWorksheetSparklineGroup(name, sheetName, type, dataRange, isVertical, locationRange, folder, storageName);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling CellsApi#cellsSparklineGroupsPutWorksheetSparklineGroup");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **String**|  |
+ **sheetName** | **String**|  |
+ **type** | **String**|  |
+ **dataRange** | **String**|  |
+ **isVertical** | **Boolean**|  |
+ **locationRange** | **String**|  |
+ **folder** | **String**|  | [optional]
+ **storageName** | **String**| storage name. | [optional]
+
+### Return type
+
+[**CellsCloudResponse**](CellsCloudResponse.md)
 
 ### Authorization
 

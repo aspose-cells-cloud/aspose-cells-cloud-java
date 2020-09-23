@@ -15,7 +15,6 @@ package com.aspose.cloud.cells.api;
 import com.aspose.cloud.cells.client.ApiClient;
 import com.aspose.cloud.cells.client.ApiException;
 import com.aspose.cloud.cells.client.Configuration;
-
 import com.aspose.cloud.cells.model.CreatePivotTableRequest;
 import com.aspose.cloud.cells.model.DataSorter;
 import com.aspose.cloud.cells.model.ListObject;
@@ -58,8 +57,7 @@ public class CellsListObjectsApiTest {
 
 	public CellsListObjectsApiTest() {
 		try {
-			api = new CellsApi(CellsApiUtil.GetClientId(),
-					CellsApiUtil.GetClientSecret());
+			api = new CellsApi(CellsApiUtil.GetClientId(),CellsApiUtil.GetClientSecret(),CellsApiUtil.GetAPIVersion(),CellsApiUtil.GetBaseUrl());
 		} catch (ApiException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

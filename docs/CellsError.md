@@ -1,5 +1,5 @@
 
-# Error
+# CellsError
 
 ## Properties
 Name | Type | Description | Notes

@@ -32,11 +32,9 @@ import com.aspose.cloud.cells.client.Configuration;
 import com.aspose.cloud.cells.client.Pair;
 import com.aspose.cloud.cells.client.ProgressRequestBody;
 import com.aspose.cloud.cells.client.ProgressResponseBody;
-
 import com.google.gson.reflect.TypeToken;
 
 import java.io.IOException;
-
 
 import com.aspose.cloud.cells.model.AccessTokenResponse;
 import com.aspose.cloud.cells.model.AutoFilterResponse;
@@ -64,7 +62,9 @@ import com.aspose.cloud.cells.model.CopyOptions;
 import com.aspose.cloud.cells.model.CreatePivotTableRequest;
 import com.aspose.cloud.cells.model.DataSorter;
 import com.aspose.cloud.cells.model.DiscUsage;
+
 import java.io.File;
+
 import com.aspose.cloud.cells.model.FileVersions;
 import com.aspose.cloud.cells.model.FilesList;
 import com.aspose.cloud.cells.model.FilesUploadResult;
@@ -98,6 +98,7 @@ import com.aspose.cloud.cells.model.PasswordRequest;
 import com.aspose.cloud.cells.model.Picture;
 import com.aspose.cloud.cells.model.PictureResponse;
 import com.aspose.cloud.cells.model.PicturesResponse;
+import com.aspose.cloud.cells.model.PivotField;
 import com.aspose.cloud.cells.model.PivotFieldResponse;
 import com.aspose.cloud.cells.model.PivotFilter;
 import com.aspose.cloud.cells.model.PivotFilterResponse;
@@ -120,6 +121,9 @@ import com.aspose.cloud.cells.model.Shape;
 import com.aspose.cloud.cells.model.ShapeResponse;
 import com.aspose.cloud.cells.model.ShapesResponse;
 import com.aspose.cloud.cells.model.SingleValueResponse;
+import com.aspose.cloud.cells.model.SparklineGroup;
+import com.aspose.cloud.cells.model.SparklineGroupResponse;
+import com.aspose.cloud.cells.model.SparklineGroupsResponse;
 import com.aspose.cloud.cells.model.SplitResultResponse;
 import com.aspose.cloud.cells.model.StorageExist;
 import com.aspose.cloud.cells.model.Style;
@@ -159,8 +163,7 @@ public class CellsApi {
         this(Configuration.getDefaultApiClient());
     }
 
-
-	public CellsApi(String appSid, String appKey) throws ApiException {
+    public CellsApi(String appSid, String appKey) throws ApiException {
 		ApiClient apiClient = new ApiClient();
 		apiClient.setBasePath("https://api.aspose.cloud");
 		apiClient.setApiVersion("v3.0");
@@ -5171,12 +5174,16 @@ public class CellsApi {
      * @param title Specifies chart title name. (optional)
      * @param folder The workbook folder. (optional)
      * @param storageName storage name. (optional)
+     * @param dataLabels  (optional, default to true)
+     * @param dataLabelsPosition  (optional, default to Above)
+     * @param pivotTableSheet  (optional)
+     * @param pivotTableName  (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call cellsChartsPutWorksheetAddChartCall(String name, String sheetName, String chartType, Integer upperLeftRow, Integer upperLeftColumn, Integer lowerRightRow, Integer lowerRightColumn, String area, Boolean isVertical, String categoryData, Boolean isAutoGetSerialName, String title, String folder, String storageName, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call cellsChartsPutWorksheetAddChartCall(String name, String sheetName, String chartType, Integer upperLeftRow, Integer upperLeftColumn, Integer lowerRightRow, Integer lowerRightColumn, String area, Boolean isVertical, String categoryData, Boolean isAutoGetSerialName, String title, String folder, String storageName, Boolean dataLabels, String dataLabelsPosition, String pivotTableSheet, String pivotTableName, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -5209,6 +5216,14 @@ public class CellsApi {
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "folder", folder));
         if (storageName != null)
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "storageName", storageName));
+        if (dataLabels != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "dataLabels", dataLabels));
+        if (dataLabelsPosition != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "dataLabelsPosition", dataLabelsPosition));
+        if (pivotTableSheet != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "pivotTableSheet", pivotTableSheet));
+        if (pivotTableName != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "pivotTableName", pivotTableName));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -5243,7 +5258,7 @@ public class CellsApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call cellsChartsPutWorksheetAddChartValidateBeforeCall(String name, String sheetName, String chartType, Integer upperLeftRow, Integer upperLeftColumn, Integer lowerRightRow, Integer lowerRightColumn, String area, Boolean isVertical, String categoryData, Boolean isAutoGetSerialName, String title, String folder, String storageName, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call cellsChartsPutWorksheetAddChartValidateBeforeCall(String name, String sheetName, String chartType, Integer upperLeftRow, Integer upperLeftColumn, Integer lowerRightRow, Integer lowerRightColumn, String area, Boolean isVertical, String categoryData, Boolean isAutoGetSerialName, String title, String folder, String storageName, Boolean dataLabels, String dataLabelsPosition, String pivotTableSheet, String pivotTableName, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'name' is set
         if (name == null) {
@@ -5261,7 +5276,7 @@ public class CellsApi {
         }
         
         
-        com.squareup.okhttp.Call call = cellsChartsPutWorksheetAddChartCall(name, sheetName, chartType, upperLeftRow, upperLeftColumn, lowerRightRow, lowerRightColumn, area, isVertical, categoryData, isAutoGetSerialName, title, folder, storageName, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsChartsPutWorksheetAddChartCall(name, sheetName, chartType, upperLeftRow, upperLeftColumn, lowerRightRow, lowerRightColumn, area, isVertical, categoryData, isAutoGetSerialName, title, folder, storageName, dataLabels, dataLabelsPosition, pivotTableSheet, pivotTableName, progressListener, progressRequestListener);
         return call;
 
         
@@ -5287,11 +5302,15 @@ public class CellsApi {
      * @param title Specifies chart title name. (optional)
      * @param folder The workbook folder. (optional)
      * @param storageName storage name. (optional)
+     * @param dataLabels  (optional, default to true)
+     * @param dataLabelsPosition  (optional, default to Above)
+     * @param pivotTableSheet  (optional)
+     * @param pivotTableName  (optional)
      * @return ChartsResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ChartsResponse cellsChartsPutWorksheetAddChart(String name, String sheetName, String chartType, Integer upperLeftRow, Integer upperLeftColumn, Integer lowerRightRow, Integer lowerRightColumn, String area, Boolean isVertical, String categoryData, Boolean isAutoGetSerialName, String title, String folder, String storageName) throws ApiException {
-        ApiResponse<ChartsResponse> resp = cellsChartsPutWorksheetAddChartWithHttpInfo(name, sheetName, chartType, upperLeftRow, upperLeftColumn, lowerRightRow, lowerRightColumn, area, isVertical, categoryData, isAutoGetSerialName, title, folder, storageName);
+    public ChartsResponse cellsChartsPutWorksheetAddChart(String name, String sheetName, String chartType, Integer upperLeftRow, Integer upperLeftColumn, Integer lowerRightRow, Integer lowerRightColumn, String area, Boolean isVertical, String categoryData, Boolean isAutoGetSerialName, String title, String folder, String storageName, Boolean dataLabels, String dataLabelsPosition, String pivotTableSheet, String pivotTableName) throws ApiException {
+        ApiResponse<ChartsResponse> resp = cellsChartsPutWorksheetAddChartWithHttpInfo(name, sheetName, chartType, upperLeftRow, upperLeftColumn, lowerRightRow, lowerRightColumn, area, isVertical, categoryData, isAutoGetSerialName, title, folder, storageName, dataLabels, dataLabelsPosition, pivotTableSheet, pivotTableName);
         return resp.getData();
     }
 
@@ -5312,11 +5331,15 @@ public class CellsApi {
      * @param title Specifies chart title name. (optional)
      * @param folder The workbook folder. (optional)
      * @param storageName storage name. (optional)
+     * @param dataLabels  (optional, default to true)
+     * @param dataLabelsPosition  (optional, default to Above)
+     * @param pivotTableSheet  (optional)
+     * @param pivotTableName  (optional)
      * @return ApiResponse&lt;ChartsResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ChartsResponse> cellsChartsPutWorksheetAddChartWithHttpInfo(String name, String sheetName, String chartType, Integer upperLeftRow, Integer upperLeftColumn, Integer lowerRightRow, Integer lowerRightColumn, String area, Boolean isVertical, String categoryData, Boolean isAutoGetSerialName, String title, String folder, String storageName) throws ApiException {
-        com.squareup.okhttp.Call call = cellsChartsPutWorksheetAddChartValidateBeforeCall(name, sheetName, chartType, upperLeftRow, upperLeftColumn, lowerRightRow, lowerRightColumn, area, isVertical, categoryData, isAutoGetSerialName, title, folder, storageName, null, null);
+    public ApiResponse<ChartsResponse> cellsChartsPutWorksheetAddChartWithHttpInfo(String name, String sheetName, String chartType, Integer upperLeftRow, Integer upperLeftColumn, Integer lowerRightRow, Integer lowerRightColumn, String area, Boolean isVertical, String categoryData, Boolean isAutoGetSerialName, String title, String folder, String storageName, Boolean dataLabels, String dataLabelsPosition, String pivotTableSheet, String pivotTableName) throws ApiException {
+        com.squareup.okhttp.Call call = cellsChartsPutWorksheetAddChartValidateBeforeCall(name, sheetName, chartType, upperLeftRow, upperLeftColumn, lowerRightRow, lowerRightColumn, area, isVertical, categoryData, isAutoGetSerialName, title, folder, storageName, dataLabels, dataLabelsPosition, pivotTableSheet, pivotTableName, null, null);
         Type localVarReturnType = new TypeToken<ChartsResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -5338,11 +5361,15 @@ public class CellsApi {
      * @param title Specifies chart title name. (optional)
      * @param folder The workbook folder. (optional)
      * @param storageName storage name. (optional)
+     * @param dataLabels  (optional, default to true)
+     * @param dataLabelsPosition  (optional, default to Above)
+     * @param pivotTableSheet  (optional)
+     * @param pivotTableName  (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call cellsChartsPutWorksheetAddChartAsync(String name, String sheetName, String chartType, Integer upperLeftRow, Integer upperLeftColumn, Integer lowerRightRow, Integer lowerRightColumn, String area, Boolean isVertical, String categoryData, Boolean isAutoGetSerialName, String title, String folder, String storageName, final ApiCallback<ChartsResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call cellsChartsPutWorksheetAddChartAsync(String name, String sheetName, String chartType, Integer upperLeftRow, Integer upperLeftColumn, Integer lowerRightRow, Integer lowerRightColumn, String area, Boolean isVertical, String categoryData, Boolean isAutoGetSerialName, String title, String folder, String storageName, Boolean dataLabels, String dataLabelsPosition, String pivotTableSheet, String pivotTableName, final ApiCallback<ChartsResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -5363,7 +5390,7 @@ public class CellsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = cellsChartsPutWorksheetAddChartValidateBeforeCall(name, sheetName, chartType, upperLeftRow, upperLeftColumn, lowerRightRow, lowerRightColumn, area, isVertical, categoryData, isAutoGetSerialName, title, folder, storageName, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsChartsPutWorksheetAddChartValidateBeforeCall(name, sheetName, chartType, upperLeftRow, upperLeftColumn, lowerRightRow, lowerRightColumn, area, isVertical, categoryData, isAutoGetSerialName, title, folder, storageName, dataLabels, dataLabelsPosition, pivotTableSheet, pivotTableName, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<ChartsResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -18455,6 +18482,372 @@ public class CellsApi {
         return call;
     }
     /**
+     * Build call for cellsPivotTablesPostPivotTableUpdatePivotField
+     * @param name  (required)
+     * @param sheetName  (required)
+     * @param pivotTableIndex  (required)
+     * @param pivotFieldIndex  (required)
+     * @param pivotFieldType  (required)
+     * @param pivotField  (required)
+     * @param needReCalculate  (optional, default to false)
+     * @param folder  (optional)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call cellsPivotTablesPostPivotTableUpdatePivotFieldCall(String name, String sheetName, Integer pivotTableIndex, Integer pivotFieldIndex, String pivotFieldType, PivotField pivotField, Boolean needReCalculate, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = pivotField;
+        
+        // create path and map variables
+        String localVarPath = "/cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/PivotFields/{pivotFieldIndex}"
+            .replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString()))
+            .replaceAll("\\{" + "sheetName" + "\\}", apiClient.escapeString(sheetName.toString()))
+            .replaceAll("\\{" + "pivotTableIndex" + "\\}", apiClient.escapeString(pivotTableIndex.toString()))
+            .replaceAll("\\{" + "pivotFieldIndex" + "\\}", apiClient.escapeString(pivotFieldIndex.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        if (pivotFieldType != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "pivotFieldType", pivotFieldType));
+        if (needReCalculate != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "needReCalculate", needReCalculate));
+        if (folder != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "folder", folder));
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+    
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call cellsPivotTablesPostPivotTableUpdatePivotFieldValidateBeforeCall(String name, String sheetName, Integer pivotTableIndex, Integer pivotFieldIndex, String pivotFieldType, PivotField pivotField, Boolean needReCalculate, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'name' is set
+        if (name == null) {
+            throw new ApiException("Missing the required parameter 'name' when calling cellsPivotTablesPostPivotTableUpdatePivotField(Async)");
+        }
+        
+        // verify the required parameter 'sheetName' is set
+        if (sheetName == null) {
+            throw new ApiException("Missing the required parameter 'sheetName' when calling cellsPivotTablesPostPivotTableUpdatePivotField(Async)");
+        }
+        
+        // verify the required parameter 'pivotTableIndex' is set
+        if (pivotTableIndex == null) {
+            throw new ApiException("Missing the required parameter 'pivotTableIndex' when calling cellsPivotTablesPostPivotTableUpdatePivotField(Async)");
+        }
+        
+        // verify the required parameter 'pivotFieldIndex' is set
+        if (pivotFieldIndex == null) {
+            throw new ApiException("Missing the required parameter 'pivotFieldIndex' when calling cellsPivotTablesPostPivotTableUpdatePivotField(Async)");
+        }
+        
+        // verify the required parameter 'pivotFieldType' is set
+        if (pivotFieldType == null) {
+            throw new ApiException("Missing the required parameter 'pivotFieldType' when calling cellsPivotTablesPostPivotTableUpdatePivotField(Async)");
+        }
+        
+        // verify the required parameter 'pivotField' is set
+        if (pivotField == null) {
+            throw new ApiException("Missing the required parameter 'pivotField' when calling cellsPivotTablesPostPivotTableUpdatePivotField(Async)");
+        }
+        
+        
+        com.squareup.okhttp.Call call = cellsPivotTablesPostPivotTableUpdatePivotFieldCall(name, sheetName, pivotTableIndex, pivotFieldIndex, pivotFieldType, pivotField, needReCalculate, folder, progressListener, progressRequestListener);
+        return call;
+
+        
+        
+        
+        
+    }
+
+    /**
+     * 
+     * 
+     * @param name  (required)
+     * @param sheetName  (required)
+     * @param pivotTableIndex  (required)
+     * @param pivotFieldIndex  (required)
+     * @param pivotFieldType  (required)
+     * @param pivotField  (required)
+     * @param needReCalculate  (optional, default to false)
+     * @param folder  (optional)
+     * @return CellsCloudResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public CellsCloudResponse cellsPivotTablesPostPivotTableUpdatePivotField(String name, String sheetName, Integer pivotTableIndex, Integer pivotFieldIndex, String pivotFieldType, PivotField pivotField, Boolean needReCalculate, String folder) throws ApiException {
+        ApiResponse<CellsCloudResponse> resp = cellsPivotTablesPostPivotTableUpdatePivotFieldWithHttpInfo(name, sheetName, pivotTableIndex, pivotFieldIndex, pivotFieldType, pivotField, needReCalculate, folder);
+        return resp.getData();
+    }
+
+    /**
+     * 
+     * 
+     * @param name  (required)
+     * @param sheetName  (required)
+     * @param pivotTableIndex  (required)
+     * @param pivotFieldIndex  (required)
+     * @param pivotFieldType  (required)
+     * @param pivotField  (required)
+     * @param needReCalculate  (optional, default to false)
+     * @param folder  (optional)
+     * @return ApiResponse&lt;CellsCloudResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<CellsCloudResponse> cellsPivotTablesPostPivotTableUpdatePivotFieldWithHttpInfo(String name, String sheetName, Integer pivotTableIndex, Integer pivotFieldIndex, String pivotFieldType, PivotField pivotField, Boolean needReCalculate, String folder) throws ApiException {
+        com.squareup.okhttp.Call call = cellsPivotTablesPostPivotTableUpdatePivotFieldValidateBeforeCall(name, sheetName, pivotTableIndex, pivotFieldIndex, pivotFieldType, pivotField, needReCalculate, folder, null, null);
+        Type localVarReturnType = new TypeToken<CellsCloudResponse>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     *  (asynchronously)
+     * 
+     * @param name  (required)
+     * @param sheetName  (required)
+     * @param pivotTableIndex  (required)
+     * @param pivotFieldIndex  (required)
+     * @param pivotFieldType  (required)
+     * @param pivotField  (required)
+     * @param needReCalculate  (optional, default to false)
+     * @param folder  (optional)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call cellsPivotTablesPostPivotTableUpdatePivotFieldAsync(String name, String sheetName, Integer pivotTableIndex, Integer pivotFieldIndex, String pivotFieldType, PivotField pivotField, Boolean needReCalculate, String folder, final ApiCallback<CellsCloudResponse> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = cellsPivotTablesPostPivotTableUpdatePivotFieldValidateBeforeCall(name, sheetName, pivotTableIndex, pivotFieldIndex, pivotFieldType, pivotField, needReCalculate, folder, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<CellsCloudResponse>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for cellsPivotTablesPostPivotTableUpdatePivotFields
+     * @param name  (required)
+     * @param sheetName  (required)
+     * @param pivotTableIndex  (required)
+     * @param pivotFieldType  (required)
+     * @param pivotField  (required)
+     * @param needReCalculate  (optional, default to false)
+     * @param folder  (optional)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call cellsPivotTablesPostPivotTableUpdatePivotFieldsCall(String name, String sheetName, Integer pivotTableIndex, String pivotFieldType, PivotField pivotField, Boolean needReCalculate, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = pivotField;
+        
+        // create path and map variables
+        String localVarPath = "/cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/PivotFields"
+            .replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString()))
+            .replaceAll("\\{" + "sheetName" + "\\}", apiClient.escapeString(sheetName.toString()))
+            .replaceAll("\\{" + "pivotTableIndex" + "\\}", apiClient.escapeString(pivotTableIndex.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        if (pivotFieldType != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "pivotFieldType", pivotFieldType));
+        if (needReCalculate != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "needReCalculate", needReCalculate));
+        if (folder != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "folder", folder));
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+    
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call cellsPivotTablesPostPivotTableUpdatePivotFieldsValidateBeforeCall(String name, String sheetName, Integer pivotTableIndex, String pivotFieldType, PivotField pivotField, Boolean needReCalculate, String folder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'name' is set
+        if (name == null) {
+            throw new ApiException("Missing the required parameter 'name' when calling cellsPivotTablesPostPivotTableUpdatePivotFields(Async)");
+        }
+        
+        // verify the required parameter 'sheetName' is set
+        if (sheetName == null) {
+            throw new ApiException("Missing the required parameter 'sheetName' when calling cellsPivotTablesPostPivotTableUpdatePivotFields(Async)");
+        }
+        
+        // verify the required parameter 'pivotTableIndex' is set
+        if (pivotTableIndex == null) {
+            throw new ApiException("Missing the required parameter 'pivotTableIndex' when calling cellsPivotTablesPostPivotTableUpdatePivotFields(Async)");
+        }
+        
+        // verify the required parameter 'pivotFieldType' is set
+        if (pivotFieldType == null) {
+            throw new ApiException("Missing the required parameter 'pivotFieldType' when calling cellsPivotTablesPostPivotTableUpdatePivotFields(Async)");
+        }
+        
+        // verify the required parameter 'pivotField' is set
+        if (pivotField == null) {
+            throw new ApiException("Missing the required parameter 'pivotField' when calling cellsPivotTablesPostPivotTableUpdatePivotFields(Async)");
+        }
+        
+        
+        com.squareup.okhttp.Call call = cellsPivotTablesPostPivotTableUpdatePivotFieldsCall(name, sheetName, pivotTableIndex, pivotFieldType, pivotField, needReCalculate, folder, progressListener, progressRequestListener);
+        return call;
+
+        
+        
+        
+        
+    }
+
+    /**
+     * 
+     * 
+     * @param name  (required)
+     * @param sheetName  (required)
+     * @param pivotTableIndex  (required)
+     * @param pivotFieldType  (required)
+     * @param pivotField  (required)
+     * @param needReCalculate  (optional, default to false)
+     * @param folder  (optional)
+     * @return CellsCloudResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public CellsCloudResponse cellsPivotTablesPostPivotTableUpdatePivotFields(String name, String sheetName, Integer pivotTableIndex, String pivotFieldType, PivotField pivotField, Boolean needReCalculate, String folder) throws ApiException {
+        ApiResponse<CellsCloudResponse> resp = cellsPivotTablesPostPivotTableUpdatePivotFieldsWithHttpInfo(name, sheetName, pivotTableIndex, pivotFieldType, pivotField, needReCalculate, folder);
+        return resp.getData();
+    }
+
+    /**
+     * 
+     * 
+     * @param name  (required)
+     * @param sheetName  (required)
+     * @param pivotTableIndex  (required)
+     * @param pivotFieldType  (required)
+     * @param pivotField  (required)
+     * @param needReCalculate  (optional, default to false)
+     * @param folder  (optional)
+     * @return ApiResponse&lt;CellsCloudResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<CellsCloudResponse> cellsPivotTablesPostPivotTableUpdatePivotFieldsWithHttpInfo(String name, String sheetName, Integer pivotTableIndex, String pivotFieldType, PivotField pivotField, Boolean needReCalculate, String folder) throws ApiException {
+        com.squareup.okhttp.Call call = cellsPivotTablesPostPivotTableUpdatePivotFieldsValidateBeforeCall(name, sheetName, pivotTableIndex, pivotFieldType, pivotField, needReCalculate, folder, null, null);
+        Type localVarReturnType = new TypeToken<CellsCloudResponse>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     *  (asynchronously)
+     * 
+     * @param name  (required)
+     * @param sheetName  (required)
+     * @param pivotTableIndex  (required)
+     * @param pivotFieldType  (required)
+     * @param pivotField  (required)
+     * @param needReCalculate  (optional, default to false)
+     * @param folder  (optional)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call cellsPivotTablesPostPivotTableUpdatePivotFieldsAsync(String name, String sheetName, Integer pivotTableIndex, String pivotFieldType, PivotField pivotField, Boolean needReCalculate, String folder, final ApiCallback<CellsCloudResponse> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = cellsPivotTablesPostPivotTableUpdatePivotFieldsValidateBeforeCall(name, sheetName, pivotTableIndex, pivotFieldType, pivotField, needReCalculate, folder, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<CellsCloudResponse>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
      * Build call for cellsPivotTablesPostWorksheetPivotTableCalculate
      * @param name Document name. (required)
      * @param sheetName The worksheet name. (required)
@@ -27798,6 +28191,978 @@ public class CellsApi {
 
         com.squareup.okhttp.Call call = cellsShapesPutWorksheetShapeValidateBeforeCall(name, sheetName, shapeDTO, drawingType, upperLeftRow, upperLeftColumn, top, left, width, height, folder, storageName, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<ShapeResponse>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for cellsSparklineGroupsDeleteWorksheetSparklineGroup
+     * @param name  (required)
+     * @param sheetName  (required)
+     * @param sparklineGroupIndex  (required)
+     * @param folder  (optional)
+     * @param storageName storage name. (optional)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call cellsSparklineGroupsDeleteWorksheetSparklineGroupCall(String name, String sheetName, Integer sparklineGroupIndex, String folder, String storageName, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = null;
+        
+        // create path and map variables
+        String localVarPath = "/cells/{name}/worksheets/{sheetName}/sparklinegroups/{sparklineGroupIndex}"
+            .replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString()))
+            .replaceAll("\\{" + "sheetName" + "\\}", apiClient.escapeString(sheetName.toString()))
+            .replaceAll("\\{" + "sparklineGroupIndex" + "\\}", apiClient.escapeString(sparklineGroupIndex.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        if (folder != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "folder", folder));
+        if (storageName != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "storageName", storageName));
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return apiClient.buildCall(localVarPath, "DELETE", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+    
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call cellsSparklineGroupsDeleteWorksheetSparklineGroupValidateBeforeCall(String name, String sheetName, Integer sparklineGroupIndex, String folder, String storageName, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'name' is set
+        if (name == null) {
+            throw new ApiException("Missing the required parameter 'name' when calling cellsSparklineGroupsDeleteWorksheetSparklineGroup(Async)");
+        }
+        
+        // verify the required parameter 'sheetName' is set
+        if (sheetName == null) {
+            throw new ApiException("Missing the required parameter 'sheetName' when calling cellsSparklineGroupsDeleteWorksheetSparklineGroup(Async)");
+        }
+        
+        // verify the required parameter 'sparklineGroupIndex' is set
+        if (sparklineGroupIndex == null) {
+            throw new ApiException("Missing the required parameter 'sparklineGroupIndex' when calling cellsSparklineGroupsDeleteWorksheetSparklineGroup(Async)");
+        }
+        
+        
+        com.squareup.okhttp.Call call = cellsSparklineGroupsDeleteWorksheetSparklineGroupCall(name, sheetName, sparklineGroupIndex, folder, storageName, progressListener, progressRequestListener);
+        return call;
+
+        
+        
+        
+        
+    }
+
+    /**
+     * 
+     * 
+     * @param name  (required)
+     * @param sheetName  (required)
+     * @param sparklineGroupIndex  (required)
+     * @param folder  (optional)
+     * @param storageName storage name. (optional)
+     * @return CellsCloudResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public CellsCloudResponse cellsSparklineGroupsDeleteWorksheetSparklineGroup(String name, String sheetName, Integer sparklineGroupIndex, String folder, String storageName) throws ApiException {
+        ApiResponse<CellsCloudResponse> resp = cellsSparklineGroupsDeleteWorksheetSparklineGroupWithHttpInfo(name, sheetName, sparklineGroupIndex, folder, storageName);
+        return resp.getData();
+    }
+
+    /**
+     * 
+     * 
+     * @param name  (required)
+     * @param sheetName  (required)
+     * @param sparklineGroupIndex  (required)
+     * @param folder  (optional)
+     * @param storageName storage name. (optional)
+     * @return ApiResponse&lt;CellsCloudResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<CellsCloudResponse> cellsSparklineGroupsDeleteWorksheetSparklineGroupWithHttpInfo(String name, String sheetName, Integer sparklineGroupIndex, String folder, String storageName) throws ApiException {
+        com.squareup.okhttp.Call call = cellsSparklineGroupsDeleteWorksheetSparklineGroupValidateBeforeCall(name, sheetName, sparklineGroupIndex, folder, storageName, null, null);
+        Type localVarReturnType = new TypeToken<CellsCloudResponse>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     *  (asynchronously)
+     * 
+     * @param name  (required)
+     * @param sheetName  (required)
+     * @param sparklineGroupIndex  (required)
+     * @param folder  (optional)
+     * @param storageName storage name. (optional)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call cellsSparklineGroupsDeleteWorksheetSparklineGroupAsync(String name, String sheetName, Integer sparklineGroupIndex, String folder, String storageName, final ApiCallback<CellsCloudResponse> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = cellsSparklineGroupsDeleteWorksheetSparklineGroupValidateBeforeCall(name, sheetName, sparklineGroupIndex, folder, storageName, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<CellsCloudResponse>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for cellsSparklineGroupsDeleteWorksheetSparklineGroups
+     * @param name  (required)
+     * @param sheetName  (required)
+     * @param folder  (optional)
+     * @param storageName storage name. (optional)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call cellsSparklineGroupsDeleteWorksheetSparklineGroupsCall(String name, String sheetName, String folder, String storageName, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = null;
+        
+        // create path and map variables
+        String localVarPath = "/cells/{name}/worksheets/{sheetName}/sparklinegroups"
+            .replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString()))
+            .replaceAll("\\{" + "sheetName" + "\\}", apiClient.escapeString(sheetName.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        if (folder != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "folder", folder));
+        if (storageName != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "storageName", storageName));
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return apiClient.buildCall(localVarPath, "DELETE", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+    
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call cellsSparklineGroupsDeleteWorksheetSparklineGroupsValidateBeforeCall(String name, String sheetName, String folder, String storageName, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'name' is set
+        if (name == null) {
+            throw new ApiException("Missing the required parameter 'name' when calling cellsSparklineGroupsDeleteWorksheetSparklineGroups(Async)");
+        }
+        
+        // verify the required parameter 'sheetName' is set
+        if (sheetName == null) {
+            throw new ApiException("Missing the required parameter 'sheetName' when calling cellsSparklineGroupsDeleteWorksheetSparklineGroups(Async)");
+        }
+        
+        
+        com.squareup.okhttp.Call call = cellsSparklineGroupsDeleteWorksheetSparklineGroupsCall(name, sheetName, folder, storageName, progressListener, progressRequestListener);
+        return call;
+
+        
+        
+        
+        
+    }
+
+    /**
+     * 
+     * 
+     * @param name  (required)
+     * @param sheetName  (required)
+     * @param folder  (optional)
+     * @param storageName storage name. (optional)
+     * @return CellsCloudResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public CellsCloudResponse cellsSparklineGroupsDeleteWorksheetSparklineGroups(String name, String sheetName, String folder, String storageName) throws ApiException {
+        ApiResponse<CellsCloudResponse> resp = cellsSparklineGroupsDeleteWorksheetSparklineGroupsWithHttpInfo(name, sheetName, folder, storageName);
+        return resp.getData();
+    }
+
+    /**
+     * 
+     * 
+     * @param name  (required)
+     * @param sheetName  (required)
+     * @param folder  (optional)
+     * @param storageName storage name. (optional)
+     * @return ApiResponse&lt;CellsCloudResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<CellsCloudResponse> cellsSparklineGroupsDeleteWorksheetSparklineGroupsWithHttpInfo(String name, String sheetName, String folder, String storageName) throws ApiException {
+        com.squareup.okhttp.Call call = cellsSparklineGroupsDeleteWorksheetSparklineGroupsValidateBeforeCall(name, sheetName, folder, storageName, null, null);
+        Type localVarReturnType = new TypeToken<CellsCloudResponse>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     *  (asynchronously)
+     * 
+     * @param name  (required)
+     * @param sheetName  (required)
+     * @param folder  (optional)
+     * @param storageName storage name. (optional)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call cellsSparklineGroupsDeleteWorksheetSparklineGroupsAsync(String name, String sheetName, String folder, String storageName, final ApiCallback<CellsCloudResponse> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = cellsSparklineGroupsDeleteWorksheetSparklineGroupsValidateBeforeCall(name, sheetName, folder, storageName, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<CellsCloudResponse>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for cellsSparklineGroupsGetWorksheetSparklineGroup
+     * @param name  (required)
+     * @param sheetName  (required)
+     * @param sparklineGroupIndex  (required)
+     * @param folder  (optional)
+     * @param storageName storage name. (optional)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call cellsSparklineGroupsGetWorksheetSparklineGroupCall(String name, String sheetName, Integer sparklineGroupIndex, String folder, String storageName, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = null;
+        
+        // create path and map variables
+        String localVarPath = "/cells/{name}/worksheets/{sheetName}/sparklinegroups/{sparklineGroupIndex}"
+            .replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString()))
+            .replaceAll("\\{" + "sheetName" + "\\}", apiClient.escapeString(sheetName.toString()))
+            .replaceAll("\\{" + "sparklineGroupIndex" + "\\}", apiClient.escapeString(sparklineGroupIndex.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        if (folder != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "folder", folder));
+        if (storageName != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "storageName", storageName));
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+    
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call cellsSparklineGroupsGetWorksheetSparklineGroupValidateBeforeCall(String name, String sheetName, Integer sparklineGroupIndex, String folder, String storageName, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'name' is set
+        if (name == null) {
+            throw new ApiException("Missing the required parameter 'name' when calling cellsSparklineGroupsGetWorksheetSparklineGroup(Async)");
+        }
+        
+        // verify the required parameter 'sheetName' is set
+        if (sheetName == null) {
+            throw new ApiException("Missing the required parameter 'sheetName' when calling cellsSparklineGroupsGetWorksheetSparklineGroup(Async)");
+        }
+        
+        // verify the required parameter 'sparklineGroupIndex' is set
+        if (sparklineGroupIndex == null) {
+            throw new ApiException("Missing the required parameter 'sparklineGroupIndex' when calling cellsSparklineGroupsGetWorksheetSparklineGroup(Async)");
+        }
+        
+        
+        com.squareup.okhttp.Call call = cellsSparklineGroupsGetWorksheetSparklineGroupCall(name, sheetName, sparklineGroupIndex, folder, storageName, progressListener, progressRequestListener);
+        return call;
+
+        
+        
+        
+        
+    }
+
+    /**
+     * 
+     * 
+     * @param name  (required)
+     * @param sheetName  (required)
+     * @param sparklineGroupIndex  (required)
+     * @param folder  (optional)
+     * @param storageName storage name. (optional)
+     * @return SparklineGroupResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public SparklineGroupResponse cellsSparklineGroupsGetWorksheetSparklineGroup(String name, String sheetName, Integer sparklineGroupIndex, String folder, String storageName) throws ApiException {
+        ApiResponse<SparklineGroupResponse> resp = cellsSparklineGroupsGetWorksheetSparklineGroupWithHttpInfo(name, sheetName, sparklineGroupIndex, folder, storageName);
+        return resp.getData();
+    }
+
+    /**
+     * 
+     * 
+     * @param name  (required)
+     * @param sheetName  (required)
+     * @param sparklineGroupIndex  (required)
+     * @param folder  (optional)
+     * @param storageName storage name. (optional)
+     * @return ApiResponse&lt;SparklineGroupResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<SparklineGroupResponse> cellsSparklineGroupsGetWorksheetSparklineGroupWithHttpInfo(String name, String sheetName, Integer sparklineGroupIndex, String folder, String storageName) throws ApiException {
+        com.squareup.okhttp.Call call = cellsSparklineGroupsGetWorksheetSparklineGroupValidateBeforeCall(name, sheetName, sparklineGroupIndex, folder, storageName, null, null);
+        Type localVarReturnType = new TypeToken<SparklineGroupResponse>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     *  (asynchronously)
+     * 
+     * @param name  (required)
+     * @param sheetName  (required)
+     * @param sparklineGroupIndex  (required)
+     * @param folder  (optional)
+     * @param storageName storage name. (optional)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call cellsSparklineGroupsGetWorksheetSparklineGroupAsync(String name, String sheetName, Integer sparklineGroupIndex, String folder, String storageName, final ApiCallback<SparklineGroupResponse> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = cellsSparklineGroupsGetWorksheetSparklineGroupValidateBeforeCall(name, sheetName, sparklineGroupIndex, folder, storageName, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<SparklineGroupResponse>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for cellsSparklineGroupsGetWorksheetSparklineGroups
+     * @param name Document name. (required)
+     * @param sheetName The worksheet name. (required)
+     * @param folder Document&#39;s folder. (optional)
+     * @param storageName storage name. (optional)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call cellsSparklineGroupsGetWorksheetSparklineGroupsCall(String name, String sheetName, String folder, String storageName, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = null;
+        
+        // create path and map variables
+        String localVarPath = "/cells/{name}/worksheets/{sheetName}/sparklinegroups"
+            .replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString()))
+            .replaceAll("\\{" + "sheetName" + "\\}", apiClient.escapeString(sheetName.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        if (folder != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "folder", folder));
+        if (storageName != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "storageName", storageName));
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+    
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call cellsSparklineGroupsGetWorksheetSparklineGroupsValidateBeforeCall(String name, String sheetName, String folder, String storageName, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'name' is set
+        if (name == null) {
+            throw new ApiException("Missing the required parameter 'name' when calling cellsSparklineGroupsGetWorksheetSparklineGroups(Async)");
+        }
+        
+        // verify the required parameter 'sheetName' is set
+        if (sheetName == null) {
+            throw new ApiException("Missing the required parameter 'sheetName' when calling cellsSparklineGroupsGetWorksheetSparklineGroups(Async)");
+        }
+        
+        
+        com.squareup.okhttp.Call call = cellsSparklineGroupsGetWorksheetSparklineGroupsCall(name, sheetName, folder, storageName, progressListener, progressRequestListener);
+        return call;
+
+        
+        
+        
+        
+    }
+
+    /**
+     * Get worksheet charts description.
+     * 
+     * @param name Document name. (required)
+     * @param sheetName The worksheet name. (required)
+     * @param folder Document&#39;s folder. (optional)
+     * @param storageName storage name. (optional)
+     * @return SparklineGroupsResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public SparklineGroupsResponse cellsSparklineGroupsGetWorksheetSparklineGroups(String name, String sheetName, String folder, String storageName) throws ApiException {
+        ApiResponse<SparklineGroupsResponse> resp = cellsSparklineGroupsGetWorksheetSparklineGroupsWithHttpInfo(name, sheetName, folder, storageName);
+        return resp.getData();
+    }
+
+    /**
+     * Get worksheet charts description.
+     * 
+     * @param name Document name. (required)
+     * @param sheetName The worksheet name. (required)
+     * @param folder Document&#39;s folder. (optional)
+     * @param storageName storage name. (optional)
+     * @return ApiResponse&lt;SparklineGroupsResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<SparklineGroupsResponse> cellsSparklineGroupsGetWorksheetSparklineGroupsWithHttpInfo(String name, String sheetName, String folder, String storageName) throws ApiException {
+        com.squareup.okhttp.Call call = cellsSparklineGroupsGetWorksheetSparklineGroupsValidateBeforeCall(name, sheetName, folder, storageName, null, null);
+        Type localVarReturnType = new TypeToken<SparklineGroupsResponse>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Get worksheet charts description. (asynchronously)
+     * 
+     * @param name Document name. (required)
+     * @param sheetName The worksheet name. (required)
+     * @param folder Document&#39;s folder. (optional)
+     * @param storageName storage name. (optional)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call cellsSparklineGroupsGetWorksheetSparklineGroupsAsync(String name, String sheetName, String folder, String storageName, final ApiCallback<SparklineGroupsResponse> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = cellsSparklineGroupsGetWorksheetSparklineGroupsValidateBeforeCall(name, sheetName, folder, storageName, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<SparklineGroupsResponse>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for cellsSparklineGroupsPostWorksheetSparklineGroup
+     * @param name  (required)
+     * @param sheetName  (required)
+     * @param sparklineGroupIndex  (required)
+     * @param sparklineGroup  (required)
+     * @param folder  (optional)
+     * @param storageName storage name. (optional)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call cellsSparklineGroupsPostWorksheetSparklineGroupCall(String name, String sheetName, Integer sparklineGroupIndex, SparklineGroup sparklineGroup, String folder, String storageName, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = sparklineGroup;
+        
+        // create path and map variables
+        String localVarPath = "/cells/{name}/worksheets/{sheetName}/sparklinegroups/{sparklineGroupIndex}"
+            .replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString()))
+            .replaceAll("\\{" + "sheetName" + "\\}", apiClient.escapeString(sheetName.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        if (sparklineGroupIndex != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "sparklineGroupIndex", sparklineGroupIndex));
+        if (folder != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "folder", folder));
+        if (storageName != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "storageName", storageName));
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+    
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call cellsSparklineGroupsPostWorksheetSparklineGroupValidateBeforeCall(String name, String sheetName, Integer sparklineGroupIndex, SparklineGroup sparklineGroup, String folder, String storageName, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'name' is set
+        if (name == null) {
+            throw new ApiException("Missing the required parameter 'name' when calling cellsSparklineGroupsPostWorksheetSparklineGroup(Async)");
+        }
+        
+        // verify the required parameter 'sheetName' is set
+        if (sheetName == null) {
+            throw new ApiException("Missing the required parameter 'sheetName' when calling cellsSparklineGroupsPostWorksheetSparklineGroup(Async)");
+        }
+        
+        // verify the required parameter 'sparklineGroupIndex' is set
+        if (sparklineGroupIndex == null) {
+            throw new ApiException("Missing the required parameter 'sparklineGroupIndex' when calling cellsSparklineGroupsPostWorksheetSparklineGroup(Async)");
+        }
+        
+        // verify the required parameter 'sparklineGroup' is set
+        if (sparklineGroup == null) {
+            throw new ApiException("Missing the required parameter 'sparklineGroup' when calling cellsSparklineGroupsPostWorksheetSparklineGroup(Async)");
+        }
+        
+        
+        com.squareup.okhttp.Call call = cellsSparklineGroupsPostWorksheetSparklineGroupCall(name, sheetName, sparklineGroupIndex, sparklineGroup, folder, storageName, progressListener, progressRequestListener);
+        return call;
+
+        
+        
+        
+        
+    }
+
+    /**
+     * 
+     * 
+     * @param name  (required)
+     * @param sheetName  (required)
+     * @param sparklineGroupIndex  (required)
+     * @param sparklineGroup  (required)
+     * @param folder  (optional)
+     * @param storageName storage name. (optional)
+     * @return CellsCloudResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public CellsCloudResponse cellsSparklineGroupsPostWorksheetSparklineGroup(String name, String sheetName, Integer sparklineGroupIndex, SparklineGroup sparklineGroup, String folder, String storageName) throws ApiException {
+        ApiResponse<CellsCloudResponse> resp = cellsSparklineGroupsPostWorksheetSparklineGroupWithHttpInfo(name, sheetName, sparklineGroupIndex, sparklineGroup, folder, storageName);
+        return resp.getData();
+    }
+
+    /**
+     * 
+     * 
+     * @param name  (required)
+     * @param sheetName  (required)
+     * @param sparklineGroupIndex  (required)
+     * @param sparklineGroup  (required)
+     * @param folder  (optional)
+     * @param storageName storage name. (optional)
+     * @return ApiResponse&lt;CellsCloudResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<CellsCloudResponse> cellsSparklineGroupsPostWorksheetSparklineGroupWithHttpInfo(String name, String sheetName, Integer sparklineGroupIndex, SparklineGroup sparklineGroup, String folder, String storageName) throws ApiException {
+        com.squareup.okhttp.Call call = cellsSparklineGroupsPostWorksheetSparklineGroupValidateBeforeCall(name, sheetName, sparklineGroupIndex, sparklineGroup, folder, storageName, null, null);
+        Type localVarReturnType = new TypeToken<CellsCloudResponse>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     *  (asynchronously)
+     * 
+     * @param name  (required)
+     * @param sheetName  (required)
+     * @param sparklineGroupIndex  (required)
+     * @param sparklineGroup  (required)
+     * @param folder  (optional)
+     * @param storageName storage name. (optional)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call cellsSparklineGroupsPostWorksheetSparklineGroupAsync(String name, String sheetName, Integer sparklineGroupIndex, SparklineGroup sparklineGroup, String folder, String storageName, final ApiCallback<CellsCloudResponse> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = cellsSparklineGroupsPostWorksheetSparklineGroupValidateBeforeCall(name, sheetName, sparklineGroupIndex, sparklineGroup, folder, storageName, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<CellsCloudResponse>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for cellsSparklineGroupsPutWorksheetSparklineGroup
+     * @param name  (required)
+     * @param sheetName  (required)
+     * @param type  (required)
+     * @param dataRange  (required)
+     * @param isVertical  (required)
+     * @param locationRange  (required)
+     * @param folder  (optional)
+     * @param storageName storage name. (optional)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call cellsSparklineGroupsPutWorksheetSparklineGroupCall(String name, String sheetName, String type, String dataRange, Boolean isVertical, String locationRange, String folder, String storageName, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = null;
+        
+        // create path and map variables
+        String localVarPath = "/cells/{name}/worksheets/{sheetName}/sparklinegroups"
+            .replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString()))
+            .replaceAll("\\{" + "sheetName" + "\\}", apiClient.escapeString(sheetName.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        if (type != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "type", type));
+        if (dataRange != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "dataRange", dataRange));
+        if (isVertical != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "isVertical", isVertical));
+        if (locationRange != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "locationRange", locationRange));
+        if (folder != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "folder", folder));
+        if (storageName != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "storageName", storageName));
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return apiClient.buildCall(localVarPath, "PUT", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+    
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call cellsSparklineGroupsPutWorksheetSparklineGroupValidateBeforeCall(String name, String sheetName, String type, String dataRange, Boolean isVertical, String locationRange, String folder, String storageName, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'name' is set
+        if (name == null) {
+            throw new ApiException("Missing the required parameter 'name' when calling cellsSparklineGroupsPutWorksheetSparklineGroup(Async)");
+        }
+        
+        // verify the required parameter 'sheetName' is set
+        if (sheetName == null) {
+            throw new ApiException("Missing the required parameter 'sheetName' when calling cellsSparklineGroupsPutWorksheetSparklineGroup(Async)");
+        }
+        
+        // verify the required parameter 'type' is set
+        if (type == null) {
+            throw new ApiException("Missing the required parameter 'type' when calling cellsSparklineGroupsPutWorksheetSparklineGroup(Async)");
+        }
+        
+        // verify the required parameter 'dataRange' is set
+        if (dataRange == null) {
+            throw new ApiException("Missing the required parameter 'dataRange' when calling cellsSparklineGroupsPutWorksheetSparklineGroup(Async)");
+        }
+        
+        // verify the required parameter 'isVertical' is set
+        if (isVertical == null) {
+            throw new ApiException("Missing the required parameter 'isVertical' when calling cellsSparklineGroupsPutWorksheetSparklineGroup(Async)");
+        }
+        
+        // verify the required parameter 'locationRange' is set
+        if (locationRange == null) {
+            throw new ApiException("Missing the required parameter 'locationRange' when calling cellsSparklineGroupsPutWorksheetSparklineGroup(Async)");
+        }
+        
+        
+        com.squareup.okhttp.Call call = cellsSparklineGroupsPutWorksheetSparklineGroupCall(name, sheetName, type, dataRange, isVertical, locationRange, folder, storageName, progressListener, progressRequestListener);
+        return call;
+
+        
+        
+        
+        
+    }
+
+    /**
+     * 
+     * 
+     * @param name  (required)
+     * @param sheetName  (required)
+     * @param type  (required)
+     * @param dataRange  (required)
+     * @param isVertical  (required)
+     * @param locationRange  (required)
+     * @param folder  (optional)
+     * @param storageName storage name. (optional)
+     * @return CellsCloudResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public CellsCloudResponse cellsSparklineGroupsPutWorksheetSparklineGroup(String name, String sheetName, String type, String dataRange, Boolean isVertical, String locationRange, String folder, String storageName) throws ApiException {
+        ApiResponse<CellsCloudResponse> resp = cellsSparklineGroupsPutWorksheetSparklineGroupWithHttpInfo(name, sheetName, type, dataRange, isVertical, locationRange, folder, storageName);
+        return resp.getData();
+    }
+
+    /**
+     * 
+     * 
+     * @param name  (required)
+     * @param sheetName  (required)
+     * @param type  (required)
+     * @param dataRange  (required)
+     * @param isVertical  (required)
+     * @param locationRange  (required)
+     * @param folder  (optional)
+     * @param storageName storage name. (optional)
+     * @return ApiResponse&lt;CellsCloudResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<CellsCloudResponse> cellsSparklineGroupsPutWorksheetSparklineGroupWithHttpInfo(String name, String sheetName, String type, String dataRange, Boolean isVertical, String locationRange, String folder, String storageName) throws ApiException {
+        com.squareup.okhttp.Call call = cellsSparklineGroupsPutWorksheetSparklineGroupValidateBeforeCall(name, sheetName, type, dataRange, isVertical, locationRange, folder, storageName, null, null);
+        Type localVarReturnType = new TypeToken<CellsCloudResponse>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     *  (asynchronously)
+     * 
+     * @param name  (required)
+     * @param sheetName  (required)
+     * @param type  (required)
+     * @param dataRange  (required)
+     * @param isVertical  (required)
+     * @param locationRange  (required)
+     * @param folder  (optional)
+     * @param storageName storage name. (optional)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call cellsSparklineGroupsPutWorksheetSparklineGroupAsync(String name, String sheetName, String type, String dataRange, Boolean isVertical, String locationRange, String folder, String storageName, final ApiCallback<CellsCloudResponse> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = cellsSparklineGroupsPutWorksheetSparklineGroupValidateBeforeCall(name, sheetName, type, dataRange, isVertical, locationRange, folder, storageName, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<CellsCloudResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

@@ -37,7 +37,7 @@ import java.io.IOException;
 /**
  * AccessTokenResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-08-19T15:56:27.996+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-09-18T15:44:17.049+08:00")
 public class AccessTokenResponse {
   @SerializedName(".expires")
   private String expires = null;
@@ -52,7 +52,7 @@ public class AccessTokenResponse {
   private String clientRefreshTokenLifeTimeInMinutes = null;
 
   @SerializedName("expires_in")
-  private Integer expiresIn = null;
+  private Long expiresIn = null;
 
   @SerializedName("token_type")
   private String tokenType = null;
@@ -135,7 +135,7 @@ public class AccessTokenResponse {
     this.clientRefreshTokenLifeTimeInMinutes = clientRefreshTokenLifeTimeInMinutes;
   }
 
-  public AccessTokenResponse expiresIn(Integer expiresIn) {
+  public AccessTokenResponse expiresIn(Long expiresIn) {
     this.expiresIn = expiresIn;
     return this;
   }
@@ -145,11 +145,11 @@ public class AccessTokenResponse {
    * @return expiresIn
   **/
   @ApiModelProperty(value = "")
-  public Integer getExpiresIn() {
+  public Long getExpiresIn() {
     return expiresIn;
   }
 
-  public void setExpiresIn(Integer expiresIn) {
+  public void setExpiresIn(Long expiresIn) {
     this.expiresIn = expiresIn;
   }
 

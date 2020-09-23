@@ -92,6 +92,7 @@ public class CellsApiForV11Test {
      * Delete worksheet columns.
      * @throws Exception 
      */
+    @Ignore("Not Ready to Run")  
     @Test
     public void cellsDeleteWorksheetColumnsTest() throws Exception {
         String name = BOOK1;
@@ -111,6 +112,7 @@ public class CellsApiForV11Test {
      * @throws ApiException
      *          if the Api call fails
      */
+    @Ignore("Not Ready to Run")  
     @Test
     public void cellsDeleteWorksheetRowTest() throws ApiException {
         String name = BOOK1;

@@ -12,9 +12,9 @@ import com.aspose.cloud.cells.model.AccessTokenResponse;
 
 public class CellsApiUtil {
 	private static String grantType = "client_credentials";
-	private static String clientId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx";//"";
-	private static String clientSecret =  "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";//"";
-	private static String sourceFolder ="D:\\Projects\\Aspose\\Aspose.Cloud\\Aspose.Cells.Cloud.SDK\\src\\TestData\\";
+	private static String clientId = "91A2FD07-BBA1-4B32-9112-ABFB1FE8AEBD";//"";
+	private static String clientSecret =  "0fbf678c5ecabdb5caca48452a736dd0";//"";
+	private static String sourceFolder ="D:\\Projects\\Aspose\\Aspose.Cells.Cloud.SDK\\src\\TestData\\";
 	public static String GetSourceFolder() {
 		return sourceFolder;
 	}
@@ -23,14 +23,19 @@ public class CellsApiUtil {
 	}
 
 	public static String GetClientId() {
-		return clientId;
+		return "91A2FD07-BBA1-4B32-9112-ABFB1FE8AEBD";
 	}
 
 	public static String GetClientSecret() {
-		return clientSecret;
+		return "0fbf678c5ecabdb5caca48452a736dd0";
 	}
 
-	
+	public static String GetAPIVersion() {
+		return "v3.0";
+	}
+	public static String GetBaseUrl() {
+		return "https://api-qa.aspose.cloud";
+	}
 	public static void Upload(CellsApi cellsApi,String folder ,String filename) {		
 		File file = new File(sourceFolder + filename);
 		try {
