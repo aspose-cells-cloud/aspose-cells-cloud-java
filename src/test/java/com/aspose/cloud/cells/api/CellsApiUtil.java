@@ -16,7 +16,7 @@ public class CellsApiUtil {
 	private static String clientSecret =  "0fbf678c5ecabdb5caca48452a736dd0";//"";
 	private static String sourceFolder ="/TestData/";
 	public static String GetSourceFolder() {
-		return sourceFolder;
+		return System.getProperty("user.dir") + sourceFolder;
 	}
 	public static String GetGrantType() {
 		return grantType;
