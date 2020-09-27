@@ -14,7 +14,7 @@ public class CellsApiUtil {
 	private static String grantType = "client_credentials";
 	private static String clientId = "91A2FD07-BBA1-4B32-9112-ABFB1FE8AEBD";//"";
 	private static String clientSecret =  "0fbf678c5ecabdb5caca48452a736dd0";//"";
-	private static String sourceFolder ="D:\\Projects\\Aspose\\Aspose.Cells.Cloud.SDK\\src\\TestData\\";
+	private static String sourceFolder ="TestData\\";
 	public static String GetSourceFolder() {
 		return sourceFolder;
 	}
