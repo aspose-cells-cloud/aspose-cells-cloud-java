@@ -32,9 +32,11 @@ import com.aspose.cloud.cells.client.Configuration;
 import com.aspose.cloud.cells.client.Pair;
 import com.aspose.cloud.cells.client.ProgressRequestBody;
 import com.aspose.cloud.cells.client.ProgressResponseBody;
+
 import com.google.gson.reflect.TypeToken;
 
 import java.io.IOException;
+
 
 import com.aspose.cloud.cells.model.AccessTokenResponse;
 import com.aspose.cloud.cells.model.AutoFilterResponse;
@@ -62,9 +64,7 @@ import com.aspose.cloud.cells.model.CopyOptions;
 import com.aspose.cloud.cells.model.CreatePivotTableRequest;
 import com.aspose.cloud.cells.model.DataSorter;
 import com.aspose.cloud.cells.model.DiscUsage;
-
 import java.io.File;
-
 import com.aspose.cloud.cells.model.FileVersions;
 import com.aspose.cloud.cells.model.FilesList;
 import com.aspose.cloud.cells.model.FilesUploadResult;
@@ -163,43 +163,44 @@ public class CellsApi {
         this(Configuration.getDefaultApiClient());
     }
 
-    public CellsApi(String appSid, String appKey) throws ApiException {
-		ApiClient apiClient = new ApiClient();
-		apiClient.setBasePath("https://api.aspose.cloud");
-		apiClient.setApiVersion("v3.0");
-		String accesstoken = apiClient.getAccessToken("client_credentials",
-				appSid, appKey, "v3.0");
-		apiClient.addDefaultHeader("Authorization", "Bearer " + accesstoken);
-		setApiClient(apiClient);
-	}
-
-	public CellsApi(String appSid, String appKey, String Version)
-			throws ApiException {
-
-		ApiClient apiClient = new ApiClient();
-		apiClient.setBasePath("https://api.aspose.cloud");
-		apiClient.setApiVersion(Version);
-		String accesstoken = apiClient.getAccessToken("client_credentials",
-				appSid, appKey, Version);
-
-		apiClient.addDefaultHeader("Authorization", "Bearer " + accesstoken);
-		setApiClient(apiClient);
-	}
-
-	public CellsApi(String appSid, String appKey, String Version, String baseURI)
-			throws ApiException {
-
-		ApiClient apiClient = new ApiClient();
-		apiClient.setBasePath(baseURI.endsWith("/") ? baseURI.substring(0,
-				baseURI.length() - 1) : baseURI);
-		apiClient.setApiVersion(Version);
-		String accesstoken = apiClient.getAccessToken("client_credentials",
-				appSid, appKey, Version);
-		apiClient.addDefaultHeader("Authorization", "Bearer " + accesstoken);
-		setApiClient(apiClient);
-	}
     public CellsApi(ApiClient apiClient) {
         this.apiClient = apiClient;
+    }
+
+    public CellsApi(String appSid, String appKey) throws ApiException {
+        ApiClient apiClient = new ApiClient();
+        apiClient.setBasePath("https://api.aspose.cloud");
+        apiClient.setApiVersion("v3.0");
+        String accesstoken = apiClient.getAccessToken("client_credentials",
+                appSid, appKey, "v3.0");
+        apiClient.addDefaultHeader("Authorization", "Bearer " + accesstoken);
+        setApiClient(apiClient);
+    }
+
+    public CellsApi(String appSid, String appKey, String Version)
+            throws ApiException {
+
+        ApiClient apiClient = new ApiClient();
+        apiClient.setBasePath("https://api.aspose.cloud");
+        apiClient.setApiVersion(Version);
+        String accesstoken = apiClient.getAccessToken("client_credentials",
+                appSid, appKey, Version);
+
+        apiClient.addDefaultHeader("Authorization", "Bearer " + accesstoken);
+        setApiClient(apiClient);
+    }
+
+    public CellsApi(String appSid, String appKey, String Version, String baseURI)
+            throws ApiException {
+
+        ApiClient apiClient = new ApiClient();
+        apiClient.setBasePath(baseURI.endsWith("/") ? baseURI.substring(0,
+                baseURI.length() - 1) : baseURI);
+        apiClient.setApiVersion(Version);
+        String accesstoken = apiClient.getAccessToken("client_credentials",
+                appSid, appKey, Version);
+        apiClient.addDefaultHeader("Authorization", "Bearer " + accesstoken);
+        setApiClient(apiClient);
     }
 
     public ApiClient getApiClient() {
@@ -209,6 +210,7 @@ public class CellsApi {
     public void setApiClient(ApiClient apiClient) {
         this.apiClient = apiClient;
     }
+
     /**
      * Build call for cellsAutoFilterDeleteWorksheetDateFilter
      * @param name  (required)
@@ -28825,11 +28827,10 @@ public class CellsApi {
         // create path and map variables
         String localVarPath = "/cells/{name}/worksheets/{sheetName}/sparklinegroups/{sparklineGroupIndex}"
             .replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString()))
-            .replaceAll("\\{" + "sheetName" + "\\}", apiClient.escapeString(sheetName.toString()));
+            .replaceAll("\\{" + "sheetName" + "\\}", apiClient.escapeString(sheetName.toString()))
+            .replaceAll("\\{" + "sparklineGroupIndex" + "\\}", apiClient.escapeString(sparklineGroupIndex.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        if (sparklineGroupIndex != null)
-        localVarQueryParams.addAll(apiClient.parameterToPairs("", "sparklineGroupIndex", sparklineGroupIndex));
         if (folder != null)
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "folder", folder));
         if (storageName != null)

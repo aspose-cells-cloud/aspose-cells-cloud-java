@@ -30,7 +30,7 @@ import com.aspose.cloud.cells.model.SaveOptions;
 /**
  * XlsSaveOptions
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-09-18T15:44:17.049+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-10-19T23:40:54.225-05:00")
 public class XlsSaveOptions extends SaveOptions {
 
   @Override
