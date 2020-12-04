@@ -95,6 +95,9 @@ public class CellsApiForV11Test {
     @Ignore("Not Ready to Run")  
     @Test
     public void cellsDeleteWorksheetColumnsTest() throws Exception {
+        if(CellsApiUtil.IsDockerTest()){
+            return;
+        }
         String name = BOOK1;
         String sheetName = SHEET1;
         Integer columnIndex = 1;
@@ -115,6 +118,9 @@ public class CellsApiForV11Test {
     @Ignore("Not Ready to Run")  
     @Test
     public void cellsDeleteWorksheetRowTest() throws ApiException {
+        if(CellsApiUtil.IsDockerTest()){
+            return;
+        }
         String name = BOOK1;
         String sheetName = SHEET1;
         Integer rowIndex = 1;

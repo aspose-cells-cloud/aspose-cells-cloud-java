@@ -73,6 +73,9 @@ public class CellsAutoshapesApiTest {
      */
     @Test
     public void cellsAutoshapesGetWorksheetAutoshapeTest() throws ApiException {
+        if(CellsApiUtil.IsDockerTest()){
+            return;
+        }
         String name = MYDOC;
         String sheetName = SHEET2;
         Integer autoshapeNumber = 4;
@@ -94,6 +97,9 @@ public class CellsAutoshapesApiTest {
      */
     @Test
     public void cellsAutoshapesGetWorksheetAutoshapesTest() throws ApiException {
+        if(CellsApiUtil.IsDockerTest()){
+            return;
+        }
         String name = MYDOC;
         String sheetName = SHEET2;
         String folder = TEMPFOLDER;

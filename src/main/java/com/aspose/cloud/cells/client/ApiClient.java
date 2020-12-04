@@ -149,6 +149,15 @@ public class ApiClient {
 
 	private HttpLoggingInterceptor loggingInterceptor;
 
+	private boolean needAuth = true;
+
+	/*
+	 * Set needAuth
+	 */ 
+	public void SetNeedAuth(boolean need)
+	{
+		needAuth = need;
+	}
 	/*
 	 * Constructor for ApiClient
 	 */
@@ -179,15 +188,15 @@ public class ApiClient {
 		// Setup authentications (key: authentication name, value:
 		// authentication).
 		authentications = new HashMap<String, Authentication>();
-		authentications.put("appsid", new ApiKeyAuth("query", "appsid"));
+		authentications.put("clientId", new ApiKeyAuth("query", "clientId"));
 		authentications.put("oauth", new OAuth());
 		authentications.put("signature", new ApiKeyAuth("query", "signature"));
 		// Prevent the authentications from being modified.
 		authentications = Collections.unmodifiableMap(authentications);
 	}
 
-	private String appSid;
-	private String appKey;
+	private String _clientId;
+	private String _clientSecret;
 	private String appVersion = "v3.0";
 	private String appGrantType;
 	private DateTime getAccessTokenTime;
@@ -208,8 +217,8 @@ public class ApiClient {
 
 		// create path and map variables]
 		appGrantType = grantType;
-		appSid = clientId;
-		appKey = clientSecret;
+		_clientId = clientId;
+		_clientSecret = clientSecret;
 		appVersion = version;
 
 		String localVarPath = "/connect/token";
@@ -257,8 +266,11 @@ public class ApiClient {
 		if (getAccessTokenTime == null) {
 			return;
 		}
+		if((_clientId == null || _clientId.length() == 0) && (_clientSecret == null ||_clientSecret.length() == 0)){
+			return;
+        }
 		if (DateTime.now().compareTo(getAccessTokenTime.plusSeconds(86300))>0 ) {
-			String accessToken = getAccessToken(appGrantType, appSid, appKey,
+			String accessToken = getAccessToken(appGrantType, _clientId, _clientSecret,
 					appVersion);
 			getAccessTokenTime = DateTime.now();
 			addDefaultHeader("Authorization", "Bearer " + accessToken);
@@ -1325,8 +1337,9 @@ public class ApiClient {
 			String[] authNames,
 			ProgressRequestBody.ProgressRequestListener progressRequestListener)
 			throws ApiException {
-		updateParamsForAuth(authNames, queryParams, headerParams);
-
+		if(needAuth) {			
+			updateParamsForAuth(authNames, queryParams, headerParams);
+		}
 		final String url = buildUrl(path, queryParams);
 		final Request.Builder reqBuilder = new Request.Builder().url(url);
 		processHeaderParams(headerParams, reqBuilder);

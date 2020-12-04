@@ -13598,8 +13598,8 @@ Get Access token
 
 CellsApi apiInstance = new CellsApi();
 String grantType = "grantType_example"; // String | Grant Type
-String clientId = "clientId_example"; // String | App SID
-String clientSecret = "clientSecret_example"; // String | App Key
+String clientId = "clientId_example"; // String | client Id
+String clientSecret = "clientSecret_example"; // String | client Secret
 try {
     AccessTokenResponse result = apiInstance.oAuthPost(grantType, clientId, clientSecret);
     System.out.println(result);
@@ -13614,8 +13614,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **grantType** | **String**| Grant Type |
- **clientId** | **String**| App SID |
- **clientSecret** | **String**| App Key |
+ **clientId** | **String**| client Id |
+ **clientSecret** | **String**|client Secret |
 
 ### Return type
 

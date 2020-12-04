@@ -12,8 +12,8 @@ import com.aspose.cloud.cells.model.AccessTokenResponse;
 
 public class CellsApiUtil {
 	private static String grantType = "client_credentials";
-	private static String clientId = "91A2FD07-BBA1-4B32-9112-ABFB1FE8AEBD";//"";
-	private static String clientSecret =  "0fbf678c5ecabdb5caca48452a736dd0";//"";
+	private static String clientId = "";//"";
+	private static String clientSecret =  "";//"";
 	private static String sourceFolder ="/TestData/";
 	public static String GetSourceFolder() {
 		return System.getProperty("user.dir") + sourceFolder;
@@ -23,18 +23,21 @@ public class CellsApiUtil {
 	}
 
 	public static String GetClientId() {
-		return "91A2FD07-BBA1-4B32-9112-ABFB1FE8AEBD";
+		return System.getenv("CellsCloudTestClientId");
 	}
 
 	public static String GetClientSecret() {
-		return "0fbf678c5ecabdb5caca48452a736dd0";
+		return System.getenv("CellsCloudTestClientSecret");
 	}
 
 	public static String GetAPIVersion() {
 		return "v3.0";
 	}
 	public static String GetBaseUrl() {
-		return "https://api-qa.aspose.cloud";
+		return System.getenv("CellsCloudTestApiBaseUrl");
+	}
+	public static Boolean IsDockerTest(){
+		return  Boolean.getBoolean( System.getenv("CellsCloudTestIsDockerTest"));
 	}
 	public static void Upload(CellsApi cellsApi,String folder ,String filename) {		
 		File file = new File(System.getProperty("user.dir") + sourceFolder + filename);

@@ -167,39 +167,42 @@ public class CellsApi {
         this.apiClient = apiClient;
     }
 
-    public CellsApi(String appSid, String appKey) throws ApiException {
+    public CellsApi(String clientId, String clientSecret) throws ApiException {
         ApiClient apiClient = new ApiClient();
         apiClient.setBasePath("https://api.aspose.cloud");
         apiClient.setApiVersion("v3.0");
         String accesstoken = apiClient.getAccessToken("client_credentials",
-                appSid, appKey, "v3.0");
+        clientId, clientSecret, "v3.0");
         apiClient.addDefaultHeader("Authorization", "Bearer " + accesstoken);
         setApiClient(apiClient);
     }
 
-    public CellsApi(String appSid, String appKey, String Version)
+    public CellsApi(String clientId, String clientSecret, String Version)
             throws ApiException {
 
         ApiClient apiClient = new ApiClient();
         apiClient.setBasePath("https://api.aspose.cloud");
         apiClient.setApiVersion(Version);
         String accesstoken = apiClient.getAccessToken("client_credentials",
-                appSid, appKey, Version);
+        clientId, clientSecret, Version);
 
         apiClient.addDefaultHeader("Authorization", "Bearer " + accesstoken);
         setApiClient(apiClient);
     }
 
-    public CellsApi(String appSid, String appKey, String Version, String baseURI)
+    public CellsApi(String clientId, String clientSecret, String Version, String baseURI)
             throws ApiException {
 
         ApiClient apiClient = new ApiClient();
         apiClient.setBasePath(baseURI.endsWith("/") ? baseURI.substring(0,
                 baseURI.length() - 1) : baseURI);
         apiClient.setApiVersion(Version);
-        String accesstoken = apiClient.getAccessToken("client_credentials",
-                appSid, appKey, Version);
-        apiClient.addDefaultHeader("Authorization", "Bearer " + accesstoken);
+        if((clientId == null || clientId.length() == 0) && (clientSecret == null ||clientSecret.length() == 0)){
+            apiClient.SetNeedAuth(false);
+        }else{
+            String accesstoken = apiClient.getAccessToken("client_credentials", clientId, clientSecret, "v3.0");
+            apiClient.addDefaultHeader("Authorization", "Bearer " + accesstoken);
+        }
         setApiClient(apiClient);
     }
 

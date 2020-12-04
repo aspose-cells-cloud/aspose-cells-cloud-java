@@ -249,10 +249,10 @@ public class CellsListObjectsApiTest {
 		pivotFieldColumns.add(2);
 		request.setPivotFieldColumns(pivotFieldColumns);
 		List<Integer> pivotFieldRows = new ArrayList<Integer>();
-		pivotFieldColumns.add(2);
+		pivotFieldRows.add(1);
 		request.setPivotFieldRows(pivotFieldRows);
 		List<Integer> pivotFieldData = new ArrayList<Integer>();
-		pivotFieldColumns.add(2);
+		pivotFieldData.add(0);
 		request.setPivotFieldData(pivotFieldData);
 		request.setSourceData("=Sheet2!A1:E8");
 		request.setUseSameSource(true);
