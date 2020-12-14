@@ -36,8 +36,9 @@ public class CellsApiUtil {
 	public static String GetBaseUrl() {
 		return System.getenv("CellsCloudTestApiBaseUrl");
 	}
-	public static Boolean IsDockerTest(){
-		return  Boolean.getBoolean( System.getenv("CellsCloudTestIsDockerTest"));
+	public static Boolean IsDockerTest(){		
+		return (System.getenv("CellsCloudTestIsDockerTest").toLowerCase() == "true");
+		// return  Boolean.getBoolean( System.getenv("CellsCloudTestIsDockerTest"));
 	}
 	public static void Upload(CellsApi cellsApi,String folder ,String filename) {		
 		File file = new File(System.getProperty("user.dir") + sourceFolder + filename);
