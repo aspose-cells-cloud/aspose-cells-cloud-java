@@ -1,6 +1,6 @@
 /* 
  * <summary>
- *  Copyright (c) 2020 Aspose.Cells Cloud
+ *  Copyright (c) 2021 Aspose.Cells Cloud
  *  Permission is hereby granted, free of charge, to any person obtaining a copy
  *  of this software and associated documentation files (the "Software"), to deal
  *  in the Software without restriction, including without limitation the rights
@@ -167,6 +167,12 @@ public class CellsApi {
         this.apiClient = apiClient;
     }
 
+    /**
+     * CellsApi
+     * @param clientId  (required)
+     * @param clientSecret  (required)
+     * @throws ApiException 
+     */
     public CellsApi(String clientId, String clientSecret) throws ApiException {
         ApiClient apiClient = new ApiClient();
         apiClient.setBasePath("https://api.aspose.cloud");
@@ -176,7 +182,13 @@ public class CellsApi {
         apiClient.addDefaultHeader("Authorization", "Bearer " + accesstoken);
         setApiClient(apiClient);
     }
-
+    /**
+     * CellsApi
+     * @param clientId  (required)
+     * @param clientSecret  (required)
+     * @param Version  (required)
+     * @throws ApiException 
+     */
     public CellsApi(String clientId, String clientSecret, String Version)
             throws ApiException {
 
@@ -189,7 +201,14 @@ public class CellsApi {
         apiClient.addDefaultHeader("Authorization", "Bearer " + accesstoken);
         setApiClient(apiClient);
     }
-
+    /**
+     * CellsApi
+     * @param clientId  (required)
+     * @param clientSecret  (required)
+     * @param Version  (required)
+     * @param baseURI  (required)
+     * @throws ApiException 
+     */
     public CellsApi(String clientId, String clientSecret, String Version, String baseURI)
             throws ApiException {
 
@@ -205,7 +224,7 @@ public class CellsApi {
         }
         setApiClient(apiClient);
     }
-
+    
     public ApiClient getApiClient() {
         return apiClient;
     }
@@ -25459,6 +25478,176 @@ public class CellsApi {
         return call;
     }
     /**
+     * Build call for cellsRangesDeleteWorksheetCellsRange
+     * @param name workbook name (required)
+     * @param sheetName worksheet name (required)
+     * @param range range (required)
+     * @param shift Represent the shift options when deleting a range of cells. (Left,Up)  (required)
+     * @param folder Workbook folder. (optional)
+     * @param storageName storage name. (optional)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call cellsRangesDeleteWorksheetCellsRangeCall(String name, String sheetName, String range, String shift, String folder, String storageName, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = null;
+        
+        // create path and map variables
+        String localVarPath = "/cells/{name}/worksheets/{sheetName}/ranges"
+            .replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString()))
+            .replaceAll("\\{" + "sheetName" + "\\}", apiClient.escapeString(sheetName.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        if (range != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "range", range));
+        if (shift != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "shift", shift));
+        if (folder != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "folder", folder));
+        if (storageName != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "storageName", storageName));
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return apiClient.buildCall(localVarPath, "DELETE", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+    
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call cellsRangesDeleteWorksheetCellsRangeValidateBeforeCall(String name, String sheetName, String range, String shift, String folder, String storageName, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'name' is set
+        if (name == null) {
+            throw new ApiException("Missing the required parameter 'name' when calling cellsRangesDeleteWorksheetCellsRange(Async)");
+        }
+        
+        // verify the required parameter 'sheetName' is set
+        if (sheetName == null) {
+            throw new ApiException("Missing the required parameter 'sheetName' when calling cellsRangesDeleteWorksheetCellsRange(Async)");
+        }
+        
+        // verify the required parameter 'range' is set
+        if (range == null) {
+            throw new ApiException("Missing the required parameter 'range' when calling cellsRangesDeleteWorksheetCellsRange(Async)");
+        }
+        
+        // verify the required parameter 'shift' is set
+        if (shift == null) {
+            throw new ApiException("Missing the required parameter 'shift' when calling cellsRangesDeleteWorksheetCellsRange(Async)");
+        }
+        
+        
+        com.squareup.okhttp.Call call = cellsRangesDeleteWorksheetCellsRangeCall(name, sheetName, range, shift, folder, storageName, progressListener, progressRequestListener);
+        return call;
+
+        
+        
+        
+        
+    }
+
+    /**
+     * Delete range in the worksheet
+     * 
+     * @param name workbook name (required)
+     * @param sheetName worksheet name (required)
+     * @param range range (required)
+     * @param shift Represent the shift options when deleting a range of cells. (Left,Up)  (required)
+     * @param folder Workbook folder. (optional)
+     * @param storageName storage name. (optional)
+     * @return CellsCloudResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public CellsCloudResponse cellsRangesDeleteWorksheetCellsRange(String name, String sheetName, String range, String shift, String folder, String storageName) throws ApiException {
+        ApiResponse<CellsCloudResponse> resp = cellsRangesDeleteWorksheetCellsRangeWithHttpInfo(name, sheetName, range, shift, folder, storageName);
+        return resp.getData();
+    }
+
+    /**
+     * Delete range in the worksheet
+     * 
+     * @param name workbook name (required)
+     * @param sheetName worksheet name (required)
+     * @param range range (required)
+     * @param shift Represent the shift options when deleting a range of cells. (Left,Up)  (required)
+     * @param folder Workbook folder. (optional)
+     * @param storageName storage name. (optional)
+     * @return ApiResponse&lt;CellsCloudResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<CellsCloudResponse> cellsRangesDeleteWorksheetCellsRangeWithHttpInfo(String name, String sheetName, String range, String shift, String folder, String storageName) throws ApiException {
+        com.squareup.okhttp.Call call = cellsRangesDeleteWorksheetCellsRangeValidateBeforeCall(name, sheetName, range, shift, folder, storageName, null, null);
+        Type localVarReturnType = new TypeToken<CellsCloudResponse>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Delete range in the worksheet (asynchronously)
+     * 
+     * @param name workbook name (required)
+     * @param sheetName worksheet name (required)
+     * @param range range (required)
+     * @param shift Represent the shift options when deleting a range of cells. (Left,Up)  (required)
+     * @param folder Workbook folder. (optional)
+     * @param storageName storage name. (optional)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call cellsRangesDeleteWorksheetCellsRangeAsync(String name, String sheetName, String range, String shift, String folder, String storageName, final ApiCallback<CellsCloudResponse> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = cellsRangesDeleteWorksheetCellsRangeValidateBeforeCall(name, sheetName, range, shift, folder, storageName, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<CellsCloudResponse>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
      * Build call for cellsRangesGetWorksheetCellsRangeValue
      * @param name workbook name (required)
      * @param sheetName worksheet name (required)
@@ -27067,6 +27256,176 @@ public class CellsApi {
         }
 
         com.squareup.okhttp.Call call = cellsRangesPostWorksheetCellsRangesValidateBeforeCall(name, sheetName, rangeOperate, folder, storageName, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<CellsCloudResponse>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for cellsRangesPutWorksheetCellsRange
+     * @param name workbook name (required)
+     * @param sheetName worksheet name (required)
+     * @param range range (required)
+     * @param shift Represent the shift options when deleting a range of cells. (Right,Down)  (required)
+     * @param folder Workbook folder. (optional)
+     * @param storageName storage name. (optional)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call cellsRangesPutWorksheetCellsRangeCall(String name, String sheetName, String range, String shift, String folder, String storageName, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = null;
+        
+        // create path and map variables
+        String localVarPath = "/cells/{name}/worksheets/{sheetName}/ranges"
+            .replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString()))
+            .replaceAll("\\{" + "sheetName" + "\\}", apiClient.escapeString(sheetName.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        if (range != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "range", range));
+        if (shift != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "shift", shift));
+        if (folder != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "folder", folder));
+        if (storageName != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "storageName", storageName));
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return apiClient.buildCall(localVarPath, "PUT", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+    
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call cellsRangesPutWorksheetCellsRangeValidateBeforeCall(String name, String sheetName, String range, String shift, String folder, String storageName, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'name' is set
+        if (name == null) {
+            throw new ApiException("Missing the required parameter 'name' when calling cellsRangesPutWorksheetCellsRange(Async)");
+        }
+        
+        // verify the required parameter 'sheetName' is set
+        if (sheetName == null) {
+            throw new ApiException("Missing the required parameter 'sheetName' when calling cellsRangesPutWorksheetCellsRange(Async)");
+        }
+        
+        // verify the required parameter 'range' is set
+        if (range == null) {
+            throw new ApiException("Missing the required parameter 'range' when calling cellsRangesPutWorksheetCellsRange(Async)");
+        }
+        
+        // verify the required parameter 'shift' is set
+        if (shift == null) {
+            throw new ApiException("Missing the required parameter 'shift' when calling cellsRangesPutWorksheetCellsRange(Async)");
+        }
+        
+        
+        com.squareup.okhttp.Call call = cellsRangesPutWorksheetCellsRangeCall(name, sheetName, range, shift, folder, storageName, progressListener, progressRequestListener);
+        return call;
+
+        
+        
+        
+        
+    }
+
+    /**
+     * Insert range in the worksheet
+     * 
+     * @param name workbook name (required)
+     * @param sheetName worksheet name (required)
+     * @param range range (required)
+     * @param shift Represent the shift options when deleting a range of cells. (Right,Down)  (required)
+     * @param folder Workbook folder. (optional)
+     * @param storageName storage name. (optional)
+     * @return CellsCloudResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public CellsCloudResponse cellsRangesPutWorksheetCellsRange(String name, String sheetName, String range, String shift, String folder, String storageName) throws ApiException {
+        ApiResponse<CellsCloudResponse> resp = cellsRangesPutWorksheetCellsRangeWithHttpInfo(name, sheetName, range, shift, folder, storageName);
+        return resp.getData();
+    }
+
+    /**
+     * Insert range in the worksheet
+     * 
+     * @param name workbook name (required)
+     * @param sheetName worksheet name (required)
+     * @param range range (required)
+     * @param shift Represent the shift options when deleting a range of cells. (Right,Down)  (required)
+     * @param folder Workbook folder. (optional)
+     * @param storageName storage name. (optional)
+     * @return ApiResponse&lt;CellsCloudResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<CellsCloudResponse> cellsRangesPutWorksheetCellsRangeWithHttpInfo(String name, String sheetName, String range, String shift, String folder, String storageName) throws ApiException {
+        com.squareup.okhttp.Call call = cellsRangesPutWorksheetCellsRangeValidateBeforeCall(name, sheetName, range, shift, folder, storageName, null, null);
+        Type localVarReturnType = new TypeToken<CellsCloudResponse>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Insert range in the worksheet (asynchronously)
+     * 
+     * @param name workbook name (required)
+     * @param sheetName worksheet name (required)
+     * @param range range (required)
+     * @param shift Represent the shift options when deleting a range of cells. (Right,Down)  (required)
+     * @param folder Workbook folder. (optional)
+     * @param storageName storage name. (optional)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call cellsRangesPutWorksheetCellsRangeAsync(String name, String sheetName, String range, String shift, String folder, String storageName, final ApiCallback<CellsCloudResponse> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = cellsRangesPutWorksheetCellsRangeValidateBeforeCall(name, sheetName, range, shift, folder, storageName, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<CellsCloudResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

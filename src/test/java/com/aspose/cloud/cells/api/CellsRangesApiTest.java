@@ -350,5 +350,45 @@ public class CellsRangesApiTest {
 
         // TODO: test validations
     }
-    
+    /**
+     * delete range in the worksheet
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void cellsRangesDeleteWorksheetCellsRangesTest() throws ApiException {
+        String name = BOOK1;
+        String sheetName = SHEET1;
+        String range = "A1:B4";
+        String shift = "Up";
+        String folder = TEMPFOLDER;
+        CellsApiUtil.Upload(api, folder , name);
+        CellsCloudResponse response = api.cellsRangesDeleteWorksheetCellsRange(name, sheetName, range,shift, folder,null);
+
+        // TODO: test validations
+    }
+
+    /**
+     * put range in the worksheet
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void cellsRangesPutWorksheetCellsRangesTest() throws ApiException {
+        String name = BOOK1;
+        String sheetName = SHEET1;
+        String range = "A1:B4";
+        String shift = "Down";
+        String folder = TEMPFOLDER;
+        CellsApiUtil.Upload(api, folder , name);
+        CellsCloudResponse response = api.cellsRangesPutWorksheetCellsRange(name, sheetName, range,shift, folder,null);
+
+        // TODO: test validations
+    }
 }

@@ -1,6 +1,6 @@
 /* 
  * <summary>
- *  Copyright (c) 2020 Aspose.Cells Cloud
+ *  Copyright (c) 2021 Aspose.Cells Cloud
  *  Permission is hereby granted, free of charge, to any person obtaining a copy
  *  of this software and associated documentation files (the "Software"), to deal
  *  in the Software without restriction, including without limitation the rights
@@ -38,7 +38,7 @@ import java.io.IOException;
 /**
  * Border
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-10-19T23:40:54.225-05:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-01-21T01:47:19.323-06:00")
 public class Border {
   @SerializedName("Color")
   private Color color = null;
