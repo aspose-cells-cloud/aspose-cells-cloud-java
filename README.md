@@ -27,7 +27,7 @@ This Cloud SDK enhances your Java-based cloud apps to [process & manipulate Micr
 ## Feature & Enhancements in Version 21.1
 
 - Support to convert worksheet on task API.
-- upport to add and delete cell or range in worksheet.
+- Support to add and delete cell or range in worksheet.
 
 ## Read & Write Spreadsheet Formats
 
