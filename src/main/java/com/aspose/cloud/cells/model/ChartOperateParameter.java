@@ -38,10 +38,10 @@ import java.io.IOException;
 /**
  * ChartOperateParameter
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-01-21T01:47:19.323-06:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-05-17T20:48:47.090-05:00")
 public class ChartOperateParameter extends OperateParameter {
-  @SerializedName("string")
-  private String string = null;
+  @SerializedName("Title")
+  private String title = null;
 
   @SerializedName("Area")
   private String area = null;
@@ -67,22 +67,22 @@ public class ChartOperateParameter extends OperateParameter {
   @SerializedName("IsVertical")
   private Boolean isVertical = null;
 
-  public ChartOperateParameter string(String string) {
-    this.string = string;
+  public ChartOperateParameter title(String title) {
+    this.title = title;
     return this;
   }
 
    /**
-   * Get string
-   * @return string
+   * Get title
+   * @return title
   **/
   @ApiModelProperty(value = "")
-  public String getString() {
-    return string;
+  public String getTitle() {
+    return title;
   }
 
-  public void setString(String string) {
-    this.string = string;
+  public void setTitle(String title) {
+    this.title = title;
   }
 
   public ChartOperateParameter area(String area) {
@@ -239,7 +239,7 @@ public class ChartOperateParameter extends OperateParameter {
       return false;
     }
     ChartOperateParameter chartOperateParameter = (ChartOperateParameter) o;
-    return Objects.equals(this.string, chartOperateParameter.string) &&
+    return Objects.equals(this.title, chartOperateParameter.title) &&
         Objects.equals(this.area, chartOperateParameter.area) &&
         Objects.equals(this.categoryData, chartOperateParameter.categoryData) &&
         Objects.equals(this.upperLeftRow, chartOperateParameter.upperLeftRow) &&
@@ -253,7 +253,7 @@ public class ChartOperateParameter extends OperateParameter {
 
   @Override
   public int hashCode() {
-    return Objects.hash(string, area, categoryData, upperLeftRow, lowerRightColumn, lowerRightRow, isAutoGetSerialName, chartType, isVertical, super.hashCode());
+    return Objects.hash(title, area, categoryData, upperLeftRow, lowerRightColumn, lowerRightRow, isAutoGetSerialName, chartType, isVertical, super.hashCode());
   }
 
 
@@ -262,7 +262,7 @@ public class ChartOperateParameter extends OperateParameter {
     StringBuilder sb = new StringBuilder();
     sb.append("class ChartOperateParameter {\n");
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
-    sb.append("    string: ").append(toIndentedString(string)).append("\n");
+    sb.append("    title: ").append(toIndentedString(title)).append("\n");
     sb.append("    area: ").append(toIndentedString(area)).append("\n");
     sb.append("    categoryData: ").append(toIndentedString(categoryData)).append("\n");
     sb.append("    upperLeftRow: ").append(toIndentedString(upperLeftRow)).append("\n");

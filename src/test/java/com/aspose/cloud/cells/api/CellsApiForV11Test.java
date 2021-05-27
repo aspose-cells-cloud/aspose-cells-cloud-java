@@ -104,7 +104,7 @@ public class CellsApiForV11Test {
         Integer columns = 1;
         Boolean updateReference = true;
         String folder = TEMPFOLDER;
-        ColumnsResponse response = api.cellsDeleteWorksheetColumns(name, sheetName, columnIndex, columns, updateReference, folder,null);
+        CellsCloudResponse response = api.cellsDeleteWorksheetColumns(name, sheetName, columnIndex, columns, updateReference, folder,null);
     }
     
     /**

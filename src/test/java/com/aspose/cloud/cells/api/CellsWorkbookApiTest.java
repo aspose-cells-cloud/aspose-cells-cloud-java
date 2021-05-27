@@ -367,7 +367,28 @@ public class CellsWorkbookApiTest {
 
 		// TODO: test validations
 	}
+	/**
+	 * Autofit workbook columns.
+	 *
+	 * 
+	 *
+	 * @throws ApiException
+	 *             if the Api call fails
+	 */
+	@Test
+	public void cellsWorkbookPostAutofitWorkbookColumnsTest() throws ApiException {
+		String name = BOOK1;
+		AutoFitterOptions autoFitterOptions = null;
+		Integer startColumn = 1;
+		Integer endColumn = 100;
+		String folder = TEMPFOLDER;
+		CellsApiUtil.Upload(api, folder, name);
+		CellsCloudResponse response = api.cellsWorkbookPostAutofitWorkbookColumns(
+				name, autoFitterOptions, startColumn, endColumn,  folder,
+				null);
 
+		// TODO: test validations
+	}
 	/**
 	 * Encript document.
 	 *
@@ -619,7 +640,7 @@ public class CellsWorkbookApiTest {
 		CellsApiUtil.Upload(api, folder, name);
 		File response = api.cellsWorkbookPutConvertWorkbook(
 				CellsApiUtil.GetFileHolder(name), format, password, outPath);
-
+		
 		// TODO: test validations
 	}
 

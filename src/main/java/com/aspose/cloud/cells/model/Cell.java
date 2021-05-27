@@ -40,7 +40,7 @@ import java.io.IOException;
  * Encapsulates the object that represents a single Workbook cell.
  */
 @ApiModel(description = "Encapsulates the object that represents a single Workbook cell.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-01-21T01:47:19.323-06:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-05-17T20:48:47.090-05:00")
 public class Cell {
   @SerializedName("link")
   private Link link = null;

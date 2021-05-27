@@ -25,7 +25,8 @@
 package com.aspose.cloud.cells.model;
 
 import java.util.Objects;
-import com.aspose.cloud.cells.model.SaveOptions;
+import com.aspose.cloud.cells.model.OperateParameter;
+import com.aspose.cloud.cells.model.WorksheetMovingRequest;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -36,71 +37,92 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * SpreadsheetML2003SaveOptions
+ * WorksheetOperateParameter
  */
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-05-17T20:48:47.090-05:00")
-public class SpreadsheetML2003SaveOptions extends SaveOptions {
-  @SerializedName("ExportColumnIndexOfCell")
-  private Boolean exportColumnIndexOfCell = null;
+public class WorksheetOperateParameter extends OperateParameter {
+  @SerializedName("Name")
+  private String name = null;
 
-  @SerializedName("IsIndentedFormatting")
-  private Boolean isIndentedFormatting = null;
+  @SerializedName("SheetType")
+  private String sheetType = null;
 
-  @SerializedName("LimitAsXls")
-  private Boolean limitAsXls = null;
+  @SerializedName("NewName")
+  private String newName = null;
 
-  public SpreadsheetML2003SaveOptions exportColumnIndexOfCell(Boolean exportColumnIndexOfCell) {
-    this.exportColumnIndexOfCell = exportColumnIndexOfCell;
+  @SerializedName("MovingRequest")
+  private WorksheetMovingRequest movingRequest = null;
+
+  public WorksheetOperateParameter name(String name) {
+    this.name = name;
     return this;
   }
 
    /**
-   * Get exportColumnIndexOfCell
-   * @return exportColumnIndexOfCell
+   * Get name
+   * @return name
   **/
   @ApiModelProperty(value = "")
-  public Boolean ExportColumnIndexOfCell() {
-    return exportColumnIndexOfCell;
+  public String getName() {
+    return name;
   }
 
-  public void setExportColumnIndexOfCell(Boolean exportColumnIndexOfCell) {
-    this.exportColumnIndexOfCell = exportColumnIndexOfCell;
+  public void setName(String name) {
+    this.name = name;
   }
 
-  public SpreadsheetML2003SaveOptions isIndentedFormatting(Boolean isIndentedFormatting) {
-    this.isIndentedFormatting = isIndentedFormatting;
+  public WorksheetOperateParameter sheetType(String sheetType) {
+    this.sheetType = sheetType;
     return this;
   }
 
    /**
-   * Get isIndentedFormatting
-   * @return isIndentedFormatting
+   * Get sheetType
+   * @return sheetType
   **/
   @ApiModelProperty(value = "")
-  public Boolean IsIndentedFormatting() {
-    return isIndentedFormatting;
+  public String getSheetType() {
+    return sheetType;
   }
 
-  public void setIsIndentedFormatting(Boolean isIndentedFormatting) {
-    this.isIndentedFormatting = isIndentedFormatting;
+  public void setSheetType(String sheetType) {
+    this.sheetType = sheetType;
   }
 
-  public SpreadsheetML2003SaveOptions limitAsXls(Boolean limitAsXls) {
-    this.limitAsXls = limitAsXls;
+  public WorksheetOperateParameter newName(String newName) {
+    this.newName = newName;
     return this;
   }
 
    /**
-   * Get limitAsXls
-   * @return limitAsXls
+   * Get newName
+   * @return newName
   **/
   @ApiModelProperty(value = "")
-  public Boolean LimitAsXls() {
-    return limitAsXls;
+  public String getNewName() {
+    return newName;
   }
 
-  public void setLimitAsXls(Boolean limitAsXls) {
-    this.limitAsXls = limitAsXls;
+  public void setNewName(String newName) {
+    this.newName = newName;
+  }
+
+  public WorksheetOperateParameter movingRequest(WorksheetMovingRequest movingRequest) {
+    this.movingRequest = movingRequest;
+    return this;
+  }
+
+   /**
+   * Get movingRequest
+   * @return movingRequest
+  **/
+  @ApiModelProperty(value = "")
+  public WorksheetMovingRequest getMovingRequest() {
+    return movingRequest;
+  }
+
+  public void setMovingRequest(WorksheetMovingRequest movingRequest) {
+    this.movingRequest = movingRequest;
   }
 
 
@@ -112,27 +134,29 @@ public class SpreadsheetML2003SaveOptions extends SaveOptions {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    SpreadsheetML2003SaveOptions spreadsheetML2003SaveOptions = (SpreadsheetML2003SaveOptions) o;
-    return Objects.equals(this.exportColumnIndexOfCell, spreadsheetML2003SaveOptions.exportColumnIndexOfCell) &&
-        Objects.equals(this.isIndentedFormatting, spreadsheetML2003SaveOptions.isIndentedFormatting) &&
-        Objects.equals(this.limitAsXls, spreadsheetML2003SaveOptions.limitAsXls) &&
+    WorksheetOperateParameter worksheetOperateParameter = (WorksheetOperateParameter) o;
+    return Objects.equals(this.name, worksheetOperateParameter.name) &&
+        Objects.equals(this.sheetType, worksheetOperateParameter.sheetType) &&
+        Objects.equals(this.newName, worksheetOperateParameter.newName) &&
+        Objects.equals(this.movingRequest, worksheetOperateParameter.movingRequest) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(exportColumnIndexOfCell, isIndentedFormatting, limitAsXls, super.hashCode());
+    return Objects.hash(name, sheetType, newName, movingRequest, super.hashCode());
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class SpreadsheetML2003SaveOptions {\n");
+    sb.append("class WorksheetOperateParameter {\n");
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
-    sb.append("    exportColumnIndexOfCell: ").append(toIndentedString(exportColumnIndexOfCell)).append("\n");
-    sb.append("    isIndentedFormatting: ").append(toIndentedString(isIndentedFormatting)).append("\n");
-    sb.append("    limitAsXls: ").append(toIndentedString(limitAsXls)).append("\n");
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    sheetType: ").append(toIndentedString(sheetType)).append("\n");
+    sb.append("    newName: ").append(toIndentedString(newName)).append("\n");
+    sb.append("    movingRequest: ").append(toIndentedString(movingRequest)).append("\n");
     sb.append("}");
     return sb.toString();
   }

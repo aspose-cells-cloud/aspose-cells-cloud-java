@@ -101,7 +101,7 @@ public class CellsApiTest {
         Boolean updateReference = true;
         String folder = TEMPFOLDER;
         CellsApiUtil.Upload(api, folder , name);
-        ColumnsResponse response = api.cellsDeleteWorksheetColumns(name, sheetName, columnIndex, columns, updateReference, folder,null);
+        CellsCloudResponse response = api.cellsDeleteWorksheetColumns(name, sheetName, columnIndex, columns, updateReference, folder,null);
 //        Assert.assertEquals("cellsDeleteWorksheetColumnsTest is OK.", "OK", response.getStatus());
         // TODO: test validations
     }
@@ -665,7 +665,7 @@ public class CellsApiTest {
         Double width = 10.0;
         String folder = TEMPFOLDER;
         CellsApiUtil.Upload(api, folder , name);
-        ColumnResponse response = api.cellsPostSetWorksheetColumnWidth(name, sheetName, columnIndex, width, folder,null);
+        CellsCloudResponse response = api.cellsPostSetWorksheetColumnWidth(name, sheetName, columnIndex, width, folder,null);
         Assert.assertEquals("cellsPostSetWorksheetColumnWidthTest is OK.", "OK", response.getStatus());
         // TODO: test validations
     }
@@ -821,7 +821,7 @@ public class CellsApiTest {
         Double height = 10.01;
         String folder = TEMPFOLDER;
         CellsApiUtil.Upload(api, folder , name);
-        RowResponse response = api.cellsPostUpdateWorksheetRow(name, sheetName, rowIndex, height, folder,null);
+        CellsCloudResponse response = api.cellsPostUpdateWorksheetRow(name, sheetName, rowIndex, height, folder,null);
         Assert.assertEquals("cellsPostUpdateWorksheetRowTest is OK.", "OK", response.getStatus());
         // TODO: test validations
     }
@@ -912,7 +912,7 @@ public class CellsApiTest {
         Boolean updateReference = true;
         String folder = TEMPFOLDER;
         CellsApiUtil.Upload(api, folder , name);
-        ColumnsResponse response = api.cellsPutInsertWorksheetColumns(name, sheetName, columnIndex, columns, updateReference, folder,null);
+        CellsCloudResponse response = api.cellsPutInsertWorksheetColumns(name, sheetName, columnIndex, columns, updateReference, folder,null);
         Assert.assertEquals("cellsPutInsertWorksheetColumnsTest is OK.", "OK", response.getStatus());
         // TODO: test validations
     }
@@ -932,7 +932,7 @@ public class CellsApiTest {
         Integer rowIndex = 1;
         String folder = TEMPFOLDER;
         CellsApiUtil.Upload(api, folder , name);
-        RowResponse response = api.cellsPutInsertWorksheetRow(name, sheetName, rowIndex, folder,null);
+        CellsCloudResponse response = api.cellsPutInsertWorksheetRow(name, sheetName, rowIndex, folder,null);
         Assert.assertEquals("cellsPutInsertWorksheetRowTest is OK.", "OK", response.getStatus());
         // TODO: test validations
     }
