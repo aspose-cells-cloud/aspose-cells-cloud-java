@@ -39,19 +39,28 @@ import java.io.IOException;
 /**
  * CellsDocumentProperty
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-05-17T20:48:47.090-05:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-07-08T01:54:35.499-05:00")
 public class CellsDocumentProperty {
   @SerializedName("link")
   private Link link = null;
-
-  @SerializedName("BuiltIn")
-  private String builtIn = null;
 
   @SerializedName("Name")
   private String name = null;
 
   @SerializedName("Value")
   private String value = null;
+
+  @SerializedName("IsLinkedToContent")
+  private String isLinkedToContent = null;
+
+  @SerializedName("Source")
+  private String source = null;
+
+  @SerializedName("Type")
+  private String type = null;
+
+  @SerializedName("IsGeneratedName")
+  private String isGeneratedName = null;
 
   public CellsDocumentProperty link(Link link) {
     this.link = link;
@@ -71,34 +80,16 @@ public class CellsDocumentProperty {
     this.link = link;
   }
 
-  public CellsDocumentProperty builtIn(String builtIn) {
-    this.builtIn = builtIn;
-    return this;
-  }
-
-   /**
-   * Get builtIn
-   * @return builtIn
-  **/
-  @ApiModelProperty(value = "")
-  public String getBuiltIn() {
-    return builtIn;
-  }
-
-  public void setBuiltIn(String builtIn) {
-    this.builtIn = builtIn;
-  }
-
   public CellsDocumentProperty name(String name) {
     this.name = name;
     return this;
   }
 
    /**
-   * Get name
+   * Returns the name of the property.             
    * @return name
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "Returns the name of the property.             ")
   public String getName() {
     return name;
   }
@@ -113,16 +104,88 @@ public class CellsDocumentProperty {
   }
 
    /**
-   * Get value
+   * Gets or sets the value of the property.
    * @return value
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "Gets or sets the value of the property.")
   public String getValue() {
     return value;
   }
 
   public void setValue(String value) {
     this.value = value;
+  }
+
+  public CellsDocumentProperty isLinkedToContent(String isLinkedToContent) {
+    this.isLinkedToContent = isLinkedToContent;
+    return this;
+  }
+
+   /**
+   * Indicates whether this property is linked to content
+   * @return isLinkedToContent
+  **/
+  @ApiModelProperty(value = "Indicates whether this property is linked to content")
+  public String getIsLinkedToContent() {
+    return isLinkedToContent;
+  }
+
+  public void setIsLinkedToContent(String isLinkedToContent) {
+    this.isLinkedToContent = isLinkedToContent;
+  }
+
+  public CellsDocumentProperty source(String source) {
+    this.source = source;
+    return this;
+  }
+
+   /**
+   * The linked content source.
+   * @return source
+  **/
+  @ApiModelProperty(value = "The linked content source.")
+  public String getSource() {
+    return source;
+  }
+
+  public void setSource(String source) {
+    this.source = source;
+  }
+
+  public CellsDocumentProperty type(String type) {
+    this.type = type;
+    return this;
+  }
+
+   /**
+   * Gets the data type of the property.             
+   * @return type
+  **/
+  @ApiModelProperty(value = "Gets the data type of the property.             ")
+  public String getType() {
+    return type;
+  }
+
+  public void setType(String type) {
+    this.type = type;
+  }
+
+  public CellsDocumentProperty isGeneratedName(String isGeneratedName) {
+    this.isGeneratedName = isGeneratedName;
+    return this;
+  }
+
+   /**
+   * Returns true if this property does not have a name in the OLE2 storage and a   unique name was generated only for the public API.             
+   * @return isGeneratedName
+  **/
+  @ApiModelProperty(value = "Returns true if this property does not have a name in the OLE2 storage and a   unique name was generated only for the public API.             ")
+  public String getIsGeneratedName() {
+    return isGeneratedName;
+  }
+
+  public void setIsGeneratedName(String isGeneratedName) {
+    this.isGeneratedName = isGeneratedName;
   }
 
 
@@ -136,14 +199,17 @@ public class CellsDocumentProperty {
     }
     CellsDocumentProperty cellsDocumentProperty = (CellsDocumentProperty) o;
     return Objects.equals(this.link, cellsDocumentProperty.link) &&
-        Objects.equals(this.builtIn, cellsDocumentProperty.builtIn) &&
         Objects.equals(this.name, cellsDocumentProperty.name) &&
-        Objects.equals(this.value, cellsDocumentProperty.value);
+        Objects.equals(this.value, cellsDocumentProperty.value) &&
+        Objects.equals(this.isLinkedToContent, cellsDocumentProperty.isLinkedToContent) &&
+        Objects.equals(this.source, cellsDocumentProperty.source) &&
+        Objects.equals(this.type, cellsDocumentProperty.type) &&
+        Objects.equals(this.isGeneratedName, cellsDocumentProperty.isGeneratedName);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(link, builtIn, name, value);
+    return Objects.hash(link, name, value, isLinkedToContent, source, type, isGeneratedName);
   }
 
 
@@ -153,9 +219,12 @@ public class CellsDocumentProperty {
     sb.append("class CellsDocumentProperty {\n");
     
     sb.append("    link: ").append(toIndentedString(link)).append("\n");
-    sb.append("    builtIn: ").append(toIndentedString(builtIn)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    value: ").append(toIndentedString(value)).append("\n");
+    sb.append("    isLinkedToContent: ").append(toIndentedString(isLinkedToContent)).append("\n");
+    sb.append("    source: ").append(toIndentedString(source)).append("\n");
+    sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    sb.append("    isGeneratedName: ").append(toIndentedString(isGeneratedName)).append("\n");
     sb.append("}");
     return sb.toString();
   }

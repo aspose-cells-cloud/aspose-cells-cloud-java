@@ -5,7 +5,7 @@
   <artifactId>aspose-cells-cloud</artifactId>
   <packaging>jar</packaging>
   <name>aspose-cells-cloud</name>
-  <version>21.5</version>
+  <version>21.6</version>
   <url>https://github.com/aspose-cells-cloud/aspose-cells-cloud-java</url>
   <scm>
     <connection>scm:git:git@github.com:aspose-cells-cloud/aspose-cells-cloud-java</connection>
@@ -44,7 +44,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-surefire-plugin</artifactId>
-        <version>2.12</version>
+        <version>2.22.0</version>
       </plugin>
       <plugin>
         <artifactId>maven-dependency-plugin</artifactId>

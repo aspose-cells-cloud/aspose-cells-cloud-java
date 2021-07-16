@@ -38,7 +38,7 @@ import java.io.IOException;
  * Used by workbook encryption/decryption requests.
  */
 @ApiModel(description = "Used by workbook encryption/decryption requests.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-05-17T20:48:47.090-05:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-07-08T01:54:35.499-05:00")
 public class WorkbookEncryptionRequest {
   @SerializedName("Password")
   private String password = null;

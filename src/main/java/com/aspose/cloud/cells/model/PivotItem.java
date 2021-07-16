@@ -37,7 +37,7 @@ import java.io.IOException;
 /**
  * PivotItem
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-05-17T20:48:47.090-05:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-07-08T01:54:35.499-05:00")
 public class PivotItem {
   @SerializedName("Index")
   private Integer index = null;
@@ -49,7 +49,7 @@ public class PivotItem {
   private String name = null;
 
   @SerializedName("Value")
-  private Object value = null;
+  private String value = null;
 
   public PivotItem index(Integer index) {
     this.index = index;
@@ -105,7 +105,7 @@ public class PivotItem {
     this.name = name;
   }
 
-  public PivotItem value(Object value) {
+  public PivotItem value(String value) {
     this.value = value;
     return this;
   }
@@ -115,11 +115,11 @@ public class PivotItem {
    * @return value
   **/
   @ApiModelProperty(value = "Gets the value of the specified item.")
-  public Object getValue() {
+  public String getValue() {
     return value;
   }
 
-  public void setValue(Object value) {
+  public void setValue(String value) {
     this.value = value;
   }
 

@@ -167,7 +167,7 @@ public class ApiClient {
 		verifyingSsl = true;
 
 		json = new JSON(this);
-
+		
 		/*
 		 * Use RFC3339 format for date and datetime. See
 		 * http://xml2rfc.ietf.org/public/rfc/html/rfc3339.html#anchor14
@@ -183,7 +183,7 @@ public class ApiClient {
 		this.lenientDatetimeFormat = true;
 
 		// Set default User-Agent.
-		setUserAgent("Swagger-Codegen/20.7/java");
+		setUserAgent("Swagger-Codegen/21.7/java");
 
 		// Setup authentications (key: authentication name, value:
 		// authentication).
@@ -193,6 +193,7 @@ public class ApiClient {
 		authentications.put("signature", new ApiKeyAuth("query", "signature"));
 		// Prevent the authentications from being modified.
 		authentications = Collections.unmodifiableMap(authentications);
+
 	}
 
 	private String _clientId;

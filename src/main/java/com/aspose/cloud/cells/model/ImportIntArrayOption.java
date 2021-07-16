@@ -41,7 +41,7 @@ import java.util.List;
 /**
  * ImportIntArrayOption
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-05-17T20:48:47.090-05:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-07-08T01:54:35.499-05:00")
 public class ImportIntArrayOption extends ImportOption {
   @SerializedName("Data")
   private List<Integer> data = null;
