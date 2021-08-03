@@ -15,7 +15,7 @@ package com.aspose.cloud.cells.api;
 import com.aspose.cloud.cells.client.ApiClient;
 import com.aspose.cloud.cells.client.ApiException;
 import com.aspose.cloud.cells.client.Configuration;
-import com.aspose.cloud.cells.model.FilesResult;
+import com.aspose.cloud.cells.model.TextItem;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -67,10 +67,20 @@ public class CellsSearchApiTest {
         HashMap<String,File> fileMap = new HashMap<String,File>();
         fileMap.put(AssemblyTestXlsx ,CellsApiUtil.GetFileHolder(AssemblyTestXlsx) );
         fileMap.put(DataSourceXlsx ,CellsApiUtil.GetFileHolder(DataSourceXlsx) );
-        File response = api.postSearch(fileMap,"123456",null,null,null,null);
+        List<TextItem> response = api.postSearch(fileMap,"123456",null,null);
         System.out.println(response.toString()) ;
         // TODO: test validations
     }
     
-   
+    @Test
+    public void cellsPostProtectApi_sheet_Test() throws ApiException {
+
+        HashMap<String,File> fileMap = new HashMap<String,File>();
+        fileMap.put(AssemblyTestXlsx ,CellsApiUtil.GetFileHolder(AssemblyTestXlsx) );
+        fileMap.put(DataSourceXlsx ,CellsApiUtil.GetFileHolder(DataSourceXlsx) );
+        List<TextItem> response = api.postSearch(fileMap,"123456",null,"Sheet1");
+        System.out.println(response.toString()) ;
+        // TODO: test validations
+    }
+    
 }

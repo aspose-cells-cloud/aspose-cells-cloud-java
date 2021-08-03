@@ -42,7 +42,7 @@ import com.aspose.cloud.cells.model.CellsDocumentProperty;
 import java.io.File;
 import com.aspose.cloud.cells.model.FileInfo;
 import com.aspose.cloud.cells.model.FilesResult;
-
+import com.aspose.cloud.cells.model.TextItem;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -955,6 +955,9 @@ public class LiteCellsApi {
             for (String key : file.keySet()) {
                 localVarFormParams.put(key,file.get(key));                
             }
+            if(documentProperties != null){
+                localVarFormParams.put("DocumentProperties", apiClient.getJSON().serialize(documentProperties));
+            }
         // localVarFormParams.put("File", file);
         }
 
@@ -1213,20 +1216,18 @@ public class LiteCellsApi {
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
-    /**
+        /**
      * Build call for postSearch
      * @param file File to upload (required)
      * @param text  (required)
      * @param password  (optional)
      * @param sheetname  (optional)
-     * @param path  (optional)
-     * @param storageName  (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call postSearchCall(HashMap<String,File> file, String text, String password, String sheetname, String path, String storageName, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call postSearchCall(HashMap<String,File> file, String text, String password, String sheetname, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -1239,10 +1240,6 @@ public class LiteCellsApi {
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "password", password));
         if (sheetname != null)
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "sheetname", sheetname));
-        if (path != null)
-        localVarQueryParams.addAll(apiClient.parameterToPairs("", "path", path));
-        if (storageName != null)
-        localVarQueryParams.addAll(apiClient.parameterToPairs("", "storageName", storageName));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -1283,7 +1280,7 @@ public class LiteCellsApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call postSearchValidateBeforeCall(HashMap<String,File> file, String text, String password, String sheetname, String path, String storageName, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call postSearchValidateBeforeCall(HashMap<String,File> file, String text, String password, String sheetname, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'file' is set
         if (file == null) {
@@ -1296,13 +1293,9 @@ public class LiteCellsApi {
         }
         
         
-        com.squareup.okhttp.Call call = postSearchCall(file, text, password, sheetname, path, storageName, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = postSearchCall(file, text, password, sheetname,  progressListener, progressRequestListener);
         return call;
-
-        
-        
-        
-        
+       
     }
 
     /**
@@ -1312,13 +1305,11 @@ public class LiteCellsApi {
      * @param text  (required)
      * @param password  (optional)
      * @param sheetname  (optional)
-     * @param path  (optional)
-     * @param storageName  (optional)
-     * @return File
+     * @return List&lt;TextItem&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public File postSearch(HashMap<String,File> file, String text, String password, String sheetname, String path, String storageName) throws ApiException {
-        ApiResponse<File> resp = postSearchWithHttpInfo(file, text, password, sheetname, path, storageName);
+    public List<TextItem> postSearch(HashMap<String,File> file, String text, String password, String sheetname) throws ApiException {
+        ApiResponse<List<TextItem>> resp = postSearchWithHttpInfo(file, text, password, sheetname);
         return resp.getData();
     }
 
@@ -1329,14 +1320,12 @@ public class LiteCellsApi {
      * @param text  (required)
      * @param password  (optional)
      * @param sheetname  (optional)
-     * @param path  (optional)
-     * @param storageName  (optional)
-     * @return ApiResponse&lt;File&gt;
+     * @return ApiResponse&lt;List&lt;TextItem&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<File> postSearchWithHttpInfo(HashMap<String,File> file, String text, String password, String sheetname, String path, String storageName) throws ApiException {
-        com.squareup.okhttp.Call call = postSearchValidateBeforeCall(file, text, password, sheetname, path, storageName, null, null);
-        Type localVarReturnType = new TypeToken<File>(){}.getType();
+    public ApiResponse<List<TextItem>> postSearchWithHttpInfo(HashMap<String,File> file, String text, String password, String sheetname) throws ApiException {
+        com.squareup.okhttp.Call call = postSearchValidateBeforeCall(file, text, password, sheetname,  null, null);
+        Type localVarReturnType = new TypeToken<List<TextItem>>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -1353,7 +1342,7 @@ public class LiteCellsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call postSearchAsync(HashMap<String,File> file, String text, String password, String sheetname, String path, String storageName, final ApiCallback<File> callback) throws ApiException {
+    public com.squareup.okhttp.Call postSearchAsync(HashMap<String,File> file, String text, String password, String sheetname, final ApiCallback<List<TextItem>> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1374,11 +1363,12 @@ public class LiteCellsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = postSearchValidateBeforeCall(file, text, password, sheetname, path, storageName, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<File>(){}.getType();
+        com.squareup.okhttp.Call call = postSearchValidateBeforeCall(file, text, password, sheetname,  progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<List<TextItem>>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
+
     /**
      * Build call for postSplit
      * @param file File to upload (required)
@@ -1386,14 +1376,12 @@ public class LiteCellsApi {
      * @param password  (optional)
      * @param from  (optional)
      * @param to  (optional)
-     * @param path  (optional)
-     * @param storageName  (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call postSplitCall(HashMap<String,File> file, String format, String password, Integer from, Integer to, String path, String storageName, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call postSplitCall(HashMap<String,File> file, String format, String password, Integer from, Integer to,final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -1408,10 +1396,6 @@ public class LiteCellsApi {
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "from", from));
         if (to != null)
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "to", to));
-        if (path != null)
-        localVarQueryParams.addAll(apiClient.parameterToPairs("", "path", path));
-        if (storageName != null)
-        localVarQueryParams.addAll(apiClient.parameterToPairs("", "storageName", storageName));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -1452,7 +1436,7 @@ public class LiteCellsApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call postSplitValidateBeforeCall(HashMap<String,File> file, String format, String password, Integer from, Integer to, String path, String storageName, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call postSplitValidateBeforeCall(HashMap<String,File> file, String format, String password, Integer from, Integer to,  final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'file' is set
         if (file == null) {
@@ -1465,13 +1449,8 @@ public class LiteCellsApi {
         }
         
         
-        com.squareup.okhttp.Call call = postSplitCall(file, format, password, from, to, path, storageName, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = postSplitCall(file, format, password, from, to, progressListener, progressRequestListener);
         return call;
-
-        
-        
-        
-        
     }
 
     /**
@@ -1482,13 +1461,11 @@ public class LiteCellsApi {
      * @param password  (optional)
      * @param from  (optional)
      * @param to  (optional)
-     * @param path  (optional)
-     * @param storageName  (optional)
      * @return FilesResult
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public FilesResult postSplit(HashMap<String,File> file, String format, String password, Integer from, Integer to, String path, String storageName) throws ApiException {
-        ApiResponse<FilesResult> resp = postSplitWithHttpInfo(file, format, password, from, to, path, storageName);
+    public FilesResult postSplit(HashMap<String,File> file, String format, String password, Integer from, Integer to) throws ApiException {
+        ApiResponse<FilesResult> resp = postSplitWithHttpInfo(file, format, password, from, to);
         return resp.getData();
     }
 
@@ -1500,13 +1477,11 @@ public class LiteCellsApi {
      * @param password  (optional)
      * @param from  (optional)
      * @param to  (optional)
-     * @param path  (optional)
-     * @param storageName  (optional)
      * @return ApiResponse&lt;FilesResult&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<FilesResult> postSplitWithHttpInfo(HashMap<String,File> file, String format, String password, Integer from, Integer to, String path, String storageName) throws ApiException {
-        com.squareup.okhttp.Call call = postSplitValidateBeforeCall(file, format, password, from, to, path, storageName, null, null);
+    public ApiResponse<FilesResult> postSplitWithHttpInfo(HashMap<String,File> file, String format, String password, Integer from, Integer to) throws ApiException {
+        com.squareup.okhttp.Call call = postSplitValidateBeforeCall(file, format, password, from, to,null, null);
         Type localVarReturnType = new TypeToken<FilesResult>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -1519,13 +1494,11 @@ public class LiteCellsApi {
      * @param password  (optional)
      * @param from  (optional)
      * @param to  (optional)
-     * @param path  (optional)
-     * @param storageName  (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call postSplitAsync(HashMap<String,File> file, String format, String password, Integer from, Integer to, String path, String storageName, final ApiCallback<FilesResult> callback) throws ApiException {
+    public com.squareup.okhttp.Call postSplitAsync(HashMap<String,File> file, String format, String password, Integer from, Integer to, final ApiCallback<FilesResult> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1546,7 +1519,7 @@ public class LiteCellsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = postSplitValidateBeforeCall(file, format, password, from, to, path, storageName, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = postSplitValidateBeforeCall(file, format, password, from, to,  progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<FilesResult>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
