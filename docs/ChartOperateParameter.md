@@ -4,7 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**string** | **String** |  |  [optional]
+**title** | **String** |  |  [optional]
 **area** | **String** |  |  [optional]
 **categoryData** | **String** |  |  [optional]
 **upperLeftRow** | **Integer** |  |  [optional]

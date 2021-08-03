@@ -1336,8 +1336,6 @@ public class LiteCellsApi {
      * @param text  (required)
      * @param password  (optional)
      * @param sheetname  (optional)
-     * @param path  (optional)
-     * @param storageName  (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object

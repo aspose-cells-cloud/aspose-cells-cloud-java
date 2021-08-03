@@ -155,6 +155,7 @@ Method | HTTP request | Description
 [**cellsPutInsertWorksheetColumns**](CellsApi.md#cellsPutInsertWorksheetColumns) | **PUT** /cells/{name}/worksheets/{sheetName}/cells/columns/{columnIndex} | Insert worksheet columns.
 [**cellsPutInsertWorksheetRow**](CellsApi.md#cellsPutInsertWorksheetRow) | **PUT** /cells/{name}/worksheets/{sheetName}/cells/rows/{rowIndex} | Insert new worksheet row.
 [**cellsPutInsertWorksheetRows**](CellsApi.md#cellsPutInsertWorksheetRows) | **PUT** /cells/{name}/worksheets/{sheetName}/cells/rows | Insert several new worksheet rows.
+[**cellsRangesDeleteWorksheetCellsRange**](CellsApi.md#cellsRangesDeleteWorksheetCellsRange) | **DELETE** /cells/{name}/worksheets/{sheetName}/ranges | Delete range in the worksheet
 [**cellsRangesGetWorksheetCellsRangeValue**](CellsApi.md#cellsRangesGetWorksheetCellsRangeValue) | **GET** /cells/{name}/worksheets/{sheetName}/ranges/value | Get cells list in a range by range name or row column indexes  
 [**cellsRangesPostWorksheetCellsRangeColumnWidth**](CellsApi.md#cellsRangesPostWorksheetCellsRangeColumnWidth) | **POST** /cells/{name}/worksheets/{sheetName}/ranges/columnWidth | Set column width of range
 [**cellsRangesPostWorksheetCellsRangeMerge**](CellsApi.md#cellsRangesPostWorksheetCellsRangeMerge) | **POST** /cells/{name}/worksheets/{sheetName}/ranges/merge | Combines a range of cells into a single cell.              
@@ -165,6 +166,7 @@ Method | HTTP request | Description
 [**cellsRangesPostWorksheetCellsRangeUnmerge**](CellsApi.md#cellsRangesPostWorksheetCellsRangeUnmerge) | **POST** /cells/{name}/worksheets/{sheetName}/ranges/unmerge | Unmerges merged cells of this range.             
 [**cellsRangesPostWorksheetCellsRangeValue**](CellsApi.md#cellsRangesPostWorksheetCellsRangeValue) | **POST** /cells/{name}/worksheets/{sheetName}/ranges/value | Puts a value into the range, if appropriate the value will be converted to other data type and cell&#39;s number format will be reset.             
 [**cellsRangesPostWorksheetCellsRanges**](CellsApi.md#cellsRangesPostWorksheetCellsRanges) | **POST** /cells/{name}/worksheets/{sheetName}/ranges | copy range in the worksheet
+[**cellsRangesPutWorksheetCellsRange**](CellsApi.md#cellsRangesPutWorksheetCellsRange) | **PUT** /cells/{name}/worksheets/{sheetName}/ranges | Insert range in the worksheet
 [**cellsSaveAsPostDocumentSaveAs**](CellsApi.md#cellsSaveAsPostDocumentSaveAs) | **POST** /cells/{name}/SaveAs | Convert document and save result to storage.
 [**cellsShapesDeleteWorksheetShape**](CellsApi.md#cellsShapesDeleteWorksheetShape) | **DELETE** /cells/{name}/worksheets/{sheetName}/shapes/{shapeindex} | Delete a shape in worksheet
 [**cellsShapesDeleteWorksheetShapes**](CellsApi.md#cellsShapesDeleteWorksheetShapes) | **DELETE** /cells/{name}/worksheets/{sheetName}/shapes | delete all shapes in worksheet
@@ -192,6 +194,7 @@ Method | HTTP request | Description
 [**cellsWorkbookGetWorkbookNames**](CellsApi.md#cellsWorkbookGetWorkbookNames) | **GET** /cells/{name}/names | Read workbook&#39;s names.
 [**cellsWorkbookGetWorkbookSettings**](CellsApi.md#cellsWorkbookGetWorkbookSettings) | **GET** /cells/{name}/settings | Get Workbook Settings DTO
 [**cellsWorkbookGetWorkbookTextItems**](CellsApi.md#cellsWorkbookGetWorkbookTextItems) | **GET** /cells/{name}/textItems | Read workbook&#39;s text items.
+[**cellsWorkbookPostAutofitWorkbookColumns**](CellsApi.md#cellsWorkbookPostAutofitWorkbookColumns) | **POST** /cells/{name}/autofitcolumns | Autofit workbook columns.
 [**cellsWorkbookPostAutofitWorkbookRows**](CellsApi.md#cellsWorkbookPostAutofitWorkbookRows) | **POST** /cells/{name}/autofitrows | Autofit workbook rows.
 [**cellsWorkbookPostEncryptDocument**](CellsApi.md#cellsWorkbookPostEncryptDocument) | **POST** /cells/{name}/encryption | Encript document.
 [**cellsWorkbookPostImportData**](CellsApi.md#cellsWorkbookPostImportData) | **POST** /cells/{name}/importdata | 
@@ -2507,7 +2510,7 @@ No authorization required
 
 <a name="cellsDeleteWorksheetColumns"></a>
 # **cellsDeleteWorksheetColumns**
-> ColumnsResponse cellsDeleteWorksheetColumns(name, sheetName, columnIndex, columns, updateReference, folder, storageName)
+> CellsCloudResponse cellsDeleteWorksheetColumns(name, sheetName, columnIndex, columns, updateReference, folder, storageName)
 
 Delete worksheet columns.
 
@@ -2527,7 +2530,7 @@ Boolean updateReference = true; // Boolean | The update reference.
 String folder = "folder_example"; // String | The workbook folder.
 String storageName = "storageName_example"; // String | storage name.
 try {
-    ColumnsResponse result = apiInstance.cellsDeleteWorksheetColumns(name, sheetName, columnIndex, columns, updateReference, folder, storageName);
+    CellsCloudResponse result = apiInstance.cellsDeleteWorksheetColumns(name, sheetName, columnIndex, columns, updateReference, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsDeleteWorksheetColumns");
@@ -2549,7 +2552,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ColumnsResponse**](ColumnsResponse.md)
+[**CellsCloudResponse**](CellsCloudResponse.md)
 
 ### Authorization
 
@@ -7344,7 +7347,7 @@ No authorization required
 
 <a name="cellsPostSetWorksheetColumnWidth"></a>
 # **cellsPostSetWorksheetColumnWidth**
-> ColumnResponse cellsPostSetWorksheetColumnWidth(name, sheetName, columnIndex, width, folder, storageName)
+> CellsCloudResponse cellsPostSetWorksheetColumnWidth(name, sheetName, columnIndex, width, folder, storageName)
 
 Set worksheet column width.
 
@@ -7363,7 +7366,7 @@ Double width = 3.4D; // Double | The width.
 String folder = "folder_example"; // String | The workbook folder.
 String storageName = "storageName_example"; // String | storage name.
 try {
-    ColumnResponse result = apiInstance.cellsPostSetWorksheetColumnWidth(name, sheetName, columnIndex, width, folder, storageName);
+    CellsCloudResponse result = apiInstance.cellsPostSetWorksheetColumnWidth(name, sheetName, columnIndex, width, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsPostSetWorksheetColumnWidth");
@@ -7384,7 +7387,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ColumnResponse**](ColumnResponse.md)
+[**CellsCloudResponse**](CellsCloudResponse.md)
 
 ### Authorization
 
@@ -7721,7 +7724,7 @@ No authorization required
 
 <a name="cellsPostUpdateWorksheetRow"></a>
 # **cellsPostUpdateWorksheetRow**
-> RowResponse cellsPostUpdateWorksheetRow(name, sheetName, rowIndex, height, folder, storageName)
+> CellsCloudResponse cellsPostUpdateWorksheetRow(name, sheetName, rowIndex, height, folder, storageName)
 
 Update worksheet row.
 
@@ -7740,7 +7743,7 @@ Double height = 3.4D; // Double | The new row height.
 String folder = "folder_example"; // String | The document folder.
 String storageName = "storageName_example"; // String | storage name.
 try {
-    RowResponse result = apiInstance.cellsPostUpdateWorksheetRow(name, sheetName, rowIndex, height, folder, storageName);
+    CellsCloudResponse result = apiInstance.cellsPostUpdateWorksheetRow(name, sheetName, rowIndex, height, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsPostUpdateWorksheetRow");
@@ -7761,7 +7764,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**RowResponse**](RowResponse.md)
+[**CellsCloudResponse**](CellsCloudResponse.md)
 
 ### Authorization
 
@@ -8188,7 +8191,7 @@ No authorization required
 
 <a name="cellsPutInsertWorksheetColumns"></a>
 # **cellsPutInsertWorksheetColumns**
-> ColumnsResponse cellsPutInsertWorksheetColumns(name, sheetName, columnIndex, columns, updateReference, folder, storageName)
+> CellsCloudResponse cellsPutInsertWorksheetColumns(name, sheetName, columnIndex, columns, updateReference, folder, storageName)
 
 Insert worksheet columns.
 
@@ -8208,7 +8211,7 @@ Boolean updateReference = true; // Boolean | The update reference.
 String folder = "folder_example"; // String | The workbook folder.
 String storageName = "storageName_example"; // String | storage name.
 try {
-    ColumnsResponse result = apiInstance.cellsPutInsertWorksheetColumns(name, sheetName, columnIndex, columns, updateReference, folder, storageName);
+    CellsCloudResponse result = apiInstance.cellsPutInsertWorksheetColumns(name, sheetName, columnIndex, columns, updateReference, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsPutInsertWorksheetColumns");
@@ -8230,7 +8233,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ColumnsResponse**](ColumnsResponse.md)
+[**CellsCloudResponse**](CellsCloudResponse.md)
 
 ### Authorization
 
@@ -8243,7 +8246,7 @@ No authorization required
 
 <a name="cellsPutInsertWorksheetRow"></a>
 # **cellsPutInsertWorksheetRow**
-> RowResponse cellsPutInsertWorksheetRow(name, sheetName, rowIndex, folder, storageName)
+> CellsCloudResponse cellsPutInsertWorksheetRow(name, sheetName, rowIndex, folder, storageName)
 
 Insert new worksheet row.
 
@@ -8261,7 +8264,7 @@ Integer rowIndex = 56; // Integer | The new row index.
 String folder = "folder_example"; // String | The document folder.
 String storageName = "storageName_example"; // String | storage name.
 try {
-    RowResponse result = apiInstance.cellsPutInsertWorksheetRow(name, sheetName, rowIndex, folder, storageName);
+    CellsCloudResponse result = apiInstance.cellsPutInsertWorksheetRow(name, sheetName, rowIndex, folder, storageName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsPutInsertWorksheetRow");
@@ -8281,7 +8284,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**RowResponse**](RowResponse.md)
+[**CellsCloudResponse**](CellsCloudResponse.md)
 
 ### Authorization
 
@@ -8332,6 +8335,59 @@ Name | Type | Description  | Notes
  **totalRows** | **Integer**| Number of rows to be operated. | [optional] [default to 1]
  **updateReference** | **Boolean**| Indicates if update references in other worksheets. | [optional] [default to true]
  **folder** | **String**| The document folder. | [optional]
+ **storageName** | **String**| storage name. | [optional]
+
+### Return type
+
+[**CellsCloudResponse**](CellsCloudResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="cellsRangesDeleteWorksheetCellsRange"></a>
+# **cellsRangesDeleteWorksheetCellsRange**
+> CellsCloudResponse cellsRangesDeleteWorksheetCellsRange(name, sheetName, range, shift, folder, storageName)
+
+Delete range in the worksheet
+
+### Example
+```java
+// Import classes:
+//import com.aspose.cloud.cells.client.ApiException;
+//import com.aspose.cloud.cells.api.CellsApi;
+
+
+CellsApi apiInstance = new CellsApi();
+String name = "name_example"; // String | workbook name
+String sheetName = "sheetName_example"; // String | worksheet name
+String range = "range_example"; // String | range
+String shift = "shift_example"; // String | Represent the shift options when deleting a range of cells. (Left,Up) 
+String folder = "folder_example"; // String | Workbook folder.
+String storageName = "storageName_example"; // String | storage name.
+try {
+    CellsCloudResponse result = apiInstance.cellsRangesDeleteWorksheetCellsRange(name, sheetName, range, shift, folder, storageName);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling CellsApi#cellsRangesDeleteWorksheetCellsRange");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **String**| workbook name |
+ **sheetName** | **String**| worksheet name |
+ **range** | **String**| range |
+ **shift** | **String**| Represent the shift options when deleting a range of cells. (Left,Up)  |
+ **folder** | **String**| Workbook folder. | [optional]
  **storageName** | **String**| storage name. | [optional]
 
 ### Return type
@@ -8863,6 +8919,59 @@ Name | Type | Description  | Notes
  **name** | **String**| workbook name |
  **sheetName** | **String**| worksheet name |
  **rangeOperate** | [**RangeCopyRequest**](RangeCopyRequest.md)| copydata,copystyle,copyto,copyvalue | [optional]
+ **folder** | **String**| Workbook folder. | [optional]
+ **storageName** | **String**| storage name. | [optional]
+
+### Return type
+
+[**CellsCloudResponse**](CellsCloudResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="cellsRangesPutWorksheetCellsRange"></a>
+# **cellsRangesPutWorksheetCellsRange**
+> CellsCloudResponse cellsRangesPutWorksheetCellsRange(name, sheetName, range, shift, folder, storageName)
+
+Insert range in the worksheet
+
+### Example
+```java
+// Import classes:
+//import com.aspose.cloud.cells.client.ApiException;
+//import com.aspose.cloud.cells.api.CellsApi;
+
+
+CellsApi apiInstance = new CellsApi();
+String name = "name_example"; // String | workbook name
+String sheetName = "sheetName_example"; // String | worksheet name
+String range = "range_example"; // String | range
+String shift = "shift_example"; // String | Represent the shift options when deleting a range of cells. (Right,Down) 
+String folder = "folder_example"; // String | Workbook folder.
+String storageName = "storageName_example"; // String | storage name.
+try {
+    CellsCloudResponse result = apiInstance.cellsRangesPutWorksheetCellsRange(name, sheetName, range, shift, folder, storageName);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling CellsApi#cellsRangesPutWorksheetCellsRange");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **String**| workbook name |
+ **sheetName** | **String**| worksheet name |
+ **range** | **String**| range |
+ **shift** | **String**| Represent the shift options when deleting a range of cells. (Right,Down)  |
  **folder** | **String**| Workbook folder. | [optional]
  **storageName** | **String**| storage name. | [optional]
 
@@ -10236,6 +10345,59 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+<a name="cellsWorkbookPostAutofitWorkbookColumns"></a>
+# **cellsWorkbookPostAutofitWorkbookColumns**
+> CellsCloudResponse cellsWorkbookPostAutofitWorkbookColumns(name, autoFitterOptions, startColumn, endColumn, folder, storageName)
+
+Autofit workbook columns.
+
+### Example
+```java
+// Import classes:
+//import com.aspose.cloud.cells.client.ApiException;
+//import com.aspose.cloud.cells.api.CellsApi;
+
+
+CellsApi apiInstance = new CellsApi();
+String name = "name_example"; // String | Document name.
+AutoFitterOptions autoFitterOptions = new AutoFitterOptions(); // AutoFitterOptions | Auto Fitter Options.
+Integer startColumn = 56; // Integer | Start column.
+Integer endColumn = 56; // Integer | End column.
+String folder = "folder_example"; // String | Document's folder.
+String storageName = "storageName_example"; // String | storage name.
+try {
+    CellsCloudResponse result = apiInstance.cellsWorkbookPostAutofitWorkbookColumns(name, autoFitterOptions, startColumn, endColumn, folder, storageName);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling CellsApi#cellsWorkbookPostAutofitWorkbookColumns");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **String**| Document name. |
+ **autoFitterOptions** | [**AutoFitterOptions**](AutoFitterOptions.md)| Auto Fitter Options. | [optional]
+ **startColumn** | **Integer**| Start column. | [optional]
+ **endColumn** | **Integer**| End column. | [optional]
+ **folder** | **String**| Document&#39;s folder. | [optional]
+ **storageName** | **String**| storage name. | [optional]
+
+### Return type
+
+[**CellsCloudResponse**](CellsCloudResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
 <a name="cellsWorkbookPostAutofitWorkbookRows"></a>
 # **cellsWorkbookPostAutofitWorkbookRows**
 > CellsCloudResponse cellsWorkbookPostAutofitWorkbookRows(name, autoFitterOptions, startRow, endRow, onlyAuto, folder, storageName)
@@ -10799,7 +10961,7 @@ No authorization required
 
 <a name="cellsWorkbookPutConvertWorkbook"></a>
 # **cellsWorkbookPutConvertWorkbook**
-> File cellsWorkbookPutConvertWorkbook(workbook, format, password, outPath)
+> File cellsWorkbookPutConvertWorkbook(file, format, password, outPath)
 
 Convert workbook from request content to some format.
 
@@ -10811,12 +10973,12 @@ Convert workbook from request content to some format.
 
 
 CellsApi apiInstance = new CellsApi();
-File workbook = new File("/path/to/file.txt"); // File | 
+File file = new File("/path/to/file.txt"); // File | 
 String format = "format_example"; // String | The format to convert.
 String password = "password_example"; // String | The workbook password.
 String outPath = "outPath_example"; // String | Path to save result
 try {
-    File result = apiInstance.cellsWorkbookPutConvertWorkbook(workbook, format, password, outPath);
+    File result = apiInstance.cellsWorkbookPutConvertWorkbook(file, format, password, outPath);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CellsApi#cellsWorkbookPutConvertWorkbook");
@@ -10828,7 +10990,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **workbook** | **File**|  |
+ **file** | **File**|  |
  **format** | **String**| The format to convert. | [optional]
  **password** | **String**| The workbook password. | [optional]
  **outPath** | **String**| Path to save result | [optional]
@@ -10843,7 +11005,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: multipart/form-data
  - **Accept**: application/json
 
 <a name="cellsWorkbookPutDocumentProtectFromChanges"></a>
@@ -13598,8 +13760,8 @@ Get Access token
 
 CellsApi apiInstance = new CellsApi();
 String grantType = "grantType_example"; // String | Grant Type
-String clientId = "clientId_example"; // String | client Id
-String clientSecret = "clientSecret_example"; // String | client Secret
+String clientId = "clientId_example"; // String | App SID
+String clientSecret = "clientSecret_example"; // String | App Key
 try {
     AccessTokenResponse result = apiInstance.oAuthPost(grantType, clientId, clientSecret);
     System.out.println(result);
@@ -13614,8 +13776,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **grantType** | **String**| Grant Type |
- **clientId** | **String**| client Id |
- **clientSecret** | **String**|client Secret |
+ **clientId** | **String**| App SID |
+ **clientSecret** | **String**| App Key |
 
 ### Return type
 
