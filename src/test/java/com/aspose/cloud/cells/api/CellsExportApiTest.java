@@ -60,24 +60,68 @@ public class CellsExportApiTest {
 		}
     }    
     
-    /**
-     * Delete a shape in worksheet
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
     @Test
-    public void cellsPostExportApiTest() throws ApiException {
+    public void cellsPostExportApiTest_chart() throws ApiException {
 
         HashMap<String,File> fileMap = new HashMap<String,File>();
         fileMap.put(AssemblyTestXlsx ,CellsApiUtil.GetFileHolder(AssemblyTestXlsx) );
         fileMap.put(DataSourceXlsx ,CellsApiUtil.GetFileHolder(DataSourceXlsx) );
         FilesResult response = api.postExport(fileMap, "chart","png");
 
-        // TODO: test validations
     }
     
-   
+
+    @Test
+    public void cellsPostExportApiTest_shape() throws ApiException {
+
+        HashMap<String,File> fileMap = new HashMap<String,File>();
+        fileMap.put(AssemblyTestXlsx ,CellsApiUtil.GetFileHolder(AssemblyTestXlsx) );
+        fileMap.put(DataSourceXlsx ,CellsApiUtil.GetFileHolder(DataSourceXlsx) );
+        FilesResult response = api.postExport(fileMap, "shape","png");
+    }
+    @Test
+    public void cellsPostExportApiTest_picture() throws ApiException {
+
+        HashMap<String,File> fileMap = new HashMap<String,File>();
+        fileMap.put(AssemblyTestXlsx ,CellsApiUtil.GetFileHolder(AssemblyTestXlsx) );
+        fileMap.put(DataSourceXlsx ,CellsApiUtil.GetFileHolder(DataSourceXlsx) );
+        FilesResult response = api.postExport(fileMap, "picture","png");
+    }
+
+    @Test
+    public void cellsPostExportApiTest_listobject() throws ApiException {
+
+        HashMap<String,File> fileMap = new HashMap<String,File>();
+        fileMap.put(AssemblyTestXlsx ,CellsApiUtil.GetFileHolder(AssemblyTestXlsx) );
+        fileMap.put(DataSourceXlsx ,CellsApiUtil.GetFileHolder(DataSourceXlsx) );
+        FilesResult response = api.postExport(fileMap, "listobject","png");
+    }
+
+    @Test
+    public void cellsPostExportApiTest_oleobject() throws ApiException {
+
+        HashMap<String,File> fileMap = new HashMap<String,File>();
+        fileMap.put(AssemblyTestXlsx ,CellsApiUtil.GetFileHolder(AssemblyTestXlsx) );
+        fileMap.put(DataSourceXlsx ,CellsApiUtil.GetFileHolder(DataSourceXlsx) );
+        FilesResult response = api.postExport(fileMap, "oleobject","png");
+    }
+
+    @Test
+    public void cellsPostExportApiTest_worksheet() throws ApiException {
+
+        HashMap<String,File> fileMap = new HashMap<String,File>();
+        fileMap.put(AssemblyTestXlsx ,CellsApiUtil.GetFileHolder(AssemblyTestXlsx) );
+        fileMap.put(DataSourceXlsx ,CellsApiUtil.GetFileHolder(DataSourceXlsx) );
+        FilesResult response = api.postExport(fileMap, "sheet","png");
+    }
+
+    @Test
+    public void cellsPostExportApiTest_workbook() throws ApiException {
+
+        HashMap<String,File> fileMap = new HashMap<String,File>();
+        fileMap.put(AssemblyTestXlsx ,CellsApiUtil.GetFileHolder(AssemblyTestXlsx) );
+        fileMap.put(DataSourceXlsx ,CellsApiUtil.GetFileHolder(DataSourceXlsx) );
+        FilesResult response = api.postExport(fileMap, "workbook","png");
+    }
+
 }

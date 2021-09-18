@@ -37,7 +37,7 @@ import java.io.IOException;
 /**
  * ConditionalFormattingValue
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-07-08T01:54:35.499-05:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-09-17T23:42:04.472-05:00")
 public class ConditionalFormattingValue {
   @SerializedName("IsGTE")
   private Boolean isGTE = null;
@@ -46,7 +46,7 @@ public class ConditionalFormattingValue {
   private String type = null;
 
   @SerializedName("Value")
-  private Object value = null;
+  private String value = null;
 
   public ConditionalFormattingValue isGTE(Boolean isGTE) {
     this.isGTE = isGTE;
@@ -84,7 +84,7 @@ public class ConditionalFormattingValue {
     this.type = type;
   }
 
-  public ConditionalFormattingValue value(Object value) {
+  public ConditionalFormattingValue value(String value) {
     this.value = value;
     return this;
   }
@@ -94,11 +94,11 @@ public class ConditionalFormattingValue {
    * @return value
   **/
   @ApiModelProperty(value = "Get or set the value of this conditional formatting value object.  It should     be used in conjunction with Type.")
-  public Object getValue() {
+  public String getValue() {
     return value;
   }
 
-  public void setValue(Object value) {
+  public void setValue(String value) {
     this.value = value;
   }
 

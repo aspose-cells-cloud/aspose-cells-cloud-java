@@ -1,4 +1,4 @@
-![](https://img.shields.io/badge/REST%20API-v3.0-lightgrey) [![GitHub license](https://img.shields.io/github/license/aspose-cells-cloud/aspose-cells-cloud-java)](https://github.com/aspose-cells-cloud/aspose-cells-cloud-java/blob/master/LICENSE) ![GitHub commits since latest release (by date)](https://img.shields.io/github/commits-since/aspose-cells-cloud/aspose-cells-cloud-java/21.7)
+![](https://img.shields.io/badge/REST%20API-v3.0-lightgrey) [![GitHub license](https://img.shields.io/github/license/aspose-cells-cloud/aspose-cells-cloud-java)](https://github.com/aspose-cells-cloud/aspose-cells-cloud-java/blob/master/LICENSE) ![GitHub commits since latest release (by date)](https://img.shields.io/github/commits-since/aspose-cells-cloud/aspose-cells-cloud-java/21.8)
 
 # Java SDK for Spreadsheet Processing in the Cloud
 
@@ -24,11 +24,10 @@ This Cloud SDK enhances your Java-based cloud apps to [process & manipulate Micr
 - Fetch the required shape from worksheet.
 - Leverage the power of [Pivot Tables](https://docs.aspose.cloud/cells/working-with-pivot-tables/) & Ranges.
 
-## Feature & Enhancements in Version 21.7
+## Feature & Enhancements in Version 21.8
 
-- Fix search API.
-- Fix split API.
-- Fix update metadata API.
+- Improvement for getting list object Api.
+- Add import Api.
  
 ## Read & Write Spreadsheet Formats
 

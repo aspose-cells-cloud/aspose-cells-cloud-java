@@ -43,6 +43,7 @@ import java.io.File;
 import com.aspose.cloud.cells.model.FileInfo;
 import com.aspose.cloud.cells.model.FilesResult;
 import com.aspose.cloud.cells.model.TextItem;
+import com.aspose.cloud.cells.model.ImportOption;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -788,6 +789,148 @@ public class LiteCellsApi {
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
+/**
+     * Build call for postImport
+     * @param file File to upload (required)
+     * @param importOption  (required)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call postImportCall(HashMap<String,File> file, ImportOption importOption, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = importOption;
+        
+        // create path and map variables
+        String localVarPath = "/cells/import";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+        if (file != null) {
+            for (String key : file.keySet()) {
+                localVarFormParams.put(key,file.get(key)); 
+            }
+            if(importOption != null){
+                localVarFormParams.put("importOption", apiClient.getJSON().serialize(importOption));
+            }
+        }
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "multipart/form-data"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+    
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call postImportValidateBeforeCall(HashMap<String,File> file, ImportOption importOption, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'file' is set
+        if (file == null) {
+            throw new ApiException("Missing the required parameter 'file' when calling postImport(Async)");
+        }
+        
+        // verify the required parameter 'importOption' is set
+        if (importOption == null) {
+            throw new ApiException("Missing the required parameter 'importOption' when calling postImport(Async)");
+        }
+        
+        
+        com.squareup.okhttp.Call call = postImportCall(file, importOption, progressListener, progressRequestListener);
+        return call;
+
+        
+        
+        
+        
+    }
+
+    /**
+     * 
+     * 
+     * @param file File to upload (required)
+     * @param importOption  (required)
+     * @return FilesResult
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public FilesResult postImport(HashMap<String,File> file, ImportOption importOption) throws ApiException {
+        ApiResponse<FilesResult> resp = postImportWithHttpInfo(file, importOption);
+        return resp.getData();
+    }
+
+    /**
+     * 
+     * 
+     * @param file File to upload (required)
+     * @param importOption  (required)
+     * @return ApiResponse&lt;FilesResult&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<FilesResult> postImportWithHttpInfo(HashMap<String,File> file, ImportOption importOption) throws ApiException {
+        com.squareup.okhttp.Call call = postImportValidateBeforeCall(file, importOption, null, null);
+        Type localVarReturnType = new TypeToken<FilesResult>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     *  (asynchronously)
+     * 
+     * @param file File to upload (required)
+     * @param importOption  (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call postImportAsync(HashMap<String,File> file, ImportOption importOption, final ApiCallback<FilesResult> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = postImportValidateBeforeCall(file, importOption, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<FilesResult>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }    
     /**
      * Build call for postMerge
      * @param file File to upload (required)
@@ -940,7 +1083,7 @@ public class LiteCellsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call postMetadataCall(HashMap<String,File> file, CellsDocumentProperty[] documentProperties, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call postMetadataCall(HashMap<String,File> file, List<CellsDocumentProperty> documentProperties, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = documentProperties;
         
         // create path and map variables
@@ -990,7 +1133,7 @@ public class LiteCellsApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call postMetadataValidateBeforeCall(HashMap<String,File> file, CellsDocumentProperty[] documentProperties, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call postMetadataValidateBeforeCall(HashMap<String,File> file, List<CellsDocumentProperty> documentProperties, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'file' is set
         if (file == null) {
@@ -1020,7 +1163,7 @@ public class LiteCellsApi {
      * @return FilesResult
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public FilesResult postMetadata(HashMap<String,File> file, CellsDocumentProperty[] documentProperties) throws ApiException {
+    public FilesResult postMetadata(HashMap<String,File> file,List<CellsDocumentProperty> documentProperties) throws ApiException {
         ApiResponse<FilesResult> resp = postMetadataWithHttpInfo(file, documentProperties);
         return resp.getData();
     }
@@ -1033,7 +1176,7 @@ public class LiteCellsApi {
      * @return ApiResponse&lt;FilesResult&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<FilesResult> postMetadataWithHttpInfo(HashMap<String,File> file, CellsDocumentProperty[] documentProperties) throws ApiException {
+    public ApiResponse<FilesResult> postMetadataWithHttpInfo(HashMap<String,File> file, List<CellsDocumentProperty> documentProperties) throws ApiException {
         com.squareup.okhttp.Call call = postMetadataValidateBeforeCall(file, documentProperties, null, null);
         Type localVarReturnType = new TypeToken<FilesResult>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -1048,7 +1191,7 @@ public class LiteCellsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call postMetadataAsync(HashMap<String,File> file, CellsDocumentProperty[] documentProperties, final ApiCallback<FilesResult> callback) throws ApiException {
+    public com.squareup.okhttp.Call postMetadataAsync(HashMap<String,File> file, List<CellsDocumentProperty> documentProperties, final ApiCallback<FilesResult> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;

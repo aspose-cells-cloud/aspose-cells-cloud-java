@@ -15,9 +15,7 @@ package com.aspose.cloud.cells.api;
 import com.aspose.cloud.cells.client.ApiClient;
 import com.aspose.cloud.cells.client.ApiException;
 import com.aspose.cloud.cells.client.Configuration;
-import com.aspose.cloud.cells.model.FilesResult;
-import com.aspose.cloud.cells.model.CellsDocumentProperty;
-
+import com.aspose.cloud.cells.model.*;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -26,12 +24,13 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Base64;
 
 /**
  * API tests for CellsShapesApi
  */
 
-public class CellsMetadataApiTest {
+public class CellsImportApiTest {
 
     private  LiteCellsApi api ;
 
@@ -53,7 +52,7 @@ public class CellsMetadataApiTest {
     private String RANGE = "A1:C10";
     private String CELLAREA = "A1:C10";
     
-    public CellsMetadataApiTest(){
+    public CellsImportApiTest(){
     	try {
 			 api = new LiteCellsApi(CellsApiUtil.GetClientId(),CellsApiUtil.GetClientSecret(),CellsApiUtil.GetAPIVersion(),CellsApiUtil.GetBaseUrl());
 		} catch (ApiException e) {
@@ -62,43 +61,53 @@ public class CellsMetadataApiTest {
 		}
     }    
     
-
+    /**
+     * Delete a shape in worksheet
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
     @Test
-    public void cellsGetMetadataApiTest() throws ApiException {
+    public void cellsPostImportApiTest() throws ApiException {
 
         HashMap<String,File> fileMap = new HashMap<String,File>();
         fileMap.put(AssemblyTestXlsx ,CellsApiUtil.GetFileHolder(AssemblyTestXlsx) );
         fileMap.put(DataSourceXlsx ,CellsApiUtil.GetFileHolder(DataSourceXlsx) );
-        List<CellsDocumentProperty> response = api.getMetadata(fileMap, "ALL");
-
+		ImportIntArrayOption data = new ImportIntArrayOption();
+		data.setDestinationWorksheet(SHEET1);
+		data.setFirstColumn(1);
+		data.setFirstRow(3);
+		data.setImportDataType("IntArray");
+		data.setIsVertical(true);
+		List<Integer> ld = new ArrayList<Integer>();
+		ld.add(1);
+		ld.add(2);
+		ld.add(3);
+		ld.add(4);
+		data.setData(ld);
+		FilesResult response = api.postImport(fileMap, data);
+        
         // TODO: test validations
     }
+    
     @Test
-    public void cellsdeleteMetadataApiTest() throws ApiException {
+    public void cellsPostImportApiTest_ImportPictureOption() throws ApiException {
 
         HashMap<String,File> fileMap = new HashMap<String,File>();
         fileMap.put(AssemblyTestXlsx ,CellsApiUtil.GetFileHolder(AssemblyTestXlsx) );
         fileMap.put(DataSourceXlsx ,CellsApiUtil.GetFileHolder(DataSourceXlsx) );
-        FilesResult response = api.deleteMetadata(fileMap, "ALL");
-
+		ImportPictureOption data = new ImportPictureOption();
+		data.setDestinationWorksheet(SHEET1);
+		data.setUpperLeftRow(1);
+		data.setUpperLeftColumn(3);
+		data.setLowerRightRow(10);
+		data.setLowerRightColumn(13);        
+		data.setImportDataType("Picture");
+		data.setData( Base64.getEncoder().encodeToString(CellsApiUtil.GetFileData("WaterMark.png")));
+		FilesResult response = api.postImport(fileMap, data);
+        
         // TODO: test validations
     }
-   
-    @Test
-    public void cellsUpdateMetadataApiTest() throws ApiException {
-
-        HashMap<String,File> fileMap = new HashMap<String,File>();
-        fileMap.put(AssemblyTestXlsx ,CellsApiUtil.GetFileHolder(AssemblyTestXlsx) );
-        fileMap.put(DataSourceXlsx ,CellsApiUtil.GetFileHolder(DataSourceXlsx) );
-
-        List<CellsDocumentProperty>  cellsDocumentProperties = new  ArrayList<CellsDocumentProperty>();
-        CellsDocumentProperty cellsDocumentProperty = new  CellsDocumentProperty();
-        cellsDocumentProperty.setName ( "test");
-        cellsDocumentProperty.setValue ( "test");
-        cellsDocumentProperties.add( cellsDocumentProperty);
-        FilesResult response = api.postMetadata(fileMap, cellsDocumentProperties);
-
-        // TODO: test validations
-    }
-       
 }

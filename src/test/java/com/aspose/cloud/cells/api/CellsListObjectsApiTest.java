@@ -125,9 +125,7 @@ public class CellsListObjectsApiTest {
 		Integer listobjectindex = 0;
 		String folder = TEMPFOLDER;
 		CellsApiUtil.Upload(api, folder, name);
-		ListObjectResponse response = api
-				.cellsListObjectsGetWorksheetListObject(name, sheetName,
-						listobjectindex, folder, null);
+		api.cellsListObjectsGetWorksheetListObject(name, sheetName,listobjectindex,null, folder, null);
 
 		// TODO: test validations
 	}

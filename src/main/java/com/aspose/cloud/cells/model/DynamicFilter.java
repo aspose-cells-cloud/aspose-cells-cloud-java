@@ -37,16 +37,16 @@ import java.io.IOException;
 /**
  * DynamicFilter
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-07-08T01:54:35.499-05:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-09-17T23:42:04.472-05:00")
 public class DynamicFilter {
   @SerializedName("DynamicFilterType")
   private String dynamicFilterType = null;
 
   @SerializedName("MaxValue")
-  private Object maxValue = null;
+  private Integer maxValue = null;
 
   @SerializedName("Value")
-  private Object value = null;
+  private Integer value = null;
 
   public DynamicFilter dynamicFilterType(String dynamicFilterType) {
     this.dynamicFilterType = dynamicFilterType;
@@ -66,7 +66,7 @@ public class DynamicFilter {
     this.dynamicFilterType = dynamicFilterType;
   }
 
-  public DynamicFilter maxValue(Object maxValue) {
+  public DynamicFilter maxValue(Integer maxValue) {
     this.maxValue = maxValue;
     return this;
   }
@@ -76,15 +76,15 @@ public class DynamicFilter {
    * @return maxValue
   **/
   @ApiModelProperty(value = "")
-  public Object getMaxValue() {
+  public Integer getMaxValue() {
     return maxValue;
   }
 
-  public void setMaxValue(Object maxValue) {
+  public void setMaxValue(Integer maxValue) {
     this.maxValue = maxValue;
   }
 
-  public DynamicFilter value(Object value) {
+  public DynamicFilter value(Integer value) {
     this.value = value;
     return this;
   }
@@ -94,11 +94,11 @@ public class DynamicFilter {
    * @return value
   **/
   @ApiModelProperty(value = "")
-  public Object getValue() {
+  public Integer getValue() {
     return value;
   }
 
-  public void setValue(Object value) {
+  public void setValue(Integer value) {
     this.value = value;
   }
 

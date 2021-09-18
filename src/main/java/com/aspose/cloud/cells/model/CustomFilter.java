@@ -37,13 +37,13 @@ import java.io.IOException;
 /**
  * CustomFilter
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-07-08T01:54:35.499-05:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-09-17T23:42:04.472-05:00")
 public class CustomFilter {
   @SerializedName("FilterOperatorType")
   private String filterOperatorType = null;
 
   @SerializedName("Criteria")
-  private Object criteria = null;
+  private String criteria = null;
 
   public CustomFilter filterOperatorType(String filterOperatorType) {
     this.filterOperatorType = filterOperatorType;
@@ -63,7 +63,7 @@ public class CustomFilter {
     this.filterOperatorType = filterOperatorType;
   }
 
-  public CustomFilter criteria(Object criteria) {
+  public CustomFilter criteria(String criteria) {
     this.criteria = criteria;
     return this;
   }
@@ -73,11 +73,11 @@ public class CustomFilter {
    * @return criteria
   **/
   @ApiModelProperty(value = "")
-  public Object getCriteria() {
+  public String getCriteria() {
     return criteria;
   }
 
-  public void setCriteria(Object criteria) {
+  public void setCriteria(String criteria) {
     this.criteria = criteria;
   }
 
