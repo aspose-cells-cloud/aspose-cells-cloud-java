@@ -161,7 +161,7 @@ public class CellsHypelinksApiTest {
         hyperlink.setAddress( "http://www.aspose.com");
         String folder = TEMPFOLDER;
         CellsApiUtil.Upload(api, folder , name);
-        HyperlinkResponse response = api.cellsHypelinksPostWorksheetHyperlink(name, sheetName, hyperlinkIndex, hyperlink, folder,null);
+        CellsCloudResponse response = api.cellsHypelinksPostWorksheetHyperlink(name, sheetName, hyperlinkIndex, hyperlink, folder,null);
         Assert.assertEquals("cellsHypelinksPostWorkSheetHyperlinkTest is OK.", "OK", response.getStatus());
         // TODO: test validations
     }
@@ -185,7 +185,7 @@ public class CellsHypelinksApiTest {
         String address = "http://wwww.aspose.com";
         String folder = TEMPFOLDER;
         CellsApiUtil.Upload(api, folder , name);
-        HyperlinkResponse response = api.cellsHypelinksPutWorksheetHyperlink(name, sheetName, firstRow, firstColumn, totalRows, totalColumns, address, folder,null);
+        CellsCloudResponse response = api.cellsHypelinksPutWorksheetHyperlink(name, sheetName, firstRow, firstColumn, totalRows, totalColumns, address, folder,null);
         Assert.assertEquals("cellsHypelinksPutWorkSheetHyperlinkTest is OK.", "OK", response.getStatus());
         // TODO: test validations
     }

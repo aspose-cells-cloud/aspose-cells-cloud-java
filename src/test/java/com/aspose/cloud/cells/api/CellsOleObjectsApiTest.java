@@ -213,7 +213,7 @@ public class CellsOleObjectsApiTest {
 		CellsApiUtil.Upload(api, folder, name);
 		CellsApiUtil.Upload(api, folder,imageFile);
 		CellsApiUtil.Upload(api,folder, oleFile);
-		OleObjectResponse response = api.cellsOleObjectsPutWorksheetOleObject(
+		CellsCloudResponse response = api.cellsOleObjectsPutWorksheetOleObject(
 				name, sheetName, oleObject, upperLeftRow, upperLeftColumn,
 				height, width, folder+"/"+oleFile, folder+"/"+imageFile, folder, null);
 		Assert.assertEquals("cellsOleObjectsPutWorksheetOleObjectTest is OK.",

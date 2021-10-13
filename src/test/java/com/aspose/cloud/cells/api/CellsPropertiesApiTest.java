@@ -20,7 +20,7 @@ import com.aspose.cloud.cells.client.Configuration;
 import com.aspose.cloud.cells.model.CellsDocumentPropertiesResponse;
 import com.aspose.cloud.cells.model.CellsDocumentProperty;
 import com.aspose.cloud.cells.model.CellsDocumentPropertyResponse;
-
+import com.aspose.cloud.cells.model.CellsCloudResponse;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -76,7 +76,7 @@ public class CellsPropertiesApiTest {
         String name = BOOK1;
         String folder = TEMPFOLDER;
         CellsApiUtil.Upload(api, folder , name);
-        CellsDocumentPropertiesResponse response = api.cellsPropertiesDeleteDocumentProperties(name, folder,null);
+        CellsCloudResponse response = api.cellsPropertiesDeleteDocumentProperties(name, folder,null);
 
         // TODO: test validations
     }
@@ -95,7 +95,7 @@ public class CellsPropertiesApiTest {
         String propertyName = "Author";
         String folder = TEMPFOLDER;
         CellsApiUtil.Upload(api, folder , name);
-        CellsDocumentPropertiesResponse response = api.cellsPropertiesDeleteDocumentProperty(name, propertyName, folder,null);
+        CellsCloudResponse response = api.cellsPropertiesDeleteDocumentProperty(name, propertyName, folder,null);
 
         // TODO: test validations
     }
@@ -154,7 +154,7 @@ public class CellsPropertiesApiTest {
         property.setValue("Roy");
         String folder = TEMPFOLDER;
         CellsApiUtil.Upload(api, folder , name);
-        CellsDocumentPropertyResponse response = api.cellsPropertiesPutDocumentProperty(name, propertyName, property, folder,null);
+        CellsCloudResponse response = api.cellsPropertiesPutDocumentProperty(name, propertyName, property, folder,null);
 
         // TODO: test validations
     }

@@ -144,7 +144,7 @@ public class CellsChartsApiTest {
         Integer chartIndex = 0;
         String folder = TEMPFOLDER;
         CellsApiUtil.Upload(api, folder , name);
-        ChartsResponse response = api.cellsChartsDeleteWorksheetDeleteChart(name, sheetName, chartIndex, folder,null);
+        CellsCloudResponse response = api.cellsChartsDeleteWorksheetDeleteChart(name, sheetName, chartIndex, folder,null);
 
         // TODO: test validations
     }
@@ -268,7 +268,7 @@ public class CellsChartsApiTest {
         legend.setWidth(0);
         String folder = TEMPFOLDER;
         CellsApiUtil.Upload(api, folder , name);
-        LegendResponse response = api.cellsChartsPostWorksheetChartLegend(name, sheetName, chartIndex, legend, folder,null);
+        CellsCloudResponse response = api.cellsChartsPostWorksheetChartLegend(name, sheetName, chartIndex, legend, folder,null);
 
         // TODO: test validations
     }
@@ -290,7 +290,7 @@ public class CellsChartsApiTest {
         title.setText("test");
         String folder = TEMPFOLDER;
         CellsApiUtil.Upload(api, folder , name);
-        TitleResponse response = api.cellsChartsPostWorksheetChartTitle(name, sheetName, chartIndex, title, folder,null);
+        CellsCloudResponse response = api.cellsChartsPostWorksheetChartTitle(name, sheetName, chartIndex, title, folder,null);
 
         // TODO: test validations
     }
@@ -319,7 +319,7 @@ public class CellsChartsApiTest {
         String title = null;
         String folder = TEMPFOLDER;
         CellsApiUtil.Upload(api, folder , name);
-        ChartsResponse response = api.cellsChartsPutWorksheetAddChart(name, sheetName, chartType, upperLeftRow, upperLeftColumn, lowerRightRow, lowerRightColumn, area, isVertical, categoryData, isAutoGetSerialName, title, folder,null,null,null,null,null);
+        CellsCloudResponse response = api.cellsChartsPutWorksheetAddChart(name, sheetName, chartType, upperLeftRow, upperLeftColumn, lowerRightRow, lowerRightColumn, area, isVertical, categoryData, isAutoGetSerialName, title, folder,null,null,null,null,null);
 
         // TODO: test validations
     }
@@ -361,7 +361,7 @@ public class CellsChartsApiTest {
         title.setText("test");
         String folder = TEMPFOLDER;
         CellsApiUtil.Upload(api, folder , name);
-        TitleResponse response = api.cellsChartsPutWorksheetChartTitle(name, sheetName, chartIndex, title, folder,null);
+        CellsCloudResponse response = api.cellsChartsPutWorksheetChartTitle(name, sheetName, chartIndex, title, folder,null);
 
         // TODO: test validations
     }

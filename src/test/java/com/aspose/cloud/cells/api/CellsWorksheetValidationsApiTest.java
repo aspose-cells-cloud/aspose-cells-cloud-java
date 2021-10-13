@@ -19,7 +19,7 @@ import com.aspose.cloud.cells.model.CellArea;
 import com.aspose.cloud.cells.model.Validation;
 import com.aspose.cloud.cells.model.ValidationResponse;
 import com.aspose.cloud.cells.model.ValidationsResponse;
-
+import com.aspose.cloud.cells.model.CellsCloudResponse;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -77,7 +77,7 @@ public class CellsWorksheetValidationsApiTest {
         Integer validationIndex = 0;
         String folder = TEMPFOLDER;
 		CellsApiUtil.Upload(api, folder , name);
-        ValidationResponse response = api.cellsWorksheetValidationsDeleteWorksheetValidation(name, sheetName, validationIndex, folder,null);
+        CellsCloudResponse response = api.cellsWorksheetValidationsDeleteWorksheetValidation(name, sheetName, validationIndex, folder,null);
 
         // TODO: test validations
     }

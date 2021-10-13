@@ -467,7 +467,7 @@ public class CellsPivotTablesApiTest {
         String tableName = "TestPivot";
         Boolean useSameSource = true;
         CellsApiUtil.Upload(api, folder , name);
-        PivotTableResponse response = api.cellsPivotTablesPutWorksheetPivotTable(name, sheetName, null, folder,null, sourceData, destCellName, tableName, useSameSource);
+        CellsCloudResponse response = api.cellsPivotTablesPutWorksheetPivotTable(name, sheetName, null, folder,null, sourceData, destCellName, tableName, useSameSource);
 
         // TODO: test validations
     }

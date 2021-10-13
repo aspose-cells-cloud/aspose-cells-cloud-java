@@ -284,7 +284,7 @@ public class CellsListObjectsApiTest {
 		String folder = TEMPFOLDER;
 		Boolean hasHeaders = null;
 		CellsApiUtil.Upload(api, folder, name);
-		ListObjectResponse response = api
+		CellsCloudResponse response = api
 				.cellsListObjectsPutWorksheetListObject(name, sheetName,
 						startRow, startColumn, endRow, endColumn, hasHeaders,
 						null, folder, null);
