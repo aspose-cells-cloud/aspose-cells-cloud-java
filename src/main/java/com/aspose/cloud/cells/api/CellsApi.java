@@ -42,6 +42,7 @@ import com.aspose.cloud.cells.model.AccessTokenResponse;
 import com.aspose.cloud.cells.model.AutoFilterResponse;
 import com.aspose.cloud.cells.model.AutoFitterOptions;
 import com.aspose.cloud.cells.model.AutoShapesResponse;
+import com.aspose.cloud.cells.model.BatchConvertRequest;
 import com.aspose.cloud.cells.model.CalculationOptions;
 import com.aspose.cloud.cells.model.CellResponse;
 import com.aspose.cloud.cells.model.CellsCloudResponse;
@@ -82,6 +83,7 @@ import com.aspose.cloud.cells.model.LegendResponse;
 import com.aspose.cloud.cells.model.LineResponse;
 import com.aspose.cloud.cells.model.ListObject;
 import com.aspose.cloud.cells.model.ListObjectsResponse;
+import com.aspose.cloud.cells.model.MatchConditionRequest;
 import com.aspose.cloud.cells.model.MergedCellResponse;
 import com.aspose.cloud.cells.model.MergedCellsResponse;
 import com.aspose.cloud.cells.model.NameResponse;
@@ -35947,6 +35949,153 @@ public class CellsApi {
         return call;
     }
     /**
+     * Build call for cellsWorksheetsDeleteWorksheets
+     * @param name  (required)
+     * @param matchCondition  (required)
+     * @param folder  (optional)
+     * @param storageName  (optional)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call cellsWorksheetsDeleteWorksheetsCall(String name, MatchConditionRequest matchCondition, String folder, String storageName, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = matchCondition;
+        
+        // create path and map variables
+        String localVarPath = "/cells/{name}/worksheets"
+            .replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        if (folder != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "folder", folder));
+        if (storageName != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "storageName", storageName));
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return apiClient.buildCall(localVarPath, "DELETE", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+    
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call cellsWorksheetsDeleteWorksheetsValidateBeforeCall(String name, MatchConditionRequest matchCondition, String folder, String storageName, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'name' is set
+        if (name == null) {
+            throw new ApiException("Missing the required parameter 'name' when calling cellsWorksheetsDeleteWorksheets(Async)");
+        }
+        
+        // verify the required parameter 'matchCondition' is set
+        if (matchCondition == null) {
+            throw new ApiException("Missing the required parameter 'matchCondition' when calling cellsWorksheetsDeleteWorksheets(Async)");
+        }
+        
+        
+        com.squareup.okhttp.Call call = cellsWorksheetsDeleteWorksheetsCall(name, matchCondition, folder, storageName, progressListener, progressRequestListener);
+        return call;
+
+        
+        
+        
+        
+    }
+
+    /**
+     * Read worksheets info.
+     * 
+     * @param name  (required)
+     * @param matchCondition  (required)
+     * @param folder  (optional)
+     * @param storageName  (optional)
+     * @return CellsCloudResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public CellsCloudResponse cellsWorksheetsDeleteWorksheets(String name, MatchConditionRequest matchCondition, String folder, String storageName) throws ApiException {
+        ApiResponse<CellsCloudResponse> resp = cellsWorksheetsDeleteWorksheetsWithHttpInfo(name, matchCondition, folder, storageName);
+        return resp.getData();
+    }
+
+    /**
+     * Read worksheets info.
+     * 
+     * @param name  (required)
+     * @param matchCondition  (required)
+     * @param folder  (optional)
+     * @param storageName  (optional)
+     * @return ApiResponse&lt;CellsCloudResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<CellsCloudResponse> cellsWorksheetsDeleteWorksheetsWithHttpInfo(String name, MatchConditionRequest matchCondition, String folder, String storageName) throws ApiException {
+        com.squareup.okhttp.Call call = cellsWorksheetsDeleteWorksheetsValidateBeforeCall(name, matchCondition, folder, storageName, null, null);
+        Type localVarReturnType = new TypeToken<CellsCloudResponse>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Read worksheets info. (asynchronously)
+     * 
+     * @param name  (required)
+     * @param matchCondition  (required)
+     * @param folder  (optional)
+     * @param storageName  (optional)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call cellsWorksheetsDeleteWorksheetsAsync(String name, MatchConditionRequest matchCondition, String folder, String storageName, final ApiCallback<CellsCloudResponse> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = cellsWorksheetsDeleteWorksheetsValidateBeforeCall(name, matchCondition, folder, storageName, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<CellsCloudResponse>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
      * Build call for cellsWorksheetsGetNamedRanges
      * @param name Document name. (required)
      * @param folder Document folder. (optional)
@@ -42089,6 +42238,131 @@ public class CellsApi {
 
         com.squareup.okhttp.Call call = objectExistsValidateBeforeCall(path, storageName, versionId, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<ObjectExist>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for postBatchConvert
+     * @param batchConvertRequest  (required)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call postBatchConvertCall(BatchConvertRequest batchConvertRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = batchConvertRequest;
+        
+        // create path and map variables
+        String localVarPath = "/cells/batch/convert";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+    
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call postBatchConvertValidateBeforeCall(BatchConvertRequest batchConvertRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'batchConvertRequest' is set
+        if (batchConvertRequest == null) {
+            throw new ApiException("Missing the required parameter 'batchConvertRequest' when calling postBatchConvert(Async)");
+        }
+        
+        
+        com.squareup.okhttp.Call call = postBatchConvertCall(batchConvertRequest, progressListener, progressRequestListener);
+        return call;
+
+        
+        
+        
+        
+    }
+
+    /**
+     * 
+     * 
+     * @param batchConvertRequest  (required)
+     * @return File
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public File postBatchConvert(BatchConvertRequest batchConvertRequest) throws ApiException {
+        ApiResponse<File> resp = postBatchConvertWithHttpInfo(batchConvertRequest);
+        return resp.getData();
+    }
+
+    /**
+     * 
+     * 
+     * @param batchConvertRequest  (required)
+     * @return ApiResponse&lt;File&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<File> postBatchConvertWithHttpInfo(BatchConvertRequest batchConvertRequest) throws ApiException {
+        com.squareup.okhttp.Call call = postBatchConvertValidateBeforeCall(batchConvertRequest, null, null);
+        Type localVarReturnType = new TypeToken<File>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     *  (asynchronously)
+     * 
+     * @param batchConvertRequest  (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call postBatchConvertAsync(BatchConvertRequest batchConvertRequest, final ApiCallback<File> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = postBatchConvertValidateBeforeCall(batchConvertRequest, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<File>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

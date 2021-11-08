@@ -27,7 +27,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-
+import com.aspose.cloud.cells.model.MatchConditionRequest;
 import com.aspose.cloud.cells.model.MergedCellResponse;
 import com.aspose.cloud.cells.model.MergedCellsResponse;
 import com.aspose.cloud.cells.model.ProtectSheetParameter;
@@ -898,6 +898,34 @@ public class CellsWorksheetsApiTest {
 		File response = api.cellsWorksheetsGetWorksheet(name, sheetName,
 				format, verticalResolution, horizontalResolution, null,
 				pageIndex, folder, null);
+
+		// TODO: test validations
+	}
+
+	@Test
+	public void cellsWorksheetsDeleteWorkSheetsTest()
+			throws ApiException {
+		String name = BOOK1;
+		String folder = TEMPFOLDER;
+		MatchConditionRequest matchConditionRequest = new MatchConditionRequest();
+		matchConditionRequest.addFullMatchConditionsItem("Sheet1");
+		matchConditionRequest.addFullMatchConditionsItem("Sheet2");
+		CellsApiUtil.Upload(api, folder, name);
+
+		CellsCloudResponse response = api.cellsWorksheetsDeleteWorksheets(name,matchConditionRequest , folder, null);
+
+		// TODO: test validations
+	}
+	@Test
+	public void cellsWorksheetsDeleteWorkSheetsTest_()
+			throws ApiException {
+		String name = BOOK1;
+		String folder = TEMPFOLDER;
+		MatchConditionRequest matchConditionRequest = new MatchConditionRequest();
+		matchConditionRequest.setRegexPattern("Sheet[13]");
+		CellsApiUtil.Upload(api, folder, name);
+
+		CellsCloudResponse response = api.cellsWorksheetsDeleteWorksheets(name,matchConditionRequest , folder, null);
 
 		// TODO: test validations
 	}

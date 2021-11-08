@@ -41,7 +41,7 @@ import java.util.List;
 /**
  * PivotTables
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-10-10T23:25:01.778-05:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-11-01T17:19:06.500-05:00")
 public class PivotTables {
   @SerializedName("link")
   private Link link = null;

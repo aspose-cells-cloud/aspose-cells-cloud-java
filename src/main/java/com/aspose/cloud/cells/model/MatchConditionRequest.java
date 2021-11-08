@@ -33,73 +33,62 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
- * ConditionalFormattingIcon
+ * MatchConditionRequest
  */
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-11-01T17:19:06.500-05:00")
-public class ConditionalFormattingIcon {
-  @SerializedName("Index")
-  private Integer index = null;
+public class MatchConditionRequest {
+  @SerializedName("RegexPattern")
+  private String regexPattern = null;
 
-  @SerializedName("Type")
-  private String type = null;
+  @SerializedName("FullMatchConditions")
+  private List<String> fullMatchConditions = null;
 
-  @SerializedName("ImageData")
-  private byte[] imageData = null;
-
-  public ConditionalFormattingIcon index(Integer index) {
-    this.index = index;
+  public MatchConditionRequest regexPattern(String regexPattern) {
+    this.regexPattern = regexPattern;
     return this;
   }
 
    /**
-   * Gets and sets the icon&#39;s index in the icon set.             
-   * @return index
+   * Get regexPattern
+   * @return regexPattern
   **/
-  @ApiModelProperty(value = "Gets and sets the icon's index in the icon set.             ")
-  public Integer getIndex() {
-    return index;
+  @ApiModelProperty(value = "")
+  public String getRegexPattern() {
+    return regexPattern;
   }
 
-  public void setIndex(Integer index) {
-    this.index = index;
+  public void setRegexPattern(String regexPattern) {
+    this.regexPattern = regexPattern;
   }
 
-  public ConditionalFormattingIcon type(String type) {
-    this.type = type;
+  public MatchConditionRequest fullMatchConditions(List<String> fullMatchConditions) {
+    this.fullMatchConditions = fullMatchConditions;
+    return this;
+  }
+
+  public MatchConditionRequest addFullMatchConditionsItem(String fullMatchConditionsItem) {
+    if (this.fullMatchConditions == null) {
+      this.fullMatchConditions = new ArrayList<>();
+    }
+    this.fullMatchConditions.add(fullMatchConditionsItem);
     return this;
   }
 
    /**
-   * Gets and sets the icon set type.             
-   * @return type
+   * Get fullMatchConditions
+   * @return fullMatchConditions
   **/
-  @ApiModelProperty(value = "Gets and sets the icon set type.             ")
-  public String getType() {
-    return type;
+  @ApiModelProperty(value = "")
+  public List<String> getFullMatchConditions() {
+    return fullMatchConditions;
   }
 
-  public void setType(String type) {
-    this.type = type;
-  }
-
-  public ConditionalFormattingIcon imageData(byte[] imageData) {
-    this.imageData = imageData;
-    return this;
-  }
-
-   /**
-   * Gets the icon set data.             
-   * @return imageData
-  **/
-  @ApiModelProperty(value = "Gets the icon set data.             ")
-  public byte[] getImageData() {
-    return imageData;
-  }
-
-  public void setImageData(byte[] imageData) {
-    this.imageData = imageData;
+  public void setFullMatchConditions(List<String> fullMatchConditions) {
+    this.fullMatchConditions = fullMatchConditions;
   }
 
 
@@ -111,26 +100,24 @@ public class ConditionalFormattingIcon {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ConditionalFormattingIcon conditionalFormattingIcon = (ConditionalFormattingIcon) o;
-    return Objects.equals(this.index, conditionalFormattingIcon.index) &&
-        Objects.equals(this.type, conditionalFormattingIcon.type) &&
-        Objects.equals(this.imageData, conditionalFormattingIcon.imageData);
+    MatchConditionRequest matchConditionRequest = (MatchConditionRequest) o;
+    return Objects.equals(this.regexPattern, matchConditionRequest.regexPattern) &&
+        Objects.equals(this.fullMatchConditions, matchConditionRequest.fullMatchConditions);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(index, type, imageData);
+    return Objects.hash(regexPattern, fullMatchConditions);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ConditionalFormattingIcon {\n");
+    sb.append("class MatchConditionRequest {\n");
     
-    sb.append("    index: ").append(toIndentedString(index)).append("\n");
-    sb.append("    type: ").append(toIndentedString(type)).append("\n");
-    sb.append("    imageData: ").append(toIndentedString(imageData)).append("\n");
+    sb.append("    regexPattern: ").append(toIndentedString(regexPattern)).append("\n");
+    sb.append("    fullMatchConditions: ").append(toIndentedString(fullMatchConditions)).append("\n");
     sb.append("}");
     return sb.toString();
   }
