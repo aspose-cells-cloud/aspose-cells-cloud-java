@@ -1960,4 +1960,300 @@ public class LiteCellsApi {
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
+
+    /**
+     * Build call for postCompress
+     * @param file File to upload (required)
+     * @param CompressLevel  (required)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call postCompressCall(HashMap<String,File> file, Integer CompressLevel, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = null;
+        
+        // create path and map variables
+        String localVarPath = "/cells/compress";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        if (CompressLevel != null)
+            localVarQueryParams.addAll(apiClient.parameterToPairs("", "CompressLevel", CompressLevel));
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+        if (file != null){
+            for (String key : file.keySet()) {
+                localVarFormParams.put(key,file.get(key));                
+            }
+        }
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "multipart/form-data"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+    
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call postCompressValidateBeforeCall(HashMap<String,File> file, Integer CompressLevel, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'file' is set
+        if (file == null) {
+            throw new ApiException("Missing the required parameter 'file' when calling postCompress(Async)");
+        }
+        
+        // verify the required parameter 'datasource' is set
+        if (CompressLevel == null) {
+            throw new ApiException("Missing the required parameter 'CompressLevel' when calling postCompress(Async)");
+        }
+        
+        
+        com.squareup.okhttp.Call call = postCompressCall(file, CompressLevel,  progressListener, progressRequestListener);
+        return call;
+        
+    }
+
+    /**
+     * 
+     * 
+     * @param file File to upload (required)
+     * @param CompressLevel  (required)
+     * @return FilesResult
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public FilesResult postCompress(HashMap<String,File> file, Integer CompressLevel) throws ApiException {
+        ApiResponse<FilesResult> resp = postCompressWithHttpInfo(file,CompressLevel);
+        return resp.getData();
+    }
+
+    /**
+     * 
+     * 
+     * @param file File to upload (required)
+     * @param CompressLevel  (required)
+     * @return ApiResponse&lt;FilesResult&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<FilesResult> postCompressWithHttpInfo(HashMap<String,File> file, Integer CompressLevel) throws ApiException {
+        com.squareup.okhttp.Call call = postCompressValidateBeforeCall(file, CompressLevel, null, null);
+        Type localVarReturnType = new TypeToken<FilesResult>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     *  (asynchronously)
+     * 
+     * @param file File to upload (required)
+     * @param CompressLevel  (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call postCompressAsync(HashMap<String,File> file, Integer CompressLevel, final ApiCallback<FilesResult> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = postCompressValidateBeforeCall(file, CompressLevel, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<FilesResult>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+
+
+    /**
+     * Build call for postReplace
+     * @param file File to upload (required)
+     * @param text  (required)
+     * @param newtext  (required)
+     * @param password 
+     * @param sheetname  
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call postReplaceCall(HashMap<String,File> file, String text, String newtext,String password , String sheetname , final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = null;
+        
+        // create path and map variables
+        String localVarPath = "/cells/compress";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        if (text != null)
+            localVarQueryParams.addAll(apiClient.parameterToPairs("", "text", text));
+        if (newtext != null)
+            localVarQueryParams.addAll(apiClient.parameterToPairs("", "newtext", newtext));
+        if (password != null)
+            localVarQueryParams.addAll(apiClient.parameterToPairs("", "password", password));
+        if (sheetname != null)
+            localVarQueryParams.addAll(apiClient.parameterToPairs("", "sheetname", sheetname));    
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+        if (file != null){
+            for (String key : file.keySet()) {
+                localVarFormParams.put(key,file.get(key));                
+            }
+        }
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "multipart/form-data"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+    
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call postReplaceValidateBeforeCall(HashMap<String,File> file,  String text, String newtext,String password , String sheetname , final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'file' is set
+        if (file == null) {
+            throw new ApiException("Missing the required parameter 'file' when calling postReplace(Async)");
+        }
+        
+        // verify the required parameter 'datasource' is set
+        if (text == null) {
+            throw new ApiException("Missing the required parameter 'text' when calling postReplace(Async)");
+        }
+        // verify the required parameter 'datasource' is set
+        if (newtext == null) {
+            throw new ApiException("Missing the required parameter 'newtext' when calling postReplace(Async)");
+        }        
+        
+        com.squareup.okhttp.Call call = postReplaceCall(file, text,newtext,password,sheetname,  progressListener, progressRequestListener);
+        return call;
+        
+    }
+
+    /**
+     * 
+     * 
+     * @param file File to upload (required)
+     * @param text  (required)
+     * @param newtext  (required)
+     * @param password 
+     * @param sheetname  
+     * @return FilesResult
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public FilesResult postReplace(HashMap<String,File> file,  String text, String newtext,String password , String sheetname ) throws ApiException {
+        ApiResponse<FilesResult> resp = postReplaceWithHttpInfo(file,text,newtext,password,sheetname);
+        return resp.getData();
+    }
+
+    /**
+     * 
+     * 
+     * @param file File to upload (required)
+     * @param text  (required)
+     * @param newtext  (required)
+     * @param password 
+     * @param sheetname  
+     * @return ApiResponse&lt;FilesResult&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<FilesResult> postReplaceWithHttpInfo(HashMap<String,File> file,  String text, String newtext,String password , String sheetname) throws ApiException {
+        com.squareup.okhttp.Call call = postReplaceValidateBeforeCall(file, text,newtext,password,sheetname, null, null);
+        Type localVarReturnType = new TypeToken<FilesResult>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     *  (asynchronously)
+     * 
+     * @param file File to upload (required)
+     * @param text  (required)
+     * @param newtext  (required)
+     * @param password 
+     * @param sheetname  
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call postReplaceAsync(HashMap<String,File> file, String text, String newtext,String password , String sheetname, final ApiCallback<FilesResult> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = postReplaceValidateBeforeCall(file, text,newtext,password,sheetname, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<FilesResult>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+
 }
