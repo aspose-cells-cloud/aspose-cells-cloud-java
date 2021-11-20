@@ -188,7 +188,7 @@ public class CellsWorksheetsApiTest {
 		String sheetName = SHEET1;
 		String folder = TEMPFOLDER;
 		CellsApiUtil.Upload(api, folder, name);
-		WorksheetsResponse response = api.cellsWorksheetsDeleteWorksheet(name,
+		CellsCloudResponse response = api.cellsWorksheetsDeleteWorksheet(name,
 				sheetName, folder, null);
 
 		// TODO: test validations
@@ -538,7 +538,7 @@ public class CellsWorksheetsApiTest {
 		moving.setPosition("after");
 		String folder = TEMPFOLDER;
 		CellsApiUtil.Upload(api, folder, name);
-		WorksheetsResponse response = api.cellsWorksheetsPostMoveWorksheet(
+		CellsCloudResponse response = api.cellsWorksheetsPostMoveWorksheet(
 				name, sheetName, moving, folder, null);
 
 		// TODO: test validations
@@ -723,7 +723,7 @@ public class CellsWorksheetsApiTest {
 		String sheettype = "VB";
 		String folder = TEMPFOLDER;
 		CellsApiUtil.Upload(api, folder, name);
-		WorksheetsResponse response = api.cellsWorksheetsPutAddNewWorksheet(
+		CellsCloudResponse response = api.cellsWorksheetsPutAddNewWorksheet(
 				name, sheetName, position, sheettype, folder, null);
 
 		// TODO: test validations
@@ -745,7 +745,7 @@ public class CellsWorksheetsApiTest {
 		Boolean isVisible = true;
 		String folder = TEMPFOLDER;
 		CellsApiUtil.Upload(api, folder, name);
-		WorksheetResponse response = api
+		CellsCloudResponse response = api
 				.cellsWorksheetsPutChangeVisibilityWorksheet(name, sheetName,
 						isVisible, folder, null);
 
