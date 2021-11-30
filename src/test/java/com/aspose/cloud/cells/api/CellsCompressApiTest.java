@@ -15,7 +15,7 @@ package com.aspose.cloud.cells.api;
 import com.aspose.cloud.cells.client.ApiClient;
 import com.aspose.cloud.cells.client.ApiException;
 import com.aspose.cloud.cells.client.Configuration;
-import com.aspose.cloud.cells.model.TextItem;
+import com.aspose.cloud.cells.model.FilesResult;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -29,7 +29,7 @@ import java.util.Map;
  * API tests for CellsShapesApi
  */
 
-public class CellsSearchApiTest {
+public class CellsCompressApiTest {
 
     private  LiteCellsApi api ;
 
@@ -51,7 +51,7 @@ public class CellsSearchApiTest {
     private String RANGE = "A1:C10";
     private String CELLAREA = "A1:C10";
     
-    public CellsSearchApiTest(){
+    public CellsCompressApiTest(){
     	try {
 			 api = new LiteCellsApi(CellsApiUtil.GetClientId(),CellsApiUtil.GetClientSecret(),CellsApiUtil.GetAPIVersion(),CellsApiUtil.GetBaseUrl());
 		} catch (ApiException e) {
@@ -60,27 +60,24 @@ public class CellsSearchApiTest {
 		}
     }    
     
-
+    /**
+     * Delete a shape in worksheet
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
     @Test
-    public void cellsPostSearchApiTest() throws ApiException {
+    public void cellsPostCompressApiTest() throws ApiException {
 
         HashMap<String,File> fileMap = new HashMap<String,File>();
         fileMap.put(AssemblyTestXlsx ,CellsApiUtil.GetFileHolder(AssemblyTestXlsx) );
         fileMap.put(DataSourceXlsx ,CellsApiUtil.GetFileHolder(DataSourceXlsx) );
-        List<TextItem> response = api.postSearch(fileMap,"123456",null,null);
-        System.out.println(response.toString()) ;
-        // TODO: test validations
-    }
-    
-    @Test
-    public void cellsPostSearchApi_sheet_Test() throws ApiException {
+        FilesResult response = api.postCompress(fileMap, 88);
 
-        HashMap<String,File> fileMap = new HashMap<String,File>();
-        fileMap.put(AssemblyTestXlsx ,CellsApiUtil.GetFileHolder(AssemblyTestXlsx) );
-        fileMap.put(DataSourceXlsx ,CellsApiUtil.GetFileHolder(DataSourceXlsx) );
-        List<TextItem> response = api.postSearch(fileMap,"123456",null,"Sheet1");
-        System.out.println(response.toString()) ;
         // TODO: test validations
     }
     
+   
 }
