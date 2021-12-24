@@ -189,5 +189,40 @@ public class CellsShapesApiTest {
 
         // TODO: test validations
     }
-    
+
+    /* cellsShapesPostWorksheetUngroupShapeTest
+    *
+    * @throws ApiException
+    *          if the Api call fails
+    */
+   @Test
+   public void cellsShapesPostWorksheetUngroupShapeTest() throws ApiException {
+      String name = BOOK1;
+       String sheetName = SHEET6;
+
+
+       String folder = TEMPFOLDER;
+       CellsApiUtil.Upload(api, folder , name);
+       CellsCloudResponse response = api.cellsShapesPostWorksheetUngroupShape(name, sheetName,6, folder,null);
+
+       // TODO: test validations
+   }
+     /* cellsShapesPostWorksheetUngroupShapeTest
+    *
+    * @throws ApiException
+    *          if the Api call fails
+    */
+   @Test
+   public void cellsShapesPostWorksheetGroupShapeTest() throws ApiException {
+      String name = BOOK1;
+       String sheetName = SHEET6;
+        List<Integer> listIndex = new ArrayList();
+        listIndex.add(1);
+        listIndex.add(3);
+       String folder = TEMPFOLDER;
+       CellsApiUtil.Upload(api, folder , name);
+       CellsCloudResponse response = api.cellsShapesPostWorksheetGroupShape(name, sheetName,listIndex, folder,null);
+
+       // TODO: test validations
+   }
 }

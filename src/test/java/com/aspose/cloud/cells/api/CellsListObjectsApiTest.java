@@ -15,13 +15,7 @@ package com.aspose.cloud.cells.api;
 import com.aspose.cloud.cells.client.ApiClient;
 import com.aspose.cloud.cells.client.ApiException;
 import com.aspose.cloud.cells.client.Configuration;
-import com.aspose.cloud.cells.model.CreatePivotTableRequest;
-import com.aspose.cloud.cells.model.DataSorter;
-import com.aspose.cloud.cells.model.ListObject;
-import com.aspose.cloud.cells.model.ListObjectResponse;
-import com.aspose.cloud.cells.model.ListObjectsResponse;
-import com.aspose.cloud.cells.model.CellsCloudResponse;
-
+import com.aspose.cloud.cells.model.*;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -286,10 +280,37 @@ public class CellsListObjectsApiTest {
 		CellsApiUtil.Upload(api, folder, name);
 		CellsCloudResponse response = api
 				.cellsListObjectsPutWorksheetListObject(name, sheetName,
-						startRow, startColumn, endRow, endColumn, hasHeaders,
+						startRow, startColumn, endRow, endColumn, hasHeaders,true,true,
 						null, folder, null);
 
 		// TODO: test validations
 	}
+/**
+	 * Add a list object into worksheet.
+	 *
+	 * 
+	 *
+	 * @throws ApiException
+	 *             if the Api call fails
+	 */
+	@Test
+	public void CellsListObjectsPostWorksheetListColumnTest()
+			throws ApiException {
+		String name = BOOK1;
+		String sheetName = SHEET7;
+		Integer listObjectIndex = 1;
+		Integer startColumn = 1;
+		Integer listColumnIndex = 0;
+		ListColumn listColumn =  new ListColumn();
+		listColumn.setName ( "test cloumn");
+		listColumn.setTotalsCalculation("Average");
+		String folder = TEMPFOLDER;
+		Boolean hasHeaders = null;
+		CellsApiUtil.Upload(api, folder, name);
+		CellsCloudResponse response = api
+				.cellsListObjectsPostWorksheetListColumn(name, sheetName,
+				listObjectIndex, listColumnIndex, listColumn,  folder, null);
 
+		// TODO: test validations
+	}
 }

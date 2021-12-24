@@ -639,7 +639,7 @@ public class CellsWorkbookApiTest {
 		String folder = TEMPFOLDER;
 		CellsApiUtil.Upload(api, folder, name);
 		File response = api.cellsWorkbookPutConvertWorkbook(
-				CellsApiUtil.GetFileHolder(name), format, password, outPath);
+				CellsApiUtil.GetFileHolder(name), format, password, outPath ,null);
 		
 		// TODO: test validations
 	}

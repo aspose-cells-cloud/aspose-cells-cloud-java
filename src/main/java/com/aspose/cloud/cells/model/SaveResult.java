@@ -40,7 +40,7 @@ import java.util.List;
 /**
  * SaveResult
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-11-19T16:36:54.237-06:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-12-23T00:44:43.052-06:00")
 public class SaveResult {
   @SerializedName("Documents")
   private List<CellsCloudFileInfo> documents = null;

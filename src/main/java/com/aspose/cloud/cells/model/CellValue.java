@@ -38,7 +38,7 @@ import java.io.IOException;
 /**
  * CellValue
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-11-19T16:36:54.237-06:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-12-23T00:44:43.052-06:00")
 public class CellValue {
   @SerializedName("rowIndex")
   private Integer rowIndex = null;
@@ -54,6 +54,9 @@ public class CellValue {
 
   @SerializedName("value")
   private String value = null;
+
+  @SerializedName("formula")
+  private String formula = null;
 
   public CellValue rowIndex(Integer rowIndex) {
     this.rowIndex = rowIndex;
@@ -145,6 +148,24 @@ public class CellValue {
     this.value = value;
   }
 
+  public CellValue formula(String formula) {
+    this.formula = formula;
+    return this;
+  }
+
+   /**
+   * Get formula
+   * @return formula
+  **/
+  @ApiModelProperty(value = "")
+  public String getFormula() {
+    return formula;
+  }
+
+  public void setFormula(String formula) {
+    this.formula = formula;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -159,12 +180,13 @@ public class CellValue {
         Objects.equals(this.columnIndex, cellValue.columnIndex) &&
         Objects.equals(this.style, cellValue.style) &&
         Objects.equals(this.type, cellValue.type) &&
-        Objects.equals(this.value, cellValue.value);
+        Objects.equals(this.value, cellValue.value) &&
+        Objects.equals(this.formula, cellValue.formula);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(rowIndex, columnIndex, style, type, value);
+    return Objects.hash(rowIndex, columnIndex, style, type, value, formula);
   }
 
 
@@ -178,6 +200,7 @@ public class CellValue {
     sb.append("    style: ").append(toIndentedString(style)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    value: ").append(toIndentedString(value)).append("\n");
+    sb.append("    formula: ").append(toIndentedString(formula)).append("\n");
     sb.append("}");
     return sb.toString();
   }

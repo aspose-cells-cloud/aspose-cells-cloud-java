@@ -25,8 +25,6 @@
 package com.aspose.cloud.cells.model;
 
 import java.util.Objects;
-import com.aspose.cloud.cells.model.Link;
-import com.aspose.cloud.cells.model.LinkElement;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -35,62 +33,73 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
- * OleObjects
+ * TableTotalRequest
  */
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-12-23T00:44:43.052-06:00")
-public class OleObjects {
-  @SerializedName("link")
-  private Link link = null;
+public class TableTotalRequest {
+  @SerializedName("ListColumnIndex")
+  private Integer listColumnIndex = null;
 
-  @SerializedName("OleObjectList")
-  private List<LinkElement> oleObjectList = null;
+  @SerializedName("TotalsCalculation")
+  private String totalsCalculation = null;
 
-  public OleObjects link(Link link) {
-    this.link = link;
+  @SerializedName("CustomFormula")
+  private String customFormula = null;
+
+  public TableTotalRequest listColumnIndex(Integer listColumnIndex) {
+    this.listColumnIndex = listColumnIndex;
     return this;
   }
 
    /**
-   * Get link
-   * @return link
+   * Get listColumnIndex
+   * @return listColumnIndex
   **/
   @ApiModelProperty(value = "")
-  public Link getLink() {
-    return link;
+  public Integer getListColumnIndex() {
+    return listColumnIndex;
   }
 
-  public void setLink(Link link) {
-    this.link = link;
+  public void setListColumnIndex(Integer listColumnIndex) {
+    this.listColumnIndex = listColumnIndex;
   }
 
-  public OleObjects oleObjectList(List<LinkElement> oleObjectList) {
-    this.oleObjectList = oleObjectList;
-    return this;
-  }
-
-  public OleObjects addOleObjectListItem(LinkElement oleObjectListItem) {
-    if (this.oleObjectList == null) {
-      this.oleObjectList = new ArrayList<>();
-    }
-    this.oleObjectList.add(oleObjectListItem);
+  public TableTotalRequest totalsCalculation(String totalsCalculation) {
+    this.totalsCalculation = totalsCalculation;
     return this;
   }
 
    /**
-   * Get oleObjectList
-   * @return oleObjectList
+   * Get totalsCalculation
+   * @return totalsCalculation
   **/
   @ApiModelProperty(value = "")
-  public List<LinkElement> getOleObjectList() {
-    return oleObjectList;
+  public String getTotalsCalculation() {
+    return totalsCalculation;
   }
 
-  public void setOleObjectList(List<LinkElement> oleObjectList) {
-    this.oleObjectList = oleObjectList;
+  public void setTotalsCalculation(String totalsCalculation) {
+    this.totalsCalculation = totalsCalculation;
+  }
+
+  public TableTotalRequest customFormula(String customFormula) {
+    this.customFormula = customFormula;
+    return this;
+  }
+
+   /**
+   * Get customFormula
+   * @return customFormula
+  **/
+  @ApiModelProperty(value = "")
+  public String getCustomFormula() {
+    return customFormula;
+  }
+
+  public void setCustomFormula(String customFormula) {
+    this.customFormula = customFormula;
   }
 
 
@@ -102,24 +111,26 @@ public class OleObjects {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    OleObjects oleObjects = (OleObjects) o;
-    return Objects.equals(this.link, oleObjects.link) &&
-        Objects.equals(this.oleObjectList, oleObjects.oleObjectList);
+    TableTotalRequest tableTotalRequest = (TableTotalRequest) o;
+    return Objects.equals(this.listColumnIndex, tableTotalRequest.listColumnIndex) &&
+        Objects.equals(this.totalsCalculation, tableTotalRequest.totalsCalculation) &&
+        Objects.equals(this.customFormula, tableTotalRequest.customFormula);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(link, oleObjectList);
+    return Objects.hash(listColumnIndex, totalsCalculation, customFormula);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class OleObjects {\n");
+    sb.append("class TableTotalRequest {\n");
     
-    sb.append("    link: ").append(toIndentedString(link)).append("\n");
-    sb.append("    oleObjectList: ").append(toIndentedString(oleObjectList)).append("\n");
+    sb.append("    listColumnIndex: ").append(toIndentedString(listColumnIndex)).append("\n");
+    sb.append("    totalsCalculation: ").append(toIndentedString(totalsCalculation)).append("\n");
+    sb.append("    customFormula: ").append(toIndentedString(customFormula)).append("\n");
     sb.append("}");
     return sb.toString();
   }

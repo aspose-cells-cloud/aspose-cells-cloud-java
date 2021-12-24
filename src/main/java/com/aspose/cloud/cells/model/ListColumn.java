@@ -25,6 +25,7 @@
 package com.aspose.cloud.cells.model;
 
 import java.util.Objects;
+import com.aspose.cloud.cells.model.Range;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -37,13 +38,19 @@ import java.io.IOException;
 /**
  * ListColumn
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-11-19T16:36:54.237-06:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-12-23T00:44:43.052-06:00")
 public class ListColumn {
   @SerializedName("TotalsCalculation")
   private String totalsCalculation = null;
 
   @SerializedName("Name")
   private String name = null;
+
+  @SerializedName("Formula")
+  private String formula = null;
+
+  @SerializedName("Range")
+  private Range range = null;
 
   public ListColumn totalsCalculation(String totalsCalculation) {
     this.totalsCalculation = totalsCalculation;
@@ -81,6 +88,42 @@ public class ListColumn {
     this.name = name;
   }
 
+  public ListColumn formula(String formula) {
+    this.formula = formula;
+    return this;
+  }
+
+   /**
+   * Gets and sets the formula of the list column.
+   * @return formula
+  **/
+  @ApiModelProperty(value = "Gets and sets the formula of the list column.")
+  public String getFormula() {
+    return formula;
+  }
+
+  public void setFormula(String formula) {
+    this.formula = formula;
+  }
+
+  public ListColumn range(Range range) {
+    this.range = range;
+    return this;
+  }
+
+   /**
+   * Gets and sets the formula of the list column.
+   * @return range
+  **/
+  @ApiModelProperty(value = "Gets and sets the formula of the list column.")
+  public Range getRange() {
+    return range;
+  }
+
+  public void setRange(Range range) {
+    this.range = range;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -92,12 +135,14 @@ public class ListColumn {
     }
     ListColumn listColumn = (ListColumn) o;
     return Objects.equals(this.totalsCalculation, listColumn.totalsCalculation) &&
-        Objects.equals(this.name, listColumn.name);
+        Objects.equals(this.name, listColumn.name) &&
+        Objects.equals(this.formula, listColumn.formula) &&
+        Objects.equals(this.range, listColumn.range);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(totalsCalculation, name);
+    return Objects.hash(totalsCalculation, name, formula, range);
   }
 
 
@@ -108,6 +153,8 @@ public class ListColumn {
     
     sb.append("    totalsCalculation: ").append(toIndentedString(totalsCalculation)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    formula: ").append(toIndentedString(formula)).append("\n");
+    sb.append("    range: ").append(toIndentedString(range)).append("\n");
     sb.append("}");
     return sb.toString();
   }

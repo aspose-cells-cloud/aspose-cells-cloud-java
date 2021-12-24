@@ -33,14 +33,16 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * SortKey
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-11-19T16:36:54.237-06:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-12-23T00:44:43.052-06:00")
 public class SortKey {
   @SerializedName("CustomList")
-  private String customList = null;
+  private List<String> customList = null;
 
   @SerializedName("SortOrder")
   private String sortOrder = null;
@@ -48,8 +50,25 @@ public class SortKey {
   @SerializedName("Key")
   private Integer key = null;
 
-  public SortKey customList(String customList) {
+  @SerializedName("Order")
+  private String order = null;
+
+  @SerializedName("Type")
+  private String type = null;
+
+  @SerializedName("Index")
+  private Integer index = null;
+
+  public SortKey customList(List<String> customList) {
     this.customList = customList;
+    return this;
+  }
+
+  public SortKey addCustomListItem(String customListItem) {
+    if (this.customList == null) {
+      this.customList = new ArrayList<>();
+    }
+    this.customList.add(customListItem);
     return this;
   }
 
@@ -58,11 +77,11 @@ public class SortKey {
    * @return customList
   **/
   @ApiModelProperty(value = "")
-  public String getCustomList() {
+  public List<String> getCustomList() {
     return customList;
   }
 
-  public void setCustomList(String customList) {
+  public void setCustomList(List<String> customList) {
     this.customList = customList;
   }
 
@@ -102,6 +121,60 @@ public class SortKey {
     this.key = key;
   }
 
+  public SortKey order(String order) {
+    this.order = order;
+    return this;
+  }
+
+   /**
+   * Get order
+   * @return order
+  **/
+  @ApiModelProperty(value = "")
+  public String getOrder() {
+    return order;
+  }
+
+  public void setOrder(String order) {
+    this.order = order;
+  }
+
+  public SortKey type(String type) {
+    this.type = type;
+    return this;
+  }
+
+   /**
+   * Get type
+   * @return type
+  **/
+  @ApiModelProperty(value = "")
+  public String getType() {
+    return type;
+  }
+
+  public void setType(String type) {
+    this.type = type;
+  }
+
+  public SortKey index(Integer index) {
+    this.index = index;
+    return this;
+  }
+
+   /**
+   * Get index
+   * @return index
+  **/
+  @ApiModelProperty(value = "")
+  public Integer getIndex() {
+    return index;
+  }
+
+  public void setIndex(Integer index) {
+    this.index = index;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -114,12 +187,15 @@ public class SortKey {
     SortKey sortKey = (SortKey) o;
     return Objects.equals(this.customList, sortKey.customList) &&
         Objects.equals(this.sortOrder, sortKey.sortOrder) &&
-        Objects.equals(this.key, sortKey.key);
+        Objects.equals(this.key, sortKey.key) &&
+        Objects.equals(this.order, sortKey.order) &&
+        Objects.equals(this.type, sortKey.type) &&
+        Objects.equals(this.index, sortKey.index);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(customList, sortOrder, key);
+    return Objects.hash(customList, sortOrder, key, order, type, index);
   }
 
 
@@ -131,6 +207,9 @@ public class SortKey {
     sb.append("    customList: ").append(toIndentedString(customList)).append("\n");
     sb.append("    sortOrder: ").append(toIndentedString(sortOrder)).append("\n");
     sb.append("    key: ").append(toIndentedString(key)).append("\n");
+    sb.append("    order: ").append(toIndentedString(order)).append("\n");
+    sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    sb.append("    index: ").append(toIndentedString(index)).append("\n");
     sb.append("}");
     return sb.toString();
   }

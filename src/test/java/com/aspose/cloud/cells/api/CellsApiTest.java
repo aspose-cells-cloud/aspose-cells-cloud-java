@@ -665,7 +665,7 @@ public class CellsApiTest {
         Double width = 10.0;
         String folder = TEMPFOLDER;
         CellsApiUtil.Upload(api, folder , name);
-        CellsCloudResponse response = api.cellsPostSetWorksheetColumnWidth(name, sheetName, columnIndex, width, folder,null);
+        CellsCloudResponse response = api.cellsPostSetWorksheetColumnWidth(name, sheetName, columnIndex, width,10, folder,null);
         Assert.assertEquals("cellsPostSetWorksheetColumnWidthTest is OK.", "OK", response.getStatus());
         // TODO: test validations
     }
@@ -821,7 +821,7 @@ public class CellsApiTest {
         Double height = 10.01;
         String folder = TEMPFOLDER;
         CellsApiUtil.Upload(api, folder , name);
-        CellsCloudResponse response = api.cellsPostUpdateWorksheetRow(name, sheetName, rowIndex, height, folder,null);
+        CellsCloudResponse response = api.cellsPostUpdateWorksheetRow(name, sheetName, rowIndex, height, 10,folder,null);
         Assert.assertEquals("cellsPostUpdateWorksheetRowTest is OK.", "OK", response.getStatus());
         // TODO: test validations
     }
