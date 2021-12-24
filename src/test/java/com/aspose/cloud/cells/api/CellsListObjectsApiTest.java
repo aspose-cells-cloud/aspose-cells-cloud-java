@@ -285,8 +285,8 @@ public class CellsListObjectsApiTest {
 
 		// TODO: test validations
 	}
-/**
-	 * Add a list object into worksheet.
+	/**
+	 *CellsListObjectsPostWorksheetListColumnTest.
 	 *
 	 * 
 	 *
@@ -310,6 +310,35 @@ public class CellsListObjectsApiTest {
 		CellsCloudResponse response = api
 				.cellsListObjectsPostWorksheetListColumn(name, sheetName,
 				listObjectIndex, listColumnIndex, listColumn,  folder, null);
+
+		// TODO: test validations
+	}
+	/**
+	 * Add a list object into worksheet.
+	 *
+	 * 
+	 *
+	 * @throws ApiException
+	 *             if the Api call fails
+	 */
+	@Test
+	public void CellsListObjectsPostWorksheetListColumnsTotalTest()
+			throws ApiException {
+		String name = BOOK1;
+		String sheetName = SHEET7;
+		Integer listObjectIndex = 1;
+		List<TableTotalRequest> listTableTotalRequest = new ArrayList();
+		TableTotalRequest tableTotalRequest = new TableTotalRequest();
+		tableTotalRequest.setListColumnIndex(1);
+		tableTotalRequest.setTotalsCalculation("Average");
+		listTableTotalRequest.add(tableTotalRequest) ;
+
+		String folder = TEMPFOLDER;
+		Boolean hasHeaders = null;
+		CellsApiUtil.Upload(api, folder, name);
+		CellsCloudResponse response = api
+				.cellsListObjectsPostWorksheetListColumnsTotal(name, sheetName,
+				listObjectIndex, listTableTotalRequest  ,folder, null);
 
 		// TODO: test validations
 	}

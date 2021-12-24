@@ -37,7 +37,7 @@ import java.io.IOException;
 /**
  * ResultDestination
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-12-23T00:44:43.052-06:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-12-23T20:05:07.092-06:00")
 public class ResultDestination {
   @SerializedName("OutputFile")
   private String outputFile = null;
