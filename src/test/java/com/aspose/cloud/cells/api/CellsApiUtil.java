@@ -50,6 +50,16 @@ public class CellsApiUtil {
 			e.printStackTrace();
 		}		
 	}
+	public static void UploadToStorage(CellsApi cellsApi,String folder ,String filename,String storageName) {		
+		File file = new File(System.getProperty("user.dir") + sourceFolder + filename);
+		try {
+			
+			cellsApi.uploadFile(folder +"\\" + filename, file, storageName);
+		} catch (ApiException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}		
+	}
 	public static void Upload(CellsApi cellsApi,String filename) {		
 		File file = new File(sourceFolder + filename);
 		try {

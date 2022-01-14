@@ -1,6 +1,6 @@
 /* 
  * <summary>
- *  Copyright (c) 2021 Aspose.Cells Cloud
+ *  Copyright (c) 2022 Aspose.Cells Cloud
  *  Permission is hereby granted, free of charge, to any person obtaining a copy
  *  of this software and associated documentation files (the "Software"), to deal
  *  in the Software without restriction, including without limitation the rights
@@ -39,10 +39,13 @@ import java.io.IOException;
 /**
  * BatchConvertRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-12-23T20:05:07.092-06:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-01-08T17:58:31.285-06:00")
 public class BatchConvertRequest {
   @SerializedName("SourceFolder")
   private String sourceFolder = null;
+
+  @SerializedName("SourceStorage")
+  private String sourceStorage = null;
 
   @SerializedName("MatchCondition")
   private MatchConditionRequest matchCondition = null;
@@ -52,6 +55,9 @@ public class BatchConvertRequest {
 
   @SerializedName("OutFolder")
   private String outFolder = null;
+
+  @SerializedName("OutStorage")
+  private String outStorage = null;
 
   @SerializedName("SaveOptions")
   private SaveOptions saveOptions = null;
@@ -72,6 +78,24 @@ public class BatchConvertRequest {
 
   public void setSourceFolder(String sourceFolder) {
     this.sourceFolder = sourceFolder;
+  }
+
+  public BatchConvertRequest sourceStorage(String sourceStorage) {
+    this.sourceStorage = sourceStorage;
+    return this;
+  }
+
+   /**
+   * Get sourceStorage
+   * @return sourceStorage
+  **/
+  @ApiModelProperty(value = "")
+  public String getSourceStorage() {
+    return sourceStorage;
+  }
+
+  public void setSourceStorage(String sourceStorage) {
+    this.sourceStorage = sourceStorage;
   }
 
   public BatchConvertRequest matchCondition(MatchConditionRequest matchCondition) {
@@ -128,6 +152,24 @@ public class BatchConvertRequest {
     this.outFolder = outFolder;
   }
 
+  public BatchConvertRequest outStorage(String outStorage) {
+    this.outStorage = outStorage;
+    return this;
+  }
+
+   /**
+   * Get outStorage
+   * @return outStorage
+  **/
+  @ApiModelProperty(value = "")
+  public String getOutStorage() {
+    return outStorage;
+  }
+
+  public void setOutStorage(String outStorage) {
+    this.outStorage = outStorage;
+  }
+
   public BatchConvertRequest saveOptions(SaveOptions saveOptions) {
     this.saveOptions = saveOptions;
     return this;
@@ -157,15 +199,17 @@ public class BatchConvertRequest {
     }
     BatchConvertRequest batchConvertRequest = (BatchConvertRequest) o;
     return Objects.equals(this.sourceFolder, batchConvertRequest.sourceFolder) &&
+        Objects.equals(this.sourceStorage, batchConvertRequest.sourceStorage) &&
         Objects.equals(this.matchCondition, batchConvertRequest.matchCondition) &&
         Objects.equals(this.format, batchConvertRequest.format) &&
         Objects.equals(this.outFolder, batchConvertRequest.outFolder) &&
+        Objects.equals(this.outStorage, batchConvertRequest.outStorage) &&
         Objects.equals(this.saveOptions, batchConvertRequest.saveOptions);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(sourceFolder, matchCondition, format, outFolder, saveOptions);
+    return Objects.hash(sourceFolder, sourceStorage, matchCondition, format, outFolder, outStorage, saveOptions);
   }
 
 
@@ -175,9 +219,11 @@ public class BatchConvertRequest {
     sb.append("class BatchConvertRequest {\n");
     
     sb.append("    sourceFolder: ").append(toIndentedString(sourceFolder)).append("\n");
+    sb.append("    sourceStorage: ").append(toIndentedString(sourceStorage)).append("\n");
     sb.append("    matchCondition: ").append(toIndentedString(matchCondition)).append("\n");
     sb.append("    format: ").append(toIndentedString(format)).append("\n");
     sb.append("    outFolder: ").append(toIndentedString(outFolder)).append("\n");
+    sb.append("    outStorage: ").append(toIndentedString(outStorage)).append("\n");
     sb.append("    saveOptions: ").append(toIndentedString(saveOptions)).append("\n");
     sb.append("}");
     return sb.toString();

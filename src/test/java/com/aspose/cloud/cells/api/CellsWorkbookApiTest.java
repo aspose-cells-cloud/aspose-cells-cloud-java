@@ -200,7 +200,7 @@ public class CellsWorkbookApiTest {
 		String folder = TEMPFOLDER;
 		CellsApiUtil.Upload(api, folder, name);
 		File response = api.cellsWorkbookGetWorkbook(name, password, format,
-				isAutoFit, onlySaveTable, folder, null, null);
+				isAutoFit, onlySaveTable, folder, null, null,null);
 
 		// TODO: test validations
 	}
@@ -223,11 +223,24 @@ public class CellsWorkbookApiTest {
 		String folder = TEMPFOLDER;
 		CellsApiUtil.Upload(api, folder, name);
 		File response = api.cellsWorkbookGetWorkbook(name, password, format,
-				isAutoFit, onlySaveTable, folder, null, null);
+				isAutoFit, onlySaveTable, folder, null, null,null);
 
 		// TODO: test validations
 	}
+	@Test
+	public void cellsWorkbookGetWorkbookForMDTootherStorageTest() throws ApiException {
+		String name = BOOK1;
+		String password = null;
+		Boolean isAutoFit = true;
+		Boolean onlySaveTable = true;
+		String format = "md";
+		String folder = TEMPFOLDER;
+		CellsApiUtil.Upload(api, folder, name);
+		File response = api.cellsWorkbookGetWorkbook(name, password, format,
+				isAutoFit, onlySaveTable, folder, null, null,"DropBox");
 
+		// TODO: test validations
+	}
 	/**
 	 * Read workbook default style info.
 	 *
@@ -508,7 +521,7 @@ public class CellsWorkbookApiTest {
 		CellsApiUtil.Upload(api, folder, name);
 		CellsApiUtil.Upload(api, folder, xmlFile);
 		File response = api.cellsWorkbookPostWorkbookGetSmartMarkerResult(name,
-				folder +"/"+ xmlFile, folder, null, outPath);
+				folder +"/"+ xmlFile, folder, null, outPath,null);
 
 		// TODO: test validations
 	}
@@ -554,11 +567,26 @@ public class CellsWorkbookApiTest {
 		CellsApiUtil.Upload(api, folder, name);
 		SplitResultResponse response = api.cellsWorkbookPostWorkbookSplit(name,
 				format, from, to, horizontalResolution, verticalResolution,
-				folder, folder, null);
+				folder, folder, null,null);
 
 		// TODO: test validations
 	}
+	@Test
+	public void cellsWorkbookPostWorkbookSplitToOtherStorageTest() throws ApiException {
+		String name = BOOK1;
+		String format = "png";
+		Integer from = 1;
+		Integer to = 3;
+		Integer horizontalResolution = 100;
+		Integer verticalResolution = 90;
+		String folder = TEMPFOLDER;
+		CellsApiUtil.Upload(api, folder, name);
+		SplitResultResponse response = api.cellsWorkbookPostWorkbookSplit(name,
+				format, from, to, horizontalResolution, verticalResolution,
+				folder, folder, null,"DropBox");
 
+		// TODO: test validations
+	}
 	/**
 	 * Merge workbooks.
 	 *
@@ -575,11 +603,22 @@ public class CellsWorkbookApiTest {
 		CellsApiUtil.Upload(api, folder, name);
 		CellsApiUtil.Upload(api, folder, mergeWith);
 		WorkbookResponse response = api.cellsWorkbookPostWorkbooksMerge(name,
-				folder + "/" + mergeWith, folder, null);
+				folder + "/" + mergeWith, folder, null,null);
 
 		// TODO: test validations
 	}
+	@Test
+	public void cellsWorkbookPostWorkbooksMergeWithOtherStorageTest() throws ApiException {
+		String name = BOOK1;
+		String mergeWith = "myDocument.xlsx";
+		String folder = TEMPFOLDER;
+		CellsApiUtil.Upload(api, folder, name);
+		CellsApiUtil.UploadToStorage(api, folder, mergeWith,"DropBox");
+		WorkbookResponse response = api.cellsWorkbookPostWorkbooksMerge(name,
+				folder + "/" + mergeWith, folder, null,"DropBox");
 
+		// TODO: test validations
+	}
 	/**
 	 * Replace text.
 	 *

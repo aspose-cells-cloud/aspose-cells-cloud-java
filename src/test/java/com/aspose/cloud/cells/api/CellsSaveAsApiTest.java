@@ -79,7 +79,8 @@ public class CellsSaveAsApiTest {
         Boolean isAutoFitColumns = false;
         String folder = TEMPFOLDER;
         CellsApiUtil.Upload(api, folder , name);
-        SaveResponse response = api.cellsSaveAsPostDocumentSaveAs(name, saveOptions, folder + "/"+ newfilename, isAutoFitRows, isAutoFitColumns, folder,null);
+        SaveResponse response = api.cellsSaveAsPostDocumentSaveAs(name, saveOptions, 
+        folder + "/"+ newfilename, isAutoFitRows, isAutoFitColumns, folder,null,null);
 
         // TODO: test validations
     }
@@ -100,7 +101,30 @@ public class CellsSaveAsApiTest {
         Boolean isAutoFitColumns = false;
         String folder = TEMPFOLDER;
         CellsApiUtil.Upload(api, folder , name);
-        SaveResponse response = api.cellsSaveAsPostDocumentSaveAs(name, saveOptions,  folder + "/"+ newfilename, isAutoFitRows, isAutoFitColumns, folder,null);
+        SaveResponse response = api.cellsSaveAsPostDocumentSaveAs(name, saveOptions, 
+         folder + "/"+ newfilename, isAutoFitRows, isAutoFitColumns, folder,null,null);
+
+        // TODO: test validations
+    }
+    /**
+     * Convert document and save result to storage.
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void cellsSaveAsPostDocumentSaveAsOtherStorageTest() throws ApiException {
+        String name = BOOK1;
+        SaveOptions saveOptions = null;
+        String newfilename = "newbook.xlsx.md";
+        Boolean isAutoFitRows = true;
+        Boolean isAutoFitColumns = false;
+        String folder = TEMPFOLDER;
+        CellsApiUtil.Upload(api, folder , name);
+        SaveResponse response = api.cellsSaveAsPostDocumentSaveAs(name, saveOptions, 
+         folder + "/"+ newfilename, isAutoFitRows, isAutoFitColumns, folder,null,"DropBox");
 
         // TODO: test validations
     }
