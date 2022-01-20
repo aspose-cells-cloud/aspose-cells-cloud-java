@@ -33,7 +33,7 @@ import java.util.Map;
 
 public class CellsMetadataApiTest {
 
-    private  LiteCellsApi api ;
+    private  LightCellsApi api ;
 
     private String BOOK1 = "Book1.xlsx";
     private String MYDOC = "myDocument.xlsx";
@@ -55,7 +55,7 @@ public class CellsMetadataApiTest {
     
     public CellsMetadataApiTest(){
     	try {
-			 api = new LiteCellsApi(CellsApiUtil.GetClientId(),CellsApiUtil.GetClientSecret(),CellsApiUtil.GetAPIVersion(),CellsApiUtil.GetBaseUrl());
+			 api = new LightCellsApi(CellsApiUtil.GetClientId(),CellsApiUtil.GetClientSecret(),CellsApiUtil.GetAPIVersion(),CellsApiUtil.GetBaseUrl());
 		} catch (ApiException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

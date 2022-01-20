@@ -45,10 +45,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class LiteCellsApi {
+public class LightCellsApi {
     private ApiClient apiClient;
 
-    public LiteCellsApi(String clientId, String clientSecret, String Version, String baseURI) throws ApiException {
+    public LightCellsApi(String clientId, String clientSecret, String Version, String baseURI) throws ApiException {
 
         ApiClient apiClient = new ApiClient();
         apiClient.setBasePath(baseURI.endsWith("/") ? baseURI.substring(0,

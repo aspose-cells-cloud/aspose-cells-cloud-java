@@ -32,7 +32,7 @@ import java.util.Base64;
 
 public class CellsImportApiTest {
 
-    private  LiteCellsApi api ;
+    private  LightCellsApi api ;
 
     private String BOOK1 = "Book1.xlsx";
     private String MYDOC = "myDocument.xlsx";
@@ -54,7 +54,7 @@ public class CellsImportApiTest {
     
     public CellsImportApiTest(){
     	try {
-			 api = new LiteCellsApi(CellsApiUtil.GetClientId(),CellsApiUtil.GetClientSecret(),CellsApiUtil.GetAPIVersion(),CellsApiUtil.GetBaseUrl());
+			 api = new LightCellsApi(CellsApiUtil.GetClientId(),CellsApiUtil.GetClientSecret(),CellsApiUtil.GetAPIVersion(),CellsApiUtil.GetBaseUrl());
 		} catch (ApiException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
