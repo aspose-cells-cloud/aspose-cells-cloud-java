@@ -32,6 +32,7 @@ This Cloud SDK enhances your Java-based cloud apps to [process & manipulate Micr
 - Workbok smart marker API add the parameter of output storage name.
 - Batch convert API add the parameters of intput and output storage name.
 - Remove AutoshapesController from Aspose.Cells Cloud.
+- Rename LiteCellsApi to LightCellsApi.
  
 ## Read & Write Spreadsheet Formats
 
