@@ -40,7 +40,7 @@ import java.time.OffsetDateTime;
  * File Version
  */
 @ApiModel(description = "File Version")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-01-08T17:58:31.285-06:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-02-21T07:23:23.400-06:00")
 public class FileVersion extends StorageFile {
   @SerializedName("VersionId")
   private String versionId = null;

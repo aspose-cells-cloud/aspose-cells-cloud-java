@@ -101,7 +101,7 @@ public class CellsWorksheetsApiTest {
 		protectParameter.setPassword("123456");
 		String folder = TEMPFOLDER;
 		CellsApiUtil.Upload(api, folder, name);
-		WorksheetResponse response = api
+		CellsCloudResponse response = api
 				.cellsWorksheetsDeleteUnprotectWorksheet(name, sheetName,
 						protectParameter, folder, null);
 
@@ -583,7 +583,7 @@ public class CellsWorksheetsApiTest {
 		sheet.setIndex(0);
 		String folder = TEMPFOLDER;
 		CellsApiUtil.Upload(api, folder, name);
-		WorksheetResponse response = api
+		CellsCloudResponse response = api
 				.cellsWorksheetsPostUpdateWorksheetProperty(name, sheetName,
 						sheet, folder, null);
 
@@ -769,7 +769,7 @@ public class CellsWorksheetsApiTest {
 		protectParameter.setPassword("123456");
 		String folder = TEMPFOLDER;
 		CellsApiUtil.Upload(api, folder, name);
-		WorksheetResponse response = api.cellsWorksheetsPutProtectWorksheet(
+		CellsCloudResponse response = api.cellsWorksheetsPutProtectWorksheet(
 				name, sheetName, protectParameter, folder, null);
 
 		// TODO: test validations

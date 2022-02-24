@@ -39,7 +39,7 @@ import java.io.IOException;
 /**
  * RangeSetOutlineBorderRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-01-08T17:58:31.285-06:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-02-21T07:23:23.400-06:00")
 public class RangeSetOutlineBorderRequest {
   @SerializedName("BorderColor")
   private Color borderColor = null;

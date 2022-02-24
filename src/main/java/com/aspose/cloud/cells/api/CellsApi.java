@@ -148,7 +148,6 @@ import com.aspose.cloud.cells.model.WorkbookSettingsResponse;
 import com.aspose.cloud.cells.model.Worksheet;
 import com.aspose.cloud.cells.model.WorksheetMovingRequest;
 import com.aspose.cloud.cells.model.WorksheetReplaceResponse;
-import com.aspose.cloud.cells.model.WorksheetResponse;
 import com.aspose.cloud.cells.model.WorksheetsResponse;
 
 import java.lang.reflect.Type;
@@ -22440,11 +22439,11 @@ public class CellsApi {
      * @param htmlString  (required)
      * @param folder The workbook folder. (optional)
      * @param storageName storage name. (optional)
-     * @return CellResponse
+     * @return CellsCloudResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public CellResponse cellsPostSetCellHtmlString(String name, String sheetName, String cellName, byte[] htmlString, String folder, String storageName) throws ApiException {
-        ApiResponse<CellResponse> resp = cellsPostSetCellHtmlStringWithHttpInfo(name, sheetName, cellName, htmlString, folder, storageName);
+    public CellsCloudResponse cellsPostSetCellHtmlString(String name, String sheetName, String cellName, byte[] htmlString, String folder, String storageName) throws ApiException {
+        ApiResponse<CellsCloudResponse> resp = cellsPostSetCellHtmlStringWithHttpInfo(name, sheetName, cellName, htmlString, folder, storageName);
         return resp.getData();
     }
 
@@ -22457,12 +22456,12 @@ public class CellsApi {
      * @param htmlString  (required)
      * @param folder The workbook folder. (optional)
      * @param storageName storage name. (optional)
-     * @return ApiResponse&lt;CellResponse&gt;
+     * @return ApiResponse&lt;CellsCloudResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<CellResponse> cellsPostSetCellHtmlStringWithHttpInfo(String name, String sheetName, String cellName, byte[] htmlString, String folder, String storageName) throws ApiException {
+    public ApiResponse<CellsCloudResponse> cellsPostSetCellHtmlStringWithHttpInfo(String name, String sheetName, String cellName, byte[] htmlString, String folder, String storageName) throws ApiException {
         com.squareup.okhttp.Call call = cellsPostSetCellHtmlStringValidateBeforeCall(name, sheetName, cellName, htmlString, folder, storageName, null, null);
-        Type localVarReturnType = new TypeToken<CellResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<CellsCloudResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -22479,7 +22478,7 @@ public class CellsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call cellsPostSetCellHtmlStringAsync(String name, String sheetName, String cellName, byte[] htmlString, String folder, String storageName, final ApiCallback<CellResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call cellsPostSetCellHtmlStringAsync(String name, String sheetName, String cellName, byte[] htmlString, String folder, String storageName, final ApiCallback<CellsCloudResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -22501,7 +22500,7 @@ public class CellsApi {
         }
 
         com.squareup.okhttp.Call call = cellsPostSetCellHtmlStringValidateBeforeCall(name, sheetName, cellName, htmlString, folder, storageName, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<CellResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<CellsCloudResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -35945,11 +35944,11 @@ public class CellsApi {
      * @param protectParameter with protection settings. Only password is used here. (optional)
      * @param folder Document folder. (optional)
      * @param storageName storage name. (optional)
-     * @return WorksheetResponse
+     * @return CellsCloudResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public WorksheetResponse cellsWorksheetsDeleteUnprotectWorksheet(String name, String sheetName, ProtectSheetParameter protectParameter, String folder, String storageName) throws ApiException {
-        ApiResponse<WorksheetResponse> resp = cellsWorksheetsDeleteUnprotectWorksheetWithHttpInfo(name, sheetName, protectParameter, folder, storageName);
+    public CellsCloudResponse cellsWorksheetsDeleteUnprotectWorksheet(String name, String sheetName, ProtectSheetParameter protectParameter, String folder, String storageName) throws ApiException {
+        ApiResponse<CellsCloudResponse> resp = cellsWorksheetsDeleteUnprotectWorksheetWithHttpInfo(name, sheetName, protectParameter, folder, storageName);
         return resp.getData();
     }
 
@@ -35961,12 +35960,12 @@ public class CellsApi {
      * @param protectParameter with protection settings. Only password is used here. (optional)
      * @param folder Document folder. (optional)
      * @param storageName storage name. (optional)
-     * @return ApiResponse&lt;WorksheetResponse&gt;
+     * @return ApiResponse&lt;CellsCloudResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<WorksheetResponse> cellsWorksheetsDeleteUnprotectWorksheetWithHttpInfo(String name, String sheetName, ProtectSheetParameter protectParameter, String folder, String storageName) throws ApiException {
+    public ApiResponse<CellsCloudResponse> cellsWorksheetsDeleteUnprotectWorksheetWithHttpInfo(String name, String sheetName, ProtectSheetParameter protectParameter, String folder, String storageName) throws ApiException {
         com.squareup.okhttp.Call call = cellsWorksheetsDeleteUnprotectWorksheetValidateBeforeCall(name, sheetName, protectParameter, folder, storageName, null, null);
-        Type localVarReturnType = new TypeToken<WorksheetResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<CellsCloudResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -35982,7 +35981,7 @@ public class CellsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call cellsWorksheetsDeleteUnprotectWorksheetAsync(String name, String sheetName, ProtectSheetParameter protectParameter, String folder, String storageName, final ApiCallback<WorksheetResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call cellsWorksheetsDeleteUnprotectWorksheetAsync(String name, String sheetName, ProtectSheetParameter protectParameter, String folder, String storageName, final ApiCallback<CellsCloudResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -36004,7 +36003,7 @@ public class CellsApi {
         }
 
         com.squareup.okhttp.Call call = cellsWorksheetsDeleteUnprotectWorksheetValidateBeforeCall(name, sheetName, protectParameter, folder, storageName, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<WorksheetResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<CellsCloudResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -39586,11 +39585,11 @@ public class CellsApi {
      * @param sheet  (optional)
      * @param folder  (optional)
      * @param storageName storage name. (optional)
-     * @return WorksheetResponse
+     * @return CellsCloudResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public WorksheetResponse cellsWorksheetsPostUpdateWorksheetProperty(String name, String sheetName, Worksheet sheet, String folder, String storageName) throws ApiException {
-        ApiResponse<WorksheetResponse> resp = cellsWorksheetsPostUpdateWorksheetPropertyWithHttpInfo(name, sheetName, sheet, folder, storageName);
+    public CellsCloudResponse cellsWorksheetsPostUpdateWorksheetProperty(String name, String sheetName, Worksheet sheet, String folder, String storageName) throws ApiException {
+        ApiResponse<CellsCloudResponse> resp = cellsWorksheetsPostUpdateWorksheetPropertyWithHttpInfo(name, sheetName, sheet, folder, storageName);
         return resp.getData();
     }
 
@@ -39602,12 +39601,12 @@ public class CellsApi {
      * @param sheet  (optional)
      * @param folder  (optional)
      * @param storageName storage name. (optional)
-     * @return ApiResponse&lt;WorksheetResponse&gt;
+     * @return ApiResponse&lt;CellsCloudResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<WorksheetResponse> cellsWorksheetsPostUpdateWorksheetPropertyWithHttpInfo(String name, String sheetName, Worksheet sheet, String folder, String storageName) throws ApiException {
+    public ApiResponse<CellsCloudResponse> cellsWorksheetsPostUpdateWorksheetPropertyWithHttpInfo(String name, String sheetName, Worksheet sheet, String folder, String storageName) throws ApiException {
         com.squareup.okhttp.Call call = cellsWorksheetsPostUpdateWorksheetPropertyValidateBeforeCall(name, sheetName, sheet, folder, storageName, null, null);
-        Type localVarReturnType = new TypeToken<WorksheetResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<CellsCloudResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -39623,7 +39622,7 @@ public class CellsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call cellsWorksheetsPostUpdateWorksheetPropertyAsync(String name, String sheetName, Worksheet sheet, String folder, String storageName, final ApiCallback<WorksheetResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call cellsWorksheetsPostUpdateWorksheetPropertyAsync(String name, String sheetName, Worksheet sheet, String folder, String storageName, final ApiCallback<CellsCloudResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -39645,7 +39644,7 @@ public class CellsApi {
         }
 
         com.squareup.okhttp.Call call = cellsWorksheetsPostUpdateWorksheetPropertyValidateBeforeCall(name, sheetName, sheet, folder, storageName, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<WorksheetResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<CellsCloudResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -40870,11 +40869,11 @@ public class CellsApi {
      * @param protectParameter with protection settings. (optional)
      * @param folder Document folder. (optional)
      * @param storageName storage name. (optional)
-     * @return WorksheetResponse
+     * @return CellsCloudResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public WorksheetResponse cellsWorksheetsPutProtectWorksheet(String name, String sheetName, ProtectSheetParameter protectParameter, String folder, String storageName) throws ApiException {
-        ApiResponse<WorksheetResponse> resp = cellsWorksheetsPutProtectWorksheetWithHttpInfo(name, sheetName, protectParameter, folder, storageName);
+    public CellsCloudResponse cellsWorksheetsPutProtectWorksheet(String name, String sheetName, ProtectSheetParameter protectParameter, String folder, String storageName) throws ApiException {
+        ApiResponse<CellsCloudResponse> resp = cellsWorksheetsPutProtectWorksheetWithHttpInfo(name, sheetName, protectParameter, folder, storageName);
         return resp.getData();
     }
 
@@ -40886,12 +40885,12 @@ public class CellsApi {
      * @param protectParameter with protection settings. (optional)
      * @param folder Document folder. (optional)
      * @param storageName storage name. (optional)
-     * @return ApiResponse&lt;WorksheetResponse&gt;
+     * @return ApiResponse&lt;CellsCloudResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<WorksheetResponse> cellsWorksheetsPutProtectWorksheetWithHttpInfo(String name, String sheetName, ProtectSheetParameter protectParameter, String folder, String storageName) throws ApiException {
+    public ApiResponse<CellsCloudResponse> cellsWorksheetsPutProtectWorksheetWithHttpInfo(String name, String sheetName, ProtectSheetParameter protectParameter, String folder, String storageName) throws ApiException {
         com.squareup.okhttp.Call call = cellsWorksheetsPutProtectWorksheetValidateBeforeCall(name, sheetName, protectParameter, folder, storageName, null, null);
-        Type localVarReturnType = new TypeToken<WorksheetResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<CellsCloudResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -40907,7 +40906,7 @@ public class CellsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call cellsWorksheetsPutProtectWorksheetAsync(String name, String sheetName, ProtectSheetParameter protectParameter, String folder, String storageName, final ApiCallback<WorksheetResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call cellsWorksheetsPutProtectWorksheetAsync(String name, String sheetName, ProtectSheetParameter protectParameter, String folder, String storageName, final ApiCallback<CellsCloudResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -40929,7 +40928,7 @@ public class CellsApi {
         }
 
         com.squareup.okhttp.Call call = cellsWorksheetsPutProtectWorksheetValidateBeforeCall(name, sheetName, protectParameter, folder, storageName, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<WorksheetResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<CellsCloudResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
