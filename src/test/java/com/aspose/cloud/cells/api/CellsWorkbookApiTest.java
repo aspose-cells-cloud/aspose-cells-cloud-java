@@ -748,4 +748,13 @@ public class CellsWorkbookApiTest {
 		CellsCloudResponse response = api.cellsWorkbookPutWorkbookBackground(
 				name, png, folder, null);
 	}
+
+	@Test
+	public void cellsWorkbookPostDigitalSignatureTest() throws ApiException {
+		String name = BOOK1;
+		String folder = TEMPFOLDER;
+		CellsApiUtil.Upload(api, folder, name);
+		CellsApiUtil.Upload(api, null,"roywang.pfx");
+		CellsCloudResponse response = api.cellsWorkbookPostDigitalSignature(name, "roywang.pfx", "123456",folder, null);
+	}
 }

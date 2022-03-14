@@ -32665,6 +32665,166 @@ public class CellsApi {
         return call;
     }
     /**
+     * Build call for cellsWorkbookPostDigitalSignature
+     * @param name Workbook name. (required)
+     * @param digitalsignaturefile Digital signature file parameters. (required)
+     * @param password  (required)
+     * @param folder Workbook&#39;s folder. (optional)
+     * @param storageName storage name. (optional)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call cellsWorkbookPostDigitalSignatureCall(String name, String digitalsignaturefile, String password, String folder, String storageName, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = null;
+        
+        // create path and map variables
+        String localVarPath = "/cells/{name}/digitalsignature"
+            .replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        if (digitalsignaturefile != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "digitalsignaturefile", digitalsignaturefile));
+        if (password != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "password", password));
+        if (folder != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "folder", folder));
+        if (storageName != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "storageName", storageName));
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+    
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call cellsWorkbookPostDigitalSignatureValidateBeforeCall(String name, String digitalsignaturefile, String password, String folder, String storageName, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'name' is set
+        if (name == null) {
+            throw new ApiException("Missing the required parameter 'name' when calling cellsWorkbookPostDigitalSignature(Async)");
+        }
+        
+        // verify the required parameter 'digitalsignaturefile' is set
+        if (digitalsignaturefile == null) {
+            throw new ApiException("Missing the required parameter 'digitalsignaturefile' when calling cellsWorkbookPostDigitalSignature(Async)");
+        }
+        
+        // verify the required parameter 'password' is set
+        if (password == null) {
+            throw new ApiException("Missing the required parameter 'password' when calling cellsWorkbookPostDigitalSignature(Async)");
+        }
+        
+        
+        com.squareup.okhttp.Call call = cellsWorkbookPostDigitalSignatureCall(name, digitalsignaturefile, password, folder, storageName, progressListener, progressRequestListener);
+        return call;
+
+        
+        
+        
+        
+    }
+
+    /**
+     * Add digital signature.
+     * 
+     * @param name Workbook name. (required)
+     * @param digitalsignaturefile Digital signature file parameters. (required)
+     * @param password  (required)
+     * @param folder Workbook&#39;s folder. (optional)
+     * @param storageName storage name. (optional)
+     * @return CellsCloudResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public CellsCloudResponse cellsWorkbookPostDigitalSignature(String name, String digitalsignaturefile, String password, String folder, String storageName) throws ApiException {
+        ApiResponse<CellsCloudResponse> resp = cellsWorkbookPostDigitalSignatureWithHttpInfo(name, digitalsignaturefile, password, folder, storageName);
+        return resp.getData();
+    }
+
+    /**
+     * Add digital signature.
+     * 
+     * @param name Workbook name. (required)
+     * @param digitalsignaturefile Digital signature file parameters. (required)
+     * @param password  (required)
+     * @param folder Workbook&#39;s folder. (optional)
+     * @param storageName storage name. (optional)
+     * @return ApiResponse&lt;CellsCloudResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<CellsCloudResponse> cellsWorkbookPostDigitalSignatureWithHttpInfo(String name, String digitalsignaturefile, String password, String folder, String storageName) throws ApiException {
+        com.squareup.okhttp.Call call = cellsWorkbookPostDigitalSignatureValidateBeforeCall(name, digitalsignaturefile, password, folder, storageName, null, null);
+        Type localVarReturnType = new TypeToken<CellsCloudResponse>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Add digital signature. (asynchronously)
+     * 
+     * @param name Workbook name. (required)
+     * @param digitalsignaturefile Digital signature file parameters. (required)
+     * @param password  (required)
+     * @param folder Workbook&#39;s folder. (optional)
+     * @param storageName storage name. (optional)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call cellsWorkbookPostDigitalSignatureAsync(String name, String digitalsignaturefile, String password, String folder, String storageName, final ApiCallback<CellsCloudResponse> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = cellsWorkbookPostDigitalSignatureValidateBeforeCall(name, digitalsignaturefile, password, folder, storageName, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<CellsCloudResponse>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
      * Build call for cellsWorkbookPostEncryptDocument
      * @param name The document name. (required)
      * @param encryption Encryption parameters. (optional)

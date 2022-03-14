@@ -92,9 +92,7 @@ public class CellsStorageApiTests {
 		api.createFolder(folder, null);
 		File file = new File(CellsApiUtil.GetSourceFolder() + name);
 		api.uploadFile(folder + "\\" + name, file, null);
-		CellsApiUtil.Upload(api, folder + "\\" + name);
-		api.copyFile(folder + "\\" + name, folder + "\\1" + name, null, null,
-				null); // error
+		api.copyFile(folder + "\\" + name, folder + "\\1" + name, null, null,null); 
 		api.copyFolder(folder, folder + "1", null, null);
 		api.moveFolder(folder + "1", folder + "2", null, null);
 		api.deleteFolder(folder + "2", null, true);
