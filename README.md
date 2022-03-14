@@ -1,4 +1,4 @@
-![](https://img.shields.io/badge/REST%20API-v3.0-lightgrey) [![GitHub license](https://img.shields.io/github/license/aspose-cells-cloud/aspose-cells-cloud-java)](https://github.com/aspose-cells-cloud/aspose-cells-cloud-java/blob/master/LICENSE) ![GitHub commits since latest release (by date)](https://img.shields.io/github/commits-since/aspose-cells-cloud/aspose-cells-cloud-java/22.2)
+![](https://img.shields.io/badge/REST%20API-v3.0-lightgrey) [![GitHub license](https://img.shields.io/github/license/aspose-cells-cloud/aspose-cells-cloud-java)](https://github.com/aspose-cells-cloud/aspose-cells-cloud-java/blob/master/LICENSE) ![GitHub commits since latest release (by date)](https://img.shields.io/github/commits-since/aspose-cells-cloud/aspose-cells-cloud-java/22.3)
 
 # Java SDK for Spreadsheet Processing in the Cloud
 
@@ -24,12 +24,9 @@ This Cloud SDK enhances your Java-based cloud apps to [process & manipulate Micr
 - Fetch the required shape from worksheet.
 - Leverage the power of [Pivot Tables](https://docs.aspose.cloud/cells/working-with-pivot-tables/) & Ranges.
 
-## Feature & Enhancements in Version 22.2
+## Feature & Enhancements in Version 22.3
 
-- Update return value for the DeleteUnprotectWorksheet API on Aspose.Cells Cloud.
-- Update return value for the PutProtectWorksheet API on Aspose.Cells Cloud.
-- Update return value for the PostSetCellHtmlString API on Aspose.Cells Cloud.
-- Update return value for the PostUpdateWorksheetProperty API on Aspose.Cells Cloud.
+- Add new API about adding digital signature for cloud file.
 
  
 ## Read & Write Spreadsheet Formats
