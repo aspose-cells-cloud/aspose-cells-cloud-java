@@ -80,7 +80,7 @@ public class CellsSaveAsApiTest {
         String folder = TEMPFOLDER;
         CellsApiUtil.Upload(api, folder , name);
         SaveResponse response = api.cellsSaveAsPostDocumentSaveAs(name, saveOptions, 
-        folder + "/"+ newfilename, isAutoFitRows, isAutoFitColumns, folder,null,null);
+        folder + "/"+ newfilename, isAutoFitRows, isAutoFitColumns, folder,null,null,null);
 
         // TODO: test validations
     }
@@ -102,7 +102,7 @@ public class CellsSaveAsApiTest {
         String folder = TEMPFOLDER;
         CellsApiUtil.Upload(api, folder , name);
         SaveResponse response = api.cellsSaveAsPostDocumentSaveAs(name, saveOptions, 
-         folder + "/"+ newfilename, isAutoFitRows, isAutoFitColumns, folder,null,null);
+         folder + "/"+ newfilename, isAutoFitRows, isAutoFitColumns, folder,null,null,null);
 
         // TODO: test validations
     }
@@ -124,7 +124,24 @@ public class CellsSaveAsApiTest {
         String folder = TEMPFOLDER;
         CellsApiUtil.Upload(api, folder , name);
         SaveResponse response = api.cellsSaveAsPostDocumentSaveAs(name, saveOptions, 
-         folder + "/"+ newfilename, isAutoFitRows, isAutoFitColumns, folder,null,"DropBox");
+         folder + "/"+ newfilename, isAutoFitRows, isAutoFitColumns, folder,null,"DropBox",null);
+
+        // TODO: test validations
+    }
+
+    @Test
+    public void cellsSaveAsPostDocumentSaveAsExtendTest() throws ApiException {
+        String name = BOOK1;
+        SaveOptions saveOptions = null;
+        String newfilename = "newbook.xlsx.md";
+        Boolean isAutoFitRows = true;
+        Boolean isAutoFitColumns = false;
+        String folder = TEMPFOLDER;
+        CellsApiUtil.Upload(api, folder , name);
+        HashMap<String,String> extendParametersMap = new HashMap<String,String>();
+        extendParametersMap.put("OnePagePerSheet","false");
+        SaveResponse response = api.cellsSaveAsPostDocumentSaveAs(name, saveOptions, 
+         folder + "/"+ newfilename, isAutoFitRows, isAutoFitColumns, folder,null,null,extendParametersMap);
 
         // TODO: test validations
     }

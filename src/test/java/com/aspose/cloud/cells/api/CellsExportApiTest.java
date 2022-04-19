@@ -66,7 +66,7 @@ public class CellsExportApiTest {
         HashMap<String,File> fileMap = new HashMap<String,File>();
         fileMap.put(AssemblyTestXlsx ,CellsApiUtil.GetFileHolder(AssemblyTestXlsx) );
         fileMap.put(DataSourceXlsx ,CellsApiUtil.GetFileHolder(DataSourceXlsx) );
-        FilesResult response = api.postExport(fileMap, "chart","png");
+        FilesResult response = api.postExport(fileMap, "chart","png",null);
 
     }
     
@@ -77,7 +77,7 @@ public class CellsExportApiTest {
         HashMap<String,File> fileMap = new HashMap<String,File>();
         fileMap.put(AssemblyTestXlsx ,CellsApiUtil.GetFileHolder(AssemblyTestXlsx) );
         fileMap.put(DataSourceXlsx ,CellsApiUtil.GetFileHolder(DataSourceXlsx) );
-        FilesResult response = api.postExport(fileMap, "shape","png");
+        FilesResult response = api.postExport(fileMap, "shape","png",null);
     }
     @Test
     public void cellsPostExportApiTest_picture() throws ApiException {
@@ -85,7 +85,7 @@ public class CellsExportApiTest {
         HashMap<String,File> fileMap = new HashMap<String,File>();
         fileMap.put(AssemblyTestXlsx ,CellsApiUtil.GetFileHolder(AssemblyTestXlsx) );
         fileMap.put(DataSourceXlsx ,CellsApiUtil.GetFileHolder(DataSourceXlsx) );
-        FilesResult response = api.postExport(fileMap, "picture","png");
+        FilesResult response = api.postExport(fileMap, "picture","png",null);
     }
 
     @Test
@@ -94,7 +94,7 @@ public class CellsExportApiTest {
         HashMap<String,File> fileMap = new HashMap<String,File>();
         fileMap.put(AssemblyTestXlsx ,CellsApiUtil.GetFileHolder(AssemblyTestXlsx) );
         fileMap.put(DataSourceXlsx ,CellsApiUtil.GetFileHolder(DataSourceXlsx) );
-        FilesResult response = api.postExport(fileMap, "listobject","png");
+        FilesResult response = api.postExport(fileMap, "listobject","png",null);
     }
 
     @Test
@@ -103,7 +103,7 @@ public class CellsExportApiTest {
         HashMap<String,File> fileMap = new HashMap<String,File>();
         fileMap.put(AssemblyTestXlsx ,CellsApiUtil.GetFileHolder(AssemblyTestXlsx) );
         fileMap.put(DataSourceXlsx ,CellsApiUtil.GetFileHolder(DataSourceXlsx) );
-        FilesResult response = api.postExport(fileMap, "oleobject","png");
+        FilesResult response = api.postExport(fileMap, "oleobject","png",null);
     }
 
     @Test
@@ -112,7 +112,7 @@ public class CellsExportApiTest {
         HashMap<String,File> fileMap = new HashMap<String,File>();
         fileMap.put(AssemblyTestXlsx ,CellsApiUtil.GetFileHolder(AssemblyTestXlsx) );
         fileMap.put(DataSourceXlsx ,CellsApiUtil.GetFileHolder(DataSourceXlsx) );
-        FilesResult response = api.postExport(fileMap, "sheet","png");
+        FilesResult response = api.postExport(fileMap, "sheet","png",null);
     }
 
     @Test
@@ -121,7 +121,16 @@ public class CellsExportApiTest {
         HashMap<String,File> fileMap = new HashMap<String,File>();
         fileMap.put(AssemblyTestXlsx ,CellsApiUtil.GetFileHolder(AssemblyTestXlsx) );
         fileMap.put(DataSourceXlsx ,CellsApiUtil.GetFileHolder(DataSourceXlsx) );
-        FilesResult response = api.postExport(fileMap, "workbook","png");
+        FilesResult response = api.postExport(fileMap, "workbook","png",null);
     }
+    @Test
+    public void cellsPostExportApiTest_workbook_extend() throws ApiException {
 
+        HashMap<String,File> fileMap = new HashMap<String,File>();
+        fileMap.put(AssemblyTestXlsx ,CellsApiUtil.GetFileHolder(AssemblyTestXlsx) );
+        fileMap.put(DataSourceXlsx ,CellsApiUtil.GetFileHolder(DataSourceXlsx) );
+        HashMap<String,String> extendParametersMap = new HashMap<String,String>();
+        extendParametersMap.put("OnePagePerSheet","false");
+        FilesResult response = api.postExport(fileMap, "workbook","pdf",extendParametersMap);
+    }
 }

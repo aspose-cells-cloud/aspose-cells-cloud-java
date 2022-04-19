@@ -183,7 +183,7 @@ public class ApiClient {
 		this.lenientDatetimeFormat = true;
 
 		// Set default User-Agent.
-		setUserAgent("Swagger-Codegen/21.7/java");
+		setUserAgent("Swagger-Codegen/22.4/java");
 
 		// Setup authentications (key: authentication name, value:
 		// authentication).

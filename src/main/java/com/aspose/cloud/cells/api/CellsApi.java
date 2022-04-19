@@ -27814,7 +27814,7 @@ public class CellsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call cellsSaveAsPostDocumentSaveAsCall(String name, SaveOptions saveOptions, String newfilename, Boolean isAutoFitRows, Boolean isAutoFitColumns, String folder, String storageName, String outStorageName, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call cellsSaveAsPostDocumentSaveAsCall(String name, SaveOptions saveOptions, String newfilename, Boolean isAutoFitRows, Boolean isAutoFitColumns, String folder, String storageName, String outStorageName,HashMap<String,String> extendedQueryParameters, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = saveOptions;
         
         // create path and map variables
@@ -27834,7 +27834,11 @@ public class CellsApi {
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "storageName", storageName));
         if (outStorageName != null)
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "outStorageName", outStorageName));
-
+        if(extendedQueryParameters!=null){
+            for (String key : extendedQueryParameters.keySet()) {
+                localVarQueryParams.addAll(apiClient.parameterToPairs("", key, extendedQueryParameters.get(key)));
+            }
+        }
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
@@ -27868,7 +27872,7 @@ public class CellsApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call cellsSaveAsPostDocumentSaveAsValidateBeforeCall(String name, SaveOptions saveOptions, String newfilename, Boolean isAutoFitRows, Boolean isAutoFitColumns, String folder, String storageName, String outStorageName, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call cellsSaveAsPostDocumentSaveAsValidateBeforeCall(String name, SaveOptions saveOptions, String newfilename, Boolean isAutoFitRows, Boolean isAutoFitColumns, String folder, String storageName, String outStorageName,HashMap<String,String> extendedQueryParameters, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'name' is set
         if (name == null) {
@@ -27876,7 +27880,7 @@ public class CellsApi {
         }
         
         
-        com.squareup.okhttp.Call call = cellsSaveAsPostDocumentSaveAsCall(name, saveOptions, newfilename, isAutoFitRows, isAutoFitColumns, folder, storageName, outStorageName, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsSaveAsPostDocumentSaveAsCall(name, saveOptions, newfilename, isAutoFitRows, isAutoFitColumns, folder, storageName, outStorageName,extendedQueryParameters, progressListener, progressRequestListener);
         return call;
 
         
@@ -27899,8 +27903,8 @@ public class CellsApi {
      * @return SaveResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public SaveResponse cellsSaveAsPostDocumentSaveAs(String name, SaveOptions saveOptions, String newfilename, Boolean isAutoFitRows, Boolean isAutoFitColumns, String folder, String storageName, String outStorageName) throws ApiException {
-        ApiResponse<SaveResponse> resp = cellsSaveAsPostDocumentSaveAsWithHttpInfo(name, saveOptions, newfilename, isAutoFitRows, isAutoFitColumns, folder, storageName, outStorageName);
+    public SaveResponse cellsSaveAsPostDocumentSaveAs(String name, SaveOptions saveOptions, String newfilename, Boolean isAutoFitRows, Boolean isAutoFitColumns, String folder, String storageName, String outStorageName,HashMap<String,String> extendedQueryParameters) throws ApiException {
+        ApiResponse<SaveResponse> resp = cellsSaveAsPostDocumentSaveAsWithHttpInfo(name, saveOptions, newfilename, isAutoFitRows, isAutoFitColumns, folder, storageName, outStorageName,extendedQueryParameters);
         return resp.getData();
     }
 
@@ -27918,8 +27922,8 @@ public class CellsApi {
      * @return ApiResponse&lt;SaveResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<SaveResponse> cellsSaveAsPostDocumentSaveAsWithHttpInfo(String name, SaveOptions saveOptions, String newfilename, Boolean isAutoFitRows, Boolean isAutoFitColumns, String folder, String storageName, String outStorageName) throws ApiException {
-        com.squareup.okhttp.Call call = cellsSaveAsPostDocumentSaveAsValidateBeforeCall(name, saveOptions, newfilename, isAutoFitRows, isAutoFitColumns, folder, storageName, outStorageName, null, null);
+    public ApiResponse<SaveResponse> cellsSaveAsPostDocumentSaveAsWithHttpInfo(String name, SaveOptions saveOptions, String newfilename, Boolean isAutoFitRows, Boolean isAutoFitColumns, String folder, String storageName, String outStorageName,HashMap<String,String> extendedQueryParameters) throws ApiException {
+        com.squareup.okhttp.Call call = cellsSaveAsPostDocumentSaveAsValidateBeforeCall(name, saveOptions, newfilename, isAutoFitRows, isAutoFitColumns, folder, storageName, outStorageName,extendedQueryParameters, null, null);
         Type localVarReturnType = new TypeToken<SaveResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -27939,7 +27943,7 @@ public class CellsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call cellsSaveAsPostDocumentSaveAsAsync(String name, SaveOptions saveOptions, String newfilename, Boolean isAutoFitRows, Boolean isAutoFitColumns, String folder, String storageName, String outStorageName, final ApiCallback<SaveResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call cellsSaveAsPostDocumentSaveAsAsync(String name, SaveOptions saveOptions, String newfilename, Boolean isAutoFitRows, Boolean isAutoFitColumns, String folder, String storageName, String outStorageName,HashMap<String,String> extendedQueryParameters, final ApiCallback<SaveResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -27960,7 +27964,7 @@ public class CellsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = cellsSaveAsPostDocumentSaveAsValidateBeforeCall(name, saveOptions, newfilename, isAutoFitRows, isAutoFitColumns, folder, storageName, outStorageName, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsSaveAsPostDocumentSaveAsValidateBeforeCall(name, saveOptions, newfilename, isAutoFitRows, isAutoFitColumns, folder, storageName, outStorageName,extendedQueryParameters, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<SaveResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -31344,7 +31348,7 @@ public class CellsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call cellsWorkbookGetWorkbookCall(String name, String password, String format, Boolean isAutoFit, Boolean onlySaveTable, String folder, String storageName, String outPath, String outStorageName, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call cellsWorkbookGetWorkbookCall(String name, String password, String format, Boolean isAutoFit, Boolean onlySaveTable, String folder, String storageName, String outPath, String outStorageName,HashMap<String,String> extendedQueryParameters, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -31368,7 +31372,11 @@ public class CellsApi {
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "outPath", outPath));
         if (outStorageName != null)
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "outStorageName", outStorageName));
-
+        if(extendedQueryParameters!=null){
+            for (String key : extendedQueryParameters.keySet()) {
+                localVarQueryParams.addAll(apiClient.parameterToPairs("", key, extendedQueryParameters.get(key)));
+            }
+        }
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
@@ -31402,7 +31410,7 @@ public class CellsApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call cellsWorkbookGetWorkbookValidateBeforeCall(String name, String password, String format, Boolean isAutoFit, Boolean onlySaveTable, String folder, String storageName, String outPath, String outStorageName, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call cellsWorkbookGetWorkbookValidateBeforeCall(String name, String password, String format, Boolean isAutoFit, Boolean onlySaveTable, String folder, String storageName, String outPath, String outStorageName,HashMap<String,String> extendedQueryParameters, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'name' is set
         if (name == null) {
@@ -31410,7 +31418,7 @@ public class CellsApi {
         }
         
         
-        com.squareup.okhttp.Call call = cellsWorkbookGetWorkbookCall(name, password, format, isAutoFit, onlySaveTable, folder, storageName, outPath, outStorageName, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsWorkbookGetWorkbookCall(name, password, format, isAutoFit, onlySaveTable, folder, storageName, outPath, outStorageName,extendedQueryParameters, progressListener, progressRequestListener);
         return call;
 
         
@@ -31434,8 +31442,8 @@ public class CellsApi {
      * @return File
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public File cellsWorkbookGetWorkbook(String name, String password, String format, Boolean isAutoFit, Boolean onlySaveTable, String folder, String storageName, String outPath, String outStorageName) throws ApiException {
-        ApiResponse<File> resp = cellsWorkbookGetWorkbookWithHttpInfo(name, password, format, isAutoFit, onlySaveTable, folder, storageName, outPath, outStorageName);
+    public File cellsWorkbookGetWorkbook(String name, String password, String format, Boolean isAutoFit, Boolean onlySaveTable, String folder, String storageName, String outPath, String outStorageName,HashMap<String,String> extendedQueryParameters) throws ApiException {
+        ApiResponse<File> resp = cellsWorkbookGetWorkbookWithHttpInfo(name, password, format, isAutoFit, onlySaveTable, folder, storageName, outPath, outStorageName,extendedQueryParameters);
         return resp.getData();
     }
 
@@ -31454,8 +31462,8 @@ public class CellsApi {
      * @return ApiResponse&lt;File&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<File> cellsWorkbookGetWorkbookWithHttpInfo(String name, String password, String format, Boolean isAutoFit, Boolean onlySaveTable, String folder, String storageName, String outPath, String outStorageName) throws ApiException {
-        com.squareup.okhttp.Call call = cellsWorkbookGetWorkbookValidateBeforeCall(name, password, format, isAutoFit, onlySaveTable, folder, storageName, outPath, outStorageName, null, null);
+    public ApiResponse<File> cellsWorkbookGetWorkbookWithHttpInfo(String name, String password, String format, Boolean isAutoFit, Boolean onlySaveTable, String folder, String storageName, String outPath, String outStorageName,HashMap<String,String> extendedQueryParameters) throws ApiException {
+        com.squareup.okhttp.Call call = cellsWorkbookGetWorkbookValidateBeforeCall(name, password, format, isAutoFit, onlySaveTable, folder, storageName, outPath, outStorageName, extendedQueryParameters,null, null);
         Type localVarReturnType = new TypeToken<File>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -31476,7 +31484,7 @@ public class CellsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call cellsWorkbookGetWorkbookAsync(String name, String password, String format, Boolean isAutoFit, Boolean onlySaveTable, String folder, String storageName, String outPath, String outStorageName, final ApiCallback<File> callback) throws ApiException {
+    public com.squareup.okhttp.Call cellsWorkbookGetWorkbookAsync(String name, String password, String format, Boolean isAutoFit, Boolean onlySaveTable, String folder, String storageName, String outPath, String outStorageName,HashMap<String,String> extendedQueryParameters, final ApiCallback<File> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -31497,7 +31505,7 @@ public class CellsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = cellsWorkbookGetWorkbookValidateBeforeCall(name, password, format, isAutoFit, onlySaveTable, folder, storageName, outPath, outStorageName, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsWorkbookGetWorkbookValidateBeforeCall(name, password, format, isAutoFit, onlySaveTable, folder, storageName, outPath, outStorageName,extendedQueryParameters, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<File>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -34357,7 +34365,7 @@ public class CellsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call cellsWorkbookPutConvertWorkbookCall(File file, String format, String password, String outPath, String storageName, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call cellsWorkbookPutConvertWorkbookCall(File file, String format, String password, String outPath, String storageName,HashMap<String,String> extendedQueryParameters, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -34372,7 +34380,11 @@ public class CellsApi {
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "outPath", outPath));
         if (storageName != null)
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "storageName", storageName));
-
+        if(extendedQueryParameters!=null){
+            for (String key : extendedQueryParameters.keySet()) {
+                localVarQueryParams.addAll(apiClient.parameterToPairs("", key, extendedQueryParameters.get(key)));
+            }
+        }
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
@@ -34408,7 +34420,7 @@ public class CellsApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call cellsWorkbookPutConvertWorkbookValidateBeforeCall(File file, String format, String password, String outPath, String storageName, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call cellsWorkbookPutConvertWorkbookValidateBeforeCall(File file, String format, String password, String outPath, String storageName,HashMap<String,String> extendedQueryParameters, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'file' is set
         if (file == null) {
@@ -34416,7 +34428,7 @@ public class CellsApi {
         }
         
         
-        com.squareup.okhttp.Call call = cellsWorkbookPutConvertWorkbookCall(file, format, password, outPath, storageName, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsWorkbookPutConvertWorkbookCall(file, format, password, outPath, storageName,extendedQueryParameters, progressListener, progressRequestListener);
         return call;
 
         
@@ -34436,8 +34448,8 @@ public class CellsApi {
      * @return File
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public File cellsWorkbookPutConvertWorkbook(File file, String format, String password, String outPath, String storageName) throws ApiException {
-        ApiResponse<File> resp = cellsWorkbookPutConvertWorkbookWithHttpInfo(file, format, password, outPath, storageName);
+    public File cellsWorkbookPutConvertWorkbook(File file, String format, String password, String outPath, String storageName,HashMap<String,String> extendedQueryParameters) throws ApiException {
+        ApiResponse<File> resp = cellsWorkbookPutConvertWorkbookWithHttpInfo(file, format, password, outPath, storageName,extendedQueryParameters);
         return resp.getData();
     }
 
@@ -34452,8 +34464,8 @@ public class CellsApi {
      * @return ApiResponse&lt;File&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<File> cellsWorkbookPutConvertWorkbookWithHttpInfo(File file, String format, String password, String outPath, String storageName) throws ApiException {
-        com.squareup.okhttp.Call call = cellsWorkbookPutConvertWorkbookValidateBeforeCall(file, format, password, outPath, storageName, null, null);
+    public ApiResponse<File> cellsWorkbookPutConvertWorkbookWithHttpInfo(File file, String format, String password, String outPath, String storageName,HashMap<String,String> extendedQueryParameters) throws ApiException {
+        com.squareup.okhttp.Call call = cellsWorkbookPutConvertWorkbookValidateBeforeCall(file, format, password, outPath, storageName,extendedQueryParameters, null, null);
         Type localVarReturnType = new TypeToken<File>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -34470,7 +34482,7 @@ public class CellsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call cellsWorkbookPutConvertWorkbookAsync(File file, String format, String password, String outPath, String storageName, final ApiCallback<File> callback) throws ApiException {
+    public com.squareup.okhttp.Call cellsWorkbookPutConvertWorkbookAsync(File file, String format, String password, String outPath, String storageName,HashMap<String,String> extendedQueryParameters, final ApiCallback<File> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -34491,7 +34503,7 @@ public class CellsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = cellsWorkbookPutConvertWorkbookValidateBeforeCall(file, format, password, outPath, storageName, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsWorkbookPutConvertWorkbookValidateBeforeCall(file, format, password, outPath, storageName,extendedQueryParameters, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<File>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

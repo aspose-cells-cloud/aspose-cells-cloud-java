@@ -200,7 +200,7 @@ public class CellsWorkbookApiTest {
 		String folder = TEMPFOLDER;
 		CellsApiUtil.Upload(api, folder, name);
 		File response = api.cellsWorkbookGetWorkbook(name, password, format,
-				isAutoFit, onlySaveTable, folder, null, null,null);
+				isAutoFit, onlySaveTable, folder, null, null,null,null);
 
 		// TODO: test validations
 	}
@@ -223,7 +223,7 @@ public class CellsWorkbookApiTest {
 		String folder = TEMPFOLDER;
 		CellsApiUtil.Upload(api, folder, name);
 		File response = api.cellsWorkbookGetWorkbook(name, password, format,
-				isAutoFit, onlySaveTable, folder, null, null,null);
+				isAutoFit, onlySaveTable, folder, null, null,null,null);
 
 		// TODO: test validations
 	}
@@ -237,7 +237,7 @@ public class CellsWorkbookApiTest {
 		String folder = TEMPFOLDER;
 		CellsApiUtil.Upload(api, folder, name);
 		File response = api.cellsWorkbookGetWorkbook(name, password, format,
-				isAutoFit, onlySaveTable, folder, null, null,"DropBox");
+				isAutoFit, onlySaveTable, folder, null, null,"DropBox",null);
 
 		// TODO: test validations
 	}
@@ -678,7 +678,7 @@ public class CellsWorkbookApiTest {
 		String folder = TEMPFOLDER;
 		CellsApiUtil.Upload(api, folder, name);
 		File response = api.cellsWorkbookPutConvertWorkbook(
-				CellsApiUtil.GetFileHolder(name), format, password, outPath ,null);
+				CellsApiUtil.GetFileHolder(name), format, password, outPath ,null,null);
 		
 		// TODO: test validations
 	}
@@ -756,5 +756,37 @@ public class CellsWorkbookApiTest {
 		CellsApiUtil.Upload(api, folder, name);
 		CellsApiUtil.Upload(api, null,"roywang.pfx");
 		CellsCloudResponse response = api.cellsWorkbookPostDigitalSignature(name, "roywang.pfx", "123456",folder, null);
+	}
+
+	@Test
+	public void cellsWorkbookPutConvertWorkbookExtendTest() throws ApiException {
+		String format = "pdf";
+		String password = null;
+		String outPath = null;
+		String name = BOOK1;
+		String folder = TEMPFOLDER;
+		CellsApiUtil.Upload(api, folder, name);
+		HashMap<String,String> extendParametersMap = new HashMap<String,String>();
+        extendParametersMap.put("OnePagePerSheet","false");
+		File response = api.cellsWorkbookPutConvertWorkbook(
+				CellsApiUtil.GetFileHolder(name), format, password, outPath ,null,extendParametersMap);
+		
+		// TODO: test validations
+	}
+	@Test
+	public void cellsWorkbookGetWorkbookExtendTest() throws ApiException {
+		String name = BOOK1;
+		String password = null;
+		Boolean isAutoFit = true;
+		Boolean onlySaveTable = true;
+		String format = "XPS";
+		String folder = TEMPFOLDER;
+		CellsApiUtil.Upload(api, folder, name);
+		HashMap<String,String> extendParametersMap = new HashMap<String,String>();
+        extendParametersMap.put("OnePagePerSheet","false");
+		File response = api.cellsWorkbookGetWorkbook(name, password, format,
+				isAutoFit, onlySaveTable, folder, null, null,null,extendParametersMap);
+
+		// TODO: test validations
 	}
 }
