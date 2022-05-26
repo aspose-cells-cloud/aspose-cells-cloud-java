@@ -43,6 +43,7 @@ import com.aspose.cloud.cells.model.AutoFilterResponse;
 import com.aspose.cloud.cells.model.AutoFitterOptions;
 import com.aspose.cloud.cells.model.AutoShapesResponse;
 import com.aspose.cloud.cells.model.BatchConvertRequest;
+import com.aspose.cloud.cells.model.BarcodeResponseList;
 import com.aspose.cloud.cells.model.CalculationOptions;
 import com.aspose.cloud.cells.model.CellResponse;
 import com.aspose.cloud.cells.model.CellsCloudResponse;
@@ -15414,7 +15415,164 @@ public class CellsApi {
         String[] localVarAuthNames = new String[] {  };
         return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
+    /**
+     * Build call for cellsPictureGetExtractBarcodes
+     * @param name Workbook name. (required)
+     * @param sheetName Worksheet name. (required)
+     * @param pictureIndex The picture index. (required)
+     * @param folder Workbook folder. (optional)
+     * @param storageName storage name. (optional)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call cellsPictureGetExtractBarcodesCall(String name, String sheetName, Integer pictureIndex, String folder, String storageName, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = null;
+        
+        // create path and map variables
+        String localVarPath = "/cells/{name}/worksheets/{sheetName}/pictures/{pictureIndex}/recognize"
+            .replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString()))
+            .replaceAll("\\{" + "sheetName" + "\\}", apiClient.escapeString(sheetName.toString()))
+            .replaceAll("\\{" + "pictureIndex" + "\\}", apiClient.escapeString(pictureIndex.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        if (folder != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "folder", folder));
+        if (storageName != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "storageName", storageName));
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
     
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call cellsPictureGetExtractBarcodesValidateBeforeCall(String name, String sheetName, Integer pictureIndex, String folder, String storageName, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'name' is set
+        if (name == null) {
+            throw new ApiException("Missing the required parameter 'name' when calling cellsPictureGetExtractBarcodes(Async)");
+        }
+        
+        // verify the required parameter 'sheetName' is set
+        if (sheetName == null) {
+            throw new ApiException("Missing the required parameter 'sheetName' when calling cellsPictureGetExtractBarcodes(Async)");
+        }
+        
+        // verify the required parameter 'pictureIndex' is set
+        if (pictureIndex == null) {
+            throw new ApiException("Missing the required parameter 'pictureIndex' when calling cellsPictureGetExtractBarcodes(Async)");
+        }
+        
+        
+        com.squareup.okhttp.Call call = cellsPictureGetExtractBarcodesCall(name, sheetName, pictureIndex, folder, storageName, progressListener, progressRequestListener);
+        return call;
+
+        
+        
+        
+        
+    }
+
+    /**
+     * Get chart area border info.
+     * 
+     * @param name Workbook name. (required)
+     * @param sheetName Worksheet name. (required)
+     * @param pictureIndex The picture index. (required)
+     * @param folder Workbook folder. (optional)
+     * @param storageName storage name. (optional)
+     * @return BarcodeResponseList
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public BarcodeResponseList cellsPictureGetExtractBarcodes(String name, String sheetName, Integer pictureIndex, String folder, String storageName) throws ApiException {
+        ApiResponse<BarcodeResponseList> resp = cellsPictureGetExtractBarcodesWithHttpInfo(name, sheetName, pictureIndex, folder, storageName);
+        return resp.getData();
+    }
+
+    /**
+     * Get chart area border info.
+     * 
+     * @param name Workbook name. (required)
+     * @param sheetName Worksheet name. (required)
+     * @param pictureIndex The picture index. (required)
+     * @param folder Workbook folder. (optional)
+     * @param storageName storage name. (optional)
+     * @return ApiResponse&lt;BarcodeResponseList&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<BarcodeResponseList> cellsPictureGetExtractBarcodesWithHttpInfo(String name, String sheetName, Integer pictureIndex, String folder, String storageName) throws ApiException {
+        com.squareup.okhttp.Call call = cellsPictureGetExtractBarcodesValidateBeforeCall(name, sheetName, pictureIndex, folder, storageName, null, null);
+        Type localVarReturnType = new TypeToken<BarcodeResponseList>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Get chart area border info. (asynchronously)
+     * 
+     * @param name Workbook name. (required)
+     * @param sheetName Worksheet name. (required)
+     * @param pictureIndex The picture index. (required)
+     * @param folder Workbook folder. (optional)
+     * @param storageName storage name. (optional)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call cellsPictureGetExtractBarcodesAsync(String name, String sheetName, Integer pictureIndex, String folder, String storageName, final ApiCallback<BarcodeResponseList> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = cellsPictureGetExtractBarcodesValidateBeforeCall(name, sheetName, pictureIndex, folder, storageName, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<BarcodeResponseList>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
     @SuppressWarnings("rawtypes")
     private com.squareup.okhttp.Call cellsPageSetupPostPageSetupValidateBeforeCall(String name, String sheetName, PageSetup pageSetup, String folder, String storageName, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         

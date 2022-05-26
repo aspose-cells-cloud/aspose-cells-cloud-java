@@ -39,7 +39,7 @@ import java.io.IOException;
  * Represents a PivotFilter in PivotFilter Collection.
  */
 @ApiModel(description = "Represents a PivotFilter in PivotFilter Collection.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-03-13T18:09:02.334-05:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-05-25T04:35:47.926-05:00")
 public class PivotFilter {
   @SerializedName("EvaluationOrder")
   private Integer evaluationOrder = null;

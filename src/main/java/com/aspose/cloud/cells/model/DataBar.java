@@ -42,7 +42,7 @@ import java.io.IOException;
  * Describe the DataBar conditional formatting rule. This conditional formatting    rule displays a gradated data bar in the range of cells.
  */
 @ApiModel(description = "Describe the DataBar conditional formatting rule. This conditional formatting    rule displays a gradated data bar in the range of cells.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-03-13T18:09:02.334-05:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-05-25T04:35:47.926-05:00")
 public class DataBar {
   @SerializedName("Direction")
   private String direction = null;

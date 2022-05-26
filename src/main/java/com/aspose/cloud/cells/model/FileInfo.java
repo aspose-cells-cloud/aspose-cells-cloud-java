@@ -37,7 +37,7 @@ import java.io.IOException;
 /**
  * FileInfo
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-03-13T18:09:02.334-05:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-05-25T04:35:47.926-05:00")
 public class FileInfo {
   @SerializedName("Filename")
   private String filename = null;

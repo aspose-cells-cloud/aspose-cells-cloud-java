@@ -33,54 +33,78 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
- * Object exists
+ * BarcodeResponse
  */
-@ApiModel(description = "Object exists")
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-05-25T04:35:47.926-05:00")
-public class ObjectExist {
-  @SerializedName("Exists")
-  private Boolean exists = null;
+public class BarcodeResponse {
+  @SerializedName("BarcodeValue")
+  private String barcodeValue = null;
 
-  @SerializedName("IsFolder")
-  private Boolean isFolder = null;
+  @SerializedName("BarcodeType")
+  private String barcodeType = null;
 
-  public ObjectExist exists(Boolean exists) {
-    this.exists = exists;
+  @SerializedName("Checksum")
+  private String checksum = null;
+
+
+  public BarcodeResponse barcodeValue(String barcodeValue) {
+    this.barcodeValue = barcodeValue;
     return this;
   }
 
    /**
-   * Indicates that the file or folder exists.
-   * @return exists
+   * Get barcodeValue
+   * @return barcodeValue
   **/
-  @ApiModelProperty(required = true, value = "Indicates that the file or folder exists.")
-  public Boolean Exists() {
-    return exists;
+  @ApiModelProperty(value = "")
+  public String getBarcodeValue() {
+    return barcodeValue;
   }
 
-  public void setExists(Boolean exists) {
-    this.exists = exists;
+  public void setBarcodeValue(String barcodeValue) {
+    this.barcodeValue = barcodeValue;
   }
 
-  public ObjectExist isFolder(Boolean isFolder) {
-    this.isFolder = isFolder;
+  public BarcodeResponse barcodeType(String barcodeType) {
+    this.barcodeType = barcodeType;
     return this;
   }
 
    /**
-   * True if it is a folder, false if it is a file.
-   * @return isFolder
+   * Get barcodeType
+   * @return barcodeType
   **/
-  @ApiModelProperty(required = true, value = "True if it is a folder, false if it is a file.")
-  public Boolean IsFolder() {
-    return isFolder;
+  @ApiModelProperty(value = "")
+  public String getBarcodeType() {
+    return barcodeType;
   }
 
-  public void setIsFolder(Boolean isFolder) {
-    this.isFolder = isFolder;
+  public void setBarcodeType(String barcodeType) {
+    this.barcodeType = barcodeType;
   }
+
+  public BarcodeResponse checksum(String checksum) {
+    this.checksum = checksum;
+    return this;
+  }
+
+   /**
+   * Get checksum
+   * @return checksum
+  **/
+  @ApiModelProperty(value = "")
+  public String getChecksum() {
+    return checksum;
+  }
+
+  public void setChecksum(String checksum) {
+    this.checksum = checksum;
+  }
+
 
 
   @Override
@@ -91,24 +115,25 @@ public class ObjectExist {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ObjectExist objectExist = (ObjectExist) o;
-    return Objects.equals(this.exists, objectExist.exists) &&
-        Objects.equals(this.isFolder, objectExist.isFolder);
+    BarcodeResponse barcodeResponse = (BarcodeResponse) o;
+    return Objects.equals(this.barcodeValue, barcodeResponse.barcodeValue) &&
+        Objects.equals(this.barcodeType, barcodeResponse.barcodeType) &&
+        Objects.equals(this.checksum, barcodeResponse.checksum);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(exists, isFolder);
+    return Objects.hash(barcodeValue, barcodeType, checksum);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ObjectExist {\n");
-    
-    sb.append("    exists: ").append(toIndentedString(exists)).append("\n");
-    sb.append("    isFolder: ").append(toIndentedString(isFolder)).append("\n");
+    sb.append("class BarcodeResponse {\n");    
+    sb.append("    barcodeValue: ").append(toIndentedString(barcodeValue)).append("\n");
+    sb.append("    barcodeType: ").append(toIndentedString(barcodeType)).append("\n");
+    sb.append("    checksum: ").append(toIndentedString(checksum)).append("\n");
     sb.append("}");
     return sb.toString();
   }

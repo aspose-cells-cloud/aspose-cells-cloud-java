@@ -39,7 +39,7 @@ import java.io.IOException;
 /**
  * StyleResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-03-13T18:09:02.334-05:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-05-25T04:35:47.926-05:00")
 public class StyleResponse extends CellsCloudResponse {
   @SerializedName("Style")
   private Style style = null;

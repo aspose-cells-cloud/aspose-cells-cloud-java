@@ -40,7 +40,7 @@ import java.io.IOException;
  * Describe the ColorScale conditional formatting rule. This conditional formatting    rule creates a gradated color scale on the cells.             
  */
 @ApiModel(description = "Describe the ColorScale conditional formatting rule. This conditional formatting    rule creates a gradated color scale on the cells.             ")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-03-13T18:09:02.334-05:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-05-25T04:35:47.926-05:00")
 public class ColorScale {
   @SerializedName("MaxCfvo")
   private ConditionalFormattingValue maxCfvo = null;

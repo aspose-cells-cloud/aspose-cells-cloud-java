@@ -42,7 +42,7 @@ import java.util.List;
  * Describe the IconSet conditional formatting rule. This conditional formatting     rule applies icons to cells according to their values.
  */
 @ApiModel(description = "Describe the IconSet conditional formatting rule. This conditional formatting     rule applies icons to cells according to their values.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-03-13T18:09:02.334-05:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-05-25T04:35:47.926-05:00")
 public class IconSet {
   @SerializedName("Reverse")
   private Boolean reverse = null;

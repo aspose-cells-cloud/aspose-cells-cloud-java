@@ -25,6 +25,7 @@
 package com.aspose.cloud.cells.model;
 
 import java.util.Objects;
+import com.aspose.cloud.cells.model.BarcodeResponse;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -33,53 +34,41 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
- * Object exists
+ * BarcodeResponseList
  */
-@ApiModel(description = "Object exists")
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-05-25T04:35:47.926-05:00")
-public class ObjectExist {
-  @SerializedName("Exists")
-  private Boolean exists = null;
+public class BarcodeResponseList {
+  @SerializedName("Barcodes")
+  private List<BarcodeResponse> barcodes = null;
 
-  @SerializedName("IsFolder")
-  private Boolean isFolder = null;
+  public BarcodeResponseList barcodes(List<BarcodeResponse> barcodes) {
+    this.barcodes = barcodes;
+    return this;
+  }
 
-  public ObjectExist exists(Boolean exists) {
-    this.exists = exists;
+  public BarcodeResponseList addBarcodesItem(BarcodeResponse barcodesItem) {
+    if (this.barcodes == null) {
+      this.barcodes = new ArrayList<>();
+    }
+    this.barcodes.add(barcodesItem);
     return this;
   }
 
    /**
-   * Indicates that the file or folder exists.
-   * @return exists
+   * Get barcodes
+   * @return barcodes
   **/
-  @ApiModelProperty(required = true, value = "Indicates that the file or folder exists.")
-  public Boolean Exists() {
-    return exists;
+  @ApiModelProperty(value = "")
+  public List<BarcodeResponse> getBarcodes() {
+    return barcodes;
   }
 
-  public void setExists(Boolean exists) {
-    this.exists = exists;
-  }
-
-  public ObjectExist isFolder(Boolean isFolder) {
-    this.isFolder = isFolder;
-    return this;
-  }
-
-   /**
-   * True if it is a folder, false if it is a file.
-   * @return isFolder
-  **/
-  @ApiModelProperty(required = true, value = "True if it is a folder, false if it is a file.")
-  public Boolean IsFolder() {
-    return isFolder;
-  }
-
-  public void setIsFolder(Boolean isFolder) {
-    this.isFolder = isFolder;
+  public void setBarcodes(List<BarcodeResponse> barcodes) {
+    this.barcodes = barcodes;
   }
 
 
@@ -91,24 +80,22 @@ public class ObjectExist {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ObjectExist objectExist = (ObjectExist) o;
-    return Objects.equals(this.exists, objectExist.exists) &&
-        Objects.equals(this.isFolder, objectExist.isFolder);
+    BarcodeResponseList barcodeResponseList = (BarcodeResponseList) o;
+    return Objects.equals(this.barcodes, barcodeResponseList.barcodes);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(exists, isFolder);
+    return Objects.hash(barcodes);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ObjectExist {\n");
+    sb.append("class BarcodeResponseList {\n");
     
-    sb.append("    exists: ").append(toIndentedString(exists)).append("\n");
-    sb.append("    isFolder: ").append(toIndentedString(isFolder)).append("\n");
+    sb.append("    barcodes: ").append(toIndentedString(barcodes)).append("\n");
     sb.append("}");
     return sb.toString();
   }

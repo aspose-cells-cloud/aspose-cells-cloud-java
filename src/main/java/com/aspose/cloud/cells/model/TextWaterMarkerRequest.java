@@ -38,7 +38,7 @@ import java.io.IOException;
  * Used by text water marker requests.
  */
 @ApiModel(description = "Used by text water marker requests.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-03-13T18:09:02.334-05:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-05-25T04:35:47.926-05:00")
 public class TextWaterMarkerRequest {
   @SerializedName("Text")
   private String text = null;
