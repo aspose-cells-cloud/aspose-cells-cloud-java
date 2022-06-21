@@ -74,10 +74,46 @@ public class CellsClearObjectsApiTest {
         HashMap<String,File> fileMap = new HashMap<String,File>();
         fileMap.put(AssemblyTestXlsx ,CellsApiUtil.GetFileHolder(AssemblyTestXlsx) );
         fileMap.put(DataSourceXlsx ,CellsApiUtil.GetFileHolder(DataSourceXlsx) );
-        FilesResult response = api.postClearObjects(fileMap, "chart");
+        FilesResult response = api.postClearObjects(fileMap, "chart",null,null);
 
         // TODO: test validations
     }
     
-   
+       /**
+     * Delete a shape in worksheet
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void cellsPostClearObjectsCommentOfSheet1ApiTest() throws ApiException {
+
+        HashMap<String,File> fileMap = new HashMap<String,File>();
+        fileMap.put(AssemblyTestXlsx ,CellsApiUtil.GetFileHolder(AssemblyTestXlsx) );
+        fileMap.put(BOOK1 ,CellsApiUtil.GetFileHolder(BOOK1) );
+        FilesResult response = api.postClearObjects(fileMap, "comment","Sheet1",null);
+
+        // TODO: test validations
+    }
+
+           /**
+     * Delete a shape in worksheet
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void cellsPostClearObjectsOutFormatApiTest() throws ApiException {
+
+        HashMap<String,File> fileMap = new HashMap<String,File>();
+        fileMap.put(AssemblyTestXlsx ,CellsApiUtil.GetFileHolder(AssemblyTestXlsx) );
+        fileMap.put(BOOK1 ,CellsApiUtil.GetFileHolder(BOOK1) );
+        FilesResult response = api.postClearObjects(fileMap, "comment","Sheet1","pdf");
+
+        // TODO: test validations
+    }
 }

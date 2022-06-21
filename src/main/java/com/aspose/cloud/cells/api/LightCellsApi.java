@@ -497,7 +497,7 @@ public class LightCellsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call postClearObjectsCall(HashMap<String,File> file, String objecttype, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call postClearObjectsCall(HashMap<String,File> file, String objecttype, String sheetname, String outFormat, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -506,7 +506,11 @@ public class LightCellsApi {
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         if (objecttype != null)
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "objecttype", objecttype));
-
+        if (sheetname != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "sheetname", sheetname));
+        if (outFormat != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "outFormat", outFormat));
+        
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
@@ -546,7 +550,7 @@ public class LightCellsApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call postClearObjectsValidateBeforeCall(HashMap<String,File> file, String objecttype, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call postClearObjectsValidateBeforeCall(HashMap<String,File> file, String objecttype, String sheetname, String outFormat, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'file' is set
         if (file == null) {
@@ -559,7 +563,7 @@ public class LightCellsApi {
         }
         
         
-        com.squareup.okhttp.Call call = postClearObjectsCall(file, objecttype, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = postClearObjectsCall(file, objecttype,sheetname,outFormat, progressListener, progressRequestListener);
         return call;
 
         
@@ -576,8 +580,8 @@ public class LightCellsApi {
      * @return FilesResult
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public FilesResult postClearObjects(HashMap<String,File> file, String objecttype) throws ApiException {
-        ApiResponse<FilesResult> resp = postClearObjectsWithHttpInfo(file, objecttype);
+    public FilesResult postClearObjects(HashMap<String,File> file, String objecttype, String sheetname, String outFormat) throws ApiException {
+        ApiResponse<FilesResult> resp = postClearObjectsWithHttpInfo(file, objecttype,sheetname,outFormat);
         return resp.getData();
     }
 
@@ -589,8 +593,8 @@ public class LightCellsApi {
      * @return ApiResponse&lt;FilesResult&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<FilesResult> postClearObjectsWithHttpInfo(HashMap<String,File> file, String objecttype) throws ApiException {
-        com.squareup.okhttp.Call call = postClearObjectsValidateBeforeCall(file, objecttype, null, null);
+    public ApiResponse<FilesResult> postClearObjectsWithHttpInfo(HashMap<String,File> file, String objecttype, String sheetname, String outFormat) throws ApiException {
+        com.squareup.okhttp.Call call = postClearObjectsValidateBeforeCall(file, objecttype,sheetname,outFormat, null, null);
         Type localVarReturnType = new TypeToken<FilesResult>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -604,7 +608,7 @@ public class LightCellsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call postClearObjectsAsync(HashMap<String,File> file, String objecttype, final ApiCallback<FilesResult> callback) throws ApiException {
+    public com.squareup.okhttp.Call postClearObjectsAsync(HashMap<String,File> file, String objecttype, String sheetname, String outFormat, final ApiCallback<FilesResult> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -625,7 +629,7 @@ public class LightCellsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = postClearObjectsValidateBeforeCall(file, objecttype, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = postClearObjectsValidateBeforeCall(file, objecttype,sheetname,outFormat, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<FilesResult>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

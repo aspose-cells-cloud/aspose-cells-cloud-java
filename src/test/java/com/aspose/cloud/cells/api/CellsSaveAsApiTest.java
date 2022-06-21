@@ -80,7 +80,7 @@ public class CellsSaveAsApiTest {
         String folder = TEMPFOLDER;
         CellsApiUtil.Upload(api, folder , name);
         SaveResponse response = api.cellsSaveAsPostDocumentSaveAs(name, saveOptions, 
-        folder + "/"+ newfilename, isAutoFitRows, isAutoFitColumns, folder,null,null,null);
+        folder + "/"+ newfilename, isAutoFitRows, isAutoFitColumns, folder,null,null,null,true);
 
         // TODO: test validations
     }
@@ -102,7 +102,7 @@ public class CellsSaveAsApiTest {
         String folder = TEMPFOLDER;
         CellsApiUtil.Upload(api, folder , name);
         SaveResponse response = api.cellsSaveAsPostDocumentSaveAs(name, saveOptions, 
-         folder + "/"+ newfilename, isAutoFitRows, isAutoFitColumns, folder,null,null,null);
+         folder + "/"+ newfilename, isAutoFitRows, isAutoFitColumns, folder,null,null,null,true);
 
         // TODO: test validations
     }
@@ -124,7 +124,7 @@ public class CellsSaveAsApiTest {
         String folder = TEMPFOLDER;
         CellsApiUtil.Upload(api, folder , name);
         SaveResponse response = api.cellsSaveAsPostDocumentSaveAs(name, saveOptions, 
-         folder + "/"+ newfilename, isAutoFitRows, isAutoFitColumns, folder,null,"DropBox",null);
+         folder + "/"+ newfilename, isAutoFitRows, isAutoFitColumns, folder,null,"DropBox",null,true);
 
         // TODO: test validations
     }
@@ -141,7 +141,7 @@ public class CellsSaveAsApiTest {
         HashMap<String,String> extendParametersMap = new HashMap<String,String>();
         extendParametersMap.put("OnePagePerSheet","false");
         SaveResponse response = api.cellsSaveAsPostDocumentSaveAs(name, saveOptions, 
-         folder + "/"+ newfilename, isAutoFitRows, isAutoFitColumns, folder,null,null,extendParametersMap);
+         folder + "/"+ newfilename, isAutoFitRows, isAutoFitColumns, folder,null,null,extendParametersMap,false);
 
         // TODO: test validations
     }

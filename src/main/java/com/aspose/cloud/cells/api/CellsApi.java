@@ -27972,7 +27972,7 @@ public class CellsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call cellsSaveAsPostDocumentSaveAsCall(String name, SaveOptions saveOptions, String newfilename, Boolean isAutoFitRows, Boolean isAutoFitColumns, String folder, String storageName, String outStorageName,HashMap<String,String> extendedQueryParameters, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call cellsSaveAsPostDocumentSaveAsCall(String name, SaveOptions saveOptions, String newfilename, Boolean isAutoFitRows, Boolean isAutoFitColumns, String folder, String storageName, String outStorageName,HashMap<String,String> extendedQueryParameters, boolean checkExcelRestriction, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = saveOptions;
         
         // create path and map variables
@@ -27992,6 +27992,9 @@ public class CellsApi {
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "storageName", storageName));
         if (outStorageName != null)
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "outStorageName", outStorageName));
+        if (!checkExcelRestriction)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "checkExcelRestriction", checkExcelRestriction));
+
         if(extendedQueryParameters!=null){
             for (String key : extendedQueryParameters.keySet()) {
                 localVarQueryParams.addAll(apiClient.parameterToPairs("", key, extendedQueryParameters.get(key)));
@@ -28030,7 +28033,7 @@ public class CellsApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call cellsSaveAsPostDocumentSaveAsValidateBeforeCall(String name, SaveOptions saveOptions, String newfilename, Boolean isAutoFitRows, Boolean isAutoFitColumns, String folder, String storageName, String outStorageName,HashMap<String,String> extendedQueryParameters, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call cellsSaveAsPostDocumentSaveAsValidateBeforeCall(String name, SaveOptions saveOptions, String newfilename, Boolean isAutoFitRows, Boolean isAutoFitColumns, String folder, String storageName, String outStorageName,HashMap<String,String> extendedQueryParameters, boolean checkExcelRestriction,final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'name' is set
         if (name == null) {
@@ -28038,7 +28041,7 @@ public class CellsApi {
         }
         
         
-        com.squareup.okhttp.Call call = cellsSaveAsPostDocumentSaveAsCall(name, saveOptions, newfilename, isAutoFitRows, isAutoFitColumns, folder, storageName, outStorageName,extendedQueryParameters, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsSaveAsPostDocumentSaveAsCall(name, saveOptions, newfilename, isAutoFitRows, isAutoFitColumns, folder, storageName, outStorageName,extendedQueryParameters,checkExcelRestriction, progressListener, progressRequestListener);
         return call;
 
         
@@ -28061,8 +28064,8 @@ public class CellsApi {
      * @return SaveResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public SaveResponse cellsSaveAsPostDocumentSaveAs(String name, SaveOptions saveOptions, String newfilename, Boolean isAutoFitRows, Boolean isAutoFitColumns, String folder, String storageName, String outStorageName,HashMap<String,String> extendedQueryParameters) throws ApiException {
-        ApiResponse<SaveResponse> resp = cellsSaveAsPostDocumentSaveAsWithHttpInfo(name, saveOptions, newfilename, isAutoFitRows, isAutoFitColumns, folder, storageName, outStorageName,extendedQueryParameters);
+    public SaveResponse cellsSaveAsPostDocumentSaveAs(String name, SaveOptions saveOptions, String newfilename, Boolean isAutoFitRows, Boolean isAutoFitColumns, String folder, String storageName, String outStorageName,HashMap<String,String> extendedQueryParameters,boolean checkExcelRestriction) throws ApiException {
+        ApiResponse<SaveResponse> resp = cellsSaveAsPostDocumentSaveAsWithHttpInfo(name, saveOptions, newfilename, isAutoFitRows, isAutoFitColumns, folder, storageName, outStorageName,extendedQueryParameters,checkExcelRestriction);
         return resp.getData();
     }
 
@@ -28080,8 +28083,8 @@ public class CellsApi {
      * @return ApiResponse&lt;SaveResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<SaveResponse> cellsSaveAsPostDocumentSaveAsWithHttpInfo(String name, SaveOptions saveOptions, String newfilename, Boolean isAutoFitRows, Boolean isAutoFitColumns, String folder, String storageName, String outStorageName,HashMap<String,String> extendedQueryParameters) throws ApiException {
-        com.squareup.okhttp.Call call = cellsSaveAsPostDocumentSaveAsValidateBeforeCall(name, saveOptions, newfilename, isAutoFitRows, isAutoFitColumns, folder, storageName, outStorageName,extendedQueryParameters, null, null);
+    public ApiResponse<SaveResponse> cellsSaveAsPostDocumentSaveAsWithHttpInfo(String name, SaveOptions saveOptions, String newfilename, Boolean isAutoFitRows, Boolean isAutoFitColumns, String folder, String storageName, String outStorageName,HashMap<String,String> extendedQueryParameters,boolean checkExcelRestriction) throws ApiException {
+        com.squareup.okhttp.Call call = cellsSaveAsPostDocumentSaveAsValidateBeforeCall(name, saveOptions, newfilename, isAutoFitRows, isAutoFitColumns, folder, storageName, outStorageName,extendedQueryParameters,checkExcelRestriction, null, null);
         Type localVarReturnType = new TypeToken<SaveResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -28101,7 +28104,7 @@ public class CellsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call cellsSaveAsPostDocumentSaveAsAsync(String name, SaveOptions saveOptions, String newfilename, Boolean isAutoFitRows, Boolean isAutoFitColumns, String folder, String storageName, String outStorageName,HashMap<String,String> extendedQueryParameters, final ApiCallback<SaveResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call cellsSaveAsPostDocumentSaveAsAsync(String name, SaveOptions saveOptions, String newfilename, Boolean isAutoFitRows, Boolean isAutoFitColumns, String folder, String storageName, String outStorageName,HashMap<String,String> extendedQueryParameters,boolean checkExcelRestriction, final ApiCallback<SaveResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -28122,7 +28125,7 @@ public class CellsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = cellsSaveAsPostDocumentSaveAsValidateBeforeCall(name, saveOptions, newfilename, isAutoFitRows, isAutoFitColumns, folder, storageName, outStorageName,extendedQueryParameters, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cellsSaveAsPostDocumentSaveAsValidateBeforeCall(name, saveOptions, newfilename, isAutoFitRows, isAutoFitColumns, folder, storageName, outStorageName,extendedQueryParameters,checkExcelRestriction, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<SaveResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
