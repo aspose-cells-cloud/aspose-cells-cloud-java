@@ -74,7 +74,7 @@ public class CellsClearObjectsApiTest {
         HashMap<String,File> fileMap = new HashMap<String,File>();
         fileMap.put(AssemblyTestXlsx ,CellsApiUtil.GetFileHolder(AssemblyTestXlsx) );
         fileMap.put(DataSourceXlsx ,CellsApiUtil.GetFileHolder(DataSourceXlsx) );
-        FilesResult response = api.postClearObjects(fileMap, "chart",null,null);
+        FilesResult response = api.postClearObjects(fileMap, "chart",null,null,true);
 
         // TODO: test validations
     }
@@ -93,7 +93,7 @@ public class CellsClearObjectsApiTest {
         HashMap<String,File> fileMap = new HashMap<String,File>();
         fileMap.put(AssemblyTestXlsx ,CellsApiUtil.GetFileHolder(AssemblyTestXlsx) );
         fileMap.put(BOOK1 ,CellsApiUtil.GetFileHolder(BOOK1) );
-        FilesResult response = api.postClearObjects(fileMap, "comment","Sheet1",null);
+        FilesResult response = api.postClearObjects(fileMap, "comment","Sheet1",null,true);
 
         // TODO: test validations
     }
@@ -112,7 +112,7 @@ public class CellsClearObjectsApiTest {
         HashMap<String,File> fileMap = new HashMap<String,File>();
         fileMap.put(AssemblyTestXlsx ,CellsApiUtil.GetFileHolder(AssemblyTestXlsx) );
         fileMap.put(BOOK1 ,CellsApiUtil.GetFileHolder(BOOK1) );
-        FilesResult response = api.postClearObjects(fileMap, "comment","Sheet1","pdf");
+        FilesResult response = api.postClearObjects(fileMap, "comment","Sheet1","pdf",true);
 
         // TODO: test validations
     }

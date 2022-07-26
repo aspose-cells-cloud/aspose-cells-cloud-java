@@ -74,7 +74,7 @@ public class CellsCompressApiTest {
         HashMap<String,File> fileMap = new HashMap<String,File>();
         fileMap.put(AssemblyTestXlsx ,CellsApiUtil.GetFileHolder(AssemblyTestXlsx) );
         fileMap.put(DataSourceXlsx ,CellsApiUtil.GetFileHolder(DataSourceXlsx) );
-        FilesResult response = api.postCompress(fileMap, 88);
+        FilesResult response = api.postCompress(fileMap, 88,true);
 
         // TODO: test validations
     }

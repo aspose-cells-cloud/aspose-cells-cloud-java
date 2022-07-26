@@ -67,7 +67,7 @@ public class CellsReplaceApiTest {
         HashMap<String,File> fileMap = new HashMap<String,File>();
         fileMap.put(AssemblyTestXlsx ,CellsApiUtil.GetFileHolder(AssemblyTestXlsx) );
         fileMap.put(DataSourceXlsx ,CellsApiUtil.GetFileHolder(DataSourceXlsx) );
-        FilesResult response = api.postReplace(fileMap,"1","aspose.cells cloud",null,null);
+        FilesResult response = api.postReplace(fileMap,"1","aspose.cells cloud",null,null,true);
         
         // TODO: test validations
     }

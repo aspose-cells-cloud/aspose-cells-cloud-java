@@ -74,7 +74,7 @@ public class CellsMergeApiTest {
         HashMap<String,File> fileMap = new HashMap<String,File>();
         fileMap.put(AssemblyTestXlsx ,CellsApiUtil.GetFileHolder(AssemblyTestXlsx) );
         fileMap.put(DataSourceXlsx ,CellsApiUtil.GetFileHolder(DataSourceXlsx) );
-        FileInfo response = api.postMerge(fileMap,"png",true);
+        FileInfo response = api.postMerge(fileMap,"png",true,true);
 
         // TODO: test validations
     }

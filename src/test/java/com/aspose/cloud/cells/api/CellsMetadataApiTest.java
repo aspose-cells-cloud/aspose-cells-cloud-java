@@ -69,7 +69,7 @@ public class CellsMetadataApiTest {
         HashMap<String,File> fileMap = new HashMap<String,File>();
         fileMap.put(AssemblyTestXlsx ,CellsApiUtil.GetFileHolder(AssemblyTestXlsx) );
         fileMap.put(DataSourceXlsx ,CellsApiUtil.GetFileHolder(DataSourceXlsx) );
-        List<CellsDocumentProperty> response = api.getMetadata(fileMap, "ALL");
+        List<CellsDocumentProperty> response = api.getMetadata(fileMap, "ALL",true);
 
         // TODO: test validations
     }
@@ -79,7 +79,7 @@ public class CellsMetadataApiTest {
         HashMap<String,File> fileMap = new HashMap<String,File>();
         fileMap.put(AssemblyTestXlsx ,CellsApiUtil.GetFileHolder(AssemblyTestXlsx) );
         fileMap.put(DataSourceXlsx ,CellsApiUtil.GetFileHolder(DataSourceXlsx) );
-        FilesResult response = api.deleteMetadata(fileMap, "ALL");
+        FilesResult response = api.deleteMetadata(fileMap, "ALL",true);
 
         // TODO: test validations
     }
@@ -96,7 +96,7 @@ public class CellsMetadataApiTest {
         cellsDocumentProperty.setName ( "test");
         cellsDocumentProperty.setValue ( "test");
         cellsDocumentProperties.add( cellsDocumentProperty);
-        FilesResult response = api.postMetadata(fileMap, cellsDocumentProperties);
+        FilesResult response = api.postMetadata(fileMap, cellsDocumentProperties,true);
 
         // TODO: test validations
     }

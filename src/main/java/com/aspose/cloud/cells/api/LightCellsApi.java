@@ -437,8 +437,8 @@ public class LightCellsApi {
      * @return FilesResult
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public FilesResult postAssemble(HashMap<String,File> file, String datasource, String format) throws ApiException {
-        ApiResponse<FilesResult> resp = postAssembleWithHttpInfo(file, datasource, format);
+    public FilesResult postAssemble(HashMap<String,File> file, String datasource, String format, Boolean checkExcelRestriction) throws ApiException {
+        ApiResponse<FilesResult> resp = postAssembleWithHttpInfo(file, datasource, format,checkExcelRestriction);
         return resp.getData();
     }
 

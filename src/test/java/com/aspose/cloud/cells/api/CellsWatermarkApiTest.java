@@ -68,7 +68,7 @@ public class CellsWatermarkApiTest {
         fileMap.put(AssemblyTestXlsx ,CellsApiUtil.GetFileHolder(AssemblyTestXlsx) );
         fileMap.put(DataSourceXlsx ,CellsApiUtil.GetFileHolder(DataSourceXlsx) );
    
-        FilesResult response = api.postWatermark(fileMap,"123456","#fff");
+        FilesResult response = api.postWatermark(fileMap,"123456","#fff",true);
 
         // TODO: test validations
     }

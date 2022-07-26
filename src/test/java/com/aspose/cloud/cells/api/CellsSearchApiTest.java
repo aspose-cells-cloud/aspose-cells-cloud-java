@@ -67,7 +67,7 @@ public class CellsSearchApiTest {
         HashMap<String,File> fileMap = new HashMap<String,File>();
         fileMap.put(AssemblyTestXlsx ,CellsApiUtil.GetFileHolder(AssemblyTestXlsx) );
         fileMap.put(DataSourceXlsx ,CellsApiUtil.GetFileHolder(DataSourceXlsx) );
-        List<TextItem> response = api.postSearch(fileMap,"123456",null,null);
+        List<TextItem> response = api.postSearch(fileMap,"123456",null,null,true);
         System.out.println(response.toString()) ;
         // TODO: test validations
     }
@@ -78,7 +78,7 @@ public class CellsSearchApiTest {
         HashMap<String,File> fileMap = new HashMap<String,File>();
         fileMap.put(AssemblyTestXlsx ,CellsApiUtil.GetFileHolder(AssemblyTestXlsx) );
         fileMap.put(DataSourceXlsx ,CellsApiUtil.GetFileHolder(DataSourceXlsx) );
-        List<TextItem> response = api.postSearch(fileMap,"123456",null,"Sheet1");
+        List<TextItem> response = api.postSearch(fileMap,"123456",null,"Sheet1",true);
         System.out.println(response.toString()) ;
         // TODO: test validations
     }

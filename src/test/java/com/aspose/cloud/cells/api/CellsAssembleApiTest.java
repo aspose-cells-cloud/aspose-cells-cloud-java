@@ -74,7 +74,7 @@ public class CellsAssembleApiTest {
         HashMap<String,File> fileMap = new HashMap<String,File>();
         fileMap.put(AssemblyTestXlsx ,CellsApiUtil.GetFileHolder(AssemblyTestXlsx) );
         fileMap.put(DataSourceXlsx ,CellsApiUtil.GetFileHolder(DataSourceXlsx) );
-        FilesResult response = api.postAssemble(fileMap, "ds","xlsx");
+        FilesResult response = api.postAssemble(fileMap, "ds","xlsx",true);
 
         // TODO: test validations
     }
