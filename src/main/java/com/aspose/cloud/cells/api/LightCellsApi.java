@@ -2399,7 +2399,7 @@ public class LightCellsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call postReverseeAsync(HashMap<String,File> file, String rotateType, String format, Boolean checkExcelRestriction, final ApiCallback<FilesResult> callback) throws ApiException {
+    public com.squareup.okhttp.Call postReverseAsync(HashMap<String,File> file, String rotateType, String format, Boolean checkExcelRestriction, final ApiCallback<FilesResult> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
