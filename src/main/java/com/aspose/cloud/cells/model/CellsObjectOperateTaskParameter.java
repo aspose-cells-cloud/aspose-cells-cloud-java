@@ -41,7 +41,7 @@ import java.io.IOException;
 /**
  * CellsObjectOperateTaskParameter
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-05-25T04:35:47.926-05:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-09-16T03:09:53.733-05:00")
 public class CellsObjectOperateTaskParameter extends TaskParameter {
   @SerializedName("OperateParameter")
   private OperateParameter operateParameter = null;

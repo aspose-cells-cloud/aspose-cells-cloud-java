@@ -39,7 +39,7 @@ import java.io.IOException;
 /**
  * ColumnsResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-05-25T04:35:47.926-05:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-09-16T03:09:53.733-05:00")
 public class ColumnsResponse extends CellsCloudResponse {
   @SerializedName("Columns")
   private Columns columns = null;

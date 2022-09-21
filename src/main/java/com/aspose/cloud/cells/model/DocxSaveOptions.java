@@ -30,7 +30,7 @@ import com.aspose.cloud.cells.model.SaveOptions;
 /**
  * DocxSaveOptions
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-07-25T00:46:02.627-05:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-09-16T03:09:53.733-05:00")
 public class DocxSaveOptions extends SaveOptions {
 
   @Override

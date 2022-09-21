@@ -38,7 +38,7 @@ import java.io.IOException;
  * Describe the AboveAverage conditional formatting rule. This conditional formatting     rule highlights cells that are above or below the average for all values     in the range.
  */
 @ApiModel(description = "Describe the AboveAverage conditional formatting rule. This conditional formatting     rule highlights cells that are above or below the average for all values     in the range.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-05-25T04:35:47.926-05:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-09-16T03:09:53.733-05:00")
 public class AboveAverage {
   @SerializedName("IsAboveAverage")
   private Boolean isAboveAverage = null;

@@ -24,9 +24,11 @@ This Cloud SDK enhances your Java-based cloud apps to [process & manipulate Micr
 - Fetch the required shape from worksheet.
 - Leverage the power of [Pivot Tables](https://docs.aspose.cloud/cells/working-with-pivot-tables/) & Ranges.
 
-## Feature & Enhancements in Version 22.8
+## Feature & Enhancements in Version 22.9
 
-- Support transposing Excel Rows to Columns.
+- Add api for converting workbook to png.
+- Add api for converting workbook to pdf.
+- Add api for converting workbook to docx.
  
 ## Read & Write Spreadsheet Formats
 
