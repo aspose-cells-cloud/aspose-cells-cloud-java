@@ -85,5 +85,30 @@ public class CellsConvertApiTest {
 
         // TODO: test validations
     }
+
     
+    @Test
+    public void cellsConvertPptxApiTest() throws ApiException {
+
+        FileInfo response = api.postConvertWorkbookToPptx(CellsApiUtil.GetFileHolder(AssemblyTestXlsx) ,null,null);
+
+        // TODO: test validations
+    }
+    
+   
+    @Test
+    public void cellsConvertHtmlApiTest() throws ApiException {
+
+        FileInfo response = api.postConvertWorkbookToHtml(CellsApiUtil.GetFileHolder(AssemblyTestXlsx) ,null,null);
+
+        // TODO: test validations
+    }
+    
+    @Test
+    public void cellsConvertMarkdownApiTest() throws ApiException {
+
+        FileInfo response = api.postConvertWorkbookToMarkdown(CellsApiUtil.GetFileHolder(AssemblyTestXlsx) ,null,null);
+
+        // TODO: test validations
+    }
 }
