@@ -44518,6 +44518,408 @@ public class CellsApi {
         return call;
     }    
 
+/**
+     * Build call for postConvertWorkbookToJson
+     * @param file File to upload (required)
+     * @param password  (optional)
+     * @param checkExcelRestriction  (optional, default to true)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call postConvertWorkbookToJsonCall(File file, String password, Boolean checkExcelRestriction, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = null;
+        
+        // create path and map variables
+        String localVarPath = "/cells/convert/json";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        if (password != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "password", password));
+        if (checkExcelRestriction != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "checkExcelRestriction", checkExcelRestriction));
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+        if (file != null)
+        localVarFormParams.put("file", file);
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "multipart/form-data"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+    
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call postConvertWorkbookToJsonValidateBeforeCall(File file, String password, Boolean checkExcelRestriction, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'file' is set
+        if (file == null) {
+            throw new ApiException("Missing the required parameter 'file' when calling postConvertWorkbookToJson(Async)");
+        }
+                
+        com.squareup.okhttp.Call call = postConvertWorkbookToJsonCall(file, password, checkExcelRestriction, progressListener, progressRequestListener);
+        return call;
+    }
+
+    /**
+     * 
+     * 
+     * @param file File to upload (required)
+     * @param password  (optional)
+     * @param checkExcelRestriction  (optional, default to true)
+     * @return FileInfo
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public FileInfo postConvertWorkbookToJson(File file, String password, Boolean checkExcelRestriction) throws ApiException {
+        ApiResponse<FileInfo> resp = postConvertWorkbookToJsonWithHttpInfo(file, password, checkExcelRestriction);
+        return resp.getData();
+    }
+
+    /**
+     * 
+     * 
+     * @param file File to upload (required)
+     * @param password  (optional)
+     * @param checkExcelRestriction  (optional, default to true)
+     * @return ApiResponse&lt;FileInfo&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<FileInfo> postConvertWorkbookToJsonWithHttpInfo(File file, String password, Boolean checkExcelRestriction) throws ApiException {
+        com.squareup.okhttp.Call call = postConvertWorkbookToJsonValidateBeforeCall(file, password, checkExcelRestriction, null, null);
+        Type localVarReturnType = new TypeToken<FileInfo>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     *  (asynchronously)
+     * 
+     * @param file File to upload (required)
+     * @param password  (optional)
+     * @param checkExcelRestriction  (optional, default to true)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call postConvertWorkbookToJsonAsync(File file, String password, Boolean checkExcelRestriction, final ApiCallback<FileInfo> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = postConvertWorkbookToJsonValidateBeforeCall(file, password, checkExcelRestriction, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<FileInfo>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }    
+
+/**
+     * Build call for postConvertWorkbookToSQL
+     * @param file File to upload (required)
+     * @param password  (optional)
+     * @param checkExcelRestriction  (optional, default to true)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call postConvertWorkbookToSQLCall(File file, String password, Boolean checkExcelRestriction, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = null;
+        
+        // create path and map variables
+        String localVarPath = "/cells/convert/sql";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        if (password != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "password", password));
+        if (checkExcelRestriction != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "checkExcelRestriction", checkExcelRestriction));
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+        if (file != null)
+        localVarFormParams.put("file", file);
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "multipart/form-data"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+    
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call postConvertWorkbookToSQLValidateBeforeCall(File file, String password, Boolean checkExcelRestriction, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'file' is set
+        if (file == null) {
+            throw new ApiException("Missing the required parameter 'file' when calling postConvertWorkbookToSQL(Async)");
+        }
+                
+        com.squareup.okhttp.Call call = postConvertWorkbookToSQLCall(file, password, checkExcelRestriction, progressListener, progressRequestListener);
+        return call;
+    }
+
+    /**
+     * 
+     * 
+     * @param file File to upload (required)
+     * @param password  (optional)
+     * @param checkExcelRestriction  (optional, default to true)
+     * @return FileInfo
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public FileInfo postConvertWorkbookToSQL(File file, String password, Boolean checkExcelRestriction) throws ApiException {
+        ApiResponse<FileInfo> resp = postConvertWorkbookToSQLWithHttpInfo(file, password, checkExcelRestriction);
+        return resp.getData();
+    }
+
+    /**
+     * 
+     * 
+     * @param file File to upload (required)
+     * @param password  (optional)
+     * @param checkExcelRestriction  (optional, default to true)
+     * @return ApiResponse&lt;FileInfo&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<FileInfo> postConvertWorkbookToSQLWithHttpInfo(File file, String password, Boolean checkExcelRestriction) throws ApiException {
+        com.squareup.okhttp.Call call = postConvertWorkbookToSQLValidateBeforeCall(file, password, checkExcelRestriction, null, null);
+        Type localVarReturnType = new TypeToken<FileInfo>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     *  (asynchronously)
+     * 
+     * @param file File to upload (required)
+     * @param password  (optional)
+     * @param checkExcelRestriction  (optional, default to true)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call postConvertWorkbookToSQLAsync(File file, String password, Boolean checkExcelRestriction, final ApiCallback<FileInfo> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = postConvertWorkbookToSQLValidateBeforeCall(file, password, checkExcelRestriction, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<FileInfo>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+
+    /**
+     * Build call for postConvertWorkbookToCSV
+     * @param file File to upload (required)
+     * @param password  (optional)
+     * @param checkExcelRestriction  (optional, default to true)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call postConvertWorkbookToCSVCall(File file, String password, Boolean checkExcelRestriction, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = null;
+        
+        // create path and map variables
+        String localVarPath = "/cells/convert/csv";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        if (password != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "password", password));
+        if (checkExcelRestriction != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "checkExcelRestriction", checkExcelRestriction));
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+        if (file != null)
+        localVarFormParams.put("file", file);
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "multipart/form-data"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+    
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call postConvertWorkbookToCSVValidateBeforeCall(File file, String password, Boolean checkExcelRestriction, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'file' is set
+        if (file == null) {
+            throw new ApiException("Missing the required parameter 'file' when calling postConvertWorkbookToCSV(Async)");
+        }
+                
+        com.squareup.okhttp.Call call = postConvertWorkbookToCSVCall(file, password, checkExcelRestriction, progressListener, progressRequestListener);
+        return call;
+    }
+
+    /**
+     * 
+     * 
+     * @param file File to upload (required)
+     * @param password  (optional)
+     * @param checkExcelRestriction  (optional, default to true)
+     * @return FileInfo
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public FileInfo postConvertWorkbookToCSV(File file, String password, Boolean checkExcelRestriction) throws ApiException {
+        ApiResponse<FileInfo> resp = postConvertWorkbookToCSVWithHttpInfo(file, password, checkExcelRestriction);
+        return resp.getData();
+    }
+
+    /**
+     * 
+     * 
+     * @param file File to upload (required)
+     * @param password  (optional)
+     * @param checkExcelRestriction  (optional, default to true)
+     * @return ApiResponse&lt;FileInfo&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<FileInfo> postConvertWorkbookToCSVWithHttpInfo(File file, String password, Boolean checkExcelRestriction) throws ApiException {
+        com.squareup.okhttp.Call call = postConvertWorkbookToCSVValidateBeforeCall(file, password, checkExcelRestriction, null, null);
+        Type localVarReturnType = new TypeToken<FileInfo>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     *  (asynchronously)
+     * 
+     * @param file File to upload (required)
+     * @param password  (optional)
+     * @param checkExcelRestriction  (optional, default to true)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call postConvertWorkbookToCSVAsync(File file, String password, Boolean checkExcelRestriction, final ApiCallback<FileInfo> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = postConvertWorkbookToCSVValidateBeforeCall(file, password, checkExcelRestriction, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<FileInfo>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+
     /**
      * Build call for storageExists
      * @param storageName Storage name (required)

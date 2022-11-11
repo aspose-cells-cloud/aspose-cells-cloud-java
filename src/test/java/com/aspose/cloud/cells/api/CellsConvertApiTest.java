@@ -111,4 +111,28 @@ public class CellsConvertApiTest {
 
         // TODO: test validations
     }
+
+    @Test
+    public void cellsConvertJsonApiTest() throws ApiException {
+
+        FileInfo response = api.postConvertWorkbookToJson(CellsApiUtil.GetFileHolder(AssemblyTestXlsx) ,null,null);
+
+        // TODO: test validations
+    }
+
+    @Test
+    public void cellsConvertSQLApiTest() throws ApiException {
+
+        FileInfo response = api.postConvertWorkbookToSQL(CellsApiUtil.GetFileHolder(AssemblyTestXlsx) ,null,null);
+
+        // TODO: test validations
+    }
+
+    @Test
+    public void cellsConvertCSVApiTest() throws ApiException {
+
+        FileInfo response = api.postConvertWorkbookToCSV(CellsApiUtil.GetFileHolder(AssemblyTestXlsx) ,null,null);
+
+        // TODO: test validations
+    }
 }
