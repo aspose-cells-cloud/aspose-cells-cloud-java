@@ -28,6 +28,8 @@ import com.aspose.cloud.cells.client.ApiCallback;
 import com.aspose.cloud.cells.client.ApiClient;
 import com.aspose.cloud.cells.client.ApiException;
 import com.aspose.cloud.cells.client.ApiResponse;
+import com.aspose.cloud.cells.model.Axis;
+import com.aspose.cloud.cells.model.AxisResponse;
 import com.aspose.cloud.cells.client.Configuration;
 import com.aspose.cloud.cells.client.Pair;
 import com.aspose.cloud.cells.client.ProgressRequestBody;
@@ -4235,6 +4237,797 @@ public class CellsApi {
         return call;
     }
     /**
+     * Build call for cellsChartsGetChartCategoryAxis
+     * @param name  (required)
+     * @param sheetName  (required)
+     * @param chartIndex  (required)
+     * @param folder  (optional)
+     * @param storageName  (optional)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call cellsChartsGetChartCategoryAxisCall(String name, String sheetName, Integer chartIndex, String folder, String storageName, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = null;
+        
+        // create path and map variables
+        String localVarPath = "/cells/{name}/worksheets/{sheetName}/charts/{chartIndex}/categoryaxis"
+            .replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString()))
+            .replaceAll("\\{" + "sheetName" + "\\}", apiClient.escapeString(sheetName.toString()))
+            .replaceAll("\\{" + "chartIndex" + "\\}", apiClient.escapeString(chartIndex.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        if (folder != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "folder", folder));
+        if (storageName != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "storageName", storageName));
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+    
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call cellsChartsGetChartCategoryAxisValidateBeforeCall(String name, String sheetName, Integer chartIndex, String folder, String storageName, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'name' is set
+        if (name == null) {
+            throw new ApiException("Missing the required parameter 'name' when calling cellsChartsGetChartCategoryAxis(Async)");
+        }
+        
+        // verify the required parameter 'sheetName' is set
+        if (sheetName == null) {
+            throw new ApiException("Missing the required parameter 'sheetName' when calling cellsChartsGetChartCategoryAxis(Async)");
+        }
+        
+        // verify the required parameter 'chartIndex' is set
+        if (chartIndex == null) {
+            throw new ApiException("Missing the required parameter 'chartIndex' when calling cellsChartsGetChartCategoryAxis(Async)");
+        }
+        
+        
+        com.squareup.okhttp.Call call = cellsChartsGetChartCategoryAxisCall(name, sheetName, chartIndex, folder, storageName, progressListener, progressRequestListener);
+        return call;
+
+        
+        
+        
+        
+    }
+
+    /**
+     * Get chart Category Axis
+     * 
+     * @param name  (required)
+     * @param sheetName  (required)
+     * @param chartIndex  (required)
+     * @param folder  (optional)
+     * @param storageName  (optional)
+     * @return AxisResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public AxisResponse cellsChartsGetChartCategoryAxis(String name, String sheetName, Integer chartIndex, String folder, String storageName) throws ApiException {
+        ApiResponse<AxisResponse> resp = cellsChartsGetChartCategoryAxisWithHttpInfo(name, sheetName, chartIndex, folder, storageName);
+        return resp.getData();
+    }
+
+    /**
+     * Get chart Category Axis
+     * 
+     * @param name  (required)
+     * @param sheetName  (required)
+     * @param chartIndex  (required)
+     * @param folder  (optional)
+     * @param storageName  (optional)
+     * @return ApiResponse&lt;AxisResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<AxisResponse> cellsChartsGetChartCategoryAxisWithHttpInfo(String name, String sheetName, Integer chartIndex, String folder, String storageName) throws ApiException {
+        com.squareup.okhttp.Call call = cellsChartsGetChartCategoryAxisValidateBeforeCall(name, sheetName, chartIndex, folder, storageName, null, null);
+        Type localVarReturnType = new TypeToken<AxisResponse>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Get chart Category Axis (asynchronously)
+     * 
+     * @param name  (required)
+     * @param sheetName  (required)
+     * @param chartIndex  (required)
+     * @param folder  (optional)
+     * @param storageName  (optional)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call cellsChartsGetChartCategoryAxisAsync(String name, String sheetName, Integer chartIndex, String folder, String storageName, final ApiCallback<AxisResponse> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = cellsChartsGetChartCategoryAxisValidateBeforeCall(name, sheetName, chartIndex, folder, storageName, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<AxisResponse>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for cellsChartsGetChartSecondCategoryAxis
+     * @param name  (required)
+     * @param sheetName  (required)
+     * @param chartIndex  (required)
+     * @param folder  (optional)
+     * @param storageName  (optional)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call cellsChartsGetChartSecondCategoryAxisCall(String name, String sheetName, Integer chartIndex, String folder, String storageName, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = null;
+        
+        // create path and map variables
+        String localVarPath = "/cells/{name}/worksheets/{sheetName}/charts/{chartIndex}/secondcategoryaxis"
+            .replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString()))
+            .replaceAll("\\{" + "sheetName" + "\\}", apiClient.escapeString(sheetName.toString()))
+            .replaceAll("\\{" + "chartIndex" + "\\}", apiClient.escapeString(chartIndex.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        if (folder != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "folder", folder));
+        if (storageName != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "storageName", storageName));
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+    
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call cellsChartsGetChartSecondCategoryAxisValidateBeforeCall(String name, String sheetName, Integer chartIndex, String folder, String storageName, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'name' is set
+        if (name == null) {
+            throw new ApiException("Missing the required parameter 'name' when calling cellsChartsGetChartSecondCategoryAxis(Async)");
+        }
+        
+        // verify the required parameter 'sheetName' is set
+        if (sheetName == null) {
+            throw new ApiException("Missing the required parameter 'sheetName' when calling cellsChartsGetChartSecondCategoryAxis(Async)");
+        }
+        
+        // verify the required parameter 'chartIndex' is set
+        if (chartIndex == null) {
+            throw new ApiException("Missing the required parameter 'chartIndex' when calling cellsChartsGetChartSecondCategoryAxis(Async)");
+        }
+        
+        
+        com.squareup.okhttp.Call call = cellsChartsGetChartSecondCategoryAxisCall(name, sheetName, chartIndex, folder, storageName, progressListener, progressRequestListener);
+        return call;
+
+        
+        
+        
+        
+    }
+
+    /**
+     * Get chart second category axis 
+     * 
+     * @param name  (required)
+     * @param sheetName  (required)
+     * @param chartIndex  (required)
+     * @param folder  (optional)
+     * @param storageName  (optional)
+     * @return AxisResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public AxisResponse cellsChartsGetChartSecondCategoryAxis(String name, String sheetName, Integer chartIndex, String folder, String storageName) throws ApiException {
+        ApiResponse<AxisResponse> resp = cellsChartsGetChartSecondCategoryAxisWithHttpInfo(name, sheetName, chartIndex, folder, storageName);
+        return resp.getData();
+    }
+
+    /**
+     * Get chart second category axis 
+     * 
+     * @param name  (required)
+     * @param sheetName  (required)
+     * @param chartIndex  (required)
+     * @param folder  (optional)
+     * @param storageName  (optional)
+     * @return ApiResponse&lt;AxisResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<AxisResponse> cellsChartsGetChartSecondCategoryAxisWithHttpInfo(String name, String sheetName, Integer chartIndex, String folder, String storageName) throws ApiException {
+        com.squareup.okhttp.Call call = cellsChartsGetChartSecondCategoryAxisValidateBeforeCall(name, sheetName, chartIndex, folder, storageName, null, null);
+        Type localVarReturnType = new TypeToken<AxisResponse>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Get chart second category axis  (asynchronously)
+     * 
+     * @param name  (required)
+     * @param sheetName  (required)
+     * @param chartIndex  (required)
+     * @param folder  (optional)
+     * @param storageName  (optional)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call cellsChartsGetChartSecondCategoryAxisAsync(String name, String sheetName, Integer chartIndex, String folder, String storageName, final ApiCallback<AxisResponse> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = cellsChartsGetChartSecondCategoryAxisValidateBeforeCall(name, sheetName, chartIndex, folder, storageName, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<AxisResponse>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for cellsChartsGetChartSecondValueAxis
+     * @param name  (required)
+     * @param sheetName  (required)
+     * @param chartIndex  (required)
+     * @param folder  (optional)
+     * @param storageName  (optional)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call cellsChartsGetChartSecondValueAxisCall(String name, String sheetName, Integer chartIndex, String folder, String storageName, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = null;
+        
+        // create path and map variables
+        String localVarPath = "/cells/{name}/worksheets/{sheetName}/charts/{chartIndex}/secondvalueaxis"
+            .replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString()))
+            .replaceAll("\\{" + "sheetName" + "\\}", apiClient.escapeString(sheetName.toString()))
+            .replaceAll("\\{" + "chartIndex" + "\\}", apiClient.escapeString(chartIndex.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        if (folder != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "folder", folder));
+        if (storageName != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "storageName", storageName));
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+    
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call cellsChartsGetChartSecondValueAxisValidateBeforeCall(String name, String sheetName, Integer chartIndex, String folder, String storageName, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'name' is set
+        if (name == null) {
+            throw new ApiException("Missing the required parameter 'name' when calling cellsChartsGetChartSecondValueAxis(Async)");
+        }
+        
+        // verify the required parameter 'sheetName' is set
+        if (sheetName == null) {
+            throw new ApiException("Missing the required parameter 'sheetName' when calling cellsChartsGetChartSecondValueAxis(Async)");
+        }
+        
+        // verify the required parameter 'chartIndex' is set
+        if (chartIndex == null) {
+            throw new ApiException("Missing the required parameter 'chartIndex' when calling cellsChartsGetChartSecondValueAxis(Async)");
+        }
+        
+        
+        com.squareup.okhttp.Call call = cellsChartsGetChartSecondValueAxisCall(name, sheetName, chartIndex, folder, storageName, progressListener, progressRequestListener);
+        return call;
+
+        
+        
+        
+        
+    }
+
+    /**
+     * Get chart second value axis 
+     * 
+     * @param name  (required)
+     * @param sheetName  (required)
+     * @param chartIndex  (required)
+     * @param folder  (optional)
+     * @param storageName  (optional)
+     * @return AxisResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public AxisResponse cellsChartsGetChartSecondValueAxis(String name, String sheetName, Integer chartIndex, String folder, String storageName) throws ApiException {
+        ApiResponse<AxisResponse> resp = cellsChartsGetChartSecondValueAxisWithHttpInfo(name, sheetName, chartIndex, folder, storageName);
+        return resp.getData();
+    }
+
+    /**
+     * Get chart second value axis 
+     * 
+     * @param name  (required)
+     * @param sheetName  (required)
+     * @param chartIndex  (required)
+     * @param folder  (optional)
+     * @param storageName  (optional)
+     * @return ApiResponse&lt;AxisResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<AxisResponse> cellsChartsGetChartSecondValueAxisWithHttpInfo(String name, String sheetName, Integer chartIndex, String folder, String storageName) throws ApiException {
+        com.squareup.okhttp.Call call = cellsChartsGetChartSecondValueAxisValidateBeforeCall(name, sheetName, chartIndex, folder, storageName, null, null);
+        Type localVarReturnType = new TypeToken<AxisResponse>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Get chart second value axis  (asynchronously)
+     * 
+     * @param name  (required)
+     * @param sheetName  (required)
+     * @param chartIndex  (required)
+     * @param folder  (optional)
+     * @param storageName  (optional)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call cellsChartsGetChartSecondValueAxisAsync(String name, String sheetName, Integer chartIndex, String folder, String storageName, final ApiCallback<AxisResponse> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = cellsChartsGetChartSecondValueAxisValidateBeforeCall(name, sheetName, chartIndex, folder, storageName, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<AxisResponse>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for cellsChartsGetChartSeriesAxis
+     * @param name  (required)
+     * @param sheetName  (required)
+     * @param chartIndex  (required)
+     * @param folder  (optional)
+     * @param storageName  (optional)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call cellsChartsGetChartSeriesAxisCall(String name, String sheetName, Integer chartIndex, String folder, String storageName, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = null;
+        
+        // create path and map variables
+        String localVarPath = "/cells/{name}/worksheets/{sheetName}/charts/{chartIndex}/seriesaxis"
+            .replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString()))
+            .replaceAll("\\{" + "sheetName" + "\\}", apiClient.escapeString(sheetName.toString()))
+            .replaceAll("\\{" + "chartIndex" + "\\}", apiClient.escapeString(chartIndex.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        if (folder != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "folder", folder));
+        if (storageName != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "storageName", storageName));
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+    
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call cellsChartsGetChartSeriesAxisValidateBeforeCall(String name, String sheetName, Integer chartIndex, String folder, String storageName, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'name' is set
+        if (name == null) {
+            throw new ApiException("Missing the required parameter 'name' when calling cellsChartsGetChartSeriesAxis(Async)");
+        }
+        
+        // verify the required parameter 'sheetName' is set
+        if (sheetName == null) {
+            throw new ApiException("Missing the required parameter 'sheetName' when calling cellsChartsGetChartSeriesAxis(Async)");
+        }
+        
+        // verify the required parameter 'chartIndex' is set
+        if (chartIndex == null) {
+            throw new ApiException("Missing the required parameter 'chartIndex' when calling cellsChartsGetChartSeriesAxis(Async)");
+        }
+        
+        
+        com.squareup.okhttp.Call call = cellsChartsGetChartSeriesAxisCall(name, sheetName, chartIndex, folder, storageName, progressListener, progressRequestListener);
+        return call;
+
+        
+        
+        
+        
+    }
+
+    /**
+     * Get chart Series Axis
+     * 
+     * @param name  (required)
+     * @param sheetName  (required)
+     * @param chartIndex  (required)
+     * @param folder  (optional)
+     * @param storageName  (optional)
+     * @return AxisResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public AxisResponse cellsChartsGetChartSeriesAxis(String name, String sheetName, Integer chartIndex, String folder, String storageName) throws ApiException {
+        ApiResponse<AxisResponse> resp = cellsChartsGetChartSeriesAxisWithHttpInfo(name, sheetName, chartIndex, folder, storageName);
+        return resp.getData();
+    }
+
+    /**
+     * Get chart Series Axis
+     * 
+     * @param name  (required)
+     * @param sheetName  (required)
+     * @param chartIndex  (required)
+     * @param folder  (optional)
+     * @param storageName  (optional)
+     * @return ApiResponse&lt;AxisResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<AxisResponse> cellsChartsGetChartSeriesAxisWithHttpInfo(String name, String sheetName, Integer chartIndex, String folder, String storageName) throws ApiException {
+        com.squareup.okhttp.Call call = cellsChartsGetChartSeriesAxisValidateBeforeCall(name, sheetName, chartIndex, folder, storageName, null, null);
+        Type localVarReturnType = new TypeToken<AxisResponse>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Get chart Series Axis (asynchronously)
+     * 
+     * @param name  (required)
+     * @param sheetName  (required)
+     * @param chartIndex  (required)
+     * @param folder  (optional)
+     * @param storageName  (optional)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call cellsChartsGetChartSeriesAxisAsync(String name, String sheetName, Integer chartIndex, String folder, String storageName, final ApiCallback<AxisResponse> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = cellsChartsGetChartSeriesAxisValidateBeforeCall(name, sheetName, chartIndex, folder, storageName, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<AxisResponse>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for cellsChartsGetChartValueAxis
+     * @param name  (required)
+     * @param sheetName  (required)
+     * @param chartIndex  (required)
+     * @param folder  (optional)
+     * @param storageName  (optional)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call cellsChartsGetChartValueAxisCall(String name, String sheetName, Integer chartIndex, String folder, String storageName, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = null;
+        
+        // create path and map variables
+        String localVarPath = "/cells/{name}/worksheets/{sheetName}/charts/{chartIndex}/valueaxis"
+            .replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString()))
+            .replaceAll("\\{" + "sheetName" + "\\}", apiClient.escapeString(sheetName.toString()))
+            .replaceAll("\\{" + "chartIndex" + "\\}", apiClient.escapeString(chartIndex.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        if (folder != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "folder", folder));
+        if (storageName != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "storageName", storageName));
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+    
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call cellsChartsGetChartValueAxisValidateBeforeCall(String name, String sheetName, Integer chartIndex, String folder, String storageName, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'name' is set
+        if (name == null) {
+            throw new ApiException("Missing the required parameter 'name' when calling cellsChartsGetChartValueAxis(Async)");
+        }
+        
+        // verify the required parameter 'sheetName' is set
+        if (sheetName == null) {
+            throw new ApiException("Missing the required parameter 'sheetName' when calling cellsChartsGetChartValueAxis(Async)");
+        }
+        
+        // verify the required parameter 'chartIndex' is set
+        if (chartIndex == null) {
+            throw new ApiException("Missing the required parameter 'chartIndex' when calling cellsChartsGetChartValueAxis(Async)");
+        }
+        
+        
+        com.squareup.okhttp.Call call = cellsChartsGetChartValueAxisCall(name, sheetName, chartIndex, folder, storageName, progressListener, progressRequestListener);
+        return call;
+
+        
+        
+        
+        
+    }
+
+    /**
+     * Get chart Value Axis
+     * 
+     * @param name  (required)
+     * @param sheetName  (required)
+     * @param chartIndex  (required)
+     * @param folder  (optional)
+     * @param storageName  (optional)
+     * @return AxisResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public AxisResponse cellsChartsGetChartValueAxis(String name, String sheetName, Integer chartIndex, String folder, String storageName) throws ApiException {
+        ApiResponse<AxisResponse> resp = cellsChartsGetChartValueAxisWithHttpInfo(name, sheetName, chartIndex, folder, storageName);
+        return resp.getData();
+    }
+
+    /**
+     * Get chart Value Axis
+     * 
+     * @param name  (required)
+     * @param sheetName  (required)
+     * @param chartIndex  (required)
+     * @param folder  (optional)
+     * @param storageName  (optional)
+     * @return ApiResponse&lt;AxisResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<AxisResponse> cellsChartsGetChartValueAxisWithHttpInfo(String name, String sheetName, Integer chartIndex, String folder, String storageName) throws ApiException {
+        com.squareup.okhttp.Call call = cellsChartsGetChartValueAxisValidateBeforeCall(name, sheetName, chartIndex, folder, storageName, null, null);
+        Type localVarReturnType = new TypeToken<AxisResponse>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Get chart Value Axis (asynchronously)
+     * 
+     * @param name  (required)
+     * @param sheetName  (required)
+     * @param chartIndex  (required)
+     * @param folder  (optional)
+     * @param storageName  (optional)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call cellsChartsGetChartValueAxisAsync(String name, String sheetName, Integer chartIndex, String folder, String storageName, final ApiCallback<AxisResponse> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = cellsChartsGetChartValueAxisValidateBeforeCall(name, sheetName, chartIndex, folder, storageName, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<AxisResponse>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+
+    /**
      * Build call for cellsChartsGetWorksheetChartLegend
      * @param name Workbook name. (required)
      * @param sheetName Worksheet name. (required)
@@ -4860,6 +5653,842 @@ public class CellsApi {
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
+    /**
+     * Build call for cellsChartsPostChartCategoryAxis
+     * @param name  (required)
+     * @param sheetName  (required)
+     * @param chartIndex  (required)
+     * @param axis  (required)
+     * @param folder  (optional)
+     * @param storageName  (optional)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call cellsChartsPostChartCategoryAxisCall(String name, String sheetName, Integer chartIndex, Axis axis, String folder, String storageName, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = axis;
+        
+        // create path and map variables
+        String localVarPath = "/cells/{name}/worksheets/{sheetName}/charts/{chartIndex}/categoryaxis"
+            .replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString()))
+            .replaceAll("\\{" + "sheetName" + "\\}", apiClient.escapeString(sheetName.toString()))
+            .replaceAll("\\{" + "chartIndex" + "\\}", apiClient.escapeString(chartIndex.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        if (folder != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "folder", folder));
+        if (storageName != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "storageName", storageName));
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+    
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call cellsChartsPostChartCategoryAxisValidateBeforeCall(String name, String sheetName, Integer chartIndex, Axis axis, String folder, String storageName, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'name' is set
+        if (name == null) {
+            throw new ApiException("Missing the required parameter 'name' when calling cellsChartsPostChartCategoryAxis(Async)");
+        }
+        
+        // verify the required parameter 'sheetName' is set
+        if (sheetName == null) {
+            throw new ApiException("Missing the required parameter 'sheetName' when calling cellsChartsPostChartCategoryAxis(Async)");
+        }
+        
+        // verify the required parameter 'chartIndex' is set
+        if (chartIndex == null) {
+            throw new ApiException("Missing the required parameter 'chartIndex' when calling cellsChartsPostChartCategoryAxis(Async)");
+        }
+        
+        // verify the required parameter 'axis' is set
+        if (axis == null) {
+            throw new ApiException("Missing the required parameter 'axis' when calling cellsChartsPostChartCategoryAxis(Async)");
+        }
+        
+        
+        com.squareup.okhttp.Call call = cellsChartsPostChartCategoryAxisCall(name, sheetName, chartIndex, axis, folder, storageName, progressListener, progressRequestListener);
+        return call;
+
+        
+        
+        
+        
+    }
+
+    /**
+     * Update chart Category Axis
+     * 
+     * @param name  (required)
+     * @param sheetName  (required)
+     * @param chartIndex  (required)
+     * @param axis  (required)
+     * @param folder  (optional)
+     * @param storageName  (optional)
+     * @return CellsCloudResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public CellsCloudResponse cellsChartsPostChartCategoryAxis(String name, String sheetName, Integer chartIndex, Axis axis, String folder, String storageName) throws ApiException {
+        ApiResponse<CellsCloudResponse> resp = cellsChartsPostChartCategoryAxisWithHttpInfo(name, sheetName, chartIndex, axis, folder, storageName);
+        return resp.getData();
+    }
+
+    /**
+     * Update chart Category Axis
+     * 
+     * @param name  (required)
+     * @param sheetName  (required)
+     * @param chartIndex  (required)
+     * @param axis  (required)
+     * @param folder  (optional)
+     * @param storageName  (optional)
+     * @return ApiResponse&lt;CellsCloudResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<CellsCloudResponse> cellsChartsPostChartCategoryAxisWithHttpInfo(String name, String sheetName, Integer chartIndex, Axis axis, String folder, String storageName) throws ApiException {
+        com.squareup.okhttp.Call call = cellsChartsPostChartCategoryAxisValidateBeforeCall(name, sheetName, chartIndex, axis, folder, storageName, null, null);
+        Type localVarReturnType = new TypeToken<CellsCloudResponse>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Update chart Category Axis (asynchronously)
+     * 
+     * @param name  (required)
+     * @param sheetName  (required)
+     * @param chartIndex  (required)
+     * @param axis  (required)
+     * @param folder  (optional)
+     * @param storageName  (optional)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call cellsChartsPostChartCategoryAxisAsync(String name, String sheetName, Integer chartIndex, Axis axis, String folder, String storageName, final ApiCallback<CellsCloudResponse> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = cellsChartsPostChartCategoryAxisValidateBeforeCall(name, sheetName, chartIndex, axis, folder, storageName, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<CellsCloudResponse>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for cellsChartsPostChartSecondCategoryAxis
+     * @param name  (required)
+     * @param sheetName  (required)
+     * @param chartIndex  (required)
+     * @param axis  (required)
+     * @param folder  (optional)
+     * @param storageName  (optional)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call cellsChartsPostChartSecondCategoryAxisCall(String name, String sheetName, Integer chartIndex, Axis axis, String folder, String storageName, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = axis;
+        
+        // create path and map variables
+        String localVarPath = "/cells/{name}/worksheets/{sheetName}/charts/{chartIndex}/secondcategoryaxis"
+            .replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString()))
+            .replaceAll("\\{" + "sheetName" + "\\}", apiClient.escapeString(sheetName.toString()))
+            .replaceAll("\\{" + "chartIndex" + "\\}", apiClient.escapeString(chartIndex.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        if (folder != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "folder", folder));
+        if (storageName != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "storageName", storageName));
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+    
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call cellsChartsPostChartSecondCategoryAxisValidateBeforeCall(String name, String sheetName, Integer chartIndex, Axis axis, String folder, String storageName, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'name' is set
+        if (name == null) {
+            throw new ApiException("Missing the required parameter 'name' when calling cellsChartsPostChartSecondCategoryAxis(Async)");
+        }
+        
+        // verify the required parameter 'sheetName' is set
+        if (sheetName == null) {
+            throw new ApiException("Missing the required parameter 'sheetName' when calling cellsChartsPostChartSecondCategoryAxis(Async)");
+        }
+        
+        // verify the required parameter 'chartIndex' is set
+        if (chartIndex == null) {
+            throw new ApiException("Missing the required parameter 'chartIndex' when calling cellsChartsPostChartSecondCategoryAxis(Async)");
+        }
+        
+        // verify the required parameter 'axis' is set
+        if (axis == null) {
+            throw new ApiException("Missing the required parameter 'axis' when calling cellsChartsPostChartSecondCategoryAxis(Async)");
+        }
+        
+        
+        com.squareup.okhttp.Call call = cellsChartsPostChartSecondCategoryAxisCall(name, sheetName, chartIndex, axis, folder, storageName, progressListener, progressRequestListener);
+        return call;
+
+        
+        
+        
+        
+    }
+
+    /**
+     * Update chart second category axis 
+     * 
+     * @param name  (required)
+     * @param sheetName  (required)
+     * @param chartIndex  (required)
+     * @param axis  (required)
+     * @param folder  (optional)
+     * @param storageName  (optional)
+     * @return CellsCloudResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public CellsCloudResponse cellsChartsPostChartSecondCategoryAxis(String name, String sheetName, Integer chartIndex, Axis axis, String folder, String storageName) throws ApiException {
+        ApiResponse<CellsCloudResponse> resp = cellsChartsPostChartSecondCategoryAxisWithHttpInfo(name, sheetName, chartIndex, axis, folder, storageName);
+        return resp.getData();
+    }
+
+    /**
+     * Update chart second category axis 
+     * 
+     * @param name  (required)
+     * @param sheetName  (required)
+     * @param chartIndex  (required)
+     * @param axis  (required)
+     * @param folder  (optional)
+     * @param storageName  (optional)
+     * @return ApiResponse&lt;CellsCloudResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<CellsCloudResponse> cellsChartsPostChartSecondCategoryAxisWithHttpInfo(String name, String sheetName, Integer chartIndex, Axis axis, String folder, String storageName) throws ApiException {
+        com.squareup.okhttp.Call call = cellsChartsPostChartSecondCategoryAxisValidateBeforeCall(name, sheetName, chartIndex, axis, folder, storageName, null, null);
+        Type localVarReturnType = new TypeToken<CellsCloudResponse>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Update chart second category axis  (asynchronously)
+     * 
+     * @param name  (required)
+     * @param sheetName  (required)
+     * @param chartIndex  (required)
+     * @param axis  (required)
+     * @param folder  (optional)
+     * @param storageName  (optional)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call cellsChartsPostChartSecondCategoryAxisAsync(String name, String sheetName, Integer chartIndex, Axis axis, String folder, String storageName, final ApiCallback<CellsCloudResponse> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = cellsChartsPostChartSecondCategoryAxisValidateBeforeCall(name, sheetName, chartIndex, axis, folder, storageName, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<CellsCloudResponse>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for cellsChartsPostChartSecondValueAxis
+     * @param name  (required)
+     * @param sheetName  (required)
+     * @param chartIndex  (required)
+     * @param axis  (required)
+     * @param folder  (optional)
+     * @param storageName  (optional)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call cellsChartsPostChartSecondValueAxisCall(String name, String sheetName, Integer chartIndex, Axis axis, String folder, String storageName, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = axis;
+        
+        // create path and map variables
+        String localVarPath = "/cells/{name}/worksheets/{sheetName}/charts/{chartIndex}/secondvalueaxis"
+            .replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString()))
+            .replaceAll("\\{" + "sheetName" + "\\}", apiClient.escapeString(sheetName.toString()))
+            .replaceAll("\\{" + "chartIndex" + "\\}", apiClient.escapeString(chartIndex.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        if (folder != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "folder", folder));
+        if (storageName != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "storageName", storageName));
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+    
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call cellsChartsPostChartSecondValueAxisValidateBeforeCall(String name, String sheetName, Integer chartIndex, Axis axis, String folder, String storageName, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'name' is set
+        if (name == null) {
+            throw new ApiException("Missing the required parameter 'name' when calling cellsChartsPostChartSecondValueAxis(Async)");
+        }
+        
+        // verify the required parameter 'sheetName' is set
+        if (sheetName == null) {
+            throw new ApiException("Missing the required parameter 'sheetName' when calling cellsChartsPostChartSecondValueAxis(Async)");
+        }
+        
+        // verify the required parameter 'chartIndex' is set
+        if (chartIndex == null) {
+            throw new ApiException("Missing the required parameter 'chartIndex' when calling cellsChartsPostChartSecondValueAxis(Async)");
+        }
+        
+        // verify the required parameter 'axis' is set
+        if (axis == null) {
+            throw new ApiException("Missing the required parameter 'axis' when calling cellsChartsPostChartSecondValueAxis(Async)");
+        }
+        
+        
+        com.squareup.okhttp.Call call = cellsChartsPostChartSecondValueAxisCall(name, sheetName, chartIndex, axis, folder, storageName, progressListener, progressRequestListener);
+        return call;
+
+        
+        
+        
+        
+    }
+
+    /**
+     * Update chart second value axis 
+     * 
+     * @param name  (required)
+     * @param sheetName  (required)
+     * @param chartIndex  (required)
+     * @param axis  (required)
+     * @param folder  (optional)
+     * @param storageName  (optional)
+     * @return CellsCloudResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public CellsCloudResponse cellsChartsPostChartSecondValueAxis(String name, String sheetName, Integer chartIndex, Axis axis, String folder, String storageName) throws ApiException {
+        ApiResponse<CellsCloudResponse> resp = cellsChartsPostChartSecondValueAxisWithHttpInfo(name, sheetName, chartIndex, axis, folder, storageName);
+        return resp.getData();
+    }
+
+    /**
+     * Update chart second value axis 
+     * 
+     * @param name  (required)
+     * @param sheetName  (required)
+     * @param chartIndex  (required)
+     * @param axis  (required)
+     * @param folder  (optional)
+     * @param storageName  (optional)
+     * @return ApiResponse&lt;CellsCloudResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<CellsCloudResponse> cellsChartsPostChartSecondValueAxisWithHttpInfo(String name, String sheetName, Integer chartIndex, Axis axis, String folder, String storageName) throws ApiException {
+        com.squareup.okhttp.Call call = cellsChartsPostChartSecondValueAxisValidateBeforeCall(name, sheetName, chartIndex, axis, folder, storageName, null, null);
+        Type localVarReturnType = new TypeToken<CellsCloudResponse>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Update chart second value axis  (asynchronously)
+     * 
+     * @param name  (required)
+     * @param sheetName  (required)
+     * @param chartIndex  (required)
+     * @param axis  (required)
+     * @param folder  (optional)
+     * @param storageName  (optional)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call cellsChartsPostChartSecondValueAxisAsync(String name, String sheetName, Integer chartIndex, Axis axis, String folder, String storageName, final ApiCallback<CellsCloudResponse> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = cellsChartsPostChartSecondValueAxisValidateBeforeCall(name, sheetName, chartIndex, axis, folder, storageName, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<CellsCloudResponse>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for cellsChartsPostChartSeriesAxis
+     * @param name  (required)
+     * @param sheetName  (required)
+     * @param chartIndex  (required)
+     * @param axis  (required)
+     * @param folder  (optional)
+     * @param storageName  (optional)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call cellsChartsPostChartSeriesAxisCall(String name, String sheetName, Integer chartIndex, Axis axis, String folder, String storageName, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = axis;
+        
+        // create path and map variables
+        String localVarPath = "/cells/{name}/worksheets/{sheetName}/charts/{chartIndex}/seriesaxis"
+            .replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString()))
+            .replaceAll("\\{" + "sheetName" + "\\}", apiClient.escapeString(sheetName.toString()))
+            .replaceAll("\\{" + "chartIndex" + "\\}", apiClient.escapeString(chartIndex.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        if (folder != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "folder", folder));
+        if (storageName != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "storageName", storageName));
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+    
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call cellsChartsPostChartSeriesAxisValidateBeforeCall(String name, String sheetName, Integer chartIndex, Axis axis, String folder, String storageName, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'name' is set
+        if (name == null) {
+            throw new ApiException("Missing the required parameter 'name' when calling cellsChartsPostChartSeriesAxis(Async)");
+        }
+        
+        // verify the required parameter 'sheetName' is set
+        if (sheetName == null) {
+            throw new ApiException("Missing the required parameter 'sheetName' when calling cellsChartsPostChartSeriesAxis(Async)");
+        }
+        
+        // verify the required parameter 'chartIndex' is set
+        if (chartIndex == null) {
+            throw new ApiException("Missing the required parameter 'chartIndex' when calling cellsChartsPostChartSeriesAxis(Async)");
+        }
+        
+        // verify the required parameter 'axis' is set
+        if (axis == null) {
+            throw new ApiException("Missing the required parameter 'axis' when calling cellsChartsPostChartSeriesAxis(Async)");
+        }
+        
+        
+        com.squareup.okhttp.Call call = cellsChartsPostChartSeriesAxisCall(name, sheetName, chartIndex, axis, folder, storageName, progressListener, progressRequestListener);
+        return call;
+
+        
+        
+        
+        
+    }
+
+    /**
+     * Update chart Series Axis
+     * 
+     * @param name  (required)
+     * @param sheetName  (required)
+     * @param chartIndex  (required)
+     * @param axis  (required)
+     * @param folder  (optional)
+     * @param storageName  (optional)
+     * @return CellsCloudResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public CellsCloudResponse cellsChartsPostChartSeriesAxis(String name, String sheetName, Integer chartIndex, Axis axis, String folder, String storageName) throws ApiException {
+        ApiResponse<CellsCloudResponse> resp = cellsChartsPostChartSeriesAxisWithHttpInfo(name, sheetName, chartIndex, axis, folder, storageName);
+        return resp.getData();
+    }
+
+    /**
+     * Update chart Series Axis
+     * 
+     * @param name  (required)
+     * @param sheetName  (required)
+     * @param chartIndex  (required)
+     * @param axis  (required)
+     * @param folder  (optional)
+     * @param storageName  (optional)
+     * @return ApiResponse&lt;CellsCloudResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<CellsCloudResponse> cellsChartsPostChartSeriesAxisWithHttpInfo(String name, String sheetName, Integer chartIndex, Axis axis, String folder, String storageName) throws ApiException {
+        com.squareup.okhttp.Call call = cellsChartsPostChartSeriesAxisValidateBeforeCall(name, sheetName, chartIndex, axis, folder, storageName, null, null);
+        Type localVarReturnType = new TypeToken<CellsCloudResponse>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Update chart Series Axis (asynchronously)
+     * 
+     * @param name  (required)
+     * @param sheetName  (required)
+     * @param chartIndex  (required)
+     * @param axis  (required)
+     * @param folder  (optional)
+     * @param storageName  (optional)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call cellsChartsPostChartSeriesAxisAsync(String name, String sheetName, Integer chartIndex, Axis axis, String folder, String storageName, final ApiCallback<CellsCloudResponse> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = cellsChartsPostChartSeriesAxisValidateBeforeCall(name, sheetName, chartIndex, axis, folder, storageName, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<CellsCloudResponse>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for cellsChartsPostChartValueAxis
+     * @param name  (required)
+     * @param sheetName  (required)
+     * @param chartIndex  (required)
+     * @param axis  (required)
+     * @param folder  (optional)
+     * @param storageName  (optional)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call cellsChartsPostChartValueAxisCall(String name, String sheetName, Integer chartIndex, Axis axis, String folder, String storageName, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = axis;
+        
+        // create path and map variables
+        String localVarPath = "/cells/{name}/worksheets/{sheetName}/charts/{chartIndex}/valueaxis"
+            .replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString()))
+            .replaceAll("\\{" + "sheetName" + "\\}", apiClient.escapeString(sheetName.toString()))
+            .replaceAll("\\{" + "chartIndex" + "\\}", apiClient.escapeString(chartIndex.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        if (folder != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "folder", folder));
+        if (storageName != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "storageName", storageName));
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+    
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call cellsChartsPostChartValueAxisValidateBeforeCall(String name, String sheetName, Integer chartIndex, Axis axis, String folder, String storageName, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'name' is set
+        if (name == null) {
+            throw new ApiException("Missing the required parameter 'name' when calling cellsChartsPostChartValueAxis(Async)");
+        }
+        
+        // verify the required parameter 'sheetName' is set
+        if (sheetName == null) {
+            throw new ApiException("Missing the required parameter 'sheetName' when calling cellsChartsPostChartValueAxis(Async)");
+        }
+        
+        // verify the required parameter 'chartIndex' is set
+        if (chartIndex == null) {
+            throw new ApiException("Missing the required parameter 'chartIndex' when calling cellsChartsPostChartValueAxis(Async)");
+        }
+        
+        // verify the required parameter 'axis' is set
+        if (axis == null) {
+            throw new ApiException("Missing the required parameter 'axis' when calling cellsChartsPostChartValueAxis(Async)");
+        }
+        
+        
+        com.squareup.okhttp.Call call = cellsChartsPostChartValueAxisCall(name, sheetName, chartIndex, axis, folder, storageName, progressListener, progressRequestListener);
+        return call;
+
+        
+        
+        
+        
+    }
+
+    /**
+     * Update chart value axis 
+     * 
+     * @param name  (required)
+     * @param sheetName  (required)
+     * @param chartIndex  (required)
+     * @param axis  (required)
+     * @param folder  (optional)
+     * @param storageName  (optional)
+     * @return CellsCloudResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public CellsCloudResponse cellsChartsPostChartValueAxis(String name, String sheetName, Integer chartIndex, Axis axis, String folder, String storageName) throws ApiException {
+        ApiResponse<CellsCloudResponse> resp = cellsChartsPostChartValueAxisWithHttpInfo(name, sheetName, chartIndex, axis, folder, storageName);
+        return resp.getData();
+    }
+
+    /**
+     * Update chart value axis 
+     * 
+     * @param name  (required)
+     * @param sheetName  (required)
+     * @param chartIndex  (required)
+     * @param axis  (required)
+     * @param folder  (optional)
+     * @param storageName  (optional)
+     * @return ApiResponse&lt;CellsCloudResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<CellsCloudResponse> cellsChartsPostChartValueAxisWithHttpInfo(String name, String sheetName, Integer chartIndex, Axis axis, String folder, String storageName) throws ApiException {
+        com.squareup.okhttp.Call call = cellsChartsPostChartValueAxisValidateBeforeCall(name, sheetName, chartIndex, axis, folder, storageName, null, null);
+        Type localVarReturnType = new TypeToken<CellsCloudResponse>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Update chart value axis  (asynchronously)
+     * 
+     * @param name  (required)
+     * @param sheetName  (required)
+     * @param chartIndex  (required)
+     * @param axis  (required)
+     * @param folder  (optional)
+     * @param storageName  (optional)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call cellsChartsPostChartValueAxisAsync(String name, String sheetName, Integer chartIndex, Axis axis, String folder, String storageName, final ApiCallback<CellsCloudResponse> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = cellsChartsPostChartValueAxisValidateBeforeCall(name, sheetName, chartIndex, axis, folder, storageName, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<CellsCloudResponse>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+
     /**
      * Build call for cellsChartsPostWorksheetChartLegend
      * @param name Workbook name. (required)
