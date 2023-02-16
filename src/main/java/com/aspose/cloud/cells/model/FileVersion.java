@@ -1,14 +1,17 @@
-/* 
+/*
+ * --------------------------------------------------------------------------------
+ * <copyright company="Aspose" file="FileVersion.java">
+ *   Copyright (c) 2023 Aspose.Cells Cloud
+ * </copyright>
  * <summary>
- *  Copyright (c) 2022 Aspose.Cells Cloud
- *  Permission is hereby granted, free of charge, to any person obtaining a copy
+ *   Permission is hereby granted, free of charge, to any person obtaining a copy
  *  of this software and associated documentation files (the "Software"), to deal
  *  in the Software without restriction, including without limitation the rights
  *  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
  *  copies of the Software, and to permit persons to whom the Software is
  *  furnished to do so, subject to the following conditions:
  * 
- *  The above copyright notice and this permission notice shall be included in all 
+ *  The above copyright notice and this permission notice shall be included in all
  *  copies or substantial portions of the Software.
  * 
  *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
@@ -19,113 +22,101 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
+ * --------------------------------------------------------------------------------
  */
-
 
 package com.aspose.cloud.cells.model;
 
 import java.util.Objects;
-import com.aspose.cloud.cells.model.StorageFile;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
+import com.aspose.cloud.cells.model.*;
+import java.util.ArrayList;
+import java.util.List;
+import com.google.gson.annotations.SerializedName;
 import java.time.OffsetDateTime;
 
-/**
- * File Version
- */
-@ApiModel(description = "File Version")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-09-16T03:09:53.733-05:00")
-public class FileVersion extends StorageFile {
-  @SerializedName("VersionId")
-  private String versionId = null;
 
-  @SerializedName("IsLatest")
-  private Boolean isLatest = null;
+public class FileVersion  extends  StorageFile {
+        @SerializedName("VersionId")
+        private String versionId ;
 
-  public FileVersion versionId(String versionId) {
-    this.versionId = versionId;
-    return this;
-  }
+        public  FileVersion  versionId(String  versionId) {
+            this.versionId =  versionId;
+            return this;
+        }
 
-   /**
-   * File Version ID.
-   * @return versionId
-  **/
-  @ApiModelProperty(value = "File Version ID.")
-  public String getVersionId() {
-    return versionId;
-  }
+        @ApiModelProperty(value = "")
+        public String getVersionId() {
+            return versionId;
+        }
 
-  public void setVersionId(String versionId) {
-    this.versionId = versionId;
-  }
+        public void setVersionId(String versionId) {
+            this.versionId = versionId;
+        }
 
-  public FileVersion isLatest(Boolean isLatest) {
-    this.isLatest = isLatest;
-    return this;
-  }
+        @SerializedName("IsLatest")
+        private Boolean isLatest ;
 
-   /**
-   * Specifies whether the file is (true) or is not (false) the latest version of an file.
-   * @return isLatest
-  **/
-  @ApiModelProperty(required = true, value = "Specifies whether the file is (true) or is not (false) the latest version of an file.")
-  public Boolean IsLatest() {
-    return isLatest;
-  }
+        public  FileVersion  isLatest(Boolean  isLatest) {
+            this.isLatest =  isLatest;
+            return this;
+        }
 
-  public void setIsLatest(Boolean isLatest) {
-    this.isLatest = isLatest;
-  }
+        @ApiModelProperty(value = "")
+        public Boolean getIsLatest() {
+            return isLatest;
+        }
+
+        public void setIsLatest(Boolean isLatest) {
+            this.isLatest = isLatest;
+        }
+
+        @Override
+        public boolean equals(java.lang.Object o) {
+            if (this == o) {
+                return true;
+            }
+            if (o == null || getClass() != o.getClass()) {
+                return false;
+            }
+
+            FileVersion fileVersion = (FileVersion) o;
+            return
+                Objects.equals(this.versionId, fileVersion.versionId) &&
+                Objects.equals(this.isLatest, fileVersion.isLatest) &&
+                super.equals(o);
+      }
+
+      @Override
+      public int hashCode() {
+        return Objects.hash(versionId, isLatest, super.hashCode());
+      }
+        @Override
+        public String toString() {
+            StringBuilder sb = new StringBuilder();
+            sb.append("class FileVersion {\n");
+            sb.append("    versionId: ").append(toIndentedString(getVersionId())).append("\n");
+            sb.append("    isLatest: ").append(toIndentedString(getIsLatest())).append("\n");
+            sb.append("    name: ").append(toIndentedString(getName())).append("\n");
+            sb.append("    isFolder: ").append(toIndentedString(getIsFolder())).append("\n");
+            sb.append("    modifiedDate: ").append(toIndentedString(getModifiedDate())).append("\n");
+            sb.append("    size: ").append(toIndentedString(getSize())).append("\n");
+            sb.append("    path: ").append(toIndentedString(getPath())).append("\n");
+            sb.append("}");
+            return sb.toString();
+        }
+
+        /**
+        * Convert the given object to string with each line indented by 4 spaces
+        * (except the first line).
+        */
+        private String toIndentedString(java.lang.Object o) {
+            if (o == null) {
+                return "null";
+            }
+            return o.toString().replace("\n", "\n    ");
+        }
 
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    FileVersion fileVersion = (FileVersion) o;
-    return Objects.equals(this.versionId, fileVersion.versionId) &&
-        Objects.equals(this.isLatest, fileVersion.isLatest) &&
-        super.equals(o);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(versionId, isLatest, super.hashCode());
-  }
-
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class FileVersion {\n");
-    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
-    sb.append("    versionId: ").append(toIndentedString(versionId)).append("\n");
-    sb.append("    isLatest: ").append(toIndentedString(isLatest)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
-  
 }
 

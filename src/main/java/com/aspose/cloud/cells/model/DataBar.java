@@ -1,14 +1,17 @@
-/* 
+/*
+ * --------------------------------------------------------------------------------
+ * <copyright company="Aspose" file="DataBar.java">
+ *   Copyright (c) 2023 Aspose.Cells Cloud
+ * </copyright>
  * <summary>
- *  Copyright (c) 2022 Aspose.Cells Cloud
- *  Permission is hereby granted, free of charge, to any person obtaining a copy
+ *   Permission is hereby granted, free of charge, to any person obtaining a copy
  *  of this software and associated documentation files (the "Software"), to deal
  *  in the Software without restriction, including without limitation the rights
  *  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
  *  copies of the Software, and to permit persons to whom the Software is
  *  furnished to do so, subject to the following conditions:
  * 
- *  The above copyright notice and this permission notice shall be included in all 
+ *  The above copyright notice and this permission notice shall be included in all
  *  copies or substantial portions of the Software.
  * 
  *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
@@ -19,344 +22,285 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
+ * --------------------------------------------------------------------------------
  */
-
 
 package com.aspose.cloud.cells.model;
 
 import java.util.Objects;
-import com.aspose.cloud.cells.model.Color;
-import com.aspose.cloud.cells.model.ConditionalFormattingValue;
-import com.aspose.cloud.cells.model.DataBarBorder;
-import com.aspose.cloud.cells.model.NegativeBarFormat;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
+import com.aspose.cloud.cells.model.*;
+import java.util.ArrayList;
+import java.util.List;
+import com.google.gson.annotations.SerializedName;
+import java.time.OffsetDateTime;
 
-/**
- * Describe the DataBar conditional formatting rule. This conditional formatting    rule displays a gradated data bar in the range of cells.
- */
-@ApiModel(description = "Describe the DataBar conditional formatting rule. This conditional formatting    rule displays a gradated data bar in the range of cells.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-09-16T03:09:53.733-05:00")
+
 public class DataBar {
-  @SerializedName("Direction")
-  private String direction = null;
+        @SerializedName("AxisColor")
+        private Color axisColor ;
 
-  @SerializedName("MaxCfvo")
-  private ConditionalFormattingValue maxCfvo = null;
+        public  DataBar  axisColor(Color  axisColor) {
+            this.axisColor =  axisColor;
+            return this;
+        }
 
-  @SerializedName("Color")
-  private Color color = null;
+        @ApiModelProperty(value = "")
+        public Color getAxisColor() {
+            return axisColor;
+        }
 
-  @SerializedName("MinLength")
-  private Integer minLength = null;
+        public void setAxisColor(Color axisColor) {
+            this.axisColor = axisColor;
+        }
 
-  @SerializedName("BarFillType")
-  private String barFillType = null;
+        @SerializedName("AxisPosition")
+        private String axisPosition ;
 
-  @SerializedName("MinCfvo")
-  private ConditionalFormattingValue minCfvo = null;
+        public  DataBar  axisPosition(String  axisPosition) {
+            this.axisPosition =  axisPosition;
+            return this;
+        }
 
-  @SerializedName("AxisPosition")
-  private String axisPosition = null;
+        @ApiModelProperty(value = "")
+        public String getAxisPosition() {
+            return axisPosition;
+        }
 
-  @SerializedName("NegativeBarFormat")
-  private NegativeBarFormat negativeBarFormat = null;
+        public void setAxisPosition(String axisPosition) {
+            this.axisPosition = axisPosition;
+        }
 
-  @SerializedName("BarBorder")
-  private DataBarBorder barBorder = null;
+        @SerializedName("BarBorder")
+        private DataBarBorder barBorder ;
 
-  @SerializedName("AxisColor")
-  private Color axisColor = null;
+        public  DataBar  barBorder(DataBarBorder  barBorder) {
+            this.barBorder =  barBorder;
+            return this;
+        }
 
-  @SerializedName("MaxLength")
-  private Integer maxLength = null;
+        @ApiModelProperty(value = "")
+        public DataBarBorder getBarBorder() {
+            return barBorder;
+        }
 
-  @SerializedName("ShowValue")
-  private Boolean showValue = null;
+        public void setBarBorder(DataBarBorder barBorder) {
+            this.barBorder = barBorder;
+        }
 
-  public DataBar direction(String direction) {
-    this.direction = direction;
-    return this;
-  }
+        @SerializedName("BarFillType")
+        private String barFillType ;
 
-   /**
-   * Gets or sets the direction the databar is displayed.
-   * @return direction
-  **/
-  @ApiModelProperty(value = "Gets or sets the direction the databar is displayed.")
-  public String getDirection() {
-    return direction;
-  }
+        public  DataBar  barFillType(String  barFillType) {
+            this.barFillType =  barFillType;
+            return this;
+        }
 
-  public void setDirection(String direction) {
-    this.direction = direction;
-  }
+        @ApiModelProperty(value = "")
+        public String getBarFillType() {
+            return barFillType;
+        }
 
-  public DataBar maxCfvo(ConditionalFormattingValue maxCfvo) {
-    this.maxCfvo = maxCfvo;
-    return this;
-  }
+        public void setBarFillType(String barFillType) {
+            this.barFillType = barFillType;
+        }
 
-   /**
-   * Get or set this DataBar&#39;s max value object.  Cannot set null or CFValueObject    with type FormatConditionValueType.Min to it.             
-   * @return maxCfvo
-  **/
-  @ApiModelProperty(value = "Get or set this DataBar's max value object.  Cannot set null or CFValueObject    with type FormatConditionValueType.Min to it.             ")
-  public ConditionalFormattingValue getMaxCfvo() {
-    return maxCfvo;
-  }
+        @SerializedName("Color")
+        private Color color ;
 
-  public void setMaxCfvo(ConditionalFormattingValue maxCfvo) {
-    this.maxCfvo = maxCfvo;
-  }
+        public  DataBar  color(Color  color) {
+            this.color =  color;
+            return this;
+        }
 
-  public DataBar color(Color color) {
-    this.color = color;
-    return this;
-  }
+        @ApiModelProperty(value = "")
+        public Color getColor() {
+            return color;
+        }
 
-   /**
-   * Get or set this DataBar&#39;s Color.             
-   * @return color
-  **/
-  @ApiModelProperty(value = "Get or set this DataBar's Color.             ")
-  public Color getColor() {
-    return color;
-  }
+        public void setColor(Color color) {
+            this.color = color;
+        }
 
-  public void setColor(Color color) {
-    this.color = color;
-  }
+        @SerializedName("Direction")
+        private String direction ;
 
-  public DataBar minLength(Integer minLength) {
-    this.minLength = minLength;
-    return this;
-  }
+        public  DataBar  direction(String  direction) {
+            this.direction =  direction;
+            return this;
+        }
 
-   /**
-   * Represents the min length of data bar .             
-   * @return minLength
-  **/
-  @ApiModelProperty(value = "Represents the min length of data bar .             ")
-  public Integer getMinLength() {
-    return minLength;
-  }
+        @ApiModelProperty(value = "")
+        public String getDirection() {
+            return direction;
+        }
 
-  public void setMinLength(Integer minLength) {
-    this.minLength = minLength;
-  }
+        public void setDirection(String direction) {
+            this.direction = direction;
+        }
 
-  public DataBar barFillType(String barFillType) {
-    this.barFillType = barFillType;
-    return this;
-  }
+        @SerializedName("MaxCfvo")
+        private ConditionalFormattingValue maxCfvo ;
 
-   /**
-   * Gets or sets how a data bar is filled with color.
-   * @return barFillType
-  **/
-  @ApiModelProperty(value = "Gets or sets how a data bar is filled with color.")
-  public String getBarFillType() {
-    return barFillType;
-  }
+        public  DataBar  maxCfvo(ConditionalFormattingValue  maxCfvo) {
+            this.maxCfvo =  maxCfvo;
+            return this;
+        }
 
-  public void setBarFillType(String barFillType) {
-    this.barFillType = barFillType;
-  }
+        @ApiModelProperty(value = "")
+        public ConditionalFormattingValue getMaxCfvo() {
+            return maxCfvo;
+        }
 
-  public DataBar minCfvo(ConditionalFormattingValue minCfvo) {
-    this.minCfvo = minCfvo;
-    return this;
-  }
+        public void setMaxCfvo(ConditionalFormattingValue maxCfvo) {
+            this.maxCfvo = maxCfvo;
+        }
 
-   /**
-   * Get or set this DataBar&#39;s min value object.  Cannot set null or CFValueObject   with type FormatConditionValueType.Max to it.             
-   * @return minCfvo
-  **/
-  @ApiModelProperty(value = "Get or set this DataBar's min value object.  Cannot set null or CFValueObject   with type FormatConditionValueType.Max to it.             ")
-  public ConditionalFormattingValue getMinCfvo() {
-    return minCfvo;
-  }
+        @SerializedName("MaxLength")
+        private Integer maxLength ;
 
-  public void setMinCfvo(ConditionalFormattingValue minCfvo) {
-    this.minCfvo = minCfvo;
-  }
+        public  DataBar  maxLength(Integer  maxLength) {
+            this.maxLength =  maxLength;
+            return this;
+        }
 
-  public DataBar axisPosition(String axisPosition) {
-    this.axisPosition = axisPosition;
-    return this;
-  }
+        @ApiModelProperty(value = "")
+        public Integer getMaxLength() {
+            return maxLength;
+        }
 
-   /**
-   * Gets or sets the position of the axis of the data bars specified by a conditional    formatting rule.
-   * @return axisPosition
-  **/
-  @ApiModelProperty(value = "Gets or sets the position of the axis of the data bars specified by a conditional    formatting rule.")
-  public String getAxisPosition() {
-    return axisPosition;
-  }
+        public void setMaxLength(Integer maxLength) {
+            this.maxLength = maxLength;
+        }
 
-  public void setAxisPosition(String axisPosition) {
-    this.axisPosition = axisPosition;
-  }
+        @SerializedName("MinCfvo")
+        private ConditionalFormattingValue minCfvo ;
 
-  public DataBar negativeBarFormat(NegativeBarFormat negativeBarFormat) {
-    this.negativeBarFormat = negativeBarFormat;
-    return this;
-  }
+        public  DataBar  minCfvo(ConditionalFormattingValue  minCfvo) {
+            this.minCfvo =  minCfvo;
+            return this;
+        }
 
-   /**
-   * Gets the NegativeBarFormat object associated with a data bar conditional     formatting rule.
-   * @return negativeBarFormat
-  **/
-  @ApiModelProperty(value = "Gets the NegativeBarFormat object associated with a data bar conditional     formatting rule.")
-  public NegativeBarFormat getNegativeBarFormat() {
-    return negativeBarFormat;
-  }
+        @ApiModelProperty(value = "")
+        public ConditionalFormattingValue getMinCfvo() {
+            return minCfvo;
+        }
 
-  public void setNegativeBarFormat(NegativeBarFormat negativeBarFormat) {
-    this.negativeBarFormat = negativeBarFormat;
-  }
+        public void setMinCfvo(ConditionalFormattingValue minCfvo) {
+            this.minCfvo = minCfvo;
+        }
 
-  public DataBar barBorder(DataBarBorder barBorder) {
-    this.barBorder = barBorder;
-    return this;
-  }
+        @SerializedName("MinLength")
+        private Integer minLength ;
 
-   /**
-   * Gets an object that specifies the border of a data bar.
-   * @return barBorder
-  **/
-  @ApiModelProperty(value = "Gets an object that specifies the border of a data bar.")
-  public DataBarBorder getBarBorder() {
-    return barBorder;
-  }
+        public  DataBar  minLength(Integer  minLength) {
+            this.minLength =  minLength;
+            return this;
+        }
 
-  public void setBarBorder(DataBarBorder barBorder) {
-    this.barBorder = barBorder;
-  }
+        @ApiModelProperty(value = "")
+        public Integer getMinLength() {
+            return minLength;
+        }
 
-  public DataBar axisColor(Color axisColor) {
-    this.axisColor = axisColor;
-    return this;
-  }
+        public void setMinLength(Integer minLength) {
+            this.minLength = minLength;
+        }
 
-   /**
-   * Gets the color of the axis for cells with conditional formatting as data bars.
-   * @return axisColor
-  **/
-  @ApiModelProperty(value = "Gets the color of the axis for cells with conditional formatting as data bars.")
-  public Color getAxisColor() {
-    return axisColor;
-  }
+        @SerializedName("NegativeBarFormat")
+        private NegativeBarFormat negativeBarFormat ;
 
-  public void setAxisColor(Color axisColor) {
-    this.axisColor = axisColor;
-  }
+        public  DataBar  negativeBarFormat(NegativeBarFormat  negativeBarFormat) {
+            this.negativeBarFormat =  negativeBarFormat;
+            return this;
+        }
 
-  public DataBar maxLength(Integer maxLength) {
-    this.maxLength = maxLength;
-    return this;
-  }
+        @ApiModelProperty(value = "")
+        public NegativeBarFormat getNegativeBarFormat() {
+            return negativeBarFormat;
+        }
 
-   /**
-   * Represents the max length of data bar .
-   * @return maxLength
-  **/
-  @ApiModelProperty(value = "Represents the max length of data bar .")
-  public Integer getMaxLength() {
-    return maxLength;
-  }
+        public void setNegativeBarFormat(NegativeBarFormat negativeBarFormat) {
+            this.negativeBarFormat = negativeBarFormat;
+        }
 
-  public void setMaxLength(Integer maxLength) {
-    this.maxLength = maxLength;
-  }
+        @SerializedName("ShowValue")
+        private Boolean showValue ;
 
-  public DataBar showValue(Boolean showValue) {
-    this.showValue = showValue;
-    return this;
-  }
+        public  DataBar  showValue(Boolean  showValue) {
+            this.showValue =  showValue;
+            return this;
+        }
 
-   /**
-   * Get or set the flag indicating whether to show the values of the cells on   which this data bar is applied.  Default value is true.             
-   * @return showValue
-  **/
-  @ApiModelProperty(value = "Get or set the flag indicating whether to show the values of the cells on   which this data bar is applied.  Default value is true.             ")
-  public Boolean ShowValue() {
-    return showValue;
-  }
+        @ApiModelProperty(value = "")
+        public Boolean getShowValue() {
+            return showValue;
+        }
 
-  public void setShowValue(Boolean showValue) {
-    this.showValue = showValue;
-  }
+        public void setShowValue(Boolean showValue) {
+            this.showValue = showValue;
+        }
 
+        @Override
+        public boolean equals(java.lang.Object o) {
+            if (this == o) {
+                return true;
+            }
+            if (o == null || getClass() != o.getClass()) {
+                return false;
+            }
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    DataBar dataBar = (DataBar) o;
-    return Objects.equals(this.direction, dataBar.direction) &&
-        Objects.equals(this.maxCfvo, dataBar.maxCfvo) &&
-        Objects.equals(this.color, dataBar.color) &&
-        Objects.equals(this.minLength, dataBar.minLength) &&
-        Objects.equals(this.barFillType, dataBar.barFillType) &&
-        Objects.equals(this.minCfvo, dataBar.minCfvo) &&
-        Objects.equals(this.axisPosition, dataBar.axisPosition) &&
-        Objects.equals(this.negativeBarFormat, dataBar.negativeBarFormat) &&
-        Objects.equals(this.barBorder, dataBar.barBorder) &&
-        Objects.equals(this.axisColor, dataBar.axisColor) &&
-        Objects.equals(this.maxLength, dataBar.maxLength) &&
-        Objects.equals(this.showValue, dataBar.showValue);
-  }
+            DataBar dataBar = (DataBar) o;
+            return
+                Objects.equals(this.axisColor, dataBar.axisColor) &&
+                Objects.equals(this.axisPosition, dataBar.axisPosition) &&
+                Objects.equals(this.barBorder, dataBar.barBorder) &&
+                Objects.equals(this.barFillType, dataBar.barFillType) &&
+                Objects.equals(this.color, dataBar.color) &&
+                Objects.equals(this.direction, dataBar.direction) &&
+                Objects.equals(this.maxCfvo, dataBar.maxCfvo) &&
+                Objects.equals(this.maxLength, dataBar.maxLength) &&
+                Objects.equals(this.minCfvo, dataBar.minCfvo) &&
+                Objects.equals(this.minLength, dataBar.minLength) &&
+                Objects.equals(this.negativeBarFormat, dataBar.negativeBarFormat) &&
+                Objects.equals(this.showValue, dataBar.showValue);
+      }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(direction, maxCfvo, color, minLength, barFillType, minCfvo, axisPosition, negativeBarFormat, barBorder, axisColor, maxLength, showValue);
-  }
+      @Override
+      public int hashCode() {
+        return Objects.hash(axisColor, axisPosition, barBorder, barFillType, color, direction, maxCfvo, maxLength, minCfvo, minLength, negativeBarFormat, showValue);
+      }
+        @Override
+        public String toString() {
+            StringBuilder sb = new StringBuilder();
+            sb.append("class DataBar {\n");
+            sb.append("    axisColor: ").append(toIndentedString(getAxisColor())).append("\n");
+            sb.append("    axisPosition: ").append(toIndentedString(getAxisPosition())).append("\n");
+            sb.append("    barBorder: ").append(toIndentedString(getBarBorder())).append("\n");
+            sb.append("    barFillType: ").append(toIndentedString(getBarFillType())).append("\n");
+            sb.append("    color: ").append(toIndentedString(getColor())).append("\n");
+            sb.append("    direction: ").append(toIndentedString(getDirection())).append("\n");
+            sb.append("    maxCfvo: ").append(toIndentedString(getMaxCfvo())).append("\n");
+            sb.append("    maxLength: ").append(toIndentedString(getMaxLength())).append("\n");
+            sb.append("    minCfvo: ").append(toIndentedString(getMinCfvo())).append("\n");
+            sb.append("    minLength: ").append(toIndentedString(getMinLength())).append("\n");
+            sb.append("    negativeBarFormat: ").append(toIndentedString(getNegativeBarFormat())).append("\n");
+            sb.append("    showValue: ").append(toIndentedString(getShowValue())).append("\n");
+            sb.append("}");
+            return sb.toString();
+        }
+
+        /**
+        * Convert the given object to string with each line indented by 4 spaces
+        * (except the first line).
+        */
+        private String toIndentedString(java.lang.Object o) {
+            if (o == null) {
+                return "null";
+            }
+            return o.toString().replace("\n", "\n    ");
+        }
 
 
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class DataBar {\n");
-    
-    sb.append("    direction: ").append(toIndentedString(direction)).append("\n");
-    sb.append("    maxCfvo: ").append(toIndentedString(maxCfvo)).append("\n");
-    sb.append("    color: ").append(toIndentedString(color)).append("\n");
-    sb.append("    minLength: ").append(toIndentedString(minLength)).append("\n");
-    sb.append("    barFillType: ").append(toIndentedString(barFillType)).append("\n");
-    sb.append("    minCfvo: ").append(toIndentedString(minCfvo)).append("\n");
-    sb.append("    axisPosition: ").append(toIndentedString(axisPosition)).append("\n");
-    sb.append("    negativeBarFormat: ").append(toIndentedString(negativeBarFormat)).append("\n");
-    sb.append("    barBorder: ").append(toIndentedString(barBorder)).append("\n");
-    sb.append("    axisColor: ").append(toIndentedString(axisColor)).append("\n");
-    sb.append("    maxLength: ").append(toIndentedString(maxLength)).append("\n");
-    sb.append("    showValue: ").append(toIndentedString(showValue)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
-  
 }
 

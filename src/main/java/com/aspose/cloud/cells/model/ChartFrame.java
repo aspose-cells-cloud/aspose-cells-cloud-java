@@ -1,14 +1,17 @@
-/* 
+/*
+ * --------------------------------------------------------------------------------
+ * <copyright company="Aspose" file="ChartFrame.java">
+ *   Copyright (c) 2023 Aspose.Cells Cloud
+ * </copyright>
  * <summary>
- *  Copyright (c) 2022 Aspose.Cells Cloud
- *  Permission is hereby granted, free of charge, to any person obtaining a copy
+ *   Permission is hereby granted, free of charge, to any person obtaining a copy
  *  of this software and associated documentation files (the "Software"), to deal
  *  in the Software without restriction, including without limitation the rights
  *  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
  *  copies of the Software, and to permit persons to whom the Software is
  *  furnished to do so, subject to the following conditions:
  * 
- *  The above copyright notice and this permission notice shall be included in all 
+ *  The above copyright notice and this permission notice shall be included in all
  *  copies or substantial portions of the Software.
  * 
  *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
@@ -19,400 +22,304 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
+ * --------------------------------------------------------------------------------
  */
-
 
 package com.aspose.cloud.cells.model;
 
 import java.util.Objects;
-import com.aspose.cloud.cells.model.Area;
-import com.aspose.cloud.cells.model.Font;
-import com.aspose.cloud.cells.model.Line;
-import com.aspose.cloud.cells.model.Link;
-import com.aspose.cloud.cells.model.LinkElement;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
+import com.aspose.cloud.cells.model.*;
 import java.util.ArrayList;
 import java.util.List;
+import com.google.gson.annotations.SerializedName;
+import java.time.OffsetDateTime;
 
-/**
- * ChartFrame
- */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-09-16T03:09:53.733-05:00")
+
 public class ChartFrame {
-  @SerializedName("link")
-  private Link link = null;
+        @SerializedName("Area")
+        private Area area ;
 
-  @SerializedName("IsInnerMode")
-  private Boolean isInnerMode = null;
+        public  ChartFrame  area(Area  area) {
+            this.area =  area;
+            return this;
+        }
 
-  @SerializedName("ShapeProperties")
-  private List<LinkElement> shapeProperties = null;
+        @ApiModelProperty(value = "")
+        public Area getArea() {
+            return area;
+        }
 
-  @SerializedName("AutoScaleFont")
-  private Boolean autoScaleFont = null;
+        public void setArea(Area area) {
+            this.area = area;
+        }
 
-  @SerializedName("Area")
-  private Area area = null;
+        @SerializedName("AutoScaleFont")
+        private Boolean autoScaleFont ;
 
-  @SerializedName("Height")
-  private Integer height = null;
+        public  ChartFrame  autoScaleFont(Boolean  autoScaleFont) {
+            this.autoScaleFont =  autoScaleFont;
+            return this;
+        }
 
-  @SerializedName("Width")
-  private Integer width = null;
+        @ApiModelProperty(value = "")
+        public Boolean getAutoScaleFont() {
+            return autoScaleFont;
+        }
 
-  @SerializedName("BackgroundMode")
-  private String backgroundMode = null;
+        public void setAutoScaleFont(Boolean autoScaleFont) {
+            this.autoScaleFont = autoScaleFont;
+        }
 
-  @SerializedName("IsAutomaticSize")
-  private Boolean isAutomaticSize = null;
+        @SerializedName("BackgroundMode")
+        private String backgroundMode ;
 
-  @SerializedName("Y")
-  private Integer Y = null;
+        public  ChartFrame  backgroundMode(String  backgroundMode) {
+            this.backgroundMode =  backgroundMode;
+            return this;
+        }
 
-  @SerializedName("X")
-  private Integer X = null;
+        @ApiModelProperty(value = "")
+        public String getBackgroundMode() {
+            return backgroundMode;
+        }
 
-  @SerializedName("Shadow")
-  private Boolean shadow = null;
+        public void setBackgroundMode(String backgroundMode) {
+            this.backgroundMode = backgroundMode;
+        }
 
-  @SerializedName("Font")
-  private Font font = null;
+        @SerializedName("Border")
+        private Line border ;
 
-  @SerializedName("Border")
-  private Line border = null;
+        public  ChartFrame  border(Line  border) {
+            this.border =  border;
+            return this;
+        }
 
-  public ChartFrame link(Link link) {
-    this.link = link;
-    return this;
-  }
+        @ApiModelProperty(value = "")
+        public Line getBorder() {
+            return border;
+        }
 
-   /**
-   * Get link
-   * @return link
-  **/
-  @ApiModelProperty(value = "")
-  public Link getLink() {
-    return link;
-  }
+        public void setBorder(Line border) {
+            this.border = border;
+        }
 
-  public void setLink(Link link) {
-    this.link = link;
-  }
+        @SerializedName("Font")
+        private Font font ;
 
-  public ChartFrame isInnerMode(Boolean isInnerMode) {
-    this.isInnerMode = isInnerMode;
-    return this;
-  }
+        public  ChartFrame  font(Font  font) {
+            this.font =  font;
+            return this;
+        }
 
-   /**
-   * Get isInnerMode
-   * @return isInnerMode
-  **/
-  @ApiModelProperty(value = "")
-  public Boolean IsInnerMode() {
-    return isInnerMode;
-  }
+        @ApiModelProperty(value = "")
+        public Font getFont() {
+            return font;
+        }
 
-  public void setIsInnerMode(Boolean isInnerMode) {
-    this.isInnerMode = isInnerMode;
-  }
+        public void setFont(Font font) {
+            this.font = font;
+        }
 
-  public ChartFrame shapeProperties(List<LinkElement> shapeProperties) {
-    this.shapeProperties = shapeProperties;
-    return this;
-  }
+        @SerializedName("IsAutomaticSize")
+        private Boolean isAutomaticSize ;
 
-  public ChartFrame addShapePropertiesItem(LinkElement shapePropertiesItem) {
-    if (this.shapeProperties == null) {
-      this.shapeProperties = new ArrayList<>();
-    }
-    this.shapeProperties.add(shapePropertiesItem);
-    return this;
-  }
+        public  ChartFrame  isAutomaticSize(Boolean  isAutomaticSize) {
+            this.isAutomaticSize =  isAutomaticSize;
+            return this;
+        }
 
-   /**
-   * Get shapeProperties
-   * @return shapeProperties
-  **/
-  @ApiModelProperty(value = "")
-  public List<LinkElement> getShapeProperties() {
-    return shapeProperties;
-  }
+        @ApiModelProperty(value = "")
+        public Boolean getIsAutomaticSize() {
+            return isAutomaticSize;
+        }
 
-  public void setShapeProperties(List<LinkElement> shapeProperties) {
-    this.shapeProperties = shapeProperties;
-  }
+        public void setIsAutomaticSize(Boolean isAutomaticSize) {
+            this.isAutomaticSize = isAutomaticSize;
+        }
 
-  public ChartFrame autoScaleFont(Boolean autoScaleFont) {
-    this.autoScaleFont = autoScaleFont;
-    return this;
-  }
+        @SerializedName("IsInnerMode")
+        private Boolean isInnerMode ;
 
-   /**
-   * Get autoScaleFont
-   * @return autoScaleFont
-  **/
-  @ApiModelProperty(value = "")
-  public Boolean AutoScaleFont() {
-    return autoScaleFont;
-  }
+        public  ChartFrame  isInnerMode(Boolean  isInnerMode) {
+            this.isInnerMode =  isInnerMode;
+            return this;
+        }
 
-  public void setAutoScaleFont(Boolean autoScaleFont) {
-    this.autoScaleFont = autoScaleFont;
-  }
+        @ApiModelProperty(value = "")
+        public Boolean getIsInnerMode() {
+            return isInnerMode;
+        }
 
-  public ChartFrame area(Area area) {
-    this.area = area;
-    return this;
-  }
+        public void setIsInnerMode(Boolean isInnerMode) {
+            this.isInnerMode = isInnerMode;
+        }
 
-   /**
-   * Get area
-   * @return area
-  **/
-  @ApiModelProperty(value = "")
-  public Area getArea() {
-    return area;
-  }
+        @SerializedName("Shadow")
+        private Boolean shadow ;
 
-  public void setArea(Area area) {
-    this.area = area;
-  }
+        public  ChartFrame  shadow(Boolean  shadow) {
+            this.shadow =  shadow;
+            return this;
+        }
 
-  public ChartFrame height(Integer height) {
-    this.height = height;
-    return this;
-  }
+        @ApiModelProperty(value = "")
+        public Boolean getShadow() {
+            return shadow;
+        }
 
-   /**
-   * Get height
-   * @return height
-  **/
-  @ApiModelProperty(value = "")
-  public Integer getHeight() {
-    return height;
-  }
+        public void setShadow(Boolean shadow) {
+            this.shadow = shadow;
+        }
 
-  public void setHeight(Integer height) {
-    this.height = height;
-  }
+        @SerializedName("ShapeProperties")
+        private List<LinkElement> shapeProperties ;
 
-  public ChartFrame width(Integer width) {
-    this.width = width;
-    return this;
-  }
+        public  ChartFrame  shapeProperties(List<LinkElement>  shapeProperties) {
+            this.shapeProperties =  shapeProperties;
+            return this;
+        }
 
-   /**
-   * Get width
-   * @return width
-  **/
-  @ApiModelProperty(value = "")
-  public Integer getWidth() {
-    return width;
-  }
+        @ApiModelProperty(value = "")
+        public List<LinkElement> getShapeProperties() {
+            return shapeProperties;
+        }
 
-  public void setWidth(Integer width) {
-    this.width = width;
-  }
+        public void setShapeProperties(List<LinkElement> shapeProperties) {
+            this.shapeProperties = shapeProperties;
+        }
 
-  public ChartFrame backgroundMode(String backgroundMode) {
-    this.backgroundMode = backgroundMode;
-    return this;
-  }
+        @SerializedName("Width")
+        private Integer width ;
 
-   /**
-   * Get backgroundMode
-   * @return backgroundMode
-  **/
-  @ApiModelProperty(value = "")
-  public String getBackgroundMode() {
-    return backgroundMode;
-  }
+        public  ChartFrame  width(Integer  width) {
+            this.width =  width;
+            return this;
+        }
 
-  public void setBackgroundMode(String backgroundMode) {
-    this.backgroundMode = backgroundMode;
-  }
+        @ApiModelProperty(value = "")
+        public Integer getWidth() {
+            return width;
+        }
 
-  public ChartFrame isAutomaticSize(Boolean isAutomaticSize) {
-    this.isAutomaticSize = isAutomaticSize;
-    return this;
-  }
+        public void setWidth(Integer width) {
+            this.width = width;
+        }
 
-   /**
-   * Get isAutomaticSize
-   * @return isAutomaticSize
-  **/
-  @ApiModelProperty(value = "")
-  public Boolean IsAutomaticSize() {
-    return isAutomaticSize;
-  }
+        @SerializedName("Height")
+        private Integer height ;
 
-  public void setIsAutomaticSize(Boolean isAutomaticSize) {
-    this.isAutomaticSize = isAutomaticSize;
-  }
+        public  ChartFrame  height(Integer  height) {
+            this.height =  height;
+            return this;
+        }
 
-  public ChartFrame Y(Integer Y) {
-    this.Y = Y;
-    return this;
-  }
+        @ApiModelProperty(value = "")
+        public Integer getHeight() {
+            return height;
+        }
 
-   /**
-   * Get Y
-   * @return Y
-  **/
-  @ApiModelProperty(value = "")
-  public Integer getY() {
-    return Y;
-  }
+        public void setHeight(Integer height) {
+            this.height = height;
+        }
 
-  public void setY(Integer Y) {
-    this.Y = Y;
-  }
+        @SerializedName("X")
+        private Integer x ;
 
-  public ChartFrame X(Integer X) {
-    this.X = X;
-    return this;
-  }
+        public  ChartFrame  x(Integer  x) {
+            this.x =  x;
+            return this;
+        }
 
-   /**
-   * Get X
-   * @return X
-  **/
-  @ApiModelProperty(value = "")
-  public Integer getX() {
-    return X;
-  }
+        @ApiModelProperty(value = "")
+        public Integer getX() {
+            return x;
+        }
 
-  public void setX(Integer X) {
-    this.X = X;
-  }
+        public void setX(Integer x) {
+            this.x = x;
+        }
 
-  public ChartFrame shadow(Boolean shadow) {
-    this.shadow = shadow;
-    return this;
-  }
+        @SerializedName("Y")
+        private Integer y ;
 
-   /**
-   * Get shadow
-   * @return shadow
-  **/
-  @ApiModelProperty(value = "")
-  public Boolean Shadow() {
-    return shadow;
-  }
+        public  ChartFrame  y(Integer  y) {
+            this.y =  y;
+            return this;
+        }
 
-  public void setShadow(Boolean shadow) {
-    this.shadow = shadow;
-  }
+        @ApiModelProperty(value = "")
+        public Integer getY() {
+            return y;
+        }
 
-  public ChartFrame font(Font font) {
-    this.font = font;
-    return this;
-  }
+        public void setY(Integer y) {
+            this.y = y;
+        }
 
-   /**
-   * Get font
-   * @return font
-  **/
-  @ApiModelProperty(value = "")
-  public Font getFont() {
-    return font;
-  }
+        @Override
+        public boolean equals(java.lang.Object o) {
+            if (this == o) {
+                return true;
+            }
+            if (o == null || getClass() != o.getClass()) {
+                return false;
+            }
 
-  public void setFont(Font font) {
-    this.font = font;
-  }
+            ChartFrame chartFrame = (ChartFrame) o;
+            return
+                Objects.equals(this.area, chartFrame.area) &&
+                Objects.equals(this.autoScaleFont, chartFrame.autoScaleFont) &&
+                Objects.equals(this.backgroundMode, chartFrame.backgroundMode) &&
+                Objects.equals(this.border, chartFrame.border) &&
+                Objects.equals(this.font, chartFrame.font) &&
+                Objects.equals(this.isAutomaticSize, chartFrame.isAutomaticSize) &&
+                Objects.equals(this.isInnerMode, chartFrame.isInnerMode) &&
+                Objects.equals(this.shadow, chartFrame.shadow) &&
+                Objects.equals(this.shapeProperties, chartFrame.shapeProperties) &&
+                Objects.equals(this.width, chartFrame.width) &&
+                Objects.equals(this.height, chartFrame.height) &&
+                Objects.equals(this.x, chartFrame.x) &&
+                Objects.equals(this.y, chartFrame.y);
+      }
 
-  public ChartFrame border(Line border) {
-    this.border = border;
-    return this;
-  }
+      @Override
+      public int hashCode() {
+        return Objects.hash(area, autoScaleFont, backgroundMode, border, font, isAutomaticSize, isInnerMode, shadow, shapeProperties, width, height, x, y);
+      }
+        @Override
+        public String toString() {
+            StringBuilder sb = new StringBuilder();
+            sb.append("class ChartFrame {\n");
+            sb.append("    area: ").append(toIndentedString(getArea())).append("\n");
+            sb.append("    autoScaleFont: ").append(toIndentedString(getAutoScaleFont())).append("\n");
+            sb.append("    backgroundMode: ").append(toIndentedString(getBackgroundMode())).append("\n");
+            sb.append("    border: ").append(toIndentedString(getBorder())).append("\n");
+            sb.append("    font: ").append(toIndentedString(getFont())).append("\n");
+            sb.append("    isAutomaticSize: ").append(toIndentedString(getIsAutomaticSize())).append("\n");
+            sb.append("    isInnerMode: ").append(toIndentedString(getIsInnerMode())).append("\n");
+            sb.append("    shadow: ").append(toIndentedString(getShadow())).append("\n");
+            sb.append("    shapeProperties: ").append(toIndentedString(getShapeProperties())).append("\n");
+            sb.append("    width: ").append(toIndentedString(getWidth())).append("\n");
+            sb.append("    height: ").append(toIndentedString(getHeight())).append("\n");
+            sb.append("    x: ").append(toIndentedString(getX())).append("\n");
+            sb.append("    y: ").append(toIndentedString(getY())).append("\n");
+            sb.append("}");
+            return sb.toString();
+        }
 
-   /**
-   * Get border
-   * @return border
-  **/
-  @ApiModelProperty(value = "")
-  public Line getBorder() {
-    return border;
-  }
-
-  public void setBorder(Line border) {
-    this.border = border;
-  }
+        /**
+        * Convert the given object to string with each line indented by 4 spaces
+        * (except the first line).
+        */
+        private String toIndentedString(java.lang.Object o) {
+            if (o == null) {
+                return "null";
+            }
+            return o.toString().replace("\n", "\n    ");
+        }
 
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    ChartFrame chartFrame = (ChartFrame) o;
-    return Objects.equals(this.link, chartFrame.link) &&
-        Objects.equals(this.isInnerMode, chartFrame.isInnerMode) &&
-        Objects.equals(this.shapeProperties, chartFrame.shapeProperties) &&
-        Objects.equals(this.autoScaleFont, chartFrame.autoScaleFont) &&
-        Objects.equals(this.area, chartFrame.area) &&
-        Objects.equals(this.height, chartFrame.height) &&
-        Objects.equals(this.width, chartFrame.width) &&
-        Objects.equals(this.backgroundMode, chartFrame.backgroundMode) &&
-        Objects.equals(this.isAutomaticSize, chartFrame.isAutomaticSize) &&
-        Objects.equals(this.Y, chartFrame.Y) &&
-        Objects.equals(this.X, chartFrame.X) &&
-        Objects.equals(this.shadow, chartFrame.shadow) &&
-        Objects.equals(this.font, chartFrame.font) &&
-        Objects.equals(this.border, chartFrame.border);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(link, isInnerMode, shapeProperties, autoScaleFont, area, height, width, backgroundMode, isAutomaticSize, Y, X, shadow, font, border);
-  }
-
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class ChartFrame {\n");
-    
-    sb.append("    link: ").append(toIndentedString(link)).append("\n");
-    sb.append("    isInnerMode: ").append(toIndentedString(isInnerMode)).append("\n");
-    sb.append("    shapeProperties: ").append(toIndentedString(shapeProperties)).append("\n");
-    sb.append("    autoScaleFont: ").append(toIndentedString(autoScaleFont)).append("\n");
-    sb.append("    area: ").append(toIndentedString(area)).append("\n");
-    sb.append("    height: ").append(toIndentedString(height)).append("\n");
-    sb.append("    width: ").append(toIndentedString(width)).append("\n");
-    sb.append("    backgroundMode: ").append(toIndentedString(backgroundMode)).append("\n");
-    sb.append("    isAutomaticSize: ").append(toIndentedString(isAutomaticSize)).append("\n");
-    sb.append("    Y: ").append(toIndentedString(Y)).append("\n");
-    sb.append("    X: ").append(toIndentedString(X)).append("\n");
-    sb.append("    shadow: ").append(toIndentedString(shadow)).append("\n");
-    sb.append("    font: ").append(toIndentedString(font)).append("\n");
-    sb.append("    border: ").append(toIndentedString(border)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
-  
 }
 

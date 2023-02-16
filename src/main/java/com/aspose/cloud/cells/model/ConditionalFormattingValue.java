@@ -1,14 +1,17 @@
-/* 
+/*
+ * --------------------------------------------------------------------------------
+ * <copyright company="Aspose" file="ConditionalFormattingValue.java">
+ *   Copyright (c) 2023 Aspose.Cells Cloud
+ * </copyright>
  * <summary>
- *  Copyright (c) 2022 Aspose.Cells Cloud
- *  Permission is hereby granted, free of charge, to any person obtaining a copy
+ *   Permission is hereby granted, free of charge, to any person obtaining a copy
  *  of this software and associated documentation files (the "Software"), to deal
  *  in the Software without restriction, including without limitation the rights
  *  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
  *  copies of the Software, and to permit persons to whom the Software is
  *  furnished to do so, subject to the following conditions:
  * 
- *  The above copyright notice and this permission notice shall be included in all 
+ *  The above copyright notice and this permission notice shall be included in all
  *  copies or substantial portions of the Software.
  * 
  *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
@@ -19,132 +22,114 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
+ * --------------------------------------------------------------------------------
  */
-
 
 package com.aspose.cloud.cells.model;
 
 import java.util.Objects;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
+import com.aspose.cloud.cells.model.*;
+import java.util.ArrayList;
+import java.util.List;
+import com.google.gson.annotations.SerializedName;
+import java.time.OffsetDateTime;
 
-/**
- * ConditionalFormattingValue
- */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-09-16T03:09:53.733-05:00")
+
 public class ConditionalFormattingValue {
-  @SerializedName("IsGTE")
-  private Boolean isGTE = null;
+        @SerializedName("IsGTE")
+        private Boolean isGTE ;
 
-  @SerializedName("Type")
-  private String type = null;
+        public  ConditionalFormattingValue  isGTE(Boolean  isGTE) {
+            this.isGTE =  isGTE;
+            return this;
+        }
 
-  @SerializedName("Value")
-  private String value = null;
+        @ApiModelProperty(value = "")
+        public Boolean getIsGTE() {
+            return isGTE;
+        }
 
-  public ConditionalFormattingValue isGTE(Boolean isGTE) {
-    this.isGTE = isGTE;
-    return this;
-  }
+        public void setIsGTE(Boolean isGTE) {
+            this.isGTE = isGTE;
+        }
 
-   /**
-   * Get or set the Greater Than Or Equal flag. Use only for icon sets, determines    whether this threshold value uses the greater than or equal to operator.    &#39;false&#39; indicates &#39;greater than&#39; is used instead of &#39;greater than or equal    to&#39;.  Default value is true.             
-   * @return isGTE
-  **/
-  @ApiModelProperty(value = "Get or set the Greater Than Or Equal flag. Use only for icon sets, determines    whether this threshold value uses the greater than or equal to operator.    'false' indicates 'greater than' is used instead of 'greater than or equal    to'.  Default value is true.             ")
-  public Boolean IsGTE() {
-    return isGTE;
-  }
+        @SerializedName("Type")
+        private String type ;
 
-  public void setIsGTE(Boolean isGTE) {
-    this.isGTE = isGTE;
-  }
+        public  ConditionalFormattingValue  type(String  type) {
+            this.type =  type;
+            return this;
+        }
 
-  public ConditionalFormattingValue type(String type) {
-    this.type = type;
-    return this;
-  }
+        @ApiModelProperty(value = "")
+        public String getType() {
+            return type;
+        }
 
-   /**
-   * Get or set the type of this conditional formatting value object.  Setting      the type to FormatConditionValueType.Min or FormatConditionValueType.Max      will auto set \&quot;Value\&quot; to null.  
-   * @return type
-  **/
-  @ApiModelProperty(value = "Get or set the type of this conditional formatting value object.  Setting      the type to FormatConditionValueType.Min or FormatConditionValueType.Max      will auto set \"Value\" to null.  ")
-  public String getType() {
-    return type;
-  }
+        public void setType(String type) {
+            this.type = type;
+        }
 
-  public void setType(String type) {
-    this.type = type;
-  }
+        @SerializedName("Value")
+        private Object value ;
 
-  public ConditionalFormattingValue value(String value) {
-    this.value = value;
-    return this;
-  }
+        public  ConditionalFormattingValue  value(Object  value) {
+            this.value =  value;
+            return this;
+        }
 
-   /**
-   * Get or set the value of this conditional formatting value object.  It should     be used in conjunction with Type.
-   * @return value
-  **/
-  @ApiModelProperty(value = "Get or set the value of this conditional formatting value object.  It should     be used in conjunction with Type.")
-  public String getValue() {
-    return value;
-  }
+        @ApiModelProperty(value = "")
+        public Object getValue() {
+            return value;
+        }
 
-  public void setValue(String value) {
-    this.value = value;
-  }
+        public void setValue(Object value) {
+            this.value = value;
+        }
+
+        @Override
+        public boolean equals(java.lang.Object o) {
+            if (this == o) {
+                return true;
+            }
+            if (o == null || getClass() != o.getClass()) {
+                return false;
+            }
+
+            ConditionalFormattingValue conditionalFormattingValue = (ConditionalFormattingValue) o;
+            return
+                Objects.equals(this.isGTE, conditionalFormattingValue.isGTE) &&
+                Objects.equals(this.type, conditionalFormattingValue.type) &&
+                Objects.equals(this.value, conditionalFormattingValue.value);
+      }
+
+      @Override
+      public int hashCode() {
+        return Objects.hash(isGTE, type, value);
+      }
+        @Override
+        public String toString() {
+            StringBuilder sb = new StringBuilder();
+            sb.append("class ConditionalFormattingValue {\n");
+            sb.append("    isGTE: ").append(toIndentedString(getIsGTE())).append("\n");
+            sb.append("    type: ").append(toIndentedString(getType())).append("\n");
+            sb.append("    value: ").append(toIndentedString(getValue())).append("\n");
+            sb.append("}");
+            return sb.toString();
+        }
+
+        /**
+        * Convert the given object to string with each line indented by 4 spaces
+        * (except the first line).
+        */
+        private String toIndentedString(java.lang.Object o) {
+            if (o == null) {
+                return "null";
+            }
+            return o.toString().replace("\n", "\n    ");
+        }
 
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    ConditionalFormattingValue conditionalFormattingValue = (ConditionalFormattingValue) o;
-    return Objects.equals(this.isGTE, conditionalFormattingValue.isGTE) &&
-        Objects.equals(this.type, conditionalFormattingValue.type) &&
-        Objects.equals(this.value, conditionalFormattingValue.value);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(isGTE, type, value);
-  }
-
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class ConditionalFormattingValue {\n");
-    
-    sb.append("    isGTE: ").append(toIndentedString(isGTE)).append("\n");
-    sb.append("    type: ").append(toIndentedString(type)).append("\n");
-    sb.append("    value: ").append(toIndentedString(value)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
-  
 }
 

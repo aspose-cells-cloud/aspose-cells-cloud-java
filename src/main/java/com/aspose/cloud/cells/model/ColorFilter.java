@@ -1,14 +1,17 @@
-/* 
+/*
+ * --------------------------------------------------------------------------------
+ * <copyright company="Aspose" file="ColorFilter.java">
+ *   Copyright (c) 2023 Aspose.Cells Cloud
+ * </copyright>
  * <summary>
- *  Copyright (c) 2022 Aspose.Cells Cloud
- *  Permission is hereby granted, free of charge, to any person obtaining a copy
+ *   Permission is hereby granted, free of charge, to any person obtaining a copy
  *  of this software and associated documentation files (the "Software"), to deal
  *  in the Software without restriction, including without limitation the rights
  *  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
  *  copies of the Software, and to permit persons to whom the Software is
  *  furnished to do so, subject to the following conditions:
  * 
- *  The above copyright notice and this permission notice shall be included in all 
+ *  The above copyright notice and this permission notice shall be included in all
  *  copies or substantial portions of the Software.
  * 
  *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
@@ -19,179 +22,152 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
+ * --------------------------------------------------------------------------------
  */
-
 
 package com.aspose.cloud.cells.model;
 
 import java.util.Objects;
-import com.aspose.cloud.cells.model.CellsColor;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
+import com.aspose.cloud.cells.model.*;
+import java.util.ArrayList;
+import java.util.List;
+import com.google.gson.annotations.SerializedName;
+import java.time.OffsetDateTime;
 
-/**
- * ColorFilter
- */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-09-16T03:09:53.733-05:00")
+
 public class ColorFilter {
-  @SerializedName("Color")
-  private CellsColor color = null;
+        @SerializedName("FilterByFillColor")
+        private Boolean filterByFillColor ;
 
-  @SerializedName("Pattern")
-  private String pattern = null;
+        public  ColorFilter  filterByFillColor(Boolean  filterByFillColor) {
+            this.filterByFillColor =  filterByFillColor;
+            return this;
+        }
 
-  @SerializedName("BackgroundColor")
-  private CellsColor backgroundColor = null;
+        @ApiModelProperty(value = "")
+        public Boolean getFilterByFillColor() {
+            return filterByFillColor;
+        }
 
-  @SerializedName("ForegroundColorColor")
-  private CellsColor foregroundColorColor = null;
+        public void setFilterByFillColor(Boolean filterByFillColor) {
+            this.filterByFillColor = filterByFillColor;
+        }
 
-  @SerializedName("FilterByFillColor")
-  private String filterByFillColor = null;
+        @SerializedName("Pattern")
+        private String pattern ;
 
-  public ColorFilter color(CellsColor color) {
-    this.color = color;
-    return this;
-  }
+        public  ColorFilter  pattern(String  pattern) {
+            this.pattern =  pattern;
+            return this;
+        }
 
-   /**
-   * Get color
-   * @return color
-  **/
-  @ApiModelProperty(value = "")
-  public CellsColor getColor() {
-    return color;
-  }
+        @ApiModelProperty(value = "")
+        public String getPattern() {
+            return pattern;
+        }
 
-  public void setColor(CellsColor color) {
-    this.color = color;
-  }
+        public void setPattern(String pattern) {
+            this.pattern = pattern;
+        }
 
-  public ColorFilter pattern(String pattern) {
-    this.pattern = pattern;
-    return this;
-  }
+        @SerializedName("Color")
+        private CellsColor color ;
 
-   /**
-   * Get pattern
-   * @return pattern
-  **/
-  @ApiModelProperty(value = "")
-  public String getPattern() {
-    return pattern;
-  }
+        public  ColorFilter  color(CellsColor  color) {
+            this.color =  color;
+            return this;
+        }
 
-  public void setPattern(String pattern) {
-    this.pattern = pattern;
-  }
+        @ApiModelProperty(value = "")
+        public CellsColor getColor() {
+            return color;
+        }
 
-  public ColorFilter backgroundColor(CellsColor backgroundColor) {
-    this.backgroundColor = backgroundColor;
-    return this;
-  }
+        public void setColor(CellsColor color) {
+            this.color = color;
+        }
 
-   /**
-   * Get backgroundColor
-   * @return backgroundColor
-  **/
-  @ApiModelProperty(value = "")
-  public CellsColor getBackgroundColor() {
-    return backgroundColor;
-  }
+        @SerializedName("ForegroundColorColor")
+        private CellsColor foregroundColorColor ;
 
-  public void setBackgroundColor(CellsColor backgroundColor) {
-    this.backgroundColor = backgroundColor;
-  }
+        public  ColorFilter  foregroundColorColor(CellsColor  foregroundColorColor) {
+            this.foregroundColorColor =  foregroundColorColor;
+            return this;
+        }
 
-  public ColorFilter foregroundColorColor(CellsColor foregroundColorColor) {
-    this.foregroundColorColor = foregroundColorColor;
-    return this;
-  }
+        @ApiModelProperty(value = "")
+        public CellsColor getForegroundColorColor() {
+            return foregroundColorColor;
+        }
 
-   /**
-   * Get foregroundColorColor
-   * @return foregroundColorColor
-  **/
-  @ApiModelProperty(value = "")
-  public CellsColor getForegroundColorColor() {
-    return foregroundColorColor;
-  }
+        public void setForegroundColorColor(CellsColor foregroundColorColor) {
+            this.foregroundColorColor = foregroundColorColor;
+        }
 
-  public void setForegroundColorColor(CellsColor foregroundColorColor) {
-    this.foregroundColorColor = foregroundColorColor;
-  }
+        @SerializedName("BackgroundColor")
+        private CellsColor backgroundColor ;
 
-  public ColorFilter filterByFillColor(String filterByFillColor) {
-    this.filterByFillColor = filterByFillColor;
-    return this;
-  }
+        public  ColorFilter  backgroundColor(CellsColor  backgroundColor) {
+            this.backgroundColor =  backgroundColor;
+            return this;
+        }
 
-   /**
-   * Get filterByFillColor
-   * @return filterByFillColor
-  **/
-  @ApiModelProperty(value = "")
-  public String getFilterByFillColor() {
-    return filterByFillColor;
-  }
+        @ApiModelProperty(value = "")
+        public CellsColor getBackgroundColor() {
+            return backgroundColor;
+        }
 
-  public void setFilterByFillColor(String filterByFillColor) {
-    this.filterByFillColor = filterByFillColor;
-  }
+        public void setBackgroundColor(CellsColor backgroundColor) {
+            this.backgroundColor = backgroundColor;
+        }
+
+        @Override
+        public boolean equals(java.lang.Object o) {
+            if (this == o) {
+                return true;
+            }
+            if (o == null || getClass() != o.getClass()) {
+                return false;
+            }
+
+            ColorFilter colorFilter = (ColorFilter) o;
+            return
+                Objects.equals(this.filterByFillColor, colorFilter.filterByFillColor) &&
+                Objects.equals(this.pattern, colorFilter.pattern) &&
+                Objects.equals(this.color, colorFilter.color) &&
+                Objects.equals(this.foregroundColorColor, colorFilter.foregroundColorColor) &&
+                Objects.equals(this.backgroundColor, colorFilter.backgroundColor);
+      }
+
+      @Override
+      public int hashCode() {
+        return Objects.hash(filterByFillColor, pattern, color, foregroundColorColor, backgroundColor);
+      }
+        @Override
+        public String toString() {
+            StringBuilder sb = new StringBuilder();
+            sb.append("class ColorFilter {\n");
+            sb.append("    filterByFillColor: ").append(toIndentedString(getFilterByFillColor())).append("\n");
+            sb.append("    pattern: ").append(toIndentedString(getPattern())).append("\n");
+            sb.append("    color: ").append(toIndentedString(getColor())).append("\n");
+            sb.append("    foregroundColorColor: ").append(toIndentedString(getForegroundColorColor())).append("\n");
+            sb.append("    backgroundColor: ").append(toIndentedString(getBackgroundColor())).append("\n");
+            sb.append("}");
+            return sb.toString();
+        }
+
+        /**
+        * Convert the given object to string with each line indented by 4 spaces
+        * (except the first line).
+        */
+        private String toIndentedString(java.lang.Object o) {
+            if (o == null) {
+                return "null";
+            }
+            return o.toString().replace("\n", "\n    ");
+        }
 
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    ColorFilter colorFilter = (ColorFilter) o;
-    return Objects.equals(this.color, colorFilter.color) &&
-        Objects.equals(this.pattern, colorFilter.pattern) &&
-        Objects.equals(this.backgroundColor, colorFilter.backgroundColor) &&
-        Objects.equals(this.foregroundColorColor, colorFilter.foregroundColorColor) &&
-        Objects.equals(this.filterByFillColor, colorFilter.filterByFillColor);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(color, pattern, backgroundColor, foregroundColorColor, filterByFillColor);
-  }
-
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class ColorFilter {\n");
-    
-    sb.append("    color: ").append(toIndentedString(color)).append("\n");
-    sb.append("    pattern: ").append(toIndentedString(pattern)).append("\n");
-    sb.append("    backgroundColor: ").append(toIndentedString(backgroundColor)).append("\n");
-    sb.append("    foregroundColorColor: ").append(toIndentedString(foregroundColorColor)).append("\n");
-    sb.append("    filterByFillColor: ").append(toIndentedString(filterByFillColor)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
-  
 }
 

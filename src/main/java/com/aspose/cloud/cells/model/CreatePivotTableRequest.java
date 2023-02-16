@@ -1,14 +1,17 @@
-/* 
+/*
+ * --------------------------------------------------------------------------------
+ * <copyright company="Aspose" file="CreatePivotTableRequest.java">
+ *   Copyright (c) 2023 Aspose.Cells Cloud
+ * </copyright>
  * <summary>
- *  Copyright (c) 2022 Aspose.Cells Cloud
- *  Permission is hereby granted, free of charge, to any person obtaining a copy
+ *   Permission is hereby granted, free of charge, to any person obtaining a copy
  *  of this software and associated documentation files (the "Software"), to deal
  *  in the Software without restriction, including without limitation the rights
  *  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
  *  copies of the Software, and to permit persons to whom the Software is
  *  furnished to do so, subject to the following conditions:
  * 
- *  The above copyright notice and this permission notice shall be included in all 
+ *  The above copyright notice and this permission notice shall be included in all
  *  copies or substantial portions of the Software.
  * 
  *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
@@ -19,250 +22,190 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
+ * --------------------------------------------------------------------------------
  */
-
 
 package com.aspose.cloud.cells.model;
 
 import java.util.Objects;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
+import com.aspose.cloud.cells.model.*;
 import java.util.ArrayList;
 import java.util.List;
+import com.google.gson.annotations.SerializedName;
+import java.time.OffsetDateTime;
 
-/**
- * CreatePivotTableRequest
- */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-09-16T03:09:53.733-05:00")
+
 public class CreatePivotTableRequest {
-  @SerializedName("PivotFieldColumns")
-  private List<Integer> pivotFieldColumns = null;
+        @SerializedName("Name")
+        private String name ;
 
-  @SerializedName("Name")
-  private String name = null;
+        public  CreatePivotTableRequest  name(String  name) {
+            this.name =  name;
+            return this;
+        }
 
-  @SerializedName("UseSameSource")
-  private Boolean useSameSource = null;
+        @ApiModelProperty(value = "")
+        public String getName() {
+            return name;
+        }
 
-  @SerializedName("PivotFieldData")
-  private List<Integer> pivotFieldData = null;
+        public void setName(String name) {
+            this.name = name;
+        }
 
-  @SerializedName("PivotFieldRows")
-  private List<Integer> pivotFieldRows = null;
+        @SerializedName("SourceData")
+        private String sourceData ;
 
-  @SerializedName("DestCellName")
-  private String destCellName = null;
+        public  CreatePivotTableRequest  sourceData(String  sourceData) {
+            this.sourceData =  sourceData;
+            return this;
+        }
 
-  @SerializedName("SourceData")
-  private String sourceData = null;
+        @ApiModelProperty(value = "")
+        public String getSourceData() {
+            return sourceData;
+        }
 
-  public CreatePivotTableRequest pivotFieldColumns(List<Integer> pivotFieldColumns) {
-    this.pivotFieldColumns = pivotFieldColumns;
-    return this;
-  }
+        public void setSourceData(String sourceData) {
+            this.sourceData = sourceData;
+        }
 
-  public CreatePivotTableRequest addPivotFieldColumnsItem(Integer pivotFieldColumnsItem) {
-    if (this.pivotFieldColumns == null) {
-      this.pivotFieldColumns = new ArrayList<>();
-    }
-    this.pivotFieldColumns.add(pivotFieldColumnsItem);
-    return this;
-  }
+        @SerializedName("DestCellName")
+        private String destCellName ;
 
-   /**
-   * Get pivotFieldColumns
-   * @return pivotFieldColumns
-  **/
-  @ApiModelProperty(value = "")
-  public List<Integer> getPivotFieldColumns() {
-    return pivotFieldColumns;
-  }
+        public  CreatePivotTableRequest  destCellName(String  destCellName) {
+            this.destCellName =  destCellName;
+            return this;
+        }
 
-  public void setPivotFieldColumns(List<Integer> pivotFieldColumns) {
-    this.pivotFieldColumns = pivotFieldColumns;
-  }
+        @ApiModelProperty(value = "")
+        public String getDestCellName() {
+            return destCellName;
+        }
 
-  public CreatePivotTableRequest name(String name) {
-    this.name = name;
-    return this;
-  }
+        public void setDestCellName(String destCellName) {
+            this.destCellName = destCellName;
+        }
 
-   /**
-   * Get name
-   * @return name
-  **/
-  @ApiModelProperty(value = "")
-  public String getName() {
-    return name;
-  }
+        @SerializedName("UseSameSource")
+        private Boolean useSameSource ;
 
-  public void setName(String name) {
-    this.name = name;
-  }
+        public  CreatePivotTableRequest  useSameSource(Boolean  useSameSource) {
+            this.useSameSource =  useSameSource;
+            return this;
+        }
 
-  public CreatePivotTableRequest useSameSource(Boolean useSameSource) {
-    this.useSameSource = useSameSource;
-    return this;
-  }
+        @ApiModelProperty(value = "")
+        public Boolean getUseSameSource() {
+            return useSameSource;
+        }
 
-   /**
-   * Get useSameSource
-   * @return useSameSource
-  **/
-  @ApiModelProperty(required = true, value = "")
-  public Boolean UseSameSource() {
-    return useSameSource;
-  }
+        public void setUseSameSource(Boolean useSameSource) {
+            this.useSameSource = useSameSource;
+        }
 
-  public void setUseSameSource(Boolean useSameSource) {
-    this.useSameSource = useSameSource;
-  }
+        @SerializedName("PivotFieldRows")
+        private List<Integer> pivotFieldRows ;
 
-  public CreatePivotTableRequest pivotFieldData(List<Integer> pivotFieldData) {
-    this.pivotFieldData = pivotFieldData;
-    return this;
-  }
+        public  CreatePivotTableRequest  pivotFieldRows(List<Integer>  pivotFieldRows) {
+            this.pivotFieldRows =  pivotFieldRows;
+            return this;
+        }
 
-  public CreatePivotTableRequest addPivotFieldDataItem(Integer pivotFieldDataItem) {
-    if (this.pivotFieldData == null) {
-      this.pivotFieldData = new ArrayList<>();
-    }
-    this.pivotFieldData.add(pivotFieldDataItem);
-    return this;
-  }
+        @ApiModelProperty(value = "")
+        public List<Integer> getPivotFieldRows() {
+            return pivotFieldRows;
+        }
 
-   /**
-   * Get pivotFieldData
-   * @return pivotFieldData
-  **/
-  @ApiModelProperty(value = "")
-  public List<Integer> getPivotFieldData() {
-    return pivotFieldData;
-  }
+        public void setPivotFieldRows(List<Integer> pivotFieldRows) {
+            this.pivotFieldRows = pivotFieldRows;
+        }
 
-  public void setPivotFieldData(List<Integer> pivotFieldData) {
-    this.pivotFieldData = pivotFieldData;
-  }
+        @SerializedName("PivotFieldColumns")
+        private List<Integer> pivotFieldColumns ;
 
-  public CreatePivotTableRequest pivotFieldRows(List<Integer> pivotFieldRows) {
-    this.pivotFieldRows = pivotFieldRows;
-    return this;
-  }
+        public  CreatePivotTableRequest  pivotFieldColumns(List<Integer>  pivotFieldColumns) {
+            this.pivotFieldColumns =  pivotFieldColumns;
+            return this;
+        }
 
-  public CreatePivotTableRequest addPivotFieldRowsItem(Integer pivotFieldRowsItem) {
-    if (this.pivotFieldRows == null) {
-      this.pivotFieldRows = new ArrayList<>();
-    }
-    this.pivotFieldRows.add(pivotFieldRowsItem);
-    return this;
-  }
+        @ApiModelProperty(value = "")
+        public List<Integer> getPivotFieldColumns() {
+            return pivotFieldColumns;
+        }
 
-   /**
-   * Get pivotFieldRows
-   * @return pivotFieldRows
-  **/
-  @ApiModelProperty(value = "")
-  public List<Integer> getPivotFieldRows() {
-    return pivotFieldRows;
-  }
+        public void setPivotFieldColumns(List<Integer> pivotFieldColumns) {
+            this.pivotFieldColumns = pivotFieldColumns;
+        }
 
-  public void setPivotFieldRows(List<Integer> pivotFieldRows) {
-    this.pivotFieldRows = pivotFieldRows;
-  }
+        @SerializedName("PivotFieldData")
+        private List<Integer> pivotFieldData ;
 
-  public CreatePivotTableRequest destCellName(String destCellName) {
-    this.destCellName = destCellName;
-    return this;
-  }
+        public  CreatePivotTableRequest  pivotFieldData(List<Integer>  pivotFieldData) {
+            this.pivotFieldData =  pivotFieldData;
+            return this;
+        }
 
-   /**
-   * Get destCellName
-   * @return destCellName
-  **/
-  @ApiModelProperty(value = "")
-  public String getDestCellName() {
-    return destCellName;
-  }
+        @ApiModelProperty(value = "")
+        public List<Integer> getPivotFieldData() {
+            return pivotFieldData;
+        }
 
-  public void setDestCellName(String destCellName) {
-    this.destCellName = destCellName;
-  }
+        public void setPivotFieldData(List<Integer> pivotFieldData) {
+            this.pivotFieldData = pivotFieldData;
+        }
 
-  public CreatePivotTableRequest sourceData(String sourceData) {
-    this.sourceData = sourceData;
-    return this;
-  }
+        @Override
+        public boolean equals(java.lang.Object o) {
+            if (this == o) {
+                return true;
+            }
+            if (o == null || getClass() != o.getClass()) {
+                return false;
+            }
 
-   /**
-   * Get sourceData
-   * @return sourceData
-  **/
-  @ApiModelProperty(value = "")
-  public String getSourceData() {
-    return sourceData;
-  }
+            CreatePivotTableRequest createPivotTableRequest = (CreatePivotTableRequest) o;
+            return
+                Objects.equals(this.name, createPivotTableRequest.name) &&
+                Objects.equals(this.sourceData, createPivotTableRequest.sourceData) &&
+                Objects.equals(this.destCellName, createPivotTableRequest.destCellName) &&
+                Objects.equals(this.useSameSource, createPivotTableRequest.useSameSource) &&
+                Objects.equals(this.pivotFieldRows, createPivotTableRequest.pivotFieldRows) &&
+                Objects.equals(this.pivotFieldColumns, createPivotTableRequest.pivotFieldColumns) &&
+                Objects.equals(this.pivotFieldData, createPivotTableRequest.pivotFieldData);
+      }
 
-  public void setSourceData(String sourceData) {
-    this.sourceData = sourceData;
-  }
+      @Override
+      public int hashCode() {
+        return Objects.hash(name, sourceData, destCellName, useSameSource, pivotFieldRows, pivotFieldColumns, pivotFieldData);
+      }
+        @Override
+        public String toString() {
+            StringBuilder sb = new StringBuilder();
+            sb.append("class CreatePivotTableRequest {\n");
+            sb.append("    name: ").append(toIndentedString(getName())).append("\n");
+            sb.append("    sourceData: ").append(toIndentedString(getSourceData())).append("\n");
+            sb.append("    destCellName: ").append(toIndentedString(getDestCellName())).append("\n");
+            sb.append("    useSameSource: ").append(toIndentedString(getUseSameSource())).append("\n");
+            sb.append("    pivotFieldRows: ").append(toIndentedString(getPivotFieldRows())).append("\n");
+            sb.append("    pivotFieldColumns: ").append(toIndentedString(getPivotFieldColumns())).append("\n");
+            sb.append("    pivotFieldData: ").append(toIndentedString(getPivotFieldData())).append("\n");
+            sb.append("}");
+            return sb.toString();
+        }
+
+        /**
+        * Convert the given object to string with each line indented by 4 spaces
+        * (except the first line).
+        */
+        private String toIndentedString(java.lang.Object o) {
+            if (o == null) {
+                return "null";
+            }
+            return o.toString().replace("\n", "\n    ");
+        }
 
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    CreatePivotTableRequest createPivotTableRequest = (CreatePivotTableRequest) o;
-    return Objects.equals(this.pivotFieldColumns, createPivotTableRequest.pivotFieldColumns) &&
-        Objects.equals(this.name, createPivotTableRequest.name) &&
-        Objects.equals(this.useSameSource, createPivotTableRequest.useSameSource) &&
-        Objects.equals(this.pivotFieldData, createPivotTableRequest.pivotFieldData) &&
-        Objects.equals(this.pivotFieldRows, createPivotTableRequest.pivotFieldRows) &&
-        Objects.equals(this.destCellName, createPivotTableRequest.destCellName) &&
-        Objects.equals(this.sourceData, createPivotTableRequest.sourceData);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(pivotFieldColumns, name, useSameSource, pivotFieldData, pivotFieldRows, destCellName, sourceData);
-  }
-
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class CreatePivotTableRequest {\n");
-    
-    sb.append("    pivotFieldColumns: ").append(toIndentedString(pivotFieldColumns)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    useSameSource: ").append(toIndentedString(useSameSource)).append("\n");
-    sb.append("    pivotFieldData: ").append(toIndentedString(pivotFieldData)).append("\n");
-    sb.append("    pivotFieldRows: ").append(toIndentedString(pivotFieldRows)).append("\n");
-    sb.append("    destCellName: ").append(toIndentedString(destCellName)).append("\n");
-    sb.append("    sourceData: ").append(toIndentedString(sourceData)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
-  
 }
 

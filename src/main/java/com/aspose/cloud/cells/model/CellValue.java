@@ -1,14 +1,17 @@
-/* 
+/*
+ * --------------------------------------------------------------------------------
+ * <copyright company="Aspose" file="CellValue.java">
+ *   Copyright (c) 2023 Aspose.Cells Cloud
+ * </copyright>
  * <summary>
- *  Copyright (c) 2022 Aspose.Cells Cloud
- *  Permission is hereby granted, free of charge, to any person obtaining a copy
+ *   Permission is hereby granted, free of charge, to any person obtaining a copy
  *  of this software and associated documentation files (the "Software"), to deal
  *  in the Software without restriction, including without limitation the rights
  *  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
  *  copies of the Software, and to permit persons to whom the Software is
  *  furnished to do so, subject to the following conditions:
  * 
- *  The above copyright notice and this permission notice shall be included in all 
+ *  The above copyright notice and this permission notice shall be included in all
  *  copies or substantial portions of the Software.
  * 
  *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
@@ -19,202 +22,171 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
+ * --------------------------------------------------------------------------------
  */
-
 
 package com.aspose.cloud.cells.model;
 
 import java.util.Objects;
-import com.aspose.cloud.cells.model.Style;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
+import com.aspose.cloud.cells.model.*;
+import java.util.ArrayList;
+import java.util.List;
+import com.google.gson.annotations.SerializedName;
+import java.time.OffsetDateTime;
 
-/**
- * CellValue
- */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-09-16T03:09:53.733-05:00")
+
 public class CellValue {
-  @SerializedName("rowIndex")
-  private Integer rowIndex = null;
+        @SerializedName("RowIndex")
+        private Integer rowIndex ;
 
-  @SerializedName("columnIndex")
-  private Integer columnIndex = null;
+        public  CellValue  rowIndex(Integer  rowIndex) {
+            this.rowIndex =  rowIndex;
+            return this;
+        }
 
-  @SerializedName("style")
-  private Style style = null;
+        @ApiModelProperty(value = "")
+        public Integer getRowIndex() {
+            return rowIndex;
+        }
 
-  @SerializedName("type")
-  private String type = null;
+        public void setRowIndex(Integer rowIndex) {
+            this.rowIndex = rowIndex;
+        }
 
-  @SerializedName("value")
-  private String value = null;
+        @SerializedName("ColumnIndex")
+        private Integer columnIndex ;
 
-  @SerializedName("formula")
-  private String formula = null;
+        public  CellValue  columnIndex(Integer  columnIndex) {
+            this.columnIndex =  columnIndex;
+            return this;
+        }
 
-  public CellValue rowIndex(Integer rowIndex) {
-    this.rowIndex = rowIndex;
-    return this;
-  }
+        @ApiModelProperty(value = "")
+        public Integer getColumnIndex() {
+            return columnIndex;
+        }
 
-   /**
-   * Get rowIndex
-   * @return rowIndex
-  **/
-  @ApiModelProperty(value = "")
-  public Integer getRowIndex() {
-    return rowIndex;
-  }
+        public void setColumnIndex(Integer columnIndex) {
+            this.columnIndex = columnIndex;
+        }
 
-  public void setRowIndex(Integer rowIndex) {
-    this.rowIndex = rowIndex;
-  }
+        @SerializedName("Type")
+        private String type ;
 
-  public CellValue columnIndex(Integer columnIndex) {
-    this.columnIndex = columnIndex;
-    return this;
-  }
+        public  CellValue  type(String  type) {
+            this.type =  type;
+            return this;
+        }
 
-   /**
-   * Get columnIndex
-   * @return columnIndex
-  **/
-  @ApiModelProperty(value = "")
-  public Integer getColumnIndex() {
-    return columnIndex;
-  }
+        @ApiModelProperty(value = "")
+        public String getType() {
+            return type;
+        }
 
-  public void setColumnIndex(Integer columnIndex) {
-    this.columnIndex = columnIndex;
-  }
+        public void setType(String type) {
+            this.type = type;
+        }
 
-  public CellValue style(Style style) {
-    this.style = style;
-    return this;
-  }
+        @SerializedName("Value")
+        private String value ;
 
-   /**
-   * Get style
-   * @return style
-  **/
-  @ApiModelProperty(value = "")
-  public Style getStyle() {
-    return style;
-  }
+        public  CellValue  value(String  value) {
+            this.value =  value;
+            return this;
+        }
 
-  public void setStyle(Style style) {
-    this.style = style;
-  }
+        @ApiModelProperty(value = "")
+        public String getValue() {
+            return value;
+        }
 
-  public CellValue type(String type) {
-    this.type = type;
-    return this;
-  }
+        public void setValue(String value) {
+            this.value = value;
+        }
 
-   /**
-   * Get type
-   * @return type
-  **/
-  @ApiModelProperty(value = "")
-  public String getType() {
-    return type;
-  }
+        @SerializedName("Formula")
+        private String formula ;
 
-  public void setType(String type) {
-    this.type = type;
-  }
+        public  CellValue  formula(String  formula) {
+            this.formula =  formula;
+            return this;
+        }
 
-  public CellValue value(String value) {
-    this.value = value;
-    return this;
-  }
+        @ApiModelProperty(value = "")
+        public String getFormula() {
+            return formula;
+        }
 
-   /**
-   * Get value
-   * @return value
-  **/
-  @ApiModelProperty(value = "")
-  public String getValue() {
-    return value;
-  }
+        public void setFormula(String formula) {
+            this.formula = formula;
+        }
 
-  public void setValue(String value) {
-    this.value = value;
-  }
+        @SerializedName("Style")
+        private Style style ;
 
-  public CellValue formula(String formula) {
-    this.formula = formula;
-    return this;
-  }
+        public  CellValue  style(Style  style) {
+            this.style =  style;
+            return this;
+        }
 
-   /**
-   * Get formula
-   * @return formula
-  **/
-  @ApiModelProperty(value = "")
-  public String getFormula() {
-    return formula;
-  }
+        @ApiModelProperty(value = "")
+        public Style getStyle() {
+            return style;
+        }
 
-  public void setFormula(String formula) {
-    this.formula = formula;
-  }
+        public void setStyle(Style style) {
+            this.style = style;
+        }
 
+        @Override
+        public boolean equals(java.lang.Object o) {
+            if (this == o) {
+                return true;
+            }
+            if (o == null || getClass() != o.getClass()) {
+                return false;
+            }
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    CellValue cellValue = (CellValue) o;
-    return Objects.equals(this.rowIndex, cellValue.rowIndex) &&
-        Objects.equals(this.columnIndex, cellValue.columnIndex) &&
-        Objects.equals(this.style, cellValue.style) &&
-        Objects.equals(this.type, cellValue.type) &&
-        Objects.equals(this.value, cellValue.value) &&
-        Objects.equals(this.formula, cellValue.formula);
-  }
+            CellValue cellValue = (CellValue) o;
+            return
+                Objects.equals(this.rowIndex, cellValue.rowIndex) &&
+                Objects.equals(this.columnIndex, cellValue.columnIndex) &&
+                Objects.equals(this.type, cellValue.type) &&
+                Objects.equals(this.value, cellValue.value) &&
+                Objects.equals(this.formula, cellValue.formula) &&
+                Objects.equals(this.style, cellValue.style);
+      }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(rowIndex, columnIndex, style, type, value, formula);
-  }
+      @Override
+      public int hashCode() {
+        return Objects.hash(rowIndex, columnIndex, type, value, formula, style);
+      }
+        @Override
+        public String toString() {
+            StringBuilder sb = new StringBuilder();
+            sb.append("class CellValue {\n");
+            sb.append("    rowIndex: ").append(toIndentedString(getRowIndex())).append("\n");
+            sb.append("    columnIndex: ").append(toIndentedString(getColumnIndex())).append("\n");
+            sb.append("    type: ").append(toIndentedString(getType())).append("\n");
+            sb.append("    value: ").append(toIndentedString(getValue())).append("\n");
+            sb.append("    formula: ").append(toIndentedString(getFormula())).append("\n");
+            sb.append("    style: ").append(toIndentedString(getStyle())).append("\n");
+            sb.append("}");
+            return sb.toString();
+        }
+
+        /**
+        * Convert the given object to string with each line indented by 4 spaces
+        * (except the first line).
+        */
+        private String toIndentedString(java.lang.Object o) {
+            if (o == null) {
+                return "null";
+            }
+            return o.toString().replace("\n", "\n    ");
+        }
 
 
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class CellValue {\n");
-    
-    sb.append("    rowIndex: ").append(toIndentedString(rowIndex)).append("\n");
-    sb.append("    columnIndex: ").append(toIndentedString(columnIndex)).append("\n");
-    sb.append("    style: ").append(toIndentedString(style)).append("\n");
-    sb.append("    type: ").append(toIndentedString(type)).append("\n");
-    sb.append("    value: ").append(toIndentedString(value)).append("\n");
-    sb.append("    formula: ").append(toIndentedString(formula)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
-  
 }
 

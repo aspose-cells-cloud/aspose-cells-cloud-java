@@ -1,14 +1,17 @@
-/* 
+/*
+ * --------------------------------------------------------------------------------
+ * <copyright company="Aspose" file="DataSorter.java">
+ *   Copyright (c) 2023 Aspose.Cells Cloud
+ * </copyright>
  * <summary>
- *  Copyright (c) 2022 Aspose.Cells Cloud
- *  Permission is hereby granted, free of charge, to any person obtaining a copy
+ *   Permission is hereby granted, free of charge, to any person obtaining a copy
  *  of this software and associated documentation files (the "Software"), to deal
  *  in the Software without restriction, including without limitation the rights
  *  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
  *  copies of the Software, and to permit persons to whom the Software is
  *  furnished to do so, subject to the following conditions:
  * 
- *  The above copyright notice and this permission notice shall be included in all 
+ *  The above copyright notice and this permission notice shall be included in all
  *  copies or substantial portions of the Software.
  * 
  *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
@@ -19,166 +22,152 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
+ * --------------------------------------------------------------------------------
  */
-
 
 package com.aspose.cloud.cells.model;
 
 import java.util.Objects;
-import com.aspose.cloud.cells.model.SortKey;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
+import com.aspose.cloud.cells.model.*;
 import java.util.ArrayList;
 import java.util.List;
+import com.google.gson.annotations.SerializedName;
+import java.time.OffsetDateTime;
 
-/**
- * DataSorter
- */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-09-16T03:09:53.733-05:00")
+
 public class DataSorter {
-  @SerializedName("CaseSensitive")
-  private Boolean caseSensitive = null;
+        @SerializedName("CaseSensitive")
+        private Boolean caseSensitive ;
 
-  @SerializedName("KeyList")
-  private List<SortKey> keyList = null;
+        public  DataSorter  caseSensitive(Boolean  caseSensitive) {
+            this.caseSensitive =  caseSensitive;
+            return this;
+        }
 
-  @SerializedName("HasHeaders")
-  private Boolean hasHeaders = null;
+        @ApiModelProperty(value = "")
+        public Boolean getCaseSensitive() {
+            return caseSensitive;
+        }
 
-  @SerializedName("SortLeftToRight")
-  private Boolean sortLeftToRight = null;
+        public void setCaseSensitive(Boolean caseSensitive) {
+            this.caseSensitive = caseSensitive;
+        }
 
-  public DataSorter caseSensitive(Boolean caseSensitive) {
-    this.caseSensitive = caseSensitive;
-    return this;
-  }
+        @SerializedName("HasHeaders")
+        private Boolean hasHeaders ;
 
-   /**
-   * Get caseSensitive
-   * @return caseSensitive
-  **/
-  @ApiModelProperty(value = "")
-  public Boolean CaseSensitive() {
-    return caseSensitive;
-  }
+        public  DataSorter  hasHeaders(Boolean  hasHeaders) {
+            this.hasHeaders =  hasHeaders;
+            return this;
+        }
 
-  public void setCaseSensitive(Boolean caseSensitive) {
-    this.caseSensitive = caseSensitive;
-  }
+        @ApiModelProperty(value = "")
+        public Boolean getHasHeaders() {
+            return hasHeaders;
+        }
 
-  public DataSorter keyList(List<SortKey> keyList) {
-    this.keyList = keyList;
-    return this;
-  }
+        public void setHasHeaders(Boolean hasHeaders) {
+            this.hasHeaders = hasHeaders;
+        }
 
-  public DataSorter addKeyListItem(SortKey keyListItem) {
-    if (this.keyList == null) {
-      this.keyList = new ArrayList<>();
-    }
-    this.keyList.add(keyListItem);
-    return this;
-  }
+        @SerializedName("KeyList")
+        private List<SortKey> keyList ;
 
-   /**
-   * Get keyList
-   * @return keyList
-  **/
-  @ApiModelProperty(value = "")
-  public List<SortKey> getKeyList() {
-    return keyList;
-  }
+        public  DataSorter  keyList(List<SortKey>  keyList) {
+            this.keyList =  keyList;
+            return this;
+        }
 
-  public void setKeyList(List<SortKey> keyList) {
-    this.keyList = keyList;
-  }
+        @ApiModelProperty(value = "")
+        public List<SortKey> getKeyList() {
+            return keyList;
+        }
 
-  public DataSorter hasHeaders(Boolean hasHeaders) {
-    this.hasHeaders = hasHeaders;
-    return this;
-  }
+        public void setKeyList(List<SortKey> keyList) {
+            this.keyList = keyList;
+        }
 
-   /**
-   * Get hasHeaders
-   * @return hasHeaders
-  **/
-  @ApiModelProperty(value = "")
-  public Boolean HasHeaders() {
-    return hasHeaders;
-  }
+        @SerializedName("SortLeftToRight")
+        private Boolean sortLeftToRight ;
 
-  public void setHasHeaders(Boolean hasHeaders) {
-    this.hasHeaders = hasHeaders;
-  }
+        public  DataSorter  sortLeftToRight(Boolean  sortLeftToRight) {
+            this.sortLeftToRight =  sortLeftToRight;
+            return this;
+        }
 
-  public DataSorter sortLeftToRight(Boolean sortLeftToRight) {
-    this.sortLeftToRight = sortLeftToRight;
-    return this;
-  }
+        @ApiModelProperty(value = "")
+        public Boolean getSortLeftToRight() {
+            return sortLeftToRight;
+        }
 
-   /**
-   * Get sortLeftToRight
-   * @return sortLeftToRight
-  **/
-  @ApiModelProperty(value = "")
-  public Boolean SortLeftToRight() {
-    return sortLeftToRight;
-  }
+        public void setSortLeftToRight(Boolean sortLeftToRight) {
+            this.sortLeftToRight = sortLeftToRight;
+        }
 
-  public void setSortLeftToRight(Boolean sortLeftToRight) {
-    this.sortLeftToRight = sortLeftToRight;
-  }
+        @SerializedName("SortAsNumber")
+        private Boolean sortAsNumber ;
+
+        public  DataSorter  sortAsNumber(Boolean  sortAsNumber) {
+            this.sortAsNumber =  sortAsNumber;
+            return this;
+        }
+
+        @ApiModelProperty(value = "")
+        public Boolean getSortAsNumber() {
+            return sortAsNumber;
+        }
+
+        public void setSortAsNumber(Boolean sortAsNumber) {
+            this.sortAsNumber = sortAsNumber;
+        }
+
+        @Override
+        public boolean equals(java.lang.Object o) {
+            if (this == o) {
+                return true;
+            }
+            if (o == null || getClass() != o.getClass()) {
+                return false;
+            }
+
+            DataSorter dataSorter = (DataSorter) o;
+            return
+                Objects.equals(this.caseSensitive, dataSorter.caseSensitive) &&
+                Objects.equals(this.hasHeaders, dataSorter.hasHeaders) &&
+                Objects.equals(this.keyList, dataSorter.keyList) &&
+                Objects.equals(this.sortLeftToRight, dataSorter.sortLeftToRight) &&
+                Objects.equals(this.sortAsNumber, dataSorter.sortAsNumber);
+      }
+
+      @Override
+      public int hashCode() {
+        return Objects.hash(caseSensitive, hasHeaders, keyList, sortLeftToRight, sortAsNumber);
+      }
+        @Override
+        public String toString() {
+            StringBuilder sb = new StringBuilder();
+            sb.append("class DataSorter {\n");
+            sb.append("    caseSensitive: ").append(toIndentedString(getCaseSensitive())).append("\n");
+            sb.append("    hasHeaders: ").append(toIndentedString(getHasHeaders())).append("\n");
+            sb.append("    keyList: ").append(toIndentedString(getKeyList())).append("\n");
+            sb.append("    sortLeftToRight: ").append(toIndentedString(getSortLeftToRight())).append("\n");
+            sb.append("    sortAsNumber: ").append(toIndentedString(getSortAsNumber())).append("\n");
+            sb.append("}");
+            return sb.toString();
+        }
+
+        /**
+        * Convert the given object to string with each line indented by 4 spaces
+        * (except the first line).
+        */
+        private String toIndentedString(java.lang.Object o) {
+            if (o == null) {
+                return "null";
+            }
+            return o.toString().replace("\n", "\n    ");
+        }
 
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    DataSorter dataSorter = (DataSorter) o;
-    return Objects.equals(this.caseSensitive, dataSorter.caseSensitive) &&
-        Objects.equals(this.keyList, dataSorter.keyList) &&
-        Objects.equals(this.hasHeaders, dataSorter.hasHeaders) &&
-        Objects.equals(this.sortLeftToRight, dataSorter.sortLeftToRight);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(caseSensitive, keyList, hasHeaders, sortLeftToRight);
-  }
-
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class DataSorter {\n");
-    
-    sb.append("    caseSensitive: ").append(toIndentedString(caseSensitive)).append("\n");
-    sb.append("    keyList: ").append(toIndentedString(keyList)).append("\n");
-    sb.append("    hasHeaders: ").append(toIndentedString(hasHeaders)).append("\n");
-    sb.append("    sortLeftToRight: ").append(toIndentedString(sortLeftToRight)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
-  
 }
 

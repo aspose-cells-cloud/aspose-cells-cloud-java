@@ -1,14 +1,17 @@
-/* 
+/*
+ * --------------------------------------------------------------------------------
+ * <copyright company="Aspose" file="BatchConvertRequest.java">
+ *   Copyright (c) 2023 Aspose.Cells Cloud
+ * </copyright>
  * <summary>
- *  Copyright (c) 2022 Aspose.Cells Cloud
- *  Permission is hereby granted, free of charge, to any person obtaining a copy
+ *   Permission is hereby granted, free of charge, to any person obtaining a copy
  *  of this software and associated documentation files (the "Software"), to deal
  *  in the Software without restriction, including without limitation the rights
  *  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
  *  copies of the Software, and to permit persons to whom the Software is
  *  furnished to do so, subject to the following conditions:
  * 
- *  The above copyright notice and this permission notice shall be included in all 
+ *  The above copyright notice and this permission notice shall be included in all
  *  copies or substantial portions of the Software.
  * 
  *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
@@ -19,226 +22,190 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
+ * --------------------------------------------------------------------------------
  */
-
 
 package com.aspose.cloud.cells.model;
 
 import java.util.Objects;
-import com.aspose.cloud.cells.model.MatchConditionRequest;
-import com.aspose.cloud.cells.model.SaveOptions;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
+import com.aspose.cloud.cells.model.*;
+import java.util.ArrayList;
+import java.util.List;
+import com.google.gson.annotations.SerializedName;
+import java.time.OffsetDateTime;
 
-/**
- * BatchConvertRequest
- */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-09-16T03:09:53.733-05:00")
+
 public class BatchConvertRequest {
-  @SerializedName("SourceFolder")
-  private String sourceFolder = null;
+        @SerializedName("SourceFolder")
+        private String sourceFolder ;
 
-  @SerializedName("SourceStorage")
-  private String sourceStorage = null;
+        public  BatchConvertRequest  sourceFolder(String  sourceFolder) {
+            this.sourceFolder =  sourceFolder;
+            return this;
+        }
 
-  @SerializedName("MatchCondition")
-  private MatchConditionRequest matchCondition = null;
+        @ApiModelProperty(value = "")
+        public String getSourceFolder() {
+            return sourceFolder;
+        }
 
-  @SerializedName("Format")
-  private String format = null;
+        public void setSourceFolder(String sourceFolder) {
+            this.sourceFolder = sourceFolder;
+        }
 
-  @SerializedName("OutFolder")
-  private String outFolder = null;
+        @SerializedName("SourceStorage")
+        private String sourceStorage ;
 
-  @SerializedName("OutStorage")
-  private String outStorage = null;
+        public  BatchConvertRequest  sourceStorage(String  sourceStorage) {
+            this.sourceStorage =  sourceStorage;
+            return this;
+        }
 
-  @SerializedName("SaveOptions")
-  private SaveOptions saveOptions = null;
+        @ApiModelProperty(value = "")
+        public String getSourceStorage() {
+            return sourceStorage;
+        }
 
-  public BatchConvertRequest sourceFolder(String sourceFolder) {
-    this.sourceFolder = sourceFolder;
-    return this;
-  }
+        public void setSourceStorage(String sourceStorage) {
+            this.sourceStorage = sourceStorage;
+        }
 
-   /**
-   * Get sourceFolder
-   * @return sourceFolder
-  **/
-  @ApiModelProperty(value = "")
-  public String getSourceFolder() {
-    return sourceFolder;
-  }
+        @SerializedName("MatchCondition")
+        private MatchConditionRequest matchCondition ;
 
-  public void setSourceFolder(String sourceFolder) {
-    this.sourceFolder = sourceFolder;
-  }
+        public  BatchConvertRequest  matchCondition(MatchConditionRequest  matchCondition) {
+            this.matchCondition =  matchCondition;
+            return this;
+        }
 
-  public BatchConvertRequest sourceStorage(String sourceStorage) {
-    this.sourceStorage = sourceStorage;
-    return this;
-  }
+        @ApiModelProperty(value = "")
+        public MatchConditionRequest getMatchCondition() {
+            return matchCondition;
+        }
 
-   /**
-   * Get sourceStorage
-   * @return sourceStorage
-  **/
-  @ApiModelProperty(value = "")
-  public String getSourceStorage() {
-    return sourceStorage;
-  }
+        public void setMatchCondition(MatchConditionRequest matchCondition) {
+            this.matchCondition = matchCondition;
+        }
 
-  public void setSourceStorage(String sourceStorage) {
-    this.sourceStorage = sourceStorage;
-  }
+        @SerializedName("Format")
+        private String format ;
 
-  public BatchConvertRequest matchCondition(MatchConditionRequest matchCondition) {
-    this.matchCondition = matchCondition;
-    return this;
-  }
+        public  BatchConvertRequest  format(String  format) {
+            this.format =  format;
+            return this;
+        }
 
-   /**
-   * Get matchCondition
-   * @return matchCondition
-  **/
-  @ApiModelProperty(value = "")
-  public MatchConditionRequest getMatchCondition() {
-    return matchCondition;
-  }
+        @ApiModelProperty(value = "")
+        public String getFormat() {
+            return format;
+        }
 
-  public void setMatchCondition(MatchConditionRequest matchCondition) {
-    this.matchCondition = matchCondition;
-  }
+        public void setFormat(String format) {
+            this.format = format;
+        }
 
-  public BatchConvertRequest format(String format) {
-    this.format = format;
-    return this;
-  }
+        @SerializedName("OutFolder")
+        private String outFolder ;
 
-   /**
-   * Get format
-   * @return format
-  **/
-  @ApiModelProperty(value = "")
-  public String getFormat() {
-    return format;
-  }
+        public  BatchConvertRequest  outFolder(String  outFolder) {
+            this.outFolder =  outFolder;
+            return this;
+        }
 
-  public void setFormat(String format) {
-    this.format = format;
-  }
+        @ApiModelProperty(value = "")
+        public String getOutFolder() {
+            return outFolder;
+        }
 
-  public BatchConvertRequest outFolder(String outFolder) {
-    this.outFolder = outFolder;
-    return this;
-  }
+        public void setOutFolder(String outFolder) {
+            this.outFolder = outFolder;
+        }
 
-   /**
-   * Get outFolder
-   * @return outFolder
-  **/
-  @ApiModelProperty(value = "")
-  public String getOutFolder() {
-    return outFolder;
-  }
+        @SerializedName("OutStorage")
+        private String outStorage ;
 
-  public void setOutFolder(String outFolder) {
-    this.outFolder = outFolder;
-  }
+        public  BatchConvertRequest  outStorage(String  outStorage) {
+            this.outStorage =  outStorage;
+            return this;
+        }
 
-  public BatchConvertRequest outStorage(String outStorage) {
-    this.outStorage = outStorage;
-    return this;
-  }
+        @ApiModelProperty(value = "")
+        public String getOutStorage() {
+            return outStorage;
+        }
 
-   /**
-   * Get outStorage
-   * @return outStorage
-  **/
-  @ApiModelProperty(value = "")
-  public String getOutStorage() {
-    return outStorage;
-  }
+        public void setOutStorage(String outStorage) {
+            this.outStorage = outStorage;
+        }
 
-  public void setOutStorage(String outStorage) {
-    this.outStorage = outStorage;
-  }
+        @SerializedName("SaveOptions")
+        private SaveOptions saveOptions ;
 
-  public BatchConvertRequest saveOptions(SaveOptions saveOptions) {
-    this.saveOptions = saveOptions;
-    return this;
-  }
+        public  BatchConvertRequest  saveOptions(SaveOptions  saveOptions) {
+            this.saveOptions =  saveOptions;
+            return this;
+        }
 
-   /**
-   * Get saveOptions
-   * @return saveOptions
-  **/
-  @ApiModelProperty(value = "")
-  public SaveOptions getSaveOptions() {
-    return saveOptions;
-  }
+        @ApiModelProperty(value = "")
+        public SaveOptions getSaveOptions() {
+            return saveOptions;
+        }
 
-  public void setSaveOptions(SaveOptions saveOptions) {
-    this.saveOptions = saveOptions;
-  }
+        public void setSaveOptions(SaveOptions saveOptions) {
+            this.saveOptions = saveOptions;
+        }
 
+        @Override
+        public boolean equals(java.lang.Object o) {
+            if (this == o) {
+                return true;
+            }
+            if (o == null || getClass() != o.getClass()) {
+                return false;
+            }
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    BatchConvertRequest batchConvertRequest = (BatchConvertRequest) o;
-    return Objects.equals(this.sourceFolder, batchConvertRequest.sourceFolder) &&
-        Objects.equals(this.sourceStorage, batchConvertRequest.sourceStorage) &&
-        Objects.equals(this.matchCondition, batchConvertRequest.matchCondition) &&
-        Objects.equals(this.format, batchConvertRequest.format) &&
-        Objects.equals(this.outFolder, batchConvertRequest.outFolder) &&
-        Objects.equals(this.outStorage, batchConvertRequest.outStorage) &&
-        Objects.equals(this.saveOptions, batchConvertRequest.saveOptions);
-  }
+            BatchConvertRequest batchConvertRequest = (BatchConvertRequest) o;
+            return
+                Objects.equals(this.sourceFolder, batchConvertRequest.sourceFolder) &&
+                Objects.equals(this.sourceStorage, batchConvertRequest.sourceStorage) &&
+                Objects.equals(this.matchCondition, batchConvertRequest.matchCondition) &&
+                Objects.equals(this.format, batchConvertRequest.format) &&
+                Objects.equals(this.outFolder, batchConvertRequest.outFolder) &&
+                Objects.equals(this.outStorage, batchConvertRequest.outStorage) &&
+                Objects.equals(this.saveOptions, batchConvertRequest.saveOptions);
+      }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(sourceFolder, sourceStorage, matchCondition, format, outFolder, outStorage, saveOptions);
-  }
+      @Override
+      public int hashCode() {
+        return Objects.hash(sourceFolder, sourceStorage, matchCondition, format, outFolder, outStorage, saveOptions);
+      }
+        @Override
+        public String toString() {
+            StringBuilder sb = new StringBuilder();
+            sb.append("class BatchConvertRequest {\n");
+            sb.append("    sourceFolder: ").append(toIndentedString(getSourceFolder())).append("\n");
+            sb.append("    sourceStorage: ").append(toIndentedString(getSourceStorage())).append("\n");
+            sb.append("    matchCondition: ").append(toIndentedString(getMatchCondition())).append("\n");
+            sb.append("    format: ").append(toIndentedString(getFormat())).append("\n");
+            sb.append("    outFolder: ").append(toIndentedString(getOutFolder())).append("\n");
+            sb.append("    outStorage: ").append(toIndentedString(getOutStorage())).append("\n");
+            sb.append("    saveOptions: ").append(toIndentedString(getSaveOptions())).append("\n");
+            sb.append("}");
+            return sb.toString();
+        }
+
+        /**
+        * Convert the given object to string with each line indented by 4 spaces
+        * (except the first line).
+        */
+        private String toIndentedString(java.lang.Object o) {
+            if (o == null) {
+                return "null";
+            }
+            return o.toString().replace("\n", "\n    ");
+        }
 
 
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class BatchConvertRequest {\n");
-    
-    sb.append("    sourceFolder: ").append(toIndentedString(sourceFolder)).append("\n");
-    sb.append("    sourceStorage: ").append(toIndentedString(sourceStorage)).append("\n");
-    sb.append("    matchCondition: ").append(toIndentedString(matchCondition)).append("\n");
-    sb.append("    format: ").append(toIndentedString(format)).append("\n");
-    sb.append("    outFolder: ").append(toIndentedString(outFolder)).append("\n");
-    sb.append("    outStorage: ").append(toIndentedString(outStorage)).append("\n");
-    sb.append("    saveOptions: ").append(toIndentedString(saveOptions)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
-  
 }
 

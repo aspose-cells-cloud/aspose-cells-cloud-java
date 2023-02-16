@@ -1,14 +1,17 @@
-/* 
+/*
+ * --------------------------------------------------------------------------------
+ * <copyright company="Aspose" file="OleObjectsResponse.java">
+ *   Copyright (c) 2023 Aspose.Cells Cloud
+ * </copyright>
  * <summary>
- *  Copyright (c) 2022 Aspose.Cells Cloud
- *  Permission is hereby granted, free of charge, to any person obtaining a copy
+ *   Permission is hereby granted, free of charge, to any person obtaining a copy
  *  of this software and associated documentation files (the "Software"), to deal
  *  in the Software without restriction, including without limitation the rights
  *  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
  *  copies of the Software, and to permit persons to whom the Software is
  *  furnished to do so, subject to the following conditions:
  * 
- *  The above copyright notice and this permission notice shall be included in all 
+ *  The above copyright notice and this permission notice shall be included in all
  *  copies or substantial portions of the Software.
  * 
  *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
@@ -19,89 +22,79 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
+ * --------------------------------------------------------------------------------
  */
-
 
 package com.aspose.cloud.cells.model;
 
 import java.util.Objects;
-import com.aspose.cloud.cells.model.CellsCloudResponse;
-import com.aspose.cloud.cells.model.OleObjects;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
-
-/**
- * OleObjectsResponse
- */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-09-16T03:09:53.733-05:00")
-public class OleObjectsResponse extends CellsCloudResponse {
-  @SerializedName("OleObjects")
-  private OleObjects oleObjects = null;
-
-  public OleObjectsResponse oleObjects(OleObjects oleObjects) {
-    this.oleObjects = oleObjects;
-    return this;
-  }
-
-   /**
-   * Get oleObjects
-   * @return oleObjects
-  **/
-  @ApiModelProperty(value = "")
-  public OleObjects getOleObjects() {
-    return oleObjects;
-  }
-
-  public void setOleObjects(OleObjects oleObjects) {
-    this.oleObjects = oleObjects;
-  }
+import com.aspose.cloud.cells.model.*;
+import java.util.ArrayList;
+import java.util.List;
+import com.google.gson.annotations.SerializedName;
+import java.time.OffsetDateTime;
 
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    OleObjectsResponse oleObjectsResponse = (OleObjectsResponse) o;
-    return Objects.equals(this.oleObjects, oleObjectsResponse.oleObjects) &&
-        super.equals(o);
-  }
+public class OleObjectsResponse  extends  CellsCloudResponse {
+        @SerializedName("OleObjects")
+        private OleObjects oleObjects ;
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(oleObjects, super.hashCode());
-  }
+        public  OleObjectsResponse  oleObjects(OleObjects  oleObjects) {
+            this.oleObjects =  oleObjects;
+            return this;
+        }
+
+        @ApiModelProperty(value = "")
+        public OleObjects getOleObjects() {
+            return oleObjects;
+        }
+
+        public void setOleObjects(OleObjects oleObjects) {
+            this.oleObjects = oleObjects;
+        }
+
+        @Override
+        public boolean equals(java.lang.Object o) {
+            if (this == o) {
+                return true;
+            }
+            if (o == null || getClass() != o.getClass()) {
+                return false;
+            }
+
+            OleObjectsResponse oleObjectsResponse = (OleObjectsResponse) o;
+            return
+                Objects.equals(this.oleObjects, oleObjectsResponse.oleObjects) &&
+                super.equals(o);
+      }
+
+      @Override
+      public int hashCode() {
+        return Objects.hash(oleObjects, super.hashCode());
+      }
+        @Override
+        public String toString() {
+            StringBuilder sb = new StringBuilder();
+            sb.append("class OleObjectsResponse {\n");
+            sb.append("    oleObjects: ").append(toIndentedString(getOleObjects())).append("\n");
+            sb.append("    code: ").append(toIndentedString(getCode())).append("\n");
+            sb.append("    status: ").append(toIndentedString(getStatus())).append("\n");
+            sb.append("}");
+            return sb.toString();
+        }
+
+        /**
+        * Convert the given object to string with each line indented by 4 spaces
+        * (except the first line).
+        */
+        private String toIndentedString(java.lang.Object o) {
+            if (o == null) {
+                return "null";
+            }
+            return o.toString().replace("\n", "\n    ");
+        }
 
 
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class OleObjectsResponse {\n");
-    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
-    sb.append("    oleObjects: ").append(toIndentedString(oleObjects)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
-  
 }
 

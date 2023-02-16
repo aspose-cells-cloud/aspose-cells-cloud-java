@@ -1,14 +1,17 @@
-/* 
+/*
+ * --------------------------------------------------------------------------------
+ * <copyright company="Aspose" file="TextWaterMarkerRequest.java">
+ *   Copyright (c) 2023 Aspose.Cells Cloud
+ * </copyright>
  * <summary>
- *  Copyright (c) 2022 Aspose.Cells Cloud
- *  Permission is hereby granted, free of charge, to any person obtaining a copy
+ *   Permission is hereby granted, free of charge, to any person obtaining a copy
  *  of this software and associated documentation files (the "Software"), to deal
  *  in the Software without restriction, including without limitation the rights
  *  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
  *  copies of the Software, and to permit persons to whom the Software is
  *  furnished to do so, subject to the following conditions:
  * 
- *  The above copyright notice and this permission notice shall be included in all 
+ *  The above copyright notice and this permission notice shall be included in all
  *  copies or substantial portions of the Software.
  * 
  *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
@@ -19,179 +22,152 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
+ * --------------------------------------------------------------------------------
  */
-
 
 package com.aspose.cloud.cells.model;
 
 import java.util.Objects;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
+import com.aspose.cloud.cells.model.*;
+import java.util.ArrayList;
+import java.util.List;
+import com.google.gson.annotations.SerializedName;
+import java.time.OffsetDateTime;
 
-/**
- * Used by text water marker requests.
- */
-@ApiModel(description = "Used by text water marker requests.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-09-16T03:09:53.733-05:00")
+
 public class TextWaterMarkerRequest {
-  @SerializedName("Text")
-  private String text = null;
+        @SerializedName("Text")
+        private String text ;
 
-  @SerializedName("FontName")
-  private String fontName = null;
+        public  TextWaterMarkerRequest  text(String  text) {
+            this.text =  text;
+            return this;
+        }
 
-  @SerializedName("FontSize")
-  private Integer fontSize = null;
+        @ApiModelProperty(value = "")
+        public String getText() {
+            return text;
+        }
 
-  @SerializedName("Height")
-  private Integer height = null;
+        public void setText(String text) {
+            this.text = text;
+        }
 
-  @SerializedName("Width")
-  private Integer width = null;
+        @SerializedName("FontName")
+        private String fontName ;
 
-  public TextWaterMarkerRequest text(String text) {
-    this.text = text;
-    return this;
-  }
+        public  TextWaterMarkerRequest  fontName(String  fontName) {
+            this.fontName =  fontName;
+            return this;
+        }
 
-   /**
-   * water marker.
-   * @return text
-  **/
-  @ApiModelProperty(value = "water marker.")
-  public String getText() {
-    return text;
-  }
+        @ApiModelProperty(value = "")
+        public String getFontName() {
+            return fontName;
+        }
 
-  public void setText(String text) {
-    this.text = text;
-  }
+        public void setFontName(String fontName) {
+            this.fontName = fontName;
+        }
 
-  public TextWaterMarkerRequest fontName(String fontName) {
-    this.fontName = fontName;
-    return this;
-  }
+        @SerializedName("FontSize")
+        private Integer fontSize ;
 
-   /**
-   * font name.
-   * @return fontName
-  **/
-  @ApiModelProperty(value = "font name.")
-  public String getFontName() {
-    return fontName;
-  }
+        public  TextWaterMarkerRequest  fontSize(Integer  fontSize) {
+            this.fontSize =  fontSize;
+            return this;
+        }
 
-  public void setFontName(String fontName) {
-    this.fontName = fontName;
-  }
+        @ApiModelProperty(value = "")
+        public Integer getFontSize() {
+            return fontSize;
+        }
 
-  public TextWaterMarkerRequest fontSize(Integer fontSize) {
-    this.fontSize = fontSize;
-    return this;
-  }
+        public void setFontSize(Integer fontSize) {
+            this.fontSize = fontSize;
+        }
 
-   /**
-   * font size.
-   * @return fontSize
-  **/
-  @ApiModelProperty(value = "font size.")
-  public Integer getFontSize() {
-    return fontSize;
-  }
+        @SerializedName("Height")
+        private Integer height ;
 
-  public void setFontSize(Integer fontSize) {
-    this.fontSize = fontSize;
-  }
+        public  TextWaterMarkerRequest  height(Integer  height) {
+            this.height =  height;
+            return this;
+        }
 
-  public TextWaterMarkerRequest height(Integer height) {
-    this.height = height;
-    return this;
-  }
+        @ApiModelProperty(value = "")
+        public Integer getHeight() {
+            return height;
+        }
 
-   /**
-   * height.
-   * @return height
-  **/
-  @ApiModelProperty(value = "height.")
-  public Integer getHeight() {
-    return height;
-  }
+        public void setHeight(Integer height) {
+            this.height = height;
+        }
 
-  public void setHeight(Integer height) {
-    this.height = height;
-  }
+        @SerializedName("Width")
+        private Integer width ;
 
-  public TextWaterMarkerRequest width(Integer width) {
-    this.width = width;
-    return this;
-  }
+        public  TextWaterMarkerRequest  width(Integer  width) {
+            this.width =  width;
+            return this;
+        }
 
-   /**
-   * width.
-   * @return width
-  **/
-  @ApiModelProperty(value = "width.")
-  public Integer getWidth() {
-    return width;
-  }
+        @ApiModelProperty(value = "")
+        public Integer getWidth() {
+            return width;
+        }
 
-  public void setWidth(Integer width) {
-    this.width = width;
-  }
+        public void setWidth(Integer width) {
+            this.width = width;
+        }
+
+        @Override
+        public boolean equals(java.lang.Object o) {
+            if (this == o) {
+                return true;
+            }
+            if (o == null || getClass() != o.getClass()) {
+                return false;
+            }
+
+            TextWaterMarkerRequest textWaterMarkerRequest = (TextWaterMarkerRequest) o;
+            return
+                Objects.equals(this.text, textWaterMarkerRequest.text) &&
+                Objects.equals(this.fontName, textWaterMarkerRequest.fontName) &&
+                Objects.equals(this.fontSize, textWaterMarkerRequest.fontSize) &&
+                Objects.equals(this.height, textWaterMarkerRequest.height) &&
+                Objects.equals(this.width, textWaterMarkerRequest.width);
+      }
+
+      @Override
+      public int hashCode() {
+        return Objects.hash(text, fontName, fontSize, height, width);
+      }
+        @Override
+        public String toString() {
+            StringBuilder sb = new StringBuilder();
+            sb.append("class TextWaterMarkerRequest {\n");
+            sb.append("    text: ").append(toIndentedString(getText())).append("\n");
+            sb.append("    fontName: ").append(toIndentedString(getFontName())).append("\n");
+            sb.append("    fontSize: ").append(toIndentedString(getFontSize())).append("\n");
+            sb.append("    height: ").append(toIndentedString(getHeight())).append("\n");
+            sb.append("    width: ").append(toIndentedString(getWidth())).append("\n");
+            sb.append("}");
+            return sb.toString();
+        }
+
+        /**
+        * Convert the given object to string with each line indented by 4 spaces
+        * (except the first line).
+        */
+        private String toIndentedString(java.lang.Object o) {
+            if (o == null) {
+                return "null";
+            }
+            return o.toString().replace("\n", "\n    ");
+        }
 
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    TextWaterMarkerRequest textWaterMarkerRequest = (TextWaterMarkerRequest) o;
-    return Objects.equals(this.text, textWaterMarkerRequest.text) &&
-        Objects.equals(this.fontName, textWaterMarkerRequest.fontName) &&
-        Objects.equals(this.fontSize, textWaterMarkerRequest.fontSize) &&
-        Objects.equals(this.height, textWaterMarkerRequest.height) &&
-        Objects.equals(this.width, textWaterMarkerRequest.width);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(text, fontName, fontSize, height, width);
-  }
-
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class TextWaterMarkerRequest {\n");
-    
-    sb.append("    text: ").append(toIndentedString(text)).append("\n");
-    sb.append("    fontName: ").append(toIndentedString(fontName)).append("\n");
-    sb.append("    fontSize: ").append(toIndentedString(fontSize)).append("\n");
-    sb.append("    height: ").append(toIndentedString(height)).append("\n");
-    sb.append("    width: ").append(toIndentedString(width)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
-  
 }
 

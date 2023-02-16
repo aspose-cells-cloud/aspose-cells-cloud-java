@@ -1,0 +1,170 @@
+/*
+ * --------------------------------------------------------------------------------
+ * <copyright company="Aspose" file="PutWorksheetBackgroundRequest.java">
+ *   Copyright (c) 2023 Aspose.Cells Cloud
+ * </copyright>
+ * <summary>
+ *   Permission is hereby granted, free of charge, to any person obtaining a copy
+ *  of this software and associated documentation files (the "Software"), to deal
+ *  in the Software without restriction, including without limitation the rights
+ *  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ *  copies of the Software, and to permit persons to whom the Software is
+ *  furnished to do so, subject to the following conditions:
+ * 
+ *  The above copyright notice and this permission notice shall be included in all
+ *  copies or substantial portions of the Software.
+ * 
+ *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ *  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ *  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ *  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ *  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ *  SOFTWARE.
+ * </summary>
+ * --------------------------------------------------------------------------------
+ */
+package com.aspose.cloud.cells.request;
+import com.aspose.cloud.cells.client.*;
+import com.aspose.cloud.cells.model.*;
+import com.squareup.okhttp.*;
+import java.io.*;
+import java.lang.reflect.Type;
+import java.util.*;
+
+public class PutWorksheetBackgroundRequest  implements IRequestModel {
+
+    private String name;
+    private String sheetName;
+    private String picPath;
+    private String folder;
+    private String storageName;
+    private HashMap<String,File> file;
+        public PutWorksheetBackgroundRequest()
+        {
+
+        }
+        public PutWorksheetBackgroundRequest(String name, String sheetName, String picPath, String folder, String storageName, HashMap<String,File> file) {
+            this.name = name;
+            this.sheetName = sheetName;
+            this.picPath = picPath;
+            this.folder = folder;
+            this.storageName = storageName;
+            this.file = file;
+        }   
+
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+
+
+        public String getSheetName() {
+            return sheetName;
+        }
+
+        public void setSheetName(String sheetName) {
+            this.sheetName = sheetName;
+        }
+
+
+        public String getPicPath() {
+            return picPath;
+        }
+
+        public void setPicPath(String picPath) {
+            this.picPath = picPath;
+        }
+
+
+        public String getFolder() {
+            return folder;
+        }
+
+        public void setFolder(String folder) {
+            this.folder = folder;
+        }
+
+
+        public String getStorageName() {
+            return storageName;
+        }
+
+        public void setStorageName(String storageName) {
+            this.storageName = storageName;
+        }
+
+
+        public HashMap<String,File> getFile() {
+            return file;
+        }
+
+        public void setFile(HashMap<String,File> file) {
+            this.file = file;
+        }
+
+    @Override
+    public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
+         if (getName() == null) {
+                    throw new ApiException("Missing the required parameter 'Name' when calling PutWorksheetBackground");
+                } 
+                if (getSheetName() == null) {
+                    throw new ApiException("Missing the required parameter 'SheetName' when calling PutWorksheetBackground");
+                }       
+        String localVarPath = "/cells/{name}/worksheets/{sheetName}/background".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
+    .replaceAll("\\{" + "sheetName" + "\\}", apiClient.escapeString(sheetName.toString()))   ;
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+            if (getPicPath() != null){
+                localVarQueryParams.addAll(apiClient.parameterToPairs("", "picPath", getPicPath()));
+            } 
+            if (getFolder() != null){
+                localVarQueryParams.addAll(apiClient.parameterToPairs("", "folder", getFolder()));
+            } 
+            if (getStorageName() != null){
+                localVarQueryParams.addAll(apiClient.parameterToPairs("", "storageName", getStorageName()));
+            }  
+                   
+                if (getFile() != null){
+                    for (String key : getFile().keySet()) {
+                        localVarFormParams.put(key,getFile().get(key));                
+                    }
+                }      
+        Object localVarPostBody = null;
+                final String[] localVarAccepts = {
+                    "application/json"
+                };
+                final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+                if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+                final String[] localVarContentTypes = { "application/json" };
+                if(getFile() != null){
+                   localVarContentTypes[0] =  "multipart/form-data";
+                }
+                final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+                localVarHeaderParams.put("Content-Type", localVarContentType);
+
+                if(progressListener != null) {
+                    apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                        @Override
+                        public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                            com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                            return originalResponse.newBuilder()
+                            .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                            .build();
+                        }
+                    });
+                }
+
+                String[] localVarAuthNames = new String[] {  };
+                return apiClient.buildCall(localVarPath, "PUT", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+
+    }
+
+
+}
+

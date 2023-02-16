@@ -1,14 +1,17 @@
-/* 
+/*
+ * --------------------------------------------------------------------------------
+ * <copyright company="Aspose" file="Color.java">
+ *   Copyright (c) 2023 Aspose.Cells Cloud
+ * </copyright>
  * <summary>
- *  Copyright (c) 2022 Aspose.Cells Cloud
- *  Permission is hereby granted, free of charge, to any person obtaining a copy
+ *   Permission is hereby granted, free of charge, to any person obtaining a copy
  *  of this software and associated documentation files (the "Software"), to deal
  *  in the Software without restriction, including without limitation the rights
  *  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
  *  copies of the Software, and to permit persons to whom the Software is
  *  furnished to do so, subject to the following conditions:
  * 
- *  The above copyright notice and this permission notice shall be included in all 
+ *  The above copyright notice and this permission notice shall be included in all
  *  copies or substantial portions of the Software.
  * 
  *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
@@ -19,155 +22,133 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
+ * --------------------------------------------------------------------------------
  */
-
 
 package com.aspose.cloud.cells.model;
 
 import java.util.Objects;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
+import com.aspose.cloud.cells.model.*;
+import java.util.ArrayList;
+import java.util.List;
+import com.google.gson.annotations.SerializedName;
+import java.time.OffsetDateTime;
 
-/**
- * Color
- */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-09-16T03:09:53.733-05:00")
+
 public class Color {
-  @SerializedName("A")
-  private Integer A = null;
+        @SerializedName("A")
+        private Integer a ;
 
-  @SerializedName("B")
-  private Integer B = null;
+        public  Color  a(Integer  a) {
+            this.a =  a;
+            return this;
+        }
 
-  @SerializedName("R")
-  private Integer R = null;
+        @ApiModelProperty(value = "")
+        public Integer getA() {
+            return a;
+        }
 
-  @SerializedName("G")
-  private Integer G = null;
+        public void setA(Integer a) {
+            this.a = a;
+        }
 
-  public Color A(Integer A) {
-    this.A = A;
-    return this;
-  }
+        @SerializedName("R")
+        private Integer r ;
 
-   /**
-   * Get A
-   * @return A
-  **/
-  @ApiModelProperty(required = true, value = "")
-  public Integer getA() {
-    return A;
-  }
+        public  Color  r(Integer  r) {
+            this.r =  r;
+            return this;
+        }
 
-  public void setA(Integer A) {
-    this.A = A;
-  }
+        @ApiModelProperty(value = "")
+        public Integer getR() {
+            return r;
+        }
 
-  public Color B(Integer B) {
-    this.B = B;
-    return this;
-  }
+        public void setR(Integer r) {
+            this.r = r;
+        }
 
-   /**
-   * Get B
-   * @return B
-  **/
-  @ApiModelProperty(required = true, value = "")
-  public Integer getB() {
-    return B;
-  }
+        @SerializedName("G")
+        private Integer g ;
 
-  public void setB(Integer B) {
-    this.B = B;
-  }
+        public  Color  g(Integer  g) {
+            this.g =  g;
+            return this;
+        }
 
-  public Color R(Integer R) {
-    this.R = R;
-    return this;
-  }
+        @ApiModelProperty(value = "")
+        public Integer getG() {
+            return g;
+        }
 
-   /**
-   * Get R
-   * @return R
-  **/
-  @ApiModelProperty(required = true, value = "")
-  public Integer getR() {
-    return R;
-  }
+        public void setG(Integer g) {
+            this.g = g;
+        }
 
-  public void setR(Integer R) {
-    this.R = R;
-  }
+        @SerializedName("B")
+        private Integer b ;
 
-  public Color G(Integer G) {
-    this.G = G;
-    return this;
-  }
+        public  Color  b(Integer  b) {
+            this.b =  b;
+            return this;
+        }
 
-   /**
-   * Get G
-   * @return G
-  **/
-  @ApiModelProperty(required = true, value = "")
-  public Integer getG() {
-    return G;
-  }
+        @ApiModelProperty(value = "")
+        public Integer getB() {
+            return b;
+        }
 
-  public void setG(Integer G) {
-    this.G = G;
-  }
+        public void setB(Integer b) {
+            this.b = b;
+        }
+
+        @Override
+        public boolean equals(java.lang.Object o) {
+            if (this == o) {
+                return true;
+            }
+            if (o == null || getClass() != o.getClass()) {
+                return false;
+            }
+
+            Color color = (Color) o;
+            return
+                Objects.equals(this.a, color.a) &&
+                Objects.equals(this.r, color.r) &&
+                Objects.equals(this.g, color.g) &&
+                Objects.equals(this.b, color.b);
+      }
+
+      @Override
+      public int hashCode() {
+        return Objects.hash(a, r, g, b);
+      }
+        @Override
+        public String toString() {
+            StringBuilder sb = new StringBuilder();
+            sb.append("class Color {\n");
+            sb.append("    a: ").append(toIndentedString(getA())).append("\n");
+            sb.append("    r: ").append(toIndentedString(getR())).append("\n");
+            sb.append("    g: ").append(toIndentedString(getG())).append("\n");
+            sb.append("    b: ").append(toIndentedString(getB())).append("\n");
+            sb.append("}");
+            return sb.toString();
+        }
+
+        /**
+        * Convert the given object to string with each line indented by 4 spaces
+        * (except the first line).
+        */
+        private String toIndentedString(java.lang.Object o) {
+            if (o == null) {
+                return "null";
+            }
+            return o.toString().replace("\n", "\n    ");
+        }
 
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    Color color = (Color) o;
-    return Objects.equals(this.A, color.A) &&
-        Objects.equals(this.B, color.B) &&
-        Objects.equals(this.R, color.R) &&
-        Objects.equals(this.G, color.G);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(A, B, R, G);
-  }
-
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class Color {\n");
-    
-    sb.append("    A: ").append(toIndentedString(A)).append("\n");
-    sb.append("    B: ").append(toIndentedString(B)).append("\n");
-    sb.append("    R: ").append(toIndentedString(R)).append("\n");
-    sb.append("    G: ").append(toIndentedString(G)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
-  
 }
 

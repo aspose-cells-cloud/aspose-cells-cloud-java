@@ -1,14 +1,17 @@
-/* 
+/*
+ * --------------------------------------------------------------------------------
+ * <copyright company="Aspose" file="OperateObjectPosition.java">
+ *   Copyright (c) 2023 Aspose.Cells Cloud
+ * </copyright>
  * <summary>
- *  Copyright (c) 2022 Aspose.Cells Cloud
- *  Permission is hereby granted, free of charge, to any person obtaining a copy
+ *   Permission is hereby granted, free of charge, to any person obtaining a copy
  *  of this software and associated documentation files (the "Software"), to deal
  *  in the Software without restriction, including without limitation the rights
  *  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
  *  copies of the Software, and to permit persons to whom the Software is
  *  furnished to do so, subject to the following conditions:
  * 
- *  The above copyright notice and this permission notice shall be included in all 
+ *  The above copyright notice and this permission notice shall be included in all
  *  copies or substantial portions of the Software.
  * 
  *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
@@ -19,202 +22,171 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
+ * --------------------------------------------------------------------------------
  */
-
 
 package com.aspose.cloud.cells.model;
 
 import java.util.Objects;
-import com.aspose.cloud.cells.model.FileSource;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
+import com.aspose.cloud.cells.model.*;
+import java.util.ArrayList;
+import java.util.List;
+import com.google.gson.annotations.SerializedName;
+import java.time.OffsetDateTime;
 
-/**
- * OperateObjectPosition
- */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-09-16T03:09:53.733-05:00")
+
 public class OperateObjectPosition {
-  @SerializedName("ChartIndex")
-  private Integer chartIndex = null;
+        @SerializedName("Workbook")
+        private FileSource workbook ;
 
-  @SerializedName("ListObjectIndex")
-  private Integer listObjectIndex = null;
+        public  OperateObjectPosition  workbook(FileSource  workbook) {
+            this.workbook =  workbook;
+            return this;
+        }
 
-  @SerializedName("SheetName")
-  private String sheetName = null;
+        @ApiModelProperty(value = "")
+        public FileSource getWorkbook() {
+            return workbook;
+        }
 
-  @SerializedName("ShapeIndex")
-  private Integer shapeIndex = null;
+        public void setWorkbook(FileSource workbook) {
+            this.workbook = workbook;
+        }
 
-  @SerializedName("CellName")
-  private String cellName = null;
+        @SerializedName("SheetName")
+        private String sheetName ;
 
-  @SerializedName("Workbook")
-  private FileSource workbook = null;
+        public  OperateObjectPosition  sheetName(String  sheetName) {
+            this.sheetName =  sheetName;
+            return this;
+        }
 
-  public OperateObjectPosition chartIndex(Integer chartIndex) {
-    this.chartIndex = chartIndex;
-    return this;
-  }
+        @ApiModelProperty(value = "")
+        public String getSheetName() {
+            return sheetName;
+        }
 
-   /**
-   * Get chartIndex
-   * @return chartIndex
-  **/
-  @ApiModelProperty(value = "")
-  public Integer getChartIndex() {
-    return chartIndex;
-  }
+        public void setSheetName(String sheetName) {
+            this.sheetName = sheetName;
+        }
 
-  public void setChartIndex(Integer chartIndex) {
-    this.chartIndex = chartIndex;
-  }
+        @SerializedName("ChartIndex")
+        private Integer chartIndex ;
 
-  public OperateObjectPosition listObjectIndex(Integer listObjectIndex) {
-    this.listObjectIndex = listObjectIndex;
-    return this;
-  }
+        public  OperateObjectPosition  chartIndex(Integer  chartIndex) {
+            this.chartIndex =  chartIndex;
+            return this;
+        }
 
-   /**
-   * Get listObjectIndex
-   * @return listObjectIndex
-  **/
-  @ApiModelProperty(value = "")
-  public Integer getListObjectIndex() {
-    return listObjectIndex;
-  }
+        @ApiModelProperty(value = "")
+        public Integer getChartIndex() {
+            return chartIndex;
+        }
 
-  public void setListObjectIndex(Integer listObjectIndex) {
-    this.listObjectIndex = listObjectIndex;
-  }
+        public void setChartIndex(Integer chartIndex) {
+            this.chartIndex = chartIndex;
+        }
 
-  public OperateObjectPosition sheetName(String sheetName) {
-    this.sheetName = sheetName;
-    return this;
-  }
+        @SerializedName("ShapeIndex")
+        private Integer shapeIndex ;
 
-   /**
-   * Get sheetName
-   * @return sheetName
-  **/
-  @ApiModelProperty(value = "")
-  public String getSheetName() {
-    return sheetName;
-  }
+        public  OperateObjectPosition  shapeIndex(Integer  shapeIndex) {
+            this.shapeIndex =  shapeIndex;
+            return this;
+        }
 
-  public void setSheetName(String sheetName) {
-    this.sheetName = sheetName;
-  }
+        @ApiModelProperty(value = "")
+        public Integer getShapeIndex() {
+            return shapeIndex;
+        }
 
-  public OperateObjectPosition shapeIndex(Integer shapeIndex) {
-    this.shapeIndex = shapeIndex;
-    return this;
-  }
+        public void setShapeIndex(Integer shapeIndex) {
+            this.shapeIndex = shapeIndex;
+        }
 
-   /**
-   * Get shapeIndex
-   * @return shapeIndex
-  **/
-  @ApiModelProperty(value = "")
-  public Integer getShapeIndex() {
-    return shapeIndex;
-  }
+        @SerializedName("CellName")
+        private String cellName ;
 
-  public void setShapeIndex(Integer shapeIndex) {
-    this.shapeIndex = shapeIndex;
-  }
+        public  OperateObjectPosition  cellName(String  cellName) {
+            this.cellName =  cellName;
+            return this;
+        }
 
-  public OperateObjectPosition cellName(String cellName) {
-    this.cellName = cellName;
-    return this;
-  }
+        @ApiModelProperty(value = "")
+        public String getCellName() {
+            return cellName;
+        }
 
-   /**
-   * Get cellName
-   * @return cellName
-  **/
-  @ApiModelProperty(value = "")
-  public String getCellName() {
-    return cellName;
-  }
+        public void setCellName(String cellName) {
+            this.cellName = cellName;
+        }
 
-  public void setCellName(String cellName) {
-    this.cellName = cellName;
-  }
+        @SerializedName("ListObjectIndex")
+        private Integer listObjectIndex ;
 
-  public OperateObjectPosition workbook(FileSource workbook) {
-    this.workbook = workbook;
-    return this;
-  }
+        public  OperateObjectPosition  listObjectIndex(Integer  listObjectIndex) {
+            this.listObjectIndex =  listObjectIndex;
+            return this;
+        }
 
-   /**
-   * Get workbook
-   * @return workbook
-  **/
-  @ApiModelProperty(value = "")
-  public FileSource getWorkbook() {
-    return workbook;
-  }
+        @ApiModelProperty(value = "")
+        public Integer getListObjectIndex() {
+            return listObjectIndex;
+        }
 
-  public void setWorkbook(FileSource workbook) {
-    this.workbook = workbook;
-  }
+        public void setListObjectIndex(Integer listObjectIndex) {
+            this.listObjectIndex = listObjectIndex;
+        }
 
+        @Override
+        public boolean equals(java.lang.Object o) {
+            if (this == o) {
+                return true;
+            }
+            if (o == null || getClass() != o.getClass()) {
+                return false;
+            }
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    OperateObjectPosition operateObjectPosition = (OperateObjectPosition) o;
-    return Objects.equals(this.chartIndex, operateObjectPosition.chartIndex) &&
-        Objects.equals(this.listObjectIndex, operateObjectPosition.listObjectIndex) &&
-        Objects.equals(this.sheetName, operateObjectPosition.sheetName) &&
-        Objects.equals(this.shapeIndex, operateObjectPosition.shapeIndex) &&
-        Objects.equals(this.cellName, operateObjectPosition.cellName) &&
-        Objects.equals(this.workbook, operateObjectPosition.workbook);
-  }
+            OperateObjectPosition operateObjectPosition = (OperateObjectPosition) o;
+            return
+                Objects.equals(this.workbook, operateObjectPosition.workbook) &&
+                Objects.equals(this.sheetName, operateObjectPosition.sheetName) &&
+                Objects.equals(this.chartIndex, operateObjectPosition.chartIndex) &&
+                Objects.equals(this.shapeIndex, operateObjectPosition.shapeIndex) &&
+                Objects.equals(this.cellName, operateObjectPosition.cellName) &&
+                Objects.equals(this.listObjectIndex, operateObjectPosition.listObjectIndex);
+      }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(chartIndex, listObjectIndex, sheetName, shapeIndex, cellName, workbook);
-  }
+      @Override
+      public int hashCode() {
+        return Objects.hash(workbook, sheetName, chartIndex, shapeIndex, cellName, listObjectIndex);
+      }
+        @Override
+        public String toString() {
+            StringBuilder sb = new StringBuilder();
+            sb.append("class OperateObjectPosition {\n");
+            sb.append("    workbook: ").append(toIndentedString(getWorkbook())).append("\n");
+            sb.append("    sheetName: ").append(toIndentedString(getSheetName())).append("\n");
+            sb.append("    chartIndex: ").append(toIndentedString(getChartIndex())).append("\n");
+            sb.append("    shapeIndex: ").append(toIndentedString(getShapeIndex())).append("\n");
+            sb.append("    cellName: ").append(toIndentedString(getCellName())).append("\n");
+            sb.append("    listObjectIndex: ").append(toIndentedString(getListObjectIndex())).append("\n");
+            sb.append("}");
+            return sb.toString();
+        }
+
+        /**
+        * Convert the given object to string with each line indented by 4 spaces
+        * (except the first line).
+        */
+        private String toIndentedString(java.lang.Object o) {
+            if (o == null) {
+                return "null";
+            }
+            return o.toString().replace("\n", "\n    ");
+        }
 
 
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class OperateObjectPosition {\n");
-    
-    sb.append("    chartIndex: ").append(toIndentedString(chartIndex)).append("\n");
-    sb.append("    listObjectIndex: ").append(toIndentedString(listObjectIndex)).append("\n");
-    sb.append("    sheetName: ").append(toIndentedString(sheetName)).append("\n");
-    sb.append("    shapeIndex: ").append(toIndentedString(shapeIndex)).append("\n");
-    sb.append("    cellName: ").append(toIndentedString(cellName)).append("\n");
-    sb.append("    workbook: ").append(toIndentedString(workbook)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
-  
 }
 

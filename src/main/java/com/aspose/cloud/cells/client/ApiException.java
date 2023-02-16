@@ -1,14 +1,17 @@
-/* 
+/*
+ * --------------------------------------------------------------------------------
+ * <copyright company="Aspose" file="ApiException.java">
+ *   Copyright (c) 2023 Aspose.Cells Cloud
+ * </copyright>
  * <summary>
- *  Copyright (c) 2022 Aspose.Cells Cloud
- *  Permission is hereby granted, free of charge, to any person obtaining a copy
+ *   Permission is hereby granted, free of charge, to any person obtaining a copy
  *  of this software and associated documentation files (the "Software"), to deal
  *  in the Software without restriction, including without limitation the rights
  *  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
  *  copies of the Software, and to permit persons to whom the Software is
  *  furnished to do so, subject to the following conditions:
  * 
- *  The above copyright notice and this permission notice shall be included in all 
+ *  The above copyright notice and this permission notice shall be included in all
  *  copies or substantial portions of the Software.
  * 
  *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
@@ -19,18 +22,16 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
+ * --------------------------------------------------------------------------------
  */
-
-
 package com.aspose.cloud.cells.client;
 
 import java.util.Map;
 import java.util.List;
 
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-09-18T15:44:17.049+08:00")
 public class ApiException extends Exception {
     private int code = 0;
-    private Map<String, List<String>> responseHeaders = null;
+    private Map<String, List<String> > responseHeaders = null;
     private String responseBody = null;
 
     public ApiException() {}
@@ -43,22 +44,22 @@ public class ApiException extends Exception {
         super(message);
     }
 
-    public ApiException(String message, Throwable throwable, int code, Map<String, List<String>> responseHeaders, String responseBody) {
+    public ApiException(String message, Throwable throwable, int code, Map<String, List<String> > responseHeaders, String responseBody) {
         super(message, throwable);
         this.code = code;
         this.responseHeaders = responseHeaders;
         this.responseBody = responseBody;
     }
 
-    public ApiException(String message, int code, Map<String, List<String>> responseHeaders, String responseBody) {
+    public ApiException(String message, int code, Map<String, List<String> > responseHeaders, String responseBody) {
         this(message, (Throwable) null, code, responseHeaders, responseBody);
     }
 
-    public ApiException(String message, Throwable throwable, int code, Map<String, List<String>> responseHeaders) {
+    public ApiException(String message, Throwable throwable, int code, Map<String, List<String> > responseHeaders) {
         this(message, throwable, code, responseHeaders, null);
     }
 
-    public ApiException(int code, Map<String, List<String>> responseHeaders, String responseBody) {
+    public ApiException(int code, Map<String, List<String> > responseHeaders, String responseBody) {
         this((String) null, (Throwable) null, code, responseHeaders, responseBody);
     }
 
@@ -67,7 +68,7 @@ public class ApiException extends Exception {
         this.code = code;
     }
 
-    public ApiException(int code, String message, Map<String, List<String>> responseHeaders, String responseBody) {
+    public ApiException(int code, String message, Map<String, List<String> > responseHeaders, String responseBody) {
         this(code, message);
         this.responseHeaders = responseHeaders;
         this.responseBody = responseBody;
@@ -87,7 +88,7 @@ public class ApiException extends Exception {
      *
      * @return A map of list of string
      */
-    public Map<String, List<String>> getResponseHeaders() {
+    public Map<String, List<String> > getResponseHeaders() {
         return responseHeaders;
     }
 

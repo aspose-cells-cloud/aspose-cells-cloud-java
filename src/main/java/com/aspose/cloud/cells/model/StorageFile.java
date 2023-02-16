@@ -1,14 +1,17 @@
-/* 
+/*
+ * --------------------------------------------------------------------------------
+ * <copyright company="Aspose" file="StorageFile.java">
+ *   Copyright (c) 2023 Aspose.Cells Cloud
+ * </copyright>
  * <summary>
- *  Copyright (c) 2022 Aspose.Cells Cloud
- *  Permission is hereby granted, free of charge, to any person obtaining a copy
+ *   Permission is hereby granted, free of charge, to any person obtaining a copy
  *  of this software and associated documentation files (the "Software"), to deal
  *  in the Software without restriction, including without limitation the rights
  *  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
  *  copies of the Software, and to permit persons to whom the Software is
  *  furnished to do so, subject to the following conditions:
  * 
- *  The above copyright notice and this permission notice shall be included in all 
+ *  The above copyright notice and this permission notice shall be included in all
  *  copies or substantial portions of the Software.
  * 
  *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
@@ -19,181 +22,152 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
+ * --------------------------------------------------------------------------------
  */
-
 
 package com.aspose.cloud.cells.model;
 
 import java.util.Objects;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
+import com.aspose.cloud.cells.model.*;
+import java.util.ArrayList;
+import java.util.List;
+import com.google.gson.annotations.SerializedName;
 import java.time.OffsetDateTime;
 
-/**
- * File or folder information
- */
-@ApiModel(description = "File or folder information")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-09-16T03:09:53.733-05:00")
 
 public class StorageFile {
-  @SerializedName("Name")
-  private String name = null;
+        @SerializedName("Name")
+        private String name ;
 
-  @SerializedName("IsFolder")
-  private Boolean isFolder = null;
+        public  StorageFile  name(String  name) {
+            this.name =  name;
+            return this;
+        }
 
-  @SerializedName("ModifiedDate")
-  private OffsetDateTime modifiedDate = null;
+        @ApiModelProperty(value = "")
+        public String getName() {
+            return name;
+        }
 
-  @SerializedName("Size")
-  private Long size = null;
+        public void setName(String name) {
+            this.name = name;
+        }
 
-  @SerializedName("Path")
-  private String path = null;
+        @SerializedName("IsFolder")
+        private Boolean isFolder ;
 
-  public StorageFile name(String name) {
-    this.name = name;
-    return this;
-  }
+        public  StorageFile  isFolder(Boolean  isFolder) {
+            this.isFolder =  isFolder;
+            return this;
+        }
 
-   /**
-   * File or folder name.
-   * @return name
-  **/
-  @ApiModelProperty(value = "File or folder name.")
-  public String getName() {
-    return name;
-  }
+        @ApiModelProperty(value = "")
+        public Boolean getIsFolder() {
+            return isFolder;
+        }
 
-  public void setName(String name) {
-    this.name = name;
-  }
+        public void setIsFolder(Boolean isFolder) {
+            this.isFolder = isFolder;
+        }
 
-  public StorageFile isFolder(Boolean isFolder) {
-    this.isFolder = isFolder;
-    return this;
-  }
+        @SerializedName("ModifiedDate")
+        private OffsetDateTime modifiedDate ;
 
-   /**
-   * True if it is a folder.
-   * @return isFolder
-  **/
-  @ApiModelProperty(required = true, value = "True if it is a folder.")
-  public Boolean IsFolder() {
-    return isFolder;
-  }
+        public  StorageFile  modifiedDate(OffsetDateTime  modifiedDate) {
+            this.modifiedDate =  modifiedDate;
+            return this;
+        }
 
-  public void setIsFolder(Boolean isFolder) {
-    this.isFolder = isFolder;
-  }
+        @ApiModelProperty(value = "")
+        public OffsetDateTime getModifiedDate() {
+            return modifiedDate;
+        }
 
-  public StorageFile modifiedDate(OffsetDateTime modifiedDate) {
-    this.modifiedDate = modifiedDate;
-    return this;
-  }
+        public void setModifiedDate(OffsetDateTime modifiedDate) {
+            this.modifiedDate = modifiedDate;
+        }
 
-   /**
-   * File or folder last modified DateTime.
-   * @return modifiedDate
-  **/
-  @ApiModelProperty(value = "File or folder last modified DateTime.")
-  public OffsetDateTime getModifiedDate() {
-    return modifiedDate;
-  }
+        @SerializedName("Size")
+        private Long size ;
 
-  public void setModifiedDate(OffsetDateTime modifiedDate) {
-    this.modifiedDate = modifiedDate;
-  }
+        public  StorageFile  size(Long  size) {
+            this.size =  size;
+            return this;
+        }
 
-  public StorageFile size(Long size) {
-    this.size = size;
-    return this;
-  }
+        @ApiModelProperty(value = "")
+        public Long getSize() {
+            return size;
+        }
 
-   /**
-   * File or folder size.
-   * @return size
-  **/
-  @ApiModelProperty(required = true, value = "File or folder size.")
-  public Long getSize() {
-    return size;
-  }
+        public void setSize(Long size) {
+            this.size = size;
+        }
 
-  public void setSize(Long size) {
-    this.size = size;
-  }
+        @SerializedName("Path")
+        private String path ;
 
-  public StorageFile path(String path) {
-    this.path = path;
-    return this;
-  }
+        public  StorageFile  path(String  path) {
+            this.path =  path;
+            return this;
+        }
 
-   /**
-   * File or folder path.
-   * @return path
-  **/
-  @ApiModelProperty(value = "File or folder path.")
-  public String getPath() {
-    return path;
-  }
+        @ApiModelProperty(value = "")
+        public String getPath() {
+            return path;
+        }
 
-  public void setPath(String path) {
-    this.path = path;
-  }
+        public void setPath(String path) {
+            this.path = path;
+        }
+
+        @Override
+        public boolean equals(java.lang.Object o) {
+            if (this == o) {
+                return true;
+            }
+            if (o == null || getClass() != o.getClass()) {
+                return false;
+            }
+
+            StorageFile storageFile = (StorageFile) o;
+            return
+                Objects.equals(this.name, storageFile.name) &&
+                Objects.equals(this.isFolder, storageFile.isFolder) &&
+                Objects.equals(this.modifiedDate, storageFile.modifiedDate) &&
+                Objects.equals(this.size, storageFile.size) &&
+                Objects.equals(this.path, storageFile.path);
+      }
+
+      @Override
+      public int hashCode() {
+        return Objects.hash(name, isFolder, modifiedDate, size, path);
+      }
+        @Override
+        public String toString() {
+            StringBuilder sb = new StringBuilder();
+            sb.append("class StorageFile {\n");
+            sb.append("    name: ").append(toIndentedString(getName())).append("\n");
+            sb.append("    isFolder: ").append(toIndentedString(getIsFolder())).append("\n");
+            sb.append("    modifiedDate: ").append(toIndentedString(getModifiedDate())).append("\n");
+            sb.append("    size: ").append(toIndentedString(getSize())).append("\n");
+            sb.append("    path: ").append(toIndentedString(getPath())).append("\n");
+            sb.append("}");
+            return sb.toString();
+        }
+
+        /**
+        * Convert the given object to string with each line indented by 4 spaces
+        * (except the first line).
+        */
+        private String toIndentedString(java.lang.Object o) {
+            if (o == null) {
+                return "null";
+            }
+            return o.toString().replace("\n", "\n    ");
+        }
 
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    StorageFile storageFile = (StorageFile) o;
-    return Objects.equals(this.name, storageFile.name) &&
-        Objects.equals(this.isFolder, storageFile.isFolder) &&
-        Objects.equals(this.modifiedDate, storageFile.modifiedDate) &&
-        Objects.equals(this.size, storageFile.size) &&
-        Objects.equals(this.path, storageFile.path);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(name, isFolder, modifiedDate, size, path);
-  }
-
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class StorageFile {\n");
-    
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    isFolder: ").append(toIndentedString(isFolder)).append("\n");
-    sb.append("    modifiedDate: ").append(toIndentedString(modifiedDate)).append("\n");
-    sb.append("    size: ").append(toIndentedString(size)).append("\n");
-    sb.append("    path: ").append(toIndentedString(path)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
-  
 }
 

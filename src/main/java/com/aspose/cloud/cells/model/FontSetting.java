@@ -1,14 +1,17 @@
-/* 
+/*
+ * --------------------------------------------------------------------------------
+ * <copyright company="Aspose" file="FontSetting.java">
+ *   Copyright (c) 2023 Aspose.Cells Cloud
+ * </copyright>
  * <summary>
- *  Copyright (c) 2022 Aspose.Cells Cloud
- *  Permission is hereby granted, free of charge, to any person obtaining a copy
+ *   Permission is hereby granted, free of charge, to any person obtaining a copy
  *  of this software and associated documentation files (the "Software"), to deal
  *  in the Software without restriction, including without limitation the rights
  *  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
  *  copies of the Software, and to permit persons to whom the Software is
  *  furnished to do so, subject to the following conditions:
  * 
- *  The above copyright notice and this permission notice shall be included in all 
+ *  The above copyright notice and this permission notice shall be included in all
  *  copies or substantial portions of the Software.
  * 
  *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
@@ -19,180 +22,152 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
+ * --------------------------------------------------------------------------------
  */
-
 
 package com.aspose.cloud.cells.model;
 
 import java.util.Objects;
-import com.aspose.cloud.cells.model.Font;
-import com.aspose.cloud.cells.model.TextOptions;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
+import com.aspose.cloud.cells.model.*;
+import java.util.ArrayList;
+import java.util.List;
+import com.google.gson.annotations.SerializedName;
+import java.time.OffsetDateTime;
 
-/**
- * FontSetting
- */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-09-16T03:09:53.733-05:00")
+
 public class FontSetting {
-  @SerializedName("TextOptions")
-  private TextOptions textOptions = null;
+        @SerializedName("Font")
+        private Font font ;
 
-  @SerializedName("Length")
-  private Integer length = null;
+        public  FontSetting  font(Font  font) {
+            this.font =  font;
+            return this;
+        }
 
-  @SerializedName("Font")
-  private Font font = null;
+        @ApiModelProperty(value = "")
+        public Font getFont() {
+            return font;
+        }
 
-  @SerializedName("Type")
-  private String type = null;
+        public void setFont(Font font) {
+            this.font = font;
+        }
 
-  @SerializedName("StartIndex")
-  private Integer startIndex = null;
+        @SerializedName("Length")
+        private Integer length ;
 
-  public FontSetting textOptions(TextOptions textOptions) {
-    this.textOptions = textOptions;
-    return this;
-  }
+        public  FontSetting  length(Integer  length) {
+            this.length =  length;
+            return this;
+        }
 
-   /**
-   * Get textOptions
-   * @return textOptions
-  **/
-  @ApiModelProperty(value = "")
-  public TextOptions getTextOptions() {
-    return textOptions;
-  }
+        @ApiModelProperty(value = "")
+        public Integer getLength() {
+            return length;
+        }
 
-  public void setTextOptions(TextOptions textOptions) {
-    this.textOptions = textOptions;
-  }
+        public void setLength(Integer length) {
+            this.length = length;
+        }
 
-  public FontSetting length(Integer length) {
-    this.length = length;
-    return this;
-  }
+        @SerializedName("StartIndex")
+        private Integer startIndex ;
 
-   /**
-   * Get length
-   * @return length
-  **/
-  @ApiModelProperty(required = true, value = "")
-  public Integer getLength() {
-    return length;
-  }
+        public  FontSetting  startIndex(Integer  startIndex) {
+            this.startIndex =  startIndex;
+            return this;
+        }
 
-  public void setLength(Integer length) {
-    this.length = length;
-  }
+        @ApiModelProperty(value = "")
+        public Integer getStartIndex() {
+            return startIndex;
+        }
 
-  public FontSetting font(Font font) {
-    this.font = font;
-    return this;
-  }
+        public void setStartIndex(Integer startIndex) {
+            this.startIndex = startIndex;
+        }
 
-   /**
-   * Get font
-   * @return font
-  **/
-  @ApiModelProperty(value = "")
-  public Font getFont() {
-    return font;
-  }
+        @SerializedName("TextOptions")
+        private TextOptions textOptions ;
 
-  public void setFont(Font font) {
-    this.font = font;
-  }
+        public  FontSetting  textOptions(TextOptions  textOptions) {
+            this.textOptions =  textOptions;
+            return this;
+        }
 
-  public FontSetting type(String type) {
-    this.type = type;
-    return this;
-  }
+        @ApiModelProperty(value = "")
+        public TextOptions getTextOptions() {
+            return textOptions;
+        }
 
-   /**
-   * Get type
-   * @return type
-  **/
-  @ApiModelProperty(value = "")
-  public String getType() {
-    return type;
-  }
+        public void setTextOptions(TextOptions textOptions) {
+            this.textOptions = textOptions;
+        }
 
-  public void setType(String type) {
-    this.type = type;
-  }
+        @SerializedName("Type")
+        private String type ;
 
-  public FontSetting startIndex(Integer startIndex) {
-    this.startIndex = startIndex;
-    return this;
-  }
+        public  FontSetting  type(String  type) {
+            this.type =  type;
+            return this;
+        }
 
-   /**
-   * Get startIndex
-   * @return startIndex
-  **/
-  @ApiModelProperty(required = true, value = "")
-  public Integer getStartIndex() {
-    return startIndex;
-  }
+        @ApiModelProperty(value = "")
+        public String getType() {
+            return type;
+        }
 
-  public void setStartIndex(Integer startIndex) {
-    this.startIndex = startIndex;
-  }
+        public void setType(String type) {
+            this.type = type;
+        }
+
+        @Override
+        public boolean equals(java.lang.Object o) {
+            if (this == o) {
+                return true;
+            }
+            if (o == null || getClass() != o.getClass()) {
+                return false;
+            }
+
+            FontSetting fontSetting = (FontSetting) o;
+            return
+                Objects.equals(this.font, fontSetting.font) &&
+                Objects.equals(this.length, fontSetting.length) &&
+                Objects.equals(this.startIndex, fontSetting.startIndex) &&
+                Objects.equals(this.textOptions, fontSetting.textOptions) &&
+                Objects.equals(this.type, fontSetting.type);
+      }
+
+      @Override
+      public int hashCode() {
+        return Objects.hash(font, length, startIndex, textOptions, type);
+      }
+        @Override
+        public String toString() {
+            StringBuilder sb = new StringBuilder();
+            sb.append("class FontSetting {\n");
+            sb.append("    font: ").append(toIndentedString(getFont())).append("\n");
+            sb.append("    length: ").append(toIndentedString(getLength())).append("\n");
+            sb.append("    startIndex: ").append(toIndentedString(getStartIndex())).append("\n");
+            sb.append("    textOptions: ").append(toIndentedString(getTextOptions())).append("\n");
+            sb.append("    type: ").append(toIndentedString(getType())).append("\n");
+            sb.append("}");
+            return sb.toString();
+        }
+
+        /**
+        * Convert the given object to string with each line indented by 4 spaces
+        * (except the first line).
+        */
+        private String toIndentedString(java.lang.Object o) {
+            if (o == null) {
+                return "null";
+            }
+            return o.toString().replace("\n", "\n    ");
+        }
 
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    FontSetting fontSetting = (FontSetting) o;
-    return Objects.equals(this.textOptions, fontSetting.textOptions) &&
-        Objects.equals(this.length, fontSetting.length) &&
-        Objects.equals(this.font, fontSetting.font) &&
-        Objects.equals(this.type, fontSetting.type) &&
-        Objects.equals(this.startIndex, fontSetting.startIndex);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(textOptions, length, font, type, startIndex);
-  }
-
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class FontSetting {\n");
-    
-    sb.append("    textOptions: ").append(toIndentedString(textOptions)).append("\n");
-    sb.append("    length: ").append(toIndentedString(length)).append("\n");
-    sb.append("    font: ").append(toIndentedString(font)).append("\n");
-    sb.append("    type: ").append(toIndentedString(type)).append("\n");
-    sb.append("    startIndex: ").append(toIndentedString(startIndex)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
-  
 }
 

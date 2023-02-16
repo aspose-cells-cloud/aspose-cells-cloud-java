@@ -1,14 +1,17 @@
-/* 
+/*
+ * --------------------------------------------------------------------------------
+ * <copyright company="Aspose" file="WorkbookProtectionRequest.java">
+ *   Copyright (c) 2023 Aspose.Cells Cloud
+ * </copyright>
  * <summary>
- *  Copyright (c) 2022 Aspose.Cells Cloud
- *  Permission is hereby granted, free of charge, to any person obtaining a copy
+ *   Permission is hereby granted, free of charge, to any person obtaining a copy
  *  of this software and associated documentation files (the "Software"), to deal
  *  in the Software without restriction, including without limitation the rights
  *  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
  *  copies of the Software, and to permit persons to whom the Software is
  *  furnished to do so, subject to the following conditions:
  * 
- *  The above copyright notice and this permission notice shall be included in all 
+ *  The above copyright notice and this permission notice shall be included in all
  *  copies or substantial portions of the Software.
  * 
  *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
@@ -19,110 +22,95 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
+ * --------------------------------------------------------------------------------
  */
-
 
 package com.aspose.cloud.cells.model;
 
 import java.util.Objects;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
+import com.aspose.cloud.cells.model.*;
+import java.util.ArrayList;
+import java.util.List;
+import com.google.gson.annotations.SerializedName;
+import java.time.OffsetDateTime;
 
-/**
- * Used by workbook protection requests.
- */
-@ApiModel(description = "Used by workbook protection requests.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-09-16T03:09:53.733-05:00")
+
 public class WorkbookProtectionRequest {
-  @SerializedName("Password")
-  private String password = null;
+        @SerializedName("ProtectionType")
+        private String protectionType ;
 
-  @SerializedName("ProtectionType")
-  private String protectionType = null;
+        public  WorkbookProtectionRequest  protectionType(String  protectionType) {
+            this.protectionType =  protectionType;
+            return this;
+        }
 
-  public WorkbookProtectionRequest password(String password) {
-    this.password = password;
-    return this;
-  }
+        @ApiModelProperty(value = "")
+        public String getProtectionType() {
+            return protectionType;
+        }
 
-   /**
-   * Encription password.
-   * @return password
-  **/
-  @ApiModelProperty(value = "Encription password.")
-  public String getPassword() {
-    return password;
-  }
+        public void setProtectionType(String protectionType) {
+            this.protectionType = protectionType;
+        }
 
-  public void setPassword(String password) {
-    this.password = password;
-  }
+        @SerializedName("Password")
+        private String password ;
 
-  public WorkbookProtectionRequest protectionType(String protectionType) {
-    this.protectionType = protectionType;
-    return this;
-  }
+        public  WorkbookProtectionRequest  password(String  password) {
+            this.password =  password;
+            return this;
+        }
 
-   /**
-   * Protection type. Can be ALL, CONTENTS, NONE, OBJECTS, SCENARIOS, STRUCTURE, WINDOWS  
-   * @return protectionType
-  **/
-  @ApiModelProperty(value = "Protection type. Can be ALL, CONTENTS, NONE, OBJECTS, SCENARIOS, STRUCTURE, WINDOWS  ")
-  public String getProtectionType() {
-    return protectionType;
-  }
+        @ApiModelProperty(value = "")
+        public String getPassword() {
+            return password;
+        }
 
-  public void setProtectionType(String protectionType) {
-    this.protectionType = protectionType;
-  }
+        public void setPassword(String password) {
+            this.password = password;
+        }
+
+        @Override
+        public boolean equals(java.lang.Object o) {
+            if (this == o) {
+                return true;
+            }
+            if (o == null || getClass() != o.getClass()) {
+                return false;
+            }
+
+            WorkbookProtectionRequest workbookProtectionRequest = (WorkbookProtectionRequest) o;
+            return
+                Objects.equals(this.protectionType, workbookProtectionRequest.protectionType) &&
+                Objects.equals(this.password, workbookProtectionRequest.password);
+      }
+
+      @Override
+      public int hashCode() {
+        return Objects.hash(protectionType, password);
+      }
+        @Override
+        public String toString() {
+            StringBuilder sb = new StringBuilder();
+            sb.append("class WorkbookProtectionRequest {\n");
+            sb.append("    protectionType: ").append(toIndentedString(getProtectionType())).append("\n");
+            sb.append("    password: ").append(toIndentedString(getPassword())).append("\n");
+            sb.append("}");
+            return sb.toString();
+        }
+
+        /**
+        * Convert the given object to string with each line indented by 4 spaces
+        * (except the first line).
+        */
+        private String toIndentedString(java.lang.Object o) {
+            if (o == null) {
+                return "null";
+            }
+            return o.toString().replace("\n", "\n    ");
+        }
 
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    WorkbookProtectionRequest workbookProtectionRequest = (WorkbookProtectionRequest) o;
-    return Objects.equals(this.password, workbookProtectionRequest.password) &&
-        Objects.equals(this.protectionType, workbookProtectionRequest.protectionType);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(password, protectionType);
-  }
-
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class WorkbookProtectionRequest {\n");
-    
-    sb.append("    password: ").append(toIndentedString(password)).append("\n");
-    sb.append("    protectionType: ").append(toIndentedString(protectionType)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
-  
 }
 

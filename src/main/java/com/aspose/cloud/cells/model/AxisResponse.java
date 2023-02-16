@@ -1,14 +1,17 @@
-/* 
+/*
+ * --------------------------------------------------------------------------------
+ * <copyright company="Aspose" file="AxisResponse.java">
+ *   Copyright (c) 2023 Aspose.Cells Cloud
+ * </copyright>
  * <summary>
- *  Copyright (c) 2022 Aspose.Cells Cloud
- *  Permission is hereby granted, free of charge, to any person obtaining a copy
+ *   Permission is hereby granted, free of charge, to any person obtaining a copy
  *  of this software and associated documentation files (the "Software"), to deal
  *  in the Software without restriction, including without limitation the rights
  *  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
  *  copies of the Software, and to permit persons to whom the Software is
  *  furnished to do so, subject to the following conditions:
  * 
- *  The above copyright notice and this permission notice shall be included in all 
+ *  The above copyright notice and this permission notice shall be included in all
  *  copies or substantial portions of the Software.
  * 
  *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
@@ -19,89 +22,79 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
+ * --------------------------------------------------------------------------------
  */
-
 
 package com.aspose.cloud.cells.model;
 
 import java.util.Objects;
-import com.aspose.cloud.cells.model.Axis;
-import com.aspose.cloud.cells.model.CellsCloudResponse;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
-
-/**
- * AxisResponse
- */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-12-05T06:46:52.811-06:00")
-public class AxisResponse extends CellsCloudResponse {
-  @SerializedName("Axis")
-  private Axis axis = null;
-
-  public AxisResponse axis(Axis axis) {
-    this.axis = axis;
-    return this;
-  }
-
-   /**
-   * Get axis
-   * @return axis
-  **/
-  @ApiModelProperty(value = "")
-  public Axis getAxis() {
-    return axis;
-  }
-
-  public void setAxis(Axis axis) {
-    this.axis = axis;
-  }
+import com.aspose.cloud.cells.model.*;
+import java.util.ArrayList;
+import java.util.List;
+import com.google.gson.annotations.SerializedName;
+import java.time.OffsetDateTime;
 
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    AxisResponse axisResponse = (AxisResponse) o;
-    return Objects.equals(this.axis, axisResponse.axis) &&
-        super.equals(o);
-  }
+public class AxisResponse  extends  CellsCloudResponse {
+        @SerializedName("Axis")
+        private Axis axis ;
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(axis, super.hashCode());
-  }
+        public  AxisResponse  axis(Axis  axis) {
+            this.axis =  axis;
+            return this;
+        }
+
+        @ApiModelProperty(value = "")
+        public Axis getAxis() {
+            return axis;
+        }
+
+        public void setAxis(Axis axis) {
+            this.axis = axis;
+        }
+
+        @Override
+        public boolean equals(java.lang.Object o) {
+            if (this == o) {
+                return true;
+            }
+            if (o == null || getClass() != o.getClass()) {
+                return false;
+            }
+
+            AxisResponse axisResponse = (AxisResponse) o;
+            return
+                Objects.equals(this.axis, axisResponse.axis) &&
+                super.equals(o);
+      }
+
+      @Override
+      public int hashCode() {
+        return Objects.hash(axis, super.hashCode());
+      }
+        @Override
+        public String toString() {
+            StringBuilder sb = new StringBuilder();
+            sb.append("class AxisResponse {\n");
+            sb.append("    axis: ").append(toIndentedString(getAxis())).append("\n");
+            sb.append("    code: ").append(toIndentedString(getCode())).append("\n");
+            sb.append("    status: ").append(toIndentedString(getStatus())).append("\n");
+            sb.append("}");
+            return sb.toString();
+        }
+
+        /**
+        * Convert the given object to string with each line indented by 4 spaces
+        * (except the first line).
+        */
+        private String toIndentedString(java.lang.Object o) {
+            if (o == null) {
+                return "null";
+            }
+            return o.toString().replace("\n", "\n    ");
+        }
 
 
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class AxisResponse {\n");
-    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
-    sb.append("    axis: ").append(toIndentedString(axis)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
-  
 }
 

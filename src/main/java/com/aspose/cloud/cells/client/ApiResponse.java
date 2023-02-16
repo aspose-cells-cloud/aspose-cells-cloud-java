@@ -1,14 +1,17 @@
-/* 
+/*
+ * --------------------------------------------------------------------------------
+ * <copyright company="Aspose" file="ApiResponse.java">
+ *   Copyright (c) 2023 Aspose.Cells Cloud
+ * </copyright>
  * <summary>
- *  Copyright (c) 2022 Aspose.Cells Cloud
- *  Permission is hereby granted, free of charge, to any person obtaining a copy
+ *   Permission is hereby granted, free of charge, to any person obtaining a copy
  *  of this software and associated documentation files (the "Software"), to deal
  *  in the Software without restriction, including without limitation the rights
  *  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
  *  copies of the Software, and to permit persons to whom the Software is
  *  furnished to do so, subject to the following conditions:
  * 
- *  The above copyright notice and this permission notice shall be included in all 
+ *  The above copyright notice and this permission notice shall be included in all
  *  copies or substantial portions of the Software.
  * 
  *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
@@ -19,9 +22,8 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
+ * --------------------------------------------------------------------------------
  */
-
-
 package com.aspose.cloud.cells.client;
 
 import java.util.List;
@@ -34,14 +36,14 @@ import java.util.Map;
  */
 public class ApiResponse<T> {
     final private int statusCode;
-    final private Map<String, List<String>> headers;
+    final private Map<String, List<String> > headers;
     final private T data;
 
     /**
      * @param statusCode The status code of HTTP response
      * @param headers The headers of HTTP response
      */
-    public ApiResponse(int statusCode, Map<String, List<String>> headers) {
+    public ApiResponse(int statusCode, Map<String, List<String> > headers) {
         this(statusCode, headers, null);
     }
 
@@ -50,7 +52,7 @@ public class ApiResponse<T> {
      * @param headers The headers of HTTP response
      * @param data The object deserialized from response bod
      */
-    public ApiResponse(int statusCode, Map<String, List<String>> headers, T data) {
+    public ApiResponse(int statusCode, Map<String, List<String> > headers, T data) {
         this.statusCode = statusCode;
         this.headers = headers;
         this.data = data;
@@ -60,7 +62,7 @@ public class ApiResponse<T> {
         return statusCode;
     }
 
-    public Map<String, List<String>> getHeaders() {
+    public Map<String, List<String> > getHeaders() {
         return headers;
     }
 

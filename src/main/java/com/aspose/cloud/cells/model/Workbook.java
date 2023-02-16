@@ -1,14 +1,17 @@
-/* 
+/*
+ * --------------------------------------------------------------------------------
+ * <copyright company="Aspose" file="Workbook.java">
+ *   Copyright (c) 2023 Aspose.Cells Cloud
+ * </copyright>
  * <summary>
- *  Copyright (c) 2022 Aspose.Cells Cloud
- *  Permission is hereby granted, free of charge, to any person obtaining a copy
+ *   Permission is hereby granted, free of charge, to any person obtaining a copy
  *  of this software and associated documentation files (the "Software"), to deal
  *  in the Software without restriction, including without limitation the rights
  *  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
  *  copies of the Software, and to permit persons to whom the Software is
  *  furnished to do so, subject to the following conditions:
  * 
- *  The above copyright notice and this permission notice shall be included in all 
+ *  The above copyright notice and this permission notice shall be included in all
  *  copies or substantial portions of the Software.
  * 
  *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
@@ -19,328 +22,266 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
+ * --------------------------------------------------------------------------------
  */
-
 
 package com.aspose.cloud.cells.model;
 
 import java.util.Objects;
-import com.aspose.cloud.cells.model.Link;
-import com.aspose.cloud.cells.model.LinkElement;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
+import com.aspose.cloud.cells.model.*;
 import java.util.ArrayList;
 import java.util.List;
+import com.google.gson.annotations.SerializedName;
+import java.time.OffsetDateTime;
 
-/**
- * Workbook
- */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-09-16T03:09:53.733-05:00")
+
 public class Workbook {
-  @SerializedName("Links")
-  private List<Link> links = null;
+        @SerializedName("FileName")
+        private String fileName ;
 
-  @SerializedName("Settings")
-  private LinkElement settings = null;
+        public  Workbook  fileName(String  fileName) {
+            this.fileName =  fileName;
+            return this;
+        }
 
-  @SerializedName("IsProtected")
-  private String isProtected = null;
+        @ApiModelProperty(value = "")
+        public String getFileName() {
+            return fileName;
+        }
 
-  @SerializedName("IsWriteProtected")
-  private String isWriteProtected = null;
+        public void setFileName(String fileName) {
+            this.fileName = fileName;
+        }
 
-  @SerializedName("FileName")
-  private String fileName = null;
+        @SerializedName("Links")
+        private List<Link> links ;
 
-  @SerializedName("DocumentProperties")
-  private LinkElement documentProperties = null;
+        public  Workbook  links(List<Link>  links) {
+            this.links =  links;
+            return this;
+        }
 
-  @SerializedName("Names")
-  private LinkElement names = null;
+        @ApiModelProperty(value = "")
+        public List<Link> getLinks() {
+            return links;
+        }
 
-  @SerializedName("DefaultStyle")
-  private LinkElement defaultStyle = null;
+        public void setLinks(List<Link> links) {
+            this.links = links;
+        }
 
-  @SerializedName("IsEncryption")
-  private String isEncryption = null;
+        @SerializedName("Worksheets")
+        private LinkElement worksheets ;
 
-  @SerializedName("Worksheets")
-  private LinkElement worksheets = null;
+        public  Workbook  worksheets(LinkElement  worksheets) {
+            this.worksheets =  worksheets;
+            return this;
+        }
 
-  @SerializedName("Password")
-  private String password = null;
+        @ApiModelProperty(value = "")
+        public LinkElement getWorksheets() {
+            return worksheets;
+        }
 
-  public Workbook links(List<Link> links) {
-    this.links = links;
-    return this;
-  }
+        public void setWorksheets(LinkElement worksheets) {
+            this.worksheets = worksheets;
+        }
 
-  public Workbook addLinksItem(Link linksItem) {
-    if (this.links == null) {
-      this.links = new ArrayList<>();
-    }
-    this.links.add(linksItem);
-    return this;
-  }
+        @SerializedName("DefaultStyle")
+        private LinkElement defaultStyle ;
 
-   /**
-   * Get links
-   * @return links
-  **/
-  @ApiModelProperty(value = "")
-  public List<Link> getLinks() {
-    return links;
-  }
+        public  Workbook  defaultStyle(LinkElement  defaultStyle) {
+            this.defaultStyle =  defaultStyle;
+            return this;
+        }
 
-  public void setLinks(List<Link> links) {
-    this.links = links;
-  }
+        @ApiModelProperty(value = "")
+        public LinkElement getDefaultStyle() {
+            return defaultStyle;
+        }
 
-  public Workbook settings(LinkElement settings) {
-    this.settings = settings;
-    return this;
-  }
+        public void setDefaultStyle(LinkElement defaultStyle) {
+            this.defaultStyle = defaultStyle;
+        }
 
-   /**
-   * Get settings
-   * @return settings
-  **/
-  @ApiModelProperty(value = "")
-  public LinkElement getSettings() {
-    return settings;
-  }
+        @SerializedName("DocumentProperties")
+        private LinkElement documentProperties ;
 
-  public void setSettings(LinkElement settings) {
-    this.settings = settings;
-  }
+        public  Workbook  documentProperties(LinkElement  documentProperties) {
+            this.documentProperties =  documentProperties;
+            return this;
+        }
 
-  public Workbook isProtected(String isProtected) {
-    this.isProtected = isProtected;
-    return this;
-  }
+        @ApiModelProperty(value = "")
+        public LinkElement getDocumentProperties() {
+            return documentProperties;
+        }
 
-   /**
-   * Get isProtected
-   * @return isProtected
-  **/
-  @ApiModelProperty(value = "")
-  public String getIsProtected() {
-    return isProtected;
-  }
+        public void setDocumentProperties(LinkElement documentProperties) {
+            this.documentProperties = documentProperties;
+        }
 
-  public void setIsProtected(String isProtected) {
-    this.isProtected = isProtected;
-  }
+        @SerializedName("Names")
+        private LinkElement names ;
 
-  public Workbook isWriteProtected(String isWriteProtected) {
-    this.isWriteProtected = isWriteProtected;
-    return this;
-  }
+        public  Workbook  names(LinkElement  names) {
+            this.names =  names;
+            return this;
+        }
 
-   /**
-   * Get isWriteProtected
-   * @return isWriteProtected
-  **/
-  @ApiModelProperty(value = "")
-  public String getIsWriteProtected() {
-    return isWriteProtected;
-  }
+        @ApiModelProperty(value = "")
+        public LinkElement getNames() {
+            return names;
+        }
 
-  public void setIsWriteProtected(String isWriteProtected) {
-    this.isWriteProtected = isWriteProtected;
-  }
+        public void setNames(LinkElement names) {
+            this.names = names;
+        }
 
-  public Workbook fileName(String fileName) {
-    this.fileName = fileName;
-    return this;
-  }
+        @SerializedName("Settings")
+        private LinkElement settings ;
 
-   /**
-   * Get fileName
-   * @return fileName
-  **/
-  @ApiModelProperty(value = "")
-  public String getFileName() {
-    return fileName;
-  }
+        public  Workbook  settings(LinkElement  settings) {
+            this.settings =  settings;
+            return this;
+        }
 
-  public void setFileName(String fileName) {
-    this.fileName = fileName;
-  }
+        @ApiModelProperty(value = "")
+        public LinkElement getSettings() {
+            return settings;
+        }
 
-  public Workbook documentProperties(LinkElement documentProperties) {
-    this.documentProperties = documentProperties;
-    return this;
-  }
+        public void setSettings(LinkElement settings) {
+            this.settings = settings;
+        }
 
-   /**
-   * Get documentProperties
-   * @return documentProperties
-  **/
-  @ApiModelProperty(value = "")
-  public LinkElement getDocumentProperties() {
-    return documentProperties;
-  }
+        @SerializedName("IsWriteProtected")
+        private String isWriteProtected ;
 
-  public void setDocumentProperties(LinkElement documentProperties) {
-    this.documentProperties = documentProperties;
-  }
+        public  Workbook  isWriteProtected(String  isWriteProtected) {
+            this.isWriteProtected =  isWriteProtected;
+            return this;
+        }
 
-  public Workbook names(LinkElement names) {
-    this.names = names;
-    return this;
-  }
+        @ApiModelProperty(value = "")
+        public String getIsWriteProtected() {
+            return isWriteProtected;
+        }
 
-   /**
-   * Get names
-   * @return names
-  **/
-  @ApiModelProperty(value = "")
-  public LinkElement getNames() {
-    return names;
-  }
+        public void setIsWriteProtected(String isWriteProtected) {
+            this.isWriteProtected = isWriteProtected;
+        }
 
-  public void setNames(LinkElement names) {
-    this.names = names;
-  }
+        @SerializedName("IsProtected")
+        private String isProtected ;
 
-  public Workbook defaultStyle(LinkElement defaultStyle) {
-    this.defaultStyle = defaultStyle;
-    return this;
-  }
+        public  Workbook  isProtected(String  isProtected) {
+            this.isProtected =  isProtected;
+            return this;
+        }
 
-   /**
-   * Get defaultStyle
-   * @return defaultStyle
-  **/
-  @ApiModelProperty(value = "")
-  public LinkElement getDefaultStyle() {
-    return defaultStyle;
-  }
+        @ApiModelProperty(value = "")
+        public String getIsProtected() {
+            return isProtected;
+        }
 
-  public void setDefaultStyle(LinkElement defaultStyle) {
-    this.defaultStyle = defaultStyle;
-  }
+        public void setIsProtected(String isProtected) {
+            this.isProtected = isProtected;
+        }
 
-  public Workbook isEncryption(String isEncryption) {
-    this.isEncryption = isEncryption;
-    return this;
-  }
+        @SerializedName("IsEncryption")
+        private String isEncryption ;
 
-   /**
-   * Get isEncryption
-   * @return isEncryption
-  **/
-  @ApiModelProperty(value = "")
-  public String getIsEncryption() {
-    return isEncryption;
-  }
+        public  Workbook  isEncryption(String  isEncryption) {
+            this.isEncryption =  isEncryption;
+            return this;
+        }
 
-  public void setIsEncryption(String isEncryption) {
-    this.isEncryption = isEncryption;
-  }
+        @ApiModelProperty(value = "")
+        public String getIsEncryption() {
+            return isEncryption;
+        }
 
-  public Workbook worksheets(LinkElement worksheets) {
-    this.worksheets = worksheets;
-    return this;
-  }
+        public void setIsEncryption(String isEncryption) {
+            this.isEncryption = isEncryption;
+        }
 
-   /**
-   * Get worksheets
-   * @return worksheets
-  **/
-  @ApiModelProperty(value = "")
-  public LinkElement getWorksheets() {
-    return worksheets;
-  }
+        @SerializedName("Password")
+        private String password ;
 
-  public void setWorksheets(LinkElement worksheets) {
-    this.worksheets = worksheets;
-  }
+        public  Workbook  password(String  password) {
+            this.password =  password;
+            return this;
+        }
 
-  public Workbook password(String password) {
-    this.password = password;
-    return this;
-  }
+        @ApiModelProperty(value = "")
+        public String getPassword() {
+            return password;
+        }
 
-   /**
-   * Get password
-   * @return password
-  **/
-  @ApiModelProperty(value = "")
-  public String getPassword() {
-    return password;
-  }
+        public void setPassword(String password) {
+            this.password = password;
+        }
 
-  public void setPassword(String password) {
-    this.password = password;
-  }
+        @Override
+        public boolean equals(java.lang.Object o) {
+            if (this == o) {
+                return true;
+            }
+            if (o == null || getClass() != o.getClass()) {
+                return false;
+            }
 
+            Workbook workbook = (Workbook) o;
+            return
+                Objects.equals(this.fileName, workbook.fileName) &&
+                Objects.equals(this.links, workbook.links) &&
+                Objects.equals(this.worksheets, workbook.worksheets) &&
+                Objects.equals(this.defaultStyle, workbook.defaultStyle) &&
+                Objects.equals(this.documentProperties, workbook.documentProperties) &&
+                Objects.equals(this.names, workbook.names) &&
+                Objects.equals(this.settings, workbook.settings) &&
+                Objects.equals(this.isWriteProtected, workbook.isWriteProtected) &&
+                Objects.equals(this.isProtected, workbook.isProtected) &&
+                Objects.equals(this.isEncryption, workbook.isEncryption) &&
+                Objects.equals(this.password, workbook.password);
+      }
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    Workbook workbook = (Workbook) o;
-    return Objects.equals(this.links, workbook.links) &&
-        Objects.equals(this.settings, workbook.settings) &&
-        Objects.equals(this.isProtected, workbook.isProtected) &&
-        Objects.equals(this.isWriteProtected, workbook.isWriteProtected) &&
-        Objects.equals(this.fileName, workbook.fileName) &&
-        Objects.equals(this.documentProperties, workbook.documentProperties) &&
-        Objects.equals(this.names, workbook.names) &&
-        Objects.equals(this.defaultStyle, workbook.defaultStyle) &&
-        Objects.equals(this.isEncryption, workbook.isEncryption) &&
-        Objects.equals(this.worksheets, workbook.worksheets) &&
-        Objects.equals(this.password, workbook.password);
-  }
+      @Override
+      public int hashCode() {
+        return Objects.hash(fileName, links, worksheets, defaultStyle, documentProperties, names, settings, isWriteProtected, isProtected, isEncryption, password);
+      }
+        @Override
+        public String toString() {
+            StringBuilder sb = new StringBuilder();
+            sb.append("class Workbook {\n");
+            sb.append("    fileName: ").append(toIndentedString(getFileName())).append("\n");
+            sb.append("    links: ").append(toIndentedString(getLinks())).append("\n");
+            sb.append("    worksheets: ").append(toIndentedString(getWorksheets())).append("\n");
+            sb.append("    defaultStyle: ").append(toIndentedString(getDefaultStyle())).append("\n");
+            sb.append("    documentProperties: ").append(toIndentedString(getDocumentProperties())).append("\n");
+            sb.append("    names: ").append(toIndentedString(getNames())).append("\n");
+            sb.append("    settings: ").append(toIndentedString(getSettings())).append("\n");
+            sb.append("    isWriteProtected: ").append(toIndentedString(getIsWriteProtected())).append("\n");
+            sb.append("    isProtected: ").append(toIndentedString(getIsProtected())).append("\n");
+            sb.append("    isEncryption: ").append(toIndentedString(getIsEncryption())).append("\n");
+            sb.append("    password: ").append(toIndentedString(getPassword())).append("\n");
+            sb.append("}");
+            return sb.toString();
+        }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(links, settings, isProtected, isWriteProtected, fileName, documentProperties, names, defaultStyle, isEncryption, worksheets, password);
-  }
+        /**
+        * Convert the given object to string with each line indented by 4 spaces
+        * (except the first line).
+        */
+        private String toIndentedString(java.lang.Object o) {
+            if (o == null) {
+                return "null";
+            }
+            return o.toString().replace("\n", "\n    ");
+        }
 
 
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class Workbook {\n");
-    
-    sb.append("    links: ").append(toIndentedString(links)).append("\n");
-    sb.append("    settings: ").append(toIndentedString(settings)).append("\n");
-    sb.append("    isProtected: ").append(toIndentedString(isProtected)).append("\n");
-    sb.append("    isWriteProtected: ").append(toIndentedString(isWriteProtected)).append("\n");
-    sb.append("    fileName: ").append(toIndentedString(fileName)).append("\n");
-    sb.append("    documentProperties: ").append(toIndentedString(documentProperties)).append("\n");
-    sb.append("    names: ").append(toIndentedString(names)).append("\n");
-    sb.append("    defaultStyle: ").append(toIndentedString(defaultStyle)).append("\n");
-    sb.append("    isEncryption: ").append(toIndentedString(isEncryption)).append("\n");
-    sb.append("    worksheets: ").append(toIndentedString(worksheets)).append("\n");
-    sb.append("    password: ").append(toIndentedString(password)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
-  
 }
 

@@ -1,14 +1,17 @@
-/* 
+/*
+ * --------------------------------------------------------------------------------
+ * <copyright company="Aspose" file="ApiClient.java">
+ *   Copyright (c) 2023 Aspose.Cells Cloud
+ * </copyright>
  * <summary>
- *  Copyright (c) 2022 Aspose.Cells Cloud
- *  Permission is hereby granted, free of charge, to any person obtaining a copy
+ *   Permission is hereby granted, free of charge, to any person obtaining a copy
  *  of this software and associated documentation files (the "Software"), to deal
  *  in the Software without restriction, including without limitation the rights
  *  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
  *  copies of the Software, and to permit persons to whom the Software is
  *  furnished to do so, subject to the following conditions:
  * 
- *  The above copyright notice and this permission notice shall be included in all 
+ *  The above copyright notice and this permission notice shall be included in all
  *  copies or substantial portions of the Software.
  * 
  *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
@@ -19,8 +22,8 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
+ * --------------------------------------------------------------------------------
  */
-
 package com.aspose.cloud.cells.client;
 
 import com.squareup.okhttp.Call;
@@ -139,7 +142,7 @@ public class ApiClient {
 	private DateFormat datetimeFormat;
 	private boolean lenientDatetimeFormat;
 	private int dateLength;
-
+	private Integer notAuthCode = 401;
 	private InputStream sslCaCert;
 	private boolean verifyingSsl;
 	private KeyManager[] keyManagers;
@@ -167,7 +170,7 @@ public class ApiClient {
 		verifyingSsl = true;
 
 		json = new JSON(this);
-		
+
 		/*
 		 * Use RFC3339 format for date and datetime. See
 		 * http://xml2rfc.ietf.org/public/rfc/html/rfc3339.html#anchor14
@@ -248,12 +251,12 @@ public class ApiClient {
 		localVarHeaderParams.put("Content-Type", localVarContentType);
 
 		String[] localVarAuthNames = new String[] {};
-		
+
 		Request request = buildGetAccessTokenRequest(localVarPath,  localVarQueryParams, localVarPostBody,
 				localVarHeaderParams, localVarFormParams, localVarAuthNames);
 
 		com.squareup.okhttp.Call call = httpClient.newCall(request);
-		
+
 		Type localVarReturnType = new TypeToken<AccessTokenResponse>() {
 		}.getType();
 		ApiResponse<AccessTokenResponse> resp = execute(call,
@@ -277,7 +280,19 @@ public class ApiClient {
 			addDefaultHeader("Authorization", "Bearer " + accessToken);
 		}
 	}
-
+    public void requestToken() throws ApiException {
+        try {
+           String accessToken = getAccessToken(appGrantType, _clientId, _clientSecret,
+					appVersion);
+			addDefaultHeader("Authorization", "Bearer " + accessToken);
+        }
+        catch (Exception ex) {
+            throw new ApiException(ex);
+        }
+    }
+	public Integer getNotAuthCode() {
+        return notAuthCode;
+    }
 	/**
 	 * Get base path
 	 *
@@ -1409,7 +1424,7 @@ public class ApiClient {
 			}
 		}
 		final String url = urlBuilder.toString();
-		
+
 		final Request.Builder reqBuilder = new Request.Builder().url(url);
 		processHeaderParams(headerParams, reqBuilder);
 

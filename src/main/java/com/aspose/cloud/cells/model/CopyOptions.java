@@ -1,14 +1,17 @@
-/* 
+/*
+ * --------------------------------------------------------------------------------
+ * <copyright company="Aspose" file="CopyOptions.java">
+ *   Copyright (c) 2023 Aspose.Cells Cloud
+ * </copyright>
  * <summary>
- *  Copyright (c) 2022 Aspose.Cells Cloud
- *  Permission is hereby granted, free of charge, to any person obtaining a copy
+ *   Permission is hereby granted, free of charge, to any person obtaining a copy
  *  of this software and associated documentation files (the "Software"), to deal
  *  in the Software without restriction, including without limitation the rights
  *  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
  *  copies of the Software, and to permit persons to whom the Software is
  *  furnished to do so, subject to the following conditions:
  * 
- *  The above copyright notice and this permission notice shall be included in all 
+ *  The above copyright notice and this permission notice shall be included in all
  *  copies or substantial portions of the Software.
  * 
  *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
@@ -19,202 +22,171 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
+ * --------------------------------------------------------------------------------
  */
-
 
 package com.aspose.cloud.cells.model;
 
 import java.util.Objects;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
+import com.aspose.cloud.cells.model.*;
+import java.util.ArrayList;
+import java.util.List;
+import com.google.gson.annotations.SerializedName;
+import java.time.OffsetDateTime;
 
-/**
- * Represents the copy options.
- */
-@ApiModel(description = "Represents the copy options.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-09-16T03:09:53.733-05:00")
+
 public class CopyOptions {
-  @SerializedName("ReferToDestinationSheet")
-  private Boolean referToDestinationSheet = null;
+        @SerializedName("ColumnCharacterWidth")
+        private Boolean columnCharacterWidth ;
 
-  @SerializedName("CopyNames")
-  private Boolean copyNames = null;
+        public  CopyOptions  columnCharacterWidth(Boolean  columnCharacterWidth) {
+            this.columnCharacterWidth =  columnCharacterWidth;
+            return this;
+        }
 
-  @SerializedName("ReferToSheetWithSameName")
-  private Boolean referToSheetWithSameName = null;
+        @ApiModelProperty(value = "")
+        public Boolean getColumnCharacterWidth() {
+            return columnCharacterWidth;
+        }
 
-  @SerializedName("ColumnCharacterWidth")
-  private Boolean columnCharacterWidth = null;
+        public void setColumnCharacterWidth(Boolean columnCharacterWidth) {
+            this.columnCharacterWidth = columnCharacterWidth;
+        }
 
-  @SerializedName("CopyInvalidFormulasAsValues")
-  private Boolean copyInvalidFormulasAsValues = null;
+        @SerializedName("CopyInvalidFormulasAsValues")
+        private Boolean copyInvalidFormulasAsValues ;
 
-  @SerializedName("ExtendToAdjacentRange")
-  private Boolean extendToAdjacentRange = null;
+        public  CopyOptions  copyInvalidFormulasAsValues(Boolean  copyInvalidFormulasAsValues) {
+            this.copyInvalidFormulasAsValues =  copyInvalidFormulasAsValues;
+            return this;
+        }
 
-  public CopyOptions referToDestinationSheet(Boolean referToDestinationSheet) {
-    this.referToDestinationSheet = referToDestinationSheet;
-    return this;
-  }
+        @ApiModelProperty(value = "")
+        public Boolean getCopyInvalidFormulasAsValues() {
+            return copyInvalidFormulasAsValues;
+        }
 
-   /**
-   * When copying the range in the same file and the chart refers to the source sheet,   False means the copied chart&#39;s data source will not be changed. True means the   copied chart&#39;s data source refers to the destination sheet.             
-   * @return referToDestinationSheet
-  **/
-  @ApiModelProperty(value = "When copying the range in the same file and the chart refers to the source sheet,   False means the copied chart's data source will not be changed. True means the   copied chart's data source refers to the destination sheet.             ")
-  public Boolean ReferToDestinationSheet() {
-    return referToDestinationSheet;
-  }
+        public void setCopyInvalidFormulasAsValues(Boolean copyInvalidFormulasAsValues) {
+            this.copyInvalidFormulasAsValues = copyInvalidFormulasAsValues;
+        }
 
-  public void setReferToDestinationSheet(Boolean referToDestinationSheet) {
-    this.referToDestinationSheet = referToDestinationSheet;
-  }
+        @SerializedName("CopyNames")
+        private Boolean copyNames ;
 
-  public CopyOptions copyNames(Boolean copyNames) {
-    this.copyNames = copyNames;
-    return this;
-  }
+        public  CopyOptions  copyNames(Boolean  copyNames) {
+            this.copyNames =  copyNames;
+            return this;
+        }
 
-   /**
-   * Indicates whether copying the names.
-   * @return copyNames
-  **/
-  @ApiModelProperty(value = "Indicates whether copying the names.")
-  public Boolean CopyNames() {
-    return copyNames;
-  }
+        @ApiModelProperty(value = "")
+        public Boolean getCopyNames() {
+            return copyNames;
+        }
 
-  public void setCopyNames(Boolean copyNames) {
-    this.copyNames = copyNames;
-  }
+        public void setCopyNames(Boolean copyNames) {
+            this.copyNames = copyNames;
+        }
 
-  public CopyOptions referToSheetWithSameName(Boolean referToSheetWithSameName) {
-    this.referToSheetWithSameName = referToSheetWithSameName;
-    return this;
-  }
+        @SerializedName("ExtendToAdjacentRange")
+        private Boolean extendToAdjacentRange ;
 
-   /**
-   * Get referToSheetWithSameName
-   * @return referToSheetWithSameName
-  **/
-  @ApiModelProperty(value = "")
-  public Boolean ReferToSheetWithSameName() {
-    return referToSheetWithSameName;
-  }
+        public  CopyOptions  extendToAdjacentRange(Boolean  extendToAdjacentRange) {
+            this.extendToAdjacentRange =  extendToAdjacentRange;
+            return this;
+        }
 
-  public void setReferToSheetWithSameName(Boolean referToSheetWithSameName) {
-    this.referToSheetWithSameName = referToSheetWithSameName;
-  }
+        @ApiModelProperty(value = "")
+        public Boolean getExtendToAdjacentRange() {
+            return extendToAdjacentRange;
+        }
 
-  public CopyOptions columnCharacterWidth(Boolean columnCharacterWidth) {
-    this.columnCharacterWidth = columnCharacterWidth;
-    return this;
-  }
+        public void setExtendToAdjacentRange(Boolean extendToAdjacentRange) {
+            this.extendToAdjacentRange = extendToAdjacentRange;
+        }
 
-   /**
-   * Indicates whether copying column width in unit of characters.
-   * @return columnCharacterWidth
-  **/
-  @ApiModelProperty(value = "Indicates whether copying column width in unit of characters.")
-  public Boolean ColumnCharacterWidth() {
-    return columnCharacterWidth;
-  }
+        @SerializedName("ReferToDestinationSheet")
+        private Boolean referToDestinationSheet ;
 
-  public void setColumnCharacterWidth(Boolean columnCharacterWidth) {
-    this.columnCharacterWidth = columnCharacterWidth;
-  }
+        public  CopyOptions  referToDestinationSheet(Boolean  referToDestinationSheet) {
+            this.referToDestinationSheet =  referToDestinationSheet;
+            return this;
+        }
 
-  public CopyOptions copyInvalidFormulasAsValues(Boolean copyInvalidFormulasAsValues) {
-    this.copyInvalidFormulasAsValues = copyInvalidFormulasAsValues;
-    return this;
-  }
+        @ApiModelProperty(value = "")
+        public Boolean getReferToDestinationSheet() {
+            return referToDestinationSheet;
+        }
 
-   /**
-   * If the formula is not valid for the dest destination, only copy values.
-   * @return copyInvalidFormulasAsValues
-  **/
-  @ApiModelProperty(value = "If the formula is not valid for the dest destination, only copy values.")
-  public Boolean CopyInvalidFormulasAsValues() {
-    return copyInvalidFormulasAsValues;
-  }
+        public void setReferToDestinationSheet(Boolean referToDestinationSheet) {
+            this.referToDestinationSheet = referToDestinationSheet;
+        }
 
-  public void setCopyInvalidFormulasAsValues(Boolean copyInvalidFormulasAsValues) {
-    this.copyInvalidFormulasAsValues = copyInvalidFormulasAsValues;
-  }
+        @SerializedName("ReferToSheetWithSameName")
+        private Boolean referToSheetWithSameName ;
 
-  public CopyOptions extendToAdjacentRange(Boolean extendToAdjacentRange) {
-    this.extendToAdjacentRange = extendToAdjacentRange;
-    return this;
-  }
+        public  CopyOptions  referToSheetWithSameName(Boolean  referToSheetWithSameName) {
+            this.referToSheetWithSameName =  referToSheetWithSameName;
+            return this;
+        }
 
-   /**
-   * Indicates whether extend ranges when copying the range to adjacent range.
-   * @return extendToAdjacentRange
-  **/
-  @ApiModelProperty(value = "Indicates whether extend ranges when copying the range to adjacent range.")
-  public Boolean ExtendToAdjacentRange() {
-    return extendToAdjacentRange;
-  }
+        @ApiModelProperty(value = "")
+        public Boolean getReferToSheetWithSameName() {
+            return referToSheetWithSameName;
+        }
 
-  public void setExtendToAdjacentRange(Boolean extendToAdjacentRange) {
-    this.extendToAdjacentRange = extendToAdjacentRange;
-  }
+        public void setReferToSheetWithSameName(Boolean referToSheetWithSameName) {
+            this.referToSheetWithSameName = referToSheetWithSameName;
+        }
 
+        @Override
+        public boolean equals(java.lang.Object o) {
+            if (this == o) {
+                return true;
+            }
+            if (o == null || getClass() != o.getClass()) {
+                return false;
+            }
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    CopyOptions copyOptions = (CopyOptions) o;
-    return Objects.equals(this.referToDestinationSheet, copyOptions.referToDestinationSheet) &&
-        Objects.equals(this.copyNames, copyOptions.copyNames) &&
-        Objects.equals(this.referToSheetWithSameName, copyOptions.referToSheetWithSameName) &&
-        Objects.equals(this.columnCharacterWidth, copyOptions.columnCharacterWidth) &&
-        Objects.equals(this.copyInvalidFormulasAsValues, copyOptions.copyInvalidFormulasAsValues) &&
-        Objects.equals(this.extendToAdjacentRange, copyOptions.extendToAdjacentRange);
-  }
+            CopyOptions copyOptions = (CopyOptions) o;
+            return
+                Objects.equals(this.columnCharacterWidth, copyOptions.columnCharacterWidth) &&
+                Objects.equals(this.copyInvalidFormulasAsValues, copyOptions.copyInvalidFormulasAsValues) &&
+                Objects.equals(this.copyNames, copyOptions.copyNames) &&
+                Objects.equals(this.extendToAdjacentRange, copyOptions.extendToAdjacentRange) &&
+                Objects.equals(this.referToDestinationSheet, copyOptions.referToDestinationSheet) &&
+                Objects.equals(this.referToSheetWithSameName, copyOptions.referToSheetWithSameName);
+      }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(referToDestinationSheet, copyNames, referToSheetWithSameName, columnCharacterWidth, copyInvalidFormulasAsValues, extendToAdjacentRange);
-  }
+      @Override
+      public int hashCode() {
+        return Objects.hash(columnCharacterWidth, copyInvalidFormulasAsValues, copyNames, extendToAdjacentRange, referToDestinationSheet, referToSheetWithSameName);
+      }
+        @Override
+        public String toString() {
+            StringBuilder sb = new StringBuilder();
+            sb.append("class CopyOptions {\n");
+            sb.append("    columnCharacterWidth: ").append(toIndentedString(getColumnCharacterWidth())).append("\n");
+            sb.append("    copyInvalidFormulasAsValues: ").append(toIndentedString(getCopyInvalidFormulasAsValues())).append("\n");
+            sb.append("    copyNames: ").append(toIndentedString(getCopyNames())).append("\n");
+            sb.append("    extendToAdjacentRange: ").append(toIndentedString(getExtendToAdjacentRange())).append("\n");
+            sb.append("    referToDestinationSheet: ").append(toIndentedString(getReferToDestinationSheet())).append("\n");
+            sb.append("    referToSheetWithSameName: ").append(toIndentedString(getReferToSheetWithSameName())).append("\n");
+            sb.append("}");
+            return sb.toString();
+        }
+
+        /**
+        * Convert the given object to string with each line indented by 4 spaces
+        * (except the first line).
+        */
+        private String toIndentedString(java.lang.Object o) {
+            if (o == null) {
+                return "null";
+            }
+            return o.toString().replace("\n", "\n    ");
+        }
 
 
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class CopyOptions {\n");
-    
-    sb.append("    referToDestinationSheet: ").append(toIndentedString(referToDestinationSheet)).append("\n");
-    sb.append("    copyNames: ").append(toIndentedString(copyNames)).append("\n");
-    sb.append("    referToSheetWithSameName: ").append(toIndentedString(referToSheetWithSameName)).append("\n");
-    sb.append("    columnCharacterWidth: ").append(toIndentedString(columnCharacterWidth)).append("\n");
-    sb.append("    copyInvalidFormulasAsValues: ").append(toIndentedString(copyInvalidFormulasAsValues)).append("\n");
-    sb.append("    extendToAdjacentRange: ").append(toIndentedString(extendToAdjacentRange)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
-  
 }
 

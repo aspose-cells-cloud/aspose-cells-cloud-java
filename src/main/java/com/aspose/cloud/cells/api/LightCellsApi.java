@@ -63,10 +63,12 @@ public class LightCellsApi {
         setApiClient(apiClient);
     }
 
+	@Deprecated 
     public ApiClient getApiClient() {
         return apiClient;
     }
 
+	@Deprecated 
     public void setApiClient(ApiClient apiClient) {
         this.apiClient = apiClient;
     }
@@ -80,6 +82,7 @@ public class LightCellsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
+	@Deprecated 
     public com.squareup.okhttp.Call deleteMetadataCall(HashMap<String,File> file, String type, Boolean checkExcelRestriction, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
@@ -116,6 +119,7 @@ public class LightCellsApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
+	@Deprecated 
                 public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
@@ -155,6 +159,7 @@ public class LightCellsApi {
      * @return FilesResult
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
+	@Deprecated 
     public FilesResult deleteMetadata(HashMap<String,File> file, String type, Boolean checkExcelRestriction) throws ApiException {
         ApiResponse<FilesResult> resp = deleteMetadataWithHttpInfo(file, type,checkExcelRestriction);
         return resp.getData();
@@ -168,6 +173,7 @@ public class LightCellsApi {
      * @return ApiResponse&lt;FilesResult&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
+	@Deprecated 
     public ApiResponse<FilesResult> deleteMetadataWithHttpInfo(HashMap<String,File> file, String type, Boolean checkExcelRestriction) throws ApiException {
         com.squareup.okhttp.Call call = deleteMetadataValidateBeforeCall(file, type,checkExcelRestriction, null, null);
         Type localVarReturnType = new TypeToken<FilesResult>(){}.getType();
@@ -183,6 +189,7 @@ public class LightCellsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
+	@Deprecated 
     public com.squareup.okhttp.Call deleteMetadataAsync(HashMap<String,File> file, String type, Boolean checkExcelRestriction, final ApiCallback<FilesResult> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -191,6 +198,7 @@ public class LightCellsApi {
         if (callback != null) {
             progressListener = new ProgressResponseBody.ProgressListener() {
                 @Override
+	@Deprecated 
                 public void update(long bytesRead, long contentLength, boolean done) {
                     callback.onDownloadProgress(bytesRead, contentLength, done);
                 }
@@ -198,6 +206,7 @@ public class LightCellsApi {
 
             progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
                 @Override
+	@Deprecated 
                 public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
                     callback.onUploadProgress(bytesWritten, contentLength, done);
                 }
@@ -218,6 +227,7 @@ public class LightCellsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
+	@Deprecated 
     public com.squareup.okhttp.Call getMetadataCall(HashMap<String,File> file, String type, Boolean checkExcelRestriction, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
@@ -255,6 +265,7 @@ public class LightCellsApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
+	@Deprecated 
                 public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
@@ -294,6 +305,7 @@ public class LightCellsApi {
      * @return List&lt;CellsDocumentProperty&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
+	@Deprecated 
     public List<CellsDocumentProperty> getMetadata(HashMap<String,File> file, String type, Boolean checkExcelRestriction) throws ApiException {
         ApiResponse<List<CellsDocumentProperty>> resp = getMetadataWithHttpInfo(file, type,checkExcelRestriction);
         return resp.getData();
@@ -307,6 +319,7 @@ public class LightCellsApi {
      * @return ApiResponse&lt;List&lt;CellsDocumentProperty&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
+	@Deprecated 
     public ApiResponse<List<CellsDocumentProperty>> getMetadataWithHttpInfo(HashMap<String,File> file, String type, Boolean checkExcelRestriction) throws ApiException {
         com.squareup.okhttp.Call call = getMetadataValidateBeforeCall(file, type,checkExcelRestriction, null, null);
         Type localVarReturnType = new TypeToken<List<CellsDocumentProperty>>(){}.getType();
@@ -322,6 +335,7 @@ public class LightCellsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
+	@Deprecated 
     public com.squareup.okhttp.Call getMetadataAsync(HashMap<String,File> file, String type, Boolean checkExcelRestriction, final ApiCallback<List<CellsDocumentProperty>> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -330,6 +344,7 @@ public class LightCellsApi {
         if (callback != null) {
             progressListener = new ProgressResponseBody.ProgressListener() {
                 @Override
+	@Deprecated 
                 public void update(long bytesRead, long contentLength, boolean done) {
                     callback.onDownloadProgress(bytesRead, contentLength, done);
                 }
@@ -337,6 +352,7 @@ public class LightCellsApi {
 
             progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
                 @Override
+	@Deprecated 
                 public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
                     callback.onUploadProgress(bytesWritten, contentLength, done);
                 }
@@ -358,6 +374,7 @@ public class LightCellsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
+	@Deprecated 
     public com.squareup.okhttp.Call postAssembleCall(HashMap<String,File> file, String datasource, String format, Boolean checkExcelRestriction, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
@@ -396,6 +413,7 @@ public class LightCellsApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
+	@Deprecated 
                 public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
@@ -437,6 +455,7 @@ public class LightCellsApi {
      * @return FilesResult
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
+	@Deprecated 
     public FilesResult postAssemble(HashMap<String,File> file, String datasource, String format, Boolean checkExcelRestriction) throws ApiException {
         ApiResponse<FilesResult> resp = postAssembleWithHttpInfo(file, datasource, format,checkExcelRestriction);
         return resp.getData();
@@ -451,6 +470,7 @@ public class LightCellsApi {
      * @return ApiResponse&lt;FilesResult&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
+	@Deprecated 
     public ApiResponse<FilesResult> postAssembleWithHttpInfo(HashMap<String,File> file, String datasource, String format, Boolean checkExcelRestriction) throws ApiException {
         com.squareup.okhttp.Call call = postAssembleValidateBeforeCall(file, datasource, format,checkExcelRestriction, null, null);
         Type localVarReturnType = new TypeToken<FilesResult>(){}.getType();
@@ -467,6 +487,7 @@ public class LightCellsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
+	@Deprecated 
     public com.squareup.okhttp.Call postAssembleAsync(HashMap<String,File> file, String datasource, String format, Boolean checkExcelRestriction, final ApiCallback<FilesResult> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -475,6 +496,7 @@ public class LightCellsApi {
         if (callback != null) {
             progressListener = new ProgressResponseBody.ProgressListener() {
                 @Override
+	@Deprecated 
                 public void update(long bytesRead, long contentLength, boolean done) {
                     callback.onDownloadProgress(bytesRead, contentLength, done);
                 }
@@ -482,6 +504,7 @@ public class LightCellsApi {
 
             progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
                 @Override
+	@Deprecated 
                 public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
                     callback.onUploadProgress(bytesWritten, contentLength, done);
                 }
@@ -502,6 +525,7 @@ public class LightCellsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
+	@Deprecated 
     public com.squareup.okhttp.Call postClearObjectsCall(HashMap<String,File> file, String objecttype, String sheetname, String outFormat, Boolean checkExcelRestriction, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
@@ -542,6 +566,7 @@ public class LightCellsApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
+	@Deprecated 
                 public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
@@ -586,6 +611,7 @@ public class LightCellsApi {
      * @return FilesResult
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
+	@Deprecated 
     public FilesResult postClearObjects(HashMap<String,File> file, String objecttype, String sheetname, String outFormat, Boolean checkExcelRestriction) throws ApiException {
         ApiResponse<FilesResult> resp = postClearObjectsWithHttpInfo(file, objecttype,sheetname,outFormat,checkExcelRestriction);
         return resp.getData();
@@ -599,6 +625,7 @@ public class LightCellsApi {
      * @return ApiResponse&lt;FilesResult&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
+	@Deprecated 
     public ApiResponse<FilesResult> postClearObjectsWithHttpInfo(HashMap<String,File> file, String objecttype, String sheetname, String outFormat, Boolean checkExcelRestriction) throws ApiException {
         com.squareup.okhttp.Call call = postClearObjectsValidateBeforeCall(file, objecttype,sheetname,outFormat,checkExcelRestriction, null, null);
         Type localVarReturnType = new TypeToken<FilesResult>(){}.getType();
@@ -614,6 +641,7 @@ public class LightCellsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
+	@Deprecated 
     public com.squareup.okhttp.Call postClearObjectsAsync(HashMap<String,File> file, String objecttype, String sheetname, String outFormat, Boolean checkExcelRestriction, final ApiCallback<FilesResult> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -622,6 +650,7 @@ public class LightCellsApi {
         if (callback != null) {
             progressListener = new ProgressResponseBody.ProgressListener() {
                 @Override
+	@Deprecated 
                 public void update(long bytesRead, long contentLength, boolean done) {
                     callback.onDownloadProgress(bytesRead, contentLength, done);
                 }
@@ -629,6 +658,7 @@ public class LightCellsApi {
 
             progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
                 @Override
+	@Deprecated 
                 public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
                     callback.onUploadProgress(bytesWritten, contentLength, done);
                 }
@@ -650,6 +680,7 @@ public class LightCellsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
+	@Deprecated 
     public com.squareup.okhttp.Call postExportCall(HashMap<String,File> file, String objectType, String format, Boolean checkExcelRestriction,HashMap<String,String> extendedQueryParameters, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
@@ -694,6 +725,7 @@ public class LightCellsApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
+	@Deprecated 
                 public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
@@ -744,6 +776,7 @@ public class LightCellsApi {
      * @return FilesResult
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
+	@Deprecated 
     public FilesResult postExport(HashMap<String,File> file, String objectType, String format, Boolean checkExcelRestriction, HashMap<String,String> extendedQueryParameters) throws ApiException {
         ApiResponse<FilesResult> resp = postExportWithHttpInfo(file, objectType, format,checkExcelRestriction,extendedQueryParameters);
         return resp.getData();
@@ -758,6 +791,7 @@ public class LightCellsApi {
      * @return ApiResponse&lt;FilesResult&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
+	@Deprecated 
     public ApiResponse<FilesResult> postExportWithHttpInfo(HashMap<String,File> file, String objectType, String format, Boolean checkExcelRestriction, HashMap<String,String> extendedQueryParameters ) throws ApiException {
         com.squareup.okhttp.Call call = postExportValidateBeforeCall(file, objectType, format,checkExcelRestriction, extendedQueryParameters, null, null);
         Type localVarReturnType = new TypeToken<FilesResult>(){}.getType();
@@ -774,6 +808,7 @@ public class LightCellsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
+	@Deprecated 
     public com.squareup.okhttp.Call postExportAsync(HashMap<String,File> file, String objectType, String format, Boolean checkExcelRestriction,HashMap<String,String> extendedQueryParameters, final ApiCallback<FilesResult> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -782,6 +817,7 @@ public class LightCellsApi {
         if (callback != null) {
             progressListener = new ProgressResponseBody.ProgressListener() {
                 @Override
+	@Deprecated 
                 public void update(long bytesRead, long contentLength, boolean done) {
                     callback.onDownloadProgress(bytesRead, contentLength, done);
                 }
@@ -789,6 +825,7 @@ public class LightCellsApi {
 
             progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
                 @Override
+	@Deprecated 
                 public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
                     callback.onUploadProgress(bytesWritten, contentLength, done);
                 }
@@ -809,6 +846,7 @@ public class LightCellsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
+	@Deprecated 
     public com.squareup.okhttp.Call postImportCall(HashMap<String,File> file, ImportOption importOption, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = importOption;
         
@@ -844,6 +882,7 @@ public class LightCellsApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
+	@Deprecated 
                 public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
@@ -888,6 +927,7 @@ public class LightCellsApi {
      * @return FilesResult
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
+	@Deprecated 
     public FilesResult postImport(HashMap<String,File> file, ImportOption importOption) throws ApiException {
         ApiResponse<FilesResult> resp = postImportWithHttpInfo(file, importOption);
         return resp.getData();
@@ -901,6 +941,7 @@ public class LightCellsApi {
      * @return ApiResponse&lt;FilesResult&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
+	@Deprecated 
     public ApiResponse<FilesResult> postImportWithHttpInfo(HashMap<String,File> file, ImportOption importOption) throws ApiException {
         com.squareup.okhttp.Call call = postImportValidateBeforeCall(file, importOption, null, null);
         Type localVarReturnType = new TypeToken<FilesResult>(){}.getType();
@@ -916,6 +957,7 @@ public class LightCellsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
+	@Deprecated 
     public com.squareup.okhttp.Call postImportAsync(HashMap<String,File> file, ImportOption importOption, final ApiCallback<FilesResult> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -924,6 +966,7 @@ public class LightCellsApi {
         if (callback != null) {
             progressListener = new ProgressResponseBody.ProgressListener() {
                 @Override
+	@Deprecated 
                 public void update(long bytesRead, long contentLength, boolean done) {
                     callback.onDownloadProgress(bytesRead, contentLength, done);
                 }
@@ -931,6 +974,7 @@ public class LightCellsApi {
 
             progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
                 @Override
+	@Deprecated 
                 public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
                     callback.onUploadProgress(bytesWritten, contentLength, done);
                 }
@@ -952,6 +996,7 @@ public class LightCellsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
+	@Deprecated 
     public com.squareup.okhttp.Call postMergeCall(HashMap<String,File> file, String format, Boolean mergeToOneSheet, Boolean checkExcelRestriction, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
@@ -991,6 +1036,7 @@ public class LightCellsApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
+	@Deprecated 
                 public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
@@ -1031,6 +1077,7 @@ public class LightCellsApi {
      * @return FileInfo
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
+	@Deprecated 
     public FileInfo postMerge(HashMap<String,File> file, String format, Boolean mergeToOneSheet, Boolean checkExcelRestriction) throws ApiException {
         ApiResponse<FileInfo> resp = postMergeWithHttpInfo(file, format, mergeToOneSheet,checkExcelRestriction);
         return resp.getData();
@@ -1045,6 +1092,7 @@ public class LightCellsApi {
      * @return ApiResponse&lt;FileInfo&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
+	@Deprecated 
     public ApiResponse<FileInfo> postMergeWithHttpInfo(HashMap<String,File> file, String format, Boolean mergeToOneSheet, Boolean checkExcelRestriction) throws ApiException {
         com.squareup.okhttp.Call call = postMergeValidateBeforeCall(file, format, mergeToOneSheet,checkExcelRestriction, null, null);
         Type localVarReturnType = new TypeToken<FileInfo>(){}.getType();
@@ -1061,6 +1109,7 @@ public class LightCellsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
+	@Deprecated 
     public com.squareup.okhttp.Call postMergeAsync(HashMap<String,File> file, String format, Boolean mergeToOneSheet, Boolean checkExcelRestriction, final ApiCallback<FileInfo> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -1069,6 +1118,7 @@ public class LightCellsApi {
         if (callback != null) {
             progressListener = new ProgressResponseBody.ProgressListener() {
                 @Override
+	@Deprecated 
                 public void update(long bytesRead, long contentLength, boolean done) {
                     callback.onDownloadProgress(bytesRead, contentLength, done);
                 }
@@ -1076,6 +1126,7 @@ public class LightCellsApi {
 
             progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
                 @Override
+	@Deprecated 
                 public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
                     callback.onUploadProgress(bytesWritten, contentLength, done);
                 }
@@ -1096,6 +1147,7 @@ public class LightCellsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
+	@Deprecated 
     public com.squareup.okhttp.Call postMetadataCall(HashMap<String,File> file, List<CellsDocumentProperty> documentProperties, Boolean checkExcelRestriction, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = documentProperties;
         
@@ -1134,6 +1186,7 @@ public class LightCellsApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
+	@Deprecated 
                 public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
@@ -1178,6 +1231,7 @@ public class LightCellsApi {
      * @return FilesResult
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
+	@Deprecated 
     public FilesResult postMetadata(HashMap<String,File> file,List<CellsDocumentProperty> documentProperties, Boolean checkExcelRestriction) throws ApiException {
         ApiResponse<FilesResult> resp = postMetadataWithHttpInfo(file, documentProperties,checkExcelRestriction);
         return resp.getData();
@@ -1191,6 +1245,7 @@ public class LightCellsApi {
      * @return ApiResponse&lt;FilesResult&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
+	@Deprecated 
     public ApiResponse<FilesResult> postMetadataWithHttpInfo(HashMap<String,File> file, List<CellsDocumentProperty> documentProperties, Boolean checkExcelRestriction) throws ApiException {
         com.squareup.okhttp.Call call = postMetadataValidateBeforeCall(file, documentProperties,checkExcelRestriction, null, null);
         Type localVarReturnType = new TypeToken<FilesResult>(){}.getType();
@@ -1206,6 +1261,7 @@ public class LightCellsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
+	@Deprecated 
     public com.squareup.okhttp.Call postMetadataAsync(HashMap<String,File> file, List<CellsDocumentProperty> documentProperties, Boolean checkExcelRestriction, final ApiCallback<FilesResult> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -1214,6 +1270,7 @@ public class LightCellsApi {
         if (callback != null) {
             progressListener = new ProgressResponseBody.ProgressListener() {
                 @Override
+	@Deprecated 
                 public void update(long bytesRead, long contentLength, boolean done) {
                     callback.onDownloadProgress(bytesRead, contentLength, done);
                 }
@@ -1221,6 +1278,7 @@ public class LightCellsApi {
 
             progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
                 @Override
+	@Deprecated 
                 public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
                     callback.onUploadProgress(bytesWritten, contentLength, done);
                 }
@@ -1241,6 +1299,7 @@ public class LightCellsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
+	@Deprecated 
     public com.squareup.okhttp.Call postProtectCall(HashMap<String,File> file, String password, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
@@ -1276,6 +1335,7 @@ public class LightCellsApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
+	@Deprecated 
                 public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
@@ -1320,6 +1380,7 @@ public class LightCellsApi {
      * @return FilesResult
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
+	@Deprecated 
     public FilesResult postProtect(HashMap<String,File> file, String password) throws ApiException {
         ApiResponse<FilesResult> resp = postProtectWithHttpInfo(file, password);
         return resp.getData();
@@ -1333,6 +1394,7 @@ public class LightCellsApi {
      * @return ApiResponse&lt;FilesResult&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
+	@Deprecated 
     public ApiResponse<FilesResult> postProtectWithHttpInfo(HashMap<String,File> file, String password) throws ApiException {
         com.squareup.okhttp.Call call = postProtectValidateBeforeCall(file, password, null, null);
         Type localVarReturnType = new TypeToken<FilesResult>(){}.getType();
@@ -1348,6 +1410,7 @@ public class LightCellsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
+	@Deprecated 
     public com.squareup.okhttp.Call postProtectAsync(HashMap<String,File> file, String password, final ApiCallback<FilesResult> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -1356,6 +1419,7 @@ public class LightCellsApi {
         if (callback != null) {
             progressListener = new ProgressResponseBody.ProgressListener() {
                 @Override
+	@Deprecated 
                 public void update(long bytesRead, long contentLength, boolean done) {
                     callback.onDownloadProgress(bytesRead, contentLength, done);
                 }
@@ -1363,6 +1427,7 @@ public class LightCellsApi {
 
             progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
                 @Override
+	@Deprecated 
                 public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
                     callback.onUploadProgress(bytesWritten, contentLength, done);
                 }
@@ -1385,6 +1450,7 @@ public class LightCellsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
+	@Deprecated 
     public com.squareup.okhttp.Call postSearchCall(HashMap<String,File> file, String text, String password, String sheetname, Boolean checkExcelRestriction, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
@@ -1425,6 +1491,7 @@ public class LightCellsApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
+	@Deprecated 
                 public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
@@ -1467,6 +1534,7 @@ public class LightCellsApi {
      * @return List&lt;TextItem&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
+	@Deprecated 
     public List<TextItem> postSearch(HashMap<String,File> file, String text, String password, String sheetname, Boolean checkExcelRestriction) throws ApiException {
         ApiResponse<List<TextItem>> resp = postSearchWithHttpInfo(file, text, password, sheetname,checkExcelRestriction);
         return resp.getData();
@@ -1482,6 +1550,7 @@ public class LightCellsApi {
      * @return ApiResponse&lt;List&lt;TextItem&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
+	@Deprecated 
     public ApiResponse<List<TextItem>> postSearchWithHttpInfo(HashMap<String,File> file, String text, String password, String sheetname, Boolean checkExcelRestriction) throws ApiException {
         com.squareup.okhttp.Call call = postSearchValidateBeforeCall(file, text, password, sheetname,checkExcelRestriction,  null, null);
         Type localVarReturnType = new TypeToken<List<TextItem>>(){}.getType();
@@ -1499,6 +1568,7 @@ public class LightCellsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
+	@Deprecated 
     public com.squareup.okhttp.Call postSearchAsync(HashMap<String,File> file, String text, String password, String sheetname, Boolean checkExcelRestriction, final ApiCallback<List<TextItem>> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -1507,6 +1577,7 @@ public class LightCellsApi {
         if (callback != null) {
             progressListener = new ProgressResponseBody.ProgressListener() {
                 @Override
+	@Deprecated 
                 public void update(long bytesRead, long contentLength, boolean done) {
                     callback.onDownloadProgress(bytesRead, contentLength, done);
                 }
@@ -1514,6 +1585,7 @@ public class LightCellsApi {
 
             progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
                 @Override
+	@Deprecated 
                 public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
                     callback.onUploadProgress(bytesWritten, contentLength, done);
                 }
@@ -1538,6 +1610,7 @@ public class LightCellsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
+	@Deprecated 
     public com.squareup.okhttp.Call postSplitCall(HashMap<String,File> file, String format, String password, Integer from, Integer to, Boolean checkExcelRestriction,final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
@@ -1580,6 +1653,7 @@ public class LightCellsApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
+	@Deprecated 
                 public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
@@ -1622,6 +1696,7 @@ public class LightCellsApi {
      * @return FilesResult
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
+	@Deprecated 
     public FilesResult postSplit(HashMap<String,File> file, String format, String password, Integer from, Integer to, Boolean checkExcelRestriction) throws ApiException {
         ApiResponse<FilesResult> resp = postSplitWithHttpInfo(file, format, password, from, to,checkExcelRestriction);
         return resp.getData();
@@ -1638,6 +1713,7 @@ public class LightCellsApi {
      * @return ApiResponse&lt;FilesResult&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
+	@Deprecated 
     public ApiResponse<FilesResult> postSplitWithHttpInfo(HashMap<String,File> file, String format, String password, Integer from, Integer to, Boolean checkExcelRestriction) throws ApiException {
         com.squareup.okhttp.Call call = postSplitValidateBeforeCall(file, format, password, from, to,checkExcelRestriction,null, null);
         Type localVarReturnType = new TypeToken<FilesResult>(){}.getType();
@@ -1656,6 +1732,7 @@ public class LightCellsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
+	@Deprecated 
     public com.squareup.okhttp.Call postSplitAsync(HashMap<String,File> file, String format, String password, Integer from, Integer to, Boolean checkExcelRestriction, final ApiCallback<FilesResult> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -1664,6 +1741,7 @@ public class LightCellsApi {
         if (callback != null) {
             progressListener = new ProgressResponseBody.ProgressListener() {
                 @Override
+	@Deprecated 
                 public void update(long bytesRead, long contentLength, boolean done) {
                     callback.onDownloadProgress(bytesRead, contentLength, done);
                 }
@@ -1671,6 +1749,7 @@ public class LightCellsApi {
 
             progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
                 @Override
+	@Deprecated 
                 public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
                     callback.onUploadProgress(bytesWritten, contentLength, done);
                 }
@@ -1691,6 +1770,7 @@ public class LightCellsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
+	@Deprecated 
     public com.squareup.okhttp.Call postUnlockCall(HashMap<String,File> file, String password, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
@@ -1726,6 +1806,7 @@ public class LightCellsApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
+	@Deprecated 
                 public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
@@ -1770,6 +1851,7 @@ public class LightCellsApi {
      * @return FilesResult
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
+	@Deprecated 
     public FilesResult postUnlock(HashMap<String,File> file, String password) throws ApiException {
         ApiResponse<FilesResult> resp = postUnlockWithHttpInfo(file, password);
         return resp.getData();
@@ -1783,6 +1865,7 @@ public class LightCellsApi {
      * @return ApiResponse&lt;FilesResult&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
+	@Deprecated 
     public ApiResponse<FilesResult> postUnlockWithHttpInfo(HashMap<String,File> file, String password) throws ApiException {
         com.squareup.okhttp.Call call = postUnlockValidateBeforeCall(file, password, null, null);
         Type localVarReturnType = new TypeToken<FilesResult>(){}.getType();
@@ -1798,6 +1881,7 @@ public class LightCellsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
+	@Deprecated 
     public com.squareup.okhttp.Call postUnlockAsync(HashMap<String,File> file, String password, final ApiCallback<FilesResult> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -1806,6 +1890,7 @@ public class LightCellsApi {
         if (callback != null) {
             progressListener = new ProgressResponseBody.ProgressListener() {
                 @Override
+	@Deprecated 
                 public void update(long bytesRead, long contentLength, boolean done) {
                     callback.onDownloadProgress(bytesRead, contentLength, done);
                 }
@@ -1813,6 +1898,7 @@ public class LightCellsApi {
 
             progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
                 @Override
+	@Deprecated 
                 public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
                     callback.onUploadProgress(bytesWritten, contentLength, done);
                 }
@@ -1834,6 +1920,7 @@ public class LightCellsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
+	@Deprecated 
     public com.squareup.okhttp.Call postWatermarkCall(HashMap<String,File> file, String text, String color, Boolean checkExcelRestriction, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
@@ -1872,6 +1959,7 @@ public class LightCellsApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
+	@Deprecated 
                 public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
@@ -1922,6 +2010,7 @@ public class LightCellsApi {
      * @return FilesResult
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
+	@Deprecated 
     public FilesResult postWatermark(HashMap<String,File> file, String text, String color, Boolean checkExcelRestriction) throws ApiException {
         ApiResponse<FilesResult> resp = postWatermarkWithHttpInfo(file, text, color,checkExcelRestriction);
         return resp.getData();
@@ -1936,6 +2025,7 @@ public class LightCellsApi {
      * @return ApiResponse&lt;FilesResult&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
+	@Deprecated 
     public ApiResponse<FilesResult> postWatermarkWithHttpInfo(HashMap<String,File> file, String text, String color, Boolean checkExcelRestriction) throws ApiException {
         com.squareup.okhttp.Call call = postWatermarkValidateBeforeCall(file, text, color,checkExcelRestriction, null, null);
         Type localVarReturnType = new TypeToken<FilesResult>(){}.getType();
@@ -1952,6 +2042,7 @@ public class LightCellsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
+	@Deprecated 
     public com.squareup.okhttp.Call postWatermarkAsync(HashMap<String,File> file, String text, String color, Boolean checkExcelRestriction, final ApiCallback<FilesResult> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -1960,6 +2051,7 @@ public class LightCellsApi {
         if (callback != null) {
             progressListener = new ProgressResponseBody.ProgressListener() {
                 @Override
+	@Deprecated 
                 public void update(long bytesRead, long contentLength, boolean done) {
                     callback.onDownloadProgress(bytesRead, contentLength, done);
                 }
@@ -1967,6 +2059,7 @@ public class LightCellsApi {
 
             progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
                 @Override
+	@Deprecated 
                 public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
                     callback.onUploadProgress(bytesWritten, contentLength, done);
                 }
@@ -1988,6 +2081,7 @@ public class LightCellsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
+	@Deprecated 
     public com.squareup.okhttp.Call postCompressCall(HashMap<String,File> file, Integer CompressLevel, Boolean checkExcelRestriction, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
@@ -2022,6 +2116,7 @@ public class LightCellsApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
+	@Deprecated 
                 public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
@@ -2062,6 +2157,7 @@ public class LightCellsApi {
      * @return FilesResult
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
+	@Deprecated 
     public FilesResult postCompress(HashMap<String,File> file, Integer CompressLevel, Boolean checkExcelRestriction) throws ApiException {
         ApiResponse<FilesResult> resp = postCompressWithHttpInfo(file,CompressLevel,checkExcelRestriction);
         return resp.getData();
@@ -2075,6 +2171,7 @@ public class LightCellsApi {
      * @return ApiResponse&lt;FilesResult&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
+	@Deprecated 
     public ApiResponse<FilesResult> postCompressWithHttpInfo(HashMap<String,File> file, Integer CompressLevel, Boolean checkExcelRestriction) throws ApiException {
         com.squareup.okhttp.Call call = postCompressValidateBeforeCall(file, CompressLevel,checkExcelRestriction, null, null);
         Type localVarReturnType = new TypeToken<FilesResult>(){}.getType();
@@ -2090,6 +2187,7 @@ public class LightCellsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
+	@Deprecated 
     public com.squareup.okhttp.Call postCompressAsync(HashMap<String,File> file, Integer CompressLevel, Boolean checkExcelRestriction, final ApiCallback<FilesResult> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -2098,6 +2196,7 @@ public class LightCellsApi {
         if (callback != null) {
             progressListener = new ProgressResponseBody.ProgressListener() {
                 @Override
+	@Deprecated 
                 public void update(long bytesRead, long contentLength, boolean done) {
                     callback.onDownloadProgress(bytesRead, contentLength, done);
                 }
@@ -2105,6 +2204,7 @@ public class LightCellsApi {
 
             progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
                 @Override
+	@Deprecated 
                 public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
                     callback.onUploadProgress(bytesWritten, contentLength, done);
                 }
@@ -2130,6 +2230,7 @@ public class LightCellsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
+	@Deprecated 
     public com.squareup.okhttp.Call postReplaceCall(HashMap<String,File> file, String text, String newtext,String password , String sheetname , Boolean checkExcelRestriction, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
@@ -2171,6 +2272,7 @@ public class LightCellsApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
+	@Deprecated 
                 public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
@@ -2217,6 +2319,7 @@ public class LightCellsApi {
      * @return FilesResult
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
+	@Deprecated 
     public FilesResult postReplace(HashMap<String,File> file,  String text, String newtext,String password , String sheetname, Boolean checkExcelRestriction ) throws ApiException {
         ApiResponse<FilesResult> resp = postReplaceWithHttpInfo(file,text,newtext,password,sheetname,checkExcelRestriction);
         return resp.getData();
@@ -2233,6 +2336,7 @@ public class LightCellsApi {
      * @return ApiResponse&lt;FilesResult&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
+	@Deprecated 
     public ApiResponse<FilesResult> postReplaceWithHttpInfo(HashMap<String,File> file,  String text, String newtext,String password , String sheetname, Boolean checkExcelRestriction) throws ApiException {
         com.squareup.okhttp.Call call = postReplaceValidateBeforeCall(file, text,newtext,password,sheetname,checkExcelRestriction, null, null);
         Type localVarReturnType = new TypeToken<FilesResult>(){}.getType();
@@ -2251,6 +2355,7 @@ public class LightCellsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
+	@Deprecated 
     public com.squareup.okhttp.Call postReplaceAsync(HashMap<String,File> file, String text, String newtext,String password , String sheetname, Boolean checkExcelRestriction, final ApiCallback<FilesResult> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -2259,6 +2364,7 @@ public class LightCellsApi {
         if (callback != null) {
             progressListener = new ProgressResponseBody.ProgressListener() {
                 @Override
+	@Deprecated 
                 public void update(long bytesRead, long contentLength, boolean done) {
                     callback.onDownloadProgress(bytesRead, contentLength, done);
                 }
@@ -2266,6 +2372,7 @@ public class LightCellsApi {
 
             progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
                 @Override
+	@Deprecated 
                 public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
                     callback.onUploadProgress(bytesWritten, contentLength, done);
                 }
@@ -2288,6 +2395,7 @@ public class LightCellsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
+	@Deprecated 
     public com.squareup.okhttp.Call postReverseCall(HashMap<String,File> file,  String rotateType, String format, Boolean checkExcelRestriction, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
@@ -2325,6 +2433,7 @@ public class LightCellsApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
+	@Deprecated 
                 public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
@@ -2369,6 +2478,7 @@ public class LightCellsApi {
      * @return FilesResult
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
+	@Deprecated 
     public FilesResult postReverse(HashMap<String,File> file,   String rotateType, String format , Boolean checkExcelRestriction) throws ApiException {
         ApiResponse<FilesResult> resp = postReverseWithHttpInfo(file,rotateType,format,checkExcelRestriction);
         return resp.getData();
@@ -2383,6 +2493,7 @@ public class LightCellsApi {
      * @return ApiResponse&lt;FilesResult&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
+	@Deprecated 
     public ApiResponse<FilesResult> postReverseWithHttpInfo(HashMap<String,File> file,  String rotateType, String format, Boolean checkExcelRestriction) throws ApiException {
         com.squareup.okhttp.Call call = postReverseValidateBeforeCall(file, rotateType,format,checkExcelRestriction, null, null);
         Type localVarReturnType = new TypeToken<FilesResult>(){}.getType();
@@ -2399,6 +2510,7 @@ public class LightCellsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
+	@Deprecated 
     public com.squareup.okhttp.Call postReverseAsync(HashMap<String,File> file, String rotateType, String format, Boolean checkExcelRestriction, final ApiCallback<FilesResult> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -2407,6 +2519,7 @@ public class LightCellsApi {
         if (callback != null) {
             progressListener = new ProgressResponseBody.ProgressListener() {
                 @Override
+	@Deprecated 
                 public void update(long bytesRead, long contentLength, boolean done) {
                     callback.onDownloadProgress(bytesRead, contentLength, done);
                 }
@@ -2414,6 +2527,7 @@ public class LightCellsApi {
 
             progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
                 @Override
+	@Deprecated 
                 public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
                     callback.onUploadProgress(bytesWritten, contentLength, done);
                 }
@@ -2435,6 +2549,7 @@ public class LightCellsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
+	@Deprecated 
     public com.squareup.okhttp.Call postRotateCall(HashMap<String,File> file,  String rotateType, String format, Boolean checkExcelRestriction, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
@@ -2472,6 +2587,7 @@ public class LightCellsApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
+	@Deprecated 
                 public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
@@ -2516,6 +2632,7 @@ public class LightCellsApi {
      * @return FilesResult
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
+	@Deprecated 
     public FilesResult postRotate(HashMap<String,File> file,   String rotateType, String format , Boolean checkExcelRestriction) throws ApiException {
         ApiResponse<FilesResult> resp = postRotateWithHttpInfo(file,rotateType,format,checkExcelRestriction);
         return resp.getData();
@@ -2530,6 +2647,7 @@ public class LightCellsApi {
      * @return ApiResponse&lt;FilesResult&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
+	@Deprecated 
     public ApiResponse<FilesResult> postRotateWithHttpInfo(HashMap<String,File> file,  String rotateType, String format, Boolean checkExcelRestriction) throws ApiException {
         com.squareup.okhttp.Call call = postRotateValidateBeforeCall(file, rotateType,format,checkExcelRestriction, null, null);
         Type localVarReturnType = new TypeToken<FilesResult>(){}.getType();
@@ -2546,6 +2664,7 @@ public class LightCellsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
+	@Deprecated 
     public com.squareup.okhttp.Call postRotateeAsync(HashMap<String,File> file, String rotateType, String format, Boolean checkExcelRestriction, final ApiCallback<FilesResult> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;

@@ -1,14 +1,17 @@
-/* 
+/*
+ * --------------------------------------------------------------------------------
+ * <copyright company="Aspose" file="PageSection.java">
+ *   Copyright (c) 2023 Aspose.Cells Cloud
+ * </copyright>
  * <summary>
- *  Copyright (c) 2022 Aspose.Cells Cloud
- *  Permission is hereby granted, free of charge, to any person obtaining a copy
+ *   Permission is hereby granted, free of charge, to any person obtaining a copy
  *  of this software and associated documentation files (the "Software"), to deal
  *  in the Software without restriction, including without limitation the rights
  *  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
  *  copies of the Software, and to permit persons to whom the Software is
  *  furnished to do so, subject to the following conditions:
  * 
- *  The above copyright notice and this permission notice shall be included in all 
+ *  The above copyright notice and this permission notice shall be included in all
  *  copies or substantial portions of the Software.
  * 
  *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
@@ -19,178 +22,152 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
+ * --------------------------------------------------------------------------------
  */
-
 
 package com.aspose.cloud.cells.model;
 
 import java.util.Objects;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
+import com.aspose.cloud.cells.model.*;
+import java.util.ArrayList;
+import java.util.List;
+import com.google.gson.annotations.SerializedName;
+import java.time.OffsetDateTime;
 
-/**
- * PageSection
- */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-09-16T03:09:53.733-05:00")
+
 public class PageSection {
-  @SerializedName("Picture")
-  private byte[] picture = null;
+        @SerializedName("Section")
+        private Integer section ;
 
-  @SerializedName("Section")
-  private Integer section = null;
+        public  PageSection  section(Integer  section) {
+            this.section =  section;
+            return this;
+        }
 
-  @SerializedName("FisrtPageContext")
-  private String fisrtPageContext = null;
+        @ApiModelProperty(value = "")
+        public Integer getSection() {
+            return section;
+        }
 
-  @SerializedName("Context")
-  private String context = null;
+        public void setSection(Integer section) {
+            this.section = section;
+        }
 
-  @SerializedName("EvenPageContext")
-  private String evenPageContext = null;
+        @SerializedName("Context")
+        private String context ;
 
-  public PageSection picture(byte[] picture) {
-    this.picture = picture;
-    return this;
-  }
+        public  PageSection  context(String  context) {
+            this.context =  context;
+            return this;
+        }
 
-   /**
-   * Get picture
-   * @return picture
-  **/
-  @ApiModelProperty(value = "")
-  public byte[] getPicture() {
-    return picture;
-  }
+        @ApiModelProperty(value = "")
+        public String getContext() {
+            return context;
+        }
 
-  public void setPicture(byte[] picture) {
-    this.picture = picture;
-  }
+        public void setContext(String context) {
+            this.context = context;
+        }
 
-  public PageSection section(Integer section) {
-    this.section = section;
-    return this;
-  }
+        @SerializedName("Picture")
+        private String picture ;
 
-   /**
-   * 0,1,2  left , middle ,right
-   * @return section
-  **/
-  @ApiModelProperty(required = true, value = "0,1,2  left , middle ,right")
-  public Integer getSection() {
-    return section;
-  }
+        public  PageSection  picture(String  picture) {
+            this.picture =  picture;
+            return this;
+        }
 
-  public void setSection(Integer section) {
-    this.section = section;
-  }
+        @ApiModelProperty(value = "")
+        public String getPicture() {
+            return picture;
+        }
 
-  public PageSection fisrtPageContext(String fisrtPageContext) {
-    this.fisrtPageContext = fisrtPageContext;
-    return this;
-  }
+        public void setPicture(String picture) {
+            this.picture = picture;
+        }
 
-   /**
-   * fisrt page context script
-   * @return fisrtPageContext
-  **/
-  @ApiModelProperty(value = "fisrt page context script")
-  public String getFisrtPageContext() {
-    return fisrtPageContext;
-  }
+        @SerializedName("FisrtPageContext")
+        private String fisrtPageContext ;
 
-  public void setFisrtPageContext(String fisrtPageContext) {
-    this.fisrtPageContext = fisrtPageContext;
-  }
+        public  PageSection  fisrtPageContext(String  fisrtPageContext) {
+            this.fisrtPageContext =  fisrtPageContext;
+            return this;
+        }
 
-  public PageSection context(String context) {
-    this.context = context;
-    return this;
-  }
+        @ApiModelProperty(value = "")
+        public String getFisrtPageContext() {
+            return fisrtPageContext;
+        }
 
-   /**
-   * page context script             
-   * @return context
-  **/
-  @ApiModelProperty(value = "page context script             ")
-  public String getContext() {
-    return context;
-  }
+        public void setFisrtPageContext(String fisrtPageContext) {
+            this.fisrtPageContext = fisrtPageContext;
+        }
 
-  public void setContext(String context) {
-    this.context = context;
-  }
+        @SerializedName("EvenPageContext")
+        private String evenPageContext ;
 
-  public PageSection evenPageContext(String evenPageContext) {
-    this.evenPageContext = evenPageContext;
-    return this;
-  }
+        public  PageSection  evenPageContext(String  evenPageContext) {
+            this.evenPageContext =  evenPageContext;
+            return this;
+        }
 
-   /**
-   * Even page context script
-   * @return evenPageContext
-  **/
-  @ApiModelProperty(value = "Even page context script")
-  public String getEvenPageContext() {
-    return evenPageContext;
-  }
+        @ApiModelProperty(value = "")
+        public String getEvenPageContext() {
+            return evenPageContext;
+        }
 
-  public void setEvenPageContext(String evenPageContext) {
-    this.evenPageContext = evenPageContext;
-  }
+        public void setEvenPageContext(String evenPageContext) {
+            this.evenPageContext = evenPageContext;
+        }
+
+        @Override
+        public boolean equals(java.lang.Object o) {
+            if (this == o) {
+                return true;
+            }
+            if (o == null || getClass() != o.getClass()) {
+                return false;
+            }
+
+            PageSection pageSection = (PageSection) o;
+            return
+                Objects.equals(this.section, pageSection.section) &&
+                Objects.equals(this.context, pageSection.context) &&
+                Objects.equals(this.picture, pageSection.picture) &&
+                Objects.equals(this.fisrtPageContext, pageSection.fisrtPageContext) &&
+                Objects.equals(this.evenPageContext, pageSection.evenPageContext);
+      }
+
+      @Override
+      public int hashCode() {
+        return Objects.hash(section, context, picture, fisrtPageContext, evenPageContext);
+      }
+        @Override
+        public String toString() {
+            StringBuilder sb = new StringBuilder();
+            sb.append("class PageSection {\n");
+            sb.append("    section: ").append(toIndentedString(getSection())).append("\n");
+            sb.append("    context: ").append(toIndentedString(getContext())).append("\n");
+            sb.append("    picture: ").append(toIndentedString(getPicture())).append("\n");
+            sb.append("    fisrtPageContext: ").append(toIndentedString(getFisrtPageContext())).append("\n");
+            sb.append("    evenPageContext: ").append(toIndentedString(getEvenPageContext())).append("\n");
+            sb.append("}");
+            return sb.toString();
+        }
+
+        /**
+        * Convert the given object to string with each line indented by 4 spaces
+        * (except the first line).
+        */
+        private String toIndentedString(java.lang.Object o) {
+            if (o == null) {
+                return "null";
+            }
+            return o.toString().replace("\n", "\n    ");
+        }
 
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    PageSection pageSection = (PageSection) o;
-    return Objects.equals(this.picture, pageSection.picture) &&
-        Objects.equals(this.section, pageSection.section) &&
-        Objects.equals(this.fisrtPageContext, pageSection.fisrtPageContext) &&
-        Objects.equals(this.context, pageSection.context) &&
-        Objects.equals(this.evenPageContext, pageSection.evenPageContext);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(picture, section, fisrtPageContext, context, evenPageContext);
-  }
-
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class PageSection {\n");
-    
-    sb.append("    picture: ").append(toIndentedString(picture)).append("\n");
-    sb.append("    section: ").append(toIndentedString(section)).append("\n");
-    sb.append("    fisrtPageContext: ").append(toIndentedString(fisrtPageContext)).append("\n");
-    sb.append("    context: ").append(toIndentedString(context)).append("\n");
-    sb.append("    evenPageContext: ").append(toIndentedString(evenPageContext)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
-  
 }
 

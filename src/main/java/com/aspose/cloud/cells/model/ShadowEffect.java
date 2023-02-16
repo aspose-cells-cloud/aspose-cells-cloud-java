@@ -1,14 +1,17 @@
-/* 
+/*
+ * --------------------------------------------------------------------------------
+ * <copyright company="Aspose" file="ShadowEffect.java">
+ *   Copyright (c) 2023 Aspose.Cells Cloud
+ * </copyright>
  * <summary>
- *  Copyright (c) 2022 Aspose.Cells Cloud
- *  Permission is hereby granted, free of charge, to any person obtaining a copy
+ *   Permission is hereby granted, free of charge, to any person obtaining a copy
  *  of this software and associated documentation files (the "Software"), to deal
  *  in the Software without restriction, including without limitation the rights
  *  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
  *  copies of the Software, and to permit persons to whom the Software is
  *  furnished to do so, subject to the following conditions:
  * 
- *  The above copyright notice and this permission notice shall be included in all 
+ *  The above copyright notice and this permission notice shall be included in all
  *  copies or substantial portions of the Software.
  * 
  *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
@@ -19,225 +22,190 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
+ * --------------------------------------------------------------------------------
  */
-
 
 package com.aspose.cloud.cells.model;
 
 import java.util.Objects;
-import com.aspose.cloud.cells.model.CellsColor;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
+import com.aspose.cloud.cells.model.*;
+import java.util.ArrayList;
+import java.util.List;
+import com.google.gson.annotations.SerializedName;
+import java.time.OffsetDateTime;
 
-/**
- * ShadowEffect
- */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-09-16T03:09:53.733-05:00")
+
 public class ShadowEffect {
-  @SerializedName("Distance")
-  private Double distance = null;
+        @SerializedName("Angle")
+        private Double angle ;
 
-  @SerializedName("Angle")
-  private Double angle = null;
+        public  ShadowEffect  angle(Double  angle) {
+            this.angle =  angle;
+            return this;
+        }
 
-  @SerializedName("PresetType")
-  private String presetType = null;
+        @ApiModelProperty(value = "")
+        public Double getAngle() {
+            return angle;
+        }
 
-  @SerializedName("Color")
-  private CellsColor color = null;
+        public void setAngle(Double angle) {
+            this.angle = angle;
+        }
 
-  @SerializedName("Transparency")
-  private Double transparency = null;
+        @SerializedName("Blur")
+        private Double blur ;
 
-  @SerializedName("Blur")
-  private Double blur = null;
+        public  ShadowEffect  blur(Double  blur) {
+            this.blur =  blur;
+            return this;
+        }
 
-  @SerializedName("Size")
-  private Double size = null;
+        @ApiModelProperty(value = "")
+        public Double getBlur() {
+            return blur;
+        }
 
-  public ShadowEffect distance(Double distance) {
-    this.distance = distance;
-    return this;
-  }
+        public void setBlur(Double blur) {
+            this.blur = blur;
+        }
 
-   /**
-   * Get distance
-   * @return distance
-  **/
-  @ApiModelProperty(value = "")
-  public Double getDistance() {
-    return distance;
-  }
+        @SerializedName("Color")
+        private CellsColor color ;
 
-  public void setDistance(Double distance) {
-    this.distance = distance;
-  }
+        public  ShadowEffect  color(CellsColor  color) {
+            this.color =  color;
+            return this;
+        }
 
-  public ShadowEffect angle(Double angle) {
-    this.angle = angle;
-    return this;
-  }
+        @ApiModelProperty(value = "")
+        public CellsColor getColor() {
+            return color;
+        }
 
-   /**
-   * Get angle
-   * @return angle
-  **/
-  @ApiModelProperty(value = "")
-  public Double getAngle() {
-    return angle;
-  }
+        public void setColor(CellsColor color) {
+            this.color = color;
+        }
 
-  public void setAngle(Double angle) {
-    this.angle = angle;
-  }
+        @SerializedName("Distance")
+        private Double distance ;
 
-  public ShadowEffect presetType(String presetType) {
-    this.presetType = presetType;
-    return this;
-  }
+        public  ShadowEffect  distance(Double  distance) {
+            this.distance =  distance;
+            return this;
+        }
 
-   /**
-   * Get presetType
-   * @return presetType
-  **/
-  @ApiModelProperty(value = "")
-  public String getPresetType() {
-    return presetType;
-  }
+        @ApiModelProperty(value = "")
+        public Double getDistance() {
+            return distance;
+        }
 
-  public void setPresetType(String presetType) {
-    this.presetType = presetType;
-  }
+        public void setDistance(Double distance) {
+            this.distance = distance;
+        }
 
-  public ShadowEffect color(CellsColor color) {
-    this.color = color;
-    return this;
-  }
+        @SerializedName("PresetType")
+        private String presetType ;
 
-   /**
-   * Get color
-   * @return color
-  **/
-  @ApiModelProperty(value = "")
-  public CellsColor getColor() {
-    return color;
-  }
+        public  ShadowEffect  presetType(String  presetType) {
+            this.presetType =  presetType;
+            return this;
+        }
 
-  public void setColor(CellsColor color) {
-    this.color = color;
-  }
+        @ApiModelProperty(value = "")
+        public String getPresetType() {
+            return presetType;
+        }
 
-  public ShadowEffect transparency(Double transparency) {
-    this.transparency = transparency;
-    return this;
-  }
+        public void setPresetType(String presetType) {
+            this.presetType = presetType;
+        }
 
-   /**
-   * Get transparency
-   * @return transparency
-  **/
-  @ApiModelProperty(value = "")
-  public Double getTransparency() {
-    return transparency;
-  }
+        @SerializedName("Size")
+        private Double size ;
 
-  public void setTransparency(Double transparency) {
-    this.transparency = transparency;
-  }
+        public  ShadowEffect  size(Double  size) {
+            this.size =  size;
+            return this;
+        }
 
-  public ShadowEffect blur(Double blur) {
-    this.blur = blur;
-    return this;
-  }
+        @ApiModelProperty(value = "")
+        public Double getSize() {
+            return size;
+        }
 
-   /**
-   * Get blur
-   * @return blur
-  **/
-  @ApiModelProperty(value = "")
-  public Double getBlur() {
-    return blur;
-  }
+        public void setSize(Double size) {
+            this.size = size;
+        }
 
-  public void setBlur(Double blur) {
-    this.blur = blur;
-  }
+        @SerializedName("Transparency")
+        private Double transparency ;
 
-  public ShadowEffect size(Double size) {
-    this.size = size;
-    return this;
-  }
+        public  ShadowEffect  transparency(Double  transparency) {
+            this.transparency =  transparency;
+            return this;
+        }
 
-   /**
-   * Get size
-   * @return size
-  **/
-  @ApiModelProperty(value = "")
-  public Double getSize() {
-    return size;
-  }
+        @ApiModelProperty(value = "")
+        public Double getTransparency() {
+            return transparency;
+        }
 
-  public void setSize(Double size) {
-    this.size = size;
-  }
+        public void setTransparency(Double transparency) {
+            this.transparency = transparency;
+        }
 
+        @Override
+        public boolean equals(java.lang.Object o) {
+            if (this == o) {
+                return true;
+            }
+            if (o == null || getClass() != o.getClass()) {
+                return false;
+            }
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    ShadowEffect shadowEffect = (ShadowEffect) o;
-    return Objects.equals(this.distance, shadowEffect.distance) &&
-        Objects.equals(this.angle, shadowEffect.angle) &&
-        Objects.equals(this.presetType, shadowEffect.presetType) &&
-        Objects.equals(this.color, shadowEffect.color) &&
-        Objects.equals(this.transparency, shadowEffect.transparency) &&
-        Objects.equals(this.blur, shadowEffect.blur) &&
-        Objects.equals(this.size, shadowEffect.size);
-  }
+            ShadowEffect shadowEffect = (ShadowEffect) o;
+            return
+                Objects.equals(this.angle, shadowEffect.angle) &&
+                Objects.equals(this.blur, shadowEffect.blur) &&
+                Objects.equals(this.color, shadowEffect.color) &&
+                Objects.equals(this.distance, shadowEffect.distance) &&
+                Objects.equals(this.presetType, shadowEffect.presetType) &&
+                Objects.equals(this.size, shadowEffect.size) &&
+                Objects.equals(this.transparency, shadowEffect.transparency);
+      }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(distance, angle, presetType, color, transparency, blur, size);
-  }
+      @Override
+      public int hashCode() {
+        return Objects.hash(angle, blur, color, distance, presetType, size, transparency);
+      }
+        @Override
+        public String toString() {
+            StringBuilder sb = new StringBuilder();
+            sb.append("class ShadowEffect {\n");
+            sb.append("    angle: ").append(toIndentedString(getAngle())).append("\n");
+            sb.append("    blur: ").append(toIndentedString(getBlur())).append("\n");
+            sb.append("    color: ").append(toIndentedString(getColor())).append("\n");
+            sb.append("    distance: ").append(toIndentedString(getDistance())).append("\n");
+            sb.append("    presetType: ").append(toIndentedString(getPresetType())).append("\n");
+            sb.append("    size: ").append(toIndentedString(getSize())).append("\n");
+            sb.append("    transparency: ").append(toIndentedString(getTransparency())).append("\n");
+            sb.append("}");
+            return sb.toString();
+        }
+
+        /**
+        * Convert the given object to string with each line indented by 4 spaces
+        * (except the first line).
+        */
+        private String toIndentedString(java.lang.Object o) {
+            if (o == null) {
+                return "null";
+            }
+            return o.toString().replace("\n", "\n    ");
+        }
 
 
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class ShadowEffect {\n");
-    
-    sb.append("    distance: ").append(toIndentedString(distance)).append("\n");
-    sb.append("    angle: ").append(toIndentedString(angle)).append("\n");
-    sb.append("    presetType: ").append(toIndentedString(presetType)).append("\n");
-    sb.append("    color: ").append(toIndentedString(color)).append("\n");
-    sb.append("    transparency: ").append(toIndentedString(transparency)).append("\n");
-    sb.append("    blur: ").append(toIndentedString(blur)).append("\n");
-    sb.append("    size: ").append(toIndentedString(size)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
-  
 }
 

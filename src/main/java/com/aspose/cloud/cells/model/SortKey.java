@@ -1,14 +1,17 @@
-/* 
+/*
+ * --------------------------------------------------------------------------------
+ * <copyright company="Aspose" file="SortKey.java">
+ *   Copyright (c) 2023 Aspose.Cells Cloud
+ * </copyright>
  * <summary>
- *  Copyright (c) 2022 Aspose.Cells Cloud
- *  Permission is hereby granted, free of charge, to any person obtaining a copy
+ *   Permission is hereby granted, free of charge, to any person obtaining a copy
  *  of this software and associated documentation files (the "Software"), to deal
  *  in the Software without restriction, including without limitation the rights
  *  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
  *  copies of the Software, and to permit persons to whom the Software is
  *  furnished to do so, subject to the following conditions:
  * 
- *  The above copyright notice and this permission notice shall be included in all 
+ *  The above copyright notice and this permission notice shall be included in all
  *  copies or substantial portions of the Software.
  * 
  *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
@@ -19,211 +22,171 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
+ * --------------------------------------------------------------------------------
  */
-
 
 package com.aspose.cloud.cells.model;
 
 import java.util.Objects;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
+import com.aspose.cloud.cells.model.*;
 import java.util.ArrayList;
 import java.util.List;
+import com.google.gson.annotations.SerializedName;
+import java.time.OffsetDateTime;
 
-/**
- * SortKey
- */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-09-16T03:09:53.733-05:00")
+
 public class SortKey {
-  @SerializedName("CustomList")
-  private List<String> customList = null;
+        @SerializedName("Key")
+        private Integer key ;
 
-  @SerializedName("SortOrder")
-  private String sortOrder = null;
+        public  SortKey  key(Integer  key) {
+            this.key =  key;
+            return this;
+        }
 
-  @SerializedName("Key")
-  private Integer key = null;
+        @ApiModelProperty(value = "")
+        public Integer getKey() {
+            return key;
+        }
 
-  @SerializedName("Order")
-  private String order = null;
+        public void setKey(Integer key) {
+            this.key = key;
+        }
 
-  @SerializedName("Type")
-  private String type = null;
+        @SerializedName("SortOrder")
+        private String sortOrder ;
 
-  @SerializedName("Index")
-  private Integer index = null;
+        public  SortKey  sortOrder(String  sortOrder) {
+            this.sortOrder =  sortOrder;
+            return this;
+        }
 
-  public SortKey customList(List<String> customList) {
-    this.customList = customList;
-    return this;
-  }
+        @ApiModelProperty(value = "")
+        public String getSortOrder() {
+            return sortOrder;
+        }
 
-  public SortKey addCustomListItem(String customListItem) {
-    if (this.customList == null) {
-      this.customList = new ArrayList<>();
-    }
-    this.customList.add(customListItem);
-    return this;
-  }
+        public void setSortOrder(String sortOrder) {
+            this.sortOrder = sortOrder;
+        }
 
-   /**
-   * Get customList
-   * @return customList
-  **/
-  @ApiModelProperty(value = "")
-  public List<String> getCustomList() {
-    return customList;
-  }
+        @SerializedName("CustomList")
+        private List<String> customList ;
 
-  public void setCustomList(List<String> customList) {
-    this.customList = customList;
-  }
+        public  SortKey  customList(List<String>  customList) {
+            this.customList =  customList;
+            return this;
+        }
 
-  public SortKey sortOrder(String sortOrder) {
-    this.sortOrder = sortOrder;
-    return this;
-  }
+        @ApiModelProperty(value = "")
+        public List<String> getCustomList() {
+            return customList;
+        }
 
-   /**
-   * Get sortOrder
-   * @return sortOrder
-  **/
-  @ApiModelProperty(value = "")
-  public String getSortOrder() {
-    return sortOrder;
-  }
+        public void setCustomList(List<String> customList) {
+            this.customList = customList;
+        }
 
-  public void setSortOrder(String sortOrder) {
-    this.sortOrder = sortOrder;
-  }
+        @SerializedName("Order")
+        private String order ;
 
-  public SortKey key(Integer key) {
-    this.key = key;
-    return this;
-  }
+        public  SortKey  order(String  order) {
+            this.order =  order;
+            return this;
+        }
 
-   /**
-   * Get key
-   * @return key
-  **/
-  @ApiModelProperty(required = true, value = "")
-  public Integer getKey() {
-    return key;
-  }
+        @ApiModelProperty(value = "")
+        public String getOrder() {
+            return order;
+        }
 
-  public void setKey(Integer key) {
-    this.key = key;
-  }
+        public void setOrder(String order) {
+            this.order = order;
+        }
 
-  public SortKey order(String order) {
-    this.order = order;
-    return this;
-  }
+        @SerializedName("Index")
+        private Integer index ;
 
-   /**
-   * Get order
-   * @return order
-  **/
-  @ApiModelProperty(value = "")
-  public String getOrder() {
-    return order;
-  }
+        public  SortKey  index(Integer  index) {
+            this.index =  index;
+            return this;
+        }
 
-  public void setOrder(String order) {
-    this.order = order;
-  }
+        @ApiModelProperty(value = "")
+        public Integer getIndex() {
+            return index;
+        }
 
-  public SortKey type(String type) {
-    this.type = type;
-    return this;
-  }
+        public void setIndex(Integer index) {
+            this.index = index;
+        }
 
-   /**
-   * Get type
-   * @return type
-  **/
-  @ApiModelProperty(value = "")
-  public String getType() {
-    return type;
-  }
+        @SerializedName("Type")
+        private String type ;
 
-  public void setType(String type) {
-    this.type = type;
-  }
+        public  SortKey  type(String  type) {
+            this.type =  type;
+            return this;
+        }
 
-  public SortKey index(Integer index) {
-    this.index = index;
-    return this;
-  }
+        @ApiModelProperty(value = "")
+        public String getType() {
+            return type;
+        }
 
-   /**
-   * Get index
-   * @return index
-  **/
-  @ApiModelProperty(value = "")
-  public Integer getIndex() {
-    return index;
-  }
+        public void setType(String type) {
+            this.type = type;
+        }
 
-  public void setIndex(Integer index) {
-    this.index = index;
-  }
+        @Override
+        public boolean equals(java.lang.Object o) {
+            if (this == o) {
+                return true;
+            }
+            if (o == null || getClass() != o.getClass()) {
+                return false;
+            }
 
+            SortKey sortKey = (SortKey) o;
+            return
+                Objects.equals(this.key, sortKey.key) &&
+                Objects.equals(this.sortOrder, sortKey.sortOrder) &&
+                Objects.equals(this.customList, sortKey.customList) &&
+                Objects.equals(this.order, sortKey.order) &&
+                Objects.equals(this.index, sortKey.index) &&
+                Objects.equals(this.type, sortKey.type);
+      }
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    SortKey sortKey = (SortKey) o;
-    return Objects.equals(this.customList, sortKey.customList) &&
-        Objects.equals(this.sortOrder, sortKey.sortOrder) &&
-        Objects.equals(this.key, sortKey.key) &&
-        Objects.equals(this.order, sortKey.order) &&
-        Objects.equals(this.type, sortKey.type) &&
-        Objects.equals(this.index, sortKey.index);
-  }
+      @Override
+      public int hashCode() {
+        return Objects.hash(key, sortOrder, customList, order, index, type);
+      }
+        @Override
+        public String toString() {
+            StringBuilder sb = new StringBuilder();
+            sb.append("class SortKey {\n");
+            sb.append("    key: ").append(toIndentedString(getKey())).append("\n");
+            sb.append("    sortOrder: ").append(toIndentedString(getSortOrder())).append("\n");
+            sb.append("    customList: ").append(toIndentedString(getCustomList())).append("\n");
+            sb.append("    order: ").append(toIndentedString(getOrder())).append("\n");
+            sb.append("    index: ").append(toIndentedString(getIndex())).append("\n");
+            sb.append("    type: ").append(toIndentedString(getType())).append("\n");
+            sb.append("}");
+            return sb.toString();
+        }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(customList, sortOrder, key, order, type, index);
-  }
+        /**
+        * Convert the given object to string with each line indented by 4 spaces
+        * (except the first line).
+        */
+        private String toIndentedString(java.lang.Object o) {
+            if (o == null) {
+                return "null";
+            }
+            return o.toString().replace("\n", "\n    ");
+        }
 
 
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class SortKey {\n");
-    
-    sb.append("    customList: ").append(toIndentedString(customList)).append("\n");
-    sb.append("    sortOrder: ").append(toIndentedString(sortOrder)).append("\n");
-    sb.append("    key: ").append(toIndentedString(key)).append("\n");
-    sb.append("    order: ").append(toIndentedString(order)).append("\n");
-    sb.append("    type: ").append(toIndentedString(type)).append("\n");
-    sb.append("    index: ").append(toIndentedString(index)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
-  
 }
 
