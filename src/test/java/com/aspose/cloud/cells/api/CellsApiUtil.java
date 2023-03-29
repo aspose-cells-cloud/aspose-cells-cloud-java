@@ -48,10 +48,11 @@ public class CellsApiUtil {
 		if(envSourceFlder != "" && envSourceFlder!=null){
 			File dir = new File(envSourceFlder);
 			if(dir.exists()){
+				System.out.println(envSourceFlder);
 				return envSourceFlder;
 			}
 		}
-
+		System.out.println(sourceFolder);
 		File dir = new File(sourceFolder);
 		if(dir.exists()){
 			return sourceFolder;
