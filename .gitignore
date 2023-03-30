@@ -20,5 +20,5 @@ target
 .gradle
 build
 .settings
-TestData/roywang.pfx
+# TestData/roywang.pfx
 packages

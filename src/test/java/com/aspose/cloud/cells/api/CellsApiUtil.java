@@ -51,8 +51,7 @@ public class CellsApiUtil {
 				System.out.println(envSourceFlder);
 				return envSourceFlder;
 			}
-		}
-		System.out.println(sourceFolder);
+		}		
 		File dir = new File(sourceFolder);
 		if(dir.exists()){
 			return sourceFolder;
