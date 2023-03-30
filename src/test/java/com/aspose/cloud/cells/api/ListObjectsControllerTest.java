@@ -121,7 +121,7 @@ public class ListObjectsControllerTest {
 
         request.setDisplayName("true");
 
-        request.setShowTotals(true);
+        request.setShowTotals(false);
 
         request.setStorageName("");
 
