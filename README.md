@@ -63,7 +63,7 @@ Next, add the following dependency to your project's POM:
     <dependency>
         <groupId>com.aspose</groupId>
         <artifactId>aspose-cells-cloud</artifactId>
-        <version>20.10.0</version>
+        <version>23.3.0</version>
     </dependency>
 </dependencies>
 ```
@@ -71,29 +71,33 @@ Next, add the following dependency to your project's POM:
 ## Using Java to Add a Worksheet to an Excel File
 
 ```Java
-CellsApi cellsApi = new CellsApi(CellsApiUtil.GetClientId(),CellsApiUtil.GetClientSecret())
-String name = BOOK1;
-String sheetName = SHEET1;
-Integer position = 1;
-String sheettype ="VB";
-String folder = TEMPFOLDER;
-cellsApi.uploadFile(folder +"\\" + filename, new File(sourceFolder + filename), null);
-WorksheetsResponse response = cellsApi.cellsWorksheetsPutAddNewWorksheet(name, sheetName, position, sheettype, folder,null);
+CellsApi cellsApi = new CellsApi(CellsApiUtil.GetClientId(),CellsApiUtil.GetClientSecret());
+String localName = "Book1.xlsx";
+String remoteName = "Book1.xlsx";
+CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
+PutAddNewWorksheetRequest request = new PutAddNewWorksheetRequest();
+request.setName(remoteName);
+request.setSheetName("Sheet1");
+request.setPosition(0);
+request.setSheettype("VB");
+request.setFolder(remoteFolder);
+CellsCloudResponse response =  cellsApi.putAddNewWorksheet(request);
 ```
 
 ## Convert Excel File in the Cloud
 
 ```Java
-String name = BOOK1;
-SaveOptions saveOptions = null;
-String newfilename = "newbook.xlsx";
-Boolean isAutoFitRows = true;
-Boolean isAutoFitColumns = false;
-String folder = TEMPFOLDER;
-// Upload source file to aspose cloud storage
-cellsApi.uploadFile(folder +"\\" + filename, new File(sourceFolder + filename), null);
-// Invoke Aspose.Cells Cloud SDK API to convert excel workbook to different format
-SaveResponse response = cellsApi.cellsSaveAsPostDocumentSaveAs(name, saveOptions, newfilename, isAutoFitRows, isAutoFitColumns, folder,null);
+CellsApi cellsApi = new CellsApi(CellsApiUtil.GetClientId(),CellsApiUtil.GetClientSecret());
+String localName = "cloud.png";
+String remoteName = "cloud.png";
+String format = "csv";
+CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
+PutConvertWorkbookRequest request = new PutConvertWorkbookRequest();
+request.setFormat(format);
+HashMap<String,File> fileMap = new HashMap<String,File>(); 
+fileMap.put(localName ,CellsApiUtil.GetFileHolder(localName) ); 
+request.setFile(fileMap);
+File response =  cellsApi.putConvertWorkbook(request);
 ```
 ## Aspose.Cells Cloud SDKs in Popular Languages
 
