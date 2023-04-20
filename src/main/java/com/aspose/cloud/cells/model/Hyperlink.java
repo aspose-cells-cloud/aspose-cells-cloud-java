@@ -105,6 +105,23 @@ public class Hyperlink  extends  LinkElement {
             this.textToDisplay = textToDisplay;
         }
 
+        @SerializedName("LinkType")
+        private String linkType ;
+
+        public  Hyperlink  linkType(String  linkType) {
+            this.linkType =  linkType;
+            return this;
+        }
+
+        @ApiModelProperty(value = "")
+        public String getLinkType() {
+            return linkType;
+        }
+
+        public void setLinkType(String linkType) {
+            this.linkType = linkType;
+        }
+
         @Override
         public boolean equals(java.lang.Object o) {
             if (this == o) {
@@ -120,12 +137,13 @@ public class Hyperlink  extends  LinkElement {
                 Objects.equals(this.area, hyperlink.area) &&
                 Objects.equals(this.screenTip, hyperlink.screenTip) &&
                 Objects.equals(this.textToDisplay, hyperlink.textToDisplay) &&
+                Objects.equals(this.linkType, hyperlink.linkType) &&
                 super.equals(o);
       }
 
       @Override
       public int hashCode() {
-        return Objects.hash(address, area, screenTip, textToDisplay, super.hashCode());
+        return Objects.hash(address, area, screenTip, textToDisplay, linkType, super.hashCode());
       }
         @Override
         public String toString() {
@@ -135,6 +153,7 @@ public class Hyperlink  extends  LinkElement {
             sb.append("    area: ").append(toIndentedString(getArea())).append("\n");
             sb.append("    screenTip: ").append(toIndentedString(getScreenTip())).append("\n");
             sb.append("    textToDisplay: ").append(toIndentedString(getTextToDisplay())).append("\n");
+            sb.append("    linkType: ").append(toIndentedString(getLinkType())).append("\n");
             sb.append("    link: ").append(toIndentedString(getLink())).append("\n");
             sb.append("}");
             return sb.toString();
