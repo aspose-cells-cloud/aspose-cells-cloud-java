@@ -64927,6 +64927,114 @@ public class CellsApi {
         return call;
     }
 
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call postWorkbookExportXMLValidateBeforeCall(PostWorkbookExportXMLRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
+        return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
+    }
+
+    public  File  postWorkbookExportXML(PostWorkbookExportXMLRequest request) throws ApiException,  IOException {
+        try {
+            ApiResponse< File > resp = postWorkbookExportXMLWithHttpInfo(request);
+             return resp.getData(); 
+        }
+        catch (ApiException ex) {
+            if (ex.getCode() == apiClient.getNotAuthCode()) {
+                apiClient.requestToken();
+                ApiResponse< File > resp = postWorkbookExportXMLWithHttpInfo(request);
+                 return resp.getData();       
+            }
+            throw ex;
+        }
+    }
+
+    private ApiResponse< File > postWorkbookExportXMLWithHttpInfo(PostWorkbookExportXMLRequest request) throws ApiException,  IOException {
+        com.squareup.okhttp.Call call =  postWorkbookExportXMLValidateBeforeCall(request, null, null);
+        Type localVarReturnType = new TypeToken< File >(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    public com.squareup.okhttp.Call  postWorkbookExportXMLAsync( PostWorkbookExportXMLRequest request, final ApiCallback< HashMap<String,File> > callback) throws ApiException,  IOException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call =  postWorkbookExportXMLValidateBeforeCall(request, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken< HashMap<String,File> >(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+
+
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call postWorkbookImportXMLValidateBeforeCall(PostWorkbookImportXMLRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
+        return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
+    }
+
+    public  File  postWorkbookImportXML(PostWorkbookImportXMLRequest request) throws ApiException,  IOException {
+        try {
+            ApiResponse< File > resp = postWorkbookImportXMLWithHttpInfo(request);
+             return resp.getData(); 
+        }
+        catch (ApiException ex) {
+            if (ex.getCode() == apiClient.getNotAuthCode()) {
+                apiClient.requestToken();
+                ApiResponse< File > resp = postWorkbookImportXMLWithHttpInfo(request);
+                 return resp.getData();       
+            }
+            throw ex;
+        }
+    }
+
+    private ApiResponse< File > postWorkbookImportXMLWithHttpInfo(PostWorkbookImportXMLRequest request) throws ApiException,  IOException {
+        com.squareup.okhttp.Call call =  postWorkbookImportXMLValidateBeforeCall(request, null, null);
+        Type localVarReturnType = new TypeToken< File >(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    public com.squareup.okhttp.Call  postWorkbookImportXMLAsync( PostWorkbookImportXMLRequest request, final ApiCallback< HashMap<String,File> > callback) throws ApiException,  IOException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call =  postWorkbookImportXMLValidateBeforeCall(request, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken< HashMap<String,File> >(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+
+
 
     @SuppressWarnings("rawtypes")
     private com.squareup.okhttp.Call downloadFileValidateBeforeCall(DownloadFileRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
