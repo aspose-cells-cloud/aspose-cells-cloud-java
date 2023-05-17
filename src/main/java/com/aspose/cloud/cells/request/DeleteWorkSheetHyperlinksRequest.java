@@ -32,17 +32,18 @@ import java.io.*;
 import java.lang.reflect.Type;
 import java.util.*;
 
-public class DeleteWorkSheetHyperlinksRequest  implements IRequestModel {
+
+public class DeleteWorksheetHyperlinksRequest  implements IRequestModel {
 
     private String name;
     private String sheetName;
     private String folder;
     private String storageName;
-        public DeleteWorkSheetHyperlinksRequest()
+        public DeleteWorksheetHyperlinksRequest()
         {
 
         }
-        public DeleteWorkSheetHyperlinksRequest(String name, String sheetName, String folder, String storageName) {
+        public DeleteWorksheetHyperlinksRequest(String name, String sheetName, String folder, String storageName) {
             this.name = name;
             this.sheetName = sheetName;
             this.folder = folder;

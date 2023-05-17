@@ -134,7 +134,7 @@ public class PicturesControllerTest {
 
         CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
        
-        PostWorkSheetPictureRequest request = new PostWorkSheetPictureRequest();
+        PostWorksheetPictureRequest request = new PostWorksheetPictureRequest();
         request.setName(remoteName);
 
         request.setSheetName("Sheet6");
@@ -186,7 +186,7 @@ public class PicturesControllerTest {
 
         CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
        
-        DeleteWorkSheetPicturesRequest request = new DeleteWorkSheetPicturesRequest();
+        DeleteWorksheetPicturesRequest request = new DeleteWorksheetPicturesRequest();
         request.setName(remoteName);
 
         request.setSheetName("Sheet6");

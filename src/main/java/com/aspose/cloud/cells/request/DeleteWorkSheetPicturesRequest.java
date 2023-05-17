@@ -32,17 +32,17 @@ import java.io.*;
 import java.lang.reflect.Type;
 import java.util.*;
 
-public class DeleteWorkSheetPicturesRequest  implements IRequestModel {
+public class DeleteWorksheetPicturesRequest  implements IRequestModel {
 
     private String name;
     private String sheetName;
     private String folder;
     private String storageName;
-        public DeleteWorkSheetPicturesRequest()
+        public DeleteWorksheetPicturesRequest()
         {
 
         }
-        public DeleteWorkSheetPicturesRequest(String name, String sheetName, String folder, String storageName) {
+        public DeleteWorksheetPicturesRequest(String name, String sheetName, String folder, String storageName) {
             this.name = name;
             this.sheetName = sheetName;
             this.folder = folder;

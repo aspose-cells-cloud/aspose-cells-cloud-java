@@ -32,7 +32,7 @@ import java.io.*;
 import java.lang.reflect.Type;
 import java.util.*;
 
-public class PostWorkSheetPictureRequest  implements IRequestModel {
+public class PostWorksheetPictureRequest  implements IRequestModel {
 
     private String name;
     private String sheetName;
@@ -40,11 +40,11 @@ public class PostWorkSheetPictureRequest  implements IRequestModel {
     private Picture picture;
     private String folder;
     private String storageName;
-        public PostWorkSheetPictureRequest()
+        public PostWorksheetPictureRequest()
         {
 
         }
-        public PostWorkSheetPictureRequest(String name, String sheetName, Integer pictureIndex, Picture picture, String folder, String storageName) {
+        public PostWorksheetPictureRequest(String name, String sheetName, Integer pictureIndex, Picture picture, String folder, String storageName) {
             this.name = name;
             this.sheetName = sheetName;
             this.pictureIndex = pictureIndex;

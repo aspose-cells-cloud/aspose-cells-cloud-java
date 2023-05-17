@@ -32,18 +32,18 @@ import java.io.*;
 import java.lang.reflect.Type;
 import java.util.*;
 
-public class GetWorkSheetHyperlinkRequest  implements IRequestModel {
+public class GetWorksheetHyperlinkRequest  implements IRequestModel {
 
     private String name;
     private String sheetName;
     private Integer hyperlinkIndex;
     private String folder;
     private String storageName;
-        public GetWorkSheetHyperlinkRequest()
+        public GetWorksheetHyperlinkRequest()
         {
 
         }
-        public GetWorkSheetHyperlinkRequest(String name, String sheetName, Integer hyperlinkIndex, String folder, String storageName) {
+        public GetWorksheetHyperlinkRequest(String name, String sheetName, Integer hyperlinkIndex, String folder, String storageName) {
             this.name = name;
             this.sheetName = sheetName;
             this.hyperlinkIndex = hyperlinkIndex;

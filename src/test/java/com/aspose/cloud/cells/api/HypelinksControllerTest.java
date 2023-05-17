@@ -100,7 +100,7 @@ public class HypelinksControllerTest {
 
         CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
        
-        DeleteWorkSheetHyperlinkRequest request = new DeleteWorkSheetHyperlinkRequest();
+        DeleteWorksheetHyperlinkRequest request = new DeleteWorksheetHyperlinkRequest();
         request.setName(remoteName);
 
         request.setSheetName("Sheet1");
@@ -122,7 +122,7 @@ public class HypelinksControllerTest {
 
         CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
        
-        PostWorkSheetHyperlinkRequest request = new PostWorkSheetHyperlinkRequest();
+        PostWorksheetHyperlinkRequest request = new PostWorksheetHyperlinkRequest();
         request.setName(remoteName);
 
         request.setSheetName("Sheet1");
@@ -149,7 +149,7 @@ public class HypelinksControllerTest {
 
         CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
        
-        PutWorkSheetHyperlinkRequest request = new PutWorkSheetHyperlinkRequest();
+        PutWorksheetHyperlinkRequest request = new PutWorksheetHyperlinkRequest();
         request.setName(remoteName);
 
         request.setSheetName("Sheet1");
@@ -179,7 +179,7 @@ public class HypelinksControllerTest {
 
         CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
        
-        DeleteWorkSheetHyperlinksRequest request = new DeleteWorkSheetHyperlinksRequest();
+        DeleteWorksheetHyperlinksRequest request = new DeleteWorksheetHyperlinksRequest();
         request.setName(remoteName);
 
         request.setSheetName("Sheet1");

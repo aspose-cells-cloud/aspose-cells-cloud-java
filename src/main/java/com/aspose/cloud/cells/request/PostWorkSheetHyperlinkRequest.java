@@ -32,7 +32,7 @@ import java.io.*;
 import java.lang.reflect.Type;
 import java.util.*;
 
-public class PostWorkSheetHyperlinkRequest  implements IRequestModel {
+public class PostWorksheetHyperlinkRequest  implements IRequestModel {
 
     private String name;
     private String sheetName;
@@ -40,11 +40,11 @@ public class PostWorkSheetHyperlinkRequest  implements IRequestModel {
     private Hyperlink hyperlink;
     private String folder;
     private String storageName;
-        public PostWorkSheetHyperlinkRequest()
+        public PostWorksheetHyperlinkRequest()
         {
 
         }
-        public PostWorkSheetHyperlinkRequest(String name, String sheetName, Integer hyperlinkIndex, Hyperlink hyperlink, String folder, String storageName) {
+        public PostWorksheetHyperlinkRequest(String name, String sheetName, Integer hyperlinkIndex, Hyperlink hyperlink, String folder, String storageName) {
             this.name = name;
             this.sheetName = sheetName;
             this.hyperlinkIndex = hyperlinkIndex;

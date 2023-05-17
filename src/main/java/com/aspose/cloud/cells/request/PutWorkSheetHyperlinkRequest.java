@@ -32,7 +32,7 @@ import java.io.*;
 import java.lang.reflect.Type;
 import java.util.*;
 
-public class PutWorkSheetHyperlinkRequest  implements IRequestModel {
+public class PutWorksheetHyperlinkRequest  implements IRequestModel {
 
     private String name;
     private String sheetName;
@@ -43,11 +43,11 @@ public class PutWorkSheetHyperlinkRequest  implements IRequestModel {
     private String address;
     private String folder;
     private String storageName;
-        public PutWorkSheetHyperlinkRequest()
+        public PutWorksheetHyperlinkRequest()
         {
 
         }
-        public PutWorkSheetHyperlinkRequest(String name, String sheetName, Integer firstRow, Integer firstColumn, Integer totalRows, Integer totalColumns, String address, String folder, String storageName) {
+        public PutWorksheetHyperlinkRequest(String name, String sheetName, Integer firstRow, Integer firstColumn, Integer totalRows, Integer totalColumns, String address, String folder, String storageName) {
             this.name = name;
             this.sheetName = sheetName;
             this.firstRow = firstRow;
