@@ -1,4 +1,4 @@
-![](https://img.shields.io/badge/REST%20API-v3.0-lightgrey) [![GitHub license](https://img.shields.io/github/license/aspose-cells-cloud/aspose-cells-cloud-java)](https://github.com/aspose-cells-cloud/aspose-cells-cloud-java/blob/master/LICENSE) ![GitHub commits since latest release (by date)](https://img.shields.io/github/commits-since/aspose-cells-cloud/aspose-cells-cloud-java/23.4)
+![](https://img.shields.io/badge/REST%20API-v3.0-lightgrey) [![GitHub license](https://img.shields.io/github/license/aspose-cells-cloud/aspose-cells-cloud-java)](https://github.com/aspose-cells-cloud/aspose-cells-cloud-java/blob/master/LICENSE) ![GitHub commits since latest release (by date)](https://img.shields.io/github/commits-since/aspose-cells-cloud/aspose-cells-cloud-java/23.5)
 
 # Java SDK for Spreadsheet Processing in the Cloud
 
@@ -24,16 +24,24 @@ This Cloud SDK enhances your Java-based cloud apps to [process & manipulate Micr
 - Fetch the required shape from worksheet.
 - Leverage the power of [Pivot Tables](https://docs.aspose.cloud/cells/working-with-pivot-tables/) & Ranges.
 
-## Feature & Enhancements in Version 23.4
+## Feature & Enhancements in Version 23.5
 
-We are pleased to announce the release of Aspose.Cells Cloud SDK 23.4 with the following improvements.
+We are pleased to announce the release of Aspose.Cells Cloud SDK 23.5 with the following improvements.
 
 ## Aspose.Cells Cloud SDK 
 
 Full list of issues covering all changes in this release:
 
-- Add import xml data api.
-- Add export xml data api.
+- Fix few method names for spelling error.
+-- getWorkSheetHyperlinks ==> getWorksheetHyperlinks
+-- getWorkSheetHyperlink ==> getWorksheetHyperlink
+-- deleteWorkSheetHyperlink ==> deleteWorksheetHyperlink
+-- deleteWorkSheetHyperlinks ==> deleteWorksheetHyperlinks
+-- putWorkSheetHyperlink ==> putWorksheetHyperlink
+-- postWorkSheetPicture ==> postWorksheetPicture
+-- deleteWorkSheetPictures ==> deleteWorksheetPictures
+
+
 
 ## Read & Write Spreadsheet Formats
 
@@ -70,7 +78,7 @@ Next, add the following dependency to your project's POM:
     <dependency>
         <groupId>com.aspose</groupId>
         <artifactId>aspose-cells-cloud</artifactId>
-        <version>23.3.0</version>
+        <version>23.5.0</version>
     </dependency>
 </dependencies>
 ```
