@@ -128,7 +128,7 @@ public class PicturesControllerTest {
 
 
     @Test
-    public void PostWorkSheetPictureTest() throws Exception {
+    public void PostWorksheetPictureTest() throws Exception {
         String localName = "Book1.xlsx";
         String remoteName = "Book1.xlsx";
 
@@ -153,7 +153,7 @@ public class PicturesControllerTest {
 
         request.setStorageName("");
 
-        CellsCloudResponse response =  this.api.postWorkSheetPicture(request);
+        CellsCloudResponse response =  this.api.postWorksheetPicture(request);
     }
 
 
@@ -180,7 +180,7 @@ public class PicturesControllerTest {
 
 
     @Test
-    public void DeleteWorkSheetPicturesTest() throws Exception {
+    public void DeleteWorksheetPicturesTest() throws Exception {
         String localName = "Book1.xlsx";
         String remoteName = "Book1.xlsx";
 
@@ -195,7 +195,7 @@ public class PicturesControllerTest {
 
         request.setStorageName("");
 
-        CellsCloudResponse response =  this.api.deleteWorkSheetPictures(request);
+        CellsCloudResponse response =  this.api.deleteWorksheetPictures(request);
     }
 
 

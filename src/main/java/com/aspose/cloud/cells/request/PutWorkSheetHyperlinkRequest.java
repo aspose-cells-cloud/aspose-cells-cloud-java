@@ -1,6 +1,6 @@
 /*
  * --------------------------------------------------------------------------------
- * <copyright company="Aspose" file="PutWorkSheetHyperlinkRequest.java">
+ * <copyright company="Aspose" file="PutWorksheetHyperlinkRequest.java">
  *   Copyright (c) 2023 Aspose.Cells Cloud
  * </copyright>
  * <summary>
@@ -142,25 +142,25 @@ public class PutWorksheetHyperlinkRequest  implements IRequestModel {
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
          if (getName() == null) {
-                    throw new ApiException("Missing the required parameter 'Name' when calling PutWorkSheetHyperlink");
+                    throw new ApiException("Missing the required parameter 'Name' when calling PutWorksheetHyperlink");
                 } 
                 if (getSheetName() == null) {
-                    throw new ApiException("Missing the required parameter 'SheetName' when calling PutWorkSheetHyperlink");
+                    throw new ApiException("Missing the required parameter 'SheetName' when calling PutWorksheetHyperlink");
                 } 
                 if (getFirstRow() == null) {
-                    throw new ApiException("Missing the required parameter 'FirstRow' when calling PutWorkSheetHyperlink");
+                    throw new ApiException("Missing the required parameter 'FirstRow' when calling PutWorksheetHyperlink");
                 } 
                 if (getFirstColumn() == null) {
-                    throw new ApiException("Missing the required parameter 'FirstColumn' when calling PutWorkSheetHyperlink");
+                    throw new ApiException("Missing the required parameter 'FirstColumn' when calling PutWorksheetHyperlink");
                 } 
                 if (getTotalRows() == null) {
-                    throw new ApiException("Missing the required parameter 'TotalRows' when calling PutWorkSheetHyperlink");
+                    throw new ApiException("Missing the required parameter 'TotalRows' when calling PutWorksheetHyperlink");
                 } 
                 if (getTotalColumns() == null) {
-                    throw new ApiException("Missing the required parameter 'TotalColumns' when calling PutWorkSheetHyperlink");
+                    throw new ApiException("Missing the required parameter 'TotalColumns' when calling PutWorksheetHyperlink");
                 } 
                 if (getAddress() == null) {
-                    throw new ApiException("Missing the required parameter 'Address' when calling PutWorkSheetHyperlink");
+                    throw new ApiException("Missing the required parameter 'Address' when calling PutWorksheetHyperlink");
                 }       
         String localVarPath = "/cells/{name}/worksheets/{sheetName}/hyperlinks".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
     .replaceAll("\\{" + "sheetName" + "\\}", apiClient.escapeString(sheetName.toString()))   ;

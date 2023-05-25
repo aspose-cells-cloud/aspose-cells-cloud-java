@@ -1,6 +1,6 @@
 /*
  * --------------------------------------------------------------------------------
- * <copyright company="Aspose" file="DeleteWorkSheetPicturesRequest.java">
+ * <copyright company="Aspose" file="DeleteWorksheetPicturesRequest.java">
  *   Copyright (c) 2023 Aspose.Cells Cloud
  * </copyright>
  * <summary>
@@ -87,10 +87,10 @@ public class DeleteWorksheetPicturesRequest  implements IRequestModel {
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
          if (getName() == null) {
-                    throw new ApiException("Missing the required parameter 'Name' when calling DeleteWorkSheetPictures");
+                    throw new ApiException("Missing the required parameter 'Name' when calling DeleteWorksheetPictures");
                 } 
                 if (getSheetName() == null) {
-                    throw new ApiException("Missing the required parameter 'SheetName' when calling DeleteWorkSheetPictures");
+                    throw new ApiException("Missing the required parameter 'SheetName' when calling DeleteWorksheetPictures");
                 }       
         String localVarPath = "/cells/{name}/worksheets/{sheetName}/pictures".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
     .replaceAll("\\{" + "sheetName" + "\\}", apiClient.escapeString(sheetName.toString()))   ;

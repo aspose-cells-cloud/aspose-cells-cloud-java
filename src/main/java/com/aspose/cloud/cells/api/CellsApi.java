@@ -74,6 +74,7 @@ public class CellsApi {
             throws ApiException {
 
         ApiClient apiClient = new ApiClient();
+        apiClient.setConnectTimeout(36000000);
         apiClient.setBasePath("https://api.aspose.cloud");
         apiClient.setApiVersion(Version);
         String accesstoken = apiClient.getAccessToken("client_credentials",

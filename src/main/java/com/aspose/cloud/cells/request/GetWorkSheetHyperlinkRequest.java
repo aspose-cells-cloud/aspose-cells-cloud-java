@@ -1,6 +1,6 @@
 /*
  * --------------------------------------------------------------------------------
- * <copyright company="Aspose" file="GetWorkSheetHyperlinkRequest.java">
+ * <copyright company="Aspose" file="GetWorksheetHyperlinkRequest.java">
  *   Copyright (c) 2023 Aspose.Cells Cloud
  * </copyright>
  * <summary>
@@ -98,13 +98,13 @@ public class GetWorksheetHyperlinkRequest  implements IRequestModel {
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
          if (getName() == null) {
-                    throw new ApiException("Missing the required parameter 'Name' when calling GetWorkSheetHyperlink");
+                    throw new ApiException("Missing the required parameter 'Name' when calling GetWorksheetHyperlink");
                 } 
                 if (getSheetName() == null) {
-                    throw new ApiException("Missing the required parameter 'SheetName' when calling GetWorkSheetHyperlink");
+                    throw new ApiException("Missing the required parameter 'SheetName' when calling GetWorksheetHyperlink");
                 } 
                 if (getHyperlinkIndex() == null) {
-                    throw new ApiException("Missing the required parameter 'HyperlinkIndex' when calling GetWorkSheetHyperlink");
+                    throw new ApiException("Missing the required parameter 'HyperlinkIndex' when calling GetWorksheetHyperlink");
                 }       
         String localVarPath = "/cells/{name}/worksheets/{sheetName}/hyperlinks/{hyperlinkIndex}".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
     .replaceAll("\\{" + "sheetName" + "\\}", apiClient.escapeString(sheetName.toString())) 

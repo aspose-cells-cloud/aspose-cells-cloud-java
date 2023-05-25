@@ -1,6 +1,6 @@
 /*
  * --------------------------------------------------------------------------------
- * <copyright company="Aspose" file="DeleteWorkSheetHyperlinksRequest.java">
+ * <copyright company="Aspose" file="DeleteWorksheetHyperlinksRequest.java">
  *   Copyright (c) 2023 Aspose.Cells Cloud
  * </copyright>
  * <summary>
@@ -88,10 +88,10 @@ public class DeleteWorksheetHyperlinksRequest  implements IRequestModel {
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
          if (getName() == null) {
-                    throw new ApiException("Missing the required parameter 'Name' when calling DeleteWorkSheetHyperlinks");
+                    throw new ApiException("Missing the required parameter 'Name' when calling DeleteWorksheetHyperlinks");
                 } 
                 if (getSheetName() == null) {
-                    throw new ApiException("Missing the required parameter 'SheetName' when calling DeleteWorkSheetHyperlinks");
+                    throw new ApiException("Missing the required parameter 'SheetName' when calling DeleteWorksheetHyperlinks");
                 }       
         String localVarPath = "/cells/{name}/worksheets/{sheetName}/hyperlinks".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
     .replaceAll("\\{" + "sheetName" + "\\}", apiClient.escapeString(sheetName.toString()))   ;

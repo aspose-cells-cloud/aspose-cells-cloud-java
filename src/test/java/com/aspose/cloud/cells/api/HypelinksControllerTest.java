@@ -52,13 +52,13 @@ public class HypelinksControllerTest {
     }
 
     @Test
-    public void GetWorkSheetHyperlinksTest() throws Exception {
+    public void GetWorksheetHyperlinksTest() throws Exception {
         String localName = "Book1.xlsx";
         String remoteName = "Book1.xlsx";
 
         CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
        
-        GetWorkSheetHyperlinksRequest request = new GetWorkSheetHyperlinksRequest();
+        GetWorksheetHyperlinksRequest request = new GetWorksheetHyperlinksRequest();
         request.setName(remoteName);
 
         request.setSheetName("Sheet1");
@@ -67,18 +67,18 @@ public class HypelinksControllerTest {
 
         request.setStorageName("");
 
-        HyperlinksResponse response =  this.api.getWorkSheetHyperlinks(request);
+        HyperlinksResponse response =  this.api.getWorksheetHyperlinks(request);
     }
 
 
     @Test
-    public void GetWorkSheetHyperlinkTest() throws Exception {
+    public void GetWorksheetHyperlinkTest() throws Exception {
         String localName = "Book1.xlsx";
         String remoteName = "Book1.xlsx";
 
         CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
        
-        GetWorkSheetHyperlinkRequest request = new GetWorkSheetHyperlinkRequest();
+        GetWorksheetHyperlinkRequest request = new GetWorksheetHyperlinkRequest();
         request.setName(remoteName);
 
         request.setSheetName("Sheet1");
@@ -89,12 +89,12 @@ public class HypelinksControllerTest {
 
         request.setStorageName("");
 
-        HyperlinkResponse response =  this.api.getWorkSheetHyperlink(request);
+        HyperlinkResponse response =  this.api.getWorksheetHyperlink(request);
     }
 
 
     @Test
-    public void DeleteWorkSheetHyperlinkTest() throws Exception {
+    public void DeleteWorksheetHyperlinkTest() throws Exception {
         String localName = "Book1.xlsx";
         String remoteName = "Book1.xlsx";
 
@@ -111,12 +111,12 @@ public class HypelinksControllerTest {
 
         request.setStorageName("");
 
-        CellsCloudResponse response =  this.api.deleteWorkSheetHyperlink(request);
+        CellsCloudResponse response =  this.api.deleteWorksheetHyperlink(request);
     }
 
 
     @Test
-    public void PostWorkSheetHyperlinkTest() throws Exception {
+    public void PostWorksheetHyperlinkTest() throws Exception {
         String localName = "Book1.xlsx";
         String remoteName = "Book1.xlsx";
 
@@ -138,12 +138,12 @@ public class HypelinksControllerTest {
 
         request.setStorageName("");
 
-        CellsCloudResponse response =  this.api.postWorkSheetHyperlink(request);
+        CellsCloudResponse response =  this.api.postWorksheetHyperlink(request);
     }
 
 
     @Test
-    public void PutWorkSheetHyperlinkTest() throws Exception {
+    public void PutWorksheetHyperlinkTest() throws Exception {
         String localName = "Book1.xlsx";
         String remoteName = "Book1.xlsx";
 
@@ -168,12 +168,12 @@ public class HypelinksControllerTest {
 
         request.setStorageName("");
 
-        CellsCloudResponse response =  this.api.putWorkSheetHyperlink(request);
+        CellsCloudResponse response =  this.api.putWorksheetHyperlink(request);
     }
 
 
     @Test
-    public void DeleteWorkSheetHyperlinksTest() throws Exception {
+    public void DeleteWorksheetHyperlinksTest() throws Exception {
         String localName = "Book1.xlsx";
         String remoteName = "Book1.xlsx";
 
@@ -188,7 +188,7 @@ public class HypelinksControllerTest {
 
         request.setStorageName("");
 
-        CellsCloudResponse response =  this.api.deleteWorkSheetHyperlinks(request);
+        CellsCloudResponse response =  this.api.deleteWorksheetHyperlinks(request);
     }
 
 

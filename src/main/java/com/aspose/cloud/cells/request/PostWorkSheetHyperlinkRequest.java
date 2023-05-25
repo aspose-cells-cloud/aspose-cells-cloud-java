@@ -1,6 +1,6 @@
 /*
  * --------------------------------------------------------------------------------
- * <copyright company="Aspose" file="PostWorkSheetHyperlinkRequest.java">
+ * <copyright company="Aspose" file="PostWorksheetHyperlinkRequest.java">
  *   Copyright (c) 2023 Aspose.Cells Cloud
  * </copyright>
  * <summary>
@@ -109,16 +109,16 @@ public class PostWorksheetHyperlinkRequest  implements IRequestModel {
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
          if (getName() == null) {
-                    throw new ApiException("Missing the required parameter 'Name' when calling PostWorkSheetHyperlink");
+                    throw new ApiException("Missing the required parameter 'Name' when calling PostWorksheetHyperlink");
                 } 
                 if (getSheetName() == null) {
-                    throw new ApiException("Missing the required parameter 'SheetName' when calling PostWorkSheetHyperlink");
+                    throw new ApiException("Missing the required parameter 'SheetName' when calling PostWorksheetHyperlink");
                 } 
                 if (getHyperlinkIndex() == null) {
-                    throw new ApiException("Missing the required parameter 'HyperlinkIndex' when calling PostWorkSheetHyperlink");
+                    throw new ApiException("Missing the required parameter 'HyperlinkIndex' when calling PostWorksheetHyperlink");
                 } 
                 if (getHyperlink() == null) {
-                    throw new ApiException("Missing the required parameter 'Hyperlink' when calling PostWorkSheetHyperlink");
+                    throw new ApiException("Missing the required parameter 'Hyperlink' when calling PostWorksheetHyperlink");
                 }       
         String localVarPath = "/cells/{name}/worksheets/{sheetName}/hyperlinks/{hyperlinkIndex}".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
     .replaceAll("\\{" + "sheetName" + "\\}", apiClient.escapeString(sheetName.toString())) 

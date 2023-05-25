@@ -607,7 +607,7 @@ public class PivotTablesControllerTest {
         DeleteWorksheetPivotTableFilterRequest request = new DeleteWorksheetPivotTableFilterRequest();
         request.setName(remoteName);
 
-        request.setSheetName("Sheet4");
+        request.setSheetName("Sheet3");
 
         request.setPivotTableIndex(0);
 

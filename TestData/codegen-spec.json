@@ -6731,7 +6731,7 @@
     },
     {
       "ClassName": "HypelinksController",
-      "Name": "GetWorkSheetHyperlinks",
+      "Name": "GetWorksheetHyperlinks",
       "HttpMethod": "GET",
       "Path": "/cells/{name}/worksheets/{sheetName}/hyperlinks",
       "Parameters": [
@@ -6784,7 +6784,7 @@
     },
     {
       "ClassName": "HypelinksController",
-      "Name": "GetWorkSheetHyperlink",
+      "Name": "GetWorksheetHyperlink",
       "HttpMethod": "GET",
       "Path": "/cells/{name}/worksheets/{sheetName}/hyperlinks/{hyperlinkIndex}",
       "Parameters": [
@@ -6846,7 +6846,7 @@
     },
     {
       "ClassName": "HypelinksController",
-      "Name": "DeleteWorkSheetHyperlink",
+      "Name": "DeleteWorksheetHyperlink",
       "HttpMethod": "DELETE",
       "Path": "/cells/{name}/worksheets/{sheetName}/hyperlinks/{hyperlinkIndex}",
       "Parameters": [
@@ -6908,7 +6908,7 @@
     },
     {
       "ClassName": "HypelinksController",
-      "Name": "PostWorkSheetHyperlink",
+      "Name": "PostWorksheetHyperlink",
       "HttpMethod": "POST",
       "Path": "/cells/{name}/worksheets/{sheetName}/hyperlinks/{hyperlinkIndex}",
       "Parameters": [
@@ -6980,7 +6980,7 @@
     },
     {
       "ClassName": "HypelinksController",
-      "Name": "PutWorkSheetHyperlink",
+      "Name": "PutWorksheetHyperlink",
       "HttpMethod": "PUT",
       "Path": "/cells/{name}/worksheets/{sheetName}/hyperlinks",
       "Parameters": [
@@ -7078,7 +7078,7 @@
     },
     {
       "ClassName": "HypelinksController",
-      "Name": "DeleteWorkSheetHyperlinks",
+      "Name": "DeleteWorksheetHyperlinks",
       "HttpMethod": "DELETE",
       "Path": "/cells/{name}/worksheets/{sheetName}/hyperlinks",
       "Parameters": [
@@ -10427,7 +10427,7 @@
     },
     {
       "ClassName": "PicturesController",
-      "Name": "PostWorkSheetPicture",
+      "Name": "PostWorksheetPicture",
       "HttpMethod": "POST",
       "Path": "/cells/{name}/worksheets/{sheetName}/pictures/{pictureIndex}",
       "Parameters": [
@@ -10561,7 +10561,7 @@
     },
     {
       "ClassName": "PicturesController",
-      "Name": "DeleteWorkSheetPictures",
+      "Name": "DeleteWorksheetPictures",
       "HttpMethod": "DELETE",
       "Path": "/cells/{name}/worksheets/{sheetName}/pictures",
       "Parameters": [
@@ -16220,7 +16220,7 @@
     },
     {
       "ClassName": "WorksheetsController",
-      "Name": "GetWorkSheets",
+      "Name": "GetWorksheets",
       "HttpMethod": "GET",
       "Path": "/cells/{name}/worksheets",
       "Parameters": [
@@ -16264,7 +16264,7 @@
     },
     {
       "ClassName": "WorksheetsController",
-      "Name": "GetWorkSheetWithFormat",
+      "Name": "GetWorksheetWithFormat",
       "HttpMethod": "GET",
       "Path": "/cells/{name}/worksheets/{sheetName}",
       "Parameters": [
@@ -16925,7 +16925,7 @@
     },
     {
       "ClassName": "WorksheetsController",
-      "Name": "GetWorkSheetTextItems",
+      "Name": "GetWorksheetTextItems",
       "HttpMethod": "GET",
       "Path": "/cells/{name}/worksheets/{sheetName}/textItems",
       "Parameters": [
@@ -16978,7 +16978,7 @@
     },
     {
       "ClassName": "WorksheetsController",
-      "Name": "GetWorkSheetComments",
+      "Name": "GetWorksheetComments",
       "HttpMethod": "GET",
       "Path": "/cells/{name}/worksheets/{sheetName}/comments",
       "Parameters": [
@@ -17031,7 +17031,7 @@
     },
     {
       "ClassName": "WorksheetsController",
-      "Name": "GetWorkSheetComment",
+      "Name": "GetWorksheetComment",
       "HttpMethod": "GET",
       "Path": "/cells/{name}/worksheets/{sheetName}/comments/{cellName}",
       "Parameters": [
@@ -17093,7 +17093,7 @@
     },
     {
       "ClassName": "WorksheetsController",
-      "Name": "PutWorkSheetComment",
+      "Name": "PutWorksheetComment",
       "HttpMethod": "PUT",
       "Path": "/cells/{name}/worksheets/{sheetName}/comments/{cellName}",
       "Parameters": [
@@ -17165,7 +17165,7 @@
     },
     {
       "ClassName": "WorksheetsController",
-      "Name": "PostWorkSheetComment",
+      "Name": "PostWorksheetComment",
       "HttpMethod": "POST",
       "Path": "/cells/{name}/worksheets/{sheetName}/comments/{cellName}",
       "Parameters": [
@@ -17237,7 +17237,7 @@
     },
     {
       "ClassName": "WorksheetsController",
-      "Name": "DeleteWorkSheetComment",
+      "Name": "DeleteWorksheetComment",
       "HttpMethod": "DELETE",
       "Path": "/cells/{name}/worksheets/{sheetName}/comments/{cellName}",
       "Parameters": [
@@ -17299,7 +17299,7 @@
     },
     {
       "ClassName": "WorksheetsController",
-      "Name": "DeleteWorkSheetComments",
+      "Name": "DeleteWorksheetComments",
       "HttpMethod": "DELETE",
       "Path": "/cells/{name}/worksheets/{sheetName}/comments",
       "Parameters": [
@@ -17352,7 +17352,7 @@
     },
     {
       "ClassName": "WorksheetsController",
-      "Name": "GetWorkSheetMergedCells",
+      "Name": "GetWorksheetMergedCells",
       "HttpMethod": "GET",
       "Path": "/cells/{name}/worksheets/{sheetName}/mergedCells",
       "Parameters": [
@@ -17405,7 +17405,7 @@
     },
     {
       "ClassName": "WorksheetsController",
-      "Name": "GetWorkSheetMergedCell",
+      "Name": "GetWorksheetMergedCell",
       "HttpMethod": "GET",
       "Path": "/cells/{name}/worksheets/{sheetName}/mergedCells/{mergedCellIndex}",
       "Parameters": [
@@ -17467,7 +17467,7 @@
     },
     {
       "ClassName": "WorksheetsController",
-      "Name": "GetWorkSheetCalculateFormula",
+      "Name": "GetWorksheetCalculateFormula",
       "HttpMethod": "GET",
       "Path": "/cells/{name}/worksheets/{sheetName}/formulaResult",
       "Parameters": [
@@ -17529,7 +17529,7 @@
     },
     {
       "ClassName": "WorksheetsController",
-      "Name": "PostWorkSheetCalculateFormula",
+      "Name": "PostWorksheetCalculateFormula",
       "HttpMethod": "POST",
       "Path": "/cells/{name}/worksheets/{sheetName}/calculateformula",
       "Parameters": [
@@ -17591,7 +17591,7 @@
     },
     {
       "ClassName": "WorksheetsController",
-      "Name": "PostWorkSheetTextSearch",
+      "Name": "PostWorksheetTextSearch",
       "HttpMethod": "POST",
       "Path": "/cells/{name}/worksheets/{sheetName}/findText",
       "Parameters": [
@@ -18038,7 +18038,7 @@
     },
     {
       "ClassName": "WorksheetsController",
-      "Name": "PutWorkSheetBackground",
+      "Name": "PutWorksheetBackground",
       "HttpMethod": "PUT",
       "Path": "/cells/{name}/worksheets/{sheetName}/background",
       "Parameters": [
@@ -18112,7 +18112,7 @@
     },
     {
       "ClassName": "WorksheetsController",
-      "Name": "DeleteWorkSheetBackground",
+      "Name": "DeleteWorksheetBackground",
       "HttpMethod": "DELETE",
       "Path": "/cells/{name}/worksheets/{sheetName}/background",
       "Parameters": [
@@ -18769,7 +18769,7 @@
     },
     {
       "ClassName": "WorksheetValidationsController",
-      "Name": "GetWorkSheetValidations",
+      "Name": "GetWorksheetValidations",
       "HttpMethod": "GET",
       "Path": "/cells/{name}/worksheets/{sheetName}/validations",
       "Parameters": [
@@ -18822,7 +18822,7 @@
     },
     {
       "ClassName": "WorksheetValidationsController",
-      "Name": "GetWorkSheetValidation",
+      "Name": "GetWorksheetValidation",
       "HttpMethod": "GET",
       "Path": "/cells/{name}/worksheets/{sheetName}/validations/{validationIndex}",
       "Parameters": [
@@ -18884,7 +18884,7 @@
     },
     {
       "ClassName": "WorksheetValidationsController",
-      "Name": "PutWorkSheetValidation",
+      "Name": "PutWorksheetValidation",
       "HttpMethod": "PUT",
       "Path": "/cells/{name}/worksheets/{sheetName}/validations",
       "Parameters": [
@@ -18946,7 +18946,7 @@
     },
     {
       "ClassName": "WorksheetValidationsController",
-      "Name": "PostWorkSheetValidation",
+      "Name": "PostWorksheetValidation",
       "HttpMethod": "POST",
       "Path": "/cells/{name}/worksheets/{sheetName}/validations/{validationIndex}",
       "Parameters": [
@@ -19018,7 +19018,7 @@
     },
     {
       "ClassName": "WorksheetValidationsController",
-      "Name": "DeleteWorkSheetValidation",
+      "Name": "DeleteWorksheetValidation",
       "HttpMethod": "DELETE",
       "Path": "/cells/{name}/worksheets/{sheetName}/validations/{validationIndex}",
       "Parameters": [
@@ -19080,7 +19080,7 @@
     },
     {
       "ClassName": "WorksheetValidationsController",
-      "Name": "DeleteWorkSheetValidations",
+      "Name": "DeleteWorksheetValidations",
       "HttpMethod": "DELETE",
       "Path": "/cells/{name}/worksheets/{sheetName}/validations",
       "Parameters": [
