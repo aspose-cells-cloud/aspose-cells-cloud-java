@@ -33,6 +33,14 @@ import java.lang.reflect.Type;
 import java.util.*;
 
 public class PostCopyWorksheetRequest  implements IRequestModel {
+    private HashMap<String,String> extendQueryParameterMap;
+    public HashMap<String,String> getExtendQueryParameterMap() {
+        return this.extendQueryParameterMap;
+    }
+
+    public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
+        this.extendQueryParameterMap = extendQueryParameterMap;
+    }
 
     private String name;
     private String sheetName;
@@ -58,7 +66,7 @@ public class PostCopyWorksheetRequest  implements IRequestModel {
         }   
 
         public String getName() {
-            return name;
+            return this.name;
         }
 
         public void setName(String name) {
@@ -67,7 +75,7 @@ public class PostCopyWorksheetRequest  implements IRequestModel {
 
 
         public String getSheetName() {
-            return sheetName;
+            return this.sheetName;
         }
 
         public void setSheetName(String sheetName) {
@@ -76,7 +84,7 @@ public class PostCopyWorksheetRequest  implements IRequestModel {
 
 
         public String getSourceSheet() {
-            return sourceSheet;
+            return this.sourceSheet;
         }
 
         public void setSourceSheet(String sourceSheet) {
@@ -85,7 +93,7 @@ public class PostCopyWorksheetRequest  implements IRequestModel {
 
 
         public CopyOptions getOptions() {
-            return options;
+            return this.options;
         }
 
         public void setOptions(CopyOptions options) {
@@ -94,7 +102,7 @@ public class PostCopyWorksheetRequest  implements IRequestModel {
 
 
         public String getSourceWorkbook() {
-            return sourceWorkbook;
+            return this.sourceWorkbook;
         }
 
         public void setSourceWorkbook(String sourceWorkbook) {
@@ -103,7 +111,7 @@ public class PostCopyWorksheetRequest  implements IRequestModel {
 
 
         public String getSourceFolder() {
-            return sourceFolder;
+            return this.sourceFolder;
         }
 
         public void setSourceFolder(String sourceFolder) {
@@ -112,7 +120,7 @@ public class PostCopyWorksheetRequest  implements IRequestModel {
 
 
         public String getFolder() {
-            return folder;
+            return this.folder;
         }
 
         public void setFolder(String folder) {
@@ -121,7 +129,7 @@ public class PostCopyWorksheetRequest  implements IRequestModel {
 
 
         public String getStorageName() {
-            return storageName;
+            return this.storageName;
         }
 
         public void setStorageName(String storageName) {
@@ -162,6 +170,11 @@ public class PostCopyWorksheetRequest  implements IRequestModel {
             if (getStorageName() != null){
                 localVarQueryParams.addAll(apiClient.parameterToPairs("", "storageName", getStorageName()));
             }  
+        if(this.extendQueryParameterMap !=null){
+            for (String key :this.extendQueryParameterMap.keySet()) {
+                    localVarQueryParams.addAll(apiClient.parameterToPairs("", key, this.extendQueryParameterMap.get(key)));           
+            }
+        }
         Object localVarPostBody = null;
         localVarPostBody = getOptions();
                 final String[] localVarAccepts = {

@@ -33,6 +33,14 @@ import java.lang.reflect.Type;
 import java.util.*;
 
 public class PutWorksheetShapeRequest  implements IRequestModel {
+    private HashMap<String,String> extendQueryParameterMap;
+    public HashMap<String,String> getExtendQueryParameterMap() {
+        return this.extendQueryParameterMap;
+    }
+
+    public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
+        this.extendQueryParameterMap = extendQueryParameterMap;
+    }
 
     private String name;
     private String sheetName;
@@ -66,7 +74,7 @@ public class PutWorksheetShapeRequest  implements IRequestModel {
         }   
 
         public String getName() {
-            return name;
+            return this.name;
         }
 
         public void setName(String name) {
@@ -75,7 +83,7 @@ public class PutWorksheetShapeRequest  implements IRequestModel {
 
 
         public String getSheetName() {
-            return sheetName;
+            return this.sheetName;
         }
 
         public void setSheetName(String sheetName) {
@@ -84,7 +92,7 @@ public class PutWorksheetShapeRequest  implements IRequestModel {
 
 
         public Shape getShapeDTO() {
-            return shapeDTO;
+            return this.shapeDTO;
         }
 
         public void setShapeDTO(Shape shapeDTO) {
@@ -93,7 +101,7 @@ public class PutWorksheetShapeRequest  implements IRequestModel {
 
 
         public String getDrawingType() {
-            return drawingType;
+            return this.drawingType;
         }
 
         public void setDrawingType(String drawingType) {
@@ -102,7 +110,7 @@ public class PutWorksheetShapeRequest  implements IRequestModel {
 
 
         public Integer getUpperLeftRow() {
-            return upperLeftRow;
+            return this.upperLeftRow;
         }
 
         public void setUpperLeftRow(Integer upperLeftRow) {
@@ -111,7 +119,7 @@ public class PutWorksheetShapeRequest  implements IRequestModel {
 
 
         public Integer getUpperLeftColumn() {
-            return upperLeftColumn;
+            return this.upperLeftColumn;
         }
 
         public void setUpperLeftColumn(Integer upperLeftColumn) {
@@ -120,7 +128,7 @@ public class PutWorksheetShapeRequest  implements IRequestModel {
 
 
         public Integer getTop() {
-            return top;
+            return this.top;
         }
 
         public void setTop(Integer top) {
@@ -129,7 +137,7 @@ public class PutWorksheetShapeRequest  implements IRequestModel {
 
 
         public Integer getLeft() {
-            return left;
+            return this.left;
         }
 
         public void setLeft(Integer left) {
@@ -138,7 +146,7 @@ public class PutWorksheetShapeRequest  implements IRequestModel {
 
 
         public Integer getWidth() {
-            return width;
+            return this.width;
         }
 
         public void setWidth(Integer width) {
@@ -147,7 +155,7 @@ public class PutWorksheetShapeRequest  implements IRequestModel {
 
 
         public Integer getHeight() {
-            return height;
+            return this.height;
         }
 
         public void setHeight(Integer height) {
@@ -156,7 +164,7 @@ public class PutWorksheetShapeRequest  implements IRequestModel {
 
 
         public String getFolder() {
-            return folder;
+            return this.folder;
         }
 
         public void setFolder(String folder) {
@@ -165,7 +173,7 @@ public class PutWorksheetShapeRequest  implements IRequestModel {
 
 
         public String getStorageName() {
-            return storageName;
+            return this.storageName;
         }
 
         public void setStorageName(String storageName) {
@@ -212,6 +220,11 @@ public class PutWorksheetShapeRequest  implements IRequestModel {
             if (getStorageName() != null){
                 localVarQueryParams.addAll(apiClient.parameterToPairs("", "storageName", getStorageName()));
             }  
+        if(this.extendQueryParameterMap !=null){
+            for (String key :this.extendQueryParameterMap.keySet()) {
+                    localVarQueryParams.addAll(apiClient.parameterToPairs("", key, this.extendQueryParameterMap.get(key)));           
+            }
+        }
         Object localVarPostBody = null;
         localVarPostBody = getShapeDTO();
                 final String[] localVarAccepts = {

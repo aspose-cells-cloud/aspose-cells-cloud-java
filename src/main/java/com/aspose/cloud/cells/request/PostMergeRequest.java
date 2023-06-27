@@ -33,6 +33,14 @@ import java.lang.reflect.Type;
 import java.util.*;
 
 public class PostMergeRequest  implements IRequestModel {
+    private HashMap<String,String> extendQueryParameterMap;
+    public HashMap<String,String> getExtendQueryParameterMap() {
+        return this.extendQueryParameterMap;
+    }
+
+    public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
+        this.extendQueryParameterMap = extendQueryParameterMap;
+    }
 
     private HashMap<String,File> file;
     private String format;
@@ -52,7 +60,7 @@ public class PostMergeRequest  implements IRequestModel {
         }   
 
         public HashMap<String,File> getFile() {
-            return file;
+            return this.file;
         }
 
         public void setFile(HashMap<String,File> file) {
@@ -61,7 +69,7 @@ public class PostMergeRequest  implements IRequestModel {
 
 
         public String getFormat() {
-            return format;
+            return this.format;
         }
 
         public void setFormat(String format) {
@@ -70,7 +78,7 @@ public class PostMergeRequest  implements IRequestModel {
 
 
         public Boolean getMergeToOneSheet() {
-            return mergeToOneSheet;
+            return this.mergeToOneSheet;
         }
 
         public void setMergeToOneSheet(Boolean mergeToOneSheet) {
@@ -79,7 +87,7 @@ public class PostMergeRequest  implements IRequestModel {
 
 
         public String getPassword() {
-            return password;
+            return this.password;
         }
 
         public void setPassword(String password) {
@@ -88,7 +96,7 @@ public class PostMergeRequest  implements IRequestModel {
 
 
         public Boolean getCheckExcelRestriction() {
-            return checkExcelRestriction;
+            return this.checkExcelRestriction;
         }
 
         public void setCheckExcelRestriction(Boolean checkExcelRestriction) {
@@ -116,6 +124,11 @@ public class PostMergeRequest  implements IRequestModel {
             if (getCheckExcelRestriction() != null){
                 localVarQueryParams.addAll(apiClient.parameterToPairs("", "checkExcelRestriction", getCheckExcelRestriction()));
             }  
+        if(this.extendQueryParameterMap !=null){
+            for (String key :this.extendQueryParameterMap.keySet()) {
+                    localVarQueryParams.addAll(apiClient.parameterToPairs("", key, this.extendQueryParameterMap.get(key)));           
+            }
+        }
                    
                 if (getFile() != null){
                     for (String key : getFile().keySet()) {

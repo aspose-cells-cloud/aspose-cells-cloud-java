@@ -33,6 +33,14 @@ import java.lang.reflect.Type;
 import java.util.*;
 
 public class PutWorksheetFilterTop10Request  implements IRequestModel {
+    private HashMap<String,String> extendQueryParameterMap;
+    public HashMap<String,String> getExtendQueryParameterMap() {
+        return this.extendQueryParameterMap;
+    }
+
+    public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
+        this.extendQueryParameterMap = extendQueryParameterMap;
+    }
 
     private String name;
     private String sheetName;
@@ -64,7 +72,7 @@ public class PutWorksheetFilterTop10Request  implements IRequestModel {
         }   
 
         public String getName() {
-            return name;
+            return this.name;
         }
 
         public void setName(String name) {
@@ -73,7 +81,7 @@ public class PutWorksheetFilterTop10Request  implements IRequestModel {
 
 
         public String getSheetName() {
-            return sheetName;
+            return this.sheetName;
         }
 
         public void setSheetName(String sheetName) {
@@ -82,7 +90,7 @@ public class PutWorksheetFilterTop10Request  implements IRequestModel {
 
 
         public String getRange() {
-            return range;
+            return this.range;
         }
 
         public void setRange(String range) {
@@ -91,7 +99,7 @@ public class PutWorksheetFilterTop10Request  implements IRequestModel {
 
 
         public Integer getFieldIndex() {
-            return fieldIndex;
+            return this.fieldIndex;
         }
 
         public void setFieldIndex(Integer fieldIndex) {
@@ -100,7 +108,7 @@ public class PutWorksheetFilterTop10Request  implements IRequestModel {
 
 
         public Boolean getIsTop() {
-            return isTop;
+            return this.isTop;
         }
 
         public void setIsTop(Boolean isTop) {
@@ -109,7 +117,7 @@ public class PutWorksheetFilterTop10Request  implements IRequestModel {
 
 
         public Boolean getIsPercent() {
-            return isPercent;
+            return this.isPercent;
         }
 
         public void setIsPercent(Boolean isPercent) {
@@ -118,7 +126,7 @@ public class PutWorksheetFilterTop10Request  implements IRequestModel {
 
 
         public Integer getItemCount() {
-            return itemCount;
+            return this.itemCount;
         }
 
         public void setItemCount(Integer itemCount) {
@@ -127,7 +135,7 @@ public class PutWorksheetFilterTop10Request  implements IRequestModel {
 
 
         public Boolean getMatchBlanks() {
-            return matchBlanks;
+            return this.matchBlanks;
         }
 
         public void setMatchBlanks(Boolean matchBlanks) {
@@ -136,7 +144,7 @@ public class PutWorksheetFilterTop10Request  implements IRequestModel {
 
 
         public Boolean getRefresh() {
-            return refresh;
+            return this.refresh;
         }
 
         public void setRefresh(Boolean refresh) {
@@ -145,7 +153,7 @@ public class PutWorksheetFilterTop10Request  implements IRequestModel {
 
 
         public String getFolder() {
-            return folder;
+            return this.folder;
         }
 
         public void setFolder(String folder) {
@@ -154,7 +162,7 @@ public class PutWorksheetFilterTop10Request  implements IRequestModel {
 
 
         public String getStorageName() {
-            return storageName;
+            return this.storageName;
         }
 
         public void setStorageName(String storageName) {
@@ -216,6 +224,11 @@ public class PutWorksheetFilterTop10Request  implements IRequestModel {
             if (getStorageName() != null){
                 localVarQueryParams.addAll(apiClient.parameterToPairs("", "storageName", getStorageName()));
             }  
+        if(this.extendQueryParameterMap !=null){
+            for (String key :this.extendQueryParameterMap.keySet()) {
+                    localVarQueryParams.addAll(apiClient.parameterToPairs("", key, this.extendQueryParameterMap.get(key)));           
+            }
+        }
         Object localVarPostBody = null;
                 final String[] localVarAccepts = {
                     "application/json"

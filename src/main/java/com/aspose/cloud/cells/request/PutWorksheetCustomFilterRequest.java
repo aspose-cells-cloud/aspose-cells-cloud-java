@@ -33,6 +33,14 @@ import java.lang.reflect.Type;
 import java.util.*;
 
 public class PutWorksheetCustomFilterRequest  implements IRequestModel {
+    private HashMap<String,String> extendQueryParameterMap;
+    public HashMap<String,String> getExtendQueryParameterMap() {
+        return this.extendQueryParameterMap;
+    }
+
+    public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
+        this.extendQueryParameterMap = extendQueryParameterMap;
+    }
 
     private String name;
     private String sheetName;
@@ -68,7 +76,7 @@ public class PutWorksheetCustomFilterRequest  implements IRequestModel {
         }   
 
         public String getName() {
-            return name;
+            return this.name;
         }
 
         public void setName(String name) {
@@ -77,7 +85,7 @@ public class PutWorksheetCustomFilterRequest  implements IRequestModel {
 
 
         public String getSheetName() {
-            return sheetName;
+            return this.sheetName;
         }
 
         public void setSheetName(String sheetName) {
@@ -86,7 +94,7 @@ public class PutWorksheetCustomFilterRequest  implements IRequestModel {
 
 
         public String getRange() {
-            return range;
+            return this.range;
         }
 
         public void setRange(String range) {
@@ -95,7 +103,7 @@ public class PutWorksheetCustomFilterRequest  implements IRequestModel {
 
 
         public Integer getFieldIndex() {
-            return fieldIndex;
+            return this.fieldIndex;
         }
 
         public void setFieldIndex(Integer fieldIndex) {
@@ -104,7 +112,7 @@ public class PutWorksheetCustomFilterRequest  implements IRequestModel {
 
 
         public String getOperatorType1() {
-            return operatorType1;
+            return this.operatorType1;
         }
 
         public void setOperatorType1(String operatorType1) {
@@ -113,7 +121,7 @@ public class PutWorksheetCustomFilterRequest  implements IRequestModel {
 
 
         public String getCriteria1() {
-            return criteria1;
+            return this.criteria1;
         }
 
         public void setCriteria1(String criteria1) {
@@ -122,7 +130,7 @@ public class PutWorksheetCustomFilterRequest  implements IRequestModel {
 
 
         public Boolean getIsAnd() {
-            return isAnd;
+            return this.isAnd;
         }
 
         public void setIsAnd(Boolean isAnd) {
@@ -131,7 +139,7 @@ public class PutWorksheetCustomFilterRequest  implements IRequestModel {
 
 
         public String getOperatorType2() {
-            return operatorType2;
+            return this.operatorType2;
         }
 
         public void setOperatorType2(String operatorType2) {
@@ -140,7 +148,7 @@ public class PutWorksheetCustomFilterRequest  implements IRequestModel {
 
 
         public String getCriteria2() {
-            return criteria2;
+            return this.criteria2;
         }
 
         public void setCriteria2(String criteria2) {
@@ -149,7 +157,7 @@ public class PutWorksheetCustomFilterRequest  implements IRequestModel {
 
 
         public Boolean getMatchBlanks() {
-            return matchBlanks;
+            return this.matchBlanks;
         }
 
         public void setMatchBlanks(Boolean matchBlanks) {
@@ -158,7 +166,7 @@ public class PutWorksheetCustomFilterRequest  implements IRequestModel {
 
 
         public Boolean getRefresh() {
-            return refresh;
+            return this.refresh;
         }
 
         public void setRefresh(Boolean refresh) {
@@ -167,7 +175,7 @@ public class PutWorksheetCustomFilterRequest  implements IRequestModel {
 
 
         public String getFolder() {
-            return folder;
+            return this.folder;
         }
 
         public void setFolder(String folder) {
@@ -176,7 +184,7 @@ public class PutWorksheetCustomFilterRequest  implements IRequestModel {
 
 
         public String getStorageName() {
-            return storageName;
+            return this.storageName;
         }
 
         public void setStorageName(String storageName) {
@@ -241,6 +249,11 @@ public class PutWorksheetCustomFilterRequest  implements IRequestModel {
             if (getStorageName() != null){
                 localVarQueryParams.addAll(apiClient.parameterToPairs("", "storageName", getStorageName()));
             }  
+        if(this.extendQueryParameterMap !=null){
+            for (String key :this.extendQueryParameterMap.keySet()) {
+                    localVarQueryParams.addAll(apiClient.parameterToPairs("", key, this.extendQueryParameterMap.get(key)));           
+            }
+        }
         Object localVarPostBody = null;
                 final String[] localVarAccepts = {
                     "application/json"

@@ -33,6 +33,14 @@ import java.lang.reflect.Type;
 import java.util.*;
 
 public class PostWorkbookSaveAsRequest  implements IRequestModel {
+    private HashMap<String,String> extendQueryParameterMap;
+    public HashMap<String,String> getExtendQueryParameterMap() {
+        return this.extendQueryParameterMap;
+    }
+
+    public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
+        this.extendQueryParameterMap = extendQueryParameterMap;
+    }
 
     private String name;
     private String newfilename;
@@ -60,7 +68,7 @@ public class PostWorkbookSaveAsRequest  implements IRequestModel {
         }   
 
         public String getName() {
-            return name;
+            return this.name;
         }
 
         public void setName(String name) {
@@ -69,7 +77,7 @@ public class PostWorkbookSaveAsRequest  implements IRequestModel {
 
 
         public String getNewfilename() {
-            return newfilename;
+            return this.newfilename;
         }
 
         public void setNewfilename(String newfilename) {
@@ -78,7 +86,7 @@ public class PostWorkbookSaveAsRequest  implements IRequestModel {
 
 
         public SaveOptions getSaveOptions() {
-            return saveOptions;
+            return this.saveOptions;
         }
 
         public void setSaveOptions(SaveOptions saveOptions) {
@@ -87,7 +95,7 @@ public class PostWorkbookSaveAsRequest  implements IRequestModel {
 
 
         public Boolean getIsAutoFitRows() {
-            return isAutoFitRows;
+            return this.isAutoFitRows;
         }
 
         public void setIsAutoFitRows(Boolean isAutoFitRows) {
@@ -96,7 +104,7 @@ public class PostWorkbookSaveAsRequest  implements IRequestModel {
 
 
         public Boolean getIsAutoFitColumns() {
-            return isAutoFitColumns;
+            return this.isAutoFitColumns;
         }
 
         public void setIsAutoFitColumns(Boolean isAutoFitColumns) {
@@ -105,7 +113,7 @@ public class PostWorkbookSaveAsRequest  implements IRequestModel {
 
 
         public String getFolder() {
-            return folder;
+            return this.folder;
         }
 
         public void setFolder(String folder) {
@@ -114,7 +122,7 @@ public class PostWorkbookSaveAsRequest  implements IRequestModel {
 
 
         public String getStorageName() {
-            return storageName;
+            return this.storageName;
         }
 
         public void setStorageName(String storageName) {
@@ -123,7 +131,7 @@ public class PostWorkbookSaveAsRequest  implements IRequestModel {
 
 
         public String getOutStorageName() {
-            return outStorageName;
+            return this.outStorageName;
         }
 
         public void setOutStorageName(String outStorageName) {
@@ -132,7 +140,7 @@ public class PostWorkbookSaveAsRequest  implements IRequestModel {
 
 
         public Boolean getCheckExcelRestriction() {
-            return checkExcelRestriction;
+            return this.checkExcelRestriction;
         }
 
         public void setCheckExcelRestriction(Boolean checkExcelRestriction) {
@@ -172,6 +180,11 @@ public class PostWorkbookSaveAsRequest  implements IRequestModel {
             if (getCheckExcelRestriction() != null){
                 localVarQueryParams.addAll(apiClient.parameterToPairs("", "checkExcelRestriction", getCheckExcelRestriction()));
             }  
+        if(this.extendQueryParameterMap !=null){
+            for (String key :this.extendQueryParameterMap.keySet()) {
+                    localVarQueryParams.addAll(apiClient.parameterToPairs("", key, this.extendQueryParameterMap.get(key)));           
+            }
+        }
         Object localVarPostBody = null;
         localVarPostBody = getSaveOptions();
                 final String[] localVarAccepts = {

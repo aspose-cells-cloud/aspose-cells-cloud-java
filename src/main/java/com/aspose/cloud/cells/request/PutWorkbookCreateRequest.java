@@ -33,6 +33,14 @@ import java.lang.reflect.Type;
 import java.util.*;
 
 public class PutWorkbookCreateRequest  implements IRequestModel {
+    private HashMap<String,String> extendQueryParameterMap;
+    public HashMap<String,String> getExtendQueryParameterMap() {
+        return this.extendQueryParameterMap;
+    }
+
+    public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
+        this.extendQueryParameterMap = extendQueryParameterMap;
+    }
 
     private String name;
     private String templateFile;
@@ -56,7 +64,7 @@ public class PutWorkbookCreateRequest  implements IRequestModel {
         }   
 
         public String getName() {
-            return name;
+            return this.name;
         }
 
         public void setName(String name) {
@@ -65,7 +73,7 @@ public class PutWorkbookCreateRequest  implements IRequestModel {
 
 
         public String getTemplateFile() {
-            return templateFile;
+            return this.templateFile;
         }
 
         public void setTemplateFile(String templateFile) {
@@ -74,7 +82,7 @@ public class PutWorkbookCreateRequest  implements IRequestModel {
 
 
         public String getDataFile() {
-            return dataFile;
+            return this.dataFile;
         }
 
         public void setDataFile(String dataFile) {
@@ -83,7 +91,7 @@ public class PutWorkbookCreateRequest  implements IRequestModel {
 
 
         public Boolean getIsWriteOver() {
-            return isWriteOver;
+            return this.isWriteOver;
         }
 
         public void setIsWriteOver(Boolean isWriteOver) {
@@ -92,7 +100,7 @@ public class PutWorkbookCreateRequest  implements IRequestModel {
 
 
         public String getFolder() {
-            return folder;
+            return this.folder;
         }
 
         public void setFolder(String folder) {
@@ -101,7 +109,7 @@ public class PutWorkbookCreateRequest  implements IRequestModel {
 
 
         public String getStorageName() {
-            return storageName;
+            return this.storageName;
         }
 
         public void setStorageName(String storageName) {
@@ -110,7 +118,7 @@ public class PutWorkbookCreateRequest  implements IRequestModel {
 
 
         public Boolean getCheckExcelRestriction() {
-            return checkExcelRestriction;
+            return this.checkExcelRestriction;
         }
 
         public void setCheckExcelRestriction(Boolean checkExcelRestriction) {
@@ -144,6 +152,11 @@ public class PutWorkbookCreateRequest  implements IRequestModel {
             if (getCheckExcelRestriction() != null){
                 localVarQueryParams.addAll(apiClient.parameterToPairs("", "checkExcelRestriction", getCheckExcelRestriction()));
             }  
+        if(this.extendQueryParameterMap !=null){
+            for (String key :this.extendQueryParameterMap.keySet()) {
+                    localVarQueryParams.addAll(apiClient.parameterToPairs("", key, this.extendQueryParameterMap.get(key)));           
+            }
+        }
         Object localVarPostBody = null;
                 final String[] localVarAccepts = {
                     "application/json"

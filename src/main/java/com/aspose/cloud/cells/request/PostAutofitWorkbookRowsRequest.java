@@ -33,6 +33,14 @@ import java.lang.reflect.Type;
 import java.util.*;
 
 public class PostAutofitWorkbookRowsRequest  implements IRequestModel {
+    private HashMap<String,String> extendQueryParameterMap;
+    public HashMap<String,String> getExtendQueryParameterMap() {
+        return this.extendQueryParameterMap;
+    }
+
+    public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
+        this.extendQueryParameterMap = extendQueryParameterMap;
+    }
 
     private String name;
     private Integer startRow;
@@ -54,7 +62,7 @@ public class PostAutofitWorkbookRowsRequest  implements IRequestModel {
         }   
 
         public String getName() {
-            return name;
+            return this.name;
         }
 
         public void setName(String name) {
@@ -63,7 +71,7 @@ public class PostAutofitWorkbookRowsRequest  implements IRequestModel {
 
 
         public Integer getStartRow() {
-            return startRow;
+            return this.startRow;
         }
 
         public void setStartRow(Integer startRow) {
@@ -72,7 +80,7 @@ public class PostAutofitWorkbookRowsRequest  implements IRequestModel {
 
 
         public Integer getEndRow() {
-            return endRow;
+            return this.endRow;
         }
 
         public void setEndRow(Integer endRow) {
@@ -81,7 +89,7 @@ public class PostAutofitWorkbookRowsRequest  implements IRequestModel {
 
 
         public Boolean getOnlyAuto() {
-            return onlyAuto;
+            return this.onlyAuto;
         }
 
         public void setOnlyAuto(Boolean onlyAuto) {
@@ -90,7 +98,7 @@ public class PostAutofitWorkbookRowsRequest  implements IRequestModel {
 
 
         public String getFolder() {
-            return folder;
+            return this.folder;
         }
 
         public void setFolder(String folder) {
@@ -99,7 +107,7 @@ public class PostAutofitWorkbookRowsRequest  implements IRequestModel {
 
 
         public String getStorageName() {
-            return storageName;
+            return this.storageName;
         }
 
         public void setStorageName(String storageName) {
@@ -130,6 +138,11 @@ public class PostAutofitWorkbookRowsRequest  implements IRequestModel {
             if (getStorageName() != null){
                 localVarQueryParams.addAll(apiClient.parameterToPairs("", "storageName", getStorageName()));
             }  
+        if(this.extendQueryParameterMap !=null){
+            for (String key :this.extendQueryParameterMap.keySet()) {
+                    localVarQueryParams.addAll(apiClient.parameterToPairs("", key, this.extendQueryParameterMap.get(key)));           
+            }
+        }
         Object localVarPostBody = null;
                 final String[] localVarAccepts = {
                     "application/json"

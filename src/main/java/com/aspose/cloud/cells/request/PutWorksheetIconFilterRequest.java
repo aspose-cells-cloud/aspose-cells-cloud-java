@@ -33,6 +33,14 @@ import java.lang.reflect.Type;
 import java.util.*;
 
 public class PutWorksheetIconFilterRequest  implements IRequestModel {
+    private HashMap<String,String> extendQueryParameterMap;
+    public HashMap<String,String> getExtendQueryParameterMap() {
+        return this.extendQueryParameterMap;
+    }
+
+    public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
+        this.extendQueryParameterMap = extendQueryParameterMap;
+    }
 
     private String name;
     private String sheetName;
@@ -62,7 +70,7 @@ public class PutWorksheetIconFilterRequest  implements IRequestModel {
         }   
 
         public String getName() {
-            return name;
+            return this.name;
         }
 
         public void setName(String name) {
@@ -71,7 +79,7 @@ public class PutWorksheetIconFilterRequest  implements IRequestModel {
 
 
         public String getSheetName() {
-            return sheetName;
+            return this.sheetName;
         }
 
         public void setSheetName(String sheetName) {
@@ -80,7 +88,7 @@ public class PutWorksheetIconFilterRequest  implements IRequestModel {
 
 
         public String getRange() {
-            return range;
+            return this.range;
         }
 
         public void setRange(String range) {
@@ -89,7 +97,7 @@ public class PutWorksheetIconFilterRequest  implements IRequestModel {
 
 
         public Integer getFieldIndex() {
-            return fieldIndex;
+            return this.fieldIndex;
         }
 
         public void setFieldIndex(Integer fieldIndex) {
@@ -98,7 +106,7 @@ public class PutWorksheetIconFilterRequest  implements IRequestModel {
 
 
         public String getIconSetType() {
-            return iconSetType;
+            return this.iconSetType;
         }
 
         public void setIconSetType(String iconSetType) {
@@ -107,7 +115,7 @@ public class PutWorksheetIconFilterRequest  implements IRequestModel {
 
 
         public Integer getIconId() {
-            return iconId;
+            return this.iconId;
         }
 
         public void setIconId(Integer iconId) {
@@ -116,7 +124,7 @@ public class PutWorksheetIconFilterRequest  implements IRequestModel {
 
 
         public Boolean getMatchBlanks() {
-            return matchBlanks;
+            return this.matchBlanks;
         }
 
         public void setMatchBlanks(Boolean matchBlanks) {
@@ -125,7 +133,7 @@ public class PutWorksheetIconFilterRequest  implements IRequestModel {
 
 
         public Boolean getRefresh() {
-            return refresh;
+            return this.refresh;
         }
 
         public void setRefresh(Boolean refresh) {
@@ -134,7 +142,7 @@ public class PutWorksheetIconFilterRequest  implements IRequestModel {
 
 
         public String getFolder() {
-            return folder;
+            return this.folder;
         }
 
         public void setFolder(String folder) {
@@ -143,7 +151,7 @@ public class PutWorksheetIconFilterRequest  implements IRequestModel {
 
 
         public String getStorageName() {
-            return storageName;
+            return this.storageName;
         }
 
         public void setStorageName(String storageName) {
@@ -199,6 +207,11 @@ public class PutWorksheetIconFilterRequest  implements IRequestModel {
             if (getStorageName() != null){
                 localVarQueryParams.addAll(apiClient.parameterToPairs("", "storageName", getStorageName()));
             }  
+        if(this.extendQueryParameterMap !=null){
+            for (String key :this.extendQueryParameterMap.keySet()) {
+                    localVarQueryParams.addAll(apiClient.parameterToPairs("", key, this.extendQueryParameterMap.get(key)));           
+            }
+        }
         Object localVarPostBody = null;
                 final String[] localVarAccepts = {
                     "application/json"

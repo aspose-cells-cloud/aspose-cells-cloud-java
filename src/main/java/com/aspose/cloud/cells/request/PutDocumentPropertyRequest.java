@@ -33,6 +33,14 @@ import java.lang.reflect.Type;
 import java.util.*;
 
 public class PutDocumentPropertyRequest  implements IRequestModel {
+    private HashMap<String,String> extendQueryParameterMap;
+    public HashMap<String,String> getExtendQueryParameterMap() {
+        return this.extendQueryParameterMap;
+    }
+
+    public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
+        this.extendQueryParameterMap = extendQueryParameterMap;
+    }
 
     private String name;
     private CellsDocumentProperty property;
@@ -50,7 +58,7 @@ public class PutDocumentPropertyRequest  implements IRequestModel {
         }   
 
         public String getName() {
-            return name;
+            return this.name;
         }
 
         public void setName(String name) {
@@ -59,7 +67,7 @@ public class PutDocumentPropertyRequest  implements IRequestModel {
 
 
         public CellsDocumentProperty getProperty() {
-            return property;
+            return this.property;
         }
 
         public void setProperty(CellsDocumentProperty property) {
@@ -68,7 +76,7 @@ public class PutDocumentPropertyRequest  implements IRequestModel {
 
 
         public String getFolder() {
-            return folder;
+            return this.folder;
         }
 
         public void setFolder(String folder) {
@@ -77,7 +85,7 @@ public class PutDocumentPropertyRequest  implements IRequestModel {
 
 
         public String getStorageName() {
-            return storageName;
+            return this.storageName;
         }
 
         public void setStorageName(String storageName) {
@@ -92,7 +100,7 @@ public class PutDocumentPropertyRequest  implements IRequestModel {
                 if (getProperty() == null) {
                     throw new ApiException("Missing the required parameter 'Property' when calling PutDocumentProperty");
                 }       
-        String localVarPath = "/cells/{name}/documentproperties/{propertyName}".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString()))   ;
+        String localVarPath = "/cells/{name}/documentproperties".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString()))   ;
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -102,6 +110,11 @@ public class PutDocumentPropertyRequest  implements IRequestModel {
             if (getStorageName() != null){
                 localVarQueryParams.addAll(apiClient.parameterToPairs("", "storageName", getStorageName()));
             }  
+        if(this.extendQueryParameterMap !=null){
+            for (String key :this.extendQueryParameterMap.keySet()) {
+                    localVarQueryParams.addAll(apiClient.parameterToPairs("", key, this.extendQueryParameterMap.get(key)));           
+            }
+        }
         Object localVarPostBody = null;
         localVarPostBody = getProperty();
                 final String[] localVarAccepts = {

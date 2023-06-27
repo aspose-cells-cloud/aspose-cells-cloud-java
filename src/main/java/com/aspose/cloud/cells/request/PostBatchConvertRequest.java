@@ -33,6 +33,14 @@ import java.lang.reflect.Type;
 import java.util.*;
 
 public class PostBatchConvertRequest  implements IRequestModel {
+    private HashMap<String,String> extendQueryParameterMap;
+    public HashMap<String,String> getExtendQueryParameterMap() {
+        return this.extendQueryParameterMap;
+    }
+
+    public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
+        this.extendQueryParameterMap = extendQueryParameterMap;
+    }
 
     private BatchConvertRequest batchConvertRequest;
         public PostBatchConvertRequest()
@@ -44,7 +52,7 @@ public class PostBatchConvertRequest  implements IRequestModel {
         }   
 
         public BatchConvertRequest getBatchConvertRequest() {
-            return batchConvertRequest;
+            return this.batchConvertRequest;
         }
 
         public void setBatchConvertRequest(BatchConvertRequest batchConvertRequest) {
@@ -60,6 +68,11 @@ public class PostBatchConvertRequest  implements IRequestModel {
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
         List<Pair> localVarQueryParams = null;
+        if(this.extendQueryParameterMap !=null){
+            for (String key :this.extendQueryParameterMap.keySet()) {
+                    localVarQueryParams.addAll(apiClient.parameterToPairs("", key, this.extendQueryParameterMap.get(key)));           
+            }
+        }
         Object localVarPostBody = null;
         localVarPostBody = getBatchConvertRequest();
                 final String[] localVarAccepts = {

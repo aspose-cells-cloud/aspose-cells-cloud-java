@@ -33,6 +33,14 @@ import java.lang.reflect.Type;
 import java.util.*;
 
 public class PutWorksheetPivotTableFilterRequest  implements IRequestModel {
+    private HashMap<String,String> extendQueryParameterMap;
+    public HashMap<String,String> getExtendQueryParameterMap() {
+        return this.extendQueryParameterMap;
+    }
+
+    public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
+        this.extendQueryParameterMap = extendQueryParameterMap;
+    }
 
     private String name;
     private String sheetName;
@@ -56,7 +64,7 @@ public class PutWorksheetPivotTableFilterRequest  implements IRequestModel {
         }   
 
         public String getName() {
-            return name;
+            return this.name;
         }
 
         public void setName(String name) {
@@ -65,7 +73,7 @@ public class PutWorksheetPivotTableFilterRequest  implements IRequestModel {
 
 
         public String getSheetName() {
-            return sheetName;
+            return this.sheetName;
         }
 
         public void setSheetName(String sheetName) {
@@ -74,7 +82,7 @@ public class PutWorksheetPivotTableFilterRequest  implements IRequestModel {
 
 
         public Integer getPivotTableIndex() {
-            return pivotTableIndex;
+            return this.pivotTableIndex;
         }
 
         public void setPivotTableIndex(Integer pivotTableIndex) {
@@ -83,7 +91,7 @@ public class PutWorksheetPivotTableFilterRequest  implements IRequestModel {
 
 
         public PivotFilter getFilter() {
-            return filter;
+            return this.filter;
         }
 
         public void setFilter(PivotFilter filter) {
@@ -92,7 +100,7 @@ public class PutWorksheetPivotTableFilterRequest  implements IRequestModel {
 
 
         public Boolean getNeedReCalculate() {
-            return needReCalculate;
+            return this.needReCalculate;
         }
 
         public void setNeedReCalculate(Boolean needReCalculate) {
@@ -101,7 +109,7 @@ public class PutWorksheetPivotTableFilterRequest  implements IRequestModel {
 
 
         public String getFolder() {
-            return folder;
+            return this.folder;
         }
 
         public void setFolder(String folder) {
@@ -110,7 +118,7 @@ public class PutWorksheetPivotTableFilterRequest  implements IRequestModel {
 
 
         public String getStorageName() {
-            return storageName;
+            return this.storageName;
         }
 
         public void setStorageName(String storageName) {
@@ -146,6 +154,11 @@ public class PutWorksheetPivotTableFilterRequest  implements IRequestModel {
             if (getStorageName() != null){
                 localVarQueryParams.addAll(apiClient.parameterToPairs("", "storageName", getStorageName()));
             }  
+        if(this.extendQueryParameterMap !=null){
+            for (String key :this.extendQueryParameterMap.keySet()) {
+                    localVarQueryParams.addAll(apiClient.parameterToPairs("", key, this.extendQueryParameterMap.get(key)));           
+            }
+        }
         Object localVarPostBody = null;
         localVarPostBody = getFilter();
                 final String[] localVarAccepts = {

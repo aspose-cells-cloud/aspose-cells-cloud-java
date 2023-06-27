@@ -33,6 +33,14 @@ import java.lang.reflect.Type;
 import java.util.*;
 
 public class PutInsertNewWorksheetRequest  implements IRequestModel {
+    private HashMap<String,String> extendQueryParameterMap;
+    public HashMap<String,String> getExtendQueryParameterMap() {
+        return this.extendQueryParameterMap;
+    }
+
+    public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
+        this.extendQueryParameterMap = extendQueryParameterMap;
+    }
 
     private String name;
     private String sheetName;
@@ -56,7 +64,7 @@ public class PutInsertNewWorksheetRequest  implements IRequestModel {
         }   
 
         public String getName() {
-            return name;
+            return this.name;
         }
 
         public void setName(String name) {
@@ -65,7 +73,7 @@ public class PutInsertNewWorksheetRequest  implements IRequestModel {
 
 
         public String getSheetName() {
-            return sheetName;
+            return this.sheetName;
         }
 
         public void setSheetName(String sheetName) {
@@ -74,7 +82,7 @@ public class PutInsertNewWorksheetRequest  implements IRequestModel {
 
 
         public Integer getIndex() {
-            return index;
+            return this.index;
         }
 
         public void setIndex(Integer index) {
@@ -83,7 +91,7 @@ public class PutInsertNewWorksheetRequest  implements IRequestModel {
 
 
         public String getSheettype() {
-            return sheettype;
+            return this.sheettype;
         }
 
         public void setSheettype(String sheettype) {
@@ -92,7 +100,7 @@ public class PutInsertNewWorksheetRequest  implements IRequestModel {
 
 
         public String getNewsheetname() {
-            return newsheetname;
+            return this.newsheetname;
         }
 
         public void setNewsheetname(String newsheetname) {
@@ -101,7 +109,7 @@ public class PutInsertNewWorksheetRequest  implements IRequestModel {
 
 
         public String getFolder() {
-            return folder;
+            return this.folder;
         }
 
         public void setFolder(String folder) {
@@ -110,7 +118,7 @@ public class PutInsertNewWorksheetRequest  implements IRequestModel {
 
 
         public String getStorageName() {
-            return storageName;
+            return this.storageName;
         }
 
         public void setStorageName(String storageName) {
@@ -153,6 +161,11 @@ public class PutInsertNewWorksheetRequest  implements IRequestModel {
             if (getStorageName() != null){
                 localVarQueryParams.addAll(apiClient.parameterToPairs("", "storageName", getStorageName()));
             }  
+        if(this.extendQueryParameterMap !=null){
+            for (String key :this.extendQueryParameterMap.keySet()) {
+                    localVarQueryParams.addAll(apiClient.parameterToPairs("", key, this.extendQueryParameterMap.get(key)));           
+            }
+        }
         Object localVarPostBody = null;
                 final String[] localVarAccepts = {
                     "application/json"

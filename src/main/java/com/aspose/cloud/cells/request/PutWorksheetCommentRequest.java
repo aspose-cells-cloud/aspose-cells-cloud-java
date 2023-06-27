@@ -33,6 +33,14 @@ import java.lang.reflect.Type;
 import java.util.*;
 
 public class PutWorksheetCommentRequest  implements IRequestModel {
+    private HashMap<String,String> extendQueryParameterMap;
+    public HashMap<String,String> getExtendQueryParameterMap() {
+        return this.extendQueryParameterMap;
+    }
+
+    public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
+        this.extendQueryParameterMap = extendQueryParameterMap;
+    }
 
     private String name;
     private String sheetName;
@@ -54,7 +62,7 @@ public class PutWorksheetCommentRequest  implements IRequestModel {
         }   
 
         public String getName() {
-            return name;
+            return this.name;
         }
 
         public void setName(String name) {
@@ -63,7 +71,7 @@ public class PutWorksheetCommentRequest  implements IRequestModel {
 
 
         public String getSheetName() {
-            return sheetName;
+            return this.sheetName;
         }
 
         public void setSheetName(String sheetName) {
@@ -72,7 +80,7 @@ public class PutWorksheetCommentRequest  implements IRequestModel {
 
 
         public String getCellName() {
-            return cellName;
+            return this.cellName;
         }
 
         public void setCellName(String cellName) {
@@ -81,7 +89,7 @@ public class PutWorksheetCommentRequest  implements IRequestModel {
 
 
         public Comment getComment() {
-            return comment;
+            return this.comment;
         }
 
         public void setComment(Comment comment) {
@@ -90,7 +98,7 @@ public class PutWorksheetCommentRequest  implements IRequestModel {
 
 
         public String getFolder() {
-            return folder;
+            return this.folder;
         }
 
         public void setFolder(String folder) {
@@ -99,7 +107,7 @@ public class PutWorksheetCommentRequest  implements IRequestModel {
 
 
         public String getStorageName() {
-            return storageName;
+            return this.storageName;
         }
 
         public void setStorageName(String storageName) {
@@ -132,6 +140,11 @@ public class PutWorksheetCommentRequest  implements IRequestModel {
             if (getStorageName() != null){
                 localVarQueryParams.addAll(apiClient.parameterToPairs("", "storageName", getStorageName()));
             }  
+        if(this.extendQueryParameterMap !=null){
+            for (String key :this.extendQueryParameterMap.keySet()) {
+                    localVarQueryParams.addAll(apiClient.parameterToPairs("", key, this.extendQueryParameterMap.get(key)));           
+            }
+        }
         Object localVarPostBody = null;
         localVarPostBody = getComment();
                 final String[] localVarAccepts = {

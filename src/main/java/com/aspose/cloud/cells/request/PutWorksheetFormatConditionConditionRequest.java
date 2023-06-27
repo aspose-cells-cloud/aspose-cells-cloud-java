@@ -33,6 +33,14 @@ import java.lang.reflect.Type;
 import java.util.*;
 
 public class PutWorksheetFormatConditionConditionRequest  implements IRequestModel {
+    private HashMap<String,String> extendQueryParameterMap;
+    public HashMap<String,String> getExtendQueryParameterMap() {
+        return this.extendQueryParameterMap;
+    }
+
+    public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
+        this.extendQueryParameterMap = extendQueryParameterMap;
+    }
 
     private String name;
     private String sheetName;
@@ -60,7 +68,7 @@ public class PutWorksheetFormatConditionConditionRequest  implements IRequestMod
         }   
 
         public String getName() {
-            return name;
+            return this.name;
         }
 
         public void setName(String name) {
@@ -69,7 +77,7 @@ public class PutWorksheetFormatConditionConditionRequest  implements IRequestMod
 
 
         public String getSheetName() {
-            return sheetName;
+            return this.sheetName;
         }
 
         public void setSheetName(String sheetName) {
@@ -78,7 +86,7 @@ public class PutWorksheetFormatConditionConditionRequest  implements IRequestMod
 
 
         public Integer getIndex() {
-            return index;
+            return this.index;
         }
 
         public void setIndex(Integer index) {
@@ -87,7 +95,7 @@ public class PutWorksheetFormatConditionConditionRequest  implements IRequestMod
 
 
         public String getType() {
-            return type;
+            return this.type;
         }
 
         public void setType(String type) {
@@ -96,7 +104,7 @@ public class PutWorksheetFormatConditionConditionRequest  implements IRequestMod
 
 
         public String getOperatorType() {
-            return operatorType;
+            return this.operatorType;
         }
 
         public void setOperatorType(String operatorType) {
@@ -105,7 +113,7 @@ public class PutWorksheetFormatConditionConditionRequest  implements IRequestMod
 
 
         public String getFormula1() {
-            return formula1;
+            return this.formula1;
         }
 
         public void setFormula1(String formula1) {
@@ -114,7 +122,7 @@ public class PutWorksheetFormatConditionConditionRequest  implements IRequestMod
 
 
         public String getFormula2() {
-            return formula2;
+            return this.formula2;
         }
 
         public void setFormula2(String formula2) {
@@ -123,7 +131,7 @@ public class PutWorksheetFormatConditionConditionRequest  implements IRequestMod
 
 
         public String getFolder() {
-            return folder;
+            return this.folder;
         }
 
         public void setFolder(String folder) {
@@ -132,7 +140,7 @@ public class PutWorksheetFormatConditionConditionRequest  implements IRequestMod
 
 
         public String getStorageName() {
-            return storageName;
+            return this.storageName;
         }
 
         public void setStorageName(String storageName) {
@@ -186,6 +194,11 @@ public class PutWorksheetFormatConditionConditionRequest  implements IRequestMod
             if (getStorageName() != null){
                 localVarQueryParams.addAll(apiClient.parameterToPairs("", "storageName", getStorageName()));
             }  
+        if(this.extendQueryParameterMap !=null){
+            for (String key :this.extendQueryParameterMap.keySet()) {
+                    localVarQueryParams.addAll(apiClient.parameterToPairs("", key, this.extendQueryParameterMap.get(key)));           
+            }
+        }
         Object localVarPostBody = null;
                 final String[] localVarAccepts = {
                     "application/json"

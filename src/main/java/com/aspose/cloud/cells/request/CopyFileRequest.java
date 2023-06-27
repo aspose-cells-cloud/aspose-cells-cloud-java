@@ -33,6 +33,14 @@ import java.lang.reflect.Type;
 import java.util.*;
 
 public class CopyFileRequest  implements IRequestModel {
+    private HashMap<String,String> extendQueryParameterMap;
+    public HashMap<String,String> getExtendQueryParameterMap() {
+        return this.extendQueryParameterMap;
+    }
+
+    public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
+        this.extendQueryParameterMap = extendQueryParameterMap;
+    }
 
     private String srcPath;
     private String destPath;
@@ -52,7 +60,7 @@ public class CopyFileRequest  implements IRequestModel {
         }   
 
         public String getSrcPath() {
-            return srcPath;
+            return this.srcPath;
         }
 
         public void setSrcPath(String srcPath) {
@@ -61,7 +69,7 @@ public class CopyFileRequest  implements IRequestModel {
 
 
         public String getDestPath() {
-            return destPath;
+            return this.destPath;
         }
 
         public void setDestPath(String destPath) {
@@ -70,7 +78,7 @@ public class CopyFileRequest  implements IRequestModel {
 
 
         public String getSrcStorageName() {
-            return srcStorageName;
+            return this.srcStorageName;
         }
 
         public void setSrcStorageName(String srcStorageName) {
@@ -79,7 +87,7 @@ public class CopyFileRequest  implements IRequestModel {
 
 
         public String getDestStorageName() {
-            return destStorageName;
+            return this.destStorageName;
         }
 
         public void setDestStorageName(String destStorageName) {
@@ -88,7 +96,7 @@ public class CopyFileRequest  implements IRequestModel {
 
 
         public String getVersionId() {
-            return versionId;
+            return this.versionId;
         }
 
         public void setVersionId(String versionId) {
@@ -119,6 +127,11 @@ public class CopyFileRequest  implements IRequestModel {
             if (getVersionId() != null){
                 localVarQueryParams.addAll(apiClient.parameterToPairs("", "versionId", getVersionId()));
             }  
+        if(this.extendQueryParameterMap !=null){
+            for (String key :this.extendQueryParameterMap.keySet()) {
+                    localVarQueryParams.addAll(apiClient.parameterToPairs("", key, this.extendQueryParameterMap.get(key)));           
+            }
+        }
         Object localVarPostBody = null;
                 final String[] localVarAccepts = {
                     "application/json"

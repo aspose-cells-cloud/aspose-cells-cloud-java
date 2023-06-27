@@ -33,6 +33,14 @@ import java.lang.reflect.Type;
 import java.util.*;
 
 public class PostWorkbookImportXMLRequest  implements IRequestModel {
+    private HashMap<String,String> extendQueryParameterMap;
+    public HashMap<String,String> getExtendQueryParameterMap() {
+        return this.extendQueryParameterMap;
+    }
+
+    public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
+        this.extendQueryParameterMap = extendQueryParameterMap;
+    }
 
     private String name;
     private ImportXMLRequest importXMLRequest;
@@ -58,7 +66,7 @@ public class PostWorkbookImportXMLRequest  implements IRequestModel {
         }   
 
         public String getName() {
-            return name;
+            return this.name;
         }
 
         public void setName(String name) {
@@ -67,7 +75,7 @@ public class PostWorkbookImportXMLRequest  implements IRequestModel {
 
 
         public ImportXMLRequest getImportXMLRequest() {
-            return importXMLRequest;
+            return this.importXMLRequest;
         }
 
         public void setImportXMLRequest(ImportXMLRequest importXMLRequest) {
@@ -76,7 +84,7 @@ public class PostWorkbookImportXMLRequest  implements IRequestModel {
 
 
         public String getPassword() {
-            return password;
+            return this.password;
         }
 
         public void setPassword(String password) {
@@ -85,7 +93,7 @@ public class PostWorkbookImportXMLRequest  implements IRequestModel {
 
 
         public String getFolder() {
-            return folder;
+            return this.folder;
         }
 
         public void setFolder(String folder) {
@@ -94,7 +102,7 @@ public class PostWorkbookImportXMLRequest  implements IRequestModel {
 
 
         public String getStorageName() {
-            return storageName;
+            return this.storageName;
         }
 
         public void setStorageName(String storageName) {
@@ -103,7 +111,7 @@ public class PostWorkbookImportXMLRequest  implements IRequestModel {
 
 
         public String getOutPath() {
-            return outPath;
+            return this.outPath;
         }
 
         public void setOutPath(String outPath) {
@@ -112,7 +120,7 @@ public class PostWorkbookImportXMLRequest  implements IRequestModel {
 
 
         public String getOutStorageName() {
-            return outStorageName;
+            return this.outStorageName;
         }
 
         public void setOutStorageName(String outStorageName) {
@@ -121,7 +129,7 @@ public class PostWorkbookImportXMLRequest  implements IRequestModel {
 
 
         public Boolean getCheckExcelRestriction() {
-            return checkExcelRestriction;
+            return this.checkExcelRestriction;
         }
 
         public void setCheckExcelRestriction(Boolean checkExcelRestriction) {
@@ -158,6 +166,11 @@ public class PostWorkbookImportXMLRequest  implements IRequestModel {
             if (getCheckExcelRestriction() != null){
                 localVarQueryParams.addAll(apiClient.parameterToPairs("", "checkExcelRestriction", getCheckExcelRestriction()));
             }  
+        if(this.extendQueryParameterMap !=null){
+            for (String key :this.extendQueryParameterMap.keySet()) {
+                    localVarQueryParams.addAll(apiClient.parameterToPairs("", key, this.extendQueryParameterMap.get(key)));           
+            }
+        }
         Object localVarPostBody = null;
         localVarPostBody = getImportXMLRequest();
                 final String[] localVarAccepts = {

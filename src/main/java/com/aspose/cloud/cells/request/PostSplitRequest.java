@@ -33,6 +33,14 @@ import java.lang.reflect.Type;
 import java.util.*;
 
 public class PostSplitRequest  implements IRequestModel {
+    private HashMap<String,String> extendQueryParameterMap;
+    public HashMap<String,String> getExtendQueryParameterMap() {
+        return this.extendQueryParameterMap;
+    }
+
+    public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
+        this.extendQueryParameterMap = extendQueryParameterMap;
+    }
 
     private HashMap<String,File> file;
     private String format;
@@ -54,7 +62,7 @@ public class PostSplitRequest  implements IRequestModel {
         }   
 
         public HashMap<String,File> getFile() {
-            return file;
+            return this.file;
         }
 
         public void setFile(HashMap<String,File> file) {
@@ -63,7 +71,7 @@ public class PostSplitRequest  implements IRequestModel {
 
 
         public String getFormat() {
-            return format;
+            return this.format;
         }
 
         public void setFormat(String format) {
@@ -72,7 +80,7 @@ public class PostSplitRequest  implements IRequestModel {
 
 
         public String getPassword() {
-            return password;
+            return this.password;
         }
 
         public void setPassword(String password) {
@@ -81,7 +89,7 @@ public class PostSplitRequest  implements IRequestModel {
 
 
         public Integer getFrom() {
-            return from;
+            return this.from;
         }
 
         public void setFrom(Integer from) {
@@ -90,7 +98,7 @@ public class PostSplitRequest  implements IRequestModel {
 
 
         public Integer getTo() {
-            return to;
+            return this.to;
         }
 
         public void setTo(Integer to) {
@@ -99,7 +107,7 @@ public class PostSplitRequest  implements IRequestModel {
 
 
         public Boolean getCheckExcelRestriction() {
-            return checkExcelRestriction;
+            return this.checkExcelRestriction;
         }
 
         public void setCheckExcelRestriction(Boolean checkExcelRestriction) {
@@ -133,6 +141,11 @@ public class PostSplitRequest  implements IRequestModel {
             if (getCheckExcelRestriction() != null){
                 localVarQueryParams.addAll(apiClient.parameterToPairs("", "checkExcelRestriction", getCheckExcelRestriction()));
             }  
+        if(this.extendQueryParameterMap !=null){
+            for (String key :this.extendQueryParameterMap.keySet()) {
+                    localVarQueryParams.addAll(apiClient.parameterToPairs("", key, this.extendQueryParameterMap.get(key)));           
+            }
+        }
                    
                 if (getFile() != null){
                     for (String key : getFile().keySet()) {

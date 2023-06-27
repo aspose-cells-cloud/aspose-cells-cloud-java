@@ -33,6 +33,14 @@ import java.lang.reflect.Type;
 import java.util.*;
 
 public class PostClearObjectsRequest  implements IRequestModel {
+    private HashMap<String,String> extendQueryParameterMap;
+    public HashMap<String,String> getExtendQueryParameterMap() {
+        return this.extendQueryParameterMap;
+    }
+
+    public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
+        this.extendQueryParameterMap = extendQueryParameterMap;
+    }
 
     private HashMap<String,File> file;
     private String objecttype;
@@ -54,7 +62,7 @@ public class PostClearObjectsRequest  implements IRequestModel {
         }   
 
         public HashMap<String,File> getFile() {
-            return file;
+            return this.file;
         }
 
         public void setFile(HashMap<String,File> file) {
@@ -63,7 +71,7 @@ public class PostClearObjectsRequest  implements IRequestModel {
 
 
         public String getObjecttype() {
-            return objecttype;
+            return this.objecttype;
         }
 
         public void setObjecttype(String objecttype) {
@@ -72,7 +80,7 @@ public class PostClearObjectsRequest  implements IRequestModel {
 
 
         public String getSheetname() {
-            return sheetname;
+            return this.sheetname;
         }
 
         public void setSheetname(String sheetname) {
@@ -81,7 +89,7 @@ public class PostClearObjectsRequest  implements IRequestModel {
 
 
         public String getOutFormat() {
-            return outFormat;
+            return this.outFormat;
         }
 
         public void setOutFormat(String outFormat) {
@@ -90,7 +98,7 @@ public class PostClearObjectsRequest  implements IRequestModel {
 
 
         public String getPassword() {
-            return password;
+            return this.password;
         }
 
         public void setPassword(String password) {
@@ -99,7 +107,7 @@ public class PostClearObjectsRequest  implements IRequestModel {
 
 
         public Boolean getCheckExcelRestriction() {
-            return checkExcelRestriction;
+            return this.checkExcelRestriction;
         }
 
         public void setCheckExcelRestriction(Boolean checkExcelRestriction) {
@@ -133,6 +141,11 @@ public class PostClearObjectsRequest  implements IRequestModel {
             if (getCheckExcelRestriction() != null){
                 localVarQueryParams.addAll(apiClient.parameterToPairs("", "checkExcelRestriction", getCheckExcelRestriction()));
             }  
+        if(this.extendQueryParameterMap !=null){
+            for (String key :this.extendQueryParameterMap.keySet()) {
+                    localVarQueryParams.addAll(apiClient.parameterToPairs("", key, this.extendQueryParameterMap.get(key)));           
+            }
+        }
                    
                 if (getFile() != null){
                     for (String key : getFile().keySet()) {

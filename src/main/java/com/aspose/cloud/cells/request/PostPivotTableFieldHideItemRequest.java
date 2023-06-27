@@ -33,6 +33,14 @@ import java.lang.reflect.Type;
 import java.util.*;
 
 public class PostPivotTableFieldHideItemRequest  implements IRequestModel {
+    private HashMap<String,String> extendQueryParameterMap;
+    public HashMap<String,String> getExtendQueryParameterMap() {
+        return this.extendQueryParameterMap;
+    }
+
+    public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
+        this.extendQueryParameterMap = extendQueryParameterMap;
+    }
 
     private String name;
     private String sheetName;
@@ -62,7 +70,7 @@ public class PostPivotTableFieldHideItemRequest  implements IRequestModel {
         }   
 
         public String getName() {
-            return name;
+            return this.name;
         }
 
         public void setName(String name) {
@@ -71,7 +79,7 @@ public class PostPivotTableFieldHideItemRequest  implements IRequestModel {
 
 
         public String getSheetName() {
-            return sheetName;
+            return this.sheetName;
         }
 
         public void setSheetName(String sheetName) {
@@ -80,7 +88,7 @@ public class PostPivotTableFieldHideItemRequest  implements IRequestModel {
 
 
         public Integer getPivotTableIndex() {
-            return pivotTableIndex;
+            return this.pivotTableIndex;
         }
 
         public void setPivotTableIndex(Integer pivotTableIndex) {
@@ -89,7 +97,7 @@ public class PostPivotTableFieldHideItemRequest  implements IRequestModel {
 
 
         public String getPivotFieldType() {
-            return pivotFieldType;
+            return this.pivotFieldType;
         }
 
         public void setPivotFieldType(String pivotFieldType) {
@@ -98,7 +106,7 @@ public class PostPivotTableFieldHideItemRequest  implements IRequestModel {
 
 
         public Integer getFieldIndex() {
-            return fieldIndex;
+            return this.fieldIndex;
         }
 
         public void setFieldIndex(Integer fieldIndex) {
@@ -107,7 +115,7 @@ public class PostPivotTableFieldHideItemRequest  implements IRequestModel {
 
 
         public Integer getItemIndex() {
-            return itemIndex;
+            return this.itemIndex;
         }
 
         public void setItemIndex(Integer itemIndex) {
@@ -116,7 +124,7 @@ public class PostPivotTableFieldHideItemRequest  implements IRequestModel {
 
 
         public Boolean getIsHide() {
-            return isHide;
+            return this.isHide;
         }
 
         public void setIsHide(Boolean isHide) {
@@ -125,7 +133,7 @@ public class PostPivotTableFieldHideItemRequest  implements IRequestModel {
 
 
         public Boolean getNeedReCalculate() {
-            return needReCalculate;
+            return this.needReCalculate;
         }
 
         public void setNeedReCalculate(Boolean needReCalculate) {
@@ -134,7 +142,7 @@ public class PostPivotTableFieldHideItemRequest  implements IRequestModel {
 
 
         public String getFolder() {
-            return folder;
+            return this.folder;
         }
 
         public void setFolder(String folder) {
@@ -143,7 +151,7 @@ public class PostPivotTableFieldHideItemRequest  implements IRequestModel {
 
 
         public String getStorageName() {
-            return storageName;
+            return this.storageName;
         }
 
         public void setStorageName(String storageName) {
@@ -200,6 +208,11 @@ public class PostPivotTableFieldHideItemRequest  implements IRequestModel {
             if (getStorageName() != null){
                 localVarQueryParams.addAll(apiClient.parameterToPairs("", "storageName", getStorageName()));
             }  
+        if(this.extendQueryParameterMap !=null){
+            for (String key :this.extendQueryParameterMap.keySet()) {
+                    localVarQueryParams.addAll(apiClient.parameterToPairs("", key, this.extendQueryParameterMap.get(key)));           
+            }
+        }
         Object localVarPostBody = null;
                 final String[] localVarAccepts = {
                     "application/json"

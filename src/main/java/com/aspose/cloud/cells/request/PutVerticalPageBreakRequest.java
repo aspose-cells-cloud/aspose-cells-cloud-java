@@ -33,6 +33,14 @@ import java.lang.reflect.Type;
 import java.util.*;
 
 public class PutVerticalPageBreakRequest  implements IRequestModel {
+    private HashMap<String,String> extendQueryParameterMap;
+    public HashMap<String,String> getExtendQueryParameterMap() {
+        return this.extendQueryParameterMap;
+    }
+
+    public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
+        this.extendQueryParameterMap = extendQueryParameterMap;
+    }
 
     private String name;
     private String sheetName;
@@ -60,7 +68,7 @@ public class PutVerticalPageBreakRequest  implements IRequestModel {
         }   
 
         public String getName() {
-            return name;
+            return this.name;
         }
 
         public void setName(String name) {
@@ -69,7 +77,7 @@ public class PutVerticalPageBreakRequest  implements IRequestModel {
 
 
         public String getSheetName() {
-            return sheetName;
+            return this.sheetName;
         }
 
         public void setSheetName(String sheetName) {
@@ -78,7 +86,7 @@ public class PutVerticalPageBreakRequest  implements IRequestModel {
 
 
         public String getCellname() {
-            return cellname;
+            return this.cellname;
         }
 
         public void setCellname(String cellname) {
@@ -87,7 +95,7 @@ public class PutVerticalPageBreakRequest  implements IRequestModel {
 
 
         public Integer getColumn() {
-            return column;
+            return this.column;
         }
 
         public void setColumn(Integer column) {
@@ -96,7 +104,7 @@ public class PutVerticalPageBreakRequest  implements IRequestModel {
 
 
         public Integer getRow() {
-            return row;
+            return this.row;
         }
 
         public void setRow(Integer row) {
@@ -105,7 +113,7 @@ public class PutVerticalPageBreakRequest  implements IRequestModel {
 
 
         public Integer getStartRow() {
-            return startRow;
+            return this.startRow;
         }
 
         public void setStartRow(Integer startRow) {
@@ -114,7 +122,7 @@ public class PutVerticalPageBreakRequest  implements IRequestModel {
 
 
         public Integer getEndRow() {
-            return endRow;
+            return this.endRow;
         }
 
         public void setEndRow(Integer endRow) {
@@ -123,7 +131,7 @@ public class PutVerticalPageBreakRequest  implements IRequestModel {
 
 
         public String getFolder() {
-            return folder;
+            return this.folder;
         }
 
         public void setFolder(String folder) {
@@ -132,7 +140,7 @@ public class PutVerticalPageBreakRequest  implements IRequestModel {
 
 
         public String getStorageName() {
-            return storageName;
+            return this.storageName;
         }
 
         public void setStorageName(String storageName) {
@@ -173,6 +181,11 @@ public class PutVerticalPageBreakRequest  implements IRequestModel {
             if (getStorageName() != null){
                 localVarQueryParams.addAll(apiClient.parameterToPairs("", "storageName", getStorageName()));
             }  
+        if(this.extendQueryParameterMap !=null){
+            for (String key :this.extendQueryParameterMap.keySet()) {
+                    localVarQueryParams.addAll(apiClient.parameterToPairs("", key, this.extendQueryParameterMap.get(key)));           
+            }
+        }
         Object localVarPostBody = null;
                 final String[] localVarAccepts = {
                     "application/json"

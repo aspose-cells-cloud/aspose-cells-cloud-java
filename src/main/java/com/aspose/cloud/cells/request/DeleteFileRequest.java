@@ -33,6 +33,14 @@ import java.lang.reflect.Type;
 import java.util.*;
 
 public class DeleteFileRequest  implements IRequestModel {
+    private HashMap<String,String> extendQueryParameterMap;
+    public HashMap<String,String> getExtendQueryParameterMap() {
+        return this.extendQueryParameterMap;
+    }
+
+    public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
+        this.extendQueryParameterMap = extendQueryParameterMap;
+    }
 
     private String path;
     private String storageName;
@@ -48,7 +56,7 @@ public class DeleteFileRequest  implements IRequestModel {
         }   
 
         public String getPath() {
-            return path;
+            return this.path;
         }
 
         public void setPath(String path) {
@@ -57,7 +65,7 @@ public class DeleteFileRequest  implements IRequestModel {
 
 
         public String getStorageName() {
-            return storageName;
+            return this.storageName;
         }
 
         public void setStorageName(String storageName) {
@@ -66,7 +74,7 @@ public class DeleteFileRequest  implements IRequestModel {
 
 
         public String getVersionId() {
-            return versionId;
+            return this.versionId;
         }
 
         public void setVersionId(String versionId) {
@@ -88,6 +96,11 @@ public class DeleteFileRequest  implements IRequestModel {
             if (getVersionId() != null){
                 localVarQueryParams.addAll(apiClient.parameterToPairs("", "versionId", getVersionId()));
             }  
+        if(this.extendQueryParameterMap !=null){
+            for (String key :this.extendQueryParameterMap.keySet()) {
+                    localVarQueryParams.addAll(apiClient.parameterToPairs("", key, this.extendQueryParameterMap.get(key)));           
+            }
+        }
         Object localVarPostBody = null;
                 final String[] localVarAccepts = {
                     "application/json"

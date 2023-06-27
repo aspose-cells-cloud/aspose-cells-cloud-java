@@ -33,6 +33,14 @@ import java.lang.reflect.Type;
 import java.util.*;
 
 public class PostImportRequest  implements IRequestModel {
+    private HashMap<String,String> extendQueryParameterMap;
+    public HashMap<String,String> getExtendQueryParameterMap() {
+        return this.extendQueryParameterMap;
+    }
+
+    public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
+        this.extendQueryParameterMap = extendQueryParameterMap;
+    }
 
     private HashMap<String,File> file;
         public PostImportRequest()
@@ -44,7 +52,7 @@ public class PostImportRequest  implements IRequestModel {
         }   
 
         public HashMap<String,File> getFile() {
-            return file;
+            return this.file;
         }
 
         public void setFile(HashMap<String,File> file) {
@@ -60,6 +68,11 @@ public class PostImportRequest  implements IRequestModel {
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
         List<Pair> localVarQueryParams = null;
+        if(this.extendQueryParameterMap !=null){
+            for (String key :this.extendQueryParameterMap.keySet()) {
+                    localVarQueryParams.addAll(apiClient.parameterToPairs("", key, this.extendQueryParameterMap.get(key)));           
+            }
+        }
                    
                 if (getFile() != null){
                     for (String key : getFile().keySet()) {

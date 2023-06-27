@@ -33,6 +33,14 @@ import java.lang.reflect.Type;
 import java.util.*;
 
 public class PostWorkbookGetSmartMarkerResultRequest  implements IRequestModel {
+    private HashMap<String,String> extendQueryParameterMap;
+    public HashMap<String,String> getExtendQueryParameterMap() {
+        return this.extendQueryParameterMap;
+    }
+
+    public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
+        this.extendQueryParameterMap = extendQueryParameterMap;
+    }
 
     private String name;
     private String xmlFile;
@@ -54,7 +62,7 @@ public class PostWorkbookGetSmartMarkerResultRequest  implements IRequestModel {
         }   
 
         public String getName() {
-            return name;
+            return this.name;
         }
 
         public void setName(String name) {
@@ -63,7 +71,7 @@ public class PostWorkbookGetSmartMarkerResultRequest  implements IRequestModel {
 
 
         public String getXmlFile() {
-            return xmlFile;
+            return this.xmlFile;
         }
 
         public void setXmlFile(String xmlFile) {
@@ -72,7 +80,7 @@ public class PostWorkbookGetSmartMarkerResultRequest  implements IRequestModel {
 
 
         public String getFolder() {
-            return folder;
+            return this.folder;
         }
 
         public void setFolder(String folder) {
@@ -81,7 +89,7 @@ public class PostWorkbookGetSmartMarkerResultRequest  implements IRequestModel {
 
 
         public String getOutPath() {
-            return outPath;
+            return this.outPath;
         }
 
         public void setOutPath(String outPath) {
@@ -90,7 +98,7 @@ public class PostWorkbookGetSmartMarkerResultRequest  implements IRequestModel {
 
 
         public String getStorageName() {
-            return storageName;
+            return this.storageName;
         }
 
         public void setStorageName(String storageName) {
@@ -99,7 +107,7 @@ public class PostWorkbookGetSmartMarkerResultRequest  implements IRequestModel {
 
 
         public String getOutStorageName() {
-            return outStorageName;
+            return this.outStorageName;
         }
 
         public void setOutStorageName(String outStorageName) {
@@ -130,6 +138,11 @@ public class PostWorkbookGetSmartMarkerResultRequest  implements IRequestModel {
             if (getOutStorageName() != null){
                 localVarQueryParams.addAll(apiClient.parameterToPairs("", "outStorageName", getOutStorageName()));
             }  
+        if(this.extendQueryParameterMap !=null){
+            for (String key :this.extendQueryParameterMap.keySet()) {
+                    localVarQueryParams.addAll(apiClient.parameterToPairs("", key, this.extendQueryParameterMap.get(key)));           
+            }
+        }
         Object localVarPostBody = null;
                 final String[] localVarAccepts = {
                     "application/json"

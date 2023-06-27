@@ -33,6 +33,14 @@ import java.lang.reflect.Type;
 import java.util.*;
 
 public class PutConvertWorkbookRequest  implements IRequestModel {
+    private HashMap<String,String> extendQueryParameterMap;
+    public HashMap<String,String> getExtendQueryParameterMap() {
+        return this.extendQueryParameterMap;
+    }
+
+    public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
+        this.extendQueryParameterMap = extendQueryParameterMap;
+    }
 
     private HashMap<String,File> file;
     private String format;
@@ -56,7 +64,7 @@ public class PutConvertWorkbookRequest  implements IRequestModel {
         }   
 
         public HashMap<String,File> getFile() {
-            return file;
+            return this.file;
         }
 
         public void setFile(HashMap<String,File> file) {
@@ -65,7 +73,7 @@ public class PutConvertWorkbookRequest  implements IRequestModel {
 
 
         public String getFormat() {
-            return format;
+            return this.format;
         }
 
         public void setFormat(String format) {
@@ -74,7 +82,7 @@ public class PutConvertWorkbookRequest  implements IRequestModel {
 
 
         public String getPassword() {
-            return password;
+            return this.password;
         }
 
         public void setPassword(String password) {
@@ -83,7 +91,7 @@ public class PutConvertWorkbookRequest  implements IRequestModel {
 
 
         public String getOutPath() {
-            return outPath;
+            return this.outPath;
         }
 
         public void setOutPath(String outPath) {
@@ -92,7 +100,7 @@ public class PutConvertWorkbookRequest  implements IRequestModel {
 
 
         public String getStorageName() {
-            return storageName;
+            return this.storageName;
         }
 
         public void setStorageName(String storageName) {
@@ -101,7 +109,7 @@ public class PutConvertWorkbookRequest  implements IRequestModel {
 
 
         public Boolean getCheckExcelRestriction() {
-            return checkExcelRestriction;
+            return this.checkExcelRestriction;
         }
 
         public void setCheckExcelRestriction(Boolean checkExcelRestriction) {
@@ -110,7 +118,7 @@ public class PutConvertWorkbookRequest  implements IRequestModel {
 
 
         public String getStreamFormat() {
-            return streamFormat;
+            return this.streamFormat;
         }
 
         public void setStreamFormat(String streamFormat) {
@@ -144,6 +152,11 @@ public class PutConvertWorkbookRequest  implements IRequestModel {
             if (getStreamFormat() != null){
                 localVarQueryParams.addAll(apiClient.parameterToPairs("", "streamFormat", getStreamFormat()));
             }  
+        if(this.extendQueryParameterMap !=null){
+            for (String key :this.extendQueryParameterMap.keySet()) {
+                    localVarQueryParams.addAll(apiClient.parameterToPairs("", key, this.extendQueryParameterMap.get(key)));           
+            }
+        }
                    
                 if (getFile() != null){
                     for (String key : getFile().keySet()) {

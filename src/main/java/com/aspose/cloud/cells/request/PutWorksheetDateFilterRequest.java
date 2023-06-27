@@ -33,6 +33,14 @@ import java.lang.reflect.Type;
 import java.util.*;
 
 public class PutWorksheetDateFilterRequest  implements IRequestModel {
+    private HashMap<String,String> extendQueryParameterMap;
+    public HashMap<String,String> getExtendQueryParameterMap() {
+        return this.extendQueryParameterMap;
+    }
+
+    public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
+        this.extendQueryParameterMap = extendQueryParameterMap;
+    }
 
     private String name;
     private String sheetName;
@@ -72,7 +80,7 @@ public class PutWorksheetDateFilterRequest  implements IRequestModel {
         }   
 
         public String getName() {
-            return name;
+            return this.name;
         }
 
         public void setName(String name) {
@@ -81,7 +89,7 @@ public class PutWorksheetDateFilterRequest  implements IRequestModel {
 
 
         public String getSheetName() {
-            return sheetName;
+            return this.sheetName;
         }
 
         public void setSheetName(String sheetName) {
@@ -90,7 +98,7 @@ public class PutWorksheetDateFilterRequest  implements IRequestModel {
 
 
         public String getRange() {
-            return range;
+            return this.range;
         }
 
         public void setRange(String range) {
@@ -99,7 +107,7 @@ public class PutWorksheetDateFilterRequest  implements IRequestModel {
 
 
         public Integer getFieldIndex() {
-            return fieldIndex;
+            return this.fieldIndex;
         }
 
         public void setFieldIndex(Integer fieldIndex) {
@@ -108,7 +116,7 @@ public class PutWorksheetDateFilterRequest  implements IRequestModel {
 
 
         public String getDateTimeGroupingType() {
-            return dateTimeGroupingType;
+            return this.dateTimeGroupingType;
         }
 
         public void setDateTimeGroupingType(String dateTimeGroupingType) {
@@ -117,7 +125,7 @@ public class PutWorksheetDateFilterRequest  implements IRequestModel {
 
 
         public Integer getYear() {
-            return year;
+            return this.year;
         }
 
         public void setYear(Integer year) {
@@ -126,7 +134,7 @@ public class PutWorksheetDateFilterRequest  implements IRequestModel {
 
 
         public Integer getMonth() {
-            return month;
+            return this.month;
         }
 
         public void setMonth(Integer month) {
@@ -135,7 +143,7 @@ public class PutWorksheetDateFilterRequest  implements IRequestModel {
 
 
         public Integer getDay() {
-            return day;
+            return this.day;
         }
 
         public void setDay(Integer day) {
@@ -144,7 +152,7 @@ public class PutWorksheetDateFilterRequest  implements IRequestModel {
 
 
         public Integer getHour() {
-            return hour;
+            return this.hour;
         }
 
         public void setHour(Integer hour) {
@@ -153,7 +161,7 @@ public class PutWorksheetDateFilterRequest  implements IRequestModel {
 
 
         public Integer getMinute() {
-            return minute;
+            return this.minute;
         }
 
         public void setMinute(Integer minute) {
@@ -162,7 +170,7 @@ public class PutWorksheetDateFilterRequest  implements IRequestModel {
 
 
         public Integer getSecond() {
-            return second;
+            return this.second;
         }
 
         public void setSecond(Integer second) {
@@ -171,7 +179,7 @@ public class PutWorksheetDateFilterRequest  implements IRequestModel {
 
 
         public Boolean getMatchBlanks() {
-            return matchBlanks;
+            return this.matchBlanks;
         }
 
         public void setMatchBlanks(Boolean matchBlanks) {
@@ -180,7 +188,7 @@ public class PutWorksheetDateFilterRequest  implements IRequestModel {
 
 
         public Boolean getRefresh() {
-            return refresh;
+            return this.refresh;
         }
 
         public void setRefresh(Boolean refresh) {
@@ -189,7 +197,7 @@ public class PutWorksheetDateFilterRequest  implements IRequestModel {
 
 
         public String getFolder() {
-            return folder;
+            return this.folder;
         }
 
         public void setFolder(String folder) {
@@ -198,7 +206,7 @@ public class PutWorksheetDateFilterRequest  implements IRequestModel {
 
 
         public String getStorageName() {
-            return storageName;
+            return this.storageName;
         }
 
         public void setStorageName(String storageName) {
@@ -266,6 +274,11 @@ public class PutWorksheetDateFilterRequest  implements IRequestModel {
             if (getStorageName() != null){
                 localVarQueryParams.addAll(apiClient.parameterToPairs("", "storageName", getStorageName()));
             }  
+        if(this.extendQueryParameterMap !=null){
+            for (String key :this.extendQueryParameterMap.keySet()) {
+                    localVarQueryParams.addAll(apiClient.parameterToPairs("", key, this.extendQueryParameterMap.get(key)));           
+            }
+        }
         Object localVarPostBody = null;
                 final String[] localVarAccepts = {
                     "application/json"

@@ -33,6 +33,14 @@ import java.lang.reflect.Type;
 import java.util.*;
 
 public class DeleteWorksheetDateFilterRequest  implements IRequestModel {
+    private HashMap<String,String> extendQueryParameterMap;
+    public HashMap<String,String> getExtendQueryParameterMap() {
+        return this.extendQueryParameterMap;
+    }
+
+    public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
+        this.extendQueryParameterMap = extendQueryParameterMap;
+    }
 
     private String name;
     private String sheetName;
@@ -66,7 +74,7 @@ public class DeleteWorksheetDateFilterRequest  implements IRequestModel {
         }   
 
         public String getName() {
-            return name;
+            return this.name;
         }
 
         public void setName(String name) {
@@ -75,7 +83,7 @@ public class DeleteWorksheetDateFilterRequest  implements IRequestModel {
 
 
         public String getSheetName() {
-            return sheetName;
+            return this.sheetName;
         }
 
         public void setSheetName(String sheetName) {
@@ -84,7 +92,7 @@ public class DeleteWorksheetDateFilterRequest  implements IRequestModel {
 
 
         public Integer getFieldIndex() {
-            return fieldIndex;
+            return this.fieldIndex;
         }
 
         public void setFieldIndex(Integer fieldIndex) {
@@ -93,7 +101,7 @@ public class DeleteWorksheetDateFilterRequest  implements IRequestModel {
 
 
         public String getDateTimeGroupingType() {
-            return dateTimeGroupingType;
+            return this.dateTimeGroupingType;
         }
 
         public void setDateTimeGroupingType(String dateTimeGroupingType) {
@@ -102,7 +110,7 @@ public class DeleteWorksheetDateFilterRequest  implements IRequestModel {
 
 
         public Integer getYear() {
-            return year;
+            return this.year;
         }
 
         public void setYear(Integer year) {
@@ -111,7 +119,7 @@ public class DeleteWorksheetDateFilterRequest  implements IRequestModel {
 
 
         public Integer getMonth() {
-            return month;
+            return this.month;
         }
 
         public void setMonth(Integer month) {
@@ -120,7 +128,7 @@ public class DeleteWorksheetDateFilterRequest  implements IRequestModel {
 
 
         public Integer getDay() {
-            return day;
+            return this.day;
         }
 
         public void setDay(Integer day) {
@@ -129,7 +137,7 @@ public class DeleteWorksheetDateFilterRequest  implements IRequestModel {
 
 
         public Integer getHour() {
-            return hour;
+            return this.hour;
         }
 
         public void setHour(Integer hour) {
@@ -138,7 +146,7 @@ public class DeleteWorksheetDateFilterRequest  implements IRequestModel {
 
 
         public Integer getMinute() {
-            return minute;
+            return this.minute;
         }
 
         public void setMinute(Integer minute) {
@@ -147,7 +155,7 @@ public class DeleteWorksheetDateFilterRequest  implements IRequestModel {
 
 
         public Integer getSecond() {
-            return second;
+            return this.second;
         }
 
         public void setSecond(Integer second) {
@@ -156,7 +164,7 @@ public class DeleteWorksheetDateFilterRequest  implements IRequestModel {
 
 
         public String getFolder() {
-            return folder;
+            return this.folder;
         }
 
         public void setFolder(String folder) {
@@ -165,7 +173,7 @@ public class DeleteWorksheetDateFilterRequest  implements IRequestModel {
 
 
         public String getStorageName() {
-            return storageName;
+            return this.storageName;
         }
 
         public void setStorageName(String storageName) {
@@ -221,6 +229,11 @@ public class DeleteWorksheetDateFilterRequest  implements IRequestModel {
             if (getStorageName() != null){
                 localVarQueryParams.addAll(apiClient.parameterToPairs("", "storageName", getStorageName()));
             }  
+        if(this.extendQueryParameterMap !=null){
+            for (String key :this.extendQueryParameterMap.keySet()) {
+                    localVarQueryParams.addAll(apiClient.parameterToPairs("", key, this.extendQueryParameterMap.get(key)));           
+            }
+        }
         Object localVarPostBody = null;
                 final String[] localVarAccepts = {
                     "application/json"

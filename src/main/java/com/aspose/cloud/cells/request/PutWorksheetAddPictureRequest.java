@@ -33,6 +33,14 @@ import java.lang.reflect.Type;
 import java.util.*;
 
 public class PutWorksheetAddPictureRequest  implements IRequestModel {
+    private HashMap<String,String> extendQueryParameterMap;
+    public HashMap<String,String> getExtendQueryParameterMap() {
+        return this.extendQueryParameterMap;
+    }
+
+    public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
+        this.extendQueryParameterMap = extendQueryParameterMap;
+    }
 
     private String name;
     private String sheetName;
@@ -62,7 +70,7 @@ public class PutWorksheetAddPictureRequest  implements IRequestModel {
         }   
 
         public String getName() {
-            return name;
+            return this.name;
         }
 
         public void setName(String name) {
@@ -71,7 +79,7 @@ public class PutWorksheetAddPictureRequest  implements IRequestModel {
 
 
         public String getSheetName() {
-            return sheetName;
+            return this.sheetName;
         }
 
         public void setSheetName(String sheetName) {
@@ -80,7 +88,7 @@ public class PutWorksheetAddPictureRequest  implements IRequestModel {
 
 
         public Picture getPicture() {
-            return picture;
+            return this.picture;
         }
 
         public void setPicture(Picture picture) {
@@ -89,7 +97,7 @@ public class PutWorksheetAddPictureRequest  implements IRequestModel {
 
 
         public Integer getUpperLeftRow() {
-            return upperLeftRow;
+            return this.upperLeftRow;
         }
 
         public void setUpperLeftRow(Integer upperLeftRow) {
@@ -98,7 +106,7 @@ public class PutWorksheetAddPictureRequest  implements IRequestModel {
 
 
         public Integer getUpperLeftColumn() {
-            return upperLeftColumn;
+            return this.upperLeftColumn;
         }
 
         public void setUpperLeftColumn(Integer upperLeftColumn) {
@@ -107,7 +115,7 @@ public class PutWorksheetAddPictureRequest  implements IRequestModel {
 
 
         public Integer getLowerRightRow() {
-            return lowerRightRow;
+            return this.lowerRightRow;
         }
 
         public void setLowerRightRow(Integer lowerRightRow) {
@@ -116,7 +124,7 @@ public class PutWorksheetAddPictureRequest  implements IRequestModel {
 
 
         public Integer getLowerRightColumn() {
-            return lowerRightColumn;
+            return this.lowerRightColumn;
         }
 
         public void setLowerRightColumn(Integer lowerRightColumn) {
@@ -125,7 +133,7 @@ public class PutWorksheetAddPictureRequest  implements IRequestModel {
 
 
         public String getPicturePath() {
-            return picturePath;
+            return this.picturePath;
         }
 
         public void setPicturePath(String picturePath) {
@@ -134,7 +142,7 @@ public class PutWorksheetAddPictureRequest  implements IRequestModel {
 
 
         public String getFolder() {
-            return folder;
+            return this.folder;
         }
 
         public void setFolder(String folder) {
@@ -143,7 +151,7 @@ public class PutWorksheetAddPictureRequest  implements IRequestModel {
 
 
         public String getStorageName() {
-            return storageName;
+            return this.storageName;
         }
 
         public void setStorageName(String storageName) {
@@ -184,6 +192,11 @@ public class PutWorksheetAddPictureRequest  implements IRequestModel {
             if (getStorageName() != null){
                 localVarQueryParams.addAll(apiClient.parameterToPairs("", "storageName", getStorageName()));
             }  
+        if(this.extendQueryParameterMap !=null){
+            for (String key :this.extendQueryParameterMap.keySet()) {
+                    localVarQueryParams.addAll(apiClient.parameterToPairs("", key, this.extendQueryParameterMap.get(key)));           
+            }
+        }
         Object localVarPostBody = null;
         localVarPostBody = getPicture();
                 final String[] localVarAccepts = {

@@ -69,7 +69,7 @@ public class BatchControllerTest {
         batchConvertRequest.setFormat("pdf");
 
 
-        batchConvertRequest.setOutFolder("pdf");
+        batchConvertRequest.setOutFolder("TestResult");
 
 
         MatchConditionRequest matchCondition = new MatchConditionRequest();
@@ -80,6 +80,105 @@ public class BatchControllerTest {
         request.setBatchConvertRequest(batchConvertRequest);
 
         File response =  this.api.postBatchConvert(request);
+    }
+
+
+    @Test
+    public void PostBatchProtectTest() throws Exception {
+        String localBook1 = "Book1.xlsx";
+        String remoteBook1 = "Book1.xlsx";
+        String localMyDoc = "myDocument.xlsx";
+        String remoteMyDoc = "myDocument.xlsx";
+
+        CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteBook1 , localBook1 , "");
+        CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteMyDoc , localMyDoc , "");
+       
+        PostBatchProtectRequest request = new PostBatchProtectRequest();
+        BatchProtectRequest batchProtectRequest = new BatchProtectRequest();
+        batchProtectRequest.setSourceFolder(remoteFolder);
+
+
+        batchProtectRequest.setProtectionType("All");
+
+
+        batchProtectRequest.setPassword("123456");
+
+
+        batchProtectRequest.setOutFolder("TestResult");
+
+
+        MatchConditionRequest matchCondition = new MatchConditionRequest();
+        matchCondition.setRegexPattern("(^Book)(.+)(xlsx$)");
+
+        batchProtectRequest.setMatchCondition(matchCondition);
+
+        request.setBatchProtectRequest(batchProtectRequest);
+
+        File response =  this.api.postBatchProtect(request);
+    }
+
+
+    @Test
+    public void PostBatchLockTest() throws Exception {
+        String localBook1 = "Book1.xlsx";
+        String remoteBook1 = "Book1.xlsx";
+        String localMyDoc = "myDocument.xlsx";
+        String remoteMyDoc = "myDocument.xlsx";
+
+        CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteBook1 , localBook1 , "");
+        CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteMyDoc , localMyDoc , "");
+       
+        PostBatchLockRequest request = new PostBatchLockRequest();
+        BatchLockRequest batchLockRequest = new BatchLockRequest();
+        batchLockRequest.setSourceFolder(remoteFolder);
+
+
+        batchLockRequest.setPassword("123456");
+
+
+        batchLockRequest.setOutFolder("TestResult");
+
+
+        MatchConditionRequest matchCondition = new MatchConditionRequest();
+        matchCondition.setRegexPattern("(^Book)(.+)(xlsx$)");
+
+        batchLockRequest.setMatchCondition(matchCondition);
+
+        request.setBatchLockRequest(batchLockRequest);
+
+        File response =  this.api.postBatchLock(request);
+    }
+
+
+    @Test
+    public void PostBatchUnlockTest() throws Exception {
+        String localBook1 = "Book1.xlsx";
+        String remoteBook1 = "Book1.xlsx";
+        String localMyDoc = "myDocument.xlsx";
+        String remoteMyDoc = "myDocument.xlsx";
+
+        CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteBook1 , localBook1 , "");
+        CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteMyDoc , localMyDoc , "");
+       
+        PostBatchUnlockRequest request = new PostBatchUnlockRequest();
+        BatchLockRequest batchLockRequest = new BatchLockRequest();
+        batchLockRequest.setSourceFolder(remoteFolder);
+
+
+        batchLockRequest.setPassword("123456");
+
+
+        batchLockRequest.setOutFolder("TestResult");
+
+
+        MatchConditionRequest matchCondition = new MatchConditionRequest();
+        matchCondition.setRegexPattern("(^Book)(.+)(xlsx$)");
+
+        batchLockRequest.setMatchCondition(matchCondition);
+
+        request.setBatchLockRequest(batchLockRequest);
+
+        File response =  this.api.postBatchUnlock(request);
     }
 
 
