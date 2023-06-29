@@ -1,4 +1,4 @@
-![](https://img.shields.io/badge/REST%20API-v3.0-lightgrey) [![GitHub license](https://img.shields.io/github/license/aspose-cells-cloud/aspose-cells-cloud-java)](https://github.com/aspose-cells-cloud/aspose-cells-cloud-java/blob/master/LICENSE) ![GitHub commits since latest release (by date)](https://img.shields.io/github/commits-since/aspose-cells-cloud/aspose-cells-cloud-java/23.5)
+![](https://img.shields.io/badge/REST%20API-v3.0-lightgrey) [![GitHub license](https://img.shields.io/github/license/aspose-cells-cloud/aspose-cells-cloud-java)](https://github.com/aspose-cells-cloud/aspose-cells-cloud-java/blob/master/LICENSE) ![GitHub commits since latest release (by date)](https://img.shields.io/github/commits-since/aspose-cells-cloud/aspose-cells-cloud-java/23.6)
 
 # Java SDK for Spreadsheet Processing in the Cloud
 
@@ -24,22 +24,15 @@ This Cloud SDK enhances your Java-based cloud apps to [process & manipulate Micr
 - Fetch the required shape from worksheet.
 - Leverage the power of [Pivot Tables](https://docs.aspose.cloud/cells/working-with-pivot-tables/) & Ranges.
 
-## Feature & Enhancements in Version 23.5
-
-We are pleased to announce the release of Aspose.Cells Cloud SDK 23.5 with the following improvements.
-
-## Aspose.Cells Cloud SDK 
+## Feature & Enhancements in Version 23.6
 
 Full list of issues covering all changes in this release:
 
-- Fix few method names for spelling error.
--- getWorkSheetHyperlinks ==> getWorksheetHyperlinks
--- getWorkSheetHyperlink ==> getWorksheetHyperlink
--- deleteWorkSheetHyperlink ==> deleteWorksheetHyperlink
--- deleteWorkSheetHyperlinks ==> deleteWorksheetHyperlinks
--- putWorkSheetHyperlink ==> putWorksheetHyperlink
--- postWorkSheetPicture ==> postWorksheetPicture
--- deleteWorkSheetPictures ==> deleteWorksheetPictures
+- Support to batch lock multi-files.
+- Support to batch unlock multi-files.
+- Support to protect lock multi-files.
+- Support to split lock multi-files.
+- Fix put document property api.
 
 
 
