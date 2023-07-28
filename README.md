@@ -29,7 +29,7 @@ This Cloud SDK enhances your Java-based cloud apps to [process & manipulate Micr
 Full list of issues covering all changes in this release:
 
 - Support to repair file.
-
+- Remove GetExtractBarcodes API.
 
 ## Read & Write Spreadsheet Formats
 

@@ -4747,6 +4747,76 @@ public class LightCellsTest {
         FilesResult response =  this.api.postClearObjects(request);
     }
 
+    @Test
+    public void PostRepair_xlsxTest() throws Exception {
+        String book1Xlsx = "Book1.xlsx";
+
+        String format = "xlsx";
+
+       
+        PostRepairRequest request = new PostRepairRequest();
+        request.setFormat(format);
+         
+
+        HashMap<String,File> fileMap = new HashMap<String,File>(); 
+        fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
+        request.setFile(fileMap);
+        FilesResult response =  this.api.postRepair(request);
+    }
+
+
+    @Test
+    public void PostRepair_pdfTest() throws Exception {
+        String book1Xlsx = "Book1.xlsx";
+
+        String format = "pdf";
+
+       
+        PostRepairRequest request = new PostRepairRequest();
+        request.setFormat(format);
+         
+
+        HashMap<String,File> fileMap = new HashMap<String,File>(); 
+        fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
+        request.setFile(fileMap);
+        FilesResult response =  this.api.postRepair(request);
+    }
+
+
+    @Test
+    public void PostRepair_csvTest() throws Exception {
+        String book1Xlsx = "Book1.xlsx";
+
+        String format = "csv";
+
+       
+        PostRepairRequest request = new PostRepairRequest();
+        request.setFormat(format);
+         
+
+        HashMap<String,File> fileMap = new HashMap<String,File>(); 
+        fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
+        request.setFile(fileMap);
+        FilesResult response =  this.api.postRepair(request);
+    }
+
+
+    @Test
+    public void PostRepair_pngTest() throws Exception {
+        String book1Xlsx = "Book1.xlsx";
+
+        String format = "png";
+
+       
+        PostRepairRequest request = new PostRepairRequest();
+        request.setFormat(format);
+         
+
+        HashMap<String,File> fileMap = new HashMap<String,File>(); 
+        fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
+        request.setFile(fileMap);
+        FilesResult response =  this.api.postRepair(request);
+    }
 
     @Test
     public void PostReverse_rows_pdfTest() throws Exception {
