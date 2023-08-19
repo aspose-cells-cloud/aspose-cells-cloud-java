@@ -1,6 +1,6 @@
 /*
  * --------------------------------------------------------------------------------
- * <copyright company="Aspose" file="PostProtectRequest.java">
+ * <copyright company="Aspose" file="PostLockRequest.java">
  *   Copyright (c) 2023 Aspose.Cells Cloud
  * </copyright>
  * <summary>
@@ -32,7 +32,7 @@ import java.io.*;
 import java.lang.reflect.Type;
 import java.util.*;
 
-public class PostProtectRequest  implements IRequestModel {
+public class PostLockRequest  implements IRequestModel {
     private HashMap<String,String> extendQueryParameterMap;
     public HashMap<String,String> getExtendQueryParameterMap() {
         return this.extendQueryParameterMap;
@@ -43,15 +43,13 @@ public class PostProtectRequest  implements IRequestModel {
     }
 
     private HashMap<String,File> file;
-    private ProtectWorkbookRequst protectWorkbookRequst;
     private String password;
-        public PostProtectRequest()
+        public PostLockRequest()
         {
 
         }
-        public PostProtectRequest(HashMap<String,File> file, ProtectWorkbookRequst protectWorkbookRequst, String password) {
+        public PostLockRequest(HashMap<String,File> file, String password) {
             this.file = file;
-            this.protectWorkbookRequst = protectWorkbookRequst;
             this.password = password;
         }   
 
@@ -61,15 +59,6 @@ public class PostProtectRequest  implements IRequestModel {
 
         public void setFile(HashMap<String,File> file) {
             this.file = file;
-        }
-
-
-        public ProtectWorkbookRequst getProtectWorkbookRequst() {
-            return this.protectWorkbookRequst;
-        }
-
-        public void setProtectWorkbookRequst(ProtectWorkbookRequst protectWorkbookRequst) {
-            this.protectWorkbookRequst = protectWorkbookRequst;
         }
 
 
@@ -84,12 +73,12 @@ public class PostProtectRequest  implements IRequestModel {
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
          if (getFile() == null) {
-                    throw new ApiException("Missing the required parameter 'File' when calling PostProtect");
+                    throw new ApiException("Missing the required parameter 'File' when calling PostLock");
                 } 
-                if (getProtectWorkbookRequst() == null) {
-                    throw new ApiException("Missing the required parameter 'ProtectWorkbookRequst' when calling PostProtect");
+                if (getPassword() == null) {
+                    throw new ApiException("Missing the required parameter 'Password' when calling PostLock");
                 }       
-        String localVarPath = "/cells/protect";
+        String localVarPath = "/cells/lock";
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -108,7 +97,6 @@ public class PostProtectRequest  implements IRequestModel {
                     }
                 }      
         Object localVarPostBody = null;
-        localVarFormParams.put("protectWorkbookRequst", apiClient.getJSON().serialize(getProtectWorkbookRequst()));                
                 final String[] localVarAccepts = {
                     "application/json"
                 };

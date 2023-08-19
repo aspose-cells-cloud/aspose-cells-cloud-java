@@ -37,6 +37,91 @@ import java.time.OffsetDateTime;
 
 
 public class HtmlSaveOptions  extends  SaveOptions {
+        @SerializedName("ExportPageHeaders")
+        private Boolean exportPageHeaders ;
+
+        public  HtmlSaveOptions  exportPageHeaders(Boolean  exportPageHeaders) {
+            this.exportPageHeaders =  exportPageHeaders;
+            return this;
+        }
+
+        @ApiModelProperty(value = "")
+        public Boolean getExportPageHeaders() {
+            return exportPageHeaders;
+        }
+
+        public void setExportPageHeaders(Boolean exportPageHeaders) {
+            this.exportPageHeaders = exportPageHeaders;
+        }
+
+        @SerializedName("ExportPageFooters")
+        private Boolean exportPageFooters ;
+
+        public  HtmlSaveOptions  exportPageFooters(Boolean  exportPageFooters) {
+            this.exportPageFooters =  exportPageFooters;
+            return this;
+        }
+
+        @ApiModelProperty(value = "")
+        public Boolean getExportPageFooters() {
+            return exportPageFooters;
+        }
+
+        public void setExportPageFooters(Boolean exportPageFooters) {
+            this.exportPageFooters = exportPageFooters;
+        }
+
+        @SerializedName("ExportRowColumnHeadings")
+        private Boolean exportRowColumnHeadings ;
+
+        public  HtmlSaveOptions  exportRowColumnHeadings(Boolean  exportRowColumnHeadings) {
+            this.exportRowColumnHeadings =  exportRowColumnHeadings;
+            return this;
+        }
+
+        @ApiModelProperty(value = "")
+        public Boolean getExportRowColumnHeadings() {
+            return exportRowColumnHeadings;
+        }
+
+        public void setExportRowColumnHeadings(Boolean exportRowColumnHeadings) {
+            this.exportRowColumnHeadings = exportRowColumnHeadings;
+        }
+
+        @SerializedName("ShowAllSheets")
+        private Boolean showAllSheets ;
+
+        public  HtmlSaveOptions  showAllSheets(Boolean  showAllSheets) {
+            this.showAllSheets =  showAllSheets;
+            return this;
+        }
+
+        @ApiModelProperty(value = "")
+        public Boolean getShowAllSheets() {
+            return showAllSheets;
+        }
+
+        public void setShowAllSheets(Boolean showAllSheets) {
+            this.showAllSheets = showAllSheets;
+        }
+
+        @SerializedName("ImageOptions")
+        private ImageOrPrintOptions imageOptions ;
+
+        public  HtmlSaveOptions  imageOptions(ImageOrPrintOptions  imageOptions) {
+            this.imageOptions =  imageOptions;
+            return this;
+        }
+
+        @ApiModelProperty(value = "")
+        public ImageOrPrintOptions getImageOptions() {
+            return imageOptions;
+        }
+
+        public void setImageOptions(ImageOrPrintOptions imageOptions) {
+            this.imageOptions = imageOptions;
+        }
+
         @SerializedName("SaveAsSingleFile")
         private Boolean saveAsSingleFile ;
 
@@ -609,6 +694,11 @@ public class HtmlSaveOptions  extends  SaveOptions {
 
             HtmlSaveOptions htmlSaveOptions = (HtmlSaveOptions) o;
             return
+                Objects.equals(this.exportPageHeaders, htmlSaveOptions.exportPageHeaders) &&
+                Objects.equals(this.exportPageFooters, htmlSaveOptions.exportPageFooters) &&
+                Objects.equals(this.exportRowColumnHeadings, htmlSaveOptions.exportRowColumnHeadings) &&
+                Objects.equals(this.showAllSheets, htmlSaveOptions.showAllSheets) &&
+                Objects.equals(this.imageOptions, htmlSaveOptions.imageOptions) &&
                 Objects.equals(this.saveAsSingleFile, htmlSaveOptions.saveAsSingleFile) &&
                 Objects.equals(this.exportHiddenWorksheet, htmlSaveOptions.exportHiddenWorksheet) &&
                 Objects.equals(this.exportGridLines, htmlSaveOptions.exportGridLines) &&
@@ -647,12 +737,17 @@ public class HtmlSaveOptions  extends  SaveOptions {
 
       @Override
       public int hashCode() {
-        return Objects.hash(saveAsSingleFile, exportHiddenWorksheet, exportGridLines, presentationPreference, cellCssPrefix, tableCssId, isFullPathLink, exportWorksheetCSSSeparately, exportSimilarBorderStyle, mergeEmptyTdForcely, exportCellCoordinate, exportExtraHeadings, exportHeadings, exportFormula, addTooltipText, exportBogusRowData, excludeUnusedStyles, exportDocumentProperties, exportWorksheetProperties, exportWorkbookProperties, exportFrameScriptsAndProperties, attachedFilesDirectory, attachedFilesUrlPrefix, encoding, exportActiveWorksheetOnly, exportChartImageFormat, exportImagesAsBase64, hiddenColDisplayType, hiddenRowDisplayType, htmlCrossStringType, isExpImageToTempDir, pageTitle, parseHtmlTagInCell, super.hashCode());
+        return Objects.hash(exportPageHeaders, exportPageFooters, exportRowColumnHeadings, showAllSheets, imageOptions, saveAsSingleFile, exportHiddenWorksheet, exportGridLines, presentationPreference, cellCssPrefix, tableCssId, isFullPathLink, exportWorksheetCSSSeparately, exportSimilarBorderStyle, mergeEmptyTdForcely, exportCellCoordinate, exportExtraHeadings, exportHeadings, exportFormula, addTooltipText, exportBogusRowData, excludeUnusedStyles, exportDocumentProperties, exportWorksheetProperties, exportWorkbookProperties, exportFrameScriptsAndProperties, attachedFilesDirectory, attachedFilesUrlPrefix, encoding, exportActiveWorksheetOnly, exportChartImageFormat, exportImagesAsBase64, hiddenColDisplayType, hiddenRowDisplayType, htmlCrossStringType, isExpImageToTempDir, pageTitle, parseHtmlTagInCell, super.hashCode());
       }
         @Override
         public String toString() {
             StringBuilder sb = new StringBuilder();
             sb.append("class HtmlSaveOptions {\n");
+            sb.append("    exportPageHeaders: ").append(toIndentedString(getExportPageHeaders())).append("\n");
+            sb.append("    exportPageFooters: ").append(toIndentedString(getExportPageFooters())).append("\n");
+            sb.append("    exportRowColumnHeadings: ").append(toIndentedString(getExportRowColumnHeadings())).append("\n");
+            sb.append("    showAllSheets: ").append(toIndentedString(getShowAllSheets())).append("\n");
+            sb.append("    imageOptions: ").append(toIndentedString(getImageOptions())).append("\n");
             sb.append("    saveAsSingleFile: ").append(toIndentedString(getSaveAsSingleFile())).append("\n");
             sb.append("    exportHiddenWorksheet: ").append(toIndentedString(getExportHiddenWorksheet())).append("\n");
             sb.append("    exportGridLines: ").append(toIndentedString(getExportGridLines())).append("\n");

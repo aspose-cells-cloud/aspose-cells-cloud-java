@@ -55101,6 +55101,60 @@ public class CellsApi {
 
 
     @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call postLockValidateBeforeCall(PostLockRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
+        return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
+    }
+
+    public  FilesResult  postLock(PostLockRequest request) throws ApiException,  IOException {
+        try {
+            ApiResponse< FilesResult > resp = postLockWithHttpInfo(request);
+             return resp.getData(); 
+        }
+        catch (ApiException ex) {
+            if (ex.getCode() == apiClient.getNotAuthCode()) {
+                apiClient.requestToken();
+                ApiResponse< FilesResult > resp = postLockWithHttpInfo(request);
+                 return resp.getData();       
+            }
+            throw ex;
+        }
+    }
+
+    private ApiResponse< FilesResult > postLockWithHttpInfo(PostLockRequest request) throws ApiException,  IOException {
+        com.squareup.okhttp.Call call =  postLockValidateBeforeCall(request, null, null);
+        Type localVarReturnType = new TypeToken< FilesResult >(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    public com.squareup.okhttp.Call  postLockAsync( PostLockRequest request, final ApiCallback< FilesResult > callback) throws ApiException,  IOException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call =  postLockValidateBeforeCall(request, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken< FilesResult >(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+
+
+    @SuppressWarnings("rawtypes")
     private com.squareup.okhttp.Call postProtectValidateBeforeCall(PostProtectRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
         return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
     }
@@ -55152,7 +55206,6 @@ public class CellsApi {
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
-
 
     @SuppressWarnings("rawtypes")
     private com.squareup.okhttp.Call postSplitValidateBeforeCall(PostSplitRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {

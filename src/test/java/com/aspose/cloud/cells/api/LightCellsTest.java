@@ -4443,7 +4443,7 @@ public class LightCellsTest {
        
         PostProtectRequest request = new PostProtectRequest();
         request.setPassword("123456");
-         
+        request.setProtectWorkbookRequst(new ProtectWorkbookRequst());
          
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 

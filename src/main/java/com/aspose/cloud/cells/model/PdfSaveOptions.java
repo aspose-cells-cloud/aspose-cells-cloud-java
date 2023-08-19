@@ -37,6 +37,159 @@ import java.time.OffsetDateTime;
 
 
 public class PdfSaveOptions  extends  SaveOptions {
+        @SerializedName("DisplayDocTitle")
+        private Boolean displayDocTitle ;
+
+        public  PdfSaveOptions  displayDocTitle(Boolean  displayDocTitle) {
+            this.displayDocTitle =  displayDocTitle;
+            return this;
+        }
+
+        @ApiModelProperty(value = "")
+        public Boolean getDisplayDocTitle() {
+            return displayDocTitle;
+        }
+
+        public void setDisplayDocTitle(Boolean displayDocTitle) {
+            this.displayDocTitle = displayDocTitle;
+        }
+
+        @SerializedName("ExportDocumentStructure")
+        private Boolean exportDocumentStructure ;
+
+        public  PdfSaveOptions  exportDocumentStructure(Boolean  exportDocumentStructure) {
+            this.exportDocumentStructure =  exportDocumentStructure;
+            return this;
+        }
+
+        @ApiModelProperty(value = "")
+        public Boolean getExportDocumentStructure() {
+            return exportDocumentStructure;
+        }
+
+        public void setExportDocumentStructure(Boolean exportDocumentStructure) {
+            this.exportDocumentStructure = exportDocumentStructure;
+        }
+
+        @SerializedName("EmfRenderSetting")
+        private String emfRenderSetting ;
+
+        public  PdfSaveOptions  emfRenderSetting(String  emfRenderSetting) {
+            this.emfRenderSetting =  emfRenderSetting;
+            return this;
+        }
+
+        @ApiModelProperty(value = "")
+        public String getEmfRenderSetting() {
+            return emfRenderSetting;
+        }
+
+        public void setEmfRenderSetting(String emfRenderSetting) {
+            this.emfRenderSetting = emfRenderSetting;
+        }
+
+        @SerializedName("CustomPropertiesExport")
+        private String customPropertiesExport ;
+
+        public  PdfSaveOptions  customPropertiesExport(String  customPropertiesExport) {
+            this.customPropertiesExport =  customPropertiesExport;
+            return this;
+        }
+
+        @ApiModelProperty(value = "")
+        public String getCustomPropertiesExport() {
+            return customPropertiesExport;
+        }
+
+        public void setCustomPropertiesExport(String customPropertiesExport) {
+            this.customPropertiesExport = customPropertiesExport;
+        }
+
+        @SerializedName("OptimizationType")
+        private String optimizationType ;
+
+        public  PdfSaveOptions  optimizationType(String  optimizationType) {
+            this.optimizationType =  optimizationType;
+            return this;
+        }
+
+        @ApiModelProperty(value = "")
+        public String getOptimizationType() {
+            return optimizationType;
+        }
+
+        public void setOptimizationType(String optimizationType) {
+            this.optimizationType = optimizationType;
+        }
+
+        @SerializedName("Producer")
+        private String producer ;
+
+        public  PdfSaveOptions  producer(String  producer) {
+            this.producer =  producer;
+            return this;
+        }
+
+        @ApiModelProperty(value = "")
+        public String getProducer() {
+            return producer;
+        }
+
+        public void setProducer(String producer) {
+            this.producer = producer;
+        }
+
+        @SerializedName("PdfCompression")
+        private String pdfCompression ;
+
+        public  PdfSaveOptions  pdfCompression(String  pdfCompression) {
+            this.pdfCompression =  pdfCompression;
+            return this;
+        }
+
+        @ApiModelProperty(value = "")
+        public String getPdfCompression() {
+            return pdfCompression;
+        }
+
+        public void setPdfCompression(String pdfCompression) {
+            this.pdfCompression = pdfCompression;
+        }
+
+        @SerializedName("FontEncoding")
+        private String fontEncoding ;
+
+        public  PdfSaveOptions  fontEncoding(String  fontEncoding) {
+            this.fontEncoding =  fontEncoding;
+            return this;
+        }
+
+        @ApiModelProperty(value = "")
+        public String getFontEncoding() {
+            return fontEncoding;
+        }
+
+        public void setFontEncoding(String fontEncoding) {
+            this.fontEncoding = fontEncoding;
+        }
+
+        @SerializedName("Watermark")
+        private RenderingWatermark watermark ;
+
+        public  PdfSaveOptions  watermark(RenderingWatermark  watermark) {
+            this.watermark =  watermark;
+            return this;
+        }
+
+        @ApiModelProperty(value = "")
+        public RenderingWatermark getWatermark() {
+            return watermark;
+        }
+
+        public void setWatermark(RenderingWatermark watermark) {
+            this.watermark = watermark;
+        }
+
         @SerializedName("CalculateFormula")
         private Boolean calculateFormula ;
 
@@ -218,6 +371,15 @@ public class PdfSaveOptions  extends  SaveOptions {
 
             PdfSaveOptions pdfSaveOptions = (PdfSaveOptions) o;
             return
+                Objects.equals(this.displayDocTitle, pdfSaveOptions.displayDocTitle) &&
+                Objects.equals(this.exportDocumentStructure, pdfSaveOptions.exportDocumentStructure) &&
+                Objects.equals(this.emfRenderSetting, pdfSaveOptions.emfRenderSetting) &&
+                Objects.equals(this.customPropertiesExport, pdfSaveOptions.customPropertiesExport) &&
+                Objects.equals(this.optimizationType, pdfSaveOptions.optimizationType) &&
+                Objects.equals(this.producer, pdfSaveOptions.producer) &&
+                Objects.equals(this.pdfCompression, pdfSaveOptions.pdfCompression) &&
+                Objects.equals(this.fontEncoding, pdfSaveOptions.fontEncoding) &&
+                Objects.equals(this.watermark, pdfSaveOptions.watermark) &&
                 Objects.equals(this.calculateFormula, pdfSaveOptions.calculateFormula) &&
                 Objects.equals(this.checkFontCompatibility, pdfSaveOptions.checkFontCompatibility) &&
                 Objects.equals(this.compliance, pdfSaveOptions.compliance) &&
@@ -233,12 +395,21 @@ public class PdfSaveOptions  extends  SaveOptions {
 
       @Override
       public int hashCode() {
-        return Objects.hash(calculateFormula, checkFontCompatibility, compliance, defaultFont, onePagePerSheet, printingPageType, securityOptions, desiredPPI, jpegQuality, imageType, super.hashCode());
+        return Objects.hash(displayDocTitle, exportDocumentStructure, emfRenderSetting, customPropertiesExport, optimizationType, producer, pdfCompression, fontEncoding, watermark, calculateFormula, checkFontCompatibility, compliance, defaultFont, onePagePerSheet, printingPageType, securityOptions, desiredPPI, jpegQuality, imageType, super.hashCode());
       }
         @Override
         public String toString() {
             StringBuilder sb = new StringBuilder();
             sb.append("class PdfSaveOptions {\n");
+            sb.append("    displayDocTitle: ").append(toIndentedString(getDisplayDocTitle())).append("\n");
+            sb.append("    exportDocumentStructure: ").append(toIndentedString(getExportDocumentStructure())).append("\n");
+            sb.append("    emfRenderSetting: ").append(toIndentedString(getEmfRenderSetting())).append("\n");
+            sb.append("    customPropertiesExport: ").append(toIndentedString(getCustomPropertiesExport())).append("\n");
+            sb.append("    optimizationType: ").append(toIndentedString(getOptimizationType())).append("\n");
+            sb.append("    producer: ").append(toIndentedString(getProducer())).append("\n");
+            sb.append("    pdfCompression: ").append(toIndentedString(getPdfCompression())).append("\n");
+            sb.append("    fontEncoding: ").append(toIndentedString(getFontEncoding())).append("\n");
+            sb.append("    watermark: ").append(toIndentedString(getWatermark())).append("\n");
             sb.append("    calculateFormula: ").append(toIndentedString(getCalculateFormula())).append("\n");
             sb.append("    checkFontCompatibility: ").append(toIndentedString(getCheckFontCompatibility())).append("\n");
             sb.append("    compliance: ").append(toIndentedString(getCompliance())).append("\n");

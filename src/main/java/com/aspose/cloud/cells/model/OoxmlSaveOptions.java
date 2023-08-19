@@ -54,6 +54,74 @@ public class OoxmlSaveOptions  extends  SaveOptions {
             this.exportCellName = exportCellName;
         }
 
+        @SerializedName("UpdateZoom")
+        private Boolean updateZoom ;
+
+        public  OoxmlSaveOptions  updateZoom(Boolean  updateZoom) {
+            this.updateZoom =  updateZoom;
+            return this;
+        }
+
+        @ApiModelProperty(value = "")
+        public Boolean getUpdateZoom() {
+            return updateZoom;
+        }
+
+        public void setUpdateZoom(Boolean updateZoom) {
+            this.updateZoom = updateZoom;
+        }
+
+        @SerializedName("EnableZip64")
+        private Boolean enableZip64 ;
+
+        public  OoxmlSaveOptions  enableZip64(Boolean  enableZip64) {
+            this.enableZip64 =  enableZip64;
+            return this;
+        }
+
+        @ApiModelProperty(value = "")
+        public Boolean getEnableZip64() {
+            return enableZip64;
+        }
+
+        public void setEnableZip64(Boolean enableZip64) {
+            this.enableZip64 = enableZip64;
+        }
+
+        @SerializedName("EmbedOoxmlAsOleObject")
+        private Boolean embedOoxmlAsOleObject ;
+
+        public  OoxmlSaveOptions  embedOoxmlAsOleObject(Boolean  embedOoxmlAsOleObject) {
+            this.embedOoxmlAsOleObject =  embedOoxmlAsOleObject;
+            return this;
+        }
+
+        @ApiModelProperty(value = "")
+        public Boolean getEmbedOoxmlAsOleObject() {
+            return embedOoxmlAsOleObject;
+        }
+
+        public void setEmbedOoxmlAsOleObject(Boolean embedOoxmlAsOleObject) {
+            this.embedOoxmlAsOleObject = embedOoxmlAsOleObject;
+        }
+
+        @SerializedName("CompressionType")
+        private String compressionType ;
+
+        public  OoxmlSaveOptions  compressionType(String  compressionType) {
+            this.compressionType =  compressionType;
+            return this;
+        }
+
+        @ApiModelProperty(value = "")
+        public String getCompressionType() {
+            return compressionType;
+        }
+
+        public void setCompressionType(String compressionType) {
+            this.compressionType = compressionType;
+        }
+
         @Override
         public boolean equals(java.lang.Object o) {
             if (this == o) {
@@ -66,18 +134,26 @@ public class OoxmlSaveOptions  extends  SaveOptions {
             OoxmlSaveOptions ooxmlSaveOptions = (OoxmlSaveOptions) o;
             return
                 Objects.equals(this.exportCellName, ooxmlSaveOptions.exportCellName) &&
+                Objects.equals(this.updateZoom, ooxmlSaveOptions.updateZoom) &&
+                Objects.equals(this.enableZip64, ooxmlSaveOptions.enableZip64) &&
+                Objects.equals(this.embedOoxmlAsOleObject, ooxmlSaveOptions.embedOoxmlAsOleObject) &&
+                Objects.equals(this.compressionType, ooxmlSaveOptions.compressionType) &&
                 super.equals(o);
       }
 
       @Override
       public int hashCode() {
-        return Objects.hash(exportCellName, super.hashCode());
+        return Objects.hash(exportCellName, updateZoom, enableZip64, embedOoxmlAsOleObject, compressionType, super.hashCode());
       }
         @Override
         public String toString() {
             StringBuilder sb = new StringBuilder();
             sb.append("class OoxmlSaveOptions {\n");
             sb.append("    exportCellName: ").append(toIndentedString(getExportCellName())).append("\n");
+            sb.append("    updateZoom: ").append(toIndentedString(getUpdateZoom())).append("\n");
+            sb.append("    enableZip64: ").append(toIndentedString(getEnableZip64())).append("\n");
+            sb.append("    embedOoxmlAsOleObject: ").append(toIndentedString(getEmbedOoxmlAsOleObject())).append("\n");
+            sb.append("    compressionType: ").append(toIndentedString(getCompressionType())).append("\n");
             sb.append("    saveFormat: ").append(toIndentedString(getSaveFormat())).append("\n");
             sb.append("    cachedFileFolder: ").append(toIndentedString(getCachedFileFolder())).append("\n");
             sb.append("    clearData: ").append(toIndentedString(getClearData())).append("\n");

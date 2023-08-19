@@ -41,6 +41,7 @@ public class PostRepairRequest  implements IRequestModel {
     public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
         this.extendQueryParameterMap = extendQueryParameterMap;
     }
+
     private HashMap<String,File> file;
     private String format;
         public PostRepairRequest()
@@ -53,7 +54,7 @@ public class PostRepairRequest  implements IRequestModel {
         }   
 
         public HashMap<String,File> getFile() {
-            return file;
+            return this.file;
         }
 
         public void setFile(HashMap<String,File> file) {
@@ -62,7 +63,7 @@ public class PostRepairRequest  implements IRequestModel {
 
 
         public String getFormat() {
-            return format;
+            return this.format;
         }
 
         public void setFormat(String format) {
@@ -81,11 +82,11 @@ public class PostRepairRequest  implements IRequestModel {
             if (getFormat() != null){
                 localVarQueryParams.addAll(apiClient.parameterToPairs("", "format", getFormat()));
             }  
-            if(this.extendQueryParameterMap !=null){
-                for (String key :this.extendQueryParameterMap.keySet()) {
-                        localVarQueryParams.addAll(apiClient.parameterToPairs("", key, this.extendQueryParameterMap.get(key)));           
-                }
+        if(this.extendQueryParameterMap !=null){
+            for (String key :this.extendQueryParameterMap.keySet()) {
+                    localVarQueryParams.addAll(apiClient.parameterToPairs("", key, this.extendQueryParameterMap.get(key)));           
             }
+        }
                    
                 if (getFile() != null){
                     for (String key : getFile().keySet()) {
