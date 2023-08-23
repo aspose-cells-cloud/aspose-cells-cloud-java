@@ -148,7 +148,7 @@ public class FileControllerTest {
 
         request.setVersionId("");
 
-     this.api.deleteFile(request);
+        this.api.deleteFile(request);
     }
 
 
