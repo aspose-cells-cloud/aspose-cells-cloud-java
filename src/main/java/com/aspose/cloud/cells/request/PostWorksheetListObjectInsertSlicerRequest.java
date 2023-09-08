@@ -1,6 +1,6 @@
 /*
  * --------------------------------------------------------------------------------
- * <copyright company="Aspose" file="GetExtractBarcodesRequest.java">
+ * <copyright company="Aspose" file="PostWorksheetListObjectInsertSlicerRequest.java">
  *   Copyright (c) 2023 Aspose.Cells Cloud
  * </copyright>
  * <summary>
@@ -32,7 +32,7 @@ import java.io.*;
 import java.lang.reflect.Type;
 import java.util.*;
 
-public class GetExtractBarcodesRequest  implements IRequestModel {
+public class PostWorksheetListObjectInsertSlicerRequest  implements IRequestModel {
     private HashMap<String,String> extendQueryParameterMap;
     public HashMap<String,String> getExtendQueryParameterMap() {
         return this.extendQueryParameterMap;
@@ -44,17 +44,21 @@ public class GetExtractBarcodesRequest  implements IRequestModel {
 
     private String name;
     private String sheetName;
-    private Integer pictureIndex;
+    private Integer listObjectIndex;
+    private Integer columnIndex;
+    private String destCellName;
     private String folder;
     private String storageName;
-        public GetExtractBarcodesRequest()
+        public PostWorksheetListObjectInsertSlicerRequest()
         {
 
         }
-        public GetExtractBarcodesRequest(String name, String sheetName, Integer pictureIndex, String folder, String storageName) {
+        public PostWorksheetListObjectInsertSlicerRequest(String name, String sheetName, Integer listObjectIndex, Integer columnIndex, String destCellName, String folder, String storageName) {
             this.name = name;
             this.sheetName = sheetName;
-            this.pictureIndex = pictureIndex;
+            this.listObjectIndex = listObjectIndex;
+            this.columnIndex = columnIndex;
+            this.destCellName = destCellName;
             this.folder = folder;
             this.storageName = storageName;
         }   
@@ -77,12 +81,30 @@ public class GetExtractBarcodesRequest  implements IRequestModel {
         }
 
 
-        public Integer getPictureIndex() {
-            return this.pictureIndex;
+        public Integer getListObjectIndex() {
+            return this.listObjectIndex;
         }
 
-        public void setPictureIndex(Integer pictureIndex) {
-            this.pictureIndex = pictureIndex;
+        public void setListObjectIndex(Integer listObjectIndex) {
+            this.listObjectIndex = listObjectIndex;
+        }
+
+
+        public Integer getColumnIndex() {
+            return this.columnIndex;
+        }
+
+        public void setColumnIndex(Integer columnIndex) {
+            this.columnIndex = columnIndex;
+        }
+
+
+        public String getDestCellName() {
+            return this.destCellName;
+        }
+
+        public void setDestCellName(String destCellName) {
+            this.destCellName = destCellName;
         }
 
 
@@ -106,20 +128,32 @@ public class GetExtractBarcodesRequest  implements IRequestModel {
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
          if (getName() == null) {
-                    throw new ApiException("Missing the required parameter 'Name' when calling GetExtractBarcodes");
+                    throw new ApiException("Missing the required parameter 'Name' when calling PostWorksheetListObjectInsertSlicer");
                 } 
                 if (getSheetName() == null) {
-                    throw new ApiException("Missing the required parameter 'SheetName' when calling GetExtractBarcodes");
+                    throw new ApiException("Missing the required parameter 'SheetName' when calling PostWorksheetListObjectInsertSlicer");
                 } 
-                if (getPictureIndex() == null) {
-                    throw new ApiException("Missing the required parameter 'PictureIndex' when calling GetExtractBarcodes");
+                if (getListObjectIndex() == null) {
+                    throw new ApiException("Missing the required parameter 'ListObjectIndex' when calling PostWorksheetListObjectInsertSlicer");
+                } 
+                if (getColumnIndex() == null) {
+                    throw new ApiException("Missing the required parameter 'ColumnIndex' when calling PostWorksheetListObjectInsertSlicer");
+                } 
+                if (getDestCellName() == null) {
+                    throw new ApiException("Missing the required parameter 'DestCellName' when calling PostWorksheetListObjectInsertSlicer");
                 }       
-        String localVarPath = "/cells/{name}/worksheets/{sheetName}/pictures/{pictureIndex}/recognize".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
+        String localVarPath = "/cells/{name}/worksheets/{sheetName}/listobjects/{listObjectIndex}/InsertSlicer".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
     .replaceAll("\\{" + "sheetName" + "\\}", apiClient.escapeString(sheetName.toString())) 
-    .replaceAll("\\{" + "pictureIndex" + "\\}", apiClient.escapeString(pictureIndex.toString()))   ;
+    .replaceAll("\\{" + "listObjectIndex" + "\\}", apiClient.escapeString(listObjectIndex.toString()))   ;
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
+            if (getColumnIndex() != null){
+                localVarQueryParams.addAll(apiClient.parameterToPairs("", "columnIndex", getColumnIndex()));
+            } 
+            if (getDestCellName() != null){
+                localVarQueryParams.addAll(apiClient.parameterToPairs("", "destCellName", getDestCellName()));
+            } 
             if (getFolder() != null){
                 localVarQueryParams.addAll(apiClient.parameterToPairs("", "folder", getFolder()));
             } 
@@ -155,7 +189,7 @@ public class GetExtractBarcodesRequest  implements IRequestModel {
                 }
 
                 String[] localVarAuthNames = new String[] {  };
-                return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+                return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
 
     }
 

@@ -292,6 +292,108 @@ public class ListObject  extends  LinkElement {
             this.tableStyleType = tableStyleType;
         }
 
+        @SerializedName("DataRange")
+        private Range dataRange ;
+
+        public  ListObject  dataRange(Range  dataRange) {
+            this.dataRange =  dataRange;
+            return this;
+        }
+
+        @ApiModelProperty(value = "")
+        public Range getDataRange() {
+            return dataRange;
+        }
+
+        public void setDataRange(Range dataRange) {
+            this.dataRange = dataRange;
+        }
+
+        @SerializedName("DataSourceType")
+        private String dataSourceType ;
+
+        public  ListObject  dataSourceType(String  dataSourceType) {
+            this.dataSourceType =  dataSourceType;
+            return this;
+        }
+
+        @ApiModelProperty(value = "")
+        public String getDataSourceType() {
+            return dataSourceType;
+        }
+
+        public void setDataSourceType(String dataSourceType) {
+            this.dataSourceType = dataSourceType;
+        }
+
+        @SerializedName("Comment")
+        private String comment ;
+
+        public  ListObject  comment(String  comment) {
+            this.comment =  comment;
+            return this;
+        }
+
+        @ApiModelProperty(value = "")
+        public String getComment() {
+            return comment;
+        }
+
+        public void setComment(String comment) {
+            this.comment = comment;
+        }
+
+        @SerializedName("XmlMap")
+        private XmlMap xmlMap ;
+
+        public  ListObject  xmlMap(XmlMap  xmlMap) {
+            this.xmlMap =  xmlMap;
+            return this;
+        }
+
+        @ApiModelProperty(value = "")
+        public XmlMap getXmlMap() {
+            return xmlMap;
+        }
+
+        public void setXmlMap(XmlMap xmlMap) {
+            this.xmlMap = xmlMap;
+        }
+
+        @SerializedName("AlternativeText")
+        private String alternativeText ;
+
+        public  ListObject  alternativeText(String  alternativeText) {
+            this.alternativeText =  alternativeText;
+            return this;
+        }
+
+        @ApiModelProperty(value = "")
+        public String getAlternativeText() {
+            return alternativeText;
+        }
+
+        public void setAlternativeText(String alternativeText) {
+            this.alternativeText = alternativeText;
+        }
+
+        @SerializedName("AlternativeDescription")
+        private String alternativeDescription ;
+
+        public  ListObject  alternativeDescription(String  alternativeDescription) {
+            this.alternativeDescription =  alternativeDescription;
+            return this;
+        }
+
+        @ApiModelProperty(value = "")
+        public String getAlternativeDescription() {
+            return alternativeDescription;
+        }
+
+        public void setAlternativeDescription(String alternativeDescription) {
+            this.alternativeDescription = alternativeDescription;
+        }
+
         @Override
         public boolean equals(java.lang.Object o) {
             if (this == o) {
@@ -318,12 +420,18 @@ public class ListObject  extends  LinkElement {
                 Objects.equals(this.showTotals, listObject.showTotals) &&
                 Objects.equals(this.tableStyleName, listObject.tableStyleName) &&
                 Objects.equals(this.tableStyleType, listObject.tableStyleType) &&
+                Objects.equals(this.dataRange, listObject.dataRange) &&
+                Objects.equals(this.dataSourceType, listObject.dataSourceType) &&
+                Objects.equals(this.comment, listObject.comment) &&
+                Objects.equals(this.xmlMap, listObject.xmlMap) &&
+                Objects.equals(this.alternativeText, listObject.alternativeText) &&
+                Objects.equals(this.alternativeDescription, listObject.alternativeDescription) &&
                 super.equals(o);
       }
 
       @Override
       public int hashCode() {
-        return Objects.hash(autoFilter, displayName, startColumn, startRow, endColumn, endRow, listColumns, showHeaderRow, showTableStyleColumnStripes, showTableStyleFirstColumn, showTableStyleLastColumn, showTableStyleRowStripes, showTotals, tableStyleName, tableStyleType, super.hashCode());
+        return Objects.hash(autoFilter, displayName, startColumn, startRow, endColumn, endRow, listColumns, showHeaderRow, showTableStyleColumnStripes, showTableStyleFirstColumn, showTableStyleLastColumn, showTableStyleRowStripes, showTotals, tableStyleName, tableStyleType, dataRange, dataSourceType, comment, xmlMap, alternativeText, alternativeDescription, super.hashCode());
       }
         @Override
         public String toString() {
@@ -344,6 +452,12 @@ public class ListObject  extends  LinkElement {
             sb.append("    showTotals: ").append(toIndentedString(getShowTotals())).append("\n");
             sb.append("    tableStyleName: ").append(toIndentedString(getTableStyleName())).append("\n");
             sb.append("    tableStyleType: ").append(toIndentedString(getTableStyleType())).append("\n");
+            sb.append("    dataRange: ").append(toIndentedString(getDataRange())).append("\n");
+            sb.append("    dataSourceType: ").append(toIndentedString(getDataSourceType())).append("\n");
+            sb.append("    comment: ").append(toIndentedString(getComment())).append("\n");
+            sb.append("    xmlMap: ").append(toIndentedString(getXmlMap())).append("\n");
+            sb.append("    alternativeText: ").append(toIndentedString(getAlternativeText())).append("\n");
+            sb.append("    alternativeDescription: ").append(toIndentedString(getAlternativeDescription())).append("\n");
             sb.append("    link: ").append(toIndentedString(getLink())).append("\n");
             sb.append("}");
             return sb.toString();

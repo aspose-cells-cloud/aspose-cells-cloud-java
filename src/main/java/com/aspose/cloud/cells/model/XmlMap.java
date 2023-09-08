@@ -1,6 +1,6 @@
 /*
  * --------------------------------------------------------------------------------
- * <copyright company="Aspose" file="ListColumn.java">
+ * <copyright company="Aspose" file="XmlMap.java">
  *   Copyright (c) 2023 Aspose.Cells Cloud
  * </copyright>
  * <summary>
@@ -36,11 +36,11 @@ import com.google.gson.annotations.SerializedName;
 import java.time.OffsetDateTime;
 
 
-public class ListColumn {
+public class XmlMap {
         @SerializedName("Name")
         private String name ;
 
-        public  ListColumn  name(String  name) {
+        public  XmlMap  name(String  name) {
             this.name =  name;
             return this;
         }
@@ -54,72 +54,38 @@ public class ListColumn {
             this.name = name;
         }
 
-        @SerializedName("Range")
-        private Range range ;
+        @SerializedName("RootElementName")
+        private String rootElementName ;
 
-        public  ListColumn  range(Range  range) {
-            this.range =  range;
+        public  XmlMap  rootElementName(String  rootElementName) {
+            this.rootElementName =  rootElementName;
             return this;
         }
 
         @ApiModelProperty(value = "")
-        public Range getRange() {
-            return range;
+        public String getRootElementName() {
+            return rootElementName;
         }
 
-        public void setRange(Range range) {
-            this.range = range;
+        public void setRootElementName(String rootElementName) {
+            this.rootElementName = rootElementName;
         }
 
-        @SerializedName("TotalsCalculation")
-        private String totalsCalculation ;
+        @SerializedName("DataBinding")
+        private XmlDataBinding dataBinding ;
 
-        public  ListColumn  totalsCalculation(String  totalsCalculation) {
-            this.totalsCalculation =  totalsCalculation;
+        public  XmlMap  dataBinding(XmlDataBinding  dataBinding) {
+            this.dataBinding =  dataBinding;
             return this;
         }
 
         @ApiModelProperty(value = "")
-        public String getTotalsCalculation() {
-            return totalsCalculation;
+        public XmlDataBinding getDataBinding() {
+            return dataBinding;
         }
 
-        public void setTotalsCalculation(String totalsCalculation) {
-            this.totalsCalculation = totalsCalculation;
-        }
-
-        @SerializedName("Formula")
-        private String formula ;
-
-        public  ListColumn  formula(String  formula) {
-            this.formula =  formula;
-            return this;
-        }
-
-        @ApiModelProperty(value = "")
-        public String getFormula() {
-            return formula;
-        }
-
-        public void setFormula(String formula) {
-            this.formula = formula;
-        }
-
-        @SerializedName("TotalsRowLabel")
-        private String totalsRowLabel ;
-
-        public  ListColumn  totalsRowLabel(String  totalsRowLabel) {
-            this.totalsRowLabel =  totalsRowLabel;
-            return this;
-        }
-
-        @ApiModelProperty(value = "")
-        public String getTotalsRowLabel() {
-            return totalsRowLabel;
-        }
-
-        public void setTotalsRowLabel(String totalsRowLabel) {
-            this.totalsRowLabel = totalsRowLabel;
+        public void setDataBinding(XmlDataBinding dataBinding) {
+            this.dataBinding = dataBinding;
         }
 
         @Override
@@ -131,28 +97,24 @@ public class ListColumn {
                 return false;
             }
 
-            ListColumn listColumn = (ListColumn) o;
+            XmlMap xmlMap = (XmlMap) o;
             return
-                Objects.equals(this.name, listColumn.name) &&
-                Objects.equals(this.range, listColumn.range) &&
-                Objects.equals(this.totalsCalculation, listColumn.totalsCalculation) &&
-                Objects.equals(this.formula, listColumn.formula) &&
-                Objects.equals(this.totalsRowLabel, listColumn.totalsRowLabel);
+                Objects.equals(this.name, xmlMap.name) &&
+                Objects.equals(this.rootElementName, xmlMap.rootElementName) &&
+                Objects.equals(this.dataBinding, xmlMap.dataBinding);
       }
 
       @Override
       public int hashCode() {
-        return Objects.hash(name, range, totalsCalculation, formula, totalsRowLabel);
+        return Objects.hash(name, rootElementName, dataBinding);
       }
         @Override
         public String toString() {
             StringBuilder sb = new StringBuilder();
-            sb.append("class ListColumn {\n");
+            sb.append("class XmlMap {\n");
             sb.append("    name: ").append(toIndentedString(getName())).append("\n");
-            sb.append("    range: ").append(toIndentedString(getRange())).append("\n");
-            sb.append("    totalsCalculation: ").append(toIndentedString(getTotalsCalculation())).append("\n");
-            sb.append("    formula: ").append(toIndentedString(getFormula())).append("\n");
-            sb.append("    totalsRowLabel: ").append(toIndentedString(getTotalsRowLabel())).append("\n");
+            sb.append("    rootElementName: ").append(toIndentedString(getRootElementName())).append("\n");
+            sb.append("    dataBinding: ").append(toIndentedString(getDataBinding())).append("\n");
             sb.append("}");
             return sb.toString();
         }

@@ -1,6 +1,6 @@
 /*
  * --------------------------------------------------------------------------------
- * <copyright company="Aspose" file="ListColumn.java">
+ * <copyright company="Aspose" file="QueryTable.java">
  *   Copyright (c) 2023 Aspose.Cells Cloud
  * </copyright>
  * <summary>
@@ -36,11 +36,28 @@ import com.google.gson.annotations.SerializedName;
 import java.time.OffsetDateTime;
 
 
-public class ListColumn {
+public class QueryTable {
+        @SerializedName("ConnectionId")
+        private Integer connectionId ;
+
+        public  QueryTable  connectionId(Integer  connectionId) {
+            this.connectionId =  connectionId;
+            return this;
+        }
+
+        @ApiModelProperty(value = "")
+        public Integer getConnectionId() {
+            return connectionId;
+        }
+
+        public void setConnectionId(Integer connectionId) {
+            this.connectionId = connectionId;
+        }
+
         @SerializedName("Name")
         private String name ;
 
-        public  ListColumn  name(String  name) {
+        public  QueryTable  name(String  name) {
             this.name =  name;
             return this;
         }
@@ -54,72 +71,55 @@ public class ListColumn {
             this.name = name;
         }
 
-        @SerializedName("Range")
-        private Range range ;
+        @SerializedName("ResultRange")
+        private Range resultRange ;
 
-        public  ListColumn  range(Range  range) {
-            this.range =  range;
+        public  QueryTable  resultRange(Range  resultRange) {
+            this.resultRange =  resultRange;
             return this;
         }
 
         @ApiModelProperty(value = "")
-        public Range getRange() {
-            return range;
+        public Range getResultRange() {
+            return resultRange;
         }
 
-        public void setRange(Range range) {
-            this.range = range;
+        public void setResultRange(Range resultRange) {
+            this.resultRange = resultRange;
         }
 
-        @SerializedName("TotalsCalculation")
-        private String totalsCalculation ;
+        @SerializedName("PreserveFormatting")
+        private Boolean preserveFormatting ;
 
-        public  ListColumn  totalsCalculation(String  totalsCalculation) {
-            this.totalsCalculation =  totalsCalculation;
+        public  QueryTable  preserveFormatting(Boolean  preserveFormatting) {
+            this.preserveFormatting =  preserveFormatting;
             return this;
         }
 
         @ApiModelProperty(value = "")
-        public String getTotalsCalculation() {
-            return totalsCalculation;
+        public Boolean getPreserveFormatting() {
+            return preserveFormatting;
         }
 
-        public void setTotalsCalculation(String totalsCalculation) {
-            this.totalsCalculation = totalsCalculation;
+        public void setPreserveFormatting(Boolean preserveFormatting) {
+            this.preserveFormatting = preserveFormatting;
         }
 
-        @SerializedName("Formula")
-        private String formula ;
+        @SerializedName("AdjustColumnWidth")
+        private Boolean adjustColumnWidth ;
 
-        public  ListColumn  formula(String  formula) {
-            this.formula =  formula;
+        public  QueryTable  adjustColumnWidth(Boolean  adjustColumnWidth) {
+            this.adjustColumnWidth =  adjustColumnWidth;
             return this;
         }
 
         @ApiModelProperty(value = "")
-        public String getFormula() {
-            return formula;
+        public Boolean getAdjustColumnWidth() {
+            return adjustColumnWidth;
         }
 
-        public void setFormula(String formula) {
-            this.formula = formula;
-        }
-
-        @SerializedName("TotalsRowLabel")
-        private String totalsRowLabel ;
-
-        public  ListColumn  totalsRowLabel(String  totalsRowLabel) {
-            this.totalsRowLabel =  totalsRowLabel;
-            return this;
-        }
-
-        @ApiModelProperty(value = "")
-        public String getTotalsRowLabel() {
-            return totalsRowLabel;
-        }
-
-        public void setTotalsRowLabel(String totalsRowLabel) {
-            this.totalsRowLabel = totalsRowLabel;
+        public void setAdjustColumnWidth(Boolean adjustColumnWidth) {
+            this.adjustColumnWidth = adjustColumnWidth;
         }
 
         @Override
@@ -131,28 +131,28 @@ public class ListColumn {
                 return false;
             }
 
-            ListColumn listColumn = (ListColumn) o;
+            QueryTable queryTable = (QueryTable) o;
             return
-                Objects.equals(this.name, listColumn.name) &&
-                Objects.equals(this.range, listColumn.range) &&
-                Objects.equals(this.totalsCalculation, listColumn.totalsCalculation) &&
-                Objects.equals(this.formula, listColumn.formula) &&
-                Objects.equals(this.totalsRowLabel, listColumn.totalsRowLabel);
+                Objects.equals(this.connectionId, queryTable.connectionId) &&
+                Objects.equals(this.name, queryTable.name) &&
+                Objects.equals(this.resultRange, queryTable.resultRange) &&
+                Objects.equals(this.preserveFormatting, queryTable.preserveFormatting) &&
+                Objects.equals(this.adjustColumnWidth, queryTable.adjustColumnWidth);
       }
 
       @Override
       public int hashCode() {
-        return Objects.hash(name, range, totalsCalculation, formula, totalsRowLabel);
+        return Objects.hash(connectionId, name, resultRange, preserveFormatting, adjustColumnWidth);
       }
         @Override
         public String toString() {
             StringBuilder sb = new StringBuilder();
-            sb.append("class ListColumn {\n");
+            sb.append("class QueryTable {\n");
+            sb.append("    connectionId: ").append(toIndentedString(getConnectionId())).append("\n");
             sb.append("    name: ").append(toIndentedString(getName())).append("\n");
-            sb.append("    range: ").append(toIndentedString(getRange())).append("\n");
-            sb.append("    totalsCalculation: ").append(toIndentedString(getTotalsCalculation())).append("\n");
-            sb.append("    formula: ").append(toIndentedString(getFormula())).append("\n");
-            sb.append("    totalsRowLabel: ").append(toIndentedString(getTotalsRowLabel())).append("\n");
+            sb.append("    resultRange: ").append(toIndentedString(getResultRange())).append("\n");
+            sb.append("    preserveFormatting: ").append(toIndentedString(getPreserveFormatting())).append("\n");
+            sb.append("    adjustColumnWidth: ").append(toIndentedString(getAdjustColumnWidth())).append("\n");
             sb.append("}");
             return sb.toString();
         }

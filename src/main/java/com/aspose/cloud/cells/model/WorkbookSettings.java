@@ -802,6 +802,312 @@ public class WorkbookSettings {
             this.windowWidth = windowWidth;
         }
 
+        @SerializedName("Author")
+        private String author ;
+
+        public  WorkbookSettings  author(String  author) {
+            this.author =  author;
+            return this;
+        }
+
+        @ApiModelProperty(value = "")
+        public String getAuthor() {
+            return author;
+        }
+
+        public void setAuthor(String author) {
+            this.author = author;
+        }
+
+        @SerializedName("CheckCustomNumberFormat")
+        private Boolean checkCustomNumberFormat ;
+
+        public  WorkbookSettings  checkCustomNumberFormat(Boolean  checkCustomNumberFormat) {
+            this.checkCustomNumberFormat =  checkCustomNumberFormat;
+            return this;
+        }
+
+        @ApiModelProperty(value = "")
+        public Boolean getCheckCustomNumberFormat() {
+            return checkCustomNumberFormat;
+        }
+
+        public void setCheckCustomNumberFormat(Boolean checkCustomNumberFormat) {
+            this.checkCustomNumberFormat = checkCustomNumberFormat;
+        }
+
+        @SerializedName("ProtectionType")
+        private String protectionType ;
+
+        public  WorkbookSettings  protectionType(String  protectionType) {
+            this.protectionType =  protectionType;
+            return this;
+        }
+
+        @ApiModelProperty(value = "")
+        public String getProtectionType() {
+            return protectionType;
+        }
+
+        public void setProtectionType(String protectionType) {
+            this.protectionType = protectionType;
+        }
+
+        @SerializedName("GlobalizationSettings")
+        private GlobalizationSettings globalizationSettings ;
+
+        public  WorkbookSettings  globalizationSettings(GlobalizationSettings  globalizationSettings) {
+            this.globalizationSettings =  globalizationSettings;
+            return this;
+        }
+
+        @ApiModelProperty(value = "")
+        public GlobalizationSettings getGlobalizationSettings() {
+            return globalizationSettings;
+        }
+
+        public void setGlobalizationSettings(GlobalizationSettings globalizationSettings) {
+            this.globalizationSettings = globalizationSettings;
+        }
+
+        @SerializedName("Password")
+        private String password ;
+
+        public  WorkbookSettings  password(String  password) {
+            this.password =  password;
+            return this;
+        }
+
+        @ApiModelProperty(value = "")
+        public String getPassword() {
+            return password;
+        }
+
+        public void setPassword(String password) {
+            this.password = password;
+        }
+
+        @SerializedName("WriteProtection")
+        private WriteProtection writeProtection ;
+
+        public  WorkbookSettings  writeProtection(WriteProtection  writeProtection) {
+            this.writeProtection =  writeProtection;
+            return this;
+        }
+
+        @ApiModelProperty(value = "")
+        public WriteProtection getWriteProtection() {
+            return writeProtection;
+        }
+
+        public void setWriteProtection(WriteProtection writeProtection) {
+            this.writeProtection = writeProtection;
+        }
+
+        @SerializedName("IsEncrypted")
+        private Boolean isEncrypted ;
+
+        public  WorkbookSettings  isEncrypted(Boolean  isEncrypted) {
+            this.isEncrypted =  isEncrypted;
+            return this;
+        }
+
+        @ApiModelProperty(value = "")
+        public Boolean getIsEncrypted() {
+            return isEncrypted;
+        }
+
+        public void setIsEncrypted(Boolean isEncrypted) {
+            this.isEncrypted = isEncrypted;
+        }
+
+        @SerializedName("IsProtected")
+        private Boolean isProtected ;
+
+        public  WorkbookSettings  isProtected(Boolean  isProtected) {
+            this.isProtected =  isProtected;
+            return this;
+        }
+
+        @ApiModelProperty(value = "")
+        public Boolean getIsProtected() {
+            return isProtected;
+        }
+
+        public void setIsProtected(Boolean isProtected) {
+            this.isProtected = isProtected;
+        }
+
+        @SerializedName("MaxRow")
+        private Integer maxRow ;
+
+        public  WorkbookSettings  maxRow(Integer  maxRow) {
+            this.maxRow =  maxRow;
+            return this;
+        }
+
+        @ApiModelProperty(value = "")
+        public Integer getMaxRow() {
+            return maxRow;
+        }
+
+        public void setMaxRow(Integer maxRow) {
+            this.maxRow = maxRow;
+        }
+
+        @SerializedName("MaxColumn")
+        private Integer maxColumn ;
+
+        public  WorkbookSettings  maxColumn(Integer  maxColumn) {
+            this.maxColumn =  maxColumn;
+            return this;
+        }
+
+        @ApiModelProperty(value = "")
+        public Integer getMaxColumn() {
+            return maxColumn;
+        }
+
+        public void setMaxColumn(Integer maxColumn) {
+            this.maxColumn = maxColumn;
+        }
+
+        @SerializedName("SignificantDigits")
+        private Integer significantDigits ;
+
+        public  WorkbookSettings  significantDigits(Integer  significantDigits) {
+            this.significantDigits =  significantDigits;
+            return this;
+        }
+
+        @ApiModelProperty(value = "")
+        public Integer getSignificantDigits() {
+            return significantDigits;
+        }
+
+        public void setSignificantDigits(Integer significantDigits) {
+            this.significantDigits = significantDigits;
+        }
+
+        @SerializedName("CheckCompatibility")
+        private Boolean checkCompatibility ;
+
+        public  WorkbookSettings  checkCompatibility(Boolean  checkCompatibility) {
+            this.checkCompatibility =  checkCompatibility;
+            return this;
+        }
+
+        @ApiModelProperty(value = "")
+        public Boolean getCheckCompatibility() {
+            return checkCompatibility;
+        }
+
+        public void setCheckCompatibility(Boolean checkCompatibility) {
+            this.checkCompatibility = checkCompatibility;
+        }
+
+        @SerializedName("PaperSize")
+        private String paperSize ;
+
+        public  WorkbookSettings  paperSize(String  paperSize) {
+            this.paperSize =  paperSize;
+            return this;
+        }
+
+        @ApiModelProperty(value = "")
+        public String getPaperSize() {
+            return paperSize;
+        }
+
+        public void setPaperSize(String paperSize) {
+            this.paperSize = paperSize;
+        }
+
+        @SerializedName("MaxRowsOfSharedFormula")
+        private Integer maxRowsOfSharedFormula ;
+
+        public  WorkbookSettings  maxRowsOfSharedFormula(Integer  maxRowsOfSharedFormula) {
+            this.maxRowsOfSharedFormula =  maxRowsOfSharedFormula;
+            return this;
+        }
+
+        @ApiModelProperty(value = "")
+        public Integer getMaxRowsOfSharedFormula() {
+            return maxRowsOfSharedFormula;
+        }
+
+        public void setMaxRowsOfSharedFormula(Integer maxRowsOfSharedFormula) {
+            this.maxRowsOfSharedFormula = maxRowsOfSharedFormula;
+        }
+
+        @SerializedName("Compliance")
+        private String compliance ;
+
+        public  WorkbookSettings  compliance(String  compliance) {
+            this.compliance =  compliance;
+            return this;
+        }
+
+        @ApiModelProperty(value = "")
+        public String getCompliance() {
+            return compliance;
+        }
+
+        public void setCompliance(String compliance) {
+            this.compliance = compliance;
+        }
+
+        @SerializedName("QuotePrefixToStyle")
+        private Boolean quotePrefixToStyle ;
+
+        public  WorkbookSettings  quotePrefixToStyle(Boolean  quotePrefixToStyle) {
+            this.quotePrefixToStyle =  quotePrefixToStyle;
+            return this;
+        }
+
+        @ApiModelProperty(value = "")
+        public Boolean getQuotePrefixToStyle() {
+            return quotePrefixToStyle;
+        }
+
+        public void setQuotePrefixToStyle(Boolean quotePrefixToStyle) {
+            this.quotePrefixToStyle = quotePrefixToStyle;
+        }
+
+        @SerializedName("FormulaSettings")
+        private FormulaSettings formulaSettings ;
+
+        public  WorkbookSettings  formulaSettings(FormulaSettings  formulaSettings) {
+            this.formulaSettings =  formulaSettings;
+            return this;
+        }
+
+        @ApiModelProperty(value = "")
+        public FormulaSettings getFormulaSettings() {
+            return formulaSettings;
+        }
+
+        public void setFormulaSettings(FormulaSettings formulaSettings) {
+            this.formulaSettings = formulaSettings;
+        }
+
+        @SerializedName("ForceFullCalculate")
+        private Boolean forceFullCalculate ;
+
+        public  WorkbookSettings  forceFullCalculate(Boolean  forceFullCalculate) {
+            this.forceFullCalculate =  forceFullCalculate;
+            return this;
+        }
+
+        @ApiModelProperty(value = "")
+        public Boolean getForceFullCalculate() {
+            return forceFullCalculate;
+        }
+
+        public void setForceFullCalculate(Boolean forceFullCalculate) {
+            this.forceFullCalculate = forceFullCalculate;
+        }
+
         @Override
         public boolean equals(java.lang.Object o) {
             if (this == o) {
@@ -857,12 +1163,30 @@ public class WorkbookSettings {
                 Objects.equals(this.windowHeight, workbookSettings.windowHeight) &&
                 Objects.equals(this.windowLeft, workbookSettings.windowLeft) &&
                 Objects.equals(this.windowTop, workbookSettings.windowTop) &&
-                Objects.equals(this.windowWidth, workbookSettings.windowWidth);
+                Objects.equals(this.windowWidth, workbookSettings.windowWidth) &&
+                Objects.equals(this.author, workbookSettings.author) &&
+                Objects.equals(this.checkCustomNumberFormat, workbookSettings.checkCustomNumberFormat) &&
+                Objects.equals(this.protectionType, workbookSettings.protectionType) &&
+                Objects.equals(this.globalizationSettings, workbookSettings.globalizationSettings) &&
+                Objects.equals(this.password, workbookSettings.password) &&
+                Objects.equals(this.writeProtection, workbookSettings.writeProtection) &&
+                Objects.equals(this.isEncrypted, workbookSettings.isEncrypted) &&
+                Objects.equals(this.isProtected, workbookSettings.isProtected) &&
+                Objects.equals(this.maxRow, workbookSettings.maxRow) &&
+                Objects.equals(this.maxColumn, workbookSettings.maxColumn) &&
+                Objects.equals(this.significantDigits, workbookSettings.significantDigits) &&
+                Objects.equals(this.checkCompatibility, workbookSettings.checkCompatibility) &&
+                Objects.equals(this.paperSize, workbookSettings.paperSize) &&
+                Objects.equals(this.maxRowsOfSharedFormula, workbookSettings.maxRowsOfSharedFormula) &&
+                Objects.equals(this.compliance, workbookSettings.compliance) &&
+                Objects.equals(this.quotePrefixToStyle, workbookSettings.quotePrefixToStyle) &&
+                Objects.equals(this.formulaSettings, workbookSettings.formulaSettings) &&
+                Objects.equals(this.forceFullCalculate, workbookSettings.forceFullCalculate);
       }
 
       @Override
       public int hashCode() {
-        return Objects.hash(autoCompressPictures, autoRecover, buildVersion, calcMode, calcStackSize, calculationId, checkComptiliblity, checkExcelRestriction, crashSave, createCalcChain, dataExtractLoad, date1904, displayDrawingObjects, enableMacros, firstVisibleTab, hidePivotFieldList, isDefaultEncrypted, isHidden, isHScrollBarVisible, isMinimized, isVScrollBarVisible, iteration, languageCode, maxChange, maxIteration, memorySetting, numberDecimalSeparator, numberGroupSeparator, parsingFormulaOnOpen, precisionAsDisplayed, recalculateBeforeSave, reCalculateOnOpen, recommendReadOnly, region, removePersonalInformation, repairLoad, shared, sheetTabBarWidth, showTabs, updateAdjacentCellsBorder, updateLinksType, windowHeight, windowLeft, windowTop, windowWidth);
+        return Objects.hash(autoCompressPictures, autoRecover, buildVersion, calcMode, calcStackSize, calculationId, checkComptiliblity, checkExcelRestriction, crashSave, createCalcChain, dataExtractLoad, date1904, displayDrawingObjects, enableMacros, firstVisibleTab, hidePivotFieldList, isDefaultEncrypted, isHidden, isHScrollBarVisible, isMinimized, isVScrollBarVisible, iteration, languageCode, maxChange, maxIteration, memorySetting, numberDecimalSeparator, numberGroupSeparator, parsingFormulaOnOpen, precisionAsDisplayed, recalculateBeforeSave, reCalculateOnOpen, recommendReadOnly, region, removePersonalInformation, repairLoad, shared, sheetTabBarWidth, showTabs, updateAdjacentCellsBorder, updateLinksType, windowHeight, windowLeft, windowTop, windowWidth, author, checkCustomNumberFormat, protectionType, globalizationSettings, password, writeProtection, isEncrypted, isProtected, maxRow, maxColumn, significantDigits, checkCompatibility, paperSize, maxRowsOfSharedFormula, compliance, quotePrefixToStyle, formulaSettings, forceFullCalculate);
       }
         @Override
         public String toString() {
@@ -913,6 +1237,24 @@ public class WorkbookSettings {
             sb.append("    windowLeft: ").append(toIndentedString(getWindowLeft())).append("\n");
             sb.append("    windowTop: ").append(toIndentedString(getWindowTop())).append("\n");
             sb.append("    windowWidth: ").append(toIndentedString(getWindowWidth())).append("\n");
+            sb.append("    author: ").append(toIndentedString(getAuthor())).append("\n");
+            sb.append("    checkCustomNumberFormat: ").append(toIndentedString(getCheckCustomNumberFormat())).append("\n");
+            sb.append("    protectionType: ").append(toIndentedString(getProtectionType())).append("\n");
+            sb.append("    globalizationSettings: ").append(toIndentedString(getGlobalizationSettings())).append("\n");
+            sb.append("    password: ").append(toIndentedString(getPassword())).append("\n");
+            sb.append("    writeProtection: ").append(toIndentedString(getWriteProtection())).append("\n");
+            sb.append("    isEncrypted: ").append(toIndentedString(getIsEncrypted())).append("\n");
+            sb.append("    isProtected: ").append(toIndentedString(getIsProtected())).append("\n");
+            sb.append("    maxRow: ").append(toIndentedString(getMaxRow())).append("\n");
+            sb.append("    maxColumn: ").append(toIndentedString(getMaxColumn())).append("\n");
+            sb.append("    significantDigits: ").append(toIndentedString(getSignificantDigits())).append("\n");
+            sb.append("    checkCompatibility: ").append(toIndentedString(getCheckCompatibility())).append("\n");
+            sb.append("    paperSize: ").append(toIndentedString(getPaperSize())).append("\n");
+            sb.append("    maxRowsOfSharedFormula: ").append(toIndentedString(getMaxRowsOfSharedFormula())).append("\n");
+            sb.append("    compliance: ").append(toIndentedString(getCompliance())).append("\n");
+            sb.append("    quotePrefixToStyle: ").append(toIndentedString(getQuotePrefixToStyle())).append("\n");
+            sb.append("    formulaSettings: ").append(toIndentedString(getFormulaSettings())).append("\n");
+            sb.append("    forceFullCalculate: ").append(toIndentedString(getForceFullCalculate())).append("\n");
             sb.append("}");
             return sb.toString();
         }

@@ -105,6 +105,91 @@ public class AutoFitterOptions {
             this.onlyAuto = onlyAuto;
         }
 
+        @SerializedName("DefaultEditLanguage")
+        private String defaultEditLanguage ;
+
+        public  AutoFitterOptions  defaultEditLanguage(String  defaultEditLanguage) {
+            this.defaultEditLanguage =  defaultEditLanguage;
+            return this;
+        }
+
+        @ApiModelProperty(value = "")
+        public String getDefaultEditLanguage() {
+            return defaultEditLanguage;
+        }
+
+        public void setDefaultEditLanguage(String defaultEditLanguage) {
+            this.defaultEditLanguage = defaultEditLanguage;
+        }
+
+        @SerializedName("MaxRowHeight")
+        private Double maxRowHeight ;
+
+        public  AutoFitterOptions  maxRowHeight(Double  maxRowHeight) {
+            this.maxRowHeight =  maxRowHeight;
+            return this;
+        }
+
+        @ApiModelProperty(value = "")
+        public Double getMaxRowHeight() {
+            return maxRowHeight;
+        }
+
+        public void setMaxRowHeight(Double maxRowHeight) {
+            this.maxRowHeight = maxRowHeight;
+        }
+
+        @SerializedName("AutoFitWrappedTextType")
+        private String autoFitWrappedTextType ;
+
+        public  AutoFitterOptions  autoFitWrappedTextType(String  autoFitWrappedTextType) {
+            this.autoFitWrappedTextType =  autoFitWrappedTextType;
+            return this;
+        }
+
+        @ApiModelProperty(value = "")
+        public String getAutoFitWrappedTextType() {
+            return autoFitWrappedTextType;
+        }
+
+        public void setAutoFitWrappedTextType(String autoFitWrappedTextType) {
+            this.autoFitWrappedTextType = autoFitWrappedTextType;
+        }
+
+        @SerializedName("FormatStrategy")
+        private String formatStrategy ;
+
+        public  AutoFitterOptions  formatStrategy(String  formatStrategy) {
+            this.formatStrategy =  formatStrategy;
+            return this;
+        }
+
+        @ApiModelProperty(value = "")
+        public String getFormatStrategy() {
+            return formatStrategy;
+        }
+
+        public void setFormatStrategy(String formatStrategy) {
+            this.formatStrategy = formatStrategy;
+        }
+
+        @SerializedName("ForRendering")
+        private Boolean forRendering ;
+
+        public  AutoFitterOptions  forRendering(Boolean  forRendering) {
+            this.forRendering =  forRendering;
+            return this;
+        }
+
+        @ApiModelProperty(value = "")
+        public Boolean getForRendering() {
+            return forRendering;
+        }
+
+        public void setForRendering(Boolean forRendering) {
+            this.forRendering = forRendering;
+        }
+
         @Override
         public boolean equals(java.lang.Object o) {
             if (this == o) {
@@ -119,12 +204,17 @@ public class AutoFitterOptions {
                 Objects.equals(this.autoFitMergedCellsType, autoFitterOptions.autoFitMergedCellsType) &&
                 Objects.equals(this.autoFitMergedCells, autoFitterOptions.autoFitMergedCells) &&
                 Objects.equals(this.ignoreHidden, autoFitterOptions.ignoreHidden) &&
-                Objects.equals(this.onlyAuto, autoFitterOptions.onlyAuto);
+                Objects.equals(this.onlyAuto, autoFitterOptions.onlyAuto) &&
+                Objects.equals(this.defaultEditLanguage, autoFitterOptions.defaultEditLanguage) &&
+                Objects.equals(this.maxRowHeight, autoFitterOptions.maxRowHeight) &&
+                Objects.equals(this.autoFitWrappedTextType, autoFitterOptions.autoFitWrappedTextType) &&
+                Objects.equals(this.formatStrategy, autoFitterOptions.formatStrategy) &&
+                Objects.equals(this.forRendering, autoFitterOptions.forRendering);
       }
 
       @Override
       public int hashCode() {
-        return Objects.hash(autoFitMergedCellsType, autoFitMergedCells, ignoreHidden, onlyAuto);
+        return Objects.hash(autoFitMergedCellsType, autoFitMergedCells, ignoreHidden, onlyAuto, defaultEditLanguage, maxRowHeight, autoFitWrappedTextType, formatStrategy, forRendering);
       }
         @Override
         public String toString() {
@@ -134,6 +224,11 @@ public class AutoFitterOptions {
             sb.append("    autoFitMergedCells: ").append(toIndentedString(getAutoFitMergedCells())).append("\n");
             sb.append("    ignoreHidden: ").append(toIndentedString(getIgnoreHidden())).append("\n");
             sb.append("    onlyAuto: ").append(toIndentedString(getOnlyAuto())).append("\n");
+            sb.append("    defaultEditLanguage: ").append(toIndentedString(getDefaultEditLanguage())).append("\n");
+            sb.append("    maxRowHeight: ").append(toIndentedString(getMaxRowHeight())).append("\n");
+            sb.append("    autoFitWrappedTextType: ").append(toIndentedString(getAutoFitWrappedTextType())).append("\n");
+            sb.append("    formatStrategy: ").append(toIndentedString(getFormatStrategy())).append("\n");
+            sb.append("    forRendering: ").append(toIndentedString(getForRendering())).append("\n");
             sb.append("}");
             return sb.toString();
         }

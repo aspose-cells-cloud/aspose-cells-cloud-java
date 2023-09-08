@@ -105,6 +105,57 @@ public class CalculationOptions {
             this.recursive = recursive;
         }
 
+        @SerializedName("CustomEngine")
+        private AbstractCalculationEngine customEngine ;
+
+        public  CalculationOptions  customEngine(AbstractCalculationEngine  customEngine) {
+            this.customEngine =  customEngine;
+            return this;
+        }
+
+        @ApiModelProperty(value = "")
+        public AbstractCalculationEngine getCustomEngine() {
+            return customEngine;
+        }
+
+        public void setCustomEngine(AbstractCalculationEngine customEngine) {
+            this.customEngine = customEngine;
+        }
+
+        @SerializedName("CalculationMonitor")
+        private AbstractCalculationMonitor calculationMonitor ;
+
+        public  CalculationOptions  calculationMonitor(AbstractCalculationMonitor  calculationMonitor) {
+            this.calculationMonitor =  calculationMonitor;
+            return this;
+        }
+
+        @ApiModelProperty(value = "")
+        public AbstractCalculationMonitor getCalculationMonitor() {
+            return calculationMonitor;
+        }
+
+        public void setCalculationMonitor(AbstractCalculationMonitor calculationMonitor) {
+            this.calculationMonitor = calculationMonitor;
+        }
+
+        @SerializedName("LinkedDataSources")
+        private List<Workbook> linkedDataSources ;
+
+        public  CalculationOptions  linkedDataSources(List<Workbook>  linkedDataSources) {
+            this.linkedDataSources =  linkedDataSources;
+            return this;
+        }
+
+        @ApiModelProperty(value = "")
+        public List<Workbook> getLinkedDataSources() {
+            return linkedDataSources;
+        }
+
+        public void setLinkedDataSources(List<Workbook> linkedDataSources) {
+            this.linkedDataSources = linkedDataSources;
+        }
+
         @Override
         public boolean equals(java.lang.Object o) {
             if (this == o) {
@@ -119,12 +170,15 @@ public class CalculationOptions {
                 Objects.equals(this.calcStackSize, calculationOptions.calcStackSize) &&
                 Objects.equals(this.ignoreError, calculationOptions.ignoreError) &&
                 Objects.equals(this.precisionStrategy, calculationOptions.precisionStrategy) &&
-                Objects.equals(this.recursive, calculationOptions.recursive);
+                Objects.equals(this.recursive, calculationOptions.recursive) &&
+                Objects.equals(this.customEngine, calculationOptions.customEngine) &&
+                Objects.equals(this.calculationMonitor, calculationOptions.calculationMonitor) &&
+                Objects.equals(this.linkedDataSources, calculationOptions.linkedDataSources);
       }
 
       @Override
       public int hashCode() {
-        return Objects.hash(calcStackSize, ignoreError, precisionStrategy, recursive);
+        return Objects.hash(calcStackSize, ignoreError, precisionStrategy, recursive, customEngine, calculationMonitor, linkedDataSources);
       }
         @Override
         public String toString() {
@@ -134,6 +188,9 @@ public class CalculationOptions {
             sb.append("    ignoreError: ").append(toIndentedString(getIgnoreError())).append("\n");
             sb.append("    precisionStrategy: ").append(toIndentedString(getPrecisionStrategy())).append("\n");
             sb.append("    recursive: ").append(toIndentedString(getRecursive())).append("\n");
+            sb.append("    customEngine: ").append(toIndentedString(getCustomEngine())).append("\n");
+            sb.append("    calculationMonitor: ").append(toIndentedString(getCalculationMonitor())).append("\n");
+            sb.append("    linkedDataSources: ").append(toIndentedString(getLinkedDataSources())).append("\n");
             sb.append("}");
             return sb.toString();
         }
