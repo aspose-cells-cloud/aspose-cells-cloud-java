@@ -358,38 +358,7 @@ public class ListObjectsControllerTest {
         CellsCloudResponse response =  this.api.postWorksheetListColumnsTotal(request);
     }
 
-    @Test
-    public void PostWorksheetListColumnsTotalTest() throws Exception {
-        String localName = "Book1.xlsx";
-        String remoteName = "Book1.xlsx";
-
-        CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
-        PostWorksheetListColumnsTotalRequest request = new PostWorksheetListColumnsTotalRequest();
-        request.setName(remoteName);
-
-        request.setSheetName("Sheet7");
-
-        request.setListObjectIndex(0);
-         
-        ArrayList<TableTotalRequest> tableTotalRequests = new ArrayList<TableTotalRequest>();
-        TableTotalRequest tableTotalRequest = new TableTotalRequest();
-        tableTotalRequest.setListColumnIndex(1);
-
-
-        tableTotalRequest.setTotalsCalculation("Average");
-
-        tableTotalRequests.add(tableTotalRequest);
-
-        request.setTableTotalRequests(tableTotalRequests);
-
-        request.setFolder(remoteFolder);
-
-        request.setStorageName("");
-
-        CellsCloudResponse response =  this.api.postWorksheetListColumnsTotal(request);
-    }
-
+    
 
     @Test
     public void PostWorksheetListObjectRemoveDuplicatesTest() throws Exception {
