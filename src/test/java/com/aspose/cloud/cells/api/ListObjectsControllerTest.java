@@ -358,5 +358,84 @@ public class ListObjectsControllerTest {
         CellsCloudResponse response =  this.api.postWorksheetListColumnsTotal(request);
     }
 
+    @Test
+    public void PostWorksheetListColumnsTotalTest() throws Exception {
+        String localName = "Book1.xlsx";
+        String remoteName = "Book1.xlsx";
+
+        CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
+       
+        PostWorksheetListColumnsTotalRequest request = new PostWorksheetListColumnsTotalRequest();
+        request.setName(remoteName);
+
+        request.setSheetName("Sheet7");
+
+        request.setListObjectIndex(0);
+         
+        ArrayList<TableTotalRequest> tableTotalRequests = new ArrayList<TableTotalRequest>();
+        TableTotalRequest tableTotalRequest = new TableTotalRequest();
+        tableTotalRequest.setListColumnIndex(1);
+
+
+        tableTotalRequest.setTotalsCalculation("Average");
+
+        tableTotalRequests.add(tableTotalRequest);
+
+        request.setTableTotalRequests(tableTotalRequests);
+
+        request.setFolder(remoteFolder);
+
+        request.setStorageName("");
+
+        CellsCloudResponse response =  this.api.postWorksheetListColumnsTotal(request);
+    }
+
+
+    @Test
+    public void PostWorksheetListObjectRemoveDuplicatesTest() throws Exception {
+        String localName = "TestTables.xlsx";
+        String remoteName = "TestTables.xlsx";
+
+        CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
+       
+        PostWorksheetListObjectRemoveDuplicatesRequest request = new PostWorksheetListObjectRemoveDuplicatesRequest();
+        request.setName(remoteName);
+
+        request.setSheetName("Sheet2");
+
+        request.setListObjectIndex(0);
+
+        request.setFolder(remoteFolder);
+
+        request.setStorageName("");
+
+        CellsCloudResponse response =  this.api.postWorksheetListObjectRemoveDuplicates(request);
+    }
+
+
+    @Test
+    public void PostWorksheetListObjectInsertSlicerTest() throws Exception {
+        String localName = "TestTables.xlsx";
+        String remoteName = "TestTables.xlsx";
+
+        CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
+       
+        PostWorksheetListObjectInsertSlicerRequest request = new PostWorksheetListObjectInsertSlicerRequest();
+        request.setName(remoteName);
+
+        request.setSheetName("Sheet1");
+
+        request.setListObjectIndex(0);
+
+        request.setColumnIndex(2);
+
+        request.setDestCellName("j9");
+
+        request.setFolder(remoteFolder);
+
+        request.setStorageName("");
+
+        CellsCloudResponse response =  this.api.postWorksheetListObjectInsertSlicer(request);
+    }
 
 }

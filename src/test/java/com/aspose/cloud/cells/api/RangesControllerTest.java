@@ -502,5 +502,46 @@ public class RangesControllerTest {
         CellsCloudResponse response =  this.api.deleteWorksheetCellsRange(request);
     }
 
+    @Test
+    public void PostWorksheetCellsRangeSortTest() throws Exception {
+        String localName = "Group.xlsx";
+        String remoteName = "Group.xlsx";
+
+        CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
+       
+        PostWorksheetCellsRangeSortRequest request = new PostWorksheetCellsRangeSortRequest();
+        request.setName(remoteName);
+
+        request.setSheetName("book1");
+
+        RangeSortRequest rangeOperate = new RangeSortRequest();
+        DataSorter dataSorter = new DataSorter();
+        dataSorter.setCaseSensitive(true);
+
+        rangeOperate.setDataSorter(dataSorter);
+
+
+        Range cellArea = new Range();
+        cellArea.setColumnCount(3);
+
+
+        cellArea.setFirstColumn(0);
+
+
+        cellArea.setFirstRow(0);
+
+
+        cellArea.setRowCount(15);
+
+        rangeOperate.setCellArea(cellArea);
+
+        request.setRangeOperate(rangeOperate);
+
+        request.setFolder(remoteFolder);
+
+        request.setStorageName("");
+
+        CellsCloudResponse response =  this.api.postWorksheetCellsRangeSort(request);
+    }
 
 }
