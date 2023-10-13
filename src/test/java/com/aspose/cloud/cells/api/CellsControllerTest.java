@@ -812,7 +812,7 @@ public class CellsControllerTest {
 
         request.setSheetName("Sheet1");
 
-        request.setRowIndex(0);
+        request.setRowIndex(1);
 
         request.setFolder(remoteFolder);
 
@@ -908,7 +908,7 @@ public class CellsControllerTest {
 
         request.setSheetName("Sheet1");
 
-        request.setRowIndex(0);
+        request.setRowIndex(1);
 
         request.setFolder(remoteFolder);
 
@@ -930,7 +930,7 @@ public class CellsControllerTest {
 
         request.setSheetName("Sheet1");
 
-        request.setRowIndex(0);
+        request.setRowIndex(1);
 
         request.setHeight(10.8);
 

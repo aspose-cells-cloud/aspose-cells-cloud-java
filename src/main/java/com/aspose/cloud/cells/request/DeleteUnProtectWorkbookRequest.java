@@ -43,16 +43,16 @@ public class DeleteUnProtectWorkbookRequest  implements IRequestModel {
     }
 
     private String name;
-    private WorkbookProtectionRequest protection;
+    private String password;
     private String folder;
     private String storageName;
         public DeleteUnProtectWorkbookRequest()
         {
 
         }
-        public DeleteUnProtectWorkbookRequest(String name, WorkbookProtectionRequest protection, String folder, String storageName) {
+        public DeleteUnProtectWorkbookRequest(String name, String password, String folder, String storageName) {
             this.name = name;
-            this.protection = protection;
+            this.password = password;
             this.folder = folder;
             this.storageName = storageName;
         }   
@@ -66,12 +66,12 @@ public class DeleteUnProtectWorkbookRequest  implements IRequestModel {
         }
 
 
-        public WorkbookProtectionRequest getProtection() {
-            return this.protection;
+        public String getPassword() {
+            return this.password;
         }
 
-        public void setProtection(WorkbookProtectionRequest protection) {
-            this.protection = protection;
+        public void setPassword(String password) {
+            this.password = password;
         }
 
 
@@ -97,13 +97,16 @@ public class DeleteUnProtectWorkbookRequest  implements IRequestModel {
          if (getName() == null) {
                     throw new ApiException("Missing the required parameter 'Name' when calling DeleteUnProtectWorkbook");
                 } 
-                if (getProtection() == null) {
-                    throw new ApiException("Missing the required parameter 'Protection' when calling DeleteUnProtectWorkbook");
+                if (getPassword() == null) {
+                    throw new ApiException("Missing the required parameter 'Password' when calling DeleteUnProtectWorkbook");
                 }       
         String localVarPath = "/cells/{name}/protection".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString()))   ;
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
+            if (getPassword() != null){
+                localVarQueryParams.addAll(apiClient.parameterToPairs("", "password", getPassword()));
+            } 
             if (getFolder() != null){
                 localVarQueryParams.addAll(apiClient.parameterToPairs("", "folder", getFolder()));
             } 
@@ -116,7 +119,6 @@ public class DeleteUnProtectWorkbookRequest  implements IRequestModel {
             }
         }
         Object localVarPostBody = null;
-        localVarPostBody = getProtection();
                 final String[] localVarAccepts = {
                     "application/json"
                 };

@@ -181,8 +181,8 @@ public class OleObjectsControllerTest {
         String remoteName = "Book1.xlsx";
 
         CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-        CellsApiUtil.Upload(api,  remoteFolder + "/OLEDoc.docx" , oLEDoc , "");
-        CellsApiUtil.Upload(api,  remoteFolder + "/word.jpg" , wordJPG , "");
+        CellsApiUtil.Upload(api,  "OLEDoc.docx" , oLEDoc , "");
+        CellsApiUtil.Upload(api,  "word.jpg" , wordJPG , "");
        
         PutWorksheetOleObjectRequest request = new PutWorksheetOleObjectRequest();
         request.setName(remoteName);

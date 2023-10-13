@@ -43,16 +43,16 @@ public class PostProtectWorkbookRequest  implements IRequestModel {
     }
 
     private String name;
-    private WorkbookProtectionRequest protection;
+    private ProtectWorkbookRequest protectWorkbookRequest;
     private String folder;
     private String storageName;
         public PostProtectWorkbookRequest()
         {
 
         }
-        public PostProtectWorkbookRequest(String name, WorkbookProtectionRequest protection, String folder, String storageName) {
+        public PostProtectWorkbookRequest(String name, ProtectWorkbookRequest protectWorkbookRequest, String folder, String storageName) {
             this.name = name;
-            this.protection = protection;
+            this.protectWorkbookRequest = protectWorkbookRequest;
             this.folder = folder;
             this.storageName = storageName;
         }   
@@ -66,12 +66,12 @@ public class PostProtectWorkbookRequest  implements IRequestModel {
         }
 
 
-        public WorkbookProtectionRequest getProtection() {
-            return this.protection;
+        public ProtectWorkbookRequest getProtectWorkbookRequest() {
+            return this.protectWorkbookRequest;
         }
 
-        public void setProtection(WorkbookProtectionRequest protection) {
-            this.protection = protection;
+        public void setProtectWorkbookRequest(ProtectWorkbookRequest protectWorkbookRequest) {
+            this.protectWorkbookRequest = protectWorkbookRequest;
         }
 
 
@@ -97,8 +97,8 @@ public class PostProtectWorkbookRequest  implements IRequestModel {
          if (getName() == null) {
                     throw new ApiException("Missing the required parameter 'Name' when calling PostProtectWorkbook");
                 } 
-                if (getProtection() == null) {
-                    throw new ApiException("Missing the required parameter 'Protection' when calling PostProtectWorkbook");
+                if (getProtectWorkbookRequest() == null) {
+                    throw new ApiException("Missing the required parameter 'ProtectWorkbookRequest' when calling PostProtectWorkbook");
                 }       
         String localVarPath = "/cells/{name}/protection".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString()))   ;
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
@@ -116,7 +116,7 @@ public class PostProtectWorkbookRequest  implements IRequestModel {
             }
         }
         Object localVarPostBody = null;
-        localVarPostBody = getProtection();
+        localVarPostBody = getProtectWorkbookRequest();
                 final String[] localVarAccepts = {
                     "application/json"
                 };

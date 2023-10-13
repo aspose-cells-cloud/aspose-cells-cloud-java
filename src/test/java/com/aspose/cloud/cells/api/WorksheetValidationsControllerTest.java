@@ -130,7 +130,7 @@ public class WorksheetValidationsControllerTest {
         request.setValidationIndex(0);
 
         Validation validation = new Validation();
-        validation.setFormula1("=(OR(A1=\"Yes\",A1=\"No\"))");
+        validation.setFormula1("=A1");
 
 
         validation.setType("Custom");

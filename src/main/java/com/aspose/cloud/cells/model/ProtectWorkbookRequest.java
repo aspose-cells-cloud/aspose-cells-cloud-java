@@ -1,6 +1,6 @@
 /*
  * --------------------------------------------------------------------------------
- * <copyright company="Aspose" file="ProtectWorkbookRequst.java">
+ * <copyright company="Aspose" file="ProtectWorkbookRequest.java">
  *   Copyright (c) 2023 Aspose.Cells Cloud
  * </copyright>
  * <summary>
@@ -36,28 +36,28 @@ import com.google.gson.annotations.SerializedName;
 import java.time.OffsetDateTime;
 
 
-public class ProtectWorkbookRequst {
-        @SerializedName("AwaysOpenOnlyReady")
-        private Boolean awaysOpenOnlyReady ;
+public class ProtectWorkbookRequest {
+        @SerializedName("AwaysOpenReadOnly")
+        private Boolean awaysOpenReadOnly ;
 
-        public  ProtectWorkbookRequst  awaysOpenOnlyReady(Boolean  awaysOpenOnlyReady) {
-            this.awaysOpenOnlyReady =  awaysOpenOnlyReady;
+        public  ProtectWorkbookRequest  awaysOpenReadOnly(Boolean  awaysOpenReadOnly) {
+            this.awaysOpenReadOnly =  awaysOpenReadOnly;
             return this;
         }
 
         @ApiModelProperty(value = "")
-        public Boolean getAwaysOpenOnlyReady() {
-            return awaysOpenOnlyReady;
+        public Boolean getAwaysOpenReadOnly() {
+            return awaysOpenReadOnly;
         }
 
-        public void setAwaysOpenOnlyReady(Boolean awaysOpenOnlyReady) {
-            this.awaysOpenOnlyReady = awaysOpenOnlyReady;
+        public void setAwaysOpenReadOnly(Boolean awaysOpenReadOnly) {
+            this.awaysOpenReadOnly = awaysOpenReadOnly;
         }
 
         @SerializedName("EncryptWithPassword")
         private String encryptWithPassword ;
 
-        public  ProtectWorkbookRequst  encryptWithPassword(String  encryptWithPassword) {
+        public  ProtectWorkbookRequest  encryptWithPassword(String  encryptWithPassword) {
             this.encryptWithPassword =  encryptWithPassword;
             return this;
         }
@@ -74,7 +74,7 @@ public class ProtectWorkbookRequst {
         @SerializedName("ProtectCurrentSheet")
         private Protection protectCurrentSheet ;
 
-        public  ProtectWorkbookRequst  protectCurrentSheet(Protection  protectCurrentSheet) {
+        public  ProtectWorkbookRequest  protectCurrentSheet(Protection  protectCurrentSheet) {
             this.protectCurrentSheet =  protectCurrentSheet;
             return this;
         }
@@ -91,7 +91,7 @@ public class ProtectWorkbookRequst {
         @SerializedName("ProtectWorkbookStructure")
         private String protectWorkbookStructure ;
 
-        public  ProtectWorkbookRequst  protectWorkbookStructure(String  protectWorkbookStructure) {
+        public  ProtectWorkbookRequest  protectWorkbookStructure(String  protectWorkbookStructure) {
             this.protectWorkbookStructure =  protectWorkbookStructure;
             return this;
         }
@@ -108,7 +108,7 @@ public class ProtectWorkbookRequst {
         @SerializedName("DigitalSignature")
         private DigitalSignature digitalSignature ;
 
-        public  ProtectWorkbookRequst  digitalSignature(DigitalSignature  digitalSignature) {
+        public  ProtectWorkbookRequest  digitalSignature(DigitalSignature  digitalSignature) {
             this.digitalSignature =  digitalSignature;
             return this;
         }
@@ -125,7 +125,7 @@ public class ProtectWorkbookRequst {
         @SerializedName("MarkAsFinal")
         private Boolean markAsFinal ;
 
-        public  ProtectWorkbookRequst  markAsFinal(Boolean  markAsFinal) {
+        public  ProtectWorkbookRequest  markAsFinal(Boolean  markAsFinal) {
             this.markAsFinal =  markAsFinal;
             return this;
         }
@@ -148,25 +148,25 @@ public class ProtectWorkbookRequst {
                 return false;
             }
 
-            ProtectWorkbookRequst protectWorkbookRequst = (ProtectWorkbookRequst) o;
+            ProtectWorkbookRequest protectWorkbookRequest = (ProtectWorkbookRequest) o;
             return
-                Objects.equals(this.awaysOpenOnlyReady, protectWorkbookRequst.awaysOpenOnlyReady) &&
-                Objects.equals(this.encryptWithPassword, protectWorkbookRequst.encryptWithPassword) &&
-                Objects.equals(this.protectCurrentSheet, protectWorkbookRequst.protectCurrentSheet) &&
-                Objects.equals(this.protectWorkbookStructure, protectWorkbookRequst.protectWorkbookStructure) &&
-                Objects.equals(this.digitalSignature, protectWorkbookRequst.digitalSignature) &&
-                Objects.equals(this.markAsFinal, protectWorkbookRequst.markAsFinal);
+                Objects.equals(this.awaysOpenReadOnly, protectWorkbookRequest.awaysOpenReadOnly) &&
+                Objects.equals(this.encryptWithPassword, protectWorkbookRequest.encryptWithPassword) &&
+                Objects.equals(this.protectCurrentSheet, protectWorkbookRequest.protectCurrentSheet) &&
+                Objects.equals(this.protectWorkbookStructure, protectWorkbookRequest.protectWorkbookStructure) &&
+                Objects.equals(this.digitalSignature, protectWorkbookRequest.digitalSignature) &&
+                Objects.equals(this.markAsFinal, protectWorkbookRequest.markAsFinal);
       }
 
       @Override
       public int hashCode() {
-        return Objects.hash(awaysOpenOnlyReady, encryptWithPassword, protectCurrentSheet, protectWorkbookStructure, digitalSignature, markAsFinal);
+        return Objects.hash(awaysOpenReadOnly, encryptWithPassword, protectCurrentSheet, protectWorkbookStructure, digitalSignature, markAsFinal);
       }
         @Override
         public String toString() {
             StringBuilder sb = new StringBuilder();
-            sb.append("class ProtectWorkbookRequst {\n");
-            sb.append("    awaysOpenOnlyReady: ").append(toIndentedString(getAwaysOpenOnlyReady())).append("\n");
+            sb.append("class ProtectWorkbookRequest {\n");
+            sb.append("    awaysOpenReadOnly: ").append(toIndentedString(getAwaysOpenReadOnly())).append("\n");
             sb.append("    encryptWithPassword: ").append(toIndentedString(getEncryptWithPassword())).append("\n");
             sb.append("    protectCurrentSheet: ").append(toIndentedString(getProtectCurrentSheet())).append("\n");
             sb.append("    protectWorkbookStructure: ").append(toIndentedString(getProtectWorkbookStructure())).append("\n");

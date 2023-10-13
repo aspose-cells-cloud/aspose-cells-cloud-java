@@ -4443,7 +4443,32 @@ public class LightCellsTest {
        
         PostProtectRequest request = new PostProtectRequest();
         request.setPassword("123456");
-        request.setProtectWorkbookRequst(new ProtectWorkbookRequst());
+         
+         
+
+        HashMap<String,File> fileMap = new HashMap<String,File>(); 
+        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
+        fileMap.put(dataSourceXlsx ,CellsApiUtil.GetFileHolder(dataSourceXlsx) ); 
+        request.setFile(fileMap);
+        FilesResult response =  this.api.postProtect(request);
+    }
+
+
+    @Test
+    public void PostProtect_ProtectWorkbookRequestTest() throws Exception {
+        String assemblyTestXlsx = "assemblytest.xlsx";
+        String dataSourceXlsx = "datasource.xlsx";
+
+       
+        PostProtectRequest request = new PostProtectRequest();
+        ProtectWorkbookRequest protectWorkbookRequst = new ProtectWorkbookRequest();
+        protectWorkbookRequst.setAwaysOpenReadOnly(true);
+
+
+        protectWorkbookRequst.setEncryptWithPassword("123456");
+
+        request.setProtectWorkbookRequst(protectWorkbookRequst);
+         
          
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 

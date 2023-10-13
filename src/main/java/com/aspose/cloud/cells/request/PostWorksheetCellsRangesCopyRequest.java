@@ -1,6 +1,6 @@
 /*
  * --------------------------------------------------------------------------------
- * <copyright company="Aspose" file="PostWorksheetCellsRangesRequest.java">
+ * <copyright company="Aspose" file="PostWorksheetCellsRangesCopyRequest.java">
  *   Copyright (c) 2023 Aspose.Cells Cloud
  * </copyright>
  * <summary>
@@ -32,7 +32,7 @@ import java.io.*;
 import java.lang.reflect.Type;
 import java.util.*;
 
-public class PostWorksheetCellsRangesRequest  implements IRequestModel {
+public class PostWorksheetCellsRangesCopyRequest  implements IRequestModel {
     private HashMap<String,String> extendQueryParameterMap;
     public HashMap<String,String> getExtendQueryParameterMap() {
         return this.extendQueryParameterMap;
@@ -47,11 +47,11 @@ public class PostWorksheetCellsRangesRequest  implements IRequestModel {
     private RangeCopyRequest rangeOperate;
     private String folder;
     private String storageName;
-        public PostWorksheetCellsRangesRequest()
+        public PostWorksheetCellsRangesCopyRequest()
         {
 
         }
-        public PostWorksheetCellsRangesRequest(String name, String sheetName, RangeCopyRequest rangeOperate, String folder, String storageName) {
+        public PostWorksheetCellsRangesCopyRequest(String name, String sheetName, RangeCopyRequest rangeOperate, String folder, String storageName) {
             this.name = name;
             this.sheetName = sheetName;
             this.rangeOperate = rangeOperate;
@@ -106,15 +106,15 @@ public class PostWorksheetCellsRangesRequest  implements IRequestModel {
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
          if (getName() == null) {
-                    throw new ApiException("Missing the required parameter 'Name' when calling PostWorksheetCellsRanges");
+                    throw new ApiException("Missing the required parameter 'Name' when calling PostWorksheetCellsRangesCopy");
                 } 
                 if (getSheetName() == null) {
-                    throw new ApiException("Missing the required parameter 'SheetName' when calling PostWorksheetCellsRanges");
+                    throw new ApiException("Missing the required parameter 'SheetName' when calling PostWorksheetCellsRangesCopy");
                 } 
                 if (getRangeOperate() == null) {
-                    throw new ApiException("Missing the required parameter 'RangeOperate' when calling PostWorksheetCellsRanges");
+                    throw new ApiException("Missing the required parameter 'RangeOperate' when calling PostWorksheetCellsRangesCopy");
                 }       
-        String localVarPath = "/cells/{name}/worksheets/{sheetName}/ranges".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
+        String localVarPath = "/cells/{name}/worksheets/{sheetName}/ranges/copy".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
     .replaceAll("\\{" + "sheetName" + "\\}", apiClient.escapeString(sheetName.toString()))   ;
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();

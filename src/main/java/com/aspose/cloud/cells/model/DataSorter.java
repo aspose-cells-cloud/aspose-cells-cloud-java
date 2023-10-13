@@ -122,6 +122,23 @@ public class DataSorter {
             this.sortAsNumber = sortAsNumber;
         }
 
+        @SerializedName("Keys")
+        private List<DataSorterKey> keys ;
+
+        public  DataSorter  keys(List<DataSorterKey>  keys) {
+            this.keys =  keys;
+            return this;
+        }
+
+        @ApiModelProperty(value = "")
+        public List<DataSorterKey> getKeys() {
+            return keys;
+        }
+
+        public void setKeys(List<DataSorterKey> keys) {
+            this.keys = keys;
+        }
+
         @Override
         public boolean equals(java.lang.Object o) {
             if (this == o) {
@@ -137,12 +154,13 @@ public class DataSorter {
                 Objects.equals(this.hasHeaders, dataSorter.hasHeaders) &&
                 Objects.equals(this.keyList, dataSorter.keyList) &&
                 Objects.equals(this.sortLeftToRight, dataSorter.sortLeftToRight) &&
-                Objects.equals(this.sortAsNumber, dataSorter.sortAsNumber);
+                Objects.equals(this.sortAsNumber, dataSorter.sortAsNumber) &&
+                Objects.equals(this.keys, dataSorter.keys);
       }
 
       @Override
       public int hashCode() {
-        return Objects.hash(caseSensitive, hasHeaders, keyList, sortLeftToRight, sortAsNumber);
+        return Objects.hash(caseSensitive, hasHeaders, keyList, sortLeftToRight, sortAsNumber, keys);
       }
         @Override
         public String toString() {
@@ -153,6 +171,7 @@ public class DataSorter {
             sb.append("    keyList: ").append(toIndentedString(getKeyList())).append("\n");
             sb.append("    sortLeftToRight: ").append(toIndentedString(getSortLeftToRight())).append("\n");
             sb.append("    sortAsNumber: ").append(toIndentedString(getSortAsNumber())).append("\n");
+            sb.append("    keys: ").append(toIndentedString(getKeys())).append("\n");
             sb.append("}");
             return sb.toString();
         }

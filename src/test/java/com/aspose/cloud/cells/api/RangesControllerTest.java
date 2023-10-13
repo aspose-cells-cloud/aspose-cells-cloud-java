@@ -52,13 +52,13 @@ public class RangesControllerTest {
     }
 
     @Test
-    public void PostWorksheetCellsRangesTest() throws Exception {
+    public void PostWorksheetCellsRangesCopyTest() throws Exception {
         String localName = "Book1.xlsx";
         String remoteName = "Book1.xlsx";
 
         CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
        
-        PostWorksheetCellsRangesRequest request = new PostWorksheetCellsRangesRequest();
+        PostWorksheetCellsRangesCopyRequest request = new PostWorksheetCellsRangesCopyRequest();
         request.setName(remoteName);
 
         request.setSheetName("Sheet1");
@@ -102,7 +102,7 @@ public class RangesControllerTest {
 
         request.setStorageName("");
 
-        CellsCloudResponse response =  this.api.postWorksheetCellsRanges(request);
+        CellsCloudResponse response =  this.api.postWorksheetCellsRangesCopy(request);
     }
 
 
@@ -502,6 +502,7 @@ public class RangesControllerTest {
         CellsCloudResponse response =  this.api.deleteWorksheetCellsRange(request);
     }
 
+
     @Test
     public void PostWorksheetCellsRangeSortTest() throws Exception {
         String localName = "Group.xlsx";
@@ -514,11 +515,11 @@ public class RangesControllerTest {
 
         request.setSheetName("book1");
 
-        RangeSortRequest rangeOperate = new RangeSortRequest();
+        RangeSortRequest rangeSortRequest = new RangeSortRequest();
         DataSorter dataSorter = new DataSorter();
         dataSorter.setCaseSensitive(true);
 
-        rangeOperate.setDataSorter(dataSorter);
+        rangeSortRequest.setDataSorter(dataSorter);
 
 
         Range cellArea = new Range();
@@ -533,9 +534,9 @@ public class RangesControllerTest {
 
         cellArea.setRowCount(15);
 
-        rangeOperate.setCellArea(cellArea);
+        rangeSortRequest.setCellArea(cellArea);
 
-        request.setRangeOperate(rangeOperate);
+        request.setRangeSortRequest(rangeSortRequest);
 
         request.setFolder(remoteFolder);
 
@@ -543,5 +544,6 @@ public class RangesControllerTest {
 
         CellsCloudResponse response =  this.api.postWorksheetCellsRangeSort(request);
     }
+
 
 }

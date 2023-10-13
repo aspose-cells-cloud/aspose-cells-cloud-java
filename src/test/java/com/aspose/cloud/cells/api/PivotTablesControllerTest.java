@@ -129,7 +129,7 @@ public class PivotTablesControllerTest {
         GetWorksheetPivotTableFiltersRequest request = new GetWorksheetPivotTableFiltersRequest();
         request.setName(remoteName);
 
-        request.setSheetName("Sheet3");
+        request.setSheetName("Sheet4");
 
         request.setPivotTableIndex(0);
 
@@ -175,7 +175,7 @@ public class PivotTablesControllerTest {
         PutWorksheetPivotTableRequest request = new PutWorksheetPivotTableRequest();
         request.setName(remoteName);
 
-        request.setSheetName("Sheet3");
+        request.setSheetName("Sheet4");
 
         request.setFolder(remoteFolder);
 

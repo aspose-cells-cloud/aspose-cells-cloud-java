@@ -358,7 +358,6 @@ public class ListObjectsControllerTest {
         CellsCloudResponse response =  this.api.postWorksheetListColumnsTotal(request);
     }
 
-    
 
     @Test
     public void PostWorksheetListObjectRemoveDuplicatesTest() throws Exception {
@@ -406,5 +405,6 @@ public class ListObjectsControllerTest {
 
         CellsCloudResponse response =  this.api.postWorksheetListObjectInsertSlicer(request);
     }
+
 
 }

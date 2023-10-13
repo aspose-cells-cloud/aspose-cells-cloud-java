@@ -59528,32 +59528,32 @@ public class CellsApi {
 
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call postWorksheetCellsRangesValidateBeforeCall(PostWorksheetCellsRangesRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
+    private com.squareup.okhttp.Call postWorksheetCellsRangesCopyValidateBeforeCall(PostWorksheetCellsRangesCopyRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
         return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
     }
 
-    public  CellsCloudResponse  postWorksheetCellsRanges(PostWorksheetCellsRangesRequest request) throws ApiException,  IOException {
+    public  CellsCloudResponse  postWorksheetCellsRangesCopy(PostWorksheetCellsRangesCopyRequest request) throws ApiException,  IOException {
         try {
-            ApiResponse< CellsCloudResponse > resp = postWorksheetCellsRangesWithHttpInfo(request);
+            ApiResponse< CellsCloudResponse > resp = postWorksheetCellsRangesCopyWithHttpInfo(request);
              return resp.getData(); 
         }
         catch (ApiException ex) {
             if (ex.getCode() == apiClient.getNotAuthCode()) {
                 apiClient.requestToken();
-                ApiResponse< CellsCloudResponse > resp = postWorksheetCellsRangesWithHttpInfo(request);
+                ApiResponse< CellsCloudResponse > resp = postWorksheetCellsRangesCopyWithHttpInfo(request);
                  return resp.getData();       
             }
             throw ex;
         }
     }
 
-    private ApiResponse< CellsCloudResponse > postWorksheetCellsRangesWithHttpInfo(PostWorksheetCellsRangesRequest request) throws ApiException,  IOException {
-        com.squareup.okhttp.Call call =  postWorksheetCellsRangesValidateBeforeCall(request, null, null);
+    private ApiResponse< CellsCloudResponse > postWorksheetCellsRangesCopyWithHttpInfo(PostWorksheetCellsRangesCopyRequest request) throws ApiException,  IOException {
+        com.squareup.okhttp.Call call =  postWorksheetCellsRangesCopyValidateBeforeCall(request, null, null);
         Type localVarReturnType = new TypeToken< CellsCloudResponse >(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
-    public com.squareup.okhttp.Call  postWorksheetCellsRangesAsync( PostWorksheetCellsRangesRequest request, final ApiCallback< CellsCloudResponse > callback) throws ApiException,  IOException {
+    public com.squareup.okhttp.Call  postWorksheetCellsRangesCopyAsync( PostWorksheetCellsRangesCopyRequest request, final ApiCallback< CellsCloudResponse > callback) throws ApiException,  IOException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -59574,7 +59574,7 @@ public class CellsApi {
             };
         }
 
-        com.squareup.okhttp.Call call =  postWorksheetCellsRangesValidateBeforeCall(request, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call =  postWorksheetCellsRangesCopyValidateBeforeCall(request, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken< CellsCloudResponse >(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

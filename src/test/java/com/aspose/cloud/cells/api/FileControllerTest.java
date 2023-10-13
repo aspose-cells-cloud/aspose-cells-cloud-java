@@ -112,26 +112,26 @@ public class FileControllerTest {
     }
 
 
-    // @Test
-    // public void MoveFileTest() throws Exception {
-    //     String localName = "Book1.xlsx";
-    //     String remoteName = "Book1.xlsx";
+    @Test
+    public void MoveFileTest() throws Exception {
+        String localName = "Book1.xlsx";
+        String remoteName = "Book1.xlsx";
 
-    //     CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
+        CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
        
-    //     MoveFileRequest request = new MoveFileRequest();
-    //     request.setSrcPath(remoteFolder + "/" + remoteName);
+        MoveFileRequest request = new MoveFileRequest();
+        request.setSrcPath(remoteFolder + "/" + remoteName);
 
-    //     request.setDestPath("OutResult/" + remoteName);
+        request.setDestPath("OutResult/" + remoteName);
 
-    //     request.setSrcStorageName("");
+        request.setSrcStorageName("");
 
-    //     request.setDestStorageName("");
+        request.setDestStorageName("");
 
-    //     request.setVersionId("");
+        request.setVersionId("");
 
-    //  this.api.moveFile(request);
-    // }
+     this.api.moveFile(request);
+    }
 
 
     @Test
@@ -148,7 +148,7 @@ public class FileControllerTest {
 
         request.setVersionId("");
 
-        this.api.deleteFile(request);
+     this.api.deleteFile(request);
     }
 
 
