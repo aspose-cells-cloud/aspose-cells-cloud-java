@@ -143,11 +143,11 @@ public class WorkbookControllerTest {
         PostProtectWorkbookRequest request = new PostProtectWorkbookRequest();
         request.setName(remoteName);
 
-        WorkbookProtectionRequest protectWorkbookRequest = new WorkbookProtectionRequest();
-        protectWorkbookRequest.setPassword("123456");
+        ProtectWorkbookRequest protectWorkbookRequest = new ProtectWorkbookRequest();
+        protectWorkbookRequest.setEncryptWithPassword("123456");
 
 
-        protectWorkbookRequest.setProtectionType("ALL");
+        protectWorkbookRequest.setProtectWorkbookStructure("ALL");
 
         request.setProtectWorkbookRequest(protectWorkbookRequest);
 
@@ -168,15 +168,7 @@ public class WorkbookControllerTest {
        
         DeleteUnProtectWorkbookRequest request = new DeleteUnProtectWorkbookRequest();
         request.setName(remoteName);
-
-        WorkbookProtectionRequest protection = new WorkbookProtectionRequest();
-        protection.setPassword("123456");
-
-
-        protection.setProtectionType("ALL");
-
-        request.setProtection(protection);
-
+        request.setPassword("123456");
         request.setFolder(remoteFolder);
 
         request.setStorageName("");

@@ -30,7 +30,6 @@ Full list of issues covering all changes in this release:
 
 - Fix protect workbook request.
 - Fix range copy API.
-- Fix workbook import API.
 - Optimize workbook protect API.
 
 

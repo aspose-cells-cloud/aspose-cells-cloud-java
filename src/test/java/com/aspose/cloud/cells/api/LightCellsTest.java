@@ -4444,7 +4444,13 @@ public class LightCellsTest {
         PostProtectRequest request = new PostProtectRequest();
         request.setPassword("123456");
          
-         
+        ProtectWorkbookRequest protectWorkbookRequst = new ProtectWorkbookRequest();
+        protectWorkbookRequst.setAwaysOpenReadOnly(true);
+
+
+        protectWorkbookRequst.setEncryptWithPassword("123456");
+
+        request.setProtectWorkbookRequest(protectWorkbookRequst);
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
         fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
@@ -4467,7 +4473,7 @@ public class LightCellsTest {
 
         protectWorkbookRequst.setEncryptWithPassword("123456");
 
-        request.setProtectWorkbookRequst(protectWorkbookRequst);
+        request.setProtectWorkbookRequest(protectWorkbookRequst);
          
          
 
