@@ -71,6 +71,23 @@ public class ImportXMLRequest {
             this.importPosition = importPosition;
         }
 
+        @SerializedName("XMLContent")
+        private String xMLContent ;
+
+        public  ImportXMLRequest  xMLContent(String  xMLContent) {
+            this.xMLContent =  xMLContent;
+            return this;
+        }
+
+        @ApiModelProperty(value = "")
+        public String getXMLContent() {
+            return xMLContent;
+        }
+
+        public void setXMLContent(String xMLContent) {
+            this.xMLContent = xMLContent;
+        }
+
         @Override
         public boolean equals(java.lang.Object o) {
             if (this == o) {
@@ -83,12 +100,13 @@ public class ImportXMLRequest {
             ImportXMLRequest importXMLRequest = (ImportXMLRequest) o;
             return
                 Objects.equals(this.xMLFileSource, importXMLRequest.xMLFileSource) &&
-                Objects.equals(this.importPosition, importXMLRequest.importPosition);
+                Objects.equals(this.importPosition, importXMLRequest.importPosition) &&
+                Objects.equals(this.xMLContent, importXMLRequest.xMLContent);
       }
 
       @Override
       public int hashCode() {
-        return Objects.hash(xMLFileSource, importPosition);
+        return Objects.hash(xMLFileSource, importPosition, xMLContent);
       }
         @Override
         public String toString() {
@@ -96,6 +114,7 @@ public class ImportXMLRequest {
             sb.append("class ImportXMLRequest {\n");
             sb.append("    xMLFileSource: ").append(toIndentedString(getXMLFileSource())).append("\n");
             sb.append("    importPosition: ").append(toIndentedString(getImportPosition())).append("\n");
+            sb.append("    xMLContent: ").append(toIndentedString(getXMLContent())).append("\n");
             sb.append("}");
             return sb.toString();
         }

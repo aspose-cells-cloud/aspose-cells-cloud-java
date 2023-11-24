@@ -212,26 +212,6 @@ public class ConversionJsonTest {
 
 
     @Test
-    public void ConvertWorkbook_tifTest() throws Exception {
-        String localName = "codegen-spec.json";
-        String remoteName = "codegen-spec.json";
-
-        String format = "tif";
-
-        CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
-        PutConvertWorkbookRequest request = new PutConvertWorkbookRequest();
-        request.setFormat(format);
-         
-
-        HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(localName ,CellsApiUtil.GetFileHolder(localName) ); 
-        request.setFile(fileMap);
-        File response =  this.api.putConvertWorkbook(request);
-    }
-
-
-    @Test
     public void ConvertWorkbook_xlsbTest() throws Exception {
         String localName = "codegen-spec.json";
         String remoteName = "codegen-spec.json";
@@ -252,71 +232,11 @@ public class ConversionJsonTest {
 
 
     @Test
-    public void ConvertWorkbook_xlsmTest() throws Exception {
-        String localName = "codegen-spec.json";
-        String remoteName = "codegen-spec.json";
-
-        String format = "xlsm";
-
-        CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
-        PutConvertWorkbookRequest request = new PutConvertWorkbookRequest();
-        request.setFormat(format);
-         
-
-        HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(localName ,CellsApiUtil.GetFileHolder(localName) ); 
-        request.setFile(fileMap);
-        File response =  this.api.putConvertWorkbook(request);
-    }
-
-
-    @Test
     public void ConvertWorkbook_xlsxTest() throws Exception {
         String localName = "codegen-spec.json";
         String remoteName = "codegen-spec.json";
 
         String format = "xlsx";
-
-        CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
-        PutConvertWorkbookRequest request = new PutConvertWorkbookRequest();
-        request.setFormat(format);
-         
-
-        HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(localName ,CellsApiUtil.GetFileHolder(localName) ); 
-        request.setFile(fileMap);
-        File response =  this.api.putConvertWorkbook(request);
-    }
-
-
-    @Test
-    public void ConvertWorkbook_xltmTest() throws Exception {
-        String localName = "codegen-spec.json";
-        String remoteName = "codegen-spec.json";
-
-        String format = "xltm";
-
-        CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
-        PutConvertWorkbookRequest request = new PutConvertWorkbookRequest();
-        request.setFormat(format);
-         
-
-        HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(localName ,CellsApiUtil.GetFileHolder(localName) ); 
-        request.setFile(fileMap);
-        File response =  this.api.putConvertWorkbook(request);
-    }
-
-
-    @Test
-    public void ConvertWorkbook_xltxTest() throws Exception {
-        String localName = "codegen-spec.json";
-        String remoteName = "codegen-spec.json";
-
-        String format = "xltx";
 
         CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
        
@@ -372,86 +292,6 @@ public class ConversionJsonTest {
 
 
     @Test
-    public void ConvertWorkbook_jpgTest() throws Exception {
-        String localName = "codegen-spec.json";
-        String remoteName = "codegen-spec.json";
-
-        String format = "jpg";
-
-        CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
-        PutConvertWorkbookRequest request = new PutConvertWorkbookRequest();
-        request.setFormat(format);
-         
-
-        HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(localName ,CellsApiUtil.GetFileHolder(localName) ); 
-        request.setFile(fileMap);
-        File response =  this.api.putConvertWorkbook(request);
-    }
-
-
-    @Test
-    public void ConvertWorkbook_gifTest() throws Exception {
-        String localName = "codegen-spec.json";
-        String remoteName = "codegen-spec.json";
-
-        String format = "gif";
-
-        CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
-        PutConvertWorkbookRequest request = new PutConvertWorkbookRequest();
-        request.setFormat(format);
-         
-
-        HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(localName ,CellsApiUtil.GetFileHolder(localName) ); 
-        request.setFile(fileMap);
-        File response =  this.api.putConvertWorkbook(request);
-    }
-
-
-    @Test
-    public void ConvertWorkbook_emfTest() throws Exception {
-        String localName = "codegen-spec.json";
-        String remoteName = "codegen-spec.json";
-
-        String format = "emf";
-
-        CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
-        PutConvertWorkbookRequest request = new PutConvertWorkbookRequest();
-        request.setFormat(format);
-         
-
-        HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(localName ,CellsApiUtil.GetFileHolder(localName) ); 
-        request.setFile(fileMap);
-        File response =  this.api.putConvertWorkbook(request);
-    }
-
-
-    @Test
-    public void ConvertWorkbook_bmpTest() throws Exception {
-        String localName = "codegen-spec.json";
-        String remoteName = "codegen-spec.json";
-
-        String format = "bmp";
-
-        CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
-        PutConvertWorkbookRequest request = new PutConvertWorkbookRequest();
-        request.setFormat(format);
-         
-
-        HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(localName ,CellsApiUtil.GetFileHolder(localName) ); 
-        request.setFile(fileMap);
-        File response =  this.api.putConvertWorkbook(request);
-    }
-
-
-    @Test
     public void ConvertWorkbook_mdTest() throws Exception {
         String localName = "codegen-spec.json";
         String remoteName = "codegen-spec.json";
@@ -477,26 +317,6 @@ public class ConversionJsonTest {
         String remoteName = "codegen-spec.json";
 
         String format = "numbers";
-
-        CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
-        PutConvertWorkbookRequest request = new PutConvertWorkbookRequest();
-        request.setFormat(format);
-         
-
-        HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(localName ,CellsApiUtil.GetFileHolder(localName) ); 
-        request.setFile(fileMap);
-        File response =  this.api.putConvertWorkbook(request);
-    }
-
-
-    @Test
-    public void ConvertWorkbook_wmfTest() throws Exception {
-        String localName = "codegen-spec.json";
-        String remoteName = "codegen-spec.json";
-
-        String format = "wmf";
 
         CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
        

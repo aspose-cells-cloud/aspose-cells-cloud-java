@@ -186,7 +186,7 @@ public class ApiClient {
 		this.lenientDatetimeFormat = true;
 
 		// Set default User-Agent.
-		setUserAgent("Swagger-Codegen/22.4/java");
+		setUserAgent("CellsCloud-SDK/23.11/java");
 
 		// Setup authentications (key: authentication name, value:
 		// authentication).

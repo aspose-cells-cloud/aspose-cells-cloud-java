@@ -42,16 +42,16 @@ public class CellsApiUtil {
 	private static String grantType = "client_credentials";
 	private static String clientId = "";
 	private static String clientSecret =  "";
-	private static String sourceFolder ="TestData\\";
+	private static String sourceFolder ="TestData/";
 	public static String GetSourceFolder() {
 		String  envSourceFlder = System.getenv("CellsCloudTestDataFolder");
 		if(envSourceFlder != "" && envSourceFlder!=null){
 			File dir = new File(envSourceFlder);
 			if(dir.exists()){
-				System.out.println(envSourceFlder);
 				return envSourceFlder;
 			}
-		}		
+		}
+
 		File dir = new File(sourceFolder);
 		if(dir.exists()){
 			return sourceFolder;
@@ -76,7 +76,7 @@ public class CellsApiUtil {
 	public static String GetBaseUrl() {
 		String apiUrl =  System.getenv("CellsCloudApiBaseUrl");
 		if( apiUrl==null || apiUrl.isEmpty()){
-			return "https://api.aspose.cloud";
+			return "https://api-qa.aspose.cloud";
 		}
 		return apiUrl;
 	}

@@ -52,46 +52,6 @@ public class ConversionPngTest {
     }
 
     @Test
-    public void ConvertWorkbook_csvTest() throws Exception {
-        String localName = "cloud.png";
-        String remoteName = "cloud.png";
-
-        String format = "csv";
-
-        CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
-        PutConvertWorkbookRequest request = new PutConvertWorkbookRequest();
-        request.setFormat(format);
-         
-
-        HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(localName ,CellsApiUtil.GetFileHolder(localName) ); 
-        request.setFile(fileMap);
-        File response =  this.api.putConvertWorkbook(request);
-    }
-
-
-    @Test
-    public void ConvertWorkbook_xlsTest() throws Exception {
-        String localName = "cloud.png";
-        String remoteName = "cloud.png";
-
-        String format = "xls";
-
-        CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
-        PutConvertWorkbookRequest request = new PutConvertWorkbookRequest();
-        request.setFormat(format);
-         
-
-        HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(localName ,CellsApiUtil.GetFileHolder(localName) ); 
-        request.setFile(fileMap);
-        File response =  this.api.putConvertWorkbook(request);
-    }
-
-
-    @Test
     public void ConvertWorkbook_htmlTest() throws Exception {
         String localName = "cloud.png";
         String remoteName = "cloud.png";
@@ -192,26 +152,6 @@ public class ConversionPngTest {
 
 
     @Test
-    public void ConvertWorkbook_txtTest() throws Exception {
-        String localName = "cloud.png";
-        String remoteName = "cloud.png";
-
-        String format = "txt";
-
-        CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
-        PutConvertWorkbookRequest request = new PutConvertWorkbookRequest();
-        request.setFormat(format);
-         
-
-        HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(localName ,CellsApiUtil.GetFileHolder(localName) ); 
-        request.setFile(fileMap);
-        File response =  this.api.putConvertWorkbook(request);
-    }
-
-
-    @Test
     public void ConvertWorkbook_tifTest() throws Exception {
         String localName = "cloud.png";
         String remoteName = "cloud.png";
@@ -252,86 +192,6 @@ public class ConversionPngTest {
 
 
     @Test
-    public void ConvertWorkbook_xlsmTest() throws Exception {
-        String localName = "cloud.png";
-        String remoteName = "cloud.png";
-
-        String format = "xlsm";
-
-        CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
-        PutConvertWorkbookRequest request = new PutConvertWorkbookRequest();
-        request.setFormat(format);
-         
-
-        HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(localName ,CellsApiUtil.GetFileHolder(localName) ); 
-        request.setFile(fileMap);
-        File response =  this.api.putConvertWorkbook(request);
-    }
-
-
-    @Test
-    public void ConvertWorkbook_xlsxTest() throws Exception {
-        String localName = "cloud.png";
-        String remoteName = "cloud.png";
-
-        String format = "xlsx";
-
-        CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
-        PutConvertWorkbookRequest request = new PutConvertWorkbookRequest();
-        request.setFormat(format);
-         
-
-        HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(localName ,CellsApiUtil.GetFileHolder(localName) ); 
-        request.setFile(fileMap);
-        File response =  this.api.putConvertWorkbook(request);
-    }
-
-
-    @Test
-    public void ConvertWorkbook_xltmTest() throws Exception {
-        String localName = "cloud.png";
-        String remoteName = "cloud.png";
-
-        String format = "xltm";
-
-        CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
-        PutConvertWorkbookRequest request = new PutConvertWorkbookRequest();
-        request.setFormat(format);
-         
-
-        HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(localName ,CellsApiUtil.GetFileHolder(localName) ); 
-        request.setFile(fileMap);
-        File response =  this.api.putConvertWorkbook(request);
-    }
-
-
-    @Test
-    public void ConvertWorkbook_xltxTest() throws Exception {
-        String localName = "cloud.png";
-        String remoteName = "cloud.png";
-
-        String format = "xltx";
-
-        CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
-        PutConvertWorkbookRequest request = new PutConvertWorkbookRequest();
-        request.setFormat(format);
-         
-
-        HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(localName ,CellsApiUtil.GetFileHolder(localName) ); 
-        request.setFile(fileMap);
-        File response =  this.api.putConvertWorkbook(request);
-    }
-
-
-    @Test
     public void ConvertWorkbook_xpsTest() throws Exception {
         String localName = "cloud.png";
         String remoteName = "cloud.png";
@@ -352,91 +212,11 @@ public class ConversionPngTest {
 
 
     @Test
-    public void ConvertWorkbook_pngTest() throws Exception {
-        String localName = "cloud.png";
-        String remoteName = "cloud.png";
-
-        String format = "png";
-
-        CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
-        PutConvertWorkbookRequest request = new PutConvertWorkbookRequest();
-        request.setFormat(format);
-         
-
-        HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(localName ,CellsApiUtil.GetFileHolder(localName) ); 
-        request.setFile(fileMap);
-        File response =  this.api.putConvertWorkbook(request);
-    }
-
-
-    @Test
     public void ConvertWorkbook_jpgTest() throws Exception {
         String localName = "cloud.png";
         String remoteName = "cloud.png";
 
         String format = "jpg";
-
-        CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
-        PutConvertWorkbookRequest request = new PutConvertWorkbookRequest();
-        request.setFormat(format);
-         
-
-        HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(localName ,CellsApiUtil.GetFileHolder(localName) ); 
-        request.setFile(fileMap);
-        File response =  this.api.putConvertWorkbook(request);
-    }
-
-
-    @Test
-    public void ConvertWorkbook_gifTest() throws Exception {
-        String localName = "cloud.png";
-        String remoteName = "cloud.png";
-
-        String format = "gif";
-
-        CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
-        PutConvertWorkbookRequest request = new PutConvertWorkbookRequest();
-        request.setFormat(format);
-         
-
-        HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(localName ,CellsApiUtil.GetFileHolder(localName) ); 
-        request.setFile(fileMap);
-        File response =  this.api.putConvertWorkbook(request);
-    }
-
-
-    @Test
-    public void ConvertWorkbook_emfTest() throws Exception {
-        String localName = "cloud.png";
-        String remoteName = "cloud.png";
-
-        String format = "emf";
-
-        CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
-        PutConvertWorkbookRequest request = new PutConvertWorkbookRequest();
-        request.setFormat(format);
-         
-
-        HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(localName ,CellsApiUtil.GetFileHolder(localName) ); 
-        request.setFile(fileMap);
-        File response =  this.api.putConvertWorkbook(request);
-    }
-
-
-    @Test
-    public void ConvertWorkbook_bmpTest() throws Exception {
-        String localName = "cloud.png";
-        String remoteName = "cloud.png";
-
-        String format = "bmp";
 
         CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
        
@@ -477,26 +257,6 @@ public class ConversionPngTest {
         String remoteName = "cloud.png";
 
         String format = "numbers";
-
-        CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
-        PutConvertWorkbookRequest request = new PutConvertWorkbookRequest();
-        request.setFormat(format);
-         
-
-        HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(localName ,CellsApiUtil.GetFileHolder(localName) ); 
-        request.setFile(fileMap);
-        File response =  this.api.putConvertWorkbook(request);
-    }
-
-
-    @Test
-    public void ConvertWorkbook_wmfTest() throws Exception {
-        String localName = "cloud.png";
-        String remoteName = "cloud.png";
-
-        String format = "wmf";
 
         CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
        

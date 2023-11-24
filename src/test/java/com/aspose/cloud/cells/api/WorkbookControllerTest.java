@@ -168,7 +168,9 @@ public class WorkbookControllerTest {
        
         DeleteUnProtectWorkbookRequest request = new DeleteUnProtectWorkbookRequest();
         request.setName(remoteName);
-        request.setPassword("123456");
+
+        request.setPassword(remoteName);
+
         request.setFolder(remoteFolder);
 
         request.setStorageName("");

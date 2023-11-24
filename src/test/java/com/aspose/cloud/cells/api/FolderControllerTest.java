@@ -75,7 +75,7 @@ public class FolderControllerTest {
         CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
        
         CreateFolderRequest request = new CreateFolderRequest();
-        request.setPath("OutResul/NewFolder");
+        request.setPath("OutResult/NewFolder");
 
         request.setStorageName("");
 

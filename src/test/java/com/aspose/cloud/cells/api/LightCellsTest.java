@@ -4442,15 +4442,17 @@ public class LightCellsTest {
 
        
         PostProtectRequest request = new PostProtectRequest();
+        ProtectWorkbookRequest protectWorkbookRequest = new ProtectWorkbookRequest();
+        protectWorkbookRequest.setAwaysOpenReadOnly(true);
+
+
+        protectWorkbookRequest.setEncryptWithPassword("123456");
+
+        request.setProtectWorkbookRequest(protectWorkbookRequest);
+
         request.setPassword("123456");
          
-        ProtectWorkbookRequest protectWorkbookRequst = new ProtectWorkbookRequest();
-        protectWorkbookRequst.setAwaysOpenReadOnly(true);
-
-
-        protectWorkbookRequst.setEncryptWithPassword("123456");
-
-        request.setProtectWorkbookRequest(protectWorkbookRequst);
+         
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
         fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
@@ -4467,13 +4469,13 @@ public class LightCellsTest {
 
        
         PostProtectRequest request = new PostProtectRequest();
-        ProtectWorkbookRequest protectWorkbookRequst = new ProtectWorkbookRequest();
-        protectWorkbookRequst.setAwaysOpenReadOnly(true);
+        ProtectWorkbookRequest protectWorkbookRequest = new ProtectWorkbookRequest();
+        protectWorkbookRequest.setAwaysOpenReadOnly(true);
 
 
-        protectWorkbookRequst.setEncryptWithPassword("123456");
+        protectWorkbookRequest.setEncryptWithPassword("123456");
 
-        request.setProtectWorkbookRequest(protectWorkbookRequst);
+        request.setProtectWorkbookRequest(protectWorkbookRequest);
          
          
 
@@ -4778,6 +4780,7 @@ public class LightCellsTest {
         FilesResult response =  this.api.postClearObjects(request);
     }
 
+
     @Test
     public void PostRepair_xlsxTest() throws Exception {
         String book1Xlsx = "Book1.xlsx";
@@ -4848,6 +4851,7 @@ public class LightCellsTest {
         request.setFile(fileMap);
         FilesResult response =  this.api.postRepair(request);
     }
+
 
     @Test
     public void PostReverse_rows_pdfTest() throws Exception {

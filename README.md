@@ -1,4 +1,4 @@
-![](https://img.shields.io/badge/REST%20API-v3.0-lightgrey) [![GitHub license](https://img.shields.io/github/license/aspose-cells-cloud/aspose-cells-cloud-java)](https://github.com/aspose-cells-cloud/aspose-cells-cloud-java/blob/master/LICENSE) ![GitHub commits since latest release (by date)](https://img.shields.io/github/commits-since/aspose-cells-cloud/aspose-cells-cloud-java/23.10)
+![](https://img.shields.io/badge/REST%20API-v3.0-lightgrey) [![GitHub license](https://img.shields.io/github/license/aspose-cells-cloud/aspose-cells-cloud-java)](https://github.com/aspose-cells-cloud/aspose-cells-cloud-java/blob/master/LICENSE) ![GitHub commits since latest release (by date)](https://img.shields.io/github/commits-since/aspose-cells-cloud/aspose-cells-cloud-java/23.11)
 
 # Java SDK for Spreadsheet Processing in the Cloud
 
@@ -24,14 +24,13 @@ This Cloud SDK enhances your Java-based cloud apps to [process & manipulate Micr
 - Fetch the required shape from worksheet.
 - Leverage the power of [Pivot Tables](https://docs.aspose.cloud/cells/working-with-pivot-tables/) & Ranges.
 
-## Feature & Enhancements in Version 23.10
+## Feature & Enhancements in Version 23.11
 
 Full list of issues covering all changes in this release:
 
-- Fix protect workbook request.
-- Fix range copy API.
-- Optimize workbook protect API.
-
+- Optimize import xml data into Excel file.
+- Optimize import json data into Excel file.
+- **Remove deprecated functions, class and test case**.
 
 ## Read & Write Spreadsheet Formats
 
@@ -68,7 +67,7 @@ Next, add the following dependency to your project's POM:
     <dependency>
         <groupId>com.aspose</groupId>
         <artifactId>aspose-cells-cloud</artifactId>
-        <version>23.5.0</version>
+        <version>23.11.0</version>
     </dependency>
 </dependencies>
 ```
@@ -79,7 +78,7 @@ Next, add the following dependency to your project's POM:
 CellsApi cellsApi = new CellsApi(CellsApiUtil.GetClientId(),CellsApiUtil.GetClientSecret());
 String localName = "Book1.xlsx";
 String remoteName = "Book1.xlsx";
-CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
+
 PutAddNewWorksheetRequest request = new PutAddNewWorksheetRequest();
 request.setName(remoteName);
 request.setSheetName("Sheet1");
@@ -96,7 +95,6 @@ CellsApi cellsApi = new CellsApi(CellsApiUtil.GetClientId(),CellsApiUtil.GetClie
 String localName = "cloud.png";
 String remoteName = "cloud.png";
 String format = "csv";
-CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
 PutConvertWorkbookRequest request = new PutConvertWorkbookRequest();
 request.setFormat(format);
 HashMap<String,File> fileMap = new HashMap<String,File>(); 
