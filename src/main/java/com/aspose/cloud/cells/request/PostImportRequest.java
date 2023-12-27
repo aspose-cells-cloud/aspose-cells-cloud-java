@@ -43,12 +43,20 @@ public class PostImportRequest  implements IRequestModel {
     }
 
     private HashMap<String,File> file;
+    private String outFormat;
+    private String password;
+    private Boolean checkExcelRestriction;
+    private String region;
         public PostImportRequest()
         {
 
         }
-        public PostImportRequest(HashMap<String,File> file) {
+        public PostImportRequest(HashMap<String,File> file, String outFormat, String password, Boolean checkExcelRestriction, String region) {
             this.file = file;
+            this.outFormat = outFormat;
+            this.password = password;
+            this.checkExcelRestriction = checkExcelRestriction;
+            this.region = region;
         }   
 
         public HashMap<String,File> getFile() {
@@ -59,6 +67,42 @@ public class PostImportRequest  implements IRequestModel {
             this.file = file;
         }
 
+
+        public String getOutFormat() {
+            return this.outFormat;
+        }
+
+        public void setOutFormat(String outFormat) {
+            this.outFormat = outFormat;
+        }
+
+
+        public String getPassword() {
+            return this.password;
+        }
+
+        public void setPassword(String password) {
+            this.password = password;
+        }
+
+
+        public Boolean getCheckExcelRestriction() {
+            return this.checkExcelRestriction;
+        }
+
+        public void setCheckExcelRestriction(Boolean checkExcelRestriction) {
+            this.checkExcelRestriction = checkExcelRestriction;
+        }
+
+
+        public String getRegion() {
+            return this.region;
+        }
+
+        public void setRegion(String region) {
+            this.region = region;
+        }
+
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
          if (getFile() == null) {
@@ -67,7 +111,19 @@ public class PostImportRequest  implements IRequestModel {
         String localVarPath = "/cells/import";
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-        List<Pair> localVarQueryParams = null;
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+            if (getOutFormat() != null){
+                localVarQueryParams.addAll(apiClient.parameterToPairs("", "outFormat", getOutFormat()));
+            } 
+            if (getPassword() != null){
+                localVarQueryParams.addAll(apiClient.parameterToPairs("", "password", getPassword()));
+            } 
+            if (getCheckExcelRestriction() != null){
+                localVarQueryParams.addAll(apiClient.parameterToPairs("", "checkExcelRestriction", getCheckExcelRestriction()));
+            } 
+            if (getRegion() != null){
+                localVarQueryParams.addAll(apiClient.parameterToPairs("", "region", getRegion()));
+            }  
         if(this.extendQueryParameterMap !=null){
             for (String key :this.extendQueryParameterMap.keySet()) {
                     localVarQueryParams.addAll(apiClient.parameterToPairs("", key, this.extendQueryParameterMap.get(key)));           

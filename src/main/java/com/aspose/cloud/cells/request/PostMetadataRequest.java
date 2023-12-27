@@ -46,15 +46,19 @@ public class PostMetadataRequest  implements IRequestModel {
     private List<CellsDocumentProperty> cellsDocuments;
     private String password;
     private Boolean checkExcelRestriction;
+    private String outFormat;
+    private String region;
         public PostMetadataRequest()
         {
 
         }
-        public PostMetadataRequest(HashMap<String,File> file, List<CellsDocumentProperty> cellsDocuments, String password, Boolean checkExcelRestriction) {
+        public PostMetadataRequest(HashMap<String,File> file, List<CellsDocumentProperty> cellsDocuments, String password, Boolean checkExcelRestriction, String outFormat, String region) {
             this.file = file;
             this.cellsDocuments = cellsDocuments;
             this.password = password;
             this.checkExcelRestriction = checkExcelRestriction;
+            this.outFormat = outFormat;
+            this.region = region;
         }   
 
         public HashMap<String,File> getFile() {
@@ -92,6 +96,24 @@ public class PostMetadataRequest  implements IRequestModel {
             this.checkExcelRestriction = checkExcelRestriction;
         }
 
+
+        public String getOutFormat() {
+            return this.outFormat;
+        }
+
+        public void setOutFormat(String outFormat) {
+            this.outFormat = outFormat;
+        }
+
+
+        public String getRegion() {
+            return this.region;
+        }
+
+        public void setRegion(String region) {
+            this.region = region;
+        }
+
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
          if (getFile() == null) {
@@ -109,6 +131,12 @@ public class PostMetadataRequest  implements IRequestModel {
             } 
             if (getCheckExcelRestriction() != null){
                 localVarQueryParams.addAll(apiClient.parameterToPairs("", "checkExcelRestriction", getCheckExcelRestriction()));
+            } 
+            if (getOutFormat() != null){
+                localVarQueryParams.addAll(apiClient.parameterToPairs("", "outFormat", getOutFormat()));
+            } 
+            if (getRegion() != null){
+                localVarQueryParams.addAll(apiClient.parameterToPairs("", "region", getRegion()));
             }  
         if(this.extendQueryParameterMap !=null){
             for (String key :this.extendQueryParameterMap.keySet()) {

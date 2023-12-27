@@ -78,32 +78,6 @@ public class ConversionTest {
 
 
     @Test
-    public void WorkbookSaveAs_xls_OutResultPostExcelSaveAsxlsTest() throws Exception {
-        String localName = "Book1.xlsx";
-        String remoteName = "Book1.xlsx";
-
-        String format = "xls";
-        String newfilename = "OutResult/PostExcelSaveAs.xls";
-
-        CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
-        PostWorkbookSaveAsRequest request = new PostWorkbookSaveAsRequest();
-        request.setName(remoteName);
-
-        request.setNewfilename(newfilename);
-
-        PdfSaveOptions saveOptions = new PdfSaveOptions();
-        saveOptions.setSaveFormat(format);
-
-        request.setSaveOptions(saveOptions);
-
-        request.setFolder(remoteFolder);
-
-        SaveResponse response =  this.api.postWorkbookSaveAs(request);
-    }
-
-
-    @Test
     public void WorkbookSaveAs_html_OutResultPostExcelSaveAshtmlTest() throws Exception {
         String localName = "Book1.xlsx";
         String remoteName = "Book1.xlsx";
@@ -292,110 +266,6 @@ public class ConversionTest {
 
         String format = "xlsb";
         String newfilename = "OutResult/PostExcelSaveAs.xlsb";
-
-        CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
-        PostWorkbookSaveAsRequest request = new PostWorkbookSaveAsRequest();
-        request.setName(remoteName);
-
-        request.setNewfilename(newfilename);
-
-        PdfSaveOptions saveOptions = new PdfSaveOptions();
-        saveOptions.setSaveFormat(format);
-
-        request.setSaveOptions(saveOptions);
-
-        request.setFolder(remoteFolder);
-
-        SaveResponse response =  this.api.postWorkbookSaveAs(request);
-    }
-
-
-    @Test
-    public void WorkbookSaveAs_xlsm_OutResultPostExcelSaveAsxlsmTest() throws Exception {
-        String localName = "Book1.xlsx";
-        String remoteName = "Book1.xlsx";
-
-        String format = "xlsm";
-        String newfilename = "OutResult/PostExcelSaveAs.xlsm";
-
-        CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
-        PostWorkbookSaveAsRequest request = new PostWorkbookSaveAsRequest();
-        request.setName(remoteName);
-
-        request.setNewfilename(newfilename);
-
-        PdfSaveOptions saveOptions = new PdfSaveOptions();
-        saveOptions.setSaveFormat(format);
-
-        request.setSaveOptions(saveOptions);
-
-        request.setFolder(remoteFolder);
-
-        SaveResponse response =  this.api.postWorkbookSaveAs(request);
-    }
-
-
-    @Test
-    public void WorkbookSaveAs_xlsx_OutResultPostExcelSaveAsxlsxTest() throws Exception {
-        String localName = "Book1.xlsx";
-        String remoteName = "Book1.xlsx";
-
-        String format = "xlsx";
-        String newfilename = "OutResult/PostExcelSaveAs.xlsx";
-
-        CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
-        PostWorkbookSaveAsRequest request = new PostWorkbookSaveAsRequest();
-        request.setName(remoteName);
-
-        request.setNewfilename(newfilename);
-
-        PdfSaveOptions saveOptions = new PdfSaveOptions();
-        saveOptions.setSaveFormat(format);
-
-        request.setSaveOptions(saveOptions);
-
-        request.setFolder(remoteFolder);
-
-        SaveResponse response =  this.api.postWorkbookSaveAs(request);
-    }
-
-
-    @Test
-    public void WorkbookSaveAs_xltm_OutResultPostExcelSaveAsxltmTest() throws Exception {
-        String localName = "Book1.xlsx";
-        String remoteName = "Book1.xlsx";
-
-        String format = "xltm";
-        String newfilename = "OutResult/PostExcelSaveAs.xltm";
-
-        CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
-        PostWorkbookSaveAsRequest request = new PostWorkbookSaveAsRequest();
-        request.setName(remoteName);
-
-        request.setNewfilename(newfilename);
-
-        PdfSaveOptions saveOptions = new PdfSaveOptions();
-        saveOptions.setSaveFormat(format);
-
-        request.setSaveOptions(saveOptions);
-
-        request.setFolder(remoteFolder);
-
-        SaveResponse response =  this.api.postWorkbookSaveAs(request);
-    }
-
-
-    @Test
-    public void WorkbookSaveAs_xltx_OutResultPostExcelSaveAsxltxTest() throws Exception {
-        String localName = "Book1.xlsx";
-        String remoteName = "Book1.xlsx";
-
-        String format = "xltx";
-        String newfilename = "OutResult/PostExcelSaveAs.xltx";
 
         CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
        
@@ -670,26 +540,6 @@ public class ConversionTest {
 
 
     @Test
-    public void GetWorkbookFormat_xlsTest() throws Exception {
-        String localName = "Book1.xlsx";
-        String remoteName = "Book1.xlsx";
-
-        String format = "xls";
-
-        CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
-        GetWorkbookRequest request = new GetWorkbookRequest();
-        request.setName(remoteName);
-
-        request.setFormat(format);
-
-        request.setFolder(remoteFolder);
-
-        File response =  this.api.getWorkbook(request);
-    }
-
-
-    @Test
     public void GetWorkbookFormat_htmlTest() throws Exception {
         String localName = "Book1.xlsx";
         String remoteName = "Book1.xlsx";
@@ -830,26 +680,6 @@ public class ConversionTest {
 
 
     @Test
-    public void GetWorkbookFormat_xlsbTest() throws Exception {
-        String localName = "Book1.xlsx";
-        String remoteName = "Book1.xlsx";
-
-        String format = "xlsb";
-
-        CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
-        GetWorkbookRequest request = new GetWorkbookRequest();
-        request.setName(remoteName);
-
-        request.setFormat(format);
-
-        request.setFolder(remoteFolder);
-
-        File response =  this.api.getWorkbook(request);
-    }
-
-
-    @Test
     public void GetWorkbookFormat_xpsTest() throws Exception {
         String localName = "Book1.xlsx";
         String remoteName = "Book1.xlsx";
@@ -915,26 +745,6 @@ public class ConversionTest {
         String remoteName = "Book1.xlsx";
 
         String format = "numbers";
-
-        CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
-        GetWorkbookRequest request = new GetWorkbookRequest();
-        request.setName(remoteName);
-
-        request.setFormat(format);
-
-        request.setFolder(remoteFolder);
-
-        File response =  this.api.getWorkbook(request);
-    }
-
-
-    @Test
-    public void GetWorkbookFormat_wmfTest() throws Exception {
-        String localName = "Book1.xlsx";
-        String remoteName = "Book1.xlsx";
-
-        String format = "wmf";
 
         CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
        
@@ -1680,81 +1490,12 @@ public class ConversionTest {
 
 
     @Test
-    public void ConvertWorkbookSaveCloud_xlsm_OutResultConvertWorkbookxlsmTest() throws Exception {
-        String localName = "Book1.xlsx";
-        String remoteName = "Book1.xlsx";
-
-        String format = "xlsm";
-        String outPath = "OutResult/ConvertWorkbook.xlsm";
-
-        CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
-        PutConvertWorkbookRequest request = new PutConvertWorkbookRequest();
-        request.setFormat(format);
-
-        request.setOutPath(outPath);
-         
-
-        HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(localName ,CellsApiUtil.GetFileHolder(localName) ); 
-        request.setFile(fileMap);
-        File response =  this.api.putConvertWorkbook(request);
-    }
-
-
-    @Test
-    public void ConvertWorkbookSaveCloud_xlsx_OutResultConvertWorkbookxlsxTest() throws Exception {
-        String localName = "Book1.xlsx";
-        String remoteName = "Book1.xlsx";
-
-        String format = "xlsx";
-        String outPath = "OutResult/ConvertWorkbook.xlsx";
-
-        CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
-        PutConvertWorkbookRequest request = new PutConvertWorkbookRequest();
-        request.setFormat(format);
-
-        request.setOutPath(outPath);
-         
-
-        HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(localName ,CellsApiUtil.GetFileHolder(localName) ); 
-        request.setFile(fileMap);
-        File response =  this.api.putConvertWorkbook(request);
-    }
-
-
-    @Test
     public void ConvertWorkbookSaveCloud_xltm_OutResultConvertWorkbookxltmTest() throws Exception {
         String localName = "Book1.xlsx";
         String remoteName = "Book1.xlsx";
 
         String format = "xltm";
         String outPath = "OutResult/ConvertWorkbook.xltm";
-
-        CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
-        PutConvertWorkbookRequest request = new PutConvertWorkbookRequest();
-        request.setFormat(format);
-
-        request.setOutPath(outPath);
-         
-
-        HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(localName ,CellsApiUtil.GetFileHolder(localName) ); 
-        request.setFile(fileMap);
-        File response =  this.api.putConvertWorkbook(request);
-    }
-
-
-    @Test
-    public void ConvertWorkbookSaveCloud_xltx_OutResultConvertWorkbookxltxTest() throws Exception {
-        String localName = "Book1.xlsx";
-        String remoteName = "Book1.xlsx";
-
-        String format = "xltx";
-        String outPath = "OutResult/ConvertWorkbook.xltx";
 
         CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
        

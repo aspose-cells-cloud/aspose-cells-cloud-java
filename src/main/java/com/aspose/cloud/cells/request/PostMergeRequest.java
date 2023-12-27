@@ -43,20 +43,22 @@ public class PostMergeRequest  implements IRequestModel {
     }
 
     private HashMap<String,File> file;
-    private String format;
+    private String outFormat;
     private Boolean mergeToOneSheet;
     private String password;
     private Boolean checkExcelRestriction;
+    private String region;
         public PostMergeRequest()
         {
 
         }
-        public PostMergeRequest(HashMap<String,File> file, String format, Boolean mergeToOneSheet, String password, Boolean checkExcelRestriction) {
+        public PostMergeRequest(HashMap<String,File> file, String outFormat, Boolean mergeToOneSheet, String password, Boolean checkExcelRestriction, String region) {
             this.file = file;
-            this.format = format;
+            this.outFormat = outFormat;
             this.mergeToOneSheet = mergeToOneSheet;
             this.password = password;
             this.checkExcelRestriction = checkExcelRestriction;
+            this.region = region;
         }   
 
         public HashMap<String,File> getFile() {
@@ -68,12 +70,12 @@ public class PostMergeRequest  implements IRequestModel {
         }
 
 
-        public String getFormat() {
-            return this.format;
+        public String getOutFormat() {
+            return this.outFormat;
         }
 
-        public void setFormat(String format) {
-            this.format = format;
+        public void setOutFormat(String outFormat) {
+            this.outFormat = outFormat;
         }
 
 
@@ -103,6 +105,15 @@ public class PostMergeRequest  implements IRequestModel {
             this.checkExcelRestriction = checkExcelRestriction;
         }
 
+
+        public String getRegion() {
+            return this.region;
+        }
+
+        public void setRegion(String region) {
+            this.region = region;
+        }
+
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
          if (getFile() == null) {
@@ -112,8 +123,8 @@ public class PostMergeRequest  implements IRequestModel {
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
-            if (getFormat() != null){
-                localVarQueryParams.addAll(apiClient.parameterToPairs("", "format", getFormat()));
+            if (getOutFormat() != null){
+                localVarQueryParams.addAll(apiClient.parameterToPairs("", "outFormat", getOutFormat()));
             } 
             if (getMergeToOneSheet() != null){
                 localVarQueryParams.addAll(apiClient.parameterToPairs("", "mergeToOneSheet", getMergeToOneSheet()));
@@ -123,6 +134,9 @@ public class PostMergeRequest  implements IRequestModel {
             } 
             if (getCheckExcelRestriction() != null){
                 localVarQueryParams.addAll(apiClient.parameterToPairs("", "checkExcelRestriction", getCheckExcelRestriction()));
+            } 
+            if (getRegion() != null){
+                localVarQueryParams.addAll(apiClient.parameterToPairs("", "region", getRegion()));
             }  
         if(this.extendQueryParameterMap !=null){
             for (String key :this.extendQueryParameterMap.keySet()) {

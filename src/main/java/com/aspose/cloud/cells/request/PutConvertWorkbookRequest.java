@@ -49,11 +49,12 @@ public class PutConvertWorkbookRequest  implements IRequestModel {
     private String storageName;
     private Boolean checkExcelRestriction;
     private String streamFormat;
+    private String region;
         public PutConvertWorkbookRequest()
         {
 
         }
-        public PutConvertWorkbookRequest(HashMap<String,File> file, String format, String password, String outPath, String storageName, Boolean checkExcelRestriction, String streamFormat) {
+        public PutConvertWorkbookRequest(HashMap<String,File> file, String format, String password, String outPath, String storageName, Boolean checkExcelRestriction, String streamFormat, String region) {
             this.file = file;
             this.format = format;
             this.password = password;
@@ -61,6 +62,7 @@ public class PutConvertWorkbookRequest  implements IRequestModel {
             this.storageName = storageName;
             this.checkExcelRestriction = checkExcelRestriction;
             this.streamFormat = streamFormat;
+            this.region = region;
         }   
 
         public HashMap<String,File> getFile() {
@@ -125,6 +127,15 @@ public class PutConvertWorkbookRequest  implements IRequestModel {
             this.streamFormat = streamFormat;
         }
 
+
+        public String getRegion() {
+            return this.region;
+        }
+
+        public void setRegion(String region) {
+            this.region = region;
+        }
+
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
          if (getFile() == null) {
@@ -151,6 +162,9 @@ public class PutConvertWorkbookRequest  implements IRequestModel {
             } 
             if (getStreamFormat() != null){
                 localVarQueryParams.addAll(apiClient.parameterToPairs("", "streamFormat", getStreamFormat()));
+            } 
+            if (getRegion() != null){
+                localVarQueryParams.addAll(apiClient.parameterToPairs("", "region", getRegion()));
             }  
         if(this.extendQueryParameterMap !=null){
             for (String key :this.extendQueryParameterMap.keySet()) {

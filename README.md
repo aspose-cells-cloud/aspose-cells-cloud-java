@@ -1,4 +1,4 @@
-![](https://img.shields.io/badge/REST%20API-v3.0-lightgrey) [![GitHub license](https://img.shields.io/github/license/aspose-cells-cloud/aspose-cells-cloud-java)](https://github.com/aspose-cells-cloud/aspose-cells-cloud-java/blob/master/LICENSE) ![GitHub commits since latest release (by date)](https://img.shields.io/github/commits-since/aspose-cells-cloud/aspose-cells-cloud-java/23.11)
+![](https://img.shields.io/badge/REST%20API-v3.0-lightgrey) [![GitHub license](https://img.shields.io/github/license/aspose-cells-cloud/aspose-cells-cloud-java)](https://github.com/aspose-cells-cloud/aspose-cells-cloud-java/blob/master/LICENSE) ![GitHub commits since latest release (by date)](https://img.shields.io/github/commits-since/aspose-cells-cloud/aspose-cells-cloud-java/23.12.0)
 
 # Java SDK for Spreadsheet Processing in the Cloud
 
@@ -24,13 +24,20 @@ This Cloud SDK enhances your Java-based cloud apps to [process & manipulate Micr
 - Fetch the required shape from worksheet.
 - Leverage the power of [Pivot Tables](https://docs.aspose.cloud/cells/working-with-pivot-tables/) & Ranges.
 
-## Feature & Enhancements in Version 23.11
+## Feature & Enhancements in Version 23.12.0
 
 Full list of issues covering all changes in this release:
 
-- Optimize import xml data into Excel file.
-- Optimize import json data into Excel file.
-- **Remove deprecated functions, class and test case**.
+- Conversion APIs add region parameter.
+- Protection APIs add region parameter.
+- Assemble data API adds region parameter.
+- Merge files API adds region parameter.
+- Split files API adds region parameter.
+- Import data API adds region parameter.
+- Watermark API adds region parameter.
+- Clear object API adds region parameter.
+- Reverse data API adds region parameter.
+- Rotate data API adds region parameter.
 
 ## Read & Write Spreadsheet Formats
 

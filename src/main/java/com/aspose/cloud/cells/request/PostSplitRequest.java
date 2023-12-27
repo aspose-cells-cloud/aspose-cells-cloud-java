@@ -43,22 +43,24 @@ public class PostSplitRequest  implements IRequestModel {
     }
 
     private HashMap<String,File> file;
-    private String format;
+    private String outFormat;
     private String password;
     private Integer from;
     private Integer to;
     private Boolean checkExcelRestriction;
+    private String region;
         public PostSplitRequest()
         {
 
         }
-        public PostSplitRequest(HashMap<String,File> file, String format, String password, Integer from, Integer to, Boolean checkExcelRestriction) {
+        public PostSplitRequest(HashMap<String,File> file, String outFormat, String password, Integer from, Integer to, Boolean checkExcelRestriction, String region) {
             this.file = file;
-            this.format = format;
+            this.outFormat = outFormat;
             this.password = password;
             this.from = from;
             this.to = to;
             this.checkExcelRestriction = checkExcelRestriction;
+            this.region = region;
         }   
 
         public HashMap<String,File> getFile() {
@@ -70,12 +72,12 @@ public class PostSplitRequest  implements IRequestModel {
         }
 
 
-        public String getFormat() {
-            return this.format;
+        public String getOutFormat() {
+            return this.outFormat;
         }
 
-        public void setFormat(String format) {
-            this.format = format;
+        public void setOutFormat(String outFormat) {
+            this.outFormat = outFormat;
         }
 
 
@@ -114,20 +116,29 @@ public class PostSplitRequest  implements IRequestModel {
             this.checkExcelRestriction = checkExcelRestriction;
         }
 
+
+        public String getRegion() {
+            return this.region;
+        }
+
+        public void setRegion(String region) {
+            this.region = region;
+        }
+
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
          if (getFile() == null) {
                     throw new ApiException("Missing the required parameter 'File' when calling PostSplit");
                 } 
-                if (getFormat() == null) {
-                    throw new ApiException("Missing the required parameter 'Format' when calling PostSplit");
+                if (getOutFormat() == null) {
+                    throw new ApiException("Missing the required parameter 'OutFormat' when calling PostSplit");
                 }       
         String localVarPath = "/cells/split";
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
-            if (getFormat() != null){
-                localVarQueryParams.addAll(apiClient.parameterToPairs("", "format", getFormat()));
+            if (getOutFormat() != null){
+                localVarQueryParams.addAll(apiClient.parameterToPairs("", "outFormat", getOutFormat()));
             } 
             if (getPassword() != null){
                 localVarQueryParams.addAll(apiClient.parameterToPairs("", "password", getPassword()));
@@ -140,6 +151,9 @@ public class PostSplitRequest  implements IRequestModel {
             } 
             if (getCheckExcelRestriction() != null){
                 localVarQueryParams.addAll(apiClient.parameterToPairs("", "checkExcelRestriction", getCheckExcelRestriction()));
+            } 
+            if (getRegion() != null){
+                localVarQueryParams.addAll(apiClient.parameterToPairs("", "region", getRegion()));
             }  
         if(this.extendQueryParameterMap !=null){
             for (String key :this.extendQueryParameterMap.keySet()) {

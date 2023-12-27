@@ -45,18 +45,22 @@ public class PostWatermarkRequest  implements IRequestModel {
     private HashMap<String,File> file;
     private String text;
     private String color;
+    private String outFormat;
     private String password;
     private Boolean checkExcelRestriction;
+    private String region;
         public PostWatermarkRequest()
         {
 
         }
-        public PostWatermarkRequest(HashMap<String,File> file, String text, String color, String password, Boolean checkExcelRestriction) {
+        public PostWatermarkRequest(HashMap<String,File> file, String text, String color, String outFormat, String password, Boolean checkExcelRestriction, String region) {
             this.file = file;
             this.text = text;
             this.color = color;
+            this.outFormat = outFormat;
             this.password = password;
             this.checkExcelRestriction = checkExcelRestriction;
+            this.region = region;
         }   
 
         public HashMap<String,File> getFile() {
@@ -86,6 +90,15 @@ public class PostWatermarkRequest  implements IRequestModel {
         }
 
 
+        public String getOutFormat() {
+            return this.outFormat;
+        }
+
+        public void setOutFormat(String outFormat) {
+            this.outFormat = outFormat;
+        }
+
+
         public String getPassword() {
             return this.password;
         }
@@ -101,6 +114,15 @@ public class PostWatermarkRequest  implements IRequestModel {
 
         public void setCheckExcelRestriction(Boolean checkExcelRestriction) {
             this.checkExcelRestriction = checkExcelRestriction;
+        }
+
+
+        public String getRegion() {
+            return this.region;
+        }
+
+        public void setRegion(String region) {
+            this.region = region;
         }
 
     @Override
@@ -124,11 +146,17 @@ public class PostWatermarkRequest  implements IRequestModel {
             if (getColor() != null){
                 localVarQueryParams.addAll(apiClient.parameterToPairs("", "color", getColor()));
             } 
+            if (getOutFormat() != null){
+                localVarQueryParams.addAll(apiClient.parameterToPairs("", "outFormat", getOutFormat()));
+            } 
             if (getPassword() != null){
                 localVarQueryParams.addAll(apiClient.parameterToPairs("", "password", getPassword()));
             } 
             if (getCheckExcelRestriction() != null){
                 localVarQueryParams.addAll(apiClient.parameterToPairs("", "checkExcelRestriction", getCheckExcelRestriction()));
+            } 
+            if (getRegion() != null){
+                localVarQueryParams.addAll(apiClient.parameterToPairs("", "region", getRegion()));
             }  
         if(this.extendQueryParameterMap !=null){
             for (String key :this.extendQueryParameterMap.keySet()) {

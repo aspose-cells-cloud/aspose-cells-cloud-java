@@ -71,6 +71,23 @@ public class ConvertTaskParameter  extends  TaskParameter {
             this.destinationFile = destinationFile;
         }
 
+        @SerializedName("Region")
+        private String region ;
+
+        public  ConvertTaskParameter  region(String  region) {
+            this.region =  region;
+            return this;
+        }
+
+        @ApiModelProperty(value = "")
+        public String getRegion() {
+            return region;
+        }
+
+        public void setRegion(String region) {
+            this.region = region;
+        }
+
         @SerializedName("SaveOptions")
         private SaveOptions saveOptions ;
 
@@ -101,13 +118,14 @@ public class ConvertTaskParameter  extends  TaskParameter {
             return
                 Objects.equals(this.workbook, convertTaskParameter.workbook) &&
                 Objects.equals(this.destinationFile, convertTaskParameter.destinationFile) &&
+                Objects.equals(this.region, convertTaskParameter.region) &&
                 Objects.equals(this.saveOptions, convertTaskParameter.saveOptions) &&
                 super.equals(o);
       }
 
       @Override
       public int hashCode() {
-        return Objects.hash(workbook, destinationFile, saveOptions, super.hashCode());
+        return Objects.hash(workbook, destinationFile, region, saveOptions, super.hashCode());
       }
         @Override
         public String toString() {
@@ -115,6 +133,7 @@ public class ConvertTaskParameter  extends  TaskParameter {
             sb.append("class ConvertTaskParameter {\n");
             sb.append("    workbook: ").append(toIndentedString(getWorkbook())).append("\n");
             sb.append("    destinationFile: ").append(toIndentedString(getDestinationFile())).append("\n");
+            sb.append("    region: ").append(toIndentedString(getRegion())).append("\n");
             sb.append("    saveOptions: ").append(toIndentedString(getSaveOptions())).append("\n");
             sb.append("}");
             return sb.toString();

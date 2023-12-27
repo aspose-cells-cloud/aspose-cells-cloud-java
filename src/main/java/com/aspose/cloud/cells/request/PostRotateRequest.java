@@ -44,19 +44,21 @@ public class PostRotateRequest  implements IRequestModel {
 
     private HashMap<String,File> file;
     private String rotateType;
-    private String format;
+    private String outFormat;
     private String password;
     private Boolean checkExcelRestriction;
+    private String region;
         public PostRotateRequest()
         {
 
         }
-        public PostRotateRequest(HashMap<String,File> file, String rotateType, String format, String password, Boolean checkExcelRestriction) {
+        public PostRotateRequest(HashMap<String,File> file, String rotateType, String outFormat, String password, Boolean checkExcelRestriction, String region) {
             this.file = file;
             this.rotateType = rotateType;
-            this.format = format;
+            this.outFormat = outFormat;
             this.password = password;
             this.checkExcelRestriction = checkExcelRestriction;
+            this.region = region;
         }   
 
         public HashMap<String,File> getFile() {
@@ -77,12 +79,12 @@ public class PostRotateRequest  implements IRequestModel {
         }
 
 
-        public String getFormat() {
-            return this.format;
+        public String getOutFormat() {
+            return this.outFormat;
         }
 
-        public void setFormat(String format) {
-            this.format = format;
+        public void setOutFormat(String outFormat) {
+            this.outFormat = outFormat;
         }
 
 
@@ -103,6 +105,15 @@ public class PostRotateRequest  implements IRequestModel {
             this.checkExcelRestriction = checkExcelRestriction;
         }
 
+
+        public String getRegion() {
+            return this.region;
+        }
+
+        public void setRegion(String region) {
+            this.region = region;
+        }
+
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
          if (getFile() == null) {
@@ -118,14 +129,17 @@ public class PostRotateRequest  implements IRequestModel {
             if (getRotateType() != null){
                 localVarQueryParams.addAll(apiClient.parameterToPairs("", "rotateType", getRotateType()));
             } 
-            if (getFormat() != null){
-                localVarQueryParams.addAll(apiClient.parameterToPairs("", "format", getFormat()));
+            if (getOutFormat() != null){
+                localVarQueryParams.addAll(apiClient.parameterToPairs("", "outFormat", getOutFormat()));
             } 
             if (getPassword() != null){
                 localVarQueryParams.addAll(apiClient.parameterToPairs("", "password", getPassword()));
             } 
             if (getCheckExcelRestriction() != null){
                 localVarQueryParams.addAll(apiClient.parameterToPairs("", "checkExcelRestriction", getCheckExcelRestriction()));
+            } 
+            if (getRegion() != null){
+                localVarQueryParams.addAll(apiClient.parameterToPairs("", "region", getRegion()));
             }  
         if(this.extendQueryParameterMap !=null){
             for (String key :this.extendQueryParameterMap.keySet()) {

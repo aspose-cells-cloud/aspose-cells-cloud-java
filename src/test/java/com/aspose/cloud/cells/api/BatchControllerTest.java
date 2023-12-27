@@ -69,7 +69,7 @@ public class BatchControllerTest {
         batchConvertRequest.setFormat("pdf");
 
 
-        batchConvertRequest.setOutFolder("TestResult");
+        batchConvertRequest.setOutFolder("OutResult");
 
 
         MatchConditionRequest matchCondition = new MatchConditionRequest();
@@ -104,7 +104,7 @@ public class BatchControllerTest {
         batchProtectRequest.setPassword("123456");
 
 
-        batchProtectRequest.setOutFolder("TestResult");
+        batchProtectRequest.setOutFolder("OutResult");
 
 
         MatchConditionRequest matchCondition = new MatchConditionRequest();
@@ -136,7 +136,7 @@ public class BatchControllerTest {
         batchLockRequest.setPassword("123456");
 
 
-        batchLockRequest.setOutFolder("TestResult");
+        batchLockRequest.setOutFolder("OutResult");
 
 
         MatchConditionRequest matchCondition = new MatchConditionRequest();
@@ -168,7 +168,7 @@ public class BatchControllerTest {
         batchLockRequest.setPassword("123456");
 
 
-        batchLockRequest.setOutFolder("TestResult");
+        batchLockRequest.setOutFolder("OutResult");
 
 
         MatchConditionRequest matchCondition = new MatchConditionRequest();

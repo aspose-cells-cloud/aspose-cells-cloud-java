@@ -550,6 +550,10 @@ public class WorkbookControllerTest {
 
         request.setTo(5);
 
+        request.setHorizontalResolution(96);
+
+        request.setVerticalResolution(96);
+
         request.setSplitNameRule("sheetname");
 
         request.setFolder(remoteFolder);

@@ -6731,7 +6731,7 @@
     },
     {
       "ClassName": "HypelinksController",
-      "Name": "GetWorksheetHyperlinks",
+      "Name": "GetWorkSheetHyperlinks",
       "HttpMethod": "GET",
       "Path": "/cells/{name}/worksheets/{sheetName}/hyperlinks",
       "Parameters": [
@@ -6784,7 +6784,7 @@
     },
     {
       "ClassName": "HypelinksController",
-      "Name": "GetWorksheetHyperlink",
+      "Name": "GetWorkSheetHyperlink",
       "HttpMethod": "GET",
       "Path": "/cells/{name}/worksheets/{sheetName}/hyperlinks/{hyperlinkIndex}",
       "Parameters": [
@@ -6846,7 +6846,7 @@
     },
     {
       "ClassName": "HypelinksController",
-      "Name": "DeleteWorksheetHyperlink",
+      "Name": "DeleteWorkSheetHyperlink",
       "HttpMethod": "DELETE",
       "Path": "/cells/{name}/worksheets/{sheetName}/hyperlinks/{hyperlinkIndex}",
       "Parameters": [
@@ -6908,7 +6908,7 @@
     },
     {
       "ClassName": "HypelinksController",
-      "Name": "PostWorksheetHyperlink",
+      "Name": "PostWorkSheetHyperlink",
       "HttpMethod": "POST",
       "Path": "/cells/{name}/worksheets/{sheetName}/hyperlinks/{hyperlinkIndex}",
       "Parameters": [
@@ -6980,7 +6980,7 @@
     },
     {
       "ClassName": "HypelinksController",
-      "Name": "PutWorksheetHyperlink",
+      "Name": "PutWorkSheetHyperlink",
       "HttpMethod": "PUT",
       "Path": "/cells/{name}/worksheets/{sheetName}/hyperlinks",
       "Parameters": [
@@ -7078,7 +7078,7 @@
     },
     {
       "ClassName": "HypelinksController",
-      "Name": "DeleteWorksheetHyperlinks",
+      "Name": "DeleteWorkSheetHyperlinks",
       "HttpMethod": "DELETE",
       "Path": "/cells/{name}/worksheets/{sheetName}/hyperlinks",
       "Parameters": [
@@ -10427,7 +10427,7 @@
     },
     {
       "ClassName": "PicturesController",
-      "Name": "PostWorksheetPicture",
+      "Name": "PostWorkSheetPicture",
       "HttpMethod": "POST",
       "Path": "/cells/{name}/worksheets/{sheetName}/pictures/{pictureIndex}",
       "Parameters": [
@@ -10561,7 +10561,7 @@
     },
     {
       "ClassName": "PicturesController",
-      "Name": "DeleteWorksheetPictures",
+      "Name": "DeleteWorkSheetPictures",
       "HttpMethod": "DELETE",
       "Path": "/cells/{name}/worksheets/{sheetName}/pictures",
       "Parameters": [
@@ -16220,7 +16220,7 @@
     },
     {
       "ClassName": "WorksheetsController",
-      "Name": "GetWorksheets",
+      "Name": "GetWorkSheets",
       "HttpMethod": "GET",
       "Path": "/cells/{name}/worksheets",
       "Parameters": [
@@ -16264,7 +16264,7 @@
     },
     {
       "ClassName": "WorksheetsController",
-      "Name": "GetWorksheetWithFormat",
+      "Name": "GetWorkSheetWithFormat",
       "HttpMethod": "GET",
       "Path": "/cells/{name}/worksheets/{sheetName}",
       "Parameters": [
@@ -16925,7 +16925,7 @@
     },
     {
       "ClassName": "WorksheetsController",
-      "Name": "GetWorksheetTextItems",
+      "Name": "GetWorkSheetTextItems",
       "HttpMethod": "GET",
       "Path": "/cells/{name}/worksheets/{sheetName}/textItems",
       "Parameters": [
@@ -16978,7 +16978,7 @@
     },
     {
       "ClassName": "WorksheetsController",
-      "Name": "GetWorksheetComments",
+      "Name": "GetWorkSheetComments",
       "HttpMethod": "GET",
       "Path": "/cells/{name}/worksheets/{sheetName}/comments",
       "Parameters": [
@@ -17031,7 +17031,7 @@
     },
     {
       "ClassName": "WorksheetsController",
-      "Name": "GetWorksheetComment",
+      "Name": "GetWorkSheetComment",
       "HttpMethod": "GET",
       "Path": "/cells/{name}/worksheets/{sheetName}/comments/{cellName}",
       "Parameters": [
@@ -17093,7 +17093,7 @@
     },
     {
       "ClassName": "WorksheetsController",
-      "Name": "PutWorksheetComment",
+      "Name": "PutWorkSheetComment",
       "HttpMethod": "PUT",
       "Path": "/cells/{name}/worksheets/{sheetName}/comments/{cellName}",
       "Parameters": [
@@ -17165,7 +17165,7 @@
     },
     {
       "ClassName": "WorksheetsController",
-      "Name": "PostWorksheetComment",
+      "Name": "PostWorkSheetComment",
       "HttpMethod": "POST",
       "Path": "/cells/{name}/worksheets/{sheetName}/comments/{cellName}",
       "Parameters": [
@@ -17237,7 +17237,7 @@
     },
     {
       "ClassName": "WorksheetsController",
-      "Name": "DeleteWorksheetComment",
+      "Name": "DeleteWorkSheetComment",
       "HttpMethod": "DELETE",
       "Path": "/cells/{name}/worksheets/{sheetName}/comments/{cellName}",
       "Parameters": [
@@ -17299,7 +17299,7 @@
     },
     {
       "ClassName": "WorksheetsController",
-      "Name": "DeleteWorksheetComments",
+      "Name": "DeleteWorkSheetComments",
       "HttpMethod": "DELETE",
       "Path": "/cells/{name}/worksheets/{sheetName}/comments",
       "Parameters": [
@@ -17352,7 +17352,7 @@
     },
     {
       "ClassName": "WorksheetsController",
-      "Name": "GetWorksheetMergedCells",
+      "Name": "GetWorkSheetMergedCells",
       "HttpMethod": "GET",
       "Path": "/cells/{name}/worksheets/{sheetName}/mergedCells",
       "Parameters": [
@@ -17405,7 +17405,7 @@
     },
     {
       "ClassName": "WorksheetsController",
-      "Name": "GetWorksheetMergedCell",
+      "Name": "GetWorkSheetMergedCell",
       "HttpMethod": "GET",
       "Path": "/cells/{name}/worksheets/{sheetName}/mergedCells/{mergedCellIndex}",
       "Parameters": [
@@ -17467,7 +17467,7 @@
     },
     {
       "ClassName": "WorksheetsController",
-      "Name": "GetWorksheetCalculateFormula",
+      "Name": "GetWorkSheetCalculateFormula",
       "HttpMethod": "GET",
       "Path": "/cells/{name}/worksheets/{sheetName}/formulaResult",
       "Parameters": [
@@ -17529,7 +17529,7 @@
     },
     {
       "ClassName": "WorksheetsController",
-      "Name": "PostWorksheetCalculateFormula",
+      "Name": "PostWorkSheetCalculateFormula",
       "HttpMethod": "POST",
       "Path": "/cells/{name}/worksheets/{sheetName}/calculateformula",
       "Parameters": [
@@ -17591,7 +17591,7 @@
     },
     {
       "ClassName": "WorksheetsController",
-      "Name": "PostWorksheetTextSearch",
+      "Name": "PostWorkSheetTextSearch",
       "HttpMethod": "POST",
       "Path": "/cells/{name}/worksheets/{sheetName}/findText",
       "Parameters": [
@@ -18038,7 +18038,7 @@
     },
     {
       "ClassName": "WorksheetsController",
-      "Name": "PutWorksheetBackground",
+      "Name": "PutWorkSheetBackground",
       "HttpMethod": "PUT",
       "Path": "/cells/{name}/worksheets/{sheetName}/background",
       "Parameters": [
@@ -18112,7 +18112,7 @@
     },
     {
       "ClassName": "WorksheetsController",
-      "Name": "DeleteWorksheetBackground",
+      "Name": "DeleteWorkSheetBackground",
       "HttpMethod": "DELETE",
       "Path": "/cells/{name}/worksheets/{sheetName}/background",
       "Parameters": [
@@ -18769,7 +18769,7 @@
     },
     {
       "ClassName": "WorksheetValidationsController",
-      "Name": "GetWorksheetValidations",
+      "Name": "GetWorkSheetValidations",
       "HttpMethod": "GET",
       "Path": "/cells/{name}/worksheets/{sheetName}/validations",
       "Parameters": [
@@ -18822,7 +18822,7 @@
     },
     {
       "ClassName": "WorksheetValidationsController",
-      "Name": "GetWorksheetValidation",
+      "Name": "GetWorkSheetValidation",
       "HttpMethod": "GET",
       "Path": "/cells/{name}/worksheets/{sheetName}/validations/{validationIndex}",
       "Parameters": [
@@ -18884,7 +18884,7 @@
     },
     {
       "ClassName": "WorksheetValidationsController",
-      "Name": "PutWorksheetValidation",
+      "Name": "PutWorkSheetValidation",
       "HttpMethod": "PUT",
       "Path": "/cells/{name}/worksheets/{sheetName}/validations",
       "Parameters": [
@@ -18946,7 +18946,7 @@
     },
     {
       "ClassName": "WorksheetValidationsController",
-      "Name": "PostWorksheetValidation",
+      "Name": "PostWorkSheetValidation",
       "HttpMethod": "POST",
       "Path": "/cells/{name}/worksheets/{sheetName}/validations/{validationIndex}",
       "Parameters": [
@@ -19018,7 +19018,7 @@
     },
     {
       "ClassName": "WorksheetValidationsController",
-      "Name": "DeleteWorksheetValidation",
+      "Name": "DeleteWorkSheetValidation",
       "HttpMethod": "DELETE",
       "Path": "/cells/{name}/worksheets/{sheetName}/validations/{validationIndex}",
       "Parameters": [
@@ -19080,7 +19080,7 @@
     },
     {
       "ClassName": "WorksheetValidationsController",
-      "Name": "DeleteWorksheetValidations",
+      "Name": "DeleteWorkSheetValidations",
       "HttpMethod": "DELETE",
       "Path": "/cells/{name}/worksheets/{sheetName}/validations",
       "Parameters": [
@@ -19736,5 +19736,298 @@
         }
       ]
     }
-  ]
+  ],
+  "Models": [
+    {
+      "Name": "DiscUsage",
+      "Type": "Class",
+      "IsAbstract": false,
+      "Properties": [
+        {
+          "Name": "UsedSize",
+          "Nullable": true,
+          "ReadOnly": false,
+          "DataType": {
+            "Identifier": "Long"
+          }
+        },
+        {
+          "Name": "TotalSize",
+          "Nullable": true,
+          "ReadOnly": false,
+          "DataType": {
+            "Identifier": "Long"
+          }
+        }
+      ]
+    },
+    {
+      "Name": "ObjectExist",
+      "Type": "Class",
+      "IsAbstract": false,
+      "Properties": [
+        {
+          "Name": "Exists",
+          "Nullable": true,
+          "ReadOnly": false,
+          "DataType": {
+            "Identifier": "Boolean"
+          }
+        },
+        {
+          "Name": "IsFolder",
+          "Nullable": true,
+          "ReadOnly": false,
+          "DataType": {
+            "Identifier": "Boolean"
+          }
+        }
+      ]
+    },
+    {
+      "Name": "ObjectExistsExtensions",
+      "Type": "Class",
+      "IsAbstract": false,
+      "Properties": []
+    },
+    {
+      "Name": "FileVersion",
+      "Type": "Class",
+      "ParentName": "StorageFile",
+      "IsAbstract": false,
+      "Properties": [
+        {
+          "Name": "VersionId",
+          "Nullable": true,
+          "ReadOnly": false,
+          "DataType": {
+            "Identifier": "String"
+          }
+        },
+        {
+          "Name": "IsLatest",
+          "Nullable": true,
+          "ReadOnly": false,
+          "DataType": {
+            "Identifier": "Boolean"
+          }
+        },
+        {
+          "Name": "Name",
+          "Nullable": true,
+          "ReadOnly": false,
+          "DataType": {
+            "Identifier": "String"
+          }
+        },
+        {
+          "Name": "IsFolder",
+          "Nullable": true,
+          "ReadOnly": false,
+          "DataType": {
+            "Identifier": "Boolean"
+          }
+        },
+        {
+          "Name": "ModifiedDate",
+          "Nullable": true,
+          "ReadOnly": false,
+          "DataType": {
+            "Identifier": "DateTime"
+          }
+        },
+        {
+          "Name": "Size",
+          "Nullable": true,
+          "ReadOnly": false,
+          "DataType": {
+            "Identifier": "Long"
+          }
+        },
+        {
+          "Name": "Path",
+          "Nullable": true,
+          "ReadOnly": false,
+          "DataType": {
+            "Identifier": "String"
+          }
+        }
+      ]
+    },
+    {
+      "Name": "StorageExist",
+      "Type": "Class",
+      "IsAbstract": false,
+      "Properties": [
+        {
+          "Name": "Exists",
+          "Nullable": true,
+          "ReadOnly": false,
+          "DataType": {
+            "Identifier": "Boolean"
+          }
+        }
+      ]
+    },
+    {
+      "Name": "FileVersions",
+      "Type": "Class",
+      "IsAbstract": false,
+      "Properties": [
+        {
+          "Name": "Value",
+          "Nullable": true,
+          "ReadOnly": false,
+          "DataType": {
+            "Identifier": "Class",
+            "Reference": "IList<FileVersion>"
+          }
+        }
+      ]
+    },
+    {
+      "Name": "FilesList",
+      "Type": "Class",
+      "IsAbstract": false,
+      "Properties": [
+        {
+          "Name": "Value",
+          "Nullable": true,
+          "ReadOnly": false,
+          "DataType": {
+            "Identifier": "Class",
+            "Reference": "IList<StorageFile>"
+          }
+        }
+      ]
+    },
+    {
+      "Name": "FilesUploadResult",
+      "Type": "Class",
+      "IsAbstract": false,
+      "Properties": [
+        {
+          "Name": "Uploaded",
+          "Nullable": true,
+          "ReadOnly": false,
+          "DataType": {
+            "Identifier": "Class",
+            "Reference": "IList<String>"
+          }
+        },
+        {
+          "Name": "Errors",
+          "Nullable": true,
+          "ReadOnly": false,
+          "DataType": {
+            "Identifier": "Class",
+            "Reference": "IList<Error>"
+          }
+        }
+      ]
+    },
+    {
+      "Name": "StorageFile",
+      "Type": "Class",
+      "IsAbstract": false,
+      "Properties": [
+        {
+          "Name": "Name",
+          "Nullable": true,
+          "ReadOnly": false,
+          "DataType": {
+            "Identifier": "String"
+          }
+        },
+        {
+          "Name": "IsFolder",
+          "Nullable": true,
+          "ReadOnly": false,
+          "DataType": {
+            "Identifier": "Boolean"
+          }
+        },
+        {
+          "Name": "ModifiedDate",
+          "Nullable": true,
+          "ReadOnly": false,
+          "DataType": {
+            "Identifier": "DateTime"
+          }
+        },
+        {
+          "Name": "Size",
+          "Nullable": true,
+          "ReadOnly": false,
+          "DataType": {
+            "Identifier": "Long"
+          }
+        },
+        {
+          "Name": "Path",
+          "Nullable": true,
+          "ReadOnly": false,
+          "DataType": {
+            "Identifier": "String"
+          }
+        }
+      ]
+    },
+    {
+      "Name": "GoogleDriveStorageFile",
+      "Type": "Class",
+      "ParentName": "StorageFile",
+      "IsAbstract": false,
+      "Properties": [
+        {
+          "Name": "MimeType",
+          "Nullable": true,
+          "ReadOnly": false,
+          "DataType": {
+            "Identifier": "String"
+          }
+        },
+        {
+          "Name": "Name",
+          "Nullable": true,
+          "ReadOnly": false,
+          "DataType": {
+            "Identifier": "String"
+          }
+        },
+        {
+          "Name": "IsFolder",
+          "Nullable": true,
+          "ReadOnly": false,
+          "DataType": {
+            "Identifier": "Boolean"
+          }
+        },
+        {
+          "Name": "ModifiedDate",
+          "Nullable": true,
+          "ReadOnly": false,
+          "DataType": {
+            "Identifier": "DateTime"
+          }
+        },
+        {
+          "Name": "Size",
+          "Nullable": true,
+          "ReadOnly": false,
+          "DataType": {
+            "Identifier": "Long"
+          }
+        },
+        {
+          "Name": "Path",
+          "Nullable": true,
+          "ReadOnly": false,
+          "DataType": {
+            "Identifier": "String"
+          }
+        }
+      ]
+    }
+    ]
 }

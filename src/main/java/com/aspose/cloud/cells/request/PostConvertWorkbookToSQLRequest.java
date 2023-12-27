@@ -45,14 +45,16 @@ public class PostConvertWorkbookToSQLRequest  implements IRequestModel {
     private HashMap<String,File> file;
     private String password;
     private Boolean checkExcelRestriction;
+    private String region;
         public PostConvertWorkbookToSQLRequest()
         {
 
         }
-        public PostConvertWorkbookToSQLRequest(HashMap<String,File> file, String password, Boolean checkExcelRestriction) {
+        public PostConvertWorkbookToSQLRequest(HashMap<String,File> file, String password, Boolean checkExcelRestriction, String region) {
             this.file = file;
             this.password = password;
             this.checkExcelRestriction = checkExcelRestriction;
+            this.region = region;
         }   
 
         public HashMap<String,File> getFile() {
@@ -81,6 +83,15 @@ public class PostConvertWorkbookToSQLRequest  implements IRequestModel {
             this.checkExcelRestriction = checkExcelRestriction;
         }
 
+
+        public String getRegion() {
+            return this.region;
+        }
+
+        public void setRegion(String region) {
+            this.region = region;
+        }
+
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
          if (getFile() == null) {
@@ -95,6 +106,9 @@ public class PostConvertWorkbookToSQLRequest  implements IRequestModel {
             } 
             if (getCheckExcelRestriction() != null){
                 localVarQueryParams.addAll(apiClient.parameterToPairs("", "checkExcelRestriction", getCheckExcelRestriction()));
+            } 
+            if (getRegion() != null){
+                localVarQueryParams.addAll(apiClient.parameterToPairs("", "region", getRegion()));
             }  
         if(this.extendQueryParameterMap !=null){
             for (String key :this.extendQueryParameterMap.keySet()) {

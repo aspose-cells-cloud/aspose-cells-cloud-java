@@ -44,15 +44,17 @@ public class DeleteMetadataRequest  implements IRequestModel {
 
     private HashMap<String,File> file;
     private String type;
+    private String outFormat;
     private String password;
     private Boolean checkExcelRestriction;
         public DeleteMetadataRequest()
         {
 
         }
-        public DeleteMetadataRequest(HashMap<String,File> file, String type, String password, Boolean checkExcelRestriction) {
+        public DeleteMetadataRequest(HashMap<String,File> file, String type, String outFormat, String password, Boolean checkExcelRestriction) {
             this.file = file;
             this.type = type;
+            this.outFormat = outFormat;
             this.password = password;
             this.checkExcelRestriction = checkExcelRestriction;
         }   
@@ -72,6 +74,15 @@ public class DeleteMetadataRequest  implements IRequestModel {
 
         public void setType(String type) {
             this.type = type;
+        }
+
+
+        public String getOutFormat() {
+            return this.outFormat;
+        }
+
+        public void setOutFormat(String outFormat) {
+            this.outFormat = outFormat;
         }
 
 
@@ -103,6 +114,9 @@ public class DeleteMetadataRequest  implements IRequestModel {
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
             if (getType() != null){
                 localVarQueryParams.addAll(apiClient.parameterToPairs("", "type", getType()));
+            } 
+            if (getOutFormat() != null){
+                localVarQueryParams.addAll(apiClient.parameterToPairs("", "outFormat", getOutFormat()));
             } 
             if (getPassword() != null){
                 localVarQueryParams.addAll(apiClient.parameterToPairs("", "password", getPassword()));

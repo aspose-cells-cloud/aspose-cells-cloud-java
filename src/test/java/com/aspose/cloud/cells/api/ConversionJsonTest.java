@@ -232,51 +232,11 @@ public class ConversionJsonTest {
 
 
     @Test
-    public void ConvertWorkbook_xlsxTest() throws Exception {
-        String localName = "codegen-spec.json";
-        String remoteName = "codegen-spec.json";
-
-        String format = "xlsx";
-
-        CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
-        PutConvertWorkbookRequest request = new PutConvertWorkbookRequest();
-        request.setFormat(format);
-         
-
-        HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(localName ,CellsApiUtil.GetFileHolder(localName) ); 
-        request.setFile(fileMap);
-        File response =  this.api.putConvertWorkbook(request);
-    }
-
-
-    @Test
     public void ConvertWorkbook_xpsTest() throws Exception {
         String localName = "codegen-spec.json";
         String remoteName = "codegen-spec.json";
 
         String format = "xps";
-
-        CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
-        PutConvertWorkbookRequest request = new PutConvertWorkbookRequest();
-        request.setFormat(format);
-         
-
-        HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(localName ,CellsApiUtil.GetFileHolder(localName) ); 
-        request.setFile(fileMap);
-        File response =  this.api.putConvertWorkbook(request);
-    }
-
-
-    @Test
-    public void ConvertWorkbook_pngTest() throws Exception {
-        String localName = "codegen-spec.json";
-        String remoteName = "codegen-spec.json";
-
-        String format = "png";
 
         CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
        

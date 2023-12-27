@@ -54,11 +54,11 @@ public class LightCellsTest {
         String assemblyTestXlsx = "assemblytest.xlsx";
         String dataSourceXlsx = "datasource.xlsx";
 
-        String format = "csv";
+        String outFormat = "csv";
 
        
         PostSplitRequest request = new PostSplitRequest();
-        request.setFormat(format);
+        request.setOutFormat(outFormat);
          
          
 
@@ -75,11 +75,11 @@ public class LightCellsTest {
         String assemblyTestXlsx = "assemblytest.xlsx";
         String dataSourceXlsx = "datasource.xlsx";
 
-        String format = "xls";
+        String outFormat = "xls";
 
        
         PostSplitRequest request = new PostSplitRequest();
-        request.setFormat(format);
+        request.setOutFormat(outFormat);
          
          
 
@@ -96,11 +96,11 @@ public class LightCellsTest {
         String assemblyTestXlsx = "assemblytest.xlsx";
         String dataSourceXlsx = "datasource.xlsx";
 
-        String format = "html";
+        String outFormat = "html";
 
        
         PostSplitRequest request = new PostSplitRequest();
-        request.setFormat(format);
+        request.setOutFormat(outFormat);
          
          
 
@@ -117,11 +117,11 @@ public class LightCellsTest {
         String assemblyTestXlsx = "assemblytest.xlsx";
         String dataSourceXlsx = "datasource.xlsx";
 
-        String format = "mhtml";
+        String outFormat = "mhtml";
 
        
         PostSplitRequest request = new PostSplitRequest();
-        request.setFormat(format);
+        request.setOutFormat(outFormat);
          
          
 
@@ -138,11 +138,11 @@ public class LightCellsTest {
         String assemblyTestXlsx = "assemblytest.xlsx";
         String dataSourceXlsx = "datasource.xlsx";
 
-        String format = "ods";
+        String outFormat = "ods";
 
        
         PostSplitRequest request = new PostSplitRequest();
-        request.setFormat(format);
+        request.setOutFormat(outFormat);
          
          
 
@@ -159,11 +159,11 @@ public class LightCellsTest {
         String assemblyTestXlsx = "assemblytest.xlsx";
         String dataSourceXlsx = "datasource.xlsx";
 
-        String format = "pdf";
+        String outFormat = "pdf";
 
        
         PostSplitRequest request = new PostSplitRequest();
-        request.setFormat(format);
+        request.setOutFormat(outFormat);
          
          
 
@@ -180,11 +180,11 @@ public class LightCellsTest {
         String assemblyTestXlsx = "assemblytest.xlsx";
         String dataSourceXlsx = "datasource.xlsx";
 
-        String format = "xml";
+        String outFormat = "xml";
 
        
         PostSplitRequest request = new PostSplitRequest();
-        request.setFormat(format);
+        request.setOutFormat(outFormat);
          
          
 
@@ -201,11 +201,11 @@ public class LightCellsTest {
         String assemblyTestXlsx = "assemblytest.xlsx";
         String dataSourceXlsx = "datasource.xlsx";
 
-        String format = "txt";
+        String outFormat = "txt";
 
        
         PostSplitRequest request = new PostSplitRequest();
-        request.setFormat(format);
+        request.setOutFormat(outFormat);
          
          
 
@@ -222,11 +222,11 @@ public class LightCellsTest {
         String assemblyTestXlsx = "assemblytest.xlsx";
         String dataSourceXlsx = "datasource.xlsx";
 
-        String format = "tif";
+        String outFormat = "tif";
 
        
         PostSplitRequest request = new PostSplitRequest();
-        request.setFormat(format);
+        request.setOutFormat(outFormat);
          
          
 
@@ -243,32 +243,11 @@ public class LightCellsTest {
         String assemblyTestXlsx = "assemblytest.xlsx";
         String dataSourceXlsx = "datasource.xlsx";
 
-        String format = "xlsb";
+        String outFormat = "xlsb";
 
        
         PostSplitRequest request = new PostSplitRequest();
-        request.setFormat(format);
-         
-         
-
-        HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
-        fileMap.put(dataSourceXlsx ,CellsApiUtil.GetFileHolder(dataSourceXlsx) ); 
-        request.setFile(fileMap);
-        FilesResult response =  this.api.postSplit(request);
-    }
-
-
-    @Test
-    public void PostSplit_xlsmTest() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
-        String dataSourceXlsx = "datasource.xlsx";
-
-        String format = "xlsm";
-
-       
-        PostSplitRequest request = new PostSplitRequest();
-        request.setFormat(format);
+        request.setOutFormat(outFormat);
          
          
 
@@ -285,53 +264,11 @@ public class LightCellsTest {
         String assemblyTestXlsx = "assemblytest.xlsx";
         String dataSourceXlsx = "datasource.xlsx";
 
-        String format = "xlsx";
+        String outFormat = "xlsx";
 
        
         PostSplitRequest request = new PostSplitRequest();
-        request.setFormat(format);
-         
-         
-
-        HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
-        fileMap.put(dataSourceXlsx ,CellsApiUtil.GetFileHolder(dataSourceXlsx) ); 
-        request.setFile(fileMap);
-        FilesResult response =  this.api.postSplit(request);
-    }
-
-
-    @Test
-    public void PostSplit_xltmTest() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
-        String dataSourceXlsx = "datasource.xlsx";
-
-        String format = "xltm";
-
-       
-        PostSplitRequest request = new PostSplitRequest();
-        request.setFormat(format);
-         
-         
-
-        HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
-        fileMap.put(dataSourceXlsx ,CellsApiUtil.GetFileHolder(dataSourceXlsx) ); 
-        request.setFile(fileMap);
-        FilesResult response =  this.api.postSplit(request);
-    }
-
-
-    @Test
-    public void PostSplit_xltxTest() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
-        String dataSourceXlsx = "datasource.xlsx";
-
-        String format = "xltx";
-
-       
-        PostSplitRequest request = new PostSplitRequest();
-        request.setFormat(format);
+        request.setOutFormat(outFormat);
          
          
 
@@ -348,11 +285,11 @@ public class LightCellsTest {
         String assemblyTestXlsx = "assemblytest.xlsx";
         String dataSourceXlsx = "datasource.xlsx";
 
-        String format = "xps";
+        String outFormat = "xps";
 
        
         PostSplitRequest request = new PostSplitRequest();
-        request.setFormat(format);
+        request.setOutFormat(outFormat);
          
          
 
@@ -369,11 +306,11 @@ public class LightCellsTest {
         String assemblyTestXlsx = "assemblytest.xlsx";
         String dataSourceXlsx = "datasource.xlsx";
 
-        String format = "png";
+        String outFormat = "png";
 
        
         PostSplitRequest request = new PostSplitRequest();
-        request.setFormat(format);
+        request.setOutFormat(outFormat);
          
          
 
@@ -390,74 +327,11 @@ public class LightCellsTest {
         String assemblyTestXlsx = "assemblytest.xlsx";
         String dataSourceXlsx = "datasource.xlsx";
 
-        String format = "jpg";
+        String outFormat = "jpg";
 
        
         PostSplitRequest request = new PostSplitRequest();
-        request.setFormat(format);
-         
-         
-
-        HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
-        fileMap.put(dataSourceXlsx ,CellsApiUtil.GetFileHolder(dataSourceXlsx) ); 
-        request.setFile(fileMap);
-        FilesResult response =  this.api.postSplit(request);
-    }
-
-
-    @Test
-    public void PostSplit_gifTest() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
-        String dataSourceXlsx = "datasource.xlsx";
-
-        String format = "gif";
-
-       
-        PostSplitRequest request = new PostSplitRequest();
-        request.setFormat(format);
-         
-         
-
-        HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
-        fileMap.put(dataSourceXlsx ,CellsApiUtil.GetFileHolder(dataSourceXlsx) ); 
-        request.setFile(fileMap);
-        FilesResult response =  this.api.postSplit(request);
-    }
-
-
-    @Test
-    public void PostSplit_emfTest() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
-        String dataSourceXlsx = "datasource.xlsx";
-
-        String format = "emf";
-
-       
-        PostSplitRequest request = new PostSplitRequest();
-        request.setFormat(format);
-         
-         
-
-        HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
-        fileMap.put(dataSourceXlsx ,CellsApiUtil.GetFileHolder(dataSourceXlsx) ); 
-        request.setFile(fileMap);
-        FilesResult response =  this.api.postSplit(request);
-    }
-
-
-    @Test
-    public void PostSplit_bmpTest() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
-        String dataSourceXlsx = "datasource.xlsx";
-
-        String format = "bmp";
-
-       
-        PostSplitRequest request = new PostSplitRequest();
-        request.setFormat(format);
+        request.setOutFormat(outFormat);
          
          
 
@@ -474,11 +348,11 @@ public class LightCellsTest {
         String assemblyTestXlsx = "assemblytest.xlsx";
         String dataSourceXlsx = "datasource.xlsx";
 
-        String format = "md";
+        String outFormat = "md";
 
        
         PostSplitRequest request = new PostSplitRequest();
-        request.setFormat(format);
+        request.setOutFormat(outFormat);
          
          
 
@@ -495,32 +369,11 @@ public class LightCellsTest {
         String assemblyTestXlsx = "assemblytest.xlsx";
         String dataSourceXlsx = "datasource.xlsx";
 
-        String format = "numbers";
+        String outFormat = "numbers";
 
        
         PostSplitRequest request = new PostSplitRequest();
-        request.setFormat(format);
-         
-         
-
-        HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
-        fileMap.put(dataSourceXlsx ,CellsApiUtil.GetFileHolder(dataSourceXlsx) ); 
-        request.setFile(fileMap);
-        FilesResult response =  this.api.postSplit(request);
-    }
-
-
-    @Test
-    public void PostSplit_wmfTest() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
-        String dataSourceXlsx = "datasource.xlsx";
-
-        String format = "wmf";
-
-       
-        PostSplitRequest request = new PostSplitRequest();
-        request.setFormat(format);
+        request.setOutFormat(outFormat);
          
          
 
@@ -537,11 +390,11 @@ public class LightCellsTest {
         String assemblyTestXlsx = "assemblytest.xlsx";
         String dataSourceXlsx = "datasource.xlsx";
 
-        String format = "svg";
+        String outFormat = "svg";
 
        
         PostSplitRequest request = new PostSplitRequest();
-        request.setFormat(format);
+        request.setOutFormat(outFormat);
          
          
 
@@ -558,11 +411,11 @@ public class LightCellsTest {
         String assemblyTestXlsx = "assemblytest.xlsx";
         String dataSourceXlsx = "datasource.xlsx";
 
-        String format = "docx";
+        String outFormat = "docx";
 
        
         PostSplitRequest request = new PostSplitRequest();
-        request.setFormat(format);
+        request.setOutFormat(outFormat);
          
          
 
@@ -579,11 +432,11 @@ public class LightCellsTest {
         String assemblyTestXlsx = "assemblytest.xlsx";
         String dataSourceXlsx = "datasource.xlsx";
 
-        String format = "pptx";
+        String outFormat = "pptx";
 
        
         PostSplitRequest request = new PostSplitRequest();
-        request.setFormat(format);
+        request.setOutFormat(outFormat);
          
          
 
@@ -600,11 +453,11 @@ public class LightCellsTest {
         String assemblyTestXlsx = "assemblytest.xlsx";
         String dataSourceXlsx = "datasource.xlsx";
 
-        String format = "json";
+        String outFormat = "json";
 
        
         PostSplitRequest request = new PostSplitRequest();
-        request.setFormat(format);
+        request.setOutFormat(outFormat);
          
          
 
@@ -621,11 +474,11 @@ public class LightCellsTest {
         String assemblyTestXlsx = "assemblytest.xlsx";
         String dataSourceXlsx = "datasource.xlsx";
 
-        String format = "sql";
+        String outFormat = "sql";
 
        
         PostSplitRequest request = new PostSplitRequest();
-        request.setFormat(format);
+        request.setOutFormat(outFormat);
          
          
 
@@ -3757,7 +3610,7 @@ public class LightCellsTest {
 
        
         PostMergeRequest request = new PostMergeRequest();
-        request.setFormat(format);
+        request.setOutFormat(format);
 
         request.setMergeToOneSheet(mergeToOneSheet);
          
@@ -3781,7 +3634,7 @@ public class LightCellsTest {
 
        
         PostMergeRequest request = new PostMergeRequest();
-        request.setFormat(format);
+        request.setOutFormat(format);
 
         request.setMergeToOneSheet(mergeToOneSheet);
          
@@ -3805,7 +3658,7 @@ public class LightCellsTest {
 
        
         PostMergeRequest request = new PostMergeRequest();
-        request.setFormat(format);
+        request.setOutFormat(format);
 
         request.setMergeToOneSheet(mergeToOneSheet);
          
@@ -3829,7 +3682,7 @@ public class LightCellsTest {
 
        
         PostMergeRequest request = new PostMergeRequest();
-        request.setFormat(format);
+        request.setOutFormat(format);
 
         request.setMergeToOneSheet(mergeToOneSheet);
          
@@ -3853,7 +3706,7 @@ public class LightCellsTest {
 
        
         PostMergeRequest request = new PostMergeRequest();
-        request.setFormat(format);
+        request.setOutFormat(format);
 
         request.setMergeToOneSheet(mergeToOneSheet);
          
@@ -3877,7 +3730,7 @@ public class LightCellsTest {
 
        
         PostMergeRequest request = new PostMergeRequest();
-        request.setFormat(format);
+        request.setOutFormat(format);
 
         request.setMergeToOneSheet(mergeToOneSheet);
          
@@ -3901,7 +3754,7 @@ public class LightCellsTest {
 
        
         PostMergeRequest request = new PostMergeRequest();
-        request.setFormat(format);
+        request.setOutFormat(format);
 
         request.setMergeToOneSheet(mergeToOneSheet);
          
@@ -3925,7 +3778,7 @@ public class LightCellsTest {
 
        
         PostMergeRequest request = new PostMergeRequest();
-        request.setFormat(format);
+        request.setOutFormat(format);
 
         request.setMergeToOneSheet(mergeToOneSheet);
          
@@ -3949,7 +3802,7 @@ public class LightCellsTest {
 
        
         PostMergeRequest request = new PostMergeRequest();
-        request.setFormat(format);
+        request.setOutFormat(format);
 
         request.setMergeToOneSheet(mergeToOneSheet);
          
@@ -3973,7 +3826,7 @@ public class LightCellsTest {
 
        
         PostMergeRequest request = new PostMergeRequest();
-        request.setFormat(format);
+        request.setOutFormat(format);
 
         request.setMergeToOneSheet(mergeToOneSheet);
          
@@ -3997,7 +3850,7 @@ public class LightCellsTest {
 
        
         PostMergeRequest request = new PostMergeRequest();
-        request.setFormat(format);
+        request.setOutFormat(format);
 
         request.setMergeToOneSheet(mergeToOneSheet);
          
@@ -4021,7 +3874,7 @@ public class LightCellsTest {
 
        
         PostMergeRequest request = new PostMergeRequest();
-        request.setFormat(format);
+        request.setOutFormat(format);
 
         request.setMergeToOneSheet(mergeToOneSheet);
          
@@ -4045,7 +3898,7 @@ public class LightCellsTest {
 
        
         PostMergeRequest request = new PostMergeRequest();
-        request.setFormat(format);
+        request.setOutFormat(format);
 
         request.setMergeToOneSheet(mergeToOneSheet);
          
@@ -4069,7 +3922,7 @@ public class LightCellsTest {
 
        
         PostMergeRequest request = new PostMergeRequest();
-        request.setFormat(format);
+        request.setOutFormat(format);
 
         request.setMergeToOneSheet(mergeToOneSheet);
          
@@ -4093,7 +3946,7 @@ public class LightCellsTest {
 
        
         PostMergeRequest request = new PostMergeRequest();
-        request.setFormat(format);
+        request.setOutFormat(format);
 
         request.setMergeToOneSheet(mergeToOneSheet);
          
@@ -4117,7 +3970,7 @@ public class LightCellsTest {
 
        
         PostMergeRequest request = new PostMergeRequest();
-        request.setFormat(format);
+        request.setOutFormat(format);
 
         request.setMergeToOneSheet(mergeToOneSheet);
          
@@ -4141,7 +3994,7 @@ public class LightCellsTest {
 
        
         PostMergeRequest request = new PostMergeRequest();
-        request.setFormat(format);
+        request.setOutFormat(format);
 
         request.setMergeToOneSheet(mergeToOneSheet);
          
@@ -4165,7 +4018,7 @@ public class LightCellsTest {
 
        
         PostMergeRequest request = new PostMergeRequest();
-        request.setFormat(format);
+        request.setOutFormat(format);
 
         request.setMergeToOneSheet(mergeToOneSheet);
          
@@ -4189,7 +4042,7 @@ public class LightCellsTest {
 
        
         PostMergeRequest request = new PostMergeRequest();
-        request.setFormat(format);
+        request.setOutFormat(format);
 
         request.setMergeToOneSheet(mergeToOneSheet);
          
@@ -4213,7 +4066,7 @@ public class LightCellsTest {
 
        
         PostMergeRequest request = new PostMergeRequest();
-        request.setFormat(format);
+        request.setOutFormat(format);
 
         request.setMergeToOneSheet(mergeToOneSheet);
          
@@ -4237,7 +4090,7 @@ public class LightCellsTest {
 
        
         PostMergeRequest request = new PostMergeRequest();
-        request.setFormat(format);
+        request.setOutFormat(format);
 
         request.setMergeToOneSheet(mergeToOneSheet);
          
@@ -4261,7 +4114,7 @@ public class LightCellsTest {
 
        
         PostMergeRequest request = new PostMergeRequest();
-        request.setFormat(format);
+        request.setOutFormat(format);
 
         request.setMergeToOneSheet(mergeToOneSheet);
          
@@ -4285,7 +4138,7 @@ public class LightCellsTest {
 
        
         PostMergeRequest request = new PostMergeRequest();
-        request.setFormat(format);
+        request.setOutFormat(format);
 
         request.setMergeToOneSheet(mergeToOneSheet);
          
@@ -4309,7 +4162,7 @@ public class LightCellsTest {
 
        
         PostMergeRequest request = new PostMergeRequest();
-        request.setFormat(format);
+        request.setOutFormat(format);
 
         request.setMergeToOneSheet(mergeToOneSheet);
          
@@ -4333,7 +4186,7 @@ public class LightCellsTest {
 
        
         PostMergeRequest request = new PostMergeRequest();
-        request.setFormat(format);
+        request.setOutFormat(format);
 
         request.setMergeToOneSheet(mergeToOneSheet);
          
@@ -4357,7 +4210,7 @@ public class LightCellsTest {
 
        
         PostMergeRequest request = new PostMergeRequest();
-        request.setFormat(format);
+        request.setOutFormat(format);
 
         request.setMergeToOneSheet(mergeToOneSheet);
          
@@ -4381,7 +4234,7 @@ public class LightCellsTest {
 
        
         PostMergeRequest request = new PostMergeRequest();
-        request.setFormat(format);
+        request.setOutFormat(format);
 
         request.setMergeToOneSheet(mergeToOneSheet);
          
@@ -4405,7 +4258,7 @@ public class LightCellsTest {
 
        
         PostMergeRequest request = new PostMergeRequest();
-        request.setFormat(format);
+        request.setOutFormat(format);
 
         request.setMergeToOneSheet(mergeToOneSheet);
          
@@ -4789,7 +4642,7 @@ public class LightCellsTest {
 
        
         PostRepairRequest request = new PostRepairRequest();
-        request.setFormat(format);
+        request.setOutFormat(format);
          
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
@@ -4807,7 +4660,7 @@ public class LightCellsTest {
 
        
         PostRepairRequest request = new PostRepairRequest();
-        request.setFormat(format);
+        request.setOutFormat(format);
          
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
@@ -4825,7 +4678,7 @@ public class LightCellsTest {
 
        
         PostRepairRequest request = new PostRepairRequest();
-        request.setFormat(format);
+        request.setOutFormat(format);
          
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
@@ -4843,7 +4696,7 @@ public class LightCellsTest {
 
        
         PostRepairRequest request = new PostRepairRequest();
-        request.setFormat(format);
+        request.setOutFormat(format);
          
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
@@ -4864,7 +4717,7 @@ public class LightCellsTest {
         PostReverseRequest request = new PostReverseRequest();
         request.setRotateType(rotateType);
 
-        request.setFormat(format);
+        request.setOutFormat(format);
          
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
@@ -4885,7 +4738,7 @@ public class LightCellsTest {
         PostReverseRequest request = new PostReverseRequest();
         request.setRotateType(rotateType);
 
-        request.setFormat(format);
+        request.setOutFormat(format);
          
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
@@ -4906,7 +4759,7 @@ public class LightCellsTest {
         PostReverseRequest request = new PostReverseRequest();
         request.setRotateType(rotateType);
 
-        request.setFormat(format);
+        request.setOutFormat(format);
          
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
@@ -4927,7 +4780,7 @@ public class LightCellsTest {
         PostReverseRequest request = new PostReverseRequest();
         request.setRotateType(rotateType);
 
-        request.setFormat(format);
+        request.setOutFormat(format);
          
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
@@ -4948,7 +4801,7 @@ public class LightCellsTest {
         PostReverseRequest request = new PostReverseRequest();
         request.setRotateType(rotateType);
 
-        request.setFormat(format);
+        request.setOutFormat(format);
          
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
@@ -4969,7 +4822,7 @@ public class LightCellsTest {
         PostReverseRequest request = new PostReverseRequest();
         request.setRotateType(rotateType);
 
-        request.setFormat(format);
+        request.setOutFormat(format);
          
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 

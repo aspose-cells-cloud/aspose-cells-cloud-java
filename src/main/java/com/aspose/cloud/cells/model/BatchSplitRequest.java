@@ -173,6 +173,23 @@ public class BatchSplitRequest {
             this.outStorage = outStorage;
         }
 
+        @SerializedName("Region")
+        private String region ;
+
+        public  BatchSplitRequest  region(String  region) {
+            this.region =  region;
+            return this;
+        }
+
+        @ApiModelProperty(value = "")
+        public String getRegion() {
+            return region;
+        }
+
+        public void setRegion(String region) {
+            this.region = region;
+        }
+
         @SerializedName("SaveOptions")
         private SaveOptions saveOptions ;
 
@@ -209,12 +226,13 @@ public class BatchSplitRequest {
                 Objects.equals(this.toIndex, batchSplitRequest.toIndex) &&
                 Objects.equals(this.outFolder, batchSplitRequest.outFolder) &&
                 Objects.equals(this.outStorage, batchSplitRequest.outStorage) &&
+                Objects.equals(this.region, batchSplitRequest.region) &&
                 Objects.equals(this.saveOptions, batchSplitRequest.saveOptions);
       }
 
       @Override
       public int hashCode() {
-        return Objects.hash(sourceFolder, sourceStorage, matchCondition, format, fromIndex, toIndex, outFolder, outStorage, saveOptions);
+        return Objects.hash(sourceFolder, sourceStorage, matchCondition, format, fromIndex, toIndex, outFolder, outStorage, region, saveOptions);
       }
         @Override
         public String toString() {
@@ -228,6 +246,7 @@ public class BatchSplitRequest {
             sb.append("    toIndex: ").append(toIndentedString(getToIndex())).append("\n");
             sb.append("    outFolder: ").append(toIndentedString(getOutFolder())).append("\n");
             sb.append("    outStorage: ").append(toIndentedString(getOutStorage())).append("\n");
+            sb.append("    region: ").append(toIndentedString(getRegion())).append("\n");
             sb.append("    saveOptions: ").append(toIndentedString(getSaveOptions())).append("\n");
             sb.append("}");
             return sb.toString();

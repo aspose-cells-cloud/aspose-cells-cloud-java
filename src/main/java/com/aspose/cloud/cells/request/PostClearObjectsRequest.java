@@ -48,17 +48,19 @@ public class PostClearObjectsRequest  implements IRequestModel {
     private String outFormat;
     private String password;
     private Boolean checkExcelRestriction;
+    private String region;
         public PostClearObjectsRequest()
         {
 
         }
-        public PostClearObjectsRequest(HashMap<String,File> file, String objecttype, String sheetname, String outFormat, String password, Boolean checkExcelRestriction) {
+        public PostClearObjectsRequest(HashMap<String,File> file, String objecttype, String sheetname, String outFormat, String password, Boolean checkExcelRestriction, String region) {
             this.file = file;
             this.objecttype = objecttype;
             this.sheetname = sheetname;
             this.outFormat = outFormat;
             this.password = password;
             this.checkExcelRestriction = checkExcelRestriction;
+            this.region = region;
         }   
 
         public HashMap<String,File> getFile() {
@@ -114,6 +116,15 @@ public class PostClearObjectsRequest  implements IRequestModel {
             this.checkExcelRestriction = checkExcelRestriction;
         }
 
+
+        public String getRegion() {
+            return this.region;
+        }
+
+        public void setRegion(String region) {
+            this.region = region;
+        }
+
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
          if (getFile() == null) {
@@ -140,6 +151,9 @@ public class PostClearObjectsRequest  implements IRequestModel {
             } 
             if (getCheckExcelRestriction() != null){
                 localVarQueryParams.addAll(apiClient.parameterToPairs("", "checkExcelRestriction", getCheckExcelRestriction()));
+            } 
+            if (getRegion() != null){
+                localVarQueryParams.addAll(apiClient.parameterToPairs("", "region", getRegion()));
             }  
         if(this.extendQueryParameterMap !=null){
             for (String key :this.extendQueryParameterMap.keySet()) {

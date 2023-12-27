@@ -139,6 +139,23 @@ public class BatchConvertRequest {
             this.outStorage = outStorage;
         }
 
+        @SerializedName("Region")
+        private String region ;
+
+        public  BatchConvertRequest  region(String  region) {
+            this.region =  region;
+            return this;
+        }
+
+        @ApiModelProperty(value = "")
+        public String getRegion() {
+            return region;
+        }
+
+        public void setRegion(String region) {
+            this.region = region;
+        }
+
         @SerializedName("SaveOptions")
         private SaveOptions saveOptions ;
 
@@ -173,12 +190,13 @@ public class BatchConvertRequest {
                 Objects.equals(this.format, batchConvertRequest.format) &&
                 Objects.equals(this.outFolder, batchConvertRequest.outFolder) &&
                 Objects.equals(this.outStorage, batchConvertRequest.outStorage) &&
+                Objects.equals(this.region, batchConvertRequest.region) &&
                 Objects.equals(this.saveOptions, batchConvertRequest.saveOptions);
       }
 
       @Override
       public int hashCode() {
-        return Objects.hash(sourceFolder, sourceStorage, matchCondition, format, outFolder, outStorage, saveOptions);
+        return Objects.hash(sourceFolder, sourceStorage, matchCondition, format, outFolder, outStorage, region, saveOptions);
       }
         @Override
         public String toString() {
@@ -190,6 +208,7 @@ public class BatchConvertRequest {
             sb.append("    format: ").append(toIndentedString(getFormat())).append("\n");
             sb.append("    outFolder: ").append(toIndentedString(getOutFolder())).append("\n");
             sb.append("    outStorage: ").append(toIndentedString(getOutStorage())).append("\n");
+            sb.append("    region: ").append(toIndentedString(getRegion())).append("\n");
             sb.append("    saveOptions: ").append(toIndentedString(getSaveOptions())).append("\n");
             sb.append("}");
             return sb.toString();

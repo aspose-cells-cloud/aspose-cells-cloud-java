@@ -46,15 +46,17 @@ public class PostImportDataRequest  implements IRequestModel {
     private ImportOption importOption;
     private String folder;
     private String storageName;
+    private String region;
         public PostImportDataRequest()
         {
 
         }
-        public PostImportDataRequest(String name, ImportOption importOption, String folder, String storageName) {
+        public PostImportDataRequest(String name, ImportOption importOption, String folder, String storageName, String region) {
             this.name = name;
             this.importOption = importOption;
             this.folder = folder;
             this.storageName = storageName;
+            this.region = region;
         }   
 
         public String getName() {
@@ -92,6 +94,15 @@ public class PostImportDataRequest  implements IRequestModel {
             this.storageName = storageName;
         }
 
+
+        public String getRegion() {
+            return this.region;
+        }
+
+        public void setRegion(String region) {
+            this.region = region;
+        }
+
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
          if (getName() == null) {
@@ -106,6 +117,9 @@ public class PostImportDataRequest  implements IRequestModel {
             } 
             if (getStorageName() != null){
                 localVarQueryParams.addAll(apiClient.parameterToPairs("", "storageName", getStorageName()));
+            } 
+            if (getRegion() != null){
+                localVarQueryParams.addAll(apiClient.parameterToPairs("", "region", getRegion()));
             }  
         if(this.extendQueryParameterMap !=null){
             for (String key :this.extendQueryParameterMap.keySet()) {
