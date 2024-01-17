@@ -1,7 +1,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="PutConvertWorkbookRequest.java">
- *   Copyright (c) 2023 Aspose.Cells Cloud
+ *   Copyright (c) 2024 Aspose.Cells Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -50,11 +50,13 @@ public class PutConvertWorkbookRequest  implements IRequestModel {
     private Boolean checkExcelRestriction;
     private String streamFormat;
     private String region;
+    private Boolean pageWideFitOnPerSheet;
+    private Boolean pageTallFitOnPerSheet;
         public PutConvertWorkbookRequest()
         {
 
         }
-        public PutConvertWorkbookRequest(HashMap<String,File> file, String format, String password, String outPath, String storageName, Boolean checkExcelRestriction, String streamFormat, String region) {
+        public PutConvertWorkbookRequest(HashMap<String,File> file, String format, String password, String outPath, String storageName, Boolean checkExcelRestriction, String streamFormat, String region, Boolean pageWideFitOnPerSheet, Boolean pageTallFitOnPerSheet) {
             this.file = file;
             this.format = format;
             this.password = password;
@@ -63,6 +65,8 @@ public class PutConvertWorkbookRequest  implements IRequestModel {
             this.checkExcelRestriction = checkExcelRestriction;
             this.streamFormat = streamFormat;
             this.region = region;
+            this.pageWideFitOnPerSheet = pageWideFitOnPerSheet;
+            this.pageTallFitOnPerSheet = pageTallFitOnPerSheet;
         }   
 
         public HashMap<String,File> getFile() {
@@ -136,6 +140,24 @@ public class PutConvertWorkbookRequest  implements IRequestModel {
             this.region = region;
         }
 
+
+        public Boolean getPageWideFitOnPerSheet() {
+            return this.pageWideFitOnPerSheet;
+        }
+
+        public void setPageWideFitOnPerSheet(Boolean pageWideFitOnPerSheet) {
+            this.pageWideFitOnPerSheet = pageWideFitOnPerSheet;
+        }
+
+
+        public Boolean getPageTallFitOnPerSheet() {
+            return this.pageTallFitOnPerSheet;
+        }
+
+        public void setPageTallFitOnPerSheet(Boolean pageTallFitOnPerSheet) {
+            this.pageTallFitOnPerSheet = pageTallFitOnPerSheet;
+        }
+
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
          if (getFile() == null) {
@@ -165,6 +187,12 @@ public class PutConvertWorkbookRequest  implements IRequestModel {
             } 
             if (getRegion() != null){
                 localVarQueryParams.addAll(apiClient.parameterToPairs("", "region", getRegion()));
+            } 
+            if (getPageWideFitOnPerSheet() != null){
+                localVarQueryParams.addAll(apiClient.parameterToPairs("", "pageWideFitOnPerSheet", getPageWideFitOnPerSheet()));
+            } 
+            if (getPageTallFitOnPerSheet() != null){
+                localVarQueryParams.addAll(apiClient.parameterToPairs("", "pageTallFitOnPerSheet", getPageTallFitOnPerSheet()));
             }  
         if(this.extendQueryParameterMap !=null){
             for (String key :this.extendQueryParameterMap.keySet()) {

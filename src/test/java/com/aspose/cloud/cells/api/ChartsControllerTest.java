@@ -1,7 +1,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="ChartsControllerTests.java">
- *   Copyright (c) 2023 Aspose.Cells Cloud
+ *   Copyright (c) 2024 Aspose.Cells Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -96,13 +96,13 @@ public class ChartsControllerTest {
 
 
     @Test
-    public void PutWorksheetAddChartTest() throws Exception {
+    public void PutWorksheetChartTest() throws Exception {
         String localName = "Book1.xlsx";
         String remoteName = "Book1.xlsx";
 
         CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
        
-        PutWorksheetAddChartRequest request = new PutWorksheetAddChartRequest();
+        PutWorksheetChartRequest request = new PutWorksheetChartRequest();
         request.setName(remoteName);
 
         request.setSheetName("Sheet4");
@@ -127,18 +127,18 @@ public class ChartsControllerTest {
 
         request.setStorageName("");
 
-        CellsCloudResponse response =  this.api.putWorksheetAddChart(request);
+        CellsCloudResponse response =  this.api.putWorksheetChart(request);
     }
 
 
     @Test
-    public void DeleteWorksheetDeleteChartTest() throws Exception {
+    public void DeleteWorksheetChartTest() throws Exception {
         String localName = "Book1.xlsx";
         String remoteName = "Book1.xlsx";
 
         CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
        
-        DeleteWorksheetDeleteChartRequest request = new DeleteWorksheetDeleteChartRequest();
+        DeleteWorksheetChartRequest request = new DeleteWorksheetChartRequest();
         request.setName(remoteName);
 
         request.setSheetName("Sheet4");
@@ -149,7 +149,7 @@ public class ChartsControllerTest {
 
         request.setStorageName("");
 
-        CellsCloudResponse response =  this.api.deleteWorksheetDeleteChart(request);
+        CellsCloudResponse response =  this.api.deleteWorksheetChart(request);
     }
 
 
@@ -277,13 +277,13 @@ public class ChartsControllerTest {
 
 
     @Test
-    public void DeleteWorksheetClearChartsTest() throws Exception {
+    public void DeleteWorksheetChartsTest() throws Exception {
         String localName = "Book1.xlsx";
         String remoteName = "Book1.xlsx";
 
         CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
        
-        DeleteWorksheetClearChartsRequest request = new DeleteWorksheetClearChartsRequest();
+        DeleteWorksheetChartsRequest request = new DeleteWorksheetChartsRequest();
         request.setName(remoteName);
 
         request.setSheetName("Sheet4");
@@ -292,7 +292,7 @@ public class ChartsControllerTest {
 
         request.setStorageName("");
 
-        CellsCloudResponse response =  this.api.deleteWorksheetClearCharts(request);
+        CellsCloudResponse response =  this.api.deleteWorksheetCharts(request);
     }
 
 

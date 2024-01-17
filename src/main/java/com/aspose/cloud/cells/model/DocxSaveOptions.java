@@ -1,7 +1,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="DocxSaveOptions.java">
- *   Copyright (c) 2023 Aspose.Cells Cloud
+ *   Copyright (c) 2024 Aspose.Cells Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -36,7 +36,7 @@ import com.google.gson.annotations.SerializedName;
 import java.time.OffsetDateTime;
 
 
-public class DocxSaveOptions  extends  SaveOptions {
+public class DocxSaveOptions  extends  PaginatedSaveOptions {
         @Override
         public boolean equals(java.lang.Object o) {
             if (this == o) {
@@ -57,6 +57,24 @@ public class DocxSaveOptions  extends  SaveOptions {
         public String toString() {
             StringBuilder sb = new StringBuilder();
             sb.append("class DocxSaveOptions {\n");
+            sb.append("    defaultFont: ").append(toIndentedString(getDefaultFont())).append("\n");
+            sb.append("    checkWorkbookDefaultFont: ").append(toIndentedString(getCheckWorkbookDefaultFont())).append("\n");
+            sb.append("    checkFontCompatibility: ").append(toIndentedString(getCheckFontCompatibility())).append("\n");
+            sb.append("    isFontSubstitutionCharGranularity: ").append(toIndentedString(getIsFontSubstitutionCharGranularity())).append("\n");
+            sb.append("    onePagePerSheet: ").append(toIndentedString(getOnePagePerSheet())).append("\n");
+            sb.append("    allColumnsInOnePagePerSheet: ").append(toIndentedString(getAllColumnsInOnePagePerSheet())).append("\n");
+            sb.append("    ignoreError: ").append(toIndentedString(getIgnoreError())).append("\n");
+            sb.append("    outputBlankPageWhenNothingToPrint: ").append(toIndentedString(getOutputBlankPageWhenNothingToPrint())).append("\n");
+            sb.append("    pageIndex: ").append(toIndentedString(getPageIndex())).append("\n");
+            sb.append("    pageCount: ").append(toIndentedString(getPageCount())).append("\n");
+            sb.append("    printingPageType: ").append(toIndentedString(getPrintingPageType())).append("\n");
+            sb.append("    gridlineType: ").append(toIndentedString(getGridlineType())).append("\n");
+            sb.append("    textCrossType: ").append(toIndentedString(getTextCrossType())).append("\n");
+            sb.append("    defaultEditLanguage: ").append(toIndentedString(getDefaultEditLanguage())).append("\n");
+            sb.append("    emfRenderSetting: ").append(toIndentedString(getEmfRenderSetting())).append("\n");
+            sb.append("    mergeAreas: ").append(toIndentedString(getMergeAreas())).append("\n");
+            sb.append("    sortExternalNames: ").append(toIndentedString(getSortExternalNames())).append("\n");
+            sb.append("    updateSmartArt: ").append(toIndentedString(getUpdateSmartArt())).append("\n");
             sb.append("    saveFormat: ").append(toIndentedString(getSaveFormat())).append("\n");
             sb.append("    cachedFileFolder: ").append(toIndentedString(getCachedFileFolder())).append("\n");
             sb.append("    clearData: ").append(toIndentedString(getClearData())).append("\n");

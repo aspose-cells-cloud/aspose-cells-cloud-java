@@ -1,7 +1,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="BatchConvertRequest.java">
- *   Copyright (c) 2023 Aspose.Cells Cloud
+ *   Copyright (c) 2024 Aspose.Cells Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -156,6 +156,40 @@ public class BatchConvertRequest {
             this.region = region;
         }
 
+        @SerializedName("PageWideFitOnPerSheet")
+        private Boolean pageWideFitOnPerSheet ;
+
+        public  BatchConvertRequest  pageWideFitOnPerSheet(Boolean  pageWideFitOnPerSheet) {
+            this.pageWideFitOnPerSheet =  pageWideFitOnPerSheet;
+            return this;
+        }
+
+        @ApiModelProperty(value = "")
+        public Boolean getPageWideFitOnPerSheet() {
+            return pageWideFitOnPerSheet;
+        }
+
+        public void setPageWideFitOnPerSheet(Boolean pageWideFitOnPerSheet) {
+            this.pageWideFitOnPerSheet = pageWideFitOnPerSheet;
+        }
+
+        @SerializedName("PageTallFitOnPerSheet")
+        private Boolean pageTallFitOnPerSheet ;
+
+        public  BatchConvertRequest  pageTallFitOnPerSheet(Boolean  pageTallFitOnPerSheet) {
+            this.pageTallFitOnPerSheet =  pageTallFitOnPerSheet;
+            return this;
+        }
+
+        @ApiModelProperty(value = "")
+        public Boolean getPageTallFitOnPerSheet() {
+            return pageTallFitOnPerSheet;
+        }
+
+        public void setPageTallFitOnPerSheet(Boolean pageTallFitOnPerSheet) {
+            this.pageTallFitOnPerSheet = pageTallFitOnPerSheet;
+        }
+
         @SerializedName("SaveOptions")
         private SaveOptions saveOptions ;
 
@@ -191,12 +225,14 @@ public class BatchConvertRequest {
                 Objects.equals(this.outFolder, batchConvertRequest.outFolder) &&
                 Objects.equals(this.outStorage, batchConvertRequest.outStorage) &&
                 Objects.equals(this.region, batchConvertRequest.region) &&
+                Objects.equals(this.pageWideFitOnPerSheet, batchConvertRequest.pageWideFitOnPerSheet) &&
+                Objects.equals(this.pageTallFitOnPerSheet, batchConvertRequest.pageTallFitOnPerSheet) &&
                 Objects.equals(this.saveOptions, batchConvertRequest.saveOptions);
       }
 
       @Override
       public int hashCode() {
-        return Objects.hash(sourceFolder, sourceStorage, matchCondition, format, outFolder, outStorage, region, saveOptions);
+        return Objects.hash(sourceFolder, sourceStorage, matchCondition, format, outFolder, outStorage, region, pageWideFitOnPerSheet, pageTallFitOnPerSheet, saveOptions);
       }
         @Override
         public String toString() {
@@ -209,6 +245,8 @@ public class BatchConvertRequest {
             sb.append("    outFolder: ").append(toIndentedString(getOutFolder())).append("\n");
             sb.append("    outStorage: ").append(toIndentedString(getOutStorage())).append("\n");
             sb.append("    region: ").append(toIndentedString(getRegion())).append("\n");
+            sb.append("    pageWideFitOnPerSheet: ").append(toIndentedString(getPageWideFitOnPerSheet())).append("\n");
+            sb.append("    pageTallFitOnPerSheet: ").append(toIndentedString(getPageTallFitOnPerSheet())).append("\n");
             sb.append("    saveOptions: ").append(toIndentedString(getSaveOptions())).append("\n");
             sb.append("}");
             return sb.toString();

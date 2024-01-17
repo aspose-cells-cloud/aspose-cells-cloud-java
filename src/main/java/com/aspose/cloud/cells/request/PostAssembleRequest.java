@@ -1,7 +1,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="PostAssembleRequest.java">
- *   Copyright (c) 2023 Aspose.Cells Cloud
+ *   Copyright (c) 2024 Aspose.Cells Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -44,7 +44,7 @@ public class PostAssembleRequest  implements IRequestModel {
 
     private HashMap<String,File> file;
     private String datasource;
-    private String format;
+    private String outFormat;
     private String password;
     private Boolean checkExcelRestriction;
     private String region;
@@ -52,10 +52,10 @@ public class PostAssembleRequest  implements IRequestModel {
         {
 
         }
-        public PostAssembleRequest(HashMap<String,File> file, String datasource, String format, String password, Boolean checkExcelRestriction, String region) {
+        public PostAssembleRequest(HashMap<String,File> file, String datasource, String outFormat, String password, Boolean checkExcelRestriction, String region) {
             this.file = file;
             this.datasource = datasource;
-            this.format = format;
+            this.outFormat = outFormat;
             this.password = password;
             this.checkExcelRestriction = checkExcelRestriction;
             this.region = region;
@@ -79,12 +79,12 @@ public class PostAssembleRequest  implements IRequestModel {
         }
 
 
-        public String getFormat() {
-            return this.format;
+        public String getOutFormat() {
+            return this.outFormat;
         }
 
-        public void setFormat(String format) {
-            this.format = format;
+        public void setOutFormat(String outFormat) {
+            this.outFormat = outFormat;
         }
 
 
@@ -129,8 +129,8 @@ public class PostAssembleRequest  implements IRequestModel {
             if (getDatasource() != null){
                 localVarQueryParams.addAll(apiClient.parameterToPairs("", "datasource", getDatasource()));
             } 
-            if (getFormat() != null){
-                localVarQueryParams.addAll(apiClient.parameterToPairs("", "format", getFormat()));
+            if (getOutFormat() != null){
+                localVarQueryParams.addAll(apiClient.parameterToPairs("", "outFormat", getOutFormat()));
             } 
             if (getPassword() != null){
                 localVarQueryParams.addAll(apiClient.parameterToPairs("", "password", getPassword()));

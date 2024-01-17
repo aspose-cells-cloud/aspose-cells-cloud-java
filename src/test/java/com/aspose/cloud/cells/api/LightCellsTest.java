@@ -1,7 +1,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="LightCellsTests.java">
- *   Copyright (c) 2023 Aspose.Cells Cloud
+ *   Copyright (c) 2024 Aspose.Cells Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -499,7 +499,7 @@ public class LightCellsTest {
 
        
         PostAssembleRequest request = new PostAssembleRequest();
-        request.setFormat(format);
+        request.setOutFormat(format);
 
         request.setDatasource("ds");
          
@@ -522,7 +522,7 @@ public class LightCellsTest {
 
        
         PostAssembleRequest request = new PostAssembleRequest();
-        request.setFormat(format);
+        request.setOutFormat(format);
 
         request.setDatasource("ds");
          
@@ -545,7 +545,7 @@ public class LightCellsTest {
 
        
         PostAssembleRequest request = new PostAssembleRequest();
-        request.setFormat(format);
+        request.setOutFormat(format);
 
         request.setDatasource("ds");
          
@@ -568,7 +568,7 @@ public class LightCellsTest {
 
        
         PostAssembleRequest request = new PostAssembleRequest();
-        request.setFormat(format);
+        request.setOutFormat(format);
 
         request.setDatasource("ds");
          
@@ -591,7 +591,7 @@ public class LightCellsTest {
 
        
         PostAssembleRequest request = new PostAssembleRequest();
-        request.setFormat(format);
+        request.setOutFormat(format);
 
         request.setDatasource("ds");
          
@@ -614,7 +614,7 @@ public class LightCellsTest {
 
        
         PostAssembleRequest request = new PostAssembleRequest();
-        request.setFormat(format);
+        request.setOutFormat(format);
 
         request.setDatasource("ds");
          
@@ -637,7 +637,7 @@ public class LightCellsTest {
 
        
         PostAssembleRequest request = new PostAssembleRequest();
-        request.setFormat(format);
+        request.setOutFormat(format);
 
         request.setDatasource("ds");
          
@@ -660,7 +660,7 @@ public class LightCellsTest {
 
        
         PostAssembleRequest request = new PostAssembleRequest();
-        request.setFormat(format);
+        request.setOutFormat(format);
 
         request.setDatasource("ds");
          
@@ -683,7 +683,7 @@ public class LightCellsTest {
 
        
         PostAssembleRequest request = new PostAssembleRequest();
-        request.setFormat(format);
+        request.setOutFormat(format);
 
         request.setDatasource("ds");
          
@@ -706,7 +706,7 @@ public class LightCellsTest {
 
        
         PostAssembleRequest request = new PostAssembleRequest();
-        request.setFormat(format);
+        request.setOutFormat(format);
 
         request.setDatasource("ds");
          
@@ -729,7 +729,7 @@ public class LightCellsTest {
 
        
         PostAssembleRequest request = new PostAssembleRequest();
-        request.setFormat(format);
+        request.setOutFormat(format);
 
         request.setDatasource("ds");
          
@@ -752,7 +752,7 @@ public class LightCellsTest {
 
        
         PostAssembleRequest request = new PostAssembleRequest();
-        request.setFormat(format);
+        request.setOutFormat(format);
 
         request.setDatasource("ds");
          
@@ -775,7 +775,7 @@ public class LightCellsTest {
 
        
         PostAssembleRequest request = new PostAssembleRequest();
-        request.setFormat(format);
+        request.setOutFormat(format);
 
         request.setDatasource("ds");
          
@@ -798,7 +798,7 @@ public class LightCellsTest {
 
        
         PostAssembleRequest request = new PostAssembleRequest();
-        request.setFormat(format);
+        request.setOutFormat(format);
 
         request.setDatasource("ds");
          
@@ -821,7 +821,7 @@ public class LightCellsTest {
 
        
         PostAssembleRequest request = new PostAssembleRequest();
-        request.setFormat(format);
+        request.setOutFormat(format);
 
         request.setDatasource("ds");
          
@@ -844,7 +844,7 @@ public class LightCellsTest {
 
        
         PostAssembleRequest request = new PostAssembleRequest();
-        request.setFormat(format);
+        request.setOutFormat(format);
 
         request.setDatasource("ds");
          
@@ -867,7 +867,7 @@ public class LightCellsTest {
 
        
         PostAssembleRequest request = new PostAssembleRequest();
-        request.setFormat(format);
+        request.setOutFormat(format);
 
         request.setDatasource("ds");
          
@@ -890,7 +890,7 @@ public class LightCellsTest {
 
        
         PostAssembleRequest request = new PostAssembleRequest();
-        request.setFormat(format);
+        request.setOutFormat(format);
 
         request.setDatasource("ds");
          
@@ -913,7 +913,7 @@ public class LightCellsTest {
 
        
         PostAssembleRequest request = new PostAssembleRequest();
-        request.setFormat(format);
+        request.setOutFormat(format);
 
         request.setDatasource("ds");
          
@@ -936,7 +936,7 @@ public class LightCellsTest {
 
        
         PostAssembleRequest request = new PostAssembleRequest();
-        request.setFormat(format);
+        request.setOutFormat(format);
 
         request.setDatasource("ds");
          
@@ -959,7 +959,7 @@ public class LightCellsTest {
 
        
         PostAssembleRequest request = new PostAssembleRequest();
-        request.setFormat(format);
+        request.setOutFormat(format);
 
         request.setDatasource("ds");
          
@@ -982,7 +982,7 @@ public class LightCellsTest {
 
        
         PostAssembleRequest request = new PostAssembleRequest();
-        request.setFormat(format);
+        request.setOutFormat(format);
 
         request.setDatasource("ds");
          
@@ -1005,7 +1005,7 @@ public class LightCellsTest {
 
        
         PostAssembleRequest request = new PostAssembleRequest();
-        request.setFormat(format);
+        request.setOutFormat(format);
 
         request.setDatasource("ds");
          
@@ -1028,7 +1028,7 @@ public class LightCellsTest {
 
        
         PostAssembleRequest request = new PostAssembleRequest();
-        request.setFormat(format);
+        request.setOutFormat(format);
 
         request.setDatasource("ds");
          
@@ -1051,7 +1051,7 @@ public class LightCellsTest {
 
        
         PostAssembleRequest request = new PostAssembleRequest();
-        request.setFormat(format);
+        request.setOutFormat(format);
 
         request.setDatasource("ds");
          
@@ -1074,7 +1074,7 @@ public class LightCellsTest {
 
        
         PostAssembleRequest request = new PostAssembleRequest();
-        request.setFormat(format);
+        request.setOutFormat(format);
 
         request.setDatasource("ds");
          
@@ -1097,7 +1097,7 @@ public class LightCellsTest {
 
        
         PostAssembleRequest request = new PostAssembleRequest();
-        request.setFormat(format);
+        request.setOutFormat(format);
 
         request.setDatasource("ds");
          
@@ -1120,7 +1120,7 @@ public class LightCellsTest {
 
        
         PostAssembleRequest request = new PostAssembleRequest();
-        request.setFormat(format);
+        request.setOutFormat(format);
 
         request.setDatasource("ds");
          

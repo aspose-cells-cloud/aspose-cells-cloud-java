@@ -1,7 +1,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="CellsApi.java">
- *   Copyright (c) 2023 Aspose.Cells Cloud
+ *   Copyright (c) 2024 Aspose.Cells Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -3689,32 +3689,32 @@ public class CellsApi {
 
 
          @SuppressWarnings("rawtypes")
-         private com.squareup.okhttp.Call putWorksheetAddChartValidateBeforeCall(PutWorksheetAddChartRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
+         private com.squareup.okhttp.Call putWorksheetChartValidateBeforeCall(PutWorksheetChartRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
 
-         public  CellsCloudResponse  putWorksheetAddChart(PutWorksheetAddChartRequest request) throws ApiException,  IOException {
+         public  CellsCloudResponse  putWorksheetChart(PutWorksheetChartRequest request) throws ApiException,  IOException {
              try {
-                 ApiResponse< CellsCloudResponse > resp = putWorksheetAddChartWithHttpInfo(request);
+                 ApiResponse< CellsCloudResponse > resp = putWorksheetChartWithHttpInfo(request);
                   return resp.getData(); 
              }
              catch (ApiException ex) {
                  if (ex.getCode() == apiClient.getNotAuthCode()) {
                      apiClient.requestToken();
-                     ApiResponse< CellsCloudResponse > resp = putWorksheetAddChartWithHttpInfo(request);
+                     ApiResponse< CellsCloudResponse > resp = putWorksheetChartWithHttpInfo(request);
                       return resp.getData();       
                  }
                  throw ex;
              }
          }
 
-         private ApiResponse< CellsCloudResponse > putWorksheetAddChartWithHttpInfo(PutWorksheetAddChartRequest request) throws ApiException,  IOException {
-             com.squareup.okhttp.Call call =  putWorksheetAddChartValidateBeforeCall(request, null, null);
+         private ApiResponse< CellsCloudResponse > putWorksheetChartWithHttpInfo(PutWorksheetChartRequest request) throws ApiException,  IOException {
+             com.squareup.okhttp.Call call =  putWorksheetChartValidateBeforeCall(request, null, null);
              Type localVarReturnType = new TypeToken< CellsCloudResponse >(){}.getType();
              return apiClient.execute(call, localVarReturnType);
          }
 
-         public com.squareup.okhttp.Call  putWorksheetAddChartAsync( PutWorksheetAddChartRequest request, final ApiCallback< CellsCloudResponse > callback) throws ApiException,  IOException {
+         public com.squareup.okhttp.Call  putWorksheetChartAsync( PutWorksheetChartRequest request, final ApiCallback< CellsCloudResponse > callback) throws ApiException,  IOException {
 
              ProgressResponseBody.ProgressListener progressListener = null;
              ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -3735,7 +3735,7 @@ public class CellsApi {
                  };
              }
 
-             com.squareup.okhttp.Call call =  putWorksheetAddChartValidateBeforeCall(request, progressListener, progressRequestListener);
+             com.squareup.okhttp.Call call =  putWorksheetChartValidateBeforeCall(request, progressListener, progressRequestListener);
              Type localVarReturnType = new TypeToken< CellsCloudResponse >(){}.getType();
              apiClient.executeAsync(call, localVarReturnType, callback);
              return call;
@@ -3743,32 +3743,32 @@ public class CellsApi {
 
 
          @SuppressWarnings("rawtypes")
-         private com.squareup.okhttp.Call deleteWorksheetDeleteChartValidateBeforeCall(DeleteWorksheetDeleteChartRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
+         private com.squareup.okhttp.Call deleteWorksheetChartValidateBeforeCall(DeleteWorksheetChartRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
 
-         public  CellsCloudResponse  deleteWorksheetDeleteChart(DeleteWorksheetDeleteChartRequest request) throws ApiException,  IOException {
+         public  CellsCloudResponse  deleteWorksheetChart(DeleteWorksheetChartRequest request) throws ApiException,  IOException {
              try {
-                 ApiResponse< CellsCloudResponse > resp = deleteWorksheetDeleteChartWithHttpInfo(request);
+                 ApiResponse< CellsCloudResponse > resp = deleteWorksheetChartWithHttpInfo(request);
                   return resp.getData(); 
              }
              catch (ApiException ex) {
                  if (ex.getCode() == apiClient.getNotAuthCode()) {
                      apiClient.requestToken();
-                     ApiResponse< CellsCloudResponse > resp = deleteWorksheetDeleteChartWithHttpInfo(request);
+                     ApiResponse< CellsCloudResponse > resp = deleteWorksheetChartWithHttpInfo(request);
                       return resp.getData();       
                  }
                  throw ex;
              }
          }
 
-         private ApiResponse< CellsCloudResponse > deleteWorksheetDeleteChartWithHttpInfo(DeleteWorksheetDeleteChartRequest request) throws ApiException,  IOException {
-             com.squareup.okhttp.Call call =  deleteWorksheetDeleteChartValidateBeforeCall(request, null, null);
+         private ApiResponse< CellsCloudResponse > deleteWorksheetChartWithHttpInfo(DeleteWorksheetChartRequest request) throws ApiException,  IOException {
+             com.squareup.okhttp.Call call =  deleteWorksheetChartValidateBeforeCall(request, null, null);
              Type localVarReturnType = new TypeToken< CellsCloudResponse >(){}.getType();
              return apiClient.execute(call, localVarReturnType);
          }
 
-         public com.squareup.okhttp.Call  deleteWorksheetDeleteChartAsync( DeleteWorksheetDeleteChartRequest request, final ApiCallback< CellsCloudResponse > callback) throws ApiException,  IOException {
+         public com.squareup.okhttp.Call  deleteWorksheetChartAsync( DeleteWorksheetChartRequest request, final ApiCallback< CellsCloudResponse > callback) throws ApiException,  IOException {
 
              ProgressResponseBody.ProgressListener progressListener = null;
              ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -3789,7 +3789,7 @@ public class CellsApi {
                  };
              }
 
-             com.squareup.okhttp.Call call =  deleteWorksheetDeleteChartValidateBeforeCall(request, progressListener, progressRequestListener);
+             com.squareup.okhttp.Call call =  deleteWorksheetChartValidateBeforeCall(request, progressListener, progressRequestListener);
              Type localVarReturnType = new TypeToken< CellsCloudResponse >(){}.getType();
              apiClient.executeAsync(call, localVarReturnType, callback);
              return call;
@@ -4067,32 +4067,32 @@ public class CellsApi {
 
 
          @SuppressWarnings("rawtypes")
-         private com.squareup.okhttp.Call deleteWorksheetClearChartsValidateBeforeCall(DeleteWorksheetClearChartsRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
+         private com.squareup.okhttp.Call deleteWorksheetChartsValidateBeforeCall(DeleteWorksheetChartsRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
 
-         public  CellsCloudResponse  deleteWorksheetClearCharts(DeleteWorksheetClearChartsRequest request) throws ApiException,  IOException {
+         public  CellsCloudResponse  deleteWorksheetCharts(DeleteWorksheetChartsRequest request) throws ApiException,  IOException {
              try {
-                 ApiResponse< CellsCloudResponse > resp = deleteWorksheetClearChartsWithHttpInfo(request);
+                 ApiResponse< CellsCloudResponse > resp = deleteWorksheetChartsWithHttpInfo(request);
                   return resp.getData(); 
              }
              catch (ApiException ex) {
                  if (ex.getCode() == apiClient.getNotAuthCode()) {
                      apiClient.requestToken();
-                     ApiResponse< CellsCloudResponse > resp = deleteWorksheetClearChartsWithHttpInfo(request);
+                     ApiResponse< CellsCloudResponse > resp = deleteWorksheetChartsWithHttpInfo(request);
                       return resp.getData();       
                  }
                  throw ex;
              }
          }
 
-         private ApiResponse< CellsCloudResponse > deleteWorksheetClearChartsWithHttpInfo(DeleteWorksheetClearChartsRequest request) throws ApiException,  IOException {
-             com.squareup.okhttp.Call call =  deleteWorksheetClearChartsValidateBeforeCall(request, null, null);
+         private ApiResponse< CellsCloudResponse > deleteWorksheetChartsWithHttpInfo(DeleteWorksheetChartsRequest request) throws ApiException,  IOException {
+             com.squareup.okhttp.Call call =  deleteWorksheetChartsValidateBeforeCall(request, null, null);
              Type localVarReturnType = new TypeToken< CellsCloudResponse >(){}.getType();
              return apiClient.execute(call, localVarReturnType);
          }
 
-         public com.squareup.okhttp.Call  deleteWorksheetClearChartsAsync( DeleteWorksheetClearChartsRequest request, final ApiCallback< CellsCloudResponse > callback) throws ApiException,  IOException {
+         public com.squareup.okhttp.Call  deleteWorksheetChartsAsync( DeleteWorksheetChartsRequest request, final ApiCallback< CellsCloudResponse > callback) throws ApiException,  IOException {
 
              ProgressResponseBody.ProgressListener progressListener = null;
              ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -4113,7 +4113,7 @@ public class CellsApi {
                  };
              }
 
-             com.squareup.okhttp.Call call =  deleteWorksheetClearChartsValidateBeforeCall(request, progressListener, progressRequestListener);
+             com.squareup.okhttp.Call call =  deleteWorksheetChartsValidateBeforeCall(request, progressListener, progressRequestListener);
              Type localVarReturnType = new TypeToken< CellsCloudResponse >(){}.getType();
              apiClient.executeAsync(call, localVarReturnType, callback);
              return call;
@@ -9352,6 +9352,114 @@ public class CellsApi {
              }
 
              com.squareup.okhttp.Call call =  postFooterValidateBeforeCall(request, progressListener, progressRequestListener);
+             Type localVarReturnType = new TypeToken< CellsCloudResponse >(){}.getType();
+             apiClient.executeAsync(call, localVarReturnType, callback);
+             return call;
+         }
+
+
+         @SuppressWarnings("rawtypes")
+         private com.squareup.okhttp.Call postFitWideToPagesValidateBeforeCall(PostFitWideToPagesRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
+             return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
+         }
+
+         public  CellsCloudResponse  postFitWideToPages(PostFitWideToPagesRequest request) throws ApiException,  IOException {
+             try {
+                 ApiResponse< CellsCloudResponse > resp = postFitWideToPagesWithHttpInfo(request);
+                  return resp.getData(); 
+             }
+             catch (ApiException ex) {
+                 if (ex.getCode() == apiClient.getNotAuthCode()) {
+                     apiClient.requestToken();
+                     ApiResponse< CellsCloudResponse > resp = postFitWideToPagesWithHttpInfo(request);
+                      return resp.getData();       
+                 }
+                 throw ex;
+             }
+         }
+
+         private ApiResponse< CellsCloudResponse > postFitWideToPagesWithHttpInfo(PostFitWideToPagesRequest request) throws ApiException,  IOException {
+             com.squareup.okhttp.Call call =  postFitWideToPagesValidateBeforeCall(request, null, null);
+             Type localVarReturnType = new TypeToken< CellsCloudResponse >(){}.getType();
+             return apiClient.execute(call, localVarReturnType);
+         }
+
+         public com.squareup.okhttp.Call  postFitWideToPagesAsync( PostFitWideToPagesRequest request, final ApiCallback< CellsCloudResponse > callback) throws ApiException,  IOException {
+
+             ProgressResponseBody.ProgressListener progressListener = null;
+             ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+             if (callback != null) {
+                 progressListener = new ProgressResponseBody.ProgressListener() {
+                     @Override
+                     public void update(long bytesRead, long contentLength, boolean done) {
+                         callback.onDownloadProgress(bytesRead, contentLength, done);
+                     }
+                 };
+
+                 progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                     @Override
+                     public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                         callback.onUploadProgress(bytesWritten, contentLength, done);
+                     }
+                 };
+             }
+
+             com.squareup.okhttp.Call call =  postFitWideToPagesValidateBeforeCall(request, progressListener, progressRequestListener);
+             Type localVarReturnType = new TypeToken< CellsCloudResponse >(){}.getType();
+             apiClient.executeAsync(call, localVarReturnType, callback);
+             return call;
+         }
+
+
+         @SuppressWarnings("rawtypes")
+         private com.squareup.okhttp.Call postFitTallToPagesValidateBeforeCall(PostFitTallToPagesRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
+             return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
+         }
+
+         public  CellsCloudResponse  postFitTallToPages(PostFitTallToPagesRequest request) throws ApiException,  IOException {
+             try {
+                 ApiResponse< CellsCloudResponse > resp = postFitTallToPagesWithHttpInfo(request);
+                  return resp.getData(); 
+             }
+             catch (ApiException ex) {
+                 if (ex.getCode() == apiClient.getNotAuthCode()) {
+                     apiClient.requestToken();
+                     ApiResponse< CellsCloudResponse > resp = postFitTallToPagesWithHttpInfo(request);
+                      return resp.getData();       
+                 }
+                 throw ex;
+             }
+         }
+
+         private ApiResponse< CellsCloudResponse > postFitTallToPagesWithHttpInfo(PostFitTallToPagesRequest request) throws ApiException,  IOException {
+             com.squareup.okhttp.Call call =  postFitTallToPagesValidateBeforeCall(request, null, null);
+             Type localVarReturnType = new TypeToken< CellsCloudResponse >(){}.getType();
+             return apiClient.execute(call, localVarReturnType);
+         }
+
+         public com.squareup.okhttp.Call  postFitTallToPagesAsync( PostFitTallToPagesRequest request, final ApiCallback< CellsCloudResponse > callback) throws ApiException,  IOException {
+
+             ProgressResponseBody.ProgressListener progressListener = null;
+             ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+             if (callback != null) {
+                 progressListener = new ProgressResponseBody.ProgressListener() {
+                     @Override
+                     public void update(long bytesRead, long contentLength, boolean done) {
+                         callback.onDownloadProgress(bytesRead, contentLength, done);
+                     }
+                 };
+
+                 progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                     @Override
+                     public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                         callback.onUploadProgress(bytesWritten, contentLength, done);
+                     }
+                 };
+             }
+
+             com.squareup.okhttp.Call call =  postFitTallToPagesValidateBeforeCall(request, progressListener, progressRequestListener);
              Type localVarReturnType = new TypeToken< CellsCloudResponse >(){}.getType();
              apiClient.executeAsync(call, localVarReturnType, callback);
              return call;
@@ -15677,32 +15785,32 @@ public class CellsApi {
 
 
          @SuppressWarnings("rawtypes")
-         private com.squareup.okhttp.Call postWorsheetTextReplaceValidateBeforeCall(PostWorsheetTextReplaceRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
+         private com.squareup.okhttp.Call postWorksheetTextReplaceValidateBeforeCall(PostWorksheetTextReplaceRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
 
-         public  WorksheetReplaceResponse  postWorsheetTextReplace(PostWorsheetTextReplaceRequest request) throws ApiException,  IOException {
+         public  WorksheetReplaceResponse  postWorksheetTextReplace(PostWorksheetTextReplaceRequest request) throws ApiException,  IOException {
              try {
-                 ApiResponse< WorksheetReplaceResponse > resp = postWorsheetTextReplaceWithHttpInfo(request);
+                 ApiResponse< WorksheetReplaceResponse > resp = postWorksheetTextReplaceWithHttpInfo(request);
                   return resp.getData(); 
              }
              catch (ApiException ex) {
                  if (ex.getCode() == apiClient.getNotAuthCode()) {
                      apiClient.requestToken();
-                     ApiResponse< WorksheetReplaceResponse > resp = postWorsheetTextReplaceWithHttpInfo(request);
+                     ApiResponse< WorksheetReplaceResponse > resp = postWorksheetTextReplaceWithHttpInfo(request);
                       return resp.getData();       
                  }
                  throw ex;
              }
          }
 
-         private ApiResponse< WorksheetReplaceResponse > postWorsheetTextReplaceWithHttpInfo(PostWorsheetTextReplaceRequest request) throws ApiException,  IOException {
-             com.squareup.okhttp.Call call =  postWorsheetTextReplaceValidateBeforeCall(request, null, null);
+         private ApiResponse< WorksheetReplaceResponse > postWorksheetTextReplaceWithHttpInfo(PostWorksheetTextReplaceRequest request) throws ApiException,  IOException {
+             com.squareup.okhttp.Call call =  postWorksheetTextReplaceValidateBeforeCall(request, null, null);
              Type localVarReturnType = new TypeToken< WorksheetReplaceResponse >(){}.getType();
              return apiClient.execute(call, localVarReturnType);
          }
 
-         public com.squareup.okhttp.Call  postWorsheetTextReplaceAsync( PostWorsheetTextReplaceRequest request, final ApiCallback< WorksheetReplaceResponse > callback) throws ApiException,  IOException {
+         public com.squareup.okhttp.Call  postWorksheetTextReplaceAsync( PostWorksheetTextReplaceRequest request, final ApiCallback< WorksheetReplaceResponse > callback) throws ApiException,  IOException {
 
              ProgressResponseBody.ProgressListener progressListener = null;
              ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -15723,7 +15831,7 @@ public class CellsApi {
                  };
              }
 
-             com.squareup.okhttp.Call call =  postWorsheetTextReplaceValidateBeforeCall(request, progressListener, progressRequestListener);
+             com.squareup.okhttp.Call call =  postWorksheetTextReplaceValidateBeforeCall(request, progressListener, progressRequestListener);
              Type localVarReturnType = new TypeToken< WorksheetReplaceResponse >(){}.getType();
              apiClient.executeAsync(call, localVarReturnType, callback);
              return call;

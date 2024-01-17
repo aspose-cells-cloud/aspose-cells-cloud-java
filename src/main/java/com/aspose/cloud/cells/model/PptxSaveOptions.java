@@ -1,7 +1,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="PptxSaveOptions.java">
- *   Copyright (c) 2023 Aspose.Cells Cloud
+ *   Copyright (c) 2024 Aspose.Cells Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -36,7 +36,58 @@ import com.google.gson.annotations.SerializedName;
 import java.time.OffsetDateTime;
 
 
-public class PptxSaveOptions  extends  SaveOptions {
+public class PptxSaveOptions  extends  PaginatedSaveOptions {
+        @SerializedName("IgnoreHiddenRows")
+        private Boolean ignoreHiddenRows ;
+
+        public  PptxSaveOptions  ignoreHiddenRows(Boolean  ignoreHiddenRows) {
+            this.ignoreHiddenRows =  ignoreHiddenRows;
+            return this;
+        }
+
+        @ApiModelProperty(value = "")
+        public Boolean getIgnoreHiddenRows() {
+            return ignoreHiddenRows;
+        }
+
+        public void setIgnoreHiddenRows(Boolean ignoreHiddenRows) {
+            this.ignoreHiddenRows = ignoreHiddenRows;
+        }
+
+        @SerializedName("AdjustFontSizeForRowType")
+        private String adjustFontSizeForRowType ;
+
+        public  PptxSaveOptions  adjustFontSizeForRowType(String  adjustFontSizeForRowType) {
+            this.adjustFontSizeForRowType =  adjustFontSizeForRowType;
+            return this;
+        }
+
+        @ApiModelProperty(value = "")
+        public String getAdjustFontSizeForRowType() {
+            return adjustFontSizeForRowType;
+        }
+
+        public void setAdjustFontSizeForRowType(String adjustFontSizeForRowType) {
+            this.adjustFontSizeForRowType = adjustFontSizeForRowType;
+        }
+
+        @SerializedName("ExportViewType")
+        private String exportViewType ;
+
+        public  PptxSaveOptions  exportViewType(String  exportViewType) {
+            this.exportViewType =  exportViewType;
+            return this;
+        }
+
+        @ApiModelProperty(value = "")
+        public String getExportViewType() {
+            return exportViewType;
+        }
+
+        public void setExportViewType(String exportViewType) {
+            this.exportViewType = exportViewType;
+        }
+
         @Override
         public boolean equals(java.lang.Object o) {
             if (this == o) {
@@ -46,17 +97,43 @@ public class PptxSaveOptions  extends  SaveOptions {
                 return false;
             }
 
-            return super.equals(o);
+            PptxSaveOptions pptxSaveOptions = (PptxSaveOptions) o;
+            return
+                Objects.equals(this.ignoreHiddenRows, pptxSaveOptions.ignoreHiddenRows) &&
+                Objects.equals(this.adjustFontSizeForRowType, pptxSaveOptions.adjustFontSizeForRowType) &&
+                Objects.equals(this.exportViewType, pptxSaveOptions.exportViewType) &&
+                super.equals(o);
       }
 
       @Override
       public int hashCode() {
-        return Objects.hash(super.hashCode());
+        return Objects.hash(ignoreHiddenRows, adjustFontSizeForRowType, exportViewType, super.hashCode());
       }
         @Override
         public String toString() {
             StringBuilder sb = new StringBuilder();
             sb.append("class PptxSaveOptions {\n");
+            sb.append("    ignoreHiddenRows: ").append(toIndentedString(getIgnoreHiddenRows())).append("\n");
+            sb.append("    adjustFontSizeForRowType: ").append(toIndentedString(getAdjustFontSizeForRowType())).append("\n");
+            sb.append("    exportViewType: ").append(toIndentedString(getExportViewType())).append("\n");
+            sb.append("    defaultFont: ").append(toIndentedString(getDefaultFont())).append("\n");
+            sb.append("    checkWorkbookDefaultFont: ").append(toIndentedString(getCheckWorkbookDefaultFont())).append("\n");
+            sb.append("    checkFontCompatibility: ").append(toIndentedString(getCheckFontCompatibility())).append("\n");
+            sb.append("    isFontSubstitutionCharGranularity: ").append(toIndentedString(getIsFontSubstitutionCharGranularity())).append("\n");
+            sb.append("    onePagePerSheet: ").append(toIndentedString(getOnePagePerSheet())).append("\n");
+            sb.append("    allColumnsInOnePagePerSheet: ").append(toIndentedString(getAllColumnsInOnePagePerSheet())).append("\n");
+            sb.append("    ignoreError: ").append(toIndentedString(getIgnoreError())).append("\n");
+            sb.append("    outputBlankPageWhenNothingToPrint: ").append(toIndentedString(getOutputBlankPageWhenNothingToPrint())).append("\n");
+            sb.append("    pageIndex: ").append(toIndentedString(getPageIndex())).append("\n");
+            sb.append("    pageCount: ").append(toIndentedString(getPageCount())).append("\n");
+            sb.append("    printingPageType: ").append(toIndentedString(getPrintingPageType())).append("\n");
+            sb.append("    gridlineType: ").append(toIndentedString(getGridlineType())).append("\n");
+            sb.append("    textCrossType: ").append(toIndentedString(getTextCrossType())).append("\n");
+            sb.append("    defaultEditLanguage: ").append(toIndentedString(getDefaultEditLanguage())).append("\n");
+            sb.append("    emfRenderSetting: ").append(toIndentedString(getEmfRenderSetting())).append("\n");
+            sb.append("    mergeAreas: ").append(toIndentedString(getMergeAreas())).append("\n");
+            sb.append("    sortExternalNames: ").append(toIndentedString(getSortExternalNames())).append("\n");
+            sb.append("    updateSmartArt: ").append(toIndentedString(getUpdateSmartArt())).append("\n");
             sb.append("    saveFormat: ").append(toIndentedString(getSaveFormat())).append("\n");
             sb.append("    cachedFileFolder: ").append(toIndentedString(getCachedFileFolder())).append("\n");
             sb.append("    clearData: ").append(toIndentedString(getClearData())).append("\n");

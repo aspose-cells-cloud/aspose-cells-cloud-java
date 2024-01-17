@@ -9,14 +9,14 @@
 	<repositories>
 		<repository>
 			<id>aspose</id>
-			<url>https://artifact.aspose.cloud/repo/</url>
+			<url>https://repository.aspose.cloud/java/repo/</url>
 		</repository>
 	</repositories>
 	<dependencies>
 		<dependency>
 			<groupId>com.aspose</groupId>
 			<artifactId>aspose-cells-cloud</artifactId>
-			<version>19.2.1</version>
+			<version>23.10</version>
 		</dependency>
 		<dependency>
 			<groupId>com.squareup.okhttp</groupId>
@@ -35,6 +35,11 @@
 			<artifactId>joda-time</artifactId>
 			<version>2.10.1</version>
 		</dependency>
-
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.12</version>
+			<scope>test</scope>
+		</dependency>
 	</dependencies>
 </project>

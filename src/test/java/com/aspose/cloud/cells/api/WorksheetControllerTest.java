@@ -1,7 +1,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="WorksheetControllerTests.java">
- *   Copyright (c) 2023 Aspose.Cells Cloud
+ *   Copyright (c) 2024 Aspose.Cells Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -585,13 +585,13 @@ public class WorksheetControllerTest {
 
 
     @Test
-    public void PostWorsheetTextReplaceTest() throws Exception {
+    public void PostWorksheetTextReplaceTest() throws Exception {
         String localName = "Book1.xlsx";
         String remoteName = "Book1.xlsx";
 
         CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
        
-        PostWorsheetTextReplaceRequest request = new PostWorsheetTextReplaceRequest();
+        PostWorksheetTextReplaceRequest request = new PostWorksheetTextReplaceRequest();
         request.setName(remoteName);
 
         request.setSheetName("Sheet1");
@@ -604,7 +604,7 @@ public class WorksheetControllerTest {
 
         request.setStorageName("");
 
-        WorksheetReplaceResponse response =  this.api.postWorsheetTextReplace(request);
+        WorksheetReplaceResponse response =  this.api.postWorksheetTextReplace(request);
     }
 
 

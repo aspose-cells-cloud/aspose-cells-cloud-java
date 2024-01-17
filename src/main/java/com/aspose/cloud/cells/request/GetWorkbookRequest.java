@@ -1,7 +1,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="GetWorkbookRequest.java">
- *   Copyright (c) 2023 Aspose.Cells Cloud
+ *   Copyright (c) 2024 Aspose.Cells Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -53,11 +53,13 @@ public class GetWorkbookRequest  implements IRequestModel {
     private String outStorageName;
     private Boolean checkExcelRestriction;
     private String region;
+    private Boolean pageWideFitOnPerSheet;
+    private Boolean pageTallFitOnPerSheet;
         public GetWorkbookRequest()
         {
 
         }
-        public GetWorkbookRequest(String name, String format, String password, Boolean isAutoFit, Boolean onlySaveTable, String folder, String outPath, String storageName, String outStorageName, Boolean checkExcelRestriction, String region) {
+        public GetWorkbookRequest(String name, String format, String password, Boolean isAutoFit, Boolean onlySaveTable, String folder, String outPath, String storageName, String outStorageName, Boolean checkExcelRestriction, String region, Boolean pageWideFitOnPerSheet, Boolean pageTallFitOnPerSheet) {
             this.name = name;
             this.format = format;
             this.password = password;
@@ -69,6 +71,8 @@ public class GetWorkbookRequest  implements IRequestModel {
             this.outStorageName = outStorageName;
             this.checkExcelRestriction = checkExcelRestriction;
             this.region = region;
+            this.pageWideFitOnPerSheet = pageWideFitOnPerSheet;
+            this.pageTallFitOnPerSheet = pageTallFitOnPerSheet;
         }   
 
         public String getName() {
@@ -169,6 +173,24 @@ public class GetWorkbookRequest  implements IRequestModel {
             this.region = region;
         }
 
+
+        public Boolean getPageWideFitOnPerSheet() {
+            return this.pageWideFitOnPerSheet;
+        }
+
+        public void setPageWideFitOnPerSheet(Boolean pageWideFitOnPerSheet) {
+            this.pageWideFitOnPerSheet = pageWideFitOnPerSheet;
+        }
+
+
+        public Boolean getPageTallFitOnPerSheet() {
+            return this.pageTallFitOnPerSheet;
+        }
+
+        public void setPageTallFitOnPerSheet(Boolean pageTallFitOnPerSheet) {
+            this.pageTallFitOnPerSheet = pageTallFitOnPerSheet;
+        }
+
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
          if (getName() == null) {
@@ -207,6 +229,12 @@ public class GetWorkbookRequest  implements IRequestModel {
             } 
             if (getRegion() != null){
                 localVarQueryParams.addAll(apiClient.parameterToPairs("", "region", getRegion()));
+            } 
+            if (getPageWideFitOnPerSheet() != null){
+                localVarQueryParams.addAll(apiClient.parameterToPairs("", "pageWideFitOnPerSheet", getPageWideFitOnPerSheet()));
+            } 
+            if (getPageTallFitOnPerSheet() != null){
+                localVarQueryParams.addAll(apiClient.parameterToPairs("", "pageTallFitOnPerSheet", getPageTallFitOnPerSheet()));
             }  
         if(this.extendQueryParameterMap !=null){
             for (String key :this.extendQueryParameterMap.keySet()) {
