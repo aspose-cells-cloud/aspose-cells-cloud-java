@@ -214,4 +214,44 @@ public class PageSetupControllerTest {
     }
 
 
+    @Test
+    public void PostFitWideToPagesTest() throws Exception {
+        String localName = "Book1.xlsx";
+        String remoteName = "Book1.xlsx";
+
+        CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
+       
+        PostFitWideToPagesRequest request = new PostFitWideToPagesRequest();
+        request.setName(remoteName);
+
+        request.setSheetName("Sheet1");
+
+        request.setFolder(remoteFolder);
+
+        request.setStorageName("");
+
+        CellsCloudResponse response =  this.api.postFitWideToPages(request);
+    }
+
+
+    @Test
+    public void PostFitTallToPagesTest() throws Exception {
+        String localName = "Book1.xlsx";
+        String remoteName = "Book1.xlsx";
+
+        CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
+       
+        PostFitTallToPagesRequest request = new PostFitTallToPagesRequest();
+        request.setName(remoteName);
+
+        request.setSheetName("Sheet1");
+
+        request.setFolder(remoteFolder);
+
+        request.setStorageName("");
+
+        CellsCloudResponse response =  this.api.postFitTallToPages(request);
+    }
+
+
 }

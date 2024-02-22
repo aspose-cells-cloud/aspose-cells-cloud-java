@@ -88,23 +88,6 @@ public class PdfSecurityOptions {
             this.extractContentPermission = extractContentPermission;
         }
 
-        @SerializedName("ExtractContentPermissionObsolete")
-        private Boolean extractContentPermissionObsolete ;
-
-        public  PdfSecurityOptions  extractContentPermissionObsolete(Boolean  extractContentPermissionObsolete) {
-            this.extractContentPermissionObsolete =  extractContentPermissionObsolete;
-            return this;
-        }
-
-        @ApiModelProperty(value = "")
-        public Boolean getExtractContentPermissionObsolete() {
-            return extractContentPermissionObsolete;
-        }
-
-        public void setExtractContentPermissionObsolete(Boolean extractContentPermissionObsolete) {
-            this.extractContentPermissionObsolete = extractContentPermissionObsolete;
-        }
-
         @SerializedName("FillFormsPermission")
         private Boolean fillFormsPermission ;
 
@@ -221,7 +204,6 @@ public class PdfSecurityOptions {
                 Objects.equals(this.annotationsPermission, pdfSecurityOptions.annotationsPermission) &&
                 Objects.equals(this.assembleDocumentPermission, pdfSecurityOptions.assembleDocumentPermission) &&
                 Objects.equals(this.extractContentPermission, pdfSecurityOptions.extractContentPermission) &&
-                Objects.equals(this.extractContentPermissionObsolete, pdfSecurityOptions.extractContentPermissionObsolete) &&
                 Objects.equals(this.fillFormsPermission, pdfSecurityOptions.fillFormsPermission) &&
                 Objects.equals(this.fullQualityPrintPermission, pdfSecurityOptions.fullQualityPrintPermission) &&
                 Objects.equals(this.modifyDocumentPermission, pdfSecurityOptions.modifyDocumentPermission) &&
@@ -232,7 +214,7 @@ public class PdfSecurityOptions {
 
       @Override
       public int hashCode() {
-        return Objects.hash(annotationsPermission, assembleDocumentPermission, extractContentPermission, extractContentPermissionObsolete, fillFormsPermission, fullQualityPrintPermission, modifyDocumentPermission, ownerPassword, printPermission, userPassword);
+        return Objects.hash(annotationsPermission, assembleDocumentPermission, extractContentPermission, fillFormsPermission, fullQualityPrintPermission, modifyDocumentPermission, ownerPassword, printPermission, userPassword);
       }
         @Override
         public String toString() {
@@ -241,7 +223,6 @@ public class PdfSecurityOptions {
             sb.append("    annotationsPermission: ").append(toIndentedString(getAnnotationsPermission())).append("\n");
             sb.append("    assembleDocumentPermission: ").append(toIndentedString(getAssembleDocumentPermission())).append("\n");
             sb.append("    extractContentPermission: ").append(toIndentedString(getExtractContentPermission())).append("\n");
-            sb.append("    extractContentPermissionObsolete: ").append(toIndentedString(getExtractContentPermissionObsolete())).append("\n");
             sb.append("    fillFormsPermission: ").append(toIndentedString(getFillFormsPermission())).append("\n");
             sb.append("    fullQualityPrintPermission: ").append(toIndentedString(getFullQualityPrintPermission())).append("\n");
             sb.append("    modifyDocumentPermission: ").append(toIndentedString(getModifyDocumentPermission())).append("\n");

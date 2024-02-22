@@ -1,4 +1,4 @@
-![](https://img.shields.io/badge/REST%20API-v3.0-lightgrey) [![GitHub license](https://img.shields.io/github/license/aspose-cells-cloud/aspose-cells-cloud-java)](https://github.com/aspose-cells-cloud/aspose-cells-cloud-java/blob/master/LICENSE) ![GitHub commits since latest release (by date)](https://img.shields.io/github/commits-since/aspose-cells-cloud/aspose-cells-cloud-java/24.1.1)
+![](https://img.shields.io/badge/REST%20API-v3.0-lightgrey) [![GitHub license](https://img.shields.io/github/license/aspose-cells-cloud/aspose-cells-cloud-java)](https://github.com/aspose-cells-cloud/aspose-cells-cloud-java/blob/master/LICENSE) ![GitHub commits since latest release (by date)](https://img.shields.io/github/commits-since/aspose-cells-cloud/aspose-cells-cloud-java/24.2.1)
 
 # Java SDK for Spreadsheet Processing in the Cloud
 
@@ -24,14 +24,11 @@ This Cloud SDK enhances your Java-based cloud apps to [process & manipulate Micr
 - Fetch the required shape from worksheet.
 - Leverage the power of [Pivot Tables](https://docs.aspose.cloud/cells/working-with-pivot-tables/) & Ranges.
 
-## Feature & Enhancements in Version 24.1.1
+## Feature & Enhancements in Version 24.2.1
 
 Full list of issues covering all changes in this release:
 
-- Fixed spelling mistakes for several functions.
-- Add the PostFitTallToPages method for page setup controller.
-- Add the PostFitWideToPages method for page setup controller.
-- Optimize save options about paginated.
+- Add the analyze excel api for analyze controller.
 
 ## Read & Write Spreadsheet Formats
 

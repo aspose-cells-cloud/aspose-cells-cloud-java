@@ -54,23 +54,6 @@ public class AutoFitterOptions {
             this.autoFitMergedCellsType = autoFitMergedCellsType;
         }
 
-        @SerializedName("AutoFitMergedCells")
-        private Boolean autoFitMergedCells ;
-
-        public  AutoFitterOptions  autoFitMergedCells(Boolean  autoFitMergedCells) {
-            this.autoFitMergedCells =  autoFitMergedCells;
-            return this;
-        }
-
-        @ApiModelProperty(value = "")
-        public Boolean getAutoFitMergedCells() {
-            return autoFitMergedCells;
-        }
-
-        public void setAutoFitMergedCells(Boolean autoFitMergedCells) {
-            this.autoFitMergedCells = autoFitMergedCells;
-        }
-
         @SerializedName("IgnoreHidden")
         private Boolean ignoreHidden ;
 
@@ -202,7 +185,6 @@ public class AutoFitterOptions {
             AutoFitterOptions autoFitterOptions = (AutoFitterOptions) o;
             return
                 Objects.equals(this.autoFitMergedCellsType, autoFitterOptions.autoFitMergedCellsType) &&
-                Objects.equals(this.autoFitMergedCells, autoFitterOptions.autoFitMergedCells) &&
                 Objects.equals(this.ignoreHidden, autoFitterOptions.ignoreHidden) &&
                 Objects.equals(this.onlyAuto, autoFitterOptions.onlyAuto) &&
                 Objects.equals(this.defaultEditLanguage, autoFitterOptions.defaultEditLanguage) &&
@@ -214,14 +196,13 @@ public class AutoFitterOptions {
 
       @Override
       public int hashCode() {
-        return Objects.hash(autoFitMergedCellsType, autoFitMergedCells, ignoreHidden, onlyAuto, defaultEditLanguage, maxRowHeight, autoFitWrappedTextType, formatStrategy, forRendering);
+        return Objects.hash(autoFitMergedCellsType, ignoreHidden, onlyAuto, defaultEditLanguage, maxRowHeight, autoFitWrappedTextType, formatStrategy, forRendering);
       }
         @Override
         public String toString() {
             StringBuilder sb = new StringBuilder();
             sb.append("class AutoFitterOptions {\n");
             sb.append("    autoFitMergedCellsType: ").append(toIndentedString(getAutoFitMergedCellsType())).append("\n");
-            sb.append("    autoFitMergedCells: ").append(toIndentedString(getAutoFitMergedCells())).append("\n");
             sb.append("    ignoreHidden: ").append(toIndentedString(getIgnoreHidden())).append("\n");
             sb.append("    onlyAuto: ").append(toIndentedString(getOnlyAuto())).append("\n");
             sb.append("    defaultEditLanguage: ").append(toIndentedString(getDefaultEditLanguage())).append("\n");
