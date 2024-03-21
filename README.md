@@ -1,8 +1,8 @@
 ![](https://img.shields.io/badge/REST%20API-v3.0-lightgrey) [![GitHub license](https://img.shields.io/github/license/aspose-cells-cloud/aspose-cells-cloud-java)](https://github.com/aspose-cells-cloud/aspose-cells-cloud-java/blob/master/LICENSE) ![GitHub commits since latest release (by date)](https://img.shields.io/github/commits-since/aspose-cells-cloud/aspose-cells-cloud-java/24.3)
 
-# Java package for Aspose.Cells Cloud SDK
+# Java package for Aspose.Cells Cloud
 
-Enhance your Java applications with the [Aspose.Cells Cloud SDK](https://products.aspose.cloud/cells/java) , enabling seamless integration with [Excel, ODS, CSV, Json and other spreadsheet document formats](https://docs.aspose.cloud/cells/supported-file-formats/). With its powerful APIs, developers can effortlessly read, convert, create, edit, and manipulate the contents of Excel documents without the need for any office software installed on the machine
+Enhance your Java applications with the [Aspose.Cells Cloud](https://products.aspose.cloud/cells/java) , enabling seamless integration with [Excel, ODS, CSV, Json and other spreadsheet document formats](https://docs.aspose.cloud/cells/supported-file-formats/). With its powerful APIs, developers can effortlessly read, convert, create, edit, and manipulate the contents of Excel documents without the need for any office software installed on the machine
 
 ## Manipulate Excel and other spreadsheet files in the Cloud
 
@@ -66,7 +66,7 @@ Full list of issues covering all changes in this release:
 
 ## Quick Start Guide
 
-To get started with Aspose.Cells Cloud SDK for Java, follow these steps:
+To get started with Aspose.Cells Cloud for Java, follow these steps:
 
 1. Create an account at  [Aspose for Cloud](https://dashboard.aspose.cloud/#/apps) and obtain your application information.
 2. Add the following dependency to your project's POM:
@@ -102,7 +102,7 @@ request.setFile(fileMap);
 File response =  cellsApi.putConvertWorkbook(request);
 ```
 
-## Aspose.Cells Cloud SDKs in Popular Languages
+## Aspose.Cells Cloud in Popular Languages
 
 | .NET | PHP | Python | Ruby | Node.js | Android | Swift | Perl | GO |
 |---|---|---|---|---|---|---|---|---|
