@@ -105,23 +105,6 @@ public class WorkbookSettings {
             this.calcMode = calcMode;
         }
 
-        @SerializedName("CalcStackSize")
-        private Integer calcStackSize ;
-
-        public  WorkbookSettings  calcStackSize(Integer  calcStackSize) {
-            this.calcStackSize =  calcStackSize;
-            return this;
-        }
-
-        @ApiModelProperty(value = "")
-        public Integer getCalcStackSize() {
-            return calcStackSize;
-        }
-
-        public void setCalcStackSize(Integer calcStackSize) {
-            this.calcStackSize = calcStackSize;
-        }
-
         @SerializedName("CalculationId")
         private String calculationId ;
 
@@ -1123,7 +1106,6 @@ public class WorkbookSettings {
                 Objects.equals(this.autoRecover, workbookSettings.autoRecover) &&
                 Objects.equals(this.buildVersion, workbookSettings.buildVersion) &&
                 Objects.equals(this.calcMode, workbookSettings.calcMode) &&
-                Objects.equals(this.calcStackSize, workbookSettings.calcStackSize) &&
                 Objects.equals(this.calculationId, workbookSettings.calculationId) &&
                 Objects.equals(this.checkComptiliblity, workbookSettings.checkComptiliblity) &&
                 Objects.equals(this.checkExcelRestriction, workbookSettings.checkExcelRestriction) &&
@@ -1186,7 +1168,7 @@ public class WorkbookSettings {
 
       @Override
       public int hashCode() {
-        return Objects.hash(autoCompressPictures, autoRecover, buildVersion, calcMode, calcStackSize, calculationId, checkComptiliblity, checkExcelRestriction, crashSave, createCalcChain, dataExtractLoad, date1904, displayDrawingObjects, enableMacros, firstVisibleTab, hidePivotFieldList, isDefaultEncrypted, isHidden, isHScrollBarVisible, isMinimized, isVScrollBarVisible, iteration, languageCode, maxChange, maxIteration, memorySetting, numberDecimalSeparator, numberGroupSeparator, parsingFormulaOnOpen, precisionAsDisplayed, recalculateBeforeSave, reCalculateOnOpen, recommendReadOnly, region, removePersonalInformation, repairLoad, shared, sheetTabBarWidth, showTabs, updateAdjacentCellsBorder, updateLinksType, windowHeight, windowLeft, windowTop, windowWidth, author, checkCustomNumberFormat, protectionType, globalizationSettings, password, writeProtection, isEncrypted, isProtected, maxRow, maxColumn, significantDigits, checkCompatibility, paperSize, maxRowsOfSharedFormula, compliance, quotePrefixToStyle, formulaSettings, forceFullCalculate);
+        return Objects.hash(autoCompressPictures, autoRecover, buildVersion, calcMode, calculationId, checkComptiliblity, checkExcelRestriction, crashSave, createCalcChain, dataExtractLoad, date1904, displayDrawingObjects, enableMacros, firstVisibleTab, hidePivotFieldList, isDefaultEncrypted, isHidden, isHScrollBarVisible, isMinimized, isVScrollBarVisible, iteration, languageCode, maxChange, maxIteration, memorySetting, numberDecimalSeparator, numberGroupSeparator, parsingFormulaOnOpen, precisionAsDisplayed, recalculateBeforeSave, reCalculateOnOpen, recommendReadOnly, region, removePersonalInformation, repairLoad, shared, sheetTabBarWidth, showTabs, updateAdjacentCellsBorder, updateLinksType, windowHeight, windowLeft, windowTop, windowWidth, author, checkCustomNumberFormat, protectionType, globalizationSettings, password, writeProtection, isEncrypted, isProtected, maxRow, maxColumn, significantDigits, checkCompatibility, paperSize, maxRowsOfSharedFormula, compliance, quotePrefixToStyle, formulaSettings, forceFullCalculate);
       }
         @Override
         public String toString() {
@@ -1196,7 +1178,6 @@ public class WorkbookSettings {
             sb.append("    autoRecover: ").append(toIndentedString(getAutoRecover())).append("\n");
             sb.append("    buildVersion: ").append(toIndentedString(getBuildVersion())).append("\n");
             sb.append("    calcMode: ").append(toIndentedString(getCalcMode())).append("\n");
-            sb.append("    calcStackSize: ").append(toIndentedString(getCalcStackSize())).append("\n");
             sb.append("    calculationId: ").append(toIndentedString(getCalculationId())).append("\n");
             sb.append("    checkComptiliblity: ").append(toIndentedString(getCheckComptiliblity())).append("\n");
             sb.append("    checkExcelRestriction: ").append(toIndentedString(getCheckExcelRestriction())).append("\n");
