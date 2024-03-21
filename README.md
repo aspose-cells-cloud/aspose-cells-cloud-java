@@ -2,7 +2,7 @@
 
 # Java package for Aspose.Cells Cloud SDK
 
-Enhance your Go applications with the [Aspose.Cells Cloud SDK](https://products.aspose.cloud/cells/java) , enabling seamless integration with [Excel, ODS, CSV, Json and other spreadsheet document formats](https://docs.aspose.cloud/cells/supported-file-formats/). With its powerful APIs, developers can effortlessly read, convert, create, edit, and manipulate the contents of Excel documents without the need for any office software installed on the machine
+Enhance your Java applications with the [Aspose.Cells Cloud SDK](https://products.aspose.cloud/cells/java) , enabling seamless integration with [Excel, ODS, CSV, Json and other spreadsheet document formats](https://docs.aspose.cloud/cells/supported-file-formats/). With its powerful APIs, developers can effortlessly read, convert, create, edit, and manipulate the contents of Excel documents without the need for any office software installed on the machine
 
 ## Manipulate Excel and other spreadsheet files in the Cloud
 
