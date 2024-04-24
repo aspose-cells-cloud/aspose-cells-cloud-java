@@ -176,6 +176,7 @@ public class ImportCSVDataOption  extends  ImportOption {
             sb.append("    destinationWorksheet: ").append(toIndentedString(getDestinationWorksheet())).append("\n");
             sb.append("    isInsert: ").append(toIndentedString(getIsInsert())).append("\n");
             sb.append("    importDataType: ").append(toIndentedString(getImportDataType())).append("\n");
+            sb.append("    dataSource: ").append(toIndentedString(getDataSource())).append("\n");
             sb.append("    source: ").append(toIndentedString(getSource())).append("\n");
             sb.append("}");
             return sb.toString();

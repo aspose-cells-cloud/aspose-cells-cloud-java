@@ -38,19 +38,19 @@ import java.time.OffsetDateTime;
 
 public class ImportJsonRequest {
         @SerializedName("JsonFileSource")
-        private FileSource jsonFileSource ;
+        private DataSource jsonFileSource ;
 
-        public  ImportJsonRequest  jsonFileSource(FileSource  jsonFileSource) {
+        public  ImportJsonRequest  jsonFileSource(DataSource  jsonFileSource) {
             this.jsonFileSource =  jsonFileSource;
             return this;
         }
 
         @ApiModelProperty(value = "")
-        public FileSource getJsonFileSource() {
+        public DataSource getJsonFileSource() {
             return jsonFileSource;
         }
 
-        public void setJsonFileSource(FileSource jsonFileSource) {
+        public void setJsonFileSource(DataSource jsonFileSource) {
             this.jsonFileSource = jsonFileSource;
         }
 

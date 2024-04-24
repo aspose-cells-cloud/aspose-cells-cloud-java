@@ -55,19 +55,19 @@ public class TaskRunResult {
         }
 
         @SerializedName("OutFileList")
-        private List<FileSource> outFileList ;
+        private List<DataSource> outFileList ;
 
-        public  TaskRunResult  outFileList(List<FileSource>  outFileList) {
+        public  TaskRunResult  outFileList(List<DataSource>  outFileList) {
             this.outFileList =  outFileList;
             return this;
         }
 
         @ApiModelProperty(value = "")
-        public List<FileSource> getOutFileList() {
+        public List<DataSource> getOutFileList() {
             return outFileList;
         }
 
-        public void setOutFileList(List<FileSource> outFileList) {
+        public void setOutFileList(List<DataSource> outFileList) {
             this.outFileList = outFileList;
         }
 

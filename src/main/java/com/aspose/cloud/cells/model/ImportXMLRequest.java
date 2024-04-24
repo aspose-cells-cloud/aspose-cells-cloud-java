@@ -38,19 +38,19 @@ import java.time.OffsetDateTime;
 
 public class ImportXMLRequest {
         @SerializedName("XMLFileSource")
-        private FileSource xMLFileSource ;
+        private DataSource xMLFileSource ;
 
-        public  ImportXMLRequest  xMLFileSource(FileSource  xMLFileSource) {
+        public  ImportXMLRequest  xMLFileSource(DataSource  xMLFileSource) {
             this.xMLFileSource =  xMLFileSource;
             return this;
         }
 
         @ApiModelProperty(value = "")
-        public FileSource getXMLFileSource() {
+        public DataSource getXMLFileSource() {
             return xMLFileSource;
         }
 
-        public void setXMLFileSource(FileSource xMLFileSource) {
+        public void setXMLFileSource(DataSource xMLFileSource) {
             this.xMLFileSource = xMLFileSource;
         }
 

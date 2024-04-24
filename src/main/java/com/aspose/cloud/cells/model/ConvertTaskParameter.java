@@ -37,6 +37,23 @@ import java.time.OffsetDateTime;
 
 
 public class ConvertTaskParameter  extends  TaskParameter {
+        @SerializedName("DataSource")
+        private DataSource dataSource ;
+
+        public  ConvertTaskParameter  dataSource(DataSource  dataSource) {
+            this.dataSource =  dataSource;
+            return this;
+        }
+
+        @ApiModelProperty(value = "")
+        public DataSource getDataSource() {
+            return dataSource;
+        }
+
+        public void setDataSource(DataSource dataSource) {
+            this.dataSource = dataSource;
+        }
+
         @SerializedName("Workbook")
         private FileSource workbook ;
 
@@ -116,6 +133,7 @@ public class ConvertTaskParameter  extends  TaskParameter {
 
             ConvertTaskParameter convertTaskParameter = (ConvertTaskParameter) o;
             return
+                Objects.equals(this.dataSource, convertTaskParameter.dataSource) &&
                 Objects.equals(this.workbook, convertTaskParameter.workbook) &&
                 Objects.equals(this.destinationFile, convertTaskParameter.destinationFile) &&
                 Objects.equals(this.region, convertTaskParameter.region) &&
@@ -125,12 +143,13 @@ public class ConvertTaskParameter  extends  TaskParameter {
 
       @Override
       public int hashCode() {
-        return Objects.hash(workbook, destinationFile, region, saveOptions, super.hashCode());
+        return Objects.hash(dataSource, workbook, destinationFile, region, saveOptions, super.hashCode());
       }
         @Override
         public String toString() {
             StringBuilder sb = new StringBuilder();
             sb.append("class ConvertTaskParameter {\n");
+            sb.append("    dataSource: ").append(toIndentedString(getDataSource())).append("\n");
             sb.append("    workbook: ").append(toIndentedString(getWorkbook())).append("\n");
             sb.append("    destinationFile: ").append(toIndentedString(getDestinationFile())).append("\n");
             sb.append("    region: ").append(toIndentedString(getRegion())).append("\n");

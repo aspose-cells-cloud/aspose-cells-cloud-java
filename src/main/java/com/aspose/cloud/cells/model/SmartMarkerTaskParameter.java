@@ -88,6 +88,57 @@ public class SmartMarkerTaskParameter  extends  TaskParameter {
             this.xmlFile = xmlFile;
         }
 
+        @SerializedName("DataSource")
+        private DataSource dataSource ;
+
+        public  SmartMarkerTaskParameter  dataSource(DataSource  dataSource) {
+            this.dataSource =  dataSource;
+            return this;
+        }
+
+        @ApiModelProperty(value = "")
+        public DataSource getDataSource() {
+            return dataSource;
+        }
+
+        public void setDataSource(DataSource dataSource) {
+            this.dataSource = dataSource;
+        }
+
+        @SerializedName("TargetDataSource")
+        private DataSource targetDataSource ;
+
+        public  SmartMarkerTaskParameter  targetDataSource(DataSource  targetDataSource) {
+            this.targetDataSource =  targetDataSource;
+            return this;
+        }
+
+        @ApiModelProperty(value = "")
+        public DataSource getTargetDataSource() {
+            return targetDataSource;
+        }
+
+        public void setTargetDataSource(DataSource targetDataSource) {
+            this.targetDataSource = targetDataSource;
+        }
+
+        @SerializedName("XMLFileDataSource")
+        private DataSource xMLFileDataSource ;
+
+        public  SmartMarkerTaskParameter  xMLFileDataSource(DataSource  xMLFileDataSource) {
+            this.xMLFileDataSource =  xMLFileDataSource;
+            return this;
+        }
+
+        @ApiModelProperty(value = "")
+        public DataSource getXMLFileDataSource() {
+            return xMLFileDataSource;
+        }
+
+        public void setXMLFileDataSource(DataSource xMLFileDataSource) {
+            this.xMLFileDataSource = xMLFileDataSource;
+        }
+
         @Override
         public boolean equals(java.lang.Object o) {
             if (this == o) {
@@ -102,12 +153,15 @@ public class SmartMarkerTaskParameter  extends  TaskParameter {
                 Objects.equals(this.sourceWorkbook, smartMarkerTaskParameter.sourceWorkbook) &&
                 Objects.equals(this.destinationWorkbook, smartMarkerTaskParameter.destinationWorkbook) &&
                 Objects.equals(this.xmlFile, smartMarkerTaskParameter.xmlFile) &&
+                Objects.equals(this.dataSource, smartMarkerTaskParameter.dataSource) &&
+                Objects.equals(this.targetDataSource, smartMarkerTaskParameter.targetDataSource) &&
+                Objects.equals(this.xMLFileDataSource, smartMarkerTaskParameter.xMLFileDataSource) &&
                 super.equals(o);
       }
 
       @Override
       public int hashCode() {
-        return Objects.hash(sourceWorkbook, destinationWorkbook, xmlFile, super.hashCode());
+        return Objects.hash(sourceWorkbook, destinationWorkbook, xmlFile, dataSource, targetDataSource, xMLFileDataSource, super.hashCode());
       }
         @Override
         public String toString() {
@@ -116,6 +170,9 @@ public class SmartMarkerTaskParameter  extends  TaskParameter {
             sb.append("    sourceWorkbook: ").append(toIndentedString(getSourceWorkbook())).append("\n");
             sb.append("    destinationWorkbook: ").append(toIndentedString(getDestinationWorkbook())).append("\n");
             sb.append("    xmlFile: ").append(toIndentedString(getXmlFile())).append("\n");
+            sb.append("    dataSource: ").append(toIndentedString(getDataSource())).append("\n");
+            sb.append("    targetDataSource: ").append(toIndentedString(getTargetDataSource())).append("\n");
+            sb.append("    xMLFileDataSource: ").append(toIndentedString(getXMLFileDataSource())).append("\n");
             sb.append("}");
             return sb.toString();
         }

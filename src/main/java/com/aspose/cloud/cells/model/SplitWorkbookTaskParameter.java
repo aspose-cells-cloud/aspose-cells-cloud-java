@@ -71,6 +71,40 @@ public class SplitWorkbookTaskParameter  extends  TaskParameter {
             this.destinationFilePosition = destinationFilePosition;
         }
 
+        @SerializedName("DataSource")
+        private DataSource dataSource ;
+
+        public  SplitWorkbookTaskParameter  dataSource(DataSource  dataSource) {
+            this.dataSource =  dataSource;
+            return this;
+        }
+
+        @ApiModelProperty(value = "")
+        public DataSource getDataSource() {
+            return dataSource;
+        }
+
+        public void setDataSource(DataSource dataSource) {
+            this.dataSource = dataSource;
+        }
+
+        @SerializedName("TargetDataSource")
+        private DataSource targetDataSource ;
+
+        public  SplitWorkbookTaskParameter  targetDataSource(DataSource  targetDataSource) {
+            this.targetDataSource =  targetDataSource;
+            return this;
+        }
+
+        @ApiModelProperty(value = "")
+        public DataSource getTargetDataSource() {
+            return targetDataSource;
+        }
+
+        public void setTargetDataSource(DataSource targetDataSource) {
+            this.targetDataSource = targetDataSource;
+        }
+
         @SerializedName("DestinationFileFormat")
         private String destinationFileFormat ;
 
@@ -152,6 +186,8 @@ public class SplitWorkbookTaskParameter  extends  TaskParameter {
             return
                 Objects.equals(this.workbook, splitWorkbookTaskParameter.workbook) &&
                 Objects.equals(this.destinationFilePosition, splitWorkbookTaskParameter.destinationFilePosition) &&
+                Objects.equals(this.dataSource, splitWorkbookTaskParameter.dataSource) &&
+                Objects.equals(this.targetDataSource, splitWorkbookTaskParameter.targetDataSource) &&
                 Objects.equals(this.destinationFileFormat, splitWorkbookTaskParameter.destinationFileFormat) &&
                 Objects.equals(this.splitNameRule, splitWorkbookTaskParameter.splitNameRule) &&
                 Objects.equals(this.verticalResolution, splitWorkbookTaskParameter.verticalResolution) &&
@@ -161,7 +197,7 @@ public class SplitWorkbookTaskParameter  extends  TaskParameter {
 
       @Override
       public int hashCode() {
-        return Objects.hash(workbook, destinationFilePosition, destinationFileFormat, splitNameRule, verticalResolution, horizontalResolution, super.hashCode());
+        return Objects.hash(workbook, destinationFilePosition, dataSource, targetDataSource, destinationFileFormat, splitNameRule, verticalResolution, horizontalResolution, super.hashCode());
       }
         @Override
         public String toString() {
@@ -169,6 +205,8 @@ public class SplitWorkbookTaskParameter  extends  TaskParameter {
             sb.append("class SplitWorkbookTaskParameter {\n");
             sb.append("    workbook: ").append(toIndentedString(getWorkbook())).append("\n");
             sb.append("    destinationFilePosition: ").append(toIndentedString(getDestinationFilePosition())).append("\n");
+            sb.append("    dataSource: ").append(toIndentedString(getDataSource())).append("\n");
+            sb.append("    targetDataSource: ").append(toIndentedString(getTargetDataSource())).append("\n");
             sb.append("    destinationFileFormat: ").append(toIndentedString(getDestinationFileFormat())).append("\n");
             sb.append("    splitNameRule: ").append(toIndentedString(getSplitNameRule())).append("\n");
             sb.append("    verticalResolution: ").append(toIndentedString(getVerticalResolution())).append("\n");

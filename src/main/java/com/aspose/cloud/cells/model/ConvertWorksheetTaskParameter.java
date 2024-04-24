@@ -37,6 +37,23 @@ import java.time.OffsetDateTime;
 
 
 public class ConvertWorksheetTaskParameter  extends  TaskParameter {
+        @SerializedName("DataSource")
+        private DataSource dataSource ;
+
+        public  ConvertWorksheetTaskParameter  dataSource(DataSource  dataSource) {
+            this.dataSource =  dataSource;
+            return this;
+        }
+
+        @ApiModelProperty(value = "")
+        public DataSource getDataSource() {
+            return dataSource;
+        }
+
+        public void setDataSource(DataSource dataSource) {
+            this.dataSource = dataSource;
+        }
+
         @SerializedName("Workbook")
         private FileSource workbook ;
 
@@ -69,6 +86,23 @@ public class ConvertWorksheetTaskParameter  extends  TaskParameter {
 
         public void setSheet(String sheet) {
             this.sheet = sheet;
+        }
+
+        @SerializedName("TargetDataSource")
+        private DataSource targetDataSource ;
+
+        public  ConvertWorksheetTaskParameter  targetDataSource(DataSource  targetDataSource) {
+            this.targetDataSource =  targetDataSource;
+            return this;
+        }
+
+        @ApiModelProperty(value = "")
+        public DataSource getTargetDataSource() {
+            return targetDataSource;
+        }
+
+        public void setTargetDataSource(DataSource targetDataSource) {
+            this.targetDataSource = targetDataSource;
         }
 
         @SerializedName("Target")
@@ -184,8 +218,10 @@ public class ConvertWorksheetTaskParameter  extends  TaskParameter {
 
             ConvertWorksheetTaskParameter convertWorksheetTaskParameter = (ConvertWorksheetTaskParameter) o;
             return
+                Objects.equals(this.dataSource, convertWorksheetTaskParameter.dataSource) &&
                 Objects.equals(this.workbook, convertWorksheetTaskParameter.workbook) &&
                 Objects.equals(this.sheet, convertWorksheetTaskParameter.sheet) &&
+                Objects.equals(this.targetDataSource, convertWorksheetTaskParameter.targetDataSource) &&
                 Objects.equals(this.target, convertWorksheetTaskParameter.target) &&
                 Objects.equals(this.format, convertWorksheetTaskParameter.format) &&
                 Objects.equals(this.area, convertWorksheetTaskParameter.area) &&
@@ -197,14 +233,16 @@ public class ConvertWorksheetTaskParameter  extends  TaskParameter {
 
       @Override
       public int hashCode() {
-        return Objects.hash(workbook, sheet, target, format, area, pageIndex, verticalResolution, horizontalResolution, super.hashCode());
+        return Objects.hash(dataSource, workbook, sheet, targetDataSource, target, format, area, pageIndex, verticalResolution, horizontalResolution, super.hashCode());
       }
         @Override
         public String toString() {
             StringBuilder sb = new StringBuilder();
             sb.append("class ConvertWorksheetTaskParameter {\n");
+            sb.append("    dataSource: ").append(toIndentedString(getDataSource())).append("\n");
             sb.append("    workbook: ").append(toIndentedString(getWorkbook())).append("\n");
             sb.append("    sheet: ").append(toIndentedString(getSheet())).append("\n");
+            sb.append("    targetDataSource: ").append(toIndentedString(getTargetDataSource())).append("\n");
             sb.append("    target: ").append(toIndentedString(getTarget())).append("\n");
             sb.append("    format: ").append(toIndentedString(getFormat())).append("\n");
             sb.append("    area: ").append(toIndentedString(getArea())).append("\n");

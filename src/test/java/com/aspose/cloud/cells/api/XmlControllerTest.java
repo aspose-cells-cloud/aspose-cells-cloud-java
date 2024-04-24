@@ -82,11 +82,11 @@ public class XmlControllerTest {
         request.setName(remoteName);
 
         ImportXMLRequest importXMLRequest = new ImportXMLRequest();
-        FileSource xMLFileSource = new FileSource();
-        xMLFileSource.setFileSourceType("CloudFileSystem");
+        DataSource xMLFileSource = new DataSource();
+        xMLFileSource.setDataSourceType("CloudFileSystem");
 
 
-        xMLFileSource.setFilePath(remoteFolder + "/data.xml");
+        xMLFileSource.setDataPath(remoteFolder + "/data.xml");
 
         importXMLRequest.setXMLFileSource(xMLFileSource);
 

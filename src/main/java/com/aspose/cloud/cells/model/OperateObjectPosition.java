@@ -37,6 +37,23 @@ import java.time.OffsetDateTime;
 
 
 public class OperateObjectPosition {
+        @SerializedName("DataSource")
+        private DataSource dataSource ;
+
+        public  OperateObjectPosition  dataSource(DataSource  dataSource) {
+            this.dataSource =  dataSource;
+            return this;
+        }
+
+        @ApiModelProperty(value = "")
+        public DataSource getDataSource() {
+            return dataSource;
+        }
+
+        public void setDataSource(DataSource dataSource) {
+            this.dataSource = dataSource;
+        }
+
         @SerializedName("Workbook")
         private FileSource workbook ;
 
@@ -150,6 +167,7 @@ public class OperateObjectPosition {
 
             OperateObjectPosition operateObjectPosition = (OperateObjectPosition) o;
             return
+                Objects.equals(this.dataSource, operateObjectPosition.dataSource) &&
                 Objects.equals(this.workbook, operateObjectPosition.workbook) &&
                 Objects.equals(this.sheetName, operateObjectPosition.sheetName) &&
                 Objects.equals(this.chartIndex, operateObjectPosition.chartIndex) &&
@@ -160,12 +178,13 @@ public class OperateObjectPosition {
 
       @Override
       public int hashCode() {
-        return Objects.hash(workbook, sheetName, chartIndex, shapeIndex, cellName, listObjectIndex);
+        return Objects.hash(dataSource, workbook, sheetName, chartIndex, shapeIndex, cellName, listObjectIndex);
       }
         @Override
         public String toString() {
             StringBuilder sb = new StringBuilder();
             sb.append("class OperateObjectPosition {\n");
+            sb.append("    dataSource: ").append(toIndentedString(getDataSource())).append("\n");
             sb.append("    workbook: ").append(toIndentedString(getWorkbook())).append("\n");
             sb.append("    sheetName: ").append(toIndentedString(getSheetName())).append("\n");
             sb.append("    chartIndex: ").append(toIndentedString(getChartIndex())).append("\n");

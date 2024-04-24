@@ -88,6 +88,23 @@ public class ImportOption {
             this.importDataType = importDataType;
         }
 
+        @SerializedName("DataSource")
+        private DataSource dataSource ;
+
+        public  ImportOption  dataSource(DataSource  dataSource) {
+            this.dataSource =  dataSource;
+            return this;
+        }
+
+        @ApiModelProperty(value = "")
+        public DataSource getDataSource() {
+            return dataSource;
+        }
+
+        public void setDataSource(DataSource dataSource) {
+            this.dataSource = dataSource;
+        }
+
         @SerializedName("Source")
         private FileSource source ;
 
@@ -119,12 +136,13 @@ public class ImportOption {
                 Objects.equals(this.destinationWorksheet, importOption.destinationWorksheet) &&
                 Objects.equals(this.isInsert, importOption.isInsert) &&
                 Objects.equals(this.importDataType, importOption.importDataType) &&
+                Objects.equals(this.dataSource, importOption.dataSource) &&
                 Objects.equals(this.source, importOption.source);
       }
 
       @Override
       public int hashCode() {
-        return Objects.hash(destinationWorksheet, isInsert, importDataType, source);
+        return Objects.hash(destinationWorksheet, isInsert, importDataType, dataSource, source);
       }
         @Override
         public String toString() {
@@ -133,6 +151,7 @@ public class ImportOption {
             sb.append("    destinationWorksheet: ").append(toIndentedString(getDestinationWorksheet())).append("\n");
             sb.append("    isInsert: ").append(toIndentedString(getIsInsert())).append("\n");
             sb.append("    importDataType: ").append(toIndentedString(getImportDataType())).append("\n");
+            sb.append("    dataSource: ").append(toIndentedString(getDataSource())).append("\n");
             sb.append("    source: ").append(toIndentedString(getSource())).append("\n");
             sb.append("}");
             return sb.toString();

@@ -37,6 +37,23 @@ import java.time.OffsetDateTime;
 
 
 public class ImportDataTaskParameter  extends  TaskParameter {
+        @SerializedName("DataSource")
+        private DataSource dataSource ;
+
+        public  ImportDataTaskParameter  dataSource(DataSource  dataSource) {
+            this.dataSource =  dataSource;
+            return this;
+        }
+
+        @ApiModelProperty(value = "")
+        public DataSource getDataSource() {
+            return dataSource;
+        }
+
+        public void setDataSource(DataSource dataSource) {
+            this.dataSource = dataSource;
+        }
+
         @SerializedName("Workbook")
         private FileSource workbook ;
 
@@ -71,6 +88,23 @@ public class ImportDataTaskParameter  extends  TaskParameter {
             this.importOption = importOption;
         }
 
+        @SerializedName("TargetDataSource")
+        private DataSource targetDataSource ;
+
+        public  ImportDataTaskParameter  targetDataSource(DataSource  targetDataSource) {
+            this.targetDataSource =  targetDataSource;
+            return this;
+        }
+
+        @ApiModelProperty(value = "")
+        public DataSource getTargetDataSource() {
+            return targetDataSource;
+        }
+
+        public void setTargetDataSource(DataSource targetDataSource) {
+            this.targetDataSource = targetDataSource;
+        }
+
         @SerializedName("DestinationWorkbook")
         private FileSource destinationWorkbook ;
 
@@ -99,22 +133,26 @@ public class ImportDataTaskParameter  extends  TaskParameter {
 
             ImportDataTaskParameter importDataTaskParameter = (ImportDataTaskParameter) o;
             return
+                Objects.equals(this.dataSource, importDataTaskParameter.dataSource) &&
                 Objects.equals(this.workbook, importDataTaskParameter.workbook) &&
                 Objects.equals(this.importOption, importDataTaskParameter.importOption) &&
+                Objects.equals(this.targetDataSource, importDataTaskParameter.targetDataSource) &&
                 Objects.equals(this.destinationWorkbook, importDataTaskParameter.destinationWorkbook) &&
                 super.equals(o);
       }
 
       @Override
       public int hashCode() {
-        return Objects.hash(workbook, importOption, destinationWorkbook, super.hashCode());
+        return Objects.hash(dataSource, workbook, importOption, targetDataSource, destinationWorkbook, super.hashCode());
       }
         @Override
         public String toString() {
             StringBuilder sb = new StringBuilder();
             sb.append("class ImportDataTaskParameter {\n");
+            sb.append("    dataSource: ").append(toIndentedString(getDataSource())).append("\n");
             sb.append("    workbook: ").append(toIndentedString(getWorkbook())).append("\n");
             sb.append("    importOption: ").append(toIndentedString(getImportOption())).append("\n");
+            sb.append("    targetDataSource: ").append(toIndentedString(getTargetDataSource())).append("\n");
             sb.append("    destinationWorkbook: ").append(toIndentedString(getDestinationWorkbook())).append("\n");
             sb.append("}");
             return sb.toString();
