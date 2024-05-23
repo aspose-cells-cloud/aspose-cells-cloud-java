@@ -71,21 +71,21 @@ public class CellsObjectOperateTaskParameter  extends  TaskParameter {
             this.operateParameter = operateParameter;
         }
 
-        @SerializedName("DestinatioDataSource")
-        private DataSource destinatioDataSource ;
+        @SerializedName("DestinationDataSource")
+        private DataSource destinationDataSource ;
 
-        public  CellsObjectOperateTaskParameter  destinatioDataSource(DataSource  destinatioDataSource) {
-            this.destinatioDataSource =  destinatioDataSource;
+        public  CellsObjectOperateTaskParameter  destinationDataSource(DataSource  destinationDataSource) {
+            this.destinationDataSource =  destinationDataSource;
             return this;
         }
 
         @ApiModelProperty(value = "")
-        public DataSource getDestinatioDataSource() {
-            return destinatioDataSource;
+        public DataSource getDestinationDataSource() {
+            return destinationDataSource;
         }
 
-        public void setDestinatioDataSource(DataSource destinatioDataSource) {
-            this.destinatioDataSource = destinatioDataSource;
+        public void setDestinationDataSource(DataSource destinationDataSource) {
+            this.destinationDataSource = destinationDataSource;
         }
 
         @SerializedName("DestinationWorkbook")
@@ -118,14 +118,14 @@ public class CellsObjectOperateTaskParameter  extends  TaskParameter {
             return
                 Objects.equals(this.operateObject, cellsObjectOperateTaskParameter.operateObject) &&
                 Objects.equals(this.operateParameter, cellsObjectOperateTaskParameter.operateParameter) &&
-                Objects.equals(this.destinatioDataSource, cellsObjectOperateTaskParameter.destinatioDataSource) &&
+                Objects.equals(this.destinationDataSource, cellsObjectOperateTaskParameter.destinationDataSource) &&
                 Objects.equals(this.destinationWorkbook, cellsObjectOperateTaskParameter.destinationWorkbook) &&
                 super.equals(o);
       }
 
       @Override
       public int hashCode() {
-        return Objects.hash(operateObject, operateParameter, destinatioDataSource, destinationWorkbook, super.hashCode());
+        return Objects.hash(operateObject, operateParameter, destinationDataSource, destinationWorkbook, super.hashCode());
       }
         @Override
         public String toString() {
@@ -133,7 +133,7 @@ public class CellsObjectOperateTaskParameter  extends  TaskParameter {
             sb.append("class CellsObjectOperateTaskParameter {\n");
             sb.append("    operateObject: ").append(toIndentedString(getOperateObject())).append("\n");
             sb.append("    operateParameter: ").append(toIndentedString(getOperateParameter())).append("\n");
-            sb.append("    destinatioDataSource: ").append(toIndentedString(getDestinatioDataSource())).append("\n");
+            sb.append("    destinationDataSource: ").append(toIndentedString(getDestinationDataSource())).append("\n");
             sb.append("    destinationWorkbook: ").append(toIndentedString(getDestinationWorkbook())).append("\n");
             sb.append("}");
             return sb.toString();

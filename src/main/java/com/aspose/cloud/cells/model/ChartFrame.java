@@ -173,23 +173,6 @@ public class ChartFrame {
             this.shadow = shadow;
         }
 
-        @SerializedName("ShapeProperties")
-        private List<LinkElement> shapeProperties ;
-
-        public  ChartFrame  shapeProperties(List<LinkElement>  shapeProperties) {
-            this.shapeProperties =  shapeProperties;
-            return this;
-        }
-
-        @ApiModelProperty(value = "")
-        public List<LinkElement> getShapeProperties() {
-            return shapeProperties;
-        }
-
-        public void setShapeProperties(List<LinkElement> shapeProperties) {
-            this.shapeProperties = shapeProperties;
-        }
-
         @SerializedName("Width")
         private Integer width ;
 
@@ -277,7 +260,6 @@ public class ChartFrame {
                 Objects.equals(this.isAutomaticSize, chartFrame.isAutomaticSize) &&
                 Objects.equals(this.isInnerMode, chartFrame.isInnerMode) &&
                 Objects.equals(this.shadow, chartFrame.shadow) &&
-                Objects.equals(this.shapeProperties, chartFrame.shapeProperties) &&
                 Objects.equals(this.width, chartFrame.width) &&
                 Objects.equals(this.height, chartFrame.height) &&
                 Objects.equals(this.x, chartFrame.x) &&
@@ -286,7 +268,7 @@ public class ChartFrame {
 
       @Override
       public int hashCode() {
-        return Objects.hash(area, autoScaleFont, backgroundMode, border, font, isAutomaticSize, isInnerMode, shadow, shapeProperties, width, height, x, y);
+        return Objects.hash(area, autoScaleFont, backgroundMode, border, font, isAutomaticSize, isInnerMode, shadow, width, height, x, y);
       }
         @Override
         public String toString() {
@@ -300,7 +282,6 @@ public class ChartFrame {
             sb.append("    isAutomaticSize: ").append(toIndentedString(getIsAutomaticSize())).append("\n");
             sb.append("    isInnerMode: ").append(toIndentedString(getIsInnerMode())).append("\n");
             sb.append("    shadow: ").append(toIndentedString(getShadow())).append("\n");
-            sb.append("    shapeProperties: ").append(toIndentedString(getShapeProperties())).append("\n");
             sb.append("    width: ").append(toIndentedString(getWidth())).append("\n");
             sb.append("    height: ").append(toIndentedString(getHeight())).append("\n");
             sb.append("    x: ").append(toIndentedString(getX())).append("\n");

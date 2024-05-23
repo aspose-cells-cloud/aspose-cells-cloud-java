@@ -174,19 +174,19 @@ public class Axis  extends  LinkElement {
         }
 
         @SerializedName("DisplayUnitLabel")
-        private LinkElement displayUnitLabel ;
+        private DisplayUnitLabel displayUnitLabel ;
 
-        public  Axis  displayUnitLabel(LinkElement  displayUnitLabel) {
+        public  Axis  displayUnitLabel(DisplayUnitLabel  displayUnitLabel) {
             this.displayUnitLabel =  displayUnitLabel;
             return this;
         }
 
         @ApiModelProperty(value = "")
-        public LinkElement getDisplayUnitLabel() {
+        public DisplayUnitLabel getDisplayUnitLabel() {
             return displayUnitLabel;
         }
 
-        public void setDisplayUnitLabel(LinkElement displayUnitLabel) {
+        public void setDisplayUnitLabel(DisplayUnitLabel displayUnitLabel) {
             this.displayUnitLabel = displayUnitLabel;
         }
 

@@ -55,70 +55,70 @@ public class Chart  extends  LinkElement {
         }
 
         @SerializedName("BackWall")
-        private LinkElement backWall ;
+        private Walls backWall ;
 
-        public  Chart  backWall(LinkElement  backWall) {
+        public  Chart  backWall(Walls  backWall) {
             this.backWall =  backWall;
             return this;
         }
 
         @ApiModelProperty(value = "")
-        public LinkElement getBackWall() {
+        public Walls getBackWall() {
             return backWall;
         }
 
-        public void setBackWall(LinkElement backWall) {
+        public void setBackWall(Walls backWall) {
             this.backWall = backWall;
         }
 
         @SerializedName("CategoryAxis")
-        private LinkElement categoryAxis ;
+        private Axis categoryAxis ;
 
-        public  Chart  categoryAxis(LinkElement  categoryAxis) {
+        public  Chart  categoryAxis(Axis  categoryAxis) {
             this.categoryAxis =  categoryAxis;
             return this;
         }
 
         @ApiModelProperty(value = "")
-        public LinkElement getCategoryAxis() {
+        public Axis getCategoryAxis() {
             return categoryAxis;
         }
 
-        public void setCategoryAxis(LinkElement categoryAxis) {
+        public void setCategoryAxis(Axis categoryAxis) {
             this.categoryAxis = categoryAxis;
         }
 
         @SerializedName("ChartArea")
-        private LinkElement chartArea ;
+        private ChartArea chartArea ;
 
-        public  Chart  chartArea(LinkElement  chartArea) {
+        public  Chart  chartArea(ChartArea  chartArea) {
             this.chartArea =  chartArea;
             return this;
         }
 
         @ApiModelProperty(value = "")
-        public LinkElement getChartArea() {
+        public ChartArea getChartArea() {
             return chartArea;
         }
 
-        public void setChartArea(LinkElement chartArea) {
+        public void setChartArea(ChartArea chartArea) {
             this.chartArea = chartArea;
         }
 
         @SerializedName("ChartDataTable")
-        private LinkElement chartDataTable ;
+        private ChartDataTable chartDataTable ;
 
-        public  Chart  chartDataTable(LinkElement  chartDataTable) {
+        public  Chart  chartDataTable(ChartDataTable  chartDataTable) {
             this.chartDataTable =  chartDataTable;
             return this;
         }
 
         @ApiModelProperty(value = "")
-        public LinkElement getChartDataTable() {
+        public ChartDataTable getChartDataTable() {
             return chartDataTable;
         }
 
-        public void setChartDataTable(LinkElement chartDataTable) {
+        public void setChartDataTable(ChartDataTable chartDataTable) {
             this.chartDataTable = chartDataTable;
         }
 
@@ -191,19 +191,19 @@ public class Chart  extends  LinkElement {
         }
 
         @SerializedName("Floor")
-        private LinkElement floor ;
+        private Floor floor ;
 
-        public  Chart  floor(LinkElement  floor) {
+        public  Chart  floor(Floor  floor) {
             this.floor =  floor;
             return this;
         }
 
         @ApiModelProperty(value = "")
-        public LinkElement getFloor() {
+        public Floor getFloor() {
             return floor;
         }
 
-        public void setFloor(LinkElement floor) {
+        public void setFloor(Floor floor) {
             this.floor = floor;
         }
 
@@ -310,19 +310,19 @@ public class Chart  extends  LinkElement {
         }
 
         @SerializedName("Legend")
-        private LinkElement legend ;
+        private Legend legend ;
 
-        public  Chart  legend(LinkElement  legend) {
+        public  Chart  legend(Legend  legend) {
             this.legend =  legend;
             return this;
         }
 
         @ApiModelProperty(value = "")
-        public LinkElement getLegend() {
+        public Legend getLegend() {
             return legend;
         }
 
-        public void setLegend(LinkElement legend) {
+        public void setLegend(Legend legend) {
             this.legend = legend;
         }
 
@@ -344,19 +344,19 @@ public class Chart  extends  LinkElement {
         }
 
         @SerializedName("NSeries")
-        private LinkElement nSeries ;
+        private SeriesItems nSeries ;
 
-        public  Chart  nSeries(LinkElement  nSeries) {
+        public  Chart  nSeries(SeriesItems  nSeries) {
             this.nSeries =  nSeries;
             return this;
         }
 
         @ApiModelProperty(value = "")
-        public LinkElement getNSeries() {
+        public SeriesItems getNSeries() {
             return nSeries;
         }
 
-        public void setNSeries(LinkElement nSeries) {
+        public void setNSeries(SeriesItems nSeries) {
             this.nSeries = nSeries;
         }
 
@@ -429,19 +429,19 @@ public class Chart  extends  LinkElement {
         }
 
         @SerializedName("PlotArea")
-        private LinkElement plotArea ;
+        private PlotArea plotArea ;
 
-        public  Chart  plotArea(LinkElement  plotArea) {
+        public  Chart  plotArea(PlotArea  plotArea) {
             this.plotArea =  plotArea;
             return this;
         }
 
         @ApiModelProperty(value = "")
-        public LinkElement getPlotArea() {
+        public PlotArea getPlotArea() {
             return plotArea;
         }
 
-        public void setPlotArea(LinkElement plotArea) {
+        public void setPlotArea(PlotArea plotArea) {
             this.plotArea = plotArea;
         }
 
@@ -718,19 +718,19 @@ public class Chart  extends  LinkElement {
         }
 
         @SerializedName("ValueAxis")
-        private LinkElement valueAxis ;
+        private Axis valueAxis ;
 
-        public  Chart  valueAxis(LinkElement  valueAxis) {
+        public  Chart  valueAxis(Axis  valueAxis) {
             this.valueAxis =  valueAxis;
             return this;
         }
 
         @ApiModelProperty(value = "")
-        public LinkElement getValueAxis() {
+        public Axis getValueAxis() {
             return valueAxis;
         }
 
-        public void setValueAxis(LinkElement valueAxis) {
+        public void setValueAxis(Axis valueAxis) {
             this.valueAxis = valueAxis;
         }
 

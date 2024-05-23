@@ -105,6 +105,23 @@ public class LoadData {
             this.dataItem = dataItem;
         }
 
+        @SerializedName("MergeQueries")
+        private MergeQueries mergeQueries ;
+
+        public  LoadData  mergeQueries(MergeQueries  mergeQueries) {
+            this.mergeQueries =  mergeQueries;
+            return this;
+        }
+
+        @ApiModelProperty(value = "")
+        public MergeQueries getMergeQueries() {
+            return mergeQueries;
+        }
+
+        public void setMergeQueries(MergeQueries mergeQueries) {
+            this.mergeQueries = mergeQueries;
+        }
+
         @Override
         public boolean equals(java.lang.Object o) {
             if (this == o) {
@@ -119,12 +136,13 @@ public class LoadData {
                 Objects.equals(this.loadTo, loadData.loadTo) &&
                 Objects.equals(this.dataSource, loadData.dataSource) &&
                 Objects.equals(this.fileInfo, loadData.fileInfo) &&
-                Objects.equals(this.dataItem, loadData.dataItem);
+                Objects.equals(this.dataItem, loadData.dataItem) &&
+                Objects.equals(this.mergeQueries, loadData.mergeQueries);
       }
 
       @Override
       public int hashCode() {
-        return Objects.hash(loadTo, dataSource, fileInfo, dataItem);
+        return Objects.hash(loadTo, dataSource, fileInfo, dataItem, mergeQueries);
       }
         @Override
         public String toString() {
@@ -134,6 +152,7 @@ public class LoadData {
             sb.append("    dataSource: ").append(toIndentedString(getDataSource())).append("\n");
             sb.append("    fileInfo: ").append(toIndentedString(getFileInfo())).append("\n");
             sb.append("    dataItem: ").append(toIndentedString(getDataItem())).append("\n");
+            sb.append("    mergeQueries: ").append(toIndentedString(getMergeQueries())).append("\n");
             sb.append("}");
             return sb.toString();
         }

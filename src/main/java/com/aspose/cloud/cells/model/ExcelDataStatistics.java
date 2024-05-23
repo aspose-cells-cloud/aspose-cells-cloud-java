@@ -54,23 +54,6 @@ public class ExcelDataStatistics {
             this.worksheetDataStatistics = worksheetDataStatistics;
         }
 
-        @SerializedName("NamesCount")
-        private Integer namesCount ;
-
-        public  ExcelDataStatistics  namesCount(Integer  namesCount) {
-            this.namesCount =  namesCount;
-            return this;
-        }
-
-        @ApiModelProperty(value = "")
-        public Integer getNamesCount() {
-            return namesCount;
-        }
-
-        public void setNamesCount(Integer namesCount) {
-            this.namesCount = namesCount;
-        }
-
         @Override
         public boolean equals(java.lang.Object o) {
             if (this == o) {
@@ -82,20 +65,18 @@ public class ExcelDataStatistics {
 
             ExcelDataStatistics excelDataStatistics = (ExcelDataStatistics) o;
             return
-                Objects.equals(this.worksheetDataStatistics, excelDataStatistics.worksheetDataStatistics) &&
-                Objects.equals(this.namesCount, excelDataStatistics.namesCount);
+                Objects.equals(this.worksheetDataStatistics, excelDataStatistics.worksheetDataStatistics);
       }
 
       @Override
       public int hashCode() {
-        return Objects.hash(worksheetDataStatistics, namesCount);
+        return Objects.hash(worksheetDataStatistics);
       }
         @Override
         public String toString() {
             StringBuilder sb = new StringBuilder();
             sb.append("class ExcelDataStatistics {\n");
             sb.append("    worksheetDataStatistics: ").append(toIndentedString(getWorksheetDataStatistics())).append("\n");
-            sb.append("    namesCount: ").append(toIndentedString(getNamesCount())).append("\n");
             sb.append("}");
             return sb.toString();
         }

@@ -38,19 +38,19 @@ import java.time.OffsetDateTime;
 
 public class LegendEntry  extends  LinkElement {
         @SerializedName("AutoScaleFont")
-        private String autoScaleFont ;
+        private Boolean autoScaleFont ;
 
-        public  LegendEntry  autoScaleFont(String  autoScaleFont) {
+        public  LegendEntry  autoScaleFont(Boolean  autoScaleFont) {
             this.autoScaleFont =  autoScaleFont;
             return this;
         }
 
         @ApiModelProperty(value = "")
-        public String getAutoScaleFont() {
+        public Boolean getAutoScaleFont() {
             return autoScaleFont;
         }
 
-        public void setAutoScaleFont(String autoScaleFont) {
+        public void setAutoScaleFont(Boolean autoScaleFont) {
             this.autoScaleFont = autoScaleFont;
         }
 
@@ -89,19 +89,19 @@ public class LegendEntry  extends  LinkElement {
         }
 
         @SerializedName("IsDeleted")
-        private String isDeleted ;
+        private Boolean isDeleted ;
 
-        public  LegendEntry  isDeleted(String  isDeleted) {
+        public  LegendEntry  isDeleted(Boolean  isDeleted) {
             this.isDeleted =  isDeleted;
             return this;
         }
 
         @ApiModelProperty(value = "")
-        public String getIsDeleted() {
+        public Boolean getIsDeleted() {
             return isDeleted;
         }
 
-        public void setIsDeleted(String isDeleted) {
+        public void setIsDeleted(Boolean isDeleted) {
             this.isDeleted = isDeleted;
         }
 

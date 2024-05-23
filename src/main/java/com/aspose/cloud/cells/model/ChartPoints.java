@@ -38,19 +38,19 @@ import java.time.OffsetDateTime;
 
 public class ChartPoints  extends  LinkElement {
         @SerializedName("ChartPointList")
-        private List<LinkElement> chartPointList ;
+        private List<ChartPoint> chartPointList ;
 
-        public  ChartPoints  chartPointList(List<LinkElement>  chartPointList) {
+        public  ChartPoints  chartPointList(List<ChartPoint>  chartPointList) {
             this.chartPointList =  chartPointList;
             return this;
         }
 
         @ApiModelProperty(value = "")
-        public List<LinkElement> getChartPointList() {
+        public List<ChartPoint> getChartPointList() {
             return chartPointList;
         }
 
-        public void setChartPointList(List<LinkElement> chartPointList) {
+        public void setChartPointList(List<ChartPoint> chartPointList) {
             this.chartPointList = chartPointList;
         }
 

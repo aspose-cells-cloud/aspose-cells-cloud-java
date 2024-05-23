@@ -140,37 +140,54 @@ public class ChartPoint  extends  LinkElement {
         }
 
         @SerializedName("XValue")
-        private String xValue ;
+        private Object xValue ;
 
-        public  ChartPoint  xValue(String  xValue) {
+        public  ChartPoint  xValue(Object  xValue) {
             this.xValue =  xValue;
             return this;
         }
 
         @ApiModelProperty(value = "")
-        public String getXValue() {
+        public Object getXValue() {
             return xValue;
         }
 
-        public void setXValue(String xValue) {
+        public void setXValue(Object xValue) {
             this.xValue = xValue;
         }
 
         @SerializedName("YValue")
-        private String yValue ;
+        private Object yValue ;
 
-        public  ChartPoint  yValue(String  yValue) {
+        public  ChartPoint  yValue(Object  yValue) {
             this.yValue =  yValue;
             return this;
         }
 
         @ApiModelProperty(value = "")
-        public String getYValue() {
+        public Object getYValue() {
             return yValue;
         }
 
-        public void setYValue(String yValue) {
+        public void setYValue(Object yValue) {
             this.yValue = yValue;
+        }
+
+        @SerializedName("IsInSecondaryPlot")
+        private Boolean isInSecondaryPlot ;
+
+        public  ChartPoint  isInSecondaryPlot(Boolean  isInSecondaryPlot) {
+            this.isInSecondaryPlot =  isInSecondaryPlot;
+            return this;
+        }
+
+        @ApiModelProperty(value = "")
+        public Boolean getIsInSecondaryPlot() {
+            return isInSecondaryPlot;
+        }
+
+        public void setIsInSecondaryPlot(Boolean isInSecondaryPlot) {
+            this.isInSecondaryPlot = isInSecondaryPlot;
         }
 
         @Override
@@ -192,12 +209,13 @@ public class ChartPoint  extends  LinkElement {
                 Objects.equals(this.shadow, chartPoint.shadow) &&
                 Objects.equals(this.xValue, chartPoint.xValue) &&
                 Objects.equals(this.yValue, chartPoint.yValue) &&
+                Objects.equals(this.isInSecondaryPlot, chartPoint.isInSecondaryPlot) &&
                 super.equals(o);
       }
 
       @Override
       public int hashCode() {
-        return Objects.hash(area, border, dataLabels, explosion, marker, shadow, xValue, yValue, super.hashCode());
+        return Objects.hash(area, border, dataLabels, explosion, marker, shadow, xValue, yValue, isInSecondaryPlot, super.hashCode());
       }
         @Override
         public String toString() {
@@ -211,6 +229,7 @@ public class ChartPoint  extends  LinkElement {
             sb.append("    shadow: ").append(toIndentedString(getShadow())).append("\n");
             sb.append("    xValue: ").append(toIndentedString(getXValue())).append("\n");
             sb.append("    yValue: ").append(toIndentedString(getYValue())).append("\n");
+            sb.append("    isInSecondaryPlot: ").append(toIndentedString(getIsInSecondaryPlot())).append("\n");
             sb.append("    link: ").append(toIndentedString(getLink())).append("\n");
             sb.append("}");
             return sb.toString();

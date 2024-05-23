@@ -89,19 +89,19 @@ public class SeriesItems  extends  LinkElement {
         }
 
         @SerializedName("SeriesList")
-        private List<LinkElement> seriesList ;
+        private List<Series> seriesList ;
 
-        public  SeriesItems  seriesList(List<LinkElement>  seriesList) {
+        public  SeriesItems  seriesList(List<Series>  seriesList) {
             this.seriesList =  seriesList;
             return this;
         }
 
         @ApiModelProperty(value = "")
-        public List<LinkElement> getSeriesList() {
+        public List<Series> getSeriesList() {
             return seriesList;
         }
 
-        public void setSeriesList(List<LinkElement> seriesList) {
+        public void setSeriesList(List<Series> seriesList) {
             this.seriesList = seriesList;
         }
 

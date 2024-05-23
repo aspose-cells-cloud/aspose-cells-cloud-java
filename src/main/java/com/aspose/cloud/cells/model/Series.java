@@ -140,19 +140,19 @@ public class Series  extends  LinkElement {
         }
 
         @SerializedName("DataLabels")
-        private LinkElement dataLabels ;
+        private DataLabels dataLabels ;
 
-        public  Series  dataLabels(LinkElement  dataLabels) {
+        public  Series  dataLabels(DataLabels  dataLabels) {
             this.dataLabels =  dataLabels;
             return this;
         }
 
         @ApiModelProperty(value = "")
-        public LinkElement getDataLabels() {
+        public DataLabels getDataLabels() {
             return dataLabels;
         }
 
-        public void setDataLabels(LinkElement dataLabels) {
+        public void setDataLabels(DataLabels dataLabels) {
             this.dataLabels = dataLabels;
         }
 
@@ -191,19 +191,19 @@ public class Series  extends  LinkElement {
         }
 
         @SerializedName("DownBars")
-        private LinkElement downBars ;
+        private DropBars downBars ;
 
-        public  Series  downBars(LinkElement  downBars) {
+        public  Series  downBars(DropBars  downBars) {
             this.downBars =  downBars;
             return this;
         }
 
         @ApiModelProperty(value = "")
-        public LinkElement getDownBars() {
+        public DropBars getDownBars() {
             return downBars;
         }
 
-        public void setDownBars(LinkElement downBars) {
+        public void setDownBars(DropBars downBars) {
             this.downBars = downBars;
         }
 
@@ -463,37 +463,20 @@ public class Series  extends  LinkElement {
         }
 
         @SerializedName("LegendEntry")
-        private LinkElement legendEntry ;
+        private LegendEntry legendEntry ;
 
-        public  Series  legendEntry(LinkElement  legendEntry) {
+        public  Series  legendEntry(LegendEntry  legendEntry) {
             this.legendEntry =  legendEntry;
             return this;
         }
 
         @ApiModelProperty(value = "")
-        public LinkElement getLegendEntry() {
+        public LegendEntry getLegendEntry() {
             return legendEntry;
         }
 
-        public void setLegendEntry(LinkElement legendEntry) {
+        public void setLegendEntry(LegendEntry legendEntry) {
             this.legendEntry = legendEntry;
-        }
-
-        @SerializedName("Line")
-        private Line line ;
-
-        public  Series  line(Line  line) {
-            this.line =  line;
-            return this;
-        }
-
-        @ApiModelProperty(value = "")
-        public Line getLine() {
-            return line;
-        }
-
-        public void setLine(Line line) {
-            this.line = line;
         }
 
         @SerializedName("Marker")
@@ -632,23 +615,6 @@ public class Series  extends  LinkElement {
             this.shadow = shadow;
         }
 
-        @SerializedName("ShapeProperties")
-        private LinkElement shapeProperties ;
-
-        public  Series  shapeProperties(LinkElement  shapeProperties) {
-            this.shapeProperties =  shapeProperties;
-            return this;
-        }
-
-        @ApiModelProperty(value = "")
-        public LinkElement getShapeProperties() {
-            return shapeProperties;
-        }
-
-        public void setShapeProperties(LinkElement shapeProperties) {
-            this.shapeProperties = shapeProperties;
-        }
-
         @SerializedName("ShowNegativeBubbles")
         private Boolean showNegativeBubbles ;
 
@@ -735,19 +701,19 @@ public class Series  extends  LinkElement {
         }
 
         @SerializedName("TrendLines")
-        private LinkElement trendLines ;
+        private Trendlines trendLines ;
 
-        public  Series  trendLines(LinkElement  trendLines) {
+        public  Series  trendLines(Trendlines  trendLines) {
             this.trendLines =  trendLines;
             return this;
         }
 
         @ApiModelProperty(value = "")
-        public LinkElement getTrendLines() {
+        public Trendlines getTrendLines() {
             return trendLines;
         }
 
-        public void setTrendLines(LinkElement trendLines) {
+        public void setTrendLines(Trendlines trendLines) {
             this.trendLines = trendLines;
         }
 
@@ -769,19 +735,19 @@ public class Series  extends  LinkElement {
         }
 
         @SerializedName("UpBars")
-        private LinkElement upBars ;
+        private DropBars upBars ;
 
-        public  Series  upBars(LinkElement  upBars) {
+        public  Series  upBars(DropBars  upBars) {
             this.upBars =  upBars;
             return this;
         }
 
         @ApiModelProperty(value = "")
-        public LinkElement getUpBars() {
+        public DropBars getUpBars() {
             return upBars;
         }
 
-        public void setUpBars(LinkElement upBars) {
+        public void setUpBars(DropBars upBars) {
             this.upBars = upBars;
         }
 
@@ -803,19 +769,19 @@ public class Series  extends  LinkElement {
         }
 
         @SerializedName("XErrorBar")
-        private LinkElement xErrorBar ;
+        private ErrorBar xErrorBar ;
 
-        public  Series  xErrorBar(LinkElement  xErrorBar) {
+        public  Series  xErrorBar(ErrorBar  xErrorBar) {
             this.xErrorBar =  xErrorBar;
             return this;
         }
 
         @ApiModelProperty(value = "")
-        public LinkElement getXErrorBar() {
+        public ErrorBar getXErrorBar() {
             return xErrorBar;
         }
 
-        public void setXErrorBar(LinkElement xErrorBar) {
+        public void setXErrorBar(ErrorBar xErrorBar) {
             this.xErrorBar = xErrorBar;
         }
 
@@ -837,19 +803,19 @@ public class Series  extends  LinkElement {
         }
 
         @SerializedName("YErrorBar")
-        private LinkElement yErrorBar ;
+        private ErrorBar yErrorBar ;
 
-        public  Series  yErrorBar(LinkElement  yErrorBar) {
+        public  Series  yErrorBar(ErrorBar  yErrorBar) {
             this.yErrorBar =  yErrorBar;
             return this;
         }
 
         @ApiModelProperty(value = "")
-        public LinkElement getYErrorBar() {
+        public ErrorBar getYErrorBar() {
             return yErrorBar;
         }
 
-        public void setYErrorBar(LinkElement yErrorBar) {
+        public void setYErrorBar(ErrorBar yErrorBar) {
             this.yErrorBar = yErrorBar;
         }
 
@@ -890,7 +856,6 @@ public class Series  extends  LinkElement {
                 Objects.equals(this.isColorVaried, series.isColorVaried) &&
                 Objects.equals(this.leaderLines, series.leaderLines) &&
                 Objects.equals(this.legendEntry, series.legendEntry) &&
-                Objects.equals(this.line, series.line) &&
                 Objects.equals(this.marker, series.marker) &&
                 Objects.equals(this.name, series.name) &&
                 Objects.equals(this.overlap, series.overlap) &&
@@ -899,7 +864,6 @@ public class Series  extends  LinkElement {
                 Objects.equals(this.secondPlotSize, series.secondPlotSize) &&
                 Objects.equals(this.seriesLines, series.seriesLines) &&
                 Objects.equals(this.shadow, series.shadow) &&
-                Objects.equals(this.shapeProperties, series.shapeProperties) &&
                 Objects.equals(this.showNegativeBubbles, series.showNegativeBubbles) &&
                 Objects.equals(this.sizeRepresents, series.sizeRepresents) &&
                 Objects.equals(this.smooth, series.smooth) &&
@@ -917,7 +881,7 @@ public class Series  extends  LinkElement {
 
       @Override
       public int hashCode() {
-        return Objects.hash(area, bar3DShapeType, border, bubbleScale, bubbleSizes, countOfDataValues, dataLabels, displayName, doughnutHoleSize, downBars, dropLines, explosion, firstSliceAngle, gapWidth, has3DEffect, hasDropLines, hasHiLoLines, hasLeaderLines, hasRadarAxisLabels, hasSeriesLines, hasUpDownBars, hiLoLines, isAutoSplit, isColorVaried, leaderLines, legendEntry, line, marker, name, overlap, plotOnSecondAxis, points, secondPlotSize, seriesLines, shadow, shapeProperties, showNegativeBubbles, sizeRepresents, smooth, splitType, splitValue, trendLines, type, upBars, values, xErrorBar, xValues, yErrorBar, super.hashCode());
+        return Objects.hash(area, bar3DShapeType, border, bubbleScale, bubbleSizes, countOfDataValues, dataLabels, displayName, doughnutHoleSize, downBars, dropLines, explosion, firstSliceAngle, gapWidth, has3DEffect, hasDropLines, hasHiLoLines, hasLeaderLines, hasRadarAxisLabels, hasSeriesLines, hasUpDownBars, hiLoLines, isAutoSplit, isColorVaried, leaderLines, legendEntry, marker, name, overlap, plotOnSecondAxis, points, secondPlotSize, seriesLines, shadow, showNegativeBubbles, sizeRepresents, smooth, splitType, splitValue, trendLines, type, upBars, values, xErrorBar, xValues, yErrorBar, super.hashCode());
       }
         @Override
         public String toString() {
@@ -949,7 +913,6 @@ public class Series  extends  LinkElement {
             sb.append("    isColorVaried: ").append(toIndentedString(getIsColorVaried())).append("\n");
             sb.append("    leaderLines: ").append(toIndentedString(getLeaderLines())).append("\n");
             sb.append("    legendEntry: ").append(toIndentedString(getLegendEntry())).append("\n");
-            sb.append("    line: ").append(toIndentedString(getLine())).append("\n");
             sb.append("    marker: ").append(toIndentedString(getMarker())).append("\n");
             sb.append("    name: ").append(toIndentedString(getName())).append("\n");
             sb.append("    overlap: ").append(toIndentedString(getOverlap())).append("\n");
@@ -958,7 +921,6 @@ public class Series  extends  LinkElement {
             sb.append("    secondPlotSize: ").append(toIndentedString(getSecondPlotSize())).append("\n");
             sb.append("    seriesLines: ").append(toIndentedString(getSeriesLines())).append("\n");
             sb.append("    shadow: ").append(toIndentedString(getShadow())).append("\n");
-            sb.append("    shapeProperties: ").append(toIndentedString(getShapeProperties())).append("\n");
             sb.append("    showNegativeBubbles: ").append(toIndentedString(getShowNegativeBubbles())).append("\n");
             sb.append("    sizeRepresents: ").append(toIndentedString(getSizeRepresents())).append("\n");
             sb.append("    smooth: ").append(toIndentedString(getSmooth())).append("\n");

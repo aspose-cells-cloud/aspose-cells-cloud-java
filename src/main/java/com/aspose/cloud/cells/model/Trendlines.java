@@ -38,19 +38,19 @@ import java.time.OffsetDateTime;
 
 public class Trendlines  extends  LinkElement {
         @SerializedName("TrendlineList")
-        private List<LinkElement> trendlineList ;
+        private List<Trendline> trendlineList ;
 
-        public  Trendlines  trendlineList(List<LinkElement>  trendlineList) {
+        public  Trendlines  trendlineList(List<Trendline>  trendlineList) {
             this.trendlineList =  trendlineList;
             return this;
         }
 
         @ApiModelProperty(value = "")
-        public List<LinkElement> getTrendlineList() {
+        public List<Trendline> getTrendlineList() {
             return trendlineList;
         }
 
-        public void setTrendlineList(List<LinkElement> trendlineList) {
+        public void setTrendlineList(List<Trendline> trendlineList) {
             this.trendlineList = trendlineList;
         }
 

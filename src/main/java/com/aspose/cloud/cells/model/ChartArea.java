@@ -65,7 +65,6 @@ public class ChartArea  extends  ChartFrame {
             sb.append("    isAutomaticSize: ").append(toIndentedString(getIsAutomaticSize())).append("\n");
             sb.append("    isInnerMode: ").append(toIndentedString(getIsInnerMode())).append("\n");
             sb.append("    shadow: ").append(toIndentedString(getShadow())).append("\n");
-            sb.append("    shapeProperties: ").append(toIndentedString(getShapeProperties())).append("\n");
             sb.append("    width: ").append(toIndentedString(getWidth())).append("\n");
             sb.append("    height: ").append(toIndentedString(getHeight())).append("\n");
             sb.append("    x: ").append(toIndentedString(getX())).append("\n");

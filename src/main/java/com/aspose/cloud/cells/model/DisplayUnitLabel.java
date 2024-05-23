@@ -88,23 +88,6 @@ public class DisplayUnitLabel  extends  ChartFrame {
             this.text = text;
         }
 
-        @SerializedName("TextDirection")
-        private String textDirection ;
-
-        public  DisplayUnitLabel  textDirection(String  textDirection) {
-            this.textDirection =  textDirection;
-            return this;
-        }
-
-        @ApiModelProperty(value = "")
-        public String getTextDirection() {
-            return textDirection;
-        }
-
-        public void setTextDirection(String textDirection) {
-            this.textDirection = textDirection;
-        }
-
         @SerializedName("TextHorizontalAlignment")
         private String textHorizontalAlignment ;
 
@@ -153,7 +136,6 @@ public class DisplayUnitLabel  extends  ChartFrame {
                 Objects.equals(this.linkedSource, displayUnitLabel.linkedSource) &&
                 Objects.equals(this.rotationAngle, displayUnitLabel.rotationAngle) &&
                 Objects.equals(this.text, displayUnitLabel.text) &&
-                Objects.equals(this.textDirection, displayUnitLabel.textDirection) &&
                 Objects.equals(this.textHorizontalAlignment, displayUnitLabel.textHorizontalAlignment) &&
                 Objects.equals(this.textVerticalAlignment, displayUnitLabel.textVerticalAlignment) &&
                 super.equals(o);
@@ -161,7 +143,7 @@ public class DisplayUnitLabel  extends  ChartFrame {
 
       @Override
       public int hashCode() {
-        return Objects.hash(linkedSource, rotationAngle, text, textDirection, textHorizontalAlignment, textVerticalAlignment, super.hashCode());
+        return Objects.hash(linkedSource, rotationAngle, text, textHorizontalAlignment, textVerticalAlignment, super.hashCode());
       }
         @Override
         public String toString() {
@@ -170,7 +152,6 @@ public class DisplayUnitLabel  extends  ChartFrame {
             sb.append("    linkedSource: ").append(toIndentedString(getLinkedSource())).append("\n");
             sb.append("    rotationAngle: ").append(toIndentedString(getRotationAngle())).append("\n");
             sb.append("    text: ").append(toIndentedString(getText())).append("\n");
-            sb.append("    textDirection: ").append(toIndentedString(getTextDirection())).append("\n");
             sb.append("    textHorizontalAlignment: ").append(toIndentedString(getTextHorizontalAlignment())).append("\n");
             sb.append("    textVerticalAlignment: ").append(toIndentedString(getTextVerticalAlignment())).append("\n");
             sb.append("    area: ").append(toIndentedString(getArea())).append("\n");
@@ -181,7 +162,6 @@ public class DisplayUnitLabel  extends  ChartFrame {
             sb.append("    isAutomaticSize: ").append(toIndentedString(getIsAutomaticSize())).append("\n");
             sb.append("    isInnerMode: ").append(toIndentedString(getIsInnerMode())).append("\n");
             sb.append("    shadow: ").append(toIndentedString(getShadow())).append("\n");
-            sb.append("    shapeProperties: ").append(toIndentedString(getShapeProperties())).append("\n");
             sb.append("    width: ").append(toIndentedString(getWidth())).append("\n");
             sb.append("    height: ").append(toIndentedString(getHeight())).append("\n");
             sb.append("    x: ").append(toIndentedString(getX())).append("\n");

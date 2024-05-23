@@ -72,19 +72,19 @@ public class Trendline  extends  Line {
         }
 
         @SerializedName("DataLabels")
-        private LinkElement dataLabels ;
+        private DataLabels dataLabels ;
 
-        public  Trendline  dataLabels(LinkElement  dataLabels) {
+        public  Trendline  dataLabels(DataLabels  dataLabels) {
             this.dataLabels =  dataLabels;
             return this;
         }
 
         @ApiModelProperty(value = "")
-        public LinkElement getDataLabels() {
+        public DataLabels getDataLabels() {
             return dataLabels;
         }
 
-        public void setDataLabels(LinkElement dataLabels) {
+        public void setDataLabels(DataLabels dataLabels) {
             this.dataLabels = dataLabels;
         }
 
@@ -174,19 +174,19 @@ public class Trendline  extends  Line {
         }
 
         @SerializedName("LegendEntry")
-        private LinkElement legendEntry ;
+        private LegendEntry legendEntry ;
 
-        public  Trendline  legendEntry(LinkElement  legendEntry) {
+        public  Trendline  legendEntry(LegendEntry  legendEntry) {
             this.legendEntry =  legendEntry;
             return this;
         }
 
         @ApiModelProperty(value = "")
-        public LinkElement getLegendEntry() {
+        public LegendEntry getLegendEntry() {
             return legendEntry;
         }
 
-        public void setLegendEntry(LinkElement legendEntry) {
+        public void setLegendEntry(LegendEntry legendEntry) {
             this.legendEntry = legendEntry;
         }
 
