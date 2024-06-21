@@ -1,6 +1,6 @@
 /*
  * --------------------------------------------------------------------------------
- * <copyright company="Aspose" file="QueryDataSource.java">
+ * <copyright company="Aspose" file="AppliedStep.java">
  *   Copyright (c) 2024 Aspose.Cells Cloud
  * </copyright>
  * <summary>
@@ -36,56 +36,39 @@ import com.google.gson.annotations.SerializedName;
 import java.time.OffsetDateTime;
 
 
-public class QueryDataSource {
-        @SerializedName("DataSourceDataType")
-        private String dataSourceDataType ;
+public class AppliedStep {
+        @SerializedName("StepName")
+        private String stepName ;
 
-        public  QueryDataSource  dataSourceDataType(String  dataSourceDataType) {
-            this.dataSourceDataType =  dataSourceDataType;
+        public  AppliedStep  stepName(String  stepName) {
+            this.stepName =  stepName;
             return this;
         }
 
         @ApiModelProperty(value = "")
-        public String getDataSourceDataType() {
-            return dataSourceDataType;
+        public String getStepName() {
+            return stepName;
         }
 
-        public void setDataSourceDataType(String dataSourceDataType) {
-            this.dataSourceDataType = dataSourceDataType;
+        public void setStepName(String stepName) {
+            this.stepName = stepName;
         }
 
-        @SerializedName("DataFile")
-        private DataSource dataFile ;
+        @SerializedName("AppliedOperate")
+        private AppliedOperate appliedOperate ;
 
-        public  QueryDataSource  dataFile(DataSource  dataFile) {
-            this.dataFile =  dataFile;
+        public  AppliedStep  appliedOperate(AppliedOperate  appliedOperate) {
+            this.appliedOperate =  appliedOperate;
             return this;
         }
 
         @ApiModelProperty(value = "")
-        public DataSource getDataFile() {
-            return dataFile;
+        public AppliedOperate getAppliedOperate() {
+            return appliedOperate;
         }
 
-        public void setDataFile(DataSource dataFile) {
-            this.dataFile = dataFile;
-        }
-
-        @SerializedName("DataSource")
-        private String dataSource ;
-
-        public  QueryDataSource  dataSource(String  dataSource) {
-            this.dataSource =  dataSource;
-            return this;
-        }
-
-        @ApiModelProperty(value = "")
-        public String getDataSource() {
-            return dataSource;
-        }
-
-        public void setDataSource(String dataSource) {
-            this.dataSource = dataSource;
+        public void setAppliedOperate(AppliedOperate appliedOperate) {
+            this.appliedOperate = appliedOperate;
         }
 
         @Override
@@ -97,24 +80,22 @@ public class QueryDataSource {
                 return false;
             }
 
-            QueryDataSource queryDataSource = (QueryDataSource) o;
+            AppliedStep appliedStep = (AppliedStep) o;
             return
-                Objects.equals(this.dataSourceDataType, queryDataSource.dataSourceDataType) &&
-                Objects.equals(this.dataFile, queryDataSource.dataFile) &&
-                Objects.equals(this.dataSource, queryDataSource.dataSource);
+                Objects.equals(this.stepName, appliedStep.stepName) &&
+                Objects.equals(this.appliedOperate, appliedStep.appliedOperate);
       }
 
       @Override
       public int hashCode() {
-        return Objects.hash(dataSourceDataType, dataFile, dataSource);
+        return Objects.hash(stepName, appliedOperate);
       }
         @Override
         public String toString() {
             StringBuilder sb = new StringBuilder();
-            sb.append("class QueryDataSource {\n");
-            sb.append("    dataSourceDataType: ").append(toIndentedString(getDataSourceDataType())).append("\n");
-            sb.append("    dataFile: ").append(toIndentedString(getDataFile())).append("\n");
-            sb.append("    dataSource: ").append(toIndentedString(getDataSource())).append("\n");
+            sb.append("class AppliedStep {\n");
+            sb.append("    stepName: ").append(toIndentedString(getStepName())).append("\n");
+            sb.append("    appliedOperate: ").append(toIndentedString(getAppliedOperate())).append("\n");
             sb.append("}");
             return sb.toString();
         }

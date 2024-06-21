@@ -1,6 +1,6 @@
 /*
  * --------------------------------------------------------------------------------
- * <copyright company="Aspose" file="QueryTable.java">
+ * <copyright company="Aspose" file="DataQuery.java">
  *   Copyright (c) 2024 Aspose.Cells Cloud
  * </copyright>
  * <summary>
@@ -36,28 +36,11 @@ import com.google.gson.annotations.SerializedName;
 import java.time.OffsetDateTime;
 
 
-public class QueryTable {
-        @SerializedName("ConnectionId")
-        private Integer connectionId ;
-
-        public  QueryTable  connectionId(Integer  connectionId) {
-            this.connectionId =  connectionId;
-            return this;
-        }
-
-        @ApiModelProperty(value = "")
-        public Integer getConnectionId() {
-            return connectionId;
-        }
-
-        public void setConnectionId(Integer connectionId) {
-            this.connectionId = connectionId;
-        }
-
+public class DataQuery {
         @SerializedName("Name")
         private String name ;
 
-        public  QueryTable  name(String  name) {
+        public  DataQuery  name(String  name) {
             this.name =  name;
             return this;
         }
@@ -71,55 +54,72 @@ public class QueryTable {
             this.name = name;
         }
 
-        @SerializedName("ResultRange")
-        private Range resultRange ;
+        @SerializedName("DataSourceDataType")
+        private String dataSourceDataType ;
 
-        public  QueryTable  resultRange(Range  resultRange) {
-            this.resultRange =  resultRange;
+        public  DataQuery  dataSourceDataType(String  dataSourceDataType) {
+            this.dataSourceDataType =  dataSourceDataType;
             return this;
         }
 
         @ApiModelProperty(value = "")
-        public Range getResultRange() {
-            return resultRange;
+        public String getDataSourceDataType() {
+            return dataSourceDataType;
         }
 
-        public void setResultRange(Range resultRange) {
-            this.resultRange = resultRange;
+        public void setDataSourceDataType(String dataSourceDataType) {
+            this.dataSourceDataType = dataSourceDataType;
         }
 
-        @SerializedName("PreserveFormatting")
-        private Boolean preserveFormatting ;
+        @SerializedName("DataSource")
+        private DataSource dataSource ;
 
-        public  QueryTable  preserveFormatting(Boolean  preserveFormatting) {
-            this.preserveFormatting =  preserveFormatting;
+        public  DataQuery  dataSource(DataSource  dataSource) {
+            this.dataSource =  dataSource;
             return this;
         }
 
         @ApiModelProperty(value = "")
-        public Boolean getPreserveFormatting() {
-            return preserveFormatting;
+        public DataSource getDataSource() {
+            return dataSource;
         }
 
-        public void setPreserveFormatting(Boolean preserveFormatting) {
-            this.preserveFormatting = preserveFormatting;
+        public void setDataSource(DataSource dataSource) {
+            this.dataSource = dataSource;
         }
 
-        @SerializedName("AdjustColumnWidth")
-        private Boolean adjustColumnWidth ;
+        @SerializedName("FileInfo")
+        private FileInfo fileInfo ;
 
-        public  QueryTable  adjustColumnWidth(Boolean  adjustColumnWidth) {
-            this.adjustColumnWidth =  adjustColumnWidth;
+        public  DataQuery  fileInfo(FileInfo  fileInfo) {
+            this.fileInfo =  fileInfo;
             return this;
         }
 
         @ApiModelProperty(value = "")
-        public Boolean getAdjustColumnWidth() {
-            return adjustColumnWidth;
+        public FileInfo getFileInfo() {
+            return fileInfo;
         }
 
-        public void setAdjustColumnWidth(Boolean adjustColumnWidth) {
-            this.adjustColumnWidth = adjustColumnWidth;
+        public void setFileInfo(FileInfo fileInfo) {
+            this.fileInfo = fileInfo;
+        }
+
+        @SerializedName("DataItem")
+        private DataItem dataItem ;
+
+        public  DataQuery  dataItem(DataItem  dataItem) {
+            this.dataItem =  dataItem;
+            return this;
+        }
+
+        @ApiModelProperty(value = "")
+        public DataItem getDataItem() {
+            return dataItem;
+        }
+
+        public void setDataItem(DataItem dataItem) {
+            this.dataItem = dataItem;
         }
 
         @Override
@@ -131,28 +131,28 @@ public class QueryTable {
                 return false;
             }
 
-            QueryTable queryTable = (QueryTable) o;
+            DataQuery dataQuery = (DataQuery) o;
             return
-                Objects.equals(this.connectionId, queryTable.connectionId) &&
-                Objects.equals(this.name, queryTable.name) &&
-                Objects.equals(this.resultRange, queryTable.resultRange) &&
-                Objects.equals(this.preserveFormatting, queryTable.preserveFormatting) &&
-                Objects.equals(this.adjustColumnWidth, queryTable.adjustColumnWidth);
+                Objects.equals(this.name, dataQuery.name) &&
+                Objects.equals(this.dataSourceDataType, dataQuery.dataSourceDataType) &&
+                Objects.equals(this.dataSource, dataQuery.dataSource) &&
+                Objects.equals(this.fileInfo, dataQuery.fileInfo) &&
+                Objects.equals(this.dataItem, dataQuery.dataItem);
       }
 
       @Override
       public int hashCode() {
-        return Objects.hash(connectionId, name, resultRange, preserveFormatting, adjustColumnWidth);
+        return Objects.hash(name, dataSourceDataType, dataSource, fileInfo, dataItem);
       }
         @Override
         public String toString() {
             StringBuilder sb = new StringBuilder();
-            sb.append("class QueryTable {\n");
-            sb.append("    connectionId: ").append(toIndentedString(getConnectionId())).append("\n");
+            sb.append("class DataQuery {\n");
             sb.append("    name: ").append(toIndentedString(getName())).append("\n");
-            sb.append("    resultRange: ").append(toIndentedString(getResultRange())).append("\n");
-            sb.append("    preserveFormatting: ").append(toIndentedString(getPreserveFormatting())).append("\n");
-            sb.append("    adjustColumnWidth: ").append(toIndentedString(getAdjustColumnWidth())).append("\n");
+            sb.append("    dataSourceDataType: ").append(toIndentedString(getDataSourceDataType())).append("\n");
+            sb.append("    dataSource: ").append(toIndentedString(getDataSource())).append("\n");
+            sb.append("    fileInfo: ").append(toIndentedString(getFileInfo())).append("\n");
+            sb.append("    dataItem: ").append(toIndentedString(getDataItem())).append("\n");
             sb.append("}");
             return sb.toString();
         }

@@ -54,21 +54,21 @@ public class DataTransformationRequest {
             this.fileInfo = fileInfo;
         }
 
-        @SerializedName("Transformation")
-        private Transformation transformation ;
+        @SerializedName("DataSource")
+        private DataSource dataSource ;
 
-        public  DataTransformationRequest  transformation(Transformation  transformation) {
-            this.transformation =  transformation;
+        public  DataTransformationRequest  dataSource(DataSource  dataSource) {
+            this.dataSource =  dataSource;
             return this;
         }
 
         @ApiModelProperty(value = "")
-        public Transformation getTransformation() {
-            return transformation;
+        public DataSource getDataSource() {
+            return dataSource;
         }
 
-        public void setTransformation(Transformation transformation) {
-            this.transformation = transformation;
+        public void setDataSource(DataSource dataSource) {
+            this.dataSource = dataSource;
         }
 
         @SerializedName("LoadData")
@@ -86,6 +86,23 @@ public class DataTransformationRequest {
 
         public void setLoadData(LoadData loadData) {
             this.loadData = loadData;
+        }
+
+        @SerializedName("AppliedSteps")
+        private List<AppliedStep> appliedSteps ;
+
+        public  DataTransformationRequest  appliedSteps(List<AppliedStep>  appliedSteps) {
+            this.appliedSteps =  appliedSteps;
+            return this;
+        }
+
+        @ApiModelProperty(value = "")
+        public List<AppliedStep> getAppliedSteps() {
+            return appliedSteps;
+        }
+
+        public void setAppliedSteps(List<AppliedStep> appliedSteps) {
+            this.appliedSteps = appliedSteps;
         }
 
         @SerializedName("Region")
@@ -134,23 +151,25 @@ public class DataTransformationRequest {
             DataTransformationRequest dataTransformationRequest = (DataTransformationRequest) o;
             return
                 Objects.equals(this.fileInfo, dataTransformationRequest.fileInfo) &&
-                Objects.equals(this.transformation, dataTransformationRequest.transformation) &&
+                Objects.equals(this.dataSource, dataTransformationRequest.dataSource) &&
                 Objects.equals(this.loadData, dataTransformationRequest.loadData) &&
+                Objects.equals(this.appliedSteps, dataTransformationRequest.appliedSteps) &&
                 Objects.equals(this.region, dataTransformationRequest.region) &&
                 Objects.equals(this.outFormat, dataTransformationRequest.outFormat);
       }
 
       @Override
       public int hashCode() {
-        return Objects.hash(fileInfo, transformation, loadData, region, outFormat);
+        return Objects.hash(fileInfo, dataSource, loadData, appliedSteps, region, outFormat);
       }
         @Override
         public String toString() {
             StringBuilder sb = new StringBuilder();
             sb.append("class DataTransformationRequest {\n");
             sb.append("    fileInfo: ").append(toIndentedString(getFileInfo())).append("\n");
-            sb.append("    transformation: ").append(toIndentedString(getTransformation())).append("\n");
+            sb.append("    dataSource: ").append(toIndentedString(getDataSource())).append("\n");
             sb.append("    loadData: ").append(toIndentedString(getLoadData())).append("\n");
+            sb.append("    appliedSteps: ").append(toIndentedString(getAppliedSteps())).append("\n");
             sb.append("    region: ").append(toIndentedString(getRegion())).append("\n");
             sb.append("    outFormat: ").append(toIndentedString(getOutFormat())).append("\n");
             sb.append("}");

@@ -36,7 +36,7 @@ import com.google.gson.annotations.SerializedName;
 import java.time.OffsetDateTime;
 
 
-public class UnpivotColumn {
+public class UnpivotColumn  extends  AppliedOperate {
         @SerializedName("UnpivotColumnNames")
         private List<String> unpivotColumnNames ;
 
@@ -101,12 +101,13 @@ public class UnpivotColumn {
             return
                 Objects.equals(this.unpivotColumnNames, unpivotColumn.unpivotColumnNames) &&
                 Objects.equals(this.columnMapName, unpivotColumn.columnMapName) &&
-                Objects.equals(this.valueMapName, unpivotColumn.valueMapName);
+                Objects.equals(this.valueMapName, unpivotColumn.valueMapName) &&
+                super.equals(o);
       }
 
       @Override
       public int hashCode() {
-        return Objects.hash(unpivotColumnNames, columnMapName, valueMapName);
+        return Objects.hash(unpivotColumnNames, columnMapName, valueMapName, super.hashCode());
       }
         @Override
         public String toString() {
@@ -115,6 +116,7 @@ public class UnpivotColumn {
             sb.append("    unpivotColumnNames: ").append(toIndentedString(getUnpivotColumnNames())).append("\n");
             sb.append("    columnMapName: ").append(toIndentedString(getColumnMapName())).append("\n");
             sb.append("    valueMapName: ").append(toIndentedString(getValueMapName())).append("\n");
+            sb.append("    appliedOperateType: ").append(toIndentedString(getAppliedOperateType())).append("\n");
             sb.append("}");
             return sb.toString();
         }

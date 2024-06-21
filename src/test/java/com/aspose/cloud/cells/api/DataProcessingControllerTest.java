@@ -142,4 +142,64 @@ public class DataProcessingControllerTest {
     }
 
 
+    @Test
+    public void PostDataTransformationTest() throws Exception {
+        String localName = "BookTableL2W.xlsx";
+        String remoteName = "BookTableL2W.xlsx";
+
+        CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
+       
+        PostDataTransformationRequest request = new PostDataTransformationRequest();
+        DataTransformationRequest dataTransformationRequest = new DataTransformationRequest();
+        LoadData loadData = new LoadData();
+        LoadTo loadTo = new LoadTo();
+        loadTo.setBeginColumnIndex(2);
+
+
+        loadTo.setBeginRowIndex(3);
+
+
+        loadTo.setWorksheet("L2W");
+
+        loadData.setLoadTo(loadTo);
+
+
+        DataQuery dataQuery = new DataQuery();
+        dataQuery.setName("DataQuery");
+
+
+        DataItem dataItem = new DataItem();
+        dataItem.setDataItemType("Table");
+
+
+        dataItem.setValue("Table1");
+
+        dataQuery.setDataItem(dataItem);
+
+
+        DataSource dataSource = new DataSource();
+        dataSource.setDataSourceType("CloudFileSystem");
+
+
+        dataSource.setDataPath("BookTableL2W.xlsx");
+
+        dataQuery.setDataSource(dataSource);
+
+
+        dataQuery.setDataSourceDataType("ListObject");
+
+        loadData.setDataQuery(dataQuery);
+
+        dataTransformationRequest.setLoadData(loadData);
+
+         
+        ArrayList<AppliedStep> dataTransformationRequestAppliedSteps = new ArrayList<AppliedStep>();
+        dataTransformationRequest.setAppliedSteps(dataTransformationRequestAppliedSteps);
+
+        request.setDataTransformationRequest(dataTransformationRequest);
+
+        FileInfo response =  this.api.postDataTransformation(request);
+    }
+
+
 }

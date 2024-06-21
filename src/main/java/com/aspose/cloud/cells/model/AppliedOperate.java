@@ -1,6 +1,6 @@
 /*
  * --------------------------------------------------------------------------------
- * <copyright company="Aspose" file="Transformation.java">
+ * <copyright company="Aspose" file="AppliedOperate.java">
  *   Copyright (c) 2024 Aspose.Cells Cloud
  * </copyright>
  * <summary>
@@ -36,39 +36,22 @@ import com.google.gson.annotations.SerializedName;
 import java.time.OffsetDateTime;
 
 
-public class Transformation {
-        @SerializedName("PivotColumn")
-        private PivotColumn pivotColumn ;
+public class AppliedOperate {
+        @SerializedName("AppliedOperateType")
+        private String appliedOperateType ;
 
-        public  Transformation  pivotColumn(PivotColumn  pivotColumn) {
-            this.pivotColumn =  pivotColumn;
+        public  AppliedOperate  appliedOperateType(String  appliedOperateType) {
+            this.appliedOperateType =  appliedOperateType;
             return this;
         }
 
         @ApiModelProperty(value = "")
-        public PivotColumn getPivotColumn() {
-            return pivotColumn;
+        public String getAppliedOperateType() {
+            return appliedOperateType;
         }
 
-        public void setPivotColumn(PivotColumn pivotColumn) {
-            this.pivotColumn = pivotColumn;
-        }
-
-        @SerializedName("UnpivotColumn")
-        private UnpivotColumn unpivotColumn ;
-
-        public  Transformation  unpivotColumn(UnpivotColumn  unpivotColumn) {
-            this.unpivotColumn =  unpivotColumn;
-            return this;
-        }
-
-        @ApiModelProperty(value = "")
-        public UnpivotColumn getUnpivotColumn() {
-            return unpivotColumn;
-        }
-
-        public void setUnpivotColumn(UnpivotColumn unpivotColumn) {
-            this.unpivotColumn = unpivotColumn;
+        public void setAppliedOperateType(String appliedOperateType) {
+            this.appliedOperateType = appliedOperateType;
         }
 
         @Override
@@ -80,22 +63,20 @@ public class Transformation {
                 return false;
             }
 
-            Transformation transformation = (Transformation) o;
+            AppliedOperate appliedOperate = (AppliedOperate) o;
             return
-                Objects.equals(this.pivotColumn, transformation.pivotColumn) &&
-                Objects.equals(this.unpivotColumn, transformation.unpivotColumn);
+                Objects.equals(this.appliedOperateType, appliedOperate.appliedOperateType);
       }
 
       @Override
       public int hashCode() {
-        return Objects.hash(pivotColumn, unpivotColumn);
+        return Objects.hash(appliedOperateType);
       }
         @Override
         public String toString() {
             StringBuilder sb = new StringBuilder();
-            sb.append("class Transformation {\n");
-            sb.append("    pivotColumn: ").append(toIndentedString(getPivotColumn())).append("\n");
-            sb.append("    unpivotColumn: ").append(toIndentedString(getUnpivotColumn())).append("\n");
+            sb.append("class AppliedOperate {\n");
+            sb.append("    appliedOperateType: ").append(toIndentedString(getAppliedOperateType())).append("\n");
             sb.append("}");
             return sb.toString();
         }

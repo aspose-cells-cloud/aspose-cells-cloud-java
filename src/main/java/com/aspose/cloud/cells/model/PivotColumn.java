@@ -36,7 +36,7 @@ import com.google.gson.annotations.SerializedName;
 import java.time.OffsetDateTime;
 
 
-public class PivotColumn {
+public class PivotColumn  extends  AppliedOperate {
         @SerializedName("PivotColumnName")
         private String pivotColumnName ;
 
@@ -83,12 +83,13 @@ public class PivotColumn {
             PivotColumn pivotColumn = (PivotColumn) o;
             return
                 Objects.equals(this.pivotColumnName, pivotColumn.pivotColumnName) &&
-                Objects.equals(this.valueColumnNames, pivotColumn.valueColumnNames);
+                Objects.equals(this.valueColumnNames, pivotColumn.valueColumnNames) &&
+                super.equals(o);
       }
 
       @Override
       public int hashCode() {
-        return Objects.hash(pivotColumnName, valueColumnNames);
+        return Objects.hash(pivotColumnName, valueColumnNames, super.hashCode());
       }
         @Override
         public String toString() {
@@ -96,6 +97,7 @@ public class PivotColumn {
             sb.append("class PivotColumn {\n");
             sb.append("    pivotColumnName: ").append(toIndentedString(getPivotColumnName())).append("\n");
             sb.append("    valueColumnNames: ").append(toIndentedString(getValueColumnNames())).append("\n");
+            sb.append("    appliedOperateType: ").append(toIndentedString(getAppliedOperateType())).append("\n");
             sb.append("}");
             return sb.toString();
         }

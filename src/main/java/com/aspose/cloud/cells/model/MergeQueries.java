@@ -36,56 +36,22 @@ import com.google.gson.annotations.SerializedName;
 import java.time.OffsetDateTime;
 
 
-public class MergeQueries {
-        @SerializedName("DataSourceA")
-        private DataSource dataSourceA ;
+public class MergeQueries  extends  AppliedOperate {
+        @SerializedName("DataQueryNameA")
+        private String dataQueryNameA ;
 
-        public  MergeQueries  dataSourceA(DataSource  dataSourceA) {
-            this.dataSourceA =  dataSourceA;
+        public  MergeQueries  dataQueryNameA(String  dataQueryNameA) {
+            this.dataQueryNameA =  dataQueryNameA;
             return this;
         }
 
         @ApiModelProperty(value = "")
-        public DataSource getDataSourceA() {
-            return dataSourceA;
+        public String getDataQueryNameA() {
+            return dataQueryNameA;
         }
 
-        public void setDataSourceA(DataSource dataSourceA) {
-            this.dataSourceA = dataSourceA;
-        }
-
-        @SerializedName("FileInfoA")
-        private FileInfo fileInfoA ;
-
-        public  MergeQueries  fileInfoA(FileInfo  fileInfoA) {
-            this.fileInfoA =  fileInfoA;
-            return this;
-        }
-
-        @ApiModelProperty(value = "")
-        public FileInfo getFileInfoA() {
-            return fileInfoA;
-        }
-
-        public void setFileInfoA(FileInfo fileInfoA) {
-            this.fileInfoA = fileInfoA;
-        }
-
-        @SerializedName("DataItemA")
-        private DataItem dataItemA ;
-
-        public  MergeQueries  dataItemA(DataItem  dataItemA) {
-            this.dataItemA =  dataItemA;
-            return this;
-        }
-
-        @ApiModelProperty(value = "")
-        public DataItem getDataItemA() {
-            return dataItemA;
-        }
-
-        public void setDataItemA(DataItem dataItemA) {
-            this.dataItemA = dataItemA;
+        public void setDataQueryNameA(String dataQueryNameA) {
+            this.dataQueryNameA = dataQueryNameA;
         }
 
         @SerializedName("DataAIndexField")
@@ -105,55 +71,21 @@ public class MergeQueries {
             this.dataAIndexField = dataAIndexField;
         }
 
-        @SerializedName("DataSourceB")
-        private DataSource dataSourceB ;
+        @SerializedName("DataQueryNameB")
+        private String dataQueryNameB ;
 
-        public  MergeQueries  dataSourceB(DataSource  dataSourceB) {
-            this.dataSourceB =  dataSourceB;
+        public  MergeQueries  dataQueryNameB(String  dataQueryNameB) {
+            this.dataQueryNameB =  dataQueryNameB;
             return this;
         }
 
         @ApiModelProperty(value = "")
-        public DataSource getDataSourceB() {
-            return dataSourceB;
+        public String getDataQueryNameB() {
+            return dataQueryNameB;
         }
 
-        public void setDataSourceB(DataSource dataSourceB) {
-            this.dataSourceB = dataSourceB;
-        }
-
-        @SerializedName("FileInfoB")
-        private FileInfo fileInfoB ;
-
-        public  MergeQueries  fileInfoB(FileInfo  fileInfoB) {
-            this.fileInfoB =  fileInfoB;
-            return this;
-        }
-
-        @ApiModelProperty(value = "")
-        public FileInfo getFileInfoB() {
-            return fileInfoB;
-        }
-
-        public void setFileInfoB(FileInfo fileInfoB) {
-            this.fileInfoB = fileInfoB;
-        }
-
-        @SerializedName("DataItemB")
-        private DataItem dataItemB ;
-
-        public  MergeQueries  dataItemB(DataItem  dataItemB) {
-            this.dataItemB =  dataItemB;
-            return this;
-        }
-
-        @ApiModelProperty(value = "")
-        public DataItem getDataItemB() {
-            return dataItemB;
-        }
-
-        public void setDataItemB(DataItem dataItemB) {
-            this.dataItemB = dataItemB;
+        public void setDataQueryNameB(String dataQueryNameB) {
+            this.dataQueryNameB = dataQueryNameB;
         }
 
         @SerializedName("DataBIndexField")
@@ -201,34 +133,28 @@ public class MergeQueries {
 
             MergeQueries mergeQueries = (MergeQueries) o;
             return
-                Objects.equals(this.dataSourceA, mergeQueries.dataSourceA) &&
-                Objects.equals(this.fileInfoA, mergeQueries.fileInfoA) &&
-                Objects.equals(this.dataItemA, mergeQueries.dataItemA) &&
+                Objects.equals(this.dataQueryNameA, mergeQueries.dataQueryNameA) &&
                 Objects.equals(this.dataAIndexField, mergeQueries.dataAIndexField) &&
-                Objects.equals(this.dataSourceB, mergeQueries.dataSourceB) &&
-                Objects.equals(this.fileInfoB, mergeQueries.fileInfoB) &&
-                Objects.equals(this.dataItemB, mergeQueries.dataItemB) &&
+                Objects.equals(this.dataQueryNameB, mergeQueries.dataQueryNameB) &&
                 Objects.equals(this.dataBIndexField, mergeQueries.dataBIndexField) &&
-                Objects.equals(this.joinType, mergeQueries.joinType);
+                Objects.equals(this.joinType, mergeQueries.joinType) &&
+                super.equals(o);
       }
 
       @Override
       public int hashCode() {
-        return Objects.hash(dataSourceA, fileInfoA, dataItemA, dataAIndexField, dataSourceB, fileInfoB, dataItemB, dataBIndexField, joinType);
+        return Objects.hash(dataQueryNameA, dataAIndexField, dataQueryNameB, dataBIndexField, joinType, super.hashCode());
       }
         @Override
         public String toString() {
             StringBuilder sb = new StringBuilder();
             sb.append("class MergeQueries {\n");
-            sb.append("    dataSourceA: ").append(toIndentedString(getDataSourceA())).append("\n");
-            sb.append("    fileInfoA: ").append(toIndentedString(getFileInfoA())).append("\n");
-            sb.append("    dataItemA: ").append(toIndentedString(getDataItemA())).append("\n");
+            sb.append("    dataQueryNameA: ").append(toIndentedString(getDataQueryNameA())).append("\n");
             sb.append("    dataAIndexField: ").append(toIndentedString(getDataAIndexField())).append("\n");
-            sb.append("    dataSourceB: ").append(toIndentedString(getDataSourceB())).append("\n");
-            sb.append("    fileInfoB: ").append(toIndentedString(getFileInfoB())).append("\n");
-            sb.append("    dataItemB: ").append(toIndentedString(getDataItemB())).append("\n");
+            sb.append("    dataQueryNameB: ").append(toIndentedString(getDataQueryNameB())).append("\n");
             sb.append("    dataBIndexField: ").append(toIndentedString(getDataBIndexField())).append("\n");
             sb.append("    joinType: ").append(toIndentedString(getJoinType())).append("\n");
+            sb.append("    appliedOperateType: ").append(toIndentedString(getAppliedOperateType())).append("\n");
             sb.append("}");
             return sb.toString();
         }

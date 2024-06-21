@@ -54,72 +54,21 @@ public class LoadData {
             this.loadTo = loadTo;
         }
 
-        @SerializedName("DataSource")
-        private DataSource dataSource ;
+        @SerializedName("DataQuery")
+        private DataQuery dataQuery ;
 
-        public  LoadData  dataSource(DataSource  dataSource) {
-            this.dataSource =  dataSource;
+        public  LoadData  dataQuery(DataQuery  dataQuery) {
+            this.dataQuery =  dataQuery;
             return this;
         }
 
         @ApiModelProperty(value = "")
-        public DataSource getDataSource() {
-            return dataSource;
+        public DataQuery getDataQuery() {
+            return dataQuery;
         }
 
-        public void setDataSource(DataSource dataSource) {
-            this.dataSource = dataSource;
-        }
-
-        @SerializedName("FileInfo")
-        private FileInfo fileInfo ;
-
-        public  LoadData  fileInfo(FileInfo  fileInfo) {
-            this.fileInfo =  fileInfo;
-            return this;
-        }
-
-        @ApiModelProperty(value = "")
-        public FileInfo getFileInfo() {
-            return fileInfo;
-        }
-
-        public void setFileInfo(FileInfo fileInfo) {
-            this.fileInfo = fileInfo;
-        }
-
-        @SerializedName("DataItem")
-        private DataItem dataItem ;
-
-        public  LoadData  dataItem(DataItem  dataItem) {
-            this.dataItem =  dataItem;
-            return this;
-        }
-
-        @ApiModelProperty(value = "")
-        public DataItem getDataItem() {
-            return dataItem;
-        }
-
-        public void setDataItem(DataItem dataItem) {
-            this.dataItem = dataItem;
-        }
-
-        @SerializedName("MergeQueries")
-        private MergeQueries mergeQueries ;
-
-        public  LoadData  mergeQueries(MergeQueries  mergeQueries) {
-            this.mergeQueries =  mergeQueries;
-            return this;
-        }
-
-        @ApiModelProperty(value = "")
-        public MergeQueries getMergeQueries() {
-            return mergeQueries;
-        }
-
-        public void setMergeQueries(MergeQueries mergeQueries) {
-            this.mergeQueries = mergeQueries;
+        public void setDataQuery(DataQuery dataQuery) {
+            this.dataQuery = dataQuery;
         }
 
         @Override
@@ -134,25 +83,19 @@ public class LoadData {
             LoadData loadData = (LoadData) o;
             return
                 Objects.equals(this.loadTo, loadData.loadTo) &&
-                Objects.equals(this.dataSource, loadData.dataSource) &&
-                Objects.equals(this.fileInfo, loadData.fileInfo) &&
-                Objects.equals(this.dataItem, loadData.dataItem) &&
-                Objects.equals(this.mergeQueries, loadData.mergeQueries);
+                Objects.equals(this.dataQuery, loadData.dataQuery);
       }
 
       @Override
       public int hashCode() {
-        return Objects.hash(loadTo, dataSource, fileInfo, dataItem, mergeQueries);
+        return Objects.hash(loadTo, dataQuery);
       }
         @Override
         public String toString() {
             StringBuilder sb = new StringBuilder();
             sb.append("class LoadData {\n");
             sb.append("    loadTo: ").append(toIndentedString(getLoadTo())).append("\n");
-            sb.append("    dataSource: ").append(toIndentedString(getDataSource())).append("\n");
-            sb.append("    fileInfo: ").append(toIndentedString(getFileInfo())).append("\n");
-            sb.append("    dataItem: ").append(toIndentedString(getDataItem())).append("\n");
-            sb.append("    mergeQueries: ").append(toIndentedString(getMergeQueries())).append("\n");
+            sb.append("    dataQuery: ").append(toIndentedString(getDataQuery())).append("\n");
             sb.append("}");
             return sb.toString();
         }
