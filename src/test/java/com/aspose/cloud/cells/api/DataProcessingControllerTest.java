@@ -100,6 +100,10 @@ public class DataProcessingControllerTest {
         request.setName(remoteName);
 
         DeduplicationRegion deduplicationRegion = new DeduplicationRegion();
+         
+        ArrayList<Range> deduplicationRegionRanges = new ArrayList<Range>();
+        deduplicationRegion.setRanges(deduplicationRegionRanges);
+
         request.setDeduplicationRegion(deduplicationRegion);
 
         request.setFolder(remoteFolder);

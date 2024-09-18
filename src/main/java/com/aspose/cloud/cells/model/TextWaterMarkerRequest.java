@@ -122,6 +122,23 @@ public class TextWaterMarkerRequest {
             this.width = width;
         }
 
+        @SerializedName("ImageAdaptOption")
+        private String imageAdaptOption ;
+
+        public  TextWaterMarkerRequest  imageAdaptOption(String  imageAdaptOption) {
+            this.imageAdaptOption =  imageAdaptOption;
+            return this;
+        }
+
+        @ApiModelProperty(value = "")
+        public String getImageAdaptOption() {
+            return imageAdaptOption;
+        }
+
+        public void setImageAdaptOption(String imageAdaptOption) {
+            this.imageAdaptOption = imageAdaptOption;
+        }
+
         @Override
         public boolean equals(java.lang.Object o) {
             if (this == o) {
@@ -137,12 +154,13 @@ public class TextWaterMarkerRequest {
                 Objects.equals(this.fontName, textWaterMarkerRequest.fontName) &&
                 Objects.equals(this.fontSize, textWaterMarkerRequest.fontSize) &&
                 Objects.equals(this.height, textWaterMarkerRequest.height) &&
-                Objects.equals(this.width, textWaterMarkerRequest.width);
+                Objects.equals(this.width, textWaterMarkerRequest.width) &&
+                Objects.equals(this.imageAdaptOption, textWaterMarkerRequest.imageAdaptOption);
       }
 
       @Override
       public int hashCode() {
-        return Objects.hash(text, fontName, fontSize, height, width);
+        return Objects.hash(text, fontName, fontSize, height, width, imageAdaptOption);
       }
         @Override
         public String toString() {
@@ -153,6 +171,7 @@ public class TextWaterMarkerRequest {
             sb.append("    fontSize: ").append(toIndentedString(getFontSize())).append("\n");
             sb.append("    height: ").append(toIndentedString(getHeight())).append("\n");
             sb.append("    width: ").append(toIndentedString(getWidth())).append("\n");
+            sb.append("    imageAdaptOption: ").append(toIndentedString(getImageAdaptOption())).append("\n");
             sb.append("}");
             return sb.toString();
         }

@@ -112,44 +112,4 @@ public class FileControllerTest {
     }
 
 
-    @Test
-    public void MoveFileTest() throws Exception {
-        String localName = "Book1.xlsx";
-        String remoteName = "Book1.xlsx";
-
-        CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
-        MoveFileRequest request = new MoveFileRequest();
-        request.setSrcPath(remoteFolder + "/" + remoteName);
-
-        request.setDestPath("OutResult/" + remoteName);
-
-        request.setSrcStorageName("");
-
-        request.setDestStorageName("");
-
-        request.setVersionId("");
-
-     this.api.moveFile(request);
-    }
-
-
-    @Test
-    public void DeleteFileTest() throws Exception {
-        String localName = "Book1.xlsx";
-        String remoteName = "Book1.xlsx";
-
-        CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
-        DeleteFileRequest request = new DeleteFileRequest();
-        request.setPath(remoteFolder + "/" + remoteName);
-
-        request.setStorageName("");
-
-        request.setVersionId("");
-
-     this.api.deleteFile(request);
-    }
-
-
 }

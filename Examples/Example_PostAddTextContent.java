@@ -10,9 +10,9 @@ import java.util.List;
 import java.io.File;
 import java.util.HashMap;
 
-public class ExamplePostWorkbookDataDeduplication {
+public class ExamplePostAddTextContent {
     private  CellsApi api;
-    public ExamplePostWorkbookDataDeduplication(){
+    public ExamplePostAddTextContent(){
         try {
             api = new CellsApi(
                 System.getenv("CellsCloudClientId"),
@@ -29,8 +29,8 @@ public class ExamplePostWorkbookDataDeduplication {
         try{
             String remoteFolder = "TestData/In";
 
-            String localName = "BookCsvDuplicateData.csv";
-            String remoteName = "BookCsvDuplicateData.csv";
+            String localName = "BookText.xlsx";
+            String remoteName = "BookText.xlsx";
 
             UploadFileRequest  uploadFileRequest = new UploadFileRequest();
             uploadFileRequest.setPath( remoteFolder + "/" + remoteName );
@@ -40,21 +40,31 @@ public class ExamplePostWorkbookDataDeduplication {
             uploadFileRequest.setUploadFiles(files);
             cellsApi.uploadFile(uploadFileRequest);
    
-            PostWorkbookDataDeduplicationRequest request = new PostWorkbookDataDeduplicationRequest();
-            request.setName(remoteName);
+            PostAddTextContentRequest request = new PostAddTextContentRequest();
+            AddTextOptions addTextOptions = new AddTextOptions();
+            DataSource dataSource = new DataSource();
+            dataSource.setDataSourceType("CloudFileSystem");
 
-            DeduplicationRegion deduplicationRegion = new DeduplicationRegion();
-             
-            ArrayList<Range> deduplicationRegionRanges = new ArrayList<Range>();
-            deduplicationRegion.setRanges(deduplicationRegionRanges);
 
-            request.setDeduplicationRegion(deduplicationRegion);
+            dataSource.setDataPath("BookText.xlsx");
 
-            request.setFolder(remoteFolder);
+            addTextOptions.setDataSource(dataSource);
 
-            request.setStorageName("");
 
-            this.api.postWorkbookDataDeduplication(request);
+            addTextOptions.setText("Aspose.Cells Cloud is an excellent product.");
+
+
+            addTextOptions.setWorksheet("202401");
+
+
+            addTextOptions.setSelectPoistion("AtTheBeginning");
+
+
+            addTextOptions.setSkipEmptyCells(true);
+
+            request.setAddTextOptions(addTextOptions);
+
+            this.api.postAddTextContent(request);
 
         } catch (ApiException e) {
             // TODO Auto-generated catch block

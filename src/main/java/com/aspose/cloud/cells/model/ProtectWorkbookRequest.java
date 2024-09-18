@@ -88,6 +88,23 @@ public class ProtectWorkbookRequest {
             this.protectCurrentSheet = protectCurrentSheet;
         }
 
+        @SerializedName("ProtectAllSheets")
+        private Protection protectAllSheets ;
+
+        public  ProtectWorkbookRequest  protectAllSheets(Protection  protectAllSheets) {
+            this.protectAllSheets =  protectAllSheets;
+            return this;
+        }
+
+        @ApiModelProperty(value = "")
+        public Protection getProtectAllSheets() {
+            return protectAllSheets;
+        }
+
+        public void setProtectAllSheets(Protection protectAllSheets) {
+            this.protectAllSheets = protectAllSheets;
+        }
+
         @SerializedName("ProtectWorkbookStructure")
         private String protectWorkbookStructure ;
 
@@ -153,6 +170,7 @@ public class ProtectWorkbookRequest {
                 Objects.equals(this.awaysOpenReadOnly, protectWorkbookRequest.awaysOpenReadOnly) &&
                 Objects.equals(this.encryptWithPassword, protectWorkbookRequest.encryptWithPassword) &&
                 Objects.equals(this.protectCurrentSheet, protectWorkbookRequest.protectCurrentSheet) &&
+                Objects.equals(this.protectAllSheets, protectWorkbookRequest.protectAllSheets) &&
                 Objects.equals(this.protectWorkbookStructure, protectWorkbookRequest.protectWorkbookStructure) &&
                 Objects.equals(this.digitalSignature, protectWorkbookRequest.digitalSignature) &&
                 Objects.equals(this.markAsFinal, protectWorkbookRequest.markAsFinal);
@@ -160,7 +178,7 @@ public class ProtectWorkbookRequest {
 
       @Override
       public int hashCode() {
-        return Objects.hash(awaysOpenReadOnly, encryptWithPassword, protectCurrentSheet, protectWorkbookStructure, digitalSignature, markAsFinal);
+        return Objects.hash(awaysOpenReadOnly, encryptWithPassword, protectCurrentSheet, protectAllSheets, protectWorkbookStructure, digitalSignature, markAsFinal);
       }
         @Override
         public String toString() {
@@ -169,6 +187,7 @@ public class ProtectWorkbookRequest {
             sb.append("    awaysOpenReadOnly: ").append(toIndentedString(getAwaysOpenReadOnly())).append("\n");
             sb.append("    encryptWithPassword: ").append(toIndentedString(getEncryptWithPassword())).append("\n");
             sb.append("    protectCurrentSheet: ").append(toIndentedString(getProtectCurrentSheet())).append("\n");
+            sb.append("    protectAllSheets: ").append(toIndentedString(getProtectAllSheets())).append("\n");
             sb.append("    protectWorkbookStructure: ").append(toIndentedString(getProtectWorkbookStructure())).append("\n");
             sb.append("    digitalSignature: ").append(toIndentedString(getDigitalSignature())).append("\n");
             sb.append("    markAsFinal: ").append(toIndentedString(getMarkAsFinal())).append("\n");

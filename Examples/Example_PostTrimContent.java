@@ -10,9 +10,9 @@ import java.util.List;
 import java.io.File;
 import java.util.HashMap;
 
-public class ExampleDeleteFile {
+public class ExamplePostTrimContent {
     private  CellsApi api;
-    public ExampleDeleteFile(){
+    public ExamplePostTrimContent(){
         try {
             api = new CellsApi(
                 System.getenv("CellsCloudClientId"),
@@ -29,8 +29,8 @@ public class ExampleDeleteFile {
         try{
             String remoteFolder = "TestData/In";
 
-            String localName = "Book1.xlsx";
-            String remoteName = "Book1.xlsx";
+            String localName = "BookText.xlsx";
+            String remoteName = "BookText.xlsx";
 
             UploadFileRequest  uploadFileRequest = new UploadFileRequest();
             uploadFileRequest.setPath( remoteFolder + "/" + remoteName );
@@ -40,14 +40,37 @@ public class ExampleDeleteFile {
             uploadFileRequest.setUploadFiles(files);
             cellsApi.uploadFile(uploadFileRequest);
    
-            DeleteFileRequest request = new DeleteFileRequest();
-            request.setPath(remoteFolder + "/" + remoteName);
+            PostTrimContentRequest request = new PostTrimContentRequest();
+            TrimContentOptions trimContentOptions = new TrimContentOptions();
+            DataSource dataSource = new DataSource();
+            dataSource.setDataSourceType("CloudFileSystem");
 
-            request.setStorageName("");
 
-            request.setVersionId("");
+            dataSource.setDataPath("BookText.xlsx");
 
-            this.api.deleteFile(request);
+            trimContentOptions.setDataSource(dataSource);
+
+
+            trimContentOptions.setTrimLeading(true);
+
+
+            trimContentOptions.setTrimTrailing(true);
+
+
+            trimContentOptions.setTrimSpaceBetweenWordTo1(true);
+
+
+            trimContentOptions.setRemoveAllLineBreaks(true);
+
+
+            ScopeOptions scopeOptions = new ScopeOptions();
+            scopeOptions.setScope("EntireWorkbook");
+
+            trimContentOptions.setScopeOptions(scopeOptions);
+
+            request.setTrimContentOptions(trimContentOptions);
+
+            this.api.postTrimContent(request);
 
         } catch (ApiException e) {
             // TODO Auto-generated catch block

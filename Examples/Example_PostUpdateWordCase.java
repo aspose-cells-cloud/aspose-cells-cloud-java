@@ -10,9 +10,9 @@ import java.util.List;
 import java.io.File;
 import java.util.HashMap;
 
-public class ExampleMoveFile {
+public class ExamplePostUpdateWordCase {
     private  CellsApi api;
-    public ExampleMoveFile(){
+    public ExamplePostUpdateWordCase(){
         try {
             api = new CellsApi(
                 System.getenv("CellsCloudClientId"),
@@ -29,8 +29,8 @@ public class ExampleMoveFile {
         try{
             String remoteFolder = "TestData/In";
 
-            String localName = "Book1.xlsx";
-            String remoteName = "Book1.xlsx";
+            String localName = "BookText.xlsx";
+            String remoteName = "BookText.xlsx";
 
             UploadFileRequest  uploadFileRequest = new UploadFileRequest();
             uploadFileRequest.setPath( remoteFolder + "/" + remoteName );
@@ -40,18 +40,28 @@ public class ExampleMoveFile {
             uploadFileRequest.setUploadFiles(files);
             cellsApi.uploadFile(uploadFileRequest);
    
-            MoveFileRequest request = new MoveFileRequest();
-            request.setSrcPath(remoteFolder + "/" + remoteName);
+            PostUpdateWordCaseRequest request = new PostUpdateWordCaseRequest();
+            WordCaseOptions wordCaseOptions = new WordCaseOptions();
+            DataSource dataSource = new DataSource();
+            dataSource.setDataSourceType("CloudFileSystem");
 
-            request.setDestPath("OutResult/" + remoteName);
 
-            request.setSrcStorageName("");
+            dataSource.setDataPath("BookText.xlsx");
 
-            request.setDestStorageName("");
+            wordCaseOptions.setDataSource(dataSource);
 
-            request.setVersionId("");
 
-            this.api.moveFile(request);
+            wordCaseOptions.setWordCaseType("None");
+
+
+            ScopeOptions scopeOptions = new ScopeOptions();
+            scopeOptions.setScope("EntireWorkbook");
+
+            wordCaseOptions.setScopeOptions(scopeOptions);
+
+            request.setWordCaseOptions(wordCaseOptions);
+
+            this.api.postUpdateWordCase(request);
 
         } catch (ApiException e) {
             // TODO Auto-generated catch block

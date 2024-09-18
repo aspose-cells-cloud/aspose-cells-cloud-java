@@ -683,6 +683,23 @@ public class HtmlSaveOptions  extends  SaveOptions {
             this.parseHtmlTagInCell = parseHtmlTagInCell;
         }
 
+        @SerializedName("CellNameAttribute")
+        private String cellNameAttribute ;
+
+        public  HtmlSaveOptions  cellNameAttribute(String  cellNameAttribute) {
+            this.cellNameAttribute =  cellNameAttribute;
+            return this;
+        }
+
+        @ApiModelProperty(value = "")
+        public String getCellNameAttribute() {
+            return cellNameAttribute;
+        }
+
+        public void setCellNameAttribute(String cellNameAttribute) {
+            this.cellNameAttribute = cellNameAttribute;
+        }
+
         @Override
         public boolean equals(java.lang.Object o) {
             if (this == o) {
@@ -732,12 +749,13 @@ public class HtmlSaveOptions  extends  SaveOptions {
                 Objects.equals(this.isExpImageToTempDir, htmlSaveOptions.isExpImageToTempDir) &&
                 Objects.equals(this.pageTitle, htmlSaveOptions.pageTitle) &&
                 Objects.equals(this.parseHtmlTagInCell, htmlSaveOptions.parseHtmlTagInCell) &&
+                Objects.equals(this.cellNameAttribute, htmlSaveOptions.cellNameAttribute) &&
                 super.equals(o);
       }
 
       @Override
       public int hashCode() {
-        return Objects.hash(exportPageHeaders, exportPageFooters, exportRowColumnHeadings, showAllSheets, imageOptions, saveAsSingleFile, exportHiddenWorksheet, exportGridLines, presentationPreference, cellCssPrefix, tableCssId, isFullPathLink, exportWorksheetCSSSeparately, exportSimilarBorderStyle, mergeEmptyTdForcely, exportCellCoordinate, exportExtraHeadings, exportHeadings, exportFormula, addTooltipText, exportBogusRowData, excludeUnusedStyles, exportDocumentProperties, exportWorksheetProperties, exportWorkbookProperties, exportFrameScriptsAndProperties, attachedFilesDirectory, attachedFilesUrlPrefix, encoding, exportActiveWorksheetOnly, exportChartImageFormat, exportImagesAsBase64, hiddenColDisplayType, hiddenRowDisplayType, htmlCrossStringType, isExpImageToTempDir, pageTitle, parseHtmlTagInCell, super.hashCode());
+        return Objects.hash(exportPageHeaders, exportPageFooters, exportRowColumnHeadings, showAllSheets, imageOptions, saveAsSingleFile, exportHiddenWorksheet, exportGridLines, presentationPreference, cellCssPrefix, tableCssId, isFullPathLink, exportWorksheetCSSSeparately, exportSimilarBorderStyle, mergeEmptyTdForcely, exportCellCoordinate, exportExtraHeadings, exportHeadings, exportFormula, addTooltipText, exportBogusRowData, excludeUnusedStyles, exportDocumentProperties, exportWorksheetProperties, exportWorkbookProperties, exportFrameScriptsAndProperties, attachedFilesDirectory, attachedFilesUrlPrefix, encoding, exportActiveWorksheetOnly, exportChartImageFormat, exportImagesAsBase64, hiddenColDisplayType, hiddenRowDisplayType, htmlCrossStringType, isExpImageToTempDir, pageTitle, parseHtmlTagInCell, cellNameAttribute, super.hashCode());
       }
         @Override
         public String toString() {
@@ -781,6 +799,7 @@ public class HtmlSaveOptions  extends  SaveOptions {
             sb.append("    isExpImageToTempDir: ").append(toIndentedString(getIsExpImageToTempDir())).append("\n");
             sb.append("    pageTitle: ").append(toIndentedString(getPageTitle())).append("\n");
             sb.append("    parseHtmlTagInCell: ").append(toIndentedString(getParseHtmlTagInCell())).append("\n");
+            sb.append("    cellNameAttribute: ").append(toIndentedString(getCellNameAttribute())).append("\n");
             sb.append("    saveFormat: ").append(toIndentedString(getSaveFormat())).append("\n");
             sb.append("    cachedFileFolder: ").append(toIndentedString(getCachedFileFolder())).append("\n");
             sb.append("    clearData: ").append(toIndentedString(getClearData())).append("\n");

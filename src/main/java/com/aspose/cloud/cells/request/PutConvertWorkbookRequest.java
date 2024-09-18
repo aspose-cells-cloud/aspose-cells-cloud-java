@@ -52,11 +52,13 @@ public class PutConvertWorkbookRequest  implements IRequestModel {
     private String region;
     private Boolean pageWideFitOnPerSheet;
     private Boolean pageTallFitOnPerSheet;
+    private String sheetName;
+    private Integer pageIndex;
         public PutConvertWorkbookRequest()
         {
 
         }
-        public PutConvertWorkbookRequest(HashMap<String,File> file, String format, String password, String outPath, String storageName, Boolean checkExcelRestriction, String streamFormat, String region, Boolean pageWideFitOnPerSheet, Boolean pageTallFitOnPerSheet) {
+        public PutConvertWorkbookRequest(HashMap<String,File> file, String format, String password, String outPath, String storageName, Boolean checkExcelRestriction, String streamFormat, String region, Boolean pageWideFitOnPerSheet, Boolean pageTallFitOnPerSheet, String sheetName, Integer pageIndex) {
             this.file = file;
             this.format = format;
             this.password = password;
@@ -67,6 +69,8 @@ public class PutConvertWorkbookRequest  implements IRequestModel {
             this.region = region;
             this.pageWideFitOnPerSheet = pageWideFitOnPerSheet;
             this.pageTallFitOnPerSheet = pageTallFitOnPerSheet;
+            this.sheetName = sheetName;
+            this.pageIndex = pageIndex;
         }   
 
         public HashMap<String,File> getFile() {
@@ -158,6 +162,24 @@ public class PutConvertWorkbookRequest  implements IRequestModel {
             this.pageTallFitOnPerSheet = pageTallFitOnPerSheet;
         }
 
+
+        public String getSheetName() {
+            return this.sheetName;
+        }
+
+        public void setSheetName(String sheetName) {
+            this.sheetName = sheetName;
+        }
+
+
+        public Integer getPageIndex() {
+            return this.pageIndex;
+        }
+
+        public void setPageIndex(Integer pageIndex) {
+            this.pageIndex = pageIndex;
+        }
+
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
          if (getFile() == null) {
@@ -193,6 +215,12 @@ public class PutConvertWorkbookRequest  implements IRequestModel {
             } 
             if (getPageTallFitOnPerSheet() != null){
                 localVarQueryParams.addAll(apiClient.parameterToPairs("", "pageTallFitOnPerSheet", getPageTallFitOnPerSheet()));
+            } 
+            if (getSheetName() != null){
+                localVarQueryParams.addAll(apiClient.parameterToPairs("", "sheetName", getSheetName()));
+            } 
+            if (getPageIndex() != null){
+                localVarQueryParams.addAll(apiClient.parameterToPairs("", "pageIndex", getPageIndex()));
             }  
         if(this.extendQueryParameterMap !=null){
             for (String key :this.extendQueryParameterMap.keySet()) {

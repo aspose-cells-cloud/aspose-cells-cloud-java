@@ -44,6 +44,7 @@ public class PutWorkbookBackgroundRequest  implements IRequestModel {
 
     private String name;
     private String picPath;
+    private String imageAdaptOption;
     private String folder;
     private String storageName;
     private HashMap<String,File> file;
@@ -51,9 +52,10 @@ public class PutWorkbookBackgroundRequest  implements IRequestModel {
         {
 
         }
-        public PutWorkbookBackgroundRequest(String name, String picPath, String folder, String storageName, HashMap<String,File> file) {
+        public PutWorkbookBackgroundRequest(String name, String picPath, String imageAdaptOption, String folder, String storageName, HashMap<String,File> file) {
             this.name = name;
             this.picPath = picPath;
+            this.imageAdaptOption = imageAdaptOption;
             this.folder = folder;
             this.storageName = storageName;
             this.file = file;
@@ -74,6 +76,15 @@ public class PutWorkbookBackgroundRequest  implements IRequestModel {
 
         public void setPicPath(String picPath) {
             this.picPath = picPath;
+        }
+
+
+        public String getImageAdaptOption() {
+            return this.imageAdaptOption;
+        }
+
+        public void setImageAdaptOption(String imageAdaptOption) {
+            this.imageAdaptOption = imageAdaptOption;
         }
 
 
@@ -114,6 +125,9 @@ public class PutWorkbookBackgroundRequest  implements IRequestModel {
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
             if (getPicPath() != null){
                 localVarQueryParams.addAll(apiClient.parameterToPairs("", "picPath", getPicPath()));
+            } 
+            if (getImageAdaptOption() != null){
+                localVarQueryParams.addAll(apiClient.parameterToPairs("", "imageAdaptOption", getImageAdaptOption()));
             } 
             if (getFolder() != null){
                 localVarQueryParams.addAll(apiClient.parameterToPairs("", "folder", getFolder()));

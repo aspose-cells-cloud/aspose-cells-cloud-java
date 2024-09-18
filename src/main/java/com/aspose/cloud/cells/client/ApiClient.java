@@ -186,7 +186,7 @@ public class ApiClient {
 		this.lenientDatetimeFormat = true;
 
 		// Set default User-Agent.
-		setUserAgent("CellsCloud-SDK/24.8/java");
+		setUserAgent("CellsCloud-SDK/24.9/java");
 
 		// Setup authentications (key: authentication name, value:
 		// authentication).
@@ -225,7 +225,7 @@ public class ApiClient {
 		_clientSecret = clientSecret;
 		appVersion = version;
 
-		String localVarPath = "/connect/token";
+		String localVarPath = "/v3.0/cells/connect/token";
 		if (version == "v1.1") {
 			localVarPath = "/oauth2/token";
 		}

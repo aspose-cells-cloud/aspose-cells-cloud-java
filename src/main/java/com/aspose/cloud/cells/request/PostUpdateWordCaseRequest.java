@@ -1,6 +1,6 @@
 /*
  * --------------------------------------------------------------------------------
- * <copyright company="Aspose" file="PutWorksheetBackgroundRequest.java">
+ * <copyright company="Aspose" file="PostUpdateWordCaseRequest.java">
  *   Copyright (c) 2024 Aspose.Cells Cloud
  * </copyright>
  * <summary>
@@ -32,7 +32,7 @@ import java.io.*;
 import java.lang.reflect.Type;
 import java.util.*;
 
-public class PutWorksheetBackgroundRequest  implements IRequestModel {
+public class PostUpdateWordCaseRequest  implements IRequestModel {
     private HashMap<String,String> extendQueryParameterMap;
     public HashMap<String,String> getExtendQueryParameterMap() {
         return this.extendQueryParameterMap;
@@ -42,126 +42,39 @@ public class PutWorksheetBackgroundRequest  implements IRequestModel {
         this.extendQueryParameterMap = extendQueryParameterMap;
     }
 
-    private String name;
-    private String sheetName;
-    private String picPath;
-    private String imageAdaptOption;
-    private String folder;
-    private String storageName;
-    private HashMap<String,File> file;
-        public PutWorksheetBackgroundRequest()
+    private WordCaseOptions wordCaseOptions;
+        public PostUpdateWordCaseRequest()
         {
 
         }
-        public PutWorksheetBackgroundRequest(String name, String sheetName, String picPath, String imageAdaptOption, String folder, String storageName, HashMap<String,File> file) {
-            this.name = name;
-            this.sheetName = sheetName;
-            this.picPath = picPath;
-            this.imageAdaptOption = imageAdaptOption;
-            this.folder = folder;
-            this.storageName = storageName;
-            this.file = file;
+        public PostUpdateWordCaseRequest(WordCaseOptions wordCaseOptions) {
+            this.wordCaseOptions = wordCaseOptions;
         }   
 
-        public String getName() {
-            return this.name;
+        public WordCaseOptions getWordCaseOptions() {
+            return this.wordCaseOptions;
         }
 
-        public void setName(String name) {
-            this.name = name;
-        }
-
-
-        public String getSheetName() {
-            return this.sheetName;
-        }
-
-        public void setSheetName(String sheetName) {
-            this.sheetName = sheetName;
-        }
-
-
-        public String getPicPath() {
-            return this.picPath;
-        }
-
-        public void setPicPath(String picPath) {
-            this.picPath = picPath;
-        }
-
-
-        public String getImageAdaptOption() {
-            return this.imageAdaptOption;
-        }
-
-        public void setImageAdaptOption(String imageAdaptOption) {
-            this.imageAdaptOption = imageAdaptOption;
-        }
-
-
-        public String getFolder() {
-            return this.folder;
-        }
-
-        public void setFolder(String folder) {
-            this.folder = folder;
-        }
-
-
-        public String getStorageName() {
-            return this.storageName;
-        }
-
-        public void setStorageName(String storageName) {
-            this.storageName = storageName;
-        }
-
-
-        public HashMap<String,File> getFile() {
-            return this.file;
-        }
-
-        public void setFile(HashMap<String,File> file) {
-            this.file = file;
+        public void setWordCaseOptions(WordCaseOptions wordCaseOptions) {
+            this.wordCaseOptions = wordCaseOptions;
         }
 
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
-         if (getName() == null) {
-                    throw new ApiException("Missing the required parameter 'Name' when calling PutWorksheetBackground");
-                } 
-                if (getSheetName() == null) {
-                    throw new ApiException("Missing the required parameter 'SheetName' when calling PutWorksheetBackground");
+         if (getWordCaseOptions() == null) {
+                    throw new ApiException("Missing the required parameter 'WordCaseOptions' when calling PostUpdateWordCase");
                 }       
-        String localVarPath = "/cells/{name}/worksheets/{sheetName}/background".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
-    .replaceAll("\\{" + "sheetName" + "\\}", apiClient.escapeString(sheetName.toString()))   ;
+        String localVarPath = "/cells/updatewordcase";
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-            if (getPicPath() != null){
-                localVarQueryParams.addAll(apiClient.parameterToPairs("", "picPath", getPicPath()));
-            } 
-            if (getImageAdaptOption() != null){
-                localVarQueryParams.addAll(apiClient.parameterToPairs("", "imageAdaptOption", getImageAdaptOption()));
-            } 
-            if (getFolder() != null){
-                localVarQueryParams.addAll(apiClient.parameterToPairs("", "folder", getFolder()));
-            } 
-            if (getStorageName() != null){
-                localVarQueryParams.addAll(apiClient.parameterToPairs("", "storageName", getStorageName()));
-            }  
+        List<Pair> localVarQueryParams = null;
         if(this.extendQueryParameterMap !=null){
             for (String key :this.extendQueryParameterMap.keySet()) {
                     localVarQueryParams.addAll(apiClient.parameterToPairs("", key, this.extendQueryParameterMap.get(key)));           
             }
         }
-                   
-                if (getFile() != null){
-                    for (String key : getFile().keySet()) {
-                        localVarFormParams.put(key,getFile().get(key));                
-                    }
-                }      
         Object localVarPostBody = null;
+        localVarPostBody = getWordCaseOptions();
                 final String[] localVarAccepts = {
                     "application/json"
                 };
@@ -169,9 +82,6 @@ public class PutWorksheetBackgroundRequest  implements IRequestModel {
                 if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
                 final String[] localVarContentTypes = { "application/json" };
-                if(getFile() != null){
-                   localVarContentTypes[0] =  "multipart/form-data";
-                }
                 final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
                 localVarHeaderParams.put("Content-Type", localVarContentType);
 
@@ -188,7 +98,7 @@ public class PutWorksheetBackgroundRequest  implements IRequestModel {
                 }
 
                 String[] localVarAuthNames = new String[] {  };
-                return apiClient.buildCall(localVarPath, "PUT", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+                return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
 
     }
 
