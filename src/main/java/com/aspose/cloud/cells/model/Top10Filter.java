@@ -37,6 +37,23 @@ import java.time.OffsetDateTime;
 
 
 public class Top10Filter {
+        @SerializedName("FieldIndex")
+        private Integer fieldIndex ;
+
+        public  Top10Filter  fieldIndex(Integer  fieldIndex) {
+            this.fieldIndex =  fieldIndex;
+            return this;
+        }
+
+        @ApiModelProperty(value = "")
+        public Integer getFieldIndex() {
+            return fieldIndex;
+        }
+
+        public void setFieldIndex(Integer fieldIndex) {
+            this.fieldIndex = fieldIndex;
+        }
+
         @SerializedName("Criteria")
         private String criteria ;
 
@@ -116,6 +133,7 @@ public class Top10Filter {
 
             Top10Filter top10Filter = (Top10Filter) o;
             return
+                Objects.equals(this.fieldIndex, top10Filter.fieldIndex) &&
                 Objects.equals(this.criteria, top10Filter.criteria) &&
                 Objects.equals(this.isPercent, top10Filter.isPercent) &&
                 Objects.equals(this.isTop, top10Filter.isTop) &&
@@ -124,12 +142,13 @@ public class Top10Filter {
 
       @Override
       public int hashCode() {
-        return Objects.hash(criteria, isPercent, isTop, items);
+        return Objects.hash(fieldIndex, criteria, isPercent, isTop, items);
       }
         @Override
         public String toString() {
             StringBuilder sb = new StringBuilder();
             sb.append("class Top10Filter {\n");
+            sb.append("    fieldIndex: ").append(toIndentedString(getFieldIndex())).append("\n");
             sb.append("    criteria: ").append(toIndentedString(getCriteria())).append("\n");
             sb.append("    isPercent: ").append(toIndentedString(getIsPercent())).append("\n");
             sb.append("    isTop: ").append(toIndentedString(getIsTop())).append("\n");

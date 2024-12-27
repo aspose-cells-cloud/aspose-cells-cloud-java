@@ -105,21 +105,21 @@ public class PivotFilter {
             this.filterType = filterType;
         }
 
-        @SerializedName("MeasureFldIndex")
-        private Integer measureFldIndex ;
+        @SerializedName("ValueFieldIndex")
+        private Integer valueFieldIndex ;
 
-        public  PivotFilter  measureFldIndex(Integer  measureFldIndex) {
-            this.measureFldIndex =  measureFldIndex;
+        public  PivotFilter  valueFieldIndex(Integer  valueFieldIndex) {
+            this.valueFieldIndex =  valueFieldIndex;
             return this;
         }
 
         @ApiModelProperty(value = "")
-        public Integer getMeasureFldIndex() {
-            return measureFldIndex;
+        public Integer getValueFieldIndex() {
+            return valueFieldIndex;
         }
 
-        public void setMeasureFldIndex(Integer measureFldIndex) {
-            this.measureFldIndex = measureFldIndex;
+        public void setValueFieldIndex(Integer valueFieldIndex) {
+            this.valueFieldIndex = valueFieldIndex;
         }
 
         @SerializedName("MemberPropertyFieldIndex")
@@ -190,6 +190,23 @@ public class PivotFilter {
             this.value2 = value2;
         }
 
+        @SerializedName("Top10Filter")
+        private Top10Filter top10Filter ;
+
+        public  PivotFilter  top10Filter(Top10Filter  top10Filter) {
+            this.top10Filter =  top10Filter;
+            return this;
+        }
+
+        @ApiModelProperty(value = "")
+        public Top10Filter getTop10Filter() {
+            return top10Filter;
+        }
+
+        public void setTop10Filter(Top10Filter top10Filter) {
+            this.top10Filter = top10Filter;
+        }
+
         @Override
         public boolean equals(java.lang.Object o) {
             if (this == o) {
@@ -205,16 +222,17 @@ public class PivotFilter {
                 Objects.equals(this.evaluationOrder, pivotFilter.evaluationOrder) &&
                 Objects.equals(this.fieldIndex, pivotFilter.fieldIndex) &&
                 Objects.equals(this.filterType, pivotFilter.filterType) &&
-                Objects.equals(this.measureFldIndex, pivotFilter.measureFldIndex) &&
+                Objects.equals(this.valueFieldIndex, pivotFilter.valueFieldIndex) &&
                 Objects.equals(this.memberPropertyFieldIndex, pivotFilter.memberPropertyFieldIndex) &&
                 Objects.equals(this.name, pivotFilter.name) &&
                 Objects.equals(this.value1, pivotFilter.value1) &&
-                Objects.equals(this.value2, pivotFilter.value2);
+                Objects.equals(this.value2, pivotFilter.value2) &&
+                Objects.equals(this.top10Filter, pivotFilter.top10Filter);
       }
 
       @Override
       public int hashCode() {
-        return Objects.hash(autoFilter, evaluationOrder, fieldIndex, filterType, measureFldIndex, memberPropertyFieldIndex, name, value1, value2);
+        return Objects.hash(autoFilter, evaluationOrder, fieldIndex, filterType, valueFieldIndex, memberPropertyFieldIndex, name, value1, value2, top10Filter);
       }
         @Override
         public String toString() {
@@ -224,11 +242,12 @@ public class PivotFilter {
             sb.append("    evaluationOrder: ").append(toIndentedString(getEvaluationOrder())).append("\n");
             sb.append("    fieldIndex: ").append(toIndentedString(getFieldIndex())).append("\n");
             sb.append("    filterType: ").append(toIndentedString(getFilterType())).append("\n");
-            sb.append("    measureFldIndex: ").append(toIndentedString(getMeasureFldIndex())).append("\n");
+            sb.append("    valueFieldIndex: ").append(toIndentedString(getValueFieldIndex())).append("\n");
             sb.append("    memberPropertyFieldIndex: ").append(toIndentedString(getMemberPropertyFieldIndex())).append("\n");
             sb.append("    name: ").append(toIndentedString(getName())).append("\n");
             sb.append("    value1: ").append(toIndentedString(getValue1())).append("\n");
             sb.append("    value2: ").append(toIndentedString(getValue2())).append("\n");
+            sb.append("    top10Filter: ").append(toIndentedString(getTop10Filter())).append("\n");
             sb.append("}");
             return sb.toString();
         }

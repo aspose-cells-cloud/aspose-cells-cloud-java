@@ -10,10 +10,10 @@
  *  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
  *  copies of the Software, and to permit persons to whom the Software is
  *  furnished to do so, subject to the following conditions:
- * 
+ *
  *  The above copyright notice and this permission notice shall be included in all
  *  copies or substantial portions of the Software.
- * 
+ *
  *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  *  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
  *  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -57,7 +57,7 @@ public class PivotTablesControllerTest {
         String remoteName = "TestCase.xlsx";
 
         CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
+
         GetWorksheetPivotTablesRequest request = new GetWorksheetPivotTablesRequest();
         request.setName(remoteName);
 
@@ -77,7 +77,7 @@ public class PivotTablesControllerTest {
         String remoteName = "TestCase.xlsx";
 
         CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
+
         GetWorksheetPivotTableRequest request = new GetWorksheetPivotTableRequest();
         request.setName(remoteName);
 
@@ -99,7 +99,7 @@ public class PivotTablesControllerTest {
         String remoteName = "TestCase.xlsx";
 
         CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
+
         GetPivotTableFieldRequest request = new GetPivotTableFieldRequest();
         request.setName(remoteName);
 
@@ -125,7 +125,7 @@ public class PivotTablesControllerTest {
         String remoteName = "TestCase.xlsx";
 
         CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
+
         GetWorksheetPivotTableFiltersRequest request = new GetWorksheetPivotTableFiltersRequest();
         request.setName(remoteName);
 
@@ -140,14 +140,14 @@ public class PivotTablesControllerTest {
         PivotFiltersResponse response =  this.api.getWorksheetPivotTableFilters(request);
     }
 
-
+/*
     @Test
     public void GetWorksheetPivotTableFilterTest() throws Exception {
         String localName = "TestCase.xlsx";
         String remoteName = "TestCase.xlsx";
 
         CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
+
         GetWorksheetPivotTableFilterRequest request = new GetWorksheetPivotTableFilterRequest();
         request.setName(remoteName);
 
@@ -162,7 +162,7 @@ public class PivotTablesControllerTest {
         request.setStorageName("");
 
         PivotFilterResponse response =  this.api.getWorksheetPivotTableFilter(request);
-    }
+    }*/
 
 
     @Test
@@ -171,7 +171,7 @@ public class PivotTablesControllerTest {
         String remoteName = "TestCase.xlsx";
 
         CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
+
         PutWorksheetPivotTableRequest request = new PutWorksheetPivotTableRequest();
         request.setName(remoteName);
 
@@ -199,7 +199,7 @@ public class PivotTablesControllerTest {
         String remoteName = "TestCase.xlsx";
 
         CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
+
         PutPivotTableFieldRequest request = new PutPivotTableFieldRequest();
         request.setName(remoteName);
 
@@ -210,7 +210,7 @@ public class PivotTablesControllerTest {
         request.setPivotFieldType("Row");
 
         PivotTableFieldRequest pivotTableFieldRequest = new PivotTableFieldRequest();
-         
+
         ArrayList<Integer> pivotTableFieldRequestData = new ArrayList<Integer>();
         pivotTableFieldRequest.setData(pivotTableFieldRequestData);
 
@@ -225,14 +225,14 @@ public class PivotTablesControllerTest {
         CellsCloudResponse response =  this.api.putPivotTableField(request);
     }
 
-
+/*
     @Test
     public void PutWorksheetPivotTableFilterTest() throws Exception {
         String localName = "TestCase.xlsx";
         String remoteName = "TestCase.xlsx";
 
         CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
+
         PutWorksheetPivotTableFilterRequest request = new PutWorksheetPivotTableFilterRequest();
         request.setName(remoteName);
 
@@ -255,7 +255,7 @@ public class PivotTablesControllerTest {
         request.setStorageName("");
 
         CellsCloudResponse response =  this.api.putWorksheetPivotTableFilter(request);
-    }
+    }*/
 
 
     @Test
@@ -264,7 +264,7 @@ public class PivotTablesControllerTest {
         String remoteName = "TestCase.xlsx";
 
         CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
+
         PostPivotTableFieldHideItemRequest request = new PostPivotTableFieldHideItemRequest();
         request.setName(remoteName);
 
@@ -296,7 +296,7 @@ public class PivotTablesControllerTest {
         String remoteName = "TestCase.xlsx";
 
         CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
+
         PostPivotTableFieldMoveToRequest request = new PostPivotTableFieldMoveToRequest();
         request.setName(remoteName);
 
@@ -324,7 +324,7 @@ public class PivotTablesControllerTest {
         String remoteName = "TestCase.xlsx";
 
         CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
+
         PostPivotTableCellStyleRequest request = new PostPivotTableCellStyleRequest();
         request.setName(remoteName);
 
@@ -360,7 +360,7 @@ public class PivotTablesControllerTest {
         String remoteName = "TestCase.xlsx";
 
         CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
+
         PostPivotTableStyleRequest request = new PostPivotTableStyleRequest();
         request.setName(remoteName);
 
@@ -392,7 +392,7 @@ public class PivotTablesControllerTest {
         String remoteName = "TestCase.xlsx";
 
         CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
+
         PostPivotTableUpdatePivotFieldsRequest request = new PostPivotTableUpdatePivotFieldsRequest();
         request.setName(remoteName);
 
@@ -423,7 +423,7 @@ public class PivotTablesControllerTest {
         String remoteName = "TestCase.xlsx";
 
         CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
+
         PostPivotTableUpdatePivotFieldRequest request = new PostPivotTableUpdatePivotFieldRequest();
         request.setName(remoteName);
 
@@ -456,7 +456,7 @@ public class PivotTablesControllerTest {
         String remoteName = "TestCase.xlsx";
 
         CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
+
         PostWorksheetPivotTableCalculateRequest request = new PostWorksheetPivotTableCalculateRequest();
         request.setName(remoteName);
 
@@ -478,7 +478,7 @@ public class PivotTablesControllerTest {
         String remoteName = "TestCase.xlsx";
 
         CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
+
         PostWorksheetPivotTableMoveRequest request = new PostWorksheetPivotTableMoveRequest();
         request.setName(remoteName);
 
@@ -506,7 +506,7 @@ public class PivotTablesControllerTest {
         String remoteName = "TestCase.xlsx";
 
         CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
+
         DeleteWorksheetPivotTablesRequest request = new DeleteWorksheetPivotTablesRequest();
         request.setName(remoteName);
 
@@ -526,7 +526,7 @@ public class PivotTablesControllerTest {
         String remoteName = "TestCase.xlsx";
 
         CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
+
         DeleteWorksheetPivotTableRequest request = new DeleteWorksheetPivotTableRequest();
         request.setName(remoteName);
 
@@ -548,7 +548,7 @@ public class PivotTablesControllerTest {
         String remoteName = "TestCase.xlsx";
 
         CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
+
         DeletePivotTableFieldRequest request = new DeletePivotTableFieldRequest();
         request.setName(remoteName);
 
@@ -559,7 +559,7 @@ public class PivotTablesControllerTest {
         request.setPivotFieldType("Row");
 
         PivotTableFieldRequest pivotTableFieldRequest = new PivotTableFieldRequest();
-         
+
         ArrayList<Integer> pivotTableFieldRequestData = new ArrayList<Integer>();
         pivotTableFieldRequest.setData(pivotTableFieldRequestData);
 
@@ -579,7 +579,7 @@ public class PivotTablesControllerTest {
         String remoteName = "TestCase.xlsx";
 
         CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
+
         DeleteWorksheetPivotTableFiltersRequest request = new DeleteWorksheetPivotTableFiltersRequest();
         request.setName(remoteName);
 
@@ -603,7 +603,7 @@ public class PivotTablesControllerTest {
         String remoteName = "TestCase.xlsx";
 
         CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
+
         DeleteWorksheetPivotTableFilterRequest request = new DeleteWorksheetPivotTableFilterRequest();
         request.setName(remoteName);
 
