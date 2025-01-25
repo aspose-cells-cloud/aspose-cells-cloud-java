@@ -1,7 +1,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="PivotTablesControllerTests.java">
- *   Copyright (c) 2024 Aspose.Cells Cloud
+ *   Copyright (c) 2025 Aspose.Cells Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -140,7 +140,7 @@ public class PivotTablesControllerTest {
         PivotFiltersResponse response =  this.api.getWorksheetPivotTableFilters(request);
     }
 
-/*
+
     @Test
     public void GetWorksheetPivotTableFilterTest() throws Exception {
         String localName = "TestCase.xlsx";
@@ -162,7 +162,7 @@ public class PivotTablesControllerTest {
         request.setStorageName("");
 
         PivotFilterResponse response =  this.api.getWorksheetPivotTableFilter(request);
-    }*/
+    }
 
 
     @Test
@@ -225,7 +225,7 @@ public class PivotTablesControllerTest {
         CellsCloudResponse response =  this.api.putPivotTableField(request);
     }
 
-/*
+
     @Test
     public void PutWorksheetPivotTableFilterTest() throws Exception {
         String localName = "TestCase.xlsx";
@@ -240,11 +240,23 @@ public class PivotTablesControllerTest {
 
         request.setPivotTableIndex(0);
 
+         Top10Filter top10Filter = new Top10Filter();
+        top10Filter.setItems(1);
+        top10Filter.setIsTop(true);
+        top10Filter.setIsPercent(true);
+
+        FilterColumn filterColumn = new FilterColumn();
+        filterColumn.setFilterType("Top10Filter");
+        filterColumn.setFieldIndex(0);
+        filterColumn.setTop10Filter(top10Filter);
+
+        AutoFilter autoFilter = new AutoFilter();
+        autoFilter.setFilterColumns(Arrays.asList(filterColumn));
+
         PivotFilter filter = new PivotFilter();
         filter.setFieldIndex(1);
-
-
         filter.setFilterType("Count");
+        filter.setAutoFilter(autoFilter);
 
         request.setFilter(filter);
 
@@ -255,7 +267,7 @@ public class PivotTablesControllerTest {
         request.setStorageName("");
 
         CellsCloudResponse response =  this.api.putWorksheetPivotTableFilter(request);
-    }*/
+    }
 
 
     @Test

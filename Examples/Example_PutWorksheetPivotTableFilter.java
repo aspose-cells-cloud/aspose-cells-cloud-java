@@ -48,7 +48,7 @@ public class ExamplePutWorksheetPivotTableFilter {
             request.setPivotTableIndex(0);
 
             PivotFilter filter = new PivotFilter();
-            filter.setFieldIndex(1);
+            filter.setFieldIndex(0);
 
 
             filter.setFilterType("Count");

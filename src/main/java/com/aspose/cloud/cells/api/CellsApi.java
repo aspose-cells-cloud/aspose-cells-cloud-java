@@ -1,7 +1,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="CellsApi.java">
- *   Copyright (c) 2024 Aspose.Cells Cloud
+ *   Copyright (c) 2025 Aspose.Cells Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -14158,6 +14158,60 @@ public class CellsApi {
              }
 
              com.squareup.okhttp.Call call =  postExtractTextValidateBeforeCall(request, progressListener, progressRequestListener);
+             Type localVarReturnType = new TypeToken< FileInfo >(){}.getType();
+             apiClient.executeAsync(call, localVarReturnType, callback);
+             return call;
+         }
+
+
+         @SuppressWarnings("rawtypes")
+         private com.squareup.okhttp.Call postSplitTextValidateBeforeCall(PostSplitTextRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
+             return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
+         }
+
+         public  FileInfo  postSplitText(PostSplitTextRequest request) throws ApiException,  IOException {
+             try {
+                 ApiResponse< FileInfo > resp = postSplitTextWithHttpInfo(request);
+                  return resp.getData(); 
+             }
+             catch (ApiException ex) {
+                 if (ex.getCode() == apiClient.getNotAuthCode()) {
+                     apiClient.requestToken();
+                     ApiResponse< FileInfo > resp = postSplitTextWithHttpInfo(request);
+                      return resp.getData();       
+                 }
+                 throw ex;
+             }
+         }
+
+         private ApiResponse< FileInfo > postSplitTextWithHttpInfo(PostSplitTextRequest request) throws ApiException,  IOException {
+             com.squareup.okhttp.Call call =  postSplitTextValidateBeforeCall(request, null, null);
+             Type localVarReturnType = new TypeToken< FileInfo >(){}.getType();
+             return apiClient.execute(call, localVarReturnType);
+         }
+
+         public com.squareup.okhttp.Call  postSplitTextAsync( PostSplitTextRequest request, final ApiCallback< FileInfo > callback) throws ApiException,  IOException {
+
+             ProgressResponseBody.ProgressListener progressListener = null;
+             ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+             if (callback != null) {
+                 progressListener = new ProgressResponseBody.ProgressListener() {
+                     @Override
+                     public void update(long bytesRead, long contentLength, boolean done) {
+                         callback.onDownloadProgress(bytesRead, contentLength, done);
+                     }
+                 };
+
+                 progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                     @Override
+                     public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                         callback.onUploadProgress(bytesWritten, contentLength, done);
+                     }
+                 };
+             }
+
+             com.squareup.okhttp.Call call =  postSplitTextValidateBeforeCall(request, progressListener, progressRequestListener);
              Type localVarReturnType = new TypeToken< FileInfo >(){}.getType();
              apiClient.executeAsync(call, localVarReturnType, callback);
              return call;
