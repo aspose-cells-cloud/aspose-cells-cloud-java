@@ -63,18 +63,18 @@ public class CellsApiUtil {
 	}
 
 	public static String GetClientId() {
-		return System.getenv("CellsCloudTestClientId");
+		return System.getenv("CellsCloudClientId");
 	}
 
 	public static String GetClientSecret() {
-		return System.getenv("CellsCloudTestClientSecret");
+		return System.getenv("CellsCloudClientSecret");
 	}
 
 	public static String GetAPIVersion() {
 		return "v3.0";
 	}
 	public static String GetBaseUrl() {
-		String apiUrl =  System.getenv("CellsCloudTestApiBaseUrl");
+		String apiUrl =  System.getenv("CellsCloudApiBaseUrl");
 		if( apiUrl==null || apiUrl.isEmpty()){
 			return "https://api-qa.aspose.cloud";
 		}
