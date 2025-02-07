@@ -33,6 +33,7 @@ import com.aspose.cloud.cells.request.*;
 
 import org.junit.Test;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.io.File;
 import java.util.HashMap;
@@ -228,7 +229,7 @@ public class PivotTablesControllerTest {
 
     @Test
     public void PutWorksheetPivotTableFilterTest() throws Exception {
-        String localName = "TestCase.xlsx";
+     String localName = "TestCase.xlsx";
         String remoteName = "TestCase.xlsx";
 
         CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
@@ -250,8 +251,9 @@ public class PivotTablesControllerTest {
         filterColumn.setFieldIndex(0);
         filterColumn.setTop10Filter(top10Filter);
 
+
         AutoFilter autoFilter = new AutoFilter();
-        autoFilter.setFilterColumns(Arrays.asList(filterColumn));
+        autoFilter.setFilterColumns(Collections.singletonList(filterColumn));
 
         PivotFilter filter = new PivotFilter();
         filter.setFieldIndex(1);
