@@ -10,10 +10,10 @@
  *  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
  *  copies of the Software, and to permit persons to whom the Software is
  *  furnished to do so, subject to the following conditions:
- * 
+ *
  *  The above copyright notice and this permission notice shall be included in all
  *  copies or substantial portions of the Software.
- * 
+ *
  *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  *  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
  *  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -57,14 +57,14 @@ public class TextProcessingControllerTest {
         String remoteName = "BookText.xlsx";
 
         CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
+
         PostAddTextContentRequest request = new PostAddTextContentRequest();
         AddTextOptions addTextOptions = new AddTextOptions();
         DataSource dataSource = new DataSource();
         dataSource.setDataSourceType("CloudFileSystem");
 
 
-        dataSource.setDataPath("BookText.xlsx");
+        dataSource.setDataPath(remoteFolder + "/" + remoteName);
 
         addTextOptions.setDataSource(dataSource);
 
@@ -92,14 +92,14 @@ public class TextProcessingControllerTest {
         String remoteName = "BookText.xlsx";
 
         CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
+
         PostTrimContentRequest request = new PostTrimContentRequest();
         TrimContentOptions trimContentOptions = new TrimContentOptions();
         DataSource dataSource = new DataSource();
         dataSource.setDataSourceType("CloudFileSystem");
 
 
-        dataSource.setDataPath("BookText.xlsx");
+        dataSource.setDataPath(remoteFolder + "/" + remoteName);
 
         trimContentOptions.setDataSource(dataSource);
 
@@ -133,14 +133,14 @@ public class TextProcessingControllerTest {
         String remoteName = "BookText.xlsx";
 
         CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
+
         PostUpdateWordCaseRequest request = new PostUpdateWordCaseRequest();
         WordCaseOptions wordCaseOptions = new WordCaseOptions();
         DataSource dataSource = new DataSource();
         dataSource.setDataSourceType("CloudFileSystem");
 
 
-        dataSource.setDataPath("BookText.xlsx");
+        dataSource.setDataPath(remoteFolder + "/" + remoteName);
 
         wordCaseOptions.setDataSource(dataSource);
 

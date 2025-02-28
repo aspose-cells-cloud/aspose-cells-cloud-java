@@ -166,7 +166,9 @@ public class ApiClient {
 	 */
 	public ApiClient() {
 		httpClient = new OkHttpClient();
-
+		httpClient.setConnectTimeout(600, TimeUnit.SECONDS);
+		httpClient.setReadTimeout(600, TimeUnit.SECONDS);
+		httpClient.setWriteTimeout(600, TimeUnit.SECONDS);
 		verifyingSsl = true;
 
 		json = new JSON(this);
@@ -186,7 +188,7 @@ public class ApiClient {
 		this.lenientDatetimeFormat = true;
 
 		// Set default User-Agent.
-		setUserAgent("CellsCloud-SDK/25.1/java");
+		setUserAgent("CellsCloud-SDK/25.2/java");
 
 		// Setup authentications (key: authentication name, value:
 		// authentication).

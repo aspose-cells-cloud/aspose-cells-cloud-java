@@ -88,6 +88,23 @@ public class RangeCopyRequest {
             this.target = target;
         }
 
+        @SerializedName("TargetWorkbook")
+        private String targetWorkbook ;
+
+        public  RangeCopyRequest  targetWorkbook(String  targetWorkbook) {
+            this.targetWorkbook =  targetWorkbook;
+            return this;
+        }
+
+        @ApiModelProperty(value = "")
+        public String getTargetWorkbook() {
+            return targetWorkbook;
+        }
+
+        public void setTargetWorkbook(String targetWorkbook) {
+            this.targetWorkbook = targetWorkbook;
+        }
+
         @SerializedName("PasteOptions")
         private PasteOptions pasteOptions ;
 
@@ -119,12 +136,13 @@ public class RangeCopyRequest {
                 Objects.equals(this.operate, rangeCopyRequest.operate) &&
                 Objects.equals(this.source, rangeCopyRequest.source) &&
                 Objects.equals(this.target, rangeCopyRequest.target) &&
+                Objects.equals(this.targetWorkbook, rangeCopyRequest.targetWorkbook) &&
                 Objects.equals(this.pasteOptions, rangeCopyRequest.pasteOptions);
       }
 
       @Override
       public int hashCode() {
-        return Objects.hash(operate, source, target, pasteOptions);
+        return Objects.hash(operate, source, target, targetWorkbook, pasteOptions);
       }
         @Override
         public String toString() {
@@ -133,6 +151,7 @@ public class RangeCopyRequest {
             sb.append("    operate: ").append(toIndentedString(getOperate())).append("\n");
             sb.append("    source: ").append(toIndentedString(getSource())).append("\n");
             sb.append("    target: ").append(toIndentedString(getTarget())).append("\n");
+            sb.append("    targetWorkbook: ").append(toIndentedString(getTargetWorkbook())).append("\n");
             sb.append("    pasteOptions: ").append(toIndentedString(getPasteOptions())).append("\n");
             sb.append("}");
             return sb.toString();

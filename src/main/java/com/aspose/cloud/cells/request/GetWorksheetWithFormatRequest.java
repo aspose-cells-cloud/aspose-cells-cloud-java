@@ -49,13 +49,15 @@ public class GetWorksheetWithFormatRequest  implements IRequestModel {
     private Integer horizontalResolution;
     private String area;
     private Integer pageIndex;
+    private Boolean onePagePerSheet;
+    private Boolean printHeadings;
     private String folder;
     private String storageName;
         public GetWorksheetWithFormatRequest()
         {
 
         }
-        public GetWorksheetWithFormatRequest(String name, String sheetName, String format, Integer verticalResolution, Integer horizontalResolution, String area, Integer pageIndex, String folder, String storageName) {
+        public GetWorksheetWithFormatRequest(String name, String sheetName, String format, Integer verticalResolution, Integer horizontalResolution, String area, Integer pageIndex, Boolean onePagePerSheet, Boolean printHeadings, String folder, String storageName) {
             this.name = name;
             this.sheetName = sheetName;
             this.format = format;
@@ -63,6 +65,8 @@ public class GetWorksheetWithFormatRequest  implements IRequestModel {
             this.horizontalResolution = horizontalResolution;
             this.area = area;
             this.pageIndex = pageIndex;
+            this.onePagePerSheet = onePagePerSheet;
+            this.printHeadings = printHeadings;
             this.folder = folder;
             this.storageName = storageName;
         }   
@@ -130,6 +134,24 @@ public class GetWorksheetWithFormatRequest  implements IRequestModel {
         }
 
 
+        public Boolean getOnePagePerSheet() {
+            return this.onePagePerSheet;
+        }
+
+        public void setOnePagePerSheet(Boolean onePagePerSheet) {
+            this.onePagePerSheet = onePagePerSheet;
+        }
+
+
+        public Boolean getPrintHeadings() {
+            return this.printHeadings;
+        }
+
+        public void setPrintHeadings(Boolean printHeadings) {
+            this.printHeadings = printHeadings;
+        }
+
+
         public String getFolder() {
             return this.folder;
         }
@@ -174,6 +196,12 @@ public class GetWorksheetWithFormatRequest  implements IRequestModel {
             } 
             if (getPageIndex() != null){
                 localVarQueryParams.addAll(apiClient.parameterToPairs("", "pageIndex", getPageIndex()));
+            } 
+            if (getOnePagePerSheet() != null){
+                localVarQueryParams.addAll(apiClient.parameterToPairs("", "onePagePerSheet", getOnePagePerSheet()));
+            } 
+            if (getPrintHeadings() != null){
+                localVarQueryParams.addAll(apiClient.parameterToPairs("", "printHeadings", getPrintHeadings()));
             } 
             if (getFolder() != null){
                 localVarQueryParams.addAll(apiClient.parameterToPairs("", "folder", getFolder()));

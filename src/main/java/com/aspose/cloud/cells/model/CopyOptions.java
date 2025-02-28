@@ -139,6 +139,23 @@ public class CopyOptions {
             this.referToSheetWithSameName = referToSheetWithSameName;
         }
 
+        @SerializedName("CopyTheme")
+        private Boolean copyTheme ;
+
+        public  CopyOptions  copyTheme(Boolean  copyTheme) {
+            this.copyTheme =  copyTheme;
+            return this;
+        }
+
+        @ApiModelProperty(value = "")
+        public Boolean getCopyTheme() {
+            return copyTheme;
+        }
+
+        public void setCopyTheme(Boolean copyTheme) {
+            this.copyTheme = copyTheme;
+        }
+
         @Override
         public boolean equals(java.lang.Object o) {
             if (this == o) {
@@ -155,12 +172,13 @@ public class CopyOptions {
                 Objects.equals(this.copyNames, copyOptions.copyNames) &&
                 Objects.equals(this.extendToAdjacentRange, copyOptions.extendToAdjacentRange) &&
                 Objects.equals(this.referToDestinationSheet, copyOptions.referToDestinationSheet) &&
-                Objects.equals(this.referToSheetWithSameName, copyOptions.referToSheetWithSameName);
+                Objects.equals(this.referToSheetWithSameName, copyOptions.referToSheetWithSameName) &&
+                Objects.equals(this.copyTheme, copyOptions.copyTheme);
       }
 
       @Override
       public int hashCode() {
-        return Objects.hash(columnCharacterWidth, copyInvalidFormulasAsValues, copyNames, extendToAdjacentRange, referToDestinationSheet, referToSheetWithSameName);
+        return Objects.hash(columnCharacterWidth, copyInvalidFormulasAsValues, copyNames, extendToAdjacentRange, referToDestinationSheet, referToSheetWithSameName, copyTheme);
       }
         @Override
         public String toString() {
@@ -172,6 +190,7 @@ public class CopyOptions {
             sb.append("    extendToAdjacentRange: ").append(toIndentedString(getExtendToAdjacentRange())).append("\n");
             sb.append("    referToDestinationSheet: ").append(toIndentedString(getReferToDestinationSheet())).append("\n");
             sb.append("    referToSheetWithSameName: ").append(toIndentedString(getReferToSheetWithSameName())).append("\n");
+            sb.append("    copyTheme: ").append(toIndentedString(getCopyTheme())).append("\n");
             sb.append("}");
             return sb.toString();
         }

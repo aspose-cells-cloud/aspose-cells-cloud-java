@@ -42,7 +42,8 @@ public class CellsApiUtil {
 	private static String grantType = "client_credentials";
 	private static String clientId = "";
 	private static String clientSecret =  "";
-	private static String sourceFolder ="TestData/CellsCloud/";
+	//private static String sourceFolder ="TestData/CellsCloud/";
+	private static String sourceFolder ="TestData/";
 	public static String GetSourceFolder() {
 		String  envSourceFlder = System.getenv("CellsCloudTestDataFolder");
 		if(envSourceFlder != "" && envSourceFlder!=null){

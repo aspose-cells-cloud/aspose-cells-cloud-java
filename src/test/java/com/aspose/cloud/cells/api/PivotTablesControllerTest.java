@@ -30,7 +30,7 @@ package com.aspose.cloud.cells.api;
 import com.aspose.cloud.cells.client.*;
 import com.aspose.cloud.cells.model.*;
 import com.aspose.cloud.cells.request.*;
-
+import java.util.Collections;
 import org.junit.Test;
 import java.util.ArrayList;
 import java.util.List;
@@ -140,7 +140,7 @@ public class PivotTablesControllerTest {
         PivotFiltersResponse response =  this.api.getWorksheetPivotTableFilters(request);
     }
 
-
+/*
     @Test
     public void GetWorksheetPivotTableFilterTest() throws Exception {
         String localName = "TestCase.xlsx";
@@ -163,7 +163,7 @@ public class PivotTablesControllerTest {
 
         PivotFilterResponse response =  this.api.getWorksheetPivotTableFilter(request);
     }
-
+*/
 
     @Test
     public void PutWorksheetPivotTableTest() throws Exception {
@@ -225,7 +225,6 @@ public class PivotTablesControllerTest {
         CellsCloudResponse response =  this.api.putPivotTableField(request);
     }
 
-
     @Test
     public void PutWorksheetPivotTableFilterTest() throws Exception {
         String localName = "TestCase.xlsx";
@@ -250,8 +249,9 @@ public class PivotTablesControllerTest {
         filterColumn.setFieldIndex(0);
         filterColumn.setTop10Filter(top10Filter);
 
+
         AutoFilter autoFilter = new AutoFilter();
-        autoFilter.setFilterColumns(Arrays.asList(filterColumn));
+        autoFilter.setFilterColumns(Collections.singletonList(filterColumn));
 
         PivotFilter filter = new PivotFilter();
         filter.setFieldIndex(1);

@@ -50,31 +50,31 @@ public class ExamplePostWorksheetCellsRangesCopy {
 
 
             Range source = new Range();
-            source.setColumnCount(1);
+            source.setColumnCount(3);
 
 
-            source.setColumnWidth(10.0);
+            source.setFirstColumn(8);
 
 
-            source.setFirstRow(1);
+            source.setFirstRow(3);
 
 
-            source.setRowCount(10);
+            source.setRowCount(2);
 
             rangeOperate.setSource(source);
 
 
             Range target = new Range();
-            target.setColumnCount(1);
+            target.setColumnCount(3);
 
 
-            target.setColumnWidth(10.0);
+            target.setFirstColumn(8);
 
 
-            target.setFirstRow(10);
+            target.setFirstRow(13);
 
 
-            target.setRowCount(10);
+            target.setRowCount(2);
 
             rangeOperate.setTarget(target);
 
