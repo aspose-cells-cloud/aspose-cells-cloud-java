@@ -124,6 +124,11 @@ public class MarkdownSaveOptions  extends  SaveOptions {
             sb.append("    refreshChartCache: ").append(toIndentedString(getRefreshChartCache())).append("\n");
             sb.append("    sortNames: ").append(toIndentedString(getSortNames())).append("\n");
             sb.append("    validateMergedAreas: ").append(toIndentedString(getValidateMergedAreas())).append("\n");
+            sb.append("    mergeAreas: ").append(toIndentedString(getMergeAreas())).append("\n");
+            sb.append("    sortExternalNames: ").append(toIndentedString(getSortExternalNames())).append("\n");
+            sb.append("    checkExcelRestriction: ").append(toIndentedString(getCheckExcelRestriction())).append("\n");
+            sb.append("    updateSmartArt: ").append(toIndentedString(getUpdateSmartArt())).append("\n");
+            sb.append("    encryptDocumentProperties: ").append(toIndentedString(getEncryptDocumentProperties())).append("\n");
             sb.append("}");
             return sb.toString();
         }

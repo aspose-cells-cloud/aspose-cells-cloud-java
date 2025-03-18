@@ -38,19 +38,19 @@ import java.time.OffsetDateTime;
 
 public class Styles  extends  LinkElement {
         @SerializedName("StyleList")
-        private List<LinkElement> styleList ;
+        private List<Style> styleList ;
 
-        public  Styles  styleList(List<LinkElement>  styleList) {
+        public  Styles  styleList(List<Style>  styleList) {
             this.styleList =  styleList;
             return this;
         }
 
         @ApiModelProperty(value = "")
-        public List<LinkElement> getStyleList() {
+        public List<Style> getStyleList() {
             return styleList;
         }
 
-        public void setStyleList(List<LinkElement> styleList) {
+        public void setStyleList(List<Style> styleList) {
             this.styleList = styleList;
         }
 

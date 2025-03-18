@@ -292,57 +292,6 @@ public class PaginatedSaveOptions  extends  SaveOptions {
             this.emfRenderSetting = emfRenderSetting;
         }
 
-        @SerializedName("MergeAreas")
-        private Boolean mergeAreas ;
-
-        public  PaginatedSaveOptions  mergeAreas(Boolean  mergeAreas) {
-            this.mergeAreas =  mergeAreas;
-            return this;
-        }
-
-        @ApiModelProperty(value = "")
-        public Boolean getMergeAreas() {
-            return mergeAreas;
-        }
-
-        public void setMergeAreas(Boolean mergeAreas) {
-            this.mergeAreas = mergeAreas;
-        }
-
-        @SerializedName("SortExternalNames")
-        private Boolean sortExternalNames ;
-
-        public  PaginatedSaveOptions  sortExternalNames(Boolean  sortExternalNames) {
-            this.sortExternalNames =  sortExternalNames;
-            return this;
-        }
-
-        @ApiModelProperty(value = "")
-        public Boolean getSortExternalNames() {
-            return sortExternalNames;
-        }
-
-        public void setSortExternalNames(Boolean sortExternalNames) {
-            this.sortExternalNames = sortExternalNames;
-        }
-
-        @SerializedName("UpdateSmartArt")
-        private Boolean updateSmartArt ;
-
-        public  PaginatedSaveOptions  updateSmartArt(Boolean  updateSmartArt) {
-            this.updateSmartArt =  updateSmartArt;
-            return this;
-        }
-
-        @ApiModelProperty(value = "")
-        public Boolean getUpdateSmartArt() {
-            return updateSmartArt;
-        }
-
-        public void setUpdateSmartArt(Boolean updateSmartArt) {
-            this.updateSmartArt = updateSmartArt;
-        }
-
         @Override
         public boolean equals(java.lang.Object o) {
             if (this == o) {
@@ -369,15 +318,12 @@ public class PaginatedSaveOptions  extends  SaveOptions {
                 Objects.equals(this.textCrossType, paginatedSaveOptions.textCrossType) &&
                 Objects.equals(this.defaultEditLanguage, paginatedSaveOptions.defaultEditLanguage) &&
                 Objects.equals(this.emfRenderSetting, paginatedSaveOptions.emfRenderSetting) &&
-                Objects.equals(this.mergeAreas, paginatedSaveOptions.mergeAreas) &&
-                Objects.equals(this.sortExternalNames, paginatedSaveOptions.sortExternalNames) &&
-                Objects.equals(this.updateSmartArt, paginatedSaveOptions.updateSmartArt) &&
                 super.equals(o);
       }
 
       @Override
       public int hashCode() {
-        return Objects.hash(defaultFont, checkWorkbookDefaultFont, checkFontCompatibility, isFontSubstitutionCharGranularity, onePagePerSheet, allColumnsInOnePagePerSheet, ignoreError, outputBlankPageWhenNothingToPrint, pageIndex, pageCount, printingPageType, gridlineType, textCrossType, defaultEditLanguage, emfRenderSetting, mergeAreas, sortExternalNames, updateSmartArt, super.hashCode());
+        return Objects.hash(defaultFont, checkWorkbookDefaultFont, checkFontCompatibility, isFontSubstitutionCharGranularity, onePagePerSheet, allColumnsInOnePagePerSheet, ignoreError, outputBlankPageWhenNothingToPrint, pageIndex, pageCount, printingPageType, gridlineType, textCrossType, defaultEditLanguage, emfRenderSetting, super.hashCode());
       }
         @Override
         public String toString() {
@@ -409,6 +355,8 @@ public class PaginatedSaveOptions  extends  SaveOptions {
             sb.append("    refreshChartCache: ").append(toIndentedString(getRefreshChartCache())).append("\n");
             sb.append("    sortNames: ").append(toIndentedString(getSortNames())).append("\n");
             sb.append("    validateMergedAreas: ").append(toIndentedString(getValidateMergedAreas())).append("\n");
+            sb.append("    checkExcelRestriction: ").append(toIndentedString(getCheckExcelRestriction())).append("\n");
+            sb.append("    encryptDocumentProperties: ").append(toIndentedString(getEncryptDocumentProperties())).append("\n");
             sb.append("}");
             return sb.toString();
         }

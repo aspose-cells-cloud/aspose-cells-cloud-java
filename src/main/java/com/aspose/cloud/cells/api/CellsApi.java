@@ -6173,6 +6173,60 @@ public class CellsApi {
 
 
          @SuppressWarnings("rawtypes")
+         private com.squareup.okhttp.Call postConvertWorkbookValidateBeforeCall(PostConvertWorkbookRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
+             return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
+         }
+
+         public  FileInfo  postConvertWorkbook(PostConvertWorkbookRequest request) throws ApiException,  IOException {
+             try {
+                 ApiResponse< FileInfo > resp = postConvertWorkbookWithHttpInfo(request);
+                  return resp.getData(); 
+             }
+             catch (ApiException ex) {
+                 if (ex.getCode() == apiClient.getNotAuthCode()) {
+                     apiClient.requestToken();
+                     ApiResponse< FileInfo > resp = postConvertWorkbookWithHttpInfo(request);
+                      return resp.getData();       
+                 }
+                 throw ex;
+             }
+         }
+
+         private ApiResponse< FileInfo > postConvertWorkbookWithHttpInfo(PostConvertWorkbookRequest request) throws ApiException,  IOException {
+             com.squareup.okhttp.Call call =  postConvertWorkbookValidateBeforeCall(request, null, null);
+             Type localVarReturnType = new TypeToken< FileInfo >(){}.getType();
+             return apiClient.execute(call, localVarReturnType);
+         }
+
+         public com.squareup.okhttp.Call  postConvertWorkbookAsync( PostConvertWorkbookRequest request, final ApiCallback< FileInfo > callback) throws ApiException,  IOException {
+
+             ProgressResponseBody.ProgressListener progressListener = null;
+             ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+             if (callback != null) {
+                 progressListener = new ProgressResponseBody.ProgressListener() {
+                     @Override
+                     public void update(long bytesRead, long contentLength, boolean done) {
+                         callback.onDownloadProgress(bytesRead, contentLength, done);
+                     }
+                 };
+
+                 progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                     @Override
+                     public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                         callback.onUploadProgress(bytesWritten, contentLength, done);
+                     }
+                 };
+             }
+
+             com.squareup.okhttp.Call call =  postConvertWorkbookValidateBeforeCall(request, progressListener, progressRequestListener);
+             Type localVarReturnType = new TypeToken< FileInfo >(){}.getType();
+             apiClient.executeAsync(call, localVarReturnType, callback);
+             return call;
+         }
+
+
+         @SuppressWarnings("rawtypes")
          private com.squareup.okhttp.Call postExportValidateBeforeCall(PostExportRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
@@ -10223,6 +10277,60 @@ public class CellsApi {
 
 
          @SuppressWarnings("rawtypes")
+         private com.squareup.okhttp.Call addPictureInCellValidateBeforeCall(AddPictureInCellRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
+             return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
+         }
+
+         public  CellsCloudResponse  addPictureInCell(AddPictureInCellRequest request) throws ApiException,  IOException {
+             try {
+                 ApiResponse< CellsCloudResponse > resp = addPictureInCellWithHttpInfo(request);
+                  return resp.getData(); 
+             }
+             catch (ApiException ex) {
+                 if (ex.getCode() == apiClient.getNotAuthCode()) {
+                     apiClient.requestToken();
+                     ApiResponse< CellsCloudResponse > resp = addPictureInCellWithHttpInfo(request);
+                      return resp.getData();       
+                 }
+                 throw ex;
+             }
+         }
+
+         private ApiResponse< CellsCloudResponse > addPictureInCellWithHttpInfo(AddPictureInCellRequest request) throws ApiException,  IOException {
+             com.squareup.okhttp.Call call =  addPictureInCellValidateBeforeCall(request, null, null);
+             Type localVarReturnType = new TypeToken< CellsCloudResponse >(){}.getType();
+             return apiClient.execute(call, localVarReturnType);
+         }
+
+         public com.squareup.okhttp.Call  addPictureInCellAsync( AddPictureInCellRequest request, final ApiCallback< CellsCloudResponse > callback) throws ApiException,  IOException {
+
+             ProgressResponseBody.ProgressListener progressListener = null;
+             ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+             if (callback != null) {
+                 progressListener = new ProgressResponseBody.ProgressListener() {
+                     @Override
+                     public void update(long bytesRead, long contentLength, boolean done) {
+                         callback.onDownloadProgress(bytesRead, contentLength, done);
+                     }
+                 };
+
+                 progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                     @Override
+                     public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                         callback.onUploadProgress(bytesWritten, contentLength, done);
+                     }
+                 };
+             }
+
+             com.squareup.okhttp.Call call =  addPictureInCellValidateBeforeCall(request, progressListener, progressRequestListener);
+             Type localVarReturnType = new TypeToken< CellsCloudResponse >(){}.getType();
+             apiClient.executeAsync(call, localVarReturnType, callback);
+             return call;
+         }
+
+
+         @SuppressWarnings("rawtypes")
          private com.squareup.okhttp.Call postWorksheetPictureValidateBeforeCall(PostWorksheetPictureRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
@@ -12927,28 +13035,28 @@ public class CellsApi {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
 
-         public  CellsCloudResponse  postWorksheetCellsRangeToImage(PostWorksheetCellsRangeToImageRequest request) throws ApiException,  IOException {
+         public  File  postWorksheetCellsRangeToImage(PostWorksheetCellsRangeToImageRequest request) throws ApiException,  IOException {
              try {
-                 ApiResponse< CellsCloudResponse > resp = postWorksheetCellsRangeToImageWithHttpInfo(request);
+                 ApiResponse< File > resp = postWorksheetCellsRangeToImageWithHttpInfo(request);
                   return resp.getData(); 
              }
              catch (ApiException ex) {
                  if (ex.getCode() == apiClient.getNotAuthCode()) {
                      apiClient.requestToken();
-                     ApiResponse< CellsCloudResponse > resp = postWorksheetCellsRangeToImageWithHttpInfo(request);
+                     ApiResponse< File > resp = postWorksheetCellsRangeToImageWithHttpInfo(request);
                       return resp.getData();       
                  }
                  throw ex;
              }
          }
 
-         private ApiResponse< CellsCloudResponse > postWorksheetCellsRangeToImageWithHttpInfo(PostWorksheetCellsRangeToImageRequest request) throws ApiException,  IOException {
+         private ApiResponse< File > postWorksheetCellsRangeToImageWithHttpInfo(PostWorksheetCellsRangeToImageRequest request) throws ApiException,  IOException {
              com.squareup.okhttp.Call call =  postWorksheetCellsRangeToImageValidateBeforeCall(request, null, null);
-             Type localVarReturnType = new TypeToken< CellsCloudResponse >(){}.getType();
+             Type localVarReturnType = new TypeToken< File >(){}.getType();
              return apiClient.execute(call, localVarReturnType);
          }
 
-         public com.squareup.okhttp.Call  postWorksheetCellsRangeToImageAsync( PostWorksheetCellsRangeToImageRequest request, final ApiCallback< CellsCloudResponse > callback) throws ApiException,  IOException {
+         public com.squareup.okhttp.Call  postWorksheetCellsRangeToImageAsync( PostWorksheetCellsRangeToImageRequest request, final ApiCallback< HashMap<String,File> > callback) throws ApiException,  IOException {
 
              ProgressResponseBody.ProgressListener progressListener = null;
              ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -12970,7 +13078,7 @@ public class CellsApi {
              }
 
              com.squareup.okhttp.Call call =  postWorksheetCellsRangeToImageValidateBeforeCall(request, progressListener, progressRequestListener);
-             Type localVarReturnType = new TypeToken< CellsCloudResponse >(){}.getType();
+             Type localVarReturnType = new TypeToken< HashMap<String,File> >(){}.getType();
              apiClient.executeAsync(call, localVarReturnType, callback);
              return call;
          }
@@ -15779,6 +15887,60 @@ public class CellsApi {
 
              com.squareup.okhttp.Call call =  getPageCountValidateBeforeCall(request, progressListener, progressRequestListener);
              Type localVarReturnType = new TypeToken< Integer >(){}.getType();
+             apiClient.executeAsync(call, localVarReturnType, callback);
+             return call;
+         }
+
+
+         @SuppressWarnings("rawtypes")
+         private com.squareup.okhttp.Call getAllStylesValidateBeforeCall(GetAllStylesRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
+             return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
+         }
+
+         public  StylesResponse  getAllStyles(GetAllStylesRequest request) throws ApiException,  IOException {
+             try {
+                 ApiResponse< StylesResponse > resp = getAllStylesWithHttpInfo(request);
+                  return resp.getData(); 
+             }
+             catch (ApiException ex) {
+                 if (ex.getCode() == apiClient.getNotAuthCode()) {
+                     apiClient.requestToken();
+                     ApiResponse< StylesResponse > resp = getAllStylesWithHttpInfo(request);
+                      return resp.getData();       
+                 }
+                 throw ex;
+             }
+         }
+
+         private ApiResponse< StylesResponse > getAllStylesWithHttpInfo(GetAllStylesRequest request) throws ApiException,  IOException {
+             com.squareup.okhttp.Call call =  getAllStylesValidateBeforeCall(request, null, null);
+             Type localVarReturnType = new TypeToken< StylesResponse >(){}.getType();
+             return apiClient.execute(call, localVarReturnType);
+         }
+
+         public com.squareup.okhttp.Call  getAllStylesAsync( GetAllStylesRequest request, final ApiCallback< StylesResponse > callback) throws ApiException,  IOException {
+
+             ProgressResponseBody.ProgressListener progressListener = null;
+             ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+             if (callback != null) {
+                 progressListener = new ProgressResponseBody.ProgressListener() {
+                     @Override
+                     public void update(long bytesRead, long contentLength, boolean done) {
+                         callback.onDownloadProgress(bytesRead, contentLength, done);
+                     }
+                 };
+
+                 progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                     @Override
+                     public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                         callback.onUploadProgress(bytesWritten, contentLength, done);
+                     }
+                 };
+             }
+
+             com.squareup.okhttp.Call call =  getAllStylesValidateBeforeCall(request, progressListener, progressRequestListener);
+             Type localVarReturnType = new TypeToken< StylesResponse >(){}.getType();
              apiClient.executeAsync(call, localVarReturnType, callback);
              return call;
          }

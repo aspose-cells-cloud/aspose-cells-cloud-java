@@ -83,6 +83,8 @@ public class DocxSaveOptions  extends  PaginatedSaveOptions {
             sb.append("    refreshChartCache: ").append(toIndentedString(getRefreshChartCache())).append("\n");
             sb.append("    sortNames: ").append(toIndentedString(getSortNames())).append("\n");
             sb.append("    validateMergedAreas: ").append(toIndentedString(getValidateMergedAreas())).append("\n");
+            sb.append("    checkExcelRestriction: ").append(toIndentedString(getCheckExcelRestriction())).append("\n");
+            sb.append("    encryptDocumentProperties: ").append(toIndentedString(getEncryptDocumentProperties())).append("\n");
             sb.append("}");
             return sb.toString();
         }

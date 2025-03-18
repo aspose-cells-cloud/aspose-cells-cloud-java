@@ -37,6 +37,40 @@ import java.time.OffsetDateTime;
 
 
 public class XlsbSaveOptions  extends  SaveOptions {
+        @SerializedName("ExportAllColumnIndexes")
+        private Boolean exportAllColumnIndexes ;
+
+        public  XlsbSaveOptions  exportAllColumnIndexes(Boolean  exportAllColumnIndexes) {
+            this.exportAllColumnIndexes =  exportAllColumnIndexes;
+            return this;
+        }
+
+        @ApiModelProperty(value = "")
+        public Boolean getExportAllColumnIndexes() {
+            return exportAllColumnIndexes;
+        }
+
+        public void setExportAllColumnIndexes(Boolean exportAllColumnIndexes) {
+            this.exportAllColumnIndexes = exportAllColumnIndexes;
+        }
+
+        @SerializedName("CompressionType")
+        private String compressionType ;
+
+        public  XlsbSaveOptions  compressionType(String  compressionType) {
+            this.compressionType =  compressionType;
+            return this;
+        }
+
+        @ApiModelProperty(value = "")
+        public String getCompressionType() {
+            return compressionType;
+        }
+
+        public void setCompressionType(String compressionType) {
+            this.compressionType = compressionType;
+        }
+
         @Override
         public boolean equals(java.lang.Object o) {
             if (this == o) {
@@ -46,17 +80,23 @@ public class XlsbSaveOptions  extends  SaveOptions {
                 return false;
             }
 
-            return super.equals(o);
+            XlsbSaveOptions xlsbSaveOptions = (XlsbSaveOptions) o;
+            return
+                Objects.equals(this.exportAllColumnIndexes, xlsbSaveOptions.exportAllColumnIndexes) &&
+                Objects.equals(this.compressionType, xlsbSaveOptions.compressionType) &&
+                super.equals(o);
       }
 
       @Override
       public int hashCode() {
-        return Objects.hash(super.hashCode());
+        return Objects.hash(exportAllColumnIndexes, compressionType, super.hashCode());
       }
         @Override
         public String toString() {
             StringBuilder sb = new StringBuilder();
             sb.append("class XlsbSaveOptions {\n");
+            sb.append("    exportAllColumnIndexes: ").append(toIndentedString(getExportAllColumnIndexes())).append("\n");
+            sb.append("    compressionType: ").append(toIndentedString(getCompressionType())).append("\n");
             sb.append("    saveFormat: ").append(toIndentedString(getSaveFormat())).append("\n");
             sb.append("    cachedFileFolder: ").append(toIndentedString(getCachedFileFolder())).append("\n");
             sb.append("    clearData: ").append(toIndentedString(getClearData())).append("\n");
@@ -65,6 +105,11 @@ public class XlsbSaveOptions  extends  SaveOptions {
             sb.append("    refreshChartCache: ").append(toIndentedString(getRefreshChartCache())).append("\n");
             sb.append("    sortNames: ").append(toIndentedString(getSortNames())).append("\n");
             sb.append("    validateMergedAreas: ").append(toIndentedString(getValidateMergedAreas())).append("\n");
+            sb.append("    mergeAreas: ").append(toIndentedString(getMergeAreas())).append("\n");
+            sb.append("    sortExternalNames: ").append(toIndentedString(getSortExternalNames())).append("\n");
+            sb.append("    checkExcelRestriction: ").append(toIndentedString(getCheckExcelRestriction())).append("\n");
+            sb.append("    updateSmartArt: ").append(toIndentedString(getUpdateSmartArt())).append("\n");
+            sb.append("    encryptDocumentProperties: ").append(toIndentedString(getEncryptDocumentProperties())).append("\n");
             sb.append("}");
             return sb.toString();
         }

@@ -37,6 +37,40 @@ import java.time.OffsetDateTime;
 
 
 public class XlsSaveOptions  extends  SaveOptions {
+        @SerializedName("MatchColor")
+        private Boolean matchColor ;
+
+        public  XlsSaveOptions  matchColor(Boolean  matchColor) {
+            this.matchColor =  matchColor;
+            return this;
+        }
+
+        @ApiModelProperty(value = "")
+        public Boolean getMatchColor() {
+            return matchColor;
+        }
+
+        public void setMatchColor(Boolean matchColor) {
+            this.matchColor = matchColor;
+        }
+
+        @SerializedName("WpsCompatibility")
+        private Boolean wpsCompatibility ;
+
+        public  XlsSaveOptions  wpsCompatibility(Boolean  wpsCompatibility) {
+            this.wpsCompatibility =  wpsCompatibility;
+            return this;
+        }
+
+        @ApiModelProperty(value = "")
+        public Boolean getWpsCompatibility() {
+            return wpsCompatibility;
+        }
+
+        public void setWpsCompatibility(Boolean wpsCompatibility) {
+            this.wpsCompatibility = wpsCompatibility;
+        }
+
         @Override
         public boolean equals(java.lang.Object o) {
             if (this == o) {
@@ -46,17 +80,23 @@ public class XlsSaveOptions  extends  SaveOptions {
                 return false;
             }
 
-            return super.equals(o);
+            XlsSaveOptions xlsSaveOptions = (XlsSaveOptions) o;
+            return
+                Objects.equals(this.matchColor, xlsSaveOptions.matchColor) &&
+                Objects.equals(this.wpsCompatibility, xlsSaveOptions.wpsCompatibility) &&
+                super.equals(o);
       }
 
       @Override
       public int hashCode() {
-        return Objects.hash(super.hashCode());
+        return Objects.hash(matchColor, wpsCompatibility, super.hashCode());
       }
         @Override
         public String toString() {
             StringBuilder sb = new StringBuilder();
             sb.append("class XlsSaveOptions {\n");
+            sb.append("    matchColor: ").append(toIndentedString(getMatchColor())).append("\n");
+            sb.append("    wpsCompatibility: ").append(toIndentedString(getWpsCompatibility())).append("\n");
             sb.append("    saveFormat: ").append(toIndentedString(getSaveFormat())).append("\n");
             sb.append("    cachedFileFolder: ").append(toIndentedString(getCachedFileFolder())).append("\n");
             sb.append("    clearData: ").append(toIndentedString(getClearData())).append("\n");
@@ -65,6 +105,11 @@ public class XlsSaveOptions  extends  SaveOptions {
             sb.append("    refreshChartCache: ").append(toIndentedString(getRefreshChartCache())).append("\n");
             sb.append("    sortNames: ").append(toIndentedString(getSortNames())).append("\n");
             sb.append("    validateMergedAreas: ").append(toIndentedString(getValidateMergedAreas())).append("\n");
+            sb.append("    mergeAreas: ").append(toIndentedString(getMergeAreas())).append("\n");
+            sb.append("    sortExternalNames: ").append(toIndentedString(getSortExternalNames())).append("\n");
+            sb.append("    checkExcelRestriction: ").append(toIndentedString(getCheckExcelRestriction())).append("\n");
+            sb.append("    updateSmartArt: ").append(toIndentedString(getUpdateSmartArt())).append("\n");
+            sb.append("    encryptDocumentProperties: ").append(toIndentedString(getEncryptDocumentProperties())).append("\n");
             sb.append("}");
             return sb.toString();
         }

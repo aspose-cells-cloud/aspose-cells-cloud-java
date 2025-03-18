@@ -173,6 +173,91 @@ public class SaveOptions {
             this.validateMergedAreas = validateMergedAreas;
         }
 
+        @SerializedName("MergeAreas")
+        private Boolean mergeAreas ;
+
+        public  SaveOptions  mergeAreas(Boolean  mergeAreas) {
+            this.mergeAreas =  mergeAreas;
+            return this;
+        }
+
+        @ApiModelProperty(value = "")
+        public Boolean getMergeAreas() {
+            return mergeAreas;
+        }
+
+        public void setMergeAreas(Boolean mergeAreas) {
+            this.mergeAreas = mergeAreas;
+        }
+
+        @SerializedName("SortExternalNames")
+        private Boolean sortExternalNames ;
+
+        public  SaveOptions  sortExternalNames(Boolean  sortExternalNames) {
+            this.sortExternalNames =  sortExternalNames;
+            return this;
+        }
+
+        @ApiModelProperty(value = "")
+        public Boolean getSortExternalNames() {
+            return sortExternalNames;
+        }
+
+        public void setSortExternalNames(Boolean sortExternalNames) {
+            this.sortExternalNames = sortExternalNames;
+        }
+
+        @SerializedName("CheckExcelRestriction")
+        private Boolean checkExcelRestriction ;
+
+        public  SaveOptions  checkExcelRestriction(Boolean  checkExcelRestriction) {
+            this.checkExcelRestriction =  checkExcelRestriction;
+            return this;
+        }
+
+        @ApiModelProperty(value = "")
+        public Boolean getCheckExcelRestriction() {
+            return checkExcelRestriction;
+        }
+
+        public void setCheckExcelRestriction(Boolean checkExcelRestriction) {
+            this.checkExcelRestriction = checkExcelRestriction;
+        }
+
+        @SerializedName("UpdateSmartArt")
+        private Boolean updateSmartArt ;
+
+        public  SaveOptions  updateSmartArt(Boolean  updateSmartArt) {
+            this.updateSmartArt =  updateSmartArt;
+            return this;
+        }
+
+        @ApiModelProperty(value = "")
+        public Boolean getUpdateSmartArt() {
+            return updateSmartArt;
+        }
+
+        public void setUpdateSmartArt(Boolean updateSmartArt) {
+            this.updateSmartArt = updateSmartArt;
+        }
+
+        @SerializedName("EncryptDocumentProperties")
+        private Boolean encryptDocumentProperties ;
+
+        public  SaveOptions  encryptDocumentProperties(Boolean  encryptDocumentProperties) {
+            this.encryptDocumentProperties =  encryptDocumentProperties;
+            return this;
+        }
+
+        @ApiModelProperty(value = "")
+        public Boolean getEncryptDocumentProperties() {
+            return encryptDocumentProperties;
+        }
+
+        public void setEncryptDocumentProperties(Boolean encryptDocumentProperties) {
+            this.encryptDocumentProperties = encryptDocumentProperties;
+        }
+
         @Override
         public boolean equals(java.lang.Object o) {
             if (this == o) {
@@ -191,12 +276,17 @@ public class SaveOptions {
                 Objects.equals(this.enableHTTPCompression, saveOptions.enableHTTPCompression) &&
                 Objects.equals(this.refreshChartCache, saveOptions.refreshChartCache) &&
                 Objects.equals(this.sortNames, saveOptions.sortNames) &&
-                Objects.equals(this.validateMergedAreas, saveOptions.validateMergedAreas);
+                Objects.equals(this.validateMergedAreas, saveOptions.validateMergedAreas) &&
+                Objects.equals(this.mergeAreas, saveOptions.mergeAreas) &&
+                Objects.equals(this.sortExternalNames, saveOptions.sortExternalNames) &&
+                Objects.equals(this.checkExcelRestriction, saveOptions.checkExcelRestriction) &&
+                Objects.equals(this.updateSmartArt, saveOptions.updateSmartArt) &&
+                Objects.equals(this.encryptDocumentProperties, saveOptions.encryptDocumentProperties);
       }
 
       @Override
       public int hashCode() {
-        return Objects.hash(saveFormat, cachedFileFolder, clearData, createDirectory, enableHTTPCompression, refreshChartCache, sortNames, validateMergedAreas);
+        return Objects.hash(saveFormat, cachedFileFolder, clearData, createDirectory, enableHTTPCompression, refreshChartCache, sortNames, validateMergedAreas, mergeAreas, sortExternalNames, checkExcelRestriction, updateSmartArt, encryptDocumentProperties);
       }
         @Override
         public String toString() {
@@ -210,6 +300,11 @@ public class SaveOptions {
             sb.append("    refreshChartCache: ").append(toIndentedString(getRefreshChartCache())).append("\n");
             sb.append("    sortNames: ").append(toIndentedString(getSortNames())).append("\n");
             sb.append("    validateMergedAreas: ").append(toIndentedString(getValidateMergedAreas())).append("\n");
+            sb.append("    mergeAreas: ").append(toIndentedString(getMergeAreas())).append("\n");
+            sb.append("    sortExternalNames: ").append(toIndentedString(getSortExternalNames())).append("\n");
+            sb.append("    checkExcelRestriction: ").append(toIndentedString(getCheckExcelRestriction())).append("\n");
+            sb.append("    updateSmartArt: ").append(toIndentedString(getUpdateSmartArt())).append("\n");
+            sb.append("    encryptDocumentProperties: ").append(toIndentedString(getEncryptDocumentProperties())).append("\n");
             sb.append("}");
             return sb.toString();
         }

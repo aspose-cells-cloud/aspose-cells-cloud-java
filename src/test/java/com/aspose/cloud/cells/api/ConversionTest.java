@@ -10,10 +10,10 @@
  *  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
  *  copies of the Software, and to permit persons to whom the Software is
  *  furnished to do so, subject to the following conditions:
- * 
+ *
  *  The above copyright notice and this permission notice shall be included in all
  *  copies or substantial portions of the Software.
- * 
+ *
  *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  *  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
  *  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -60,7 +60,7 @@ public class ConversionTest {
         String newfilename = "OutResult/PostExcelSaveAs.csv";
 
         CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
+
         PostWorkbookSaveAsRequest request = new PostWorkbookSaveAsRequest();
         request.setName(remoteName);
 
@@ -86,7 +86,7 @@ public class ConversionTest {
         String newfilename = "OutResult/PostExcelSaveAs.html";
 
         CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
+
         PostWorkbookSaveAsRequest request = new PostWorkbookSaveAsRequest();
         request.setName(remoteName);
 
@@ -112,7 +112,7 @@ public class ConversionTest {
         String newfilename = "OutResult/PostExcelSaveAs.mhtml";
 
         CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
+
         PostWorkbookSaveAsRequest request = new PostWorkbookSaveAsRequest();
         request.setName(remoteName);
 
@@ -138,7 +138,7 @@ public class ConversionTest {
         String newfilename = "OutResult/PostExcelSaveAs.ods";
 
         CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
+
         PostWorkbookSaveAsRequest request = new PostWorkbookSaveAsRequest();
         request.setName(remoteName);
 
@@ -164,7 +164,7 @@ public class ConversionTest {
         String newfilename = "OutResult/PostExcelSaveAs.pdf";
 
         CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
+
         PostWorkbookSaveAsRequest request = new PostWorkbookSaveAsRequest();
         request.setName(remoteName);
 
@@ -190,7 +190,7 @@ public class ConversionTest {
         String newfilename = "OutResult/PostExcelSaveAs.xml";
 
         CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
+
         PostWorkbookSaveAsRequest request = new PostWorkbookSaveAsRequest();
         request.setName(remoteName);
 
@@ -216,7 +216,7 @@ public class ConversionTest {
         String newfilename = "OutResult/PostExcelSaveAs.txt";
 
         CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
+
         PostWorkbookSaveAsRequest request = new PostWorkbookSaveAsRequest();
         request.setName(remoteName);
 
@@ -242,7 +242,7 @@ public class ConversionTest {
         String newfilename = "OutResult/PostExcelSaveAs.tif";
 
         CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
+
         PostWorkbookSaveAsRequest request = new PostWorkbookSaveAsRequest();
         request.setName(remoteName);
 
@@ -268,7 +268,7 @@ public class ConversionTest {
         String newfilename = "OutResult/PostExcelSaveAs.xlsb";
 
         CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
+
         PostWorkbookSaveAsRequest request = new PostWorkbookSaveAsRequest();
         request.setName(remoteName);
 
@@ -294,7 +294,7 @@ public class ConversionTest {
         String newfilename = "OutResult/PostExcelSaveAs.xps";
 
         CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
+
         PostWorkbookSaveAsRequest request = new PostWorkbookSaveAsRequest();
         request.setName(remoteName);
 
@@ -320,7 +320,7 @@ public class ConversionTest {
         String newfilename = "OutResult/PostExcelSaveAs.png";
 
         CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
+
         PostWorkbookSaveAsRequest request = new PostWorkbookSaveAsRequest();
         request.setName(remoteName);
 
@@ -346,33 +346,7 @@ public class ConversionTest {
         String newfilename = "OutResult/PostExcelSaveAs.md";
 
         CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
-        PostWorkbookSaveAsRequest request = new PostWorkbookSaveAsRequest();
-        request.setName(remoteName);
 
-        request.setNewfilename(newfilename);
-
-        PdfSaveOptions saveOptions = new PdfSaveOptions();
-        saveOptions.setSaveFormat(format);
-
-        request.setSaveOptions(saveOptions);
-
-        request.setFolder(remoteFolder);
-
-        SaveResponse response =  this.api.postWorkbookSaveAs(request);
-    }
-
-
-    @Test
-    public void WorkbookSaveAs_numbers_OutResultPostExcelSaveAsnumbersTest() throws Exception {
-        String localName = "Book1.xlsx";
-        String remoteName = "Book1.xlsx";
-
-        String format = "numbers";
-        String newfilename = "OutResult/PostExcelSaveAs.numbers";
-
-        CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
         PostWorkbookSaveAsRequest request = new PostWorkbookSaveAsRequest();
         request.setName(remoteName);
 
@@ -398,7 +372,7 @@ public class ConversionTest {
         String newfilename = "OutResult/PostExcelSaveAs.svg";
 
         CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
+
         PostWorkbookSaveAsRequest request = new PostWorkbookSaveAsRequest();
         request.setName(remoteName);
 
@@ -424,7 +398,7 @@ public class ConversionTest {
         String newfilename = "OutResult/PostExcelSaveAs.docx";
 
         CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
+
         PostWorkbookSaveAsRequest request = new PostWorkbookSaveAsRequest();
         request.setName(remoteName);
 
@@ -450,7 +424,7 @@ public class ConversionTest {
         String newfilename = "OutResult/PostExcelSaveAs.pptx";
 
         CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
+
         PostWorkbookSaveAsRequest request = new PostWorkbookSaveAsRequest();
         request.setName(remoteName);
 
@@ -476,7 +450,7 @@ public class ConversionTest {
         String newfilename = "OutResult/PostExcelSaveAs.json";
 
         CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
+
         PostWorkbookSaveAsRequest request = new PostWorkbookSaveAsRequest();
         request.setName(remoteName);
 
@@ -502,7 +476,7 @@ public class ConversionTest {
         String newfilename = "OutResult/PostExcelSaveAs.sql";
 
         CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
+
         PostWorkbookSaveAsRequest request = new PostWorkbookSaveAsRequest();
         request.setName(remoteName);
 
@@ -527,7 +501,7 @@ public class ConversionTest {
         String format = "csv";
 
         CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
+
         GetWorkbookRequest request = new GetWorkbookRequest();
         request.setName(remoteName);
 
@@ -547,7 +521,7 @@ public class ConversionTest {
         String format = "html";
 
         CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
+
         GetWorkbookRequest request = new GetWorkbookRequest();
         request.setName(remoteName);
 
@@ -567,7 +541,7 @@ public class ConversionTest {
         String format = "mhtml";
 
         CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
+
         GetWorkbookRequest request = new GetWorkbookRequest();
         request.setName(remoteName);
 
@@ -587,7 +561,7 @@ public class ConversionTest {
         String format = "ods";
 
         CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
+
         GetWorkbookRequest request = new GetWorkbookRequest();
         request.setName(remoteName);
 
@@ -607,7 +581,7 @@ public class ConversionTest {
         String format = "pdf";
 
         CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
+
         GetWorkbookRequest request = new GetWorkbookRequest();
         request.setName(remoteName);
 
@@ -627,7 +601,7 @@ public class ConversionTest {
         String format = "xml";
 
         CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
+
         GetWorkbookRequest request = new GetWorkbookRequest();
         request.setName(remoteName);
 
@@ -647,7 +621,7 @@ public class ConversionTest {
         String format = "txt";
 
         CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
+
         GetWorkbookRequest request = new GetWorkbookRequest();
         request.setName(remoteName);
 
@@ -667,7 +641,7 @@ public class ConversionTest {
         String format = "tif";
 
         CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
+
         GetWorkbookRequest request = new GetWorkbookRequest();
         request.setName(remoteName);
 
@@ -687,7 +661,7 @@ public class ConversionTest {
         String format = "xps";
 
         CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
+
         GetWorkbookRequest request = new GetWorkbookRequest();
         request.setName(remoteName);
 
@@ -707,7 +681,7 @@ public class ConversionTest {
         String format = "png";
 
         CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
+
         GetWorkbookRequest request = new GetWorkbookRequest();
         request.setName(remoteName);
 
@@ -727,7 +701,7 @@ public class ConversionTest {
         String format = "md";
 
         CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
+
         GetWorkbookRequest request = new GetWorkbookRequest();
         request.setName(remoteName);
 
@@ -739,24 +713,6 @@ public class ConversionTest {
     }
 
 
-    @Test
-    public void GetWorkbookFormat_numbersTest() throws Exception {
-        String localName = "Book1.xlsx";
-        String remoteName = "Book1.xlsx";
-
-        String format = "numbers";
-
-        CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
-        GetWorkbookRequest request = new GetWorkbookRequest();
-        request.setName(remoteName);
-
-        request.setFormat(format);
-
-        request.setFolder(remoteFolder);
-
-        File response =  this.api.getWorkbook(request);
-    }
 
 
     @Test
@@ -767,7 +723,7 @@ public class ConversionTest {
         String format = "svg";
 
         CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
+
         GetWorkbookRequest request = new GetWorkbookRequest();
         request.setName(remoteName);
 
@@ -787,7 +743,7 @@ public class ConversionTest {
         String format = "docx";
 
         CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
+
         GetWorkbookRequest request = new GetWorkbookRequest();
         request.setName(remoteName);
 
@@ -807,7 +763,7 @@ public class ConversionTest {
         String format = "pptx";
 
         CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
+
         GetWorkbookRequest request = new GetWorkbookRequest();
         request.setName(remoteName);
 
@@ -827,7 +783,7 @@ public class ConversionTest {
         String format = "json";
 
         CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
+
         GetWorkbookRequest request = new GetWorkbookRequest();
         request.setName(remoteName);
 
@@ -847,7 +803,7 @@ public class ConversionTest {
         String format = "sql";
 
         CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
+
         GetWorkbookRequest request = new GetWorkbookRequest();
         request.setName(remoteName);
 
@@ -867,13 +823,13 @@ public class ConversionTest {
         String format = "csv";
 
         CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
+
         PutConvertWorkbookRequest request = new PutConvertWorkbookRequest();
         request.setFormat(format);
-         
 
-        HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(localName ,CellsApiUtil.GetFileHolder(localName) ); 
+
+        HashMap<String,File> fileMap = new HashMap<String,File>();
+        fileMap.put(localName ,CellsApiUtil.GetFileHolder(localName) );
         request.setFile(fileMap);
         File response =  this.api.putConvertWorkbook(request);
     }
@@ -887,13 +843,13 @@ public class ConversionTest {
         String format = "xls";
 
         CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
+
         PutConvertWorkbookRequest request = new PutConvertWorkbookRequest();
         request.setFormat(format);
-         
 
-        HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(localName ,CellsApiUtil.GetFileHolder(localName) ); 
+
+        HashMap<String,File> fileMap = new HashMap<String,File>();
+        fileMap.put(localName ,CellsApiUtil.GetFileHolder(localName) );
         request.setFile(fileMap);
         File response =  this.api.putConvertWorkbook(request);
     }
@@ -907,13 +863,13 @@ public class ConversionTest {
         String format = "html";
 
         CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
+
         PutConvertWorkbookRequest request = new PutConvertWorkbookRequest();
         request.setFormat(format);
-         
 
-        HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(localName ,CellsApiUtil.GetFileHolder(localName) ); 
+
+        HashMap<String,File> fileMap = new HashMap<String,File>();
+        fileMap.put(localName ,CellsApiUtil.GetFileHolder(localName) );
         request.setFile(fileMap);
         File response =  this.api.putConvertWorkbook(request);
     }
@@ -927,13 +883,13 @@ public class ConversionTest {
         String format = "mhtml";
 
         CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
+
         PutConvertWorkbookRequest request = new PutConvertWorkbookRequest();
         request.setFormat(format);
-         
 
-        HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(localName ,CellsApiUtil.GetFileHolder(localName) ); 
+
+        HashMap<String,File> fileMap = new HashMap<String,File>();
+        fileMap.put(localName ,CellsApiUtil.GetFileHolder(localName) );
         request.setFile(fileMap);
         File response =  this.api.putConvertWorkbook(request);
     }
@@ -947,13 +903,13 @@ public class ConversionTest {
         String format = "ods";
 
         CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
+
         PutConvertWorkbookRequest request = new PutConvertWorkbookRequest();
         request.setFormat(format);
-         
 
-        HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(localName ,CellsApiUtil.GetFileHolder(localName) ); 
+
+        HashMap<String,File> fileMap = new HashMap<String,File>();
+        fileMap.put(localName ,CellsApiUtil.GetFileHolder(localName) );
         request.setFile(fileMap);
         File response =  this.api.putConvertWorkbook(request);
     }
@@ -967,13 +923,13 @@ public class ConversionTest {
         String format = "pdf";
 
         CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
+
         PutConvertWorkbookRequest request = new PutConvertWorkbookRequest();
         request.setFormat(format);
-         
 
-        HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(localName ,CellsApiUtil.GetFileHolder(localName) ); 
+
+        HashMap<String,File> fileMap = new HashMap<String,File>();
+        fileMap.put(localName ,CellsApiUtil.GetFileHolder(localName) );
         request.setFile(fileMap);
         File response =  this.api.putConvertWorkbook(request);
     }
@@ -987,13 +943,13 @@ public class ConversionTest {
         String format = "xml";
 
         CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
+
         PutConvertWorkbookRequest request = new PutConvertWorkbookRequest();
         request.setFormat(format);
-         
 
-        HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(localName ,CellsApiUtil.GetFileHolder(localName) ); 
+
+        HashMap<String,File> fileMap = new HashMap<String,File>();
+        fileMap.put(localName ,CellsApiUtil.GetFileHolder(localName) );
         request.setFile(fileMap);
         File response =  this.api.putConvertWorkbook(request);
     }
@@ -1007,13 +963,13 @@ public class ConversionTest {
         String format = "txt";
 
         CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
+
         PutConvertWorkbookRequest request = new PutConvertWorkbookRequest();
         request.setFormat(format);
-         
 
-        HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(localName ,CellsApiUtil.GetFileHolder(localName) ); 
+
+        HashMap<String,File> fileMap = new HashMap<String,File>();
+        fileMap.put(localName ,CellsApiUtil.GetFileHolder(localName) );
         request.setFile(fileMap);
         File response =  this.api.putConvertWorkbook(request);
     }
@@ -1027,13 +983,13 @@ public class ConversionTest {
         String format = "tif";
 
         CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
+
         PutConvertWorkbookRequest request = new PutConvertWorkbookRequest();
         request.setFormat(format);
-         
 
-        HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(localName ,CellsApiUtil.GetFileHolder(localName) ); 
+
+        HashMap<String,File> fileMap = new HashMap<String,File>();
+        fileMap.put(localName ,CellsApiUtil.GetFileHolder(localName) );
         request.setFile(fileMap);
         File response =  this.api.putConvertWorkbook(request);
     }
@@ -1047,13 +1003,13 @@ public class ConversionTest {
         String format = "xlsb";
 
         CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
+
         PutConvertWorkbookRequest request = new PutConvertWorkbookRequest();
         request.setFormat(format);
-         
 
-        HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(localName ,CellsApiUtil.GetFileHolder(localName) ); 
+
+        HashMap<String,File> fileMap = new HashMap<String,File>();
+        fileMap.put(localName ,CellsApiUtil.GetFileHolder(localName) );
         request.setFile(fileMap);
         File response =  this.api.putConvertWorkbook(request);
     }
@@ -1067,13 +1023,13 @@ public class ConversionTest {
         String format = "xps";
 
         CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
+
         PutConvertWorkbookRequest request = new PutConvertWorkbookRequest();
         request.setFormat(format);
-         
 
-        HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(localName ,CellsApiUtil.GetFileHolder(localName) ); 
+
+        HashMap<String,File> fileMap = new HashMap<String,File>();
+        fileMap.put(localName ,CellsApiUtil.GetFileHolder(localName) );
         request.setFile(fileMap);
         File response =  this.api.putConvertWorkbook(request);
     }
@@ -1087,13 +1043,13 @@ public class ConversionTest {
         String format = "png";
 
         CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
+
         PutConvertWorkbookRequest request = new PutConvertWorkbookRequest();
         request.setFormat(format);
-         
 
-        HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(localName ,CellsApiUtil.GetFileHolder(localName) ); 
+
+        HashMap<String,File> fileMap = new HashMap<String,File>();
+        fileMap.put(localName ,CellsApiUtil.GetFileHolder(localName) );
         request.setFile(fileMap);
         File response =  this.api.putConvertWorkbook(request);
     }
@@ -1107,36 +1063,19 @@ public class ConversionTest {
         String format = "md";
 
         CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
+
         PutConvertWorkbookRequest request = new PutConvertWorkbookRequest();
         request.setFormat(format);
-         
 
-        HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(localName ,CellsApiUtil.GetFileHolder(localName) ); 
+
+        HashMap<String,File> fileMap = new HashMap<String,File>();
+        fileMap.put(localName ,CellsApiUtil.GetFileHolder(localName) );
         request.setFile(fileMap);
         File response =  this.api.putConvertWorkbook(request);
     }
 
 
-    @Test
-    public void ConvertWorkbook_numbersTest() throws Exception {
-        String localName = "Book1.xlsx";
-        String remoteName = "Book1.xlsx";
 
-        String format = "numbers";
-
-        CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
-        PutConvertWorkbookRequest request = new PutConvertWorkbookRequest();
-        request.setFormat(format);
-         
-
-        HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(localName ,CellsApiUtil.GetFileHolder(localName) ); 
-        request.setFile(fileMap);
-        File response =  this.api.putConvertWorkbook(request);
-    }
 
 
     @Test
@@ -1147,13 +1086,13 @@ public class ConversionTest {
         String format = "wmf";
 
         CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
+
         PutConvertWorkbookRequest request = new PutConvertWorkbookRequest();
         request.setFormat(format);
-         
 
-        HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(localName ,CellsApiUtil.GetFileHolder(localName) ); 
+
+        HashMap<String,File> fileMap = new HashMap<String,File>();
+        fileMap.put(localName ,CellsApiUtil.GetFileHolder(localName) );
         request.setFile(fileMap);
         File response =  this.api.putConvertWorkbook(request);
     }
@@ -1167,13 +1106,13 @@ public class ConversionTest {
         String format = "svg";
 
         CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
+
         PutConvertWorkbookRequest request = new PutConvertWorkbookRequest();
         request.setFormat(format);
-         
 
-        HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(localName ,CellsApiUtil.GetFileHolder(localName) ); 
+
+        HashMap<String,File> fileMap = new HashMap<String,File>();
+        fileMap.put(localName ,CellsApiUtil.GetFileHolder(localName) );
         request.setFile(fileMap);
         File response =  this.api.putConvertWorkbook(request);
     }
@@ -1187,13 +1126,13 @@ public class ConversionTest {
         String format = "docx";
 
         CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
+
         PutConvertWorkbookRequest request = new PutConvertWorkbookRequest();
         request.setFormat(format);
-         
 
-        HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(localName ,CellsApiUtil.GetFileHolder(localName) ); 
+
+        HashMap<String,File> fileMap = new HashMap<String,File>();
+        fileMap.put(localName ,CellsApiUtil.GetFileHolder(localName) );
         request.setFile(fileMap);
         File response =  this.api.putConvertWorkbook(request);
     }
@@ -1207,13 +1146,13 @@ public class ConversionTest {
         String format = "pptx";
 
         CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
+
         PutConvertWorkbookRequest request = new PutConvertWorkbookRequest();
         request.setFormat(format);
-         
 
-        HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(localName ,CellsApiUtil.GetFileHolder(localName) ); 
+
+        HashMap<String,File> fileMap = new HashMap<String,File>();
+        fileMap.put(localName ,CellsApiUtil.GetFileHolder(localName) );
         request.setFile(fileMap);
         File response =  this.api.putConvertWorkbook(request);
     }
@@ -1227,13 +1166,13 @@ public class ConversionTest {
         String format = "json";
 
         CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
+
         PutConvertWorkbookRequest request = new PutConvertWorkbookRequest();
         request.setFormat(format);
-         
 
-        HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(localName ,CellsApiUtil.GetFileHolder(localName) ); 
+
+        HashMap<String,File> fileMap = new HashMap<String,File>();
+        fileMap.put(localName ,CellsApiUtil.GetFileHolder(localName) );
         request.setFile(fileMap);
         File response =  this.api.putConvertWorkbook(request);
     }
@@ -1247,13 +1186,13 @@ public class ConversionTest {
         String format = "sql";
 
         CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
+
         PutConvertWorkbookRequest request = new PutConvertWorkbookRequest();
         request.setFormat(format);
-         
 
-        HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(localName ,CellsApiUtil.GetFileHolder(localName) ); 
+
+        HashMap<String,File> fileMap = new HashMap<String,File>();
+        fileMap.put(localName ,CellsApiUtil.GetFileHolder(localName) );
         request.setFile(fileMap);
         File response =  this.api.putConvertWorkbook(request);
     }
@@ -1268,15 +1207,15 @@ public class ConversionTest {
         String outPath = "OutResult/ConvertWorkbook.csv";
 
         CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
+
         PutConvertWorkbookRequest request = new PutConvertWorkbookRequest();
         request.setFormat(format);
 
         request.setOutPath(outPath);
-         
 
-        HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(localName ,CellsApiUtil.GetFileHolder(localName) ); 
+
+        HashMap<String,File> fileMap = new HashMap<String,File>();
+        fileMap.put(localName ,CellsApiUtil.GetFileHolder(localName) );
         request.setFile(fileMap);
         File response =  this.api.putConvertWorkbook(request);
     }
@@ -1291,15 +1230,15 @@ public class ConversionTest {
         String outPath = "OutResult/ConvertWorkbook.xls";
 
         CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
+
         PutConvertWorkbookRequest request = new PutConvertWorkbookRequest();
         request.setFormat(format);
 
         request.setOutPath(outPath);
-         
 
-        HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(localName ,CellsApiUtil.GetFileHolder(localName) ); 
+
+        HashMap<String,File> fileMap = new HashMap<String,File>();
+        fileMap.put(localName ,CellsApiUtil.GetFileHolder(localName) );
         request.setFile(fileMap);
         File response =  this.api.putConvertWorkbook(request);
     }
@@ -1314,15 +1253,15 @@ public class ConversionTest {
         String outPath = "OutResult/ConvertWorkbook.html";
 
         CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
+
         PutConvertWorkbookRequest request = new PutConvertWorkbookRequest();
         request.setFormat(format);
 
         request.setOutPath(outPath);
-         
 
-        HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(localName ,CellsApiUtil.GetFileHolder(localName) ); 
+
+        HashMap<String,File> fileMap = new HashMap<String,File>();
+        fileMap.put(localName ,CellsApiUtil.GetFileHolder(localName) );
         request.setFile(fileMap);
         File response =  this.api.putConvertWorkbook(request);
     }
@@ -1337,15 +1276,15 @@ public class ConversionTest {
         String outPath = "OutResult/ConvertWorkbook.mhtml";
 
         CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
+
         PutConvertWorkbookRequest request = new PutConvertWorkbookRequest();
         request.setFormat(format);
 
         request.setOutPath(outPath);
-         
 
-        HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(localName ,CellsApiUtil.GetFileHolder(localName) ); 
+
+        HashMap<String,File> fileMap = new HashMap<String,File>();
+        fileMap.put(localName ,CellsApiUtil.GetFileHolder(localName) );
         request.setFile(fileMap);
         File response =  this.api.putConvertWorkbook(request);
     }
@@ -1360,15 +1299,15 @@ public class ConversionTest {
         String outPath = "OutResult/ConvertWorkbook.ods";
 
         CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
+
         PutConvertWorkbookRequest request = new PutConvertWorkbookRequest();
         request.setFormat(format);
 
         request.setOutPath(outPath);
-         
 
-        HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(localName ,CellsApiUtil.GetFileHolder(localName) ); 
+
+        HashMap<String,File> fileMap = new HashMap<String,File>();
+        fileMap.put(localName ,CellsApiUtil.GetFileHolder(localName) );
         request.setFile(fileMap);
         File response =  this.api.putConvertWorkbook(request);
     }
@@ -1383,15 +1322,15 @@ public class ConversionTest {
         String outPath = "OutResult/ConvertWorkbook.pdf";
 
         CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
+
         PutConvertWorkbookRequest request = new PutConvertWorkbookRequest();
         request.setFormat(format);
 
         request.setOutPath(outPath);
-         
 
-        HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(localName ,CellsApiUtil.GetFileHolder(localName) ); 
+
+        HashMap<String,File> fileMap = new HashMap<String,File>();
+        fileMap.put(localName ,CellsApiUtil.GetFileHolder(localName) );
         request.setFile(fileMap);
         File response =  this.api.putConvertWorkbook(request);
     }
@@ -1406,15 +1345,15 @@ public class ConversionTest {
         String outPath = "OutResult/ConvertWorkbook.xml";
 
         CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
+
         PutConvertWorkbookRequest request = new PutConvertWorkbookRequest();
         request.setFormat(format);
 
         request.setOutPath(outPath);
-         
 
-        HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(localName ,CellsApiUtil.GetFileHolder(localName) ); 
+
+        HashMap<String,File> fileMap = new HashMap<String,File>();
+        fileMap.put(localName ,CellsApiUtil.GetFileHolder(localName) );
         request.setFile(fileMap);
         File response =  this.api.putConvertWorkbook(request);
     }
@@ -1429,15 +1368,15 @@ public class ConversionTest {
         String outPath = "OutResult/ConvertWorkbook.txt";
 
         CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
+
         PutConvertWorkbookRequest request = new PutConvertWorkbookRequest();
         request.setFormat(format);
 
         request.setOutPath(outPath);
-         
 
-        HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(localName ,CellsApiUtil.GetFileHolder(localName) ); 
+
+        HashMap<String,File> fileMap = new HashMap<String,File>();
+        fileMap.put(localName ,CellsApiUtil.GetFileHolder(localName) );
         request.setFile(fileMap);
         File response =  this.api.putConvertWorkbook(request);
     }
@@ -1452,15 +1391,15 @@ public class ConversionTest {
         String outPath = "OutResult/ConvertWorkbook.tif";
 
         CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
+
         PutConvertWorkbookRequest request = new PutConvertWorkbookRequest();
         request.setFormat(format);
 
         request.setOutPath(outPath);
-         
 
-        HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(localName ,CellsApiUtil.GetFileHolder(localName) ); 
+
+        HashMap<String,File> fileMap = new HashMap<String,File>();
+        fileMap.put(localName ,CellsApiUtil.GetFileHolder(localName) );
         request.setFile(fileMap);
         File response =  this.api.putConvertWorkbook(request);
     }
@@ -1475,15 +1414,15 @@ public class ConversionTest {
         String outPath = "OutResult/ConvertWorkbook.xlsb";
 
         CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
+
         PutConvertWorkbookRequest request = new PutConvertWorkbookRequest();
         request.setFormat(format);
 
         request.setOutPath(outPath);
-         
 
-        HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(localName ,CellsApiUtil.GetFileHolder(localName) ); 
+
+        HashMap<String,File> fileMap = new HashMap<String,File>();
+        fileMap.put(localName ,CellsApiUtil.GetFileHolder(localName) );
         request.setFile(fileMap);
         File response =  this.api.putConvertWorkbook(request);
     }
@@ -1498,15 +1437,15 @@ public class ConversionTest {
         String outPath = "OutResult/ConvertWorkbook.xltm";
 
         CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
+
         PutConvertWorkbookRequest request = new PutConvertWorkbookRequest();
         request.setFormat(format);
 
         request.setOutPath(outPath);
-         
 
-        HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(localName ,CellsApiUtil.GetFileHolder(localName) ); 
+
+        HashMap<String,File> fileMap = new HashMap<String,File>();
+        fileMap.put(localName ,CellsApiUtil.GetFileHolder(localName) );
         request.setFile(fileMap);
         File response =  this.api.putConvertWorkbook(request);
     }
@@ -1521,15 +1460,15 @@ public class ConversionTest {
         String outPath = "OutResult/ConvertWorkbook.xps";
 
         CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
+
         PutConvertWorkbookRequest request = new PutConvertWorkbookRequest();
         request.setFormat(format);
 
         request.setOutPath(outPath);
-         
 
-        HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(localName ,CellsApiUtil.GetFileHolder(localName) ); 
+
+        HashMap<String,File> fileMap = new HashMap<String,File>();
+        fileMap.put(localName ,CellsApiUtil.GetFileHolder(localName) );
         request.setFile(fileMap);
         File response =  this.api.putConvertWorkbook(request);
     }
@@ -1544,15 +1483,15 @@ public class ConversionTest {
         String outPath = "OutResult/ConvertWorkbook.png";
 
         CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
+
         PutConvertWorkbookRequest request = new PutConvertWorkbookRequest();
         request.setFormat(format);
 
         request.setOutPath(outPath);
-         
 
-        HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(localName ,CellsApiUtil.GetFileHolder(localName) ); 
+
+        HashMap<String,File> fileMap = new HashMap<String,File>();
+        fileMap.put(localName ,CellsApiUtil.GetFileHolder(localName) );
         request.setFile(fileMap);
         File response =  this.api.putConvertWorkbook(request);
     }
@@ -1567,41 +1506,19 @@ public class ConversionTest {
         String outPath = "OutResult/ConvertWorkbook.md";
 
         CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
+
         PutConvertWorkbookRequest request = new PutConvertWorkbookRequest();
         request.setFormat(format);
 
         request.setOutPath(outPath);
-         
 
-        HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(localName ,CellsApiUtil.GetFileHolder(localName) ); 
+
+        HashMap<String,File> fileMap = new HashMap<String,File>();
+        fileMap.put(localName ,CellsApiUtil.GetFileHolder(localName) );
         request.setFile(fileMap);
         File response =  this.api.putConvertWorkbook(request);
     }
 
-
-    @Test
-    public void ConvertWorkbookSaveCloud_numbers_OutResultConvertWorkbooknumbersTest() throws Exception {
-        String localName = "Book1.xlsx";
-        String remoteName = "Book1.xlsx";
-
-        String format = "numbers";
-        String outPath = "OutResult/ConvertWorkbook.numbers";
-
-        CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
-        PutConvertWorkbookRequest request = new PutConvertWorkbookRequest();
-        request.setFormat(format);
-
-        request.setOutPath(outPath);
-         
-
-        HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(localName ,CellsApiUtil.GetFileHolder(localName) ); 
-        request.setFile(fileMap);
-        File response =  this.api.putConvertWorkbook(request);
-    }
 
 
     @Test
@@ -1613,15 +1530,15 @@ public class ConversionTest {
         String outPath = "OutResult/ConvertWorkbook.svg";
 
         CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
+
         PutConvertWorkbookRequest request = new PutConvertWorkbookRequest();
         request.setFormat(format);
 
         request.setOutPath(outPath);
-         
 
-        HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(localName ,CellsApiUtil.GetFileHolder(localName) ); 
+
+        HashMap<String,File> fileMap = new HashMap<String,File>();
+        fileMap.put(localName ,CellsApiUtil.GetFileHolder(localName) );
         request.setFile(fileMap);
         File response =  this.api.putConvertWorkbook(request);
     }
@@ -1636,15 +1553,15 @@ public class ConversionTest {
         String outPath = "OutResult/ConvertWorkbook.docx";
 
         CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
+
         PutConvertWorkbookRequest request = new PutConvertWorkbookRequest();
         request.setFormat(format);
 
         request.setOutPath(outPath);
-         
 
-        HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(localName ,CellsApiUtil.GetFileHolder(localName) ); 
+
+        HashMap<String,File> fileMap = new HashMap<String,File>();
+        fileMap.put(localName ,CellsApiUtil.GetFileHolder(localName) );
         request.setFile(fileMap);
         File response =  this.api.putConvertWorkbook(request);
     }
@@ -1659,15 +1576,15 @@ public class ConversionTest {
         String outPath = "OutResult/ConvertWorkbook.pptx";
 
         CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
+
         PutConvertWorkbookRequest request = new PutConvertWorkbookRequest();
         request.setFormat(format);
 
         request.setOutPath(outPath);
-         
 
-        HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(localName ,CellsApiUtil.GetFileHolder(localName) ); 
+
+        HashMap<String,File> fileMap = new HashMap<String,File>();
+        fileMap.put(localName ,CellsApiUtil.GetFileHolder(localName) );
         request.setFile(fileMap);
         File response =  this.api.putConvertWorkbook(request);
     }
@@ -1682,15 +1599,15 @@ public class ConversionTest {
         String outPath = "OutResult/ConvertWorkbook.json";
 
         CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
+
         PutConvertWorkbookRequest request = new PutConvertWorkbookRequest();
         request.setFormat(format);
 
         request.setOutPath(outPath);
-         
 
-        HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(localName ,CellsApiUtil.GetFileHolder(localName) ); 
+
+        HashMap<String,File> fileMap = new HashMap<String,File>();
+        fileMap.put(localName ,CellsApiUtil.GetFileHolder(localName) );
         request.setFile(fileMap);
         File response =  this.api.putConvertWorkbook(request);
     }
@@ -1705,15 +1622,15 @@ public class ConversionTest {
         String outPath = "OutResult/ConvertWorkbook.sql";
 
         CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
+
         PutConvertWorkbookRequest request = new PutConvertWorkbookRequest();
         request.setFormat(format);
 
         request.setOutPath(outPath);
-         
 
-        HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(localName ,CellsApiUtil.GetFileHolder(localName) ); 
+
+        HashMap<String,File> fileMap = new HashMap<String,File>();
+        fileMap.put(localName ,CellsApiUtil.GetFileHolder(localName) );
         request.setFile(fileMap);
         File response =  this.api.putConvertWorkbook(request);
     }

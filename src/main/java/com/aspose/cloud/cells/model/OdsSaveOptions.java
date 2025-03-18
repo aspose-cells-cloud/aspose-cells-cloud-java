@@ -37,6 +37,57 @@ import java.time.OffsetDateTime;
 
 
 public class OdsSaveOptions  extends  SaveOptions {
+        @SerializedName("GeneratorType")
+        private String generatorType ;
+
+        public  OdsSaveOptions  generatorType(String  generatorType) {
+            this.generatorType =  generatorType;
+            return this;
+        }
+
+        @ApiModelProperty(value = "")
+        public String getGeneratorType() {
+            return generatorType;
+        }
+
+        public void setGeneratorType(String generatorType) {
+            this.generatorType = generatorType;
+        }
+
+        @SerializedName("OdfStrictVersion")
+        private String odfStrictVersion ;
+
+        public  OdsSaveOptions  odfStrictVersion(String  odfStrictVersion) {
+            this.odfStrictVersion =  odfStrictVersion;
+            return this;
+        }
+
+        @ApiModelProperty(value = "")
+        public String getOdfStrictVersion() {
+            return odfStrictVersion;
+        }
+
+        public void setOdfStrictVersion(String odfStrictVersion) {
+            this.odfStrictVersion = odfStrictVersion;
+        }
+
+        @SerializedName("IgnorePivotTables")
+        private Boolean ignorePivotTables ;
+
+        public  OdsSaveOptions  ignorePivotTables(Boolean  ignorePivotTables) {
+            this.ignorePivotTables =  ignorePivotTables;
+            return this;
+        }
+
+        @ApiModelProperty(value = "")
+        public Boolean getIgnorePivotTables() {
+            return ignorePivotTables;
+        }
+
+        public void setIgnorePivotTables(Boolean ignorePivotTables) {
+            this.ignorePivotTables = ignorePivotTables;
+        }
+
         @Override
         public boolean equals(java.lang.Object o) {
             if (this == o) {
@@ -46,17 +97,25 @@ public class OdsSaveOptions  extends  SaveOptions {
                 return false;
             }
 
-            return super.equals(o);
+            OdsSaveOptions odsSaveOptions = (OdsSaveOptions) o;
+            return
+                Objects.equals(this.generatorType, odsSaveOptions.generatorType) &&
+                Objects.equals(this.odfStrictVersion, odsSaveOptions.odfStrictVersion) &&
+                Objects.equals(this.ignorePivotTables, odsSaveOptions.ignorePivotTables) &&
+                super.equals(o);
       }
 
       @Override
       public int hashCode() {
-        return Objects.hash(super.hashCode());
+        return Objects.hash(generatorType, odfStrictVersion, ignorePivotTables, super.hashCode());
       }
         @Override
         public String toString() {
             StringBuilder sb = new StringBuilder();
             sb.append("class OdsSaveOptions {\n");
+            sb.append("    generatorType: ").append(toIndentedString(getGeneratorType())).append("\n");
+            sb.append("    odfStrictVersion: ").append(toIndentedString(getOdfStrictVersion())).append("\n");
+            sb.append("    ignorePivotTables: ").append(toIndentedString(getIgnorePivotTables())).append("\n");
             sb.append("    saveFormat: ").append(toIndentedString(getSaveFormat())).append("\n");
             sb.append("    cachedFileFolder: ").append(toIndentedString(getCachedFileFolder())).append("\n");
             sb.append("    clearData: ").append(toIndentedString(getClearData())).append("\n");
@@ -65,6 +124,11 @@ public class OdsSaveOptions  extends  SaveOptions {
             sb.append("    refreshChartCache: ").append(toIndentedString(getRefreshChartCache())).append("\n");
             sb.append("    sortNames: ").append(toIndentedString(getSortNames())).append("\n");
             sb.append("    validateMergedAreas: ").append(toIndentedString(getValidateMergedAreas())).append("\n");
+            sb.append("    mergeAreas: ").append(toIndentedString(getMergeAreas())).append("\n");
+            sb.append("    sortExternalNames: ").append(toIndentedString(getSortExternalNames())).append("\n");
+            sb.append("    checkExcelRestriction: ").append(toIndentedString(getCheckExcelRestriction())).append("\n");
+            sb.append("    updateSmartArt: ").append(toIndentedString(getUpdateSmartArt())).append("\n");
+            sb.append("    encryptDocumentProperties: ").append(toIndentedString(getEncryptDocumentProperties())).append("\n");
             sb.append("}");
             return sb.toString();
         }
