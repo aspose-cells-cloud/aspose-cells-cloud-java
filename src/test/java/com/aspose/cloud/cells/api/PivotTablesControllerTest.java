@@ -30,7 +30,7 @@ package com.aspose.cloud.cells.api;
 import com.aspose.cloud.cells.client.*;
 import com.aspose.cloud.cells.model.*;
 import com.aspose.cloud.cells.request.*;
-
+import java.util.Collections;
 import org.junit.Test;
 import java.util.ArrayList;
 import java.util.List;
