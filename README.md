@@ -71,6 +71,7 @@ To get started with Aspose.Cells Cloud for Java, follow these steps:
 
 1. Create an account at  [Aspose for Cloud](https://dashboard.aspose.cloud/#/apps) and obtain your application information.
 2. Add the following dependency to your project's POM:
+3. You need to set your CellsCloudClientId and CellsCloudClientSecret in the environment variables.
 
 ```
 <repositories>
@@ -85,22 +86,41 @@ To get started with Aspose.Cells Cloud for Java, follow these steps:
     <dependency>
         <groupId>com.aspose</groupId>
         <artifactId>aspose-cells-cloud</artifactId>
-        <version>25.2.0</version>
+        <version>25.3.0</version>
     </dependency>
 </dependencies>
 ```
 
 ```Java
-CellsApi cellsApi = new CellsApi(CellsApiUtil.GetClientId(),CellsApiUtil.GetClientSecret());
-String localName = "cloud.png";
-String remoteName = "cloud.png";
-String format = "csv";
-PutConvertWorkbookRequest request = new PutConvertWorkbookRequest();
-request.setFormat(format);
-HashMap<String,File> fileMap = new HashMap<String,File>();
-fileMap.put(localName ,CellsApiUtil.GetFileHolder(localName) );
-request.setFile(fileMap);
-File response =  cellsApi.putConvertWorkbook(request);
+package com.aspose.cloud.cells.api;
+import com.aspose.cloud.cells.client.*;
+import com.aspose.cloud.cells.model.*;
+import com.aspose.cloud.cells.request.*;
+import org.junit.Test;
+import java.util.ArrayList;
+import java.util.List;
+import java.io.File;
+import java.util.HashMap;
+import junit.framework.Assert;
+
+public class ConversionTest {
+    private String remoteFolder = "TestData/In";
+    CellsApi cellsApi = new CellsApi(System.getenv("CellsCloudClientId"),System.getenv("CellsCloudClientSecret"));
+
+    public void putConvertWorkbook() throws Exception {
+        private String remoteFolder = "TestData/In";
+        String localName = "Book1.xlsx";
+        String remoteName = "Book1.xlsx";
+        String format = "csv";
+        CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
+        PutConvertWorkbookRequest request = new PutConvertWorkbookRequest();
+        request.setFormat(format);
+        HashMap<String,File> fileMap = new HashMap<String,File>();
+        fileMap.put(localName ,CellsApiUtil.GetFileHolder(localName) );
+        request.setFile(fileMap);
+        File response =  this.api.putConvertWorkbook(request);
+    }
+}
 ```
 
 ## Aspose.Cells Cloud in Popular Languages
