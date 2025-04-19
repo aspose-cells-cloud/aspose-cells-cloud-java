@@ -27,17 +27,14 @@ public class ExamplePostSearch {
 
     public void Run(){
         try{
-            String assemblyTestXlsx = "assemblytest.xlsx";
             String dataSourceXlsx = "datasource.xlsx";
 
    
             PostSearchRequest request = new PostSearchRequest();
             request.setText("12");
              
-             
 
             HashMap<String,File> fileMap = new HashMap<String,File>(); 
-            fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
             fileMap.put(dataSourceXlsx ,CellsApiUtil.GetFileHolder(dataSourceXlsx) ); 
             request.setFile(fileMap);
             this.api.postSearch(request);

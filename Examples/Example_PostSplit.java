@@ -27,8 +27,7 @@ public class ExamplePostSplit {
 
     public void Run(){
         try{
-            String assemblyTestXlsx = "assemblytest.xlsx";
-            String dataSourceXlsx = "datasource.xlsx";
+            String book1Xlsx = "Book1.xlsx";
 
             String outFormat = "csv";
 
@@ -36,11 +35,9 @@ public class ExamplePostSplit {
             PostSplitRequest request = new PostSplitRequest();
             request.setOutFormat(outFormat);
              
-             
 
             HashMap<String,File> fileMap = new HashMap<String,File>(); 
-            fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
-            fileMap.put(dataSourceXlsx ,CellsApiUtil.GetFileHolder(dataSourceXlsx) ); 
+            fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
             request.setFile(fileMap);
             this.api.postSplit(request);
 

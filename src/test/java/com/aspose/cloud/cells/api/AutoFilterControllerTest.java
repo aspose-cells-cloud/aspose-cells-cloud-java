@@ -10,10 +10,10 @@
  *  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
  *  copies of the Software, and to permit persons to whom the Software is
  *  furnished to do so, subject to the following conditions:
- * 
+ *
  *  The above copyright notice and this permission notice shall be included in all
  *  copies or substantial portions of the Software.
- * 
+ *
  *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  *  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
  *  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -51,13 +51,15 @@ public class AutoFilterControllerTest {
         }
     }
 
+
+
     @Test
     public void GetWorksheetAutoFilterTest() throws Exception {
         String localName = "Book1.xlsx";
         String remoteName = "Book1.xlsx";
 
         CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
+
         GetWorksheetAutoFilterRequest request = new GetWorksheetAutoFilterRequest();
         request.setName(remoteName);
 
@@ -77,7 +79,7 @@ public class AutoFilterControllerTest {
         String remoteName = "Book1.xlsx";
 
         CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
+
         PutWorksheetDateFilterRequest request = new PutWorksheetDateFilterRequest();
         request.setName(remoteName);
 
@@ -109,7 +111,7 @@ public class AutoFilterControllerTest {
         String remoteName = "Book1.xlsx";
 
         CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
+
         PutWorksheetFilterRequest request = new PutWorksheetFilterRequest();
         request.setName(remoteName);
 
@@ -139,7 +141,7 @@ public class AutoFilterControllerTest {
         String remoteName = "Book1.xlsx";
 
         CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
+
         PutWorksheetIconFilterRequest request = new PutWorksheetIconFilterRequest();
         request.setName(remoteName);
 
@@ -171,7 +173,7 @@ public class AutoFilterControllerTest {
         String remoteName = "Book1.xlsx";
 
         CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
+
         PutWorksheetCustomFilterRequest request = new PutWorksheetCustomFilterRequest();
         request.setName(remoteName);
 
@@ -203,7 +205,7 @@ public class AutoFilterControllerTest {
         String remoteName = "Book1.xlsx";
 
         CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
+
         PutWorksheetDynamicFilterRequest request = new PutWorksheetDynamicFilterRequest();
         request.setName(remoteName);
 
@@ -233,7 +235,7 @@ public class AutoFilterControllerTest {
         String remoteName = "Book1.xlsx";
 
         CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
+
         PutWorksheetFilterTop10Request request = new PutWorksheetFilterTop10Request();
         request.setName(remoteName);
 
@@ -267,7 +269,7 @@ public class AutoFilterControllerTest {
         String remoteName = "Book1.xlsx";
 
         CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
+
         PutWorksheetColorFilterRequest request = new PutWorksheetColorFilterRequest();
         request.setName(remoteName);
 
@@ -318,7 +320,7 @@ public class AutoFilterControllerTest {
         String remoteName = "Book1.xlsx";
 
         CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
+
         PostWorksheetMatchBlanksRequest request = new PostWorksheetMatchBlanksRequest();
         request.setName(remoteName);
 
@@ -340,7 +342,7 @@ public class AutoFilterControllerTest {
         String remoteName = "Book1.xlsx";
 
         CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
+
         PostWorksheetMatchNonBlanksRequest request = new PostWorksheetMatchNonBlanksRequest();
         request.setName(remoteName);
 
@@ -362,7 +364,7 @@ public class AutoFilterControllerTest {
         String remoteName = "Book1.xlsx";
 
         CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
+
         PostWorksheetAutoFilterRefreshRequest request = new PostWorksheetAutoFilterRefreshRequest();
         request.setName(remoteName);
 
@@ -382,7 +384,7 @@ public class AutoFilterControllerTest {
         String remoteName = "Book1.xlsx";
 
         CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
+
         DeleteWorksheetDateFilterRequest request = new DeleteWorksheetDateFilterRequest();
         request.setName(remoteName);
 
@@ -408,7 +410,7 @@ public class AutoFilterControllerTest {
         String remoteName = "Book1.xlsx";
 
         CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
+
         DeleteWorksheetFilterRequest request = new DeleteWorksheetFilterRequest();
         request.setName(remoteName);
 

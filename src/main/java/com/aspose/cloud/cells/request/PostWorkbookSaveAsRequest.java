@@ -54,11 +54,12 @@ public class PostWorkbookSaveAsRequest  implements IRequestModel {
     private String region;
     private Boolean pageWideFitOnPerSheet;
     private Boolean pageTallFitOnPerSheet;
+    private String fontsLocation;
         public PostWorkbookSaveAsRequest()
         {
 
         }
-        public PostWorkbookSaveAsRequest(String name, String newfilename, SaveOptions saveOptions, Boolean isAutoFitRows, Boolean isAutoFitColumns, String folder, String storageName, String outStorageName, Boolean checkExcelRestriction, String region, Boolean pageWideFitOnPerSheet, Boolean pageTallFitOnPerSheet) {
+        public PostWorkbookSaveAsRequest(String name, String newfilename, SaveOptions saveOptions, Boolean isAutoFitRows, Boolean isAutoFitColumns, String folder, String storageName, String outStorageName, Boolean checkExcelRestriction, String region, Boolean pageWideFitOnPerSheet, Boolean pageTallFitOnPerSheet, String fontsLocation) {
             this.name = name;
             this.newfilename = newfilename;
             this.saveOptions = saveOptions;
@@ -71,6 +72,7 @@ public class PostWorkbookSaveAsRequest  implements IRequestModel {
             this.region = region;
             this.pageWideFitOnPerSheet = pageWideFitOnPerSheet;
             this.pageTallFitOnPerSheet = pageTallFitOnPerSheet;
+            this.fontsLocation = fontsLocation;
         }   
 
         public String getName() {
@@ -180,6 +182,15 @@ public class PostWorkbookSaveAsRequest  implements IRequestModel {
             this.pageTallFitOnPerSheet = pageTallFitOnPerSheet;
         }
 
+
+        public String getFontsLocation() {
+            return this.fontsLocation;
+        }
+
+        public void setFontsLocation(String fontsLocation) {
+            this.fontsLocation = fontsLocation;
+        }
+
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
          if (getName() == null) {
@@ -221,6 +232,9 @@ public class PostWorkbookSaveAsRequest  implements IRequestModel {
             } 
             if (getPageTallFitOnPerSheet() != null){
                 localVarQueryParams.addAll(apiClient.parameterToPairs("", "pageTallFitOnPerSheet", getPageTallFitOnPerSheet()));
+            } 
+            if (getFontsLocation() != null){
+                localVarQueryParams.addAll(apiClient.parameterToPairs("", "FontsLocation", getFontsLocation()));
             }  
         if(this.extendQueryParameterMap !=null){
             for (String key :this.extendQueryParameterMap.keySet()) {

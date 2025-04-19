@@ -10,10 +10,10 @@
  *  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
  *  copies of the Software, and to permit persons to whom the Software is
  *  furnished to do so, subject to the following conditions:
- * 
+ *
  *  The above copyright notice and this permission notice shall be included in all
  *  copies or substantial portions of the Software.
- * 
+ *
  *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  *  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
  *  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -43,17 +43,32 @@ public class UploadFileRequest  implements IRequestModel {
     }
 
     private HashMap<String,File> uploadFiles;
+    private String uploadFile;
+
     private String path;
     private String storageName;
         public UploadFileRequest()
         {
 
         }
+
+        public UploadFileRequest(String uploadFile, String path, String storageName) {
+            this.uploadFile = uploadFile;
+            this.path = path;
+            this.storageName = storageName;
+        }
+
+
+
+
+
+
+        //@Deprecated
         public UploadFileRequest(HashMap<String,File> uploadFiles, String path, String storageName) {
             this.uploadFiles = uploadFiles;
             this.path = path;
             this.storageName = storageName;
-        }   
+        }
 
         public HashMap<String,File> getUploadFiles() {
             return this.uploadFiles;
@@ -63,6 +78,13 @@ public class UploadFileRequest  implements IRequestModel {
             this.uploadFiles = uploadFiles;
         }
 
+        public String getUploadFile() {
+            return this.uploadFile;
+        }
+
+        public void setUploadFile(String uploadFile) {
+            this.uploadFile = uploadFile;
+        }
 
         public String getPath() {
             return this.path;
@@ -83,30 +105,36 @@ public class UploadFileRequest  implements IRequestModel {
 
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
-         if (getUploadFiles() == null) {
+         if (getUploadFiles() == null && getUploadFile() == null) {
                     throw new ApiException("Missing the required parameter 'UploadFiles' when calling UploadFile");
-                } 
+                }
                 if (getPath() == null) {
                     throw new ApiException("Missing the required parameter 'Path' when calling UploadFile");
-                }       
+                }
         String localVarPath = "/cells/storage/file/{path}".replaceAll("\\{" + "path" + "\\}", apiClient.escapeString(path.toString()))   ;
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
             if (getStorageName() != null){
                 localVarQueryParams.addAll(apiClient.parameterToPairs("", "storageName", getStorageName()));
-            }  
+            }
         if(this.extendQueryParameterMap !=null){
             for (String key :this.extendQueryParameterMap.keySet()) {
-                    localVarQueryParams.addAll(apiClient.parameterToPairs("", key, this.extendQueryParameterMap.get(key)));           
+                    localVarQueryParams.addAll(apiClient.parameterToPairs("", key, this.extendQueryParameterMap.get(key)));
             }
         }
-                   
+
                 if (getUploadFiles() != null){
                     for (String key : getUploadFiles().keySet()) {
-                        localVarFormParams.put(key,getUploadFiles().get(key));                
+                        localVarFormParams.put(key,getUploadFiles().get(key));
                     }
-                }      
+                }
+                if(getUploadFile() != null && !getUploadFile().isEmpty()) {
+                    File singleFile = new File(getUploadFile());
+                    if (singleFile.exists()) {
+                        localVarFormParams.put(singleFile.getName(), singleFile);
+                    }
+                }
         Object localVarPostBody = null;
                 final String[] localVarAccepts = {
                     "application/json"
@@ -116,6 +144,9 @@ public class UploadFileRequest  implements IRequestModel {
 
                 final String[] localVarContentTypes = { "application/json" };
                 if(getUploadFiles() != null){
+                   localVarContentTypes[0] =  "multipart/form-data";
+                }
+                if(getUploadFile() != null){
                    localVarContentTypes[0] =  "multipart/form-data";
                 }
                 final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
@@ -137,7 +168,5 @@ public class UploadFileRequest  implements IRequestModel {
                 return apiClient.buildCall(localVarPath, "PUT", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
 
     }
-
-
 }
 

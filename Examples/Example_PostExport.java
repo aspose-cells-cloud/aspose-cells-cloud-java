@@ -27,7 +27,6 @@ public class ExamplePostExport {
 
     public void Run(){
         try{
-            String assemblyTestXlsx = "assemblytest.xlsx";
             String book1Xlsx = "Book1.xlsx";
 
             String format = "csv";
@@ -39,10 +38,8 @@ public class ExamplePostExport {
 
             request.setObjectType(objectType);
              
-             
 
             HashMap<String,File> fileMap = new HashMap<String,File>(); 
-            fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
             fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
             request.setFile(fileMap);
             this.api.postExport(request);

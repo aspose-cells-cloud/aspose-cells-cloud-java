@@ -51,8 +51,7 @@ public class LightCellsTest {
 
     @Test
     public void PostSplit_csvTest() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
-        String dataSourceXlsx = "datasource.xlsx";
+        String book1Xlsx = "Book1.xlsx";
 
         String outFormat = "csv";
 
@@ -60,11 +59,9 @@ public class LightCellsTest {
         PostSplitRequest request = new PostSplitRequest();
         request.setOutFormat(outFormat);
          
-         
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
-        fileMap.put(dataSourceXlsx ,CellsApiUtil.GetFileHolder(dataSourceXlsx) ); 
+        fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
         request.setFile(fileMap);
         FilesResult response =  this.api.postSplit(request);
     }
@@ -72,8 +69,7 @@ public class LightCellsTest {
 
     @Test
     public void PostSplit_xlsTest() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
-        String dataSourceXlsx = "datasource.xlsx";
+        String book1Xlsx = "Book1.xlsx";
 
         String outFormat = "xls";
 
@@ -81,11 +77,9 @@ public class LightCellsTest {
         PostSplitRequest request = new PostSplitRequest();
         request.setOutFormat(outFormat);
          
-         
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
-        fileMap.put(dataSourceXlsx ,CellsApiUtil.GetFileHolder(dataSourceXlsx) ); 
+        fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
         request.setFile(fileMap);
         FilesResult response =  this.api.postSplit(request);
     }
@@ -93,8 +87,7 @@ public class LightCellsTest {
 
     @Test
     public void PostSplit_htmlTest() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
-        String dataSourceXlsx = "datasource.xlsx";
+        String book1Xlsx = "Book1.xlsx";
 
         String outFormat = "html";
 
@@ -102,11 +95,9 @@ public class LightCellsTest {
         PostSplitRequest request = new PostSplitRequest();
         request.setOutFormat(outFormat);
          
-         
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
-        fileMap.put(dataSourceXlsx ,CellsApiUtil.GetFileHolder(dataSourceXlsx) ); 
+        fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
         request.setFile(fileMap);
         FilesResult response =  this.api.postSplit(request);
     }
@@ -114,8 +105,7 @@ public class LightCellsTest {
 
     @Test
     public void PostSplit_mhtmlTest() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
-        String dataSourceXlsx = "datasource.xlsx";
+        String book1Xlsx = "Book1.xlsx";
 
         String outFormat = "mhtml";
 
@@ -123,11 +113,9 @@ public class LightCellsTest {
         PostSplitRequest request = new PostSplitRequest();
         request.setOutFormat(outFormat);
          
-         
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
-        fileMap.put(dataSourceXlsx ,CellsApiUtil.GetFileHolder(dataSourceXlsx) ); 
+        fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
         request.setFile(fileMap);
         FilesResult response =  this.api.postSplit(request);
     }
@@ -135,8 +123,7 @@ public class LightCellsTest {
 
     @Test
     public void PostSplit_odsTest() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
-        String dataSourceXlsx = "datasource.xlsx";
+        String book1Xlsx = "Book1.xlsx";
 
         String outFormat = "ods";
 
@@ -144,11 +131,9 @@ public class LightCellsTest {
         PostSplitRequest request = new PostSplitRequest();
         request.setOutFormat(outFormat);
          
-         
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
-        fileMap.put(dataSourceXlsx ,CellsApiUtil.GetFileHolder(dataSourceXlsx) ); 
+        fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
         request.setFile(fileMap);
         FilesResult response =  this.api.postSplit(request);
     }
@@ -156,8 +141,7 @@ public class LightCellsTest {
 
     @Test
     public void PostSplit_pdfTest() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
-        String dataSourceXlsx = "datasource.xlsx";
+        String book1Xlsx = "Book1.xlsx";
 
         String outFormat = "pdf";
 
@@ -165,11 +149,9 @@ public class LightCellsTest {
         PostSplitRequest request = new PostSplitRequest();
         request.setOutFormat(outFormat);
          
-         
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
-        fileMap.put(dataSourceXlsx ,CellsApiUtil.GetFileHolder(dataSourceXlsx) ); 
+        fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
         request.setFile(fileMap);
         FilesResult response =  this.api.postSplit(request);
     }
@@ -177,8 +159,7 @@ public class LightCellsTest {
 
     @Test
     public void PostSplit_xmlTest() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
-        String dataSourceXlsx = "datasource.xlsx";
+        String book1Xlsx = "Book1.xlsx";
 
         String outFormat = "xml";
 
@@ -186,11 +167,9 @@ public class LightCellsTest {
         PostSplitRequest request = new PostSplitRequest();
         request.setOutFormat(outFormat);
          
-         
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
-        fileMap.put(dataSourceXlsx ,CellsApiUtil.GetFileHolder(dataSourceXlsx) ); 
+        fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
         request.setFile(fileMap);
         FilesResult response =  this.api.postSplit(request);
     }
@@ -198,8 +177,7 @@ public class LightCellsTest {
 
     @Test
     public void PostSplit_txtTest() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
-        String dataSourceXlsx = "datasource.xlsx";
+        String book1Xlsx = "Book1.xlsx";
 
         String outFormat = "txt";
 
@@ -207,11 +185,9 @@ public class LightCellsTest {
         PostSplitRequest request = new PostSplitRequest();
         request.setOutFormat(outFormat);
          
-         
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
-        fileMap.put(dataSourceXlsx ,CellsApiUtil.GetFileHolder(dataSourceXlsx) ); 
+        fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
         request.setFile(fileMap);
         FilesResult response =  this.api.postSplit(request);
     }
@@ -219,8 +195,7 @@ public class LightCellsTest {
 
     @Test
     public void PostSplit_tifTest() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
-        String dataSourceXlsx = "datasource.xlsx";
+        String book1Xlsx = "Book1.xlsx";
 
         String outFormat = "tif";
 
@@ -228,11 +203,9 @@ public class LightCellsTest {
         PostSplitRequest request = new PostSplitRequest();
         request.setOutFormat(outFormat);
          
-         
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
-        fileMap.put(dataSourceXlsx ,CellsApiUtil.GetFileHolder(dataSourceXlsx) ); 
+        fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
         request.setFile(fileMap);
         FilesResult response =  this.api.postSplit(request);
     }
@@ -240,8 +213,7 @@ public class LightCellsTest {
 
     @Test
     public void PostSplit_xlsbTest() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
-        String dataSourceXlsx = "datasource.xlsx";
+        String book1Xlsx = "Book1.xlsx";
 
         String outFormat = "xlsb";
 
@@ -249,11 +221,9 @@ public class LightCellsTest {
         PostSplitRequest request = new PostSplitRequest();
         request.setOutFormat(outFormat);
          
-         
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
-        fileMap.put(dataSourceXlsx ,CellsApiUtil.GetFileHolder(dataSourceXlsx) ); 
+        fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
         request.setFile(fileMap);
         FilesResult response =  this.api.postSplit(request);
     }
@@ -261,8 +231,7 @@ public class LightCellsTest {
 
     @Test
     public void PostSplit_xlsxTest() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
-        String dataSourceXlsx = "datasource.xlsx";
+        String book1Xlsx = "Book1.xlsx";
 
         String outFormat = "xlsx";
 
@@ -270,11 +239,9 @@ public class LightCellsTest {
         PostSplitRequest request = new PostSplitRequest();
         request.setOutFormat(outFormat);
          
-         
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
-        fileMap.put(dataSourceXlsx ,CellsApiUtil.GetFileHolder(dataSourceXlsx) ); 
+        fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
         request.setFile(fileMap);
         FilesResult response =  this.api.postSplit(request);
     }
@@ -282,8 +249,7 @@ public class LightCellsTest {
 
     @Test
     public void PostSplit_xpsTest() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
-        String dataSourceXlsx = "datasource.xlsx";
+        String book1Xlsx = "Book1.xlsx";
 
         String outFormat = "xps";
 
@@ -291,11 +257,9 @@ public class LightCellsTest {
         PostSplitRequest request = new PostSplitRequest();
         request.setOutFormat(outFormat);
          
-         
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
-        fileMap.put(dataSourceXlsx ,CellsApiUtil.GetFileHolder(dataSourceXlsx) ); 
+        fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
         request.setFile(fileMap);
         FilesResult response =  this.api.postSplit(request);
     }
@@ -303,8 +267,7 @@ public class LightCellsTest {
 
     @Test
     public void PostSplit_pngTest() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
-        String dataSourceXlsx = "datasource.xlsx";
+        String book1Xlsx = "Book1.xlsx";
 
         String outFormat = "png";
 
@@ -312,11 +275,9 @@ public class LightCellsTest {
         PostSplitRequest request = new PostSplitRequest();
         request.setOutFormat(outFormat);
          
-         
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
-        fileMap.put(dataSourceXlsx ,CellsApiUtil.GetFileHolder(dataSourceXlsx) ); 
+        fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
         request.setFile(fileMap);
         FilesResult response =  this.api.postSplit(request);
     }
@@ -324,8 +285,7 @@ public class LightCellsTest {
 
     @Test
     public void PostSplit_jpgTest() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
-        String dataSourceXlsx = "datasource.xlsx";
+        String book1Xlsx = "Book1.xlsx";
 
         String outFormat = "jpg";
 
@@ -333,11 +293,9 @@ public class LightCellsTest {
         PostSplitRequest request = new PostSplitRequest();
         request.setOutFormat(outFormat);
          
-         
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
-        fileMap.put(dataSourceXlsx ,CellsApiUtil.GetFileHolder(dataSourceXlsx) ); 
+        fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
         request.setFile(fileMap);
         FilesResult response =  this.api.postSplit(request);
     }
@@ -345,8 +303,7 @@ public class LightCellsTest {
 
     @Test
     public void PostSplit_mdTest() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
-        String dataSourceXlsx = "datasource.xlsx";
+        String book1Xlsx = "Book1.xlsx";
 
         String outFormat = "md";
 
@@ -354,32 +311,9 @@ public class LightCellsTest {
         PostSplitRequest request = new PostSplitRequest();
         request.setOutFormat(outFormat);
          
-         
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
-        fileMap.put(dataSourceXlsx ,CellsApiUtil.GetFileHolder(dataSourceXlsx) ); 
-        request.setFile(fileMap);
-        FilesResult response =  this.api.postSplit(request);
-    }
-
-
-    @Test
-    public void PostSplit_numbersTest() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
-        String dataSourceXlsx = "datasource.xlsx";
-
-        String outFormat = "numbers";
-
-       
-        PostSplitRequest request = new PostSplitRequest();
-        request.setOutFormat(outFormat);
-         
-         
-
-        HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
-        fileMap.put(dataSourceXlsx ,CellsApiUtil.GetFileHolder(dataSourceXlsx) ); 
+        fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
         request.setFile(fileMap);
         FilesResult response =  this.api.postSplit(request);
     }
@@ -387,8 +321,7 @@ public class LightCellsTest {
 
     @Test
     public void PostSplit_svgTest() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
-        String dataSourceXlsx = "datasource.xlsx";
+        String book1Xlsx = "Book1.xlsx";
 
         String outFormat = "svg";
 
@@ -396,11 +329,9 @@ public class LightCellsTest {
         PostSplitRequest request = new PostSplitRequest();
         request.setOutFormat(outFormat);
          
-         
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
-        fileMap.put(dataSourceXlsx ,CellsApiUtil.GetFileHolder(dataSourceXlsx) ); 
+        fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
         request.setFile(fileMap);
         FilesResult response =  this.api.postSplit(request);
     }
@@ -408,8 +339,7 @@ public class LightCellsTest {
 
     @Test
     public void PostSplit_docxTest() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
-        String dataSourceXlsx = "datasource.xlsx";
+        String book1Xlsx = "Book1.xlsx";
 
         String outFormat = "docx";
 
@@ -417,11 +347,9 @@ public class LightCellsTest {
         PostSplitRequest request = new PostSplitRequest();
         request.setOutFormat(outFormat);
          
-         
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
-        fileMap.put(dataSourceXlsx ,CellsApiUtil.GetFileHolder(dataSourceXlsx) ); 
+        fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
         request.setFile(fileMap);
         FilesResult response =  this.api.postSplit(request);
     }
@@ -429,8 +357,7 @@ public class LightCellsTest {
 
     @Test
     public void PostSplit_pptxTest() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
-        String dataSourceXlsx = "datasource.xlsx";
+        String book1Xlsx = "Book1.xlsx";
 
         String outFormat = "pptx";
 
@@ -438,11 +365,9 @@ public class LightCellsTest {
         PostSplitRequest request = new PostSplitRequest();
         request.setOutFormat(outFormat);
          
-         
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
-        fileMap.put(dataSourceXlsx ,CellsApiUtil.GetFileHolder(dataSourceXlsx) ); 
+        fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
         request.setFile(fileMap);
         FilesResult response =  this.api.postSplit(request);
     }
@@ -450,8 +375,7 @@ public class LightCellsTest {
 
     @Test
     public void PostSplit_jsonTest() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
-        String dataSourceXlsx = "datasource.xlsx";
+        String book1Xlsx = "Book1.xlsx";
 
         String outFormat = "json";
 
@@ -459,11 +383,9 @@ public class LightCellsTest {
         PostSplitRequest request = new PostSplitRequest();
         request.setOutFormat(outFormat);
          
-         
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
-        fileMap.put(dataSourceXlsx ,CellsApiUtil.GetFileHolder(dataSourceXlsx) ); 
+        fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
         request.setFile(fileMap);
         FilesResult response =  this.api.postSplit(request);
     }
@@ -471,8 +393,7 @@ public class LightCellsTest {
 
     @Test
     public void PostSplit_sqlTest() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
-        String dataSourceXlsx = "datasource.xlsx";
+        String book1Xlsx = "Book1.xlsx";
 
         String outFormat = "sql";
 
@@ -480,11 +401,9 @@ public class LightCellsTest {
         PostSplitRequest request = new PostSplitRequest();
         request.setOutFormat(outFormat);
          
-         
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
-        fileMap.put(dataSourceXlsx ,CellsApiUtil.GetFileHolder(dataSourceXlsx) ); 
+        fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
         request.setFile(fileMap);
         FilesResult response =  this.api.postSplit(request);
     }
@@ -974,29 +893,6 @@ public class LightCellsTest {
 
 
     @Test
-    public void PostAssemble_numbersTest() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
-        String dataSourceXlsx = "datasource.xlsx";
-
-        String format = "numbers";
-
-       
-        PostAssembleRequest request = new PostAssembleRequest();
-        request.setOutFormat(format);
-
-        request.setDatasource("ds");
-         
-         
-
-        HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
-        fileMap.put(dataSourceXlsx ,CellsApiUtil.GetFileHolder(dataSourceXlsx) ); 
-        request.setFile(fileMap);
-        FilesResult response =  this.api.postAssemble(request);
-    }
-
-
-    @Test
     public void PostAssemble_wmfTest() throws Exception {
         String assemblyTestXlsx = "assemblytest.xlsx";
         String dataSourceXlsx = "datasource.xlsx";
@@ -1136,7 +1032,6 @@ public class LightCellsTest {
 
     @Test
     public void PostExport_csv_workbookTest() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
         String book1Xlsx = "Book1.xlsx";
 
         String format = "csv";
@@ -1148,10 +1043,8 @@ public class LightCellsTest {
 
         request.setObjectType(objectType);
          
-         
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
         fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
         request.setFile(fileMap);
         FilesResult response =  this.api.postExport(request);
@@ -1160,7 +1053,6 @@ public class LightCellsTest {
 
     @Test
     public void PostExport_xls_workbookTest() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
         String book1Xlsx = "Book1.xlsx";
 
         String format = "xls";
@@ -1172,10 +1064,8 @@ public class LightCellsTest {
 
         request.setObjectType(objectType);
          
-         
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
         fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
         request.setFile(fileMap);
         FilesResult response =  this.api.postExport(request);
@@ -1184,7 +1074,6 @@ public class LightCellsTest {
 
     @Test
     public void PostExport_html_workbookTest() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
         String book1Xlsx = "Book1.xlsx";
 
         String format = "html";
@@ -1196,10 +1085,8 @@ public class LightCellsTest {
 
         request.setObjectType(objectType);
          
-         
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
         fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
         request.setFile(fileMap);
         FilesResult response =  this.api.postExport(request);
@@ -1208,7 +1095,6 @@ public class LightCellsTest {
 
     @Test
     public void PostExport_mhtml_workbookTest() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
         String book1Xlsx = "Book1.xlsx";
 
         String format = "mhtml";
@@ -1220,10 +1106,8 @@ public class LightCellsTest {
 
         request.setObjectType(objectType);
          
-         
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
         fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
         request.setFile(fileMap);
         FilesResult response =  this.api.postExport(request);
@@ -1232,7 +1116,6 @@ public class LightCellsTest {
 
     @Test
     public void PostExport_ods_workbookTest() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
         String book1Xlsx = "Book1.xlsx";
 
         String format = "ods";
@@ -1244,10 +1127,8 @@ public class LightCellsTest {
 
         request.setObjectType(objectType);
          
-         
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
         fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
         request.setFile(fileMap);
         FilesResult response =  this.api.postExport(request);
@@ -1256,7 +1137,6 @@ public class LightCellsTest {
 
     @Test
     public void PostExport_pdf_workbookTest() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
         String book1Xlsx = "Book1.xlsx";
 
         String format = "pdf";
@@ -1268,10 +1148,8 @@ public class LightCellsTest {
 
         request.setObjectType(objectType);
          
-         
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
         fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
         request.setFile(fileMap);
         FilesResult response =  this.api.postExport(request);
@@ -1280,7 +1158,6 @@ public class LightCellsTest {
 
     @Test
     public void PostExport_xml_workbookTest() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
         String book1Xlsx = "Book1.xlsx";
 
         String format = "xml";
@@ -1292,10 +1169,8 @@ public class LightCellsTest {
 
         request.setObjectType(objectType);
          
-         
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
         fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
         request.setFile(fileMap);
         FilesResult response =  this.api.postExport(request);
@@ -1304,7 +1179,6 @@ public class LightCellsTest {
 
     @Test
     public void PostExport_txt_workbookTest() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
         String book1Xlsx = "Book1.xlsx";
 
         String format = "txt";
@@ -1316,10 +1190,8 @@ public class LightCellsTest {
 
         request.setObjectType(objectType);
          
-         
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
         fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
         request.setFile(fileMap);
         FilesResult response =  this.api.postExport(request);
@@ -1328,7 +1200,6 @@ public class LightCellsTest {
 
     @Test
     public void PostExport_tif_workbookTest() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
         String book1Xlsx = "Book1.xlsx";
 
         String format = "tif";
@@ -1340,10 +1211,8 @@ public class LightCellsTest {
 
         request.setObjectType(objectType);
          
-         
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
         fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
         request.setFile(fileMap);
         FilesResult response =  this.api.postExport(request);
@@ -1352,7 +1221,6 @@ public class LightCellsTest {
 
     @Test
     public void PostExport_xlsb_workbookTest() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
         String book1Xlsx = "Book1.xlsx";
 
         String format = "xlsb";
@@ -1364,10 +1232,8 @@ public class LightCellsTest {
 
         request.setObjectType(objectType);
          
-         
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
         fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
         request.setFile(fileMap);
         FilesResult response =  this.api.postExport(request);
@@ -1376,7 +1242,6 @@ public class LightCellsTest {
 
     @Test
     public void PostExport_xlsm_workbookTest() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
         String book1Xlsx = "Book1.xlsx";
 
         String format = "xlsm";
@@ -1388,10 +1253,8 @@ public class LightCellsTest {
 
         request.setObjectType(objectType);
          
-         
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
         fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
         request.setFile(fileMap);
         FilesResult response =  this.api.postExport(request);
@@ -1400,7 +1263,6 @@ public class LightCellsTest {
 
     @Test
     public void PostExport_xlsx_workbookTest() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
         String book1Xlsx = "Book1.xlsx";
 
         String format = "xlsx";
@@ -1412,10 +1274,8 @@ public class LightCellsTest {
 
         request.setObjectType(objectType);
          
-         
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
         fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
         request.setFile(fileMap);
         FilesResult response =  this.api.postExport(request);
@@ -1424,7 +1284,6 @@ public class LightCellsTest {
 
     @Test
     public void PostExport_xltm_workbookTest() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
         String book1Xlsx = "Book1.xlsx";
 
         String format = "xltm";
@@ -1436,10 +1295,8 @@ public class LightCellsTest {
 
         request.setObjectType(objectType);
          
-         
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
         fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
         request.setFile(fileMap);
         FilesResult response =  this.api.postExport(request);
@@ -1448,7 +1305,6 @@ public class LightCellsTest {
 
     @Test
     public void PostExport_xltx_workbookTest() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
         String book1Xlsx = "Book1.xlsx";
 
         String format = "xltx";
@@ -1460,10 +1316,8 @@ public class LightCellsTest {
 
         request.setObjectType(objectType);
          
-         
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
         fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
         request.setFile(fileMap);
         FilesResult response =  this.api.postExport(request);
@@ -1472,7 +1326,6 @@ public class LightCellsTest {
 
     @Test
     public void PostExport_xps_workbookTest() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
         String book1Xlsx = "Book1.xlsx";
 
         String format = "xps";
@@ -1484,10 +1337,8 @@ public class LightCellsTest {
 
         request.setObjectType(objectType);
          
-         
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
         fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
         request.setFile(fileMap);
         FilesResult response =  this.api.postExport(request);
@@ -1496,7 +1347,6 @@ public class LightCellsTest {
 
     @Test
     public void PostExport_png_workbookTest() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
         String book1Xlsx = "Book1.xlsx";
 
         String format = "png";
@@ -1508,10 +1358,8 @@ public class LightCellsTest {
 
         request.setObjectType(objectType);
          
-         
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
         fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
         request.setFile(fileMap);
         FilesResult response =  this.api.postExport(request);
@@ -1520,7 +1368,6 @@ public class LightCellsTest {
 
     @Test
     public void PostExport_jpg_workbookTest() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
         String book1Xlsx = "Book1.xlsx";
 
         String format = "jpg";
@@ -1532,10 +1379,8 @@ public class LightCellsTest {
 
         request.setObjectType(objectType);
          
-         
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
         fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
         request.setFile(fileMap);
         FilesResult response =  this.api.postExport(request);
@@ -1544,7 +1389,6 @@ public class LightCellsTest {
 
     @Test
     public void PostExport_gif_workbookTest() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
         String book1Xlsx = "Book1.xlsx";
 
         String format = "gif";
@@ -1556,10 +1400,8 @@ public class LightCellsTest {
 
         request.setObjectType(objectType);
          
-         
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
         fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
         request.setFile(fileMap);
         FilesResult response =  this.api.postExport(request);
@@ -1568,7 +1410,6 @@ public class LightCellsTest {
 
     @Test
     public void PostExport_emf_workbookTest() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
         String book1Xlsx = "Book1.xlsx";
 
         String format = "emf";
@@ -1580,10 +1421,8 @@ public class LightCellsTest {
 
         request.setObjectType(objectType);
          
-         
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
         fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
         request.setFile(fileMap);
         FilesResult response =  this.api.postExport(request);
@@ -1592,7 +1431,6 @@ public class LightCellsTest {
 
     @Test
     public void PostExport_bmp_workbookTest() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
         String book1Xlsx = "Book1.xlsx";
 
         String format = "bmp";
@@ -1604,10 +1442,8 @@ public class LightCellsTest {
 
         request.setObjectType(objectType);
          
-         
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
         fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
         request.setFile(fileMap);
         FilesResult response =  this.api.postExport(request);
@@ -1616,7 +1452,6 @@ public class LightCellsTest {
 
     @Test
     public void PostExport_md_workbookTest() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
         String book1Xlsx = "Book1.xlsx";
 
         String format = "md";
@@ -1628,34 +1463,8 @@ public class LightCellsTest {
 
         request.setObjectType(objectType);
          
-         
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
-        fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
-        request.setFile(fileMap);
-        FilesResult response =  this.api.postExport(request);
-    }
-
-
-    @Test
-    public void PostExport_numbers_workbookTest() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
-        String book1Xlsx = "Book1.xlsx";
-
-        String format = "numbers";
-        String objectType = "workbook";
-
-       
-        PostExportRequest request = new PostExportRequest();
-        request.setFormat(format);
-
-        request.setObjectType(objectType);
-         
-         
-
-        HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
         fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
         request.setFile(fileMap);
         FilesResult response =  this.api.postExport(request);
@@ -1664,7 +1473,6 @@ public class LightCellsTest {
 
     @Test
     public void PostExport_wmf_workbookTest() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
         String book1Xlsx = "Book1.xlsx";
 
         String format = "wmf";
@@ -1676,10 +1484,8 @@ public class LightCellsTest {
 
         request.setObjectType(objectType);
          
-         
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
         fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
         request.setFile(fileMap);
         FilesResult response =  this.api.postExport(request);
@@ -1688,7 +1494,6 @@ public class LightCellsTest {
 
     @Test
     public void PostExport_svg_workbookTest() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
         String book1Xlsx = "Book1.xlsx";
 
         String format = "svg";
@@ -1700,10 +1505,8 @@ public class LightCellsTest {
 
         request.setObjectType(objectType);
          
-         
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
         fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
         request.setFile(fileMap);
         FilesResult response =  this.api.postExport(request);
@@ -1712,7 +1515,6 @@ public class LightCellsTest {
 
     @Test
     public void PostExport_docx_workbookTest() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
         String book1Xlsx = "Book1.xlsx";
 
         String format = "docx";
@@ -1724,10 +1526,8 @@ public class LightCellsTest {
 
         request.setObjectType(objectType);
          
-         
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
         fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
         request.setFile(fileMap);
         FilesResult response =  this.api.postExport(request);
@@ -1736,7 +1536,6 @@ public class LightCellsTest {
 
     @Test
     public void PostExport_pptx_workbookTest() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
         String book1Xlsx = "Book1.xlsx";
 
         String format = "pptx";
@@ -1748,10 +1547,8 @@ public class LightCellsTest {
 
         request.setObjectType(objectType);
          
-         
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
         fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
         request.setFile(fileMap);
         FilesResult response =  this.api.postExport(request);
@@ -1760,7 +1557,6 @@ public class LightCellsTest {
 
     @Test
     public void PostExport_json_workbookTest() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
         String book1Xlsx = "Book1.xlsx";
 
         String format = "json";
@@ -1772,10 +1568,8 @@ public class LightCellsTest {
 
         request.setObjectType(objectType);
          
-         
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
         fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
         request.setFile(fileMap);
         FilesResult response =  this.api.postExport(request);
@@ -1784,7 +1578,6 @@ public class LightCellsTest {
 
     @Test
     public void PostExport_sql_workbookTest() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
         String book1Xlsx = "Book1.xlsx";
 
         String format = "sql";
@@ -1796,10 +1589,8 @@ public class LightCellsTest {
 
         request.setObjectType(objectType);
          
-         
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
         fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
         request.setFile(fileMap);
         FilesResult response =  this.api.postExport(request);
@@ -1808,7 +1599,6 @@ public class LightCellsTest {
 
     @Test
     public void PostExport_csv_worksheetTest() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
         String book1Xlsx = "Book1.xlsx";
 
         String format = "csv";
@@ -1820,10 +1610,8 @@ public class LightCellsTest {
 
         request.setObjectType(objectType);
          
-         
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
         fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
         request.setFile(fileMap);
         FilesResult response =  this.api.postExport(request);
@@ -1832,7 +1620,6 @@ public class LightCellsTest {
 
     @Test
     public void PostExport_xls_worksheetTest() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
         String book1Xlsx = "Book1.xlsx";
 
         String format = "xls";
@@ -1844,10 +1631,8 @@ public class LightCellsTest {
 
         request.setObjectType(objectType);
          
-         
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
         fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
         request.setFile(fileMap);
         FilesResult response =  this.api.postExport(request);
@@ -1856,7 +1641,6 @@ public class LightCellsTest {
 
     @Test
     public void PostExport_html_worksheetTest() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
         String book1Xlsx = "Book1.xlsx";
 
         String format = "html";
@@ -1868,10 +1652,8 @@ public class LightCellsTest {
 
         request.setObjectType(objectType);
          
-         
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
         fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
         request.setFile(fileMap);
         FilesResult response =  this.api.postExport(request);
@@ -1880,7 +1662,6 @@ public class LightCellsTest {
 
     @Test
     public void PostExport_mhtml_worksheetTest() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
         String book1Xlsx = "Book1.xlsx";
 
         String format = "mhtml";
@@ -1892,10 +1673,8 @@ public class LightCellsTest {
 
         request.setObjectType(objectType);
          
-         
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
         fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
         request.setFile(fileMap);
         FilesResult response =  this.api.postExport(request);
@@ -1904,7 +1683,6 @@ public class LightCellsTest {
 
     @Test
     public void PostExport_ods_worksheetTest() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
         String book1Xlsx = "Book1.xlsx";
 
         String format = "ods";
@@ -1916,10 +1694,8 @@ public class LightCellsTest {
 
         request.setObjectType(objectType);
          
-         
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
         fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
         request.setFile(fileMap);
         FilesResult response =  this.api.postExport(request);
@@ -1928,7 +1704,6 @@ public class LightCellsTest {
 
     @Test
     public void PostExport_pdf_worksheetTest() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
         String book1Xlsx = "Book1.xlsx";
 
         String format = "pdf";
@@ -1940,10 +1715,8 @@ public class LightCellsTest {
 
         request.setObjectType(objectType);
          
-         
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
         fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
         request.setFile(fileMap);
         FilesResult response =  this.api.postExport(request);
@@ -1952,7 +1725,6 @@ public class LightCellsTest {
 
     @Test
     public void PostExport_xml_worksheetTest() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
         String book1Xlsx = "Book1.xlsx";
 
         String format = "xml";
@@ -1964,10 +1736,8 @@ public class LightCellsTest {
 
         request.setObjectType(objectType);
          
-         
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
         fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
         request.setFile(fileMap);
         FilesResult response =  this.api.postExport(request);
@@ -1976,7 +1746,6 @@ public class LightCellsTest {
 
     @Test
     public void PostExport_txt_worksheetTest() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
         String book1Xlsx = "Book1.xlsx";
 
         String format = "txt";
@@ -1988,10 +1757,8 @@ public class LightCellsTest {
 
         request.setObjectType(objectType);
          
-         
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
         fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
         request.setFile(fileMap);
         FilesResult response =  this.api.postExport(request);
@@ -2000,7 +1767,6 @@ public class LightCellsTest {
 
     @Test
     public void PostExport_tif_worksheetTest() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
         String book1Xlsx = "Book1.xlsx";
 
         String format = "tif";
@@ -2012,10 +1778,8 @@ public class LightCellsTest {
 
         request.setObjectType(objectType);
          
-         
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
         fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
         request.setFile(fileMap);
         FilesResult response =  this.api.postExport(request);
@@ -2024,7 +1788,6 @@ public class LightCellsTest {
 
     @Test
     public void PostExport_xlsb_worksheetTest() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
         String book1Xlsx = "Book1.xlsx";
 
         String format = "xlsb";
@@ -2036,10 +1799,8 @@ public class LightCellsTest {
 
         request.setObjectType(objectType);
          
-         
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
         fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
         request.setFile(fileMap);
         FilesResult response =  this.api.postExport(request);
@@ -2048,7 +1809,6 @@ public class LightCellsTest {
 
     @Test
     public void PostExport_xlsm_worksheetTest() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
         String book1Xlsx = "Book1.xlsx";
 
         String format = "xlsm";
@@ -2060,10 +1820,8 @@ public class LightCellsTest {
 
         request.setObjectType(objectType);
          
-         
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
         fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
         request.setFile(fileMap);
         FilesResult response =  this.api.postExport(request);
@@ -2072,7 +1830,6 @@ public class LightCellsTest {
 
     @Test
     public void PostExport_xlsx_worksheetTest() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
         String book1Xlsx = "Book1.xlsx";
 
         String format = "xlsx";
@@ -2084,10 +1841,8 @@ public class LightCellsTest {
 
         request.setObjectType(objectType);
          
-         
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
         fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
         request.setFile(fileMap);
         FilesResult response =  this.api.postExport(request);
@@ -2096,7 +1851,6 @@ public class LightCellsTest {
 
     @Test
     public void PostExport_xltm_worksheetTest() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
         String book1Xlsx = "Book1.xlsx";
 
         String format = "xltm";
@@ -2108,10 +1862,8 @@ public class LightCellsTest {
 
         request.setObjectType(objectType);
          
-         
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
         fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
         request.setFile(fileMap);
         FilesResult response =  this.api.postExport(request);
@@ -2120,7 +1872,6 @@ public class LightCellsTest {
 
     @Test
     public void PostExport_xltx_worksheetTest() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
         String book1Xlsx = "Book1.xlsx";
 
         String format = "xltx";
@@ -2132,10 +1883,8 @@ public class LightCellsTest {
 
         request.setObjectType(objectType);
          
-         
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
         fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
         request.setFile(fileMap);
         FilesResult response =  this.api.postExport(request);
@@ -2144,7 +1893,6 @@ public class LightCellsTest {
 
     @Test
     public void PostExport_xps_worksheetTest() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
         String book1Xlsx = "Book1.xlsx";
 
         String format = "xps";
@@ -2156,10 +1904,8 @@ public class LightCellsTest {
 
         request.setObjectType(objectType);
          
-         
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
         fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
         request.setFile(fileMap);
         FilesResult response =  this.api.postExport(request);
@@ -2168,7 +1914,6 @@ public class LightCellsTest {
 
     @Test
     public void PostExport_png_worksheetTest() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
         String book1Xlsx = "Book1.xlsx";
 
         String format = "png";
@@ -2180,10 +1925,8 @@ public class LightCellsTest {
 
         request.setObjectType(objectType);
          
-         
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
         fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
         request.setFile(fileMap);
         FilesResult response =  this.api.postExport(request);
@@ -2192,7 +1935,6 @@ public class LightCellsTest {
 
     @Test
     public void PostExport_jpg_worksheetTest() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
         String book1Xlsx = "Book1.xlsx";
 
         String format = "jpg";
@@ -2204,10 +1946,8 @@ public class LightCellsTest {
 
         request.setObjectType(objectType);
          
-         
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
         fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
         request.setFile(fileMap);
         FilesResult response =  this.api.postExport(request);
@@ -2216,7 +1956,6 @@ public class LightCellsTest {
 
     @Test
     public void PostExport_gif_worksheetTest() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
         String book1Xlsx = "Book1.xlsx";
 
         String format = "gif";
@@ -2228,10 +1967,8 @@ public class LightCellsTest {
 
         request.setObjectType(objectType);
          
-         
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
         fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
         request.setFile(fileMap);
         FilesResult response =  this.api.postExport(request);
@@ -2240,7 +1977,6 @@ public class LightCellsTest {
 
     @Test
     public void PostExport_emf_worksheetTest() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
         String book1Xlsx = "Book1.xlsx";
 
         String format = "emf";
@@ -2252,10 +1988,8 @@ public class LightCellsTest {
 
         request.setObjectType(objectType);
          
-         
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
         fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
         request.setFile(fileMap);
         FilesResult response =  this.api.postExport(request);
@@ -2264,7 +1998,6 @@ public class LightCellsTest {
 
     @Test
     public void PostExport_bmp_worksheetTest() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
         String book1Xlsx = "Book1.xlsx";
 
         String format = "bmp";
@@ -2276,10 +2009,8 @@ public class LightCellsTest {
 
         request.setObjectType(objectType);
          
-         
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
         fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
         request.setFile(fileMap);
         FilesResult response =  this.api.postExport(request);
@@ -2288,7 +2019,6 @@ public class LightCellsTest {
 
     @Test
     public void PostExport_md_worksheetTest() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
         String book1Xlsx = "Book1.xlsx";
 
         String format = "md";
@@ -2300,58 +2030,8 @@ public class LightCellsTest {
 
         request.setObjectType(objectType);
          
-         
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
-        fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
-        request.setFile(fileMap);
-        FilesResult response =  this.api.postExport(request);
-    }
-
-
-    @Test
-    public void PostExport_numbers_worksheetTest() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
-        String book1Xlsx = "Book1.xlsx";
-
-        String format = "numbers";
-        String objectType = "worksheet";
-
-       
-        PostExportRequest request = new PostExportRequest();
-        request.setFormat(format);
-
-        request.setObjectType(objectType);
-         
-         
-
-        HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
-        fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
-        request.setFile(fileMap);
-        FilesResult response =  this.api.postExport(request);
-    }
-
-
-    @Test
-    public void PostExport_wmf_worksheetTest() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
-        String book1Xlsx = "Book1.xlsx";
-
-        String format = "wmf";
-        String objectType = "worksheet";
-
-       
-        PostExportRequest request = new PostExportRequest();
-        request.setFormat(format);
-
-        request.setObjectType(objectType);
-         
-         
-
-        HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
         fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
         request.setFile(fileMap);
         FilesResult response =  this.api.postExport(request);
@@ -2360,7 +2040,6 @@ public class LightCellsTest {
 
     @Test
     public void PostExport_svg_worksheetTest() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
         String book1Xlsx = "Book1.xlsx";
 
         String format = "svg";
@@ -2372,10 +2051,8 @@ public class LightCellsTest {
 
         request.setObjectType(objectType);
          
-         
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
         fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
         request.setFile(fileMap);
         FilesResult response =  this.api.postExport(request);
@@ -2384,7 +2061,6 @@ public class LightCellsTest {
 
     @Test
     public void PostExport_docx_worksheetTest() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
         String book1Xlsx = "Book1.xlsx";
 
         String format = "docx";
@@ -2396,10 +2072,8 @@ public class LightCellsTest {
 
         request.setObjectType(objectType);
          
-         
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
         fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
         request.setFile(fileMap);
         FilesResult response =  this.api.postExport(request);
@@ -2408,7 +2082,6 @@ public class LightCellsTest {
 
     @Test
     public void PostExport_pptx_worksheetTest() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
         String book1Xlsx = "Book1.xlsx";
 
         String format = "pptx";
@@ -2420,10 +2093,8 @@ public class LightCellsTest {
 
         request.setObjectType(objectType);
          
-         
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
         fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
         request.setFile(fileMap);
         FilesResult response =  this.api.postExport(request);
@@ -2432,7 +2103,6 @@ public class LightCellsTest {
 
     @Test
     public void PostExport_json_worksheetTest() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
         String book1Xlsx = "Book1.xlsx";
 
         String format = "json";
@@ -2444,10 +2114,8 @@ public class LightCellsTest {
 
         request.setObjectType(objectType);
          
-         
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
         fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
         request.setFile(fileMap);
         FilesResult response =  this.api.postExport(request);
@@ -2456,7 +2124,6 @@ public class LightCellsTest {
 
     @Test
     public void PostExport_sql_worksheetTest() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
         String book1Xlsx = "Book1.xlsx";
 
         String format = "sql";
@@ -2468,10 +2135,8 @@ public class LightCellsTest {
 
         request.setObjectType(objectType);
          
-         
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
         fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
         request.setFile(fileMap);
         FilesResult response =  this.api.postExport(request);
@@ -2480,7 +2145,6 @@ public class LightCellsTest {
 
     @Test
     public void PostExport_pdf_chartTest() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
         String book1Xlsx = "Book1.xlsx";
 
         String format = "pdf";
@@ -2492,10 +2156,8 @@ public class LightCellsTest {
 
         request.setObjectType(objectType);
          
-         
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
         fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
         request.setFile(fileMap);
         FilesResult response =  this.api.postExport(request);
@@ -2504,7 +2166,6 @@ public class LightCellsTest {
 
     @Test
     public void PostExport_tif_chartTest() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
         String book1Xlsx = "Book1.xlsx";
 
         String format = "tif";
@@ -2516,10 +2177,8 @@ public class LightCellsTest {
 
         request.setObjectType(objectType);
          
-         
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
         fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
         request.setFile(fileMap);
         FilesResult response =  this.api.postExport(request);
@@ -2528,7 +2187,6 @@ public class LightCellsTest {
 
     @Test
     public void PostExport_png_chartTest() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
         String book1Xlsx = "Book1.xlsx";
 
         String format = "png";
@@ -2540,10 +2198,8 @@ public class LightCellsTest {
 
         request.setObjectType(objectType);
          
-         
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
         fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
         request.setFile(fileMap);
         FilesResult response =  this.api.postExport(request);
@@ -2552,7 +2208,6 @@ public class LightCellsTest {
 
     @Test
     public void PostExport_jpg_chartTest() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
         String book1Xlsx = "Book1.xlsx";
 
         String format = "jpg";
@@ -2564,10 +2219,8 @@ public class LightCellsTest {
 
         request.setObjectType(objectType);
          
-         
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
         fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
         request.setFile(fileMap);
         FilesResult response =  this.api.postExport(request);
@@ -2576,7 +2229,6 @@ public class LightCellsTest {
 
     @Test
     public void PostExport_gif_chartTest() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
         String book1Xlsx = "Book1.xlsx";
 
         String format = "gif";
@@ -2588,10 +2240,8 @@ public class LightCellsTest {
 
         request.setObjectType(objectType);
          
-         
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
         fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
         request.setFile(fileMap);
         FilesResult response =  this.api.postExport(request);
@@ -2600,7 +2250,6 @@ public class LightCellsTest {
 
     @Test
     public void PostExport_emf_chartTest() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
         String book1Xlsx = "Book1.xlsx";
 
         String format = "emf";
@@ -2612,10 +2261,8 @@ public class LightCellsTest {
 
         request.setObjectType(objectType);
          
-         
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
         fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
         request.setFile(fileMap);
         FilesResult response =  this.api.postExport(request);
@@ -2624,7 +2271,6 @@ public class LightCellsTest {
 
     @Test
     public void PostExport_bmp_chartTest() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
         String book1Xlsx = "Book1.xlsx";
 
         String format = "bmp";
@@ -2636,10 +2282,8 @@ public class LightCellsTest {
 
         request.setObjectType(objectType);
          
-         
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
         fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
         request.setFile(fileMap);
         FilesResult response =  this.api.postExport(request);
@@ -2648,7 +2292,6 @@ public class LightCellsTest {
 
     @Test
     public void PostExport_png_pictureTest() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
         String book1Xlsx = "Book1.xlsx";
 
         String format = "png";
@@ -2660,10 +2303,8 @@ public class LightCellsTest {
 
         request.setObjectType(objectType);
          
-         
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
         fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
         request.setFile(fileMap);
         FilesResult response =  this.api.postExport(request);
@@ -2672,7 +2313,6 @@ public class LightCellsTest {
 
     @Test
     public void PostExport_jpg_pictureTest() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
         String book1Xlsx = "Book1.xlsx";
 
         String format = "jpg";
@@ -2684,10 +2324,8 @@ public class LightCellsTest {
 
         request.setObjectType(objectType);
          
-         
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
         fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
         request.setFile(fileMap);
         FilesResult response =  this.api.postExport(request);
@@ -2696,7 +2334,6 @@ public class LightCellsTest {
 
     @Test
     public void PostExport_gif_pictureTest() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
         String book1Xlsx = "Book1.xlsx";
 
         String format = "gif";
@@ -2708,10 +2345,8 @@ public class LightCellsTest {
 
         request.setObjectType(objectType);
          
-         
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
         fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
         request.setFile(fileMap);
         FilesResult response =  this.api.postExport(request);
@@ -2720,7 +2355,6 @@ public class LightCellsTest {
 
     @Test
     public void PostExport_emf_pictureTest() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
         String book1Xlsx = "Book1.xlsx";
 
         String format = "emf";
@@ -2732,10 +2366,8 @@ public class LightCellsTest {
 
         request.setObjectType(objectType);
          
-         
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
         fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
         request.setFile(fileMap);
         FilesResult response =  this.api.postExport(request);
@@ -2744,7 +2376,6 @@ public class LightCellsTest {
 
     @Test
     public void PostExport_bmp_pictureTest() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
         String book1Xlsx = "Book1.xlsx";
 
         String format = "bmp";
@@ -2756,10 +2387,8 @@ public class LightCellsTest {
 
         request.setObjectType(objectType);
          
-         
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
         fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
         request.setFile(fileMap);
         FilesResult response =  this.api.postExport(request);
@@ -2768,7 +2397,6 @@ public class LightCellsTest {
 
     @Test
     public void PostExport_csv_listobjectTest() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
         String book1Xlsx = "Book1.xlsx";
 
         String format = "csv";
@@ -2780,10 +2408,8 @@ public class LightCellsTest {
 
         request.setObjectType(objectType);
          
-         
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
         fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
         request.setFile(fileMap);
         FilesResult response =  this.api.postExport(request);
@@ -2792,7 +2418,6 @@ public class LightCellsTest {
 
     @Test
     public void PostExport_xls_listobjectTest() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
         String book1Xlsx = "Book1.xlsx";
 
         String format = "xls";
@@ -2804,10 +2429,8 @@ public class LightCellsTest {
 
         request.setObjectType(objectType);
          
-         
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
         fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
         request.setFile(fileMap);
         FilesResult response =  this.api.postExport(request);
@@ -2816,7 +2439,6 @@ public class LightCellsTest {
 
     @Test
     public void PostExport_html_listobjectTest() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
         String book1Xlsx = "Book1.xlsx";
 
         String format = "html";
@@ -2828,10 +2450,8 @@ public class LightCellsTest {
 
         request.setObjectType(objectType);
          
-         
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
         fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
         request.setFile(fileMap);
         FilesResult response =  this.api.postExport(request);
@@ -2840,7 +2460,6 @@ public class LightCellsTest {
 
     @Test
     public void PostExport_mhtml_listobjectTest() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
         String book1Xlsx = "Book1.xlsx";
 
         String format = "mhtml";
@@ -2852,10 +2471,8 @@ public class LightCellsTest {
 
         request.setObjectType(objectType);
          
-         
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
         fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
         request.setFile(fileMap);
         FilesResult response =  this.api.postExport(request);
@@ -2864,7 +2481,6 @@ public class LightCellsTest {
 
     @Test
     public void PostExport_ods_listobjectTest() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
         String book1Xlsx = "Book1.xlsx";
 
         String format = "ods";
@@ -2876,10 +2492,8 @@ public class LightCellsTest {
 
         request.setObjectType(objectType);
          
-         
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
         fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
         request.setFile(fileMap);
         FilesResult response =  this.api.postExport(request);
@@ -2888,7 +2502,6 @@ public class LightCellsTest {
 
     @Test
     public void PostExport_pdf_listobjectTest() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
         String book1Xlsx = "Book1.xlsx";
 
         String format = "pdf";
@@ -2900,10 +2513,8 @@ public class LightCellsTest {
 
         request.setObjectType(objectType);
          
-         
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
         fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
         request.setFile(fileMap);
         FilesResult response =  this.api.postExport(request);
@@ -2912,7 +2523,6 @@ public class LightCellsTest {
 
     @Test
     public void PostExport_xml_listobjectTest() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
         String book1Xlsx = "Book1.xlsx";
 
         String format = "xml";
@@ -2924,10 +2534,8 @@ public class LightCellsTest {
 
         request.setObjectType(objectType);
          
-         
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
         fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
         request.setFile(fileMap);
         FilesResult response =  this.api.postExport(request);
@@ -2936,7 +2544,6 @@ public class LightCellsTest {
 
     @Test
     public void PostExport_txt_listobjectTest() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
         String book1Xlsx = "Book1.xlsx";
 
         String format = "txt";
@@ -2948,10 +2555,8 @@ public class LightCellsTest {
 
         request.setObjectType(objectType);
          
-         
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
         fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
         request.setFile(fileMap);
         FilesResult response =  this.api.postExport(request);
@@ -2960,7 +2565,6 @@ public class LightCellsTest {
 
     @Test
     public void PostExport_tif_listobjectTest() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
         String book1Xlsx = "Book1.xlsx";
 
         String format = "tif";
@@ -2972,10 +2576,8 @@ public class LightCellsTest {
 
         request.setObjectType(objectType);
          
-         
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
         fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
         request.setFile(fileMap);
         FilesResult response =  this.api.postExport(request);
@@ -2984,7 +2586,6 @@ public class LightCellsTest {
 
     @Test
     public void PostExport_xlsb_listobjectTest() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
         String book1Xlsx = "Book1.xlsx";
 
         String format = "xlsb";
@@ -2996,10 +2597,8 @@ public class LightCellsTest {
 
         request.setObjectType(objectType);
          
-         
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
         fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
         request.setFile(fileMap);
         FilesResult response =  this.api.postExport(request);
@@ -3008,7 +2607,6 @@ public class LightCellsTest {
 
     @Test
     public void PostExport_xlsm_listobjectTest() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
         String book1Xlsx = "Book1.xlsx";
 
         String format = "xlsm";
@@ -3020,10 +2618,8 @@ public class LightCellsTest {
 
         request.setObjectType(objectType);
          
-         
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
         fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
         request.setFile(fileMap);
         FilesResult response =  this.api.postExport(request);
@@ -3032,7 +2628,6 @@ public class LightCellsTest {
 
     @Test
     public void PostExport_xlsx_listobjectTest() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
         String book1Xlsx = "Book1.xlsx";
 
         String format = "xlsx";
@@ -3044,10 +2639,8 @@ public class LightCellsTest {
 
         request.setObjectType(objectType);
          
-         
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
         fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
         request.setFile(fileMap);
         FilesResult response =  this.api.postExport(request);
@@ -3056,7 +2649,6 @@ public class LightCellsTest {
 
     @Test
     public void PostExport_xltm_listobjectTest() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
         String book1Xlsx = "Book1.xlsx";
 
         String format = "xltm";
@@ -3068,10 +2660,8 @@ public class LightCellsTest {
 
         request.setObjectType(objectType);
          
-         
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
         fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
         request.setFile(fileMap);
         FilesResult response =  this.api.postExport(request);
@@ -3080,7 +2670,6 @@ public class LightCellsTest {
 
     @Test
     public void PostExport_xltx_listobjectTest() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
         String book1Xlsx = "Book1.xlsx";
 
         String format = "xltx";
@@ -3092,10 +2681,8 @@ public class LightCellsTest {
 
         request.setObjectType(objectType);
          
-         
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
         fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
         request.setFile(fileMap);
         FilesResult response =  this.api.postExport(request);
@@ -3104,7 +2691,6 @@ public class LightCellsTest {
 
     @Test
     public void PostExport_xps_listobjectTest() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
         String book1Xlsx = "Book1.xlsx";
 
         String format = "xps";
@@ -3116,10 +2702,8 @@ public class LightCellsTest {
 
         request.setObjectType(objectType);
          
-         
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
         fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
         request.setFile(fileMap);
         FilesResult response =  this.api.postExport(request);
@@ -3128,7 +2712,6 @@ public class LightCellsTest {
 
     @Test
     public void PostExport_png_listobjectTest() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
         String book1Xlsx = "Book1.xlsx";
 
         String format = "png";
@@ -3140,10 +2723,8 @@ public class LightCellsTest {
 
         request.setObjectType(objectType);
          
-         
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
         fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
         request.setFile(fileMap);
         FilesResult response =  this.api.postExport(request);
@@ -3152,7 +2733,6 @@ public class LightCellsTest {
 
     @Test
     public void PostExport_jpg_listobjectTest() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
         String book1Xlsx = "Book1.xlsx";
 
         String format = "jpg";
@@ -3164,10 +2744,8 @@ public class LightCellsTest {
 
         request.setObjectType(objectType);
          
-         
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
         fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
         request.setFile(fileMap);
         FilesResult response =  this.api.postExport(request);
@@ -3176,7 +2754,6 @@ public class LightCellsTest {
 
     @Test
     public void PostExport_gif_listobjectTest() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
         String book1Xlsx = "Book1.xlsx";
 
         String format = "gif";
@@ -3188,10 +2765,8 @@ public class LightCellsTest {
 
         request.setObjectType(objectType);
          
-         
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
         fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
         request.setFile(fileMap);
         FilesResult response =  this.api.postExport(request);
@@ -3200,7 +2775,6 @@ public class LightCellsTest {
 
     @Test
     public void PostExport_emf_listobjectTest() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
         String book1Xlsx = "Book1.xlsx";
 
         String format = "emf";
@@ -3212,10 +2786,8 @@ public class LightCellsTest {
 
         request.setObjectType(objectType);
          
-         
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
         fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
         request.setFile(fileMap);
         FilesResult response =  this.api.postExport(request);
@@ -3224,7 +2796,6 @@ public class LightCellsTest {
 
     @Test
     public void PostExport_bmp_listobjectTest() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
         String book1Xlsx = "Book1.xlsx";
 
         String format = "bmp";
@@ -3236,10 +2807,8 @@ public class LightCellsTest {
 
         request.setObjectType(objectType);
          
-         
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
         fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
         request.setFile(fileMap);
         FilesResult response =  this.api.postExport(request);
@@ -3248,7 +2817,6 @@ public class LightCellsTest {
 
     @Test
     public void PostExport_md_listobjectTest() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
         String book1Xlsx = "Book1.xlsx";
 
         String format = "md";
@@ -3260,58 +2828,8 @@ public class LightCellsTest {
 
         request.setObjectType(objectType);
          
-         
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
-        fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
-        request.setFile(fileMap);
-        FilesResult response =  this.api.postExport(request);
-    }
-
-
-    @Test
-    public void PostExport_numbers_listobjectTest() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
-        String book1Xlsx = "Book1.xlsx";
-
-        String format = "numbers";
-        String objectType = "listobject";
-
-       
-        PostExportRequest request = new PostExportRequest();
-        request.setFormat(format);
-
-        request.setObjectType(objectType);
-         
-         
-
-        HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
-        fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
-        request.setFile(fileMap);
-        FilesResult response =  this.api.postExport(request);
-    }
-
-
-    @Test
-    public void PostExport_wmf_listobjectTest() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
-        String book1Xlsx = "Book1.xlsx";
-
-        String format = "wmf";
-        String objectType = "listobject";
-
-       
-        PostExportRequest request = new PostExportRequest();
-        request.setFormat(format);
-
-        request.setObjectType(objectType);
-         
-         
-
-        HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
         fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
         request.setFile(fileMap);
         FilesResult response =  this.api.postExport(request);
@@ -3320,7 +2838,6 @@ public class LightCellsTest {
 
     @Test
     public void PostExport_svg_listobjectTest() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
         String book1Xlsx = "Book1.xlsx";
 
         String format = "svg";
@@ -3332,10 +2849,8 @@ public class LightCellsTest {
 
         request.setObjectType(objectType);
          
-         
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
         fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
         request.setFile(fileMap);
         FilesResult response =  this.api.postExport(request);
@@ -3344,7 +2859,6 @@ public class LightCellsTest {
 
     @Test
     public void PostExport_docx_listobjectTest() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
         String book1Xlsx = "Book1.xlsx";
 
         String format = "docx";
@@ -3356,10 +2870,8 @@ public class LightCellsTest {
 
         request.setObjectType(objectType);
          
-         
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
         fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
         request.setFile(fileMap);
         FilesResult response =  this.api.postExport(request);
@@ -3368,7 +2880,6 @@ public class LightCellsTest {
 
     @Test
     public void PostExport_pptx_listobjectTest() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
         String book1Xlsx = "Book1.xlsx";
 
         String format = "pptx";
@@ -3380,10 +2891,8 @@ public class LightCellsTest {
 
         request.setObjectType(objectType);
          
-         
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
         fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
         request.setFile(fileMap);
         FilesResult response =  this.api.postExport(request);
@@ -3392,7 +2901,6 @@ public class LightCellsTest {
 
     @Test
     public void PostExport_json_listobjectTest() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
         String book1Xlsx = "Book1.xlsx";
 
         String format = "json";
@@ -3404,10 +2912,8 @@ public class LightCellsTest {
 
         request.setObjectType(objectType);
          
-         
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
         fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
         request.setFile(fileMap);
         FilesResult response =  this.api.postExport(request);
@@ -3416,7 +2922,6 @@ public class LightCellsTest {
 
     @Test
     public void PostExport_sql_listobjectTest() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
         String book1Xlsx = "Book1.xlsx";
 
         String format = "sql";
@@ -3428,10 +2933,8 @@ public class LightCellsTest {
 
         request.setObjectType(objectType);
          
-         
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
         fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
         request.setFile(fileMap);
         FilesResult response =  this.api.postExport(request);
@@ -3440,7 +2943,6 @@ public class LightCellsTest {
 
     @Test
     public void PostExport_png_oleobjectTest() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
         String book1Xlsx = "Book1.xlsx";
 
         String format = "png";
@@ -3452,10 +2954,8 @@ public class LightCellsTest {
 
         request.setObjectType(objectType);
          
-         
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
         fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
         request.setFile(fileMap);
         FilesResult response =  this.api.postExport(request);
@@ -3464,7 +2964,6 @@ public class LightCellsTest {
 
     @Test
     public void PostExport_jpg_oleobjectTest() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
         String book1Xlsx = "Book1.xlsx";
 
         String format = "jpg";
@@ -3476,10 +2975,8 @@ public class LightCellsTest {
 
         request.setObjectType(objectType);
          
-         
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
         fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
         request.setFile(fileMap);
         FilesResult response =  this.api.postExport(request);
@@ -3488,7 +2985,6 @@ public class LightCellsTest {
 
     @Test
     public void PostExport_gif_oleobjectTest() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
         String book1Xlsx = "Book1.xlsx";
 
         String format = "gif";
@@ -3500,10 +2996,8 @@ public class LightCellsTest {
 
         request.setObjectType(objectType);
          
-         
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
         fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
         request.setFile(fileMap);
         FilesResult response =  this.api.postExport(request);
@@ -3512,7 +3006,6 @@ public class LightCellsTest {
 
     @Test
     public void PostExport_emf_oleobjectTest() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
         String book1Xlsx = "Book1.xlsx";
 
         String format = "emf";
@@ -3524,10 +3017,8 @@ public class LightCellsTest {
 
         request.setObjectType(objectType);
          
-         
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
         fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
         request.setFile(fileMap);
         FilesResult response =  this.api.postExport(request);
@@ -3536,7 +3027,6 @@ public class LightCellsTest {
 
     @Test
     public void PostExport_bmp_oleobjectTest() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
         String book1Xlsx = "Book1.xlsx";
 
         String format = "bmp";
@@ -3548,10 +3038,8 @@ public class LightCellsTest {
 
         request.setObjectType(objectType);
          
-         
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
         fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
         request.setFile(fileMap);
         FilesResult response =  this.api.postExport(request);
@@ -3560,7 +3048,6 @@ public class LightCellsTest {
 
     @Test
     public void PostCompress_50Test() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
         String dataSourceXlsx = "datasource.xlsx";
 
         Integer compressLevel = 50;
@@ -3569,10 +3056,8 @@ public class LightCellsTest {
         PostCompressRequest request = new PostCompressRequest();
         request.setCompressLevel(compressLevel);
          
-         
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
         fileMap.put(dataSourceXlsx ,CellsApiUtil.GetFileHolder(dataSourceXlsx) ); 
         request.setFile(fileMap);
         FilesResult response =  this.api.postCompress(request);
@@ -3581,7 +3066,6 @@ public class LightCellsTest {
 
     @Test
     public void PostCompress_90Test() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
         String dataSourceXlsx = "datasource.xlsx";
 
         Integer compressLevel = 90;
@@ -3590,10 +3074,8 @@ public class LightCellsTest {
         PostCompressRequest request = new PostCompressRequest();
         request.setCompressLevel(compressLevel);
          
-         
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
         fileMap.put(dataSourceXlsx ,CellsApiUtil.GetFileHolder(dataSourceXlsx) ); 
         request.setFile(fileMap);
         FilesResult response =  this.api.postCompress(request);
@@ -4105,54 +3587,6 @@ public class LightCellsTest {
 
 
     @Test
-    public void PostMerge_numbers_trueTest() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
-        String dataSourceXlsx = "datasource.xlsx";
-
-        String format = "numbers";
-        Boolean mergeToOneSheet = true;
-
-       
-        PostMergeRequest request = new PostMergeRequest();
-        request.setOutFormat(format);
-
-        request.setMergeToOneSheet(mergeToOneSheet);
-         
-         
-
-        HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
-        fileMap.put(dataSourceXlsx ,CellsApiUtil.GetFileHolder(dataSourceXlsx) ); 
-        request.setFile(fileMap);
-        FileInfo response =  this.api.postMerge(request);
-    }
-
-
-    @Test
-    public void PostMerge_wmf_trueTest() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
-        String dataSourceXlsx = "datasource.xlsx";
-
-        String format = "wmf";
-        Boolean mergeToOneSheet = true;
-
-       
-        PostMergeRequest request = new PostMergeRequest();
-        request.setOutFormat(format);
-
-        request.setMergeToOneSheet(mergeToOneSheet);
-         
-         
-
-        HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
-        fileMap.put(dataSourceXlsx ,CellsApiUtil.GetFileHolder(dataSourceXlsx) ); 
-        request.setFile(fileMap);
-        FileInfo response =  this.api.postMerge(request);
-    }
-
-
-    @Test
     public void PostMerge_svg_trueTest() throws Exception {
         String assemblyTestXlsx = "assemblytest.xlsx";
         String dataSourceXlsx = "datasource.xlsx";
@@ -4289,9 +3723,24 @@ public class LightCellsTest {
 
 
     @Test
+    public void PostLockTest() throws Exception {
+        String needlockXlsx = "needlock.xlsx";
+
+       
+        PostLockRequest request = new PostLockRequest();
+        request.setPassword("123456");
+         
+
+        HashMap<String,File> fileMap = new HashMap<String,File>(); 
+        fileMap.put(needlockXlsx ,CellsApiUtil.GetFileHolder(needlockXlsx) ); 
+        request.setFile(fileMap);
+        FilesResult response =  this.api.postLock(request);
+    }
+
+
+    @Test
     public void PostProtectTest() throws Exception {
         String assemblyTestXlsx = "assemblytest.xlsx";
-        String dataSourceXlsx = "datasource.xlsx";
 
        
         PostProtectRequest request = new PostProtectRequest();
@@ -4305,11 +3754,9 @@ public class LightCellsTest {
 
         request.setPassword("123456");
          
-         
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
         fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
-        fileMap.put(dataSourceXlsx ,CellsApiUtil.GetFileHolder(dataSourceXlsx) ); 
         request.setFile(fileMap);
         FilesResult response =  this.api.postProtect(request);
     }
@@ -4317,7 +3764,6 @@ public class LightCellsTest {
 
     @Test
     public void PostProtect_ProtectWorkbookRequestTest() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
         String dataSourceXlsx = "datasource.xlsx";
 
        
@@ -4330,10 +3776,8 @@ public class LightCellsTest {
 
         request.setProtectWorkbookRequest(protectWorkbookRequest);
          
-         
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
         fileMap.put(dataSourceXlsx ,CellsApiUtil.GetFileHolder(dataSourceXlsx) ); 
         request.setFile(fileMap);
         FilesResult response =  this.api.postProtect(request);
@@ -4342,17 +3786,14 @@ public class LightCellsTest {
 
     @Test
     public void PostSearchTest() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
         String dataSourceXlsx = "datasource.xlsx";
 
        
         PostSearchRequest request = new PostSearchRequest();
         request.setText("12");
          
-         
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
         fileMap.put(dataSourceXlsx ,CellsApiUtil.GetFileHolder(dataSourceXlsx) ); 
         request.setFile(fileMap);
         List<TextItem> response =  this.api.postSearch(request);
@@ -4361,7 +3802,6 @@ public class LightCellsTest {
 
     @Test
     public void PostReplaceTest() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
         String dataSourceXlsx = "datasource.xlsx";
 
        
@@ -4370,10 +3810,8 @@ public class LightCellsTest {
 
         request.setNewtext("newtext");
          
-         
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
         fileMap.put(dataSourceXlsx ,CellsApiUtil.GetFileHolder(dataSourceXlsx) ); 
         request.setFile(fileMap);
         FilesResult response =  this.api.postReplace(request);
@@ -4382,7 +3820,6 @@ public class LightCellsTest {
 
     @Test
     public void PostReplaceOnlySheetnameTest() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
         String dataSourceXlsx = "datasource.xlsx";
 
        
@@ -4393,10 +3830,8 @@ public class LightCellsTest {
 
         request.setSheetname("Sheet1");
          
-         
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
         fileMap.put(dataSourceXlsx ,CellsApiUtil.GetFileHolder(dataSourceXlsx) ); 
         request.setFile(fileMap);
         FilesResult response =  this.api.postReplace(request);
@@ -4405,7 +3840,6 @@ public class LightCellsTest {
 
     @Test
     public void PostWatermarkTest() throws Exception {
-        String assemblyTestXlsx = "assemblytest.xlsx";
         String dataSourceXlsx = "datasource.xlsx";
 
        
@@ -4414,10 +3848,8 @@ public class LightCellsTest {
 
         request.setColor("#773322");
          
-         
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
         fileMap.put(dataSourceXlsx ,CellsApiUtil.GetFileHolder(dataSourceXlsx) ); 
         request.setFile(fileMap);
         FilesResult response =  this.api.postWatermark(request);
@@ -4427,7 +3859,6 @@ public class LightCellsTest {
     @Test
     public void PostClearObjects_chartTest() throws Exception {
         String book1Xlsx = "Book1.xlsx";
-        String dataSourceXlsx = "datasource.xlsx";
 
         String objecttype = "chart";
 
@@ -4435,11 +3866,9 @@ public class LightCellsTest {
         PostClearObjectsRequest request = new PostClearObjectsRequest();
         request.setObjecttype(objecttype);
          
-         
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
         fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
-        fileMap.put(dataSourceXlsx ,CellsApiUtil.GetFileHolder(dataSourceXlsx) ); 
         request.setFile(fileMap);
         FilesResult response =  this.api.postClearObjects(request);
     }
@@ -4448,7 +3877,6 @@ public class LightCellsTest {
     @Test
     public void PostClearObjects_commentTest() throws Exception {
         String book1Xlsx = "Book1.xlsx";
-        String dataSourceXlsx = "datasource.xlsx";
 
         String objecttype = "comment";
 
@@ -4456,11 +3884,9 @@ public class LightCellsTest {
         PostClearObjectsRequest request = new PostClearObjectsRequest();
         request.setObjecttype(objecttype);
          
-         
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
         fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
-        fileMap.put(dataSourceXlsx ,CellsApiUtil.GetFileHolder(dataSourceXlsx) ); 
         request.setFile(fileMap);
         FilesResult response =  this.api.postClearObjects(request);
     }
@@ -4469,7 +3895,6 @@ public class LightCellsTest {
     @Test
     public void PostClearObjects_pictureTest() throws Exception {
         String book1Xlsx = "Book1.xlsx";
-        String dataSourceXlsx = "datasource.xlsx";
 
         String objecttype = "picture";
 
@@ -4477,11 +3902,9 @@ public class LightCellsTest {
         PostClearObjectsRequest request = new PostClearObjectsRequest();
         request.setObjecttype(objecttype);
          
-         
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
         fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
-        fileMap.put(dataSourceXlsx ,CellsApiUtil.GetFileHolder(dataSourceXlsx) ); 
         request.setFile(fileMap);
         FilesResult response =  this.api.postClearObjects(request);
     }
@@ -4490,7 +3913,6 @@ public class LightCellsTest {
     @Test
     public void PostClearObjects_shapeTest() throws Exception {
         String book1Xlsx = "Book1.xlsx";
-        String dataSourceXlsx = "datasource.xlsx";
 
         String objecttype = "shape";
 
@@ -4498,11 +3920,9 @@ public class LightCellsTest {
         PostClearObjectsRequest request = new PostClearObjectsRequest();
         request.setObjecttype(objecttype);
          
-         
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
         fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
-        fileMap.put(dataSourceXlsx ,CellsApiUtil.GetFileHolder(dataSourceXlsx) ); 
         request.setFile(fileMap);
         FilesResult response =  this.api.postClearObjects(request);
     }
@@ -4511,7 +3931,6 @@ public class LightCellsTest {
     @Test
     public void PostClearObjects_listobjectTest() throws Exception {
         String book1Xlsx = "Book1.xlsx";
-        String dataSourceXlsx = "datasource.xlsx";
 
         String objecttype = "listobject";
 
@@ -4519,11 +3938,9 @@ public class LightCellsTest {
         PostClearObjectsRequest request = new PostClearObjectsRequest();
         request.setObjecttype(objecttype);
          
-         
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
         fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
-        fileMap.put(dataSourceXlsx ,CellsApiUtil.GetFileHolder(dataSourceXlsx) ); 
         request.setFile(fileMap);
         FilesResult response =  this.api.postClearObjects(request);
     }
@@ -4532,7 +3949,6 @@ public class LightCellsTest {
     @Test
     public void PostClearObjects_hyperlinkTest() throws Exception {
         String book1Xlsx = "Book1.xlsx";
-        String dataSourceXlsx = "datasource.xlsx";
 
         String objecttype = "hyperlink";
 
@@ -4540,11 +3956,9 @@ public class LightCellsTest {
         PostClearObjectsRequest request = new PostClearObjectsRequest();
         request.setObjecttype(objecttype);
          
-         
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
         fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
-        fileMap.put(dataSourceXlsx ,CellsApiUtil.GetFileHolder(dataSourceXlsx) ); 
         request.setFile(fileMap);
         FilesResult response =  this.api.postClearObjects(request);
     }
@@ -4553,7 +3967,6 @@ public class LightCellsTest {
     @Test
     public void PostClearObjects_oleobjectTest() throws Exception {
         String book1Xlsx = "Book1.xlsx";
-        String dataSourceXlsx = "datasource.xlsx";
 
         String objecttype = "oleobject";
 
@@ -4561,11 +3974,9 @@ public class LightCellsTest {
         PostClearObjectsRequest request = new PostClearObjectsRequest();
         request.setObjecttype(objecttype);
          
-         
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
         fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
-        fileMap.put(dataSourceXlsx ,CellsApiUtil.GetFileHolder(dataSourceXlsx) ); 
         request.setFile(fileMap);
         FilesResult response =  this.api.postClearObjects(request);
     }
@@ -4574,7 +3985,6 @@ public class LightCellsTest {
     @Test
     public void PostClearObjects_pivottableTest() throws Exception {
         String book1Xlsx = "Book1.xlsx";
-        String dataSourceXlsx = "datasource.xlsx";
 
         String objecttype = "pivottable";
 
@@ -4582,11 +3992,9 @@ public class LightCellsTest {
         PostClearObjectsRequest request = new PostClearObjectsRequest();
         request.setObjecttype(objecttype);
          
-         
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
         fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
-        fileMap.put(dataSourceXlsx ,CellsApiUtil.GetFileHolder(dataSourceXlsx) ); 
         request.setFile(fileMap);
         FilesResult response =  this.api.postClearObjects(request);
     }
@@ -4595,7 +4003,6 @@ public class LightCellsTest {
     @Test
     public void PostClearObjects_validationTest() throws Exception {
         String book1Xlsx = "Book1.xlsx";
-        String dataSourceXlsx = "datasource.xlsx";
 
         String objecttype = "validation";
 
@@ -4603,11 +4010,9 @@ public class LightCellsTest {
         PostClearObjectsRequest request = new PostClearObjectsRequest();
         request.setObjecttype(objecttype);
          
-         
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
         fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
-        fileMap.put(dataSourceXlsx ,CellsApiUtil.GetFileHolder(dataSourceXlsx) ); 
         request.setFile(fileMap);
         FilesResult response =  this.api.postClearObjects(request);
     }
@@ -4616,7 +4021,6 @@ public class LightCellsTest {
     @Test
     public void PostClearObjects_BackgroundTest() throws Exception {
         String book1Xlsx = "Book1.xlsx";
-        String dataSourceXlsx = "datasource.xlsx";
 
         String objecttype = "Background";
 
@@ -4624,11 +4028,9 @@ public class LightCellsTest {
         PostClearObjectsRequest request = new PostClearObjectsRequest();
         request.setObjecttype(objecttype);
          
-         
 
         HashMap<String,File> fileMap = new HashMap<String,File>(); 
         fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
-        fileMap.put(dataSourceXlsx ,CellsApiUtil.GetFileHolder(dataSourceXlsx) ); 
         request.setFile(fileMap);
         FilesResult response =  this.api.postClearObjects(request);
     }

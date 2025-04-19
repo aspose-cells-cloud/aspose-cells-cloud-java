@@ -140,10 +140,31 @@ public class PivotTablesControllerTest {
         PivotFiltersResponse response =  this.api.getWorksheetPivotTableFilters(request);
     }
 
+/*
+    @Test
+    public void GetWorksheetPivotTableFilterTest() throws Exception {
+        String localName = "TestCase.xlsx";
+        String remoteName = "TestCase.xlsx";
 
+        CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
 
+        GetWorksheetPivotTableFilterRequest request = new GetWorksheetPivotTableFilterRequest();
+        request.setName(remoteName);
 
+        request.setSheetName("Sheet3");
 
+        request.setPivotTableIndex(0);
+
+        request.setFilterIndex(0);
+
+        request.setFolder(remoteFolder);
+
+        request.setStorageName("");
+
+        PivotFilterResponse response =  this.api.getWorksheetPivotTableFilter(request);
+    }
+
+*/
     @Test
     public void PutWorksheetPivotTableTest() throws Exception {
         String localName = "TestCase.xlsx";

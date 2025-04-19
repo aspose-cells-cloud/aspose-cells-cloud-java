@@ -28,7 +28,6 @@ public class ExamplePostProtect {
     public void Run(){
         try{
             String assemblyTestXlsx = "assemblytest.xlsx";
-            String dataSourceXlsx = "datasource.xlsx";
 
    
             PostProtectRequest request = new PostProtectRequest();
@@ -42,11 +41,9 @@ public class ExamplePostProtect {
 
             request.setPassword("123456");
              
-             
 
             HashMap<String,File> fileMap = new HashMap<String,File>(); 
             fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
-            fileMap.put(dataSourceXlsx ,CellsApiUtil.GetFileHolder(dataSourceXlsx) ); 
             request.setFile(fileMap);
             this.api.postProtect(request);
 

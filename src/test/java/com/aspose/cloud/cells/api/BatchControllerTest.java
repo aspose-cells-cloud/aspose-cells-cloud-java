@@ -182,4 +182,36 @@ public class BatchControllerTest {
     }
 
 
+    @Test
+    public void PostBatchSplitTest() throws Exception {
+        String localBook1 = "Book1.xlsx";
+        String remoteBook1 = "Book1.xlsx";
+        String localMyDoc = "myDocument.xlsx";
+        String remoteMyDoc = "myDocument.xlsx";
+
+        CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteBook1 , localBook1 , "");
+        CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteMyDoc , localMyDoc , "");
+       
+        PostBatchSplitRequest request = new PostBatchSplitRequest();
+        BatchSplitRequest batchSplitRequest = new BatchSplitRequest();
+        batchSplitRequest.setSourceFolder(remoteFolder);
+
+
+        batchSplitRequest.setFormat("Pdf");
+
+
+        batchSplitRequest.setOutFolder("OutResult");
+
+
+        MatchConditionRequest matchCondition = new MatchConditionRequest();
+        matchCondition.setRegexPattern("(^Book)(.+)(xlsx$)");
+
+        batchSplitRequest.setMatchCondition(matchCondition);
+
+        request.setBatchSplitRequest(batchSplitRequest);
+
+        File response =  this.api.postBatchSplit(request);
+    }
+
+
 }

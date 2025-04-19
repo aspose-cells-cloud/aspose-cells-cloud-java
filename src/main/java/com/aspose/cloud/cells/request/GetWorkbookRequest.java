@@ -55,11 +55,12 @@ public class GetWorkbookRequest  implements IRequestModel {
     private String region;
     private Boolean pageWideFitOnPerSheet;
     private Boolean pageTallFitOnPerSheet;
+    private String fontsLocation;
         public GetWorkbookRequest()
         {
 
         }
-        public GetWorkbookRequest(String name, String format, String password, Boolean isAutoFit, Boolean onlySaveTable, String folder, String outPath, String storageName, String outStorageName, Boolean checkExcelRestriction, String region, Boolean pageWideFitOnPerSheet, Boolean pageTallFitOnPerSheet) {
+        public GetWorkbookRequest(String name, String format, String password, Boolean isAutoFit, Boolean onlySaveTable, String folder, String outPath, String storageName, String outStorageName, Boolean checkExcelRestriction, String region, Boolean pageWideFitOnPerSheet, Boolean pageTallFitOnPerSheet, String fontsLocation) {
             this.name = name;
             this.format = format;
             this.password = password;
@@ -73,6 +74,7 @@ public class GetWorkbookRequest  implements IRequestModel {
             this.region = region;
             this.pageWideFitOnPerSheet = pageWideFitOnPerSheet;
             this.pageTallFitOnPerSheet = pageTallFitOnPerSheet;
+            this.fontsLocation = fontsLocation;
         }   
 
         public String getName() {
@@ -191,6 +193,15 @@ public class GetWorkbookRequest  implements IRequestModel {
             this.pageTallFitOnPerSheet = pageTallFitOnPerSheet;
         }
 
+
+        public String getFontsLocation() {
+            return this.fontsLocation;
+        }
+
+        public void setFontsLocation(String fontsLocation) {
+            this.fontsLocation = fontsLocation;
+        }
+
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
          if (getName() == null) {
@@ -235,6 +246,9 @@ public class GetWorkbookRequest  implements IRequestModel {
             } 
             if (getPageTallFitOnPerSheet() != null){
                 localVarQueryParams.addAll(apiClient.parameterToPairs("", "pageTallFitOnPerSheet", getPageTallFitOnPerSheet()));
+            } 
+            if (getFontsLocation() != null){
+                localVarQueryParams.addAll(apiClient.parameterToPairs("", "FontsLocation", getFontsLocation()));
             }  
         if(this.extendQueryParameterMap !=null){
             for (String key :this.extendQueryParameterMap.keySet()) {

@@ -27,7 +27,6 @@ public class ExamplePostReplace {
 
     public void Run(){
         try{
-            String assemblyTestXlsx = "assemblytest.xlsx";
             String dataSourceXlsx = "datasource.xlsx";
 
    
@@ -36,10 +35,8 @@ public class ExamplePostReplace {
 
             request.setNewtext("newtext");
              
-             
 
             HashMap<String,File> fileMap = new HashMap<String,File>(); 
-            fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
             fileMap.put(dataSourceXlsx ,CellsApiUtil.GetFileHolder(dataSourceXlsx) ); 
             request.setFile(fileMap);
             this.api.postReplace(request);

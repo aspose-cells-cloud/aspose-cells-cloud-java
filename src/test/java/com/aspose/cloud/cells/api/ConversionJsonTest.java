@@ -10,10 +10,10 @@
  *  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
  *  copies of the Software, and to permit persons to whom the Software is
  *  furnished to do so, subject to the following conditions:
- * 
+ *
  *  The above copyright notice and this permission notice shall be included in all
  *  copies or substantial portions of the Software.
- * 
+ *
  *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  *  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
  *  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -42,6 +42,7 @@ import junit.framework.Assert;
 public class ConversionJsonTest {
     private String remoteFolder = "TestData/In";
 
+
     private  CellsApi api;
     public ConversionJsonTest(){
         try {
@@ -57,16 +58,14 @@ public class ConversionJsonTest {
         String remoteName = "codegen-spec.json";
 
         String format = "csv";
-
-        CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
         PutConvertWorkbookRequest request = new PutConvertWorkbookRequest();
+        request.setLocalPath(CellsApiUtil.GetLocalFilePath(localName) );
         request.setFormat(format);
-         
 
-        HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(localName ,CellsApiUtil.GetFileHolder(localName) ); 
-        request.setFile(fileMap);
+
+        //HashMap<String,File> fileMap = new HashMap<String,File>();
+        //fileMap.put(localName ,CellsApiUtil.GetFileHolder(localName) );
+        //request.setFile(fileMap);
         File response =  this.api.putConvertWorkbook(request);
     }
 
@@ -78,15 +77,11 @@ public class ConversionJsonTest {
 
         String format = "xls";
 
-        CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
+
         PutConvertWorkbookRequest request = new PutConvertWorkbookRequest();
         request.setFormat(format);
-         
 
-        HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(localName ,CellsApiUtil.GetFileHolder(localName) ); 
-        request.setFile(fileMap);
+        request.setLocalPath(CellsApiUtil.GetLocalFilePath(localName) );
         File response =  this.api.putConvertWorkbook(request);
     }
 
@@ -95,18 +90,12 @@ public class ConversionJsonTest {
     public void ConvertWorkbook_htmlTest() throws Exception {
         String localName = "codegen-spec.json";
         String remoteName = "codegen-spec.json";
-
         String format = "html";
-
-        CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
         PutConvertWorkbookRequest request = new PutConvertWorkbookRequest();
         request.setFormat(format);
-         
 
-        HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(localName ,CellsApiUtil.GetFileHolder(localName) ); 
-        request.setFile(fileMap);
+        request.setLocalPath(CellsApiUtil.GetLocalFilePath(localName) );
+
         File response =  this.api.putConvertWorkbook(request);
     }
 
@@ -115,18 +104,10 @@ public class ConversionJsonTest {
     public void ConvertWorkbook_mhtmlTest() throws Exception {
         String localName = "codegen-spec.json";
         String remoteName = "codegen-spec.json";
-
         String format = "mhtml";
-
-        CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
         PutConvertWorkbookRequest request = new PutConvertWorkbookRequest();
         request.setFormat(format);
-         
-
-        HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(localName ,CellsApiUtil.GetFileHolder(localName) ); 
-        request.setFile(fileMap);
+        request.setLocalPath(CellsApiUtil.GetLocalFilePath(localName) );
         File response =  this.api.putConvertWorkbook(request);
     }
 
@@ -135,18 +116,10 @@ public class ConversionJsonTest {
     public void ConvertWorkbook_odsTest() throws Exception {
         String localName = "codegen-spec.json";
         String remoteName = "codegen-spec.json";
-
         String format = "ods";
-
-        CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
         PutConvertWorkbookRequest request = new PutConvertWorkbookRequest();
         request.setFormat(format);
-         
-
-        HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(localName ,CellsApiUtil.GetFileHolder(localName) ); 
-        request.setFile(fileMap);
+        request.setLocalPath(CellsApiUtil.GetLocalFilePath(localName) );
         File response =  this.api.putConvertWorkbook(request);
     }
 
@@ -158,15 +131,12 @@ public class ConversionJsonTest {
 
         String format = "pdf";
 
-        CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
+
         PutConvertWorkbookRequest request = new PutConvertWorkbookRequest();
         request.setFormat(format);
-         
 
-        HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(localName ,CellsApiUtil.GetFileHolder(localName) ); 
-        request.setFile(fileMap);
+
+        request.setLocalPath(CellsApiUtil.GetLocalFilePath(localName) );
         File response =  this.api.putConvertWorkbook(request);
     }
 
@@ -175,18 +145,12 @@ public class ConversionJsonTest {
     public void ConvertWorkbook_xmlTest() throws Exception {
         String localName = "codegen-spec.json";
         String remoteName = "codegen-spec.json";
-
         String format = "xml";
-
-        CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
         PutConvertWorkbookRequest request = new PutConvertWorkbookRequest();
         request.setFormat(format);
-         
 
-        HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(localName ,CellsApiUtil.GetFileHolder(localName) ); 
-        request.setFile(fileMap);
+
+        request.setLocalPath(CellsApiUtil.GetLocalFilePath(localName) );
         File response =  this.api.putConvertWorkbook(request);
     }
 
@@ -198,15 +162,12 @@ public class ConversionJsonTest {
 
         String format = "txt";
 
-        CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
+
         PutConvertWorkbookRequest request = new PutConvertWorkbookRequest();
         request.setFormat(format);
-         
 
-        HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(localName ,CellsApiUtil.GetFileHolder(localName) ); 
-        request.setFile(fileMap);
+
+        request.setLocalPath(CellsApiUtil.GetLocalFilePath(localName) );
         File response =  this.api.putConvertWorkbook(request);
     }
 
@@ -218,15 +179,13 @@ public class ConversionJsonTest {
 
         String format = "xlsb";
 
-        CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
+
+
         PutConvertWorkbookRequest request = new PutConvertWorkbookRequest();
         request.setFormat(format);
-         
 
-        HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(localName ,CellsApiUtil.GetFileHolder(localName) ); 
-        request.setFile(fileMap);
+
+        request.setLocalPath(CellsApiUtil.GetLocalFilePath(localName) );
         File response =  this.api.putConvertWorkbook(request);
     }
 
@@ -238,15 +197,13 @@ public class ConversionJsonTest {
 
         String format = "xps";
 
-        CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
+
+
         PutConvertWorkbookRequest request = new PutConvertWorkbookRequest();
         request.setFormat(format);
-         
 
-        HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(localName ,CellsApiUtil.GetFileHolder(localName) ); 
-        request.setFile(fileMap);
+
+        request.setLocalPath(CellsApiUtil.GetLocalFilePath(localName) );
         File response =  this.api.putConvertWorkbook(request);
     }
 
@@ -258,35 +215,13 @@ public class ConversionJsonTest {
 
         String format = "md";
 
-        CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
+
+
         PutConvertWorkbookRequest request = new PutConvertWorkbookRequest();
         request.setFormat(format);
-         
-
-        HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(localName ,CellsApiUtil.GetFileHolder(localName) ); 
-        request.setFile(fileMap);
-        File response =  this.api.putConvertWorkbook(request);
-    }
 
 
-    @Test
-    public void ConvertWorkbook_numbersTest() throws Exception {
-        String localName = "codegen-spec.json";
-        String remoteName = "codegen-spec.json";
-
-        String format = "numbers";
-
-        CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
-        PutConvertWorkbookRequest request = new PutConvertWorkbookRequest();
-        request.setFormat(format);
-         
-
-        HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(localName ,CellsApiUtil.GetFileHolder(localName) ); 
-        request.setFile(fileMap);
+        request.setLocalPath(CellsApiUtil.GetLocalFilePath(localName) );
         File response =  this.api.putConvertWorkbook(request);
     }
 
@@ -298,15 +233,13 @@ public class ConversionJsonTest {
 
         String format = "svg";
 
-        CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
+
+
         PutConvertWorkbookRequest request = new PutConvertWorkbookRequest();
         request.setFormat(format);
-         
 
-        HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(localName ,CellsApiUtil.GetFileHolder(localName) ); 
-        request.setFile(fileMap);
+
+        request.setLocalPath(CellsApiUtil.GetLocalFilePath(localName) );
         File response =  this.api.putConvertWorkbook(request);
     }
 
@@ -318,15 +251,13 @@ public class ConversionJsonTest {
 
         String format = "docx";
 
-        CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
+
+
         PutConvertWorkbookRequest request = new PutConvertWorkbookRequest();
         request.setFormat(format);
-         
 
-        HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(localName ,CellsApiUtil.GetFileHolder(localName) ); 
-        request.setFile(fileMap);
+
+        request.setLocalPath(CellsApiUtil.GetLocalFilePath(localName) );
         File response =  this.api.putConvertWorkbook(request);
     }
 
@@ -338,15 +269,13 @@ public class ConversionJsonTest {
 
         String format = "pptx";
 
-        CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
+
+
         PutConvertWorkbookRequest request = new PutConvertWorkbookRequest();
         request.setFormat(format);
-         
 
-        HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(localName ,CellsApiUtil.GetFileHolder(localName) ); 
-        request.setFile(fileMap);
+
+        request.setLocalPath(CellsApiUtil.GetLocalFilePath(localName) );
         File response =  this.api.putConvertWorkbook(request);
     }
 
@@ -358,15 +287,12 @@ public class ConversionJsonTest {
 
         String format = "json";
 
-        CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
+
         PutConvertWorkbookRequest request = new PutConvertWorkbookRequest();
         request.setFormat(format);
-         
 
-        HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(localName ,CellsApiUtil.GetFileHolder(localName) ); 
-        request.setFile(fileMap);
+
+        request.setLocalPath(CellsApiUtil.GetLocalFilePath(localName) );
         File response =  this.api.putConvertWorkbook(request);
     }
 
@@ -378,15 +304,13 @@ public class ConversionJsonTest {
 
         String format = "sql";
 
-        CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
+
+
         PutConvertWorkbookRequest request = new PutConvertWorkbookRequest();
         request.setFormat(format);
-         
 
-        HashMap<String,File> fileMap = new HashMap<String,File>(); 
-        fileMap.put(localName ,CellsApiUtil.GetFileHolder(localName) ); 
-        request.setFile(fileMap);
+
+        request.setLocalPath(CellsApiUtil.GetLocalFilePath(localName) );
         File response =  this.api.putConvertWorkbook(request);
     }
 

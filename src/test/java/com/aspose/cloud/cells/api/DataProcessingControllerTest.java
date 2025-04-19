@@ -10,10 +10,10 @@
  *  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
  *  copies of the Software, and to permit persons to whom the Software is
  *  furnished to do so, subject to the following conditions:
- * 
+ *
  *  The above copyright notice and this permission notice shall be included in all
  *  copies or substantial portions of the Software.
- * 
+ *
  *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  *  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
  *  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -57,7 +57,7 @@ public class DataProcessingControllerTest {
         String remoteName = "BookCsvDuplicateData.csv";
 
         CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
+
         PostWorkbookDataCleansingRequest request = new PostWorkbookDataCleansingRequest();
         request.setName(remoteName);
 
@@ -95,12 +95,12 @@ public class DataProcessingControllerTest {
         String remoteName = "BookCsvDuplicateData.csv";
 
         CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
+
         PostWorkbookDataDeduplicationRequest request = new PostWorkbookDataDeduplicationRequest();
         request.setName(remoteName);
 
         DeduplicationRegion deduplicationRegion = new DeduplicationRegion();
-         
+
         ArrayList<Range> deduplicationRegionRanges = new ArrayList<Range>();
         deduplicationRegion.setRanges(deduplicationRegionRanges);
 
@@ -120,7 +120,7 @@ public class DataProcessingControllerTest {
         String remoteName = "BookCsvDuplicateData.csv";
 
         CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
+
         PostWorkbookDataFillRequest request = new PostWorkbookDataFillRequest();
         request.setName(remoteName);
 
@@ -152,7 +152,7 @@ public class DataProcessingControllerTest {
         String remoteName = "BookTableL2W.xlsx";
 
         CellsApiUtil.Upload(api,  remoteFolder + "/" + remoteName , localName , "");
-       
+
         PostDataTransformationRequest request = new PostDataTransformationRequest();
         DataTransformationRequest dataTransformationRequest = new DataTransformationRequest();
         LoadData loadData = new LoadData();
@@ -185,7 +185,7 @@ public class DataProcessingControllerTest {
         dataSource.setDataSourceType("CloudFileSystem");
 
 
-        dataSource.setDataPath("BookTableL2W.xlsx");
+        dataSource.setDataPath(remoteFolder + "/" + remoteName);
 
         dataQuery.setDataSource(dataSource);
 
@@ -196,7 +196,7 @@ public class DataProcessingControllerTest {
 
         dataTransformationRequest.setLoadData(loadData);
 
-         
+
         ArrayList<AppliedStep> dataTransformationRequestAppliedSteps = new ArrayList<AppliedStep>();
         dataTransformationRequest.setAppliedSteps(dataTransformationRequestAppliedSteps);
 

@@ -47,16 +47,18 @@ public class PostImportDataRequest  implements IRequestModel {
     private String folder;
     private String storageName;
     private String region;
+    private String fontsLocation;
         public PostImportDataRequest()
         {
 
         }
-        public PostImportDataRequest(String name, ImportOption importOption, String folder, String storageName, String region) {
+        public PostImportDataRequest(String name, ImportOption importOption, String folder, String storageName, String region, String fontsLocation) {
             this.name = name;
             this.importOption = importOption;
             this.folder = folder;
             this.storageName = storageName;
             this.region = region;
+            this.fontsLocation = fontsLocation;
         }   
 
         public String getName() {
@@ -103,6 +105,15 @@ public class PostImportDataRequest  implements IRequestModel {
             this.region = region;
         }
 
+
+        public String getFontsLocation() {
+            return this.fontsLocation;
+        }
+
+        public void setFontsLocation(String fontsLocation) {
+            this.fontsLocation = fontsLocation;
+        }
+
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
          if (getName() == null) {
@@ -120,6 +131,9 @@ public class PostImportDataRequest  implements IRequestModel {
             } 
             if (getRegion() != null){
                 localVarQueryParams.addAll(apiClient.parameterToPairs("", "region", getRegion()));
+            } 
+            if (getFontsLocation() != null){
+                localVarQueryParams.addAll(apiClient.parameterToPairs("", "FontsLocation", getFontsLocation()));
             }  
         if(this.extendQueryParameterMap !=null){
             for (String key :this.extendQueryParameterMap.keySet()) {

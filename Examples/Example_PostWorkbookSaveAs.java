@@ -48,7 +48,7 @@ public class ExamplePostWorkbookSaveAs {
 
             request.setNewfilename(newfilename);
 
-            PdfSaveOptions saveOptions = new PdfSaveOptions();
+            SaveOptions saveOptions = new SaveOptions();
             saveOptions.setSaveFormat(format);
 
             request.setSaveOptions(saveOptions);

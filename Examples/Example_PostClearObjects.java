@@ -28,7 +28,6 @@ public class ExamplePostClearObjects {
     public void Run(){
         try{
             String book1Xlsx = "Book1.xlsx";
-            String dataSourceXlsx = "datasource.xlsx";
 
             String objecttype = "chart";
 
@@ -36,11 +35,9 @@ public class ExamplePostClearObjects {
             PostClearObjectsRequest request = new PostClearObjectsRequest();
             request.setObjecttype(objecttype);
              
-             
 
             HashMap<String,File> fileMap = new HashMap<String,File>(); 
             fileMap.put(book1Xlsx ,CellsApiUtil.GetFileHolder(book1Xlsx) ); 
-            fileMap.put(dataSourceXlsx ,CellsApiUtil.GetFileHolder(dataSourceXlsx) ); 
             request.setFile(fileMap);
             this.api.postClearObjects(request);
 

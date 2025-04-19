@@ -43,12 +43,14 @@ public class PostConvertWorkbookRequest  implements IRequestModel {
     }
 
     private ConvertWorkbookOptions convertWorkbookOptions;
+    private String fontsLocation;
         public PostConvertWorkbookRequest()
         {
 
         }
-        public PostConvertWorkbookRequest(ConvertWorkbookOptions convertWorkbookOptions) {
+        public PostConvertWorkbookRequest(ConvertWorkbookOptions convertWorkbookOptions, String fontsLocation) {
             this.convertWorkbookOptions = convertWorkbookOptions;
+            this.fontsLocation = fontsLocation;
         }   
 
         public ConvertWorkbookOptions getConvertWorkbookOptions() {
@@ -59,6 +61,15 @@ public class PostConvertWorkbookRequest  implements IRequestModel {
             this.convertWorkbookOptions = convertWorkbookOptions;
         }
 
+
+        public String getFontsLocation() {
+            return this.fontsLocation;
+        }
+
+        public void setFontsLocation(String fontsLocation) {
+            this.fontsLocation = fontsLocation;
+        }
+
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
          if (getConvertWorkbookOptions() == null) {
@@ -67,7 +78,10 @@ public class PostConvertWorkbookRequest  implements IRequestModel {
         String localVarPath = "/cells/convertWorkbook";
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-        List<Pair> localVarQueryParams = null;
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+            if (getFontsLocation() != null){
+                localVarQueryParams.addAll(apiClient.parameterToPairs("", "FontsLocation", getFontsLocation()));
+            }  
         if(this.extendQueryParameterMap !=null){
             for (String key :this.extendQueryParameterMap.keySet()) {
                     localVarQueryParams.addAll(apiClient.parameterToPairs("", key, this.extendQueryParameterMap.get(key)));           

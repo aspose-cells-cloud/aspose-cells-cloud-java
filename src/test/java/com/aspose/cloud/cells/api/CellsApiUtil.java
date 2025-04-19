@@ -10,10 +10,10 @@
  *  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
  *  copies of the Software, and to permit persons to whom the Software is
  *  furnished to do so, subject to the following conditions:
- * 
+ *
  *  The above copyright notice and this permission notice shall be included in all
  *  copies or substantial portions of the Software.
- * 
+ *
  *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  *  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
  *  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -59,6 +59,25 @@ public class CellsApiUtil {
 		}
 		return System.getProperty("user.dir") + sourceFolder;
 	}
+
+	public static String GetLocalFilePath(String filename){
+		String  envSourceFlder = System.getenv("CellsCloudTestDataFolder");
+		if(envSourceFlder != "" && envSourceFlder!=null){
+			File dir = new File(envSourceFlder);
+			if(dir.exists()){
+				return envSourceFlder;
+
+			}
+		}
+
+		File dir = new File(sourceFolder);
+		if(dir.exists()){
+			return sourceFolder+filename;
+
+		}
+		return System.getProperty("user.dir") + sourceFolder+filename;
+	}
+
 	public static String GetGrantType() {
 		return grantType;
 	}
@@ -81,24 +100,25 @@ public class CellsApiUtil {
 		}
 		return apiUrl;
 	}
-	public static Boolean IsDockerTest(){		
+	public static Boolean IsDockerTest(){
 		return (System.getenv("CellsCloudTestIsDockerTest").toLowerCase() == "true");
 	}
-	public static void Upload(CellsApi cellsApi,String remotePath ,String localFilename,String storageName) {		
-		File file = new File(GetSourceFolder() + localFilename);
+	public static void Upload(CellsApi cellsApi,String remotePath ,String localFilename,String storageName) {
+		//File file = new File(GetSourceFolder() + localFilename);
+		String localPath = GetLocalFilePath(localFilename);
 		try {
 			UploadFileRequest  uploadFileRequest = new UploadFileRequest();
 			uploadFileRequest.setPath(remotePath);
 			uploadFileRequest.setStorageName(storageName);
-			HashMap<String,File> files = new HashMap<String,File>();
-			files.put(localFilename, file);
-			uploadFileRequest.setUploadFiles(files);
+			//HashMap<String,File> files = new HashMap<String,File>();
+			//files.put(localFilename, file);
+			uploadFileRequest.setUploadFile(localPath);
 			cellsApi.uploadFile(uploadFileRequest);
 		} catch (ApiException | IOException e) {
 			e.printStackTrace();
-		}		
+		}
 	}
-	public static void UploadToStorage(CellsApi cellsApi,String folder ,String filename,String localFilename,String storageName) {		
+	public static void UploadToStorage(CellsApi cellsApi,String folder ,String filename,String localFilename,String storageName) {
 		File file = new File(GetSourceFolder()+ localFilename);
 		try {
 			UploadFileRequest  uploadFileRequest = new UploadFileRequest();
@@ -110,9 +130,9 @@ public class CellsApiUtil {
 			cellsApi.uploadFile(uploadFileRequest);
 		} catch (ApiException | IOException e) {
 			e.printStackTrace();
-		}		
+		}
 	}
-	public static void Upload(CellsApi cellsApi,String remotePath,String localFilename) {		
+	public static void Upload(CellsApi cellsApi,String remotePath,String localFilename) {
 		File file = new File(GetSourceFolder() + localFilename);
 		try {
 			UploadFileRequest  uploadFileRequest = new UploadFileRequest();
@@ -123,31 +143,31 @@ public class CellsApiUtil {
 			cellsApi.uploadFile(uploadFileRequest);
 		} catch (ApiException | IOException e) {
 			e.printStackTrace();
-		}		
+		}
 	}
-	public static byte[] GetFileData(String filename)	{		
-        try {  
-            File file = new File(GetSourceFolder() + filename);  
-            FileInputStream fis = new FileInputStream(file);  
-            ByteArrayOutputStream bos = new ByteArrayOutputStream(1000);  
-            byte[] b = new byte[1000];  
-            int n;  
-            while ((n = fis.read(b)) != -1) {  
-                bos.write(b, 0, n);  
-            }  
-            fis.close();  
-            bos.close();  
-            return bos.toByteArray();  
-        } catch (FileNotFoundException e) {  
-            e.printStackTrace();  
-        } catch (IOException e) {  
-            e.printStackTrace();  
+	public static byte[] GetFileData(String filename)	{
+        try {
+            File file = new File(GetSourceFolder() + filename);
+            FileInputStream fis = new FileInputStream(file);
+            ByteArrayOutputStream bos = new ByteArrayOutputStream(1000);
+            byte[] b = new byte[1000];
+            int n;
+            while ((n = fis.read(b)) != -1) {
+                bos.write(b, 0, n);
+            }
+            fis.close();
+            bos.close();
+            return bos.toByteArray();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-		return null;  
+		return null;
 	}
 
-	public static File GetFileHolder(String filename)	{		
-		File file = new File(GetSourceFolder() + filename);  
+	public static File GetFileHolder(String filename)	{
+		File file = new File(GetSourceFolder() + filename);
         return file;
 	}
 

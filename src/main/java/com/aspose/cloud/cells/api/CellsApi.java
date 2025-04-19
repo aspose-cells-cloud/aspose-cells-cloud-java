@@ -6227,6 +6227,114 @@ public class CellsApi {
 
 
          @SuppressWarnings("rawtypes")
+         private com.squareup.okhttp.Call checkWrokbookExternalReferenceValidateBeforeCall(CheckWrokbookExternalReferenceRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
+             return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
+         }
+
+         public  CheckedExternalReferenceResponse  checkWrokbookExternalReference(CheckWrokbookExternalReferenceRequest request) throws ApiException,  IOException {
+             try {
+                 ApiResponse< CheckedExternalReferenceResponse > resp = checkWrokbookExternalReferenceWithHttpInfo(request);
+                  return resp.getData(); 
+             }
+             catch (ApiException ex) {
+                 if (ex.getCode() == apiClient.getNotAuthCode()) {
+                     apiClient.requestToken();
+                     ApiResponse< CheckedExternalReferenceResponse > resp = checkWrokbookExternalReferenceWithHttpInfo(request);
+                      return resp.getData();       
+                 }
+                 throw ex;
+             }
+         }
+
+         private ApiResponse< CheckedExternalReferenceResponse > checkWrokbookExternalReferenceWithHttpInfo(CheckWrokbookExternalReferenceRequest request) throws ApiException,  IOException {
+             com.squareup.okhttp.Call call =  checkWrokbookExternalReferenceValidateBeforeCall(request, null, null);
+             Type localVarReturnType = new TypeToken< CheckedExternalReferenceResponse >(){}.getType();
+             return apiClient.execute(call, localVarReturnType);
+         }
+
+         public com.squareup.okhttp.Call  checkWrokbookExternalReferenceAsync( CheckWrokbookExternalReferenceRequest request, final ApiCallback< CheckedExternalReferenceResponse > callback) throws ApiException,  IOException {
+
+             ProgressResponseBody.ProgressListener progressListener = null;
+             ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+             if (callback != null) {
+                 progressListener = new ProgressResponseBody.ProgressListener() {
+                     @Override
+                     public void update(long bytesRead, long contentLength, boolean done) {
+                         callback.onDownloadProgress(bytesRead, contentLength, done);
+                     }
+                 };
+
+                 progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                     @Override
+                     public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                         callback.onUploadProgress(bytesWritten, contentLength, done);
+                     }
+                 };
+             }
+
+             com.squareup.okhttp.Call call =  checkWrokbookExternalReferenceValidateBeforeCall(request, progressListener, progressRequestListener);
+             Type localVarReturnType = new TypeToken< CheckedExternalReferenceResponse >(){}.getType();
+             apiClient.executeAsync(call, localVarReturnType, callback);
+             return call;
+         }
+
+
+         @SuppressWarnings("rawtypes")
+         private com.squareup.okhttp.Call checkWorkbookFormulaErrorsValidateBeforeCall(CheckWorkbookFormulaErrorsRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
+             return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
+         }
+
+         public  CheckedFormulaErrorsResponse  checkWorkbookFormulaErrors(CheckWorkbookFormulaErrorsRequest request) throws ApiException,  IOException {
+             try {
+                 ApiResponse< CheckedFormulaErrorsResponse > resp = checkWorkbookFormulaErrorsWithHttpInfo(request);
+                  return resp.getData(); 
+             }
+             catch (ApiException ex) {
+                 if (ex.getCode() == apiClient.getNotAuthCode()) {
+                     apiClient.requestToken();
+                     ApiResponse< CheckedFormulaErrorsResponse > resp = checkWorkbookFormulaErrorsWithHttpInfo(request);
+                      return resp.getData();       
+                 }
+                 throw ex;
+             }
+         }
+
+         private ApiResponse< CheckedFormulaErrorsResponse > checkWorkbookFormulaErrorsWithHttpInfo(CheckWorkbookFormulaErrorsRequest request) throws ApiException,  IOException {
+             com.squareup.okhttp.Call call =  checkWorkbookFormulaErrorsValidateBeforeCall(request, null, null);
+             Type localVarReturnType = new TypeToken< CheckedFormulaErrorsResponse >(){}.getType();
+             return apiClient.execute(call, localVarReturnType);
+         }
+
+         public com.squareup.okhttp.Call  checkWorkbookFormulaErrorsAsync( CheckWorkbookFormulaErrorsRequest request, final ApiCallback< CheckedFormulaErrorsResponse > callback) throws ApiException,  IOException {
+
+             ProgressResponseBody.ProgressListener progressListener = null;
+             ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+             if (callback != null) {
+                 progressListener = new ProgressResponseBody.ProgressListener() {
+                     @Override
+                     public void update(long bytesRead, long contentLength, boolean done) {
+                         callback.onDownloadProgress(bytesRead, contentLength, done);
+                     }
+                 };
+
+                 progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                     @Override
+                     public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                         callback.onUploadProgress(bytesWritten, contentLength, done);
+                     }
+                 };
+             }
+
+             com.squareup.okhttp.Call call =  checkWorkbookFormulaErrorsValidateBeforeCall(request, progressListener, progressRequestListener);
+             Type localVarReturnType = new TypeToken< CheckedFormulaErrorsResponse >(){}.getType();
+             apiClient.executeAsync(call, localVarReturnType, callback);
+             return call;
+         }
+
+
+         @SuppressWarnings("rawtypes")
          private com.squareup.okhttp.Call postExportValidateBeforeCall(PostExportRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }

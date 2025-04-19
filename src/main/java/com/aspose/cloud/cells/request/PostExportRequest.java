@@ -48,17 +48,19 @@ public class PostExportRequest  implements IRequestModel {
     private String password;
     private Boolean checkExcelRestriction;
     private String region;
+    private String fontsLocation;
         public PostExportRequest()
         {
 
         }
-        public PostExportRequest(HashMap<String,File> file, String objectType, String format, String password, Boolean checkExcelRestriction, String region) {
+        public PostExportRequest(HashMap<String,File> file, String objectType, String format, String password, Boolean checkExcelRestriction, String region, String fontsLocation) {
             this.file = file;
             this.objectType = objectType;
             this.format = format;
             this.password = password;
             this.checkExcelRestriction = checkExcelRestriction;
             this.region = region;
+            this.fontsLocation = fontsLocation;
         }   
 
         public HashMap<String,File> getFile() {
@@ -114,6 +116,15 @@ public class PostExportRequest  implements IRequestModel {
             this.region = region;
         }
 
+
+        public String getFontsLocation() {
+            return this.fontsLocation;
+        }
+
+        public void setFontsLocation(String fontsLocation) {
+            this.fontsLocation = fontsLocation;
+        }
+
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
          if (getFile() == null) {
@@ -137,6 +148,9 @@ public class PostExportRequest  implements IRequestModel {
             } 
             if (getRegion() != null){
                 localVarQueryParams.addAll(apiClient.parameterToPairs("", "region", getRegion()));
+            } 
+            if (getFontsLocation() != null){
+                localVarQueryParams.addAll(apiClient.parameterToPairs("", "FontsLocation", getFontsLocation()));
             }  
         if(this.extendQueryParameterMap !=null){
             for (String key :this.extendQueryParameterMap.keySet()) {
