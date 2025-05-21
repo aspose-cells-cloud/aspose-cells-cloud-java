@@ -41,11 +41,10 @@ public class PostEncryptWorkbookRequest  implements IRequestModel {
     public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
         this.extendQueryParameterMap = extendQueryParameterMap;
     }
-
     private String name;
-    private WorkbookEncryptionRequest encryption;
     private String folder;
     private String storageName;
+    private WorkbookEncryptionRequest encryption;    
         public PostEncryptWorkbookRequest()
         {
 
@@ -65,16 +64,6 @@ public class PostEncryptWorkbookRequest  implements IRequestModel {
             this.name = name;
         }
 
-
-        public WorkbookEncryptionRequest getEncryption() {
-            return this.encryption;
-        }
-
-        public void setEncryption(WorkbookEncryptionRequest encryption) {
-            this.encryption = encryption;
-        }
-
-
         public String getFolder() {
             return this.folder;
         }
@@ -92,15 +81,25 @@ public class PostEncryptWorkbookRequest  implements IRequestModel {
             this.storageName = storageName;
         }
 
+        public WorkbookEncryptionRequest getEncryption() {
+            return this.encryption;
+        }
+
+        public void setEncryption(WorkbookEncryptionRequest encryption) {
+            this.encryption = encryption;
+        }
+    
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
-         if (getName() == null) {
+         
+                if (getName() == null) {
                     throw new ApiException("Missing the required parameter 'Name' when calling PostEncryptWorkbook");
                 } 
+
                 if (getEncryption() == null) {
                     throw new ApiException("Missing the required parameter 'Encryption' when calling PostEncryptWorkbook");
                 }       
-        String localVarPath = "/cells/{name}/encryption".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString()))   ;
+        String localVarPath = "v3.0/cells/{name}/encryption".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString()))   ;
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -143,7 +142,5 @@ public class PostEncryptWorkbookRequest  implements IRequestModel {
                 return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
 
     }
-
-
 }
 

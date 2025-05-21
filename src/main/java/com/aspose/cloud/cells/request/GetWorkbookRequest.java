@@ -41,7 +41,6 @@ public class GetWorkbookRequest  implements IRequestModel {
     public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
         this.extendQueryParameterMap = extendQueryParameterMap;
     }
-
     private String name;
     private String format;
     private String password;
@@ -55,12 +54,15 @@ public class GetWorkbookRequest  implements IRequestModel {
     private String region;
     private Boolean pageWideFitOnPerSheet;
     private Boolean pageTallFitOnPerSheet;
+    private Boolean onePagePerSheet;
+    private Boolean onlyAutofitTable;
     private String fontsLocation;
+    
         public GetWorkbookRequest()
         {
 
         }
-        public GetWorkbookRequest(String name, String format, String password, Boolean isAutoFit, Boolean onlySaveTable, String folder, String outPath, String storageName, String outStorageName, Boolean checkExcelRestriction, String region, Boolean pageWideFitOnPerSheet, Boolean pageTallFitOnPerSheet, String fontsLocation) {
+        public GetWorkbookRequest(String name, String format, String password, Boolean isAutoFit, Boolean onlySaveTable, String folder, String outPath, String storageName, String outStorageName, Boolean checkExcelRestriction, String region, Boolean pageWideFitOnPerSheet, Boolean pageTallFitOnPerSheet, Boolean onePagePerSheet, Boolean onlyAutofitTable, String fontsLocation) {
             this.name = name;
             this.format = format;
             this.password = password;
@@ -74,6 +76,8 @@ public class GetWorkbookRequest  implements IRequestModel {
             this.region = region;
             this.pageWideFitOnPerSheet = pageWideFitOnPerSheet;
             this.pageTallFitOnPerSheet = pageTallFitOnPerSheet;
+            this.onePagePerSheet = onePagePerSheet;
+            this.onlyAutofitTable = onlyAutofitTable;
             this.fontsLocation = fontsLocation;
         }   
 
@@ -84,7 +88,6 @@ public class GetWorkbookRequest  implements IRequestModel {
         public void setName(String name) {
             this.name = name;
         }
-
 
         public String getFormat() {
             return this.format;
@@ -194,6 +197,24 @@ public class GetWorkbookRequest  implements IRequestModel {
         }
 
 
+        public Boolean getOnePagePerSheet() {
+            return this.onePagePerSheet;
+        }
+
+        public void setOnePagePerSheet(Boolean onePagePerSheet) {
+            this.onePagePerSheet = onePagePerSheet;
+        }
+
+
+        public Boolean getOnlyAutofitTable() {
+            return this.onlyAutofitTable;
+        }
+
+        public void setOnlyAutofitTable(Boolean onlyAutofitTable) {
+            this.onlyAutofitTable = onlyAutofitTable;
+        }
+
+
         public String getFontsLocation() {
             return this.fontsLocation;
         }
@@ -202,12 +223,14 @@ public class GetWorkbookRequest  implements IRequestModel {
             this.fontsLocation = fontsLocation;
         }
 
+    
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
-         if (getName() == null) {
+         
+                if (getName() == null) {
                     throw new ApiException("Missing the required parameter 'Name' when calling GetWorkbook");
                 }       
-        String localVarPath = "/cells/{name}".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString()))   ;
+        String localVarPath = "v3.0/cells/{name}".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString()))   ;
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -247,6 +270,12 @@ public class GetWorkbookRequest  implements IRequestModel {
             if (getPageTallFitOnPerSheet() != null){
                 localVarQueryParams.addAll(apiClient.parameterToPairs("", "pageTallFitOnPerSheet", getPageTallFitOnPerSheet()));
             } 
+            if (getOnePagePerSheet() != null){
+                localVarQueryParams.addAll(apiClient.parameterToPairs("", "onePagePerSheet", getOnePagePerSheet()));
+            } 
+            if (getOnlyAutofitTable() != null){
+                localVarQueryParams.addAll(apiClient.parameterToPairs("", "onlyAutofitTable", getOnlyAutofitTable()));
+            } 
             if (getFontsLocation() != null){
                 localVarQueryParams.addAll(apiClient.parameterToPairs("", "FontsLocation", getFontsLocation()));
             }  
@@ -282,7 +311,5 @@ public class GetWorkbookRequest  implements IRequestModel {
                 return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
 
     }
-
-
 }
 

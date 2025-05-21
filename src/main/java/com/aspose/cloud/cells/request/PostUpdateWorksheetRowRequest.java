@@ -41,7 +41,6 @@ public class PostUpdateWorksheetRowRequest  implements IRequestModel {
     public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
         this.extendQueryParameterMap = extendQueryParameterMap;
     }
-
     private String name;
     private String sheetName;
     private Integer rowIndex;
@@ -49,6 +48,7 @@ public class PostUpdateWorksheetRowRequest  implements IRequestModel {
     private Integer count;
     private String folder;
     private String storageName;
+    
         public PostUpdateWorksheetRowRequest()
         {
 
@@ -89,7 +89,6 @@ public class PostUpdateWorksheetRowRequest  implements IRequestModel {
             this.rowIndex = rowIndex;
         }
 
-
         public Double getHeight() {
             return this.height;
         }
@@ -125,18 +124,22 @@ public class PostUpdateWorksheetRowRequest  implements IRequestModel {
             this.storageName = storageName;
         }
 
+    
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
-         if (getName() == null) {
+         
+                if (getName() == null) {
                     throw new ApiException("Missing the required parameter 'Name' when calling PostUpdateWorksheetRow");
                 } 
+
                 if (getSheetName() == null) {
                     throw new ApiException("Missing the required parameter 'SheetName' when calling PostUpdateWorksheetRow");
                 } 
+
                 if (getRowIndex() == null) {
                     throw new ApiException("Missing the required parameter 'RowIndex' when calling PostUpdateWorksheetRow");
                 }       
-        String localVarPath = "/cells/{name}/worksheets/{sheetName}/cells/rows/{rowIndex}".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
+        String localVarPath = "v3.0/cells/{name}/worksheets/{sheetName}/cells/rows/{rowIndex}".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
     .replaceAll("\\{" + "sheetName" + "\\}", apiClient.escapeString(sheetName.toString())) 
     .replaceAll("\\{" + "rowIndex" + "\\}", apiClient.escapeString(rowIndex.toString()))   ;
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
@@ -186,7 +189,5 @@ public class PostUpdateWorksheetRowRequest  implements IRequestModel {
                 return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
 
     }
-
-
 }
 

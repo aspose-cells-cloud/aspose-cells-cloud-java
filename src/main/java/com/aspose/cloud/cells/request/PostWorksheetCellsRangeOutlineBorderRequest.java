@@ -41,12 +41,11 @@ public class PostWorksheetCellsRangeOutlineBorderRequest  implements IRequestMod
     public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
         this.extendQueryParameterMap = extendQueryParameterMap;
     }
-
     private String name;
     private String sheetName;
-    private RangeSetOutlineBorderRequest rangeOperate;
     private String folder;
     private String storageName;
+    private RangeSetOutlineBorderRequest rangeOperate;    
         public PostWorksheetCellsRangeOutlineBorderRequest()
         {
 
@@ -76,16 +75,6 @@ public class PostWorksheetCellsRangeOutlineBorderRequest  implements IRequestMod
             this.sheetName = sheetName;
         }
 
-
-        public RangeSetOutlineBorderRequest getRangeOperate() {
-            return this.rangeOperate;
-        }
-
-        public void setRangeOperate(RangeSetOutlineBorderRequest rangeOperate) {
-            this.rangeOperate = rangeOperate;
-        }
-
-
         public String getFolder() {
             return this.folder;
         }
@@ -103,18 +92,29 @@ public class PostWorksheetCellsRangeOutlineBorderRequest  implements IRequestMod
             this.storageName = storageName;
         }
 
+        public RangeSetOutlineBorderRequest getRangeOperate() {
+            return this.rangeOperate;
+        }
+
+        public void setRangeOperate(RangeSetOutlineBorderRequest rangeOperate) {
+            this.rangeOperate = rangeOperate;
+        }
+    
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
-         if (getName() == null) {
+         
+                if (getName() == null) {
                     throw new ApiException("Missing the required parameter 'Name' when calling PostWorksheetCellsRangeOutlineBorder");
                 } 
+
                 if (getSheetName() == null) {
                     throw new ApiException("Missing the required parameter 'SheetName' when calling PostWorksheetCellsRangeOutlineBorder");
                 } 
+
                 if (getRangeOperate() == null) {
                     throw new ApiException("Missing the required parameter 'RangeOperate' when calling PostWorksheetCellsRangeOutlineBorder");
                 }       
-        String localVarPath = "/cells/{name}/worksheets/{sheetName}/ranges/outlineBorder".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
+        String localVarPath = "v3.0/cells/{name}/worksheets/{sheetName}/ranges/outlineBorder".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
     .replaceAll("\\{" + "sheetName" + "\\}", apiClient.escapeString(sheetName.toString()))   ;
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
@@ -158,7 +158,5 @@ public class PostWorksheetCellsRangeOutlineBorderRequest  implements IRequestMod
                 return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
 
     }
-
-
 }
 

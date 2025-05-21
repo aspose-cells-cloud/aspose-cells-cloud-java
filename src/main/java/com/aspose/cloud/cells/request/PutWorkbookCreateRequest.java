@@ -41,7 +41,6 @@ public class PutWorkbookCreateRequest  implements IRequestModel {
     public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
         this.extendQueryParameterMap = extendQueryParameterMap;
     }
-
     private String name;
     private String templateFile;
     private String dataFile;
@@ -49,6 +48,7 @@ public class PutWorkbookCreateRequest  implements IRequestModel {
     private String folder;
     private String storageName;
     private Boolean checkExcelRestriction;
+    
         public PutWorkbookCreateRequest()
         {
 
@@ -70,7 +70,6 @@ public class PutWorkbookCreateRequest  implements IRequestModel {
         public void setName(String name) {
             this.name = name;
         }
-
 
         public String getTemplateFile() {
             return this.templateFile;
@@ -125,12 +124,14 @@ public class PutWorkbookCreateRequest  implements IRequestModel {
             this.checkExcelRestriction = checkExcelRestriction;
         }
 
+    
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
-         if (getName() == null) {
+         
+                if (getName() == null) {
                     throw new ApiException("Missing the required parameter 'Name' when calling PutWorkbookCreate");
                 }       
-        String localVarPath = "/cells/{name}".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString()))   ;
+        String localVarPath = "v3.0/cells/{name}".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString()))   ;
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -184,7 +185,5 @@ public class PutWorkbookCreateRequest  implements IRequestModel {
                 return apiClient.buildCall(localVarPath, "PUT", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
 
     }
-
-
 }
 

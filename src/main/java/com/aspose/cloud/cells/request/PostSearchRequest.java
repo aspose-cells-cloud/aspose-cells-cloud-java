@@ -41,12 +41,14 @@ public class PostSearchRequest  implements IRequestModel {
     public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
         this.extendQueryParameterMap = extendQueryParameterMap;
     }
-
-    private HashMap<String,File> file;
     private String text;
     private String password;
     private String sheetname;
     private Boolean checkExcelRestriction;
+    
+     
+                private HashMap<String,File> file;
+                private String localPath;
         public PostSearchRequest()
         {
 
@@ -58,15 +60,6 @@ public class PostSearchRequest  implements IRequestModel {
             this.sheetname = sheetname;
             this.checkExcelRestriction = checkExcelRestriction;
         }   
-
-        public HashMap<String,File> getFile() {
-            return this.file;
-        }
-
-        public void setFile(HashMap<String,File> file) {
-            this.file = file;
-        }
-
 
         public String getText() {
             return this.text;
@@ -103,15 +96,34 @@ public class PostSearchRequest  implements IRequestModel {
             this.checkExcelRestriction = checkExcelRestriction;
         }
 
+    
+         
+                public HashMap<String,File> getFile() {
+                    return this.file;
+                }
+
+                public void setFile(HashMap<String,File> file) {
+                    this.file = file;
+                }
+         
+            public String getLocalPath() {
+                    return this.localPath;
+            }
+            public void setLocalPath(String localPath) {
+                this.localPath = localPath;
+            }
+        
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
-         if (getFile() == null) {
+          
+                if (  getFile() == null &&  getLocalPath() ==null ) {
                     throw new ApiException("Missing the required parameter 'File' when calling PostSearch");
                 } 
+
                 if (getText() == null) {
                     throw new ApiException("Missing the required parameter 'Text' when calling PostSearch");
                 }       
-        String localVarPath = "/cells/search";
+        String localVarPath = "v3.0/cells/search";
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -133,11 +145,17 @@ public class PostSearchRequest  implements IRequestModel {
             }
         }
                    
+              if (getLocalPath() != null && !getLocalPath().isEmpty()) {
+                     File fileToUpload = new File(getLocalPath());
+                     if (fileToUpload.exists()) {
+                         localVarFormParams.put(fileToUpload.getName(), fileToUpload);
+                     }
+                 }
                 if (getFile() != null){
-                    for (String key : getFile().keySet()) {
-                        localVarFormParams.put(key,getFile().get(key));                
-                    }
-                }      
+                        for (String key : getFile().keySet()) {
+                            localVarFormParams.put(key,getFile().get(key));                
+                        }
+                    }      
         Object localVarPostBody = null;
                 final String[] localVarAccepts = {
                     "application/json"
@@ -168,7 +186,5 @@ public class PostSearchRequest  implements IRequestModel {
                 return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
 
     }
-
-
 }
 

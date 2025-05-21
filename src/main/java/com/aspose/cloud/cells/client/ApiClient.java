@@ -188,7 +188,7 @@ public class ApiClient {
 		this.lenientDatetimeFormat = true;
 
 		// Set default User-Agent.
-		setUserAgent("CellsCloud-SDK/25.4/java");
+		setUserAgent("CellsCloud-SDK/25.5/java");
 
 		// Setup authentications (key: authentication name, value:
 		// authentication).
@@ -1473,7 +1473,7 @@ public class ApiClient {
 	 */
 	public String buildUrl(String path, List<Pair> queryParams) {
 		final StringBuilder url = new StringBuilder();
-		url.append(basePath + "/" + appVersion ).append(path);
+		url.append(basePath + "/" ).append(path);
 
 		if (queryParams != null && !queryParams.isEmpty()) {
 			// support (constant) query string in `path`, e.g. "/posts?draft=1"

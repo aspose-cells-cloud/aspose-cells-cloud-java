@@ -41,8 +41,7 @@ public class PostExtractTextRequest  implements IRequestModel {
     public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
         this.extendQueryParameterMap = extendQueryParameterMap;
     }
-
-    private ExtractTextOptions extractTextOptions;
+    private ExtractTextOptions extractTextOptions;    
         public PostExtractTextRequest()
         {
 
@@ -58,13 +57,14 @@ public class PostExtractTextRequest  implements IRequestModel {
         public void setExtractTextOptions(ExtractTextOptions extractTextOptions) {
             this.extractTextOptions = extractTextOptions;
         }
-
+    
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
-         if (getExtractTextOptions() == null) {
+         
+                if (getExtractTextOptions() == null) {
                     throw new ApiException("Missing the required parameter 'ExtractTextOptions' when calling PostExtractText");
                 }       
-        String localVarPath = "/cells/extracttext";
+        String localVarPath = "v3.0/cells/extracttext";
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
         List<Pair> localVarQueryParams = null;
@@ -101,7 +101,5 @@ public class PostExtractTextRequest  implements IRequestModel {
                 return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
 
     }
-
-
 }
 

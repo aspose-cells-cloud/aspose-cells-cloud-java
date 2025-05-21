@@ -22,3 +22,5 @@ build
 .settings
 # TestData/roywang.pfx
 packages
+src/test
+test/data

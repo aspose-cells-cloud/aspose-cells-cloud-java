@@ -41,12 +41,12 @@ public class PutChangeVisibilityWorksheetRequest  implements IRequestModel {
     public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
         this.extendQueryParameterMap = extendQueryParameterMap;
     }
-
     private String name;
     private String sheetName;
     private Boolean isVisible;
     private String folder;
     private String storageName;
+    
         public PutChangeVisibilityWorksheetRequest()
         {
 
@@ -76,7 +76,6 @@ public class PutChangeVisibilityWorksheetRequest  implements IRequestModel {
             this.sheetName = sheetName;
         }
 
-
         public Boolean getIsVisible() {
             return this.isVisible;
         }
@@ -103,18 +102,22 @@ public class PutChangeVisibilityWorksheetRequest  implements IRequestModel {
             this.storageName = storageName;
         }
 
+    
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
-         if (getName() == null) {
+         
+                if (getName() == null) {
                     throw new ApiException("Missing the required parameter 'Name' when calling PutChangeVisibilityWorksheet");
                 } 
+
                 if (getSheetName() == null) {
                     throw new ApiException("Missing the required parameter 'SheetName' when calling PutChangeVisibilityWorksheet");
                 } 
+
                 if (getIsVisible() == null) {
                     throw new ApiException("Missing the required parameter 'IsVisible' when calling PutChangeVisibilityWorksheet");
                 }       
-        String localVarPath = "/cells/{name}/worksheets/{sheetName}/visible".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
+        String localVarPath = "v3.0/cells/{name}/worksheets/{sheetName}/visible".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
     .replaceAll("\\{" + "sheetName" + "\\}", apiClient.escapeString(sheetName.toString()))   ;
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
@@ -160,7 +163,5 @@ public class PutChangeVisibilityWorksheetRequest  implements IRequestModel {
                 return apiClient.buildCall(localVarPath, "PUT", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
 
     }
-
-
 }
 

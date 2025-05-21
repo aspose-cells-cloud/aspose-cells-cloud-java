@@ -41,11 +41,10 @@ public class PutDocumentProtectFromChangesRequest  implements IRequestModel {
     public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
         this.extendQueryParameterMap = extendQueryParameterMap;
     }
-
     private String name;
-    private PasswordRequest password;
     private String folder;
     private String storageName;
+    private PasswordRequest password;    
         public PutDocumentProtectFromChangesRequest()
         {
 
@@ -65,16 +64,6 @@ public class PutDocumentProtectFromChangesRequest  implements IRequestModel {
             this.name = name;
         }
 
-
-        public PasswordRequest getPassword() {
-            return this.password;
-        }
-
-        public void setPassword(PasswordRequest password) {
-            this.password = password;
-        }
-
-
         public String getFolder() {
             return this.folder;
         }
@@ -92,15 +81,25 @@ public class PutDocumentProtectFromChangesRequest  implements IRequestModel {
             this.storageName = storageName;
         }
 
+        public PasswordRequest getPassword() {
+            return this.password;
+        }
+
+        public void setPassword(PasswordRequest password) {
+            this.password = password;
+        }
+    
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
-         if (getName() == null) {
+         
+                if (getName() == null) {
                     throw new ApiException("Missing the required parameter 'Name' when calling PutDocumentProtectFromChanges");
                 } 
+
                 if (getPassword() == null) {
                     throw new ApiException("Missing the required parameter 'Password' when calling PutDocumentProtectFromChanges");
                 }       
-        String localVarPath = "/cells/{name}/writeProtection".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString()))   ;
+        String localVarPath = "v3.0/cells/{name}/writeProtection".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString()))   ;
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -143,7 +142,5 @@ public class PutDocumentProtectFromChangesRequest  implements IRequestModel {
                 return apiClient.buildCall(localVarPath, "PUT", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
 
     }
-
-
 }
 

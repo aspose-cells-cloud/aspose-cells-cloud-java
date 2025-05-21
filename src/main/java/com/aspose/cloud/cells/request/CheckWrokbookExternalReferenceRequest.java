@@ -41,8 +41,7 @@ public class CheckWrokbookExternalReferenceRequest  implements IRequestModel {
     public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
         this.extendQueryParameterMap = extendQueryParameterMap;
     }
-
-    private CheckExternalReferenceOptions checkExternalReferenceOptions;
+    private CheckExternalReferenceOptions checkExternalReferenceOptions;    
         public CheckWrokbookExternalReferenceRequest()
         {
 
@@ -58,13 +57,14 @@ public class CheckWrokbookExternalReferenceRequest  implements IRequestModel {
         public void setCheckExternalReferenceOptions(CheckExternalReferenceOptions checkExternalReferenceOptions) {
             this.checkExternalReferenceOptions = checkExternalReferenceOptions;
         }
-
+    
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
-         if (getCheckExternalReferenceOptions() == null) {
+         
+                if (getCheckExternalReferenceOptions() == null) {
                     throw new ApiException("Missing the required parameter 'CheckExternalReferenceOptions' when calling CheckWrokbookExternalReference");
                 }       
-        String localVarPath = "/cells/checkexternalreference";
+        String localVarPath = "v3.0/cells/checkexternalreference";
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
         List<Pair> localVarQueryParams = null;
@@ -101,7 +101,5 @@ public class CheckWrokbookExternalReferenceRequest  implements IRequestModel {
                 return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
 
     }
-
-
 }
 

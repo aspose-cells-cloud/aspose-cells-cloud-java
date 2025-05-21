@@ -41,7 +41,6 @@ public class DeleteWorksheetColumnsRequest  implements IRequestModel {
     public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
         this.extendQueryParameterMap = extendQueryParameterMap;
     }
-
     private String name;
     private String sheetName;
     private Integer columnIndex;
@@ -49,6 +48,7 @@ public class DeleteWorksheetColumnsRequest  implements IRequestModel {
     private Boolean updateReference;
     private String folder;
     private String storageName;
+    
         public DeleteWorksheetColumnsRequest()
         {
 
@@ -89,7 +89,6 @@ public class DeleteWorksheetColumnsRequest  implements IRequestModel {
             this.columnIndex = columnIndex;
         }
 
-
         public Integer getColumns() {
             return this.columns;
         }
@@ -125,24 +124,30 @@ public class DeleteWorksheetColumnsRequest  implements IRequestModel {
             this.storageName = storageName;
         }
 
+    
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
-         if (getName() == null) {
+         
+                if (getName() == null) {
                     throw new ApiException("Missing the required parameter 'Name' when calling DeleteWorksheetColumns");
                 } 
+
                 if (getSheetName() == null) {
                     throw new ApiException("Missing the required parameter 'SheetName' when calling DeleteWorksheetColumns");
                 } 
+
                 if (getColumnIndex() == null) {
                     throw new ApiException("Missing the required parameter 'ColumnIndex' when calling DeleteWorksheetColumns");
                 } 
+
                 if (getColumns() == null) {
                     throw new ApiException("Missing the required parameter 'Columns' when calling DeleteWorksheetColumns");
                 } 
+
                 if (getUpdateReference() == null) {
                     throw new ApiException("Missing the required parameter 'UpdateReference' when calling DeleteWorksheetColumns");
                 }       
-        String localVarPath = "/cells/{name}/worksheets/{sheetName}/cells/columns/{columnIndex}".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
+        String localVarPath = "v3.0/cells/{name}/worksheets/{sheetName}/cells/columns/{columnIndex}".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
     .replaceAll("\\{" + "sheetName" + "\\}", apiClient.escapeString(sheetName.toString())) 
     .replaceAll("\\{" + "columnIndex" + "\\}", apiClient.escapeString(columnIndex.toString()))   ;
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
@@ -192,7 +197,5 @@ public class DeleteWorksheetColumnsRequest  implements IRequestModel {
                 return apiClient.buildCall(localVarPath, "DELETE", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
 
     }
-
-
 }
 

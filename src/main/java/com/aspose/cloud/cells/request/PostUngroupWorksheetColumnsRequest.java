@@ -41,13 +41,13 @@ public class PostUngroupWorksheetColumnsRequest  implements IRequestModel {
     public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
         this.extendQueryParameterMap = extendQueryParameterMap;
     }
-
     private String name;
     private String sheetName;
     private Integer firstIndex;
     private Integer lastIndex;
     private String folder;
     private String storageName;
+    
         public PostUngroupWorksheetColumnsRequest()
         {
 
@@ -77,7 +77,6 @@ public class PostUngroupWorksheetColumnsRequest  implements IRequestModel {
         public void setSheetName(String sheetName) {
             this.sheetName = sheetName;
         }
-
 
         public Integer getFirstIndex() {
             return this.firstIndex;
@@ -114,21 +113,26 @@ public class PostUngroupWorksheetColumnsRequest  implements IRequestModel {
             this.storageName = storageName;
         }
 
+    
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
-         if (getName() == null) {
+         
+                if (getName() == null) {
                     throw new ApiException("Missing the required parameter 'Name' when calling PostUngroupWorksheetColumns");
                 } 
+
                 if (getSheetName() == null) {
                     throw new ApiException("Missing the required parameter 'SheetName' when calling PostUngroupWorksheetColumns");
                 } 
+
                 if (getFirstIndex() == null) {
                     throw new ApiException("Missing the required parameter 'FirstIndex' when calling PostUngroupWorksheetColumns");
                 } 
+
                 if (getLastIndex() == null) {
                     throw new ApiException("Missing the required parameter 'LastIndex' when calling PostUngroupWorksheetColumns");
                 }       
-        String localVarPath = "/cells/{name}/worksheets/{sheetName}/cells/columns/ungroup".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
+        String localVarPath = "v3.0/cells/{name}/worksheets/{sheetName}/cells/columns/ungroup".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
     .replaceAll("\\{" + "sheetName" + "\\}", apiClient.escapeString(sheetName.toString()))   ;
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
@@ -177,7 +181,5 @@ public class PostUngroupWorksheetColumnsRequest  implements IRequestModel {
                 return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
 
     }
-
-
 }
 

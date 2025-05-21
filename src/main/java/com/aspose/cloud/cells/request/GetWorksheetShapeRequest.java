@@ -41,12 +41,12 @@ public class GetWorksheetShapeRequest  implements IRequestModel {
     public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
         this.extendQueryParameterMap = extendQueryParameterMap;
     }
-
     private String name;
     private String sheetName;
     private Integer shapeindex;
     private String folder;
     private String storageName;
+    
         public GetWorksheetShapeRequest()
         {
 
@@ -85,7 +85,6 @@ public class GetWorksheetShapeRequest  implements IRequestModel {
             this.shapeindex = shapeindex;
         }
 
-
         public String getFolder() {
             return this.folder;
         }
@@ -103,18 +102,22 @@ public class GetWorksheetShapeRequest  implements IRequestModel {
             this.storageName = storageName;
         }
 
+    
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
-         if (getName() == null) {
+         
+                if (getName() == null) {
                     throw new ApiException("Missing the required parameter 'Name' when calling GetWorksheetShape");
                 } 
+
                 if (getSheetName() == null) {
                     throw new ApiException("Missing the required parameter 'SheetName' when calling GetWorksheetShape");
                 } 
+
                 if (getShapeindex() == null) {
                     throw new ApiException("Missing the required parameter 'Shapeindex' when calling GetWorksheetShape");
                 }       
-        String localVarPath = "/cells/{name}/worksheets/{sheetName}/shapes/{shapeindex}".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
+        String localVarPath = "v3.0/cells/{name}/worksheets/{sheetName}/shapes/{shapeindex}".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
     .replaceAll("\\{" + "sheetName" + "\\}", apiClient.escapeString(sheetName.toString())) 
     .replaceAll("\\{" + "shapeindex" + "\\}", apiClient.escapeString(shapeindex.toString()))   ;
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
@@ -158,7 +161,5 @@ public class GetWorksheetShapeRequest  implements IRequestModel {
                 return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
 
     }
-
-
 }
 

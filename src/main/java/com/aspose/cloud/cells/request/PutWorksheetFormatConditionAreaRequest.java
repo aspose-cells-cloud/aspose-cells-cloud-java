@@ -41,13 +41,13 @@ public class PutWorksheetFormatConditionAreaRequest  implements IRequestModel {
     public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
         this.extendQueryParameterMap = extendQueryParameterMap;
     }
-
     private String name;
     private String sheetName;
     private Integer index;
     private String cellArea;
     private String folder;
     private String storageName;
+    
         public PutWorksheetFormatConditionAreaRequest()
         {
 
@@ -87,7 +87,6 @@ public class PutWorksheetFormatConditionAreaRequest  implements IRequestModel {
             this.index = index;
         }
 
-
         public String getCellArea() {
             return this.cellArea;
         }
@@ -114,21 +113,26 @@ public class PutWorksheetFormatConditionAreaRequest  implements IRequestModel {
             this.storageName = storageName;
         }
 
+    
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
-         if (getName() == null) {
+         
+                if (getName() == null) {
                     throw new ApiException("Missing the required parameter 'Name' when calling PutWorksheetFormatConditionArea");
                 } 
+
                 if (getSheetName() == null) {
                     throw new ApiException("Missing the required parameter 'SheetName' when calling PutWorksheetFormatConditionArea");
                 } 
+
                 if (getIndex() == null) {
                     throw new ApiException("Missing the required parameter 'Index' when calling PutWorksheetFormatConditionArea");
                 } 
+
                 if (getCellArea() == null) {
                     throw new ApiException("Missing the required parameter 'CellArea' when calling PutWorksheetFormatConditionArea");
                 }       
-        String localVarPath = "/cells/{name}/worksheets/{sheetName}/conditionalFormattings/{index}/area".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
+        String localVarPath = "v3.0/cells/{name}/worksheets/{sheetName}/conditionalFormattings/{index}/area".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
     .replaceAll("\\{" + "sheetName" + "\\}", apiClient.escapeString(sheetName.toString())) 
     .replaceAll("\\{" + "index" + "\\}", apiClient.escapeString(index.toString()))   ;
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
@@ -175,7 +179,5 @@ public class PutWorksheetFormatConditionAreaRequest  implements IRequestModel {
                 return apiClient.buildCall(localVarPath, "PUT", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
 
     }
-
-
 }
 

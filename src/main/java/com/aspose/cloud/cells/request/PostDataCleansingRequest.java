@@ -41,8 +41,7 @@ public class PostDataCleansingRequest  implements IRequestModel {
     public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
         this.extendQueryParameterMap = extendQueryParameterMap;
     }
-
-    private DataCleansingRequest dataCleansingRequest;
+    private DataCleansingRequest dataCleansingRequest;    
         public PostDataCleansingRequest()
         {
 
@@ -58,13 +57,14 @@ public class PostDataCleansingRequest  implements IRequestModel {
         public void setDataCleansingRequest(DataCleansingRequest dataCleansingRequest) {
             this.dataCleansingRequest = dataCleansingRequest;
         }
-
+    
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
-         if (getDataCleansingRequest() == null) {
+         
+                if (getDataCleansingRequest() == null) {
                     throw new ApiException("Missing the required parameter 'DataCleansingRequest' when calling PostDataCleansing");
                 }       
-        String localVarPath = "/cells/datacleansing";
+        String localVarPath = "v3.0/cells/datacleansing";
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
         List<Pair> localVarQueryParams = null;
@@ -101,7 +101,5 @@ public class PostDataCleansingRequest  implements IRequestModel {
                 return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
 
     }
-
-
 }
 

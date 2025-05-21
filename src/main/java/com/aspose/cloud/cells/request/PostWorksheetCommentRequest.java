@@ -41,13 +41,12 @@ public class PostWorksheetCommentRequest  implements IRequestModel {
     public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
         this.extendQueryParameterMap = extendQueryParameterMap;
     }
-
     private String name;
     private String sheetName;
     private String cellName;
-    private Comment comment;
     private String folder;
     private String storageName;
+    private Comment comment;    
         public PostWorksheetCommentRequest()
         {
 
@@ -87,16 +86,6 @@ public class PostWorksheetCommentRequest  implements IRequestModel {
             this.cellName = cellName;
         }
 
-
-        public Comment getComment() {
-            return this.comment;
-        }
-
-        public void setComment(Comment comment) {
-            this.comment = comment;
-        }
-
-
         public String getFolder() {
             return this.folder;
         }
@@ -114,21 +103,33 @@ public class PostWorksheetCommentRequest  implements IRequestModel {
             this.storageName = storageName;
         }
 
+        public Comment getComment() {
+            return this.comment;
+        }
+
+        public void setComment(Comment comment) {
+            this.comment = comment;
+        }
+    
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
-         if (getName() == null) {
+         
+                if (getName() == null) {
                     throw new ApiException("Missing the required parameter 'Name' when calling PostWorksheetComment");
                 } 
+
                 if (getSheetName() == null) {
                     throw new ApiException("Missing the required parameter 'SheetName' when calling PostWorksheetComment");
                 } 
+
                 if (getCellName() == null) {
                     throw new ApiException("Missing the required parameter 'CellName' when calling PostWorksheetComment");
                 } 
+
                 if (getComment() == null) {
                     throw new ApiException("Missing the required parameter 'Comment' when calling PostWorksheetComment");
                 }       
-        String localVarPath = "/cells/{name}/worksheets/{sheetName}/comments/{cellName}".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
+        String localVarPath = "v3.0/cells/{name}/worksheets/{sheetName}/comments/{cellName}".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
     .replaceAll("\\{" + "sheetName" + "\\}", apiClient.escapeString(sheetName.toString())) 
     .replaceAll("\\{" + "cellName" + "\\}", apiClient.escapeString(cellName.toString()))   ;
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
@@ -173,7 +174,5 @@ public class PostWorksheetCommentRequest  implements IRequestModel {
                 return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
 
     }
-
-
 }
 

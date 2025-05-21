@@ -41,12 +41,12 @@ public class PostWorksheetPivotTableCalculateRequest  implements IRequestModel {
     public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
         this.extendQueryParameterMap = extendQueryParameterMap;
     }
-
     private String name;
     private String sheetName;
     private Integer pivotTableIndex;
     private String folder;
     private String storageName;
+    
         public PostWorksheetPivotTableCalculateRequest()
         {
 
@@ -85,7 +85,6 @@ public class PostWorksheetPivotTableCalculateRequest  implements IRequestModel {
             this.pivotTableIndex = pivotTableIndex;
         }
 
-
         public String getFolder() {
             return this.folder;
         }
@@ -103,18 +102,22 @@ public class PostWorksheetPivotTableCalculateRequest  implements IRequestModel {
             this.storageName = storageName;
         }
 
+    
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
-         if (getName() == null) {
+         
+                if (getName() == null) {
                     throw new ApiException("Missing the required parameter 'Name' when calling PostWorksheetPivotTableCalculate");
                 } 
+
                 if (getSheetName() == null) {
                     throw new ApiException("Missing the required parameter 'SheetName' when calling PostWorksheetPivotTableCalculate");
                 } 
+
                 if (getPivotTableIndex() == null) {
                     throw new ApiException("Missing the required parameter 'PivotTableIndex' when calling PostWorksheetPivotTableCalculate");
                 }       
-        String localVarPath = "/cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/Calculate".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
+        String localVarPath = "v3.0/cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/Calculate".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
     .replaceAll("\\{" + "sheetName" + "\\}", apiClient.escapeString(sheetName.toString())) 
     .replaceAll("\\{" + "pivotTableIndex" + "\\}", apiClient.escapeString(pivotTableIndex.toString()))   ;
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
@@ -158,7 +161,5 @@ public class PostWorksheetPivotTableCalculateRequest  implements IRequestModel {
                 return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
 
     }
-
-
 }
 

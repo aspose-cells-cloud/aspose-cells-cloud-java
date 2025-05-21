@@ -41,12 +41,11 @@ public class PostWorkbookNameRequest  implements IRequestModel {
     public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
         this.extendQueryParameterMap = extendQueryParameterMap;
     }
-
     private String name;
     private String nameName;
-    private Name newName;
     private String folder;
     private String storageName;
+    private Name newName;    
         public PostWorkbookNameRequest()
         {
 
@@ -76,16 +75,6 @@ public class PostWorkbookNameRequest  implements IRequestModel {
             this.nameName = nameName;
         }
 
-
-        public Name getNewName() {
-            return this.newName;
-        }
-
-        public void setNewName(Name newName) {
-            this.newName = newName;
-        }
-
-
         public String getFolder() {
             return this.folder;
         }
@@ -103,18 +92,29 @@ public class PostWorkbookNameRequest  implements IRequestModel {
             this.storageName = storageName;
         }
 
+        public Name getNewName() {
+            return this.newName;
+        }
+
+        public void setNewName(Name newName) {
+            this.newName = newName;
+        }
+    
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
-         if (getName() == null) {
+         
+                if (getName() == null) {
                     throw new ApiException("Missing the required parameter 'Name' when calling PostWorkbookName");
                 } 
+
                 if (getNameName() == null) {
                     throw new ApiException("Missing the required parameter 'NameName' when calling PostWorkbookName");
                 } 
+
                 if (getNewName() == null) {
                     throw new ApiException("Missing the required parameter 'NewName' when calling PostWorkbookName");
                 }       
-        String localVarPath = "/cells/{name}/names/{nameName}".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
+        String localVarPath = "v3.0/cells/{name}/names/{nameName}".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
     .replaceAll("\\{" + "nameName" + "\\}", apiClient.escapeString(nameName.toString()))   ;
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
@@ -158,7 +158,5 @@ public class PostWorkbookNameRequest  implements IRequestModel {
                 return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
 
     }
-
-
 }
 

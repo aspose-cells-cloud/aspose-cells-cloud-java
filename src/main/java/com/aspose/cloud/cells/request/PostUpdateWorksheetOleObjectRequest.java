@@ -41,13 +41,12 @@ public class PostUpdateWorksheetOleObjectRequest  implements IRequestModel {
     public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
         this.extendQueryParameterMap = extendQueryParameterMap;
     }
-
     private String name;
     private String sheetName;
     private Integer oleObjectIndex;
-    private OleObject ole;
     private String folder;
     private String storageName;
+    private OleObject ole;    
         public PostUpdateWorksheetOleObjectRequest()
         {
 
@@ -87,16 +86,6 @@ public class PostUpdateWorksheetOleObjectRequest  implements IRequestModel {
             this.oleObjectIndex = oleObjectIndex;
         }
 
-
-        public OleObject getOle() {
-            return this.ole;
-        }
-
-        public void setOle(OleObject ole) {
-            this.ole = ole;
-        }
-
-
         public String getFolder() {
             return this.folder;
         }
@@ -114,21 +103,33 @@ public class PostUpdateWorksheetOleObjectRequest  implements IRequestModel {
             this.storageName = storageName;
         }
 
+        public OleObject getOle() {
+            return this.ole;
+        }
+
+        public void setOle(OleObject ole) {
+            this.ole = ole;
+        }
+    
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
-         if (getName() == null) {
+         
+                if (getName() == null) {
                     throw new ApiException("Missing the required parameter 'Name' when calling PostUpdateWorksheetOleObject");
                 } 
+
                 if (getSheetName() == null) {
                     throw new ApiException("Missing the required parameter 'SheetName' when calling PostUpdateWorksheetOleObject");
                 } 
+
                 if (getOleObjectIndex() == null) {
                     throw new ApiException("Missing the required parameter 'OleObjectIndex' when calling PostUpdateWorksheetOleObject");
                 } 
+
                 if (getOle() == null) {
                     throw new ApiException("Missing the required parameter 'Ole' when calling PostUpdateWorksheetOleObject");
                 }       
-        String localVarPath = "/cells/{name}/worksheets/{sheetName}/oleobjects/{oleObjectIndex}".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
+        String localVarPath = "v3.0/cells/{name}/worksheets/{sheetName}/oleobjects/{oleObjectIndex}".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
     .replaceAll("\\{" + "sheetName" + "\\}", apiClient.escapeString(sheetName.toString())) 
     .replaceAll("\\{" + "oleObjectIndex" + "\\}", apiClient.escapeString(oleObjectIndex.toString()))   ;
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
@@ -173,7 +174,5 @@ public class PostUpdateWorksheetOleObjectRequest  implements IRequestModel {
                 return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
 
     }
-
-
 }
 

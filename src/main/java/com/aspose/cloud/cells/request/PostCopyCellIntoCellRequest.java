@@ -41,7 +41,6 @@ public class PostCopyCellIntoCellRequest  implements IRequestModel {
     public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
         this.extendQueryParameterMap = extendQueryParameterMap;
     }
-
     private String name;
     private String destCellName;
     private String sheetName;
@@ -51,6 +50,7 @@ public class PostCopyCellIntoCellRequest  implements IRequestModel {
     private Integer column;
     private String folder;
     private String storageName;
+    
         public PostCopyCellIntoCellRequest()
         {
 
@@ -92,7 +92,6 @@ public class PostCopyCellIntoCellRequest  implements IRequestModel {
         public void setSheetName(String sheetName) {
             this.sheetName = sheetName;
         }
-
 
         public String getWorksheet() {
             return this.worksheet;
@@ -147,21 +146,26 @@ public class PostCopyCellIntoCellRequest  implements IRequestModel {
             this.storageName = storageName;
         }
 
+    
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
-         if (getName() == null) {
+         
+                if (getName() == null) {
                     throw new ApiException("Missing the required parameter 'Name' when calling PostCopyCellIntoCell");
                 } 
+
                 if (getDestCellName() == null) {
                     throw new ApiException("Missing the required parameter 'DestCellName' when calling PostCopyCellIntoCell");
                 } 
+
                 if (getSheetName() == null) {
                     throw new ApiException("Missing the required parameter 'SheetName' when calling PostCopyCellIntoCell");
                 } 
+
                 if (getWorksheet() == null) {
                     throw new ApiException("Missing the required parameter 'Worksheet' when calling PostCopyCellIntoCell");
                 }       
-        String localVarPath = "/cells/{name}/worksheets/{sheetName}/cells/{destCellName}/copy".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
+        String localVarPath = "v3.0/cells/{name}/worksheets/{sheetName}/cells/{destCellName}/copy".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
     .replaceAll("\\{" + "destCellName" + "\\}", apiClient.escapeString(destCellName.toString())) 
     .replaceAll("\\{" + "sheetName" + "\\}", apiClient.escapeString(sheetName.toString()))   ;
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
@@ -217,7 +221,5 @@ public class PostCopyCellIntoCellRequest  implements IRequestModel {
                 return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
 
     }
-
-
 }
 

@@ -53,6 +53,8 @@ public class CellsApi {
         apiClient.setApiVersion("v3.0");
         String accesstoken = apiClient.getAccessToken("client_credentials", clientId, clientSecret, "v3.0");
         apiClient.addDefaultHeader("Authorization", "Bearer " + accesstoken);
+        apiClient.addDefaultHeader("x-aspose-client", "java sdk");
+        apiClient.addDefaultHeader("x-aspose-client-version", "25.5");
         this.apiClient = apiClient;
     }
 
@@ -67,6 +69,8 @@ public class CellsApi {
             String accesstoken = apiClient.getAccessToken("client_credentials", clientId, clientSecret, "v3.0");
             apiClient.addDefaultHeader("Authorization", "Bearer " + accesstoken);
         }
+        apiClient.addDefaultHeader("x-aspose-client", "java sdk");
+        apiClient.addDefaultHeader("x-aspose-client-version", "25.5");
         this.apiClient = apiClient;
     }
 
@@ -74,7 +78,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postAnalyzeExcelValidateBeforeCall(PostAnalyzeExcelRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  List<AnalyzedResult>  postAnalyzeExcel(PostAnalyzeExcelRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< List<AnalyzedResult> > resp = postAnalyzeExcelWithHttpInfo(request);
@@ -128,7 +131,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call getWorksheetAutoFilterValidateBeforeCall(GetWorksheetAutoFilterRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  AutoFilterResponse  getWorksheetAutoFilter(GetWorksheetAutoFilterRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< AutoFilterResponse > resp = getWorksheetAutoFilterWithHttpInfo(request);
@@ -182,7 +184,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call putWorksheetDateFilterValidateBeforeCall(PutWorksheetDateFilterRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  putWorksheetDateFilter(PutWorksheetDateFilterRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = putWorksheetDateFilterWithHttpInfo(request);
@@ -236,7 +237,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call putWorksheetFilterValidateBeforeCall(PutWorksheetFilterRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  putWorksheetFilter(PutWorksheetFilterRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = putWorksheetFilterWithHttpInfo(request);
@@ -290,7 +290,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call putWorksheetIconFilterValidateBeforeCall(PutWorksheetIconFilterRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  putWorksheetIconFilter(PutWorksheetIconFilterRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = putWorksheetIconFilterWithHttpInfo(request);
@@ -344,7 +343,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call putWorksheetCustomFilterValidateBeforeCall(PutWorksheetCustomFilterRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  putWorksheetCustomFilter(PutWorksheetCustomFilterRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = putWorksheetCustomFilterWithHttpInfo(request);
@@ -398,7 +396,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call putWorksheetDynamicFilterValidateBeforeCall(PutWorksheetDynamicFilterRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  putWorksheetDynamicFilter(PutWorksheetDynamicFilterRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = putWorksheetDynamicFilterWithHttpInfo(request);
@@ -452,7 +449,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call putWorksheetFilterTop10ValidateBeforeCall(PutWorksheetFilterTop10Request request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  putWorksheetFilterTop10(PutWorksheetFilterTop10Request request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = putWorksheetFilterTop10WithHttpInfo(request);
@@ -506,7 +502,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call putWorksheetColorFilterValidateBeforeCall(PutWorksheetColorFilterRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  putWorksheetColorFilter(PutWorksheetColorFilterRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = putWorksheetColorFilterWithHttpInfo(request);
@@ -560,7 +555,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postWorksheetMatchBlanksValidateBeforeCall(PostWorksheetMatchBlanksRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  postWorksheetMatchBlanks(PostWorksheetMatchBlanksRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = postWorksheetMatchBlanksWithHttpInfo(request);
@@ -614,7 +608,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postWorksheetMatchNonBlanksValidateBeforeCall(PostWorksheetMatchNonBlanksRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  postWorksheetMatchNonBlanks(PostWorksheetMatchNonBlanksRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = postWorksheetMatchNonBlanksWithHttpInfo(request);
@@ -668,7 +661,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postWorksheetAutoFilterRefreshValidateBeforeCall(PostWorksheetAutoFilterRefreshRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  postWorksheetAutoFilterRefresh(PostWorksheetAutoFilterRefreshRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = postWorksheetAutoFilterRefreshWithHttpInfo(request);
@@ -722,7 +714,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call deleteWorksheetDateFilterValidateBeforeCall(DeleteWorksheetDateFilterRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  deleteWorksheetDateFilter(DeleteWorksheetDateFilterRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = deleteWorksheetDateFilterWithHttpInfo(request);
@@ -776,7 +767,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call deleteWorksheetFilterValidateBeforeCall(DeleteWorksheetFilterRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  deleteWorksheetFilter(DeleteWorksheetFilterRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = deleteWorksheetFilterWithHttpInfo(request);
@@ -830,7 +820,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call getWorksheetAutoshapesValidateBeforeCall(GetWorksheetAutoshapesRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  AutoShapesResponse  getWorksheetAutoshapes(GetWorksheetAutoshapesRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< AutoShapesResponse > resp = getWorksheetAutoshapesWithHttpInfo(request);
@@ -884,7 +873,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call getWorksheetAutoshapeWithFormatValidateBeforeCall(GetWorksheetAutoshapeWithFormatRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  File  getWorksheetAutoshapeWithFormat(GetWorksheetAutoshapeWithFormatRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< File > resp = getWorksheetAutoshapeWithFormatWithHttpInfo(request);
@@ -938,7 +926,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postBatchConvertValidateBeforeCall(PostBatchConvertRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  File  postBatchConvert(PostBatchConvertRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< File > resp = postBatchConvertWithHttpInfo(request);
@@ -992,7 +979,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postBatchProtectValidateBeforeCall(PostBatchProtectRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  File  postBatchProtect(PostBatchProtectRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< File > resp = postBatchProtectWithHttpInfo(request);
@@ -1046,7 +1032,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postBatchLockValidateBeforeCall(PostBatchLockRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  File  postBatchLock(PostBatchLockRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< File > resp = postBatchLockWithHttpInfo(request);
@@ -1100,7 +1085,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postBatchUnlockValidateBeforeCall(PostBatchUnlockRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  File  postBatchUnlock(PostBatchUnlockRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< File > resp = postBatchUnlockWithHttpInfo(request);
@@ -1154,7 +1138,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postBatchSplitValidateBeforeCall(PostBatchSplitRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  File  postBatchSplit(PostBatchSplitRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< File > resp = postBatchSplitWithHttpInfo(request);
@@ -1208,7 +1191,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postAccessTokenValidateBeforeCall(PostAccessTokenRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  String  postAccessToken(PostAccessTokenRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< String > resp = postAccessTokenWithHttpInfo(request);
@@ -1262,7 +1244,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postClearContentsValidateBeforeCall(PostClearContentsRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  postClearContents(PostClearContentsRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = postClearContentsWithHttpInfo(request);
@@ -1316,7 +1297,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postClearFormatsValidateBeforeCall(PostClearFormatsRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  postClearFormats(PostClearFormatsRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = postClearFormatsWithHttpInfo(request);
@@ -1370,7 +1350,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postUpdateWorksheetRangeStyleValidateBeforeCall(PostUpdateWorksheetRangeStyleRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  postUpdateWorksheetRangeStyle(PostUpdateWorksheetRangeStyleRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = postUpdateWorksheetRangeStyleWithHttpInfo(request);
@@ -1424,7 +1403,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postWorksheetMergeValidateBeforeCall(PostWorksheetMergeRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  postWorksheetMerge(PostWorksheetMergeRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = postWorksheetMergeWithHttpInfo(request);
@@ -1478,7 +1456,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postWorksheetUnmergeValidateBeforeCall(PostWorksheetUnmergeRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  postWorksheetUnmerge(PostWorksheetUnmergeRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = postWorksheetUnmergeWithHttpInfo(request);
@@ -1532,7 +1509,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call getWorksheetCellsValidateBeforeCall(GetWorksheetCellsRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsResponse  getWorksheetCells(GetWorksheetCellsRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsResponse > resp = getWorksheetCellsWithHttpInfo(request);
@@ -1586,7 +1562,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call getWorksheetCellValidateBeforeCall(GetWorksheetCellRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  String  getWorksheetCell(GetWorksheetCellRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< String > resp = getWorksheetCellWithHttpInfo(request);
@@ -1640,7 +1615,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call getWorksheetCellStyleValidateBeforeCall(GetWorksheetCellStyleRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  StyleResponse  getWorksheetCellStyle(GetWorksheetCellStyleRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< StyleResponse > resp = getWorksheetCellStyleWithHttpInfo(request);
@@ -1694,7 +1668,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postWorksheetCellSetValueValidateBeforeCall(PostWorksheetCellSetValueRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellResponse  postWorksheetCellSetValue(PostWorksheetCellSetValueRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellResponse > resp = postWorksheetCellSetValueWithHttpInfo(request);
@@ -1748,7 +1721,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postUpdateWorksheetCellStyleValidateBeforeCall(PostUpdateWorksheetCellStyleRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  postUpdateWorksheetCellStyle(PostUpdateWorksheetCellStyleRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = postUpdateWorksheetCellStyleWithHttpInfo(request);
@@ -1802,7 +1774,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postSetCellRangeValueValidateBeforeCall(PostSetCellRangeValueRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  postSetCellRangeValue(PostSetCellRangeValueRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = postSetCellRangeValueWithHttpInfo(request);
@@ -1856,7 +1827,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postCopyCellIntoCellValidateBeforeCall(PostCopyCellIntoCellRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  postCopyCellIntoCell(PostCopyCellIntoCellRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = postCopyCellIntoCellWithHttpInfo(request);
@@ -1910,7 +1880,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call getCellHtmlStringValidateBeforeCall(GetCellHtmlStringRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  String  getCellHtmlString(GetCellHtmlStringRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< String > resp = getCellHtmlStringWithHttpInfo(request);
@@ -1964,7 +1933,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postSetCellHtmlStringValidateBeforeCall(PostSetCellHtmlStringRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  postSetCellHtmlString(PostSetCellHtmlStringRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = postSetCellHtmlStringWithHttpInfo(request);
@@ -2018,7 +1986,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postCellCalculateValidateBeforeCall(PostCellCalculateRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  postCellCalculate(PostCellCalculateRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = postCellCalculateWithHttpInfo(request);
@@ -2072,7 +2039,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postCellCharactersValidateBeforeCall(PostCellCharactersRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  postCellCharacters(PostCellCharactersRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = postCellCharactersWithHttpInfo(request);
@@ -2126,7 +2092,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call getWorksheetColumnsValidateBeforeCall(GetWorksheetColumnsRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  ColumnsResponse  getWorksheetColumns(GetWorksheetColumnsRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< ColumnsResponse > resp = getWorksheetColumnsWithHttpInfo(request);
@@ -2180,7 +2145,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postSetWorksheetColumnWidthValidateBeforeCall(PostSetWorksheetColumnWidthRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  postSetWorksheetColumnWidth(PostSetWorksheetColumnWidthRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = postSetWorksheetColumnWidthWithHttpInfo(request);
@@ -2234,7 +2198,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call getWorksheetColumnValidateBeforeCall(GetWorksheetColumnRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  ColumnResponse  getWorksheetColumn(GetWorksheetColumnRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< ColumnResponse > resp = getWorksheetColumnWithHttpInfo(request);
@@ -2288,7 +2251,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call putInsertWorksheetColumnsValidateBeforeCall(PutInsertWorksheetColumnsRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  putInsertWorksheetColumns(PutInsertWorksheetColumnsRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = putInsertWorksheetColumnsWithHttpInfo(request);
@@ -2342,7 +2304,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call deleteWorksheetColumnsValidateBeforeCall(DeleteWorksheetColumnsRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  deleteWorksheetColumns(DeleteWorksheetColumnsRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = deleteWorksheetColumnsWithHttpInfo(request);
@@ -2396,7 +2357,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postHideWorksheetColumnsValidateBeforeCall(PostHideWorksheetColumnsRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  postHideWorksheetColumns(PostHideWorksheetColumnsRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = postHideWorksheetColumnsWithHttpInfo(request);
@@ -2450,7 +2410,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postUnhideWorksheetColumnsValidateBeforeCall(PostUnhideWorksheetColumnsRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  postUnhideWorksheetColumns(PostUnhideWorksheetColumnsRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = postUnhideWorksheetColumnsWithHttpInfo(request);
@@ -2504,7 +2463,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postGroupWorksheetColumnsValidateBeforeCall(PostGroupWorksheetColumnsRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  postGroupWorksheetColumns(PostGroupWorksheetColumnsRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = postGroupWorksheetColumnsWithHttpInfo(request);
@@ -2558,7 +2516,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postUngroupWorksheetColumnsValidateBeforeCall(PostUngroupWorksheetColumnsRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  postUngroupWorksheetColumns(PostUngroupWorksheetColumnsRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = postUngroupWorksheetColumnsWithHttpInfo(request);
@@ -2612,7 +2569,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postCopyWorksheetColumnsValidateBeforeCall(PostCopyWorksheetColumnsRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  postCopyWorksheetColumns(PostCopyWorksheetColumnsRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = postCopyWorksheetColumnsWithHttpInfo(request);
@@ -2666,7 +2622,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postColumnStyleValidateBeforeCall(PostColumnStyleRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  postColumnStyle(PostColumnStyleRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = postColumnStyleWithHttpInfo(request);
@@ -2720,7 +2675,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call getWorksheetRowsValidateBeforeCall(GetWorksheetRowsRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  RowsResponse  getWorksheetRows(GetWorksheetRowsRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< RowsResponse > resp = getWorksheetRowsWithHttpInfo(request);
@@ -2774,7 +2728,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call getWorksheetRowValidateBeforeCall(GetWorksheetRowRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  RowResponse  getWorksheetRow(GetWorksheetRowRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< RowResponse > resp = getWorksheetRowWithHttpInfo(request);
@@ -2828,7 +2781,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call deleteWorksheetRowValidateBeforeCall(DeleteWorksheetRowRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  deleteWorksheetRow(DeleteWorksheetRowRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = deleteWorksheetRowWithHttpInfo(request);
@@ -2882,7 +2834,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call deleteWorksheetRowsValidateBeforeCall(DeleteWorksheetRowsRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  deleteWorksheetRows(DeleteWorksheetRowsRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = deleteWorksheetRowsWithHttpInfo(request);
@@ -2936,7 +2887,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call putInsertWorksheetRowsValidateBeforeCall(PutInsertWorksheetRowsRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  putInsertWorksheetRows(PutInsertWorksheetRowsRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = putInsertWorksheetRowsWithHttpInfo(request);
@@ -2990,7 +2940,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call putInsertWorksheetRowValidateBeforeCall(PutInsertWorksheetRowRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  putInsertWorksheetRow(PutInsertWorksheetRowRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = putInsertWorksheetRowWithHttpInfo(request);
@@ -3044,7 +2993,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postUpdateWorksheetRowValidateBeforeCall(PostUpdateWorksheetRowRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  postUpdateWorksheetRow(PostUpdateWorksheetRowRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = postUpdateWorksheetRowWithHttpInfo(request);
@@ -3098,7 +3046,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postHideWorksheetRowsValidateBeforeCall(PostHideWorksheetRowsRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  postHideWorksheetRows(PostHideWorksheetRowsRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = postHideWorksheetRowsWithHttpInfo(request);
@@ -3152,7 +3099,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postUnhideWorksheetRowsValidateBeforeCall(PostUnhideWorksheetRowsRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  postUnhideWorksheetRows(PostUnhideWorksheetRowsRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = postUnhideWorksheetRowsWithHttpInfo(request);
@@ -3206,7 +3152,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postGroupWorksheetRowsValidateBeforeCall(PostGroupWorksheetRowsRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  postGroupWorksheetRows(PostGroupWorksheetRowsRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = postGroupWorksheetRowsWithHttpInfo(request);
@@ -3260,7 +3205,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postUngroupWorksheetRowsValidateBeforeCall(PostUngroupWorksheetRowsRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  postUngroupWorksheetRows(PostUngroupWorksheetRowsRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = postUngroupWorksheetRowsWithHttpInfo(request);
@@ -3314,7 +3258,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postCopyWorksheetRowsValidateBeforeCall(PostCopyWorksheetRowsRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  postCopyWorksheetRows(PostCopyWorksheetRowsRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = postCopyWorksheetRowsWithHttpInfo(request);
@@ -3368,7 +3311,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postRowStyleValidateBeforeCall(PostRowStyleRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  postRowStyle(PostRowStyleRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = postRowStyleWithHttpInfo(request);
@@ -3422,7 +3364,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call getCellsCloudServicesHealthCheckValidateBeforeCall(GetCellsCloudServicesHealthCheckRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  String  getCellsCloudServicesHealthCheck(GetCellsCloudServicesHealthCheckRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< String > resp = getCellsCloudServicesHealthCheckWithHttpInfo(request);
@@ -3476,7 +3417,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call getCellsCloudServiceStatusValidateBeforeCall(GetCellsCloudServiceStatusRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  String  getCellsCloudServiceStatus(GetCellsCloudServiceStatusRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< String > resp = getCellsCloudServiceStatusWithHttpInfo(request);
@@ -3530,7 +3470,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call getChartAreaValidateBeforeCall(GetChartAreaRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  ChartAreaResponse  getChartArea(GetChartAreaRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< ChartAreaResponse > resp = getChartAreaWithHttpInfo(request);
@@ -3584,7 +3523,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call getChartAreaFillFormatValidateBeforeCall(GetChartAreaFillFormatRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  FillFormatResponse  getChartAreaFillFormat(GetChartAreaFillFormatRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< FillFormatResponse > resp = getChartAreaFillFormatWithHttpInfo(request);
@@ -3638,7 +3576,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call getChartAreaBorderValidateBeforeCall(GetChartAreaBorderRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  LineResponse  getChartAreaBorder(GetChartAreaBorderRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< LineResponse > resp = getChartAreaBorderWithHttpInfo(request);
@@ -3692,7 +3629,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call getWorksheetChartsValidateBeforeCall(GetWorksheetChartsRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  ChartsResponse  getWorksheetCharts(GetWorksheetChartsRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< ChartsResponse > resp = getWorksheetChartsWithHttpInfo(request);
@@ -3746,7 +3682,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call getWorksheetChartValidateBeforeCall(GetWorksheetChartRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  File  getWorksheetChart(GetWorksheetChartRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< File > resp = getWorksheetChartWithHttpInfo(request);
@@ -3800,7 +3735,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call putWorksheetChartValidateBeforeCall(PutWorksheetChartRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  putWorksheetChart(PutWorksheetChartRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = putWorksheetChartWithHttpInfo(request);
@@ -3854,7 +3788,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call deleteWorksheetChartValidateBeforeCall(DeleteWorksheetChartRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  deleteWorksheetChart(DeleteWorksheetChartRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = deleteWorksheetChartWithHttpInfo(request);
@@ -3908,7 +3841,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postWorksheetChartValidateBeforeCall(PostWorksheetChartRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  postWorksheetChart(PostWorksheetChartRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = postWorksheetChartWithHttpInfo(request);
@@ -3962,7 +3894,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call getWorksheetChartLegendValidateBeforeCall(GetWorksheetChartLegendRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  LegendResponse  getWorksheetChartLegend(GetWorksheetChartLegendRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< LegendResponse > resp = getWorksheetChartLegendWithHttpInfo(request);
@@ -4016,7 +3947,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postWorksheetChartLegendValidateBeforeCall(PostWorksheetChartLegendRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  postWorksheetChartLegend(PostWorksheetChartLegendRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = postWorksheetChartLegendWithHttpInfo(request);
@@ -4070,7 +4000,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call putWorksheetChartLegendValidateBeforeCall(PutWorksheetChartLegendRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  putWorksheetChartLegend(PutWorksheetChartLegendRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = putWorksheetChartLegendWithHttpInfo(request);
@@ -4124,7 +4053,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call deleteWorksheetChartLegendValidateBeforeCall(DeleteWorksheetChartLegendRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  deleteWorksheetChartLegend(DeleteWorksheetChartLegendRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = deleteWorksheetChartLegendWithHttpInfo(request);
@@ -4178,7 +4106,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call deleteWorksheetChartsValidateBeforeCall(DeleteWorksheetChartsRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  deleteWorksheetCharts(DeleteWorksheetChartsRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = deleteWorksheetChartsWithHttpInfo(request);
@@ -4232,7 +4159,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call getWorksheetChartTitleValidateBeforeCall(GetWorksheetChartTitleRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  TitleResponse  getWorksheetChartTitle(GetWorksheetChartTitleRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< TitleResponse > resp = getWorksheetChartTitleWithHttpInfo(request);
@@ -4286,7 +4212,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postWorksheetChartTitleValidateBeforeCall(PostWorksheetChartTitleRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  postWorksheetChartTitle(PostWorksheetChartTitleRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = postWorksheetChartTitleWithHttpInfo(request);
@@ -4340,7 +4265,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call putWorksheetChartTitleValidateBeforeCall(PutWorksheetChartTitleRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  putWorksheetChartTitle(PutWorksheetChartTitleRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = putWorksheetChartTitleWithHttpInfo(request);
@@ -4394,7 +4318,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call deleteWorksheetChartTitleValidateBeforeCall(DeleteWorksheetChartTitleRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  deleteWorksheetChartTitle(DeleteWorksheetChartTitleRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = deleteWorksheetChartTitleWithHttpInfo(request);
@@ -4448,7 +4371,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call getChartSeriesAxisValidateBeforeCall(GetChartSeriesAxisRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  AxisResponse  getChartSeriesAxis(GetChartSeriesAxisRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< AxisResponse > resp = getChartSeriesAxisWithHttpInfo(request);
@@ -4502,7 +4424,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call getChartCategoryAxisValidateBeforeCall(GetChartCategoryAxisRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  AxisResponse  getChartCategoryAxis(GetChartCategoryAxisRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< AxisResponse > resp = getChartCategoryAxisWithHttpInfo(request);
@@ -4556,7 +4477,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call getChartValueAxisValidateBeforeCall(GetChartValueAxisRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  AxisResponse  getChartValueAxis(GetChartValueAxisRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< AxisResponse > resp = getChartValueAxisWithHttpInfo(request);
@@ -4610,7 +4530,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call getChartSecondCategoryAxisValidateBeforeCall(GetChartSecondCategoryAxisRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  AxisResponse  getChartSecondCategoryAxis(GetChartSecondCategoryAxisRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< AxisResponse > resp = getChartSecondCategoryAxisWithHttpInfo(request);
@@ -4664,7 +4583,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call getChartSecondValueAxisValidateBeforeCall(GetChartSecondValueAxisRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  AxisResponse  getChartSecondValueAxis(GetChartSecondValueAxisRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< AxisResponse > resp = getChartSecondValueAxisWithHttpInfo(request);
@@ -4718,7 +4636,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postChartSeriesAxisValidateBeforeCall(PostChartSeriesAxisRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  postChartSeriesAxis(PostChartSeriesAxisRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = postChartSeriesAxisWithHttpInfo(request);
@@ -4772,7 +4689,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postChartCategoryAxisValidateBeforeCall(PostChartCategoryAxisRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  postChartCategoryAxis(PostChartCategoryAxisRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = postChartCategoryAxisWithHttpInfo(request);
@@ -4826,7 +4742,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postChartValueAxisValidateBeforeCall(PostChartValueAxisRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  postChartValueAxis(PostChartValueAxisRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = postChartValueAxisWithHttpInfo(request);
@@ -4880,7 +4795,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postChartSecondCategoryAxisValidateBeforeCall(PostChartSecondCategoryAxisRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  postChartSecondCategoryAxis(PostChartSecondCategoryAxisRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = postChartSecondCategoryAxisWithHttpInfo(request);
@@ -4934,7 +4848,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postChartSecondValueAxisValidateBeforeCall(PostChartSecondValueAxisRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  postChartSecondValueAxis(PostChartSecondValueAxisRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = postChartSecondValueAxisWithHttpInfo(request);
@@ -4988,7 +4901,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call getWorksheetConditionalFormattingsValidateBeforeCall(GetWorksheetConditionalFormattingsRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  ConditionalFormattingsResponse  getWorksheetConditionalFormattings(GetWorksheetConditionalFormattingsRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< ConditionalFormattingsResponse > resp = getWorksheetConditionalFormattingsWithHttpInfo(request);
@@ -5042,7 +4954,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call getWorksheetConditionalFormattingValidateBeforeCall(GetWorksheetConditionalFormattingRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  ConditionalFormattingResponse  getWorksheetConditionalFormatting(GetWorksheetConditionalFormattingRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< ConditionalFormattingResponse > resp = getWorksheetConditionalFormattingWithHttpInfo(request);
@@ -5096,7 +5007,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call putWorksheetConditionalFormattingValidateBeforeCall(PutWorksheetConditionalFormattingRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  putWorksheetConditionalFormatting(PutWorksheetConditionalFormattingRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = putWorksheetConditionalFormattingWithHttpInfo(request);
@@ -5150,7 +5060,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call putWorksheetFormatConditionValidateBeforeCall(PutWorksheetFormatConditionRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  putWorksheetFormatCondition(PutWorksheetFormatConditionRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = putWorksheetFormatConditionWithHttpInfo(request);
@@ -5204,7 +5113,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call putWorksheetFormatConditionAreaValidateBeforeCall(PutWorksheetFormatConditionAreaRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  putWorksheetFormatConditionArea(PutWorksheetFormatConditionAreaRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = putWorksheetFormatConditionAreaWithHttpInfo(request);
@@ -5258,7 +5166,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call putWorksheetFormatConditionConditionValidateBeforeCall(PutWorksheetFormatConditionConditionRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  putWorksheetFormatConditionCondition(PutWorksheetFormatConditionConditionRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = putWorksheetFormatConditionConditionWithHttpInfo(request);
@@ -5312,7 +5219,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call deleteWorksheetConditionalFormattingsValidateBeforeCall(DeleteWorksheetConditionalFormattingsRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  deleteWorksheetConditionalFormattings(DeleteWorksheetConditionalFormattingsRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = deleteWorksheetConditionalFormattingsWithHttpInfo(request);
@@ -5366,7 +5272,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call deleteWorksheetConditionalFormattingValidateBeforeCall(DeleteWorksheetConditionalFormattingRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  deleteWorksheetConditionalFormatting(DeleteWorksheetConditionalFormattingRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = deleteWorksheetConditionalFormattingWithHttpInfo(request);
@@ -5420,7 +5325,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call deleteWorksheetConditionalFormattingAreaValidateBeforeCall(DeleteWorksheetConditionalFormattingAreaRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  deleteWorksheetConditionalFormattingArea(DeleteWorksheetConditionalFormattingAreaRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = deleteWorksheetConditionalFormattingAreaWithHttpInfo(request);
@@ -5474,7 +5378,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call getWorkbookValidateBeforeCall(GetWorkbookRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  File  getWorkbook(GetWorkbookRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< File > resp = getWorkbookWithHttpInfo(request);
@@ -5528,7 +5431,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call putConvertWorkbookValidateBeforeCall(PutConvertWorkbookRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  File  putConvertWorkbook(PutConvertWorkbookRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< File > resp = putConvertWorkbookWithHttpInfo(request);
@@ -5582,7 +5484,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postWorkbookSaveAsValidateBeforeCall(PostWorkbookSaveAsRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  SaveResponse  postWorkbookSaveAs(PostWorkbookSaveAsRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< SaveResponse > resp = postWorkbookSaveAsWithHttpInfo(request);
@@ -5636,7 +5537,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postConvertWorkbookToPDFValidateBeforeCall(PostConvertWorkbookToPDFRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  FileInfo  postConvertWorkbookToPDF(PostConvertWorkbookToPDFRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< FileInfo > resp = postConvertWorkbookToPDFWithHttpInfo(request);
@@ -5690,7 +5590,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postConvertWorkbookToPNGValidateBeforeCall(PostConvertWorkbookToPNGRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  FileInfo  postConvertWorkbookToPNG(PostConvertWorkbookToPNGRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< FileInfo > resp = postConvertWorkbookToPNGWithHttpInfo(request);
@@ -5744,7 +5643,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postConvertWorkbookToDocxValidateBeforeCall(PostConvertWorkbookToDocxRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  FileInfo  postConvertWorkbookToDocx(PostConvertWorkbookToDocxRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< FileInfo > resp = postConvertWorkbookToDocxWithHttpInfo(request);
@@ -5798,7 +5696,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postConvertWorkbookToPptxValidateBeforeCall(PostConvertWorkbookToPptxRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  FileInfo  postConvertWorkbookToPptx(PostConvertWorkbookToPptxRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< FileInfo > resp = postConvertWorkbookToPptxWithHttpInfo(request);
@@ -5852,7 +5749,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postConvertWorkbookToHtmlValidateBeforeCall(PostConvertWorkbookToHtmlRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  FileInfo  postConvertWorkbookToHtml(PostConvertWorkbookToHtmlRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< FileInfo > resp = postConvertWorkbookToHtmlWithHttpInfo(request);
@@ -5906,7 +5802,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postConvertWorkbookToMarkdownValidateBeforeCall(PostConvertWorkbookToMarkdownRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  FileInfo  postConvertWorkbookToMarkdown(PostConvertWorkbookToMarkdownRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< FileInfo > resp = postConvertWorkbookToMarkdownWithHttpInfo(request);
@@ -5960,7 +5855,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postConvertWorkbookToJsonValidateBeforeCall(PostConvertWorkbookToJsonRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  FileInfo  postConvertWorkbookToJson(PostConvertWorkbookToJsonRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< FileInfo > resp = postConvertWorkbookToJsonWithHttpInfo(request);
@@ -6014,7 +5908,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postConvertWorkbookToSQLValidateBeforeCall(PostConvertWorkbookToSQLRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  FileInfo  postConvertWorkbookToSQL(PostConvertWorkbookToSQLRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< FileInfo > resp = postConvertWorkbookToSQLWithHttpInfo(request);
@@ -6068,7 +5961,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postConvertWorkbookToCSVValidateBeforeCall(PostConvertWorkbookToCSVRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  FileInfo  postConvertWorkbookToCSV(PostConvertWorkbookToCSVRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< FileInfo > resp = postConvertWorkbookToCSVWithHttpInfo(request);
@@ -6122,7 +6014,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postConvertWorksheetToImageValidateBeforeCall(PostConvertWorksheetToImageRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  FileInfo  postConvertWorksheetToImage(PostConvertWorksheetToImageRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< FileInfo > resp = postConvertWorksheetToImageWithHttpInfo(request);
@@ -6176,7 +6067,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postConvertWorkbookValidateBeforeCall(PostConvertWorkbookRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  FileInfo  postConvertWorkbook(PostConvertWorkbookRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< FileInfo > resp = postConvertWorkbookWithHttpInfo(request);
@@ -6230,7 +6120,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call checkWrokbookExternalReferenceValidateBeforeCall(CheckWrokbookExternalReferenceRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CheckedExternalReferenceResponse  checkWrokbookExternalReference(CheckWrokbookExternalReferenceRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CheckedExternalReferenceResponse > resp = checkWrokbookExternalReferenceWithHttpInfo(request);
@@ -6284,7 +6173,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call checkWorkbookFormulaErrorsValidateBeforeCall(CheckWorkbookFormulaErrorsRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CheckedFormulaErrorsResponse  checkWorkbookFormulaErrors(CheckWorkbookFormulaErrorsRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CheckedFormulaErrorsResponse > resp = checkWorkbookFormulaErrorsWithHttpInfo(request);
@@ -6338,7 +6226,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postExportValidateBeforeCall(PostExportRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  FilesResult  postExport(PostExportRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< FilesResult > resp = postExportWithHttpInfo(request);
@@ -6392,7 +6279,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postWorkbookExportXMLValidateBeforeCall(PostWorkbookExportXMLRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  File  postWorkbookExportXML(PostWorkbookExportXMLRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< File > resp = postWorkbookExportXMLWithHttpInfo(request);
@@ -6446,7 +6332,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postWorkbookImportJsonValidateBeforeCall(PostWorkbookImportJsonRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  File  postWorkbookImportJson(PostWorkbookImportJsonRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< File > resp = postWorkbookImportJsonWithHttpInfo(request);
@@ -6500,7 +6385,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postWorkbookImportXMLValidateBeforeCall(PostWorkbookImportXMLRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  File  postWorkbookImportXML(PostWorkbookImportXMLRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< File > resp = postWorkbookImportXMLWithHttpInfo(request);
@@ -6554,7 +6438,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postImportDataValidateBeforeCall(PostImportDataRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  postImportData(PostImportDataRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = postImportDataWithHttpInfo(request);
@@ -6608,7 +6491,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postWorkbookDataCleansingValidateBeforeCall(PostWorkbookDataCleansingRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  FileInfo  postWorkbookDataCleansing(PostWorkbookDataCleansingRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< FileInfo > resp = postWorkbookDataCleansingWithHttpInfo(request);
@@ -6662,7 +6544,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postDataCleansingValidateBeforeCall(PostDataCleansingRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  FileInfo  postDataCleansing(PostDataCleansingRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< FileInfo > resp = postDataCleansingWithHttpInfo(request);
@@ -6716,7 +6597,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postWorkbookDataDeduplicationValidateBeforeCall(PostWorkbookDataDeduplicationRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  FileInfo  postWorkbookDataDeduplication(PostWorkbookDataDeduplicationRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< FileInfo > resp = postWorkbookDataDeduplicationWithHttpInfo(request);
@@ -6770,7 +6650,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postDataDeduplicationValidateBeforeCall(PostDataDeduplicationRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  FileInfo  postDataDeduplication(PostDataDeduplicationRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< FileInfo > resp = postDataDeduplicationWithHttpInfo(request);
@@ -6824,7 +6703,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postWorkbookDataFillValidateBeforeCall(PostWorkbookDataFillRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  FileInfo  postWorkbookDataFill(PostWorkbookDataFillRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< FileInfo > resp = postWorkbookDataFillWithHttpInfo(request);
@@ -6878,7 +6756,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postDataFillValidateBeforeCall(PostDataFillRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  FileInfo  postDataFill(PostDataFillRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< FileInfo > resp = postDataFillWithHttpInfo(request);
@@ -6932,7 +6809,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postDeleteIncompleteRowsValidateBeforeCall(PostDeleteIncompleteRowsRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  FileInfo  postDeleteIncompleteRows(PostDeleteIncompleteRowsRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< FileInfo > resp = postDeleteIncompleteRowsWithHttpInfo(request);
@@ -6986,7 +6862,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postDataTransformationValidateBeforeCall(PostDataTransformationRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  FileInfo  postDataTransformation(PostDataTransformationRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< FileInfo > resp = postDataTransformationWithHttpInfo(request);
@@ -7040,7 +6915,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call getWorksheetHyperlinksValidateBeforeCall(GetWorksheetHyperlinksRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  HyperlinksResponse  getWorksheetHyperlinks(GetWorksheetHyperlinksRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< HyperlinksResponse > resp = getWorksheetHyperlinksWithHttpInfo(request);
@@ -7094,7 +6968,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call getWorksheetHyperlinkValidateBeforeCall(GetWorksheetHyperlinkRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  HyperlinkResponse  getWorksheetHyperlink(GetWorksheetHyperlinkRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< HyperlinkResponse > resp = getWorksheetHyperlinkWithHttpInfo(request);
@@ -7148,7 +7021,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call deleteWorksheetHyperlinkValidateBeforeCall(DeleteWorksheetHyperlinkRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  deleteWorksheetHyperlink(DeleteWorksheetHyperlinkRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = deleteWorksheetHyperlinkWithHttpInfo(request);
@@ -7202,7 +7074,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postWorksheetHyperlinkValidateBeforeCall(PostWorksheetHyperlinkRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  postWorksheetHyperlink(PostWorksheetHyperlinkRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = postWorksheetHyperlinkWithHttpInfo(request);
@@ -7256,7 +7127,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call putWorksheetHyperlinkValidateBeforeCall(PutWorksheetHyperlinkRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  putWorksheetHyperlink(PutWorksheetHyperlinkRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = putWorksheetHyperlinkWithHttpInfo(request);
@@ -7310,7 +7180,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call deleteWorksheetHyperlinksValidateBeforeCall(DeleteWorksheetHyperlinksRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  deleteWorksheetHyperlinks(DeleteWorksheetHyperlinksRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = deleteWorksheetHyperlinksWithHttpInfo(request);
@@ -7361,10 +7230,62 @@ public class CellsApi {
 
 
          @SuppressWarnings("rawtypes")
+         private com.squareup.okhttp.Call getPublicKeyValidateBeforeCall(GetPublicKeyRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
+             return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
+         }
+         public  CellsCloudPublicKeyResponse  getPublicKey(GetPublicKeyRequest request) throws ApiException,  IOException {
+             try {
+                 ApiResponse< CellsCloudPublicKeyResponse > resp = getPublicKeyWithHttpInfo(request);
+                  return resp.getData(); 
+             }
+             catch (ApiException ex) {
+                 if (ex.getCode() == apiClient.getNotAuthCode()) {
+                     apiClient.requestToken();
+                     ApiResponse< CellsCloudPublicKeyResponse > resp = getPublicKeyWithHttpInfo(request);
+                      return resp.getData();       
+                 }
+                 throw ex;
+             }
+         }
+
+         private ApiResponse< CellsCloudPublicKeyResponse > getPublicKeyWithHttpInfo(GetPublicKeyRequest request) throws ApiException,  IOException {
+             com.squareup.okhttp.Call call =  getPublicKeyValidateBeforeCall(request, null, null);
+             Type localVarReturnType = new TypeToken< CellsCloudPublicKeyResponse >(){}.getType();
+             return apiClient.execute(call, localVarReturnType);
+         }
+
+         public com.squareup.okhttp.Call  getPublicKeyAsync( GetPublicKeyRequest request, final ApiCallback< CellsCloudPublicKeyResponse > callback) throws ApiException,  IOException {
+
+             ProgressResponseBody.ProgressListener progressListener = null;
+             ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+             if (callback != null) {
+                 progressListener = new ProgressResponseBody.ProgressListener() {
+                     @Override
+                     public void update(long bytesRead, long contentLength, boolean done) {
+                         callback.onDownloadProgress(bytesRead, contentLength, done);
+                     }
+                 };
+
+                 progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                     @Override
+                     public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                         callback.onUploadProgress(bytesWritten, contentLength, done);
+                     }
+                 };
+             }
+
+             com.squareup.okhttp.Call call =  getPublicKeyValidateBeforeCall(request, progressListener, progressRequestListener);
+             Type localVarReturnType = new TypeToken< CellsCloudPublicKeyResponse >(){}.getType();
+             apiClient.executeAsync(call, localVarReturnType, callback);
+             return call;
+         }
+
+
+         @SuppressWarnings("rawtypes")
          private com.squareup.okhttp.Call postAssembleValidateBeforeCall(PostAssembleRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  FilesResult  postAssemble(PostAssembleRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< FilesResult > resp = postAssembleWithHttpInfo(request);
@@ -7418,7 +7339,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postCompressValidateBeforeCall(PostCompressRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  FilesResult  postCompress(PostCompressRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< FilesResult > resp = postCompressWithHttpInfo(request);
@@ -7472,7 +7392,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postMergeValidateBeforeCall(PostMergeRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  FileInfo  postMerge(PostMergeRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< FileInfo > resp = postMergeWithHttpInfo(request);
@@ -7526,7 +7445,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postSplitValidateBeforeCall(PostSplitRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  FilesResult  postSplit(PostSplitRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< FilesResult > resp = postSplitWithHttpInfo(request);
@@ -7580,7 +7498,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postSearchValidateBeforeCall(PostSearchRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  List<TextItem>  postSearch(PostSearchRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< List<TextItem> > resp = postSearchWithHttpInfo(request);
@@ -7634,7 +7551,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postReplaceValidateBeforeCall(PostReplaceRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  FilesResult  postReplace(PostReplaceRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< FilesResult > resp = postReplaceWithHttpInfo(request);
@@ -7688,7 +7604,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postImportValidateBeforeCall(PostImportRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  FilesResult  postImport(PostImportRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< FilesResult > resp = postImportWithHttpInfo(request);
@@ -7742,7 +7657,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postWatermarkValidateBeforeCall(PostWatermarkRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  FilesResult  postWatermark(PostWatermarkRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< FilesResult > resp = postWatermarkWithHttpInfo(request);
@@ -7796,7 +7710,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postClearObjectsValidateBeforeCall(PostClearObjectsRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  FilesResult  postClearObjects(PostClearObjectsRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< FilesResult > resp = postClearObjectsWithHttpInfo(request);
@@ -7850,7 +7763,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postReverseValidateBeforeCall(PostReverseRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  FilesResult  postReverse(PostReverseRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< FilesResult > resp = postReverseWithHttpInfo(request);
@@ -7904,7 +7816,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postRepairValidateBeforeCall(PostRepairRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  FilesResult  postRepair(PostRepairRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< FilesResult > resp = postRepairWithHttpInfo(request);
@@ -7958,7 +7869,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postRotateValidateBeforeCall(PostRotateRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  FilesResult  postRotate(PostRotateRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< FilesResult > resp = postRotateWithHttpInfo(request);
@@ -8012,7 +7922,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postMetadataValidateBeforeCall(PostMetadataRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  FilesResult  postMetadata(PostMetadataRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< FilesResult > resp = postMetadataWithHttpInfo(request);
@@ -8066,7 +7975,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call getMetadataValidateBeforeCall(GetMetadataRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  List<CellsDocumentProperty>  getMetadata(GetMetadataRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< List<CellsDocumentProperty> > resp = getMetadataWithHttpInfo(request);
@@ -8120,7 +8028,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call deleteMetadataValidateBeforeCall(DeleteMetadataRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  FilesResult  deleteMetadata(DeleteMetadataRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< FilesResult > resp = deleteMetadataWithHttpInfo(request);
@@ -8174,7 +8081,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call getWorksheetListObjectsValidateBeforeCall(GetWorksheetListObjectsRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  ListObjectsResponse  getWorksheetListObjects(GetWorksheetListObjectsRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< ListObjectsResponse > resp = getWorksheetListObjectsWithHttpInfo(request);
@@ -8228,7 +8134,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call getWorksheetListObjectValidateBeforeCall(GetWorksheetListObjectRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  File  getWorksheetListObject(GetWorksheetListObjectRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< File > resp = getWorksheetListObjectWithHttpInfo(request);
@@ -8282,7 +8187,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call putWorksheetListObjectValidateBeforeCall(PutWorksheetListObjectRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  putWorksheetListObject(PutWorksheetListObjectRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = putWorksheetListObjectWithHttpInfo(request);
@@ -8336,7 +8240,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call deleteWorksheetListObjectsValidateBeforeCall(DeleteWorksheetListObjectsRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  deleteWorksheetListObjects(DeleteWorksheetListObjectsRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = deleteWorksheetListObjectsWithHttpInfo(request);
@@ -8390,7 +8293,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call deleteWorksheetListObjectValidateBeforeCall(DeleteWorksheetListObjectRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  deleteWorksheetListObject(DeleteWorksheetListObjectRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = deleteWorksheetListObjectWithHttpInfo(request);
@@ -8444,7 +8346,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postWorksheetListObjectValidateBeforeCall(PostWorksheetListObjectRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  postWorksheetListObject(PostWorksheetListObjectRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = postWorksheetListObjectWithHttpInfo(request);
@@ -8498,7 +8399,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postWorksheetListObjectConvertToRangeValidateBeforeCall(PostWorksheetListObjectConvertToRangeRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  postWorksheetListObjectConvertToRange(PostWorksheetListObjectConvertToRangeRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = postWorksheetListObjectConvertToRangeWithHttpInfo(request);
@@ -8552,7 +8452,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postWorksheetListObjectSummarizeWithPivotTableValidateBeforeCall(PostWorksheetListObjectSummarizeWithPivotTableRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  postWorksheetListObjectSummarizeWithPivotTable(PostWorksheetListObjectSummarizeWithPivotTableRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = postWorksheetListObjectSummarizeWithPivotTableWithHttpInfo(request);
@@ -8606,7 +8505,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postWorksheetListObjectSortTableValidateBeforeCall(PostWorksheetListObjectSortTableRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  postWorksheetListObjectSortTable(PostWorksheetListObjectSortTableRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = postWorksheetListObjectSortTableWithHttpInfo(request);
@@ -8660,7 +8558,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postWorksheetListObjectRemoveDuplicatesValidateBeforeCall(PostWorksheetListObjectRemoveDuplicatesRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  postWorksheetListObjectRemoveDuplicates(PostWorksheetListObjectRemoveDuplicatesRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = postWorksheetListObjectRemoveDuplicatesWithHttpInfo(request);
@@ -8714,7 +8611,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postWorksheetListObjectInsertSlicerValidateBeforeCall(PostWorksheetListObjectInsertSlicerRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  postWorksheetListObjectInsertSlicer(PostWorksheetListObjectInsertSlicerRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = postWorksheetListObjectInsertSlicerWithHttpInfo(request);
@@ -8768,7 +8664,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postWorksheetListColumnValidateBeforeCall(PostWorksheetListColumnRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  postWorksheetListColumn(PostWorksheetListColumnRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = postWorksheetListColumnWithHttpInfo(request);
@@ -8822,7 +8717,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postWorksheetListColumnsTotalValidateBeforeCall(PostWorksheetListColumnsTotalRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  postWorksheetListColumnsTotal(PostWorksheetListColumnsTotalRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = postWorksheetListColumnsTotalWithHttpInfo(request);
@@ -8876,7 +8770,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call getWorksheetOleObjectsValidateBeforeCall(GetWorksheetOleObjectsRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  OleObjectsResponse  getWorksheetOleObjects(GetWorksheetOleObjectsRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< OleObjectsResponse > resp = getWorksheetOleObjectsWithHttpInfo(request);
@@ -8930,7 +8823,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call getWorksheetOleObjectValidateBeforeCall(GetWorksheetOleObjectRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  File  getWorksheetOleObject(GetWorksheetOleObjectRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< File > resp = getWorksheetOleObjectWithHttpInfo(request);
@@ -8984,7 +8876,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call deleteWorksheetOleObjectsValidateBeforeCall(DeleteWorksheetOleObjectsRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  deleteWorksheetOleObjects(DeleteWorksheetOleObjectsRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = deleteWorksheetOleObjectsWithHttpInfo(request);
@@ -9038,7 +8929,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call deleteWorksheetOleObjectValidateBeforeCall(DeleteWorksheetOleObjectRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  deleteWorksheetOleObject(DeleteWorksheetOleObjectRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = deleteWorksheetOleObjectWithHttpInfo(request);
@@ -9092,7 +8982,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postUpdateWorksheetOleObjectValidateBeforeCall(PostUpdateWorksheetOleObjectRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  postUpdateWorksheetOleObject(PostUpdateWorksheetOleObjectRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = postUpdateWorksheetOleObjectWithHttpInfo(request);
@@ -9146,7 +9035,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call putWorksheetOleObjectValidateBeforeCall(PutWorksheetOleObjectRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  putWorksheetOleObject(PutWorksheetOleObjectRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = putWorksheetOleObjectWithHttpInfo(request);
@@ -9200,7 +9088,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call getVerticalPageBreaksValidateBeforeCall(GetVerticalPageBreaksRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  VerticalPageBreaksResponse  getVerticalPageBreaks(GetVerticalPageBreaksRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< VerticalPageBreaksResponse > resp = getVerticalPageBreaksWithHttpInfo(request);
@@ -9254,7 +9141,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call getHorizontalPageBreaksValidateBeforeCall(GetHorizontalPageBreaksRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  HorizontalPageBreaksResponse  getHorizontalPageBreaks(GetHorizontalPageBreaksRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< HorizontalPageBreaksResponse > resp = getHorizontalPageBreaksWithHttpInfo(request);
@@ -9308,7 +9194,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call getVerticalPageBreakValidateBeforeCall(GetVerticalPageBreakRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  VerticalPageBreakResponse  getVerticalPageBreak(GetVerticalPageBreakRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< VerticalPageBreakResponse > resp = getVerticalPageBreakWithHttpInfo(request);
@@ -9362,7 +9247,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call getHorizontalPageBreakValidateBeforeCall(GetHorizontalPageBreakRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  HorizontalPageBreakResponse  getHorizontalPageBreak(GetHorizontalPageBreakRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< HorizontalPageBreakResponse > resp = getHorizontalPageBreakWithHttpInfo(request);
@@ -9416,7 +9300,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call putVerticalPageBreakValidateBeforeCall(PutVerticalPageBreakRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  putVerticalPageBreak(PutVerticalPageBreakRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = putVerticalPageBreakWithHttpInfo(request);
@@ -9470,7 +9353,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call putHorizontalPageBreakValidateBeforeCall(PutHorizontalPageBreakRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  putHorizontalPageBreak(PutHorizontalPageBreakRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = putHorizontalPageBreakWithHttpInfo(request);
@@ -9524,7 +9406,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call deleteVerticalPageBreaksValidateBeforeCall(DeleteVerticalPageBreaksRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  deleteVerticalPageBreaks(DeleteVerticalPageBreaksRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = deleteVerticalPageBreaksWithHttpInfo(request);
@@ -9578,7 +9459,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call deleteHorizontalPageBreaksValidateBeforeCall(DeleteHorizontalPageBreaksRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  deleteHorizontalPageBreaks(DeleteHorizontalPageBreaksRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = deleteHorizontalPageBreaksWithHttpInfo(request);
@@ -9632,7 +9512,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call deleteVerticalPageBreakValidateBeforeCall(DeleteVerticalPageBreakRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  deleteVerticalPageBreak(DeleteVerticalPageBreakRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = deleteVerticalPageBreakWithHttpInfo(request);
@@ -9686,7 +9565,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call deleteHorizontalPageBreakValidateBeforeCall(DeleteHorizontalPageBreakRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  deleteHorizontalPageBreak(DeleteHorizontalPageBreakRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = deleteHorizontalPageBreakWithHttpInfo(request);
@@ -9740,7 +9618,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call getPageSetupValidateBeforeCall(GetPageSetupRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  PageSetupResponse  getPageSetup(GetPageSetupRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< PageSetupResponse > resp = getPageSetupWithHttpInfo(request);
@@ -9794,7 +9671,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postPageSetupValidateBeforeCall(PostPageSetupRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  postPageSetup(PostPageSetupRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = postPageSetupWithHttpInfo(request);
@@ -9848,7 +9724,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call deleteHeaderFooterValidateBeforeCall(DeleteHeaderFooterRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  deleteHeaderFooter(DeleteHeaderFooterRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = deleteHeaderFooterWithHttpInfo(request);
@@ -9902,7 +9777,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call getHeaderValidateBeforeCall(GetHeaderRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  PageSectionsResponse  getHeader(GetHeaderRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< PageSectionsResponse > resp = getHeaderWithHttpInfo(request);
@@ -9956,7 +9830,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postHeaderValidateBeforeCall(PostHeaderRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  postHeader(PostHeaderRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = postHeaderWithHttpInfo(request);
@@ -10010,7 +9883,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call getFooterValidateBeforeCall(GetFooterRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  PageSectionsResponse  getFooter(GetFooterRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< PageSectionsResponse > resp = getFooterWithHttpInfo(request);
@@ -10064,7 +9936,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postFooterValidateBeforeCall(PostFooterRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  postFooter(PostFooterRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = postFooterWithHttpInfo(request);
@@ -10118,7 +9989,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postFitWideToPagesValidateBeforeCall(PostFitWideToPagesRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  postFitWideToPages(PostFitWideToPagesRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = postFitWideToPagesWithHttpInfo(request);
@@ -10172,7 +10042,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postFitTallToPagesValidateBeforeCall(PostFitTallToPagesRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  postFitTallToPages(PostFitTallToPagesRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = postFitTallToPagesWithHttpInfo(request);
@@ -10226,7 +10095,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call getWorksheetPicturesValidateBeforeCall(GetWorksheetPicturesRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  PicturesResponse  getWorksheetPictures(GetWorksheetPicturesRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< PicturesResponse > resp = getWorksheetPicturesWithHttpInfo(request);
@@ -10280,7 +10148,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call getWorksheetPictureWithFormatValidateBeforeCall(GetWorksheetPictureWithFormatRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  File  getWorksheetPictureWithFormat(GetWorksheetPictureWithFormatRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< File > resp = getWorksheetPictureWithFormatWithHttpInfo(request);
@@ -10334,7 +10201,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call putWorksheetAddPictureValidateBeforeCall(PutWorksheetAddPictureRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  putWorksheetAddPicture(PutWorksheetAddPictureRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = putWorksheetAddPictureWithHttpInfo(request);
@@ -10388,7 +10254,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call addPictureInCellValidateBeforeCall(AddPictureInCellRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  addPictureInCell(AddPictureInCellRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = addPictureInCellWithHttpInfo(request);
@@ -10442,7 +10307,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postWorksheetPictureValidateBeforeCall(PostWorksheetPictureRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  postWorksheetPicture(PostWorksheetPictureRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = postWorksheetPictureWithHttpInfo(request);
@@ -10496,7 +10360,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call deleteWorksheetPictureValidateBeforeCall(DeleteWorksheetPictureRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  deleteWorksheetPicture(DeleteWorksheetPictureRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = deleteWorksheetPictureWithHttpInfo(request);
@@ -10550,7 +10413,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call deleteWorksheetPicturesValidateBeforeCall(DeleteWorksheetPicturesRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  deleteWorksheetPictures(DeleteWorksheetPicturesRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = deleteWorksheetPicturesWithHttpInfo(request);
@@ -10604,7 +10466,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call getWorksheetPivotTablesValidateBeforeCall(GetWorksheetPivotTablesRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  PivotTablesResponse  getWorksheetPivotTables(GetWorksheetPivotTablesRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< PivotTablesResponse > resp = getWorksheetPivotTablesWithHttpInfo(request);
@@ -10658,7 +10519,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call getWorksheetPivotTableValidateBeforeCall(GetWorksheetPivotTableRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  PivotTableResponse  getWorksheetPivotTable(GetWorksheetPivotTableRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< PivotTableResponse > resp = getWorksheetPivotTableWithHttpInfo(request);
@@ -10712,7 +10572,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call getPivotTableFieldValidateBeforeCall(GetPivotTableFieldRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  PivotFieldResponse  getPivotTableField(GetPivotTableFieldRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< PivotFieldResponse > resp = getPivotTableFieldWithHttpInfo(request);
@@ -10766,7 +10625,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call getWorksheetPivotTableFiltersValidateBeforeCall(GetWorksheetPivotTableFiltersRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  PivotFiltersResponse  getWorksheetPivotTableFilters(GetWorksheetPivotTableFiltersRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< PivotFiltersResponse > resp = getWorksheetPivotTableFiltersWithHttpInfo(request);
@@ -10820,7 +10678,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call getWorksheetPivotTableFilterValidateBeforeCall(GetWorksheetPivotTableFilterRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  PivotFilterResponse  getWorksheetPivotTableFilter(GetWorksheetPivotTableFilterRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< PivotFilterResponse > resp = getWorksheetPivotTableFilterWithHttpInfo(request);
@@ -10874,7 +10731,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call putWorksheetPivotTableValidateBeforeCall(PutWorksheetPivotTableRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  putWorksheetPivotTable(PutWorksheetPivotTableRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = putWorksheetPivotTableWithHttpInfo(request);
@@ -10928,7 +10784,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call putPivotTableFieldValidateBeforeCall(PutPivotTableFieldRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  putPivotTableField(PutPivotTableFieldRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = putPivotTableFieldWithHttpInfo(request);
@@ -10982,7 +10837,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call putWorksheetPivotTableFilterValidateBeforeCall(PutWorksheetPivotTableFilterRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  putWorksheetPivotTableFilter(PutWorksheetPivotTableFilterRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = putWorksheetPivotTableFilterWithHttpInfo(request);
@@ -11036,7 +10890,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postPivotTableFieldHideItemValidateBeforeCall(PostPivotTableFieldHideItemRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  postPivotTableFieldHideItem(PostPivotTableFieldHideItemRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = postPivotTableFieldHideItemWithHttpInfo(request);
@@ -11090,7 +10943,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postPivotTableFieldMoveToValidateBeforeCall(PostPivotTableFieldMoveToRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  postPivotTableFieldMoveTo(PostPivotTableFieldMoveToRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = postPivotTableFieldMoveToWithHttpInfo(request);
@@ -11144,7 +10996,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postPivotTableCellStyleValidateBeforeCall(PostPivotTableCellStyleRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  postPivotTableCellStyle(PostPivotTableCellStyleRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = postPivotTableCellStyleWithHttpInfo(request);
@@ -11198,7 +11049,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postPivotTableStyleValidateBeforeCall(PostPivotTableStyleRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  postPivotTableStyle(PostPivotTableStyleRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = postPivotTableStyleWithHttpInfo(request);
@@ -11252,7 +11102,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postPivotTableUpdatePivotFieldsValidateBeforeCall(PostPivotTableUpdatePivotFieldsRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  postPivotTableUpdatePivotFields(PostPivotTableUpdatePivotFieldsRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = postPivotTableUpdatePivotFieldsWithHttpInfo(request);
@@ -11306,7 +11155,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postPivotTableUpdatePivotFieldValidateBeforeCall(PostPivotTableUpdatePivotFieldRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  postPivotTableUpdatePivotField(PostPivotTableUpdatePivotFieldRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = postPivotTableUpdatePivotFieldWithHttpInfo(request);
@@ -11360,7 +11208,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postWorksheetPivotTableCalculateValidateBeforeCall(PostWorksheetPivotTableCalculateRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  postWorksheetPivotTableCalculate(PostWorksheetPivotTableCalculateRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = postWorksheetPivotTableCalculateWithHttpInfo(request);
@@ -11414,7 +11261,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postWorksheetPivotTableMoveValidateBeforeCall(PostWorksheetPivotTableMoveRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  postWorksheetPivotTableMove(PostWorksheetPivotTableMoveRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = postWorksheetPivotTableMoveWithHttpInfo(request);
@@ -11468,7 +11314,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call deleteWorksheetPivotTablesValidateBeforeCall(DeleteWorksheetPivotTablesRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  deleteWorksheetPivotTables(DeleteWorksheetPivotTablesRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = deleteWorksheetPivotTablesWithHttpInfo(request);
@@ -11522,7 +11367,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call deleteWorksheetPivotTableValidateBeforeCall(DeleteWorksheetPivotTableRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  deleteWorksheetPivotTable(DeleteWorksheetPivotTableRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = deleteWorksheetPivotTableWithHttpInfo(request);
@@ -11576,7 +11420,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call deletePivotTableFieldValidateBeforeCall(DeletePivotTableFieldRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  deletePivotTableField(DeletePivotTableFieldRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = deletePivotTableFieldWithHttpInfo(request);
@@ -11630,7 +11473,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call deleteWorksheetPivotTableFiltersValidateBeforeCall(DeleteWorksheetPivotTableFiltersRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  deleteWorksheetPivotTableFilters(DeleteWorksheetPivotTableFiltersRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = deleteWorksheetPivotTableFiltersWithHttpInfo(request);
@@ -11684,7 +11526,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call deleteWorksheetPivotTableFilterValidateBeforeCall(DeleteWorksheetPivotTableFilterRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  deleteWorksheetPivotTableFilter(DeleteWorksheetPivotTableFilterRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = deleteWorksheetPivotTableFilterWithHttpInfo(request);
@@ -11738,7 +11579,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call getDocumentPropertiesValidateBeforeCall(GetDocumentPropertiesRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsDocumentPropertiesResponse  getDocumentProperties(GetDocumentPropertiesRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsDocumentPropertiesResponse > resp = getDocumentPropertiesWithHttpInfo(request);
@@ -11792,7 +11632,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call putDocumentPropertyValidateBeforeCall(PutDocumentPropertyRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  putDocumentProperty(PutDocumentPropertyRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = putDocumentPropertyWithHttpInfo(request);
@@ -11846,7 +11685,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call getDocumentPropertyValidateBeforeCall(GetDocumentPropertyRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsDocumentPropertyResponse  getDocumentProperty(GetDocumentPropertyRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsDocumentPropertyResponse > resp = getDocumentPropertyWithHttpInfo(request);
@@ -11900,7 +11738,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call deleteDocumentPropertyValidateBeforeCall(DeleteDocumentPropertyRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  deleteDocumentProperty(DeleteDocumentPropertyRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = deleteDocumentPropertyWithHttpInfo(request);
@@ -11954,7 +11791,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call deleteDocumentPropertiesValidateBeforeCall(DeleteDocumentPropertiesRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  deleteDocumentProperties(DeleteDocumentPropertiesRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = deleteDocumentPropertiesWithHttpInfo(request);
@@ -12008,7 +11844,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postDigitalSignatureValidateBeforeCall(PostDigitalSignatureRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  postDigitalSignature(PostDigitalSignatureRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = postDigitalSignatureWithHttpInfo(request);
@@ -12062,7 +11897,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postEncryptWorkbookValidateBeforeCall(PostEncryptWorkbookRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  postEncryptWorkbook(PostEncryptWorkbookRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = postEncryptWorkbookWithHttpInfo(request);
@@ -12116,7 +11950,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call deleteDecryptWorkbookValidateBeforeCall(DeleteDecryptWorkbookRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  deleteDecryptWorkbook(DeleteDecryptWorkbookRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = deleteDecryptWorkbookWithHttpInfo(request);
@@ -12170,7 +12003,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postProtectWorkbookValidateBeforeCall(PostProtectWorkbookRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  postProtectWorkbook(PostProtectWorkbookRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = postProtectWorkbookWithHttpInfo(request);
@@ -12224,7 +12056,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call deleteUnProtectWorkbookValidateBeforeCall(DeleteUnProtectWorkbookRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  deleteUnProtectWorkbook(DeleteUnProtectWorkbookRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = deleteUnProtectWorkbookWithHttpInfo(request);
@@ -12278,7 +12109,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call putDocumentProtectFromChangesValidateBeforeCall(PutDocumentProtectFromChangesRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  putDocumentProtectFromChanges(PutDocumentProtectFromChangesRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = putDocumentProtectFromChangesWithHttpInfo(request);
@@ -12332,7 +12162,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call deleteDocumentUnProtectFromChangesValidateBeforeCall(DeleteDocumentUnProtectFromChangesRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  deleteDocumentUnProtectFromChanges(DeleteDocumentUnProtectFromChangesRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = deleteDocumentUnProtectFromChangesWithHttpInfo(request);
@@ -12386,7 +12215,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postUnlockValidateBeforeCall(PostUnlockRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  FilesResult  postUnlock(PostUnlockRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< FilesResult > resp = postUnlockWithHttpInfo(request);
@@ -12440,7 +12268,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postLockValidateBeforeCall(PostLockRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  FilesResult  postLock(PostLockRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< FilesResult > resp = postLockWithHttpInfo(request);
@@ -12494,7 +12321,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postProtectValidateBeforeCall(PostProtectRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  FilesResult  postProtect(PostProtectRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< FilesResult > resp = postProtectWithHttpInfo(request);
@@ -12548,7 +12374,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postWorksheetCellsRangesCopyValidateBeforeCall(PostWorksheetCellsRangesCopyRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  postWorksheetCellsRangesCopy(PostWorksheetCellsRangesCopyRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = postWorksheetCellsRangesCopyWithHttpInfo(request);
@@ -12602,7 +12427,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postWorksheetCellsRangeMergeValidateBeforeCall(PostWorksheetCellsRangeMergeRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  postWorksheetCellsRangeMerge(PostWorksheetCellsRangeMergeRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = postWorksheetCellsRangeMergeWithHttpInfo(request);
@@ -12656,7 +12480,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postWorksheetCellsRangeUnMergeValidateBeforeCall(PostWorksheetCellsRangeUnMergeRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  postWorksheetCellsRangeUnMerge(PostWorksheetCellsRangeUnMergeRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = postWorksheetCellsRangeUnMergeWithHttpInfo(request);
@@ -12710,7 +12533,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postWorksheetCellsRangeStyleValidateBeforeCall(PostWorksheetCellsRangeStyleRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  postWorksheetCellsRangeStyle(PostWorksheetCellsRangeStyleRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = postWorksheetCellsRangeStyleWithHttpInfo(request);
@@ -12764,7 +12586,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call getWorksheetCellsRangeValueValidateBeforeCall(GetWorksheetCellsRangeValueRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  RangeValueResponse  getWorksheetCellsRangeValue(GetWorksheetCellsRangeValueRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< RangeValueResponse > resp = getWorksheetCellsRangeValueWithHttpInfo(request);
@@ -12818,7 +12639,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postWorksheetCellsRangeValueValidateBeforeCall(PostWorksheetCellsRangeValueRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  postWorksheetCellsRangeValue(PostWorksheetCellsRangeValueRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = postWorksheetCellsRangeValueWithHttpInfo(request);
@@ -12872,7 +12692,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postWorksheetCellsRangeMoveToValidateBeforeCall(PostWorksheetCellsRangeMoveToRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  postWorksheetCellsRangeMoveTo(PostWorksheetCellsRangeMoveToRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = postWorksheetCellsRangeMoveToWithHttpInfo(request);
@@ -12926,7 +12745,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postWorksheetCellsRangeSortValidateBeforeCall(PostWorksheetCellsRangeSortRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  postWorksheetCellsRangeSort(PostWorksheetCellsRangeSortRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = postWorksheetCellsRangeSortWithHttpInfo(request);
@@ -12980,7 +12798,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postWorksheetCellsRangeOutlineBorderValidateBeforeCall(PostWorksheetCellsRangeOutlineBorderRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  postWorksheetCellsRangeOutlineBorder(PostWorksheetCellsRangeOutlineBorderRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = postWorksheetCellsRangeOutlineBorderWithHttpInfo(request);
@@ -13034,7 +12851,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postWorksheetCellsRangeColumnWidthValidateBeforeCall(PostWorksheetCellsRangeColumnWidthRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  postWorksheetCellsRangeColumnWidth(PostWorksheetCellsRangeColumnWidthRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = postWorksheetCellsRangeColumnWidthWithHttpInfo(request);
@@ -13088,7 +12904,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postWorksheetCellsRangeRowHeightValidateBeforeCall(PostWorksheetCellsRangeRowHeightRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  postWorksheetCellsRangeRowHeight(PostWorksheetCellsRangeRowHeightRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = postWorksheetCellsRangeRowHeightWithHttpInfo(request);
@@ -13142,7 +12957,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postWorksheetCellsRangeToImageValidateBeforeCall(PostWorksheetCellsRangeToImageRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  File  postWorksheetCellsRangeToImage(PostWorksheetCellsRangeToImageRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< File > resp = postWorksheetCellsRangeToImageWithHttpInfo(request);
@@ -13196,7 +13010,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call putWorksheetCellsRangeValidateBeforeCall(PutWorksheetCellsRangeRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  putWorksheetCellsRange(PutWorksheetCellsRangeRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = putWorksheetCellsRangeWithHttpInfo(request);
@@ -13250,7 +13063,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call deleteWorksheetCellsRangeValidateBeforeCall(DeleteWorksheetCellsRangeRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  deleteWorksheetCellsRange(DeleteWorksheetCellsRangeRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = deleteWorksheetCellsRangeWithHttpInfo(request);
@@ -13304,7 +13116,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call getWorksheetShapesValidateBeforeCall(GetWorksheetShapesRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  ShapesResponse  getWorksheetShapes(GetWorksheetShapesRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< ShapesResponse > resp = getWorksheetShapesWithHttpInfo(request);
@@ -13358,7 +13169,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call getWorksheetShapeValidateBeforeCall(GetWorksheetShapeRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  ShapeResponse  getWorksheetShape(GetWorksheetShapeRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< ShapeResponse > resp = getWorksheetShapeWithHttpInfo(request);
@@ -13412,7 +13222,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call putWorksheetShapeValidateBeforeCall(PutWorksheetShapeRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  putWorksheetShape(PutWorksheetShapeRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = putWorksheetShapeWithHttpInfo(request);
@@ -13466,7 +13275,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call deleteWorksheetShapesValidateBeforeCall(DeleteWorksheetShapesRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  deleteWorksheetShapes(DeleteWorksheetShapesRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = deleteWorksheetShapesWithHttpInfo(request);
@@ -13520,7 +13328,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call deleteWorksheetShapeValidateBeforeCall(DeleteWorksheetShapeRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  deleteWorksheetShape(DeleteWorksheetShapeRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = deleteWorksheetShapeWithHttpInfo(request);
@@ -13574,7 +13381,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postWorksheetShapeValidateBeforeCall(PostWorksheetShapeRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  postWorksheetShape(PostWorksheetShapeRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = postWorksheetShapeWithHttpInfo(request);
@@ -13628,7 +13434,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postWorksheetGroupShapeValidateBeforeCall(PostWorksheetGroupShapeRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  postWorksheetGroupShape(PostWorksheetGroupShapeRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = postWorksheetGroupShapeWithHttpInfo(request);
@@ -13682,7 +13487,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postWorksheetUngroupShapeValidateBeforeCall(PostWorksheetUngroupShapeRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  postWorksheetUngroupShape(PostWorksheetUngroupShapeRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = postWorksheetUngroupShapeWithHttpInfo(request);
@@ -13736,7 +13540,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call getWorksheetSparklineGroupsValidateBeforeCall(GetWorksheetSparklineGroupsRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  SparklineGroupsResponse  getWorksheetSparklineGroups(GetWorksheetSparklineGroupsRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< SparklineGroupsResponse > resp = getWorksheetSparklineGroupsWithHttpInfo(request);
@@ -13790,7 +13593,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call getWorksheetSparklineGroupValidateBeforeCall(GetWorksheetSparklineGroupRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  SparklineGroupResponse  getWorksheetSparklineGroup(GetWorksheetSparklineGroupRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< SparklineGroupResponse > resp = getWorksheetSparklineGroupWithHttpInfo(request);
@@ -13844,7 +13646,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call deleteWorksheetSparklineGroupsValidateBeforeCall(DeleteWorksheetSparklineGroupsRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  deleteWorksheetSparklineGroups(DeleteWorksheetSparklineGroupsRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = deleteWorksheetSparklineGroupsWithHttpInfo(request);
@@ -13898,7 +13699,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call deleteWorksheetSparklineGroupValidateBeforeCall(DeleteWorksheetSparklineGroupRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  deleteWorksheetSparklineGroup(DeleteWorksheetSparklineGroupRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = deleteWorksheetSparklineGroupWithHttpInfo(request);
@@ -13952,7 +13752,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call putWorksheetSparklineGroupValidateBeforeCall(PutWorksheetSparklineGroupRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  putWorksheetSparklineGroup(PutWorksheetSparklineGroupRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = putWorksheetSparklineGroupWithHttpInfo(request);
@@ -14006,7 +13805,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postWorksheetSparklineGroupValidateBeforeCall(PostWorksheetSparklineGroupRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  postWorksheetSparklineGroup(PostWorksheetSparklineGroupRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = postWorksheetSparklineGroupWithHttpInfo(request);
@@ -14060,7 +13858,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postCharacterCountValidateBeforeCall(PostCharacterCountRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  String  postCharacterCount(PostCharacterCountRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< String > resp = postCharacterCountWithHttpInfo(request);
@@ -14114,7 +13911,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postWordsCountValidateBeforeCall(PostWordsCountRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  String  postWordsCount(PostWordsCountRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< String > resp = postWordsCountWithHttpInfo(request);
@@ -14168,7 +13964,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postSpecifyWordsCountValidateBeforeCall(PostSpecifyWordsCountRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  String  postSpecifyWordsCount(PostSpecifyWordsCountRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< String > resp = postSpecifyWordsCountWithHttpInfo(request);
@@ -14222,7 +14017,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postRunTaskValidateBeforeCall(PostRunTaskRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  File  postRunTask(PostRunTaskRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< File > resp = postRunTaskWithHttpInfo(request);
@@ -14276,7 +14070,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postAddTextContentValidateBeforeCall(PostAddTextContentRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  FileInfo  postAddTextContent(PostAddTextContentRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< FileInfo > resp = postAddTextContentWithHttpInfo(request);
@@ -14330,7 +14123,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postTrimContentValidateBeforeCall(PostTrimContentRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  FileInfo  postTrimContent(PostTrimContentRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< FileInfo > resp = postTrimContentWithHttpInfo(request);
@@ -14384,7 +14176,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postUpdateWordCaseValidateBeforeCall(PostUpdateWordCaseRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  FileInfo  postUpdateWordCase(PostUpdateWordCaseRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< FileInfo > resp = postUpdateWordCaseWithHttpInfo(request);
@@ -14438,7 +14229,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postRemoveCharactersValidateBeforeCall(PostRemoveCharactersRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  FileInfo  postRemoveCharacters(PostRemoveCharactersRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< FileInfo > resp = postRemoveCharactersWithHttpInfo(request);
@@ -14492,7 +14282,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postConvertTextValidateBeforeCall(PostConvertTextRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  FileInfo  postConvertText(PostConvertTextRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< FileInfo > resp = postConvertTextWithHttpInfo(request);
@@ -14546,7 +14335,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postRemoveDuplicatesValidateBeforeCall(PostRemoveDuplicatesRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  FileInfo  postRemoveDuplicates(PostRemoveDuplicatesRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< FileInfo > resp = postRemoveDuplicatesWithHttpInfo(request);
@@ -14600,7 +14388,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postExtractTextValidateBeforeCall(PostExtractTextRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  FileInfo  postExtractText(PostExtractTextRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< FileInfo > resp = postExtractTextWithHttpInfo(request);
@@ -14654,7 +14441,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postSplitTextValidateBeforeCall(PostSplitTextRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  FileInfo  postSplitText(PostSplitTextRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< FileInfo > resp = postSplitTextWithHttpInfo(request);
@@ -14708,7 +14494,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call getWorkbookDefaultStyleValidateBeforeCall(GetWorkbookDefaultStyleRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  StyleResponse  getWorkbookDefaultStyle(GetWorkbookDefaultStyleRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< StyleResponse > resp = getWorkbookDefaultStyleWithHttpInfo(request);
@@ -14762,7 +14547,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call getWorkbookTextItemsValidateBeforeCall(GetWorkbookTextItemsRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  TextItemsResponse  getWorkbookTextItems(GetWorkbookTextItemsRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< TextItemsResponse > resp = getWorkbookTextItemsWithHttpInfo(request);
@@ -14816,7 +14600,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call getWorkbookNamesValidateBeforeCall(GetWorkbookNamesRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  NamesResponse  getWorkbookNames(GetWorkbookNamesRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< NamesResponse > resp = getWorkbookNamesWithHttpInfo(request);
@@ -14870,7 +14653,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call putWorkbookNameValidateBeforeCall(PutWorkbookNameRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  putWorkbookName(PutWorkbookNameRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = putWorkbookNameWithHttpInfo(request);
@@ -14924,7 +14706,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call getWorkbookNameValidateBeforeCall(GetWorkbookNameRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  NameResponse  getWorkbookName(GetWorkbookNameRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< NameResponse > resp = getWorkbookNameWithHttpInfo(request);
@@ -14978,7 +14759,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postWorkbookNameValidateBeforeCall(PostWorkbookNameRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  postWorkbookName(PostWorkbookNameRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = postWorkbookNameWithHttpInfo(request);
@@ -15032,7 +14812,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call getWorkbookNameValueValidateBeforeCall(GetWorkbookNameValueRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  RangeValueResponse  getWorkbookNameValue(GetWorkbookNameValueRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< RangeValueResponse > resp = getWorkbookNameValueWithHttpInfo(request);
@@ -15086,7 +14865,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call deleteWorkbookNamesValidateBeforeCall(DeleteWorkbookNamesRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  deleteWorkbookNames(DeleteWorkbookNamesRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = deleteWorkbookNamesWithHttpInfo(request);
@@ -15140,7 +14918,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call deleteWorkbookNameValidateBeforeCall(DeleteWorkbookNameRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  deleteWorkbookName(DeleteWorkbookNameRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = deleteWorkbookNameWithHttpInfo(request);
@@ -15194,7 +14971,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postWorkbooksMergeValidateBeforeCall(PostWorkbooksMergeRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  WorkbookResponse  postWorkbooksMerge(PostWorkbooksMergeRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< WorkbookResponse > resp = postWorkbooksMergeWithHttpInfo(request);
@@ -15248,7 +15024,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postWorkbooksTextSearchValidateBeforeCall(PostWorkbooksTextSearchRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  TextItemsResponse  postWorkbooksTextSearch(PostWorkbooksTextSearchRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< TextItemsResponse > resp = postWorkbooksTextSearchWithHttpInfo(request);
@@ -15302,7 +15077,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postWorkbookTextReplaceValidateBeforeCall(PostWorkbookTextReplaceRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  WorkbookReplaceResponse  postWorkbookTextReplace(PostWorkbookTextReplaceRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< WorkbookReplaceResponse > resp = postWorkbookTextReplaceWithHttpInfo(request);
@@ -15356,7 +15130,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postWorkbookGetSmartMarkerResultValidateBeforeCall(PostWorkbookGetSmartMarkerResultRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  File  postWorkbookGetSmartMarkerResult(PostWorkbookGetSmartMarkerResultRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< File > resp = postWorkbookGetSmartMarkerResultWithHttpInfo(request);
@@ -15410,7 +15183,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call putWorkbookCreateValidateBeforeCall(PutWorkbookCreateRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  putWorkbookCreate(PutWorkbookCreateRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = putWorkbookCreateWithHttpInfo(request);
@@ -15464,7 +15236,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postWorkbookSplitValidateBeforeCall(PostWorkbookSplitRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  SplitResultResponse  postWorkbookSplit(PostWorkbookSplitRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< SplitResultResponse > resp = postWorkbookSplitWithHttpInfo(request);
@@ -15518,7 +15289,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postWorkbookCalculateFormulaValidateBeforeCall(PostWorkbookCalculateFormulaRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  postWorkbookCalculateFormula(PostWorkbookCalculateFormulaRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = postWorkbookCalculateFormulaWithHttpInfo(request);
@@ -15572,7 +15342,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postAutofitWorkbookRowsValidateBeforeCall(PostAutofitWorkbookRowsRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  postAutofitWorkbookRows(PostAutofitWorkbookRowsRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = postAutofitWorkbookRowsWithHttpInfo(request);
@@ -15626,7 +15395,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postAutofitWorkbookColumnsValidateBeforeCall(PostAutofitWorkbookColumnsRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  postAutofitWorkbookColumns(PostAutofitWorkbookColumnsRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = postAutofitWorkbookColumnsWithHttpInfo(request);
@@ -15680,7 +15448,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call getWorkbookSettingsValidateBeforeCall(GetWorkbookSettingsRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  WorkbookSettingsResponse  getWorkbookSettings(GetWorkbookSettingsRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< WorkbookSettingsResponse > resp = getWorkbookSettingsWithHttpInfo(request);
@@ -15734,7 +15501,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postWorkbookSettingsValidateBeforeCall(PostWorkbookSettingsRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  postWorkbookSettings(PostWorkbookSettingsRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = postWorkbookSettingsWithHttpInfo(request);
@@ -15788,7 +15554,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call putWorkbookBackgroundValidateBeforeCall(PutWorkbookBackgroundRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  putWorkbookBackground(PutWorkbookBackgroundRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = putWorkbookBackgroundWithHttpInfo(request);
@@ -15842,7 +15607,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call deleteWorkbookBackgroundValidateBeforeCall(DeleteWorkbookBackgroundRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  deleteWorkbookBackground(DeleteWorkbookBackgroundRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = deleteWorkbookBackgroundWithHttpInfo(request);
@@ -15896,7 +15660,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call putWorkbookWaterMarkerValidateBeforeCall(PutWorkbookWaterMarkerRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  putWorkbookWaterMarker(PutWorkbookWaterMarkerRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = putWorkbookWaterMarkerWithHttpInfo(request);
@@ -15950,7 +15713,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call getPageCountValidateBeforeCall(GetPageCountRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  Integer  getPageCount(GetPageCountRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< Integer > resp = getPageCountWithHttpInfo(request);
@@ -16004,7 +15766,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call getAllStylesValidateBeforeCall(GetAllStylesRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  StylesResponse  getAllStyles(GetAllStylesRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< StylesResponse > resp = getAllStylesWithHttpInfo(request);
@@ -16058,7 +15819,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call getWorksheetsValidateBeforeCall(GetWorksheetsRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  WorksheetsResponse  getWorksheets(GetWorksheetsRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< WorksheetsResponse > resp = getWorksheetsWithHttpInfo(request);
@@ -16112,7 +15872,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call getWorksheetWithFormatValidateBeforeCall(GetWorksheetWithFormatRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  File  getWorksheetWithFormat(GetWorksheetWithFormatRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< File > resp = getWorksheetWithFormatWithHttpInfo(request);
@@ -16166,7 +15925,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call putChangeVisibilityWorksheetValidateBeforeCall(PutChangeVisibilityWorksheetRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  putChangeVisibilityWorksheet(PutChangeVisibilityWorksheetRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = putChangeVisibilityWorksheetWithHttpInfo(request);
@@ -16220,7 +15978,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call putActiveWorksheetValidateBeforeCall(PutActiveWorksheetRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  putActiveWorksheet(PutActiveWorksheetRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = putActiveWorksheetWithHttpInfo(request);
@@ -16274,7 +16031,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call putInsertNewWorksheetValidateBeforeCall(PutInsertNewWorksheetRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  putInsertNewWorksheet(PutInsertNewWorksheetRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = putInsertNewWorksheetWithHttpInfo(request);
@@ -16328,7 +16084,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call putAddNewWorksheetValidateBeforeCall(PutAddNewWorksheetRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  putAddNewWorksheet(PutAddNewWorksheetRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = putAddNewWorksheetWithHttpInfo(request);
@@ -16382,7 +16137,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call deleteWorksheetValidateBeforeCall(DeleteWorksheetRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  deleteWorksheet(DeleteWorksheetRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = deleteWorksheetWithHttpInfo(request);
@@ -16436,7 +16190,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call deleteWorksheetsValidateBeforeCall(DeleteWorksheetsRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  deleteWorksheets(DeleteWorksheetsRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = deleteWorksheetsWithHttpInfo(request);
@@ -16490,7 +16243,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postMoveWorksheetValidateBeforeCall(PostMoveWorksheetRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  postMoveWorksheet(PostMoveWorksheetRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = postMoveWorksheetWithHttpInfo(request);
@@ -16544,7 +16296,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call putProtectWorksheetValidateBeforeCall(PutProtectWorksheetRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  putProtectWorksheet(PutProtectWorksheetRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = putProtectWorksheetWithHttpInfo(request);
@@ -16598,7 +16349,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call deleteUnprotectWorksheetValidateBeforeCall(DeleteUnprotectWorksheetRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  deleteUnprotectWorksheet(DeleteUnprotectWorksheetRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = deleteUnprotectWorksheetWithHttpInfo(request);
@@ -16652,7 +16402,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call getWorksheetTextItemsValidateBeforeCall(GetWorksheetTextItemsRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  TextItemsResponse  getWorksheetTextItems(GetWorksheetTextItemsRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< TextItemsResponse > resp = getWorksheetTextItemsWithHttpInfo(request);
@@ -16706,7 +16455,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call getWorksheetCommentsValidateBeforeCall(GetWorksheetCommentsRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CommentsResponse  getWorksheetComments(GetWorksheetCommentsRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CommentsResponse > resp = getWorksheetCommentsWithHttpInfo(request);
@@ -16760,7 +16508,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call getWorksheetCommentValidateBeforeCall(GetWorksheetCommentRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CommentResponse  getWorksheetComment(GetWorksheetCommentRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CommentResponse > resp = getWorksheetCommentWithHttpInfo(request);
@@ -16814,7 +16561,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call putWorksheetCommentValidateBeforeCall(PutWorksheetCommentRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CommentResponse  putWorksheetComment(PutWorksheetCommentRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CommentResponse > resp = putWorksheetCommentWithHttpInfo(request);
@@ -16868,7 +16614,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postWorksheetCommentValidateBeforeCall(PostWorksheetCommentRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  postWorksheetComment(PostWorksheetCommentRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = postWorksheetCommentWithHttpInfo(request);
@@ -16922,7 +16667,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call deleteWorksheetCommentValidateBeforeCall(DeleteWorksheetCommentRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  deleteWorksheetComment(DeleteWorksheetCommentRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = deleteWorksheetCommentWithHttpInfo(request);
@@ -16976,7 +16720,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call deleteWorksheetCommentsValidateBeforeCall(DeleteWorksheetCommentsRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  deleteWorksheetComments(DeleteWorksheetCommentsRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = deleteWorksheetCommentsWithHttpInfo(request);
@@ -17030,7 +16773,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call getWorksheetMergedCellsValidateBeforeCall(GetWorksheetMergedCellsRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  MergedCellsResponse  getWorksheetMergedCells(GetWorksheetMergedCellsRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< MergedCellsResponse > resp = getWorksheetMergedCellsWithHttpInfo(request);
@@ -17084,7 +16826,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call getWorksheetMergedCellValidateBeforeCall(GetWorksheetMergedCellRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  MergedCellResponse  getWorksheetMergedCell(GetWorksheetMergedCellRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< MergedCellResponse > resp = getWorksheetMergedCellWithHttpInfo(request);
@@ -17138,7 +16879,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call getWorksheetCalculateFormulaValidateBeforeCall(GetWorksheetCalculateFormulaRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  SingleValueResponse  getWorksheetCalculateFormula(GetWorksheetCalculateFormulaRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< SingleValueResponse > resp = getWorksheetCalculateFormulaWithHttpInfo(request);
@@ -17192,7 +16932,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postWorksheetCalculateFormulaValidateBeforeCall(PostWorksheetCalculateFormulaRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  SingleValueResponse  postWorksheetCalculateFormula(PostWorksheetCalculateFormulaRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< SingleValueResponse > resp = postWorksheetCalculateFormulaWithHttpInfo(request);
@@ -17246,7 +16985,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postWorksheetTextSearchValidateBeforeCall(PostWorksheetTextSearchRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  TextItemsResponse  postWorksheetTextSearch(PostWorksheetTextSearchRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< TextItemsResponse > resp = postWorksheetTextSearchWithHttpInfo(request);
@@ -17300,7 +17038,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postWorksheetTextReplaceValidateBeforeCall(PostWorksheetTextReplaceRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  WorksheetReplaceResponse  postWorksheetTextReplace(PostWorksheetTextReplaceRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< WorksheetReplaceResponse > resp = postWorksheetTextReplaceWithHttpInfo(request);
@@ -17354,7 +17091,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postWorksheetRangeSortValidateBeforeCall(PostWorksheetRangeSortRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  postWorksheetRangeSort(PostWorksheetRangeSortRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = postWorksheetRangeSortWithHttpInfo(request);
@@ -17408,7 +17144,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postAutofitWorksheetRowValidateBeforeCall(PostAutofitWorksheetRowRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  postAutofitWorksheetRow(PostAutofitWorksheetRowRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = postAutofitWorksheetRowWithHttpInfo(request);
@@ -17462,7 +17197,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postAutofitWorksheetRowsValidateBeforeCall(PostAutofitWorksheetRowsRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  postAutofitWorksheetRows(PostAutofitWorksheetRowsRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = postAutofitWorksheetRowsWithHttpInfo(request);
@@ -17516,7 +17250,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postAutofitWorksheetColumnsValidateBeforeCall(PostAutofitWorksheetColumnsRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  postAutofitWorksheetColumns(PostAutofitWorksheetColumnsRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = postAutofitWorksheetColumnsWithHttpInfo(request);
@@ -17570,7 +17303,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call putWorksheetBackgroundValidateBeforeCall(PutWorksheetBackgroundRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  putWorksheetBackground(PutWorksheetBackgroundRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = putWorksheetBackgroundWithHttpInfo(request);
@@ -17624,7 +17356,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call deleteWorksheetBackgroundValidateBeforeCall(DeleteWorksheetBackgroundRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  deleteWorksheetBackground(DeleteWorksheetBackgroundRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = deleteWorksheetBackgroundWithHttpInfo(request);
@@ -17678,7 +17409,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call putWorksheetFreezePanesValidateBeforeCall(PutWorksheetFreezePanesRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  putWorksheetFreezePanes(PutWorksheetFreezePanesRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = putWorksheetFreezePanesWithHttpInfo(request);
@@ -17732,7 +17462,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call deleteWorksheetFreezePanesValidateBeforeCall(DeleteWorksheetFreezePanesRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  deleteWorksheetFreezePanes(DeleteWorksheetFreezePanesRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = deleteWorksheetFreezePanesWithHttpInfo(request);
@@ -17786,7 +17515,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postCopyWorksheetValidateBeforeCall(PostCopyWorksheetRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  postCopyWorksheet(PostCopyWorksheetRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = postCopyWorksheetWithHttpInfo(request);
@@ -17840,7 +17568,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postRenameWorksheetValidateBeforeCall(PostRenameWorksheetRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  postRenameWorksheet(PostRenameWorksheetRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = postRenameWorksheetWithHttpInfo(request);
@@ -17894,7 +17621,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postUpdateWorksheetPropertyValidateBeforeCall(PostUpdateWorksheetPropertyRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  postUpdateWorksheetProperty(PostUpdateWorksheetPropertyRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = postUpdateWorksheetPropertyWithHttpInfo(request);
@@ -17948,7 +17674,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call getNamedRangesValidateBeforeCall(GetNamedRangesRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  RangesResponse  getNamedRanges(GetNamedRangesRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< RangesResponse > resp = getNamedRangesWithHttpInfo(request);
@@ -18002,7 +17727,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call getNamedRangeValueValidateBeforeCall(GetNamedRangeValueRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  RangeValueResponse  getNamedRangeValue(GetNamedRangeValueRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< RangeValueResponse > resp = getNamedRangeValueWithHttpInfo(request);
@@ -18056,7 +17780,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postUpdateWorksheetZoomValidateBeforeCall(PostUpdateWorksheetZoomRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  postUpdateWorksheetZoom(PostUpdateWorksheetZoomRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = postUpdateWorksheetZoomWithHttpInfo(request);
@@ -18110,7 +17833,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call getWorksheetPageCountValidateBeforeCall(GetWorksheetPageCountRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  Integer  getWorksheetPageCount(GetWorksheetPageCountRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< Integer > resp = getWorksheetPageCountWithHttpInfo(request);
@@ -18164,7 +17886,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call getWorksheetValidationsValidateBeforeCall(GetWorksheetValidationsRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  ValidationsResponse  getWorksheetValidations(GetWorksheetValidationsRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< ValidationsResponse > resp = getWorksheetValidationsWithHttpInfo(request);
@@ -18218,7 +17939,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call getWorksheetValidationValidateBeforeCall(GetWorksheetValidationRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  ValidationResponse  getWorksheetValidation(GetWorksheetValidationRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< ValidationResponse > resp = getWorksheetValidationWithHttpInfo(request);
@@ -18272,7 +17992,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call putWorksheetValidationValidateBeforeCall(PutWorksheetValidationRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  putWorksheetValidation(PutWorksheetValidationRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = putWorksheetValidationWithHttpInfo(request);
@@ -18326,7 +18045,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call postWorksheetValidationValidateBeforeCall(PostWorksheetValidationRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  postWorksheetValidation(PostWorksheetValidationRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = postWorksheetValidationWithHttpInfo(request);
@@ -18380,7 +18098,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call deleteWorksheetValidationValidateBeforeCall(DeleteWorksheetValidationRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  deleteWorksheetValidation(DeleteWorksheetValidationRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = deleteWorksheetValidationWithHttpInfo(request);
@@ -18434,7 +18151,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call deleteWorksheetValidationsValidateBeforeCall(DeleteWorksheetValidationsRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  CellsCloudResponse  deleteWorksheetValidations(DeleteWorksheetValidationsRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< CellsCloudResponse > resp = deleteWorksheetValidationsWithHttpInfo(request);
@@ -18488,7 +18204,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call downloadFileValidateBeforeCall(DownloadFileRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  File  downloadFile(DownloadFileRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< File > resp = downloadFileWithHttpInfo(request);
@@ -18542,7 +18257,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call uploadFileValidateBeforeCall(UploadFileRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  FilesUploadResult  uploadFile(UploadFileRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< FilesUploadResult > resp = uploadFileWithHttpInfo(request);
@@ -18596,7 +18310,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call copyFileValidateBeforeCall(CopyFileRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  void  copyFile(CopyFileRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< Void > resp = copyFileWithHttpInfo(request);
@@ -18649,7 +18362,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call moveFileValidateBeforeCall(MoveFileRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  void  moveFile(MoveFileRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< Void > resp = moveFileWithHttpInfo(request);
@@ -18702,7 +18414,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call deleteFileValidateBeforeCall(DeleteFileRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  void  deleteFile(DeleteFileRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< Void > resp = deleteFileWithHttpInfo(request);
@@ -18755,7 +18466,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call getFilesListValidateBeforeCall(GetFilesListRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  FilesList  getFilesList(GetFilesListRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< FilesList > resp = getFilesListWithHttpInfo(request);
@@ -18809,7 +18519,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call createFolderValidateBeforeCall(CreateFolderRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  void  createFolder(CreateFolderRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< Void > resp = createFolderWithHttpInfo(request);
@@ -18862,7 +18571,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call copyFolderValidateBeforeCall(CopyFolderRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  void  copyFolder(CopyFolderRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< Void > resp = copyFolderWithHttpInfo(request);
@@ -18915,7 +18623,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call moveFolderValidateBeforeCall(MoveFolderRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  void  moveFolder(MoveFolderRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< Void > resp = moveFolderWithHttpInfo(request);
@@ -18968,7 +18675,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call deleteFolderValidateBeforeCall(DeleteFolderRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  void  deleteFolder(DeleteFolderRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< Void > resp = deleteFolderWithHttpInfo(request);
@@ -19021,7 +18727,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call storageExistsValidateBeforeCall(StorageExistsRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  StorageExist  storageExists(StorageExistsRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< StorageExist > resp = storageExistsWithHttpInfo(request);
@@ -19075,7 +18780,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call objectExistsValidateBeforeCall(ObjectExistsRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  ObjectExist  objectExists(ObjectExistsRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< ObjectExist > resp = objectExistsWithHttpInfo(request);
@@ -19129,7 +18833,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call getDiscUsageValidateBeforeCall(GetDiscUsageRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  DiscUsage  getDiscUsage(GetDiscUsageRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< DiscUsage > resp = getDiscUsageWithHttpInfo(request);
@@ -19183,7 +18886,6 @@ public class CellsApi {
          private com.squareup.okhttp.Call getFileVersionsValidateBeforeCall(GetFileVersionsRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
-
          public  FileVersions  getFileVersions(GetFileVersionsRequest request) throws ApiException,  IOException {
              try {
                  ApiResponse< FileVersions > resp = getFileVersionsWithHttpInfo(request);

@@ -41,13 +41,13 @@ public class PostWorkbookGetSmartMarkerResultRequest  implements IRequestModel {
     public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
         this.extendQueryParameterMap = extendQueryParameterMap;
     }
-
     private String name;
     private String xmlFile;
     private String folder;
     private String outPath;
     private String storageName;
     private String outStorageName;
+    
         public PostWorkbookGetSmartMarkerResultRequest()
         {
 
@@ -68,7 +68,6 @@ public class PostWorkbookGetSmartMarkerResultRequest  implements IRequestModel {
         public void setName(String name) {
             this.name = name;
         }
-
 
         public String getXmlFile() {
             return this.xmlFile;
@@ -114,12 +113,14 @@ public class PostWorkbookGetSmartMarkerResultRequest  implements IRequestModel {
             this.outStorageName = outStorageName;
         }
 
+    
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
-         if (getName() == null) {
+         
+                if (getName() == null) {
                     throw new ApiException("Missing the required parameter 'Name' when calling PostWorkbookGetSmartMarkerResult");
                 }       
-        String localVarPath = "/cells/{name}/smartmarker".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString()))   ;
+        String localVarPath = "v3.0/cells/{name}/smartmarker".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString()))   ;
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -170,7 +171,5 @@ public class PostWorkbookGetSmartMarkerResultRequest  implements IRequestModel {
                 return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
 
     }
-
-
 }
 

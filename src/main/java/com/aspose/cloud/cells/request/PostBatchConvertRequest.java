@@ -41,8 +41,7 @@ public class PostBatchConvertRequest  implements IRequestModel {
     public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
         this.extendQueryParameterMap = extendQueryParameterMap;
     }
-
-    private BatchConvertRequest batchConvertRequest;
+    private BatchConvertRequest batchConvertRequest;    
         public PostBatchConvertRequest()
         {
 
@@ -58,13 +57,14 @@ public class PostBatchConvertRequest  implements IRequestModel {
         public void setBatchConvertRequest(BatchConvertRequest batchConvertRequest) {
             this.batchConvertRequest = batchConvertRequest;
         }
-
+    
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
-         if (getBatchConvertRequest() == null) {
+         
+                if (getBatchConvertRequest() == null) {
                     throw new ApiException("Missing the required parameter 'BatchConvertRequest' when calling PostBatchConvert");
                 }       
-        String localVarPath = "/cells/batch/convert";
+        String localVarPath = "v3.0/cells/batch/convert";
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
         List<Pair> localVarQueryParams = null;
@@ -101,7 +101,5 @@ public class PostBatchConvertRequest  implements IRequestModel {
                 return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
 
     }
-
-
 }
 

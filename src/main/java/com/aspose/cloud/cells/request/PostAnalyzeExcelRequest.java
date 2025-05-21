@@ -41,8 +41,7 @@ public class PostAnalyzeExcelRequest  implements IRequestModel {
     public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
         this.extendQueryParameterMap = extendQueryParameterMap;
     }
-
-    private AnalyzeExcelRequest analyzeExcelRequest;
+    private AnalyzeExcelRequest analyzeExcelRequest;    
         public PostAnalyzeExcelRequest()
         {
 
@@ -58,13 +57,14 @@ public class PostAnalyzeExcelRequest  implements IRequestModel {
         public void setAnalyzeExcelRequest(AnalyzeExcelRequest analyzeExcelRequest) {
             this.analyzeExcelRequest = analyzeExcelRequest;
         }
-
+    
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
-         if (getAnalyzeExcelRequest() == null) {
+         
+                if (getAnalyzeExcelRequest() == null) {
                     throw new ApiException("Missing the required parameter 'AnalyzeExcelRequest' when calling PostAnalyzeExcel");
                 }       
-        String localVarPath = "/cells/analyze";
+        String localVarPath = "v3.0/cells/analyze";
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
         List<Pair> localVarQueryParams = null;
@@ -101,7 +101,5 @@ public class PostAnalyzeExcelRequest  implements IRequestModel {
                 return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
 
     }
-
-
 }
 

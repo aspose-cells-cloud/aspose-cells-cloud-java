@@ -41,12 +41,12 @@ public class PostWorksheetListObjectConvertToRangeRequest  implements IRequestMo
     public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
         this.extendQueryParameterMap = extendQueryParameterMap;
     }
-
     private String name;
     private String sheetName;
     private Integer listObjectIndex;
     private String folder;
     private String storageName;
+    
         public PostWorksheetListObjectConvertToRangeRequest()
         {
 
@@ -85,7 +85,6 @@ public class PostWorksheetListObjectConvertToRangeRequest  implements IRequestMo
             this.listObjectIndex = listObjectIndex;
         }
 
-
         public String getFolder() {
             return this.folder;
         }
@@ -103,18 +102,22 @@ public class PostWorksheetListObjectConvertToRangeRequest  implements IRequestMo
             this.storageName = storageName;
         }
 
+    
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
-         if (getName() == null) {
+         
+                if (getName() == null) {
                     throw new ApiException("Missing the required parameter 'Name' when calling PostWorksheetListObjectConvertToRange");
                 } 
+
                 if (getSheetName() == null) {
                     throw new ApiException("Missing the required parameter 'SheetName' when calling PostWorksheetListObjectConvertToRange");
                 } 
+
                 if (getListObjectIndex() == null) {
                     throw new ApiException("Missing the required parameter 'ListObjectIndex' when calling PostWorksheetListObjectConvertToRange");
                 }       
-        String localVarPath = "/cells/{name}/worksheets/{sheetName}/listobjects/{listObjectIndex}/ConvertToRange".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
+        String localVarPath = "v3.0/cells/{name}/worksheets/{sheetName}/listobjects/{listObjectIndex}/ConvertToRange".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
     .replaceAll("\\{" + "sheetName" + "\\}", apiClient.escapeString(sheetName.toString())) 
     .replaceAll("\\{" + "listObjectIndex" + "\\}", apiClient.escapeString(listObjectIndex.toString()))   ;
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
@@ -158,7 +161,5 @@ public class PostWorksheetListObjectConvertToRangeRequest  implements IRequestMo
                 return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
 
     }
-
-
 }
 

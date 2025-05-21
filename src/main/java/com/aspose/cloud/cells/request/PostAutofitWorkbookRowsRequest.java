@@ -41,24 +41,28 @@ public class PostAutofitWorkbookRowsRequest  implements IRequestModel {
     public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
         this.extendQueryParameterMap = extendQueryParameterMap;
     }
-
     private String name;
     private Integer startRow;
     private Integer endRow;
     private Boolean onlyAuto;
     private String folder;
     private String storageName;
+    private Integer firstColumn;
+    private Integer lastColumn;
+    
         public PostAutofitWorkbookRowsRequest()
         {
 
         }
-        public PostAutofitWorkbookRowsRequest(String name, Integer startRow, Integer endRow, Boolean onlyAuto, String folder, String storageName) {
+        public PostAutofitWorkbookRowsRequest(String name, Integer startRow, Integer endRow, Boolean onlyAuto, String folder, String storageName, Integer firstColumn, Integer lastColumn) {
             this.name = name;
             this.startRow = startRow;
             this.endRow = endRow;
             this.onlyAuto = onlyAuto;
             this.folder = folder;
             this.storageName = storageName;
+            this.firstColumn = firstColumn;
+            this.lastColumn = lastColumn;
         }   
 
         public String getName() {
@@ -68,7 +72,6 @@ public class PostAutofitWorkbookRowsRequest  implements IRequestModel {
         public void setName(String name) {
             this.name = name;
         }
-
 
         public Integer getStartRow() {
             return this.startRow;
@@ -114,12 +117,32 @@ public class PostAutofitWorkbookRowsRequest  implements IRequestModel {
             this.storageName = storageName;
         }
 
+
+        public Integer getFirstColumn() {
+            return this.firstColumn;
+        }
+
+        public void setFirstColumn(Integer firstColumn) {
+            this.firstColumn = firstColumn;
+        }
+
+
+        public Integer getLastColumn() {
+            return this.lastColumn;
+        }
+
+        public void setLastColumn(Integer lastColumn) {
+            this.lastColumn = lastColumn;
+        }
+
+    
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
-         if (getName() == null) {
+         
+                if (getName() == null) {
                     throw new ApiException("Missing the required parameter 'Name' when calling PostAutofitWorkbookRows");
                 }       
-        String localVarPath = "/cells/{name}/autofitrows".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString()))   ;
+        String localVarPath = "v3.0/cells/{name}/autofitrows".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString()))   ;
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -137,6 +160,12 @@ public class PostAutofitWorkbookRowsRequest  implements IRequestModel {
             } 
             if (getStorageName() != null){
                 localVarQueryParams.addAll(apiClient.parameterToPairs("", "storageName", getStorageName()));
+            } 
+            if (getFirstColumn() != null){
+                localVarQueryParams.addAll(apiClient.parameterToPairs("", "firstColumn", getFirstColumn()));
+            } 
+            if (getLastColumn() != null){
+                localVarQueryParams.addAll(apiClient.parameterToPairs("", "lastColumn", getLastColumn()));
             }  
         if(this.extendQueryParameterMap !=null){
             for (String key :this.extendQueryParameterMap.keySet()) {
@@ -170,7 +199,5 @@ public class PostAutofitWorkbookRowsRequest  implements IRequestModel {
                 return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
 
     }
-
-
 }
 

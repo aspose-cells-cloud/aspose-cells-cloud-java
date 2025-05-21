@@ -41,11 +41,10 @@ public class PutWorkbookNameRequest  implements IRequestModel {
     public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
         this.extendQueryParameterMap = extendQueryParameterMap;
     }
-
     private String name;
-    private Name newName;
     private String folder;
     private String storageName;
+    private Name newName;    
         public PutWorkbookNameRequest()
         {
 
@@ -65,16 +64,6 @@ public class PutWorkbookNameRequest  implements IRequestModel {
             this.name = name;
         }
 
-
-        public Name getNewName() {
-            return this.newName;
-        }
-
-        public void setNewName(Name newName) {
-            this.newName = newName;
-        }
-
-
         public String getFolder() {
             return this.folder;
         }
@@ -92,15 +81,25 @@ public class PutWorkbookNameRequest  implements IRequestModel {
             this.storageName = storageName;
         }
 
+        public Name getNewName() {
+            return this.newName;
+        }
+
+        public void setNewName(Name newName) {
+            this.newName = newName;
+        }
+    
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
-         if (getName() == null) {
+         
+                if (getName() == null) {
                     throw new ApiException("Missing the required parameter 'Name' when calling PutWorkbookName");
                 } 
+
                 if (getNewName() == null) {
                     throw new ApiException("Missing the required parameter 'NewName' when calling PutWorkbookName");
                 }       
-        String localVarPath = "/cells/{name}/names".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString()))   ;
+        String localVarPath = "v3.0/cells/{name}/names".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString()))   ;
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -143,7 +142,5 @@ public class PutWorkbookNameRequest  implements IRequestModel {
                 return apiClient.buildCall(localVarPath, "PUT", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
 
     }
-
-
 }
 

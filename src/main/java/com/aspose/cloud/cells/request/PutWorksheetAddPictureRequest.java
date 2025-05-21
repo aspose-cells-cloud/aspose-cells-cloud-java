@@ -41,10 +41,8 @@ public class PutWorksheetAddPictureRequest  implements IRequestModel {
     public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
         this.extendQueryParameterMap = extendQueryParameterMap;
     }
-
     private String name;
     private String sheetName;
-    private Picture picture;
     private Integer upperLeftRow;
     private Integer upperLeftColumn;
     private Integer lowerRightRow;
@@ -52,6 +50,7 @@ public class PutWorksheetAddPictureRequest  implements IRequestModel {
     private String picturePath;
     private String folder;
     private String storageName;
+    private Picture picture;    
         public PutWorksheetAddPictureRequest()
         {
 
@@ -85,16 +84,6 @@ public class PutWorksheetAddPictureRequest  implements IRequestModel {
         public void setSheetName(String sheetName) {
             this.sheetName = sheetName;
         }
-
-
-        public Picture getPicture() {
-            return this.picture;
-        }
-
-        public void setPicture(Picture picture) {
-            this.picture = picture;
-        }
-
 
         public Integer getUpperLeftRow() {
             return this.upperLeftRow;
@@ -158,15 +147,25 @@ public class PutWorksheetAddPictureRequest  implements IRequestModel {
             this.storageName = storageName;
         }
 
+        public Picture getPicture() {
+            return this.picture;
+        }
+
+        public void setPicture(Picture picture) {
+            this.picture = picture;
+        }
+    
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
-         if (getName() == null) {
+         
+                if (getName() == null) {
                     throw new ApiException("Missing the required parameter 'Name' when calling PutWorksheetAddPicture");
                 } 
+
                 if (getSheetName() == null) {
                     throw new ApiException("Missing the required parameter 'SheetName' when calling PutWorksheetAddPicture");
                 }       
-        String localVarPath = "/cells/{name}/worksheets/{sheetName}/pictures".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
+        String localVarPath = "v3.0/cells/{name}/worksheets/{sheetName}/pictures".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
     .replaceAll("\\{" + "sheetName" + "\\}", apiClient.escapeString(sheetName.toString()))   ;
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
@@ -225,7 +224,5 @@ public class PutWorksheetAddPictureRequest  implements IRequestModel {
                 return apiClient.buildCall(localVarPath, "PUT", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
 
     }
-
-
 }
 

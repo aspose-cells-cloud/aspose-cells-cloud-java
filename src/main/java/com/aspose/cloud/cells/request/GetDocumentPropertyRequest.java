@@ -41,11 +41,11 @@ public class GetDocumentPropertyRequest  implements IRequestModel {
     public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
         this.extendQueryParameterMap = extendQueryParameterMap;
     }
-
     private String name;
     private String propertyName;
     private String folder;
     private String storageName;
+    
         public GetDocumentPropertyRequest()
         {
 
@@ -74,7 +74,6 @@ public class GetDocumentPropertyRequest  implements IRequestModel {
             this.propertyName = propertyName;
         }
 
-
         public String getFolder() {
             return this.folder;
         }
@@ -92,15 +91,18 @@ public class GetDocumentPropertyRequest  implements IRequestModel {
             this.storageName = storageName;
         }
 
+    
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
-         if (getName() == null) {
+         
+                if (getName() == null) {
                     throw new ApiException("Missing the required parameter 'Name' when calling GetDocumentProperty");
                 } 
+
                 if (getPropertyName() == null) {
                     throw new ApiException("Missing the required parameter 'PropertyName' when calling GetDocumentProperty");
                 }       
-        String localVarPath = "/cells/{name}/documentproperties/{propertyName}".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
+        String localVarPath = "v3.0/cells/{name}/documentproperties/{propertyName}".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
     .replaceAll("\\{" + "propertyName" + "\\}", apiClient.escapeString(propertyName.toString()))   ;
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
@@ -143,7 +145,5 @@ public class GetDocumentPropertyRequest  implements IRequestModel {
                 return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
 
     }
-
-
 }
 

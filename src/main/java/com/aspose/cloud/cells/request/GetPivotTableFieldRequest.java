@@ -41,7 +41,6 @@ public class GetPivotTableFieldRequest  implements IRequestModel {
     public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
         this.extendQueryParameterMap = extendQueryParameterMap;
     }
-
     private String name;
     private String sheetName;
     private Integer pivotTableIndex;
@@ -49,6 +48,7 @@ public class GetPivotTableFieldRequest  implements IRequestModel {
     private String pivotFieldType;
     private String folder;
     private String storageName;
+    
         public GetPivotTableFieldRequest()
         {
 
@@ -89,7 +89,6 @@ public class GetPivotTableFieldRequest  implements IRequestModel {
             this.pivotTableIndex = pivotTableIndex;
         }
 
-
         public Integer getPivotFieldIndex() {
             return this.pivotFieldIndex;
         }
@@ -125,24 +124,30 @@ public class GetPivotTableFieldRequest  implements IRequestModel {
             this.storageName = storageName;
         }
 
+    
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
-         if (getName() == null) {
+         
+                if (getName() == null) {
                     throw new ApiException("Missing the required parameter 'Name' when calling GetPivotTableField");
                 } 
+
                 if (getSheetName() == null) {
                     throw new ApiException("Missing the required parameter 'SheetName' when calling GetPivotTableField");
                 } 
+
                 if (getPivotTableIndex() == null) {
                     throw new ApiException("Missing the required parameter 'PivotTableIndex' when calling GetPivotTableField");
                 } 
+
                 if (getPivotFieldIndex() == null) {
                     throw new ApiException("Missing the required parameter 'PivotFieldIndex' when calling GetPivotTableField");
                 } 
+
                 if (getPivotFieldType() == null) {
                     throw new ApiException("Missing the required parameter 'PivotFieldType' when calling GetPivotTableField");
                 }       
-        String localVarPath = "/cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/PivotField".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
+        String localVarPath = "v3.0/cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/PivotField".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
     .replaceAll("\\{" + "sheetName" + "\\}", apiClient.escapeString(sheetName.toString())) 
     .replaceAll("\\{" + "pivotTableIndex" + "\\}", apiClient.escapeString(pivotTableIndex.toString()))   ;
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
@@ -192,7 +197,5 @@ public class GetPivotTableFieldRequest  implements IRequestModel {
                 return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
 
     }
-
-
 }
 

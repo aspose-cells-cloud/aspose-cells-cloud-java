@@ -41,7 +41,6 @@ public class PostUnhideWorksheetColumnsRequest  implements IRequestModel {
     public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
         this.extendQueryParameterMap = extendQueryParameterMap;
     }
-
     private String name;
     private String sheetName;
     private Integer startColumn;
@@ -49,6 +48,7 @@ public class PostUnhideWorksheetColumnsRequest  implements IRequestModel {
     private Double width;
     private String folder;
     private String storageName;
+    
         public PostUnhideWorksheetColumnsRequest()
         {
 
@@ -79,7 +79,6 @@ public class PostUnhideWorksheetColumnsRequest  implements IRequestModel {
         public void setSheetName(String sheetName) {
             this.sheetName = sheetName;
         }
-
 
         public Integer getStartColumn() {
             return this.startColumn;
@@ -125,21 +124,26 @@ public class PostUnhideWorksheetColumnsRequest  implements IRequestModel {
             this.storageName = storageName;
         }
 
+    
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
-         if (getName() == null) {
+         
+                if (getName() == null) {
                     throw new ApiException("Missing the required parameter 'Name' when calling PostUnhideWorksheetColumns");
                 } 
+
                 if (getSheetName() == null) {
                     throw new ApiException("Missing the required parameter 'SheetName' when calling PostUnhideWorksheetColumns");
                 } 
+
                 if (getStartColumn() == null) {
                     throw new ApiException("Missing the required parameter 'StartColumn' when calling PostUnhideWorksheetColumns");
                 } 
+
                 if (getTotalColumns() == null) {
                     throw new ApiException("Missing the required parameter 'TotalColumns' when calling PostUnhideWorksheetColumns");
                 }       
-        String localVarPath = "/cells/{name}/worksheets/{sheetName}/cells/columns/unhide".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
+        String localVarPath = "v3.0/cells/{name}/worksheets/{sheetName}/cells/columns/unhide".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
     .replaceAll("\\{" + "sheetName" + "\\}", apiClient.escapeString(sheetName.toString()))   ;
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
@@ -191,7 +195,5 @@ public class PostUnhideWorksheetColumnsRequest  implements IRequestModel {
                 return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
 
     }
-
-
 }
 

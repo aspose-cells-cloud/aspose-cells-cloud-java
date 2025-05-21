@@ -41,12 +41,14 @@ public class PostImportRequest  implements IRequestModel {
     public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
         this.extendQueryParameterMap = extendQueryParameterMap;
     }
-
-    private HashMap<String,File> file;
     private String outFormat;
     private String password;
     private Boolean checkExcelRestriction;
     private String region;
+    
+     
+                private HashMap<String,File> file;
+                private String localPath;
         public PostImportRequest()
         {
 
@@ -58,15 +60,6 @@ public class PostImportRequest  implements IRequestModel {
             this.checkExcelRestriction = checkExcelRestriction;
             this.region = region;
         }   
-
-        public HashMap<String,File> getFile() {
-            return this.file;
-        }
-
-        public void setFile(HashMap<String,File> file) {
-            this.file = file;
-        }
-
 
         public String getOutFormat() {
             return this.outFormat;
@@ -103,12 +96,30 @@ public class PostImportRequest  implements IRequestModel {
             this.region = region;
         }
 
+    
+         
+                public HashMap<String,File> getFile() {
+                    return this.file;
+                }
+
+                public void setFile(HashMap<String,File> file) {
+                    this.file = file;
+                }
+         
+            public String getLocalPath() {
+                    return this.localPath;
+            }
+            public void setLocalPath(String localPath) {
+                this.localPath = localPath;
+            }
+        
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
-         if (getFile() == null) {
+          
+                if (  getFile() == null &&  getLocalPath() ==null ) {
                     throw new ApiException("Missing the required parameter 'File' when calling PostImport");
                 }       
-        String localVarPath = "/cells/import";
+        String localVarPath = "v3.0/cells/import";
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -130,11 +141,17 @@ public class PostImportRequest  implements IRequestModel {
             }
         }
                    
+              if (getLocalPath() != null && !getLocalPath().isEmpty()) {
+                     File fileToUpload = new File(getLocalPath());
+                     if (fileToUpload.exists()) {
+                         localVarFormParams.put(fileToUpload.getName(), fileToUpload);
+                     }
+                 }
                 if (getFile() != null){
-                    for (String key : getFile().keySet()) {
-                        localVarFormParams.put(key,getFile().get(key));                
-                    }
-                }      
+                        for (String key : getFile().keySet()) {
+                            localVarFormParams.put(key,getFile().get(key));                
+                        }
+                    }      
         Object localVarPostBody = null;
                 final String[] localVarAccepts = {
                     "application/json"
@@ -165,7 +182,5 @@ public class PostImportRequest  implements IRequestModel {
                 return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
 
     }
-
-
 }
 

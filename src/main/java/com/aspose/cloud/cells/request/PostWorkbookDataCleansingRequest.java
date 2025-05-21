@@ -41,14 +41,13 @@ public class PostWorkbookDataCleansingRequest  implements IRequestModel {
     public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
         this.extendQueryParameterMap = extendQueryParameterMap;
     }
-
     private String name;
-    private DataCleansing dataCleansing;
     private String folder;
     private String storageName;
     private String password;
     private String region;
     private Boolean checkExcelRestriction;
+    private DataCleansing dataCleansing;    
         public PostWorkbookDataCleansingRequest()
         {
 
@@ -70,16 +69,6 @@ public class PostWorkbookDataCleansingRequest  implements IRequestModel {
         public void setName(String name) {
             this.name = name;
         }
-
-
-        public DataCleansing getDataCleansing() {
-            return this.dataCleansing;
-        }
-
-        public void setDataCleansing(DataCleansing dataCleansing) {
-            this.dataCleansing = dataCleansing;
-        }
-
 
         public String getFolder() {
             return this.folder;
@@ -125,15 +114,25 @@ public class PostWorkbookDataCleansingRequest  implements IRequestModel {
             this.checkExcelRestriction = checkExcelRestriction;
         }
 
+        public DataCleansing getDataCleansing() {
+            return this.dataCleansing;
+        }
+
+        public void setDataCleansing(DataCleansing dataCleansing) {
+            this.dataCleansing = dataCleansing;
+        }
+    
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
-         if (getName() == null) {
+         
+                if (getName() == null) {
                     throw new ApiException("Missing the required parameter 'Name' when calling PostWorkbookDataCleansing");
                 } 
+
                 if (getDataCleansing() == null) {
                     throw new ApiException("Missing the required parameter 'DataCleansing' when calling PostWorkbookDataCleansing");
                 }       
-        String localVarPath = "/cells/{name}/datacleansing".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString()))   ;
+        String localVarPath = "v3.0/cells/{name}/datacleansing".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString()))   ;
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -185,7 +184,5 @@ public class PostWorkbookDataCleansingRequest  implements IRequestModel {
                 return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
 
     }
-
-
 }
 

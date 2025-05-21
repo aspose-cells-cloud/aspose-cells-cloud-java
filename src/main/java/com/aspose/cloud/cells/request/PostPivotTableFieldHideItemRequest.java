@@ -41,7 +41,6 @@ public class PostPivotTableFieldHideItemRequest  implements IRequestModel {
     public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
         this.extendQueryParameterMap = extendQueryParameterMap;
     }
-
     private String name;
     private String sheetName;
     private Integer pivotTableIndex;
@@ -52,6 +51,7 @@ public class PostPivotTableFieldHideItemRequest  implements IRequestModel {
     private Boolean needReCalculate;
     private String folder;
     private String storageName;
+    
         public PostPivotTableFieldHideItemRequest()
         {
 
@@ -94,7 +94,6 @@ public class PostPivotTableFieldHideItemRequest  implements IRequestModel {
         public void setPivotTableIndex(Integer pivotTableIndex) {
             this.pivotTableIndex = pivotTableIndex;
         }
-
 
         public String getPivotFieldType() {
             return this.pivotFieldType;
@@ -158,30 +157,38 @@ public class PostPivotTableFieldHideItemRequest  implements IRequestModel {
             this.storageName = storageName;
         }
 
+    
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
-         if (getName() == null) {
+         
+                if (getName() == null) {
                     throw new ApiException("Missing the required parameter 'Name' when calling PostPivotTableFieldHideItem");
                 } 
+
                 if (getSheetName() == null) {
                     throw new ApiException("Missing the required parameter 'SheetName' when calling PostPivotTableFieldHideItem");
                 } 
+
                 if (getPivotTableIndex() == null) {
                     throw new ApiException("Missing the required parameter 'PivotTableIndex' when calling PostPivotTableFieldHideItem");
                 } 
+
                 if (getPivotFieldType() == null) {
                     throw new ApiException("Missing the required parameter 'PivotFieldType' when calling PostPivotTableFieldHideItem");
                 } 
+
                 if (getFieldIndex() == null) {
                     throw new ApiException("Missing the required parameter 'FieldIndex' when calling PostPivotTableFieldHideItem");
                 } 
+
                 if (getItemIndex() == null) {
                     throw new ApiException("Missing the required parameter 'ItemIndex' when calling PostPivotTableFieldHideItem");
                 } 
+
                 if (getIsHide() == null) {
                     throw new ApiException("Missing the required parameter 'IsHide' when calling PostPivotTableFieldHideItem");
                 }       
-        String localVarPath = "/cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/PivotField/Hide".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
+        String localVarPath = "v3.0/cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/PivotField/Hide".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
     .replaceAll("\\{" + "sheetName" + "\\}", apiClient.escapeString(sheetName.toString())) 
     .replaceAll("\\{" + "pivotTableIndex" + "\\}", apiClient.escapeString(pivotTableIndex.toString()))   ;
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
@@ -240,7 +247,5 @@ public class PostPivotTableFieldHideItemRequest  implements IRequestModel {
                 return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
 
     }
-
-
 }
 

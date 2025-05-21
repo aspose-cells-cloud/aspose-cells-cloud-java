@@ -41,8 +41,7 @@ public class PostAddTextContentRequest  implements IRequestModel {
     public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
         this.extendQueryParameterMap = extendQueryParameterMap;
     }
-
-    private AddTextOptions addTextOptions;
+    private AddTextOptions addTextOptions;    
         public PostAddTextContentRequest()
         {
 
@@ -58,13 +57,14 @@ public class PostAddTextContentRequest  implements IRequestModel {
         public void setAddTextOptions(AddTextOptions addTextOptions) {
             this.addTextOptions = addTextOptions;
         }
-
+    
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
-         if (getAddTextOptions() == null) {
+         
+                if (getAddTextOptions() == null) {
                     throw new ApiException("Missing the required parameter 'AddTextOptions' when calling PostAddTextContent");
                 }       
-        String localVarPath = "/cells/addtext";
+        String localVarPath = "v3.0/cells/addtext";
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
         List<Pair> localVarQueryParams = null;
@@ -101,7 +101,5 @@ public class PostAddTextContentRequest  implements IRequestModel {
                 return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
 
     }
-
-
 }
 

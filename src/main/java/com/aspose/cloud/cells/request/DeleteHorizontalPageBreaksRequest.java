@@ -41,12 +41,12 @@ public class DeleteHorizontalPageBreaksRequest  implements IRequestModel {
     public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
         this.extendQueryParameterMap = extendQueryParameterMap;
     }
-
     private String name;
     private String sheetName;
     private Integer row;
     private String folder;
     private String storageName;
+    
         public DeleteHorizontalPageBreaksRequest()
         {
 
@@ -76,7 +76,6 @@ public class DeleteHorizontalPageBreaksRequest  implements IRequestModel {
             this.sheetName = sheetName;
         }
 
-
         public Integer getRow() {
             return this.row;
         }
@@ -103,15 +102,18 @@ public class DeleteHorizontalPageBreaksRequest  implements IRequestModel {
             this.storageName = storageName;
         }
 
+    
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
-         if (getName() == null) {
+         
+                if (getName() == null) {
                     throw new ApiException("Missing the required parameter 'Name' when calling DeleteHorizontalPageBreaks");
                 } 
+
                 if (getSheetName() == null) {
                     throw new ApiException("Missing the required parameter 'SheetName' when calling DeleteHorizontalPageBreaks");
                 }       
-        String localVarPath = "/cells/{name}/worksheets/{sheetName}/horizontalpagebreaks".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
+        String localVarPath = "v3.0/cells/{name}/worksheets/{sheetName}/horizontalpagebreaks".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
     .replaceAll("\\{" + "sheetName" + "\\}", apiClient.escapeString(sheetName.toString()))   ;
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
@@ -157,7 +159,5 @@ public class DeleteHorizontalPageBreaksRequest  implements IRequestModel {
                 return apiClient.buildCall(localVarPath, "DELETE", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
 
     }
-
-
 }
 

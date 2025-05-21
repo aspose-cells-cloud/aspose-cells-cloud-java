@@ -41,14 +41,13 @@ public class PostWorkbookDataDeduplicationRequest  implements IRequestModel {
     public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
         this.extendQueryParameterMap = extendQueryParameterMap;
     }
-
     private String name;
-    private DeduplicationRegion deduplicationRegion;
     private String folder;
     private String storageName;
     private String password;
     private String region;
     private Boolean checkExcelRestriction;
+    private DeduplicationRegion deduplicationRegion;    
         public PostWorkbookDataDeduplicationRequest()
         {
 
@@ -70,16 +69,6 @@ public class PostWorkbookDataDeduplicationRequest  implements IRequestModel {
         public void setName(String name) {
             this.name = name;
         }
-
-
-        public DeduplicationRegion getDeduplicationRegion() {
-            return this.deduplicationRegion;
-        }
-
-        public void setDeduplicationRegion(DeduplicationRegion deduplicationRegion) {
-            this.deduplicationRegion = deduplicationRegion;
-        }
-
 
         public String getFolder() {
             return this.folder;
@@ -125,15 +114,25 @@ public class PostWorkbookDataDeduplicationRequest  implements IRequestModel {
             this.checkExcelRestriction = checkExcelRestriction;
         }
 
+        public DeduplicationRegion getDeduplicationRegion() {
+            return this.deduplicationRegion;
+        }
+
+        public void setDeduplicationRegion(DeduplicationRegion deduplicationRegion) {
+            this.deduplicationRegion = deduplicationRegion;
+        }
+    
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
-         if (getName() == null) {
+         
+                if (getName() == null) {
                     throw new ApiException("Missing the required parameter 'Name' when calling PostWorkbookDataDeduplication");
                 } 
+
                 if (getDeduplicationRegion() == null) {
                     throw new ApiException("Missing the required parameter 'DeduplicationRegion' when calling PostWorkbookDataDeduplication");
                 }       
-        String localVarPath = "/cells/{name}/datadeduplication".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString()))   ;
+        String localVarPath = "v3.0/cells/{name}/datadeduplication".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString()))   ;
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -185,7 +184,5 @@ public class PostWorkbookDataDeduplicationRequest  implements IRequestModel {
                 return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
 
     }
-
-
 }
 

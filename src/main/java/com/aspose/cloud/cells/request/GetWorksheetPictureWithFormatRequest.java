@@ -41,13 +41,13 @@ public class GetWorksheetPictureWithFormatRequest  implements IRequestModel {
     public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
         this.extendQueryParameterMap = extendQueryParameterMap;
     }
-
     private String name;
     private String sheetName;
     private Integer pictureNumber;
     private String format;
     private String folder;
     private String storageName;
+    
         public GetWorksheetPictureWithFormatRequest()
         {
 
@@ -87,7 +87,6 @@ public class GetWorksheetPictureWithFormatRequest  implements IRequestModel {
             this.pictureNumber = pictureNumber;
         }
 
-
         public String getFormat() {
             return this.format;
         }
@@ -114,21 +113,26 @@ public class GetWorksheetPictureWithFormatRequest  implements IRequestModel {
             this.storageName = storageName;
         }
 
+    
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
-         if (getName() == null) {
+         
+                if (getName() == null) {
                     throw new ApiException("Missing the required parameter 'Name' when calling GetWorksheetPictureWithFormat");
                 } 
+
                 if (getSheetName() == null) {
                     throw new ApiException("Missing the required parameter 'SheetName' when calling GetWorksheetPictureWithFormat");
                 } 
+
                 if (getPictureNumber() == null) {
                     throw new ApiException("Missing the required parameter 'PictureNumber' when calling GetWorksheetPictureWithFormat");
                 } 
+
                 if (getFormat() == null) {
                     throw new ApiException("Missing the required parameter 'Format' when calling GetWorksheetPictureWithFormat");
                 }       
-        String localVarPath = "/cells/{name}/worksheets/{sheetName}/pictures/{pictureNumber}".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
+        String localVarPath = "v3.0/cells/{name}/worksheets/{sheetName}/pictures/{pictureNumber}".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
     .replaceAll("\\{" + "sheetName" + "\\}", apiClient.escapeString(sheetName.toString())) 
     .replaceAll("\\{" + "pictureNumber" + "\\}", apiClient.escapeString(pictureNumber.toString()))   ;
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
@@ -175,7 +179,5 @@ public class GetWorksheetPictureWithFormatRequest  implements IRequestModel {
                 return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
 
     }
-
-
 }
 

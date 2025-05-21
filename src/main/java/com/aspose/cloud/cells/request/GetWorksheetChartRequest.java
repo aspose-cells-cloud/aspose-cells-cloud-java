@@ -41,13 +41,13 @@ public class GetWorksheetChartRequest  implements IRequestModel {
     public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
         this.extendQueryParameterMap = extendQueryParameterMap;
     }
-
     private String name;
     private String sheetName;
     private Integer chartNumber;
     private String format;
     private String folder;
     private String storageName;
+    
         public GetWorksheetChartRequest()
         {
 
@@ -87,7 +87,6 @@ public class GetWorksheetChartRequest  implements IRequestModel {
             this.chartNumber = chartNumber;
         }
 
-
         public String getFormat() {
             return this.format;
         }
@@ -114,18 +113,22 @@ public class GetWorksheetChartRequest  implements IRequestModel {
             this.storageName = storageName;
         }
 
+    
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
-         if (getName() == null) {
+         
+                if (getName() == null) {
                     throw new ApiException("Missing the required parameter 'Name' when calling GetWorksheetChart");
                 } 
+
                 if (getSheetName() == null) {
                     throw new ApiException("Missing the required parameter 'SheetName' when calling GetWorksheetChart");
                 } 
+
                 if (getChartNumber() == null) {
                     throw new ApiException("Missing the required parameter 'ChartNumber' when calling GetWorksheetChart");
                 }       
-        String localVarPath = "/cells/{name}/worksheets/{sheetName}/charts/{chartNumber}".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
+        String localVarPath = "v3.0/cells/{name}/worksheets/{sheetName}/charts/{chartNumber}".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
     .replaceAll("\\{" + "sheetName" + "\\}", apiClient.escapeString(sheetName.toString())) 
     .replaceAll("\\{" + "chartNumber" + "\\}", apiClient.escapeString(chartNumber.toString()))   ;
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
@@ -172,7 +175,5 @@ public class GetWorksheetChartRequest  implements IRequestModel {
                 return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
 
     }
-
-
 }
 

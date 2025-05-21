@@ -41,8 +41,7 @@ public class PostBatchSplitRequest  implements IRequestModel {
     public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
         this.extendQueryParameterMap = extendQueryParameterMap;
     }
-
-    private BatchSplitRequest batchSplitRequest;
+    private BatchSplitRequest batchSplitRequest;    
         public PostBatchSplitRequest()
         {
 
@@ -58,13 +57,14 @@ public class PostBatchSplitRequest  implements IRequestModel {
         public void setBatchSplitRequest(BatchSplitRequest batchSplitRequest) {
             this.batchSplitRequest = batchSplitRequest;
         }
-
+    
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
-         if (getBatchSplitRequest() == null) {
+         
+                if (getBatchSplitRequest() == null) {
                     throw new ApiException("Missing the required parameter 'BatchSplitRequest' when calling PostBatchSplit");
                 }       
-        String localVarPath = "/cells/batch/split";
+        String localVarPath = "v3.0/cells/batch/split";
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
         List<Pair> localVarQueryParams = null;
@@ -101,7 +101,5 @@ public class PostBatchSplitRequest  implements IRequestModel {
                 return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
 
     }
-
-
 }
 

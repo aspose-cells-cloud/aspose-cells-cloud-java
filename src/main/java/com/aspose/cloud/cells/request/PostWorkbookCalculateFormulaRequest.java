@@ -41,12 +41,11 @@ public class PostWorkbookCalculateFormulaRequest  implements IRequestModel {
     public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
         this.extendQueryParameterMap = extendQueryParameterMap;
     }
-
     private String name;
-    private CalculationOptions options;
     private Boolean ignoreError;
     private String folder;
     private String storageName;
+    private CalculationOptions options;    
         public PostWorkbookCalculateFormulaRequest()
         {
 
@@ -66,16 +65,6 @@ public class PostWorkbookCalculateFormulaRequest  implements IRequestModel {
         public void setName(String name) {
             this.name = name;
         }
-
-
-        public CalculationOptions getOptions() {
-            return this.options;
-        }
-
-        public void setOptions(CalculationOptions options) {
-            this.options = options;
-        }
-
 
         public Boolean getIgnoreError() {
             return this.ignoreError;
@@ -103,12 +92,21 @@ public class PostWorkbookCalculateFormulaRequest  implements IRequestModel {
             this.storageName = storageName;
         }
 
+        public CalculationOptions getOptions() {
+            return this.options;
+        }
+
+        public void setOptions(CalculationOptions options) {
+            this.options = options;
+        }
+    
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
-         if (getName() == null) {
+         
+                if (getName() == null) {
                     throw new ApiException("Missing the required parameter 'Name' when calling PostWorkbookCalculateFormula");
                 }       
-        String localVarPath = "/cells/{name}/calculateformula".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString()))   ;
+        String localVarPath = "v3.0/cells/{name}/calculateformula".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString()))   ;
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -154,7 +152,5 @@ public class PostWorkbookCalculateFormulaRequest  implements IRequestModel {
                 return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
 
     }
-
-
 }
 

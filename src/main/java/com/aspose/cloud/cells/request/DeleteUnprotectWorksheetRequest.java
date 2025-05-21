@@ -41,12 +41,11 @@ public class DeleteUnprotectWorksheetRequest  implements IRequestModel {
     public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
         this.extendQueryParameterMap = extendQueryParameterMap;
     }
-
     private String name;
     private String sheetName;
-    private ProtectSheetParameter protectParameter;
     private String folder;
     private String storageName;
+    private ProtectSheetParameter protectParameter;    
         public DeleteUnprotectWorksheetRequest()
         {
 
@@ -76,16 +75,6 @@ public class DeleteUnprotectWorksheetRequest  implements IRequestModel {
             this.sheetName = sheetName;
         }
 
-
-        public ProtectSheetParameter getProtectParameter() {
-            return this.protectParameter;
-        }
-
-        public void setProtectParameter(ProtectSheetParameter protectParameter) {
-            this.protectParameter = protectParameter;
-        }
-
-
         public String getFolder() {
             return this.folder;
         }
@@ -103,18 +92,29 @@ public class DeleteUnprotectWorksheetRequest  implements IRequestModel {
             this.storageName = storageName;
         }
 
+        public ProtectSheetParameter getProtectParameter() {
+            return this.protectParameter;
+        }
+
+        public void setProtectParameter(ProtectSheetParameter protectParameter) {
+            this.protectParameter = protectParameter;
+        }
+    
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
-         if (getName() == null) {
+         
+                if (getName() == null) {
                     throw new ApiException("Missing the required parameter 'Name' when calling DeleteUnprotectWorksheet");
                 } 
+
                 if (getSheetName() == null) {
                     throw new ApiException("Missing the required parameter 'SheetName' when calling DeleteUnprotectWorksheet");
                 } 
+
                 if (getProtectParameter() == null) {
                     throw new ApiException("Missing the required parameter 'ProtectParameter' when calling DeleteUnprotectWorksheet");
                 }       
-        String localVarPath = "/cells/{name}/worksheets/{sheetName}/protection".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
+        String localVarPath = "v3.0/cells/{name}/worksheets/{sheetName}/protection".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
     .replaceAll("\\{" + "sheetName" + "\\}", apiClient.escapeString(sheetName.toString()))   ;
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
@@ -158,7 +158,5 @@ public class DeleteUnprotectWorksheetRequest  implements IRequestModel {
                 return apiClient.buildCall(localVarPath, "DELETE", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
 
     }
-
-
 }
 

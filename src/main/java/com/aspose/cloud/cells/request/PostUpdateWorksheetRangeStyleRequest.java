@@ -41,13 +41,12 @@ public class PostUpdateWorksheetRangeStyleRequest  implements IRequestModel {
     public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
         this.extendQueryParameterMap = extendQueryParameterMap;
     }
-
     private String name;
     private String sheetName;
     private String range;
-    private Style style;
     private String folder;
     private String storageName;
+    private Style style;    
         public PostUpdateWorksheetRangeStyleRequest()
         {
 
@@ -78,22 +77,12 @@ public class PostUpdateWorksheetRangeStyleRequest  implements IRequestModel {
             this.sheetName = sheetName;
         }
 
-
         public String getRange() {
             return this.range;
         }
 
         public void setRange(String range) {
             this.range = range;
-        }
-
-
-        public Style getStyle() {
-            return this.style;
-        }
-
-        public void setStyle(Style style) {
-            this.style = style;
         }
 
 
@@ -114,21 +103,33 @@ public class PostUpdateWorksheetRangeStyleRequest  implements IRequestModel {
             this.storageName = storageName;
         }
 
+        public Style getStyle() {
+            return this.style;
+        }
+
+        public void setStyle(Style style) {
+            this.style = style;
+        }
+    
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
-         if (getName() == null) {
+         
+                if (getName() == null) {
                     throw new ApiException("Missing the required parameter 'Name' when calling PostUpdateWorksheetRangeStyle");
                 } 
+
                 if (getSheetName() == null) {
                     throw new ApiException("Missing the required parameter 'SheetName' when calling PostUpdateWorksheetRangeStyle");
                 } 
+
                 if (getRange() == null) {
                     throw new ApiException("Missing the required parameter 'Range' when calling PostUpdateWorksheetRangeStyle");
                 } 
+
                 if (getStyle() == null) {
                     throw new ApiException("Missing the required parameter 'Style' when calling PostUpdateWorksheetRangeStyle");
                 }       
-        String localVarPath = "/cells/{name}/worksheets/{sheetName}/cells/style".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
+        String localVarPath = "v3.0/cells/{name}/worksheets/{sheetName}/cells/style".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
     .replaceAll("\\{" + "sheetName" + "\\}", apiClient.escapeString(sheetName.toString()))   ;
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
@@ -175,7 +176,5 @@ public class PostUpdateWorksheetRangeStyleRequest  implements IRequestModel {
                 return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
 
     }
-
-
 }
 

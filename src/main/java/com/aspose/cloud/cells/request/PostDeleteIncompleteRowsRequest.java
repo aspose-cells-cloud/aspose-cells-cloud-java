@@ -41,8 +41,7 @@ public class PostDeleteIncompleteRowsRequest  implements IRequestModel {
     public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
         this.extendQueryParameterMap = extendQueryParameterMap;
     }
-
-    private DeleteIncompleteRowsRequest deleteIncompleteRowsRequest;
+    private DeleteIncompleteRowsRequest deleteIncompleteRowsRequest;    
         public PostDeleteIncompleteRowsRequest()
         {
 
@@ -58,13 +57,14 @@ public class PostDeleteIncompleteRowsRequest  implements IRequestModel {
         public void setDeleteIncompleteRowsRequest(DeleteIncompleteRowsRequest deleteIncompleteRowsRequest) {
             this.deleteIncompleteRowsRequest = deleteIncompleteRowsRequest;
         }
-
+    
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
-         if (getDeleteIncompleteRowsRequest() == null) {
+         
+                if (getDeleteIncompleteRowsRequest() == null) {
                     throw new ApiException("Missing the required parameter 'DeleteIncompleteRowsRequest' when calling PostDeleteIncompleteRows");
                 }       
-        String localVarPath = "/cells/deleteincompleterows";
+        String localVarPath = "v3.0/cells/deleteincompleterows";
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
         List<Pair> localVarQueryParams = null;
@@ -101,7 +101,5 @@ public class PostDeleteIncompleteRowsRequest  implements IRequestModel {
                 return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
 
     }
-
-
 }
 

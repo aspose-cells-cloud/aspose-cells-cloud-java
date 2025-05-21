@@ -41,7 +41,6 @@ public class PostWorkbookSplitRequest  implements IRequestModel {
     public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
         this.extendQueryParameterMap = extendQueryParameterMap;
     }
-
     private String name;
     private String format;
     private String outFolder;
@@ -53,6 +52,7 @@ public class PostWorkbookSplitRequest  implements IRequestModel {
     private String folder;
     private String storageName;
     private String outStorageName;
+    
         public PostWorkbookSplitRequest()
         {
 
@@ -78,7 +78,6 @@ public class PostWorkbookSplitRequest  implements IRequestModel {
         public void setName(String name) {
             this.name = name;
         }
-
 
         public String getFormat() {
             return this.format;
@@ -169,12 +168,14 @@ public class PostWorkbookSplitRequest  implements IRequestModel {
             this.outStorageName = outStorageName;
         }
 
+    
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
-         if (getName() == null) {
+         
+                if (getName() == null) {
                     throw new ApiException("Missing the required parameter 'Name' when calling PostWorkbookSplit");
                 }       
-        String localVarPath = "/cells/{name}/split".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString()))   ;
+        String localVarPath = "v3.0/cells/{name}/split".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString()))   ;
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -240,7 +241,5 @@ public class PostWorkbookSplitRequest  implements IRequestModel {
                 return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
 
     }
-
-
 }
 

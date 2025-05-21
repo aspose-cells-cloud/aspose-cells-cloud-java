@@ -41,15 +41,14 @@ public class PostPivotTableUpdatePivotFieldsRequest  implements IRequestModel {
     public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
         this.extendQueryParameterMap = extendQueryParameterMap;
     }
-
     private String name;
     private String sheetName;
     private Integer pivotTableIndex;
     private String pivotFieldType;
-    private PivotField pivotField;
     private Boolean needReCalculate;
     private String folder;
     private String storageName;
+    private PivotField pivotField;    
         public PostPivotTableUpdatePivotFieldsRequest()
         {
 
@@ -91,22 +90,12 @@ public class PostPivotTableUpdatePivotFieldsRequest  implements IRequestModel {
             this.pivotTableIndex = pivotTableIndex;
         }
 
-
         public String getPivotFieldType() {
             return this.pivotFieldType;
         }
 
         public void setPivotFieldType(String pivotFieldType) {
             this.pivotFieldType = pivotFieldType;
-        }
-
-
-        public PivotField getPivotField() {
-            return this.pivotField;
-        }
-
-        public void setPivotField(PivotField pivotField) {
-            this.pivotField = pivotField;
         }
 
 
@@ -136,24 +125,37 @@ public class PostPivotTableUpdatePivotFieldsRequest  implements IRequestModel {
             this.storageName = storageName;
         }
 
+        public PivotField getPivotField() {
+            return this.pivotField;
+        }
+
+        public void setPivotField(PivotField pivotField) {
+            this.pivotField = pivotField;
+        }
+    
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
-         if (getName() == null) {
+         
+                if (getName() == null) {
                     throw new ApiException("Missing the required parameter 'Name' when calling PostPivotTableUpdatePivotFields");
                 } 
+
                 if (getSheetName() == null) {
                     throw new ApiException("Missing the required parameter 'SheetName' when calling PostPivotTableUpdatePivotFields");
                 } 
+
                 if (getPivotTableIndex() == null) {
                     throw new ApiException("Missing the required parameter 'PivotTableIndex' when calling PostPivotTableUpdatePivotFields");
                 } 
+
                 if (getPivotFieldType() == null) {
                     throw new ApiException("Missing the required parameter 'PivotFieldType' when calling PostPivotTableUpdatePivotFields");
                 } 
+
                 if (getPivotField() == null) {
                     throw new ApiException("Missing the required parameter 'PivotField' when calling PostPivotTableUpdatePivotFields");
                 }       
-        String localVarPath = "/cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/PivotFields".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
+        String localVarPath = "v3.0/cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/PivotFields".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
     .replaceAll("\\{" + "sheetName" + "\\}", apiClient.escapeString(sheetName.toString())) 
     .replaceAll("\\{" + "pivotTableIndex" + "\\}", apiClient.escapeString(pivotTableIndex.toString()))   ;
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
@@ -204,7 +206,5 @@ public class PostPivotTableUpdatePivotFieldsRequest  implements IRequestModel {
                 return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
 
     }
-
-
 }
 

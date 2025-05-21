@@ -41,13 +41,12 @@ public class PostWorksheetShapeRequest  implements IRequestModel {
     public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
         this.extendQueryParameterMap = extendQueryParameterMap;
     }
-
     private String name;
     private String sheetName;
     private Integer shapeindex;
-    private Shape dto;
     private String folder;
     private String storageName;
+    private Shape dto;    
         public PostWorksheetShapeRequest()
         {
 
@@ -87,16 +86,6 @@ public class PostWorksheetShapeRequest  implements IRequestModel {
             this.shapeindex = shapeindex;
         }
 
-
-        public Shape getDto() {
-            return this.dto;
-        }
-
-        public void setDto(Shape dto) {
-            this.dto = dto;
-        }
-
-
         public String getFolder() {
             return this.folder;
         }
@@ -114,21 +103,33 @@ public class PostWorksheetShapeRequest  implements IRequestModel {
             this.storageName = storageName;
         }
 
+        public Shape getDto() {
+            return this.dto;
+        }
+
+        public void setDto(Shape dto) {
+            this.dto = dto;
+        }
+    
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
-         if (getName() == null) {
+         
+                if (getName() == null) {
                     throw new ApiException("Missing the required parameter 'Name' when calling PostWorksheetShape");
                 } 
+
                 if (getSheetName() == null) {
                     throw new ApiException("Missing the required parameter 'SheetName' when calling PostWorksheetShape");
                 } 
+
                 if (getShapeindex() == null) {
                     throw new ApiException("Missing the required parameter 'Shapeindex' when calling PostWorksheetShape");
                 } 
+
                 if (getDto() == null) {
                     throw new ApiException("Missing the required parameter 'Dto' when calling PostWorksheetShape");
                 }       
-        String localVarPath = "/cells/{name}/worksheets/{sheetName}/shapes/{shapeindex}".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
+        String localVarPath = "v3.0/cells/{name}/worksheets/{sheetName}/shapes/{shapeindex}".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
     .replaceAll("\\{" + "sheetName" + "\\}", apiClient.escapeString(sheetName.toString())) 
     .replaceAll("\\{" + "shapeindex" + "\\}", apiClient.escapeString(shapeindex.toString()))   ;
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
@@ -173,7 +174,5 @@ public class PostWorksheetShapeRequest  implements IRequestModel {
                 return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
 
     }
-
-
 }
 

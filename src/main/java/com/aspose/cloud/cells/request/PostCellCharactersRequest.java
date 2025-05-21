@@ -41,13 +41,12 @@ public class PostCellCharactersRequest  implements IRequestModel {
     public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
         this.extendQueryParameterMap = extendQueryParameterMap;
     }
-
     private String name;
     private String sheetName;
     private String cellName;
-    private List<FontSetting> options;
     private String folder;
     private String storageName;
+    private List<FontSetting> options;    
         public PostCellCharactersRequest()
         {
 
@@ -87,16 +86,6 @@ public class PostCellCharactersRequest  implements IRequestModel {
             this.cellName = cellName;
         }
 
-
-        public List<FontSetting> getOptions() {
-            return this.options;
-        }
-
-        public void setOptions(List<FontSetting> options) {
-            this.options = options;
-        }
-
-
         public String getFolder() {
             return this.folder;
         }
@@ -114,18 +103,29 @@ public class PostCellCharactersRequest  implements IRequestModel {
             this.storageName = storageName;
         }
 
+        public List<FontSetting> getOptions() {
+            return this.options;
+        }
+
+        public void setOptions(List<FontSetting> options) {
+            this.options = options;
+        }
+    
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
-         if (getName() == null) {
+         
+                if (getName() == null) {
                     throw new ApiException("Missing the required parameter 'Name' when calling PostCellCharacters");
                 } 
+
                 if (getSheetName() == null) {
                     throw new ApiException("Missing the required parameter 'SheetName' when calling PostCellCharacters");
                 } 
+
                 if (getCellName() == null) {
                     throw new ApiException("Missing the required parameter 'CellName' when calling PostCellCharacters");
                 }       
-        String localVarPath = "/cells/{name}/worksheets/{sheetName}/cells/{cellName}/characters".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
+        String localVarPath = "v3.0/cells/{name}/worksheets/{sheetName}/cells/{cellName}/characters".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
     .replaceAll("\\{" + "sheetName" + "\\}", apiClient.escapeString(sheetName.toString())) 
     .replaceAll("\\{" + "cellName" + "\\}", apiClient.escapeString(cellName.toString()))   ;
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
@@ -170,7 +170,5 @@ public class PostCellCharactersRequest  implements IRequestModel {
                 return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
 
     }
-
-
 }
 

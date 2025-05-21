@@ -41,8 +41,7 @@ public class PostDataTransformationRequest  implements IRequestModel {
     public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
         this.extendQueryParameterMap = extendQueryParameterMap;
     }
-
-    private DataTransformationRequest dataTransformationRequest;
+    private DataTransformationRequest dataTransformationRequest;    
         public PostDataTransformationRequest()
         {
 
@@ -58,13 +57,14 @@ public class PostDataTransformationRequest  implements IRequestModel {
         public void setDataTransformationRequest(DataTransformationRequest dataTransformationRequest) {
             this.dataTransformationRequest = dataTransformationRequest;
         }
-
+    
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
-         if (getDataTransformationRequest() == null) {
+         
+                if (getDataTransformationRequest() == null) {
                     throw new ApiException("Missing the required parameter 'DataTransformationRequest' when calling PostDataTransformation");
                 }       
-        String localVarPath = "/cells/datatransformation";
+        String localVarPath = "v3.0/cells/datatransformation";
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
         List<Pair> localVarQueryParams = null;
@@ -101,7 +101,5 @@ public class PostDataTransformationRequest  implements IRequestModel {
                 return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
 
     }
-
-
 }
 

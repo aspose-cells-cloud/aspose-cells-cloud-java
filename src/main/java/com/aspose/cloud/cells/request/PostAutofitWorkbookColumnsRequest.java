@@ -41,12 +41,12 @@ public class PostAutofitWorkbookColumnsRequest  implements IRequestModel {
     public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
         this.extendQueryParameterMap = extendQueryParameterMap;
     }
-
     private String name;
     private Integer startColumn;
     private Integer endColumn;
     private String folder;
     private String storageName;
+    
         public PostAutofitWorkbookColumnsRequest()
         {
 
@@ -66,7 +66,6 @@ public class PostAutofitWorkbookColumnsRequest  implements IRequestModel {
         public void setName(String name) {
             this.name = name;
         }
-
 
         public Integer getStartColumn() {
             return this.startColumn;
@@ -103,12 +102,14 @@ public class PostAutofitWorkbookColumnsRequest  implements IRequestModel {
             this.storageName = storageName;
         }
 
+    
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
-         if (getName() == null) {
+         
+                if (getName() == null) {
                     throw new ApiException("Missing the required parameter 'Name' when calling PostAutofitWorkbookColumns");
                 }       
-        String localVarPath = "/cells/{name}/autofitcolumns".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString()))   ;
+        String localVarPath = "v3.0/cells/{name}/autofitcolumns".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString()))   ;
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -156,7 +157,5 @@ public class PostAutofitWorkbookColumnsRequest  implements IRequestModel {
                 return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
 
     }
-
-
 }
 

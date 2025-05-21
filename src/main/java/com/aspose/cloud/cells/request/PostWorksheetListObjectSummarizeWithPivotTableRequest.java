@@ -41,14 +41,13 @@ public class PostWorksheetListObjectSummarizeWithPivotTableRequest  implements I
     public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
         this.extendQueryParameterMap = extendQueryParameterMap;
     }
-
     private String name;
     private String sheetName;
     private Integer listObjectIndex;
     private String destsheetName;
-    private CreatePivotTableRequest createPivotTableRequest;
     private String folder;
     private String storageName;
+    private CreatePivotTableRequest createPivotTableRequest;    
         public PostWorksheetListObjectSummarizeWithPivotTableRequest()
         {
 
@@ -89,22 +88,12 @@ public class PostWorksheetListObjectSummarizeWithPivotTableRequest  implements I
             this.listObjectIndex = listObjectIndex;
         }
 
-
         public String getDestsheetName() {
             return this.destsheetName;
         }
 
         public void setDestsheetName(String destsheetName) {
             this.destsheetName = destsheetName;
-        }
-
-
-        public CreatePivotTableRequest getCreatePivotTableRequest() {
-            return this.createPivotTableRequest;
-        }
-
-        public void setCreatePivotTableRequest(CreatePivotTableRequest createPivotTableRequest) {
-            this.createPivotTableRequest = createPivotTableRequest;
         }
 
 
@@ -125,24 +114,37 @@ public class PostWorksheetListObjectSummarizeWithPivotTableRequest  implements I
             this.storageName = storageName;
         }
 
+        public CreatePivotTableRequest getCreatePivotTableRequest() {
+            return this.createPivotTableRequest;
+        }
+
+        public void setCreatePivotTableRequest(CreatePivotTableRequest createPivotTableRequest) {
+            this.createPivotTableRequest = createPivotTableRequest;
+        }
+    
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
-         if (getName() == null) {
+         
+                if (getName() == null) {
                     throw new ApiException("Missing the required parameter 'Name' when calling PostWorksheetListObjectSummarizeWithPivotTable");
                 } 
+
                 if (getSheetName() == null) {
                     throw new ApiException("Missing the required parameter 'SheetName' when calling PostWorksheetListObjectSummarizeWithPivotTable");
                 } 
+
                 if (getListObjectIndex() == null) {
                     throw new ApiException("Missing the required parameter 'ListObjectIndex' when calling PostWorksheetListObjectSummarizeWithPivotTable");
                 } 
+
                 if (getDestsheetName() == null) {
                     throw new ApiException("Missing the required parameter 'DestsheetName' when calling PostWorksheetListObjectSummarizeWithPivotTable");
                 } 
+
                 if (getCreatePivotTableRequest() == null) {
                     throw new ApiException("Missing the required parameter 'CreatePivotTableRequest' when calling PostWorksheetListObjectSummarizeWithPivotTable");
                 }       
-        String localVarPath = "/cells/{name}/worksheets/{sheetName}/listobjects/{listObjectIndex}/SummarizeWithPivotTable".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
+        String localVarPath = "v3.0/cells/{name}/worksheets/{sheetName}/listobjects/{listObjectIndex}/SummarizeWithPivotTable".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
     .replaceAll("\\{" + "sheetName" + "\\}", apiClient.escapeString(sheetName.toString())) 
     .replaceAll("\\{" + "listObjectIndex" + "\\}", apiClient.escapeString(listObjectIndex.toString()))   ;
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
@@ -190,7 +192,5 @@ public class PostWorksheetListObjectSummarizeWithPivotTableRequest  implements I
                 return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
 
     }
-
-
 }
 

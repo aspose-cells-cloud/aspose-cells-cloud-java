@@ -41,13 +41,12 @@ public class PostWorksheetChartLegendRequest  implements IRequestModel {
     public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
         this.extendQueryParameterMap = extendQueryParameterMap;
     }
-
     private String name;
     private String sheetName;
     private Integer chartIndex;
-    private Legend legend;
     private String folder;
     private String storageName;
+    private Legend legend;    
         public PostWorksheetChartLegendRequest()
         {
 
@@ -87,16 +86,6 @@ public class PostWorksheetChartLegendRequest  implements IRequestModel {
             this.chartIndex = chartIndex;
         }
 
-
-        public Legend getLegend() {
-            return this.legend;
-        }
-
-        public void setLegend(Legend legend) {
-            this.legend = legend;
-        }
-
-
         public String getFolder() {
             return this.folder;
         }
@@ -114,21 +103,33 @@ public class PostWorksheetChartLegendRequest  implements IRequestModel {
             this.storageName = storageName;
         }
 
+        public Legend getLegend() {
+            return this.legend;
+        }
+
+        public void setLegend(Legend legend) {
+            this.legend = legend;
+        }
+    
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
-         if (getName() == null) {
+         
+                if (getName() == null) {
                     throw new ApiException("Missing the required parameter 'Name' when calling PostWorksheetChartLegend");
                 } 
+
                 if (getSheetName() == null) {
                     throw new ApiException("Missing the required parameter 'SheetName' when calling PostWorksheetChartLegend");
                 } 
+
                 if (getChartIndex() == null) {
                     throw new ApiException("Missing the required parameter 'ChartIndex' when calling PostWorksheetChartLegend");
                 } 
+
                 if (getLegend() == null) {
                     throw new ApiException("Missing the required parameter 'Legend' when calling PostWorksheetChartLegend");
                 }       
-        String localVarPath = "/cells/{name}/worksheets/{sheetName}/charts/{chartIndex}/legend".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
+        String localVarPath = "v3.0/cells/{name}/worksheets/{sheetName}/charts/{chartIndex}/legend".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
     .replaceAll("\\{" + "sheetName" + "\\}", apiClient.escapeString(sheetName.toString())) 
     .replaceAll("\\{" + "chartIndex" + "\\}", apiClient.escapeString(chartIndex.toString()))   ;
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
@@ -173,7 +174,5 @@ public class PostWorksheetChartLegendRequest  implements IRequestModel {
                 return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
 
     }
-
-
 }
 

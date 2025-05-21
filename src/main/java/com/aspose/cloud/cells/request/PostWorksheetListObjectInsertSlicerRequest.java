@@ -41,7 +41,6 @@ public class PostWorksheetListObjectInsertSlicerRequest  implements IRequestMode
     public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
         this.extendQueryParameterMap = extendQueryParameterMap;
     }
-
     private String name;
     private String sheetName;
     private Integer listObjectIndex;
@@ -49,6 +48,7 @@ public class PostWorksheetListObjectInsertSlicerRequest  implements IRequestMode
     private String destCellName;
     private String folder;
     private String storageName;
+    
         public PostWorksheetListObjectInsertSlicerRequest()
         {
 
@@ -89,7 +89,6 @@ public class PostWorksheetListObjectInsertSlicerRequest  implements IRequestMode
             this.listObjectIndex = listObjectIndex;
         }
 
-
         public Integer getColumnIndex() {
             return this.columnIndex;
         }
@@ -125,24 +124,30 @@ public class PostWorksheetListObjectInsertSlicerRequest  implements IRequestMode
             this.storageName = storageName;
         }
 
+    
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
-         if (getName() == null) {
+         
+                if (getName() == null) {
                     throw new ApiException("Missing the required parameter 'Name' when calling PostWorksheetListObjectInsertSlicer");
                 } 
+
                 if (getSheetName() == null) {
                     throw new ApiException("Missing the required parameter 'SheetName' when calling PostWorksheetListObjectInsertSlicer");
                 } 
+
                 if (getListObjectIndex() == null) {
                     throw new ApiException("Missing the required parameter 'ListObjectIndex' when calling PostWorksheetListObjectInsertSlicer");
                 } 
+
                 if (getColumnIndex() == null) {
                     throw new ApiException("Missing the required parameter 'ColumnIndex' when calling PostWorksheetListObjectInsertSlicer");
                 } 
+
                 if (getDestCellName() == null) {
                     throw new ApiException("Missing the required parameter 'DestCellName' when calling PostWorksheetListObjectInsertSlicer");
                 }       
-        String localVarPath = "/cells/{name}/worksheets/{sheetName}/listobjects/{listObjectIndex}/InsertSlicer".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
+        String localVarPath = "v3.0/cells/{name}/worksheets/{sheetName}/listobjects/{listObjectIndex}/InsertSlicer".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
     .replaceAll("\\{" + "sheetName" + "\\}", apiClient.escapeString(sheetName.toString())) 
     .replaceAll("\\{" + "listObjectIndex" + "\\}", apiClient.escapeString(listObjectIndex.toString()))   ;
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
@@ -192,7 +197,5 @@ public class PostWorksheetListObjectInsertSlicerRequest  implements IRequestMode
                 return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
 
     }
-
-
 }
 

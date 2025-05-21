@@ -41,12 +41,12 @@ public class DeleteWorksheetValidationRequest  implements IRequestModel {
     public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
         this.extendQueryParameterMap = extendQueryParameterMap;
     }
-
     private String name;
     private String sheetName;
     private Integer validationIndex;
     private String folder;
     private String storageName;
+    
         public DeleteWorksheetValidationRequest()
         {
 
@@ -85,7 +85,6 @@ public class DeleteWorksheetValidationRequest  implements IRequestModel {
             this.validationIndex = validationIndex;
         }
 
-
         public String getFolder() {
             return this.folder;
         }
@@ -103,18 +102,22 @@ public class DeleteWorksheetValidationRequest  implements IRequestModel {
             this.storageName = storageName;
         }
 
+    
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
-         if (getName() == null) {
+         
+                if (getName() == null) {
                     throw new ApiException("Missing the required parameter 'Name' when calling DeleteWorksheetValidation");
                 } 
+
                 if (getSheetName() == null) {
                     throw new ApiException("Missing the required parameter 'SheetName' when calling DeleteWorksheetValidation");
                 } 
+
                 if (getValidationIndex() == null) {
                     throw new ApiException("Missing the required parameter 'ValidationIndex' when calling DeleteWorksheetValidation");
                 }       
-        String localVarPath = "/cells/{name}/worksheets/{sheetName}/validations/{validationIndex}".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
+        String localVarPath = "v3.0/cells/{name}/worksheets/{sheetName}/validations/{validationIndex}".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
     .replaceAll("\\{" + "sheetName" + "\\}", apiClient.escapeString(sheetName.toString())) 
     .replaceAll("\\{" + "validationIndex" + "\\}", apiClient.escapeString(validationIndex.toString()))   ;
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
@@ -158,7 +161,5 @@ public class DeleteWorksheetValidationRequest  implements IRequestModel {
                 return apiClient.buildCall(localVarPath, "DELETE", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
 
     }
-
-
 }
 

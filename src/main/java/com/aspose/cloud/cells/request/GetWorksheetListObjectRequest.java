@@ -41,13 +41,13 @@ public class GetWorksheetListObjectRequest  implements IRequestModel {
     public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
         this.extendQueryParameterMap = extendQueryParameterMap;
     }
-
     private String name;
     private String sheetName;
     private Integer listobjectindex;
     private String format;
     private String folder;
     private String storageName;
+    
         public GetWorksheetListObjectRequest()
         {
 
@@ -87,7 +87,6 @@ public class GetWorksheetListObjectRequest  implements IRequestModel {
             this.listobjectindex = listobjectindex;
         }
 
-
         public String getFormat() {
             return this.format;
         }
@@ -114,18 +113,22 @@ public class GetWorksheetListObjectRequest  implements IRequestModel {
             this.storageName = storageName;
         }
 
+    
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
-         if (getName() == null) {
+         
+                if (getName() == null) {
                     throw new ApiException("Missing the required parameter 'Name' when calling GetWorksheetListObject");
                 } 
+
                 if (getSheetName() == null) {
                     throw new ApiException("Missing the required parameter 'SheetName' when calling GetWorksheetListObject");
                 } 
+
                 if (getListobjectindex() == null) {
                     throw new ApiException("Missing the required parameter 'Listobjectindex' when calling GetWorksheetListObject");
                 }       
-        String localVarPath = "/cells/{name}/worksheets/{sheetName}/listobjects/{listobjectindex}".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
+        String localVarPath = "v3.0/cells/{name}/worksheets/{sheetName}/listobjects/{listobjectindex}".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
     .replaceAll("\\{" + "sheetName" + "\\}", apiClient.escapeString(sheetName.toString())) 
     .replaceAll("\\{" + "listobjectindex" + "\\}", apiClient.escapeString(listobjectindex.toString()))   ;
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
@@ -172,7 +175,5 @@ public class GetWorksheetListObjectRequest  implements IRequestModel {
                 return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
 
     }
-
-
 }
 

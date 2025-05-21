@@ -41,9 +41,8 @@ public class PostConvertWorksheetToImageRequest  implements IRequestModel {
     public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
         this.extendQueryParameterMap = extendQueryParameterMap;
     }
-
-    private ConvertWorksheetOptions convertWorksheetOptions;
     private String fontsLocation;
+    private ConvertWorksheetOptions convertWorksheetOptions;    
         public PostConvertWorksheetToImageRequest()
         {
 
@@ -53,15 +52,6 @@ public class PostConvertWorksheetToImageRequest  implements IRequestModel {
             this.fontsLocation = fontsLocation;
         }   
 
-        public ConvertWorksheetOptions getConvertWorksheetOptions() {
-            return this.convertWorksheetOptions;
-        }
-
-        public void setConvertWorksheetOptions(ConvertWorksheetOptions convertWorksheetOptions) {
-            this.convertWorksheetOptions = convertWorksheetOptions;
-        }
-
-
         public String getFontsLocation() {
             return this.fontsLocation;
         }
@@ -70,12 +60,21 @@ public class PostConvertWorksheetToImageRequest  implements IRequestModel {
             this.fontsLocation = fontsLocation;
         }
 
+        public ConvertWorksheetOptions getConvertWorksheetOptions() {
+            return this.convertWorksheetOptions;
+        }
+
+        public void setConvertWorksheetOptions(ConvertWorksheetOptions convertWorksheetOptions) {
+            this.convertWorksheetOptions = convertWorksheetOptions;
+        }
+    
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
-         if (getConvertWorksheetOptions() == null) {
+         
+                if (getConvertWorksheetOptions() == null) {
                     throw new ApiException("Missing the required parameter 'ConvertWorksheetOptions' when calling PostConvertWorksheetToImage");
                 }       
-        String localVarPath = "/cells/convertWorksheetToImage";
+        String localVarPath = "v3.0/cells/convertWorksheetToImage";
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -115,7 +114,5 @@ public class PostConvertWorksheetToImageRequest  implements IRequestModel {
                 return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
 
     }
-
-
 }
 

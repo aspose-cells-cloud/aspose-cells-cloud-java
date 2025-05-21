@@ -41,12 +41,12 @@ public class GetWorksheetSparklineGroupRequest  implements IRequestModel {
     public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
         this.extendQueryParameterMap = extendQueryParameterMap;
     }
-
     private String name;
     private String sheetName;
     private Integer sparklineIndex;
     private String folder;
     private String storageName;
+    
         public GetWorksheetSparklineGroupRequest()
         {
 
@@ -85,7 +85,6 @@ public class GetWorksheetSparklineGroupRequest  implements IRequestModel {
             this.sparklineIndex = sparklineIndex;
         }
 
-
         public String getFolder() {
             return this.folder;
         }
@@ -103,18 +102,22 @@ public class GetWorksheetSparklineGroupRequest  implements IRequestModel {
             this.storageName = storageName;
         }
 
+    
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
-         if (getName() == null) {
+         
+                if (getName() == null) {
                     throw new ApiException("Missing the required parameter 'Name' when calling GetWorksheetSparklineGroup");
                 } 
+
                 if (getSheetName() == null) {
                     throw new ApiException("Missing the required parameter 'SheetName' when calling GetWorksheetSparklineGroup");
                 } 
+
                 if (getSparklineIndex() == null) {
                     throw new ApiException("Missing the required parameter 'SparklineIndex' when calling GetWorksheetSparklineGroup");
                 }       
-        String localVarPath = "/cells/{name}/worksheets/{sheetName}/sparklineGroups/{sparklineIndex}".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
+        String localVarPath = "v3.0/cells/{name}/worksheets/{sheetName}/sparklineGroups/{sparklineIndex}".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
     .replaceAll("\\{" + "sheetName" + "\\}", apiClient.escapeString(sheetName.toString())) 
     .replaceAll("\\{" + "sparklineIndex" + "\\}", apiClient.escapeString(sparklineIndex.toString()))   ;
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
@@ -158,7 +161,5 @@ public class GetWorksheetSparklineGroupRequest  implements IRequestModel {
                 return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
 
     }
-
-
 }
 

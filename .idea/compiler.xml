@@ -9,8 +9,5 @@
         <module name="aspose-cells-cloud" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="aspose-cells-cloud" target="1.7" />
-    </bytecodeTargetLevel>
   </component>
 </project>

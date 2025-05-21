@@ -41,13 +41,12 @@ public class PostWorksheetListObjectSortTableRequest  implements IRequestModel {
     public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
         this.extendQueryParameterMap = extendQueryParameterMap;
     }
-
     private String name;
     private String sheetName;
     private Integer listObjectIndex;
-    private DataSorter dataSorter;
     private String folder;
     private String storageName;
+    private DataSorter dataSorter;    
         public PostWorksheetListObjectSortTableRequest()
         {
 
@@ -87,16 +86,6 @@ public class PostWorksheetListObjectSortTableRequest  implements IRequestModel {
             this.listObjectIndex = listObjectIndex;
         }
 
-
-        public DataSorter getDataSorter() {
-            return this.dataSorter;
-        }
-
-        public void setDataSorter(DataSorter dataSorter) {
-            this.dataSorter = dataSorter;
-        }
-
-
         public String getFolder() {
             return this.folder;
         }
@@ -114,21 +103,33 @@ public class PostWorksheetListObjectSortTableRequest  implements IRequestModel {
             this.storageName = storageName;
         }
 
+        public DataSorter getDataSorter() {
+            return this.dataSorter;
+        }
+
+        public void setDataSorter(DataSorter dataSorter) {
+            this.dataSorter = dataSorter;
+        }
+    
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
-         if (getName() == null) {
+         
+                if (getName() == null) {
                     throw new ApiException("Missing the required parameter 'Name' when calling PostWorksheetListObjectSortTable");
                 } 
+
                 if (getSheetName() == null) {
                     throw new ApiException("Missing the required parameter 'SheetName' when calling PostWorksheetListObjectSortTable");
                 } 
+
                 if (getListObjectIndex() == null) {
                     throw new ApiException("Missing the required parameter 'ListObjectIndex' when calling PostWorksheetListObjectSortTable");
                 } 
+
                 if (getDataSorter() == null) {
                     throw new ApiException("Missing the required parameter 'DataSorter' when calling PostWorksheetListObjectSortTable");
                 }       
-        String localVarPath = "/cells/{name}/worksheets/{sheetName}/listobjects/{listObjectIndex}/sort".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
+        String localVarPath = "v3.0/cells/{name}/worksheets/{sheetName}/listobjects/{listObjectIndex}/sort".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
     .replaceAll("\\{" + "sheetName" + "\\}", apiClient.escapeString(sheetName.toString())) 
     .replaceAll("\\{" + "listObjectIndex" + "\\}", apiClient.escapeString(listObjectIndex.toString()))   ;
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
@@ -173,7 +174,5 @@ public class PostWorksheetListObjectSortTableRequest  implements IRequestModel {
                 return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
 
     }
-
-
 }
 

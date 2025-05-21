@@ -41,7 +41,6 @@ public class PostHeaderRequest  implements IRequestModel {
     public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
         this.extendQueryParameterMap = extendQueryParameterMap;
     }
-
     private String name;
     private String sheetName;
     private Integer section;
@@ -49,6 +48,7 @@ public class PostHeaderRequest  implements IRequestModel {
     private Boolean isFirstPage;
     private String folder;
     private String storageName;
+    
         public PostHeaderRequest()
         {
 
@@ -79,7 +79,6 @@ public class PostHeaderRequest  implements IRequestModel {
         public void setSheetName(String sheetName) {
             this.sheetName = sheetName;
         }
-
 
         public Integer getSection() {
             return this.section;
@@ -125,24 +124,30 @@ public class PostHeaderRequest  implements IRequestModel {
             this.storageName = storageName;
         }
 
+    
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
-         if (getName() == null) {
+         
+                if (getName() == null) {
                     throw new ApiException("Missing the required parameter 'Name' when calling PostHeader");
                 } 
+
                 if (getSheetName() == null) {
                     throw new ApiException("Missing the required parameter 'SheetName' when calling PostHeader");
                 } 
+
                 if (getSection() == null) {
                     throw new ApiException("Missing the required parameter 'Section' when calling PostHeader");
                 } 
+
                 if (getScript() == null) {
                     throw new ApiException("Missing the required parameter 'Script' when calling PostHeader");
                 } 
+
                 if (getIsFirstPage() == null) {
                     throw new ApiException("Missing the required parameter 'IsFirstPage' when calling PostHeader");
                 }       
-        String localVarPath = "/cells/{name}/worksheets/{sheetName}/pagesetup/header".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
+        String localVarPath = "v3.0/cells/{name}/worksheets/{sheetName}/pagesetup/header".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
     .replaceAll("\\{" + "sheetName" + "\\}", apiClient.escapeString(sheetName.toString()))   ;
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
@@ -194,7 +199,5 @@ public class PostHeaderRequest  implements IRequestModel {
                 return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
 
     }
-
-
 }
 

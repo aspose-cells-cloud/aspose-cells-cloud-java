@@ -41,9 +41,7 @@ public class PostWorkbookImportJsonRequest  implements IRequestModel {
     public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
         this.extendQueryParameterMap = extendQueryParameterMap;
     }
-
     private String name;
-    private ImportJsonRequest importJsonRequest;
     private String password;
     private String folder;
     private String storageName;
@@ -51,6 +49,7 @@ public class PostWorkbookImportJsonRequest  implements IRequestModel {
     private String outStorageName;
     private Boolean checkExcelRestriction;
     private String region;
+    private ImportJsonRequest importJsonRequest;    
         public PostWorkbookImportJsonRequest()
         {
 
@@ -74,16 +73,6 @@ public class PostWorkbookImportJsonRequest  implements IRequestModel {
         public void setName(String name) {
             this.name = name;
         }
-
-
-        public ImportJsonRequest getImportJsonRequest() {
-            return this.importJsonRequest;
-        }
-
-        public void setImportJsonRequest(ImportJsonRequest importJsonRequest) {
-            this.importJsonRequest = importJsonRequest;
-        }
-
 
         public String getPassword() {
             return this.password;
@@ -147,15 +136,25 @@ public class PostWorkbookImportJsonRequest  implements IRequestModel {
             this.region = region;
         }
 
+        public ImportJsonRequest getImportJsonRequest() {
+            return this.importJsonRequest;
+        }
+
+        public void setImportJsonRequest(ImportJsonRequest importJsonRequest) {
+            this.importJsonRequest = importJsonRequest;
+        }
+    
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
-         if (getName() == null) {
+         
+                if (getName() == null) {
                     throw new ApiException("Missing the required parameter 'Name' when calling PostWorkbookImportJson");
                 } 
+
                 if (getImportJsonRequest() == null) {
                     throw new ApiException("Missing the required parameter 'ImportJsonRequest' when calling PostWorkbookImportJson");
                 }       
-        String localVarPath = "/cells/{name}/importjson".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString()))   ;
+        String localVarPath = "v3.0/cells/{name}/importjson".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString()))   ;
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -213,7 +212,5 @@ public class PostWorkbookImportJsonRequest  implements IRequestModel {
                 return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
 
     }
-
-
 }
 

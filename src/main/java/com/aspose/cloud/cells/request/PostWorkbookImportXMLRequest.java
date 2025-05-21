@@ -41,9 +41,7 @@ public class PostWorkbookImportXMLRequest  implements IRequestModel {
     public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
         this.extendQueryParameterMap = extendQueryParameterMap;
     }
-
     private String name;
-    private ImportXMLRequest importXMLRequest;
     private String password;
     private String folder;
     private String storageName;
@@ -51,6 +49,7 @@ public class PostWorkbookImportXMLRequest  implements IRequestModel {
     private String outStorageName;
     private Boolean checkExcelRestriction;
     private String region;
+    private ImportXMLRequest importXMLRequest;    
         public PostWorkbookImportXMLRequest()
         {
 
@@ -74,16 +73,6 @@ public class PostWorkbookImportXMLRequest  implements IRequestModel {
         public void setName(String name) {
             this.name = name;
         }
-
-
-        public ImportXMLRequest getImportXMLRequest() {
-            return this.importXMLRequest;
-        }
-
-        public void setImportXMLRequest(ImportXMLRequest importXMLRequest) {
-            this.importXMLRequest = importXMLRequest;
-        }
-
 
         public String getPassword() {
             return this.password;
@@ -147,15 +136,25 @@ public class PostWorkbookImportXMLRequest  implements IRequestModel {
             this.region = region;
         }
 
+        public ImportXMLRequest getImportXMLRequest() {
+            return this.importXMLRequest;
+        }
+
+        public void setImportXMLRequest(ImportXMLRequest importXMLRequest) {
+            this.importXMLRequest = importXMLRequest;
+        }
+    
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
-         if (getName() == null) {
+         
+                if (getName() == null) {
                     throw new ApiException("Missing the required parameter 'Name' when calling PostWorkbookImportXML");
                 } 
+
                 if (getImportXMLRequest() == null) {
                     throw new ApiException("Missing the required parameter 'ImportXMLRequest' when calling PostWorkbookImportXML");
                 }       
-        String localVarPath = "/cells/{name}/importxml".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString()))   ;
+        String localVarPath = "v3.0/cells/{name}/importxml".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString()))   ;
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -213,7 +212,5 @@ public class PostWorkbookImportXMLRequest  implements IRequestModel {
                 return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
 
     }
-
-
 }
 

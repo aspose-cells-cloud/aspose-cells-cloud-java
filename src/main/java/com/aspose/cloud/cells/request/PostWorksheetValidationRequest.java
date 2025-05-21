@@ -41,13 +41,12 @@ public class PostWorksheetValidationRequest  implements IRequestModel {
     public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
         this.extendQueryParameterMap = extendQueryParameterMap;
     }
-
     private String name;
     private String sheetName;
     private Integer validationIndex;
-    private Validation validation;
     private String folder;
     private String storageName;
+    private Validation validation;    
         public PostWorksheetValidationRequest()
         {
 
@@ -87,16 +86,6 @@ public class PostWorksheetValidationRequest  implements IRequestModel {
             this.validationIndex = validationIndex;
         }
 
-
-        public Validation getValidation() {
-            return this.validation;
-        }
-
-        public void setValidation(Validation validation) {
-            this.validation = validation;
-        }
-
-
         public String getFolder() {
             return this.folder;
         }
@@ -114,21 +103,33 @@ public class PostWorksheetValidationRequest  implements IRequestModel {
             this.storageName = storageName;
         }
 
+        public Validation getValidation() {
+            return this.validation;
+        }
+
+        public void setValidation(Validation validation) {
+            this.validation = validation;
+        }
+    
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
-         if (getName() == null) {
+         
+                if (getName() == null) {
                     throw new ApiException("Missing the required parameter 'Name' when calling PostWorksheetValidation");
                 } 
+
                 if (getSheetName() == null) {
                     throw new ApiException("Missing the required parameter 'SheetName' when calling PostWorksheetValidation");
                 } 
+
                 if (getValidationIndex() == null) {
                     throw new ApiException("Missing the required parameter 'ValidationIndex' when calling PostWorksheetValidation");
                 } 
+
                 if (getValidation() == null) {
                     throw new ApiException("Missing the required parameter 'Validation' when calling PostWorksheetValidation");
                 }       
-        String localVarPath = "/cells/{name}/worksheets/{sheetName}/validations/{validationIndex}".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
+        String localVarPath = "v3.0/cells/{name}/worksheets/{sheetName}/validations/{validationIndex}".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
     .replaceAll("\\{" + "sheetName" + "\\}", apiClient.escapeString(sheetName.toString())) 
     .replaceAll("\\{" + "validationIndex" + "\\}", apiClient.escapeString(validationIndex.toString()))   ;
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
@@ -173,7 +174,5 @@ public class PostWorksheetValidationRequest  implements IRequestModel {
                 return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
 
     }
-
-
 }
 

@@ -41,8 +41,7 @@ public class PostRemoveCharactersRequest  implements IRequestModel {
     public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
         this.extendQueryParameterMap = extendQueryParameterMap;
     }
-
-    private RemoveCharactersOptions removeCharactersOptions;
+    private RemoveCharactersOptions removeCharactersOptions;    
         public PostRemoveCharactersRequest()
         {
 
@@ -58,13 +57,14 @@ public class PostRemoveCharactersRequest  implements IRequestModel {
         public void setRemoveCharactersOptions(RemoveCharactersOptions removeCharactersOptions) {
             this.removeCharactersOptions = removeCharactersOptions;
         }
-
+    
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
-         if (getRemoveCharactersOptions() == null) {
+         
+                if (getRemoveCharactersOptions() == null) {
                     throw new ApiException("Missing the required parameter 'RemoveCharactersOptions' when calling PostRemoveCharacters");
                 }       
-        String localVarPath = "/cells/removecharacters";
+        String localVarPath = "v3.0/cells/removecharacters";
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
         List<Pair> localVarQueryParams = null;
@@ -101,7 +101,5 @@ public class PostRemoveCharactersRequest  implements IRequestModel {
                 return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
 
     }
-
-
 }
 

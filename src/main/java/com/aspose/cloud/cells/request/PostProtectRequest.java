@@ -41,10 +41,11 @@ public class PostProtectRequest  implements IRequestModel {
     public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
         this.extendQueryParameterMap = extendQueryParameterMap;
     }
-
-    private HashMap<String,File> file;
-    private ProtectWorkbookRequest protectWorkbookRequest;
     private String password;
+    private ProtectWorkbookRequest protectWorkbookRequest;    
+     
+                private HashMap<String,File> file;
+                private String localPath;
         public PostProtectRequest()
         {
 
@@ -55,24 +56,6 @@ public class PostProtectRequest  implements IRequestModel {
             this.password = password;
         }   
 
-        public HashMap<String,File> getFile() {
-            return this.file;
-        }
-
-        public void setFile(HashMap<String,File> file) {
-            this.file = file;
-        }
-
-
-        public ProtectWorkbookRequest getProtectWorkbookRequest() {
-            return this.protectWorkbookRequest;
-        }
-
-        public void setProtectWorkbookRequest(ProtectWorkbookRequest protectWorkbookRequest) {
-            this.protectWorkbookRequest = protectWorkbookRequest;
-        }
-
-
         public String getPassword() {
             return this.password;
         }
@@ -81,15 +64,41 @@ public class PostProtectRequest  implements IRequestModel {
             this.password = password;
         }
 
+        public ProtectWorkbookRequest getProtectWorkbookRequest() {
+            return this.protectWorkbookRequest;
+        }
+
+        public void setProtectWorkbookRequest(ProtectWorkbookRequest protectWorkbookRequest) {
+            this.protectWorkbookRequest = protectWorkbookRequest;
+        }
+    
+         
+                public HashMap<String,File> getFile() {
+                    return this.file;
+                }
+
+                public void setFile(HashMap<String,File> file) {
+                    this.file = file;
+                }
+         
+            public String getLocalPath() {
+                    return this.localPath;
+            }
+            public void setLocalPath(String localPath) {
+                this.localPath = localPath;
+            }
+        
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
-         if (getFile() == null) {
+          
+                if (  getFile() == null &&  getLocalPath() ==null ) {
                     throw new ApiException("Missing the required parameter 'File' when calling PostProtect");
                 } 
+
                 if (getProtectWorkbookRequest() == null) {
                     throw new ApiException("Missing the required parameter 'ProtectWorkbookRequest' when calling PostProtect");
                 }       
-        String localVarPath = "/cells/protect";
+        String localVarPath = "v3.0/cells/protect";
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -102,11 +111,17 @@ public class PostProtectRequest  implements IRequestModel {
             }
         }
                    
+              if (getLocalPath() != null && !getLocalPath().isEmpty()) {
+                     File fileToUpload = new File(getLocalPath());
+                     if (fileToUpload.exists()) {
+                         localVarFormParams.put(fileToUpload.getName(), fileToUpload);
+                     }
+                 }
                 if (getFile() != null){
-                    for (String key : getFile().keySet()) {
-                        localVarFormParams.put(key,getFile().get(key));                
-                    }
-                }      
+                        for (String key : getFile().keySet()) {
+                            localVarFormParams.put(key,getFile().get(key));                
+                        }
+                    }      
         Object localVarPostBody = null;
         localVarFormParams.put("protectWorkbookRequest", apiClient.getJSON().serialize(getProtectWorkbookRequest()));                
                 final String[] localVarAccepts = {
@@ -138,7 +153,5 @@ public class PostProtectRequest  implements IRequestModel {
                 return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
 
     }
-
-
 }
 

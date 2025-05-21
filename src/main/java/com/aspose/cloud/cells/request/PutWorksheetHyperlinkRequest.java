@@ -41,7 +41,6 @@ public class PutWorksheetHyperlinkRequest  implements IRequestModel {
     public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
         this.extendQueryParameterMap = extendQueryParameterMap;
     }
-
     private String name;
     private String sheetName;
     private Integer firstRow;
@@ -51,6 +50,7 @@ public class PutWorksheetHyperlinkRequest  implements IRequestModel {
     private String address;
     private String folder;
     private String storageName;
+    
         public PutWorksheetHyperlinkRequest()
         {
 
@@ -83,7 +83,6 @@ public class PutWorksheetHyperlinkRequest  implements IRequestModel {
         public void setSheetName(String sheetName) {
             this.sheetName = sheetName;
         }
-
 
         public Integer getFirstRow() {
             return this.firstRow;
@@ -147,30 +146,38 @@ public class PutWorksheetHyperlinkRequest  implements IRequestModel {
             this.storageName = storageName;
         }
 
+    
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
-         if (getName() == null) {
+         
+                if (getName() == null) {
                     throw new ApiException("Missing the required parameter 'Name' when calling PutWorksheetHyperlink");
                 } 
+
                 if (getSheetName() == null) {
                     throw new ApiException("Missing the required parameter 'SheetName' when calling PutWorksheetHyperlink");
                 } 
+
                 if (getFirstRow() == null) {
                     throw new ApiException("Missing the required parameter 'FirstRow' when calling PutWorksheetHyperlink");
                 } 
+
                 if (getFirstColumn() == null) {
                     throw new ApiException("Missing the required parameter 'FirstColumn' when calling PutWorksheetHyperlink");
                 } 
+
                 if (getTotalRows() == null) {
                     throw new ApiException("Missing the required parameter 'TotalRows' when calling PutWorksheetHyperlink");
                 } 
+
                 if (getTotalColumns() == null) {
                     throw new ApiException("Missing the required parameter 'TotalColumns' when calling PutWorksheetHyperlink");
                 } 
+
                 if (getAddress() == null) {
                     throw new ApiException("Missing the required parameter 'Address' when calling PutWorksheetHyperlink");
                 }       
-        String localVarPath = "/cells/{name}/worksheets/{sheetName}/hyperlinks".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
+        String localVarPath = "v3.0/cells/{name}/worksheets/{sheetName}/hyperlinks".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
     .replaceAll("\\{" + "sheetName" + "\\}", apiClient.escapeString(sheetName.toString()))   ;
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
@@ -228,7 +235,5 @@ public class PutWorksheetHyperlinkRequest  implements IRequestModel {
                 return apiClient.buildCall(localVarPath, "PUT", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
 
     }
-
-
 }
 

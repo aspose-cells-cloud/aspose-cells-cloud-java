@@ -41,8 +41,7 @@ public class PostConvertTextRequest  implements IRequestModel {
     public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
         this.extendQueryParameterMap = extendQueryParameterMap;
     }
-
-    private ConvertTextOptions convertTextOptions;
+    private ConvertTextOptions convertTextOptions;    
         public PostConvertTextRequest()
         {
 
@@ -58,13 +57,14 @@ public class PostConvertTextRequest  implements IRequestModel {
         public void setConvertTextOptions(ConvertTextOptions convertTextOptions) {
             this.convertTextOptions = convertTextOptions;
         }
-
+    
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
-         if (getConvertTextOptions() == null) {
+         
+                if (getConvertTextOptions() == null) {
                     throw new ApiException("Missing the required parameter 'ConvertTextOptions' when calling PostConvertText");
                 }       
-        String localVarPath = "/cells/converttext";
+        String localVarPath = "v3.0/cells/converttext";
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
         List<Pair> localVarQueryParams = null;
@@ -101,7 +101,5 @@ public class PostConvertTextRequest  implements IRequestModel {
                 return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
 
     }
-
-
 }
 

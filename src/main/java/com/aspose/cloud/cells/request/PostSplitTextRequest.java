@@ -41,8 +41,7 @@ public class PostSplitTextRequest  implements IRequestModel {
     public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
         this.extendQueryParameterMap = extendQueryParameterMap;
     }
-
-    private SplitTextOptions splitTextOptions;
+    private SplitTextOptions splitTextOptions;    
         public PostSplitTextRequest()
         {
 
@@ -58,13 +57,14 @@ public class PostSplitTextRequest  implements IRequestModel {
         public void setSplitTextOptions(SplitTextOptions splitTextOptions) {
             this.splitTextOptions = splitTextOptions;
         }
-
+    
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
-         if (getSplitTextOptions() == null) {
+         
+                if (getSplitTextOptions() == null) {
                     throw new ApiException("Missing the required parameter 'SplitTextOptions' when calling PostSplitText");
                 }       
-        String localVarPath = "/cells/splittext";
+        String localVarPath = "v3.0/cells/splittext";
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
         List<Pair> localVarQueryParams = null;
@@ -101,7 +101,5 @@ public class PostSplitTextRequest  implements IRequestModel {
                 return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
 
     }
-
-
 }
 

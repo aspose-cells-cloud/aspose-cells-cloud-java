@@ -41,14 +41,13 @@ public class PutWorksheetPivotTableFilterRequest  implements IRequestModel {
     public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
         this.extendQueryParameterMap = extendQueryParameterMap;
     }
-
     private String name;
     private String sheetName;
     private Integer pivotTableIndex;
-    private PivotFilter filter;
     private Boolean needReCalculate;
     private String folder;
     private String storageName;
+    private PivotFilter filter;    
         public PutWorksheetPivotTableFilterRequest()
         {
 
@@ -89,16 +88,6 @@ public class PutWorksheetPivotTableFilterRequest  implements IRequestModel {
             this.pivotTableIndex = pivotTableIndex;
         }
 
-
-        public PivotFilter getFilter() {
-            return this.filter;
-        }
-
-        public void setFilter(PivotFilter filter) {
-            this.filter = filter;
-        }
-
-
         public Boolean getNeedReCalculate() {
             return this.needReCalculate;
         }
@@ -125,21 +114,33 @@ public class PutWorksheetPivotTableFilterRequest  implements IRequestModel {
             this.storageName = storageName;
         }
 
+        public PivotFilter getFilter() {
+            return this.filter;
+        }
+
+        public void setFilter(PivotFilter filter) {
+            this.filter = filter;
+        }
+    
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
-         if (getName() == null) {
+         
+                if (getName() == null) {
                     throw new ApiException("Missing the required parameter 'Name' when calling PutWorksheetPivotTableFilter");
                 } 
+
                 if (getSheetName() == null) {
                     throw new ApiException("Missing the required parameter 'SheetName' when calling PutWorksheetPivotTableFilter");
                 } 
+
                 if (getPivotTableIndex() == null) {
                     throw new ApiException("Missing the required parameter 'PivotTableIndex' when calling PutWorksheetPivotTableFilter");
                 } 
+
                 if (getFilter() == null) {
                     throw new ApiException("Missing the required parameter 'Filter' when calling PutWorksheetPivotTableFilter");
                 }       
-        String localVarPath = "/cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/PivotFilters".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
+        String localVarPath = "v3.0/cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/PivotFilters".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
     .replaceAll("\\{" + "sheetName" + "\\}", apiClient.escapeString(sheetName.toString())) 
     .replaceAll("\\{" + "pivotTableIndex" + "\\}", apiClient.escapeString(pivotTableIndex.toString()))   ;
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
@@ -187,7 +188,5 @@ public class PutWorksheetPivotTableFilterRequest  implements IRequestModel {
                 return apiClient.buildCall(localVarPath, "PUT", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
 
     }
-
-
 }
 

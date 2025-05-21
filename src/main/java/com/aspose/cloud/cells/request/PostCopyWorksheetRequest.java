@@ -41,15 +41,14 @@ public class PostCopyWorksheetRequest  implements IRequestModel {
     public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
         this.extendQueryParameterMap = extendQueryParameterMap;
     }
-
     private String name;
     private String sheetName;
     private String sourceSheet;
-    private CopyOptions options;
     private String sourceWorkbook;
     private String sourceFolder;
     private String folder;
     private String storageName;
+    private CopyOptions options;    
         public PostCopyWorksheetRequest()
         {
 
@@ -82,22 +81,12 @@ public class PostCopyWorksheetRequest  implements IRequestModel {
             this.sheetName = sheetName;
         }
 
-
         public String getSourceSheet() {
             return this.sourceSheet;
         }
 
         public void setSourceSheet(String sourceSheet) {
             this.sourceSheet = sourceSheet;
-        }
-
-
-        public CopyOptions getOptions() {
-            return this.options;
-        }
-
-        public void setOptions(CopyOptions options) {
-            this.options = options;
         }
 
 
@@ -136,21 +125,33 @@ public class PostCopyWorksheetRequest  implements IRequestModel {
             this.storageName = storageName;
         }
 
+        public CopyOptions getOptions() {
+            return this.options;
+        }
+
+        public void setOptions(CopyOptions options) {
+            this.options = options;
+        }
+    
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
-         if (getName() == null) {
+         
+                if (getName() == null) {
                     throw new ApiException("Missing the required parameter 'Name' when calling PostCopyWorksheet");
                 } 
+
                 if (getSheetName() == null) {
                     throw new ApiException("Missing the required parameter 'SheetName' when calling PostCopyWorksheet");
                 } 
+
                 if (getSourceSheet() == null) {
                     throw new ApiException("Missing the required parameter 'SourceSheet' when calling PostCopyWorksheet");
                 } 
+
                 if (getOptions() == null) {
                     throw new ApiException("Missing the required parameter 'Options' when calling PostCopyWorksheet");
                 }       
-        String localVarPath = "/cells/{name}/worksheets/{sheetName}/copy".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
+        String localVarPath = "v3.0/cells/{name}/worksheets/{sheetName}/copy".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
     .replaceAll("\\{" + "sheetName" + "\\}", apiClient.escapeString(sheetName.toString()))   ;
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
@@ -203,7 +204,5 @@ public class PostCopyWorksheetRequest  implements IRequestModel {
                 return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
 
     }
-
-
 }
 

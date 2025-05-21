@@ -41,13 +41,12 @@ public class PostWorksheetListObjectRequest  implements IRequestModel {
     public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
         this.extendQueryParameterMap = extendQueryParameterMap;
     }
-
     private String name;
     private String sheetName;
     private Integer listObjectIndex;
-    private ListObject listObject;
     private String folder;
     private String storageName;
+    private ListObject listObject;    
         public PostWorksheetListObjectRequest()
         {
 
@@ -87,16 +86,6 @@ public class PostWorksheetListObjectRequest  implements IRequestModel {
             this.listObjectIndex = listObjectIndex;
         }
 
-
-        public ListObject getListObject() {
-            return this.listObject;
-        }
-
-        public void setListObject(ListObject listObject) {
-            this.listObject = listObject;
-        }
-
-
         public String getFolder() {
             return this.folder;
         }
@@ -114,21 +103,33 @@ public class PostWorksheetListObjectRequest  implements IRequestModel {
             this.storageName = storageName;
         }
 
+        public ListObject getListObject() {
+            return this.listObject;
+        }
+
+        public void setListObject(ListObject listObject) {
+            this.listObject = listObject;
+        }
+    
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
-         if (getName() == null) {
+         
+                if (getName() == null) {
                     throw new ApiException("Missing the required parameter 'Name' when calling PostWorksheetListObject");
                 } 
+
                 if (getSheetName() == null) {
                     throw new ApiException("Missing the required parameter 'SheetName' when calling PostWorksheetListObject");
                 } 
+
                 if (getListObjectIndex() == null) {
                     throw new ApiException("Missing the required parameter 'ListObjectIndex' when calling PostWorksheetListObject");
                 } 
+
                 if (getListObject() == null) {
                     throw new ApiException("Missing the required parameter 'ListObject' when calling PostWorksheetListObject");
                 }       
-        String localVarPath = "/cells/{name}/worksheets/{sheetName}/listobjects/{listObjectIndex}".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
+        String localVarPath = "v3.0/cells/{name}/worksheets/{sheetName}/listobjects/{listObjectIndex}".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
     .replaceAll("\\{" + "sheetName" + "\\}", apiClient.escapeString(sheetName.toString())) 
     .replaceAll("\\{" + "listObjectIndex" + "\\}", apiClient.escapeString(listObjectIndex.toString()))   ;
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
@@ -173,7 +174,5 @@ public class PostWorksheetListObjectRequest  implements IRequestModel {
                 return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
 
     }
-
-
 }
 

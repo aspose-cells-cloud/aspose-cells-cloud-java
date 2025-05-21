@@ -41,13 +41,12 @@ public class PutWorksheetConditionalFormattingRequest  implements IRequestModel 
     public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
         this.extendQueryParameterMap = extendQueryParameterMap;
     }
-
     private String name;
     private String sheetName;
-    private FormatCondition formatcondition;
     private String cellArea;
     private String folder;
     private String storageName;
+    private FormatCondition formatcondition;    
         public PutWorksheetConditionalFormattingRequest()
         {
 
@@ -78,16 +77,6 @@ public class PutWorksheetConditionalFormattingRequest  implements IRequestModel 
             this.sheetName = sheetName;
         }
 
-
-        public FormatCondition getFormatcondition() {
-            return this.formatcondition;
-        }
-
-        public void setFormatcondition(FormatCondition formatcondition) {
-            this.formatcondition = formatcondition;
-        }
-
-
         public String getCellArea() {
             return this.cellArea;
         }
@@ -114,21 +103,33 @@ public class PutWorksheetConditionalFormattingRequest  implements IRequestModel 
             this.storageName = storageName;
         }
 
+        public FormatCondition getFormatcondition() {
+            return this.formatcondition;
+        }
+
+        public void setFormatcondition(FormatCondition formatcondition) {
+            this.formatcondition = formatcondition;
+        }
+    
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
-         if (getName() == null) {
+         
+                if (getName() == null) {
                     throw new ApiException("Missing the required parameter 'Name' when calling PutWorksheetConditionalFormatting");
                 } 
+
                 if (getSheetName() == null) {
                     throw new ApiException("Missing the required parameter 'SheetName' when calling PutWorksheetConditionalFormatting");
                 } 
+
                 if (getFormatcondition() == null) {
                     throw new ApiException("Missing the required parameter 'Formatcondition' when calling PutWorksheetConditionalFormatting");
                 } 
+
                 if (getCellArea() == null) {
                     throw new ApiException("Missing the required parameter 'CellArea' when calling PutWorksheetConditionalFormatting");
                 }       
-        String localVarPath = "/cells/{name}/worksheets/{sheetName}/conditionalFormattings".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
+        String localVarPath = "v3.0/cells/{name}/worksheets/{sheetName}/conditionalFormattings".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
     .replaceAll("\\{" + "sheetName" + "\\}", apiClient.escapeString(sheetName.toString()))   ;
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
@@ -175,7 +176,5 @@ public class PutWorksheetConditionalFormattingRequest  implements IRequestModel 
                 return apiClient.buildCall(localVarPath, "PUT", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
 
     }
-
-
 }
 

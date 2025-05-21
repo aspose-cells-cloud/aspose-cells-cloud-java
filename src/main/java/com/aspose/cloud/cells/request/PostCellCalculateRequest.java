@@ -41,13 +41,12 @@ public class PostCellCalculateRequest  implements IRequestModel {
     public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
         this.extendQueryParameterMap = extendQueryParameterMap;
     }
-
     private String name;
     private String sheetName;
     private String cellName;
-    private CalculationOptions options;
     private String folder;
     private String storageName;
+    private CalculationOptions options;    
         public PostCellCalculateRequest()
         {
 
@@ -87,16 +86,6 @@ public class PostCellCalculateRequest  implements IRequestModel {
             this.cellName = cellName;
         }
 
-
-        public CalculationOptions getOptions() {
-            return this.options;
-        }
-
-        public void setOptions(CalculationOptions options) {
-            this.options = options;
-        }
-
-
         public String getFolder() {
             return this.folder;
         }
@@ -114,18 +103,29 @@ public class PostCellCalculateRequest  implements IRequestModel {
             this.storageName = storageName;
         }
 
+        public CalculationOptions getOptions() {
+            return this.options;
+        }
+
+        public void setOptions(CalculationOptions options) {
+            this.options = options;
+        }
+    
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
-         if (getName() == null) {
+         
+                if (getName() == null) {
                     throw new ApiException("Missing the required parameter 'Name' when calling PostCellCalculate");
                 } 
+
                 if (getSheetName() == null) {
                     throw new ApiException("Missing the required parameter 'SheetName' when calling PostCellCalculate");
                 } 
+
                 if (getCellName() == null) {
                     throw new ApiException("Missing the required parameter 'CellName' when calling PostCellCalculate");
                 }       
-        String localVarPath = "/cells/{name}/worksheets/{sheetName}/cells/{cellName}/calculate".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
+        String localVarPath = "v3.0/cells/{name}/worksheets/{sheetName}/cells/{cellName}/calculate".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
     .replaceAll("\\{" + "sheetName" + "\\}", apiClient.escapeString(sheetName.toString())) 
     .replaceAll("\\{" + "cellName" + "\\}", apiClient.escapeString(cellName.toString()))   ;
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
@@ -170,7 +170,5 @@ public class PostCellCalculateRequest  implements IRequestModel {
                 return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
 
     }
-
-
 }
 

@@ -41,8 +41,7 @@ public class PostDataDeduplicationRequest  implements IRequestModel {
     public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
         this.extendQueryParameterMap = extendQueryParameterMap;
     }
-
-    private DataDeduplicationRequest dataDeduplicationRequest;
+    private DataDeduplicationRequest dataDeduplicationRequest;    
         public PostDataDeduplicationRequest()
         {
 
@@ -58,13 +57,14 @@ public class PostDataDeduplicationRequest  implements IRequestModel {
         public void setDataDeduplicationRequest(DataDeduplicationRequest dataDeduplicationRequest) {
             this.dataDeduplicationRequest = dataDeduplicationRequest;
         }
-
+    
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
-         if (getDataDeduplicationRequest() == null) {
+         
+                if (getDataDeduplicationRequest() == null) {
                     throw new ApiException("Missing the required parameter 'DataDeduplicationRequest' when calling PostDataDeduplication");
                 }       
-        String localVarPath = "/cells/datadeduplication";
+        String localVarPath = "v3.0/cells/datadeduplication";
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
         List<Pair> localVarQueryParams = null;
@@ -101,7 +101,5 @@ public class PostDataDeduplicationRequest  implements IRequestModel {
                 return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
 
     }
-
-
 }
 

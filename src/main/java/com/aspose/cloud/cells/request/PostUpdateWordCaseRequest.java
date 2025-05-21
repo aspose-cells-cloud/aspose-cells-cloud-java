@@ -41,8 +41,7 @@ public class PostUpdateWordCaseRequest  implements IRequestModel {
     public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
         this.extendQueryParameterMap = extendQueryParameterMap;
     }
-
-    private WordCaseOptions wordCaseOptions;
+    private WordCaseOptions wordCaseOptions;    
         public PostUpdateWordCaseRequest()
         {
 
@@ -58,13 +57,14 @@ public class PostUpdateWordCaseRequest  implements IRequestModel {
         public void setWordCaseOptions(WordCaseOptions wordCaseOptions) {
             this.wordCaseOptions = wordCaseOptions;
         }
-
+    
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
-         if (getWordCaseOptions() == null) {
+         
+                if (getWordCaseOptions() == null) {
                     throw new ApiException("Missing the required parameter 'WordCaseOptions' when calling PostUpdateWordCase");
                 }       
-        String localVarPath = "/cells/updatewordcase";
+        String localVarPath = "v3.0/cells/updatewordcase";
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
         List<Pair> localVarQueryParams = null;
@@ -101,7 +101,5 @@ public class PostUpdateWordCaseRequest  implements IRequestModel {
                 return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
 
     }
-
-
 }
 

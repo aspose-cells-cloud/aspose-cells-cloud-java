@@ -41,7 +41,6 @@ public class PostSetCellRangeValueRequest  implements IRequestModel {
     public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
         this.extendQueryParameterMap = extendQueryParameterMap;
     }
-
     private String name;
     private String sheetName;
     private String cellarea;
@@ -49,6 +48,7 @@ public class PostSetCellRangeValueRequest  implements IRequestModel {
     private String type;
     private String folder;
     private String storageName;
+    
         public PostSetCellRangeValueRequest()
         {
 
@@ -79,7 +79,6 @@ public class PostSetCellRangeValueRequest  implements IRequestModel {
         public void setSheetName(String sheetName) {
             this.sheetName = sheetName;
         }
-
 
         public String getCellarea() {
             return this.cellarea;
@@ -125,24 +124,30 @@ public class PostSetCellRangeValueRequest  implements IRequestModel {
             this.storageName = storageName;
         }
 
+    
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
-         if (getName() == null) {
+         
+                if (getName() == null) {
                     throw new ApiException("Missing the required parameter 'Name' when calling PostSetCellRangeValue");
                 } 
+
                 if (getSheetName() == null) {
                     throw new ApiException("Missing the required parameter 'SheetName' when calling PostSetCellRangeValue");
                 } 
+
                 if (getCellarea() == null) {
                     throw new ApiException("Missing the required parameter 'Cellarea' when calling PostSetCellRangeValue");
                 } 
+
                 if (getValue() == null) {
                     throw new ApiException("Missing the required parameter 'Value' when calling PostSetCellRangeValue");
                 } 
+
                 if (getType() == null) {
                     throw new ApiException("Missing the required parameter 'Type' when calling PostSetCellRangeValue");
                 }       
-        String localVarPath = "/cells/{name}/worksheets/{sheetName}/cells".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
+        String localVarPath = "v3.0/cells/{name}/worksheets/{sheetName}/cells".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
     .replaceAll("\\{" + "sheetName" + "\\}", apiClient.escapeString(sheetName.toString()))   ;
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
@@ -194,7 +199,5 @@ public class PostSetCellRangeValueRequest  implements IRequestModel {
                 return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
 
     }
-
-
 }
 

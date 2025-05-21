@@ -41,13 +41,12 @@ public class PostWorksheetHyperlinkRequest  implements IRequestModel {
     public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
         this.extendQueryParameterMap = extendQueryParameterMap;
     }
-
     private String name;
     private String sheetName;
     private Integer hyperlinkIndex;
-    private Hyperlink hyperlink;
     private String folder;
     private String storageName;
+    private Hyperlink hyperlink;    
         public PostWorksheetHyperlinkRequest()
         {
 
@@ -87,16 +86,6 @@ public class PostWorksheetHyperlinkRequest  implements IRequestModel {
             this.hyperlinkIndex = hyperlinkIndex;
         }
 
-
-        public Hyperlink getHyperlink() {
-            return this.hyperlink;
-        }
-
-        public void setHyperlink(Hyperlink hyperlink) {
-            this.hyperlink = hyperlink;
-        }
-
-
         public String getFolder() {
             return this.folder;
         }
@@ -114,21 +103,33 @@ public class PostWorksheetHyperlinkRequest  implements IRequestModel {
             this.storageName = storageName;
         }
 
+        public Hyperlink getHyperlink() {
+            return this.hyperlink;
+        }
+
+        public void setHyperlink(Hyperlink hyperlink) {
+            this.hyperlink = hyperlink;
+        }
+    
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
-         if (getName() == null) {
+         
+                if (getName() == null) {
                     throw new ApiException("Missing the required parameter 'Name' when calling PostWorksheetHyperlink");
                 } 
+
                 if (getSheetName() == null) {
                     throw new ApiException("Missing the required parameter 'SheetName' when calling PostWorksheetHyperlink");
                 } 
+
                 if (getHyperlinkIndex() == null) {
                     throw new ApiException("Missing the required parameter 'HyperlinkIndex' when calling PostWorksheetHyperlink");
                 } 
+
                 if (getHyperlink() == null) {
                     throw new ApiException("Missing the required parameter 'Hyperlink' when calling PostWorksheetHyperlink");
                 }       
-        String localVarPath = "/cells/{name}/worksheets/{sheetName}/hyperlinks/{hyperlinkIndex}".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
+        String localVarPath = "v3.0/cells/{name}/worksheets/{sheetName}/hyperlinks/{hyperlinkIndex}".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
     .replaceAll("\\{" + "sheetName" + "\\}", apiClient.escapeString(sheetName.toString())) 
     .replaceAll("\\{" + "hyperlinkIndex" + "\\}", apiClient.escapeString(hyperlinkIndex.toString()))   ;
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
@@ -173,7 +174,5 @@ public class PostWorksheetHyperlinkRequest  implements IRequestModel {
                 return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
 
     }
-
-
 }
 

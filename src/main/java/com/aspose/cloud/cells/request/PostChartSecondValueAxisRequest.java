@@ -41,13 +41,12 @@ public class PostChartSecondValueAxisRequest  implements IRequestModel {
     public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
         this.extendQueryParameterMap = extendQueryParameterMap;
     }
-
     private String name;
     private String sheetName;
     private Integer chartIndex;
-    private Axis axis;
     private String folder;
     private String storageName;
+    private Axis axis;    
         public PostChartSecondValueAxisRequest()
         {
 
@@ -87,16 +86,6 @@ public class PostChartSecondValueAxisRequest  implements IRequestModel {
             this.chartIndex = chartIndex;
         }
 
-
-        public Axis getAxis() {
-            return this.axis;
-        }
-
-        public void setAxis(Axis axis) {
-            this.axis = axis;
-        }
-
-
         public String getFolder() {
             return this.folder;
         }
@@ -114,21 +103,33 @@ public class PostChartSecondValueAxisRequest  implements IRequestModel {
             this.storageName = storageName;
         }
 
+        public Axis getAxis() {
+            return this.axis;
+        }
+
+        public void setAxis(Axis axis) {
+            this.axis = axis;
+        }
+    
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
-         if (getName() == null) {
+         
+                if (getName() == null) {
                     throw new ApiException("Missing the required parameter 'Name' when calling PostChartSecondValueAxis");
                 } 
+
                 if (getSheetName() == null) {
                     throw new ApiException("Missing the required parameter 'SheetName' when calling PostChartSecondValueAxis");
                 } 
+
                 if (getChartIndex() == null) {
                     throw new ApiException("Missing the required parameter 'ChartIndex' when calling PostChartSecondValueAxis");
                 } 
+
                 if (getAxis() == null) {
                     throw new ApiException("Missing the required parameter 'Axis' when calling PostChartSecondValueAxis");
                 }       
-        String localVarPath = "/cells/{name}/worksheets/{sheetName}/charts/{chartIndex}/secondvalueaxis".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
+        String localVarPath = "v3.0/cells/{name}/worksheets/{sheetName}/charts/{chartIndex}/secondvalueaxis".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
     .replaceAll("\\{" + "sheetName" + "\\}", apiClient.escapeString(sheetName.toString())) 
     .replaceAll("\\{" + "chartIndex" + "\\}", apiClient.escapeString(chartIndex.toString()))   ;
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
@@ -173,7 +174,5 @@ public class PostChartSecondValueAxisRequest  implements IRequestModel {
                 return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
 
     }
-
-
 }
 

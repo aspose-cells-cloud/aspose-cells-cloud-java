@@ -41,12 +41,11 @@ public class PostPageSetupRequest  implements IRequestModel {
     public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
         this.extendQueryParameterMap = extendQueryParameterMap;
     }
-
     private String name;
     private String sheetName;
-    private PageSetup pageSetup;
     private String folder;
     private String storageName;
+    private PageSetup pageSetup;    
         public PostPageSetupRequest()
         {
 
@@ -76,16 +75,6 @@ public class PostPageSetupRequest  implements IRequestModel {
             this.sheetName = sheetName;
         }
 
-
-        public PageSetup getPageSetup() {
-            return this.pageSetup;
-        }
-
-        public void setPageSetup(PageSetup pageSetup) {
-            this.pageSetup = pageSetup;
-        }
-
-
         public String getFolder() {
             return this.folder;
         }
@@ -103,18 +92,29 @@ public class PostPageSetupRequest  implements IRequestModel {
             this.storageName = storageName;
         }
 
+        public PageSetup getPageSetup() {
+            return this.pageSetup;
+        }
+
+        public void setPageSetup(PageSetup pageSetup) {
+            this.pageSetup = pageSetup;
+        }
+    
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
-         if (getName() == null) {
+         
+                if (getName() == null) {
                     throw new ApiException("Missing the required parameter 'Name' when calling PostPageSetup");
                 } 
+
                 if (getSheetName() == null) {
                     throw new ApiException("Missing the required parameter 'SheetName' when calling PostPageSetup");
                 } 
+
                 if (getPageSetup() == null) {
                     throw new ApiException("Missing the required parameter 'PageSetup' when calling PostPageSetup");
                 }       
-        String localVarPath = "/cells/{name}/worksheets/{sheetName}/pagesetup".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
+        String localVarPath = "v3.0/cells/{name}/worksheets/{sheetName}/pagesetup".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
     .replaceAll("\\{" + "sheetName" + "\\}", apiClient.escapeString(sheetName.toString()))   ;
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
@@ -158,7 +158,5 @@ public class PostPageSetupRequest  implements IRequestModel {
                 return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
 
     }
-
-
 }
 

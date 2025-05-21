@@ -41,16 +41,15 @@ public class PutWorksheetColorFilterRequest  implements IRequestModel {
     public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
         this.extendQueryParameterMap = extendQueryParameterMap;
     }
-
     private String name;
     private String sheetName;
     private String range;
     private Integer fieldIndex;
-    private ColorFilterRequest colorFilter;
     private Boolean matchBlanks;
     private Boolean refresh;
     private String folder;
     private String storageName;
+    private ColorFilterRequest colorFilter;    
         public PutWorksheetColorFilterRequest()
         {
 
@@ -84,7 +83,6 @@ public class PutWorksheetColorFilterRequest  implements IRequestModel {
             this.sheetName = sheetName;
         }
 
-
         public String getRange() {
             return this.range;
         }
@@ -100,15 +98,6 @@ public class PutWorksheetColorFilterRequest  implements IRequestModel {
 
         public void setFieldIndex(Integer fieldIndex) {
             this.fieldIndex = fieldIndex;
-        }
-
-
-        public ColorFilterRequest getColorFilter() {
-            return this.colorFilter;
-        }
-
-        public void setColorFilter(ColorFilterRequest colorFilter) {
-            this.colorFilter = colorFilter;
         }
 
 
@@ -147,24 +136,37 @@ public class PutWorksheetColorFilterRequest  implements IRequestModel {
             this.storageName = storageName;
         }
 
+        public ColorFilterRequest getColorFilter() {
+            return this.colorFilter;
+        }
+
+        public void setColorFilter(ColorFilterRequest colorFilter) {
+            this.colorFilter = colorFilter;
+        }
+    
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
-         if (getName() == null) {
+         
+                if (getName() == null) {
                     throw new ApiException("Missing the required parameter 'Name' when calling PutWorksheetColorFilter");
                 } 
+
                 if (getSheetName() == null) {
                     throw new ApiException("Missing the required parameter 'SheetName' when calling PutWorksheetColorFilter");
                 } 
+
                 if (getRange() == null) {
                     throw new ApiException("Missing the required parameter 'Range' when calling PutWorksheetColorFilter");
                 } 
+
                 if (getFieldIndex() == null) {
                     throw new ApiException("Missing the required parameter 'FieldIndex' when calling PutWorksheetColorFilter");
                 } 
+
                 if (getColorFilter() == null) {
                     throw new ApiException("Missing the required parameter 'ColorFilter' when calling PutWorksheetColorFilter");
                 }       
-        String localVarPath = "/cells/{name}/worksheets/{sheetName}/autoFilter/colorFilter".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
+        String localVarPath = "v3.0/cells/{name}/worksheets/{sheetName}/autoFilter/colorFilter".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
     .replaceAll("\\{" + "sheetName" + "\\}", apiClient.escapeString(sheetName.toString()))   ;
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
@@ -220,7 +222,5 @@ public class PutWorksheetColorFilterRequest  implements IRequestModel {
                 return apiClient.buildCall(localVarPath, "PUT", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
 
     }
-
-
 }
 

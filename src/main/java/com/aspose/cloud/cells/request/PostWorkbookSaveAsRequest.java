@@ -41,10 +41,8 @@ public class PostWorkbookSaveAsRequest  implements IRequestModel {
     public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
         this.extendQueryParameterMap = extendQueryParameterMap;
     }
-
     private String name;
     private String newfilename;
-    private SaveOptions saveOptions;
     private Boolean isAutoFitRows;
     private Boolean isAutoFitColumns;
     private String folder;
@@ -54,12 +52,14 @@ public class PostWorkbookSaveAsRequest  implements IRequestModel {
     private String region;
     private Boolean pageWideFitOnPerSheet;
     private Boolean pageTallFitOnPerSheet;
+    private Boolean onePagePerSheet;
     private String fontsLocation;
+    private SaveOptions saveOptions;    
         public PostWorkbookSaveAsRequest()
         {
 
         }
-        public PostWorkbookSaveAsRequest(String name, String newfilename, SaveOptions saveOptions, Boolean isAutoFitRows, Boolean isAutoFitColumns, String folder, String storageName, String outStorageName, Boolean checkExcelRestriction, String region, Boolean pageWideFitOnPerSheet, Boolean pageTallFitOnPerSheet, String fontsLocation) {
+        public PostWorkbookSaveAsRequest(String name, String newfilename, SaveOptions saveOptions, Boolean isAutoFitRows, Boolean isAutoFitColumns, String folder, String storageName, String outStorageName, Boolean checkExcelRestriction, String region, Boolean pageWideFitOnPerSheet, Boolean pageTallFitOnPerSheet, Boolean onePagePerSheet, String fontsLocation) {
             this.name = name;
             this.newfilename = newfilename;
             this.saveOptions = saveOptions;
@@ -72,6 +72,7 @@ public class PostWorkbookSaveAsRequest  implements IRequestModel {
             this.region = region;
             this.pageWideFitOnPerSheet = pageWideFitOnPerSheet;
             this.pageTallFitOnPerSheet = pageTallFitOnPerSheet;
+            this.onePagePerSheet = onePagePerSheet;
             this.fontsLocation = fontsLocation;
         }   
 
@@ -83,22 +84,12 @@ public class PostWorkbookSaveAsRequest  implements IRequestModel {
             this.name = name;
         }
 
-
         public String getNewfilename() {
             return this.newfilename;
         }
 
         public void setNewfilename(String newfilename) {
             this.newfilename = newfilename;
-        }
-
-
-        public SaveOptions getSaveOptions() {
-            return this.saveOptions;
-        }
-
-        public void setSaveOptions(SaveOptions saveOptions) {
-            this.saveOptions = saveOptions;
         }
 
 
@@ -183,6 +174,15 @@ public class PostWorkbookSaveAsRequest  implements IRequestModel {
         }
 
 
+        public Boolean getOnePagePerSheet() {
+            return this.onePagePerSheet;
+        }
+
+        public void setOnePagePerSheet(Boolean onePagePerSheet) {
+            this.onePagePerSheet = onePagePerSheet;
+        }
+
+
         public String getFontsLocation() {
             return this.fontsLocation;
         }
@@ -191,15 +191,25 @@ public class PostWorkbookSaveAsRequest  implements IRequestModel {
             this.fontsLocation = fontsLocation;
         }
 
+        public SaveOptions getSaveOptions() {
+            return this.saveOptions;
+        }
+
+        public void setSaveOptions(SaveOptions saveOptions) {
+            this.saveOptions = saveOptions;
+        }
+    
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
-         if (getName() == null) {
+         
+                if (getName() == null) {
                     throw new ApiException("Missing the required parameter 'Name' when calling PostWorkbookSaveAs");
                 } 
+
                 if (getNewfilename() == null) {
                     throw new ApiException("Missing the required parameter 'Newfilename' when calling PostWorkbookSaveAs");
                 }       
-        String localVarPath = "/cells/{name}/SaveAs".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString()))   ;
+        String localVarPath = "v3.0/cells/{name}/SaveAs".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString()))   ;
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -232,6 +242,9 @@ public class PostWorkbookSaveAsRequest  implements IRequestModel {
             } 
             if (getPageTallFitOnPerSheet() != null){
                 localVarQueryParams.addAll(apiClient.parameterToPairs("", "pageTallFitOnPerSheet", getPageTallFitOnPerSheet()));
+            } 
+            if (getOnePagePerSheet() != null){
+                localVarQueryParams.addAll(apiClient.parameterToPairs("", "onePagePerSheet", getOnePagePerSheet()));
             } 
             if (getFontsLocation() != null){
                 localVarQueryParams.addAll(apiClient.parameterToPairs("", "FontsLocation", getFontsLocation()));
@@ -269,7 +282,5 @@ public class PostWorkbookSaveAsRequest  implements IRequestModel {
                 return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
 
     }
-
-
 }
 

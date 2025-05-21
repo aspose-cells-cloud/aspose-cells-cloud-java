@@ -41,11 +41,10 @@ public class PostWorkbookSettingsRequest  implements IRequestModel {
     public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
         this.extendQueryParameterMap = extendQueryParameterMap;
     }
-
     private String name;
-    private WorkbookSettings settings;
     private String folder;
     private String storageName;
+    private WorkbookSettings settings;    
         public PostWorkbookSettingsRequest()
         {
 
@@ -65,16 +64,6 @@ public class PostWorkbookSettingsRequest  implements IRequestModel {
             this.name = name;
         }
 
-
-        public WorkbookSettings getSettings() {
-            return this.settings;
-        }
-
-        public void setSettings(WorkbookSettings settings) {
-            this.settings = settings;
-        }
-
-
         public String getFolder() {
             return this.folder;
         }
@@ -92,15 +81,25 @@ public class PostWorkbookSettingsRequest  implements IRequestModel {
             this.storageName = storageName;
         }
 
+        public WorkbookSettings getSettings() {
+            return this.settings;
+        }
+
+        public void setSettings(WorkbookSettings settings) {
+            this.settings = settings;
+        }
+    
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
-         if (getName() == null) {
+         
+                if (getName() == null) {
                     throw new ApiException("Missing the required parameter 'Name' when calling PostWorkbookSettings");
                 } 
+
                 if (getSettings() == null) {
                     throw new ApiException("Missing the required parameter 'Settings' when calling PostWorkbookSettings");
                 }       
-        String localVarPath = "/cells/{name}/settings".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString()))   ;
+        String localVarPath = "v3.0/cells/{name}/settings".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString()))   ;
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -143,7 +142,5 @@ public class PostWorkbookSettingsRequest  implements IRequestModel {
                 return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
 
     }
-
-
 }
 

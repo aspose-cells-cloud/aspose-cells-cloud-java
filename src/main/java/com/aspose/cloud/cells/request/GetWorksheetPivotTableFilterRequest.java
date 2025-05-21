@@ -41,13 +41,13 @@ public class GetWorksheetPivotTableFilterRequest  implements IRequestModel {
     public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
         this.extendQueryParameterMap = extendQueryParameterMap;
     }
-
     private String name;
     private String sheetName;
     private Integer pivotTableIndex;
     private Integer filterIndex;
     private String folder;
     private String storageName;
+    
         public GetWorksheetPivotTableFilterRequest()
         {
 
@@ -96,7 +96,6 @@ public class GetWorksheetPivotTableFilterRequest  implements IRequestModel {
             this.filterIndex = filterIndex;
         }
 
-
         public String getFolder() {
             return this.folder;
         }
@@ -114,21 +113,26 @@ public class GetWorksheetPivotTableFilterRequest  implements IRequestModel {
             this.storageName = storageName;
         }
 
+    
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
-         if (getName() == null) {
+         
+                if (getName() == null) {
                     throw new ApiException("Missing the required parameter 'Name' when calling GetWorksheetPivotTableFilter");
                 } 
+
                 if (getSheetName() == null) {
                     throw new ApiException("Missing the required parameter 'SheetName' when calling GetWorksheetPivotTableFilter");
                 } 
+
                 if (getPivotTableIndex() == null) {
                     throw new ApiException("Missing the required parameter 'PivotTableIndex' when calling GetWorksheetPivotTableFilter");
                 } 
+
                 if (getFilterIndex() == null) {
                     throw new ApiException("Missing the required parameter 'FilterIndex' when calling GetWorksheetPivotTableFilter");
                 }       
-        String localVarPath = "/cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/PivotFilters/{filterIndex}".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
+        String localVarPath = "v3.0/cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/PivotFilters/{filterIndex}".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
     .replaceAll("\\{" + "sheetName" + "\\}", apiClient.escapeString(sheetName.toString())) 
     .replaceAll("\\{" + "pivotTableIndex" + "\\}", apiClient.escapeString(pivotTableIndex.toString())) 
     .replaceAll("\\{" + "filterIndex" + "\\}", apiClient.escapeString(filterIndex.toString()))   ;
@@ -173,7 +177,5 @@ public class GetWorksheetPivotTableFilterRequest  implements IRequestModel {
                 return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
 
     }
-
-
 }
 

@@ -41,13 +41,12 @@ public class PostWorksheetCellsRangeColumnWidthRequest  implements IRequestModel
     public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
         this.extendQueryParameterMap = extendQueryParameterMap;
     }
-
     private String name;
     private String sheetName;
-    private Range range;
     private Double value;
     private String folder;
     private String storageName;
+    private Range range;    
         public PostWorksheetCellsRangeColumnWidthRequest()
         {
 
@@ -78,16 +77,6 @@ public class PostWorksheetCellsRangeColumnWidthRequest  implements IRequestModel
             this.sheetName = sheetName;
         }
 
-
-        public Range getRange() {
-            return this.range;
-        }
-
-        public void setRange(Range range) {
-            this.range = range;
-        }
-
-
         public Double getValue() {
             return this.value;
         }
@@ -114,21 +103,33 @@ public class PostWorksheetCellsRangeColumnWidthRequest  implements IRequestModel
             this.storageName = storageName;
         }
 
+        public Range getRange() {
+            return this.range;
+        }
+
+        public void setRange(Range range) {
+            this.range = range;
+        }
+    
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
-         if (getName() == null) {
+         
+                if (getName() == null) {
                     throw new ApiException("Missing the required parameter 'Name' when calling PostWorksheetCellsRangeColumnWidth");
                 } 
+
                 if (getSheetName() == null) {
                     throw new ApiException("Missing the required parameter 'SheetName' when calling PostWorksheetCellsRangeColumnWidth");
                 } 
+
                 if (getRange() == null) {
                     throw new ApiException("Missing the required parameter 'Range' when calling PostWorksheetCellsRangeColumnWidth");
                 } 
+
                 if (getValue() == null) {
                     throw new ApiException("Missing the required parameter 'Value' when calling PostWorksheetCellsRangeColumnWidth");
                 }       
-        String localVarPath = "/cells/{name}/worksheets/{sheetName}/ranges/columnWidth".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
+        String localVarPath = "v3.0/cells/{name}/worksheets/{sheetName}/ranges/columnWidth".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
     .replaceAll("\\{" + "sheetName" + "\\}", apiClient.escapeString(sheetName.toString()))   ;
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
@@ -175,7 +176,5 @@ public class PostWorksheetCellsRangeColumnWidthRequest  implements IRequestModel
                 return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
 
     }
-
-
 }
 

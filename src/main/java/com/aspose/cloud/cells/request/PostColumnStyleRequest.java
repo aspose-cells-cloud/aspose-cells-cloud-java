@@ -41,13 +41,12 @@ public class PostColumnStyleRequest  implements IRequestModel {
     public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
         this.extendQueryParameterMap = extendQueryParameterMap;
     }
-
     private String name;
     private String sheetName;
     private Integer columnIndex;
-    private Style style;
     private String folder;
     private String storageName;
+    private Style style;    
         public PostColumnStyleRequest()
         {
 
@@ -87,16 +86,6 @@ public class PostColumnStyleRequest  implements IRequestModel {
             this.columnIndex = columnIndex;
         }
 
-
-        public Style getStyle() {
-            return this.style;
-        }
-
-        public void setStyle(Style style) {
-            this.style = style;
-        }
-
-
         public String getFolder() {
             return this.folder;
         }
@@ -114,21 +103,33 @@ public class PostColumnStyleRequest  implements IRequestModel {
             this.storageName = storageName;
         }
 
+        public Style getStyle() {
+            return this.style;
+        }
+
+        public void setStyle(Style style) {
+            this.style = style;
+        }
+    
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
-         if (getName() == null) {
+         
+                if (getName() == null) {
                     throw new ApiException("Missing the required parameter 'Name' when calling PostColumnStyle");
                 } 
+
                 if (getSheetName() == null) {
                     throw new ApiException("Missing the required parameter 'SheetName' when calling PostColumnStyle");
                 } 
+
                 if (getColumnIndex() == null) {
                     throw new ApiException("Missing the required parameter 'ColumnIndex' when calling PostColumnStyle");
                 } 
+
                 if (getStyle() == null) {
                     throw new ApiException("Missing the required parameter 'Style' when calling PostColumnStyle");
                 }       
-        String localVarPath = "/cells/{name}/worksheets/{sheetName}/cells/columns/{columnIndex}/style".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
+        String localVarPath = "v3.0/cells/{name}/worksheets/{sheetName}/cells/columns/{columnIndex}/style".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
     .replaceAll("\\{" + "sheetName" + "\\}", apiClient.escapeString(sheetName.toString())) 
     .replaceAll("\\{" + "columnIndex" + "\\}", apiClient.escapeString(columnIndex.toString()))   ;
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
@@ -173,7 +174,5 @@ public class PostColumnStyleRequest  implements IRequestModel {
                 return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
 
     }
-
-
 }
 

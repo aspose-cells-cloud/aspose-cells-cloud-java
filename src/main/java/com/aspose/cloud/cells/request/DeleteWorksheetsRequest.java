@@ -41,11 +41,10 @@ public class DeleteWorksheetsRequest  implements IRequestModel {
     public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
         this.extendQueryParameterMap = extendQueryParameterMap;
     }
-
     private String name;
-    private MatchConditionRequest matchCondition;
     private String folder;
     private String storageName;
+    private MatchConditionRequest matchCondition;    
         public DeleteWorksheetsRequest()
         {
 
@@ -65,16 +64,6 @@ public class DeleteWorksheetsRequest  implements IRequestModel {
             this.name = name;
         }
 
-
-        public MatchConditionRequest getMatchCondition() {
-            return this.matchCondition;
-        }
-
-        public void setMatchCondition(MatchConditionRequest matchCondition) {
-            this.matchCondition = matchCondition;
-        }
-
-
         public String getFolder() {
             return this.folder;
         }
@@ -92,12 +81,21 @@ public class DeleteWorksheetsRequest  implements IRequestModel {
             this.storageName = storageName;
         }
 
+        public MatchConditionRequest getMatchCondition() {
+            return this.matchCondition;
+        }
+
+        public void setMatchCondition(MatchConditionRequest matchCondition) {
+            this.matchCondition = matchCondition;
+        }
+    
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
-         if (getName() == null) {
+         
+                if (getName() == null) {
                     throw new ApiException("Missing the required parameter 'Name' when calling DeleteWorksheets");
                 }       
-        String localVarPath = "/cells/{name}/worksheets".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString()))   ;
+        String localVarPath = "v3.0/cells/{name}/worksheets".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString()))   ;
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -140,7 +138,5 @@ public class DeleteWorksheetsRequest  implements IRequestModel {
                 return apiClient.buildCall(localVarPath, "DELETE", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
 
     }
-
-
 }
 

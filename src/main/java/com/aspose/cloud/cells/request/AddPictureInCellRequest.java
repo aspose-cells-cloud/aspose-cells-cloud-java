@@ -41,13 +41,13 @@ public class AddPictureInCellRequest  implements IRequestModel {
     public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
         this.extendQueryParameterMap = extendQueryParameterMap;
     }
-
     private String name;
     private String sheetName;
     private String cellName;
     private String picturePath;
     private String folder;
     private String storageName;
+    
         public AddPictureInCellRequest()
         {
 
@@ -77,7 +77,6 @@ public class AddPictureInCellRequest  implements IRequestModel {
         public void setSheetName(String sheetName) {
             this.sheetName = sheetName;
         }
-
 
         public String getCellName() {
             return this.cellName;
@@ -114,21 +113,26 @@ public class AddPictureInCellRequest  implements IRequestModel {
             this.storageName = storageName;
         }
 
+    
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
-         if (getName() == null) {
+         
+                if (getName() == null) {
                     throw new ApiException("Missing the required parameter 'Name' when calling AddPictureInCell");
                 } 
+
                 if (getSheetName() == null) {
                     throw new ApiException("Missing the required parameter 'SheetName' when calling AddPictureInCell");
                 } 
+
                 if (getCellName() == null) {
                     throw new ApiException("Missing the required parameter 'CellName' when calling AddPictureInCell");
                 } 
+
                 if (getPicturePath() == null) {
                     throw new ApiException("Missing the required parameter 'PicturePath' when calling AddPictureInCell");
                 }       
-        String localVarPath = "/cells/{name}/worksheets/{sheetName}/pictures/addPictureInCell".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
+        String localVarPath = "v3.0/cells/{name}/worksheets/{sheetName}/pictures/addPictureInCell".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
     .replaceAll("\\{" + "sheetName" + "\\}", apiClient.escapeString(sheetName.toString()))   ;
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
@@ -177,7 +181,5 @@ public class AddPictureInCellRequest  implements IRequestModel {
                 return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
 
     }
-
-
 }
 

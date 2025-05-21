@@ -41,14 +41,16 @@ public class PutWorksheetBackgroundRequest  implements IRequestModel {
     public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
         this.extendQueryParameterMap = extendQueryParameterMap;
     }
-
     private String name;
     private String sheetName;
     private String picPath;
     private String imageAdaptOption;
     private String folder;
     private String storageName;
-    private HashMap<String,File> file;
+    
+     
+                private HashMap<String,File> file;
+                private String localPath;
         public PutWorksheetBackgroundRequest()
         {
 
@@ -79,7 +81,6 @@ public class PutWorksheetBackgroundRequest  implements IRequestModel {
         public void setSheetName(String sheetName) {
             this.sheetName = sheetName;
         }
-
 
         public String getPicPath() {
             return this.picPath;
@@ -116,24 +117,34 @@ public class PutWorksheetBackgroundRequest  implements IRequestModel {
             this.storageName = storageName;
         }
 
+    
+         
+                public HashMap<String,File> getFile() {
+                    return this.file;
+                }
 
-        public HashMap<String,File> getFile() {
-            return this.file;
-        }
-
-        public void setFile(HashMap<String,File> file) {
-            this.file = file;
-        }
-
+                public void setFile(HashMap<String,File> file) {
+                    this.file = file;
+                }
+         
+            public String getLocalPath() {
+                    return this.localPath;
+            }
+            public void setLocalPath(String localPath) {
+                this.localPath = localPath;
+            }
+        
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
-         if (getName() == null) {
+         
+                if (getName() == null) {
                     throw new ApiException("Missing the required parameter 'Name' when calling PutWorksheetBackground");
                 } 
+
                 if (getSheetName() == null) {
                     throw new ApiException("Missing the required parameter 'SheetName' when calling PutWorksheetBackground");
                 }       
-        String localVarPath = "/cells/{name}/worksheets/{sheetName}/background".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
+        String localVarPath = "v3.0/cells/{name}/worksheets/{sheetName}/background".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
     .replaceAll("\\{" + "sheetName" + "\\}", apiClient.escapeString(sheetName.toString()))   ;
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
@@ -156,11 +167,17 @@ public class PutWorksheetBackgroundRequest  implements IRequestModel {
             }
         }
                    
+              if (getLocalPath() != null && !getLocalPath().isEmpty()) {
+                     File fileToUpload = new File(getLocalPath());
+                     if (fileToUpload.exists()) {
+                         localVarFormParams.put(fileToUpload.getName(), fileToUpload);
+                     }
+                 }
                 if (getFile() != null){
-                    for (String key : getFile().keySet()) {
-                        localVarFormParams.put(key,getFile().get(key));                
-                    }
-                }      
+                        for (String key : getFile().keySet()) {
+                            localVarFormParams.put(key,getFile().get(key));                
+                        }
+                    }      
         Object localVarPostBody = null;
                 final String[] localVarAccepts = {
                     "application/json"
@@ -191,7 +208,5 @@ public class PutWorksheetBackgroundRequest  implements IRequestModel {
                 return apiClient.buildCall(localVarPath, "PUT", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
 
     }
-
-
 }
 

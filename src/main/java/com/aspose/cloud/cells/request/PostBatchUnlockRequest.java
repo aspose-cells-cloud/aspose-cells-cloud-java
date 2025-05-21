@@ -41,8 +41,7 @@ public class PostBatchUnlockRequest  implements IRequestModel {
     public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
         this.extendQueryParameterMap = extendQueryParameterMap;
     }
-
-    private BatchLockRequest batchLockRequest;
+    private BatchLockRequest batchLockRequest;    
         public PostBatchUnlockRequest()
         {
 
@@ -58,13 +57,14 @@ public class PostBatchUnlockRequest  implements IRequestModel {
         public void setBatchLockRequest(BatchLockRequest batchLockRequest) {
             this.batchLockRequest = batchLockRequest;
         }
-
+    
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
-         if (getBatchLockRequest() == null) {
+         
+                if (getBatchLockRequest() == null) {
                     throw new ApiException("Missing the required parameter 'BatchLockRequest' when calling PostBatchUnlock");
                 }       
-        String localVarPath = "/cells/batch/unlock";
+        String localVarPath = "v3.0/cells/batch/unlock";
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
         List<Pair> localVarQueryParams = null;
@@ -101,7 +101,5 @@ public class PostBatchUnlockRequest  implements IRequestModel {
                 return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
 
     }
-
-
 }
 

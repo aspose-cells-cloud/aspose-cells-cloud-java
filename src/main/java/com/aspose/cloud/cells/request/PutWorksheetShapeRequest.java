@@ -41,10 +41,8 @@ public class PutWorksheetShapeRequest  implements IRequestModel {
     public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
         this.extendQueryParameterMap = extendQueryParameterMap;
     }
-
     private String name;
     private String sheetName;
-    private Shape shapeDTO;
     private String drawingType;
     private Integer upperLeftRow;
     private Integer upperLeftColumn;
@@ -54,6 +52,7 @@ public class PutWorksheetShapeRequest  implements IRequestModel {
     private Integer height;
     private String folder;
     private String storageName;
+    private Shape shapeDTO;    
         public PutWorksheetShapeRequest()
         {
 
@@ -89,16 +88,6 @@ public class PutWorksheetShapeRequest  implements IRequestModel {
         public void setSheetName(String sheetName) {
             this.sheetName = sheetName;
         }
-
-
-        public Shape getShapeDTO() {
-            return this.shapeDTO;
-        }
-
-        public void setShapeDTO(Shape shapeDTO) {
-            this.shapeDTO = shapeDTO;
-        }
-
 
         public String getDrawingType() {
             return this.drawingType;
@@ -180,15 +169,25 @@ public class PutWorksheetShapeRequest  implements IRequestModel {
             this.storageName = storageName;
         }
 
+        public Shape getShapeDTO() {
+            return this.shapeDTO;
+        }
+
+        public void setShapeDTO(Shape shapeDTO) {
+            this.shapeDTO = shapeDTO;
+        }
+    
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
-         if (getName() == null) {
+         
+                if (getName() == null) {
                     throw new ApiException("Missing the required parameter 'Name' when calling PutWorksheetShape");
                 } 
+
                 if (getSheetName() == null) {
                     throw new ApiException("Missing the required parameter 'SheetName' when calling PutWorksheetShape");
                 }       
-        String localVarPath = "/cells/{name}/worksheets/{sheetName}/shapes".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
+        String localVarPath = "v3.0/cells/{name}/worksheets/{sheetName}/shapes".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
     .replaceAll("\\{" + "sheetName" + "\\}", apiClient.escapeString(sheetName.toString()))   ;
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
@@ -253,7 +252,5 @@ public class PutWorksheetShapeRequest  implements IRequestModel {
                 return apiClient.buildCall(localVarPath, "PUT", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
 
     }
-
-
 }
 

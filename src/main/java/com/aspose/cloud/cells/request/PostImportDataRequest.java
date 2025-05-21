@@ -41,13 +41,12 @@ public class PostImportDataRequest  implements IRequestModel {
     public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
         this.extendQueryParameterMap = extendQueryParameterMap;
     }
-
     private String name;
-    private ImportOption importOption;
     private String folder;
     private String storageName;
     private String region;
     private String fontsLocation;
+    private ImportOption importOption;    
         public PostImportDataRequest()
         {
 
@@ -68,16 +67,6 @@ public class PostImportDataRequest  implements IRequestModel {
         public void setName(String name) {
             this.name = name;
         }
-
-
-        public ImportOption getImportOption() {
-            return this.importOption;
-        }
-
-        public void setImportOption(ImportOption importOption) {
-            this.importOption = importOption;
-        }
-
 
         public String getFolder() {
             return this.folder;
@@ -114,12 +103,21 @@ public class PostImportDataRequest  implements IRequestModel {
             this.fontsLocation = fontsLocation;
         }
 
+        public ImportOption getImportOption() {
+            return this.importOption;
+        }
+
+        public void setImportOption(ImportOption importOption) {
+            this.importOption = importOption;
+        }
+    
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
-         if (getName() == null) {
+         
+                if (getName() == null) {
                     throw new ApiException("Missing the required parameter 'Name' when calling PostImportData");
                 }       
-        String localVarPath = "/cells/{name}/importdata".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString()))   ;
+        String localVarPath = "v3.0/cells/{name}/importdata".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString()))   ;
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -168,7 +166,5 @@ public class PostImportDataRequest  implements IRequestModel {
                 return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
 
     }
-
-
 }
 

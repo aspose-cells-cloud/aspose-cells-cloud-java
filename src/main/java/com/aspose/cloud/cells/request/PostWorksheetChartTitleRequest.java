@@ -41,13 +41,12 @@ public class PostWorksheetChartTitleRequest  implements IRequestModel {
     public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
         this.extendQueryParameterMap = extendQueryParameterMap;
     }
-
     private String name;
     private String sheetName;
     private Integer chartIndex;
-    private Title title;
     private String folder;
     private String storageName;
+    private Title title;    
         public PostWorksheetChartTitleRequest()
         {
 
@@ -87,16 +86,6 @@ public class PostWorksheetChartTitleRequest  implements IRequestModel {
             this.chartIndex = chartIndex;
         }
 
-
-        public Title getTitle() {
-            return this.title;
-        }
-
-        public void setTitle(Title title) {
-            this.title = title;
-        }
-
-
         public String getFolder() {
             return this.folder;
         }
@@ -114,21 +103,33 @@ public class PostWorksheetChartTitleRequest  implements IRequestModel {
             this.storageName = storageName;
         }
 
+        public Title getTitle() {
+            return this.title;
+        }
+
+        public void setTitle(Title title) {
+            this.title = title;
+        }
+    
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
-         if (getName() == null) {
+         
+                if (getName() == null) {
                     throw new ApiException("Missing the required parameter 'Name' when calling PostWorksheetChartTitle");
                 } 
+
                 if (getSheetName() == null) {
                     throw new ApiException("Missing the required parameter 'SheetName' when calling PostWorksheetChartTitle");
                 } 
+
                 if (getChartIndex() == null) {
                     throw new ApiException("Missing the required parameter 'ChartIndex' when calling PostWorksheetChartTitle");
                 } 
+
                 if (getTitle() == null) {
                     throw new ApiException("Missing the required parameter 'Title' when calling PostWorksheetChartTitle");
                 }       
-        String localVarPath = "/cells/{name}/worksheets/{sheetName}/charts/{chartIndex}/title".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
+        String localVarPath = "v3.0/cells/{name}/worksheets/{sheetName}/charts/{chartIndex}/title".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
     .replaceAll("\\{" + "sheetName" + "\\}", apiClient.escapeString(sheetName.toString())) 
     .replaceAll("\\{" + "chartIndex" + "\\}", apiClient.escapeString(chartIndex.toString()))   ;
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
@@ -173,7 +174,5 @@ public class PostWorksheetChartTitleRequest  implements IRequestModel {
                 return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
 
     }
-
-
 }
 

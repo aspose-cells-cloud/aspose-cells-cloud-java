@@ -41,8 +41,7 @@ public class PostRunTaskRequest  implements IRequestModel {
     public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
         this.extendQueryParameterMap = extendQueryParameterMap;
     }
-
-    private TaskData taskData;
+    private TaskData taskData;    
         public PostRunTaskRequest()
         {
 
@@ -58,13 +57,14 @@ public class PostRunTaskRequest  implements IRequestModel {
         public void setTaskData(TaskData taskData) {
             this.taskData = taskData;
         }
-
+    
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
-         if (getTaskData() == null) {
+         
+                if (getTaskData() == null) {
                     throw new ApiException("Missing the required parameter 'TaskData' when calling PostRunTask");
                 }       
-        String localVarPath = "/cells/task/runtask";
+        String localVarPath = "v3.0/cells/task/runtask";
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
         List<Pair> localVarQueryParams = null;
@@ -101,7 +101,5 @@ public class PostRunTaskRequest  implements IRequestModel {
                 return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
 
     }
-
-
 }
 

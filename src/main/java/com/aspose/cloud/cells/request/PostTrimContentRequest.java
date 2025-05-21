@@ -41,8 +41,7 @@ public class PostTrimContentRequest  implements IRequestModel {
     public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
         this.extendQueryParameterMap = extendQueryParameterMap;
     }
-
-    private TrimContentOptions trimContentOptions;
+    private TrimContentOptions trimContentOptions;    
         public PostTrimContentRequest()
         {
 
@@ -58,13 +57,14 @@ public class PostTrimContentRequest  implements IRequestModel {
         public void setTrimContentOptions(TrimContentOptions trimContentOptions) {
             this.trimContentOptions = trimContentOptions;
         }
-
+    
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
-         if (getTrimContentOptions() == null) {
+         
+                if (getTrimContentOptions() == null) {
                     throw new ApiException("Missing the required parameter 'TrimContentOptions' when calling PostTrimContent");
                 }       
-        String localVarPath = "/cells/trimcontent";
+        String localVarPath = "v3.0/cells/trimcontent";
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
         List<Pair> localVarQueryParams = null;
@@ -101,7 +101,5 @@ public class PostTrimContentRequest  implements IRequestModel {
                 return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
 
     }
-
-
 }
 

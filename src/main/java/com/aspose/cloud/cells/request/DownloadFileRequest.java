@@ -41,10 +41,10 @@ public class DownloadFileRequest  implements IRequestModel {
     public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
         this.extendQueryParameterMap = extendQueryParameterMap;
     }
-
     private String path;
     private String storageName;
     private String versionId;
+    
         public DownloadFileRequest()
         {
 
@@ -63,7 +63,6 @@ public class DownloadFileRequest  implements IRequestModel {
             this.path = path;
         }
 
-
         public String getStorageName() {
             return this.storageName;
         }
@@ -81,12 +80,14 @@ public class DownloadFileRequest  implements IRequestModel {
             this.versionId = versionId;
         }
 
+    
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
-         if (getPath() == null) {
+         
+                if (getPath() == null) {
                     throw new ApiException("Missing the required parameter 'Path' when calling DownloadFile");
                 }       
-        String localVarPath = "/cells/storage/file/{path}".replaceAll("\\{" + "path" + "\\}", apiClient.escapeString(path.toString()))   ;
+        String localVarPath = "v3.0/cells/storage/file/{path}".replaceAll("\\{" + "path" + "\\}", apiClient.escapeString(path.toString()))   ;
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -128,7 +129,5 @@ public class DownloadFileRequest  implements IRequestModel {
                 return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
 
     }
-
-
 }
 

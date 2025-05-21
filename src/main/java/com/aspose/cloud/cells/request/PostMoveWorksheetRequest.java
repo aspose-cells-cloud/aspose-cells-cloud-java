@@ -41,12 +41,11 @@ public class PostMoveWorksheetRequest  implements IRequestModel {
     public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
         this.extendQueryParameterMap = extendQueryParameterMap;
     }
-
     private String name;
     private String sheetName;
-    private WorksheetMovingRequest moving;
     private String folder;
     private String storageName;
+    private WorksheetMovingRequest moving;    
         public PostMoveWorksheetRequest()
         {
 
@@ -76,16 +75,6 @@ public class PostMoveWorksheetRequest  implements IRequestModel {
             this.sheetName = sheetName;
         }
 
-
-        public WorksheetMovingRequest getMoving() {
-            return this.moving;
-        }
-
-        public void setMoving(WorksheetMovingRequest moving) {
-            this.moving = moving;
-        }
-
-
         public String getFolder() {
             return this.folder;
         }
@@ -103,18 +92,29 @@ public class PostMoveWorksheetRequest  implements IRequestModel {
             this.storageName = storageName;
         }
 
+        public WorksheetMovingRequest getMoving() {
+            return this.moving;
+        }
+
+        public void setMoving(WorksheetMovingRequest moving) {
+            this.moving = moving;
+        }
+    
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
-         if (getName() == null) {
+         
+                if (getName() == null) {
                     throw new ApiException("Missing the required parameter 'Name' when calling PostMoveWorksheet");
                 } 
+
                 if (getSheetName() == null) {
                     throw new ApiException("Missing the required parameter 'SheetName' when calling PostMoveWorksheet");
                 } 
+
                 if (getMoving() == null) {
                     throw new ApiException("Missing the required parameter 'Moving' when calling PostMoveWorksheet");
                 }       
-        String localVarPath = "/cells/{name}/worksheets/{sheetName}/position".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
+        String localVarPath = "v3.0/cells/{name}/worksheets/{sheetName}/position".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
     .replaceAll("\\{" + "sheetName" + "\\}", apiClient.escapeString(sheetName.toString()))   ;
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
@@ -158,7 +158,5 @@ public class PostMoveWorksheetRequest  implements IRequestModel {
                 return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
 
     }
-
-
 }
 

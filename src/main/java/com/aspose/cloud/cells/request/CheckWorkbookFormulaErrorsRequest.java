@@ -41,8 +41,7 @@ public class CheckWorkbookFormulaErrorsRequest  implements IRequestModel {
     public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
         this.extendQueryParameterMap = extendQueryParameterMap;
     }
-
-    private CheckFormulaErrorOptions formulaErrorOptions;
+    private CheckFormulaErrorOptions formulaErrorOptions;    
         public CheckWorkbookFormulaErrorsRequest()
         {
 
@@ -58,13 +57,14 @@ public class CheckWorkbookFormulaErrorsRequest  implements IRequestModel {
         public void setFormulaErrorOptions(CheckFormulaErrorOptions formulaErrorOptions) {
             this.formulaErrorOptions = formulaErrorOptions;
         }
-
+    
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
-         if (getFormulaErrorOptions() == null) {
+         
+                if (getFormulaErrorOptions() == null) {
                     throw new ApiException("Missing the required parameter 'FormulaErrorOptions' when calling CheckWorkbookFormulaErrors");
                 }       
-        String localVarPath = "/cells/checkformulaerrors";
+        String localVarPath = "v3.0/cells/checkformulaerrors";
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
         List<Pair> localVarQueryParams = null;
@@ -101,7 +101,5 @@ public class CheckWorkbookFormulaErrorsRequest  implements IRequestModel {
                 return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
 
     }
-
-
 }
 

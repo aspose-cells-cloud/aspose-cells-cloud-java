@@ -41,13 +41,15 @@ public class PutWorkbookBackgroundRequest  implements IRequestModel {
     public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
         this.extendQueryParameterMap = extendQueryParameterMap;
     }
-
     private String name;
     private String picPath;
     private String imageAdaptOption;
     private String folder;
     private String storageName;
-    private HashMap<String,File> file;
+    
+     
+                private HashMap<String,File> file;
+                private String localPath;
         public PutWorkbookBackgroundRequest()
         {
 
@@ -68,7 +70,6 @@ public class PutWorkbookBackgroundRequest  implements IRequestModel {
         public void setName(String name) {
             this.name = name;
         }
-
 
         public String getPicPath() {
             return this.picPath;
@@ -105,21 +106,30 @@ public class PutWorkbookBackgroundRequest  implements IRequestModel {
             this.storageName = storageName;
         }
 
+    
+         
+                public HashMap<String,File> getFile() {
+                    return this.file;
+                }
 
-        public HashMap<String,File> getFile() {
-            return this.file;
-        }
-
-        public void setFile(HashMap<String,File> file) {
-            this.file = file;
-        }
-
+                public void setFile(HashMap<String,File> file) {
+                    this.file = file;
+                }
+         
+            public String getLocalPath() {
+                    return this.localPath;
+            }
+            public void setLocalPath(String localPath) {
+                this.localPath = localPath;
+            }
+        
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
-         if (getName() == null) {
+         
+                if (getName() == null) {
                     throw new ApiException("Missing the required parameter 'Name' when calling PutWorkbookBackground");
                 }       
-        String localVarPath = "/cells/{name}/background".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString()))   ;
+        String localVarPath = "v3.0/cells/{name}/background".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString()))   ;
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -141,11 +151,17 @@ public class PutWorkbookBackgroundRequest  implements IRequestModel {
             }
         }
                    
+              if (getLocalPath() != null && !getLocalPath().isEmpty()) {
+                     File fileToUpload = new File(getLocalPath());
+                     if (fileToUpload.exists()) {
+                         localVarFormParams.put(fileToUpload.getName(), fileToUpload);
+                     }
+                 }
                 if (getFile() != null){
-                    for (String key : getFile().keySet()) {
-                        localVarFormParams.put(key,getFile().get(key));                
-                    }
-                }      
+                        for (String key : getFile().keySet()) {
+                            localVarFormParams.put(key,getFile().get(key));                
+                        }
+                    }      
         Object localVarPostBody = null;
                 final String[] localVarAccepts = {
                     "application/json"
@@ -176,7 +192,5 @@ public class PutWorkbookBackgroundRequest  implements IRequestModel {
                 return apiClient.buildCall(localVarPath, "PUT", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
 
     }
-
-
 }
 

@@ -41,8 +41,7 @@ public class PostSpecifyWordsCountRequest  implements IRequestModel {
     public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
         this.extendQueryParameterMap = extendQueryParameterMap;
     }
-
-    private SpecifyWordsCountOptions specifyWordsCountOptions;
+    private SpecifyWordsCountOptions specifyWordsCountOptions;    
         public PostSpecifyWordsCountRequest()
         {
 
@@ -58,13 +57,14 @@ public class PostSpecifyWordsCountRequest  implements IRequestModel {
         public void setSpecifyWordsCountOptions(SpecifyWordsCountOptions specifyWordsCountOptions) {
             this.specifyWordsCountOptions = specifyWordsCountOptions;
         }
-
+    
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
-         if (getSpecifyWordsCountOptions() == null) {
+         
+                if (getSpecifyWordsCountOptions() == null) {
                     throw new ApiException("Missing the required parameter 'SpecifyWordsCountOptions' when calling PostSpecifyWordsCount");
                 }       
-        String localVarPath = "/cells/specifywordscount";
+        String localVarPath = "v3.0/cells/specifywordscount";
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
         List<Pair> localVarQueryParams = null;
@@ -101,7 +101,5 @@ public class PostSpecifyWordsCountRequest  implements IRequestModel {
                 return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
 
     }
-
-
 }
 

@@ -41,7 +41,6 @@ public class DeleteWorksheetPivotTableFilterRequest  implements IRequestModel {
     public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
         this.extendQueryParameterMap = extendQueryParameterMap;
     }
-
     private String name;
     private String sheetName;
     private Integer pivotTableIndex;
@@ -49,6 +48,7 @@ public class DeleteWorksheetPivotTableFilterRequest  implements IRequestModel {
     private Boolean needReCalculate;
     private String folder;
     private String storageName;
+    
         public DeleteWorksheetPivotTableFilterRequest()
         {
 
@@ -98,7 +98,6 @@ public class DeleteWorksheetPivotTableFilterRequest  implements IRequestModel {
             this.fieldIndex = fieldIndex;
         }
 
-
         public Boolean getNeedReCalculate() {
             return this.needReCalculate;
         }
@@ -125,21 +124,26 @@ public class DeleteWorksheetPivotTableFilterRequest  implements IRequestModel {
             this.storageName = storageName;
         }
 
+    
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
-         if (getName() == null) {
+         
+                if (getName() == null) {
                     throw new ApiException("Missing the required parameter 'Name' when calling DeleteWorksheetPivotTableFilter");
                 } 
+
                 if (getSheetName() == null) {
                     throw new ApiException("Missing the required parameter 'SheetName' when calling DeleteWorksheetPivotTableFilter");
                 } 
+
                 if (getPivotTableIndex() == null) {
                     throw new ApiException("Missing the required parameter 'PivotTableIndex' when calling DeleteWorksheetPivotTableFilter");
                 } 
+
                 if (getFieldIndex() == null) {
                     throw new ApiException("Missing the required parameter 'FieldIndex' when calling DeleteWorksheetPivotTableFilter");
                 }       
-        String localVarPath = "/cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/PivotFilters/{fieldIndex}".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
+        String localVarPath = "v3.0/cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/PivotFilters/{fieldIndex}".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
     .replaceAll("\\{" + "sheetName" + "\\}", apiClient.escapeString(sheetName.toString())) 
     .replaceAll("\\{" + "pivotTableIndex" + "\\}", apiClient.escapeString(pivotTableIndex.toString())) 
     .replaceAll("\\{" + "fieldIndex" + "\\}", apiClient.escapeString(fieldIndex.toString()))   ;
@@ -187,7 +191,5 @@ public class DeleteWorksheetPivotTableFilterRequest  implements IRequestModel {
                 return apiClient.buildCall(localVarPath, "DELETE", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
 
     }
-
-
 }
 

@@ -41,7 +41,6 @@ public class PostAutofitWorksheetRowRequest  implements IRequestModel {
     public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
         this.extendQueryParameterMap = extendQueryParameterMap;
     }
-
     private String name;
     private String sheetName;
     private Integer rowIndex;
@@ -49,11 +48,13 @@ public class PostAutofitWorksheetRowRequest  implements IRequestModel {
     private Integer lastColumn;
     private String folder;
     private String storageName;
+    private Integer rowCount;
+    
         public PostAutofitWorksheetRowRequest()
         {
 
         }
-        public PostAutofitWorksheetRowRequest(String name, String sheetName, Integer rowIndex, Integer firstColumn, Integer lastColumn, String folder, String storageName) {
+        public PostAutofitWorksheetRowRequest(String name, String sheetName, Integer rowIndex, Integer firstColumn, Integer lastColumn, String folder, String storageName, Integer rowCount) {
             this.name = name;
             this.sheetName = sheetName;
             this.rowIndex = rowIndex;
@@ -61,6 +62,7 @@ public class PostAutofitWorksheetRowRequest  implements IRequestModel {
             this.lastColumn = lastColumn;
             this.folder = folder;
             this.storageName = storageName;
+            this.rowCount = rowCount;
         }   
 
         public String getName() {
@@ -79,7 +81,6 @@ public class PostAutofitWorksheetRowRequest  implements IRequestModel {
         public void setSheetName(String sheetName) {
             this.sheetName = sheetName;
         }
-
 
         public Integer getRowIndex() {
             return this.rowIndex;
@@ -125,24 +126,31 @@ public class PostAutofitWorksheetRowRequest  implements IRequestModel {
             this.storageName = storageName;
         }
 
+
+        public Integer getRowCount() {
+            return this.rowCount;
+        }
+
+        public void setRowCount(Integer rowCount) {
+            this.rowCount = rowCount;
+        }
+
+    
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
-         if (getName() == null) {
+         
+                if (getName() == null) {
                     throw new ApiException("Missing the required parameter 'Name' when calling PostAutofitWorksheetRow");
                 } 
+
                 if (getSheetName() == null) {
                     throw new ApiException("Missing the required parameter 'SheetName' when calling PostAutofitWorksheetRow");
                 } 
+
                 if (getRowIndex() == null) {
                     throw new ApiException("Missing the required parameter 'RowIndex' when calling PostAutofitWorksheetRow");
-                } 
-                if (getFirstColumn() == null) {
-                    throw new ApiException("Missing the required parameter 'FirstColumn' when calling PostAutofitWorksheetRow");
-                } 
-                if (getLastColumn() == null) {
-                    throw new ApiException("Missing the required parameter 'LastColumn' when calling PostAutofitWorksheetRow");
                 }       
-        String localVarPath = "/cells/{name}/worksheets/{sheetName}/autofitrow".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
+        String localVarPath = "v3.0/cells/{name}/worksheets/{sheetName}/autofitrow".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
     .replaceAll("\\{" + "sheetName" + "\\}", apiClient.escapeString(sheetName.toString()))   ;
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
@@ -161,6 +169,9 @@ public class PostAutofitWorksheetRowRequest  implements IRequestModel {
             } 
             if (getStorageName() != null){
                 localVarQueryParams.addAll(apiClient.parameterToPairs("", "storageName", getStorageName()));
+            } 
+            if (getRowCount() != null){
+                localVarQueryParams.addAll(apiClient.parameterToPairs("", "rowCount", getRowCount()));
             }  
         if(this.extendQueryParameterMap !=null){
             for (String key :this.extendQueryParameterMap.keySet()) {
@@ -194,7 +205,5 @@ public class PostAutofitWorksheetRowRequest  implements IRequestModel {
                 return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
 
     }
-
-
 }
 

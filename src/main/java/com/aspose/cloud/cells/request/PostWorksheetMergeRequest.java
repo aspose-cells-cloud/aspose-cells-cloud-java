@@ -41,7 +41,6 @@ public class PostWorksheetMergeRequest  implements IRequestModel {
     public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
         this.extendQueryParameterMap = extendQueryParameterMap;
     }
-
     private String name;
     private String sheetName;
     private Integer startRow;
@@ -50,6 +49,7 @@ public class PostWorksheetMergeRequest  implements IRequestModel {
     private Integer totalColumns;
     private String folder;
     private String storageName;
+    
         public PostWorksheetMergeRequest()
         {
 
@@ -81,7 +81,6 @@ public class PostWorksheetMergeRequest  implements IRequestModel {
         public void setSheetName(String sheetName) {
             this.sheetName = sheetName;
         }
-
 
         public Integer getStartRow() {
             return this.startRow;
@@ -136,27 +135,34 @@ public class PostWorksheetMergeRequest  implements IRequestModel {
             this.storageName = storageName;
         }
 
+    
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
-         if (getName() == null) {
+         
+                if (getName() == null) {
                     throw new ApiException("Missing the required parameter 'Name' when calling PostWorksheetMerge");
                 } 
+
                 if (getSheetName() == null) {
                     throw new ApiException("Missing the required parameter 'SheetName' when calling PostWorksheetMerge");
                 } 
+
                 if (getStartRow() == null) {
                     throw new ApiException("Missing the required parameter 'StartRow' when calling PostWorksheetMerge");
                 } 
+
                 if (getStartColumn() == null) {
                     throw new ApiException("Missing the required parameter 'StartColumn' when calling PostWorksheetMerge");
                 } 
+
                 if (getTotalRows() == null) {
                     throw new ApiException("Missing the required parameter 'TotalRows' when calling PostWorksheetMerge");
                 } 
+
                 if (getTotalColumns() == null) {
                     throw new ApiException("Missing the required parameter 'TotalColumns' when calling PostWorksheetMerge");
                 }       
-        String localVarPath = "/cells/{name}/worksheets/{sheetName}/cells/merge".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
+        String localVarPath = "v3.0/cells/{name}/worksheets/{sheetName}/cells/merge".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
     .replaceAll("\\{" + "sheetName" + "\\}", apiClient.escapeString(sheetName.toString()))   ;
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
@@ -211,7 +217,5 @@ public class PostWorksheetMergeRequest  implements IRequestModel {
                 return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
 
     }
-
-
 }
 

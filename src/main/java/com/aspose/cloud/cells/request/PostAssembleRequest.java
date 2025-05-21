@@ -41,13 +41,14 @@ public class PostAssembleRequest  implements IRequestModel {
     public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
         this.extendQueryParameterMap = extendQueryParameterMap;
     }
-
-    private HashMap<String,File> file;
     private String datasource;
     private String outFormat;
     private String password;
     private Boolean checkExcelRestriction;
     private String region;
+    
+     
+                private HashMap<String,File> file;
         public PostAssembleRequest()
         {
 
@@ -60,15 +61,6 @@ public class PostAssembleRequest  implements IRequestModel {
             this.checkExcelRestriction = checkExcelRestriction;
             this.region = region;
         }   
-
-        public HashMap<String,File> getFile() {
-            return this.file;
-        }
-
-        public void setFile(HashMap<String,File> file) {
-            this.file = file;
-        }
-
 
         public String getDatasource() {
             return this.datasource;
@@ -114,15 +106,28 @@ public class PostAssembleRequest  implements IRequestModel {
             this.region = region;
         }
 
+    
+         
+                public HashMap<String,File> getFile() {
+                    return this.file;
+                }
+
+                public void setFile(HashMap<String,File> file) {
+                    this.file = file;
+                }
+
+        
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
-         if (getFile() == null) {
+          
+                if (getFile() == null) {
                     throw new ApiException("Missing the required parameter 'File' when calling PostAssemble");
                 } 
+
                 if (getDatasource() == null) {
                     throw new ApiException("Missing the required parameter 'Datasource' when calling PostAssemble");
                 }       
-        String localVarPath = "/cells/assemble";
+        String localVarPath = "v3.0/cells/assemble";
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -147,11 +152,11 @@ public class PostAssembleRequest  implements IRequestModel {
             }
         }
                    
-                if (getFile() != null){
-                    for (String key : getFile().keySet()) {
-                        localVarFormParams.put(key,getFile().get(key));                
-                    }
-                }      
+              if (getFile() != null){
+                        for (String key : getFile().keySet()) {
+                            localVarFormParams.put(key,getFile().get(key));                
+                        }
+                    }      
         Object localVarPostBody = null;
                 final String[] localVarAccepts = {
                     "application/json"
@@ -182,7 +187,5 @@ public class PostAssembleRequest  implements IRequestModel {
                 return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
 
     }
-
-
 }
 

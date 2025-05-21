@@ -41,8 +41,8 @@ public class StorageExistsRequest  implements IRequestModel {
     public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
         this.extendQueryParameterMap = extendQueryParameterMap;
     }
-
     private String storageName;
+    
         public StorageExistsRequest()
         {
 
@@ -59,12 +59,14 @@ public class StorageExistsRequest  implements IRequestModel {
             this.storageName = storageName;
         }
 
+    
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
-         if (getStorageName() == null) {
+         
+                if (getStorageName() == null) {
                     throw new ApiException("Missing the required parameter 'StorageName' when calling StorageExists");
                 }       
-        String localVarPath = "/cells/storage/{storageName}/exist".replaceAll("\\{" + "storageName" + "\\}", apiClient.escapeString(storageName.toString()))   ;
+        String localVarPath = "v3.0/cells/storage/{storageName}/exist".replaceAll("\\{" + "storageName" + "\\}", apiClient.escapeString(storageName.toString()))   ;
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
         List<Pair> localVarQueryParams = null;
@@ -100,7 +102,5 @@ public class StorageExistsRequest  implements IRequestModel {
                 return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
 
     }
-
-
 }
 

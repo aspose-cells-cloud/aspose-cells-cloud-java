@@ -41,12 +41,12 @@ public class DeleteWorksheetOleObjectRequest  implements IRequestModel {
     public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
         this.extendQueryParameterMap = extendQueryParameterMap;
     }
-
     private String name;
     private String sheetName;
     private Integer oleObjectIndex;
     private String folder;
     private String storageName;
+    
         public DeleteWorksheetOleObjectRequest()
         {
 
@@ -85,7 +85,6 @@ public class DeleteWorksheetOleObjectRequest  implements IRequestModel {
             this.oleObjectIndex = oleObjectIndex;
         }
 
-
         public String getFolder() {
             return this.folder;
         }
@@ -103,18 +102,22 @@ public class DeleteWorksheetOleObjectRequest  implements IRequestModel {
             this.storageName = storageName;
         }
 
+    
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
-         if (getName() == null) {
+         
+                if (getName() == null) {
                     throw new ApiException("Missing the required parameter 'Name' when calling DeleteWorksheetOleObject");
                 } 
+
                 if (getSheetName() == null) {
                     throw new ApiException("Missing the required parameter 'SheetName' when calling DeleteWorksheetOleObject");
                 } 
+
                 if (getOleObjectIndex() == null) {
                     throw new ApiException("Missing the required parameter 'OleObjectIndex' when calling DeleteWorksheetOleObject");
                 }       
-        String localVarPath = "/cells/{name}/worksheets/{sheetName}/oleobjects/{oleObjectIndex}".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
+        String localVarPath = "v3.0/cells/{name}/worksheets/{sheetName}/oleobjects/{oleObjectIndex}".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
     .replaceAll("\\{" + "sheetName" + "\\}", apiClient.escapeString(sheetName.toString())) 
     .replaceAll("\\{" + "oleObjectIndex" + "\\}", apiClient.escapeString(oleObjectIndex.toString()))   ;
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
@@ -158,7 +161,5 @@ public class DeleteWorksheetOleObjectRequest  implements IRequestModel {
                 return apiClient.buildCall(localVarPath, "DELETE", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
 
     }
-
-
 }
 

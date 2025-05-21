@@ -41,7 +41,6 @@ public class PutInsertNewWorksheetRequest  implements IRequestModel {
     public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
         this.extendQueryParameterMap = extendQueryParameterMap;
     }
-
     private String name;
     private String sheetName;
     private Integer index;
@@ -49,6 +48,7 @@ public class PutInsertNewWorksheetRequest  implements IRequestModel {
     private String newsheetname;
     private String folder;
     private String storageName;
+    
         public PutInsertNewWorksheetRequest()
         {
 
@@ -70,7 +70,6 @@ public class PutInsertNewWorksheetRequest  implements IRequestModel {
         public void setName(String name) {
             this.name = name;
         }
-
 
         public String getSheetName() {
             return this.sheetName;
@@ -125,21 +124,26 @@ public class PutInsertNewWorksheetRequest  implements IRequestModel {
             this.storageName = storageName;
         }
 
+    
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
-         if (getName() == null) {
+         
+                if (getName() == null) {
                     throw new ApiException("Missing the required parameter 'Name' when calling PutInsertNewWorksheet");
                 } 
+
                 if (getSheetName() == null) {
                     throw new ApiException("Missing the required parameter 'SheetName' when calling PutInsertNewWorksheet");
                 } 
+
                 if (getIndex() == null) {
                     throw new ApiException("Missing the required parameter 'Index' when calling PutInsertNewWorksheet");
                 } 
+
                 if (getSheettype() == null) {
                     throw new ApiException("Missing the required parameter 'Sheettype' when calling PutInsertNewWorksheet");
                 }       
-        String localVarPath = "/cells/{name}/worksheets/insert".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString()))   ;
+        String localVarPath = "v3.0/cells/{name}/worksheets/insert".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString()))   ;
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -193,7 +197,5 @@ public class PutInsertNewWorksheetRequest  implements IRequestModel {
                 return apiClient.buildCall(localVarPath, "PUT", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
 
     }
-
-
 }
 

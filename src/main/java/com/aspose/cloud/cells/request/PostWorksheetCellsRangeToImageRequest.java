@@ -41,12 +41,11 @@ public class PostWorksheetCellsRangeToImageRequest  implements IRequestModel {
     public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
         this.extendQueryParameterMap = extendQueryParameterMap;
     }
-
     private String name;
     private String sheetName;
-    private RangeConvertRequest rangeConvertRequest;
     private String folder;
     private String storageName;
+    private RangeConvertRequest rangeConvertRequest;    
         public PostWorksheetCellsRangeToImageRequest()
         {
 
@@ -76,16 +75,6 @@ public class PostWorksheetCellsRangeToImageRequest  implements IRequestModel {
             this.sheetName = sheetName;
         }
 
-
-        public RangeConvertRequest getRangeConvertRequest() {
-            return this.rangeConvertRequest;
-        }
-
-        public void setRangeConvertRequest(RangeConvertRequest rangeConvertRequest) {
-            this.rangeConvertRequest = rangeConvertRequest;
-        }
-
-
         public String getFolder() {
             return this.folder;
         }
@@ -103,18 +92,29 @@ public class PostWorksheetCellsRangeToImageRequest  implements IRequestModel {
             this.storageName = storageName;
         }
 
+        public RangeConvertRequest getRangeConvertRequest() {
+            return this.rangeConvertRequest;
+        }
+
+        public void setRangeConvertRequest(RangeConvertRequest rangeConvertRequest) {
+            this.rangeConvertRequest = rangeConvertRequest;
+        }
+    
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
-         if (getName() == null) {
+         
+                if (getName() == null) {
                     throw new ApiException("Missing the required parameter 'Name' when calling PostWorksheetCellsRangeToImage");
                 } 
+
                 if (getSheetName() == null) {
                     throw new ApiException("Missing the required parameter 'SheetName' when calling PostWorksheetCellsRangeToImage");
                 } 
+
                 if (getRangeConvertRequest() == null) {
                     throw new ApiException("Missing the required parameter 'RangeConvertRequest' when calling PostWorksheetCellsRangeToImage");
                 }       
-        String localVarPath = "/cells/{name}/worksheets/{sheetName}/ranges/convertToImage".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
+        String localVarPath = "v3.0/cells/{name}/worksheets/{sheetName}/ranges/convertToImage".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
     .replaceAll("\\{" + "sheetName" + "\\}", apiClient.escapeString(sheetName.toString()))   ;
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
@@ -158,7 +158,5 @@ public class PostWorksheetCellsRangeToImageRequest  implements IRequestModel {
                 return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
 
     }
-
-
 }
 

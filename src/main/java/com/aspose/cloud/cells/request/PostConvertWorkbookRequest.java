@@ -41,9 +41,8 @@ public class PostConvertWorkbookRequest  implements IRequestModel {
     public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
         this.extendQueryParameterMap = extendQueryParameterMap;
     }
-
-    private ConvertWorkbookOptions convertWorkbookOptions;
     private String fontsLocation;
+    private ConvertWorkbookOptions convertWorkbookOptions;    
         public PostConvertWorkbookRequest()
         {
 
@@ -53,15 +52,6 @@ public class PostConvertWorkbookRequest  implements IRequestModel {
             this.fontsLocation = fontsLocation;
         }   
 
-        public ConvertWorkbookOptions getConvertWorkbookOptions() {
-            return this.convertWorkbookOptions;
-        }
-
-        public void setConvertWorkbookOptions(ConvertWorkbookOptions convertWorkbookOptions) {
-            this.convertWorkbookOptions = convertWorkbookOptions;
-        }
-
-
         public String getFontsLocation() {
             return this.fontsLocation;
         }
@@ -70,12 +60,21 @@ public class PostConvertWorkbookRequest  implements IRequestModel {
             this.fontsLocation = fontsLocation;
         }
 
+        public ConvertWorkbookOptions getConvertWorkbookOptions() {
+            return this.convertWorkbookOptions;
+        }
+
+        public void setConvertWorkbookOptions(ConvertWorkbookOptions convertWorkbookOptions) {
+            this.convertWorkbookOptions = convertWorkbookOptions;
+        }
+    
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
-         if (getConvertWorkbookOptions() == null) {
+         
+                if (getConvertWorkbookOptions() == null) {
                     throw new ApiException("Missing the required parameter 'ConvertWorkbookOptions' when calling PostConvertWorkbook");
                 }       
-        String localVarPath = "/cells/convertWorkbook";
+        String localVarPath = "v3.0/cells/convertWorkbook";
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -115,7 +114,5 @@ public class PostConvertWorkbookRequest  implements IRequestModel {
                 return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
 
     }
-
-
 }
 

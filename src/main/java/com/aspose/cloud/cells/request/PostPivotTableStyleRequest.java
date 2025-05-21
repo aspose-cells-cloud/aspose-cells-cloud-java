@@ -41,14 +41,13 @@ public class PostPivotTableStyleRequest  implements IRequestModel {
     public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
         this.extendQueryParameterMap = extendQueryParameterMap;
     }
-
     private String name;
     private String sheetName;
     private Integer pivotTableIndex;
-    private Style style;
     private Boolean needReCalculate;
     private String folder;
     private String storageName;
+    private Style style;    
         public PostPivotTableStyleRequest()
         {
 
@@ -89,16 +88,6 @@ public class PostPivotTableStyleRequest  implements IRequestModel {
             this.pivotTableIndex = pivotTableIndex;
         }
 
-
-        public Style getStyle() {
-            return this.style;
-        }
-
-        public void setStyle(Style style) {
-            this.style = style;
-        }
-
-
         public Boolean getNeedReCalculate() {
             return this.needReCalculate;
         }
@@ -125,21 +114,33 @@ public class PostPivotTableStyleRequest  implements IRequestModel {
             this.storageName = storageName;
         }
 
+        public Style getStyle() {
+            return this.style;
+        }
+
+        public void setStyle(Style style) {
+            this.style = style;
+        }
+    
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
-         if (getName() == null) {
+         
+                if (getName() == null) {
                     throw new ApiException("Missing the required parameter 'Name' when calling PostPivotTableStyle");
                 } 
+
                 if (getSheetName() == null) {
                     throw new ApiException("Missing the required parameter 'SheetName' when calling PostPivotTableStyle");
                 } 
+
                 if (getPivotTableIndex() == null) {
                     throw new ApiException("Missing the required parameter 'PivotTableIndex' when calling PostPivotTableStyle");
                 } 
+
                 if (getStyle() == null) {
                     throw new ApiException("Missing the required parameter 'Style' when calling PostPivotTableStyle");
                 }       
-        String localVarPath = "/cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/FormatAll".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
+        String localVarPath = "v3.0/cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/FormatAll".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
     .replaceAll("\\{" + "sheetName" + "\\}", apiClient.escapeString(sheetName.toString())) 
     .replaceAll("\\{" + "pivotTableIndex" + "\\}", apiClient.escapeString(pivotTableIndex.toString()))   ;
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
@@ -187,7 +188,5 @@ public class PostPivotTableStyleRequest  implements IRequestModel {
                 return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
 
     }
-
-
 }
 

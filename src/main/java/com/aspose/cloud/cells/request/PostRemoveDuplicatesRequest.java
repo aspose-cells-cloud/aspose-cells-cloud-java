@@ -41,8 +41,7 @@ public class PostRemoveDuplicatesRequest  implements IRequestModel {
     public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
         this.extendQueryParameterMap = extendQueryParameterMap;
     }
-
-    private RemoveDuplicatesOptions removeDuplicatesOptions;
+    private RemoveDuplicatesOptions removeDuplicatesOptions;    
         public PostRemoveDuplicatesRequest()
         {
 
@@ -58,13 +57,14 @@ public class PostRemoveDuplicatesRequest  implements IRequestModel {
         public void setRemoveDuplicatesOptions(RemoveDuplicatesOptions removeDuplicatesOptions) {
             this.removeDuplicatesOptions = removeDuplicatesOptions;
         }
-
+    
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
-         if (getRemoveDuplicatesOptions() == null) {
+         
+                if (getRemoveDuplicatesOptions() == null) {
                     throw new ApiException("Missing the required parameter 'RemoveDuplicatesOptions' when calling PostRemoveDuplicates");
                 }       
-        String localVarPath = "/cells/removeduplicates";
+        String localVarPath = "v3.0/cells/removeduplicates";
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
         List<Pair> localVarQueryParams = null;
@@ -101,7 +101,5 @@ public class PostRemoveDuplicatesRequest  implements IRequestModel {
                 return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
 
     }
-
-
 }
 

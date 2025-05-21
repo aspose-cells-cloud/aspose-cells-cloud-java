@@ -41,14 +41,13 @@ public class PostWorksheetListColumnRequest  implements IRequestModel {
     public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
         this.extendQueryParameterMap = extendQueryParameterMap;
     }
-
     private String name;
     private String sheetName;
     private Integer listObjectIndex;
     private Integer columnIndex;
-    private ListColumn listColumn;
     private String folder;
     private String storageName;
+    private ListColumn listColumn;    
         public PostWorksheetListColumnRequest()
         {
 
@@ -98,16 +97,6 @@ public class PostWorksheetListColumnRequest  implements IRequestModel {
             this.columnIndex = columnIndex;
         }
 
-
-        public ListColumn getListColumn() {
-            return this.listColumn;
-        }
-
-        public void setListColumn(ListColumn listColumn) {
-            this.listColumn = listColumn;
-        }
-
-
         public String getFolder() {
             return this.folder;
         }
@@ -125,24 +114,37 @@ public class PostWorksheetListColumnRequest  implements IRequestModel {
             this.storageName = storageName;
         }
 
+        public ListColumn getListColumn() {
+            return this.listColumn;
+        }
+
+        public void setListColumn(ListColumn listColumn) {
+            this.listColumn = listColumn;
+        }
+    
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
-         if (getName() == null) {
+         
+                if (getName() == null) {
                     throw new ApiException("Missing the required parameter 'Name' when calling PostWorksheetListColumn");
                 } 
+
                 if (getSheetName() == null) {
                     throw new ApiException("Missing the required parameter 'SheetName' when calling PostWorksheetListColumn");
                 } 
+
                 if (getListObjectIndex() == null) {
                     throw new ApiException("Missing the required parameter 'ListObjectIndex' when calling PostWorksheetListColumn");
                 } 
+
                 if (getColumnIndex() == null) {
                     throw new ApiException("Missing the required parameter 'ColumnIndex' when calling PostWorksheetListColumn");
                 } 
+
                 if (getListColumn() == null) {
                     throw new ApiException("Missing the required parameter 'ListColumn' when calling PostWorksheetListColumn");
                 }       
-        String localVarPath = "/cells/{name}/worksheets/{sheetName}/listobjects/{listObjectIndex}/listcolumns/{columnIndex}".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
+        String localVarPath = "v3.0/cells/{name}/worksheets/{sheetName}/listobjects/{listObjectIndex}/listcolumns/{columnIndex}".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
     .replaceAll("\\{" + "sheetName" + "\\}", apiClient.escapeString(sheetName.toString())) 
     .replaceAll("\\{" + "listObjectIndex" + "\\}", apiClient.escapeString(listObjectIndex.toString())) 
     .replaceAll("\\{" + "columnIndex" + "\\}", apiClient.escapeString(columnIndex.toString()))   ;
@@ -188,7 +190,5 @@ public class PostWorksheetListColumnRequest  implements IRequestModel {
                 return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
 
     }
-
-
 }
 

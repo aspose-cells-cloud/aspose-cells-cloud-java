@@ -41,12 +41,11 @@ public class PostWorksheetCellsRangeSortRequest  implements IRequestModel {
     public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
         this.extendQueryParameterMap = extendQueryParameterMap;
     }
-
     private String name;
     private String sheetName;
-    private RangeSortRequest rangeSortRequest;
     private String folder;
     private String storageName;
+    private RangeSortRequest rangeSortRequest;    
         public PostWorksheetCellsRangeSortRequest()
         {
 
@@ -76,16 +75,6 @@ public class PostWorksheetCellsRangeSortRequest  implements IRequestModel {
             this.sheetName = sheetName;
         }
 
-
-        public RangeSortRequest getRangeSortRequest() {
-            return this.rangeSortRequest;
-        }
-
-        public void setRangeSortRequest(RangeSortRequest rangeSortRequest) {
-            this.rangeSortRequest = rangeSortRequest;
-        }
-
-
         public String getFolder() {
             return this.folder;
         }
@@ -103,18 +92,29 @@ public class PostWorksheetCellsRangeSortRequest  implements IRequestModel {
             this.storageName = storageName;
         }
 
+        public RangeSortRequest getRangeSortRequest() {
+            return this.rangeSortRequest;
+        }
+
+        public void setRangeSortRequest(RangeSortRequest rangeSortRequest) {
+            this.rangeSortRequest = rangeSortRequest;
+        }
+    
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
-         if (getName() == null) {
+         
+                if (getName() == null) {
                     throw new ApiException("Missing the required parameter 'Name' when calling PostWorksheetCellsRangeSort");
                 } 
+
                 if (getSheetName() == null) {
                     throw new ApiException("Missing the required parameter 'SheetName' when calling PostWorksheetCellsRangeSort");
                 } 
+
                 if (getRangeSortRequest() == null) {
                     throw new ApiException("Missing the required parameter 'RangeSortRequest' when calling PostWorksheetCellsRangeSort");
                 }       
-        String localVarPath = "/cells/{name}/worksheets/{sheetName}/ranges/sort".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
+        String localVarPath = "v3.0/cells/{name}/worksheets/{sheetName}/ranges/sort".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
     .replaceAll("\\{" + "sheetName" + "\\}", apiClient.escapeString(sheetName.toString()))   ;
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
@@ -158,7 +158,5 @@ public class PostWorksheetCellsRangeSortRequest  implements IRequestModel {
                 return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
 
     }
-
-
 }
 

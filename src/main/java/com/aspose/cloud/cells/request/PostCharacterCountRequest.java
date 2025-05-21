@@ -41,8 +41,7 @@ public class PostCharacterCountRequest  implements IRequestModel {
     public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
         this.extendQueryParameterMap = extendQueryParameterMap;
     }
-
-    private CharacterCountOptions characterCountOptions;
+    private CharacterCountOptions characterCountOptions;    
         public PostCharacterCountRequest()
         {
 
@@ -58,13 +57,14 @@ public class PostCharacterCountRequest  implements IRequestModel {
         public void setCharacterCountOptions(CharacterCountOptions characterCountOptions) {
             this.characterCountOptions = characterCountOptions;
         }
-
+    
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
-         if (getCharacterCountOptions() == null) {
+         
+                if (getCharacterCountOptions() == null) {
                     throw new ApiException("Missing the required parameter 'CharacterCountOptions' when calling PostCharacterCount");
                 }       
-        String localVarPath = "/cells/charactercount";
+        String localVarPath = "v3.0/cells/charactercount";
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
         List<Pair> localVarQueryParams = null;
@@ -101,7 +101,5 @@ public class PostCharacterCountRequest  implements IRequestModel {
                 return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
 
     }
-
-
 }
 

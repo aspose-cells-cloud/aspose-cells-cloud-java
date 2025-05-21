@@ -41,11 +41,11 @@ public class MoveFolderRequest  implements IRequestModel {
     public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
         this.extendQueryParameterMap = extendQueryParameterMap;
     }
-
     private String srcPath;
     private String destPath;
     private String srcStorageName;
     private String destStorageName;
+    
         public MoveFolderRequest()
         {
 
@@ -64,7 +64,6 @@ public class MoveFolderRequest  implements IRequestModel {
         public void setSrcPath(String srcPath) {
             this.srcPath = srcPath;
         }
-
 
         public String getDestPath() {
             return this.destPath;
@@ -92,15 +91,18 @@ public class MoveFolderRequest  implements IRequestModel {
             this.destStorageName = destStorageName;
         }
 
+    
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
-         if (getSrcPath() == null) {
+         
+                if (getSrcPath() == null) {
                     throw new ApiException("Missing the required parameter 'SrcPath' when calling MoveFolder");
                 } 
+
                 if (getDestPath() == null) {
                     throw new ApiException("Missing the required parameter 'DestPath' when calling MoveFolder");
                 }       
-        String localVarPath = "/cells/storage/folder/move/{srcPath}".replaceAll("\\{" + "srcPath" + "\\}", apiClient.escapeString(srcPath.toString()))   ;
+        String localVarPath = "v3.0/cells/storage/folder/move/{srcPath}".replaceAll("\\{" + "srcPath" + "\\}", apiClient.escapeString(srcPath.toString()))   ;
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -145,7 +147,5 @@ public class MoveFolderRequest  implements IRequestModel {
                 return apiClient.buildCall(localVarPath, "PUT", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
 
     }
-
-
 }
 
