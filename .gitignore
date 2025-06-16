@@ -24,3 +24,4 @@ build
 packages
 src/test
 test/data
+.idea
