@@ -47,14 +47,13 @@ public class GetNamedRangeValueRequest  implements IRequestModel {
     private String storageName;
     
         public GetNamedRangeValueRequest()
-        {
-
+        {        
         }
-        public GetNamedRangeValueRequest(String name, String namerange, String folder, String storageName) {
-            this.name = name;
-            this.namerange = namerange;
-            this.folder = folder;
-            this.storageName = storageName;
+        public GetNamedRangeValueRequest( String name ,  String namerange ,  String folder ,  String storageName ) {
+            this.name = name; 
+            this.namerange = namerange; 
+            this.folder = folder; 
+            this.storageName = storageName; 
         }   
 
         public String getName() {
@@ -125,7 +124,7 @@ public class GetNamedRangeValueRequest  implements IRequestModel {
                 final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
                 if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-                final String[] localVarContentTypes = { "application/json" };
+                final String[] localVarContentTypes = { "application/json" };        
                 final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
                 localVarHeaderParams.put("Content-Type", localVarContentType);
 

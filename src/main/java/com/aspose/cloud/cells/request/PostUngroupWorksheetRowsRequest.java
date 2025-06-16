@@ -50,17 +50,16 @@ public class PostUngroupWorksheetRowsRequest  implements IRequestModel {
     private String storageName;
     
         public PostUngroupWorksheetRowsRequest()
-        {
-
+        {        
         }
-        public PostUngroupWorksheetRowsRequest(String name, String sheetName, Integer firstIndex, Integer lastIndex, Boolean isAll, String folder, String storageName) {
-            this.name = name;
-            this.sheetName = sheetName;
-            this.firstIndex = firstIndex;
-            this.lastIndex = lastIndex;
-            this.isAll = isAll;
-            this.folder = folder;
-            this.storageName = storageName;
+        public PostUngroupWorksheetRowsRequest( String name ,  String sheetName ,  Integer firstIndex ,  Integer lastIndex ,  Boolean isAll ,  String folder ,  String storageName ) {
+            this.name = name; 
+            this.sheetName = sheetName; 
+            this.firstIndex = firstIndex; 
+            this.lastIndex = lastIndex; 
+            this.isAll = isAll; 
+            this.folder = folder; 
+            this.storageName = storageName; 
         }   
 
         public String getName() {
@@ -175,7 +174,7 @@ public class PostUngroupWorksheetRowsRequest  implements IRequestModel {
                 final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
                 if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-                final String[] localVarContentTypes = { "application/json" };
+                final String[] localVarContentTypes = { "application/json" };        
                 final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
                 localVarHeaderParams.put("Content-Type", localVarContentType);
 

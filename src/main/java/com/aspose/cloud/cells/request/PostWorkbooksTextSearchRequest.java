@@ -47,14 +47,13 @@ public class PostWorkbooksTextSearchRequest  implements IRequestModel {
     private String storageName;
     
         public PostWorkbooksTextSearchRequest()
-        {
-
+        {        
         }
-        public PostWorkbooksTextSearchRequest(String name, String text, String folder, String storageName) {
-            this.name = name;
-            this.text = text;
-            this.folder = folder;
-            this.storageName = storageName;
+        public PostWorkbooksTextSearchRequest( String name ,  String text ,  String folder ,  String storageName ) {
+            this.name = name; 
+            this.text = text; 
+            this.folder = folder; 
+            this.storageName = storageName; 
         }   
 
         public String getName() {
@@ -127,7 +126,7 @@ public class PostWorkbooksTextSearchRequest  implements IRequestModel {
                 final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
                 if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-                final String[] localVarContentTypes = { "application/json" };
+                final String[] localVarContentTypes = { "application/json" };        
                 final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
                 localVarHeaderParams.put("Content-Type", localVarContentType);
 

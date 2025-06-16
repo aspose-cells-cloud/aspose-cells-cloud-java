@@ -51,18 +51,17 @@ public class PostAutofitWorksheetRowRequest  implements IRequestModel {
     private Integer rowCount;
     
         public PostAutofitWorksheetRowRequest()
-        {
-
+        {        
         }
-        public PostAutofitWorksheetRowRequest(String name, String sheetName, Integer rowIndex, Integer firstColumn, Integer lastColumn, String folder, String storageName, Integer rowCount) {
-            this.name = name;
-            this.sheetName = sheetName;
-            this.rowIndex = rowIndex;
-            this.firstColumn = firstColumn;
-            this.lastColumn = lastColumn;
-            this.folder = folder;
-            this.storageName = storageName;
-            this.rowCount = rowCount;
+        public PostAutofitWorksheetRowRequest( String name ,  String sheetName ,  Integer rowIndex ,  Integer firstColumn ,  Integer lastColumn ,  String folder ,  String storageName ,  Integer rowCount ) {
+            this.name = name; 
+            this.sheetName = sheetName; 
+            this.rowIndex = rowIndex; 
+            this.firstColumn = firstColumn; 
+            this.lastColumn = lastColumn; 
+            this.folder = folder; 
+            this.storageName = storageName; 
+            this.rowCount = rowCount; 
         }   
 
         public String getName() {
@@ -185,7 +184,7 @@ public class PostAutofitWorksheetRowRequest  implements IRequestModel {
                 final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
                 if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-                final String[] localVarContentTypes = { "application/json" };
+                final String[] localVarContentTypes = { "application/json" };        
                 final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
                 localVarHeaderParams.put("Content-Type", localVarContentType);
 

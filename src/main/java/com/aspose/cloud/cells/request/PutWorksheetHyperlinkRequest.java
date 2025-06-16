@@ -52,19 +52,18 @@ public class PutWorksheetHyperlinkRequest  implements IRequestModel {
     private String storageName;
     
         public PutWorksheetHyperlinkRequest()
-        {
-
+        {        
         }
-        public PutWorksheetHyperlinkRequest(String name, String sheetName, Integer firstRow, Integer firstColumn, Integer totalRows, Integer totalColumns, String address, String folder, String storageName) {
-            this.name = name;
-            this.sheetName = sheetName;
-            this.firstRow = firstRow;
-            this.firstColumn = firstColumn;
-            this.totalRows = totalRows;
-            this.totalColumns = totalColumns;
-            this.address = address;
-            this.folder = folder;
-            this.storageName = storageName;
+        public PutWorksheetHyperlinkRequest( String name ,  String sheetName ,  Integer firstRow ,  Integer firstColumn ,  Integer totalRows ,  Integer totalColumns ,  String address ,  String folder ,  String storageName ) {
+            this.name = name; 
+            this.sheetName = sheetName; 
+            this.firstRow = firstRow; 
+            this.firstColumn = firstColumn; 
+            this.totalRows = totalRows; 
+            this.totalColumns = totalColumns; 
+            this.address = address; 
+            this.folder = folder; 
+            this.storageName = storageName; 
         }   
 
         public String getName() {
@@ -215,7 +214,7 @@ public class PutWorksheetHyperlinkRequest  implements IRequestModel {
                 final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
                 if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-                final String[] localVarContentTypes = { "application/json" };
+                final String[] localVarContentTypes = { "application/json" };        
                 final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
                 localVarHeaderParams.put("Content-Type", localVarContentType);
 

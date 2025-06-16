@@ -43,11 +43,10 @@ public class PostRunTaskRequest  implements IRequestModel {
     }
     private TaskData taskData;    
         public PostRunTaskRequest()
-        {
-
+        {        
         }
-        public PostRunTaskRequest(TaskData taskData) {
-            this.taskData = taskData;
+        public PostRunTaskRequest( TaskData taskData ) {
+            this.taskData = taskData; 
         }   
 
         public TaskData getTaskData() {
@@ -81,7 +80,7 @@ public class PostRunTaskRequest  implements IRequestModel {
                 final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
                 if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-                final String[] localVarContentTypes = { "application/json" };
+                final String[] localVarContentTypes = { "application/json" };        
                 final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
                 localVarHeaderParams.put("Content-Type", localVarContentType);
 

@@ -51,18 +51,17 @@ public class PostAutofitWorkbookRowsRequest  implements IRequestModel {
     private Integer lastColumn;
     
         public PostAutofitWorkbookRowsRequest()
-        {
-
+        {        
         }
-        public PostAutofitWorkbookRowsRequest(String name, Integer startRow, Integer endRow, Boolean onlyAuto, String folder, String storageName, Integer firstColumn, Integer lastColumn) {
-            this.name = name;
-            this.startRow = startRow;
-            this.endRow = endRow;
-            this.onlyAuto = onlyAuto;
-            this.folder = folder;
-            this.storageName = storageName;
-            this.firstColumn = firstColumn;
-            this.lastColumn = lastColumn;
+        public PostAutofitWorkbookRowsRequest( String name ,  Integer startRow ,  Integer endRow ,  Boolean onlyAuto ,  String folder ,  String storageName ,  Integer firstColumn ,  Integer lastColumn ) {
+            this.name = name; 
+            this.startRow = startRow; 
+            this.endRow = endRow; 
+            this.onlyAuto = onlyAuto; 
+            this.folder = folder; 
+            this.storageName = storageName; 
+            this.firstColumn = firstColumn; 
+            this.lastColumn = lastColumn; 
         }   
 
         public String getName() {
@@ -179,7 +178,7 @@ public class PostAutofitWorkbookRowsRequest  implements IRequestModel {
                 final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
                 if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-                final String[] localVarContentTypes = { "application/json" };
+                final String[] localVarContentTypes = { "application/json" };        
                 final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
                 localVarHeaderParams.put("Content-Type", localVarContentType);
 

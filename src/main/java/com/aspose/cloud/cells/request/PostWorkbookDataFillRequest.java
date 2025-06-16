@@ -49,17 +49,16 @@ public class PostWorkbookDataFillRequest  implements IRequestModel {
     private Boolean checkExcelRestriction;
     private DataFill dataFill;    
         public PostWorkbookDataFillRequest()
-        {
-
+        {        
         }
-        public PostWorkbookDataFillRequest(String name, DataFill dataFill, String folder, String storageName, String password, String region, Boolean checkExcelRestriction) {
-            this.name = name;
-            this.dataFill = dataFill;
-            this.folder = folder;
-            this.storageName = storageName;
-            this.password = password;
-            this.region = region;
-            this.checkExcelRestriction = checkExcelRestriction;
+        public PostWorkbookDataFillRequest( String name ,  DataFill dataFill ,  String folder ,  String storageName ,  String password ,  String region ,  Boolean checkExcelRestriction ) {
+            this.name = name; 
+            this.dataFill = dataFill; 
+            this.folder = folder; 
+            this.storageName = storageName; 
+            this.password = password; 
+            this.region = region; 
+            this.checkExcelRestriction = checkExcelRestriction; 
         }   
 
         public String getName() {
@@ -164,7 +163,7 @@ public class PostWorkbookDataFillRequest  implements IRequestModel {
                 final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
                 if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-                final String[] localVarContentTypes = { "application/json" };
+                final String[] localVarContentTypes = { "application/json" };        
                 final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
                 localVarHeaderParams.put("Content-Type", localVarContentType);
 

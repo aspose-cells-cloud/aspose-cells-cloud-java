@@ -54,21 +54,20 @@ public class GetWorksheetWithFormatRequest  implements IRequestModel {
     private String storageName;
     
         public GetWorksheetWithFormatRequest()
-        {
-
+        {        
         }
-        public GetWorksheetWithFormatRequest(String name, String sheetName, String format, Integer verticalResolution, Integer horizontalResolution, String area, Integer pageIndex, Boolean onePagePerSheet, Boolean printHeadings, String folder, String storageName) {
-            this.name = name;
-            this.sheetName = sheetName;
-            this.format = format;
-            this.verticalResolution = verticalResolution;
-            this.horizontalResolution = horizontalResolution;
-            this.area = area;
-            this.pageIndex = pageIndex;
-            this.onePagePerSheet = onePagePerSheet;
-            this.printHeadings = printHeadings;
-            this.folder = folder;
-            this.storageName = storageName;
+        public GetWorksheetWithFormatRequest( String name ,  String sheetName ,  String format ,  Integer verticalResolution ,  Integer horizontalResolution ,  String area ,  Integer pageIndex ,  Boolean onePagePerSheet ,  Boolean printHeadings ,  String folder ,  String storageName ) {
+            this.name = name; 
+            this.sheetName = sheetName; 
+            this.format = format; 
+            this.verticalResolution = verticalResolution; 
+            this.horizontalResolution = horizontalResolution; 
+            this.area = area; 
+            this.pageIndex = pageIndex; 
+            this.onePagePerSheet = onePagePerSheet; 
+            this.printHeadings = printHeadings; 
+            this.folder = folder; 
+            this.storageName = storageName; 
         }   
 
         public String getName() {
@@ -223,7 +222,7 @@ public class GetWorksheetWithFormatRequest  implements IRequestModel {
                 final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
                 if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-                final String[] localVarContentTypes = { "application/json" };
+                final String[] localVarContentTypes = { "application/json" };        
                 final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
                 localVarHeaderParams.put("Content-Type", localVarContentType);
 

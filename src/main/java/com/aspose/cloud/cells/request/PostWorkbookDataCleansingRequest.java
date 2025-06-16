@@ -49,17 +49,16 @@ public class PostWorkbookDataCleansingRequest  implements IRequestModel {
     private Boolean checkExcelRestriction;
     private DataCleansing dataCleansing;    
         public PostWorkbookDataCleansingRequest()
-        {
-
+        {        
         }
-        public PostWorkbookDataCleansingRequest(String name, DataCleansing dataCleansing, String folder, String storageName, String password, String region, Boolean checkExcelRestriction) {
-            this.name = name;
-            this.dataCleansing = dataCleansing;
-            this.folder = folder;
-            this.storageName = storageName;
-            this.password = password;
-            this.region = region;
-            this.checkExcelRestriction = checkExcelRestriction;
+        public PostWorkbookDataCleansingRequest( String name ,  DataCleansing dataCleansing ,  String folder ,  String storageName ,  String password ,  String region ,  Boolean checkExcelRestriction ) {
+            this.name = name; 
+            this.dataCleansing = dataCleansing; 
+            this.folder = folder; 
+            this.storageName = storageName; 
+            this.password = password; 
+            this.region = region; 
+            this.checkExcelRestriction = checkExcelRestriction; 
         }   
 
         public String getName() {
@@ -164,7 +163,7 @@ public class PostWorkbookDataCleansingRequest  implements IRequestModel {
                 final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
                 if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-                final String[] localVarContentTypes = { "application/json" };
+                final String[] localVarContentTypes = { "application/json" };        
                 final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
                 localVarHeaderParams.put("Content-Type", localVarContentType);
 

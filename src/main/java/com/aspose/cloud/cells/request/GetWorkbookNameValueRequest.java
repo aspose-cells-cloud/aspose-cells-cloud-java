@@ -47,14 +47,13 @@ public class GetWorkbookNameValueRequest  implements IRequestModel {
     private String storageName;
     
         public GetWorkbookNameValueRequest()
-        {
-
+        {        
         }
-        public GetWorkbookNameValueRequest(String name, String nameName, String folder, String storageName) {
-            this.name = name;
-            this.nameName = nameName;
-            this.folder = folder;
-            this.storageName = storageName;
+        public GetWorkbookNameValueRequest( String name ,  String nameName ,  String folder ,  String storageName ) {
+            this.name = name; 
+            this.nameName = nameName; 
+            this.folder = folder; 
+            this.storageName = storageName; 
         }   
 
         public String getName() {
@@ -125,7 +124,7 @@ public class GetWorkbookNameValueRequest  implements IRequestModel {
                 final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
                 if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-                final String[] localVarContentTypes = { "application/json" };
+                final String[] localVarContentTypes = { "application/json" };        
                 final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
                 localVarHeaderParams.put("Content-Type", localVarContentType);
 

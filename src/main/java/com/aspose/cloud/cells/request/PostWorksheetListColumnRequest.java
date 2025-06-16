@@ -49,17 +49,16 @@ public class PostWorksheetListColumnRequest  implements IRequestModel {
     private String storageName;
     private ListColumn listColumn;    
         public PostWorksheetListColumnRequest()
-        {
-
+        {        
         }
-        public PostWorksheetListColumnRequest(String name, String sheetName, Integer listObjectIndex, Integer columnIndex, ListColumn listColumn, String folder, String storageName) {
-            this.name = name;
-            this.sheetName = sheetName;
-            this.listObjectIndex = listObjectIndex;
-            this.columnIndex = columnIndex;
-            this.listColumn = listColumn;
-            this.folder = folder;
-            this.storageName = storageName;
+        public PostWorksheetListColumnRequest( String name ,  String sheetName ,  Integer listObjectIndex ,  Integer columnIndex ,  ListColumn listColumn ,  String folder ,  String storageName ) {
+            this.name = name; 
+            this.sheetName = sheetName; 
+            this.listObjectIndex = listObjectIndex; 
+            this.columnIndex = columnIndex; 
+            this.listColumn = listColumn; 
+            this.folder = folder; 
+            this.storageName = storageName; 
         }   
 
         public String getName() {
@@ -170,7 +169,7 @@ public class PostWorksheetListColumnRequest  implements IRequestModel {
                 final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
                 if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-                final String[] localVarContentTypes = { "application/json" };
+                final String[] localVarContentTypes = { "application/json" };        
                 final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
                 localVarHeaderParams.put("Content-Type", localVarContentType);
 

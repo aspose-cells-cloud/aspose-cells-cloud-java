@@ -36,22 +36,73 @@ import com.google.gson.annotations.SerializedName;
 import java.time.OffsetDateTime;
 
 
-public class TextItem  extends  LinkElement {
-        @SerializedName("Text")
-        private String text ;
+public class TextItem {
+        @SerializedName("Filename")
+        private String filename ;
 
-        public  TextItem  text(String  text) {
-            this.text =  text;
+        public  TextItem  filename(String  filename) {
+            this.filename =  filename;
             return this;
         }
 
         @ApiModelProperty(value = "")
-        public String getText() {
-            return text;
+        public String getFilename() {
+            return filename;
         }
 
-        public void setText(String text) {
-            this.text = text;
+        public void setFilename(String filename) {
+            this.filename = filename;
+        }
+
+        @SerializedName("Worksheet")
+        private String worksheet ;
+
+        public  TextItem  worksheet(String  worksheet) {
+            this.worksheet =  worksheet;
+            return this;
+        }
+
+        @ApiModelProperty(value = "")
+        public String getWorksheet() {
+            return worksheet;
+        }
+
+        public void setWorksheet(String worksheet) {
+            this.worksheet = worksheet;
+        }
+
+        @SerializedName("Position")
+        private String position ;
+
+        public  TextItem  position(String  position) {
+            this.position =  position;
+            return this;
+        }
+
+        @ApiModelProperty(value = "")
+        public String getPosition() {
+            return position;
+        }
+
+        public void setPosition(String position) {
+            this.position = position;
+        }
+
+        @SerializedName("Content")
+        private String content ;
+
+        public  TextItem  content(String  content) {
+            this.content =  content;
+            return this;
+        }
+
+        @ApiModelProperty(value = "")
+        public String getContent() {
+            return content;
+        }
+
+        public void setContent(String content) {
+            this.content = content;
         }
 
         @Override
@@ -65,20 +116,24 @@ public class TextItem  extends  LinkElement {
 
             TextItem textItem = (TextItem) o;
             return
-                Objects.equals(this.text, textItem.text) &&
-                super.equals(o);
+                Objects.equals(this.filename, textItem.filename) &&
+                Objects.equals(this.worksheet, textItem.worksheet) &&
+                Objects.equals(this.position, textItem.position) &&
+                Objects.equals(this.content, textItem.content);
       }
 
       @Override
       public int hashCode() {
-        return Objects.hash(text, super.hashCode());
+        return Objects.hash(filename, worksheet, position, content);
       }
         @Override
         public String toString() {
             StringBuilder sb = new StringBuilder();
             sb.append("class TextItem {\n");
-            sb.append("    text: ").append(toIndentedString(getText())).append("\n");
-            sb.append("    link: ").append(toIndentedString(getLink())).append("\n");
+            sb.append("    filename: ").append(toIndentedString(getFilename())).append("\n");
+            sb.append("    worksheet: ").append(toIndentedString(getWorksheet())).append("\n");
+            sb.append("    position: ").append(toIndentedString(getPosition())).append("\n");
+            sb.append("    content: ").append(toIndentedString(getContent())).append("\n");
             sb.append("}");
             return sb.toString();
         }

@@ -48,15 +48,14 @@ public class DeleteWorksheetValidationRequest  implements IRequestModel {
     private String storageName;
     
         public DeleteWorksheetValidationRequest()
-        {
-
+        {        
         }
-        public DeleteWorksheetValidationRequest(String name, String sheetName, Integer validationIndex, String folder, String storageName) {
-            this.name = name;
-            this.sheetName = sheetName;
-            this.validationIndex = validationIndex;
-            this.folder = folder;
-            this.storageName = storageName;
+        public DeleteWorksheetValidationRequest( String name ,  String sheetName ,  Integer validationIndex ,  String folder ,  String storageName ) {
+            this.name = name; 
+            this.sheetName = sheetName; 
+            this.validationIndex = validationIndex; 
+            this.folder = folder; 
+            this.storageName = storageName; 
         }   
 
         public String getName() {
@@ -141,7 +140,7 @@ public class DeleteWorksheetValidationRequest  implements IRequestModel {
                 final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
                 if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-                final String[] localVarContentTypes = { "application/json" };
+                final String[] localVarContentTypes = { "application/json" };        
                 final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
                 localVarHeaderParams.put("Content-Type", localVarContentType);
 

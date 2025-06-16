@@ -48,16 +48,15 @@ public class PutWorksheetConditionalFormattingRequest  implements IRequestModel 
     private String storageName;
     private FormatCondition formatcondition;    
         public PutWorksheetConditionalFormattingRequest()
-        {
-
+        {        
         }
-        public PutWorksheetConditionalFormattingRequest(String name, String sheetName, FormatCondition formatcondition, String cellArea, String folder, String storageName) {
-            this.name = name;
-            this.sheetName = sheetName;
-            this.formatcondition = formatcondition;
-            this.cellArea = cellArea;
-            this.folder = folder;
-            this.storageName = storageName;
+        public PutWorksheetConditionalFormattingRequest( String name ,  String sheetName ,  FormatCondition formatcondition ,  String cellArea ,  String folder ,  String storageName ) {
+            this.name = name; 
+            this.sheetName = sheetName; 
+            this.formatcondition = formatcondition; 
+            this.cellArea = cellArea; 
+            this.folder = folder; 
+            this.storageName = storageName; 
         }   
 
         public String getName() {
@@ -156,7 +155,7 @@ public class PutWorksheetConditionalFormattingRequest  implements IRequestModel 
                 final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
                 if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-                final String[] localVarContentTypes = { "application/json" };
+                final String[] localVarContentTypes = { "application/json" };        
                 final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
                 localVarHeaderParams.put("Content-Type", localVarContentType);
 

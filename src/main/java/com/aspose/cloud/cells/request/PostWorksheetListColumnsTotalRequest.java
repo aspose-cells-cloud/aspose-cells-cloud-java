@@ -48,16 +48,15 @@ public class PostWorksheetListColumnsTotalRequest  implements IRequestModel {
     private String storageName;
     private List<TableTotalRequest> tableTotalRequests;    
         public PostWorksheetListColumnsTotalRequest()
-        {
-
+        {        
         }
-        public PostWorksheetListColumnsTotalRequest(String name, String sheetName, Integer listObjectIndex, List<TableTotalRequest> tableTotalRequests, String folder, String storageName) {
-            this.name = name;
-            this.sheetName = sheetName;
-            this.listObjectIndex = listObjectIndex;
-            this.tableTotalRequests = tableTotalRequests;
-            this.folder = folder;
-            this.storageName = storageName;
+        public PostWorksheetListColumnsTotalRequest( String name ,  String sheetName ,  Integer listObjectIndex ,  List<TableTotalRequest> tableTotalRequests ,  String folder ,  String storageName ) {
+            this.name = name; 
+            this.sheetName = sheetName; 
+            this.listObjectIndex = listObjectIndex; 
+            this.tableTotalRequests = tableTotalRequests; 
+            this.folder = folder; 
+            this.storageName = storageName; 
         }   
 
         public String getName() {
@@ -154,7 +153,7 @@ public class PostWorksheetListColumnsTotalRequest  implements IRequestModel {
                 final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
                 if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-                final String[] localVarContentTypes = { "application/json" };
+                final String[] localVarContentTypes = { "application/json" };        
                 final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
                 localVarHeaderParams.put("Content-Type", localVarContentType);
 

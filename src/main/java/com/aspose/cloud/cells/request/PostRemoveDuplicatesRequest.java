@@ -43,11 +43,10 @@ public class PostRemoveDuplicatesRequest  implements IRequestModel {
     }
     private RemoveDuplicatesOptions removeDuplicatesOptions;    
         public PostRemoveDuplicatesRequest()
-        {
-
+        {        
         }
-        public PostRemoveDuplicatesRequest(RemoveDuplicatesOptions removeDuplicatesOptions) {
-            this.removeDuplicatesOptions = removeDuplicatesOptions;
+        public PostRemoveDuplicatesRequest( RemoveDuplicatesOptions removeDuplicatesOptions ) {
+            this.removeDuplicatesOptions = removeDuplicatesOptions; 
         }   
 
         public RemoveDuplicatesOptions getRemoveDuplicatesOptions() {
@@ -81,7 +80,7 @@ public class PostRemoveDuplicatesRequest  implements IRequestModel {
                 final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
                 if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-                final String[] localVarContentTypes = { "application/json" };
+                final String[] localVarContentTypes = { "application/json" };        
                 final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
                 localVarHeaderParams.put("Content-Type", localVarContentType);
 

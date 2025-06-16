@@ -51,16 +51,15 @@ public class PostReplaceRequest  implements IRequestModel {
                 private HashMap<String,File> file;
                 private String localPath;
         public PostReplaceRequest()
-        {
-
+        {        
         }
-        public PostReplaceRequest(HashMap<String,File> file, String text, String newtext, String password, String sheetname, Boolean checkExcelRestriction) {
-            this.file = file;
-            this.text = text;
-            this.newtext = newtext;
-            this.password = password;
-            this.sheetname = sheetname;
-            this.checkExcelRestriction = checkExcelRestriction;
+        public PostReplaceRequest( String  localPath   ,  String text ,  String newtext ,  String password ,  String sheetname ,  Boolean checkExcelRestriction ) {
+              this.localPath  = localPath;   
+            this.text = text; 
+            this.newtext = newtext; 
+            this.password = password; 
+            this.sheetname = sheetname; 
+            this.checkExcelRestriction = checkExcelRestriction; 
         }   
 
         public String getText() {
@@ -108,26 +107,26 @@ public class PostReplaceRequest  implements IRequestModel {
         }
 
     
-         
-                public HashMap<String,File> getFile() {
-                    return this.file;
-                }
+             
+            public HashMap<String,File> getFile() {
+                return this.file;
+            }
 
-                public void setFile(HashMap<String,File> file) {
-                    this.file = file;
-                }
-         
-            public String getLocalPath() {
-                    return this.localPath;
+            public void setFile(HashMap<String,File> file) {
+                this.file = file;
             }
-            public void setLocalPath(String localPath) {
-                this.localPath = localPath;
-            }
+     
+        public String getLocalPath() {
+                return this.localPath;
+        }
+        public void setLocalPath(String localPath) {
+            this.localPath = localPath;
+        }        
         
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
           
-                if (  getFile() == null &&  getLocalPath() ==null ) {
+                if ( getFile() == null && getLocalPath() ==null ) {
                     throw new ApiException("Missing the required parameter 'File' when calling PostReplace");
                 } 
 
@@ -163,17 +162,18 @@ public class PostReplaceRequest  implements IRequestModel {
             }
         }
                    
-              if (getLocalPath() != null && !getLocalPath().isEmpty()) {
-                     File fileToUpload = new File(getLocalPath());
-                     if (fileToUpload.exists()) {
-                         localVarFormParams.put(fileToUpload.getName(), fileToUpload);
-                     }
-                 }
-                if (getFile() != null){
-                        for (String key : getFile().keySet()) {
-                            localVarFormParams.put(key,getFile().get(key));                
-                        }
-                    }      
+            if (getLocalPath() != null && !getLocalPath().isEmpty()) {
+                File fileToUpload = new File(getLocalPath());
+                if (fileToUpload.exists()) {
+                    localVarFormParams.put(fileToUpload.getName(), fileToUpload);
+                }
+            }
+            if (getFile() != null){
+                for (String key : getFile().keySet()) {
+                    localVarFormParams.put(key,getFile().get(key));                
+                }
+            }
+                  
         Object localVarPostBody = null;
                 final String[] localVarAccepts = {
                     "application/json"
@@ -181,10 +181,7 @@ public class PostReplaceRequest  implements IRequestModel {
                 final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
                 if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-                final String[] localVarContentTypes = { "application/json" };
-                if(getFile() != null){
-                   localVarContentTypes[0] =  "multipart/form-data";
-                }
+                final String[] localVarContentTypes = { "multipart/form-data"  };        
                 final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
                 localVarHeaderParams.put("Content-Type", localVarContentType);
 

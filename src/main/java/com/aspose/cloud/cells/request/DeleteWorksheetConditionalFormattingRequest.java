@@ -48,15 +48,14 @@ public class DeleteWorksheetConditionalFormattingRequest  implements IRequestMod
     private String storageName;
     
         public DeleteWorksheetConditionalFormattingRequest()
-        {
-
+        {        
         }
-        public DeleteWorksheetConditionalFormattingRequest(String name, String sheetName, Integer index, String folder, String storageName) {
-            this.name = name;
-            this.sheetName = sheetName;
-            this.index = index;
-            this.folder = folder;
-            this.storageName = storageName;
+        public DeleteWorksheetConditionalFormattingRequest( String name ,  String sheetName ,  Integer index ,  String folder ,  String storageName ) {
+            this.name = name; 
+            this.sheetName = sheetName; 
+            this.index = index; 
+            this.folder = folder; 
+            this.storageName = storageName; 
         }   
 
         public String getName() {
@@ -141,7 +140,7 @@ public class DeleteWorksheetConditionalFormattingRequest  implements IRequestMod
                 final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
                 if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-                final String[] localVarContentTypes = { "application/json" };
+                final String[] localVarContentTypes = { "application/json" };        
                 final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
                 localVarHeaderParams.put("Content-Type", localVarContentType);
 

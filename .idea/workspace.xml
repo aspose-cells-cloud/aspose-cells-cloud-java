@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="ALL" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="ad4a541f-0bdc-4da8-8ec2-3c2fbdd796dc" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/aspose/cloud/cells/api/CellsApiUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/aspose/cloud/cells/api/CellsApiUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/aspose/cloud/cells/api/ConversionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/aspose/cloud/cells/api/ConversionTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/aspose/cloud/cells/api/DataProcessingControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/aspose/cloud/cells/api/DataProcessingControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/aspose/cloud/cells/api/FileControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/aspose/cloud/cells/api/FileControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/aspose/cloud/cells/api/LightCellsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/aspose/cloud/cells/api/LightCellsTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/aspose/cloud/cells/api/TextProcessingControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/aspose/cloud/cells/api/TextProcessingControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/aspose/cloud/cells/api/WorksheetControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/aspose/cloud/cells/api/WorksheetControllerTest.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/src/test" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/aspose/cloud/cells/api/CellsApi.java" root0="SKIP_INSPECTION" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
+  <component name="ProjectId" id="1r6XZ1yZpHFvHcN7OBrre78pG4X" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/cells.cloud.family/cells.cloud-sdk-java",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager" selected="JUnit.CellsApiTest.cellsDeleteWorksheetColumnsTest">
+    <configuration name="CellsApiTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="aspose-cells-cloud" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.aspose.cloud.cells.api.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.aspose.cloud.cells.api" />
+      <option name="MAIN_CLASS_NAME" value="com.aspose.cloud.cells.api.CellsApiTest" />
+      <option name="METHOD_NAME" value="cellsDeleteWorksheetRowTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CellsApiTest.cellsDeleteWorksheetColumnsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="aspose-cells-cloud" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.aspose.cloud.cells.api.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.aspose.cloud.cells.api" />
+      <option name="MAIN_CLASS_NAME" value="com.aspose.cloud.cells.api.CellsApiTest" />
+      <option name="METHOD_NAME" value="cellsDeleteWorksheetColumnsTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CellsApiTest.cellsDeleteWorksheetRowTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="aspose-cells-cloud" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.aspose.cloud.cells.api.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.aspose.cloud.cells.api" />
+      <option name="MAIN_CLASS_NAME" value="com.aspose.cloud.cells.api.CellsApiTest" />
+      <option name="METHOD_NAME" value="cellsDeleteWorksheetRowTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CellsApiTest.cellsPostWorksheetMergeTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="aspose-cells-cloud" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.aspose.cloud.cells.api.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.aspose.cloud.cells.api" />
+      <option name="MAIN_CLASS_NAME" value="com.aspose.cloud.cells.api.CellsApiTest" />
+      <option name="METHOD_NAME" value="cellsPostWorksheetMergeTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CellsWorkbookApiTest.cellsWorkbookPutConvertWorkbookTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="aspose-cells-cloud" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.aspose.cloud.cells.api.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.aspose.cloud.cells.api" />
+      <option name="MAIN_CLASS_NAME" value="com.aspose.cloud.cells.api.CellsWorkbookApiTest" />
+      <option name="METHOD_NAME" value="cellsWorkbookPutConvertWorkbookTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.CellsApiTest.cellsDeleteWorksheetColumnsTest" />
+        <item itemvalue="JUnit.CellsApiTest" />
+        <item itemvalue="JUnit.CellsApiTest.cellsPostWorksheetMergeTest" />
+        <item itemvalue="JUnit.CellsApiTest.cellsDeleteWorksheetRowTest" />
+        <item itemvalue="JUnit.CellsWorkbookApiTest.cellsWorkbookPutConvertWorkbookTest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ad4a541f-0bdc-4da8-8ec2-3c2fbdd796dc" name="Default Changelist" comment="" />
+      <created>1618297602920</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1618297602920</updated>
+      <workItem from="1631106861890" duration="3467000" />
+      <workItem from="1631153511999" duration="4110000" />
+      <workItem from="1631171290911" duration="3448000" />
+      <workItem from="1631188372365" duration="11956000" />
+      <workItem from="1631254975722" duration="220000" />
+      <workItem from="1631255641099" duration="392000" />
+      <workItem from="1631256088633" duration="263000" />
+      <workItem from="1631256479969" duration="1295000" />
+      <workItem from="1631870430554" duration="2000" />
+      <workItem from="1640507291351" duration="586000" />
+      <workItem from="1747777996579" duration="4691000" />
+      <workItem from="1747826918349" duration="100000" />
+      <workItem from="1747831944705" duration="1453000" />
+      <workItem from="1747928228157" duration="31000" />
+      <workItem from="1750084175877" duration="144000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/aspose/cloud/cells/client/ApiClient.java</url>
+          <line>1184</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/aspose/cloud/cells/client/ApiClient.java</url>
+          <line>1444</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/aspose/cloud/cells/api/CellsApi.java</url>
+          <line>70</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/aspose/cloud/cells/client/ApiClient.java</url>
+          <line>1647</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/aspose/cloud/cells/api/CellsApiTest.java</url>
+          <line>102</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

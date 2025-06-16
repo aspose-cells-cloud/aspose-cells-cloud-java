@@ -48,15 +48,14 @@ public class PostWorkbooksMergeRequest  implements IRequestModel {
     private String mergedStorageName;
     
         public PostWorkbooksMergeRequest()
-        {
-
+        {        
         }
-        public PostWorkbooksMergeRequest(String name, String mergeWith, String folder, String storageName, String mergedStorageName) {
-            this.name = name;
-            this.mergeWith = mergeWith;
-            this.folder = folder;
-            this.storageName = storageName;
-            this.mergedStorageName = mergedStorageName;
+        public PostWorkbooksMergeRequest( String name ,  String mergeWith ,  String folder ,  String storageName ,  String mergedStorageName ) {
+            this.name = name; 
+            this.mergeWith = mergeWith; 
+            this.folder = folder; 
+            this.storageName = storageName; 
+            this.mergedStorageName = mergedStorageName; 
         }   
 
         public String getName() {
@@ -141,7 +140,7 @@ public class PostWorkbooksMergeRequest  implements IRequestModel {
                 final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
                 if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-                final String[] localVarContentTypes = { "application/json" };
+                final String[] localVarContentTypes = { "application/json" };        
                 final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
                 localVarHeaderParams.put("Content-Type", localVarContentType);
 

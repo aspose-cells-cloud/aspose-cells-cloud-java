@@ -36,7 +36,7 @@ import com.google.gson.annotations.SerializedName;
 import java.time.OffsetDateTime;
 
 
-public class PageSetup  extends  LinkElement {
+public class PageSetup {
         @SerializedName("BlackAndWhite")
         private Boolean blackAndWhite ;
 
@@ -659,13 +659,12 @@ public class PageSetup  extends  LinkElement {
                 Objects.equals(this.topMargin, pageSetup.topMargin) &&
                 Objects.equals(this.zoom, pageSetup.zoom) &&
                 Objects.equals(this.header, pageSetup.header) &&
-                Objects.equals(this.footer, pageSetup.footer) &&
-                super.equals(o);
+                Objects.equals(this.footer, pageSetup.footer);
       }
 
       @Override
       public int hashCode() {
-        return Objects.hash(blackAndWhite, bottomMargin, centerHorizontally, centerVertically, firstPageNumber, fitToPagesTall, fitToPagesWide, footerMargin, headerMargin, isAutoFirstPageNumber, isHFAlignMargins, isHFDiffFirst, isHFDiffOddEven, isHFScaleWithDoc, isPercentScale, leftMargin, order, orientation, paperSize, printArea, printComments, printCopies, printDraft, printErrors, printGridlines, printHeadings, printQuality, printTitleColumns, printTitleRows, rightMargin, topMargin, zoom, header, footer, super.hashCode());
+        return Objects.hash(blackAndWhite, bottomMargin, centerHorizontally, centerVertically, firstPageNumber, fitToPagesTall, fitToPagesWide, footerMargin, headerMargin, isAutoFirstPageNumber, isHFAlignMargins, isHFDiffFirst, isHFDiffOddEven, isHFScaleWithDoc, isPercentScale, leftMargin, order, orientation, paperSize, printArea, printComments, printCopies, printDraft, printErrors, printGridlines, printHeadings, printQuality, printTitleColumns, printTitleRows, rightMargin, topMargin, zoom, header, footer);
       }
         @Override
         public String toString() {
@@ -705,7 +704,6 @@ public class PageSetup  extends  LinkElement {
             sb.append("    zoom: ").append(toIndentedString(getZoom())).append("\n");
             sb.append("    header: ").append(toIndentedString(getHeader())).append("\n");
             sb.append("    footer: ").append(toIndentedString(getFooter())).append("\n");
-            sb.append("    link: ").append(toIndentedString(getLink())).append("\n");
             sb.append("}");
             return sb.toString();
         }

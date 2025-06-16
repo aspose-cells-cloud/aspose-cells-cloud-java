@@ -43,11 +43,10 @@ public class PostUpdateWordCaseRequest  implements IRequestModel {
     }
     private WordCaseOptions wordCaseOptions;    
         public PostUpdateWordCaseRequest()
-        {
-
+        {        
         }
-        public PostUpdateWordCaseRequest(WordCaseOptions wordCaseOptions) {
-            this.wordCaseOptions = wordCaseOptions;
+        public PostUpdateWordCaseRequest( WordCaseOptions wordCaseOptions ) {
+            this.wordCaseOptions = wordCaseOptions; 
         }   
 
         public WordCaseOptions getWordCaseOptions() {
@@ -81,7 +80,7 @@ public class PostUpdateWordCaseRequest  implements IRequestModel {
                 final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
                 if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-                final String[] localVarContentTypes = { "application/json" };
+                final String[] localVarContentTypes = { "application/json" };        
                 final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
                 localVarHeaderParams.put("Content-Type", localVarContentType);
 

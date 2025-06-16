@@ -53,20 +53,19 @@ public class PutWorksheetOleObjectRequest  implements IRequestModel {
     private String storageName;
     
         public PutWorksheetOleObjectRequest()
-        {
-
+        {        
         }
-        public PutWorksheetOleObjectRequest(String name, String sheetName, Integer upperLeftRow, Integer upperLeftColumn, Integer height, Integer width, String oleFile, String imageFile, String folder, String storageName) {
-            this.name = name;
-            this.sheetName = sheetName;
-            this.upperLeftRow = upperLeftRow;
-            this.upperLeftColumn = upperLeftColumn;
-            this.height = height;
-            this.width = width;
-            this.oleFile = oleFile;
-            this.imageFile = imageFile;
-            this.folder = folder;
-            this.storageName = storageName;
+        public PutWorksheetOleObjectRequest( String name ,  String sheetName ,  Integer upperLeftRow ,  Integer upperLeftColumn ,  Integer height ,  Integer width ,  String oleFile ,  String imageFile ,  String folder ,  String storageName ) {
+            this.name = name; 
+            this.sheetName = sheetName; 
+            this.upperLeftRow = upperLeftRow; 
+            this.upperLeftColumn = upperLeftColumn; 
+            this.height = height; 
+            this.width = width; 
+            this.oleFile = oleFile; 
+            this.imageFile = imageFile; 
+            this.folder = folder; 
+            this.storageName = storageName; 
         }   
 
         public String getName() {
@@ -209,7 +208,7 @@ public class PutWorksheetOleObjectRequest  implements IRequestModel {
                 final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
                 if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-                final String[] localVarContentTypes = { "application/json" };
+                final String[] localVarContentTypes = { "application/json" };        
                 final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
                 localVarHeaderParams.put("Content-Type", localVarContentType);
 

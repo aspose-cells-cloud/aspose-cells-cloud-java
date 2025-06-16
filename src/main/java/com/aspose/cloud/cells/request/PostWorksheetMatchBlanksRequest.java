@@ -48,15 +48,14 @@ public class PostWorksheetMatchBlanksRequest  implements IRequestModel {
     private String storageName;
     
         public PostWorksheetMatchBlanksRequest()
-        {
-
+        {        
         }
-        public PostWorksheetMatchBlanksRequest(String name, String sheetName, Integer fieldIndex, String folder, String storageName) {
-            this.name = name;
-            this.sheetName = sheetName;
-            this.fieldIndex = fieldIndex;
-            this.folder = folder;
-            this.storageName = storageName;
+        public PostWorksheetMatchBlanksRequest( String name ,  String sheetName ,  Integer fieldIndex ,  String folder ,  String storageName ) {
+            this.name = name; 
+            this.sheetName = sheetName; 
+            this.fieldIndex = fieldIndex; 
+            this.folder = folder; 
+            this.storageName = storageName; 
         }   
 
         public String getName() {
@@ -143,7 +142,7 @@ public class PostWorksheetMatchBlanksRequest  implements IRequestModel {
                 final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
                 if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-                final String[] localVarContentTypes = { "application/json" };
+                final String[] localVarContentTypes = { "application/json" };        
                 final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
                 localVarHeaderParams.put("Content-Type", localVarContentType);
 

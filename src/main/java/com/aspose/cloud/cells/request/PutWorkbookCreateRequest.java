@@ -50,17 +50,16 @@ public class PutWorkbookCreateRequest  implements IRequestModel {
     private Boolean checkExcelRestriction;
     
         public PutWorkbookCreateRequest()
-        {
-
+        {        
         }
-        public PutWorkbookCreateRequest(String name, String templateFile, String dataFile, Boolean isWriteOver, String folder, String storageName, Boolean checkExcelRestriction) {
-            this.name = name;
-            this.templateFile = templateFile;
-            this.dataFile = dataFile;
-            this.isWriteOver = isWriteOver;
-            this.folder = folder;
-            this.storageName = storageName;
-            this.checkExcelRestriction = checkExcelRestriction;
+        public PutWorkbookCreateRequest( String name ,  String templateFile ,  String dataFile ,  Boolean isWriteOver ,  String folder ,  String storageName ,  Boolean checkExcelRestriction ) {
+            this.name = name; 
+            this.templateFile = templateFile; 
+            this.dataFile = dataFile; 
+            this.isWriteOver = isWriteOver; 
+            this.folder = folder; 
+            this.storageName = storageName; 
+            this.checkExcelRestriction = checkExcelRestriction; 
         }   
 
         public String getName() {
@@ -165,7 +164,7 @@ public class PutWorkbookCreateRequest  implements IRequestModel {
                 final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
                 if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-                final String[] localVarContentTypes = { "application/json" };
+                final String[] localVarContentTypes = { "application/json" };        
                 final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
                 localVarHeaderParams.put("Content-Type", localVarContentType);
 

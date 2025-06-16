@@ -43,11 +43,10 @@ public class PostDataCleansingRequest  implements IRequestModel {
     }
     private DataCleansingRequest dataCleansingRequest;    
         public PostDataCleansingRequest()
-        {
-
+        {        
         }
-        public PostDataCleansingRequest(DataCleansingRequest dataCleansingRequest) {
-            this.dataCleansingRequest = dataCleansingRequest;
+        public PostDataCleansingRequest( DataCleansingRequest dataCleansingRequest ) {
+            this.dataCleansingRequest = dataCleansingRequest; 
         }   
 
         public DataCleansingRequest getDataCleansingRequest() {
@@ -81,7 +80,7 @@ public class PostDataCleansingRequest  implements IRequestModel {
                 final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
                 if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-                final String[] localVarContentTypes = { "application/json" };
+                final String[] localVarContentTypes = { "application/json" };        
                 final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
                 localVarHeaderParams.put("Content-Type", localVarContentType);
 

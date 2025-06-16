@@ -43,11 +43,10 @@ public class PostBatchConvertRequest  implements IRequestModel {
     }
     private BatchConvertRequest batchConvertRequest;    
         public PostBatchConvertRequest()
-        {
-
+        {        
         }
-        public PostBatchConvertRequest(BatchConvertRequest batchConvertRequest) {
-            this.batchConvertRequest = batchConvertRequest;
+        public PostBatchConvertRequest( BatchConvertRequest batchConvertRequest ) {
+            this.batchConvertRequest = batchConvertRequest; 
         }   
 
         public BatchConvertRequest getBatchConvertRequest() {
@@ -81,7 +80,7 @@ public class PostBatchConvertRequest  implements IRequestModel {
                 final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
                 if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-                final String[] localVarContentTypes = { "application/json" };
+                final String[] localVarContentTypes = { "application/json" };        
                 final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
                 localVarHeaderParams.put("Content-Type", localVarContentType);
 

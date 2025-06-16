@@ -43,11 +43,10 @@ public class PostCharacterCountRequest  implements IRequestModel {
     }
     private CharacterCountOptions characterCountOptions;    
         public PostCharacterCountRequest()
-        {
-
+        {        
         }
-        public PostCharacterCountRequest(CharacterCountOptions characterCountOptions) {
-            this.characterCountOptions = characterCountOptions;
+        public PostCharacterCountRequest( CharacterCountOptions characterCountOptions ) {
+            this.characterCountOptions = characterCountOptions; 
         }   
 
         public CharacterCountOptions getCharacterCountOptions() {
@@ -81,7 +80,7 @@ public class PostCharacterCountRequest  implements IRequestModel {
                 final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
                 if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-                final String[] localVarContentTypes = { "application/json" };
+                final String[] localVarContentTypes = { "application/json" };        
                 final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
                 localVarHeaderParams.put("Content-Type", localVarContentType);
 

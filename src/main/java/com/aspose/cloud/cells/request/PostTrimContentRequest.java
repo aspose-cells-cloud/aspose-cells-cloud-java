@@ -43,11 +43,10 @@ public class PostTrimContentRequest  implements IRequestModel {
     }
     private TrimContentOptions trimContentOptions;    
         public PostTrimContentRequest()
-        {
-
+        {        
         }
-        public PostTrimContentRequest(TrimContentOptions trimContentOptions) {
-            this.trimContentOptions = trimContentOptions;
+        public PostTrimContentRequest( TrimContentOptions trimContentOptions ) {
+            this.trimContentOptions = trimContentOptions; 
         }   
 
         public TrimContentOptions getTrimContentOptions() {
@@ -81,7 +80,7 @@ public class PostTrimContentRequest  implements IRequestModel {
                 final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
                 if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-                final String[] localVarContentTypes = { "application/json" };
+                final String[] localVarContentTypes = { "application/json" };        
                 final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
                 localVarHeaderParams.put("Content-Type", localVarContentType);
 

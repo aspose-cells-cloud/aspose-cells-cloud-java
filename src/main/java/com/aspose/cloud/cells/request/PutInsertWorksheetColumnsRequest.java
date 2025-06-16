@@ -50,17 +50,16 @@ public class PutInsertWorksheetColumnsRequest  implements IRequestModel {
     private String storageName;
     
         public PutInsertWorksheetColumnsRequest()
-        {
-
+        {        
         }
-        public PutInsertWorksheetColumnsRequest(String name, String sheetName, Integer columnIndex, Integer columns, Boolean updateReference, String folder, String storageName) {
-            this.name = name;
-            this.sheetName = sheetName;
-            this.columnIndex = columnIndex;
-            this.columns = columns;
-            this.updateReference = updateReference;
-            this.folder = folder;
-            this.storageName = storageName;
+        public PutInsertWorksheetColumnsRequest( String name ,  String sheetName ,  Integer columnIndex ,  Integer columns ,  Boolean updateReference ,  String folder ,  String storageName ) {
+            this.name = name; 
+            this.sheetName = sheetName; 
+            this.columnIndex = columnIndex; 
+            this.columns = columns; 
+            this.updateReference = updateReference; 
+            this.folder = folder; 
+            this.storageName = storageName; 
         }   
 
         public String getName() {
@@ -173,7 +172,7 @@ public class PutInsertWorksheetColumnsRequest  implements IRequestModel {
                 final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
                 if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-                final String[] localVarContentTypes = { "application/json" };
+                final String[] localVarContentTypes = { "application/json" };        
                 final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
                 localVarHeaderParams.put("Content-Type", localVarContentType);
 

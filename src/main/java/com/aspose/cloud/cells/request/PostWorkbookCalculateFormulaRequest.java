@@ -47,15 +47,14 @@ public class PostWorkbookCalculateFormulaRequest  implements IRequestModel {
     private String storageName;
     private CalculationOptions options;    
         public PostWorkbookCalculateFormulaRequest()
-        {
-
+        {        
         }
-        public PostWorkbookCalculateFormulaRequest(String name, CalculationOptions options, Boolean ignoreError, String folder, String storageName) {
-            this.name = name;
-            this.options = options;
-            this.ignoreError = ignoreError;
-            this.folder = folder;
-            this.storageName = storageName;
+        public PostWorkbookCalculateFormulaRequest( String name ,  CalculationOptions options ,  Boolean ignoreError ,  String folder ,  String storageName ) {
+            this.name = name; 
+            this.options = options; 
+            this.ignoreError = ignoreError; 
+            this.folder = folder; 
+            this.storageName = storageName; 
         }   
 
         public String getName() {
@@ -132,7 +131,7 @@ public class PostWorkbookCalculateFormulaRequest  implements IRequestModel {
                 final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
                 if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-                final String[] localVarContentTypes = { "application/json" };
+                final String[] localVarContentTypes = { "application/json" };        
                 final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
                 localVarHeaderParams.put("Content-Type", localVarContentType);
 

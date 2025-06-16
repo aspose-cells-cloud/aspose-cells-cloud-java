@@ -46,14 +46,13 @@ public class PutDocumentProtectFromChangesRequest  implements IRequestModel {
     private String storageName;
     private PasswordRequest password;    
         public PutDocumentProtectFromChangesRequest()
-        {
-
+        {        
         }
-        public PutDocumentProtectFromChangesRequest(String name, PasswordRequest password, String folder, String storageName) {
-            this.name = name;
-            this.password = password;
-            this.folder = folder;
-            this.storageName = storageName;
+        public PutDocumentProtectFromChangesRequest( String name ,  PasswordRequest password ,  String folder ,  String storageName ) {
+            this.name = name; 
+            this.password = password; 
+            this.folder = folder; 
+            this.storageName = storageName; 
         }   
 
         public String getName() {
@@ -122,7 +121,7 @@ public class PutDocumentProtectFromChangesRequest  implements IRequestModel {
                 final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
                 if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-                final String[] localVarContentTypes = { "application/json" };
+                final String[] localVarContentTypes = { "application/json" };        
                 final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
                 localVarHeaderParams.put("Content-Type", localVarContentType);
 

@@ -47,15 +47,14 @@ public class PostWorksheetCellsRangeToImageRequest  implements IRequestModel {
     private String storageName;
     private RangeConvertRequest rangeConvertRequest;    
         public PostWorksheetCellsRangeToImageRequest()
-        {
-
+        {        
         }
-        public PostWorksheetCellsRangeToImageRequest(String name, String sheetName, RangeConvertRequest rangeConvertRequest, String folder, String storageName) {
-            this.name = name;
-            this.sheetName = sheetName;
-            this.rangeConvertRequest = rangeConvertRequest;
-            this.folder = folder;
-            this.storageName = storageName;
+        public PostWorksheetCellsRangeToImageRequest( String name ,  String sheetName ,  RangeConvertRequest rangeConvertRequest ,  String folder ,  String storageName ) {
+            this.name = name; 
+            this.sheetName = sheetName; 
+            this.rangeConvertRequest = rangeConvertRequest; 
+            this.folder = folder; 
+            this.storageName = storageName; 
         }   
 
         public String getName() {
@@ -138,7 +137,7 @@ public class PostWorksheetCellsRangeToImageRequest  implements IRequestModel {
                 final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
                 if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-                final String[] localVarContentTypes = { "application/json" };
+                final String[] localVarContentTypes = { "application/json" };        
                 final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
                 localVarHeaderParams.put("Content-Type", localVarContentType);
 

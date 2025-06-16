@@ -48,15 +48,14 @@ public class GetWorksheetShapeRequest  implements IRequestModel {
     private String storageName;
     
         public GetWorksheetShapeRequest()
-        {
-
+        {        
         }
-        public GetWorksheetShapeRequest(String name, String sheetName, Integer shapeindex, String folder, String storageName) {
-            this.name = name;
-            this.sheetName = sheetName;
-            this.shapeindex = shapeindex;
-            this.folder = folder;
-            this.storageName = storageName;
+        public GetWorksheetShapeRequest( String name ,  String sheetName ,  Integer shapeindex ,  String folder ,  String storageName ) {
+            this.name = name; 
+            this.sheetName = sheetName; 
+            this.shapeindex = shapeindex; 
+            this.folder = folder; 
+            this.storageName = storageName; 
         }   
 
         public String getName() {
@@ -141,7 +140,7 @@ public class GetWorksheetShapeRequest  implements IRequestModel {
                 final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
                 if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-                final String[] localVarContentTypes = { "application/json" };
+                final String[] localVarContentTypes = { "application/json" };        
                 final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
                 localVarHeaderParams.put("Content-Type", localVarContentType);
 

@@ -51,18 +51,17 @@ public class PostWorksheetCellSetValueRequest  implements IRequestModel {
     private String storageName;
     
         public PostWorksheetCellSetValueRequest()
-        {
-
+        {        
         }
-        public PostWorksheetCellSetValueRequest(String name, String sheetName, String cellName, String value, String type, String formula, String folder, String storageName) {
-            this.name = name;
-            this.sheetName = sheetName;
-            this.cellName = cellName;
-            this.value = value;
-            this.type = type;
-            this.formula = formula;
-            this.folder = folder;
-            this.storageName = storageName;
+        public PostWorksheetCellSetValueRequest( String name ,  String sheetName ,  String cellName ,  String value ,  String type ,  String formula ,  String folder ,  String storageName ) {
+            this.name = name; 
+            this.sheetName = sheetName; 
+            this.cellName = cellName; 
+            this.value = value; 
+            this.type = type; 
+            this.formula = formula; 
+            this.folder = folder; 
+            this.storageName = storageName; 
         }   
 
         public String getName() {
@@ -183,7 +182,7 @@ public class PostWorksheetCellSetValueRequest  implements IRequestModel {
                 final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
                 if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-                final String[] localVarContentTypes = { "application/json" };
+                final String[] localVarContentTypes = { "application/json" };        
                 final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
                 localVarHeaderParams.put("Content-Type", localVarContentType);
 

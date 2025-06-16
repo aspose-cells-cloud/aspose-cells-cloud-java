@@ -45,12 +45,11 @@ public class GetFilesListRequest  implements IRequestModel {
     private String storageName;
     
         public GetFilesListRequest()
-        {
-
+        {        
         }
-        public GetFilesListRequest(String path, String storageName) {
-            this.path = path;
-            this.storageName = storageName;
+        public GetFilesListRequest( String path ,  String storageName ) {
+            this.path = path; 
+            this.storageName = storageName; 
         }   
 
         public String getPath() {
@@ -73,7 +72,7 @@ public class GetFilesListRequest  implements IRequestModel {
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
          
-        String localVarPath = "v3.0/cells/storage/folder/{path}".replaceAll("\\{" + "path" + "\\}", apiClient.escapeString(path.toString()))   ;
+        String localVarPath = "v4.0/cells/storage/folder/{path}".replaceAll("\\{" + "path" + "\\}", apiClient.escapeString(path.toString()))   ;
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -92,7 +91,7 @@ public class GetFilesListRequest  implements IRequestModel {
                 final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
                 if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-                final String[] localVarContentTypes = { "application/json" };
+                final String[] localVarContentTypes = { "application/json" };        
                 final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
                 localVarHeaderParams.put("Content-Type", localVarContentType);
 

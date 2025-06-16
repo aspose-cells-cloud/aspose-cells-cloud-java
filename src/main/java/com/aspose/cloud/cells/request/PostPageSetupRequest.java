@@ -47,15 +47,14 @@ public class PostPageSetupRequest  implements IRequestModel {
     private String storageName;
     private PageSetup pageSetup;    
         public PostPageSetupRequest()
-        {
-
+        {        
         }
-        public PostPageSetupRequest(String name, String sheetName, PageSetup pageSetup, String folder, String storageName) {
-            this.name = name;
-            this.sheetName = sheetName;
-            this.pageSetup = pageSetup;
-            this.folder = folder;
-            this.storageName = storageName;
+        public PostPageSetupRequest( String name ,  String sheetName ,  PageSetup pageSetup ,  String folder ,  String storageName ) {
+            this.name = name; 
+            this.sheetName = sheetName; 
+            this.pageSetup = pageSetup; 
+            this.folder = folder; 
+            this.storageName = storageName; 
         }   
 
         public String getName() {
@@ -138,7 +137,7 @@ public class PostPageSetupRequest  implements IRequestModel {
                 final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
                 if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-                final String[] localVarContentTypes = { "application/json" };
+                final String[] localVarContentTypes = { "application/json" };        
                 final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
                 localVarHeaderParams.put("Content-Type", localVarContentType);
 

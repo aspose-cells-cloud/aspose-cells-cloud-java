@@ -51,18 +51,17 @@ public class PostWorkbookExportXMLRequest  implements IRequestModel {
     private String region;
     
         public PostWorkbookExportXMLRequest()
-        {
-
+        {        
         }
-        public PostWorkbookExportXMLRequest(String name, String password, String folder, String storageName, String outPath, String outStorageName, Boolean checkExcelRestriction, String region) {
-            this.name = name;
-            this.password = password;
-            this.folder = folder;
-            this.storageName = storageName;
-            this.outPath = outPath;
-            this.outStorageName = outStorageName;
-            this.checkExcelRestriction = checkExcelRestriction;
-            this.region = region;
+        public PostWorkbookExportXMLRequest( String name ,  String password ,  String folder ,  String storageName ,  String outPath ,  String outStorageName ,  Boolean checkExcelRestriction ,  String region ) {
+            this.name = name; 
+            this.password = password; 
+            this.folder = folder; 
+            this.storageName = storageName; 
+            this.outPath = outPath; 
+            this.outStorageName = outStorageName; 
+            this.checkExcelRestriction = checkExcelRestriction; 
+            this.region = region; 
         }   
 
         public String getName() {
@@ -179,7 +178,7 @@ public class PostWorkbookExportXMLRequest  implements IRequestModel {
                 final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
                 if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-                final String[] localVarContentTypes = { "application/json" };
+                final String[] localVarContentTypes = { "application/json" };        
                 final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
                 localVarHeaderParams.put("Content-Type", localVarContentType);
 

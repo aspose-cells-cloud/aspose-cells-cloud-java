@@ -52,19 +52,18 @@ public class PutVerticalPageBreakRequest  implements IRequestModel {
     private String storageName;
     
         public PutVerticalPageBreakRequest()
-        {
-
+        {        
         }
-        public PutVerticalPageBreakRequest(String name, String sheetName, String cellname, Integer column, Integer row, Integer startRow, Integer endRow, String folder, String storageName) {
-            this.name = name;
-            this.sheetName = sheetName;
-            this.cellname = cellname;
-            this.column = column;
-            this.row = row;
-            this.startRow = startRow;
-            this.endRow = endRow;
-            this.folder = folder;
-            this.storageName = storageName;
+        public PutVerticalPageBreakRequest( String name ,  String sheetName ,  String cellname ,  Integer column ,  Integer row ,  Integer startRow ,  Integer endRow ,  String folder ,  String storageName ) {
+            this.name = name; 
+            this.sheetName = sheetName; 
+            this.cellname = cellname; 
+            this.column = column; 
+            this.row = row; 
+            this.startRow = startRow; 
+            this.endRow = endRow; 
+            this.folder = folder; 
+            this.storageName = storageName; 
         }   
 
         public String getName() {
@@ -195,7 +194,7 @@ public class PutVerticalPageBreakRequest  implements IRequestModel {
                 final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
                 if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-                final String[] localVarContentTypes = { "application/json" };
+                final String[] localVarContentTypes = { "application/json" };        
                 final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
                 localVarHeaderParams.put("Content-Type", localVarContentType);
 

@@ -47,15 +47,14 @@ public class PostWorksheetCellsRangeStyleRequest  implements IRequestModel {
     private String storageName;
     private RangeSetStyleRequest rangeOperate;    
         public PostWorksheetCellsRangeStyleRequest()
-        {
-
+        {        
         }
-        public PostWorksheetCellsRangeStyleRequest(String name, String sheetName, RangeSetStyleRequest rangeOperate, String folder, String storageName) {
-            this.name = name;
-            this.sheetName = sheetName;
-            this.rangeOperate = rangeOperate;
-            this.folder = folder;
-            this.storageName = storageName;
+        public PostWorksheetCellsRangeStyleRequest( String name ,  String sheetName ,  RangeSetStyleRequest rangeOperate ,  String folder ,  String storageName ) {
+            this.name = name; 
+            this.sheetName = sheetName; 
+            this.rangeOperate = rangeOperate; 
+            this.folder = folder; 
+            this.storageName = storageName; 
         }   
 
         public String getName() {
@@ -138,7 +137,7 @@ public class PostWorksheetCellsRangeStyleRequest  implements IRequestModel {
                 final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
                 if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-                final String[] localVarContentTypes = { "application/json" };
+                final String[] localVarContentTypes = { "application/json" };        
                 final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
                 localVarHeaderParams.put("Content-Type", localVarContentType);
 

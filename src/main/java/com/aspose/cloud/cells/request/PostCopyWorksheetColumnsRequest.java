@@ -51,18 +51,17 @@ public class PostCopyWorksheetColumnsRequest  implements IRequestModel {
     private String storageName;
     
         public PostCopyWorksheetColumnsRequest()
-        {
-
+        {        
         }
-        public PostCopyWorksheetColumnsRequest(String name, String sheetName, Integer sourceColumnIndex, Integer destinationColumnIndex, Integer columnNumber, String worksheet, String folder, String storageName) {
-            this.name = name;
-            this.sheetName = sheetName;
-            this.sourceColumnIndex = sourceColumnIndex;
-            this.destinationColumnIndex = destinationColumnIndex;
-            this.columnNumber = columnNumber;
-            this.worksheet = worksheet;
-            this.folder = folder;
-            this.storageName = storageName;
+        public PostCopyWorksheetColumnsRequest( String name ,  String sheetName ,  Integer sourceColumnIndex ,  Integer destinationColumnIndex ,  Integer columnNumber ,  String worksheet ,  String folder ,  String storageName ) {
+            this.name = name; 
+            this.sheetName = sheetName; 
+            this.sourceColumnIndex = sourceColumnIndex; 
+            this.destinationColumnIndex = destinationColumnIndex; 
+            this.columnNumber = columnNumber; 
+            this.worksheet = worksheet; 
+            this.folder = folder; 
+            this.storageName = storageName; 
         }   
 
         public String getName() {
@@ -193,7 +192,7 @@ public class PostCopyWorksheetColumnsRequest  implements IRequestModel {
                 final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
                 if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-                final String[] localVarContentTypes = { "application/json" };
+                final String[] localVarContentTypes = { "application/json" };        
                 final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
                 localVarHeaderParams.put("Content-Type", localVarContentType);
 

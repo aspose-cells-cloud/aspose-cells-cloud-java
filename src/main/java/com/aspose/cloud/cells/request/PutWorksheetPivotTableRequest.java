@@ -51,18 +51,17 @@ public class PutWorksheetPivotTableRequest  implements IRequestModel {
     private String storageName;
     
         public PutWorksheetPivotTableRequest()
-        {
-
+        {        
         }
-        public PutWorksheetPivotTableRequest(String name, String sheetName, String folder, String sourceData, String destCellName, String tableName, Boolean useSameSource, String storageName) {
-            this.name = name;
-            this.sheetName = sheetName;
-            this.folder = folder;
-            this.sourceData = sourceData;
-            this.destCellName = destCellName;
-            this.tableName = tableName;
-            this.useSameSource = useSameSource;
-            this.storageName = storageName;
+        public PutWorksheetPivotTableRequest( String name ,  String sheetName ,  String folder ,  String sourceData ,  String destCellName ,  String tableName ,  Boolean useSameSource ,  String storageName ) {
+            this.name = name; 
+            this.sheetName = sheetName; 
+            this.folder = folder; 
+            this.sourceData = sourceData; 
+            this.destCellName = destCellName; 
+            this.tableName = tableName; 
+            this.useSameSource = useSameSource; 
+            this.storageName = storageName; 
         }   
 
         public String getName() {
@@ -181,7 +180,7 @@ public class PutWorksheetPivotTableRequest  implements IRequestModel {
                 final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
                 if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-                final String[] localVarContentTypes = { "application/json" };
+                final String[] localVarContentTypes = { "application/json" };        
                 final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
                 localVarHeaderParams.put("Content-Type", localVarContentType);
 

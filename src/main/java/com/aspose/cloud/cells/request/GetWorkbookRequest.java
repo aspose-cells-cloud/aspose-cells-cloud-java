@@ -59,26 +59,25 @@ public class GetWorkbookRequest  implements IRequestModel {
     private String fontsLocation;
     
         public GetWorkbookRequest()
-        {
-
+        {        
         }
-        public GetWorkbookRequest(String name, String format, String password, Boolean isAutoFit, Boolean onlySaveTable, String folder, String outPath, String storageName, String outStorageName, Boolean checkExcelRestriction, String region, Boolean pageWideFitOnPerSheet, Boolean pageTallFitOnPerSheet, Boolean onePagePerSheet, Boolean onlyAutofitTable, String fontsLocation) {
-            this.name = name;
-            this.format = format;
-            this.password = password;
-            this.isAutoFit = isAutoFit;
-            this.onlySaveTable = onlySaveTable;
-            this.folder = folder;
-            this.outPath = outPath;
-            this.storageName = storageName;
-            this.outStorageName = outStorageName;
-            this.checkExcelRestriction = checkExcelRestriction;
-            this.region = region;
-            this.pageWideFitOnPerSheet = pageWideFitOnPerSheet;
-            this.pageTallFitOnPerSheet = pageTallFitOnPerSheet;
-            this.onePagePerSheet = onePagePerSheet;
-            this.onlyAutofitTable = onlyAutofitTable;
-            this.fontsLocation = fontsLocation;
+        public GetWorkbookRequest( String name ,  String format ,  String password ,  Boolean isAutoFit ,  Boolean onlySaveTable ,  String folder ,  String outPath ,  String storageName ,  String outStorageName ,  Boolean checkExcelRestriction ,  String region ,  Boolean pageWideFitOnPerSheet ,  Boolean pageTallFitOnPerSheet ,  Boolean onePagePerSheet ,  Boolean onlyAutofitTable ,  String fontsLocation ) {
+            this.name = name; 
+            this.format = format; 
+            this.password = password; 
+            this.isAutoFit = isAutoFit; 
+            this.onlySaveTable = onlySaveTable; 
+            this.folder = folder; 
+            this.outPath = outPath; 
+            this.storageName = storageName; 
+            this.outStorageName = outStorageName; 
+            this.checkExcelRestriction = checkExcelRestriction; 
+            this.region = region; 
+            this.pageWideFitOnPerSheet = pageWideFitOnPerSheet; 
+            this.pageTallFitOnPerSheet = pageTallFitOnPerSheet; 
+            this.onePagePerSheet = onePagePerSheet; 
+            this.onlyAutofitTable = onlyAutofitTable; 
+            this.fontsLocation = fontsLocation; 
         }   
 
         public String getName() {
@@ -291,7 +290,7 @@ public class GetWorkbookRequest  implements IRequestModel {
                 final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
                 if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-                final String[] localVarContentTypes = { "application/json" };
+                final String[] localVarContentTypes = { "application/json" };        
                 final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
                 localVarHeaderParams.put("Content-Type", localVarContentType);
 

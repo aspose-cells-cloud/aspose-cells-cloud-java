@@ -49,16 +49,15 @@ public class PostWorkbookGetSmartMarkerResultRequest  implements IRequestModel {
     private String outStorageName;
     
         public PostWorkbookGetSmartMarkerResultRequest()
-        {
-
+        {        
         }
-        public PostWorkbookGetSmartMarkerResultRequest(String name, String xmlFile, String folder, String outPath, String storageName, String outStorageName) {
-            this.name = name;
-            this.xmlFile = xmlFile;
-            this.folder = folder;
-            this.outPath = outPath;
-            this.storageName = storageName;
-            this.outStorageName = outStorageName;
+        public PostWorkbookGetSmartMarkerResultRequest( String name ,  String xmlFile ,  String folder ,  String outPath ,  String storageName ,  String outStorageName ) {
+            this.name = name; 
+            this.xmlFile = xmlFile; 
+            this.folder = folder; 
+            this.outPath = outPath; 
+            this.storageName = storageName; 
+            this.outStorageName = outStorageName; 
         }   
 
         public String getName() {
@@ -151,7 +150,7 @@ public class PostWorkbookGetSmartMarkerResultRequest  implements IRequestModel {
                 final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
                 if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-                final String[] localVarContentTypes = { "application/json" };
+                final String[] localVarContentTypes = { "application/json" };        
                 final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
                 localVarHeaderParams.put("Content-Type", localVarContentType);
 

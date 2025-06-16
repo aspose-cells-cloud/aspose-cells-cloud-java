@@ -50,17 +50,16 @@ public class PostSetCellRangeValueRequest  implements IRequestModel {
     private String storageName;
     
         public PostSetCellRangeValueRequest()
-        {
-
+        {        
         }
-        public PostSetCellRangeValueRequest(String name, String sheetName, String cellarea, String value, String type, String folder, String storageName) {
-            this.name = name;
-            this.sheetName = sheetName;
-            this.cellarea = cellarea;
-            this.value = value;
-            this.type = type;
-            this.folder = folder;
-            this.storageName = storageName;
+        public PostSetCellRangeValueRequest( String name ,  String sheetName ,  String cellarea ,  String value ,  String type ,  String folder ,  String storageName ) {
+            this.name = name; 
+            this.sheetName = sheetName; 
+            this.cellarea = cellarea; 
+            this.value = value; 
+            this.type = type; 
+            this.folder = folder; 
+            this.storageName = storageName; 
         }   
 
         public String getName() {
@@ -179,7 +178,7 @@ public class PostSetCellRangeValueRequest  implements IRequestModel {
                 final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
                 if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-                final String[] localVarContentTypes = { "application/json" };
+                final String[] localVarContentTypes = { "application/json" };        
                 final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
                 localVarHeaderParams.put("Content-Type", localVarContentType);
 

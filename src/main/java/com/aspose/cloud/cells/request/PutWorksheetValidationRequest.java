@@ -48,15 +48,14 @@ public class PutWorksheetValidationRequest  implements IRequestModel {
     private String storageName;
     
         public PutWorksheetValidationRequest()
-        {
-
+        {        
         }
-        public PutWorksheetValidationRequest(String name, String sheetName, String range, String folder, String storageName) {
-            this.name = name;
-            this.sheetName = sheetName;
-            this.range = range;
-            this.folder = folder;
-            this.storageName = storageName;
+        public PutWorksheetValidationRequest( String name ,  String sheetName ,  String range ,  String folder ,  String storageName ) {
+            this.name = name; 
+            this.sheetName = sheetName; 
+            this.range = range; 
+            this.folder = folder; 
+            this.storageName = storageName; 
         }   
 
         public String getName() {
@@ -139,7 +138,7 @@ public class PutWorksheetValidationRequest  implements IRequestModel {
                 final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
                 if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-                final String[] localVarContentTypes = { "application/json" };
+                final String[] localVarContentTypes = { "application/json" };        
                 final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
                 localVarHeaderParams.put("Content-Type", localVarContentType);
 

@@ -43,11 +43,10 @@ public class PostDataDeduplicationRequest  implements IRequestModel {
     }
     private DataDeduplicationRequest dataDeduplicationRequest;    
         public PostDataDeduplicationRequest()
-        {
-
+        {        
         }
-        public PostDataDeduplicationRequest(DataDeduplicationRequest dataDeduplicationRequest) {
-            this.dataDeduplicationRequest = dataDeduplicationRequest;
+        public PostDataDeduplicationRequest( DataDeduplicationRequest dataDeduplicationRequest ) {
+            this.dataDeduplicationRequest = dataDeduplicationRequest; 
         }   
 
         public DataDeduplicationRequest getDataDeduplicationRequest() {
@@ -81,7 +80,7 @@ public class PostDataDeduplicationRequest  implements IRequestModel {
                 final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
                 if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-                final String[] localVarContentTypes = { "application/json" };
+                final String[] localVarContentTypes = { "application/json" };        
                 final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
                 localVarHeaderParams.put("Content-Type", localVarContentType);
 

@@ -48,15 +48,14 @@ public class GetWorksheetHyperlinkRequest  implements IRequestModel {
     private String storageName;
     
         public GetWorksheetHyperlinkRequest()
-        {
-
+        {        
         }
-        public GetWorksheetHyperlinkRequest(String name, String sheetName, Integer hyperlinkIndex, String folder, String storageName) {
-            this.name = name;
-            this.sheetName = sheetName;
-            this.hyperlinkIndex = hyperlinkIndex;
-            this.folder = folder;
-            this.storageName = storageName;
+        public GetWorksheetHyperlinkRequest( String name ,  String sheetName ,  Integer hyperlinkIndex ,  String folder ,  String storageName ) {
+            this.name = name; 
+            this.sheetName = sheetName; 
+            this.hyperlinkIndex = hyperlinkIndex; 
+            this.folder = folder; 
+            this.storageName = storageName; 
         }   
 
         public String getName() {
@@ -141,7 +140,7 @@ public class GetWorksheetHyperlinkRequest  implements IRequestModel {
                 final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
                 if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-                final String[] localVarContentTypes = { "application/json" };
+                final String[] localVarContentTypes = { "application/json" };        
                 final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
                 localVarHeaderParams.put("Content-Type", localVarContentType);
 

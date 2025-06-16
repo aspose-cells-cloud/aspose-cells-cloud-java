@@ -48,16 +48,15 @@ public class PostChartCategoryAxisRequest  implements IRequestModel {
     private String storageName;
     private Axis axis;    
         public PostChartCategoryAxisRequest()
-        {
-
+        {        
         }
-        public PostChartCategoryAxisRequest(String name, String sheetName, Integer chartIndex, Axis axis, String folder, String storageName) {
-            this.name = name;
-            this.sheetName = sheetName;
-            this.chartIndex = chartIndex;
-            this.axis = axis;
-            this.folder = folder;
-            this.storageName = storageName;
+        public PostChartCategoryAxisRequest( String name ,  String sheetName ,  Integer chartIndex ,  Axis axis ,  String folder ,  String storageName ) {
+            this.name = name; 
+            this.sheetName = sheetName; 
+            this.chartIndex = chartIndex; 
+            this.axis = axis; 
+            this.folder = folder; 
+            this.storageName = storageName; 
         }   
 
         public String getName() {
@@ -154,7 +153,7 @@ public class PostChartCategoryAxisRequest  implements IRequestModel {
                 final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
                 if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-                final String[] localVarContentTypes = { "application/json" };
+                final String[] localVarContentTypes = { "application/json" };        
                 final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
                 localVarHeaderParams.put("Content-Type", localVarContentType);
 

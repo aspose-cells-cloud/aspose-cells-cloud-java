@@ -51,18 +51,17 @@ public class PutWorksheetFreezePanesRequest  implements IRequestModel {
     private String storageName;
     
         public PutWorksheetFreezePanesRequest()
-        {
-
+        {        
         }
-        public PutWorksheetFreezePanesRequest(String name, String sheetName, Integer row, Integer column, Integer freezedRows, Integer freezedColumns, String folder, String storageName) {
-            this.name = name;
-            this.sheetName = sheetName;
-            this.row = row;
-            this.column = column;
-            this.freezedRows = freezedRows;
-            this.freezedColumns = freezedColumns;
-            this.folder = folder;
-            this.storageName = storageName;
+        public PutWorksheetFreezePanesRequest( String name ,  String sheetName ,  Integer row ,  Integer column ,  Integer freezedRows ,  Integer freezedColumns ,  String folder ,  String storageName ) {
+            this.name = name; 
+            this.sheetName = sheetName; 
+            this.row = row; 
+            this.column = column; 
+            this.freezedRows = freezedRows; 
+            this.freezedColumns = freezedColumns; 
+            this.folder = folder; 
+            this.storageName = storageName; 
         }   
 
         public String getName() {
@@ -197,7 +196,7 @@ public class PutWorksheetFreezePanesRequest  implements IRequestModel {
                 final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
                 if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-                final String[] localVarContentTypes = { "application/json" };
+                final String[] localVarContentTypes = { "application/json" };        
                 final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
                 localVarHeaderParams.put("Content-Type", localVarContentType);
 

@@ -52,17 +52,16 @@ public class PutWorksheetBackgroundRequest  implements IRequestModel {
                 private HashMap<String,File> file;
                 private String localPath;
         public PutWorksheetBackgroundRequest()
-        {
-
+        {        
         }
-        public PutWorksheetBackgroundRequest(String name, String sheetName, String picPath, String imageAdaptOption, String folder, String storageName, HashMap<String,File> file) {
-            this.name = name;
-            this.sheetName = sheetName;
-            this.picPath = picPath;
-            this.imageAdaptOption = imageAdaptOption;
-            this.folder = folder;
-            this.storageName = storageName;
-            this.file = file;
+        public PutWorksheetBackgroundRequest( String name ,  String sheetName ,  String picPath ,  String imageAdaptOption ,  String folder ,  String storageName ,  String  localPath   ) {
+            this.name = name; 
+            this.sheetName = sheetName; 
+            this.picPath = picPath; 
+            this.imageAdaptOption = imageAdaptOption; 
+            this.folder = folder; 
+            this.storageName = storageName; 
+              this.localPath  = localPath;   
         }   
 
         public String getName() {
@@ -118,21 +117,21 @@ public class PutWorksheetBackgroundRequest  implements IRequestModel {
         }
 
     
-         
-                public HashMap<String,File> getFile() {
-                    return this.file;
-                }
+             
+            public HashMap<String,File> getFile() {
+                return this.file;
+            }
 
-                public void setFile(HashMap<String,File> file) {
-                    this.file = file;
-                }
-         
-            public String getLocalPath() {
-                    return this.localPath;
+            public void setFile(HashMap<String,File> file) {
+                this.file = file;
             }
-            public void setLocalPath(String localPath) {
-                this.localPath = localPath;
-            }
+     
+        public String getLocalPath() {
+                return this.localPath;
+        }
+        public void setLocalPath(String localPath) {
+            this.localPath = localPath;
+        }        
         
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
@@ -167,17 +166,18 @@ public class PutWorksheetBackgroundRequest  implements IRequestModel {
             }
         }
                    
-              if (getLocalPath() != null && !getLocalPath().isEmpty()) {
-                     File fileToUpload = new File(getLocalPath());
-                     if (fileToUpload.exists()) {
-                         localVarFormParams.put(fileToUpload.getName(), fileToUpload);
-                     }
-                 }
-                if (getFile() != null){
-                        for (String key : getFile().keySet()) {
-                            localVarFormParams.put(key,getFile().get(key));                
-                        }
-                    }      
+            if (getLocalPath() != null && !getLocalPath().isEmpty()) {
+                File fileToUpload = new File(getLocalPath());
+                if (fileToUpload.exists()) {
+                    localVarFormParams.put(fileToUpload.getName(), fileToUpload);
+                }
+            }
+            if (getFile() != null){
+                for (String key : getFile().keySet()) {
+                    localVarFormParams.put(key,getFile().get(key));                
+                }
+            }
+                  
         Object localVarPostBody = null;
                 final String[] localVarAccepts = {
                     "application/json"
@@ -185,10 +185,7 @@ public class PutWorksheetBackgroundRequest  implements IRequestModel {
                 final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
                 if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-                final String[] localVarContentTypes = { "application/json" };
-                if(getFile() != null){
-                   localVarContentTypes[0] =  "multipart/form-data";
-                }
+                final String[] localVarContentTypes = { "multipart/form-data"  };        
                 final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
                 localVarHeaderParams.put("Content-Type", localVarContentType);
 

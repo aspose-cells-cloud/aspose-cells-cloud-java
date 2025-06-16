@@ -56,23 +56,22 @@ public class PutWorksheetCustomFilterRequest  implements IRequestModel {
     private String storageName;
     
         public PutWorksheetCustomFilterRequest()
-        {
-
+        {        
         }
-        public PutWorksheetCustomFilterRequest(String name, String sheetName, String range, Integer fieldIndex, String operatorType1, String criteria1, Boolean isAnd, String operatorType2, String criteria2, Boolean matchBlanks, Boolean refresh, String folder, String storageName) {
-            this.name = name;
-            this.sheetName = sheetName;
-            this.range = range;
-            this.fieldIndex = fieldIndex;
-            this.operatorType1 = operatorType1;
-            this.criteria1 = criteria1;
-            this.isAnd = isAnd;
-            this.operatorType2 = operatorType2;
-            this.criteria2 = criteria2;
-            this.matchBlanks = matchBlanks;
-            this.refresh = refresh;
-            this.folder = folder;
-            this.storageName = storageName;
+        public PutWorksheetCustomFilterRequest( String name ,  String sheetName ,  String range ,  Integer fieldIndex ,  String operatorType1 ,  String criteria1 ,  Boolean isAnd ,  String operatorType2 ,  String criteria2 ,  Boolean matchBlanks ,  Boolean refresh ,  String folder ,  String storageName ) {
+            this.name = name; 
+            this.sheetName = sheetName; 
+            this.range = range; 
+            this.fieldIndex = fieldIndex; 
+            this.operatorType1 = operatorType1; 
+            this.criteria1 = criteria1; 
+            this.isAnd = isAnd; 
+            this.operatorType2 = operatorType2; 
+            this.criteria2 = criteria2; 
+            this.matchBlanks = matchBlanks; 
+            this.refresh = refresh; 
+            this.folder = folder; 
+            this.storageName = storageName; 
         }   
 
         public String getName() {
@@ -267,7 +266,7 @@ public class PutWorksheetCustomFilterRequest  implements IRequestModel {
                 final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
                 if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-                final String[] localVarContentTypes = { "application/json" };
+                final String[] localVarContentTypes = { "application/json" };        
                 final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
                 localVarHeaderParams.put("Content-Type", localVarContentType);
 

@@ -45,12 +45,11 @@ public class GetFileVersionsRequest  implements IRequestModel {
     private String storageName;
     
         public GetFileVersionsRequest()
-        {
-
+        {        
         }
-        public GetFileVersionsRequest(String path, String storageName) {
-            this.path = path;
-            this.storageName = storageName;
+        public GetFileVersionsRequest( String path ,  String storageName ) {
+            this.path = path; 
+            this.storageName = storageName; 
         }   
 
         public String getPath() {
@@ -76,7 +75,7 @@ public class GetFileVersionsRequest  implements IRequestModel {
                 if (getPath() == null) {
                     throw new ApiException("Missing the required parameter 'Path' when calling GetFileVersions");
                 }       
-        String localVarPath = "v3.0/cells/storage/version/{path}".replaceAll("\\{" + "path" + "\\}", apiClient.escapeString(path.toString()))   ;
+        String localVarPath = "v4.0/cells/storage/version/{path}".replaceAll("\\{" + "path" + "\\}", apiClient.escapeString(path.toString()))   ;
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -95,7 +94,7 @@ public class GetFileVersionsRequest  implements IRequestModel {
                 final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
                 if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-                final String[] localVarContentTypes = { "application/json" };
+                final String[] localVarContentTypes = { "application/json" };        
                 final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
                 localVarHeaderParams.put("Content-Type", localVarContentType);
 

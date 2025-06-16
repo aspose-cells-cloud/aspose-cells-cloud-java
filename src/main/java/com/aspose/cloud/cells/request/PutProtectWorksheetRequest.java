@@ -47,15 +47,14 @@ public class PutProtectWorksheetRequest  implements IRequestModel {
     private String storageName;
     private ProtectSheetParameter protectParameter;    
         public PutProtectWorksheetRequest()
-        {
-
+        {        
         }
-        public PutProtectWorksheetRequest(String name, String sheetName, ProtectSheetParameter protectParameter, String folder, String storageName) {
-            this.name = name;
-            this.sheetName = sheetName;
-            this.protectParameter = protectParameter;
-            this.folder = folder;
-            this.storageName = storageName;
+        public PutProtectWorksheetRequest( String name ,  String sheetName ,  ProtectSheetParameter protectParameter ,  String folder ,  String storageName ) {
+            this.name = name; 
+            this.sheetName = sheetName; 
+            this.protectParameter = protectParameter; 
+            this.folder = folder; 
+            this.storageName = storageName; 
         }   
 
         public String getName() {
@@ -138,7 +137,7 @@ public class PutProtectWorksheetRequest  implements IRequestModel {
                 final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
                 if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-                final String[] localVarContentTypes = { "application/json" };
+                final String[] localVarContentTypes = { "application/json" };        
                 final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
                 localVarHeaderParams.put("Content-Type", localVarContentType);
 

@@ -48,16 +48,15 @@ public class PostCellCharactersRequest  implements IRequestModel {
     private String storageName;
     private List<FontSetting> options;    
         public PostCellCharactersRequest()
-        {
-
+        {        
         }
-        public PostCellCharactersRequest(String name, String sheetName, String cellName, List<FontSetting> options, String folder, String storageName) {
-            this.name = name;
-            this.sheetName = sheetName;
-            this.cellName = cellName;
-            this.options = options;
-            this.folder = folder;
-            this.storageName = storageName;
+        public PostCellCharactersRequest( String name ,  String sheetName ,  String cellName ,  List<FontSetting> options ,  String folder ,  String storageName ) {
+            this.name = name; 
+            this.sheetName = sheetName; 
+            this.cellName = cellName; 
+            this.options = options; 
+            this.folder = folder; 
+            this.storageName = storageName; 
         }   
 
         public String getName() {
@@ -150,7 +149,7 @@ public class PostCellCharactersRequest  implements IRequestModel {
                 final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
                 if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-                final String[] localVarContentTypes = { "application/json" };
+                final String[] localVarContentTypes = { "application/json" };        
                 final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
                 localVarHeaderParams.put("Content-Type", localVarContentType);
 

@@ -52,19 +52,18 @@ public class PutWorksheetDynamicFilterRequest  implements IRequestModel {
     private String storageName;
     
         public PutWorksheetDynamicFilterRequest()
-        {
-
+        {        
         }
-        public PutWorksheetDynamicFilterRequest(String name, String sheetName, String range, Integer fieldIndex, String dynamicFilterType, Boolean matchBlanks, Boolean refresh, String folder, String storageName) {
-            this.name = name;
-            this.sheetName = sheetName;
-            this.range = range;
-            this.fieldIndex = fieldIndex;
-            this.dynamicFilterType = dynamicFilterType;
-            this.matchBlanks = matchBlanks;
-            this.refresh = refresh;
-            this.folder = folder;
-            this.storageName = storageName;
+        public PutWorksheetDynamicFilterRequest( String name ,  String sheetName ,  String range ,  Integer fieldIndex ,  String dynamicFilterType ,  Boolean matchBlanks ,  Boolean refresh ,  String folder ,  String storageName ) {
+            this.name = name; 
+            this.sheetName = sheetName; 
+            this.range = range; 
+            this.fieldIndex = fieldIndex; 
+            this.dynamicFilterType = dynamicFilterType; 
+            this.matchBlanks = matchBlanks; 
+            this.refresh = refresh; 
+            this.folder = folder; 
+            this.storageName = storageName; 
         }   
 
         public String getName() {
@@ -207,7 +206,7 @@ public class PutWorksheetDynamicFilterRequest  implements IRequestModel {
                 final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
                 if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-                final String[] localVarContentTypes = { "application/json" };
+                final String[] localVarContentTypes = { "application/json" };        
                 final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
                 localVarHeaderParams.put("Content-Type", localVarContentType);
 

@@ -46,14 +46,13 @@ public class DeleteWorksheetsRequest  implements IRequestModel {
     private String storageName;
     private MatchConditionRequest matchCondition;    
         public DeleteWorksheetsRequest()
-        {
-
+        {        
         }
-        public DeleteWorksheetsRequest(String name, MatchConditionRequest matchCondition, String folder, String storageName) {
-            this.name = name;
-            this.matchCondition = matchCondition;
-            this.folder = folder;
-            this.storageName = storageName;
+        public DeleteWorksheetsRequest( String name ,  MatchConditionRequest matchCondition ,  String folder ,  String storageName ) {
+            this.name = name; 
+            this.matchCondition = matchCondition; 
+            this.folder = folder; 
+            this.storageName = storageName; 
         }   
 
         public String getName() {
@@ -118,7 +117,7 @@ public class DeleteWorksheetsRequest  implements IRequestModel {
                 final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
                 if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-                final String[] localVarContentTypes = { "application/json" };
+                final String[] localVarContentTypes = { "application/json" };        
                 final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
                 localVarHeaderParams.put("Content-Type", localVarContentType);
 

@@ -48,15 +48,14 @@ public class GetWorksheetPivotTableRequest  implements IRequestModel {
     private String storageName;
     
         public GetWorksheetPivotTableRequest()
-        {
-
+        {        
         }
-        public GetWorksheetPivotTableRequest(String name, String sheetName, Integer pivottableIndex, String folder, String storageName) {
-            this.name = name;
-            this.sheetName = sheetName;
-            this.pivottableIndex = pivottableIndex;
-            this.folder = folder;
-            this.storageName = storageName;
+        public GetWorksheetPivotTableRequest( String name ,  String sheetName ,  Integer pivottableIndex ,  String folder ,  String storageName ) {
+            this.name = name; 
+            this.sheetName = sheetName; 
+            this.pivottableIndex = pivottableIndex; 
+            this.folder = folder; 
+            this.storageName = storageName; 
         }   
 
         public String getName() {
@@ -141,7 +140,7 @@ public class GetWorksheetPivotTableRequest  implements IRequestModel {
                 final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
                 if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-                final String[] localVarContentTypes = { "application/json" };
+                final String[] localVarContentTypes = { "application/json" };        
                 final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
                 localVarHeaderParams.put("Content-Type", localVarContentType);
 

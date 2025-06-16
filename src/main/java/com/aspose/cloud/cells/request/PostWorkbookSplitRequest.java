@@ -54,21 +54,20 @@ public class PostWorkbookSplitRequest  implements IRequestModel {
     private String outStorageName;
     
         public PostWorkbookSplitRequest()
-        {
-
+        {        
         }
-        public PostWorkbookSplitRequest(String name, String format, String outFolder, Integer from, Integer to, Integer horizontalResolution, Integer verticalResolution, String splitNameRule, String folder, String storageName, String outStorageName) {
-            this.name = name;
-            this.format = format;
-            this.outFolder = outFolder;
-            this.from = from;
-            this.to = to;
-            this.horizontalResolution = horizontalResolution;
-            this.verticalResolution = verticalResolution;
-            this.splitNameRule = splitNameRule;
-            this.folder = folder;
-            this.storageName = storageName;
-            this.outStorageName = outStorageName;
+        public PostWorkbookSplitRequest( String name ,  String format ,  String outFolder ,  Integer from ,  Integer to ,  Integer horizontalResolution ,  Integer verticalResolution ,  String splitNameRule ,  String folder ,  String storageName ,  String outStorageName ) {
+            this.name = name; 
+            this.format = format; 
+            this.outFolder = outFolder; 
+            this.from = from; 
+            this.to = to; 
+            this.horizontalResolution = horizontalResolution; 
+            this.verticalResolution = verticalResolution; 
+            this.splitNameRule = splitNameRule; 
+            this.folder = folder; 
+            this.storageName = storageName; 
+            this.outStorageName = outStorageName; 
         }   
 
         public String getName() {
@@ -221,7 +220,7 @@ public class PostWorkbookSplitRequest  implements IRequestModel {
                 final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
                 if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-                final String[] localVarContentTypes = { "application/json" };
+                final String[] localVarContentTypes = { "application/json" };        
                 final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
                 localVarHeaderParams.put("Content-Type", localVarContentType);
 

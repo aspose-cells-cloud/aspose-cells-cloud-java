@@ -48,16 +48,15 @@ public class PostColumnStyleRequest  implements IRequestModel {
     private String storageName;
     private Style style;    
         public PostColumnStyleRequest()
-        {
-
+        {        
         }
-        public PostColumnStyleRequest(String name, String sheetName, Integer columnIndex, Style style, String folder, String storageName) {
-            this.name = name;
-            this.sheetName = sheetName;
-            this.columnIndex = columnIndex;
-            this.style = style;
-            this.folder = folder;
-            this.storageName = storageName;
+        public PostColumnStyleRequest( String name ,  String sheetName ,  Integer columnIndex ,  Style style ,  String folder ,  String storageName ) {
+            this.name = name; 
+            this.sheetName = sheetName; 
+            this.columnIndex = columnIndex; 
+            this.style = style; 
+            this.folder = folder; 
+            this.storageName = storageName; 
         }   
 
         public String getName() {
@@ -154,7 +153,7 @@ public class PostColumnStyleRequest  implements IRequestModel {
                 final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
                 if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-                final String[] localVarContentTypes = { "application/json" };
+                final String[] localVarContentTypes = { "application/json" };        
                 final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
                 localVarHeaderParams.put("Content-Type", localVarContentType);
 

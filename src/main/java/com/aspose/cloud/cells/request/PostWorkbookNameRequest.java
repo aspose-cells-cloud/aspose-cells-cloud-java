@@ -47,15 +47,14 @@ public class PostWorkbookNameRequest  implements IRequestModel {
     private String storageName;
     private Name newName;    
         public PostWorkbookNameRequest()
-        {
-
+        {        
         }
-        public PostWorkbookNameRequest(String name, String nameName, Name newName, String folder, String storageName) {
-            this.name = name;
-            this.nameName = nameName;
-            this.newName = newName;
-            this.folder = folder;
-            this.storageName = storageName;
+        public PostWorkbookNameRequest( String name ,  String nameName ,  Name newName ,  String folder ,  String storageName ) {
+            this.name = name; 
+            this.nameName = nameName; 
+            this.newName = newName; 
+            this.folder = folder; 
+            this.storageName = storageName; 
         }   
 
         public String getName() {
@@ -138,7 +137,7 @@ public class PostWorkbookNameRequest  implements IRequestModel {
                 final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
                 if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-                final String[] localVarContentTypes = { "application/json" };
+                final String[] localVarContentTypes = { "application/json" };        
                 final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
                 localVarHeaderParams.put("Content-Type", localVarContentType);
 

@@ -52,19 +52,18 @@ public class PostClearFormatsRequest  implements IRequestModel {
     private String storageName;
     
         public PostClearFormatsRequest()
-        {
-
+        {        
         }
-        public PostClearFormatsRequest(String name, String sheetName, String range, Integer startRow, Integer startColumn, Integer endRow, Integer endColumn, String folder, String storageName) {
-            this.name = name;
-            this.sheetName = sheetName;
-            this.range = range;
-            this.startRow = startRow;
-            this.startColumn = startColumn;
-            this.endRow = endRow;
-            this.endColumn = endColumn;
-            this.folder = folder;
-            this.storageName = storageName;
+        public PostClearFormatsRequest( String name ,  String sheetName ,  String range ,  Integer startRow ,  Integer startColumn ,  Integer endRow ,  Integer endColumn ,  String folder ,  String storageName ) {
+            this.name = name; 
+            this.sheetName = sheetName; 
+            this.range = range; 
+            this.startRow = startRow; 
+            this.startColumn = startColumn; 
+            this.endRow = endRow; 
+            this.endColumn = endColumn; 
+            this.folder = folder; 
+            this.storageName = storageName; 
         }   
 
         public String getName() {
@@ -195,7 +194,7 @@ public class PostClearFormatsRequest  implements IRequestModel {
                 final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
                 if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-                final String[] localVarContentTypes = { "application/json" };
+                final String[] localVarContentTypes = { "application/json" };        
                 final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
                 localVarHeaderParams.put("Content-Type", localVarContentType);
 

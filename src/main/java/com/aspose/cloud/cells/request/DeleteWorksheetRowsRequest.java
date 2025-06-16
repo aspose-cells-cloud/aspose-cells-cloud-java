@@ -50,17 +50,16 @@ public class DeleteWorksheetRowsRequest  implements IRequestModel {
     private String storageName;
     
         public DeleteWorksheetRowsRequest()
-        {
-
+        {        
         }
-        public DeleteWorksheetRowsRequest(String name, String sheetName, Integer startrow, Integer totalRows, Boolean updateReference, String folder, String storageName) {
-            this.name = name;
-            this.sheetName = sheetName;
-            this.startrow = startrow;
-            this.totalRows = totalRows;
-            this.updateReference = updateReference;
-            this.folder = folder;
-            this.storageName = storageName;
+        public DeleteWorksheetRowsRequest( String name ,  String sheetName ,  Integer startrow ,  Integer totalRows ,  Boolean updateReference ,  String folder ,  String storageName ) {
+            this.name = name; 
+            this.sheetName = sheetName; 
+            this.startrow = startrow; 
+            this.totalRows = totalRows; 
+            this.updateReference = updateReference; 
+            this.folder = folder; 
+            this.storageName = storageName; 
         }   
 
         public String getName() {
@@ -171,7 +170,7 @@ public class DeleteWorksheetRowsRequest  implements IRequestModel {
                 final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
                 if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-                final String[] localVarContentTypes = { "application/json" };
+                final String[] localVarContentTypes = { "application/json" };        
                 final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
                 localVarHeaderParams.put("Content-Type", localVarContentType);
 

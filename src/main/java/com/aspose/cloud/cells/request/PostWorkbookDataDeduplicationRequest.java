@@ -49,17 +49,16 @@ public class PostWorkbookDataDeduplicationRequest  implements IRequestModel {
     private Boolean checkExcelRestriction;
     private DeduplicationRegion deduplicationRegion;    
         public PostWorkbookDataDeduplicationRequest()
-        {
-
+        {        
         }
-        public PostWorkbookDataDeduplicationRequest(String name, DeduplicationRegion deduplicationRegion, String folder, String storageName, String password, String region, Boolean checkExcelRestriction) {
-            this.name = name;
-            this.deduplicationRegion = deduplicationRegion;
-            this.folder = folder;
-            this.storageName = storageName;
-            this.password = password;
-            this.region = region;
-            this.checkExcelRestriction = checkExcelRestriction;
+        public PostWorkbookDataDeduplicationRequest( String name ,  DeduplicationRegion deduplicationRegion ,  String folder ,  String storageName ,  String password ,  String region ,  Boolean checkExcelRestriction ) {
+            this.name = name; 
+            this.deduplicationRegion = deduplicationRegion; 
+            this.folder = folder; 
+            this.storageName = storageName; 
+            this.password = password; 
+            this.region = region; 
+            this.checkExcelRestriction = checkExcelRestriction; 
         }   
 
         public String getName() {
@@ -164,7 +163,7 @@ public class PostWorkbookDataDeduplicationRequest  implements IRequestModel {
                 final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
                 if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-                final String[] localVarContentTypes = { "application/json" };
+                final String[] localVarContentTypes = { "application/json" };        
                 final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
                 localVarHeaderParams.put("Content-Type", localVarContentType);
 

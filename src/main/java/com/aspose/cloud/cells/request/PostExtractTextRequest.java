@@ -43,11 +43,10 @@ public class PostExtractTextRequest  implements IRequestModel {
     }
     private ExtractTextOptions extractTextOptions;    
         public PostExtractTextRequest()
-        {
-
+        {        
         }
-        public PostExtractTextRequest(ExtractTextOptions extractTextOptions) {
-            this.extractTextOptions = extractTextOptions;
+        public PostExtractTextRequest( ExtractTextOptions extractTextOptions ) {
+            this.extractTextOptions = extractTextOptions; 
         }   
 
         public ExtractTextOptions getExtractTextOptions() {
@@ -81,7 +80,7 @@ public class PostExtractTextRequest  implements IRequestModel {
                 final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
                 if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-                final String[] localVarContentTypes = { "application/json" };
+                final String[] localVarContentTypes = { "application/json" };        
                 final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
                 localVarHeaderParams.put("Content-Type", localVarContentType);
 

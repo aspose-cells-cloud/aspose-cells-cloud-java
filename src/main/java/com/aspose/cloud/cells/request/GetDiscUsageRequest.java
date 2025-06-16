@@ -44,11 +44,10 @@ public class GetDiscUsageRequest  implements IRequestModel {
     private String storageName;
     
         public GetDiscUsageRequest()
-        {
-
+        {        
         }
-        public GetDiscUsageRequest(String storageName) {
-            this.storageName = storageName;
+        public GetDiscUsageRequest( String storageName ) {
+            this.storageName = storageName; 
         }   
 
         public String getStorageName() {
@@ -63,7 +62,7 @@ public class GetDiscUsageRequest  implements IRequestModel {
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
          
-        String localVarPath = "v3.0/cells/storage/disc";
+        String localVarPath = "v4.0/cells/storage/disc";
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -82,7 +81,7 @@ public class GetDiscUsageRequest  implements IRequestModel {
                 final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
                 if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-                final String[] localVarContentTypes = { "application/json" };
+                final String[] localVarContentTypes = { "application/json" };        
                 final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
                 localVarHeaderParams.put("Content-Type", localVarContentType);
 

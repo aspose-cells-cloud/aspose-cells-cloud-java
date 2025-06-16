@@ -43,11 +43,10 @@ public class CheckWrokbookExternalReferenceRequest  implements IRequestModel {
     }
     private CheckExternalReferenceOptions checkExternalReferenceOptions;    
         public CheckWrokbookExternalReferenceRequest()
-        {
-
+        {        
         }
-        public CheckWrokbookExternalReferenceRequest(CheckExternalReferenceOptions checkExternalReferenceOptions) {
-            this.checkExternalReferenceOptions = checkExternalReferenceOptions;
+        public CheckWrokbookExternalReferenceRequest( CheckExternalReferenceOptions checkExternalReferenceOptions ) {
+            this.checkExternalReferenceOptions = checkExternalReferenceOptions; 
         }   
 
         public CheckExternalReferenceOptions getCheckExternalReferenceOptions() {
@@ -81,7 +80,7 @@ public class CheckWrokbookExternalReferenceRequest  implements IRequestModel {
                 final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
                 if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-                final String[] localVarContentTypes = { "application/json" };
+                final String[] localVarContentTypes = { "application/json" };        
                 final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
                 localVarHeaderParams.put("Content-Type", localVarContentType);
 

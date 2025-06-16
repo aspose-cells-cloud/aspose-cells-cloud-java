@@ -61,26 +61,25 @@ public class PutConvertWorkbookRequest  implements IRequestModel {
                 private HashMap<String,File> file;
                 private String localPath;
         public PutConvertWorkbookRequest()
-        {
-
+        {        
         }
-        public PutConvertWorkbookRequest(HashMap<String,File> file, String format, String password, String outPath, String storageName, Boolean checkExcelRestriction, String streamFormat, String region, Boolean pageWideFitOnPerSheet, Boolean pageTallFitOnPerSheet, String sheetName, Integer pageIndex, Boolean onePagePerSheet, Boolean autoRowsFit, Boolean autoColumnsFit, String fontsLocation) {
-            this.file = file;
-            this.format = format;
-            this.password = password;
-            this.outPath = outPath;
-            this.storageName = storageName;
-            this.checkExcelRestriction = checkExcelRestriction;
-            this.streamFormat = streamFormat;
-            this.region = region;
-            this.pageWideFitOnPerSheet = pageWideFitOnPerSheet;
-            this.pageTallFitOnPerSheet = pageTallFitOnPerSheet;
-            this.sheetName = sheetName;
-            this.pageIndex = pageIndex;
-            this.onePagePerSheet = onePagePerSheet;
-            this.autoRowsFit = autoRowsFit;
-            this.autoColumnsFit = autoColumnsFit;
-            this.fontsLocation = fontsLocation;
+        public PutConvertWorkbookRequest( String  localPath   ,  String format ,  String password ,  String outPath ,  String storageName ,  Boolean checkExcelRestriction ,  String streamFormat ,  String region ,  Boolean pageWideFitOnPerSheet ,  Boolean pageTallFitOnPerSheet ,  String sheetName ,  Integer pageIndex ,  Boolean onePagePerSheet ,  Boolean autoRowsFit ,  Boolean autoColumnsFit ,  String fontsLocation ) {
+              this.localPath  = localPath;   
+            this.format = format; 
+            this.password = password; 
+            this.outPath = outPath; 
+            this.storageName = storageName; 
+            this.checkExcelRestriction = checkExcelRestriction; 
+            this.streamFormat = streamFormat; 
+            this.region = region; 
+            this.pageWideFitOnPerSheet = pageWideFitOnPerSheet; 
+            this.pageTallFitOnPerSheet = pageTallFitOnPerSheet; 
+            this.sheetName = sheetName; 
+            this.pageIndex = pageIndex; 
+            this.onePagePerSheet = onePagePerSheet; 
+            this.autoRowsFit = autoRowsFit; 
+            this.autoColumnsFit = autoColumnsFit; 
+            this.fontsLocation = fontsLocation; 
         }   
 
         public String getFormat() {
@@ -218,26 +217,26 @@ public class PutConvertWorkbookRequest  implements IRequestModel {
         }
 
     
-         
-                public HashMap<String,File> getFile() {
-                    return this.file;
-                }
+             
+            public HashMap<String,File> getFile() {
+                return this.file;
+            }
 
-                public void setFile(HashMap<String,File> file) {
-                    this.file = file;
-                }
-         
-            public String getLocalPath() {
-                    return this.localPath;
+            public void setFile(HashMap<String,File> file) {
+                this.file = file;
             }
-            public void setLocalPath(String localPath) {
-                this.localPath = localPath;
-            }
+     
+        public String getLocalPath() {
+                return this.localPath;
+        }
+        public void setLocalPath(String localPath) {
+            this.localPath = localPath;
+        }        
         
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
           
-                if (  getFile() == null &&  getLocalPath() ==null ) {
+                if ( getFile() == null && getLocalPath() ==null ) {
                     throw new ApiException("Missing the required parameter 'File' when calling PutConvertWorkbook");
                 } 
 
@@ -299,17 +298,18 @@ public class PutConvertWorkbookRequest  implements IRequestModel {
             }
         }
                    
-              if (getLocalPath() != null && !getLocalPath().isEmpty()) {
-                     File fileToUpload = new File(getLocalPath());
-                     if (fileToUpload.exists()) {
-                         localVarFormParams.put(fileToUpload.getName(), fileToUpload);
-                     }
-                 }
-                if (getFile() != null){
-                        for (String key : getFile().keySet()) {
-                            localVarFormParams.put(key,getFile().get(key));                
-                        }
-                    }      
+            if (getLocalPath() != null && !getLocalPath().isEmpty()) {
+                File fileToUpload = new File(getLocalPath());
+                if (fileToUpload.exists()) {
+                    localVarFormParams.put(fileToUpload.getName(), fileToUpload);
+                }
+            }
+            if (getFile() != null){
+                for (String key : getFile().keySet()) {
+                    localVarFormParams.put(key,getFile().get(key));                
+                }
+            }
+                  
         Object localVarPostBody = null;
                 final String[] localVarAccepts = {
                     "application/json"
@@ -317,10 +317,7 @@ public class PutConvertWorkbookRequest  implements IRequestModel {
                 final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
                 if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-                final String[] localVarContentTypes = { "application/json" };
-                if(getFile() != null){
-                   localVarContentTypes[0] =  "multipart/form-data";
-                }
+                final String[] localVarContentTypes = { "multipart/form-data"  };        
                 final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
                 localVarHeaderParams.put("Content-Type", localVarContentType);
 

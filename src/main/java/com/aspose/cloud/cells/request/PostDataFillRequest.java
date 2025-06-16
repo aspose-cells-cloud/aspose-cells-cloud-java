@@ -43,11 +43,10 @@ public class PostDataFillRequest  implements IRequestModel {
     }
     private DataFillRequest dataFillRequest;    
         public PostDataFillRequest()
-        {
-
+        {        
         }
-        public PostDataFillRequest(DataFillRequest dataFillRequest) {
-            this.dataFillRequest = dataFillRequest;
+        public PostDataFillRequest( DataFillRequest dataFillRequest ) {
+            this.dataFillRequest = dataFillRequest; 
         }   
 
         public DataFillRequest getDataFillRequest() {
@@ -81,7 +80,7 @@ public class PostDataFillRequest  implements IRequestModel {
                 final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
                 if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-                final String[] localVarContentTypes = { "application/json" };
+                final String[] localVarContentTypes = { "application/json" };        
                 final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
                 localVarHeaderParams.put("Content-Type", localVarContentType);
 

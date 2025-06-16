@@ -48,16 +48,15 @@ public class PostWorksheetSparklineGroupRequest  implements IRequestModel {
     private String storageName;
     private SparklineGroup sparklineGroup;    
         public PostWorksheetSparklineGroupRequest()
-        {
-
+        {        
         }
-        public PostWorksheetSparklineGroupRequest(String name, String sheetName, Integer sparklineGroupIndex, SparklineGroup sparklineGroup, String folder, String storageName) {
-            this.name = name;
-            this.sheetName = sheetName;
-            this.sparklineGroupIndex = sparklineGroupIndex;
-            this.sparklineGroup = sparklineGroup;
-            this.folder = folder;
-            this.storageName = storageName;
+        public PostWorksheetSparklineGroupRequest( String name ,  String sheetName ,  Integer sparklineGroupIndex ,  SparklineGroup sparklineGroup ,  String folder ,  String storageName ) {
+            this.name = name; 
+            this.sheetName = sheetName; 
+            this.sparklineGroupIndex = sparklineGroupIndex; 
+            this.sparklineGroup = sparklineGroup; 
+            this.folder = folder; 
+            this.storageName = storageName; 
         }   
 
         public String getName() {
@@ -154,7 +153,7 @@ public class PostWorksheetSparklineGroupRequest  implements IRequestModel {
                 final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
                 if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-                final String[] localVarContentTypes = { "application/json" };
+                final String[] localVarContentTypes = { "application/json" };        
                 final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
                 localVarHeaderParams.put("Content-Type", localVarContentType);
 

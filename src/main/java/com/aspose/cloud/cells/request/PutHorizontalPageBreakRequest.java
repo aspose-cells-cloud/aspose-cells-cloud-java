@@ -52,19 +52,18 @@ public class PutHorizontalPageBreakRequest  implements IRequestModel {
     private String storageName;
     
         public PutHorizontalPageBreakRequest()
-        {
-
+        {        
         }
-        public PutHorizontalPageBreakRequest(String name, String sheetName, String cellname, Integer row, Integer column, Integer startColumn, Integer endColumn, String folder, String storageName) {
-            this.name = name;
-            this.sheetName = sheetName;
-            this.cellname = cellname;
-            this.row = row;
-            this.column = column;
-            this.startColumn = startColumn;
-            this.endColumn = endColumn;
-            this.folder = folder;
-            this.storageName = storageName;
+        public PutHorizontalPageBreakRequest( String name ,  String sheetName ,  String cellname ,  Integer row ,  Integer column ,  Integer startColumn ,  Integer endColumn ,  String folder ,  String storageName ) {
+            this.name = name; 
+            this.sheetName = sheetName; 
+            this.cellname = cellname; 
+            this.row = row; 
+            this.column = column; 
+            this.startColumn = startColumn; 
+            this.endColumn = endColumn; 
+            this.folder = folder; 
+            this.storageName = storageName; 
         }   
 
         public String getName() {
@@ -195,7 +194,7 @@ public class PutHorizontalPageBreakRequest  implements IRequestModel {
                 final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
                 if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-                final String[] localVarContentTypes = { "application/json" };
+                final String[] localVarContentTypes = { "application/json" };        
                 final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
                 localVarHeaderParams.put("Content-Type", localVarContentType);
 

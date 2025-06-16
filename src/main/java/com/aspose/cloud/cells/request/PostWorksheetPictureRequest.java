@@ -48,16 +48,15 @@ public class PostWorksheetPictureRequest  implements IRequestModel {
     private String storageName;
     private Picture picture;    
         public PostWorksheetPictureRequest()
-        {
-
+        {        
         }
-        public PostWorksheetPictureRequest(String name, String sheetName, Integer pictureIndex, Picture picture, String folder, String storageName) {
-            this.name = name;
-            this.sheetName = sheetName;
-            this.pictureIndex = pictureIndex;
-            this.picture = picture;
-            this.folder = folder;
-            this.storageName = storageName;
+        public PostWorksheetPictureRequest( String name ,  String sheetName ,  Integer pictureIndex ,  Picture picture ,  String folder ,  String storageName ) {
+            this.name = name; 
+            this.sheetName = sheetName; 
+            this.pictureIndex = pictureIndex; 
+            this.picture = picture; 
+            this.folder = folder; 
+            this.storageName = storageName; 
         }   
 
         public String getName() {
@@ -154,7 +153,7 @@ public class PostWorksheetPictureRequest  implements IRequestModel {
                 final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
                 if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-                final String[] localVarContentTypes = { "application/json" };
+                final String[] localVarContentTypes = { "application/json" };        
                 final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
                 localVarHeaderParams.put("Content-Type", localVarContentType);
 

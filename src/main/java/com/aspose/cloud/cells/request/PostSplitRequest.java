@@ -52,17 +52,16 @@ public class PostSplitRequest  implements IRequestModel {
                 private HashMap<String,File> file;
                 private String localPath;
         public PostSplitRequest()
-        {
-
+        {        
         }
-        public PostSplitRequest(HashMap<String,File> file, String outFormat, String password, Integer from, Integer to, Boolean checkExcelRestriction, String region) {
-            this.file = file;
-            this.outFormat = outFormat;
-            this.password = password;
-            this.from = from;
-            this.to = to;
-            this.checkExcelRestriction = checkExcelRestriction;
-            this.region = region;
+        public PostSplitRequest( String  localPath   ,  String outFormat ,  String password ,  Integer from ,  Integer to ,  Boolean checkExcelRestriction ,  String region ) {
+              this.localPath  = localPath;   
+            this.outFormat = outFormat; 
+            this.password = password; 
+            this.from = from; 
+            this.to = to; 
+            this.checkExcelRestriction = checkExcelRestriction; 
+            this.region = region; 
         }   
 
         public String getOutFormat() {
@@ -119,26 +118,26 @@ public class PostSplitRequest  implements IRequestModel {
         }
 
     
-         
-                public HashMap<String,File> getFile() {
-                    return this.file;
-                }
+             
+            public HashMap<String,File> getFile() {
+                return this.file;
+            }
 
-                public void setFile(HashMap<String,File> file) {
-                    this.file = file;
-                }
-         
-            public String getLocalPath() {
-                    return this.localPath;
+            public void setFile(HashMap<String,File> file) {
+                this.file = file;
             }
-            public void setLocalPath(String localPath) {
-                this.localPath = localPath;
-            }
+     
+        public String getLocalPath() {
+                return this.localPath;
+        }
+        public void setLocalPath(String localPath) {
+            this.localPath = localPath;
+        }        
         
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
           
-                if (  getFile() == null &&  getLocalPath() ==null ) {
+                if ( getFile() == null && getLocalPath() ==null ) {
                     throw new ApiException("Missing the required parameter 'File' when calling PostSplit");
                 } 
 
@@ -173,17 +172,18 @@ public class PostSplitRequest  implements IRequestModel {
             }
         }
                    
-              if (getLocalPath() != null && !getLocalPath().isEmpty()) {
-                     File fileToUpload = new File(getLocalPath());
-                     if (fileToUpload.exists()) {
-                         localVarFormParams.put(fileToUpload.getName(), fileToUpload);
-                     }
-                 }
-                if (getFile() != null){
-                        for (String key : getFile().keySet()) {
-                            localVarFormParams.put(key,getFile().get(key));                
-                        }
-                    }      
+            if (getLocalPath() != null && !getLocalPath().isEmpty()) {
+                File fileToUpload = new File(getLocalPath());
+                if (fileToUpload.exists()) {
+                    localVarFormParams.put(fileToUpload.getName(), fileToUpload);
+                }
+            }
+            if (getFile() != null){
+                for (String key : getFile().keySet()) {
+                    localVarFormParams.put(key,getFile().get(key));                
+                }
+            }
+                  
         Object localVarPostBody = null;
                 final String[] localVarAccepts = {
                     "application/json"
@@ -191,10 +191,7 @@ public class PostSplitRequest  implements IRequestModel {
                 final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
                 if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-                final String[] localVarContentTypes = { "application/json" };
-                if(getFile() != null){
-                   localVarContentTypes[0] =  "multipart/form-data";
-                }
+                final String[] localVarContentTypes = { "multipart/form-data"  };        
                 final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
                 localVarHeaderParams.put("Content-Type", localVarContentType);
 

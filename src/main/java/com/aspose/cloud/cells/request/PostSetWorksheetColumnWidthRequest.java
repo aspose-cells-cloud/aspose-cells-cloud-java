@@ -50,17 +50,16 @@ public class PostSetWorksheetColumnWidthRequest  implements IRequestModel {
     private String storageName;
     
         public PostSetWorksheetColumnWidthRequest()
-        {
-
+        {        
         }
-        public PostSetWorksheetColumnWidthRequest(String name, String sheetName, Integer columnIndex, Double width, Integer count, String folder, String storageName) {
-            this.name = name;
-            this.sheetName = sheetName;
-            this.columnIndex = columnIndex;
-            this.width = width;
-            this.count = count;
-            this.folder = folder;
-            this.storageName = storageName;
+        public PostSetWorksheetColumnWidthRequest( String name ,  String sheetName ,  Integer columnIndex ,  Double width ,  Integer count ,  String folder ,  String storageName ) {
+            this.name = name; 
+            this.sheetName = sheetName; 
+            this.columnIndex = columnIndex; 
+            this.width = width; 
+            this.count = count; 
+            this.folder = folder; 
+            this.storageName = storageName; 
         }   
 
         public String getName() {
@@ -173,7 +172,7 @@ public class PostSetWorksheetColumnWidthRequest  implements IRequestModel {
                 final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
                 if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-                final String[] localVarContentTypes = { "application/json" };
+                final String[] localVarContentTypes = { "application/json" };        
                 final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
                 localVarHeaderParams.put("Content-Type", localVarContentType);
 

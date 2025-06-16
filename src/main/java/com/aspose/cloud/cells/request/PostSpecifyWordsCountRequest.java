@@ -43,11 +43,10 @@ public class PostSpecifyWordsCountRequest  implements IRequestModel {
     }
     private SpecifyWordsCountOptions specifyWordsCountOptions;    
         public PostSpecifyWordsCountRequest()
-        {
-
+        {        
         }
-        public PostSpecifyWordsCountRequest(SpecifyWordsCountOptions specifyWordsCountOptions) {
-            this.specifyWordsCountOptions = specifyWordsCountOptions;
+        public PostSpecifyWordsCountRequest( SpecifyWordsCountOptions specifyWordsCountOptions ) {
+            this.specifyWordsCountOptions = specifyWordsCountOptions; 
         }   
 
         public SpecifyWordsCountOptions getSpecifyWordsCountOptions() {
@@ -81,7 +80,7 @@ public class PostSpecifyWordsCountRequest  implements IRequestModel {
                 final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
                 if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-                final String[] localVarContentTypes = { "application/json" };
+                final String[] localVarContentTypes = { "application/json" };        
                 final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
                 localVarHeaderParams.put("Content-Type", localVarContentType);
 

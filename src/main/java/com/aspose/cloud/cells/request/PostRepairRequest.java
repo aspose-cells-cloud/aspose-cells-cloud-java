@@ -47,12 +47,11 @@ public class PostRepairRequest  implements IRequestModel {
                 private HashMap<String,File> file;
                 private String localPath;
         public PostRepairRequest()
-        {
-
+        {        
         }
-        public PostRepairRequest(HashMap<String,File> file, String outFormat) {
-            this.file = file;
-            this.outFormat = outFormat;
+        public PostRepairRequest( String  localPath   ,  String outFormat ) {
+              this.localPath  = localPath;   
+            this.outFormat = outFormat; 
         }   
 
         public String getOutFormat() {
@@ -64,26 +63,26 @@ public class PostRepairRequest  implements IRequestModel {
         }
 
     
-         
-                public HashMap<String,File> getFile() {
-                    return this.file;
-                }
+             
+            public HashMap<String,File> getFile() {
+                return this.file;
+            }
 
-                public void setFile(HashMap<String,File> file) {
-                    this.file = file;
-                }
-         
-            public String getLocalPath() {
-                    return this.localPath;
+            public void setFile(HashMap<String,File> file) {
+                this.file = file;
             }
-            public void setLocalPath(String localPath) {
-                this.localPath = localPath;
-            }
+     
+        public String getLocalPath() {
+                return this.localPath;
+        }
+        public void setLocalPath(String localPath) {
+            this.localPath = localPath;
+        }        
         
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
           
-                if (  getFile() == null &&  getLocalPath() ==null ) {
+                if ( getFile() == null && getLocalPath() ==null ) {
                     throw new ApiException("Missing the required parameter 'File' when calling PostRepair");
                 }       
         String localVarPath = "v3.0/cells/repair";
@@ -99,17 +98,18 @@ public class PostRepairRequest  implements IRequestModel {
             }
         }
                    
-              if (getLocalPath() != null && !getLocalPath().isEmpty()) {
-                     File fileToUpload = new File(getLocalPath());
-                     if (fileToUpload.exists()) {
-                         localVarFormParams.put(fileToUpload.getName(), fileToUpload);
-                     }
-                 }
-                if (getFile() != null){
-                        for (String key : getFile().keySet()) {
-                            localVarFormParams.put(key,getFile().get(key));                
-                        }
-                    }      
+            if (getLocalPath() != null && !getLocalPath().isEmpty()) {
+                File fileToUpload = new File(getLocalPath());
+                if (fileToUpload.exists()) {
+                    localVarFormParams.put(fileToUpload.getName(), fileToUpload);
+                }
+            }
+            if (getFile() != null){
+                for (String key : getFile().keySet()) {
+                    localVarFormParams.put(key,getFile().get(key));                
+                }
+            }
+                  
         Object localVarPostBody = null;
                 final String[] localVarAccepts = {
                     "application/json"
@@ -117,10 +117,7 @@ public class PostRepairRequest  implements IRequestModel {
                 final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
                 if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-                final String[] localVarContentTypes = { "application/json" };
-                if(getFile() != null){
-                   localVarContentTypes[0] =  "multipart/form-data";
-                }
+                final String[] localVarContentTypes = { "multipart/form-data"  };        
                 final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
                 localVarHeaderParams.put("Content-Type", localVarContentType);
 

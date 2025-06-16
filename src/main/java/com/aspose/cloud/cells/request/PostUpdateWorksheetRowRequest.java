@@ -50,17 +50,16 @@ public class PostUpdateWorksheetRowRequest  implements IRequestModel {
     private String storageName;
     
         public PostUpdateWorksheetRowRequest()
-        {
-
+        {        
         }
-        public PostUpdateWorksheetRowRequest(String name, String sheetName, Integer rowIndex, Double height, Integer count, String folder, String storageName) {
-            this.name = name;
-            this.sheetName = sheetName;
-            this.rowIndex = rowIndex;
-            this.height = height;
-            this.count = count;
-            this.folder = folder;
-            this.storageName = storageName;
+        public PostUpdateWorksheetRowRequest( String name ,  String sheetName ,  Integer rowIndex ,  Double height ,  Integer count ,  String folder ,  String storageName ) {
+            this.name = name; 
+            this.sheetName = sheetName; 
+            this.rowIndex = rowIndex; 
+            this.height = height; 
+            this.count = count; 
+            this.folder = folder; 
+            this.storageName = storageName; 
         }   
 
         public String getName() {
@@ -169,7 +168,7 @@ public class PostUpdateWorksheetRowRequest  implements IRequestModel {
                 final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
                 if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-                final String[] localVarContentTypes = { "application/json" };
+                final String[] localVarContentTypes = { "application/json" };        
                 final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
                 localVarHeaderParams.put("Content-Type", localVarContentType);
 

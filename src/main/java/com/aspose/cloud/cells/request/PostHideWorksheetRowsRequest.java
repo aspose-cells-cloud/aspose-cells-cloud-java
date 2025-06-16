@@ -49,16 +49,15 @@ public class PostHideWorksheetRowsRequest  implements IRequestModel {
     private String storageName;
     
         public PostHideWorksheetRowsRequest()
-        {
-
+        {        
         }
-        public PostHideWorksheetRowsRequest(String name, String sheetName, Integer startrow, Integer totalRows, String folder, String storageName) {
-            this.name = name;
-            this.sheetName = sheetName;
-            this.startrow = startrow;
-            this.totalRows = totalRows;
-            this.folder = folder;
-            this.storageName = storageName;
+        public PostHideWorksheetRowsRequest( String name ,  String sheetName ,  Integer startrow ,  Integer totalRows ,  String folder ,  String storageName ) {
+            this.name = name; 
+            this.sheetName = sheetName; 
+            this.startrow = startrow; 
+            this.totalRows = totalRows; 
+            this.folder = folder; 
+            this.storageName = storageName; 
         }   
 
         public String getName() {
@@ -161,7 +160,7 @@ public class PostHideWorksheetRowsRequest  implements IRequestModel {
                 final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
                 if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-                final String[] localVarContentTypes = { "application/json" };
+                final String[] localVarContentTypes = { "application/json" };        
                 final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
                 localVarHeaderParams.put("Content-Type", localVarContentType);
 

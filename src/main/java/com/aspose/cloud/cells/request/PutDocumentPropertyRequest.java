@@ -46,14 +46,13 @@ public class PutDocumentPropertyRequest  implements IRequestModel {
     private String storageName;
     private CellsDocumentProperty property;    
         public PutDocumentPropertyRequest()
-        {
-
+        {        
         }
-        public PutDocumentPropertyRequest(String name, CellsDocumentProperty property, String folder, String storageName) {
-            this.name = name;
-            this.property = property;
-            this.folder = folder;
-            this.storageName = storageName;
+        public PutDocumentPropertyRequest( String name ,  CellsDocumentProperty property ,  String folder ,  String storageName ) {
+            this.name = name; 
+            this.property = property; 
+            this.folder = folder; 
+            this.storageName = storageName; 
         }   
 
         public String getName() {
@@ -122,7 +121,7 @@ public class PutDocumentPropertyRequest  implements IRequestModel {
                 final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
                 if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-                final String[] localVarContentTypes = { "application/json" };
+                final String[] localVarContentTypes = { "application/json" };        
                 final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
                 localVarHeaderParams.put("Content-Type", localVarContentType);
 

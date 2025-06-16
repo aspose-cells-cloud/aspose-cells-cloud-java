@@ -50,17 +50,16 @@ public class PostHeaderRequest  implements IRequestModel {
     private String storageName;
     
         public PostHeaderRequest()
-        {
-
+        {        
         }
-        public PostHeaderRequest(String name, String sheetName, Integer section, String script, Boolean isFirstPage, String folder, String storageName) {
-            this.name = name;
-            this.sheetName = sheetName;
-            this.section = section;
-            this.script = script;
-            this.isFirstPage = isFirstPage;
-            this.folder = folder;
-            this.storageName = storageName;
+        public PostHeaderRequest( String name ,  String sheetName ,  Integer section ,  String script ,  Boolean isFirstPage ,  String folder ,  String storageName ) {
+            this.name = name; 
+            this.sheetName = sheetName; 
+            this.section = section; 
+            this.script = script; 
+            this.isFirstPage = isFirstPage; 
+            this.folder = folder; 
+            this.storageName = storageName; 
         }   
 
         public String getName() {
@@ -179,7 +178,7 @@ public class PostHeaderRequest  implements IRequestModel {
                 final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
                 if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-                final String[] localVarContentTypes = { "application/json" };
+                final String[] localVarContentTypes = { "application/json" };        
                 final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
                 localVarHeaderParams.put("Content-Type", localVarContentType);
 

@@ -50,16 +50,15 @@ public class PostMergeRequest  implements IRequestModel {
      
                 private HashMap<String,File> file;
         public PostMergeRequest()
-        {
-
+        {        
         }
-        public PostMergeRequest(HashMap<String,File> file, String outFormat, Boolean mergeToOneSheet, String password, Boolean checkExcelRestriction, String region) {
-            this.file = file;
-            this.outFormat = outFormat;
-            this.mergeToOneSheet = mergeToOneSheet;
-            this.password = password;
-            this.checkExcelRestriction = checkExcelRestriction;
-            this.region = region;
+        public PostMergeRequest( HashMap<String,File> file  ,  String outFormat ,  Boolean mergeToOneSheet ,  String password ,  Boolean checkExcelRestriction ,  String region ) {
+             this.file = file;  
+            this.outFormat = outFormat; 
+            this.mergeToOneSheet = mergeToOneSheet; 
+            this.password = password; 
+            this.checkExcelRestriction = checkExcelRestriction; 
+            this.region = region; 
         }   
 
         public String getOutFormat() {
@@ -107,14 +106,13 @@ public class PostMergeRequest  implements IRequestModel {
         }
 
     
-         
-                public HashMap<String,File> getFile() {
-                    return this.file;
-                }
+            public HashMap<String,File> getFile() {
+                return this.file;
+            }
 
-                public void setFile(HashMap<String,File> file) {
-                    this.file = file;
-                }
+            public void setFile(HashMap<String,File> file) {
+                this.file = file;
+            }
 
         
     @Override
@@ -148,11 +146,12 @@ public class PostMergeRequest  implements IRequestModel {
             }
         }
                    
-              if (getFile() != null){
-                        for (String key : getFile().keySet()) {
-                            localVarFormParams.put(key,getFile().get(key));                
-                        }
-                    }      
+            if (getFile() != null){
+                for (String key : getFile().keySet()) {
+                    localVarFormParams.put(key,getFile().get(key));                
+                }
+            }    
+                  
         Object localVarPostBody = null;
                 final String[] localVarAccepts = {
                     "application/json"
@@ -160,10 +159,7 @@ public class PostMergeRequest  implements IRequestModel {
                 final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
                 if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-                final String[] localVarContentTypes = { "application/json" };
-                if(getFile() != null){
-                   localVarContentTypes[0] =  "multipart/form-data";
-                }
+                final String[] localVarContentTypes = { "multipart/form-data"  };        
                 final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
                 localVarHeaderParams.put("Content-Type", localVarContentType);
 

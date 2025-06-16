@@ -47,14 +47,13 @@ public class CopyFolderRequest  implements IRequestModel {
     private String destStorageName;
     
         public CopyFolderRequest()
-        {
-
+        {        
         }
-        public CopyFolderRequest(String srcPath, String destPath, String srcStorageName, String destStorageName) {
-            this.srcPath = srcPath;
-            this.destPath = destPath;
-            this.srcStorageName = srcStorageName;
-            this.destStorageName = destStorageName;
+        public CopyFolderRequest( String srcPath ,  String destPath ,  String srcStorageName ,  String destStorageName ) {
+            this.srcPath = srcPath; 
+            this.destPath = destPath; 
+            this.srcStorageName = srcStorageName; 
+            this.destStorageName = destStorageName; 
         }   
 
         public String getSrcPath() {
@@ -102,7 +101,7 @@ public class CopyFolderRequest  implements IRequestModel {
                 if (getDestPath() == null) {
                     throw new ApiException("Missing the required parameter 'DestPath' when calling CopyFolder");
                 }       
-        String localVarPath = "v3.0/cells/storage/folder/copy/{srcPath}".replaceAll("\\{" + "srcPath" + "\\}", apiClient.escapeString(srcPath.toString()))   ;
+        String localVarPath = "v4.0/cells/storage/folder/copy/{srcPath}".replaceAll("\\{" + "srcPath" + "\\}", apiClient.escapeString(srcPath.toString()))   ;
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -127,7 +126,7 @@ public class CopyFolderRequest  implements IRequestModel {
                 final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
                 if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-                final String[] localVarContentTypes = { "application/json" };
+                final String[] localVarContentTypes = { "application/json" };        
                 final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
                 localVarHeaderParams.put("Content-Type", localVarContentType);
 

@@ -51,18 +51,17 @@ public class PostCopyWorksheetRowsRequest  implements IRequestModel {
     private String storageName;
     
         public PostCopyWorksheetRowsRequest()
-        {
-
+        {        
         }
-        public PostCopyWorksheetRowsRequest(String name, String sheetName, Integer sourceRowIndex, Integer destinationRowIndex, Integer rowNumber, String worksheet, String folder, String storageName) {
-            this.name = name;
-            this.sheetName = sheetName;
-            this.sourceRowIndex = sourceRowIndex;
-            this.destinationRowIndex = destinationRowIndex;
-            this.rowNumber = rowNumber;
-            this.worksheet = worksheet;
-            this.folder = folder;
-            this.storageName = storageName;
+        public PostCopyWorksheetRowsRequest( String name ,  String sheetName ,  Integer sourceRowIndex ,  Integer destinationRowIndex ,  Integer rowNumber ,  String worksheet ,  String folder ,  String storageName ) {
+            this.name = name; 
+            this.sheetName = sheetName; 
+            this.sourceRowIndex = sourceRowIndex; 
+            this.destinationRowIndex = destinationRowIndex; 
+            this.rowNumber = rowNumber; 
+            this.worksheet = worksheet; 
+            this.folder = folder; 
+            this.storageName = storageName; 
         }   
 
         public String getName() {
@@ -193,7 +192,7 @@ public class PostCopyWorksheetRowsRequest  implements IRequestModel {
                 final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
                 if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-                final String[] localVarContentTypes = { "application/json" };
+                final String[] localVarContentTypes = { "application/json" };        
                 final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
                 localVarHeaderParams.put("Content-Type", localVarContentType);
 

@@ -50,17 +50,16 @@ public class PostWorksheetListObjectInsertSlicerRequest  implements IRequestMode
     private String storageName;
     
         public PostWorksheetListObjectInsertSlicerRequest()
-        {
-
+        {        
         }
-        public PostWorksheetListObjectInsertSlicerRequest(String name, String sheetName, Integer listObjectIndex, Integer columnIndex, String destCellName, String folder, String storageName) {
-            this.name = name;
-            this.sheetName = sheetName;
-            this.listObjectIndex = listObjectIndex;
-            this.columnIndex = columnIndex;
-            this.destCellName = destCellName;
-            this.folder = folder;
-            this.storageName = storageName;
+        public PostWorksheetListObjectInsertSlicerRequest( String name ,  String sheetName ,  Integer listObjectIndex ,  Integer columnIndex ,  String destCellName ,  String folder ,  String storageName ) {
+            this.name = name; 
+            this.sheetName = sheetName; 
+            this.listObjectIndex = listObjectIndex; 
+            this.columnIndex = columnIndex; 
+            this.destCellName = destCellName; 
+            this.folder = folder; 
+            this.storageName = storageName; 
         }   
 
         public String getName() {
@@ -177,7 +176,7 @@ public class PostWorksheetListObjectInsertSlicerRequest  implements IRequestMode
                 final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
                 if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-                final String[] localVarContentTypes = { "application/json" };
+                final String[] localVarContentTypes = { "application/json" };        
                 final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
                 localVarHeaderParams.put("Content-Type", localVarContentType);
 

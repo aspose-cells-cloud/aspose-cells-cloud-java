@@ -48,15 +48,14 @@ public class PostWorkbookTextReplaceRequest  implements IRequestModel {
     private String storageName;
     
         public PostWorkbookTextReplaceRequest()
-        {
-
+        {        
         }
-        public PostWorkbookTextReplaceRequest(String name, String oldValue, String newValue, String folder, String storageName) {
-            this.name = name;
-            this.oldValue = oldValue;
-            this.newValue = newValue;
-            this.folder = folder;
-            this.storageName = storageName;
+        public PostWorkbookTextReplaceRequest( String name ,  String oldValue ,  String newValue ,  String folder ,  String storageName ) {
+            this.name = name; 
+            this.oldValue = oldValue; 
+            this.newValue = newValue; 
+            this.folder = folder; 
+            this.storageName = storageName; 
         }   
 
         public String getName() {
@@ -145,7 +144,7 @@ public class PostWorkbookTextReplaceRequest  implements IRequestModel {
                 final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
                 if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-                final String[] localVarContentTypes = { "application/json" };
+                final String[] localVarContentTypes = { "application/json" };        
                 final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
                 localVarHeaderParams.put("Content-Type", localVarContentType);
 

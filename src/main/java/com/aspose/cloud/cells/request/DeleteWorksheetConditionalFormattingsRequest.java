@@ -47,14 +47,13 @@ public class DeleteWorksheetConditionalFormattingsRequest  implements IRequestMo
     private String storageName;
     
         public DeleteWorksheetConditionalFormattingsRequest()
-        {
-
+        {        
         }
-        public DeleteWorksheetConditionalFormattingsRequest(String name, String sheetName, String folder, String storageName) {
-            this.name = name;
-            this.sheetName = sheetName;
-            this.folder = folder;
-            this.storageName = storageName;
+        public DeleteWorksheetConditionalFormattingsRequest( String name ,  String sheetName ,  String folder ,  String storageName ) {
+            this.name = name; 
+            this.sheetName = sheetName; 
+            this.folder = folder; 
+            this.storageName = storageName; 
         }   
 
         public String getName() {
@@ -125,7 +124,7 @@ public class DeleteWorksheetConditionalFormattingsRequest  implements IRequestMo
                 final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
                 if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-                final String[] localVarContentTypes = { "application/json" };
+                final String[] localVarContentTypes = { "application/json" };        
                 final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
                 localVarHeaderParams.put("Content-Type", localVarContentType);
 

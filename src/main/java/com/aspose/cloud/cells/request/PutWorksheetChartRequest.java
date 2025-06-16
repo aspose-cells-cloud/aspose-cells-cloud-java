@@ -61,28 +61,27 @@ public class PutWorksheetChartRequest  implements IRequestModel {
     private String storageName;
     
         public PutWorksheetChartRequest()
-        {
-
+        {        
         }
-        public PutWorksheetChartRequest(String name, String sheetName, String chartType, Integer upperLeftRow, Integer upperLeftColumn, Integer lowerRightRow, Integer lowerRightColumn, String area, Boolean isVertical, String categoryData, Boolean isAutoGetSerialName, String title, String folder, Boolean dataLabels, String dataLabelsPosition, String pivotTableSheet, String pivotTableName, String storageName) {
-            this.name = name;
-            this.sheetName = sheetName;
-            this.chartType = chartType;
-            this.upperLeftRow = upperLeftRow;
-            this.upperLeftColumn = upperLeftColumn;
-            this.lowerRightRow = lowerRightRow;
-            this.lowerRightColumn = lowerRightColumn;
-            this.area = area;
-            this.isVertical = isVertical;
-            this.categoryData = categoryData;
-            this.isAutoGetSerialName = isAutoGetSerialName;
-            this.title = title;
-            this.folder = folder;
-            this.dataLabels = dataLabels;
-            this.dataLabelsPosition = dataLabelsPosition;
-            this.pivotTableSheet = pivotTableSheet;
-            this.pivotTableName = pivotTableName;
-            this.storageName = storageName;
+        public PutWorksheetChartRequest( String name ,  String sheetName ,  String chartType ,  Integer upperLeftRow ,  Integer upperLeftColumn ,  Integer lowerRightRow ,  Integer lowerRightColumn ,  String area ,  Boolean isVertical ,  String categoryData ,  Boolean isAutoGetSerialName ,  String title ,  String folder ,  Boolean dataLabels ,  String dataLabelsPosition ,  String pivotTableSheet ,  String pivotTableName ,  String storageName ) {
+            this.name = name; 
+            this.sheetName = sheetName; 
+            this.chartType = chartType; 
+            this.upperLeftRow = upperLeftRow; 
+            this.upperLeftColumn = upperLeftColumn; 
+            this.lowerRightRow = lowerRightRow; 
+            this.lowerRightColumn = lowerRightColumn; 
+            this.area = area; 
+            this.isVertical = isVertical; 
+            this.categoryData = categoryData; 
+            this.isAutoGetSerialName = isAutoGetSerialName; 
+            this.title = title; 
+            this.folder = folder; 
+            this.dataLabels = dataLabels; 
+            this.dataLabelsPosition = dataLabelsPosition; 
+            this.pivotTableSheet = pivotTableSheet; 
+            this.pivotTableName = pivotTableName; 
+            this.storageName = storageName; 
         }   
 
         public String getName() {
@@ -325,7 +324,7 @@ public class PutWorksheetChartRequest  implements IRequestModel {
                 final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
                 if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-                final String[] localVarContentTypes = { "application/json" };
+                final String[] localVarContentTypes = { "application/json" };        
                 final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
                 localVarHeaderParams.put("Content-Type", localVarContentType);
 

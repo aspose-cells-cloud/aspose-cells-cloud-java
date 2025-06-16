@@ -46,13 +46,12 @@ public class GetAllStylesRequest  implements IRequestModel {
     private String storageName;
     
         public GetAllStylesRequest()
-        {
-
+        {        
         }
-        public GetAllStylesRequest(String name, String folder, String storageName) {
-            this.name = name;
-            this.folder = folder;
-            this.storageName = storageName;
+        public GetAllStylesRequest( String name ,  String folder ,  String storageName ) {
+            this.name = name; 
+            this.folder = folder; 
+            this.storageName = storageName; 
         }   
 
         public String getName() {
@@ -109,7 +108,7 @@ public class GetAllStylesRequest  implements IRequestModel {
                 final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
                 if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-                final String[] localVarContentTypes = { "application/json" };
+                final String[] localVarContentTypes = { "application/json" };        
                 final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
                 localVarHeaderParams.put("Content-Type", localVarContentType);
 

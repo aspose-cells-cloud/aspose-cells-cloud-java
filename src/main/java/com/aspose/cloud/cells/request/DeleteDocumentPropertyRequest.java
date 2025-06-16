@@ -48,15 +48,14 @@ public class DeleteDocumentPropertyRequest  implements IRequestModel {
     private String storageName;
     
         public DeleteDocumentPropertyRequest()
-        {
-
+        {        
         }
-        public DeleteDocumentPropertyRequest(String name, String propertyName, String type, String folder, String storageName) {
-            this.name = name;
-            this.propertyName = propertyName;
-            this.type = type;
-            this.folder = folder;
-            this.storageName = storageName;
+        public DeleteDocumentPropertyRequest( String name ,  String propertyName ,  String type ,  String folder ,  String storageName ) {
+            this.name = name; 
+            this.propertyName = propertyName; 
+            this.type = type; 
+            this.folder = folder; 
+            this.storageName = storageName; 
         }   
 
         public String getName() {
@@ -139,7 +138,7 @@ public class DeleteDocumentPropertyRequest  implements IRequestModel {
                 final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
                 if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-                final String[] localVarContentTypes = { "application/json" };
+                final String[] localVarContentTypes = { "application/json" };        
                 final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
                 localVarHeaderParams.put("Content-Type", localVarContentType);
 

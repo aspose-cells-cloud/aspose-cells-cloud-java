@@ -44,12 +44,11 @@ public class PostConvertWorkbookRequest  implements IRequestModel {
     private String fontsLocation;
     private ConvertWorkbookOptions convertWorkbookOptions;    
         public PostConvertWorkbookRequest()
-        {
-
+        {        
         }
-        public PostConvertWorkbookRequest(ConvertWorkbookOptions convertWorkbookOptions, String fontsLocation) {
-            this.convertWorkbookOptions = convertWorkbookOptions;
-            this.fontsLocation = fontsLocation;
+        public PostConvertWorkbookRequest( ConvertWorkbookOptions convertWorkbookOptions ,  String fontsLocation ) {
+            this.convertWorkbookOptions = convertWorkbookOptions; 
+            this.fontsLocation = fontsLocation; 
         }   
 
         public String getFontsLocation() {
@@ -94,7 +93,7 @@ public class PostConvertWorkbookRequest  implements IRequestModel {
                 final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
                 if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-                final String[] localVarContentTypes = { "application/json" };
+                final String[] localVarContentTypes = { "application/json" };        
                 final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
                 localVarHeaderParams.put("Content-Type", localVarContentType);
 

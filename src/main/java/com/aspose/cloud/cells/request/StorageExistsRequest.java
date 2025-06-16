@@ -44,11 +44,10 @@ public class StorageExistsRequest  implements IRequestModel {
     private String storageName;
     
         public StorageExistsRequest()
-        {
-
+        {        
         }
-        public StorageExistsRequest(String storageName) {
-            this.storageName = storageName;
+        public StorageExistsRequest( String storageName ) {
+            this.storageName = storageName; 
         }   
 
         public String getStorageName() {
@@ -66,7 +65,7 @@ public class StorageExistsRequest  implements IRequestModel {
                 if (getStorageName() == null) {
                     throw new ApiException("Missing the required parameter 'StorageName' when calling StorageExists");
                 }       
-        String localVarPath = "v3.0/cells/storage/{storageName}/exist".replaceAll("\\{" + "storageName" + "\\}", apiClient.escapeString(storageName.toString()))   ;
+        String localVarPath = "v4.0/cells/storage/{storageName}/exist".replaceAll("\\{" + "storageName" + "\\}", apiClient.escapeString(storageName.toString()))   ;
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
         List<Pair> localVarQueryParams = null;
@@ -82,7 +81,7 @@ public class StorageExistsRequest  implements IRequestModel {
                 final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
                 if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-                final String[] localVarContentTypes = { "application/json" };
+                final String[] localVarContentTypes = { "application/json" };        
                 final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
                 localVarHeaderParams.put("Content-Type", localVarContentType);
 

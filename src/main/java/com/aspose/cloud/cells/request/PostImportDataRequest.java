@@ -48,16 +48,15 @@ public class PostImportDataRequest  implements IRequestModel {
     private String fontsLocation;
     private ImportOption importOption;    
         public PostImportDataRequest()
-        {
-
+        {        
         }
-        public PostImportDataRequest(String name, ImportOption importOption, String folder, String storageName, String region, String fontsLocation) {
-            this.name = name;
-            this.importOption = importOption;
-            this.folder = folder;
-            this.storageName = storageName;
-            this.region = region;
-            this.fontsLocation = fontsLocation;
+        public PostImportDataRequest( String name ,  ImportOption importOption ,  String folder ,  String storageName ,  String region ,  String fontsLocation ) {
+            this.name = name; 
+            this.importOption = importOption; 
+            this.folder = folder; 
+            this.storageName = storageName; 
+            this.region = region; 
+            this.fontsLocation = fontsLocation; 
         }   
 
         public String getName() {
@@ -146,7 +145,7 @@ public class PostImportDataRequest  implements IRequestModel {
                 final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
                 if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-                final String[] localVarContentTypes = { "application/json" };
+                final String[] localVarContentTypes = { "application/json" };        
                 final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
                 localVarHeaderParams.put("Content-Type", localVarContentType);
 

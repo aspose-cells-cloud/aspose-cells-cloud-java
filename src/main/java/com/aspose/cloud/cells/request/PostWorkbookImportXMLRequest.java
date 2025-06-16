@@ -51,19 +51,18 @@ public class PostWorkbookImportXMLRequest  implements IRequestModel {
     private String region;
     private ImportXMLRequest importXMLRequest;    
         public PostWorkbookImportXMLRequest()
-        {
-
+        {        
         }
-        public PostWorkbookImportXMLRequest(String name, ImportXMLRequest importXMLRequest, String password, String folder, String storageName, String outPath, String outStorageName, Boolean checkExcelRestriction, String region) {
-            this.name = name;
-            this.importXMLRequest = importXMLRequest;
-            this.password = password;
-            this.folder = folder;
-            this.storageName = storageName;
-            this.outPath = outPath;
-            this.outStorageName = outStorageName;
-            this.checkExcelRestriction = checkExcelRestriction;
-            this.region = region;
+        public PostWorkbookImportXMLRequest( String name ,  ImportXMLRequest importXMLRequest ,  String password ,  String folder ,  String storageName ,  String outPath ,  String outStorageName ,  Boolean checkExcelRestriction ,  String region ) {
+            this.name = name; 
+            this.importXMLRequest = importXMLRequest; 
+            this.password = password; 
+            this.folder = folder; 
+            this.storageName = storageName; 
+            this.outPath = outPath; 
+            this.outStorageName = outStorageName; 
+            this.checkExcelRestriction = checkExcelRestriction; 
+            this.region = region; 
         }   
 
         public String getName() {
@@ -192,7 +191,7 @@ public class PostWorkbookImportXMLRequest  implements IRequestModel {
                 final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
                 if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-                final String[] localVarContentTypes = { "application/json" };
+                final String[] localVarContentTypes = { "application/json" };        
                 final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
                 localVarHeaderParams.put("Content-Type", localVarContentType);
 

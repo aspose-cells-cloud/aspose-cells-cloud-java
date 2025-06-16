@@ -48,15 +48,14 @@ public class GetWorksheetCalculateFormulaRequest  implements IRequestModel {
     private String storageName;
     
         public GetWorksheetCalculateFormulaRequest()
-        {
-
+        {        
         }
-        public GetWorksheetCalculateFormulaRequest(String name, String sheetName, String formula, String folder, String storageName) {
-            this.name = name;
-            this.sheetName = sheetName;
-            this.formula = formula;
-            this.folder = folder;
-            this.storageName = storageName;
+        public GetWorksheetCalculateFormulaRequest( String name ,  String sheetName ,  String formula ,  String folder ,  String storageName ) {
+            this.name = name; 
+            this.sheetName = sheetName; 
+            this.formula = formula; 
+            this.folder = folder; 
+            this.storageName = storageName; 
         }   
 
         public String getName() {
@@ -143,7 +142,7 @@ public class GetWorksheetCalculateFormulaRequest  implements IRequestModel {
                 final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
                 if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-                final String[] localVarContentTypes = { "application/json" };
+                final String[] localVarContentTypes = { "application/json" };        
                 final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
                 localVarHeaderParams.put("Content-Type", localVarContentType);
 

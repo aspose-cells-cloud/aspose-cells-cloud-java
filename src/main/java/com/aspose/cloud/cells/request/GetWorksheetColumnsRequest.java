@@ -49,16 +49,15 @@ public class GetWorksheetColumnsRequest  implements IRequestModel {
     private String storageName;
     
         public GetWorksheetColumnsRequest()
-        {
-
+        {        
         }
-        public GetWorksheetColumnsRequest(String name, String sheetName, Integer offset, Integer count, String folder, String storageName) {
-            this.name = name;
-            this.sheetName = sheetName;
-            this.offset = offset;
-            this.count = count;
-            this.folder = folder;
-            this.storageName = storageName;
+        public GetWorksheetColumnsRequest( String name ,  String sheetName ,  Integer offset ,  Integer count ,  String folder ,  String storageName ) {
+            this.name = name; 
+            this.sheetName = sheetName; 
+            this.offset = offset; 
+            this.count = count; 
+            this.folder = folder; 
+            this.storageName = storageName; 
         }   
 
         public String getName() {
@@ -146,7 +145,7 @@ public class GetWorksheetColumnsRequest  implements IRequestModel {
                 final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
                 if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-                final String[] localVarContentTypes = { "application/json" };
+                final String[] localVarContentTypes = { "application/json" };        
                 final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
                 localVarHeaderParams.put("Content-Type", localVarContentType);
 

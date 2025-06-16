@@ -56,24 +56,23 @@ public class PostWorkbookSaveAsRequest  implements IRequestModel {
     private String fontsLocation;
     private SaveOptions saveOptions;    
         public PostWorkbookSaveAsRequest()
-        {
-
+        {        
         }
-        public PostWorkbookSaveAsRequest(String name, String newfilename, SaveOptions saveOptions, Boolean isAutoFitRows, Boolean isAutoFitColumns, String folder, String storageName, String outStorageName, Boolean checkExcelRestriction, String region, Boolean pageWideFitOnPerSheet, Boolean pageTallFitOnPerSheet, Boolean onePagePerSheet, String fontsLocation) {
-            this.name = name;
-            this.newfilename = newfilename;
-            this.saveOptions = saveOptions;
-            this.isAutoFitRows = isAutoFitRows;
-            this.isAutoFitColumns = isAutoFitColumns;
-            this.folder = folder;
-            this.storageName = storageName;
-            this.outStorageName = outStorageName;
-            this.checkExcelRestriction = checkExcelRestriction;
-            this.region = region;
-            this.pageWideFitOnPerSheet = pageWideFitOnPerSheet;
-            this.pageTallFitOnPerSheet = pageTallFitOnPerSheet;
-            this.onePagePerSheet = onePagePerSheet;
-            this.fontsLocation = fontsLocation;
+        public PostWorkbookSaveAsRequest( String name ,  String newfilename ,  SaveOptions saveOptions ,  Boolean isAutoFitRows ,  Boolean isAutoFitColumns ,  String folder ,  String storageName ,  String outStorageName ,  Boolean checkExcelRestriction ,  String region ,  Boolean pageWideFitOnPerSheet ,  Boolean pageTallFitOnPerSheet ,  Boolean onePagePerSheet ,  String fontsLocation ) {
+            this.name = name; 
+            this.newfilename = newfilename; 
+            this.saveOptions = saveOptions; 
+            this.isAutoFitRows = isAutoFitRows; 
+            this.isAutoFitColumns = isAutoFitColumns; 
+            this.folder = folder; 
+            this.storageName = storageName; 
+            this.outStorageName = outStorageName; 
+            this.checkExcelRestriction = checkExcelRestriction; 
+            this.region = region; 
+            this.pageWideFitOnPerSheet = pageWideFitOnPerSheet; 
+            this.pageTallFitOnPerSheet = pageTallFitOnPerSheet; 
+            this.onePagePerSheet = onePagePerSheet; 
+            this.fontsLocation = fontsLocation; 
         }   
 
         public String getName() {
@@ -262,7 +261,7 @@ public class PostWorkbookSaveAsRequest  implements IRequestModel {
                 final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
                 if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-                final String[] localVarContentTypes = { "application/json" };
+                final String[] localVarContentTypes = { "application/json" };        
                 final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
                 localVarHeaderParams.put("Content-Type", localVarContentType);
 

@@ -43,11 +43,10 @@ public class PostBatchLockRequest  implements IRequestModel {
     }
     private BatchLockRequest batchLockRequest;    
         public PostBatchLockRequest()
-        {
-
+        {        
         }
-        public PostBatchLockRequest(BatchLockRequest batchLockRequest) {
-            this.batchLockRequest = batchLockRequest;
+        public PostBatchLockRequest( BatchLockRequest batchLockRequest ) {
+            this.batchLockRequest = batchLockRequest; 
         }   
 
         public BatchLockRequest getBatchLockRequest() {
@@ -81,7 +80,7 @@ public class PostBatchLockRequest  implements IRequestModel {
                 final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
                 if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-                final String[] localVarContentTypes = { "application/json" };
+                final String[] localVarContentTypes = { "application/json" };        
                 final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
                 localVarHeaderParams.put("Content-Type", localVarContentType);
 

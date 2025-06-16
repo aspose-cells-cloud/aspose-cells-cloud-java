@@ -48,16 +48,15 @@ public class PostUpdateWorksheetOleObjectRequest  implements IRequestModel {
     private String storageName;
     private OleObject ole;    
         public PostUpdateWorksheetOleObjectRequest()
-        {
-
+        {        
         }
-        public PostUpdateWorksheetOleObjectRequest(String name, String sheetName, Integer oleObjectIndex, OleObject ole, String folder, String storageName) {
-            this.name = name;
-            this.sheetName = sheetName;
-            this.oleObjectIndex = oleObjectIndex;
-            this.ole = ole;
-            this.folder = folder;
-            this.storageName = storageName;
+        public PostUpdateWorksheetOleObjectRequest( String name ,  String sheetName ,  Integer oleObjectIndex ,  OleObject ole ,  String folder ,  String storageName ) {
+            this.name = name; 
+            this.sheetName = sheetName; 
+            this.oleObjectIndex = oleObjectIndex; 
+            this.ole = ole; 
+            this.folder = folder; 
+            this.storageName = storageName; 
         }   
 
         public String getName() {
@@ -154,7 +153,7 @@ public class PostUpdateWorksheetOleObjectRequest  implements IRequestModel {
                 final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
                 if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-                final String[] localVarContentTypes = { "application/json" };
+                final String[] localVarContentTypes = { "application/json" };        
                 final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
                 localVarHeaderParams.put("Content-Type", localVarContentType);
 

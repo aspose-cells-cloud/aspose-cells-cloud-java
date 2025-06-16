@@ -51,18 +51,17 @@ public class PutWorksheetSparklineGroupRequest  implements IRequestModel {
     private String storageName;
     
         public PutWorksheetSparklineGroupRequest()
-        {
-
+        {        
         }
-        public PutWorksheetSparklineGroupRequest(String name, String sheetName, String type, String dataRange, Boolean isVertical, String locationRange, String folder, String storageName) {
-            this.name = name;
-            this.sheetName = sheetName;
-            this.type = type;
-            this.dataRange = dataRange;
-            this.isVertical = isVertical;
-            this.locationRange = locationRange;
-            this.folder = folder;
-            this.storageName = storageName;
+        public PutWorksheetSparklineGroupRequest( String name ,  String sheetName ,  String type ,  String dataRange ,  Boolean isVertical ,  String locationRange ,  String folder ,  String storageName ) {
+            this.name = name; 
+            this.sheetName = sheetName; 
+            this.type = type; 
+            this.dataRange = dataRange; 
+            this.isVertical = isVertical; 
+            this.locationRange = locationRange; 
+            this.folder = folder; 
+            this.storageName = storageName; 
         }   
 
         public String getName() {
@@ -197,7 +196,7 @@ public class PutWorksheetSparklineGroupRequest  implements IRequestModel {
                 final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
                 if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-                final String[] localVarContentTypes = { "application/json" };
+                final String[] localVarContentTypes = { "application/json" };        
                 final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
                 localVarHeaderParams.put("Content-Type", localVarContentType);
 

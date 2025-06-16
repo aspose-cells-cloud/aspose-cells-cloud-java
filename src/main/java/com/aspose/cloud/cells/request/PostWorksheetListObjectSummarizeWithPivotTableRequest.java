@@ -49,17 +49,16 @@ public class PostWorksheetListObjectSummarizeWithPivotTableRequest  implements I
     private String storageName;
     private CreatePivotTableRequest createPivotTableRequest;    
         public PostWorksheetListObjectSummarizeWithPivotTableRequest()
-        {
-
+        {        
         }
-        public PostWorksheetListObjectSummarizeWithPivotTableRequest(String name, String sheetName, Integer listObjectIndex, String destsheetName, CreatePivotTableRequest createPivotTableRequest, String folder, String storageName) {
-            this.name = name;
-            this.sheetName = sheetName;
-            this.listObjectIndex = listObjectIndex;
-            this.destsheetName = destsheetName;
-            this.createPivotTableRequest = createPivotTableRequest;
-            this.folder = folder;
-            this.storageName = storageName;
+        public PostWorksheetListObjectSummarizeWithPivotTableRequest( String name ,  String sheetName ,  Integer listObjectIndex ,  String destsheetName ,  CreatePivotTableRequest createPivotTableRequest ,  String folder ,  String storageName ) {
+            this.name = name; 
+            this.sheetName = sheetName; 
+            this.listObjectIndex = listObjectIndex; 
+            this.destsheetName = destsheetName; 
+            this.createPivotTableRequest = createPivotTableRequest; 
+            this.folder = folder; 
+            this.storageName = storageName; 
         }   
 
         public String getName() {
@@ -172,7 +171,7 @@ public class PostWorksheetListObjectSummarizeWithPivotTableRequest  implements I
                 final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
                 if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-                final String[] localVarContentTypes = { "application/json" };
+                final String[] localVarContentTypes = { "application/json" };        
                 final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
                 localVarHeaderParams.put("Content-Type", localVarContentType);
 

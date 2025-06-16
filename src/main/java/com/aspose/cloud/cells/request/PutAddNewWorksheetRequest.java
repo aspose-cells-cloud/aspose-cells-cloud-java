@@ -49,16 +49,15 @@ public class PutAddNewWorksheetRequest  implements IRequestModel {
     private String storageName;
     
         public PutAddNewWorksheetRequest()
-        {
-
+        {        
         }
-        public PutAddNewWorksheetRequest(String name, String sheetName, Integer position, String sheettype, String folder, String storageName) {
-            this.name = name;
-            this.sheetName = sheetName;
-            this.position = position;
-            this.sheettype = sheettype;
-            this.folder = folder;
-            this.storageName = storageName;
+        public PutAddNewWorksheetRequest( String name ,  String sheetName ,  Integer position ,  String sheettype ,  String folder ,  String storageName ) {
+            this.name = name; 
+            this.sheetName = sheetName; 
+            this.position = position; 
+            this.sheettype = sheettype; 
+            this.folder = folder; 
+            this.storageName = storageName; 
         }   
 
         public String getName() {
@@ -153,7 +152,7 @@ public class PutAddNewWorksheetRequest  implements IRequestModel {
                 final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
                 if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-                final String[] localVarContentTypes = { "application/json" };
+                final String[] localVarContentTypes = { "application/json" };        
                 final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
                 localVarHeaderParams.put("Content-Type", localVarContentType);
 

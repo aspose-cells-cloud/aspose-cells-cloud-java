@@ -47,15 +47,14 @@ public class PostMoveWorksheetRequest  implements IRequestModel {
     private String storageName;
     private WorksheetMovingRequest moving;    
         public PostMoveWorksheetRequest()
-        {
-
+        {        
         }
-        public PostMoveWorksheetRequest(String name, String sheetName, WorksheetMovingRequest moving, String folder, String storageName) {
-            this.name = name;
-            this.sheetName = sheetName;
-            this.moving = moving;
-            this.folder = folder;
-            this.storageName = storageName;
+        public PostMoveWorksheetRequest( String name ,  String sheetName ,  WorksheetMovingRequest moving ,  String folder ,  String storageName ) {
+            this.name = name; 
+            this.sheetName = sheetName; 
+            this.moving = moving; 
+            this.folder = folder; 
+            this.storageName = storageName; 
         }   
 
         public String getName() {
@@ -138,7 +137,7 @@ public class PostMoveWorksheetRequest  implements IRequestModel {
                 final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
                 if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-                final String[] localVarContentTypes = { "application/json" };
+                final String[] localVarContentTypes = { "application/json" };        
                 final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
                 localVarHeaderParams.put("Content-Type", localVarContentType);
 

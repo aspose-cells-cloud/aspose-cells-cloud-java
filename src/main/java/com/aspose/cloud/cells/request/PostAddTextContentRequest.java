@@ -43,11 +43,10 @@ public class PostAddTextContentRequest  implements IRequestModel {
     }
     private AddTextOptions addTextOptions;    
         public PostAddTextContentRequest()
-        {
-
+        {        
         }
-        public PostAddTextContentRequest(AddTextOptions addTextOptions) {
-            this.addTextOptions = addTextOptions;
+        public PostAddTextContentRequest( AddTextOptions addTextOptions ) {
+            this.addTextOptions = addTextOptions; 
         }   
 
         public AddTextOptions getAddTextOptions() {
@@ -81,7 +80,7 @@ public class PostAddTextContentRequest  implements IRequestModel {
                 final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
                 if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-                final String[] localVarContentTypes = { "application/json" };
+                final String[] localVarContentTypes = { "application/json" };        
                 final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
                 localVarHeaderParams.put("Content-Type", localVarContentType);
 

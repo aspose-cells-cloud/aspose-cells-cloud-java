@@ -49,16 +49,15 @@ public class AddPictureInCellRequest  implements IRequestModel {
     private String storageName;
     
         public AddPictureInCellRequest()
-        {
-
+        {        
         }
-        public AddPictureInCellRequest(String name, String sheetName, String cellName, String picturePath, String folder, String storageName) {
-            this.name = name;
-            this.sheetName = sheetName;
-            this.cellName = cellName;
-            this.picturePath = picturePath;
-            this.folder = folder;
-            this.storageName = storageName;
+        public AddPictureInCellRequest( String name ,  String sheetName ,  String cellName ,  String picturePath ,  String folder ,  String storageName ) {
+            this.name = name; 
+            this.sheetName = sheetName; 
+            this.cellName = cellName; 
+            this.picturePath = picturePath; 
+            this.folder = folder; 
+            this.storageName = storageName; 
         }   
 
         public String getName() {
@@ -161,7 +160,7 @@ public class AddPictureInCellRequest  implements IRequestModel {
                 final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
                 if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-                final String[] localVarContentTypes = { "application/json" };
+                final String[] localVarContentTypes = { "application/json" };        
                 final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
                 localVarHeaderParams.put("Content-Type", localVarContentType);
 

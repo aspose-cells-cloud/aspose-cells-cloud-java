@@ -48,16 +48,15 @@ public class PostWorksheetShapeRequest  implements IRequestModel {
     private String storageName;
     private Shape dto;    
         public PostWorksheetShapeRequest()
-        {
-
+        {        
         }
-        public PostWorksheetShapeRequest(String name, String sheetName, Integer shapeindex, Shape dto, String folder, String storageName) {
-            this.name = name;
-            this.sheetName = sheetName;
-            this.shapeindex = shapeindex;
-            this.dto = dto;
-            this.folder = folder;
-            this.storageName = storageName;
+        public PostWorksheetShapeRequest( String name ,  String sheetName ,  Integer shapeindex ,  Shape dto ,  String folder ,  String storageName ) {
+            this.name = name; 
+            this.sheetName = sheetName; 
+            this.shapeindex = shapeindex; 
+            this.dto = dto; 
+            this.folder = folder; 
+            this.storageName = storageName; 
         }   
 
         public String getName() {
@@ -154,7 +153,7 @@ public class PostWorksheetShapeRequest  implements IRequestModel {
                 final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
                 if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-                final String[] localVarContentTypes = { "application/json" };
+                final String[] localVarContentTypes = { "application/json" };        
                 final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
                 localVarHeaderParams.put("Content-Type", localVarContentType);
 

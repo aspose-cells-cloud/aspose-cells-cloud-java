@@ -50,18 +50,17 @@ public class PostPivotTableUpdatePivotFieldsRequest  implements IRequestModel {
     private String storageName;
     private PivotField pivotField;    
         public PostPivotTableUpdatePivotFieldsRequest()
-        {
-
+        {        
         }
-        public PostPivotTableUpdatePivotFieldsRequest(String name, String sheetName, Integer pivotTableIndex, String pivotFieldType, PivotField pivotField, Boolean needReCalculate, String folder, String storageName) {
-            this.name = name;
-            this.sheetName = sheetName;
-            this.pivotTableIndex = pivotTableIndex;
-            this.pivotFieldType = pivotFieldType;
-            this.pivotField = pivotField;
-            this.needReCalculate = needReCalculate;
-            this.folder = folder;
-            this.storageName = storageName;
+        public PostPivotTableUpdatePivotFieldsRequest( String name ,  String sheetName ,  Integer pivotTableIndex ,  String pivotFieldType ,  PivotField pivotField ,  Boolean needReCalculate ,  String folder ,  String storageName ) {
+            this.name = name; 
+            this.sheetName = sheetName; 
+            this.pivotTableIndex = pivotTableIndex; 
+            this.pivotFieldType = pivotFieldType; 
+            this.pivotField = pivotField; 
+            this.needReCalculate = needReCalculate; 
+            this.folder = folder; 
+            this.storageName = storageName; 
         }   
 
         public String getName() {
@@ -186,7 +185,7 @@ public class PostPivotTableUpdatePivotFieldsRequest  implements IRequestModel {
                 final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
                 if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-                final String[] localVarContentTypes = { "application/json" };
+                final String[] localVarContentTypes = { "application/json" };        
                 final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
                 localVarHeaderParams.put("Content-Type", localVarContentType);
 

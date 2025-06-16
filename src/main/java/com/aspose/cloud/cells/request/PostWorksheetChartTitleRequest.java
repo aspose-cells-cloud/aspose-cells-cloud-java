@@ -48,16 +48,15 @@ public class PostWorksheetChartTitleRequest  implements IRequestModel {
     private String storageName;
     private Title title;    
         public PostWorksheetChartTitleRequest()
-        {
-
+        {        
         }
-        public PostWorksheetChartTitleRequest(String name, String sheetName, Integer chartIndex, Title title, String folder, String storageName) {
-            this.name = name;
-            this.sheetName = sheetName;
-            this.chartIndex = chartIndex;
-            this.title = title;
-            this.folder = folder;
-            this.storageName = storageName;
+        public PostWorksheetChartTitleRequest( String name ,  String sheetName ,  Integer chartIndex ,  Title title ,  String folder ,  String storageName ) {
+            this.name = name; 
+            this.sheetName = sheetName; 
+            this.chartIndex = chartIndex; 
+            this.title = title; 
+            this.folder = folder; 
+            this.storageName = storageName; 
         }   
 
         public String getName() {
@@ -154,7 +153,7 @@ public class PostWorksheetChartTitleRequest  implements IRequestModel {
                 final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
                 if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-                final String[] localVarContentTypes = { "application/json" };
+                final String[] localVarContentTypes = { "application/json" };        
                 final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
                 localVarHeaderParams.put("Content-Type", localVarContentType);
 

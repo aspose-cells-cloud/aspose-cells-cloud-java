@@ -54,21 +54,20 @@ public class PutWorksheetListObjectRequest  implements IRequestModel {
     private String storageName;
     
         public PutWorksheetListObjectRequest()
-        {
-
+        {        
         }
-        public PutWorksheetListObjectRequest(String name, String sheetName, Integer startRow, Integer startColumn, Integer endRow, Integer endColumn, String folder, Boolean hasHeaders, String displayName, Boolean showTotals, String storageName) {
-            this.name = name;
-            this.sheetName = sheetName;
-            this.startRow = startRow;
-            this.startColumn = startColumn;
-            this.endRow = endRow;
-            this.endColumn = endColumn;
-            this.folder = folder;
-            this.hasHeaders = hasHeaders;
-            this.displayName = displayName;
-            this.showTotals = showTotals;
-            this.storageName = storageName;
+        public PutWorksheetListObjectRequest( String name ,  String sheetName ,  Integer startRow ,  Integer startColumn ,  Integer endRow ,  Integer endColumn ,  String folder ,  Boolean hasHeaders ,  String displayName ,  Boolean showTotals ,  String storageName ) {
+            this.name = name; 
+            this.sheetName = sheetName; 
+            this.startRow = startRow; 
+            this.startColumn = startColumn; 
+            this.endRow = endRow; 
+            this.endColumn = endColumn; 
+            this.folder = folder; 
+            this.hasHeaders = hasHeaders; 
+            this.displayName = displayName; 
+            this.showTotals = showTotals; 
+            this.storageName = storageName; 
         }   
 
         public String getName() {
@@ -223,7 +222,7 @@ public class PutWorksheetListObjectRequest  implements IRequestModel {
                 final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
                 if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-                final String[] localVarContentTypes = { "application/json" };
+                final String[] localVarContentTypes = { "application/json" };        
                 final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
                 localVarHeaderParams.put("Content-Type", localVarContentType);
 

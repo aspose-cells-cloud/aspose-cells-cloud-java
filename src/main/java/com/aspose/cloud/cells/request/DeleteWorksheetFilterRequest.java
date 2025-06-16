@@ -49,16 +49,15 @@ public class DeleteWorksheetFilterRequest  implements IRequestModel {
     private String storageName;
     
         public DeleteWorksheetFilterRequest()
-        {
-
+        {        
         }
-        public DeleteWorksheetFilterRequest(String name, String sheetName, Integer fieldIndex, String criteria, String folder, String storageName) {
-            this.name = name;
-            this.sheetName = sheetName;
-            this.fieldIndex = fieldIndex;
-            this.criteria = criteria;
-            this.folder = folder;
-            this.storageName = storageName;
+        public DeleteWorksheetFilterRequest( String name ,  String sheetName ,  Integer fieldIndex ,  String criteria ,  String folder ,  String storageName ) {
+            this.name = name; 
+            this.sheetName = sheetName; 
+            this.fieldIndex = fieldIndex; 
+            this.criteria = criteria; 
+            this.folder = folder; 
+            this.storageName = storageName; 
         }   
 
         public String getName() {
@@ -157,7 +156,7 @@ public class DeleteWorksheetFilterRequest  implements IRequestModel {
                 final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
                 if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-                final String[] localVarContentTypes = { "application/json" };
+                final String[] localVarContentTypes = { "application/json" };        
                 final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
                 localVarHeaderParams.put("Content-Type", localVarContentType);
 

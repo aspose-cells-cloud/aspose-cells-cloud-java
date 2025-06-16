@@ -48,15 +48,14 @@ public class GetWorksheetCellRequest  implements IRequestModel {
     private String storageName;
     
         public GetWorksheetCellRequest()
-        {
-
+        {        
         }
-        public GetWorksheetCellRequest(String name, String sheetName, String cellOrMethodName, String folder, String storageName) {
-            this.name = name;
-            this.sheetName = sheetName;
-            this.cellOrMethodName = cellOrMethodName;
-            this.folder = folder;
-            this.storageName = storageName;
+        public GetWorksheetCellRequest( String name ,  String sheetName ,  String cellOrMethodName ,  String folder ,  String storageName ) {
+            this.name = name; 
+            this.sheetName = sheetName; 
+            this.cellOrMethodName = cellOrMethodName; 
+            this.folder = folder; 
+            this.storageName = storageName; 
         }   
 
         public String getName() {
@@ -141,7 +140,7 @@ public class GetWorksheetCellRequest  implements IRequestModel {
                 final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
                 if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-                final String[] localVarContentTypes = { "application/json" };
+                final String[] localVarContentTypes = { "application/json" };        
                 final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
                 localVarHeaderParams.put("Content-Type", localVarContentType);
 

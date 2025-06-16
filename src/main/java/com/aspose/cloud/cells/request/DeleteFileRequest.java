@@ -46,13 +46,12 @@ public class DeleteFileRequest  implements IRequestModel {
     private String versionId;
     
         public DeleteFileRequest()
-        {
-
+        {        
         }
-        public DeleteFileRequest(String path, String storageName, String versionId) {
-            this.path = path;
-            this.storageName = storageName;
-            this.versionId = versionId;
+        public DeleteFileRequest( String path ,  String storageName ,  String versionId ) {
+            this.path = path; 
+            this.storageName = storageName; 
+            this.versionId = versionId; 
         }   
 
         public String getPath() {
@@ -87,7 +86,7 @@ public class DeleteFileRequest  implements IRequestModel {
                 if (getPath() == null) {
                     throw new ApiException("Missing the required parameter 'Path' when calling DeleteFile");
                 }       
-        String localVarPath = "v3.0/cells/storage/file/{path}".replaceAll("\\{" + "path" + "\\}", apiClient.escapeString(path.toString()))   ;
+        String localVarPath = "v4.0/cells/storage/file/{path}".replaceAll("\\{" + "path" + "\\}", apiClient.escapeString(path.toString()))   ;
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -109,7 +108,7 @@ public class DeleteFileRequest  implements IRequestModel {
                 final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
                 if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-                final String[] localVarContentTypes = { "application/json" };
+                final String[] localVarContentTypes = { "application/json" };        
                 final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
                 localVarHeaderParams.put("Content-Type", localVarContentType);
 

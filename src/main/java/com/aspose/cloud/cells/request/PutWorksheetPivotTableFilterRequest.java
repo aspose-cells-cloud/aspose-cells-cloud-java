@@ -49,17 +49,16 @@ public class PutWorksheetPivotTableFilterRequest  implements IRequestModel {
     private String storageName;
     private PivotFilter filter;    
         public PutWorksheetPivotTableFilterRequest()
-        {
-
+        {        
         }
-        public PutWorksheetPivotTableFilterRequest(String name, String sheetName, Integer pivotTableIndex, PivotFilter filter, Boolean needReCalculate, String folder, String storageName) {
-            this.name = name;
-            this.sheetName = sheetName;
-            this.pivotTableIndex = pivotTableIndex;
-            this.filter = filter;
-            this.needReCalculate = needReCalculate;
-            this.folder = folder;
-            this.storageName = storageName;
+        public PutWorksheetPivotTableFilterRequest( String name ,  String sheetName ,  Integer pivotTableIndex ,  PivotFilter filter ,  Boolean needReCalculate ,  String folder ,  String storageName ) {
+            this.name = name; 
+            this.sheetName = sheetName; 
+            this.pivotTableIndex = pivotTableIndex; 
+            this.filter = filter; 
+            this.needReCalculate = needReCalculate; 
+            this.folder = folder; 
+            this.storageName = storageName; 
         }   
 
         public String getName() {
@@ -168,7 +167,7 @@ public class PutWorksheetPivotTableFilterRequest  implements IRequestModel {
                 final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
                 if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-                final String[] localVarContentTypes = { "application/json" };
+                final String[] localVarContentTypes = { "application/json" };        
                 final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
                 localVarHeaderParams.put("Content-Type", localVarContentType);
 

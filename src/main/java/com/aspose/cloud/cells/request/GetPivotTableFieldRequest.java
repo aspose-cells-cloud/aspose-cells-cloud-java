@@ -50,17 +50,16 @@ public class GetPivotTableFieldRequest  implements IRequestModel {
     private String storageName;
     
         public GetPivotTableFieldRequest()
-        {
-
+        {        
         }
-        public GetPivotTableFieldRequest(String name, String sheetName, Integer pivotTableIndex, Integer pivotFieldIndex, String pivotFieldType, String folder, String storageName) {
-            this.name = name;
-            this.sheetName = sheetName;
-            this.pivotTableIndex = pivotTableIndex;
-            this.pivotFieldIndex = pivotFieldIndex;
-            this.pivotFieldType = pivotFieldType;
-            this.folder = folder;
-            this.storageName = storageName;
+        public GetPivotTableFieldRequest( String name ,  String sheetName ,  Integer pivotTableIndex ,  Integer pivotFieldIndex ,  String pivotFieldType ,  String folder ,  String storageName ) {
+            this.name = name; 
+            this.sheetName = sheetName; 
+            this.pivotTableIndex = pivotTableIndex; 
+            this.pivotFieldIndex = pivotFieldIndex; 
+            this.pivotFieldType = pivotFieldType; 
+            this.folder = folder; 
+            this.storageName = storageName; 
         }   
 
         public String getName() {
@@ -177,7 +176,7 @@ public class GetPivotTableFieldRequest  implements IRequestModel {
                 final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
                 if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-                final String[] localVarContentTypes = { "application/json" };
+                final String[] localVarContentTypes = { "application/json" };        
                 final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
                 localVarHeaderParams.put("Content-Type", localVarContentType);
 

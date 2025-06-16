@@ -51,18 +51,17 @@ public class PostPivotTableFieldMoveToRequest  implements IRequestModel {
     private String storageName;
     
         public PostPivotTableFieldMoveToRequest()
-        {
-
+        {        
         }
-        public PostPivotTableFieldMoveToRequest(String name, String sheetName, Integer pivotTableIndex, Integer fieldIndex, String from, String to, String folder, String storageName) {
-            this.name = name;
-            this.sheetName = sheetName;
-            this.pivotTableIndex = pivotTableIndex;
-            this.fieldIndex = fieldIndex;
-            this.from = from;
-            this.to = to;
-            this.folder = folder;
-            this.storageName = storageName;
+        public PostPivotTableFieldMoveToRequest( String name ,  String sheetName ,  Integer pivotTableIndex ,  Integer fieldIndex ,  String from ,  String to ,  String folder ,  String storageName ) {
+            this.name = name; 
+            this.sheetName = sheetName; 
+            this.pivotTableIndex = pivotTableIndex; 
+            this.fieldIndex = fieldIndex; 
+            this.from = from; 
+            this.to = to; 
+            this.folder = folder; 
+            this.storageName = storageName; 
         }   
 
         public String getName() {
@@ -195,7 +194,7 @@ public class PostPivotTableFieldMoveToRequest  implements IRequestModel {
                 final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
                 if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-                final String[] localVarContentTypes = { "application/json" };
+                final String[] localVarContentTypes = { "application/json" };        
                 final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
                 localVarHeaderParams.put("Content-Type", localVarContentType);
 

@@ -50,16 +50,15 @@ public class PostAssembleRequest  implements IRequestModel {
      
                 private HashMap<String,File> file;
         public PostAssembleRequest()
-        {
-
+        {        
         }
-        public PostAssembleRequest(HashMap<String,File> file, String datasource, String outFormat, String password, Boolean checkExcelRestriction, String region) {
-            this.file = file;
-            this.datasource = datasource;
-            this.outFormat = outFormat;
-            this.password = password;
-            this.checkExcelRestriction = checkExcelRestriction;
-            this.region = region;
+        public PostAssembleRequest( HashMap<String,File> file  ,  String datasource ,  String outFormat ,  String password ,  Boolean checkExcelRestriction ,  String region ) {
+             this.file = file;  
+            this.datasource = datasource; 
+            this.outFormat = outFormat; 
+            this.password = password; 
+            this.checkExcelRestriction = checkExcelRestriction; 
+            this.region = region; 
         }   
 
         public String getDatasource() {
@@ -107,14 +106,13 @@ public class PostAssembleRequest  implements IRequestModel {
         }
 
     
-         
-                public HashMap<String,File> getFile() {
-                    return this.file;
-                }
+            public HashMap<String,File> getFile() {
+                return this.file;
+            }
 
-                public void setFile(HashMap<String,File> file) {
-                    this.file = file;
-                }
+            public void setFile(HashMap<String,File> file) {
+                this.file = file;
+            }
 
         
     @Override
@@ -152,11 +150,12 @@ public class PostAssembleRequest  implements IRequestModel {
             }
         }
                    
-              if (getFile() != null){
-                        for (String key : getFile().keySet()) {
-                            localVarFormParams.put(key,getFile().get(key));                
-                        }
-                    }      
+            if (getFile() != null){
+                for (String key : getFile().keySet()) {
+                    localVarFormParams.put(key,getFile().get(key));                
+                }
+            }    
+                  
         Object localVarPostBody = null;
                 final String[] localVarAccepts = {
                     "application/json"
@@ -164,10 +163,7 @@ public class PostAssembleRequest  implements IRequestModel {
                 final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
                 if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-                final String[] localVarContentTypes = { "application/json" };
-                if(getFile() != null){
-                   localVarContentTypes[0] =  "multipart/form-data";
-                }
+                final String[] localVarContentTypes = { "multipart/form-data"  };        
                 final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
                 localVarHeaderParams.put("Content-Type", localVarContentType);
 

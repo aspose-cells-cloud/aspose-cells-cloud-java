@@ -53,20 +53,19 @@ public class PutWorksheetFormatConditionRequest  implements IRequestModel {
     private String storageName;
     
         public PutWorksheetFormatConditionRequest()
-        {
-
+        {        
         }
-        public PutWorksheetFormatConditionRequest(String name, String sheetName, Integer index, String cellArea, String type, String operatorType, String formula1, String formula2, String folder, String storageName) {
-            this.name = name;
-            this.sheetName = sheetName;
-            this.index = index;
-            this.cellArea = cellArea;
-            this.type = type;
-            this.operatorType = operatorType;
-            this.formula1 = formula1;
-            this.formula2 = formula2;
-            this.folder = folder;
-            this.storageName = storageName;
+        public PutWorksheetFormatConditionRequest( String name ,  String sheetName ,  Integer index ,  String cellArea ,  String type ,  String operatorType ,  String formula1 ,  String formula2 ,  String folder ,  String storageName ) {
+            this.name = name; 
+            this.sheetName = sheetName; 
+            this.index = index; 
+            this.cellArea = cellArea; 
+            this.type = type; 
+            this.operatorType = operatorType; 
+            this.formula1 = formula1; 
+            this.formula2 = formula2; 
+            this.folder = folder; 
+            this.storageName = storageName; 
         }   
 
         public String getName() {
@@ -231,7 +230,7 @@ public class PutWorksheetFormatConditionRequest  implements IRequestModel {
                 final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
                 if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-                final String[] localVarContentTypes = { "application/json" };
+                final String[] localVarContentTypes = { "application/json" };        
                 final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
                 localVarHeaderParams.put("Content-Type", localVarContentType);
 

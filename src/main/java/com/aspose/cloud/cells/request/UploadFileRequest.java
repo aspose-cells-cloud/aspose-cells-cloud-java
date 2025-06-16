@@ -45,16 +45,15 @@ public class UploadFileRequest  implements IRequestModel {
     private String storageName;
     
      
-                private HashMap<String,File> uploadFiles;
-                private String uploadFile;
+     
+            private String uploadFiles;
         public UploadFileRequest()
-        {
-
+        {        
         }
-        public UploadFileRequest(HashMap<String,File> uploadFiles, String path, String storageName) {
-            this.uploadFiles = uploadFiles;
-            this.path = path;
-            this.storageName = storageName;
+        public UploadFileRequest( String  uploadFiles    ,  String path ,  String storageName ) {
+              this.uploadFiles  = uploadFiles;  
+            this.path = path; 
+            this.storageName = storageName; 
         }   
 
         public String getPath() {
@@ -74,33 +73,26 @@ public class UploadFileRequest  implements IRequestModel {
         }
 
     
-         
-                public HashMap<String,File> getUploadFiles() {
-                    return this.uploadFiles;
-                }
-
-                public void setUploadFiles(HashMap<String,File> uploadFiles) {
-                    this.uploadFiles = uploadFiles;
-                }
-         
-            public String getUploadFile() {
-                    return this.uploadFile;
-            }
-            public void setUploadFile(String uploadFile) {
-                this.uploadFile = uploadFile;
-            }
+     
+        public String getUploadFiles() {
+                return this.uploadFiles;
+        }
+        public void setUploadFiles(String uploadFiles) {
+            this.uploadFiles = uploadFiles;
+        }
         
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
           
-                if (  getUploadFiles() == null &&  getUploadFile() ==null ) {
+         
+                if ( getUploadFiles() == null ) {
                     throw new ApiException("Missing the required parameter 'UploadFiles' when calling UploadFile");
                 } 
 
                 if (getPath() == null) {
                     throw new ApiException("Missing the required parameter 'Path' when calling UploadFile");
                 }       
-        String localVarPath = "v3.0/cells/storage/file/{path}".replaceAll("\\{" + "path" + "\\}", apiClient.escapeString(path.toString()))   ;
+        String localVarPath = "v4.0/cells/storage/file/{path}".replaceAll("\\{" + "path" + "\\}", apiClient.escapeString(path.toString()))   ;
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -113,17 +105,11 @@ public class UploadFileRequest  implements IRequestModel {
             }
         }
                    
-              if (getUploadFile() != null && !getUploadFile().isEmpty()) {
-                     File fileToUpload = new File(getUploadFile());
-                     if (fileToUpload.exists()) {
-                         localVarFormParams.put(fileToUpload.getName(), fileToUpload);
-                     }
-                 }
-                if (getUploadFiles() != null){
-                        for (String key : getUploadFiles().keySet()) {
-                            localVarFormParams.put(key,getUploadFiles().get(key));                
-                        }
-                    }      
+            File fileToUpload = new File(getUploadFiles());
+            if (fileToUpload.exists()) {
+                    localVarFormParams.put(fileToUpload.getName(), fileToUpload);
+            }
+                  
         Object localVarPostBody = null;
                 final String[] localVarAccepts = {
                     "application/json"
@@ -131,10 +117,7 @@ public class UploadFileRequest  implements IRequestModel {
                 final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
                 if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-                final String[] localVarContentTypes = { "application/json" };
-                if(getUploadFiles() != null){
-                   localVarContentTypes[0] =  "multipart/form-data";
-                }
+                final String[] localVarContentTypes = { "multipart/form-data"  };        
                 final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
                 localVarHeaderParams.put("Content-Type", localVarContentType);
 

@@ -48,16 +48,15 @@ public class PostWorksheetListObjectSortTableRequest  implements IRequestModel {
     private String storageName;
     private DataSorter dataSorter;    
         public PostWorksheetListObjectSortTableRequest()
-        {
-
+        {        
         }
-        public PostWorksheetListObjectSortTableRequest(String name, String sheetName, Integer listObjectIndex, DataSorter dataSorter, String folder, String storageName) {
-            this.name = name;
-            this.sheetName = sheetName;
-            this.listObjectIndex = listObjectIndex;
-            this.dataSorter = dataSorter;
-            this.folder = folder;
-            this.storageName = storageName;
+        public PostWorksheetListObjectSortTableRequest( String name ,  String sheetName ,  Integer listObjectIndex ,  DataSorter dataSorter ,  String folder ,  String storageName ) {
+            this.name = name; 
+            this.sheetName = sheetName; 
+            this.listObjectIndex = listObjectIndex; 
+            this.dataSorter = dataSorter; 
+            this.folder = folder; 
+            this.storageName = storageName; 
         }   
 
         public String getName() {
@@ -154,7 +153,7 @@ public class PostWorksheetListObjectSortTableRequest  implements IRequestModel {
                 final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
                 if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-                final String[] localVarContentTypes = { "application/json" };
+                final String[] localVarContentTypes = { "application/json" };        
                 final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
                 localVarHeaderParams.put("Content-Type", localVarContentType);
 
