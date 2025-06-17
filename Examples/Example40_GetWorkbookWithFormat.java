@@ -10,9 +10,9 @@ import java.util.List;
 import java.io.File;
 import java.util.HashMap;
 
-public class ExampleGetWorkbook {
+public class ExampleExportSpreadsheetAsFormat {
     private  CellsApi api;
-    public ExampleGetWorkbook(){
+    public ExampleExportSpreadsheetAsFormat(){
         try {
             api = new CellsApi(
                 System.getenv("CellsCloudClientId"),
@@ -27,12 +27,11 @@ public class ExampleGetWorkbook {
 
     public void Run(){
         try{
-            String remoteFolder = "TestData/In";
-
             String localName = "Book1.xlsx";
             String remoteName = "Book1.xlsx";
+            String remoteFolder = "TestData/In";
 
-            String format = "csv";
+            String format = "pdf";
 
             UploadFileRequest  uploadFileRequest = new UploadFileRequest();
             uploadFileRequest.setPath( remoteFolder + "/" + remoteName );
@@ -42,14 +41,14 @@ public class ExampleGetWorkbook {
             uploadFileRequest.setUploadFiles(files);
             cellsApi.uploadFile(uploadFileRequest);
    
-            GetWorkbookRequest request = new GetWorkbookRequest();
+            ExportSpreadsheetAsFormatRequest request = new ExportSpreadsheetAsFormatRequest();
             request.setName(remoteName);
 
             request.setFormat(format);
 
             request.setFolder(remoteFolder);
 
-            this.api.getWorkbook(request);
+            this.api.exportSpreadsheetAsFormat(request);
 
         } catch (ApiException e) {
             // TODO Auto-generated catch block

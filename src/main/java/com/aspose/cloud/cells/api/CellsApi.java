@@ -1538,6 +1538,109 @@ public class CellsApi {
          }
 
 
+         @SuppressWarnings("rawtypes")
+         private com.squareup.okhttp.Call specValidateBeforeCall(SpecRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
+             return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
+         }
+         public  void  spec(SpecRequest request) throws ApiException,  IOException {
+             try {
+                 ApiResponse< Void > resp = specWithHttpInfo(request);
+                  return ;  
+             }
+             catch (ApiException ex) {
+                 if (ex.getCode() == apiClient.getNotAuthCode()) {
+                     apiClient.requestToken();
+                     ApiResponse< Void > resp = specWithHttpInfo(request);
+                      return ;        
+                 }
+                 throw ex;
+             }
+         }
+
+         private ApiResponse< Void > specWithHttpInfo(SpecRequest request) throws ApiException,  IOException {
+             com.squareup.okhttp.Call call =  specValidateBeforeCall(request, null, null);
+             return apiClient.execute(call);
+         }
+
+         public com.squareup.okhttp.Call  specAsync( SpecRequest request, final ApiCallback< Void > callback) throws ApiException,  IOException {
+
+             ProgressResponseBody.ProgressListener progressListener = null;
+             ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+             if (callback != null) {
+                 progressListener = new ProgressResponseBody.ProgressListener() {
+                     @Override
+                     public void update(long bytesRead, long contentLength, boolean done) {
+                         callback.onDownloadProgress(bytesRead, contentLength, done);
+                     }
+                 };
+
+                 progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                     @Override
+                     public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                         callback.onUploadProgress(bytesWritten, contentLength, done);
+                     }
+                 };
+             }
+
+             com.squareup.okhttp.Call call =  specValidateBeforeCall(request, progressListener, progressRequestListener);
+             Type localVarReturnType = new TypeToken< Void >(){}.getType();
+             apiClient.executeAsync(call, localVarReturnType, callback);
+             return call;
+         }
+
+
+         @SuppressWarnings("rawtypes")
+         private com.squareup.okhttp.Call codegenSpecValidateBeforeCall(CodegenSpecRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
+             return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
+         }
+         public  void  codegenSpec(CodegenSpecRequest request) throws ApiException,  IOException {
+             try {
+                 ApiResponse< Void > resp = codegenSpecWithHttpInfo(request);
+                  return ;  
+             }
+             catch (ApiException ex) {
+                 if (ex.getCode() == apiClient.getNotAuthCode()) {
+                     apiClient.requestToken();
+                     ApiResponse< Void > resp = codegenSpecWithHttpInfo(request);
+                      return ;        
+                 }
+                 throw ex;
+             }
+         }
+
+         private ApiResponse< Void > codegenSpecWithHttpInfo(CodegenSpecRequest request) throws ApiException,  IOException {
+             com.squareup.okhttp.Call call =  codegenSpecValidateBeforeCall(request, null, null);
+             return apiClient.execute(call);
+         }
+
+         public com.squareup.okhttp.Call  codegenSpecAsync( CodegenSpecRequest request, final ApiCallback< Void > callback) throws ApiException,  IOException {
+
+             ProgressResponseBody.ProgressListener progressListener = null;
+             ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+             if (callback != null) {
+                 progressListener = new ProgressResponseBody.ProgressListener() {
+                     @Override
+                     public void update(long bytesRead, long contentLength, boolean done) {
+                         callback.onDownloadProgress(bytesRead, contentLength, done);
+                     }
+                 };
+
+                 progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                     @Override
+                     public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                         callback.onUploadProgress(bytesWritten, contentLength, done);
+                     }
+                 };
+             }
+
+             com.squareup.okhttp.Call call =  codegenSpecValidateBeforeCall(request, progressListener, progressRequestListener);
+             Type localVarReturnType = new TypeToken< Void >(){}.getType();
+             apiClient.executeAsync(call, localVarReturnType, callback);
+             return call;
+         }
+
 
          @SuppressWarnings("rawtypes")
          private com.squareup.okhttp.Call deleteSpreadsheetBlankRowsValidateBeforeCall(DeleteSpreadsheetBlankRowsRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {

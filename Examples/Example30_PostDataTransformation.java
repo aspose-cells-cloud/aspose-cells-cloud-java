@@ -72,7 +72,7 @@ public class ExamplePostDataTransformation {
             dataSource.setDataSourceType("CloudFileSystem");
 
 
-            dataSource.setDataPath("BookTableL2W.xlsx");
+            dataSource.setDataPath("TestData/In/BookTableL2W.xlsx");
 
             dataQuery.setDataSource(dataSource);
 

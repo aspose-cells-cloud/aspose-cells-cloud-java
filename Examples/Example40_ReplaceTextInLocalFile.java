@@ -10,9 +10,9 @@ import java.util.List;
 import java.io.File;
 import java.util.HashMap;
 
-public class ExamplePostMerge {
+public class ExampleReplaceSpreadsheetContent {
     private  CellsApi api;
-    public ExamplePostMerge(){
+    public ExampleReplaceSpreadsheetContent(){
         try {
             api = new CellsApi(
                 System.getenv("CellsCloudClientId"),
@@ -27,25 +27,17 @@ public class ExamplePostMerge {
 
     public void Run(){
         try{
-            String assemblyTestXlsx = "assemblytest.xlsx";
-            String dataSourceXlsx = "datasource.xlsx";
-
-            String format = "csv";
-            Boolean mergeToOneSheet = true;
+            String bookTextXlsx = "BookText.xlsx";
 
    
-            PostMergeRequest request = new PostMergeRequest();
-            request.setOutFormat(format);
+            ReplaceSpreadsheetContentRequest request = new ReplaceSpreadsheetContentRequest();
+            request.setSpreadsheet("TestData/" + bookTextXlsx);
 
-            request.setMergeToOneSheet(mergeToOneSheet);
-             
-             
+            request.setSearchText("Bike");
 
-            HashMap<String,File> fileMap = new HashMap<String,File>(); 
-            fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
-            fileMap.put(dataSourceXlsx ,CellsApiUtil.GetFileHolder(dataSourceXlsx) ); 
-            request.setFile(fileMap);
-            this.api.postMerge(request);
+            request.setReplaceText("****");
+
+            this.api.replaceSpreadsheetContent(request);
 
         } catch (ApiException e) {
             // TODO Auto-generated catch block

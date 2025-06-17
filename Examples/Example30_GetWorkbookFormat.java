@@ -10,9 +10,9 @@ import java.util.List;
 import java.io.File;
 import java.util.HashMap;
 
-public class ExamplePostUpdateWordCase {
+public class ExampleGetWorkbook {
     private  CellsApi api;
-    public ExamplePostUpdateWordCase(){
+    public ExampleGetWorkbook(){
         try {
             api = new CellsApi(
                 System.getenv("CellsCloudClientId"),
@@ -27,10 +27,11 @@ public class ExamplePostUpdateWordCase {
 
     public void Run(){
         try{
+            String localName = "Book1.xlsx";
+            String remoteName = "Book1.xlsx";
             String remoteFolder = "TestData/In";
 
-            String localName = "BookText.xlsx";
-            String remoteName = "BookText.xlsx";
+            String format = "csv";
 
             UploadFileRequest  uploadFileRequest = new UploadFileRequest();
             uploadFileRequest.setPath( remoteFolder + "/" + remoteName );
@@ -40,28 +41,14 @@ public class ExamplePostUpdateWordCase {
             uploadFileRequest.setUploadFiles(files);
             cellsApi.uploadFile(uploadFileRequest);
    
-            PostUpdateWordCaseRequest request = new PostUpdateWordCaseRequest();
-            WordCaseOptions wordCaseOptions = new WordCaseOptions();
-            DataSource dataSource = new DataSource();
-            dataSource.setDataSourceType("CloudFileSystem");
+            GetWorkbookRequest request = new GetWorkbookRequest();
+            request.setName(remoteName);
 
+            request.setFormat(format);
 
-            dataSource.setDataPath("BookText.xlsx");
+            request.setFolder(remoteFolder);
 
-            wordCaseOptions.setDataSource(dataSource);
-
-
-            wordCaseOptions.setWordCaseType("None");
-
-
-            ScopeOptions scopeOptions = new ScopeOptions();
-            scopeOptions.setScope("EntireWorkbook");
-
-            wordCaseOptions.setScopeOptions(scopeOptions);
-
-            request.setWordCaseOptions(wordCaseOptions);
-
-            this.api.postUpdateWordCase(request);
+            this.api.getWorkbook(request);
 
         } catch (ApiException e) {
             // TODO Auto-generated catch block

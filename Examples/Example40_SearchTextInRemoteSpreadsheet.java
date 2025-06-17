@@ -10,9 +10,9 @@ import java.util.List;
 import java.io.File;
 import java.util.HashMap;
 
-public class ExamplePutWorksheetBackground {
+public class ExampleSearchContentInRemoteSpreadsheet {
     private  CellsApi api;
-    public ExamplePutWorksheetBackground(){
+    public ExampleSearchContentInRemoteSpreadsheet(){
         try {
             api = new CellsApi(
                 System.getenv("CellsCloudClientId"),
@@ -28,38 +28,26 @@ public class ExamplePutWorksheetBackground {
     public void Run(){
         try{
             String remoteFolder = "TestData/In";
-
-            String localName = "Book1.xlsx";
-            String waterMarkPNG = "WaterMark.png";
-            String remoteName = "Book1.xlsx";
+            String bookTextXlsx = "BookText.xlsx";
 
             UploadFileRequest  uploadFileRequest = new UploadFileRequest();
-            uploadFileRequest.setPath( remoteFolder + "/" + remoteName );
+            uploadFileRequest.setPath( remoteFolder + "/" + bookTextXlsx );
             uploadFileRequest.setStorageName( "");
             HashMap<String,File> files = new HashMap<String,File>();
-            files.put( localName , new File(localName ));
-            uploadFileRequest.setUploadFiles(files);
-            cellsApi.uploadFile(uploadFileRequest);
-            UploadFileRequest  uploadFileRequest = new UploadFileRequest();
-            uploadFileRequest.setPath( remoteFolder + "/WaterMark.png" );
-            uploadFileRequest.setStorageName( "");
-            HashMap<String,File> files = new HashMap<String,File>();
-            files.put( waterMarkPNG , new File(waterMarkPNG ));
+            files.put( bookTextXlsx , new File(bookTextXlsx ));
             uploadFileRequest.setUploadFiles(files);
             cellsApi.uploadFile(uploadFileRequest);
    
-            PutWorksheetBackgroundRequest request = new PutWorksheetBackgroundRequest();
-            request.setName(remoteName);
+            SearchContentInRemoteSpreadsheetRequest request = new SearchContentInRemoteSpreadsheetRequest();
+            request.setName(bookTextXlsx);
 
-            request.setSheetName("Sheet1");
+            request.setSearchText("Bike");
 
-            request.setPicPath(remoteFolder + "/WaterMark.png");
+            request.setIgnoringCase(false);
 
             request.setFolder(remoteFolder);
 
-            request.setStorageName("");
-
-            this.api.putWorksheetBackground(request);
+            this.api.searchContentInRemoteSpreadsheet(request);
 
         } catch (ApiException e) {
             // TODO Auto-generated catch block

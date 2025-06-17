@@ -10,9 +10,9 @@ import java.util.List;
 import java.io.File;
 import java.util.HashMap;
 
-public class ExamplePostTrimContent {
+public class ExampleSaveSpreadsheetAs {
     private  CellsApi api;
-    public ExamplePostTrimContent(){
+    public ExampleSaveSpreadsheetAs(){
         try {
             api = new CellsApi(
                 System.getenv("CellsCloudClientId"),
@@ -27,10 +27,12 @@ public class ExamplePostTrimContent {
 
     public void Run(){
         try{
+            String localName = "Book1.xlsx";
+            String remoteName = "Book1.xlsx";
             String remoteFolder = "TestData/In";
 
-            String localName = "BookText.xlsx";
-            String remoteName = "BookText.xlsx";
+            String format = "csv";
+            String newfilename = "OutResult/PostExcelSaveAs.csv";
 
             UploadFileRequest  uploadFileRequest = new UploadFileRequest();
             uploadFileRequest.setPath( remoteFolder + "/" + remoteName );
@@ -40,37 +42,19 @@ public class ExamplePostTrimContent {
             uploadFileRequest.setUploadFiles(files);
             cellsApi.uploadFile(uploadFileRequest);
    
-            PostTrimContentRequest request = new PostTrimContentRequest();
-            TrimContentOptions trimContentOptions = new TrimContentOptions();
-            DataSource dataSource = new DataSource();
-            dataSource.setDataSourceType("CloudFileSystem");
+            SaveSpreadsheetAsRequest request = new SaveSpreadsheetAsRequest();
+            request.setName(remoteName);
 
+            request.setFormat(format);
 
-            dataSource.setDataPath("BookText.xlsx");
+            SaveOptionsData saveOptionsData = new SaveOptionsData();
+            saveOptionsData.setFilename(newfilename);
 
-            trimContentOptions.setDataSource(dataSource);
+            request.setSaveOptionsData(saveOptionsData);
 
+            request.setFolder(remoteFolder);
 
-            trimContentOptions.setTrimLeading(true);
-
-
-            trimContentOptions.setTrimTrailing(true);
-
-
-            trimContentOptions.setTrimSpaceBetweenWordTo1(true);
-
-
-            trimContentOptions.setRemoveAllLineBreaks(true);
-
-
-            ScopeOptions scopeOptions = new ScopeOptions();
-            scopeOptions.setScope("EntireWorkbook");
-
-            trimContentOptions.setScopeOptions(scopeOptions);
-
-            request.setTrimContentOptions(trimContentOptions);
-
-            this.api.postTrimContent(request);
+            this.api.saveSpreadsheetAs(request);
 
         } catch (ApiException e) {
             // TODO Auto-generated catch block

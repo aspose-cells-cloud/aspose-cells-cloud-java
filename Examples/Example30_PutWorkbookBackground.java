@@ -57,6 +57,8 @@ public class ExamplePutWorkbookBackground {
 
             request.setStorageName("");
 
+            request.setFile("");
+
             this.api.putWorkbookBackground(request);
 
         } catch (ApiException e) {

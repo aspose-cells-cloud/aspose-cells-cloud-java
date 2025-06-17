@@ -27,20 +27,10 @@ public class ExamplePutConvertWorkbook {
 
     public void Run(){
         try{
-            String remoteFolder = "TestData/In";
-
             String localName = "Book1.xlsx";
-            String remoteName = "Book1.xlsx";
 
             String format = "csv";
 
-            UploadFileRequest  uploadFileRequest = new UploadFileRequest();
-            uploadFileRequest.setPath( remoteFolder + "/" + remoteName );
-            uploadFileRequest.setStorageName( "");
-            HashMap<String,File> files = new HashMap<String,File>();
-            files.put( localName , new File(localName ));
-            uploadFileRequest.setUploadFiles(files);
-            cellsApi.uploadFile(uploadFileRequest);
    
             PutConvertWorkbookRequest request = new PutConvertWorkbookRequest();
             request.setFormat(format);

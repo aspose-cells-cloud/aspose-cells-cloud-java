@@ -10,9 +10,9 @@ import java.util.List;
 import java.io.File;
 import java.util.HashMap;
 
-public class ExamplePostAutofitWorksheetRow {
+public class ExamplePutWorksheetBackground {
     private  CellsApi api;
-    public ExamplePostAutofitWorksheetRow(){
+    public ExamplePutWorksheetBackground(){
         try {
             api = new CellsApi(
                 System.getenv("CellsCloudClientId"),
@@ -30,6 +30,7 @@ public class ExamplePostAutofitWorksheetRow {
             String remoteFolder = "TestData/In";
 
             String localName = "Book1.xlsx";
+            String waterMarkPNG = "WaterMark.png";
             String remoteName = "Book1.xlsx";
 
             UploadFileRequest  uploadFileRequest = new UploadFileRequest();
@@ -39,23 +40,30 @@ public class ExamplePostAutofitWorksheetRow {
             files.put( localName , new File(localName ));
             uploadFileRequest.setUploadFiles(files);
             cellsApi.uploadFile(uploadFileRequest);
+            UploadFileRequest  uploadFileRequest = new UploadFileRequest();
+            uploadFileRequest.setPath( remoteFolder + "/WaterMark.png" );
+            uploadFileRequest.setStorageName( "");
+            HashMap<String,File> files = new HashMap<String,File>();
+            files.put( waterMarkPNG , new File(waterMarkPNG ));
+            uploadFileRequest.setUploadFiles(files);
+            cellsApi.uploadFile(uploadFileRequest);
    
-            PostAutofitWorksheetRowRequest request = new PostAutofitWorksheetRowRequest();
+            PutWorksheetBackgroundRequest request = new PutWorksheetBackgroundRequest();
             request.setName(remoteName);
 
             request.setSheetName("Sheet1");
 
-            request.setRowIndex(1);
-
-            request.setFirstColumn(1);
-
-            request.setLastColumn(8);
+            request.setPicPath(remoteFolder + "/WaterMark.png");
 
             request.setFolder(remoteFolder);
 
             request.setStorageName("");
 
-            this.api.postAutofitWorksheetRow(request);
+            request.setStorageName("");
+
+            request.setFile("");
+
+            this.api.putWorksheetBackground(request);
 
         } catch (ApiException e) {
             // TODO Auto-generated catch block

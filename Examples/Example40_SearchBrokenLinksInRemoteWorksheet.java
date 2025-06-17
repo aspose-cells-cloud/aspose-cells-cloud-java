@@ -10,9 +10,9 @@ import java.util.List;
 import java.io.File;
 import java.util.HashMap;
 
-public class ExamplePostWorkbookSaveAs {
+public class ExampleSearchBrokenLinksInRemoteWorksheet {
     private  CellsApi api;
-    public ExamplePostWorkbookSaveAs(){
+    public ExampleSearchBrokenLinksInRemoteWorksheet(){
         try {
             api = new CellsApi(
                 System.getenv("CellsCloudClientId"),
@@ -28,34 +28,24 @@ public class ExamplePostWorkbookSaveAs {
     public void Run(){
         try{
             String remoteFolder = "TestData/In";
-
-            String localName = "Book1.xlsx";
-            String remoteName = "Book1.xlsx";
-
-            String format = "csv";
-            String newfilename = "OutResult/PostExcelSaveAs.csv";
+            String bookFormulaXlsx = "BookFormula.xlsx";
 
             UploadFileRequest  uploadFileRequest = new UploadFileRequest();
-            uploadFileRequest.setPath( remoteFolder + "/" + remoteName );
+            uploadFileRequest.setPath( remoteFolder + "/" + bookFormulaXlsx );
             uploadFileRequest.setStorageName( "");
             HashMap<String,File> files = new HashMap<String,File>();
-            files.put( localName , new File(localName ));
+            files.put( bookFormulaXlsx , new File(bookFormulaXlsx ));
             uploadFileRequest.setUploadFiles(files);
             cellsApi.uploadFile(uploadFileRequest);
    
-            PostWorkbookSaveAsRequest request = new PostWorkbookSaveAsRequest();
-            request.setName(remoteName);
+            SearchBrokenLinksInRemoteWorksheetRequest request = new SearchBrokenLinksInRemoteWorksheetRequest();
+            request.setName(bookFormulaXlsx);
 
-            request.setNewfilename(newfilename);
-
-            SaveOptions saveOptions = new SaveOptions();
-            saveOptions.setSaveFormat(format);
-
-            request.setSaveOptions(saveOptions);
+            request.setWorksheet("Sheet1");
 
             request.setFolder(remoteFolder);
 
-            this.api.postWorkbookSaveAs(request);
+            this.api.searchBrokenLinksInRemoteWorksheet(request);
 
         } catch (ApiException e) {
             // TODO Auto-generated catch block
