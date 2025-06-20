@@ -1,4 +1,4 @@
-![](https://img.shields.io/badge/REST%20API-v3.0-lightgrey) [![GitHub license](https://img.shields.io/github/license/aspose-cells-cloud/aspose-cells-cloud-java)](https://github.com/aspose-cells-cloud/aspose-cells-cloud-java/blob/master/LICENSE) ![GitHub commits since latest release (by date)](https://img.shields.io/github/commits-since/aspose-cells-cloud/aspose-cells-cloud-java/25.6.0)
+![](https://img.shields.io/badge/aspose.cells%20Cloud%20SDK%20for%20Java-v25.6.0-green?style=for-the-badge&logo=java)[![Product Page](https://img.shields.io/badge/Product-0288d1?style=for-the-badge&logo=Google-Chrome&logoColor=white)](https://products.aspose.cloud/cells/java/) [![Documentation](https://img.shields.io/badge/Documentation-388e3c?style=for-the-badge&logo=Hugo&logoColor=white)](https://docs.aspose.cloud/cells/) [![API Ref](https://img.shields.io/badge/Reference-f39c12?style=for-the-badge&logo=html5&logoColor=white)](https://reference.aspose.cloud/cells/) [![Examples](https://img.shields.io/badge/Examples-1565c0?style=for-the-badge&logo=Github&logoColor=white)](https://github.com/aspose-cells-cloud/aspose-cells-cloud-java/tree/main/examples) [![Blog](https://img.shields.io/badge/Blog-d32f2f?style=for-the-badge&logo=WordPress&logoColor=white)](https://blog.aspose.cloud/categories/aspose.cells-cloud-product-family/) [![Support](https://img.shields.io/badge/Support-7b1fa2?style=for-the-badge&logo=Discourse&logoColor=white)](https://forum.aspose.cloud/c/cells/7) [![License](https://img.shields.io/github/license/aspose-cells-cloud/aspose-cells-cloud-java?style=for-the-badge&logo=rocket&logoColor=white)](https://github.com/aspose-cells-cloud/aspose-cells-cloud-java/blob/master/LICENSE)
 
 Aspose.Cells Cloud for Go enables you to handle various aspects of Excel files, including cell data, styles, formulas, charts, pivot tables, data validation, comments, drawing objects, images, hyperlinks, and so on. Additionally, it supports operations such as splitting, merging, repairing, and converting to other compatible file formats.
 
@@ -19,16 +19,18 @@ Enhance your Go applications with the [Aspose.Cells Cloud](https://products.aspo
 - Import/Export: Facilitates importing data from various sources into spreadsheets and exporting spreadsheet data to other formats.
 - Security Management: Offers a range of security features like data encryption, access control, and permission management to safeguard the security and integrity of spreadsheet data.
 
-## Feature & Enhancements in Version 25.6.0
+
+## Feature & Enhancements in Version v25.6.0
 
 Full list of issues covering all changes in this release:
 
--  Optimize convert range to image.
--  Unable to convert chart to svg format image
--  Support delete blank rows, columns, and worksheets.
--  Optimize search context for remote spreadsheet features by splitting them into independent APIs, each dedicated to a specific operational area.
--  Optimize search broken links for remote spreadsheet features by splitting them into independent APIs, each dedicated to a specific operational area.
--  Optimize replace context for remote spreadsheet features by splitting them into independent APIs, each dedicated to a specific operational area.
+|**Summary**| **Category** |
+| :- |:-------------|
+| Optimize the upload file API  | Improvement |
+| Support delete blank rows, columns, and worksheets. | New Feature |
+| Optimize search context for remote spreadsheet features by splitting them into independent APIs, each dedicated to a specific operational area. | New Feature |
+| Optimize search broken links for remote spreadsheet features by splitting them into independent APIs, each dedicated to a specific operational area. | New Feature |
+| Optimize replace context for remote spreadsheet features by splitting them into independent APIs, each dedicated to a specific operational area. | New Feature |
 
 ## Support file format
 
