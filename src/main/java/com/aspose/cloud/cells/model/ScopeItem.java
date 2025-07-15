@@ -37,21 +37,21 @@ import java.time.OffsetDateTime;
 
 
 public class ScopeItem {
-        @SerializedName("WorksheetName")
-        private String worksheetName ;
+        @SerializedName("Worksheet")
+        private String worksheet ;
 
-        public  ScopeItem  worksheetName(String  worksheetName) {
-            this.worksheetName =  worksheetName;
+        public  ScopeItem  worksheet(String  worksheet) {
+            this.worksheet =  worksheet;
             return this;
         }
 
         @ApiModelProperty(value = "")
-        public String getWorksheetName() {
-            return worksheetName;
+        public String getWorksheet() {
+            return worksheet;
         }
 
-        public void setWorksheetName(String worksheetName) {
-            this.worksheetName = worksheetName;
+        public void setWorksheet(String worksheet) {
+            this.worksheet = worksheet;
         }
 
         @SerializedName("Ranges")
@@ -82,19 +82,19 @@ public class ScopeItem {
 
             ScopeItem scopeItem = (ScopeItem) o;
             return
-                Objects.equals(this.worksheetName, scopeItem.worksheetName) &&
+                Objects.equals(this.worksheet, scopeItem.worksheet) &&
                 Objects.equals(this.ranges, scopeItem.ranges);
       }
 
       @Override
       public int hashCode() {
-        return Objects.hash(worksheetName, ranges);
+        return Objects.hash(worksheet, ranges);
       }
         @Override
         public String toString() {
             StringBuilder sb = new StringBuilder();
             sb.append("class ScopeItem {\n");
-            sb.append("    worksheetName: ").append(toIndentedString(getWorksheetName())).append("\n");
+            sb.append("    worksheet: ").append(toIndentedString(getWorksheet())).append("\n");
             sb.append("    ranges: ").append(toIndentedString(getRanges())).append("\n");
             sb.append("}");
             return sb.toString();

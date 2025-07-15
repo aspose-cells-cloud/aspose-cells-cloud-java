@@ -71,55 +71,21 @@ public class RemoveDuplicatesOptions  extends  BaseOperateOptions {
             this.fileInfo = fileInfo;
         }
 
-        @SerializedName("Worksheet")
-        private String worksheet ;
+        @SerializedName("ScopeOptions")
+        private ScopeOptions scopeOptions ;
 
-        public  RemoveDuplicatesOptions  worksheet(String  worksheet) {
-            this.worksheet =  worksheet;
+        public  RemoveDuplicatesOptions  scopeOptions(ScopeOptions  scopeOptions) {
+            this.scopeOptions =  scopeOptions;
             return this;
         }
 
         @ApiModelProperty(value = "")
-        public String getWorksheet() {
-            return worksheet;
+        public ScopeOptions getScopeOptions() {
+            return scopeOptions;
         }
 
-        public void setWorksheet(String worksheet) {
-            this.worksheet = worksheet;
-        }
-
-        @SerializedName("RemoveDuplicatesArea")
-        private String removeDuplicatesArea ;
-
-        public  RemoveDuplicatesOptions  removeDuplicatesArea(String  removeDuplicatesArea) {
-            this.removeDuplicatesArea =  removeDuplicatesArea;
-            return this;
-        }
-
-        @ApiModelProperty(value = "")
-        public String getRemoveDuplicatesArea() {
-            return removeDuplicatesArea;
-        }
-
-        public void setRemoveDuplicatesArea(String removeDuplicatesArea) {
-            this.removeDuplicatesArea = removeDuplicatesArea;
-        }
-
-        @SerializedName("RemoveDuplicatesAreaValue")
-        private String removeDuplicatesAreaValue ;
-
-        public  RemoveDuplicatesOptions  removeDuplicatesAreaValue(String  removeDuplicatesAreaValue) {
-            this.removeDuplicatesAreaValue =  removeDuplicatesAreaValue;
-            return this;
-        }
-
-        @ApiModelProperty(value = "")
-        public String getRemoveDuplicatesAreaValue() {
-            return removeDuplicatesAreaValue;
-        }
-
-        public void setRemoveDuplicatesAreaValue(String removeDuplicatesAreaValue) {
-            this.removeDuplicatesAreaValue = removeDuplicatesAreaValue;
+        public void setScopeOptions(ScopeOptions scopeOptions) {
+            this.scopeOptions = scopeOptions;
         }
 
         @Override
@@ -135,15 +101,13 @@ public class RemoveDuplicatesOptions  extends  BaseOperateOptions {
             return
                 Objects.equals(this.dataSource, removeDuplicatesOptions.dataSource) &&
                 Objects.equals(this.fileInfo, removeDuplicatesOptions.fileInfo) &&
-                Objects.equals(this.worksheet, removeDuplicatesOptions.worksheet) &&
-                Objects.equals(this.removeDuplicatesArea, removeDuplicatesOptions.removeDuplicatesArea) &&
-                Objects.equals(this.removeDuplicatesAreaValue, removeDuplicatesOptions.removeDuplicatesAreaValue) &&
+                Objects.equals(this.scopeOptions, removeDuplicatesOptions.scopeOptions) &&
                 super.equals(o);
       }
 
       @Override
       public int hashCode() {
-        return Objects.hash(dataSource, fileInfo, worksheet, removeDuplicatesArea, removeDuplicatesAreaValue, super.hashCode());
+        return Objects.hash(dataSource, fileInfo, scopeOptions, super.hashCode());
       }
         @Override
         public String toString() {
@@ -152,9 +116,7 @@ public class RemoveDuplicatesOptions  extends  BaseOperateOptions {
             sb.append("    name: ").append(toIndentedString(getName())).append("\n");
             sb.append("    dataSource: ").append(toIndentedString(getDataSource())).append("\n");
             sb.append("    fileInfo: ").append(toIndentedString(getFileInfo())).append("\n");
-            sb.append("    worksheet: ").append(toIndentedString(getWorksheet())).append("\n");
-            sb.append("    removeDuplicatesArea: ").append(toIndentedString(getRemoveDuplicatesArea())).append("\n");
-            sb.append("    removeDuplicatesAreaValue: ").append(toIndentedString(getRemoveDuplicatesAreaValue())).append("\n");
+            sb.append("    scopeOptions: ").append(toIndentedString(getScopeOptions())).append("\n");
             sb.append("}");
             return sb.toString();
         }

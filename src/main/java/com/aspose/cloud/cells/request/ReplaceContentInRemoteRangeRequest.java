@@ -168,7 +168,7 @@ public class ReplaceContentInRemoteRangeRequest  implements IRequestModel {
                 if (getCellArea() == null) {
                     throw new ApiException("Missing the required parameter 'CellArea' when calling ReplaceContentInRemoteRange");
                 }       
-        String localVarPath = "v4.0/cells/{name}/worksheets/{worksheet}/ranges/{cellarea}/replace/content".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
+        String localVarPath = "v4.0/cells/{name}/worksheets/{worksheet}/ranges/{cellArea}/replace/content".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
     .replaceAll("\\{" + "worksheet" + "\\}", apiClient.escapeString(worksheet.toString())) 
     .replaceAll("\\{" + "cellArea" + "\\}", apiClient.escapeString(cellArea.toString()))   ;
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();

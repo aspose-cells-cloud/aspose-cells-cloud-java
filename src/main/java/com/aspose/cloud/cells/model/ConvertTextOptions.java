@@ -71,38 +71,21 @@ public class ConvertTextOptions  extends  BaseOperateOptions {
             this.fileInfo = fileInfo;
         }
 
-        @SerializedName("Worksheet")
-        private String worksheet ;
+        @SerializedName("ScopeOptions")
+        private ScopeOptions scopeOptions ;
 
-        public  ConvertTextOptions  worksheet(String  worksheet) {
-            this.worksheet =  worksheet;
+        public  ConvertTextOptions  scopeOptions(ScopeOptions  scopeOptions) {
+            this.scopeOptions =  scopeOptions;
             return this;
         }
 
         @ApiModelProperty(value = "")
-        public String getWorksheet() {
-            return worksheet;
+        public ScopeOptions getScopeOptions() {
+            return scopeOptions;
         }
 
-        public void setWorksheet(String worksheet) {
-            this.worksheet = worksheet;
-        }
-
-        @SerializedName("Range")
-        private String range ;
-
-        public  ConvertTextOptions  range(String  range) {
-            this.range =  range;
-            return this;
-        }
-
-        @ApiModelProperty(value = "")
-        public String getRange() {
-            return range;
-        }
-
-        public void setRange(String range) {
-            this.range = range;
+        public void setScopeOptions(ScopeOptions scopeOptions) {
+            this.scopeOptions = scopeOptions;
         }
 
         @SerializedName("ConvertTextType")
@@ -169,8 +152,7 @@ public class ConvertTextOptions  extends  BaseOperateOptions {
             return
                 Objects.equals(this.dataSource, convertTextOptions.dataSource) &&
                 Objects.equals(this.fileInfo, convertTextOptions.fileInfo) &&
-                Objects.equals(this.worksheet, convertTextOptions.worksheet) &&
-                Objects.equals(this.range, convertTextOptions.range) &&
+                Objects.equals(this.scopeOptions, convertTextOptions.scopeOptions) &&
                 Objects.equals(this.convertTextType, convertTextOptions.convertTextType) &&
                 Objects.equals(this.sourceCharacters, convertTextOptions.sourceCharacters) &&
                 Objects.equals(this.targetCharacters, convertTextOptions.targetCharacters) &&
@@ -179,7 +161,7 @@ public class ConvertTextOptions  extends  BaseOperateOptions {
 
       @Override
       public int hashCode() {
-        return Objects.hash(dataSource, fileInfo, worksheet, range, convertTextType, sourceCharacters, targetCharacters, super.hashCode());
+        return Objects.hash(dataSource, fileInfo, scopeOptions, convertTextType, sourceCharacters, targetCharacters, super.hashCode());
       }
         @Override
         public String toString() {
@@ -188,8 +170,7 @@ public class ConvertTextOptions  extends  BaseOperateOptions {
             sb.append("    name: ").append(toIndentedString(getName())).append("\n");
             sb.append("    dataSource: ").append(toIndentedString(getDataSource())).append("\n");
             sb.append("    fileInfo: ").append(toIndentedString(getFileInfo())).append("\n");
-            sb.append("    worksheet: ").append(toIndentedString(getWorksheet())).append("\n");
-            sb.append("    range: ").append(toIndentedString(getRange())).append("\n");
+            sb.append("    scopeOptions: ").append(toIndentedString(getScopeOptions())).append("\n");
             sb.append("    convertTextType: ").append(toIndentedString(getConvertTextType())).append("\n");
             sb.append("    sourceCharacters: ").append(toIndentedString(getSourceCharacters())).append("\n");
             sb.append("    targetCharacters: ").append(toIndentedString(getTargetCharacters())).append("\n");

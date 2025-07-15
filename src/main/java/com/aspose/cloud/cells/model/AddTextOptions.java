@@ -71,6 +71,23 @@ public class AddTextOptions  extends  BaseOperateOptions {
             this.fileInfo = fileInfo;
         }
 
+        @SerializedName("ScopeOptions")
+        private ScopeOptions scopeOptions ;
+
+        public  AddTextOptions  scopeOptions(ScopeOptions  scopeOptions) {
+            this.scopeOptions =  scopeOptions;
+            return this;
+        }
+
+        @ApiModelProperty(value = "")
+        public ScopeOptions getScopeOptions() {
+            return scopeOptions;
+        }
+
+        public void setScopeOptions(ScopeOptions scopeOptions) {
+            this.scopeOptions = scopeOptions;
+        }
+
         @SerializedName("Text")
         private String text ;
 
@@ -86,40 +103,6 @@ public class AddTextOptions  extends  BaseOperateOptions {
 
         public void setText(String text) {
             this.text = text;
-        }
-
-        @SerializedName("Worksheet")
-        private String worksheet ;
-
-        public  AddTextOptions  worksheet(String  worksheet) {
-            this.worksheet =  worksheet;
-            return this;
-        }
-
-        @ApiModelProperty(value = "")
-        public String getWorksheet() {
-            return worksheet;
-        }
-
-        public void setWorksheet(String worksheet) {
-            this.worksheet = worksheet;
-        }
-
-        @SerializedName("Range")
-        private String range ;
-
-        public  AddTextOptions  range(String  range) {
-            this.range =  range;
-            return this;
-        }
-
-        @ApiModelProperty(value = "")
-        public String getRange() {
-            return range;
-        }
-
-        public void setRange(String range) {
-            this.range = range;
         }
 
         @SerializedName("SelectPoistion")
@@ -186,9 +169,8 @@ public class AddTextOptions  extends  BaseOperateOptions {
             return
                 Objects.equals(this.dataSource, addTextOptions.dataSource) &&
                 Objects.equals(this.fileInfo, addTextOptions.fileInfo) &&
+                Objects.equals(this.scopeOptions, addTextOptions.scopeOptions) &&
                 Objects.equals(this.text, addTextOptions.text) &&
-                Objects.equals(this.worksheet, addTextOptions.worksheet) &&
-                Objects.equals(this.range, addTextOptions.range) &&
                 Objects.equals(this.selectPoistion, addTextOptions.selectPoistion) &&
                 Objects.equals(this.selectText, addTextOptions.selectText) &&
                 Objects.equals(this.skipEmptyCells, addTextOptions.skipEmptyCells) &&
@@ -197,7 +179,7 @@ public class AddTextOptions  extends  BaseOperateOptions {
 
       @Override
       public int hashCode() {
-        return Objects.hash(dataSource, fileInfo, text, worksheet, range, selectPoistion, selectText, skipEmptyCells, super.hashCode());
+        return Objects.hash(dataSource, fileInfo, scopeOptions, text, selectPoistion, selectText, skipEmptyCells, super.hashCode());
       }
         @Override
         public String toString() {
@@ -206,9 +188,8 @@ public class AddTextOptions  extends  BaseOperateOptions {
             sb.append("    name: ").append(toIndentedString(getName())).append("\n");
             sb.append("    dataSource: ").append(toIndentedString(getDataSource())).append("\n");
             sb.append("    fileInfo: ").append(toIndentedString(getFileInfo())).append("\n");
+            sb.append("    scopeOptions: ").append(toIndentedString(getScopeOptions())).append("\n");
             sb.append("    text: ").append(toIndentedString(getText())).append("\n");
-            sb.append("    worksheet: ").append(toIndentedString(getWorksheet())).append("\n");
-            sb.append("    range: ").append(toIndentedString(getRange())).append("\n");
             sb.append("    selectPoistion: ").append(toIndentedString(getSelectPoistion())).append("\n");
             sb.append("    selectText: ").append(toIndentedString(getSelectText())).append("\n");
             sb.append("    skipEmptyCells: ").append(toIndentedString(getSkipEmptyCells())).append("\n");

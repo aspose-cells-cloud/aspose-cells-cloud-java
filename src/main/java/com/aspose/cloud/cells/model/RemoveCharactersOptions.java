@@ -71,38 +71,21 @@ public class RemoveCharactersOptions  extends  BaseOperateOptions {
             this.fileInfo = fileInfo;
         }
 
-        @SerializedName("Worksheet")
-        private String worksheet ;
+        @SerializedName("ScopeOptions")
+        private ScopeOptions scopeOptions ;
 
-        public  RemoveCharactersOptions  worksheet(String  worksheet) {
-            this.worksheet =  worksheet;
+        public  RemoveCharactersOptions  scopeOptions(ScopeOptions  scopeOptions) {
+            this.scopeOptions =  scopeOptions;
             return this;
         }
 
         @ApiModelProperty(value = "")
-        public String getWorksheet() {
-            return worksheet;
+        public ScopeOptions getScopeOptions() {
+            return scopeOptions;
         }
 
-        public void setWorksheet(String worksheet) {
-            this.worksheet = worksheet;
-        }
-
-        @SerializedName("Range")
-        private String range ;
-
-        public  RemoveCharactersOptions  range(String  range) {
-            this.range =  range;
-            return this;
-        }
-
-        @ApiModelProperty(value = "")
-        public String getRange() {
-            return range;
-        }
-
-        public void setRange(String range) {
-            this.range = range;
+        public void setScopeOptions(ScopeOptions scopeOptions) {
+            this.scopeOptions = scopeOptions;
         }
 
         @SerializedName("RemoveCharactersByCharacter")
@@ -152,8 +135,7 @@ public class RemoveCharactersOptions  extends  BaseOperateOptions {
             return
                 Objects.equals(this.dataSource, removeCharactersOptions.dataSource) &&
                 Objects.equals(this.fileInfo, removeCharactersOptions.fileInfo) &&
-                Objects.equals(this.worksheet, removeCharactersOptions.worksheet) &&
-                Objects.equals(this.range, removeCharactersOptions.range) &&
+                Objects.equals(this.scopeOptions, removeCharactersOptions.scopeOptions) &&
                 Objects.equals(this.removeCharactersByCharacter, removeCharactersOptions.removeCharactersByCharacter) &&
                 Objects.equals(this.removeCharactersByPosition, removeCharactersOptions.removeCharactersByPosition) &&
                 super.equals(o);
@@ -161,7 +143,7 @@ public class RemoveCharactersOptions  extends  BaseOperateOptions {
 
       @Override
       public int hashCode() {
-        return Objects.hash(dataSource, fileInfo, worksheet, range, removeCharactersByCharacter, removeCharactersByPosition, super.hashCode());
+        return Objects.hash(dataSource, fileInfo, scopeOptions, removeCharactersByCharacter, removeCharactersByPosition, super.hashCode());
       }
         @Override
         public String toString() {
@@ -170,8 +152,7 @@ public class RemoveCharactersOptions  extends  BaseOperateOptions {
             sb.append("    name: ").append(toIndentedString(getName())).append("\n");
             sb.append("    dataSource: ").append(toIndentedString(getDataSource())).append("\n");
             sb.append("    fileInfo: ").append(toIndentedString(getFileInfo())).append("\n");
-            sb.append("    worksheet: ").append(toIndentedString(getWorksheet())).append("\n");
-            sb.append("    range: ").append(toIndentedString(getRange())).append("\n");
+            sb.append("    scopeOptions: ").append(toIndentedString(getScopeOptions())).append("\n");
             sb.append("    removeCharactersByCharacter: ").append(toIndentedString(getRemoveCharactersByCharacter())).append("\n");
             sb.append("    removeCharactersByPosition: ").append(toIndentedString(getRemoveCharactersByPosition())).append("\n");
             sb.append("}");
