@@ -46,7 +46,7 @@ public class UploadFileRequest  implements IRequestModel {
     
      
      
-            private String uploadFiles;
+     private String uploadFiles;            
         public UploadFileRequest()
         {        
         }
@@ -74,12 +74,13 @@ public class UploadFileRequest  implements IRequestModel {
 
     
      
-        public String getUploadFiles() {
-                return this.uploadFiles;
-        }
-        public void setUploadFiles(String uploadFiles) {
-            this.uploadFiles = uploadFiles;
-        }
+            public String getUploadFiles() {
+                    return this.uploadFiles;
+            }
+            public void setUploadFiles(String uploadFiles) {
+                this.uploadFiles = uploadFiles;
+            }
+         
         
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
@@ -105,10 +106,10 @@ public class UploadFileRequest  implements IRequestModel {
             }
         }
                    
-            File fileToUpload = new File(getUploadFiles());
-            if (fileToUpload.exists()) {
-                    localVarFormParams.put(fileToUpload.getName(), fileToUpload);
-            }
+            File UploadFilesToUpload = new File(getUploadFiles());
+            if (UploadFilesToUpload.exists()) {
+                    localVarFormParams.put(UploadFilesToUpload.getName(), UploadFilesToUpload);
+            }     
                   
         Object localVarPostBody = null;
                 final String[] localVarAccepts = {

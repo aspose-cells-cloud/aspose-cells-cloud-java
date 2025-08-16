@@ -53,7 +53,7 @@ public class ConvertRangeToImageRequest  implements IRequestModel {
     
      
      
-            private String spreadsheet;
+     private String spreadsheet;            
         public ConvertRangeToImageRequest()
         {        
         }
@@ -152,12 +152,13 @@ public class ConvertRangeToImageRequest  implements IRequestModel {
 
     
      
-        public String getSpreadsheet() {
-                return this.spreadsheet;
-        }
-        public void setSpreadsheet(String spreadsheet) {
-            this.spreadsheet = spreadsheet;
-        }
+            public String getSpreadsheet() {
+                    return this.spreadsheet;
+            }
+            public void setSpreadsheet(String spreadsheet) {
+                this.spreadsheet = spreadsheet;
+            }
+         
         
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
@@ -215,10 +216,10 @@ public class ConvertRangeToImageRequest  implements IRequestModel {
             }
         }
                    
-            File fileToUpload = new File(getSpreadsheet());
-            if (fileToUpload.exists()) {
-                    localVarFormParams.put(fileToUpload.getName(), fileToUpload);
-            }
+            File SpreadsheetToUpload = new File(getSpreadsheet());
+            if (SpreadsheetToUpload.exists()) {
+                    localVarFormParams.put(SpreadsheetToUpload.getName(), SpreadsheetToUpload);
+            }     
                   
         Object localVarPostBody = null;
                 final String[] localVarAccepts = {
