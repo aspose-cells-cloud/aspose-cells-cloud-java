@@ -41,23 +41,23 @@ public class CodegenSpecRequest  implements IRequestModel {
     public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
         this.extendQueryParameterMap = extendQueryParameterMap;
     }
-    private String regoin;
+    private String region;
     private String password;
     
         public CodegenSpecRequest()
         {        
         }
-        public CodegenSpecRequest( String regoin ,  String password ) {
-            this.regoin = regoin; 
+        public CodegenSpecRequest( String region ,  String password ) {
+            this.region = region; 
             this.password = password; 
         }   
 
-        public String getRegoin() {
-            return this.regoin;
+        public String getRegion() {
+            return this.region;
         }
 
-        public void setRegoin(String regoin) {
-            this.regoin = regoin;
+        public void setRegion(String region) {
+            this.region = region;
         }
 
 
@@ -77,8 +77,8 @@ public class CodegenSpecRequest  implements IRequestModel {
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
-            if (getRegoin() != null){
-                localVarQueryParams.addAll(apiClient.parameterToPairs("", "regoin", getRegoin()));
+            if (getRegion() != null){
+                localVarQueryParams.addAll(apiClient.parameterToPairs("", "region", getRegion()));
             } 
             if (getPassword() != null){
                 localVarQueryParams.addAll(apiClient.parameterToPairs("", "password", getPassword()));

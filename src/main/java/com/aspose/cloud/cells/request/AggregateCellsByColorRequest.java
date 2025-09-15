@@ -45,7 +45,7 @@ public class AggregateCellsByColorRequest  implements IRequestModel {
     private String range;
     private String operation;
     private String colorPosition;
-    private String regoin;
+    private String region;
     private String password;
     
      
@@ -54,13 +54,13 @@ public class AggregateCellsByColorRequest  implements IRequestModel {
         public AggregateCellsByColorRequest()
         {        
         }
-        public AggregateCellsByColorRequest( String  spreadsheet    ,  String worksheet ,  String range ,  String operation ,  String colorPosition ,  String regoin ,  String password ) {
+        public AggregateCellsByColorRequest( String  spreadsheet    ,  String worksheet ,  String range ,  String operation ,  String colorPosition ,  String region ,  String password ) {
               this.spreadsheet  = spreadsheet;  
             this.worksheet = worksheet; 
             this.range = range; 
             this.operation = operation; 
             this.colorPosition = colorPosition; 
-            this.regoin = regoin; 
+            this.region = region; 
             this.password = password; 
         }   
 
@@ -100,12 +100,12 @@ public class AggregateCellsByColorRequest  implements IRequestModel {
         }
 
 
-        public String getRegoin() {
-            return this.regoin;
+        public String getRegion() {
+            return this.region;
         }
 
-        public void setRegoin(String regoin) {
-            this.regoin = regoin;
+        public void setRegion(String region) {
+            this.region = region;
         }
 
 
@@ -150,8 +150,8 @@ public class AggregateCellsByColorRequest  implements IRequestModel {
             if (getColorPosition() != null){
                 localVarQueryParams.addAll(apiClient.parameterToPairs("", "colorPosition", getColorPosition()));
             } 
-            if (getRegoin() != null){
-                localVarQueryParams.addAll(apiClient.parameterToPairs("", "regoin", getRegoin()));
+            if (getRegion() != null){
+                localVarQueryParams.addAll(apiClient.parameterToPairs("", "region", getRegion()));
             } 
             if (getPassword() != null){
                 localVarQueryParams.addAll(apiClient.parameterToPairs("", "password", getPassword()));

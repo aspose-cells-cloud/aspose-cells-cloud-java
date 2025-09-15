@@ -1,6 +1,6 @@
 /*
  * --------------------------------------------------------------------------------
- * <copyright company="Aspose" file="BrokenLinksReponse.java">
+ * <copyright company="Aspose" file="BrokenLinksResponse.java">
  *   Copyright (c) 2025 Aspose.Cells Cloud
  * </copyright>
  * <summary>
@@ -36,11 +36,11 @@ import com.google.gson.annotations.SerializedName;
 import java.time.OffsetDateTime;
 
 
-public class BrokenLinksReponse  extends  CellsCloudResponse {
+public class BrokenLinksResponse  extends  CellsCloudResponse {
         @SerializedName("BrokenLinks")
         private List<BrokenLink> brokenLinks ;
 
-        public  BrokenLinksReponse  brokenLinks(List<BrokenLink>  brokenLinks) {
+        public  BrokenLinksResponse  brokenLinks(List<BrokenLink>  brokenLinks) {
             this.brokenLinks =  brokenLinks;
             return this;
         }
@@ -63,9 +63,9 @@ public class BrokenLinksReponse  extends  CellsCloudResponse {
                 return false;
             }
 
-            BrokenLinksReponse brokenLinksReponse = (BrokenLinksReponse) o;
+            BrokenLinksResponse brokenLinksResponse = (BrokenLinksResponse) o;
             return
-                Objects.equals(this.brokenLinks, brokenLinksReponse.brokenLinks) &&
+                Objects.equals(this.brokenLinks, brokenLinksResponse.brokenLinks) &&
                 super.equals(o);
       }
 
@@ -76,7 +76,7 @@ public class BrokenLinksReponse  extends  CellsCloudResponse {
         @Override
         public String toString() {
             StringBuilder sb = new StringBuilder();
-            sb.append("class BrokenLinksReponse {\n");
+            sb.append("class BrokenLinksResponse {\n");
             sb.append("    brokenLinks: ").append(toIndentedString(getBrokenLinks())).append("\n");
             sb.append("    code: ").append(toIndentedString(getCode())).append("\n");
             sb.append("    status: ").append(toIndentedString(getStatus())).append("\n");

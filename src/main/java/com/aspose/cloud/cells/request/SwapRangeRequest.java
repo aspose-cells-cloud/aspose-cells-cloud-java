@@ -1,6 +1,6 @@
 /*
  * --------------------------------------------------------------------------------
- * <copyright company="Aspose" file="SawpRangeRequest.java">
+ * <copyright company="Aspose" file="SwapRangeRequest.java">
  *   Copyright (c) 2025 Aspose.Cells Cloud
  * </copyright>
  * <summary>
@@ -32,7 +32,7 @@ import java.io.*;
 import java.lang.reflect.Type;
 import java.util.*;
 
-public class SawpRangeRequest  implements IRequestModel {
+public class SwapRangeRequest  implements IRequestModel {
     private HashMap<String,String> extendQueryParameterMap;
     public HashMap<String,String> getExtendQueryParameterMap() {
         return this.extendQueryParameterMap;
@@ -47,16 +47,16 @@ public class SawpRangeRequest  implements IRequestModel {
     private String range2;
     private String outPath;
     private String outStorageName;
-    private String regoin;
+    private String region;
     private String password;
     
      
      
      private String spreadsheet;            
-        public SawpRangeRequest()
+        public SwapRangeRequest()
         {        
         }
-        public SawpRangeRequest( String  spreadsheet    ,  String worksheet1 ,  String range1 ,  String worksheet2 ,  String range2 ,  String outPath ,  String outStorageName ,  String regoin ,  String password ) {
+        public SwapRangeRequest( String  spreadsheet    ,  String worksheet1 ,  String range1 ,  String worksheet2 ,  String range2 ,  String outPath ,  String outStorageName ,  String region ,  String password ) {
               this.spreadsheet  = spreadsheet;  
             this.worksheet1 = worksheet1; 
             this.range1 = range1; 
@@ -64,7 +64,7 @@ public class SawpRangeRequest  implements IRequestModel {
             this.range2 = range2; 
             this.outPath = outPath; 
             this.outStorageName = outStorageName; 
-            this.regoin = regoin; 
+            this.region = region; 
             this.password = password; 
         }   
 
@@ -122,12 +122,12 @@ public class SawpRangeRequest  implements IRequestModel {
         }
 
 
-        public String getRegoin() {
-            return this.regoin;
+        public String getRegion() {
+            return this.region;
         }
 
-        public void setRegoin(String regoin) {
-            this.regoin = regoin;
+        public void setRegion(String region) {
+            this.region = region;
         }
 
 
@@ -154,23 +154,23 @@ public class SawpRangeRequest  implements IRequestModel {
           
          
                 if ( getSpreadsheet() == null ) {
-                    throw new ApiException("Missing the required parameter 'Spreadsheet' when calling SawpRange");
+                    throw new ApiException("Missing the required parameter 'Spreadsheet' when calling SwapRange");
                 } 
 
                 if (getWorksheet1() == null) {
-                    throw new ApiException("Missing the required parameter 'Worksheet1' when calling SawpRange");
+                    throw new ApiException("Missing the required parameter 'Worksheet1' when calling SwapRange");
                 } 
 
                 if (getRange1() == null) {
-                    throw new ApiException("Missing the required parameter 'Range1' when calling SawpRange");
+                    throw new ApiException("Missing the required parameter 'Range1' when calling SwapRange");
                 } 
 
                 if (getWorksheet2() == null) {
-                    throw new ApiException("Missing the required parameter 'Worksheet2' when calling SawpRange");
+                    throw new ApiException("Missing the required parameter 'Worksheet2' when calling SwapRange");
                 } 
 
                 if (getRange2() == null) {
-                    throw new ApiException("Missing the required parameter 'Range2' when calling SawpRange");
+                    throw new ApiException("Missing the required parameter 'Range2' when calling SwapRange");
                 }       
         String localVarPath = "v4.0/cells/swap/range";
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
@@ -194,8 +194,8 @@ public class SawpRangeRequest  implements IRequestModel {
             if (getOutStorageName() != null){
                 localVarQueryParams.addAll(apiClient.parameterToPairs("", "outStorageName", getOutStorageName()));
             } 
-            if (getRegoin() != null){
-                localVarQueryParams.addAll(apiClient.parameterToPairs("", "regoin", getRegoin()));
+            if (getRegion() != null){
+                localVarQueryParams.addAll(apiClient.parameterToPairs("", "region", getRegion()));
             } 
             if (getPassword() != null){
                 localVarQueryParams.addAll(apiClient.parameterToPairs("", "password", getPassword()));

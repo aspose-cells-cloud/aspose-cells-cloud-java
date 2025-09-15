@@ -45,7 +45,7 @@ public class ProtectSpreadsheetRequest  implements IRequestModel {
     private String modifyPassword;
     private String outPath;
     private String outStorageName;
-    private String regoin;
+    private String region;
     
      
      
@@ -53,13 +53,13 @@ public class ProtectSpreadsheetRequest  implements IRequestModel {
         public ProtectSpreadsheetRequest()
         {        
         }
-        public ProtectSpreadsheetRequest( String  spreadsheet    ,  String password ,  String modifyPassword ,  String outPath ,  String outStorageName ,  String regoin ) {
+        public ProtectSpreadsheetRequest( String  spreadsheet    ,  String password ,  String modifyPassword ,  String outPath ,  String outStorageName ,  String region ) {
               this.spreadsheet  = spreadsheet;  
             this.password = password; 
             this.modifyPassword = modifyPassword; 
             this.outPath = outPath; 
             this.outStorageName = outStorageName; 
-            this.regoin = regoin; 
+            this.region = region; 
         }   
 
         public String getPassword() {
@@ -98,12 +98,12 @@ public class ProtectSpreadsheetRequest  implements IRequestModel {
         }
 
 
-        public String getRegoin() {
-            return this.regoin;
+        public String getRegion() {
+            return this.region;
         }
 
-        public void setRegoin(String regoin) {
-            this.regoin = regoin;
+        public void setRegion(String region) {
+            this.region = region;
         }
 
     
@@ -147,8 +147,8 @@ public class ProtectSpreadsheetRequest  implements IRequestModel {
             if (getOutStorageName() != null){
                 localVarQueryParams.addAll(apiClient.parameterToPairs("", "outStorageName", getOutStorageName()));
             } 
-            if (getRegoin() != null){
-                localVarQueryParams.addAll(apiClient.parameterToPairs("", "regoin", getRegoin()));
+            if (getRegion() != null){
+                localVarQueryParams.addAll(apiClient.parameterToPairs("", "region", getRegion()));
             }  
         if(this.extendQueryParameterMap !=null){
             for (String key :this.extendQueryParameterMap.keySet()) {

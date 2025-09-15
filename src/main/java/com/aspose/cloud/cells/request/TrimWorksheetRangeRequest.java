@@ -1,6 +1,6 @@
 /*
  * --------------------------------------------------------------------------------
- * <copyright company="Aspose" file="MathCalculateRequest.java">
+ * <copyright company="Aspose" file="TrimWorksheetRangeRequest.java">
  *   Copyright (c) 2025 Aspose.Cells Cloud
  * </copyright>
  * <summary>
@@ -32,7 +32,7 @@ import java.io.*;
 import java.lang.reflect.Type;
 import java.util.*;
 
-public class MathCalculateRequest  implements IRequestModel {
+public class TrimWorksheetRangeRequest  implements IRequestModel {
     private HashMap<String,String> extendQueryParameterMap;
     public HashMap<String,String> getExtendQueryParameterMap() {
         return this.extendQueryParameterMap;
@@ -41,46 +41,42 @@ public class MathCalculateRequest  implements IRequestModel {
     public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
         this.extendQueryParameterMap = extendQueryParameterMap;
     }
-    private String operation;
-    private String value;
     private String worksheet;
     private String range;
+    private String trimContent;
+    private Boolean trimLeading;
+    private Boolean trimTrailing;
+    private Boolean trimSpaceBetweenWordTo1;
+    private Boolean trimNonBreakingSpaces;
+    private Boolean removeExtraLineBreaks;
+    private Boolean removeAllLineBreaks;
+    private String outPath;
+    private String outStorageName;
     private String region;
     private String password;
     
      
      
      private String spreadsheet;            
-        public MathCalculateRequest()
+        public TrimWorksheetRangeRequest()
         {        
         }
-        public MathCalculateRequest( String  spreadsheet    ,  String operation ,  String value ,  String worksheet ,  String range ,  String region ,  String password ) {
+        public TrimWorksheetRangeRequest( String  spreadsheet    ,  String worksheet ,  String range ,  String trimContent ,  Boolean trimLeading ,  Boolean trimTrailing ,  Boolean trimSpaceBetweenWordTo1 ,  Boolean trimNonBreakingSpaces ,  Boolean removeExtraLineBreaks ,  Boolean removeAllLineBreaks ,  String outPath ,  String outStorageName ,  String region ,  String password ) {
               this.spreadsheet  = spreadsheet;  
-            this.operation = operation; 
-            this.value = value; 
             this.worksheet = worksheet; 
             this.range = range; 
+            this.trimContent = trimContent; 
+            this.trimLeading = trimLeading; 
+            this.trimTrailing = trimTrailing; 
+            this.trimSpaceBetweenWordTo1 = trimSpaceBetweenWordTo1; 
+            this.trimNonBreakingSpaces = trimNonBreakingSpaces; 
+            this.removeExtraLineBreaks = removeExtraLineBreaks; 
+            this.removeAllLineBreaks = removeAllLineBreaks; 
+            this.outPath = outPath; 
+            this.outStorageName = outStorageName; 
             this.region = region; 
             this.password = password; 
         }   
-
-        public String getOperation() {
-            return this.operation;
-        }
-
-        public void setOperation(String operation) {
-            this.operation = operation;
-        }
-
-
-        public String getValue() {
-            return this.value;
-        }
-
-        public void setValue(String value) {
-            this.value = value;
-        }
-
 
         public String getWorksheet() {
             return this.worksheet;
@@ -97,6 +93,87 @@ public class MathCalculateRequest  implements IRequestModel {
 
         public void setRange(String range) {
             this.range = range;
+        }
+
+
+        public String getTrimContent() {
+            return this.trimContent;
+        }
+
+        public void setTrimContent(String trimContent) {
+            this.trimContent = trimContent;
+        }
+
+
+        public Boolean getTrimLeading() {
+            return this.trimLeading;
+        }
+
+        public void setTrimLeading(Boolean trimLeading) {
+            this.trimLeading = trimLeading;
+        }
+
+
+        public Boolean getTrimTrailing() {
+            return this.trimTrailing;
+        }
+
+        public void setTrimTrailing(Boolean trimTrailing) {
+            this.trimTrailing = trimTrailing;
+        }
+
+
+        public Boolean getTrimSpaceBetweenWordTo1() {
+            return this.trimSpaceBetweenWordTo1;
+        }
+
+        public void setTrimSpaceBetweenWordTo1(Boolean trimSpaceBetweenWordTo1) {
+            this.trimSpaceBetweenWordTo1 = trimSpaceBetweenWordTo1;
+        }
+
+
+        public Boolean getTrimNonBreakingSpaces() {
+            return this.trimNonBreakingSpaces;
+        }
+
+        public void setTrimNonBreakingSpaces(Boolean trimNonBreakingSpaces) {
+            this.trimNonBreakingSpaces = trimNonBreakingSpaces;
+        }
+
+
+        public Boolean getRemoveExtraLineBreaks() {
+            return this.removeExtraLineBreaks;
+        }
+
+        public void setRemoveExtraLineBreaks(Boolean removeExtraLineBreaks) {
+            this.removeExtraLineBreaks = removeExtraLineBreaks;
+        }
+
+
+        public Boolean getRemoveAllLineBreaks() {
+            return this.removeAllLineBreaks;
+        }
+
+        public void setRemoveAllLineBreaks(Boolean removeAllLineBreaks) {
+            this.removeAllLineBreaks = removeAllLineBreaks;
+        }
+
+
+        public String getOutPath() {
+            return this.outPath;
+        }
+
+        public void setOutPath(String outPath) {
+            this.outPath = outPath;
+        }
+
+
+        public String getOutStorageName() {
+            return this.outStorageName;
+        }
+
+        public void setOutStorageName(String outStorageName) {
+            this.outStorageName = outStorageName;
         }
 
 
@@ -132,31 +209,48 @@ public class MathCalculateRequest  implements IRequestModel {
           
          
                 if ( getSpreadsheet() == null ) {
-                    throw new ApiException("Missing the required parameter 'Spreadsheet' when calling MathCalculate");
+                    throw new ApiException("Missing the required parameter 'Spreadsheet' when calling TrimWorksheetRange");
                 } 
 
-                if (getOperation() == null) {
-                    throw new ApiException("Missing the required parameter 'Operation' when calling MathCalculate");
-                } 
-
-                if (getValue() == null) {
-                    throw new ApiException("Missing the required parameter 'Value' when calling MathCalculate");
+                if (getWorksheet() == null) {
+                    throw new ApiException("Missing the required parameter 'Worksheet' when calling TrimWorksheetRange");
                 }       
-        String localVarPath = "v4.0/cells/calculate/math";
+        String localVarPath = "v4.0/cells/content/trim/worksheet";
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
-            if (getOperation() != null){
-                localVarQueryParams.addAll(apiClient.parameterToPairs("", "operation", getOperation()));
-            } 
-            if (getValue() != null){
-                localVarQueryParams.addAll(apiClient.parameterToPairs("", "value", getValue()));
-            } 
             if (getWorksheet() != null){
                 localVarQueryParams.addAll(apiClient.parameterToPairs("", "worksheet", getWorksheet()));
             } 
             if (getRange() != null){
                 localVarQueryParams.addAll(apiClient.parameterToPairs("", "range", getRange()));
+            } 
+            if (getTrimContent() != null){
+                localVarQueryParams.addAll(apiClient.parameterToPairs("", "trimContent", getTrimContent()));
+            } 
+            if (getTrimLeading() != null){
+                localVarQueryParams.addAll(apiClient.parameterToPairs("", "trimLeading", getTrimLeading()));
+            } 
+            if (getTrimTrailing() != null){
+                localVarQueryParams.addAll(apiClient.parameterToPairs("", "trimTrailing", getTrimTrailing()));
+            } 
+            if (getTrimSpaceBetweenWordTo1() != null){
+                localVarQueryParams.addAll(apiClient.parameterToPairs("", "trimSpaceBetweenWordTo1", getTrimSpaceBetweenWordTo1()));
+            } 
+            if (getTrimNonBreakingSpaces() != null){
+                localVarQueryParams.addAll(apiClient.parameterToPairs("", "trimNonBreakingSpaces", getTrimNonBreakingSpaces()));
+            } 
+            if (getRemoveExtraLineBreaks() != null){
+                localVarQueryParams.addAll(apiClient.parameterToPairs("", "removeExtraLineBreaks", getRemoveExtraLineBreaks()));
+            } 
+            if (getRemoveAllLineBreaks() != null){
+                localVarQueryParams.addAll(apiClient.parameterToPairs("", "removeAllLineBreaks", getRemoveAllLineBreaks()));
+            } 
+            if (getOutPath() != null){
+                localVarQueryParams.addAll(apiClient.parameterToPairs("", "outPath", getOutPath()));
+            } 
+            if (getOutStorageName() != null){
+                localVarQueryParams.addAll(apiClient.parameterToPairs("", "outStorageName", getOutStorageName()));
             } 
             if (getRegion() != null){
                 localVarQueryParams.addAll(apiClient.parameterToPairs("", "region", getRegion()));

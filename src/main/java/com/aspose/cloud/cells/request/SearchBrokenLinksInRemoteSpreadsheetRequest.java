@@ -46,19 +46,19 @@ public class SearchBrokenLinksInRemoteSpreadsheetRequest  implements IRequestMod
     private String cellArea;
     private String folder;
     private String storageName;
-    private String regoin;
+    private String region;
     private String password;
     
         public SearchBrokenLinksInRemoteSpreadsheetRequest()
         {        
         }
-        public SearchBrokenLinksInRemoteSpreadsheetRequest( String name ,  String worksheet ,  String cellArea ,  String folder ,  String storageName ,  String regoin ,  String password ) {
+        public SearchBrokenLinksInRemoteSpreadsheetRequest( String name ,  String worksheet ,  String cellArea ,  String folder ,  String storageName ,  String region ,  String password ) {
             this.name = name; 
             this.worksheet = worksheet; 
             this.cellArea = cellArea; 
             this.folder = folder; 
             this.storageName = storageName; 
-            this.regoin = regoin; 
+            this.region = region; 
             this.password = password; 
         }   
 
@@ -106,12 +106,12 @@ public class SearchBrokenLinksInRemoteSpreadsheetRequest  implements IRequestMod
         }
 
 
-        public String getRegoin() {
-            return this.regoin;
+        public String getRegion() {
+            return this.region;
         }
 
-        public void setRegoin(String regoin) {
-            this.regoin = regoin;
+        public void setRegion(String region) {
+            this.region = region;
         }
 
 
@@ -146,8 +146,8 @@ public class SearchBrokenLinksInRemoteSpreadsheetRequest  implements IRequestMod
             if (getStorageName() != null){
                 localVarQueryParams.addAll(apiClient.parameterToPairs("", "storageName", getStorageName()));
             } 
-            if (getRegoin() != null){
-                localVarQueryParams.addAll(apiClient.parameterToPairs("", "regoin", getRegoin()));
+            if (getRegion() != null){
+                localVarQueryParams.addAll(apiClient.parameterToPairs("", "region", getRegion()));
             } 
             if (getPassword() != null){
                 localVarQueryParams.addAll(apiClient.parameterToPairs("", "password", getPassword()));

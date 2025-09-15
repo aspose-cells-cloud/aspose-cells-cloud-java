@@ -46,7 +46,7 @@ public class MergeSpreadsheetsRequest  implements IRequestModel {
     private String outPath;
     private String outStorageName;
     private String fontsLocation;
-    private String regoin;
+    private String region;
     private String password;
     
      
@@ -54,14 +54,14 @@ public class MergeSpreadsheetsRequest  implements IRequestModel {
         public MergeSpreadsheetsRequest()
         {        
         }
-        public MergeSpreadsheetsRequest( HashMap<String,File> spreadsheet  ,  String outFormat ,  Boolean mergeInOneSheet ,  String outPath ,  String outStorageName ,  String fontsLocation ,  String regoin ,  String password ) {
+        public MergeSpreadsheetsRequest( HashMap<String,File> spreadsheet  ,  String outFormat ,  Boolean mergeInOneSheet ,  String outPath ,  String outStorageName ,  String fontsLocation ,  String region ,  String password ) {
              this.spreadsheet = spreadsheet;  
             this.outFormat = outFormat; 
             this.mergeInOneSheet = mergeInOneSheet; 
             this.outPath = outPath; 
             this.outStorageName = outStorageName; 
             this.fontsLocation = fontsLocation; 
-            this.regoin = regoin; 
+            this.region = region; 
             this.password = password; 
         }   
 
@@ -110,12 +110,12 @@ public class MergeSpreadsheetsRequest  implements IRequestModel {
         }
 
 
-        public String getRegoin() {
-            return this.regoin;
+        public String getRegion() {
+            return this.region;
         }
 
-        public void setRegoin(String regoin) {
-            this.regoin = regoin;
+        public void setRegion(String region) {
+            this.region = region;
         }
 
 
@@ -162,8 +162,8 @@ public class MergeSpreadsheetsRequest  implements IRequestModel {
             if (getFontsLocation() != null){
                 localVarQueryParams.addAll(apiClient.parameterToPairs("", "fontsLocation", getFontsLocation()));
             } 
-            if (getRegoin() != null){
-                localVarQueryParams.addAll(apiClient.parameterToPairs("", "regoin", getRegoin()));
+            if (getRegion() != null){
+                localVarQueryParams.addAll(apiClient.parameterToPairs("", "region", getRegion()));
             } 
             if (getPassword() != null){
                 localVarQueryParams.addAll(apiClient.parameterToPairs("", "password", getPassword()));

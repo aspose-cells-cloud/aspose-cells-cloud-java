@@ -156,23 +156,6 @@ public class AggregateResultByColor {
             this.averageValue = averageValue;
         }
 
-        @SerializedName("Value")
-        private Double value ;
-
-        public  AggregateResultByColor  value(Double  value) {
-            this.value =  value;
-            return this;
-        }
-
-        @ApiModelProperty(value = "")
-        public Double getValue() {
-            return value;
-        }
-
-        public void setValue(Double value) {
-            this.value = value;
-        }
-
         @Override
         public boolean equals(java.lang.Object o) {
             if (this == o) {
@@ -190,13 +173,12 @@ public class AggregateResultByColor {
                 Objects.equals(this.sum, aggregateResultByColor.sum) &&
                 Objects.equals(this.maxValue, aggregateResultByColor.maxValue) &&
                 Objects.equals(this.minValue, aggregateResultByColor.minValue) &&
-                Objects.equals(this.averageValue, aggregateResultByColor.averageValue) &&
-                Objects.equals(this.value, aggregateResultByColor.value);
+                Objects.equals(this.averageValue, aggregateResultByColor.averageValue);
       }
 
       @Override
       public int hashCode() {
-        return Objects.hash(aggregateOperation, colorName, count, sum, maxValue, minValue, averageValue, value);
+        return Objects.hash(aggregateOperation, colorName, count, sum, maxValue, minValue, averageValue);
       }
         @Override
         public String toString() {
@@ -209,7 +191,6 @@ public class AggregateResultByColor {
             sb.append("    maxValue: ").append(toIndentedString(getMaxValue())).append("\n");
             sb.append("    minValue: ").append(toIndentedString(getMinValue())).append("\n");
             sb.append("    averageValue: ").append(toIndentedString(getAverageValue())).append("\n");
-            sb.append("    value: ").append(toIndentedString(getValue())).append("\n");
             sb.append("}");
             return sb.toString();
         }

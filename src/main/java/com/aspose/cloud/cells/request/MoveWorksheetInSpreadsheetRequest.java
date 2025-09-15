@@ -45,7 +45,7 @@ public class MoveWorksheetInSpreadsheetRequest  implements IRequestModel {
     private Integer position;
     private String outPath;
     private String outStorageName;
-    private String regoin;
+    private String region;
     private String password;
     
      
@@ -54,13 +54,13 @@ public class MoveWorksheetInSpreadsheetRequest  implements IRequestModel {
         public MoveWorksheetInSpreadsheetRequest()
         {        
         }
-        public MoveWorksheetInSpreadsheetRequest( String  spreadsheet    ,  String worksheet ,  Integer position ,  String outPath ,  String outStorageName ,  String regoin ,  String password ) {
+        public MoveWorksheetInSpreadsheetRequest( String  spreadsheet    ,  String worksheet ,  Integer position ,  String outPath ,  String outStorageName ,  String region ,  String password ) {
               this.spreadsheet  = spreadsheet;  
             this.worksheet = worksheet; 
             this.position = position; 
             this.outPath = outPath; 
             this.outStorageName = outStorageName; 
-            this.regoin = regoin; 
+            this.region = region; 
             this.password = password; 
         }   
 
@@ -100,12 +100,12 @@ public class MoveWorksheetInSpreadsheetRequest  implements IRequestModel {
         }
 
 
-        public String getRegoin() {
-            return this.regoin;
+        public String getRegion() {
+            return this.region;
         }
 
-        public void setRegoin(String regoin) {
-            this.regoin = regoin;
+        public void setRegion(String region) {
+            this.region = region;
         }
 
 
@@ -158,8 +158,8 @@ public class MoveWorksheetInSpreadsheetRequest  implements IRequestModel {
             if (getOutStorageName() != null){
                 localVarQueryParams.addAll(apiClient.parameterToPairs("", "outStorageName", getOutStorageName()));
             } 
-            if (getRegoin() != null){
-                localVarQueryParams.addAll(apiClient.parameterToPairs("", "regoin", getRegoin()));
+            if (getRegion() != null){
+                localVarQueryParams.addAll(apiClient.parameterToPairs("", "region", getRegion()));
             } 
             if (getPassword() != null){
                 localVarQueryParams.addAll(apiClient.parameterToPairs("", "password", getPassword()));

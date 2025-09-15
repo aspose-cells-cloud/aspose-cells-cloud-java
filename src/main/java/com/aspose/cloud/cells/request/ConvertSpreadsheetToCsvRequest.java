@@ -1,6 +1,6 @@
 /*
  * --------------------------------------------------------------------------------
- * <copyright company="Aspose" file="MathCalculateRequest.java">
+ * <copyright company="Aspose" file="ConvertSpreadsheetToCsvRequest.java">
  *   Copyright (c) 2025 Aspose.Cells Cloud
  * </copyright>
  * <summary>
@@ -32,7 +32,7 @@ import java.io.*;
 import java.lang.reflect.Type;
 import java.util.*;
 
-public class MathCalculateRequest  implements IRequestModel {
+public class ConvertSpreadsheetToCsvRequest  implements IRequestModel {
     private HashMap<String,String> extendQueryParameterMap;
     public HashMap<String,String> getExtendQueryParameterMap() {
         return this.extendQueryParameterMap;
@@ -41,62 +41,51 @@ public class MathCalculateRequest  implements IRequestModel {
     public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
         this.extendQueryParameterMap = extendQueryParameterMap;
     }
-    private String operation;
-    private String value;
-    private String worksheet;
-    private String range;
+    private String outPath;
+    private String outStorageName;
+    private String fontsLocation;
     private String region;
     private String password;
     
      
      
      private String spreadsheet;            
-        public MathCalculateRequest()
+        public ConvertSpreadsheetToCsvRequest()
         {        
         }
-        public MathCalculateRequest( String  spreadsheet    ,  String operation ,  String value ,  String worksheet ,  String range ,  String region ,  String password ) {
+        public ConvertSpreadsheetToCsvRequest( String  spreadsheet    ,  String outPath ,  String outStorageName ,  String fontsLocation ,  String region ,  String password ) {
               this.spreadsheet  = spreadsheet;  
-            this.operation = operation; 
-            this.value = value; 
-            this.worksheet = worksheet; 
-            this.range = range; 
+            this.outPath = outPath; 
+            this.outStorageName = outStorageName; 
+            this.fontsLocation = fontsLocation; 
             this.region = region; 
             this.password = password; 
         }   
 
-        public String getOperation() {
-            return this.operation;
+        public String getOutPath() {
+            return this.outPath;
         }
 
-        public void setOperation(String operation) {
-            this.operation = operation;
-        }
-
-
-        public String getValue() {
-            return this.value;
-        }
-
-        public void setValue(String value) {
-            this.value = value;
+        public void setOutPath(String outPath) {
+            this.outPath = outPath;
         }
 
 
-        public String getWorksheet() {
-            return this.worksheet;
+        public String getOutStorageName() {
+            return this.outStorageName;
         }
 
-        public void setWorksheet(String worksheet) {
-            this.worksheet = worksheet;
+        public void setOutStorageName(String outStorageName) {
+            this.outStorageName = outStorageName;
         }
 
 
-        public String getRange() {
-            return this.range;
+        public String getFontsLocation() {
+            return this.fontsLocation;
         }
 
-        public void setRange(String range) {
-            this.range = range;
+        public void setFontsLocation(String fontsLocation) {
+            this.fontsLocation = fontsLocation;
         }
 
 
@@ -132,31 +121,20 @@ public class MathCalculateRequest  implements IRequestModel {
           
          
                 if ( getSpreadsheet() == null ) {
-                    throw new ApiException("Missing the required parameter 'Spreadsheet' when calling MathCalculate");
-                } 
-
-                if (getOperation() == null) {
-                    throw new ApiException("Missing the required parameter 'Operation' when calling MathCalculate");
-                } 
-
-                if (getValue() == null) {
-                    throw new ApiException("Missing the required parameter 'Value' when calling MathCalculate");
+                    throw new ApiException("Missing the required parameter 'Spreadsheet' when calling ConvertSpreadsheetToCsv");
                 }       
-        String localVarPath = "v4.0/cells/calculate/math";
+        String localVarPath = "v4.0/cells/convert/spreadsheet/csv";
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
-            if (getOperation() != null){
-                localVarQueryParams.addAll(apiClient.parameterToPairs("", "operation", getOperation()));
+            if (getOutPath() != null){
+                localVarQueryParams.addAll(apiClient.parameterToPairs("", "outPath", getOutPath()));
             } 
-            if (getValue() != null){
-                localVarQueryParams.addAll(apiClient.parameterToPairs("", "value", getValue()));
+            if (getOutStorageName() != null){
+                localVarQueryParams.addAll(apiClient.parameterToPairs("", "outStorageName", getOutStorageName()));
             } 
-            if (getWorksheet() != null){
-                localVarQueryParams.addAll(apiClient.parameterToPairs("", "worksheet", getWorksheet()));
-            } 
-            if (getRange() != null){
-                localVarQueryParams.addAll(apiClient.parameterToPairs("", "range", getRange()));
+            if (getFontsLocation() != null){
+                localVarQueryParams.addAll(apiClient.parameterToPairs("", "fontsLocation", getFontsLocation()));
             } 
             if (getRegion() != null){
                 localVarQueryParams.addAll(apiClient.parameterToPairs("", "region", getRegion()));
