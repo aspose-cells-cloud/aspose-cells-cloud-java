@@ -1,6 +1,6 @@
 /*
  * --------------------------------------------------------------------------------
- * <copyright company="Aspose" file="ConvertTextRequest.java">
+ * <copyright company="Aspose" file="RemoveDuplicateSubstringsRequest.java">
  *   Copyright (c) 2025 Aspose.Cells Cloud
  * </copyright>
  * <summary>
@@ -32,7 +32,7 @@ import java.io.*;
 import java.lang.reflect.Type;
 import java.util.*;
 
-public class ConvertTextRequest  implements IRequestModel {
+public class RemoveDuplicateSubstringsRequest  implements IRequestModel {
     private HashMap<String,String> extendQueryParameterMap;
     public HashMap<String,String> getExtendQueryParameterMap() {
         return this.extendQueryParameterMap;
@@ -41,9 +41,9 @@ public class ConvertTextRequest  implements IRequestModel {
     public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
         this.extendQueryParameterMap = extendQueryParameterMap;
     }
-    private String convertTextType;
-    private String sourceCharacters;
-    private String targetCharacters;
+    private String delimiters;
+    private Boolean treatConsecutiveDelimitersAsOne;
+    private Boolean caseSensitive;
     private String worksheet;
     private String range;
     private String outPath;
@@ -54,14 +54,14 @@ public class ConvertTextRequest  implements IRequestModel {
      
      
      private String spreadsheet;            
-        public ConvertTextRequest()
+        public RemoveDuplicateSubstringsRequest()
         {        
         }
-        public ConvertTextRequest( String  spreadsheet    ,  String convertTextType ,  String sourceCharacters ,  String targetCharacters ,  String worksheet ,  String range ,  String outPath ,  String outStorageName ,  String region ,  String password ) {
+        public RemoveDuplicateSubstringsRequest( String  spreadsheet    ,  String delimiters ,  Boolean treatConsecutiveDelimitersAsOne ,  Boolean caseSensitive ,  String worksheet ,  String range ,  String outPath ,  String outStorageName ,  String region ,  String password ) {
               this.spreadsheet  = spreadsheet;  
-            this.convertTextType = convertTextType; 
-            this.sourceCharacters = sourceCharacters; 
-            this.targetCharacters = targetCharacters; 
+            this.delimiters = delimiters; 
+            this.treatConsecutiveDelimitersAsOne = treatConsecutiveDelimitersAsOne; 
+            this.caseSensitive = caseSensitive; 
             this.worksheet = worksheet; 
             this.range = range; 
             this.outPath = outPath; 
@@ -70,30 +70,30 @@ public class ConvertTextRequest  implements IRequestModel {
             this.password = password; 
         }   
 
-        public String getConvertTextType() {
-            return this.convertTextType;
+        public String getDelimiters() {
+            return this.delimiters;
         }
 
-        public void setConvertTextType(String convertTextType) {
-            this.convertTextType = convertTextType;
-        }
-
-
-        public String getSourceCharacters() {
-            return this.sourceCharacters;
-        }
-
-        public void setSourceCharacters(String sourceCharacters) {
-            this.sourceCharacters = sourceCharacters;
+        public void setDelimiters(String delimiters) {
+            this.delimiters = delimiters;
         }
 
 
-        public String getTargetCharacters() {
-            return this.targetCharacters;
+        public Boolean getTreatConsecutiveDelimitersAsOne() {
+            return this.treatConsecutiveDelimitersAsOne;
         }
 
-        public void setTargetCharacters(String targetCharacters) {
-            this.targetCharacters = targetCharacters;
+        public void setTreatConsecutiveDelimitersAsOne(Boolean treatConsecutiveDelimitersAsOne) {
+            this.treatConsecutiveDelimitersAsOne = treatConsecutiveDelimitersAsOne;
+        }
+
+
+        public Boolean getCaseSensitive() {
+            return this.caseSensitive;
+        }
+
+        public void setCaseSensitive(Boolean caseSensitive) {
+            this.caseSensitive = caseSensitive;
         }
 
 
@@ -165,24 +165,24 @@ public class ConvertTextRequest  implements IRequestModel {
           
          
                 if ( getSpreadsheet() == null ) {
-                    throw new ApiException("Missing the required parameter 'Spreadsheet' when calling ConvertText");
+                    throw new ApiException("Missing the required parameter 'Spreadsheet' when calling RemoveDuplicateSubstrings");
                 } 
 
-                if (getConvertTextType() == null) {
-                    throw new ApiException("Missing the required parameter 'ConvertTextType' when calling ConvertText");
+                if (getDelimiters() == null) {
+                    throw new ApiException("Missing the required parameter 'Delimiters' when calling RemoveDuplicateSubstrings");
                 }       
-        String localVarPath = "v4.0/cells/content/convert/text";
+        String localVarPath = "v4.0/cells/content/remove/duplicate-substrings";
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
-            if (getConvertTextType() != null){
-                localVarQueryParams.addAll(apiClient.parameterToPairs("", "convertTextType", getConvertTextType()));
+            if (getDelimiters() != null){
+                localVarQueryParams.addAll(apiClient.parameterToPairs("", "delimiters", getDelimiters()));
             } 
-            if (getSourceCharacters() != null){
-                localVarQueryParams.addAll(apiClient.parameterToPairs("", "sourceCharacters", getSourceCharacters()));
+            if (getTreatConsecutiveDelimitersAsOne() != null){
+                localVarQueryParams.addAll(apiClient.parameterToPairs("", "treatConsecutiveDelimitersAsOne", getTreatConsecutiveDelimitersAsOne()));
             } 
-            if (getTargetCharacters() != null){
-                localVarQueryParams.addAll(apiClient.parameterToPairs("", "targetCharacters", getTargetCharacters()));
+            if (getCaseSensitive() != null){
+                localVarQueryParams.addAll(apiClient.parameterToPairs("", "caseSensitive", getCaseSensitive()));
             } 
             if (getWorksheet() != null){
                 localVarQueryParams.addAll(apiClient.parameterToPairs("", "worksheet", getWorksheet()));

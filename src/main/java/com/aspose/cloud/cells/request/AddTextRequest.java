@@ -185,10 +185,6 @@ public class AddTextRequest  implements IRequestModel {
 
                 if (getPosition() == null) {
                     throw new ApiException("Missing the required parameter 'Position' when calling AddText");
-                } 
-
-                if (getSelectText() == null) {
-                    throw new ApiException("Missing the required parameter 'SelectText' when calling AddText");
                 }       
         String localVarPath = "v4.0/cells/content/add/text";
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();

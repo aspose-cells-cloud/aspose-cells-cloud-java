@@ -42,11 +42,11 @@ public class ExtractTextRequest  implements IRequestModel {
         this.extendQueryParameterMap = extendQueryParameterMap;
     }
     private String extractTextType;
+    private String outPositionRange;
     private String beforeText;
     private String afterText;
     private Integer beforePosition;
     private Integer afterPosition;
-    private String outPositionRange;
     private String worksheet;
     private String range;
     private String outPath;
@@ -60,14 +60,14 @@ public class ExtractTextRequest  implements IRequestModel {
         public ExtractTextRequest()
         {        
         }
-        public ExtractTextRequest( String  spreadsheet    ,  String extractTextType ,  String beforeText ,  String afterText ,  Integer beforePosition ,  Integer afterPosition ,  String outPositionRange ,  String worksheet ,  String range ,  String outPath ,  String outStorageName ,  String region ,  String password ) {
+        public ExtractTextRequest( String  spreadsheet    ,  String extractTextType ,  String outPositionRange ,  String beforeText ,  String afterText ,  Integer beforePosition ,  Integer afterPosition ,  String worksheet ,  String range ,  String outPath ,  String outStorageName ,  String region ,  String password ) {
               this.spreadsheet  = spreadsheet;  
             this.extractTextType = extractTextType; 
+            this.outPositionRange = outPositionRange; 
             this.beforeText = beforeText; 
             this.afterText = afterText; 
             this.beforePosition = beforePosition; 
             this.afterPosition = afterPosition; 
-            this.outPositionRange = outPositionRange; 
             this.worksheet = worksheet; 
             this.range = range; 
             this.outPath = outPath; 
@@ -82,6 +82,15 @@ public class ExtractTextRequest  implements IRequestModel {
 
         public void setExtractTextType(String extractTextType) {
             this.extractTextType = extractTextType;
+        }
+
+
+        public String getOutPositionRange() {
+            return this.outPositionRange;
+        }
+
+        public void setOutPositionRange(String outPositionRange) {
+            this.outPositionRange = outPositionRange;
         }
 
 
@@ -118,15 +127,6 @@ public class ExtractTextRequest  implements IRequestModel {
 
         public void setAfterPosition(Integer afterPosition) {
             this.afterPosition = afterPosition;
-        }
-
-
-        public String getOutPositionRange() {
-            return this.outPositionRange;
-        }
-
-        public void setOutPositionRange(String outPositionRange) {
-            this.outPositionRange = outPositionRange;
         }
 
 
@@ -205,22 +205,6 @@ public class ExtractTextRequest  implements IRequestModel {
                     throw new ApiException("Missing the required parameter 'ExtractTextType' when calling ExtractText");
                 } 
 
-                if (getBeforeText() == null) {
-                    throw new ApiException("Missing the required parameter 'BeforeText' when calling ExtractText");
-                } 
-
-                if (getAfterText() == null) {
-                    throw new ApiException("Missing the required parameter 'AfterText' when calling ExtractText");
-                } 
-
-                if (getBeforePosition() == null) {
-                    throw new ApiException("Missing the required parameter 'BeforePosition' when calling ExtractText");
-                } 
-
-                if (getAfterPosition() == null) {
-                    throw new ApiException("Missing the required parameter 'AfterPosition' when calling ExtractText");
-                } 
-
                 if (getOutPositionRange() == null) {
                     throw new ApiException("Missing the required parameter 'OutPositionRange' when calling ExtractText");
                 }       
@@ -230,6 +214,9 @@ public class ExtractTextRequest  implements IRequestModel {
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
             if (getExtractTextType() != null){
                 localVarQueryParams.addAll(apiClient.parameterToPairs("", "extractTextType", getExtractTextType()));
+            } 
+            if (getOutPositionRange() != null){
+                localVarQueryParams.addAll(apiClient.parameterToPairs("", "outPositionRange", getOutPositionRange()));
             } 
             if (getBeforeText() != null){
                 localVarQueryParams.addAll(apiClient.parameterToPairs("", "beforeText", getBeforeText()));
@@ -242,9 +229,6 @@ public class ExtractTextRequest  implements IRequestModel {
             } 
             if (getAfterPosition() != null){
                 localVarQueryParams.addAll(apiClient.parameterToPairs("", "afterPosition", getAfterPosition()));
-            } 
-            if (getOutPositionRange() != null){
-                localVarQueryParams.addAll(apiClient.parameterToPairs("", "outPositionRange", getOutPositionRange()));
             } 
             if (getWorksheet() != null){
                 localVarQueryParams.addAll(apiClient.parameterToPairs("", "worksheet", getWorksheet()));

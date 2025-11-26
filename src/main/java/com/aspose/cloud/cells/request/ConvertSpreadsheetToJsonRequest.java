@@ -1,6 +1,6 @@
 /*
  * --------------------------------------------------------------------------------
- * <copyright company="Aspose" file="ConvertTextRequest.java">
+ * <copyright company="Aspose" file="ConvertSpreadsheetToJsonRequest.java">
  *   Copyright (c) 2025 Aspose.Cells Cloud
  * </copyright>
  * <summary>
@@ -32,7 +32,7 @@ import java.io.*;
 import java.lang.reflect.Type;
 import java.util.*;
 
-public class ConvertTextRequest  implements IRequestModel {
+public class ConvertSpreadsheetToJsonRequest  implements IRequestModel {
     private HashMap<String,String> extendQueryParameterMap;
     public HashMap<String,String> getExtendQueryParameterMap() {
         return this.extendQueryParameterMap;
@@ -41,79 +41,26 @@ public class ConvertTextRequest  implements IRequestModel {
     public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
         this.extendQueryParameterMap = extendQueryParameterMap;
     }
-    private String convertTextType;
-    private String sourceCharacters;
-    private String targetCharacters;
-    private String worksheet;
-    private String range;
     private String outPath;
     private String outStorageName;
+    private String fontsLocation;
     private String region;
     private String password;
     
      
      
      private String spreadsheet;            
-        public ConvertTextRequest()
+        public ConvertSpreadsheetToJsonRequest()
         {        
         }
-        public ConvertTextRequest( String  spreadsheet    ,  String convertTextType ,  String sourceCharacters ,  String targetCharacters ,  String worksheet ,  String range ,  String outPath ,  String outStorageName ,  String region ,  String password ) {
+        public ConvertSpreadsheetToJsonRequest( String  spreadsheet    ,  String outPath ,  String outStorageName ,  String fontsLocation ,  String region ,  String password ) {
               this.spreadsheet  = spreadsheet;  
-            this.convertTextType = convertTextType; 
-            this.sourceCharacters = sourceCharacters; 
-            this.targetCharacters = targetCharacters; 
-            this.worksheet = worksheet; 
-            this.range = range; 
             this.outPath = outPath; 
             this.outStorageName = outStorageName; 
+            this.fontsLocation = fontsLocation; 
             this.region = region; 
             this.password = password; 
         }   
-
-        public String getConvertTextType() {
-            return this.convertTextType;
-        }
-
-        public void setConvertTextType(String convertTextType) {
-            this.convertTextType = convertTextType;
-        }
-
-
-        public String getSourceCharacters() {
-            return this.sourceCharacters;
-        }
-
-        public void setSourceCharacters(String sourceCharacters) {
-            this.sourceCharacters = sourceCharacters;
-        }
-
-
-        public String getTargetCharacters() {
-            return this.targetCharacters;
-        }
-
-        public void setTargetCharacters(String targetCharacters) {
-            this.targetCharacters = targetCharacters;
-        }
-
-
-        public String getWorksheet() {
-            return this.worksheet;
-        }
-
-        public void setWorksheet(String worksheet) {
-            this.worksheet = worksheet;
-        }
-
-
-        public String getRange() {
-            return this.range;
-        }
-
-        public void setRange(String range) {
-            this.range = range;
-        }
-
 
         public String getOutPath() {
             return this.outPath;
@@ -130,6 +77,15 @@ public class ConvertTextRequest  implements IRequestModel {
 
         public void setOutStorageName(String outStorageName) {
             this.outStorageName = outStorageName;
+        }
+
+
+        public String getFontsLocation() {
+            return this.fontsLocation;
+        }
+
+        public void setFontsLocation(String fontsLocation) {
+            this.fontsLocation = fontsLocation;
         }
 
 
@@ -165,36 +121,20 @@ public class ConvertTextRequest  implements IRequestModel {
           
          
                 if ( getSpreadsheet() == null ) {
-                    throw new ApiException("Missing the required parameter 'Spreadsheet' when calling ConvertText");
-                } 
-
-                if (getConvertTextType() == null) {
-                    throw new ApiException("Missing the required parameter 'ConvertTextType' when calling ConvertText");
+                    throw new ApiException("Missing the required parameter 'Spreadsheet' when calling ConvertSpreadsheetToJson");
                 }       
-        String localVarPath = "v4.0/cells/content/convert/text";
+        String localVarPath = "v4.0/cells/convert/spreadsheet/json";
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
-            if (getConvertTextType() != null){
-                localVarQueryParams.addAll(apiClient.parameterToPairs("", "convertTextType", getConvertTextType()));
-            } 
-            if (getSourceCharacters() != null){
-                localVarQueryParams.addAll(apiClient.parameterToPairs("", "sourceCharacters", getSourceCharacters()));
-            } 
-            if (getTargetCharacters() != null){
-                localVarQueryParams.addAll(apiClient.parameterToPairs("", "targetCharacters", getTargetCharacters()));
-            } 
-            if (getWorksheet() != null){
-                localVarQueryParams.addAll(apiClient.parameterToPairs("", "worksheet", getWorksheet()));
-            } 
-            if (getRange() != null){
-                localVarQueryParams.addAll(apiClient.parameterToPairs("", "range", getRange()));
-            } 
             if (getOutPath() != null){
                 localVarQueryParams.addAll(apiClient.parameterToPairs("", "outPath", getOutPath()));
             } 
             if (getOutStorageName() != null){
                 localVarQueryParams.addAll(apiClient.parameterToPairs("", "outStorageName", getOutStorageName()));
+            } 
+            if (getFontsLocation() != null){
+                localVarQueryParams.addAll(apiClient.parameterToPairs("", "fontsLocation", getFontsLocation()));
             } 
             if (getRegion() != null){
                 localVarQueryParams.addAll(apiClient.parameterToPairs("", "region", getRegion()));

@@ -41,11 +41,11 @@ public class SplitTextRequest  implements IRequestModel {
     public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
         this.extendQueryParameterMap = extendQueryParameterMap;
     }
-    private String splitDelimitersType;
-    private String customDelimiter;
+    private String delimiters;
     private Boolean keepDelimitersInResultingCells;
     private String keepDelimitersPosition;
     private String howToSplit;
+    private String outPositionRange;
     private String worksheet;
     private String range;
     private String outPath;
@@ -59,13 +59,13 @@ public class SplitTextRequest  implements IRequestModel {
         public SplitTextRequest()
         {        
         }
-        public SplitTextRequest( String  spreadsheet    ,  String splitDelimitersType ,  String customDelimiter ,  Boolean keepDelimitersInResultingCells ,  String keepDelimitersPosition ,  String howToSplit ,  String worksheet ,  String range ,  String outPath ,  String outStorageName ,  String region ,  String password ) {
+        public SplitTextRequest( String  spreadsheet    ,  String delimiters ,  Boolean keepDelimitersInResultingCells ,  String keepDelimitersPosition ,  String howToSplit ,  String outPositionRange ,  String worksheet ,  String range ,  String outPath ,  String outStorageName ,  String region ,  String password ) {
               this.spreadsheet  = spreadsheet;  
-            this.splitDelimitersType = splitDelimitersType; 
-            this.customDelimiter = customDelimiter; 
+            this.delimiters = delimiters; 
             this.keepDelimitersInResultingCells = keepDelimitersInResultingCells; 
             this.keepDelimitersPosition = keepDelimitersPosition; 
             this.howToSplit = howToSplit; 
+            this.outPositionRange = outPositionRange; 
             this.worksheet = worksheet; 
             this.range = range; 
             this.outPath = outPath; 
@@ -74,21 +74,12 @@ public class SplitTextRequest  implements IRequestModel {
             this.password = password; 
         }   
 
-        public String getSplitDelimitersType() {
-            return this.splitDelimitersType;
+        public String getDelimiters() {
+            return this.delimiters;
         }
 
-        public void setSplitDelimitersType(String splitDelimitersType) {
-            this.splitDelimitersType = splitDelimitersType;
-        }
-
-
-        public String getCustomDelimiter() {
-            return this.customDelimiter;
-        }
-
-        public void setCustomDelimiter(String customDelimiter) {
-            this.customDelimiter = customDelimiter;
+        public void setDelimiters(String delimiters) {
+            this.delimiters = delimiters;
         }
 
 
@@ -116,6 +107,15 @@ public class SplitTextRequest  implements IRequestModel {
 
         public void setHowToSplit(String howToSplit) {
             this.howToSplit = howToSplit;
+        }
+
+
+        public String getOutPositionRange() {
+            return this.outPositionRange;
+        }
+
+        public void setOutPositionRange(String outPositionRange) {
+            this.outPositionRange = outPositionRange;
         }
 
 
@@ -190,34 +190,15 @@ public class SplitTextRequest  implements IRequestModel {
                     throw new ApiException("Missing the required parameter 'Spreadsheet' when calling SplitText");
                 } 
 
-                if (getSplitDelimitersType() == null) {
-                    throw new ApiException("Missing the required parameter 'SplitDelimitersType' when calling SplitText");
-                } 
-
-                if (getCustomDelimiter() == null) {
-                    throw new ApiException("Missing the required parameter 'CustomDelimiter' when calling SplitText");
-                } 
-
-                if (getKeepDelimitersInResultingCells() == null) {
-                    throw new ApiException("Missing the required parameter 'KeepDelimitersInResultingCells' when calling SplitText");
-                } 
-
-                if (getKeepDelimitersPosition() == null) {
-                    throw new ApiException("Missing the required parameter 'KeepDelimitersPosition' when calling SplitText");
-                } 
-
-                if (getHowToSplit() == null) {
-                    throw new ApiException("Missing the required parameter 'HowToSplit' when calling SplitText");
+                if (getDelimiters() == null) {
+                    throw new ApiException("Missing the required parameter 'Delimiters' when calling SplitText");
                 }       
         String localVarPath = "v4.0/cells/content/split/text";
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
-            if (getSplitDelimitersType() != null){
-                localVarQueryParams.addAll(apiClient.parameterToPairs("", "splitDelimitersType", getSplitDelimitersType()));
-            } 
-            if (getCustomDelimiter() != null){
-                localVarQueryParams.addAll(apiClient.parameterToPairs("", "customDelimiter", getCustomDelimiter()));
+            if (getDelimiters() != null){
+                localVarQueryParams.addAll(apiClient.parameterToPairs("", "delimiters", getDelimiters()));
             } 
             if (getKeepDelimitersInResultingCells() != null){
                 localVarQueryParams.addAll(apiClient.parameterToPairs("", "keepDelimitersInResultingCells", getKeepDelimitersInResultingCells()));
@@ -227,6 +208,9 @@ public class SplitTextRequest  implements IRequestModel {
             } 
             if (getHowToSplit() != null){
                 localVarQueryParams.addAll(apiClient.parameterToPairs("", "HowToSplit", getHowToSplit()));
+            } 
+            if (getOutPositionRange() != null){
+                localVarQueryParams.addAll(apiClient.parameterToPairs("", "outPositionRange", getOutPositionRange()));
             } 
             if (getWorksheet() != null){
                 localVarQueryParams.addAll(apiClient.parameterToPairs("", "worksheet", getWorksheet()));

@@ -138,7 +138,7 @@ public class SearchBrokenLinksInRemoteRangeRequest  implements IRequestModel {
                 if (getCellArea() == null) {
                     throw new ApiException("Missing the required parameter 'CellArea' when calling SearchBrokenLinksInRemoteRange");
                 }       
-        String localVarPath = "v4.0/cells/{name}/worksheets/{worksheet}/ranges/{cellArea}search/broken-links".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
+        String localVarPath = "v4.0/cells/{name}/worksheets/{worksheet}/ranges/{cellArea}/search/broken-links".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
     .replaceAll("\\{" + "worksheet" + "\\}", apiClient.escapeString(worksheet.toString())) 
     .replaceAll("\\{" + "cellArea" + "\\}", apiClient.escapeString(cellArea.toString()))   ;
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();

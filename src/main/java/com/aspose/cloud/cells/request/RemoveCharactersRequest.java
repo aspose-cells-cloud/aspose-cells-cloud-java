@@ -41,13 +41,10 @@ public class RemoveCharactersRequest  implements IRequestModel {
     public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
         this.extendQueryParameterMap = extendQueryParameterMap;
     }
-    private Integer theFirstNCharacters;
-    private Integer theLastNCharacters;
-    private String allCharactersBeforeText;
-    private String allCharactersAfterText;
     private String removeTextMethod;
     private String characterSets;
     private String removeCustomValue;
+    private Boolean caseSensitive;
     private String worksheet;
     private String range;
     private String outPath;
@@ -61,15 +58,12 @@ public class RemoveCharactersRequest  implements IRequestModel {
         public RemoveCharactersRequest()
         {        
         }
-        public RemoveCharactersRequest( String  spreadsheet    ,  Integer theFirstNCharacters ,  Integer theLastNCharacters ,  String allCharactersBeforeText ,  String allCharactersAfterText ,  String removeTextMethod ,  String characterSets ,  String removeCustomValue ,  String worksheet ,  String range ,  String outPath ,  String outStorageName ,  String region ,  String password ) {
+        public RemoveCharactersRequest( String  spreadsheet    ,  String removeTextMethod ,  String characterSets ,  String removeCustomValue ,  Boolean caseSensitive ,  String worksheet ,  String range ,  String outPath ,  String outStorageName ,  String region ,  String password ) {
               this.spreadsheet  = spreadsheet;  
-            this.theFirstNCharacters = theFirstNCharacters; 
-            this.theLastNCharacters = theLastNCharacters; 
-            this.allCharactersBeforeText = allCharactersBeforeText; 
-            this.allCharactersAfterText = allCharactersAfterText; 
             this.removeTextMethod = removeTextMethod; 
             this.characterSets = characterSets; 
             this.removeCustomValue = removeCustomValue; 
+            this.caseSensitive = caseSensitive; 
             this.worksheet = worksheet; 
             this.range = range; 
             this.outPath = outPath; 
@@ -77,42 +71,6 @@ public class RemoveCharactersRequest  implements IRequestModel {
             this.region = region; 
             this.password = password; 
         }   
-
-        public Integer getTheFirstNCharacters() {
-            return this.theFirstNCharacters;
-        }
-
-        public void setTheFirstNCharacters(Integer theFirstNCharacters) {
-            this.theFirstNCharacters = theFirstNCharacters;
-        }
-
-
-        public Integer getTheLastNCharacters() {
-            return this.theLastNCharacters;
-        }
-
-        public void setTheLastNCharacters(Integer theLastNCharacters) {
-            this.theLastNCharacters = theLastNCharacters;
-        }
-
-
-        public String getAllCharactersBeforeText() {
-            return this.allCharactersBeforeText;
-        }
-
-        public void setAllCharactersBeforeText(String allCharactersBeforeText) {
-            this.allCharactersBeforeText = allCharactersBeforeText;
-        }
-
-
-        public String getAllCharactersAfterText() {
-            return this.allCharactersAfterText;
-        }
-
-        public void setAllCharactersAfterText(String allCharactersAfterText) {
-            this.allCharactersAfterText = allCharactersAfterText;
-        }
-
 
         public String getRemoveTextMethod() {
             return this.removeTextMethod;
@@ -138,6 +96,15 @@ public class RemoveCharactersRequest  implements IRequestModel {
 
         public void setRemoveCustomValue(String removeCustomValue) {
             this.removeCustomValue = removeCustomValue;
+        }
+
+
+        public Boolean getCaseSensitive() {
+            return this.caseSensitive;
+        }
+
+        public void setCaseSensitive(Boolean caseSensitive) {
+            this.caseSensitive = caseSensitive;
         }
 
 
@@ -210,59 +177,11 @@ public class RemoveCharactersRequest  implements IRequestModel {
          
                 if ( getSpreadsheet() == null ) {
                     throw new ApiException("Missing the required parameter 'Spreadsheet' when calling RemoveCharacters");
-                } 
-
-                if (getTheFirstNCharacters() == null) {
-                    throw new ApiException("Missing the required parameter 'TheFirstNCharacters' when calling RemoveCharacters");
-                } 
-
-                if (getTheLastNCharacters() == null) {
-                    throw new ApiException("Missing the required parameter 'TheLastNCharacters' when calling RemoveCharacters");
-                } 
-
-                if (getAllCharactersBeforeText() == null) {
-                    throw new ApiException("Missing the required parameter 'AllCharactersBeforeText' when calling RemoveCharacters");
-                } 
-
-                if (getAllCharactersAfterText() == null) {
-                    throw new ApiException("Missing the required parameter 'AllCharactersAfterText' when calling RemoveCharacters");
-                } 
-
-                if (getRemoveTextMethod() == null) {
-                    throw new ApiException("Missing the required parameter 'RemoveTextMethod' when calling RemoveCharacters");
-                } 
-
-                if (getCharacterSets() == null) {
-                    throw new ApiException("Missing the required parameter 'CharacterSets' when calling RemoveCharacters");
-                } 
-
-                if (getRemoveCustomValue() == null) {
-                    throw new ApiException("Missing the required parameter 'RemoveCustomValue' when calling RemoveCharacters");
-                } 
-
-                if (getWorksheet() == null) {
-                    throw new ApiException("Missing the required parameter 'Worksheet' when calling RemoveCharacters");
-                } 
-
-                if (getRange() == null) {
-                    throw new ApiException("Missing the required parameter 'Range' when calling RemoveCharacters");
                 }       
         String localVarPath = "v4.0/cells/content/remove/characters";
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
-            if (getTheFirstNCharacters() != null){
-                localVarQueryParams.addAll(apiClient.parameterToPairs("", "theFirstNCharacters", getTheFirstNCharacters()));
-            } 
-            if (getTheLastNCharacters() != null){
-                localVarQueryParams.addAll(apiClient.parameterToPairs("", "theLastNCharacters", getTheLastNCharacters()));
-            } 
-            if (getAllCharactersBeforeText() != null){
-                localVarQueryParams.addAll(apiClient.parameterToPairs("", "allCharactersBeforeText", getAllCharactersBeforeText()));
-            } 
-            if (getAllCharactersAfterText() != null){
-                localVarQueryParams.addAll(apiClient.parameterToPairs("", "allCharactersAfterText", getAllCharactersAfterText()));
-            } 
             if (getRemoveTextMethod() != null){
                 localVarQueryParams.addAll(apiClient.parameterToPairs("", "removeTextMethod", getRemoveTextMethod()));
             } 
@@ -271,6 +190,9 @@ public class RemoveCharactersRequest  implements IRequestModel {
             } 
             if (getRemoveCustomValue() != null){
                 localVarQueryParams.addAll(apiClient.parameterToPairs("", "removeCustomValue", getRemoveCustomValue()));
+            } 
+            if (getCaseSensitive() != null){
+                localVarQueryParams.addAll(apiClient.parameterToPairs("", "caseSensitive", getCaseSensitive()));
             } 
             if (getWorksheet() != null){
                 localVarQueryParams.addAll(apiClient.parameterToPairs("", "worksheet", getWorksheet()));
