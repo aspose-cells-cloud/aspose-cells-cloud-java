@@ -1,5 +1,36 @@
 # Release History Version
 
+## Feature & Enhancements in Version 25.10
+
+| Optimize data Transform API: replace delete with remove. | Improvement  |
+| Support to update the spreadsheet content words case in Cells Cloud 4.0. | Improvement  |
+| Support to remove characters from spreadsheet content in Cells Cloud 4.0. | Improvement  |
+| Support to add text for spreadsheet content in Cells Cloud 4.0. | Improvement  |
+| Support to convert text for spreadsheet content in Cells Cloud 4.0. | Improvement  |
+| Support to extract text for spreadsheet content in Cells Cloud 4.0. | Improvement  |
+| Support to extract text for spreadsheet content in Cells Cloud 4.0. | Improvement  |
+| Support to split text for spreadsheet content in Cells Cloud 4.0. | Improvement  |
+
+## Feature & Enhancements in Version 25.9
+
+| Support trim spreadsheet content in Cells Cloud 4.0. | Improvement  |
+| Support trim worksheet range content in Cells Cloud 4.0. | Improvement  |
+| Fix few issues about spelling error. | Bug  |
+
+
+## Feature & Enhancements in Version 25.8
+
+| Support of Authorization in Aspose.Cells Cloud Docker Container | New Feature  |
+| New Feature: Aggregate cells by color in CalculateController. | New Feature  |
+| New Feature: Math Calculations in CalculateController. | New Feature  |
+| New Feature: Adding/Deleting/Renaming worksheet in ManagementController. | New Feature  |
+| New Feature: Adding/Deleting worksheet in ManagementController. | New Feature  |
+| New Feature: create spreadsheet in ManagementController. | New Feature  |
+| New feature: Redesign the data import into the Spreadsheet. | New Feature  |
+| New feature: Swap data ranges in the spreadsheet. | New Feature  |
+| Fix the code generator of the cells cloud SDK specification for the enum query parameter. | Bug  |
+
+
 ## Feature & Enhancements in Version 25.7
 
 - Optimize the operation scope options for Text Processing Controller.
